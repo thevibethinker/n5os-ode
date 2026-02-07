@@ -1,0 +1,1 @@
+{"entities": [{"name": "fabregas-cannon", "type": "TOOL", "context": "service running on a specific port"}, {"name": "fabregas-cannon-staging", "type": "TOOL", "context": "staging service running on a specific port"}], "relationships": [{"from": "fabregas-cannon", "to": "fabregas-cannon-staging", "type": "RELATED_TO", "context": "both are services related to fabregas-cannon"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ray", "type": "PERSON", "context": "provides advice on acquisition value"}, {"name": "acquisition value", "type": "CONCEPT", "context": "created primarily by competition"}], "relationships": [{"from": "Ray", "to": "acquisition value", "type": "BELIEVES", "context": "Ray believes that acquisition value is created by competition"}]}

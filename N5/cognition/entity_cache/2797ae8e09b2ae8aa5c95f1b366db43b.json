@@ -1,0 +1,1 @@
+{"entities": [{"name": "Sudesh", "type": "PERSON", "context": "Contact person at Sparkplustech.Us"}, {"name": "Sparkplustech.Us", "type": "ORG", "context": "Organization where Sudesh works"}], "relationships": [{"from": "Sudesh", "to": "Sparkplustech.Us", "type": "WORKS_WITH", "context": "Sudesh is associated with Sparkplustech.Us"}]}

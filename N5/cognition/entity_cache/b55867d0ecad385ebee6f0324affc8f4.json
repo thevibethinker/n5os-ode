@@ -1,0 +1,1 @@
+{"entities": [{"name": "execution layer", "type": "CONCEPT", "context": "layer where work happens"}, {"name": "routing/dispatch layer", "type": "CONCEPT", "context": "layer where behavior enforcement is not recommended"}], "relationships": []}

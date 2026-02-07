@@ -1,0 +1,1 @@
+{"entities": [{"name": "CRM", "type": "TOOL", "context": "Customer Relationship Management system"}, {"name": "calendar", "type": "TOOL", "context": "Scheduling tool"}, {"name": "email", "type": "TOOL", "context": "Communication tool"}], "relationships": []}

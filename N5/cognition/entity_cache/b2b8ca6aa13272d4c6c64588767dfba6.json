@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "the individual offering help"}, {"name": "soldier", "type": "CONCEPT", "context": "the type of engineers needed"}], "relationships": [{"from": "V", "to": "soldier", "type": "MENTIONS", "context": "referring to the type of engineers"}]}

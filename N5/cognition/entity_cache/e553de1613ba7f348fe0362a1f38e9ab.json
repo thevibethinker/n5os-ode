@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ben", "type": "PERSON", "context": "New contact with no existing CRM profile; cold relationship status; new introduction"}, {"name": "CRM", "type": "TOOL", "context": "Contact tracking system used for checking prior relationships and deduplication"}], "relationships": []}

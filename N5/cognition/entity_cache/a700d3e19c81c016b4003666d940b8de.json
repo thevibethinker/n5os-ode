@@ -1,0 +1,1 @@
+{"entities": [{"name": "Job seekers", "type": "PERSON", "context": "individuals looking for employment"}, {"name": "AI coaching process", "type": "CONCEPT", "context": "a process involving AI to assist job seekers"}], "relationships": [{"from": "Job seekers", "to": "AI coaching process", "type": "USES", "context": "job seekers complete the AI coaching process"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "<form-id>_analysis.md", "type": "TOOL", "context": "Synthesized findings document"}, {"name": "<form-id>_dashboard.py", "type": "TOOL", "context": "Plotly dashboard script"}, {"name": "<form-id>_framework.json", "type": "TOOL", "context": "Interpretation framework (reusable)"}], "relationships": []}

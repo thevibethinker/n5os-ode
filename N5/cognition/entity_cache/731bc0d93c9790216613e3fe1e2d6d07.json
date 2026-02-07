@@ -1,0 +1,1 @@
+{"entities": [{"name": "N5 Persona System", "type": "TOOL", "context": "Major upgrade to the system"}, {"name": "Workflow Files", "type": "CONCEPT", "context": "External files loaded on demand"}], "relationships": [{"from": "N5 Persona System", "to": "Workflow Files", "type": "USES", "context": "Decouples methodology from system prompts"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "yargs", "type": "ORG", "context": "a JavaScript library used for handling command-line interfaces"}, {"name": "cliui", "type": "ORG", "context": "a library for creating command-line user interfaces"}], "relationships": [{"from": "yargs", "to": "cliui", "type": "USES", "context": "yargs uses cliui for command-line user interface development"}]}

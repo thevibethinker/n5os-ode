@@ -1,0 +1,143 @@
+{
+  "schema_version": 3,
+  "slug": "consulting-zoffice-stack",
+  "title": "Zoffice Consultancy Stack",
+  "build_type": "code_build",
+  "status": "active",
+  "model": "anthropic:claude-sonnet-4-20250514",
+  "launch_mode": "orchestrated",
+  "waves": {
+    "W1": [
+      "D1.1",
+      "D1.2",
+      "D1.3"
+    ],
+    "W2": [
+      "D2.1",
+      "D2.2",
+      "D2.3"
+    ],
+    "W3": [
+      "D3.1",
+      "D3.2",
+      "D4.1",
+      "D4.2"
+    ]
+  },
+  "active_wave": null,
+  "drops": {
+    "D1.1": {
+      "name": "Security Gate Validator",
+      "stream": 1,
+      "order": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete"
+    },
+    "D1.2": {
+      "name": "Dual-Sided Audit System",
+      "stream": 1,
+      "order": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete"
+    },
+    "D1.3": {
+      "name": "API Communication Layer",
+      "stream": 1,
+      "order": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete"
+    },
+    "D2.1": {
+      "name": "Archetype Zo Account Setup",
+      "stream": 2,
+      "order": 1,
+      "depends_on": [
+        "D1.1",
+        "D1.2",
+        "D1.3"
+      ],
+      "spawn_mode": "manual",
+      "blocking": true,
+      "status": "complete"
+    },
+    "D2.2": {
+      "name": "Content Classification System",
+      "stream": 2,
+      "order": 2,
+      "depends_on": [
+        "D2.1"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete"
+    },
+    "D2.3": {
+      "name": "Zoffice Workers Framework",
+      "stream": 2,
+      "order": 2,
+      "depends_on": [
+        "D2.1"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete"
+    },
+    "D3.1": {
+      "name": "Daily Export Pipeline",
+      "stream": 3,
+      "order": 1,
+      "depends_on": [
+        "D2.2",
+        "D2.3"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete"
+    },
+    "D3.2": {
+      "name": "Calendly Integration",
+      "stream": 3,
+      "order": 1,
+      "depends_on": [
+        "D2.3"
+      ],
+      "spawn_mode": "auto",
+      "blocking": false,
+      "status": "complete"
+    },
+    "D4.1": {
+      "name": "Localization Framework",
+      "stream": 4,
+      "order": 1,
+      "depends_on": [],
+      "spawn_mode": "manual",
+      "blocking": false,
+      "status": "complete"
+    },
+    "D4.2": {
+      "name": "Client Onboarding Flow",
+      "stream": 4,
+      "order": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": false,
+      "status": "complete"
+    }
+  },
+  "lineage": {
+    "parent_type": "conversation",
+    "parent_ref": "con_GwlFHPrBi5KsNm1X",
+    "parent_conversation": "con_GwlFHPrBi5KsNm1X",
+    "moment": "V requested multi-Zo consultancy architecture",
+    "branched_at": "2026-02-06T16:20:00Z"
+  },
+  "started_at": "2026-02-06T16:23:59.970063+00:00",
+  "finalized_at": "2026-02-06T19:59:22.086082+00:00",
+  "finalization_passed": true
+}

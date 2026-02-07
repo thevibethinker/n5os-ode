@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ilya", "type": "PERSON", "context": "core team member"}, {"name": "core team", "type": "ORG", "context": "group involved in campaign work"}], "relationships": [{"from": "V", "to": "Ilya", "type": "KNOWS", "context": "getting acquainted in team meeting"}, {"from": "V", "to": "core team", "type": "WORKS_WITH", "context": "working together on campaign"}]}

@@ -1,0 +1,59 @@
+{
+  "slug": "consulting-zoffice-stack",
+  "learnings": [
+    {
+      "text": "/zo/ask API ignores JSON output format requests in prompt templates. Returns natural language analysis regardless of output_format parameter. Need to parse semantic response instead of expecting structured JSON.",
+      "source": "manual",
+      "added_at": "2026-02-06T16:29:27.743072+00:00",
+      "tags": []
+    },
+    {
+      "text": "Security Gate processing time averages 15 seconds due to /zo/ask API calls. Acceptable for security-critical system but exceeds 5-second target. Consider async processing or caching for production deployment.",
+      "source": "manual",
+      "added_at": "2026-02-06T16:34:39.025183+00:00",
+      "tags": []
+    },
+    {
+      "text": "D2.1 is a manual drop type - deposits should use status 'blocked_human' until V confirms completion of manual steps. Do not mark complete just because documentation was created.",
+      "source": "manual",
+      "added_at": "2026-02-06T17:10:00.771626+00:00",
+      "tags": []
+    },
+    {
+      "text": "D1.3 deposit claimed complete but was missing the core zoputer_client.py script specified in the drop requirements. Created it during D2.1 execution. Future deposits should verify ALL artifacts listed in the drop spec exist before marking complete.",
+      "source": "manual",
+      "added_at": "2026-02-06T17:38:49.845874+00:00",
+      "tags": []
+    },
+    {
+      "text": "Pulse learnings CLI: use 'list <build_slug>' to read build learnings; there is no 'read' subcommand (docs/briefs may reference outdated command). Source: D4.1",
+      "source": "manual",
+      "added_at": "2026-02-06T19:34:54.095121+00:00",
+      "tags": []
+    },
+    {
+      "text": "When executing a Drop, extract build_slug and drop_id from the drop brief frontmatter and pass them to session_state_manager.py init via --build and --worker-num flags. Without these, the router cannot detect worker context and will misroute to thread-close instead of drop-close. Source: D4.1",
+      "source": "manual",
+      "added_at": "2026-02-06T19:42:53.931102+00:00",
+      "tags": []
+    },
+    {
+      "text": "bundle_manager.py (D1.3) created JSON bundles but daily export needs tarballs - updated transmit_bundle to handle both formats",
+      "source": "Drop:D3.1",
+      "added_at": "2026-02-06T19:59:22.078715+00:00",
+      "tags": []
+    },
+    {
+      "text": "Temp directories get cleaned up before async operations - use persistent bundle storage (N5/data/bundles/)",
+      "source": "Drop:D3.1",
+      "added_at": "2026-02-06T19:59:22.079392+00:00",
+      "tags": []
+    },
+    {
+      "text": "Git-based change detection works well for skills but requires tracking last_export.json state",
+      "source": "Drop:D3.1",
+      "added_at": "2026-02-06T19:59:22.080180+00:00",
+      "tags": []
+    }
+  ]
+}

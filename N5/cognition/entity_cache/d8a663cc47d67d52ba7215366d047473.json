@@ -1,0 +1,1 @@
+{"entities": [{"name": "Syncthing", "type": "TOOL", "context": "a tool used for backup"}, {"name": "Google Drive", "type": "TOOL", "context": "a tool used for backup"}], "relationships": [{"from": "V", "to": "Syncthing", "type": "USES", "context": "V uses Syncthing for backup"}, {"from": "V", "to": "Google Drive", "type": "USES", "context": "V uses Google Drive for backup"}]}

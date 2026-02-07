@@ -1,0 +1,1 @@
+{"entities": [{"name": "AI", "type": "CONCEPT", "context": "Artificial intelligence's effect on job application processes"}, {"name": "applicants", "type": "PERSON", "context": "Individuals applying for jobs"}], "relationships": [{"from": "AI", "to": "applicants", "type": "RELATED_TO", "context": "AI-generated applications causing increased volume of screening calls"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "AI automation platform", "type": "TOOL", "context": "generic term for automation technology"}, {"name": "no-code tool", "type": "TOOL", "context": "tool that limits technical coding requirements"}, {"name": "personal AI server", "type": "TOOL", "context": "technical term for a dedicated AI system"}], "relationships": []}

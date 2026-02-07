@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Daily Agent / Trigger"}, {"name": "Luma", "type": "ORG", "context": "Source of data scraped and parsed"}], "relationships": [{"from": "V", "to": "Luma", "type": "USES", "context": "V scrapes and parses data from Luma"}]}

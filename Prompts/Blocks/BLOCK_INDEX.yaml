@@ -1,0 +1,408 @@
+---
+version: "1.0"
+created: 2026-02-01
+description: "Canonical block index with metadata, recipes, and triggers for meeting-system-v3"
+---
+
+blocks:
+  external:
+    B00:
+      name: "Zo Take Heed"
+      purpose: "Extract deferred intents and verbal cues from transcript"
+      when: always
+      trigger_conditions: null
+      avg_output_length: "short"
+      priority_relevance: [business, career]
+      triggers_blocks: [B07, B14]
+      notes: "Scans for patterns like 'intro me to', 'draft a blurb', 'remember'"
+
+    B01:
+      name: "Detailed Recap"
+      purpose: "Core narrative summary of meeting content and flow"
+      when: always
+      trigger_conditions: null
+      avg_output_length: "medium"
+      priority_relevance: [business, career]
+      triggers_blocks: []
+      notes: "Primary summary block, 2-4 paragraphs"
+
+    B02_B05:
+      name: "Commitments & Actions"
+      purpose: "Explicit promises made and action items with owners and deadlines"
+      when: always
+      trigger_conditions: null
+      avg_output_length: "medium"
+      priority_relevance: [business, career]
+      triggers_blocks: []
+      notes: "Merged from B02 (sparse) + B05 (comprehensive)"
+
+    B03:
+      name: "Decisions"
+      purpose: "Key decisions made with rationale and implications"
+      when: always
+      trigger_conditions: "Any decision reached or agreed upon"
+      avg_output_length: "short"
+      priority_relevance: [business, career]
+      triggers_blocks: []
+      notes: "External meeting decisions only"
+
+    B04:
+      name: "Open Questions"
+      purpose: "Unresolved questions that need follow-up"
+      when: conditional
+      trigger_conditions: "Questions raised without clear answers"
+      avg_output_length: "short"
+      priority_relevance: [business, career]
+      triggers_blocks: []
+      notes: "Captures knowledge gaps"
+
+    B06:
+      name: "Business Context"
+      purpose: "Company-specific strategic context and positioning"
+      when: conditional
+      trigger_conditions: "Discussion of business strategy, market positioning, company goals"
+      avg_output_length: "medium"
+      priority_relevance: [business]
+      triggers_blocks: []
+      notes: "Careerspan-specific business context"
+
+    B07:
+      name: "Warm Introductions"
+      purpose: "Draft introduction emails to specific contacts mentioned"
+      when: conditional
+      trigger_conditions: "Verbal cue via B00: 'intro me to', 'introduce me to', 'connect me with'"
+      avg_output_length: "short"
+      priority_relevance: [business, career]
+      triggers_blocks: []
+      notes: "Only triggered via B00 pattern matching"
+
+    B08:
+      name: "Stakeholder Intelligence"
+      purpose: "Participant insights, communication style, priorities, influence"
+      when: always
+      trigger_conditions: null
+      avg_output_length: "medium"
+      priority_relevance: [business, career]
+      triggers_blocks: []
+      notes: "Individual-level intelligence"
+
+    B10:
+      name: "Relationship Trajectory"
+      purpose: "Analysis of relationship direction and momentum"
+      when: conditional
+      trigger_conditions: "Discussion of future collaboration, partnership evolution, relationship status"
+      avg_output_length: "medium"
+      priority_relevance: [business, career]
+      triggers_blocks: []
+      notes: "Tracks relationship health and direction"
+
+    B13:
+      name: "Plan of Action"
+      purpose: "Synthesized next steps across all parties"
+      when: conditional
+      trigger_conditions: "Next steps discussed or implied"
+      avg_output_length: "medium"
+      priority_relevance: [business, career]
+      triggers_blocks: []
+      notes: "Cross-party action synthesis"
+
+    B14:
+      name: "Blurbs Requested"
+      purpose: "Draft blurbs for LinkedIn, intros, or other uses"
+      when: conditional
+      trigger_conditions: "Verbal cue via B00: 'draft a blurb', 'write a blurb', 'blurb about'"
+      avg_output_length: "short"
+      priority_relevance: [business, career]
+      triggers_blocks: []
+      notes: "Only triggered via B00 pattern matching"
+
+    B21:
+      name: "Key Moments"
+      purpose: "Significant moments, turning points, or breakthroughs"
+      when: always
+      trigger_conditions: null
+      avg_output_length: "short"
+      priority_relevance: [business, career]
+      triggers_blocks: []
+      notes: "Highlight reel of meeting"
+
+    B25:
+      name: "Deliverable Map"
+      purpose: "Specific deliverables discussed with owners and timelines"
+      when: conditional
+      trigger_conditions: "Explicit deliverables, artifacts, or outputs mentioned"
+      avg_output_length: "short"
+      priority_relevance: [business]
+      triggers_blocks: []
+      notes: "Deliverable tracking"
+
+    B26:
+      name: "Meeting Metadata"
+      purpose: "Date, participants, duration, purpose, and classification"
+      when: always
+      trigger_conditions: null
+      avg_output_length: "short"
+      priority_relevance: [business, career]
+      triggers_blocks: []
+      notes: "Structured metadata for classification"
+
+    B28:
+      name: "Strategic Intelligence"
+      purpose: "Broad landscape implications and market insights"
+      when: conditional
+      trigger_conditions: "Discussion of industry trends, market dynamics, competitive landscape"
+      avg_output_length: "medium"
+      priority_relevance: [business]
+      triggers_blocks: []
+      notes: "Strategic-level insights"
+
+    B32:
+      name: "Thought Provoking Ideas"
+      purpose: "Novel ideas worth capturing for future reference"
+      when: conditional
+      trigger_conditions: "New concepts, innovative ideas, or creative suggestions"
+      avg_output_length: "short"
+      priority_relevance: [business, personal]
+      triggers_blocks: []
+      notes: "Feeds idea system"
+
+    B33:
+      name: "Decision Rationale"
+      purpose: "Deep dive into why decisions were made"
+      when: conditional
+      trigger_conditions: "Complex decisions with nuanced reasoning"
+      avg_output_length: "medium"
+      priority_relevance: [business, career]
+      triggers_blocks: []
+      notes: "Feeds idea system"
+
+  internal:
+    B00:
+      name: "Zo Take Heed (Internal)"
+      purpose: "Extract deferred intents and verbal cues from internal meetings"
+      when: always
+      trigger_conditions: null
+      avg_output_length: "short"
+      priority_relevance: [business, personal]
+      triggers_blocks: []
+      notes: "Same as external, internal context"
+
+    B40:
+      name: "Internal Decisions"
+      purpose: "Team decisions with context and rationale"
+      when: always
+      trigger_conditions: null
+      avg_output_length: "medium"
+      priority_relevance: [business, career]
+      triggers_blocks: []
+      notes: "Distinct from B03 (external decisions)"
+
+    B41:
+      name: "Team Coordination"
+      purpose: "Alignment items, handoffs, and cross-team dependencies"
+      when: always
+      trigger_conditions: null
+      avg_output_length: "medium"
+      priority_relevance: [business]
+      triggers_blocks: []
+      notes: "Operational alignment"
+
+    B42:
+      name: "Internal Actions"
+      purpose: "Internal-only tasks and action items"
+      when: always
+      trigger_conditions: null
+      avg_output_length: "short"
+      priority_relevance: [business]
+      triggers_blocks: []
+      notes: "Tasks not shared externally"
+
+    B43:
+      name: "Resource Allocation"
+      purpose: "Bandwidth, capacity, and resource discussions"
+      when: conditional
+      trigger_conditions: "Discussion of capacity, hiring, budget, bandwidth"
+      avg_output_length: "medium"
+      priority_relevance: [business]
+      triggers_blocks: []
+      notes: "Resource planning"
+
+    B44:
+      name: "Process Improvements"
+      purpose: "Workflow changes and process optimization ideas"
+      when: conditional
+      trigger_conditions: "Discussion of better ways of doing things, process friction"
+      avg_output_length: "medium"
+      priority_relevance: [business]
+      triggers_blocks: []
+      notes: "Continuous improvement"
+
+    B45:
+      name: "Team Dynamics"
+      purpose: "Interpersonal notes, morale, and team health"
+      when: always
+      trigger_conditions: null
+      avg_output_length: "short"
+      priority_relevance: [business, personal]
+      triggers_blocks: []
+      notes: "Mandatory - team health"
+
+    B46:
+      name: "Knowledge Transfer"
+      purpose: "Training, onboarding, or knowledge sharing moments"
+      when: conditional
+      trigger_conditions: "Teaching, training, or knowledge sharing activities"
+      avg_output_length: "medium"
+      priority_relevance: [business, career]
+      triggers_blocks: []
+      notes: "Learning and development"
+
+    B47:
+      name: "Open Debates"
+      purpose: "Unresolved tensions and areas of disagreement"
+      when: always
+      trigger_conditions: null
+      avg_output_length: "medium"
+      priority_relevance: [business]
+      triggers_blocks: []
+      notes: "Mandatory - surface conflicts"
+
+    B48:
+      name: "Internal Synthesis"
+      purpose: "Strategic takeaways for leadership review"
+      when: always
+      trigger_conditions: null
+      avg_output_length: "medium"
+      priority_relevance: [business, career]
+      triggers_blocks: []
+      notes: "Executive-level summary"
+
+recipes:
+  external_standard:
+    description: "Default for external meetings - balanced coverage"
+    always: [B00, B01, B02_B05, B03, B08, B21, B26]
+    conditional: [B04, B06, B07, B10, B13, B14, B25, B28, B32, B33]
+    total_blocks: 17
+    token_budget: "medium"
+
+  external_sales:
+    description: "Sales and partnership meetings - focus on commitments and actions"
+    always: [B00, B01, B02_B05, B03, B06, B08, B21, B26]
+    conditional: [B04, B07, B10, B13, B14, B25, B32, B33]
+    total_blocks: 16
+    token_budget: "medium"
+    notes: "B06 (Business Context) promoted to always for sales context"
+
+  external_investor:
+    description: "Investor meetings - strategic focus with minimal fluff"
+    always: [B00, B01, B02_B05, B03, B06, B08, B21, B26, B33]
+    conditional: [B04, B10, B13, B25, B28, B32]
+    total_blocks: 15
+    token_budget: "medium-high"
+    notes: "B33 (Decision Rationale) always for investor documentation"
+
+  internal_standup:
+    description: "Team standups - operational focus, lightweight"
+    always: [B00, B40, B41, B42, B45]
+    conditional: [B43, B44, B46, B47]
+    total_blocks: 9
+    token_budget: "low"
+    notes: "Streamlined for daily operational rhythm"
+
+  internal_strategy:
+    description: "Strategy and planning sessions - comprehensive"
+    always: [B00, B40, B41, B42, B45, B47, B48]
+    conditional: [B43, B44, B46]
+    total_blocks: 10
+    token_budget: "medium"
+    notes: "Full strategic coverage for leadership"
+
+  internal_retrospective:
+    description: "Retrospectives and reviews - reflection-heavy"
+    always: [B00, B40, B41, B42, B45, B47]
+    conditional: [B43, B44, B46, B48]
+    total_blocks: 10
+    token_budget: "medium"
+    notes: "Focus on learning and improvement"
+
+triggers:
+  B07_warm_intro:
+    block: B07
+    patterns:
+      - "intro me to"
+      - "introduce me to"
+      - "connect me with"
+      - "make an introduction"
+    via: B00
+    description: "Triggers warm introduction block for specific contacts"
+
+  B14_blurb:
+    block: B14
+    patterns:
+      - "draft a blurb"
+      - "write a blurb"
+      - "blurb about"
+      - "create a blurb"
+    via: B00
+    description: "Triggers blurb drafting for LinkedIn or other uses"
+
+  deferred_intent:
+    block: B00
+    patterns:
+      - "zo take heed"
+      - "zo, remember"
+      - "zo, follow up on"
+      - "zo, note that"
+    via: B00
+    description: "Captures deferred intents in B00 for later processing"
+
+priority_relevance:
+  business:  # Careerspan recruiting revenue, partnerships, product
+    high: [B02_B05, B03, B06, B08, B25, B28]
+    medium: [B01, B10, B13, B21, B33]
+    low: [B04, B07, B14, B26, B32]
+    notes: "High blocks directly impact revenue, partnerships, or strategic decisions"
+
+  career:  # Professional growth, reputation, opportunities
+    high: [B01, B03, B08, B21, B26]
+    medium: [B02_B05, B07, B10, B13, B14, B33]
+    low: [B04, B06, B25, B28, B32]
+    notes: "High blocks track decisions, relationships, and career-critical content"
+
+  personal:  # Learning, creativity, projects, identity
+    high: [B32, B45, B46]
+    medium: [B14, B33, B48]
+    low: [B01, B03, B04, B08, B13, B21, B26, B40, B41, B42, B47]
+    notes: "Learning and team dynamics are primary personal priorities"
+
+  health:  # Physical, mental, energy, longevity
+    high: []
+    medium: [B45]
+    low: []
+    notes: "Minimal direct relevance - team dynamics (B45) touches on burnout/morale"
+
+  relationship:  # Family, friends, community, social bonds
+    high: []
+    medium: []
+    low: [B07]
+    notes: "Low relevance - B07 (warm intros) occasionally serves relationship building"
+
+metadata:
+  total_blocks: 27
+  external_blocks: 17
+  internal_blocks: 10
+  always_blocks_external: 7
+  always_blocks_internal: 7
+  conditional_blocks_external: 10
+  conditional_blocks_internal: 3
+  trigger_based_blocks: [B07, B14]
+  idea_system_feeds: [B32, B33]
+
+  output_length_guide:
+    short: "50-150 words"
+    medium: "150-400 words"
+    long: "400-800 words"
+
+  version: "1.0"
+  last_updated: "2026-02-01"
+  maintained_by: "meeting-system-v3 build"

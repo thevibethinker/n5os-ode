@@ -1,0 +1,1 @@
+{"entities": [{"name": "N5_CONVERSATION_ID", "type": "CONCEPT", "context": "An environment variable used in the knowledge system."}, {"name": "/.z/workspaces/", "type": "CONCEPT", "context": "A directory from which information may be parsed."}], "relationships": []}

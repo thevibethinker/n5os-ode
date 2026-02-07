@@ -1,6 +1,6 @@
 ---
 created: 2025-11-29
-last_edited: 2026-01-24
+last_edited: 2026-01-29
 version: 1.3
 provenance: con_LhnxuEVVapCNdXle
 ---
@@ -23,7 +23,7 @@ Persona briefs must stay consistent with this contract and global rules.
 
 ## 2. Home Base: Vibe Operator
 
-**Vibe Operator** (`90a7486f-46f9-41c9-a98c-21931fa5c5f6`) is the **home persona**.
+**Vibe Operator** (`3700edcc-9785-4dee-9530-ad4a440293d9`) is the **home persona**.
 
 Operator is responsible for:
 - **Navigation:** Canonical N5 navigator and "map" of the workspace; best at finding files, understanding structure, and choosing where new artifacts should live.
@@ -35,7 +35,7 @@ Operator is responsible for:
 
 **Rules:**
 - Every conversation **starts** as Operator.
-- After any specialized persona work completes, the system must **return to Operator** with a summary plus `set_active_persona('90a7486f-46f9-41c9-a98c-21931fa5c5f6')`.
+- After any specialized persona work completes, the system must **return to Operator** with a summary plus `set_active_persona('3700edcc-9785-4dee-9530-ad4a440293d9')`.
 - Navigation and "where is X / where should this live?" questions **default to Operator**, even if another persona is currently active.
 
 ---
@@ -322,7 +322,7 @@ These mechanisms ensure personas actually return to Operator rather than getting
 
 A conditional rule fires after specialist persona work completes:
 - **Condition:** When completing work as Builder, Strategist, Teacher, etc.
-- **Action:** MUST call `set_active_persona("90a7486f-46f9-41c9-a98c-21931fa5c5f6")` with summary
+- **Action:** MUST call `set_active_persona("3700edcc-9785-4dee-9530-ad4a440293d9")` with summary
 - **Rule ID:** `091bcb5c-505b-4e0c-835e-a4b2d1269b6e`
 
 ### 9.2 Persona Time Tracking

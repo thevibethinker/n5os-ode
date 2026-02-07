@@ -1,0 +1,1 @@
+{"entities": [{"name": "meeting transcripts", "type": "CONCEPT", "context": "Main subject for processing"}, {"name": "meeting intelligence orchestrator", "type": "TOOL", "context": "Script used for processing meeting transcripts"}, {"name": "meeting-process", "type": "CONCEPT", "context": "Document detailing meeting procedures"}], "relationships": []}

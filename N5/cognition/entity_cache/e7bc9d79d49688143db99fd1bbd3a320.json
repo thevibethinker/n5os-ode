@@ -1,0 +1,1 @@
+{"entities": [{"name": "Griffin Schultz", "type": "PERSON", "context": "a job seeker discussing internships"}, {"name": "Yale", "type": "ORG", "context": "the university's career services"}], "relationships": [{"from": "Griffin Schultz", "to": "Yale", "type": "WORKS_WITH", "context": "working with career services for job seeking"}]}

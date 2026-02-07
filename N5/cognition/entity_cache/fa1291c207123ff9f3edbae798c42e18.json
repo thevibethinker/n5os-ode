@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "refers to Vrijen"}, {"name": "Northwell", "type": "ORG", "context": "organization mentioned in relation to VML"}], "relationships": [{"from": "V", "to": "Northwell", "type": "WORKS_WITH", "context": "related to VML clarity opening opportunities with Northwell"}]}

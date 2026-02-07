@@ -1,0 +1,1 @@
+{"entities": [{"name": "Sarah", "type": "PERSON", "context": "individual offering to review documentation"}], "relationships": [{"from": "V", "to": "Sarah", "type": "WORKS_WITH", "context": "collaborating on documentation review"}]}

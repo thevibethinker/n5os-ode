@@ -1,0 +1,1 @@
+{"entities": [{"name": "NodePath", "type": "CONCEPT", "context": "A wrapper around an AST node providing access to ancestor objects and scope information"}, {"name": "AST", "type": "CONCEPT", "context": "Abstract Syntax Tree, a data structure used in compilers and interpreters"}], "relationships": []}

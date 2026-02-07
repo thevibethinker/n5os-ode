@@ -1,0 +1,1 @@
+{"entities": [{"name": "Aviato Professional Intelligence", "type": "TOOL", "context": "a tool for professional intelligence"}, {"name": "LinkedIn Intelligence", "type": "TOOL", "context": "a tool for intelligence sourced from LinkedIn"}, {"name": "Email Thread Analysis", "type": "TOOL", "context": "a method for analyzing email discussions"}], "relationships": []}

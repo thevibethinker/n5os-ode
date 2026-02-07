@@ -1,0 +1,1 @@
+{"entities": [{"name": "fetchMethod", "type": "CONCEPT", "context": "a method related to the caching system's functionality"}, {"name": "status", "type": "TOOL", "context": "an object used for tracking internal behavior of the cache"}], "relationships": []}

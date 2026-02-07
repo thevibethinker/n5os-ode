@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "the individual discussing their knowledge system"}, {"name": "Manus", "type": "CONCEPT", "context": "a concept used for analogy in technical explanations"}], "relationships": [{"from": "V", "to": "Manus", "type": "USES", "context": "V uses Manus as a reference to explain technical concepts"}]}

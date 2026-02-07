@@ -1,0 +1,1 @@
+{"entities": [{"name": "minimist", "type": "ORG", "context": "a JavaScript library for argument parsing"}], "relationships": [{"from": "V", "to": "minimist", "type": "KNOWS", "context": "V has knowledge of the minimist library as evidenced by the commits mentioned"}]}

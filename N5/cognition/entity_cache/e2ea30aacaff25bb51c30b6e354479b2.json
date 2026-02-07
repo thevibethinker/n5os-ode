@@ -1,0 +1,1 @@
+{"entities": [{"name": "Colin Navon", "type": "PERSON", "context": "Academic discussing employment journeys"}], "relationships": [{"from": "V", "to": "Colin Navon", "type": "KNOWS", "context": "V is familiar with Colin Navon's academic perspective"}]}

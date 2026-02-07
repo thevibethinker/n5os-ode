@@ -1,0 +1,44 @@
+# Awards & Achievements
+# Source: Careerspan Intelligence Brief
+# DO NOT EDIT - Preserves Careerspan conclusions verbatim
+
+academic:
+  - achievement: "JEE Advanced Rank 47"
+    context: "Out of 14 million candidates (99.97 percentile)"
+    significance: "Elite problem-solving ability indicator"
+    year: 2016
+
+  - achievement: "IIT Delhi Dual Degree"
+    context: "B.Tech + M.Tech in Computer Science"
+    significance: "Top-tier technical education"
+    year: 2021
+
+professional:
+  - achievement: "5x Budget Increase"
+    context: "Keysight ML platform"
+    significance: "Demonstrated ROI convinced leadership to expand investment"
+    type: "business_impact"
+    quantified: true
+
+  - achievement: "$50k/month Cost Savings"
+    context: "American Express developer portal"
+    significance: "Independently validated financial impact"
+    type: "business_impact"
+    quantified: true
+
+  - achievement: "Platform Scaled to 400+ Daily Users"
+    context: "Keysight ML SaaS"
+    significance: "Built from zero, now serves Apple, Samsung, Volkswagen"
+    type: "product_impact"
+    quantified: true
+
+  - achievement: "Team Growth from 0 to ~20 Engineers"
+    context: "Keysight ML team"
+    significance: "Founding engineer who scaled the team"
+    type: "leadership"
+    quantified: true
+
+patterns:
+  - "Quantifies impact in business terms (dollars, users, percentages)"
+  - "Achievements tied to organizational outcomes, not just technical delivery"
+  - "Track record of starting small and scaling"

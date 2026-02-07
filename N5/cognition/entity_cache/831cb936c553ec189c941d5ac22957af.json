@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "speaking about business partnerships"}, {"name": "incredible product", "type": "CONCEPT", "context": "refers to a product with high retention numbers"}], "relationships": [{"from": "Vrijen Attawar", "to": "incredible product", "type": "BELIEVES", "context": "believes in the value of his product"}]}

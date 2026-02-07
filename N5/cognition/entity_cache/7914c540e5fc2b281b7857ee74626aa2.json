@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "V introducing hackathon opportunity"}, {"name": "Zo", "type": "CONCEPT", "context": "significant community access for Zo adoption"}], "relationships": [{"from": "V", "to": "Zo", "type": "BELIEVES", "context": "significant community access for Zo adoption"}]}

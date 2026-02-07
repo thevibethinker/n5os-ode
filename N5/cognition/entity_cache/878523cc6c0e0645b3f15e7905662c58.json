@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vibe Debugger", "type": "TOOL", "context": "a tool used for debugging"}, {"name": "N5 semantic memory", "type": "CONCEPT", "context": "a type of semantic memory used by V"}], "relationships": [{"from": "Vibe Debugger", "to": "N5 semantic memory", "type": "USES", "context": "Vibe Debugger uses N5 semantic memory for reconstruction and evidence finding"}]}

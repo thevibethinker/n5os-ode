@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "subject of the knowledge system"}, {"name": "google.com", "type": "ORG", "context": "target host in the options"}], "relationships": [{"from": "V (Vrijen)", "to": "google.com", "type": "USES", "context": "V connects to google.com via a proxy"}]}

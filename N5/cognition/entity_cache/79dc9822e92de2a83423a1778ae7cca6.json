@@ -1,0 +1,1 @@
+{"entities": [{"name": "Jacob Bank", "type": "PERSON", "context": "A person involved in the conversation"}, {"name": "super ic", "type": "CONCEPT", "context": "A concept related to integrated circuits (IC)"}], "relationships": [{"from": "Jacob Bank", "to": "super ic", "type": "MENTIONS", "context": "Discusses the nature of super integrated circuits"}]}

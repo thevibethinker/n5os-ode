@@ -1,0 +1,1 @@
+{"entities": [{"name": "template manager", "type": "TOOL", "context": "tool used for managing templates in V's knowledge system"}, {"name": "N5", "type": "ORG", "context": "organization or system relevant to V's knowledge system"}], "relationships": []}

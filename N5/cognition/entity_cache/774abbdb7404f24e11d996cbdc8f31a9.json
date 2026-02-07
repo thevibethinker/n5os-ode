@@ -1,0 +1,1 @@
+{"entities": [{"name": "Emoji", "type": "CONCEPT", "context": "a system for categorizing tasks using icons"}, {"name": "N5/config/emoji-legend.json", "type": "TOOL", "context": "the file containing the emoji legend for task categorization"}], "relationships": []}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "David Speigel", "type": "PERSON", "context": "individual discussing V's group"}, {"name": "Andy", "type": "PERSON", "context": "person referred to as the 'whisper guy'"}], "relationships": [{"from": "David Speigel", "to": "Andy", "type": "MENTIONS", "context": "refers to Andy as part of V's group"}]}

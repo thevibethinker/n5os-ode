@@ -1,0 +1,14 @@
+{
+  "slug": "consulting-zoffice-stack",
+  "timestamp": "2026-02-06T19:59:21.816146+00:00",
+  "verification": {
+    "passed": true,
+    "output": "\u274c verify failed for consulting-zoffice-stack\n   Artifacts: 49/50 verified, 1 missing\n"
+  },
+  "integration_tests": {
+    "passed": true,
+    "output": "\n==================================================\nIntegration Tests: consulting-zoffice-stack\n==================================================\n\nNo tests defined. Run 'generate' to auto-create from artifacts.\n\nResults saved to /home/workspace/N5/builds/consulting-zoffice-stack/INTEGRATION_RESULTS.json\n"
+  },
+  "learnings_harvested": 3,
+  "success": true
+}

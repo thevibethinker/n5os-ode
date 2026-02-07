@@ -1,0 +1,1 @@
+{"entities": [{"name": "Zo", "type": "ORG", "context": "The organization that created the site."}, {"name": "Create a site", "type": "CONCEPT", "context": "The concept of creating a site hosted on a Zo server."}], "relationships": [{"from": "Zo", "to": "Create a site", "type": "CREATES", "context": "Zo created the concept of creating a site."}]}

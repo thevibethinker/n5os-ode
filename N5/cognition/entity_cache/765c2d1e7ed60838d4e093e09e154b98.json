@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "candidate being evaluated"}, {"name": "hiring manager", "type": "PERSON", "context": "audience for the candidate narrative"}], "relationships": [{"from": "V (Vrijen)", "to": "hiring manager", "type": "KNOWS", "context": "audience receiving the narrative for evaluation"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Individual with a knowledge system"}, {"name": "Arsenal FC", "type": "ORG", "context": "Specific sports organization mentioned"}], "relationships": [{"from": "V", "to": "Arsenal FC", "type": "MENTIONS", "context": "Shared affinity for the sports world"}]}

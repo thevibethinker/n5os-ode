@@ -1,0 +1,1 @@
+{"entities": [{"name": "Documents/Archive", "type": "TOOL", "context": "Location from where portfolio pages are generated"}, {"name": "Markdown", "type": "TOOL", "context": "Format used for creating index with summaries"}], "relationships": []}

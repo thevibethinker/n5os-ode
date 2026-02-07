@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "speaker"}, {"name": "Adderall", "type": "TOOL", "context": "medication"}], "relationships": [{"from": "Vrijen Attawar", "to": "Adderall", "type": "USES", "context": "taking the recommended dosage"}]}

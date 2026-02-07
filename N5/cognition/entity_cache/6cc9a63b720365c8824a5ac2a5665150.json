@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "a person involved in a knowledge system"}, {"name": "Starbridge", "type": "ORG", "context": "organization for discussion next week"}], "relationships": [{"from": "V", "to": "Starbridge", "type": "WORKS_WITH", "context": "discussion contingent on internal agreement"}]}

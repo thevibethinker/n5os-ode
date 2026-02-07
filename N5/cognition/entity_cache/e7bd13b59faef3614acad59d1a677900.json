@@ -1,0 +1,1 @@
+{"entities": [{"name": "Amrita Gill", "type": "PERSON", "context": "a person associated with the knowledge system"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "the individual whose knowledge system is being described"}], "relationships": [{"from": "V (Vrijen)", "to": "Amrita Gill", "type": "KNOWS", "context": "Amrita Gill is described within V's knowledge system"}]}

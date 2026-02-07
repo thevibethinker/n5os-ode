@@ -1,0 +1,1 @@
+{"entities": [{"name": "Fei", "type": "PERSON", "context": "Participant in the conversation"}, {"name": "team", "type": "CONCEPT", "context": "Refers to the collective group V is part of"}], "relationships": [{"from": "Fei", "to": "team", "type": "KNOWS", "context": "Fei is inquiring about the status of the team V is a part of"}]}

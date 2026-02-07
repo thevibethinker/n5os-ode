@@ -1,0 +1,1 @@
+{"entities": [{"name": "SESSION_STATE.md", "type": "CONCEPT", "context": "explicit conversation state"}, {"name": "meta.json", "type": "CONCEPT", "context": "explicit build progress"}, {"name": "n5_protect markers", "type": "CONCEPT", "context": "explicit 'don't touch' signals"}], "relationships": []}

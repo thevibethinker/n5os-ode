@@ -1,0 +1,1 @@
+{"entities": [{"name": "Aaron", "type": "PERSON", "context": "person considering client communication options"}, {"name": "Zo", "type": "TOOL", "context": "client-facing site considered for communications"}], "relationships": [{"from": "Aaron", "to": "Zo", "type": "MENTIONS", "context": "considered using for client communications"}]}

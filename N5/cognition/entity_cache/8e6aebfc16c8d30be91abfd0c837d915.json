@@ -1,0 +1,1 @@
+{"entities": [{"name": "Atis", "type": "PERSON", "context": "individual exploring pivot from mortgage to legal"}, {"name": "Careerspan", "type": "ORG", "context": "potential customer for Atis's startup"}], "relationships": [{"from": "Atis", "to": "Careerspan", "type": "RELATED_TO", "context": "Atis's startup might become a customer of Careerspan"}]}

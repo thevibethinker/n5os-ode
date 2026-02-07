@@ -1,0 +1,1 @@
+{"entities": [{"name": "Google Cloud", "type": "ORG", "context": "cloud computing service used for project configuration"}, {"name": "Zo", "type": "ORG", "context": "platform requiring webhook infrastructure"}], "relationships": []}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Voice primitive", "type": "CONCEPT", "context": "a type of linguistic structure used in V's knowledge system"}, {"name": "linkedin", "type": "ORG", "context": "source of the syntactic pattern"}], "relationships": [{"from": "Voice primitive", "to": "linkedin", "type": "MENTIONS", "context": "Voice primitive pattern is sourced from linkedin"}]}

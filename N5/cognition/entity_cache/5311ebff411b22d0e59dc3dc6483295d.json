@@ -1,0 +1,1 @@
+{"entities": [{"name": "Zo", "type": "ORG", "context": "the system that processes extraction request files"}], "relationships": [{"from": "V", "to": "Zo", "type": "USES", "context": "V's system creates files for Zo to process"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Level Upper", "type": "ORG", "context": "An organization related to guidance for Short.io ingest"}, {"name": "Short.io", "type": "TOOL", "context": "A tool mentioned for ingest purposes"}], "relationships": []}

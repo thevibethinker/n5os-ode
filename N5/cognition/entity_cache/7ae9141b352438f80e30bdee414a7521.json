@@ -1,0 +1,1 @@
+{"entities": [{"name": "merge_strategy", "type": "CONCEPT", "context": "a strategy used for section enrichment"}, {"name": "conflict", "type": "CONCEPT", "context": "a specific parameter of merge_strategy"}], "relationships": []}

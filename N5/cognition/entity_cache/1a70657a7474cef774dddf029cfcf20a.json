@@ -1,0 +1,1 @@
+{"entities": [{"name": "Session State Manager", "type": "TOOL", "context": "Tool for managing conversation state"}, {"name": "N5 Command System", "type": "CONCEPT", "context": "Overview of N5 commands"}, {"name": "spawn_worker.py", "type": "TOOL", "context": "Core worker spawning logic"}], "relationships": []}

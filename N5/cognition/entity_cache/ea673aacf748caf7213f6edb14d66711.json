@@ -1,0 +1,1 @@
+{"entities": [{"name": "the founders", "type": "PERSON", "context": "referring to the founders of a batch"}, {"name": "traffic light", "type": "CONCEPT", "context": "a metaphor for understanding the product nature"}], "relationships": [{"from": "the founders", "to": "traffic light", "type": "MENTIONS", "context": "describing a metaphor for product understanding"}]}

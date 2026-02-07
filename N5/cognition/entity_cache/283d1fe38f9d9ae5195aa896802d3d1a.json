@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "Individual associated with a knowledge system"}, {"name": "Donut", "type": "CONCEPT", "context": "A system differentiated from V's knowledge system"}], "relationships": [{"from": "V (Vrijen)", "to": "Donut", "type": "RELATED_TO", "context": "V's system is expertise-specific, differentiating it from Donut"}]}

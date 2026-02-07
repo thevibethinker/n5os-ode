@@ -1,0 +1,21 @@
+{
+  "slug": "hardik-profile-gamma",
+  "title": "Hardik Candidate Profile Gamma Site",
+  "build_type": "content",
+  "status": "complete",
+  "created_at": "2026-01-29T07:25:00Z",
+  "completed_at": "2026-01-29T07:36:00Z",
+  "output": {
+    "gamma_url": "https://gamma.app/docs/wte8uh7gme8fnfa",
+    "generation_id": "UO03ttmGmQ9vPcpdrQEB1",
+    "credits_used": 34
+  },
+  "phases": {
+    "phase1_content_optimization": "complete",
+    "phase2_gamma_generation": "complete"
+  },
+  "artifacts": [
+    "artifacts/optimized-content.md",
+    "artifacts/gamma-output.json"
+  ]
+}

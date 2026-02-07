@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "individual sending a message"}, {"name": "nysafety py", "type": "TOOL", "context": "software or file referred to"}], "relationships": [{"from": "Vrijen Attawar", "to": "nysafety py", "type": "USES", "context": "requesting to see what is indicated as missing"}]}

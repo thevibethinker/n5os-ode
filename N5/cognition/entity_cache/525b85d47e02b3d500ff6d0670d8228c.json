@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "The individual receiving the daily digest."}, {"name": "daily digest", "type": "CONCEPT", "context": "A system for receiving important information and actionable items."}], "relationships": [{"from": "V", "to": "daily digest", "type": "USES", "context": "V uses the daily digest to receive important information."}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "n5", "type": "TOOL", "context": "a launch command for a worker"}, {"name": "analysis", "type": "CONCEPT", "context": "type of task the worker is set to perform"}, {"name": "authentication methods", "type": "CONCEPT", "context": "the subject of the comparison task"}], "relationships": []}

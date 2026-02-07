@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "Community platform leader and job market participant"}, {"name": "FOHE", "type": "ORG", "context": "Community platform related to V's strategy"}], "relationships": [{"from": "V (Vrijen)", "to": "FOHE", "type": "WORKS_WITH", "context": "Leading the community strategy"}]}

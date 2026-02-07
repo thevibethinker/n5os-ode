@@ -1,0 +1,1 @@
+{"entities": [{"name": "Global prefs", "type": "CONCEPT", "context": "preferences setting for file creation"}, {"name": "Project prefs", "type": "CONCEPT", "context": "preferences setting for project-specific file creation"}, {"name": "output", "type": "CONCEPT", "context": "folder designation for auto-created files"}], "relationships": []}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Hardik", "type": "PERSON", "context": "AI Engineer Candidate"}, {"name": "FlowFuse", "type": "ORG", "context": "Full Stack Developer (AI-focused)"}], "relationships": [{"from": "Hardik", "to": "FlowFuse", "type": "WORKS_WITH", "context": "Hardik is a candidate at FlowFuse"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "a tool for candidates"}, {"name": "candidates", "type": "PERSON", "context": "individuals seeking jobs"}], "relationships": [{"from": "Careerspan", "to": "candidates", "type": "USES", "context": "helps signal value and alignment"}]}

@@ -23,7 +23,7 @@ from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from typing import Optional
 
-from pulse_common import PATHS, WORKSPACE
+from pulse_common import PATHS, WORKSPACE, parse_drop_id, sort_wave_keys, get_drop_stream_order
 
 # Paths
 # WORKSPACE = Path("/home/workspace")  # Now imported from pulse_common
@@ -34,6 +34,7 @@ SKILLS_DIR = PATHS.SCRIPTS
 # Config
 DEFAULT_POLL_INTERVAL = 180  # 3 minutes
 DEFAULT_DEAD_THRESHOLD = 900  # 15 minutes
+DEFAULT_SPAWN_TIMEOUT = 300  # 5 minutes for API call to return
 ZO_API_URL = "https://api.zo.computer/zo/ask"
 
 
@@ -53,19 +54,66 @@ def save_meta(slug: str, meta: dict):
         json.dump(meta, f, indent=2)
 
 
-def load_drop_brief(slug: str, drop_id: str) -> str:
-    """Load a Drop brief from drops/ folder"""
+def find_drop_brief_path(slug: str, drop_id: str) -> Path:
+    """Find the file path for a Drop brief in the build's drops/ folder."""
     drops_dir = BUILDS_DIR / slug / "drops"
+
     # Try both D and C prefixes
     for pattern in [f"{drop_id}-*.md", f"C*.md"]:
         for f in drops_dir.glob(pattern):
             if f.stem.startswith(drop_id):
-                return f.read_text()
+                return f
+
     # Fallback: exact match
     for f in drops_dir.glob("*.md"):
         if f.stem.split("-")[0] == drop_id:
-            return f.read_text()
+            return f
+
     raise FileNotFoundError(f"Brief not found for {drop_id}")
+
+
+def ensure_launcher(slug: str, drop_id: str) -> Path:
+    """Create/update a manual-launcher markdown file for a Drop and return its path."""
+    brief_path = find_drop_brief_path(slug, drop_id)
+    launchers_dir = BUILDS_DIR / slug / "launchers"
+    launchers_dir.mkdir(parents=True, exist_ok=True)
+
+    launcher_path = launchers_dir / f"{drop_id}.md"
+
+    today = datetime.now(timezone.utc).date().isoformat()
+    content = f"""---
+created: {today}
+last_edited: {today}
+version: 1.0
+provenance: pulse:{slug}
+---
+
+# Launcher: {slug} / {drop_id}
+
+## Paste into a new thread
+
+```text
+Load and execute: file 'N5/builds/{slug}/drops/{brief_path.name}'
+
+When complete, write deposit to:
+file 'N5/builds/{slug}/deposits/{drop_id}.json'
+```
+
+## After you finish
+
+- Confirm the deposit exists at the path above.
+- Then run:
+  - `python3 Skills/pulse/scripts/pulse.py tick {slug}`
+  - (or wait for the Sentinel to tick)
+"""
+
+    launcher_path.write_text(content)
+    return launcher_path
+
+
+def load_drop_brief(slug: str, drop_id: str) -> str:
+    """Load a Drop brief from drops/ folder"""
+    return find_drop_brief_path(slug, drop_id).read_text()
 
 
 def get_deposit(slug: str, drop_id: str) -> Optional[dict]:
@@ -131,26 +179,42 @@ def update_drop_conversation_status(convo_id: str, status: str):
 def update_status_md(slug: str, meta: dict):
     """Update STATUS.md with current progress"""
     status_path = BUILDS_DIR / slug / "STATUS.md"
-    
+
     drops = meta.get("drops", {})
     complete = [d for d, info in drops.items() if info.get("status") == "complete"]
     running = [d for d, info in drops.items() if info.get("status") == "running"]
+    awaiting_manual = [d for d, info in drops.items() if info.get("status") == "awaiting_manual"]
     pending = [d for d, info in drops.items() if info.get("status") == "pending"]
     dead = [d for d, info in drops.items() if info.get("status") == "dead"]
     failed = [d for d, info in drops.items() if info.get("status") == "failed"]
-    
+
     total = len(drops)
     pct = int(len(complete) / total * 100) if total > 0 else 0
-    
+
+    if meta.get("waves"):
+        gate_line = f"**Wave:** {meta.get('active_wave', '?')}"
+    else:
+        gate_line = f"**Legacy Stream Gate:** {meta.get('current_stream', '?')}/{meta.get('total_streams', '?')}"
+
+    gate = meta.get("gate")
+    gate_text = ""
+    if isinstance(gate, dict) and gate.get("reason"):
+        gate_text = f"\n**Gate:** {gate.get('type', 'gate')} — {gate.get('reason')}"
+
+    awaiting_lines = "\n".join(
+        f"- [ ] {d} → run: `python3 Skills/pulse/scripts/pulse.py launch {slug} {d}`"
+        for d in sorted(awaiting_manual)
+    )
+
     content = f"""# Build Status: {slug}
 
 **Updated:** {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}
 **Status:** {meta.get('status', 'unknown')}
-**Stream:** {meta.get('current_stream', '?')}/{meta.get('total_streams', '?')}
+{gate_line}{gate_text}
 **Progress:** {len(complete)}/{total} Drops ({pct}%)
 
-## Complete ({len(complete)})
-{chr(10).join(f'- [x] {d}' for d in sorted(complete)) or '(none)'}
+## Awaiting Manual ({len(awaiting_manual)})
+{awaiting_lines or '(none)'}
 
 ## Running ({len(running)})
 {chr(10).join(f'- [ ] {d} (since {drops[d].get("started_at", "?")[:16]})' for d in sorted(running)) or '(none)'}
@@ -158,13 +222,16 @@ def update_status_md(slug: str, meta: dict):
 ## Pending ({len(pending)})
 {chr(10).join(f'- [ ] {d}' for d in sorted(pending)) or '(none)'}
 
+## Complete ({len(complete)})
+{chr(10).join(f'- [x] {d}' for d in sorted(complete)) or '(none)'}
+
 ## Dead ({len(dead)})
 {chr(10).join(f'- [!] {d}' for d in sorted(dead)) or '(none)'}
 
 ## Failed ({len(failed)})
-{chr(10).join(f'- [x] {d} (Filter rejected)' for d in sorted(failed)) or '(none)'}
+{chr(10).join(f'- [x] {d}' for d in sorted(failed)) or '(none)'}
 """
-    
+
     status_path.write_text(content)
 
 
@@ -192,49 +259,82 @@ async def send_sms(message: str):
 
 
 async def spawn_drop(slug: str, drop_id: str, brief: str, model: str = None) -> str:
-    """Spawn a Drop via /zo/ask, return conversation_id"""
+    """Spawn a Drop via /zo/ask, return conversation_id
+    
+    Note: The /zo/ask API may not return the actual conversation_id.
+    We generate a tracking ID but rely on deposit detection for completion.
+    """
     token = os.environ.get("ZO_CLIENT_IDENTITY_TOKEN")
     if not token:
         raise RuntimeError("ZO_CLIENT_IDENTITY_TOKEN not set")
     
-    # Include SESSION_STATE init in the prompt
-    full_prompt = f"""You are a Pulse worker (Drop) executing build "{slug}", task "{drop_id}".
+    # Build deposit format as separate string to avoid f-string escaping issues
+    deposit_format = '''
+{
+  "drop_id": "''' + drop_id + '''",
+  "status": "complete",
+  "summary": "What you accomplished",
+  "artifacts": ["list", "of", "files", "created"],
+  "learnings": ["any lessons for other workers"],
+  "errors": []
+}'''
+    
+    full_prompt = f"""You are a Pulse Drop executing build "{slug}", task "{drop_id}".
 
-FIRST ACTION (before anything else):
-Run this command to register yourself:
-```bash
-python3 {str(PATHS.WORKSPACE)}/N5/scripts/session_state_manager.py init --convo-id $(cat /proc/self/cgroup | grep -o 'con_[^/]*' | head -1 || echo "unknown") --type build --build {slug} --worker-num {drop_id} --message "Drop {drop_id}: {brief.split(chr(10))[0][:50]}"
-```
+**YOUR IDENTITY:**
+- Build: {slug}
+- Drop ID: {drop_id}
+- Type: Headless worker (no human in loop)
 
-THEN EXECUTE:
+**EXECUTION PROTOCOL:**
 1. Read the brief below carefully
-2. Execute the task completely  
-3. Write your deposit to: N5/builds/{slug}/deposits/{drop_id}.json
-4. DO NOT commit any code
+2. Execute the task completely
+3. When done, write your deposit JSON to: N5/builds/{slug}/deposits/{drop_id}.json
+4. DO NOT commit code (orchestrator handles commits)
 5. If blocked, write deposit with status "blocked" and explain why
 
+**DEPOSIT FORMAT:**
+```json{deposit_format}
+```
+
+Status can be "complete", "blocked", or "partial".
+
 ---
+BRIEF:
 {brief}
 ---
 
-Begin execution now. Initialize SESSION_STATE first, then work, then write deposit."""
+Execute the brief now. Write deposit when done."""
 
-    async with aiohttp.ClientSession() as session:
-        async with session.post(
-            ZO_API_URL,
-            headers={
-                "authorization": token,
-                "content-type": "application/json"
-            },
-            json={
-                "input": full_prompt,
-                "model_name": model
-            }
-        ) as resp:
-            result = await resp.json()
-            # Extract conversation_id from response if available
-            convo_id = result.get("conversation_id", f"unknown_{drop_id}_{datetime.now().timestamp()}")
-            return convo_id
+    # Create timeout
+    timeout = aiohttp.ClientTimeout(total=DEFAULT_SPAWN_TIMEOUT)
+    
+    try:
+        async with aiohttp.ClientSession(timeout=timeout) as session:
+            async with session.post(
+                ZO_API_URL,
+                headers={
+                    "authorization": token,
+                    "content-type": "application/json"
+                },
+                json={
+                    "input": full_prompt,
+                    "model_name": model
+                }
+            ) as resp:
+                result = await resp.json()
+                # Extract conversation_id from response if available
+                convo_id = result.get("conversation_id")
+                if not convo_id:
+                    convo_id = f"spawn_{drop_id}_{int(datetime.now().timestamp())}"
+                return convo_id
+    except asyncio.TimeoutError:
+        # API call timed out - worker may still be running
+        print(f"[SPAWN TIMEOUT] {drop_id} - API call timed out after {DEFAULT_SPAWN_TIMEOUT}s")
+        return f"timeout_{drop_id}_{int(datetime.now().timestamp())}"
+    except Exception as e:
+        print(f"[SPAWN ERROR] {drop_id}: {e}")
+        raise
 
 
 async def run_filter(slug: str, drop_id: str, brief: str, deposit: dict) -> dict:
@@ -243,6 +343,15 @@ async def run_filter(slug: str, drop_id: str, brief: str, deposit: dict) -> dict
     if not token:
         # Fallback: auto-pass
         return {"drop_id": drop_id, "verdict": "PASS", "reason": "Filter skipped (no token)"}
+    
+    # Build JSON template separately to avoid f-string conflicts
+    json_template = """{
+  "drop_id": "DROP_ID_HERE",
+  "verdict": "PASS or FAIL",
+  "reason": "Brief explanation",
+  "artifacts_verified": true or false,
+  "concerns": ["any concerns for orchestrator"]
+}"""
     
     prompt = f"""You are a Pulse Filter validating a Drop's work.
 
@@ -258,13 +367,9 @@ async def run_filter(slug: str, drop_id: str, brief: str, deposit: dict) -> dict
 3. Determine PASS or FAIL
 
 Respond with ONLY this JSON (no other text):
-{{
-  "drop_id": "{drop_id}",
-  "verdict": "PASS" or "FAIL",
-  "reason": "Brief explanation",
-  "artifacts_verified": true/false,
-  "concerns": ["any concerns for orchestrator"]
-}}"""
+{json_template}
+
+Replace DROP_ID_HERE with "{drop_id}"."""
 
     async with aiohttp.ClientSession() as session:
         async with session.post(
@@ -320,14 +425,14 @@ Started at: {drop_info.get('started_at', 'unknown')}
 4. Write a forensics report to: N5/builds/{slug}/deposits/{drop_id}_forensics.json
 
 Report format:
-{{
+{
   "drop_id": "{drop_id}",
   "partial_artifacts": ["list of any files created"],
   "partial_work": "description of what was started",
   "likely_cause": "timeout/error/stuck",
   "recommendation": "retry/skip/manual",
   "cleanup_needed": true/false
-}}
+}
 
 Investigate now."""
 
@@ -343,43 +448,175 @@ Investigate now."""
             print(f"[DREDGE] Forensics worker spawned for {drop_id}")
 
 
+def recommend_spawn_mode(brief: str) -> str:
+    """Heuristics-first recommendation: return 'manual' or 'auto'.
+
+    This is intentionally cheap/deterministic. If we add LLM-based classification later,
+    it should be config-gated.
+    """
+    t = (brief or "").lower()
+    manual_signals = [
+        "human-in-the-loop",
+        "hitl",
+        "requires v",
+        "ask v",
+        "need v",
+        "needs v",
+        "voice protocol",
+        "careerspan voice",
+        "high-risk",
+        "close control",
+        "manual",
+        "human judgment",
+        "v review",
+        "v approval",
+        "preferences",
+    ]
+    return "manual" if any(s in t for s in manual_signals) else "auto"
+
+
+def _is_blocking(info: dict) -> bool:
+    return info.get("blocking", True) is not False
+
+
+def _build_stream_chains(drops: dict) -> dict[int, list[str]]:
+    chains: dict[int, list[tuple[int, str]]] = {}
+    for drop_id, info in drops.items():
+        try:
+            stream, order = get_drop_stream_order(drop_id, info)
+        except Exception:
+            continue
+        chains.setdefault(stream, []).append((order, drop_id))
+    return {s: [d for _, d in sorted(items, key=lambda t: t[0])] for s, items in chains.items()}
+
+
+def _can_run_stream_order(drop_id: str, drops: dict, stream_chains: dict[int, list[str]], complete: set[str]) -> bool:
+    info = drops.get(drop_id, {})
+    try:
+        stream, _ = get_drop_stream_order(drop_id, info)
+    except Exception:
+        return True
+
+    chain = stream_chains.get(stream, [])
+    if drop_id not in chain:
+        return True
+    idx = chain.index(drop_id)
+    if idx == 0:
+        return True
+    prev_drop = chain[idx - 1]
+    return prev_drop in complete
+
+
+def _get_active_wave(meta: dict) -> Optional[str]:
+    waves = meta.get("waves")
+    if not isinstance(waves, dict) or not waves:
+        meta.pop("active_wave", None)
+        meta.pop("gate", None)
+        return None
+
+    drops = meta.get("drops", {})
+    wave_keys = sort_wave_keys(list(waves.keys()))
+
+    for wk in wave_keys:
+        wave_drop_ids = list(waves.get(wk, []) or [])
+        blocking_ids = [d for d in wave_drop_ids if _is_blocking(drops.get(d, {}))]
+
+        # If any blocking drop failed/dead, block the build at this wave.
+        for d in blocking_ids:
+            st = drops.get(d, {}).get("status")
+            if st in ["failed", "dead"]:
+                meta["active_wave"] = wk
+                meta["gate"] = {
+                    "type": "wave_blocked",
+                    "wave": wk,
+                    "drop_id": d,
+                    "reason": f"Blocking drop {d} is {st}; later waves cannot start."
+                }
+                return wk
+
+        # If any blocking drop is not complete, this is the active wave.
+        if any(drops.get(d, {}).get("status") != "complete" for d in blocking_ids):
+            meta["active_wave"] = wk
+            meta.pop("gate", None)
+            return wk
+
+    # All blocking drops complete
+    meta["active_wave"] = None
+    meta.pop("gate", None)
+    return None
+
+
 def get_ready_drops(meta: dict) -> list[str]:
-    """Get list of Drops ready to spawn (dependencies met, not started)"""
-    ready = []
+    """Get list of Drops ready to spawn (dependencies met, not started).
+
+    v3 mode (meta.waves):
+      - Hard barrier waves: only consider drops in the earliest active wave
+      - blocking:false drops do not block wave advancement
+      - If a blocking drop in the active wave failed/dead, gate the build and spawn nothing
+      - Streams are sequential: within a stream, order k+1 waits for order k to be complete
+
+    legacy mode (no meta.waves):
+      - If current_stream is present, only consider drops in that stream
+      - Preserve legacy currents sequencing if meta.currents exists
+    """
+    ready: list[str] = []
     drops = meta.get("drops", {})
     currents = meta.get("currents", {})
-    
-    # Build set of complete drops
-    complete_drops = {d for d, info in drops.items() if info.get("status") == "complete"}
-    
-    # Build set of drops in currents (sequential chains)
-    current_drops = set()
-    for chain in currents.values():
-        current_drops.update(chain)
-    
-    for drop_id, info in drops.items():
+
+    complete = {d for d, info in drops.items() if info.get("status") == "complete"}
+    stream_chains = _build_stream_chains(drops)
+
+    allowed: set[str]
+    if meta.get("waves"):
+        active_wave = _get_active_wave(meta)
+        if not active_wave:
+            return []
+        if isinstance(meta.get("gate"), dict) and meta["gate"].get("type") == "wave_blocked":
+            return []
+        allowed = set((meta.get("waves") or {}).get(active_wave, []) or [])
+    elif meta.get("current_stream") is not None:
+        allowed = set()
+        try:
+            cur = int(meta.get("current_stream"))
+        except Exception:
+            cur = None
+        for drop_id, info in drops.items():
+            try:
+                stream, _ = get_drop_stream_order(drop_id, info)
+            except Exception:
+                continue
+            if cur is None or stream == cur:
+                allowed.add(drop_id)
+    else:
+        allowed = set(drops.keys())
+
+    for drop_id in sorted(allowed):
+        info = drops.get(drop_id, {})
         if info.get("status") != "pending":
             continue
-        
-        # Check dependencies
+
+        # Dependencies
         depends_on = info.get("depends_on", [])
-        if not all(d in complete_drops for d in depends_on):
+        if not all(d in complete for d in depends_on):
             continue
-        
-        # Check if part of a Current (sequential chain)
-        in_current = False
-        for chain_id, chain in currents.items():
+
+        # Legacy Currents (sequential chains)
+        blocked_by_current = False
+        for chain in currents.values():
             if drop_id in chain:
-                in_current = True
                 idx = chain.index(drop_id)
-                if idx > 0:
-                    # Must wait for previous in chain
-                    prev_drop = chain[idx - 1]
-                    if prev_drop not in complete_drops:
-                        continue
-        
+                if idx > 0 and chain[idx - 1] not in complete:
+                    blocked_by_current = True
+                    break
+        if blocked_by_current:
+            continue
+
+        # Stream sequential ordering
+        if not _can_run_stream_order(drop_id, drops, stream_chains, complete):
+            continue
+
         ready.append(drop_id)
-    
+
     return ready
 
 
@@ -393,36 +630,51 @@ def get_running_drops(meta: dict) -> list[tuple[str, dict]]:
 
 
 def check_stream_complete(meta: dict) -> bool:
-    """Check if current stream is complete"""
-    current_stream = meta.get("current_stream", 1)
+    """Legacy: Check if current stream is complete (terminal in that stream)."""
+    if meta.get("current_stream") is None:
+        return False
+
+    try:
+        current_stream = int(meta.get("current_stream", 1))
+    except Exception:
+        current_stream = 1
+
     drops = meta.get("drops", {})
-    
+
     for drop_id, info in drops.items():
-        # Parse stream from drop_id (D1.1 -> stream 1)
         try:
-            stream_num = int(drop_id[1])
-        except:
+            stream_num, _ = get_drop_stream_order(drop_id, info)
+        except Exception:
             continue
-        
+
         if stream_num == current_stream:
-            if info.get("status") not in ["complete", "failed"]:
+            if info.get("status") not in ["complete", "failed", "dead"]:
                 return False
-    
+
     return True
 
 
 def advance_stream(meta: dict) -> bool:
-    """Advance to next stream if current is complete. Returns True if advanced."""
+    """Legacy: Advance to next stream if current is complete. Returns True if advanced."""
     if not check_stream_complete(meta):
         return False
-    
+
     current = meta.get("current_stream", 1)
     total = meta.get("total_streams", 1)
-    
+
+    try:
+        current = int(current)
+    except Exception:
+        current = 1
+    try:
+        total = int(total)
+    except Exception:
+        total = 1
+
     if current < total:
         meta["current_stream"] = current + 1
         return True
-    
+
     return False
 
 
@@ -515,9 +767,10 @@ async def tick(slug: str):
                 total_count = len(meta["drops"])
                 await send_sms(f"[PULSE] {slug}: {drop_id} DEAD after {int(elapsed/60)}m. {complete_count}/{total_count} complete. Reply RESUME or STOP.")
     
-    # 3. Check if stream complete, advance if so
-    if advance_stream(meta):
-        print(f"[STREAM] Advanced to Stream {meta['current_stream']}")
+    # 3. Legacy stream gating (only when no waves)
+    if not meta.get("waves"):
+        if advance_stream(meta):
+            print(f"[STREAM] Advanced to Stream {meta['current_stream']}")
     
     # 4. Check if build complete
     all_terminal = all(
@@ -543,38 +796,52 @@ async def tick(slug: str):
     # 5. Spawn ready Drops
     ready = get_ready_drops(meta)
     model = meta.get("model")
-    
+
     for drop_id in ready:
         try:
             brief = load_drop_brief(slug, drop_id)
             print(f"[SPAWN] {drop_id}")
-            
+
             drop_info = meta.get("drops", {}).get(drop_id, {})
+
+            # Recommendation (only if not explicitly set)
+            if "spawn_mode" not in drop_info:
+                rec = recommend_spawn_mode(brief)
+                drop_info["spawn_recommendation"] = rec
+                if rec == "manual":
+                    drop_info["spawn_mode"] = "manual"
+
             spawn_mode = drop_info.get("spawn_mode", "auto")
-            
+
             if spawn_mode == "manual":
-                print(f"[SPAWN] {drop_id} is waiting for manual spawn")
+                launcher_path = ensure_launcher(slug, drop_id)
+                drop_info["launcher_path"] = f"N5/builds/{slug}/launchers/{drop_id}.md"
+                print(f"[SPAWN] {drop_id} is waiting for manual launch (launcher: {launcher_path})")
                 meta["drops"][drop_id]["status"] = "awaiting_manual"
                 continue
-            
+
             convo_id = await spawn_drop(slug, drop_id, brief, model)
-            
+
             meta["drops"][drop_id]["status"] = "running"
             meta["drops"][drop_id]["started_at"] = datetime.now(timezone.utc).isoformat()
             meta["drops"][drop_id]["conversation_id"] = convo_id
-            
+
             register_drop_conversation(drop_id, slug, convo_id)
-            
+
         except Exception as e:
             print(f"[SPAWN ERROR] {drop_id}: {e}")
             meta["drops"][drop_id]["status"] = "failed"
             meta["drops"][drop_id]["failure_reason"] = str(e)
+
     
     # 6. Save state
     save_meta(slug, meta)
     update_status_md(slug, meta)
     
-    print(f"[PULSE TICK DONE] Stream {meta.get('current_stream')}/{meta.get('total_streams')}")
+    if meta.get("waves"):
+        print(f"[PULSE TICK DONE] Wave {meta.get('active_wave')}")
+    else:
+        print(f"[PULSE TICK DONE] Stream {meta.get('current_stream')}/{meta.get('total_streams')}")
 
 
 async def start_build(slug: str):
@@ -630,28 +897,146 @@ def show_status(slug: str):
     """Show build status"""
     meta = load_meta(slug)
     drops = meta.get("drops", {})
-    
+
     complete = sum(1 for d in drops.values() if d.get("status") == "complete")
     running = sum(1 for d in drops.values() if d.get("status") == "running")
+    awaiting_manual = sum(1 for d in drops.values() if d.get("status") == "awaiting_manual")
     pending = sum(1 for d in drops.values() if d.get("status") == "pending")
     dead = sum(1 for d in drops.values() if d.get("status") == "dead")
     failed = sum(1 for d in drops.values() if d.get("status") == "failed")
-    
+
+    gate = meta.get("gate")
+    gate_line = ""
+    if isinstance(gate, dict) and gate.get("reason"):
+        gate_line = f"Gate: {gate.get('type', 'gate')} — {gate.get('reason')}\n"
+
+    if meta.get("waves"):
+        gate_scope = f"Wave: {meta.get('active_wave', '?')}\n"
+    else:
+        gate_scope = f"Legacy Stream Gate: {meta.get('current_stream', '?')}/{meta.get('total_streams', '?')}\n"
+
     print(f"""
 Build: {slug}
 Status: {meta.get('status', 'unknown')}
-Stream: {meta.get('current_stream', '?')}/{meta.get('total_streams', '?')}
-
+{gate_scope}{gate_line}
 Drops:
-  Complete: {complete}
-  Running:  {running}
-  Pending:  {pending}
-  Dead:     {dead}
-  Failed:   {failed}
-  Total:    {len(drops)}
+  Complete:        {complete}
+  Running:         {running}
+  Awaiting Manual: {awaiting_manual}
+  Pending:         {pending}
+  Dead:            {dead}
+  Failed:          {failed}
+  Total:           {len(drops)}
 
 Progress: {complete}/{len(drops)} ({int(complete/len(drops)*100) if drops else 0}%)
 """)
+
+
+def retry_drop(slug: str, drop_id: str, reason: str = None):
+    """Reset a Drop to pending, archive old deposit, optionally appends retry reason to brief.
+    
+    Based on Theo's lesson: If output is bad, don't keep appending corrections.
+    Revert and restart with corrected input. This gives the model a clean slate
+    with better context rather than compounding errors.
+    """
+    meta = load_meta(slug)
+    
+    if drop_id not in meta.get("drops", {}):
+        print(f"[ERROR] Drop {drop_id} not found in build {slug}")
+        return
+    
+    drop_info = meta["drops"][drop_id]
+    old_status = drop_info.get("status")
+    
+    # Archive old deposit if exists
+    deposit_path = BUILDS_DIR / slug / "deposits" / f"{drop_id}.json"
+    if deposit_path.exists():
+        archive_dir = BUILDS_DIR / slug / "deposits" / "archived"
+        archive_dir.mkdir(parents=True, exist_ok=True)
+        timestamp = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
+        archive_path = archive_dir / f"{drop_id}_{timestamp}.json"
+        deposit_path.rename(archive_path)
+        print(f"[RETRY] Archived old deposit to {archive_path.name}")
+    
+    # Archive filter result if exists
+    filter_path = BUILDS_DIR / slug / "deposits" / f"{drop_id}_filter.json"
+    if filter_path.exists():
+        archive_dir = BUILDS_DIR / slug / "deposits" / "archived"
+        archive_dir.mkdir(parents=True, exist_ok=True)
+        timestamp = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
+        archive_path = archive_dir / f"{drop_id}_filter_{timestamp}.json"
+        filter_path.rename(archive_path)
+    
+    # Reset Drop status
+    drop_info["status"] = "pending"
+    drop_info.pop("started_at", None)
+    drop_info.pop("conversation_id", None)
+    drop_info.pop("failure_reason", None)
+    drop_info["retry_count"] = drop_info.get("retry_count", 0) + 1
+    drop_info["last_retry"] = datetime.now(timezone.utc).isoformat()
+    
+    # Optionally update brief with retry reason
+    if reason:
+        try:
+            brief_path = find_drop_brief_path(slug, drop_id)
+            brief_content = brief_path.read_text()
+            
+            # Append retry context section
+            retry_section = f"""
+
+---
+
+## ⚠️ Retry Context (Attempt {drop_info['retry_count'] + 1})
+
+**Previous attempt failed because:** {reason}
+
+**What to do differently:**
+- Address the issue described above
+- Review the archived deposit to understand what went wrong
+- Follow the brief more carefully
+
+"""
+            # Insert before "## On Completion" if it exists, otherwise append
+            if "## On Completion" in brief_content:
+                brief_content = brief_content.replace("## On Completion", retry_section + "## On Completion")
+            else:
+                brief_content += retry_section
+            
+            brief_path.write_text(brief_content)
+            print(f"[RETRY] Updated brief with retry context")
+        except Exception as e:
+            print(f"[RETRY] Warning: Could not update brief: {e}")
+    
+    save_meta(slug, meta)
+    update_status_md(slug, meta)
+    
+    print(f"[RETRY] {drop_id} reset from '{old_status}' to 'pending' (attempt {drop_info['retry_count'] + 1})")
+    print(f"[RETRY] Run 'pulse tick {slug}' or wait for Sentinel to re-spawn")
+
+
+def validate_plan(slug: str):
+    """Validate plan completeness before starting a build.
+    
+    Based on Theo's lesson: Plans are context vehicles. An incomplete plan
+    means the model will guess, and guessing compounds errors across Drops.
+    """
+    validator_path = SKILLS_DIR / "pulse_plan_validator.py"
+    
+    if not validator_path.exists():
+        print(f"[ERROR] Plan validator not found at {validator_path}")
+        return
+    
+    result = subprocess.run(
+        ["python3", str(validator_path), slug],
+        capture_output=False,
+        cwd=str(WORKSPACE)
+    )
+    
+    if result.returncode == 0:
+        print(f"\n✅ Plan validation passed. Safe to start build.")
+    else:
+        print(f"\n❌ Plan validation failed. Fix issues before starting build.")
+        print(f"   Run: python3 {validator_path} {slug} --fix")
 
 
 async def finalize_build(slug: str):
@@ -755,8 +1140,37 @@ async def finalize_build(slug: str):
 
 def main():
     parser = argparse.ArgumentParser(description="Pulse Build Orchestration")
-    parser.add_argument("command", choices=["start", "status", "stop", "resume", "tick", "finalize"])
-    parser.add_argument("slug", help="Build slug")
+    subparsers = parser.add_subparsers(dest="command")
+    
+    start_parser = subparsers.add_parser("start", help="Begin automated orchestration")
+    start_parser.add_argument("slug", help="Build slug")
+    
+    status_parser = subparsers.add_parser("status", help="Show current build status")
+    status_parser.add_argument("slug", help="Build slug")
+    
+    stop_parser = subparsers.add_parser("stop", help="Gracefully stop orchestration")
+    stop_parser.add_argument("slug", help="Build slug")
+    
+    resume_parser = subparsers.add_parser("resume", help="Resume a stopped build")
+    resume_parser.add_argument("slug", help="Build slug")
+    
+    tick_parser = subparsers.add_parser("tick", help="Run single orchestration cycle (for scheduled tasks)")
+    tick_parser.add_argument("slug", help="Build slug")
+    
+    finalize_parser = subparsers.add_parser("finalize", help="Run post-build finalization (safety, tests, learnings)")
+    finalize_parser.add_argument("slug", help="Build slug")
+    
+    launch_parser = subparsers.add_parser("launch", help="Print launcher path and paste-prompt contents")
+    launch_parser.add_argument("slug", help="Build slug")
+    launch_parser.add_argument("drop_id", help="Drop ID")
+    
+    retry_parser = subparsers.add_parser("retry", help="Reset a failed/bad Drop and re-edit its brief")
+    retry_parser.add_argument("slug", help="Build slug")
+    retry_parser.add_argument("drop_id", help="Drop ID to retry")
+    retry_parser.add_argument("--reason", "-r", help="Why the retry is needed (appended to brief)")
+    
+    validate_parser = subparsers.add_parser("validate", help="Validate plan completeness before start")
+    validate_parser.add_argument("slug", help="Build slug")
     
     args = parser.parse_args()
     
@@ -772,6 +1186,14 @@ def main():
         asyncio.run(tick(args.slug))
     elif args.command == "finalize":
         asyncio.run(finalize_build(args.slug))
+    elif args.command == "launch":
+        launcher_path = ensure_launcher(args.slug, args.drop_id)
+        print(f"Launcher: {launcher_path}")
+        print(launcher_path.read_text())
+    elif args.command == "retry":
+        retry_drop(args.slug, args.drop_id, args.reason)
+    elif args.command == "validate":
+        validate_plan(args.slug)
 
 
 if __name__ == "__main__":

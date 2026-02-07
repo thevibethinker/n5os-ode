@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "The individual associated with the knowledge system"}, {"name": "file", "type": "TOOL", "context": "The means of storing digest information"}, {"name": "email", "type": "TOOL", "context": "The method of delivering the digest information"}], "relationships": []}

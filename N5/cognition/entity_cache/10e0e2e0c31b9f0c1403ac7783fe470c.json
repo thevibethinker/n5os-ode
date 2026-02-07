@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "subject of the knowledge system"}, {"name": "LD-INV", "type": "CONCEPT", "context": "represented as a part of the new format in the knowledge system"}], "relationships": [{"from": "V (Vrijen)", "to": "LD-INV", "type": "KNOWS", "context": "V is associated with the LD-INV concept in the new format"}]}

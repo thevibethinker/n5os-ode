@@ -1,0 +1,1 @@
+{"entities": [{"name": "David", "type": "PERSON", "context": "the person receiving assistance"}, {"name": "Zo", "type": "TOOL", "context": "the tool being set up"}], "relationships": [{"from": "V", "to": "David", "type": "ASSISTS", "context": "V is assisting David with setup"}, {"from": "V", "to": "Zo", "type": "USES", "context": "V is helping with the setup of Zo"}]}

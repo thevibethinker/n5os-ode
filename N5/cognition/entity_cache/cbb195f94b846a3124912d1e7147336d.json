@@ -1,0 +1,1 @@
+{"entities": [{"name": "Michael Grady", "type": "PERSON", "context": "mentioned in the conversation as a person involved"}, {"name": "Howie", "type": "TOOL", "context": "a bot that was attempted to be triggered"}], "relationships": [{"from": "Michael Grady", "to": "Howie", "type": "MENTIONS", "context": "Michael refers to the bot Howie in the context of triggering it"}]}

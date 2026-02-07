@@ -1,0 +1,1 @@
+{"entities": [{"name": "Build Review", "type": "CONCEPT", "context": "Architecture compliance check"}, {"name": "Safety Check", "type": "CONCEPT", "context": "N5 safety audit"}, {"name": "Browse Recipes", "type": "CONCEPT", "context": "Discover available recipes"}, {"name": "Resume", "type": "CONCEPT", "context": "Resume operations after errors"}], "relationships": []}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "an organization that specializes in coaching data"}, {"name": "coaching data", "type": "CONCEPT", "context": "data used for coaching that provides a strategic edge"}], "relationships": [{"from": "Careerspan", "to": "coaching data", "type": "USES", "context": "Careerspan uses coaching data as a strategic asset"}]}

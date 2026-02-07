@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "the individual associated with the knowledge system"}, {"name": "workspace", "type": "CONCEPT", "context": "a specified path to a conversation for running the system"}], "relationships": [{"from": "V", "to": "workspace", "type": "USES", "context": "V specifies a workspace for running the system on conversations"}]}

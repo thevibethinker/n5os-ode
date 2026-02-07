@@ -1,0 +1,1 @@
+{"entities": [{"name": "Operator", "type": "ORG", "context": "the entity invoking Librarian"}, {"name": "Librarian", "type": "TOOL", "context": "the tool invoked by Operator for various tasks"}], "relationships": [{"from": "Operator", "to": "Librarian", "type": "USES", "context": "Operator invokes Librarian for tasks"}]}

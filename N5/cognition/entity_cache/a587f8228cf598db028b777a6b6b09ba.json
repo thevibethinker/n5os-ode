@@ -1,0 +1,1 @@
+{"entities": [{"name": "Rochel", "type": "PERSON", "context": "participant in the meeting"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "individual leading the knowledge system"}], "relationships": [{"from": "V (Vrijen)", "to": "Rochel", "type": "MENTIONS", "context": "coaching/mentorship relationship in a one-on-one meeting"}]}

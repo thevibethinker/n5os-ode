@@ -1,0 +1,1 @@
+{"entities": [{"name": "careerspan", "type": "TOOL", "context": "product API integrations"}, {"name": "zo", "type": "TOOL", "context": "platform integrations"}, {"name": "n5", "type": "TOOL", "context": "Internal system scripts"}, {"name": "standalone", "type": "TOOL", "context": "General utilities with no product affiliation"}], "relationships": []}

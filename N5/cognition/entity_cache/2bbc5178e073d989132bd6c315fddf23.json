@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Individual associated with the knowledge system"}, {"name": "perform_coding_task", "type": "TOOL", "context": "Function used to execute coding tasks"}], "relationships": [{"from": "V", "to": "perform_coding_task", "type": "USES", "context": "V uses the function to perform coding tasks"}]}

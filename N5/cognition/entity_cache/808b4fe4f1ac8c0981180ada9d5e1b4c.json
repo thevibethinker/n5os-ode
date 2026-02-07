@@ -1,0 +1,1 @@
+{"entities": [{"name": "Lottie", "type": "TOOL", "context": "A library used for animations in React."}, {"name": "remotion", "type": "TOOL", "context": "A framework for creating videos using React."}], "relationships": []}

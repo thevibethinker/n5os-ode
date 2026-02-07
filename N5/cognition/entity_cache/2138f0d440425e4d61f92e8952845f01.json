@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "a person mentioned in the text"}, {"name": "Cornell", "type": "ORG", "context": "a conference location mentioned"}], "relationships": [{"from": "Vrijen Attawar", "to": "Cornell", "type": "MENTIONS", "context": "Vrijen mentions attending a conference at Cornell"}]}

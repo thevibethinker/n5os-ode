@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual utilizing the CRM Query Interface"}, {"name": "CRM Query Interface", "type": "TOOL", "context": "tool mentioned for querying database"}], "relationships": [{"from": "V (Vrijen)", "to": "CRM Query Interface", "type": "USES", "context": "V uses the CRM Query Interface to obtain information"}]}

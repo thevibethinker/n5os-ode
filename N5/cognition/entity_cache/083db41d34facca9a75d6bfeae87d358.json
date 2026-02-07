@@ -1,0 +1,1 @@
+{"entities": [{"name": "travel", "type": "CONCEPT", "context": "a method for recalibration"}], "relationships": [{"from": "travel", "to": "new form insight", "type": "USES", "context": "as a way to gain new perspectives"}]}

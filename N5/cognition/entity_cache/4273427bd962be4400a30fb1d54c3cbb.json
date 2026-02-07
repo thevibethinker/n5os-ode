@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker and creator of warm intro builder"}, {"name": "Jake", "type": "PERSON", "context": "Recipient of an introduction from Vrijen"}], "relationships": [{"from": "Vrijen Attawar", "to": "Jake", "type": "WORKS_WITH", "context": "Vrijen intends to introduce Jake"}]}

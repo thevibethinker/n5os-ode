@@ -1,0 +1,1 @@
+{"entities": [{"name": "Zapier", "type": "TOOL", "context": "A workflow automation platform similar in function"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "The individual associated with the knowledge system"}], "relationships": [{"from": "V (Vrijen)", "to": "Zapier", "type": "MENTIONS", "context": "V mentions Zapier as a similar tool"}]}

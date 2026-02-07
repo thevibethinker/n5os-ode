@@ -1,110 +1,81 @@
 ---
 created: 2026-01-26
-last_edited: 2026-01-26
-version: 1.0
+last_edited: 2026-02-01
+version: 1.1
 type: build_orchestrator
-status: draft
-provenance: [ORCHESTRATOR CONVERSATION ID]
+status: complete
+provenance: con_BTFIhYsxr3P3CzaR
 ---
 
 # Build: B05 Extended Backfill (Dec 15 - Jan 18)
 
 **Slug:** `b05-backfill-extended`  
-**Objective:** [TO BE FILLED BY ARCHITECT]  
+**Objective:** Backfill task registry from 56 historical meetings  
 **Type:** code_build  
 **Created:** 2026-01-26  
-**Orchestrator Thread:** This conversation
+**Completed:** 2026-02-01
 
 ---
 
-## Current Status
+## Final Status
 
-**Phase:** Planning  
-**Last Update:** 2026-01-26
+**✅ COMPLETE**
 
-Build initialized. Awaiting Architect plan.
-
----
-
-## Wave Progress
-
-| Wave | Workers | Status | Notes |
-|------|---------|--------|-------|
-| 1 | W1.1, W1.2, ... | 🟡 In Progress | Awaiting plan |
-| 2 | W2.1, W2.2, ... | ⚪ Pending | Depends on Wave 1 |
-
-**Legend:** ⚪ Pending | 🟡 In Progress | ✅ Complete | 🔴 Blocked
+| Metric | Value |
+|--------|-------|
+| Meetings processed | 56 |
+| Raw items extracted | 157 |
+| Unique items (post-dedup) | 140 |
+| Tasks staged | 139 |
+| Drops completed | 7/7 |
+| Streams completed | 2/2 |
 
 ---
 
-## Worker Status
+## Stream Progress
 
-| Worker | Title | Status | Thread | Notes |
-|--------|-------|--------|--------|-------|
-| W1.1 | [TBD] | ⚪ Pending | — | — |
-| W1.2 | [TBD] | ⚪ Pending | — | — |
-| W2.1 | [TBD] | ⚪ Pending | Depends: W1.1 | — |
+| Stream | Drops | Status | Notes |
+|--------|-------|--------|-------|
+| 1 | D1.1-D1.6 | ✅ Complete | Parallel extraction |
+| 2 | D2.1 | ✅ Complete | Aggregation + staging |
 
-**Status Key:**
-- ⚪ **Pending** — Not started, waiting for dependencies or wave launch
-- 🟡 **In Progress** — Worker thread active
-- ✅ **Complete** — Worker reported completion, merged/verified
-- 🔴 **Blocked** — Cannot proceed, needs intervention
-- ⏸️ **Paused** — Started but on hold
+---
+
+## Drop Status
+
+| Drop | Title | Status | Items |
+|------|-------|--------|-------|
+| D1.1 | Extract batch 1 (Dec 16-23) | ✅ | 15 |
+| D1.2 | Extract batch 2 (Jan 5-7) | ✅ | 18 |
+| D1.3 | Extract batch 3 (Jan 7-9) | ✅ | 16 |
+| D1.4 | Extract batch 4 (Jan 9-12) | ✅ | 26 |
+| D1.5 | Extract batch 5 (Jan 12-15) | ✅ | 31 |
+| D1.6 | Extract batch 6 (Jan 15-16) | ✅ | 51 |
+| D2.1 | Aggregate & stage | ✅ | 140 unique |
+
+---
+
+## Next Steps for V
+
+1. **Review checklist:** `artifacts/REVIEW_CHECKLIST.md`
+2. **Check items** you want to import
+3. **Say "import checked"** to commit approved tasks
+4. **Or "clarify #XX"** for transcript lookup on specific items
 
 ---
 
 ## Build Lesson Ledger
 
-**Read lessons from all workers:**
-```bash
-python3 N5/scripts/build_lesson_ledger.py read b05-backfill-extended
-```
+### Captured During Build
 
-Lessons are logged by workers in real-time to `BUILD_LESSONS.json`. Review after each wave completion and incorporate relevant insights into subsequent worker briefs.
+1. **STATUS.md can drift from meta.json** — The Pulse filter marked drops as "failed" when they actually completed. Need better sync between deposit existence and status tracking.
 
-**Current lesson count:** _Check via command above_
+2. **Manual spawn mode caused blocking** — D2.1 was set to `spawn_mode: manual` which left the build in limbo. Auto-spawn is preferable unless human judgment is truly needed.
 
----
+3. **Template PLAN.md is a smell** — Build was executed before PLAN.md was filled in. Going forward, ensure PLAN.md is complete before launching drops.
 
-## Blockers & Concerns
+### Applied During Repair (2026-02-01)
 
-<!-- Active issues requiring attention. Remove when resolved. -->
-
-| Issue | Worker | Severity | Action Needed |
-|-------|--------|----------|---------------|
-| _None currently_ | — | — | — |
-
----
-
-## Next Actions
-
-<!-- What the orchestrator should do next. Update after each action. -->
-
-1. [ ] Launch Wave 1 workers
-2. [ ] Monitor for completion reports
-3. [ ] Review and merge completions
-4. [ ] Launch Wave 2 when Wave 1 complete
-5. [ ] Final integration and close
-
----
-
-## References
-
-- **PLAN.md:** `N5/builds/b05-backfill-extended/PLAN.md`
-- **Worker Briefs:** `N5/builds/b05-backfill-extended/workers/`
-- **Completions:** `N5/builds/b05-backfill-extended/completions/`
-- **meta.json:** `N5/builds/b05-backfill-extended/meta.json`
-
----
-
-## Closure Checklist
-
-_Complete before marking build as done._
-
-- [ ] All workers complete
-- [ ] All completions reviewed
-- [ ] Learnings aggregated
-- [ ] meta.json status updated to "complete"
-- [ ] PLAN.md checklist fully checked
-- [ ] Final verification performed
+- Fixed STATUS.md to match actual deposit state
+- Executed D2.1 in interactive session
+- Backfilled documentation

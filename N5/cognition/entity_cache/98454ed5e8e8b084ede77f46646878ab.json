@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "author of the knowledge system"}, {"name": "vrijen", "type": "ENTITY", "context": "specifically mentioned in bio tags"}], "relationships": [{"from": "V", "to": "vrijen", "type": "MENTIONS", "context": "V references vrijen in the context of bios"}]}

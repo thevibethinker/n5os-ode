@@ -1,0 +1,1 @@
+{"entities": [{"name": "Recruiter Networks", "type": "ORG", "context": "a type of network related to recruitment"}], "relationships": [{"from": "Recruiter Networks", "to": "V", "type": "RELATED_TO", "context": "V's viewpoint contrasts with traditional recruiter networks"}]}

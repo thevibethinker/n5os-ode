@@ -1,0 +1,1 @@
+{"entities": [{"name": "Plaud AutoFlow", "type": "TOOL", "context": "a tool mentioned for automation"}, {"name": "dummy recording", "type": "CONCEPT", "context": "a concept used for testing purposes"}, {"name": "processed meeting folder", "type": "CONCEPT", "context": "a concept related to the verification process"}], "relationships": []}

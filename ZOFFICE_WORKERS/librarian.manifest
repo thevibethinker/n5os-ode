@@ -1,0 +1,8 @@
+name: librarian
+persona_id: 1bb66f53-9e2a-4152-9b18-75c2ee2c25a3
+type: scheduled
+schedule: "0 9 * * *"
+timezone: America/New_York
+activation: python3 N5/scripts/export_pipeline_worker.py
+notifications: on_start=false,on_complete=true,on_error=true,method=email
+notes: Runs Drop 3.1 export pipeline daily

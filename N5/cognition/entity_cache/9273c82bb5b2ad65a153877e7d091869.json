@@ -1,0 +1,1 @@
+{"entities": [{"name": "Chris", "type": "PERSON", "context": "has strong positioning in the network"}, {"name": "K-12 administrator", "type": "CONCEPT", "context": "relationships mentioned as part of network leverage"}], "relationships": [{"from": "Chris", "to": "K-12 administrator", "type": "WORKS_WITH", "context": "direct/indirect relationships"}]}

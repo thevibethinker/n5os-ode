@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "identified as the central figure in the knowledge system"}, {"name": "Gmail", "type": "TOOL", "context": "email service used for interaction history"}, {"name": "calendar", "type": "TOOL", "context": "used for scheduling and V-OS tags"}], "relationships": []}

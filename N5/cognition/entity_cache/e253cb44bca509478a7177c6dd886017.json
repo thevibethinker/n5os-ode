@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ascent Funding", "type": "ORG", "context": "a company connected to V"}], "relationships": [{"from": "V", "to": "Ascent Funding", "type": "WORKS_WITH", "context": "V connects to companies like Ascent Funding"}, {"from": "V", "to": "investor interest", "type": "KNOWS", "context": "may have direct investor interest"}]}

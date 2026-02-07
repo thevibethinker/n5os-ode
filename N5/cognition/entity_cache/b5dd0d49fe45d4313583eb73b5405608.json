@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "the individual discussing the knowledge system"}, {"name": "reindex", "type": "TOOL", "context": "a procedure used to clean up stale entries"}, {"name": "document", "type": "CONCEPT", "context": "refers to the file that may be deleted"}], "relationships": []}

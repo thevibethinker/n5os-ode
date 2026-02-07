@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Asking a question"}, {"name": "Zoho Claude", "type": "TOOL", "context": "Mentioned as an API connection"}], "relationships": [{"from": "Vrijen Attawar", "to": "Zoho Claude", "type": "MENTIONS", "context": "Inquiring about API connection and functionality"}]}

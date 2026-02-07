@@ -1,0 +1,1 @@
+{"entities": [{"name": "Aaron", "type": "PERSON", "context": "sophisticated Zo usage and expertise"}], "relationships": [{"from": "V", "to": "Aaron", "type": "KNOWS", "context": "peer relationship for knowledge exchange and potential collaboration"}]}

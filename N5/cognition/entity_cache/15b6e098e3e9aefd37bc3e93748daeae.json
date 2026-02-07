@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "known as Vrijen"}, {"name": "Careerspan", "type": "ORG", "context": "organization with a tired team and exit interest"}], "relationships": [{"from": "V", "to": "Careerspan", "type": "MENTIONS", "context": "Vrijen sharing information about Careerspan's situation"}]}

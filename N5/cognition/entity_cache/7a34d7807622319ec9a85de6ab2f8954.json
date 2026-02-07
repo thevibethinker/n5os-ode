@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "the individual associated with the knowledge system"}, {"name": "meeting_prep_digest.py", "type": "TOOL", "context": "the script used for meeting preparation"}], "relationships": []}

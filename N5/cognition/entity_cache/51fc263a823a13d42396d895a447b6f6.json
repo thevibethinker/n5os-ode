@@ -1,0 +1,1 @@
+{"entities": [{"name": "David", "type": "PERSON", "context": "a person updating the Zo workspace"}, {"name": "Zo workspace", "type": "TOOL", "context": "a workspace being updated"}], "relationships": [{"from": "David", "to": "Zo workspace", "type": "USES", "context": "David is updating Zo workspace"}]}

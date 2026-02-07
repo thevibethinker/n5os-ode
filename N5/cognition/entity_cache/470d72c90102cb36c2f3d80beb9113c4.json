@@ -1,0 +1,1 @@
+{"entities": [{"name": "McKinsey Alumni founders", "type": "ORG", "context": "community of former McKinsey employees who are now founders"}], "relationships": [{"from": "V (Vrijen)", "to": "McKinsey Alumni founders", "type": "WORKS_WITH", "context": "potential collaboration in community workshops"}]}

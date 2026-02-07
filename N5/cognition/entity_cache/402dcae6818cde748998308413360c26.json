@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Zo brand evangelist/partnerships"}, {"name": "Zo", "type": "ORG", "context": "consumer AI platform"}], "relationships": [{"from": "Vrijen Attawar", "to": "Zo", "type": "WORKS_WITH", "context": "actively scouting partnerships for the organization"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Sarah", "type": "PERSON", "context": "individual involved in the review cycle"}], "relationships": [{"from": "Sarah", "to": "V", "type": "WORKS_WITH", "context": "Sarah's review cycle is unblocked, implying collaboration with V"}]}

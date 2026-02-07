@@ -1,0 +1,1 @@
+{"entities": [{"name": "N5", "type": "ORG", "context": "name of the tool/script being used"}, {"name": "jq", "type": "TOOL", "context": "tool used for processing JSON data"}], "relationships": []}

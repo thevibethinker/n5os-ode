@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "the individual utilizing the knowledge system"}, {"name": "regimen.json", "type": "TOOL", "context": "file used to manage supplement doses and timing"}], "relationships": [{"from": "V", "to": "regimen.json", "type": "USES", "context": "V uses regimen.json to update and manage supplement information"}]}

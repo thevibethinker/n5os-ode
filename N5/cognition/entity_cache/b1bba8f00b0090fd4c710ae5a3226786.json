@@ -1,0 +1,1 @@
+{"entities": [{"name": "RemotionRoot", "type": "TOOL", "context": "a component in the code for rendering"}, {"name": "Thumbnail", "type": "TOOL", "context": "a component used for creating a thumbnail image"}], "relationships": []}

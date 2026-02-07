@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "the speaker discussing personal experiences"}, {"name": "fatherhood", "type": "CONCEPT", "context": "a life stage mentioned as a factor for taking a break"}], "relationships": [{"from": "Vrijen Attawar", "to": "fatherhood", "type": "RELATED_TO", "context": "Vrijen discusses taking a break for fatherhood"}]}

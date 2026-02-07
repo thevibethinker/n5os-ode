@@ -1,0 +1,165 @@
+---
+created: 2026-02-02
+last_edited: 2026-02-02
+version: 1.5
+provenance: con_NLOu2MVInIYnuwuf
+---
+
+# Airtable
+airtable:
+  base_id: appd12asvg42woz9I
+  base_name: Careerspan Candidate Tracker
+  tables:
+    job_openings: tblHgSEOsoegYnJl7
+    candidates: tblWB2mGbioA8pLBL
+    employers: tblvIfVUHxzuBQ2WB
+    activity_log: tblGpSaOO5mEBXMU8
+
+# Careerspan API Integration
+# ⚠️ BEFORE USE: Fill in corridorx_account_id once Careerspan API access is provisioned
+careerspan:
+  corridorx_org_id: "corridorx.io"  # CorridorX career coach organization
+  corridorx_account_id: null        # PENDING: CorridorX employer account ID for adding roles
+  # To get corridorx_account_id:
+  # 1. Log into Careerspan admin as CorridorX
+  # 2. Navigate to employer settings
+  # 3. Copy the account/employer ID from the URL or settings page
+  # This ID is required for: programmatic role creation, candidate assignment
+
+# Google Drive Output
+google_drive:
+  shared_folder_id: "1UVNExCjlCEclCG6x7gj06ChUxP-e9GnM"
+  shared_folder_name: "Careerspan Pipeline Outputs"
+  shared_folder_link: "https://drive.google.com/drive/folders/1UVNExCjlCEclCG6x7gj06ChUxP-e9GnM"
+  template_employer_folder_id: "1QqRfGTcZnBnw9AbRHGzyKNThW6mJ1XrK"
+  structure:
+    employer_folder: "{employer_slug}/"
+    hiring_pov: "{employer_slug}/hiring-povs/{role_slug}_hiring-pov.pdf"
+    candidate_folder: "{employer_slug}/candidates/{candidate_slug}/"
+    candidate_guide: "{employer_slug}/candidates/{candidate_slug}/{candidate_slug}_guide.pdf"
+    meta_resume: "{employer_slug}/candidates/{candidate_slug}/{candidate_slug}_meta-resume.pdf"
+
+# Geographies
+geographies:
+  - id: ny
+    name: New York
+  - id: sf
+    name: San Francisco
+  - id: bangalore
+    name: Bangalore
+  - id: hyderabad
+    name: Hyderabad
+  - id: remote
+    name: Remote (Global)
+
+# Email Monitoring
+email:
+  # Zo monitors all email traffic involving Shivam
+  monitor_query: "from:shivam@corridorx.io OR to:shivam@corridorx.io OR cc:shivam@corridorx.io"
+  # During transition, scan both tagged AND untagged emails for coverage
+  transition_mode: true
+  permitted_senders:
+    - shivam@corridorx.io
+  
+  # Communication rules - Zo is a silent observer
+  rules:
+    only_email_shivam: true       # Never email employers or candidates directly
+    never_reply_in_thread: true   # Always start separate thread with Shivam
+    one_thread_per_topic: true    # Maintain persistent thread per role/topic
+    identify_as_zo: true          # Shivam knows it's automated
+
+# Tags
+tags:
+  jd:
+    pattern: "[JD]"
+    action: jd_intake
+    description: "New JD - kicks off intake, may trigger optional Hiring POV refinement"
+  update:
+    pattern: "[UPDATE]"
+    action: general_update
+    description: "General update - Zo interprets body for nature and target"
+  resume:
+    pattern: "[RESUME]"
+    action: resume_intake
+    description: "Candidate response - triggers Careerspan invite flow"
+
+# 5 Core Questions (for optional Hiring POV refinement)
+core_questions:
+  - id: salary_range
+    question: "What's the salary range for this role?"
+    followup: "Should the range be visible to candidates or hidden?"
+    required: true
+  - id: location
+    question: "Where can this person be located? Any hard constraints?"
+    followup: "Remote OK? Specific cities required? Time zone requirements?"
+    required: true
+  - id: visa_sponsorship
+    question: "Will you sponsor visas, or is existing authorization required?"
+    required: true
+  - id: ninety_day_success
+    question: "What does success look like in 90 days?"
+    followup: "What's the first real deliverable you'd expect?"
+    required: true
+  - id: anti_pattern
+    question: "What's the anti-pattern? Who should NOT apply?"
+    followup: "What past hires didn't work out, and why?"
+    required: true
+
+# Workflow
+workflow:
+  job_statuses:
+    - id: new
+      name: New
+      ball_in_court: zo
+    - id: pov_refinement
+      name: POV Refinement
+      ball_in_court: employer
+      description: "Optional - when employer needs help clarifying JD"
+    - id: broadcasted
+      name: Broadcasted
+      ball_in_court: shivam
+      description: "Shivam has sent to his network"
+    - id: candidates_responding
+      name: Candidates Responding
+      ball_in_court: zo
+    - id: active
+      name: Active
+      ball_in_court: shivam
+    - id: paused
+      name: Paused
+      ball_in_court: employer
+    - id: closed
+      name: Closed
+      ball_in_court: null
+  
+  candidate_statuses:
+    - id: interested
+      name: Interested
+      description: "Raised hand in response to broadcast"
+    - id: invited_to_careerspan
+      name: Invited to Careerspan
+    - id: careerspan_complete
+      name: Careerspan Complete
+    - id: submitted_to_employer
+      name: Submitted to Employer
+    - id: interviewing
+      name: Interviewing
+    - id: offered
+      name: Offered
+    - id: hired
+      name: Hired
+    - id: rejected
+      name: Rejected
+    - id: withdrawn
+      name: Withdrawn
+
+# Response Settings
+response:
+  max_pov_rounds: 2
+  auto_respond_to_shivam: true
+  identify_as_zo: true
+  # Thread management: one persistent thread per topic
+  thread_subject_format: "[Zo] {topic_type}: {role_title} @ {company_name}"
+  signature: |
+    ---
+    — Zo (on V's behalf)

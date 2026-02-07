@@ -1,0 +1,1 @@
+{"entities": [{"name": "jane@example.com", "type": "PERSON", "context": "email address of a stakeholder"}, {"name": "Investor", "type": "CONCEPT", "context": "type of stakeholder identified"}], "relationships": []}

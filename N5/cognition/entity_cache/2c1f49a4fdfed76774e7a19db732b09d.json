@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "Individual delivering demo and information"}, {"name": "Yale", "type": "ORG", "context": "Potential partner for pilot program"}], "relationships": [{"from": "Vrijen", "to": "Yale", "type": "WORKS_WITH", "context": "Potential pilot program discussion"}]}

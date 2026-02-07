@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual involved in professional interactions"}, {"name": "mycareerspan.com", "type": "ORG", "context": "source of email communications"}], "relationships": [{"from": "V", "to": "mycareerspan.com", "type": "USES", "context": "email communications originating from this organization"}]}

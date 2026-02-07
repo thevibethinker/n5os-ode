@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "a person involved in the knowledge system"}, {"name": "meeting_auto_processor.py", "type": "TOOL", "context": "a script used for automatic meeting processing"}], "relationships": [{"from": "V (Vrijen)", "to": "meeting_auto_processor.py", "type": "USES", "context": "V uses this tool for meeting management"}]}

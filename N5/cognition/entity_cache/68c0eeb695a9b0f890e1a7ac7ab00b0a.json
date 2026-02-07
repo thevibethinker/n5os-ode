@@ -1,0 +1,1 @@
+{"entities": [{"name": "Edmund", "type": "PERSON", "context": "individual outlining strategic directions"}, {"name": "Careerspan", "type": "ORG", "context": "organization for which strategies are outlined"}], "relationships": [{"from": "Edmund", "to": "Careerspan", "type": "MENTIONS", "context": "Edmund mentions potential strategic directions for Careerspan"}]}

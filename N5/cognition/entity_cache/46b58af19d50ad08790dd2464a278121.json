@@ -1,0 +1,1 @@
+{"entities": [{"name": "Zoe team", "type": "ORG", "context": "a team attempting outbound strategies"}], "relationships": [{"from": "Zoe team", "to": "Tier 4", "type": "MENTIONS", "context": "referring to outbound strategies"}, {"from": "Zoe team", "to": "Tier 1-2", "type": "MENTIONS", "context": "suggested focus for outreach"}]}

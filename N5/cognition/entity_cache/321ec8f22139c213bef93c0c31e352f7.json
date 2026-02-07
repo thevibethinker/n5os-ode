@@ -1,0 +1,1 @@
+{"entities": [{"name": "Colin", "type": "PERSON", "context": "mentioned in the context of fraud operation"}], "relationships": [{"from": "Colin", "to": "fraud operation", "type": "MENTIONS", "context": "suggesting an organized operation"}]}

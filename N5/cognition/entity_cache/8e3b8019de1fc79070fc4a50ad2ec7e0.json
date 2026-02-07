@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "the speaker"}, {"name": "CRM", "type": "TOOL", "context": "system used for customer relationship management"}], "relationships": [{"from": "Vrijen Attawar", "to": "CRM", "type": "USES", "context": "Vrijen uses CRM for managing essential information from emails"}]}

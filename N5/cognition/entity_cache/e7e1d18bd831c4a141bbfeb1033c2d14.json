@@ -1,0 +1,1 @@
+{"entities": [{"name": "FOHE", "type": "ORG", "context": "an organization related to onboarding and risk management"}, {"name": "local lead", "type": "PERSON", "context": "individual responsible for local operations within FOHE"}], "relationships": [{"from": "FOHE", "to": "local lead", "type": "WORKS_WITH", "context": "FOHE collaborates with local leads for onboarding"}]}

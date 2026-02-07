@@ -1,0 +1,1 @@
+{"entities": [{"name": "Orchestrator", "type": "PERSON", "context": "Speaker in the conversation"}, {"name": "WORKER_1_ASSIGNMENT.md", "type": "TOOL", "context": "File mentioned for assignment"}], "relationships": [{"from": "Orchestrator", "to": "WORKER_1_ASSIGNMENT.md", "type": "MENTIONS", "context": "Orchestrator instructs to open the file"}]}

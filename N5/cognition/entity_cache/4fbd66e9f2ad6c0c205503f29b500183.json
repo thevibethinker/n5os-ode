@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual associated with a knowledge system"}, {"name": "intelligence_extractor.py", "type": "TOOL", "context": "a script used to generate intelligence"}], "relationships": []}

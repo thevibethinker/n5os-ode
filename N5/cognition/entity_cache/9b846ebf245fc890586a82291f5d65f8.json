@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "speaking about fears and beliefs"}, {"name": "alien overlords", "type": "BELIEF", "context": "reference to potential extraterrestrial beings"}], "relationships": [{"from": "Vrijen Attawar", "to": "alien overlords", "type": "MENTIONS", "context": "expresses inclusivity towards extraterrestrial beings"}]}

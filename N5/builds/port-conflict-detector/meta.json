@@ -1,0 +1,16 @@
+{
+  "slug": "port-conflict-detector",
+  "title": "Port Conflict Detector",
+  "status": "complete",
+  "created": "2026-01-30T17:35:00Z",
+  "updated": "2026-01-30T17:51:00Z",
+  "completed": "2026-01-30T17:51:00Z",
+  "type": "single-worker",
+  "phases": 2,
+  "orchestrator_convo": "con_xMvzWKgpZHS5XdCn",
+  "artifacts": [
+    "N5/scripts/port_conflict_detector.py",
+    "N5/data/port_conflict_state.json",
+    "N5/data/services_cache.json"
+  ]
+}

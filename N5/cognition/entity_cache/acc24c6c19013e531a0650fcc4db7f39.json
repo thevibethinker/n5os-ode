@@ -1,0 +1,1 @@
+{"entities": [{"name": "Alex Caveny", "type": "PERSON", "context": "Advisor, last contacted on 2025-11-17"}], "relationships": [{"from": "V", "to": "Alex Caveny", "type": "KNOWS", "context": "V has contact with advisor Alex Caveny"}]}

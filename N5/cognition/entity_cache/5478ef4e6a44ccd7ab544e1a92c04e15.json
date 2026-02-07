@@ -1,0 +1,1 @@
+{"entities": [{"name": "Howie", "type": "PERSON", "context": "individual who confirms understanding and updates preferences"}, {"name": "Zo", "type": "PERSON", "context": "individual who monitors response and addresses questions"}], "relationships": [{"from": "Howie", "to": "Zo", "type": "WORKS_WITH", "context": "collaboration in addressing preferences and questions"}]}

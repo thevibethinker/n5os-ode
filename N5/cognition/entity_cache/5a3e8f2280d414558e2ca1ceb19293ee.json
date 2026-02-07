@@ -1,0 +1,1 @@
+{"entities": [{"name": "conversations", "type": "CONCEPT", "context": "refers to the discussions or exchanges categorized by type"}, {"name": "artifacts", "type": "TOOL", "context": "refers to the items or resources associated with conversations"}], "relationships": []}

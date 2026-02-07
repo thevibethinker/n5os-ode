@@ -1,0 +1,1 @@
+{"entities": [{"name": "deno", "type": "TOOL", "context": "a tool for runtime JavaScript and TypeScript"}, {"name": "yargs-parser", "type": "ORG", "context": "a JavaScript library for parsing command-line arguments"}], "relationships": [{"from": "deno", "to": "yargs-parser", "type": "USES", "context": "deno uses yargs-parser for command-line argument parsing"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "TOOL", "context": "A tool suggested for reflection on recruiting wins."}, {"name": "V", "type": "PERSON", "context": "The individual suggesting the use of Careerspan."}], "relationships": [{"from": "V", "to": "Careerspan", "type": "USES", "context": "V recommends using Careerspan for reflection."}]}

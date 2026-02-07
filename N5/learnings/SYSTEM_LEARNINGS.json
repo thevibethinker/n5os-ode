@@ -128,6 +128,660 @@
       "status": "active",
       "disputed_by": null,
       "dispute_reason": null
+    },
+    {
+      "text": "Batch API operations (migrations, bulk processing) run 3-4x slower than estimated due to API latency. Budget 3.5 items/sec for OpenAI calls, not theoretical throughput.",
+      "source": "promotion",
+      "added_at": "2026-02-07T11:24:52.443331",
+      "tags": [
+        "api",
+        "performance",
+        "estimation"
+      ],
+      "origin_build": "memory-as-reasoning",
+      "confidence": 0.9,
+      "validated_count": 1,
+      "last_validated": null,
+      "decay_days": 30,
+      "expires_at": null,
+      "status": "active",
+      "disputed_by": null,
+      "dispute_reason": null
+    },
+    {
+      "text": "Temp directories get cleaned up before async operations complete. Use persistent storage paths (e.g., N5/data/) instead of temp directories for any data that must survive async processing.",
+      "source": "promotion",
+      "added_at": "2026-02-07T11:24:52.444007",
+      "tags": [
+        "async",
+        "filesystem",
+        "infrastructure"
+      ],
+      "origin_build": "consulting-zoffice-stack",
+      "confidence": 0.9,
+      "validated_count": 1,
+      "last_validated": null,
+      "decay_days": 30,
+      "expires_at": null,
+      "status": "active",
+      "disputed_by": null,
+      "dispute_reason": null
+    },
+    {
+      "text": "SQLite database initialization: Use Python's sqlite3 module directly (CREATE TABLE IF NOT EXISTS) rather than shell commands like 'sqlite3 < schema.sql'. Shell approach can leave empty DB files causing 'no such table' errors.",
+      "source": "promotion",
+      "added_at": "2026-02-07T11:24:52.444674",
+      "tags": [
+        "sqlite",
+        "database",
+        "initialization"
+      ],
+      "origin_build": "memory-as-reasoning",
+      "confidence": 0.9,
+      "validated_count": 1,
+      "last_validated": null,
+      "decay_days": 30,
+      "expires_at": null,
+      "status": "active",
+      "disputed_by": null,
+      "dispute_reason": null
+    },
+    {
+      "text": "Pipeline pre-flight validation: Validate data alignment BEFORE execution. Check that input data (e.g., decomposer output) matches target context (e.g., correct employer). Misalignment causes silent failures.",
+      "source": "promotion",
+      "added_at": "2026-02-07T11:24:52.445330",
+      "tags": [
+        "pipeline",
+        "validation",
+        "data-integrity"
+      ],
+      "origin_build": "meta-resume-v2",
+      "confidence": 0.9,
+      "validated_count": 1,
+      "last_validated": null,
+      "decay_days": 30,
+      "expires_at": null,
+      "status": "active",
+      "disputed_by": null,
+      "dispute_reason": null
+    },
+    {
+      "text": "gather_thread_context() is the single source of truth for context data. Wrapper scripts should only add presentation-layer flags for LLM consumption. Cleanly separates mechanics (data gathering) from semantics (interpretation).",
+      "source": "promotion",
+      "added_at": "2026-02-07T11:24:52.445821",
+      "tags": [
+        "architecture",
+        "context",
+        "separation-of-concerns"
+      ],
+      "origin_build": "task-system-wiring",
+      "confidence": 0.9,
+      "validated_count": 1,
+      "last_validated": null,
+      "decay_days": 30,
+      "expires_at": null,
+      "status": "active",
+      "disputed_by": null,
+      "dispute_reason": null
+    },
+    {
+      "text": "LLM responses via /zo/ask often include markdown code fences around JSON or truncate mid-object. Use robust regex extraction that handles triple-backtick wrappers, extra content after valid JSON, and attempts to close incomplete objects/arrays.",
+      "source": "promotion",
+      "added_at": "2026-02-07T11:24:52.446313",
+      "tags": [
+        "zo-api",
+        "json-parsing",
+        "error-handling"
+      ],
+      "origin_build": "consulting-zoffice-stack",
+      "confidence": 0.85,
+      "validated_count": 8,
+      "last_validated": null,
+      "decay_days": 30,
+      "expires_at": null,
+      "status": "active",
+      "disputed_by": null,
+      "dispute_reason": null
+    },
+    {
+      "text": "Airtable checkbox fields have parenthetical suffixes like 'Salary Range (Checkbox)' - use exact field names from schema documentation when building integrations.",
+      "source": "promotion",
+      "added_at": "2026-02-07T11:24:52.446818",
+      "tags": [
+        "airtable",
+        "api",
+        "field-naming",
+        "integration"
+      ],
+      "origin_build": "careerspan-pipeline-v2",
+      "confidence": 0.85,
+      "validated_count": 1,
+      "last_validated": null,
+      "decay_days": 30,
+      "expires_at": null,
+      "status": "active",
+      "disputed_by": null,
+      "dispute_reason": null
+    },
+    {
+      "text": "When integrating Zo app tools (Airtable, Google Drive, Gmail), scripts should output instructions/logs for the tools rather than directly calling them. The orchestrator executes tool calls. This decouples skills from app tool implementation details.",
+      "source": "promotion",
+      "added_at": "2026-02-07T11:24:52.447597",
+      "tags": [
+        "zo-skills",
+        "architecture",
+        "decoupling",
+        "app-tools"
+      ],
+      "origin_build": "careerspan-pipeline-v2",
+      "confidence": 0.85,
+      "validated_count": 1,
+      "last_validated": null,
+      "decay_days": 30,
+      "expires_at": null,
+      "status": "active",
+      "disputed_by": null,
+      "dispute_reason": null
+    },
+    {
+      "text": "Cannot JOIN across SQLite databases. When working with multiple .db files, query each separately and merge results in Python.",
+      "source": "promotion",
+      "added_at": "2026-02-07T11:24:52.448143",
+      "tags": [
+        "sqlite",
+        "database",
+        "architecture"
+      ],
+      "origin_build": "zo-task-system",
+      "confidence": 0.85,
+      "validated_count": 1,
+      "last_validated": null,
+      "decay_days": 30,
+      "expires_at": null,
+      "status": "active",
+      "disputed_by": null,
+      "dispute_reason": null
+    },
+    {
+      "text": "Scheduled agents needing reply handling require dual trigger design: (1) scheduled run for initial action, (2) SMS/email reply trigger for follow-up processing. Same prompt handles both based on context detection (has reply content or not).",
+      "source": "promotion",
+      "added_at": "2026-02-07T11:24:52.448689",
+      "tags": [
+        "scheduled-agents",
+        "sms",
+        "architecture"
+      ],
+      "origin_build": "zo-task-system",
+      "confidence": 0.85,
+      "validated_count": 1,
+      "last_validated": null,
+      "decay_days": 30,
+      "expires_at": null,
+      "status": "active",
+      "disputed_by": null,
+      "dispute_reason": null
+    },
+    {
+      "text": "Image generation alignment: Inspect tailwind.config/CSS variables for specific color names (e.g., 'zinc-900', 'sky-400') to align generated image aesthetics with UI theme.",
+      "source": "promotion",
+      "added_at": "2026-02-07T11:24:52.449294",
+      "tags": [
+        "image-generation",
+        "design",
+        "tailwind"
+      ],
+      "origin_build": "store-v2",
+      "confidence": 0.85,
+      "validated_count": 1,
+      "last_validated": null,
+      "decay_days": 30,
+      "expires_at": null,
+      "status": "active",
+      "disputed_by": null,
+      "dispute_reason": null
+    },
+    {
+      "text": "ZO_CLIENT_IDENTITY_TOKEN may not be available in all execution contexts (e.g., scheduled agents, certain API calls). Add fallback error handling for integrations requiring this token.",
+      "source": "promotion",
+      "added_at": "2026-02-07T11:24:52.449883",
+      "tags": [
+        "zo-api",
+        "authentication",
+        "error-handling"
+      ],
+      "origin_build": "perf-dashboard-v2",
+      "confidence": 0.85,
+      "validated_count": 1,
+      "last_validated": null,
+      "decay_days": 30,
+      "expires_at": null,
+      "status": "active",
+      "disputed_by": null,
+      "dispute_reason": null
+    },
+    {
+      "text": "Pulse deposit learnings can have multiple formats - list of objects with 'text' field, list of strings, or single strings. Extraction code must handle all three formats and skip malformed JSON gracefully.",
+      "source": "promotion",
+      "added_at": "2026-02-07T11:24:52.450504",
+      "tags": [
+        "pulse",
+        "deposits",
+        "json-parsing",
+        "error-handling"
+      ],
+      "origin_build": "vibeteacher-integration",
+      "confidence": 0.8,
+      "validated_count": 2,
+      "last_validated": null,
+      "decay_days": 30,
+      "expires_at": null,
+      "status": "active",
+      "disputed_by": null,
+      "dispute_reason": null
+    },
+    {
+      "text": "Code output format and schema must be designed together - mismatches (e.g., flat array vs wrapped object) cause integration failures. Validate schema compatibility before implementation.",
+      "source": "promotion",
+      "added_at": "2026-02-07T11:24:52.451280",
+      "tags": [
+        "schema",
+        "integration",
+        "validation",
+        "api-design"
+      ],
+      "origin_build": "careerspan-pipeline-v2",
+      "confidence": 0.8,
+      "validated_count": 1,
+      "last_validated": null,
+      "decay_days": 30,
+      "expires_at": null,
+      "status": "active",
+      "disputed_by": null,
+      "dispute_reason": null
+    },
+    {
+      "text": "Making schema fields nullable allows graceful migration of legacy data without breaking existing records.",
+      "source": "promotion",
+      "added_at": "2026-02-07T11:24:52.452020",
+      "tags": [
+        "database",
+        "schema",
+        "migration",
+        "backwards-compatibility"
+      ],
+      "origin_build": "careerspan-pipeline-v2",
+      "confidence": 0.8,
+      "validated_count": 1,
+      "last_validated": null,
+      "decay_days": 30,
+      "expires_at": null,
+      "status": "active",
+      "disputed_by": null,
+      "dispute_reason": null
+    },
+    {
+      "text": "Zo API calls can timeout at 120s during long extractions. Use 180s timeout with retry mechanism for content-heavy requests.",
+      "source": "promotion",
+      "added_at": "2026-02-07T11:24:52.452710",
+      "tags": [
+        "zo-api",
+        "timeout",
+        "error-handling"
+      ],
+      "origin_build": "b05-backfill-extended",
+      "confidence": 0.8,
+      "validated_count": 2,
+      "last_validated": null,
+      "decay_days": 30,
+      "expires_at": null,
+      "status": "active",
+      "disputed_by": null,
+      "dispute_reason": null
+    },
+    {
+      "text": "SMS interface cannot handle complex multi-option selection (domain/project pickers) due to character limits. Solution: mark items as 'pending_review' status and require browser-based completion for complex workflows.",
+      "source": "promotion",
+      "added_at": "2026-02-07T11:24:52.453432",
+      "tags": [
+        "sms",
+        "channel-constraints",
+        "ux"
+      ],
+      "origin_build": "zo-task-system",
+      "confidence": 0.8,
+      "validated_count": 1,
+      "last_validated": null,
+      "decay_days": 30,
+      "expires_at": null,
+      "status": "active",
+      "disputed_by": null,
+      "dispute_reason": null
+    },
+    {
+      "text": "Contradiction detector: single-sided negation detection (one text has 'never/not/no' while semantically similar text doesn't) catches contradictions that paired patterns miss. Use similarity threshold of 0.7+ to avoid false positives.",
+      "source": "promotion",
+      "added_at": "2026-02-07T11:24:52.454177",
+      "tags": [
+        "quality-gates",
+        "nlp",
+        "contradiction-detection"
+      ],
+      "origin_build": "watts-principles",
+      "confidence": 0.8,
+      "validated_count": 1,
+      "last_validated": null,
+      "decay_days": 30,
+      "expires_at": null,
+      "status": "active",
+      "disputed_by": null,
+      "dispute_reason": null
+    },
+    {
+      "text": "SQLite embeddings stored as BLOB in vectors table (not separate embeddings table). Migration scripts must decode/encode float32 arrays, not just copy rows. Schema: block_id TEXT PRIMARY KEY, embedding BLOB NOT NULL.",
+      "source": "promotion",
+      "added_at": "2026-02-07T11:24:52.454894",
+      "tags": [
+        "sqlite",
+        "embeddings",
+        "schema"
+      ],
+      "origin_build": "memory-as-reasoning",
+      "confidence": 0.8,
+      "validated_count": 1,
+      "last_validated": null,
+      "decay_days": 30,
+      "expires_at": null,
+      "status": "active",
+      "disputed_by": null,
+      "dispute_reason": null
+    },
+    {
+      "text": "Path sanitization patterns must account for: end of string ($), various separators (/\\s), and quoted contexts (\"'). Use character class like ([/\\s\"'\\)]|$) to capture and preserve context.",
+      "source": "promotion",
+      "added_at": "2026-02-07T11:24:52.455889",
+      "tags": [
+        "parsing",
+        "regex",
+        "paths"
+      ],
+      "origin_build": "store-v2",
+      "confidence": 0.8,
+      "validated_count": 1,
+      "last_validated": null,
+      "decay_days": 30,
+      "expires_at": null,
+      "status": "active",
+      "disputed_by": null,
+      "dispute_reason": null
+    },
+    {
+      "text": "When executing a Drop, extract build_slug and drop_id from drop brief frontmatter and pass to session_state_manager.py via --build and --worker-num flags. Without these, router misroutes to thread-close instead of drop-close.",
+      "source": "promotion",
+      "added_at": "2026-02-07T11:24:52.456676",
+      "tags": [
+        "pulse",
+        "drops",
+        "session-state"
+      ],
+      "origin_build": "consulting-zoffice-stack",
+      "confidence": 0.8,
+      "validated_count": 1,
+      "last_validated": null,
+      "decay_days": 30,
+      "expires_at": null,
+      "status": "active",
+      "disputed_by": null,
+      "dispute_reason": null
+    },
+    {
+      "text": "Meeting folder state: [R] marker is NOT in folder names. State tracked in manifest.json (status field). Scripts should check manifest.json['status'] instead of folder name patterns.",
+      "source": "promotion",
+      "added_at": "2026-02-07T11:24:52.457492",
+      "tags": [
+        "n5",
+        "meetings",
+        "manifest"
+      ],
+      "origin_build": "task-system-wiring",
+      "confidence": 0.8,
+      "validated_count": 1,
+      "last_validated": null,
+      "decay_days": 30,
+      "expires_at": null,
+      "status": "active",
+      "disputed_by": null,
+      "dispute_reason": null
+    },
+    {
+      "text": "Verify existing implementations match architecture requirements before starting work - existing code may use different patterns (e.g., SQLite vs JSON state file) requiring overwrite rather than extension.",
+      "source": "promotion",
+      "added_at": "2026-02-07T11:24:52.458337",
+      "tags": [
+        "pulse",
+        "verification",
+        "architecture",
+        "drops"
+      ],
+      "origin_build": "recall-calendar",
+      "confidence": 0.75,
+      "validated_count": 1,
+      "last_validated": null,
+      "decay_days": 30,
+      "expires_at": null,
+      "status": "active",
+      "disputed_by": null,
+      "dispute_reason": null
+    },
+    {
+      "text": "Fillout API stores emoji-labeled responses as full text strings (e.g., '5 = \ud83d\ude80 Excited / All-in'). Parse with pattern 'N = emoji Text' to extract numeric scores. Also: screening questions may not filter API responses - filter ineligible responses manually.",
+      "source": "promotion",
+      "added_at": "2026-02-07T11:24:52.459242",
+      "tags": [
+        "fillout",
+        "api",
+        "parsing"
+      ],
+      "origin_build": "dynamic-survey-analyzer",
+      "confidence": 0.75,
+      "validated_count": 3,
+      "last_validated": null,
+      "decay_days": 30,
+      "expires_at": null,
+      "status": "active",
+      "disputed_by": null,
+      "dispute_reason": null
+    },
+    {
+      "text": "Pulse safety checks (impossibility audit, prompt lint, contradiction detection, plateau detection) must use try/except for graceful fallback - detectors may not be available in all environments.",
+      "source": "promotion",
+      "added_at": "2026-02-07T11:24:52.460079",
+      "tags": [
+        "pulse",
+        "error-handling",
+        "safety-checks"
+      ],
+      "origin_build": "watts-principles",
+      "confidence": 0.75,
+      "validated_count": 1,
+      "last_validated": null,
+      "decay_days": 30,
+      "expires_at": null,
+      "status": "active",
+      "disputed_by": null,
+      "dispute_reason": null
+    },
+    {
+      "text": "Build deposits must verify ALL artifacts listed in drop spec exist before marking complete. Missing artifacts discovered later require rework. Quality gate should check content existence, not just brief presence.",
+      "source": "promotion",
+      "added_at": "2026-02-07T11:24:52.460964",
+      "tags": [
+        "pulse",
+        "deposits",
+        "verification"
+      ],
+      "origin_build": "careerspan-profile-output-v1",
+      "confidence": 0.75,
+      "validated_count": 3,
+      "last_validated": null,
+      "decay_days": 30,
+      "expires_at": null,
+      "status": "active",
+      "disputed_by": null,
+      "dispute_reason": null
+    },
+    {
+      "text": "Field naming inconsistencies (name vs skill_name, level_required vs required_level) should be caught by validation tests early in the pipeline, not at integration time.",
+      "source": "promotion",
+      "added_at": "2026-02-07T11:24:52.461861",
+      "tags": [
+        "testing",
+        "validation",
+        "schema",
+        "naming-conventions"
+      ],
+      "origin_build": "careerspan-pipeline-v2",
+      "confidence": 0.7,
+      "validated_count": 1,
+      "last_validated": null,
+      "decay_days": 30,
+      "expires_at": null,
+      "status": "active",
+      "disputed_by": null,
+      "dispute_reason": null
+    },
+    {
+      "text": "task_registry.py is the canonical interface for N5/task-system - all code should import from it rather than direct SQL access. Domain and project auto-creation happens automatically when creating tasks.",
+      "source": "promotion",
+      "added_at": "2026-02-07T11:24:52.462744",
+      "tags": [
+        "task-system",
+        "architecture",
+        "canonical-interface",
+        "n5"
+      ],
+      "origin_build": "zo-task-system",
+      "confidence": 0.7,
+      "validated_count": 1,
+      "last_validated": null,
+      "decay_days": 30,
+      "expires_at": null,
+      "status": "active",
+      "disputed_by": null,
+      "dispute_reason": null
+    },
+    {
+      "text": "Pattern matching for work completion detection works better with standalone word patterns ('drafted', 'saved', 'created', 'built') than complex noun-dependent patterns. Use flexible word boundary detection.",
+      "source": "promotion",
+      "added_at": "2026-02-07T11:24:52.463631",
+      "tags": [
+        "pattern-matching",
+        "close-hooks",
+        "nlp"
+      ],
+      "origin_build": "zo-task-system",
+      "confidence": 0.7,
+      "validated_count": 2,
+      "last_validated": null,
+      "decay_days": 30,
+      "expires_at": null,
+      "status": "active",
+      "disputed_by": null,
+      "dispute_reason": null
+    },
+    {
+      "text": "Pulse learnings CLI: use 'list <build_slug>' to read build learnings. There is no 'read' subcommand despite documentation references.",
+      "source": "promotion",
+      "added_at": "2026-02-07T11:24:52.464533",
+      "tags": [
+        "pulse",
+        "cli",
+        "commands"
+      ],
+      "origin_build": "consulting-zoffice-stack",
+      "confidence": 0.7,
+      "validated_count": 1,
+      "last_validated": null,
+      "decay_days": 30,
+      "expires_at": null,
+      "status": "active",
+      "disputed_by": null,
+      "dispute_reason": null
+    },
+    {
+      "text": "SQLite column types matter for cross-table operations. INTEGER IDs must be converted to TEXT strings when storing in tables with TEXT ID columns, and vice versa when querying.",
+      "source": "promotion",
+      "added_at": "2026-02-07T11:24:52.465460",
+      "tags": [
+        "sqlite",
+        "database",
+        "type-conversion"
+      ],
+      "origin_build": "zo-task-system",
+      "confidence": 0.65,
+      "validated_count": 1,
+      "last_validated": null,
+      "decay_days": 30,
+      "expires_at": null,
+      "status": "active",
+      "disputed_by": null,
+      "dispute_reason": null
+    },
+    {
+      "text": "Word overlap matching for imprecision detection: 40% threshold on expanded word sets works better than direct substring matching which is too rigid.",
+      "source": "promotion",
+      "added_at": "2026-02-07T11:24:52.466400",
+      "tags": [
+        "parsing",
+        "matching",
+        "thresholds"
+      ],
+      "origin_build": "vibe-teacher",
+      "confidence": 0.65,
+      "validated_count": 1,
+      "last_validated": null,
+      "decay_days": 30,
+      "expires_at": null,
+      "status": "active",
+      "disputed_by": null,
+      "dispute_reason": null
+    },
+    {
+      "text": "GitHub force-push preserves content but destroys history. Always verify existing directory structure before copying. Consider workflow warnings on low commit count detection.",
+      "source": "promotion",
+      "added_at": "2026-02-07T11:24:52.467401",
+      "tags": [
+        "git",
+        "version-control",
+        "history"
+      ],
+      "origin_build": "ode-cleanup",
+      "confidence": 0.6,
+      "validated_count": 2,
+      "last_validated": null,
+      "decay_days": 30,
+      "expires_at": null,
+      "status": "active",
+      "disputed_by": null,
+      "dispute_reason": null
+    },
+    {
+      "text": "Git-based change detection works well for incremental exports but requires tracking state (last_export.json) to identify what changed since last run.",
+      "source": "promotion",
+      "added_at": "2026-02-07T11:24:52.468399",
+      "tags": [
+        "git",
+        "incremental",
+        "state-tracking"
+      ],
+      "origin_build": "consulting-zoffice-stack",
+      "confidence": 0.6,
+      "validated_count": 1,
+      "last_validated": null,
+      "decay_days": 30,
+      "expires_at": null,
+      "status": "active",
+      "disputed_by": null,
+      "dispute_reason": null
     }
   ]
 }

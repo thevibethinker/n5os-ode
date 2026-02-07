@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "a person expressing interest in discussing thoughts"}, {"name": "Alex", "type": "PERSON", "context": "another person involved in the discussion"}], "relationships": [{"from": "Vrijen Attawar", "to": "Alex", "type": "WORKS_WITH", "context": "collaborating on thoughts and discussions"}]}

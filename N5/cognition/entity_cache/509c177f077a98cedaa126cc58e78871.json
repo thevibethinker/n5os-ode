@@ -1,0 +1,1 @@
+{"entities": [{"name": "markdown", "type": "CONCEPT", "context": "a lightweight markup language for formatting text"}, {"name": "DB", "type": "CONCEPT", "context": "database used for storing and retrieving data"}], "relationships": [{"from": "markdown", "to": "DB", "type": "VALIDATES", "context": "ensures consistency between markdown and database"}]}

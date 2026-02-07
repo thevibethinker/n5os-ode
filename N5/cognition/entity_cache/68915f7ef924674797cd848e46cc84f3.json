@@ -1,0 +1,1 @@
+{"entities": [{"name": "MEDIUM", "type": "ORG", "context": "An organization that V is a part of as a founding team member."}, {"name": "V", "type": "PERSON", "context": "Individual referred to in the text."}], "relationships": [{"from": "V", "to": "MEDIUM", "type": "WORKS_WITH", "context": "Part of founding team but with limited interaction."}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual involved with HR tech"}, {"name": "SHRM", "type": "ORG", "context": "organization offering funding for HR tech startups"}], "relationships": [{"from": "V", "to": "SHRM", "type": "KNOWS", "context": "V has submitted a cold application to SHRM"}]}

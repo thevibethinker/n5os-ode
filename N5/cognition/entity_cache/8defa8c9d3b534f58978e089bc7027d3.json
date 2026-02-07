@@ -1,0 +1,1 @@
+{"entities": [{"name": "SESSION_STATE.md", "type": "CONCEPT", "context": "file or document related to session state"}, {"name": "init", "type": "TOOL", "context": "initialization process or function"}], "relationships": []}

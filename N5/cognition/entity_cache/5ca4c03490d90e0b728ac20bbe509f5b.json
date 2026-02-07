@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "serial founder/operator in workforce re-entry space"}, {"name": "workforce re-entry", "type": "CONCEPT", "context": "market where V has professional experience"}], "relationships": [{"from": "V", "to": "workforce re-entry", "type": "KNOWS", "context": "V has 11+ years professional experience in this space"}]}

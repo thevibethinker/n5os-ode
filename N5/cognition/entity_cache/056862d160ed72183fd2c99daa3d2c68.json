@@ -1,0 +1,1 @@
+{"entities": [{"name": "workspace", "type": "TOOL", "context": "directory for backup management"}, {"name": "snapshot", "type": "CONCEPT", "context": "a stored state of the system"}], "relationships": [{"from": "V", "to": "workspace", "type": "USES", "context": "to manage backups"}, {"from": "V", "to": "snapshot", "type": "USES", "context": "to restore system state"}]}

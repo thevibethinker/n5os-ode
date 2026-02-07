@@ -1,0 +1,1 @@
+{"entities": [{"name": "N5OS", "type": "ORG", "context": "operating system for data processing"}], "relationships": [{"from": "Direct processing", "to": "N5OS", "type": "USES", "context": "established as the default method in N5OS for data processing"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "HOWIE", "type": "TOOL", "context": "notification processing system"}, {"name": "ZO", "type": "TOOL", "context": "processing notifications"}], "relationships": [{"from": "HOWIE", "to": "ZO", "type": "USES", "context": "HOWIE processes notifications for ZO"}]}

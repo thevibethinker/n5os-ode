@@ -1,0 +1,1 @@
+{"entities": [{"name": "folderId", "type": "CONCEPT", "context": "parameter used for folder identification"}, {"name": "pageSize", "type": "CONCEPT", "context": "parameter used to limit results"}, {"name": "query", "type": "CONCEPT", "context": "a method of filtering results based on conditions"}], "relationships": []}

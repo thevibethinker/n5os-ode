@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "individual exploring opportunities"}, {"name": "Trial", "type": "CONCEPT", "context": "suitable option for current stage of exploration"}], "relationships": [{"from": "Vrijen", "to": "Trial", "type": "USES", "context": "Vrijen is considering Trial as a suitable option for exploration"}]}

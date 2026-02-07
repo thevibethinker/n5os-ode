@@ -1,0 +1,1 @@
+{"entities": [{"name": "MG-7C", "type": "TOOL", "context": "System handling archiving for meetings"}], "relationships": [{"from": "V", "to": "MG-7C", "type": "USES", "context": "V utilizes MG-7C for archiving meetings"}]}

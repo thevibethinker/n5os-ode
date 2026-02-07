@@ -1,0 +1,1 @@
+{"entities": [{"name": "SessionStateManager", "type": "TOOL", "context": "a class for managing session state"}, {"name": "convo_id", "type": "CONCEPT", "context": "identifier for the conversation context"}], "relationships": []}

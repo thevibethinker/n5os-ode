@@ -1,0 +1,1 @@
+{"entities": [{"name": "sqlite3", "type": "TOOL", "context": "A command-line tool used for managing SQLite databases."}, {"name": "conversations.db", "type": "ORG", "context": "The database file that stores conversation data."}], "relationships": []}

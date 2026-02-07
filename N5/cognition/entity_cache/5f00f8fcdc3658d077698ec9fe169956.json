@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ayush Jain", "type": "PERSON", "context": "recipient of the email"}, {"name": "Vrijen Attawar", "type": "PERSON", "context": "sender of the email"}], "relationships": [{"from": "Vrijen Attawar", "to": "Ayush Jain", "type": "KNOWS", "context": "Vrijen is communicating with Ayush"}]}

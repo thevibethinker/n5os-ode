@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan Job Board", "type": "ORG", "context": "destination for new job postings"}, {"name": "OpenAI Billing Dashboard", "type": "TOOL", "context": "related to projected scaling scenario"}], "relationships": []}

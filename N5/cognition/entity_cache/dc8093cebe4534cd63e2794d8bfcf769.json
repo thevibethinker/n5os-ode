@@ -1,0 +1,1 @@
+{"entities": [{"name": "Edmund", "type": "PERSON", "context": "explained a product"}, {"name": "Superposition", "type": "ORG", "context": "organization that has a voice-based product for onboarding"}], "relationships": [{"from": "Edmund", "to": "Superposition", "type": "MENTIONS", "context": "explains the product of the organization"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Drop", "type": "TOOL", "context": "A component that can be non-blocking"}, {"name": "Wave", "type": "CONCEPT", "context": "The system being advanced that can be held up by blocking Drops"}], "relationships": []}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "model", "type": "TOOL", "context": "a reference to a specific model type used in the system"}, {"name": "prompts", "type": "CONCEPT", "context": "a collection of prompts loaded into the system"}], "relationships": []}

@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume:Decoded - Hardik</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    
+    :root {
+      --purple-primary: #7C3AED;
+      --purple-light: #EDE9FE;
+      --purple-muted: #C4B5FD;
+      --purple-dark: #5B21B6;
+      --text-primary: #1F2937;
+      --text-muted: #6B7280;
+      --text-light: #9CA3AF;
+      --bg-card: #F9FAFB;
+      --bg-white: #FFFFFF;
+      --border-light: #E5E7EB;
+      --amber: #F59E0B;
+      --amber-light: #FEF3C7;
+      --amber-dark: #D97706;
+      --green: #10B981;
+      --green-light: #D1FAE5;
+    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 9pt;
+      line-height: 1.4;
+      color: var(--text-primary);
+      background: white;
+    }
+    
+    .page {
+      width: 8.5in;
+      height: 11in;
+      padding: 0.35in 0.45in 0.4in 0.45in;
+      position: relative;
+      page-break-after: always;
+      overflow: hidden;
+    }
+    
+    .page:last-child { page-break-after: avoid; }
+    
+    /* === HEADER === */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 6px;
+      border-bottom: 2.5px solid var(--purple-primary);
+      margin-bottom: 10px;
+    }
+    
+    .header-left {
+      font-size: 8pt;
+      font-weight: 700;
+      color: var(--purple-primary);
+      letter-spacing: 1.5px;
+    }
+    
+    .header-right {
+      font-size: 7.5pt;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    
+    /* === HERO === */
+    .hero {
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    
+    .candidate-name {
+      font-size: 22pt;
+      font-weight: 700;
+      margin-bottom: 2px;
+      color: var(--text-primary);
+    }
+    
+    .candidate-role {
+      font-size: 10pt;
+      color: var(--purple-primary);
+      font-weight: 600;
+      margin-bottom: 2px;
+    }
+    
+    .candidate-meta {
+      font-size: 8pt;
+      color: var(--text-muted);
+      line-height: 1.3;
+    }
+    
+    /* === AT A GLANCE (SPIKES) === */
+    .spikes-section {
+      background: var(--bg-card);
+      border-radius: 6px;
+      padding: 8px 12px;
+      margin-bottom: 8px;
+    }
+    
+    .spikes-header {
+      font-size: 7pt;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+    
+    .spikes-legend {
+      font-size: 6.5pt;
+      color: var(--text-light);
+      font-style: italic;
+      margin-left: 8px;
+      font-weight: 400;
+    }
+    
+    .spikes-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 6px;
+    }
+    
+    .spikes-row:last-child { margin-bottom: 0; }
+    
+    .spike {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--bg-white);
+      border-radius: 5px;
+      padding: 5px 8px;
+      flex: 1;
+      min-width: 140px;
+      max-width: 200px;
+    }
+    
+    .spike-up { border-left: 3px solid var(--purple-primary); }
+    .spike-down { border-left: 3px solid var(--amber); }
+    
+    .spike-arrow {
+      font-size: 9pt;
+      font-weight: 700;
+    }
+    
+    .spike-up .spike-arrow { color: var(--purple-primary); }
+    .spike-down .spike-arrow { color: var(--amber-dark); }
+    
+    .spike-content { flex: 1; }
+    
+    .spike-label {
+      font-weight: 500;
+      font-size: 7.5pt;
+      margin-bottom: 2px;
+    }
+    
+    .spike-label strong { font-weight: 700; }
+    .spike-label em { font-style: italic; color: var(--text-muted); }
+    
+    .spike-years {
+      font-size: 6.5pt;
+      color: var(--text-muted);
+    }
+    
+    .spike-action {
+      font-size: 6pt;
+      color: var(--amber-dark);
+      font-style: italic;
+    }
+    
+    .spike-bar {
+      height: 3px;
+      background: var(--border-light);
+      border-radius: 2px;
+      margin-top: 3px;
+      overflow: hidden;
+    }
+    
+    .spike-bar-fill {
+      height: 100%;
+      border-radius: 2px;
+    }
+    
+    .spike-up .spike-bar-fill { background: var(--purple-primary); }
+    .spike-down .spike-bar-fill { background: var(--amber); }
+    
+    /* === VERDICT BOX === */
+    .verdict-box {
+      background: var(--purple-primary);
+      color: white;
+      padding: 8px 14px;
+      border-radius: 6px;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    
+    .verdict-title {
+      font-size: 11pt;
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+    
+    .verdict-summary {
+      font-size: 7.5pt;
+      opacity: 0.95;
+      line-height: 1.35;
+    }
+    
+    /* === WHAT TO VERIFY === */
+    .verify-section {
+      margin-bottom: 8px;
+    }
+    
+    .section-label {
+      font-size: 7.5pt;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 5px;
+    }
+    
+    .verify-grid {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 8px;
+      background: var(--bg-card);
+      border-radius: 6px;
+      padding: 8px 10px;
+    }
+    
+    .verify-col {
+      min-height: 60px;
+    }
+    
+    .verify-col-header {
+      font-size: 7pt;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 5px;
+      padding-bottom: 3px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    
+    .dealbreaker-item {
+      font-size: 7.5pt;
+      color: var(--amber-dark);
+      margin-bottom: 3px;
+      padding-left: 8px;
+      border-left: 2px solid var(--amber);
+    }
+    
+    .dealbreaker-empty {
+      font-size: 7pt;
+      color: var(--text-light);
+      font-style: italic;
+    }
+    
+    .probe-item {
+      margin-bottom: 6px;
+    }
+    
+    .probe-area {
+      font-weight: 600;
+      font-size: 7.5pt;
+      color: var(--text-primary);
+    }
+    
+    .probe-context {
+      font-size: 6.5pt;
+      color: var(--text-muted);
+      margin-bottom: 1px;
+    }
+    
+    .probe-prompt {
+      font-size: 7pt;
+      color: var(--purple-primary);
+    }
+    
+    .probe-prompt::before {
+      content: "→ ";
+      font-weight: 600;
+    }
+    
+    .verify-note {
+      font-size: 6.5pt;
+      color: var(--text-light);
+      font-style: italic;
+      margin-top: 5px;
+      padding-top: 5px;
+      border-top: 1px solid var(--border-light);
+    }
+    
+    /* === TWO COLUMN: WHY + SIGNAL === */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+    
+    .col-header {
+      font-size: 8pt;
+      font-weight: 700;
+      margin-bottom: 5px;
+      padding-bottom: 3px;
+      border-bottom: 2px solid var(--purple-primary);
+    }
+    
+    .why-item {
+      margin-bottom: 6px;
+      padding-left: 8px;
+      border-left: 2px solid var(--purple-light);
+    }
+    
+    .why-title {
+      font-weight: 600;
+      font-size: 7.5pt;
+      color: var(--purple-primary);
+      margin-bottom: 1px;
+    }
+    
+    .why-story {
+      font-size: 6.5pt;
+      color: var(--text-muted);
+      line-height: 1.3;
+    }
+    
+    /* === SIGNAL COMPOSITION === */
+    .signal-section {
+      padding: 8px 10px;
+      background: var(--bg-card);
+      border-radius: 6px;
+    }
+    
+    .signal-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+    
+    .signal-row:last-child { margin-bottom: 0; }
+    
+    .signal-label {
+      width: 90px;
+      font-size: 7pt;
+      color: var(--text-muted);
+    }
+    
+    .signal-bar-container {
+      flex: 1;
+      height: 6px;
+      background: var(--border-light);
+      border-radius: 3px;
+      margin-right: 6px;
+      overflow: hidden;
+    }
+    
+    .signal-bar {
+      height: 100%;
+      border-radius: 3px;
+      background: var(--purple-primary);
+    }
+    
+    .signal-bar.resume { opacity: 0.6; }
+    .signal-bar.inferred { opacity: 0.3; }
+    
+    .signal-value {
+      width: 32px;
+      text-align: right;
+      font-weight: 600;
+      font-size: 7pt;
+    }
+    
+    .signal-meta {
+      font-size: 6.5pt;
+      color: var(--text-light);
+      margin-top: 4px;
+      text-align: center;
+    }
+    
+    /* === FOOTER === */
+    .footer {
+      position: absolute;
+      bottom: 0.3in;
+      left: 0.45in;
+      right: 0.45in;
+      display: flex;
+      justify-content: space-between;
+      font-size: 6.5pt;
+      color: var(--text-muted);
+      padding-top: 5px;
+      border-top: 1px solid var(--border-light);
+    }
+    
+    .footer-brand { color: var(--purple-primary); font-weight: 600; }
+    
+    /* ==============================
+       PAGE 2: THE PREP PAGE
+       ============================== */
+    
+    /* === BEHAVIORAL EVIDENCE === */
+    .behavioral-section {
+      margin-bottom: 10px;
+    }
+    
+    .behavioral-header {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 6px;
+      padding-bottom: 4px;
+      border-bottom: 2px solid var(--purple-primary);
+    }
+    
+    .behavioral-title {
+      font-size: 9pt;
+      font-weight: 700;
+    }
+    
+    .behavioral-subtitle {
+      font-size: 7pt;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+    
+    .behavioral-item {
+      margin-bottom: 8px;
+      padding-left: 10px;
+      border-left: 3px solid var(--purple-light);
+    }
+    
+    .behavioral-item-title {
+      font-weight: 600;
+      font-size: 8pt;
+      color: var(--purple-primary);
+      margin-bottom: 2px;
+    }
+    
+    .behavioral-desc {
+      font-size: 7.5pt;
+      color: var(--text-muted);
+      margin-bottom: 3px;
+    }
+    
+    .behavioral-quote {
+      background: var(--bg-card);
+      padding: 4px 8px;
+      border-radius: 4px;
+      font-size: 7.5pt;
+      font-style: italic;
+      color: var(--text-primary);
+    }
+    
+    .behavioral-citation {
+      font-size: 6.5pt;
+      color: var(--text-light);
+      margin-top: 2px;
+      font-style: normal;
+    }
+    
+    /* === QUESTIONS THAT MATTER === */
+    .questions-section {
+      margin-bottom: 10px;
+    }
+    
+    .questions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    
+    .questions-col-header {
+      font-size: 7pt;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      padding-bottom: 3px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    
+    .question {
+      margin-bottom: 8px;
+      padding-left: 8px;
+      border-left: 2px solid var(--purple-light);
+    }
+    
+    .question-topic {
+      color: var(--purple-primary);
+      font-weight: 600;
+      font-size: 7.5pt;
+      margin-bottom: 2px;
+    }
+    
+    .question-text {
+      font-style: italic;
+      font-size: 7.5pt;
+      color: var(--text-primary);
+      margin-bottom: 2px;
+    }
+    
+    .question-verifies {
+      font-size: 6.5pt;
+      color: var(--text-muted);
+    }
+    
+    .question-verifies::before {
+      content: "→ Verifies: ";
+      color: var(--purple-primary);
+      font-weight: 500;
+    }
+    
+    .question-verifies strong { font-weight: 600; }
+    .question-verifies em { font-style: italic; }
+    
+    /* === YOUR PRIORITIES → FIT === */
+    .tradeoffs-section {
+      margin-bottom: 10px;
+    }
+    
+    .tradeoffs-header {
+      font-size: 9pt;
+      font-weight: 700;
+      margin-bottom: 6px;
+      padding-bottom: 4px;
+      border-bottom: 2px solid var(--purple-primary);
+    }
+    
+    .tradeoffs-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 7.5pt;
+    }
+    
+    .tradeoffs-table th {
+      text-align: left;
+      font-weight: 700;
+      font-size: 7pt;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      padding: 4px 8px;
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border-light);
+    }
+    
+    .tradeoffs-table td {
+      padding: 5px 8px;
+      border-bottom: 1px solid var(--border-light);
+      vertical-align: top;
+    }
+    
+    .tradeoffs-table tr:last-child td {
+      border-bottom: none;
+    }
+    
+    .tradeoff-need {
+      font-weight: 500;
+    }
+    
+    .tradeoff-verdict {
+      font-weight: 600;
+    }
+    
+    .tradeoff-verdict.strong { color: var(--green); }
+    .tradeoff-verdict.verify { color: var(--amber-dark); font-style: italic; }
+    .tradeoff-verdict.gap { color: var(--text-muted); font-style: italic; }
+    
+    .tradeoff-reason {
+      font-size: 6.5pt;
+      color: var(--text-muted);
+    }
+    
+    /* === UTILITY CLASSES === */
+    .muted { color: var(--text-muted); }
+    .italic { font-style: italic; }
+    .bold { font-weight: 600; }
+    .small { font-size: 6.5pt; }
+  </style>
+</head>
+<body>
+  <!-- ==================== PAGE 1: THE DECISION PAGE ==================== -->
+  <div class="page">
+    <div class="header">
+      <div class="header-left">RESUME:DECODED</div>
+      <div class="header-right">Careerspan × CorridorX · Docsum · Feb 2026</div>
+    </div>
+    
+    <!-- HERO -->
+    <div class="hero">
+      <div class="candidate-name">Hardik</div>
+      <div class="candidate-role">Founding Engineer (Fullstack)</div>
+      <div class="candidate-meta">
+        4.7y exp · 3.5y IC · 1.2y Lead<br>
+        Keysight (1y) → American Express (3y)
+      </div>
+    </div>
+    
+    <!-- AT A GLANCE (SPIKES) -->
+    <div class="spikes-section">
+      <div class="spikes-header">
+        At a Glance
+        <span class="spikes-legend">[bold = story-verified · italic = more signal needed]</span>
+      </div>
+      
+      <!-- Upward Spikes -->
+      <div class="spikes-row">
+        <div class="spike spike-up">
+          <span class="spike-arrow">▲</span>
+          <div class="spike-content">
+            <div class="spike-label">
+              <strong>Own features end-to-end</strong>
+              <span class="spike-years">(4y)</span>
+            </div>
+            <div class="spike-bar">
+              <div class="spike-bar-fill" style="width: 100%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="spike spike-up">
+          <span class="spike-arrow">▲</span>
+          <div class="spike-content">
+            <div class="spike-label">
+              <strong>Build core systems</strong>
+              <span class="spike-years">(1y)</span>
+            </div>
+            <div class="spike-bar">
+              <div class="spike-bar-fill" style="width: 100%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="spike spike-up">
+          <span class="spike-arrow">▲</span>
+          <div class="spike-content">
+            <div class="spike-label">
+              <strong>Proactive problem solving</strong>
+              
+            </div>
+            <div class="spike-bar">
+              <div class="spike-bar-fill" style="width: 100%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="spike spike-up">
+          <span class="spike-arrow">▲</span>
+          <div class="spike-content">
+            <div class="spike-label">
+              <strong>Self-motivation</strong>
+              
+            </div>
+            <div class="spike-bar">
+              <div class="spike-bar-fill" style="width: 100%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="spike spike-up">
+          <span class="spike-arrow">▲</span>
+          <div class="spike-content">
+            <div class="spike-label">
+              <strong>Clear written communication</strong>
+              
+            </div>
+            <div class="spike-bar">
+              <div class="spike-bar-fill" style="width: 100%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Downward Spikes (Areas to Verify) -->
+      <div class="spikes-row">
+        <div class="spike spike-down">
+          <span class="spike-arrow">▼</span>
+          <div class="spike-content">
+            <div class="spike-label"><em>Document work clearly</em></div>
+            <div class="spike-action">[verify depth]</div>
+            <div class="spike-bar">
+              <div class="spike-bar-fill" style="width: 90%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="spike spike-down">
+          <span class="spike-arrow">▼</span>
+          <div class="spike-content">
+            <div class="spike-label"><em>Technical documentation</em></div>
+            <div class="spike-action">[verify depth]</div>
+            <div class="spike-bar">
+              <div class="spike-bar-fill" style="width: 80%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="spike spike-down">
+          <span class="spike-arrow">▼</span>
+          <div class="spike-content">
+            <div class="spike-label"><em>Next.js</em></div>
+            <div class="spike-action">[verify depth]</div>
+            <div class="spike-bar">
+              <div class="spike-bar-fill" style="width: 70%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- VERDICT -->
+    <div class="verdict-box">
+      <div class="verdict-title">👍 Take This Meeting — 85/100</div>
+      <div class="verdict-summary">Strong recommend as a founding full-stack engineer with rare zero-to-one platform experience and immediate impact potential, with manageable ramp on Next.js/PostgreSQL specifics and contract-focused document processing.</div>
+    </div>
+    
+    <!-- WHAT TO VERIFY -->
+    <div class="verify-section">
+      <div class="section-label">⚠ What to Verify</div>
+      <div class="verify-grid">
+        <!-- Dealbreakers Column -->
+        <div class="verify-col">
+          <div class="verify-col-header">Dealbreakers</div>
+            <div class="dealbreaker-empty">None identified</div>
+        </div>
+        
+        <!-- Areas to Probe Column -->
+        <div class="verify-col">
+          <div class="verify-col-header">Areas to Probe</div>
+          <div class="probe-item">
+            <div class="probe-area">Document work clearly</div>
+            <div class="probe-context">Resume-only signal for Document work clearly.</div>
+            <div class="probe-prompt">Verify depth: ask for specific example of Document work clearly in practice.</div>
+          </div>
+          <div class="probe-item">
+            <div class="probe-area">Technical documentation</div>
+            <div class="probe-context">Resume-only signal for Technical documentation.</div>
+            <div class="probe-prompt">Verify depth: ask for specific example of Technical documentation in practice.</div>
+          </div>
+          <div class="probe-item">
+            <div class="probe-area">Next.js</div>
+            <div class="probe-context">Resume-only signal for Next.js.</div>
+            <div class="probe-prompt">Verify depth: ask for specific example of Next.js in practice.</div>
+          </div>
+          <div class="probe-item">
+            <div class="probe-area">PostgreSQL</div>
+            <div class="probe-context">Resume-only signal for PostgreSQL.</div>
+            <div class="probe-prompt">Verify depth: ask for specific example of PostgreSQL in practice.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- TWO COLUMN: WHY STRONG + SIGNAL COMPOSITION -->
+    <div class="two-col">
+      <!-- Why Signal Is Strong -->
+      <div>
+        <div class="col-header">✦ Why Signal Is Strong</div>
+        <div class="why-item">
+          <div class="why-title">Leading End-to-End Development and Scaling of a Hi</div>
+          <div class="why-story">One of first engineers architecting ML SaaS platform from ground up. Designed Dataset Storage 
+layer with versioning, MLOps and Model Storage layers with automated hyperparameter tuning, 
+dynamic reso</div>
+        </div>
+        <div class="why-item">
+          <div class="why-title">Solo-led Global Automation of Database Decommissio</div>
+          <div class="why-story">Led end-to-end design of automated portal for database usage optimization. Solo product leader 
+responsible for architecture, Python/Couchbase data aggregation, Java/Spring Boot backend, 
+ReactJS UI. </div>
+        </div>
+        <div class="why-item">
+          <div class="why-title">Architecting a vendor-agnostic AI/ML platform thro</div>
+          <div class="why-story">Led end-to-end architecture of AI/ML platform with vendor-agnostic, open-source philosophy. 
+Built dataset storage with MinIO, model management with MLflow, execution layer with Kubernetes. 
+Guided by</div>
+        </div>
+      </div>
+      
+      <!-- Signal Composition -->
+      <div>
+        <div class="col-header">📊 Signal Composition</div>
+        <div class="signal-section">
+          <div class="signal-row">
+            <span class="signal-label">Story-verified</span>
+            <div class="signal-bar-container">
+              <div class="signal-bar" style="width: 78%"></div>
+            </div>
+            <span class="signal-value">78%</span>
+          </div>
+          <div class="signal-row">
+            <span class="signal-label">Resume-backed</span>
+            <div class="signal-bar-container">
+              <div class="signal-bar resume" style="width: 22%"></div>
+            </div>
+            <span class="signal-value">22%</span>
+          </div>
+          <div class="signal-meta">
+            45 skills assessed · 3 structured interviews · Feb 2026
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <span>Resume:Decoded by <span class="footer-brand">Careerspan</span> × CorridorX</span>
+      <span>1</span>
+    </div>
+  </div>
+  
+  <!-- ==================== PAGE 2: THE PREP PAGE ==================== -->
+  <div class="page">
+    <div class="header">
+      <div class="header-left">RESUME:DECODED</div>
+      <div class="header-right">Careerspan × CorridorX · Docsum · Feb 2026</div>
+    </div>
+    
+    <!-- BEHAVIORAL EVIDENCE -->
+    <div class="behavioral-section">
+      <div class="behavioral-header">
+        <span class="behavioral-title">🔍 What the Resume Can't Tell You</span>
+        <span class="behavioral-subtitle">— Behavioral signals from structured interviews</span>
+      </div>
+      
+      <div class="behavioral-item">
+        <div class="behavioral-item-title">Zero To One Building</div>
+        <div class="behavioral-desc">Demonstrated in: Leading End-to-End Development and Scaling of a High-Im...</div>
+        <div class="behavioral-quote">
+          "One of first engineers architecting ML SaaS platform from ground up."
+          <div class="behavioral-citation">— Keysight, Senior Machine Learning Engineer (R&amp;D)</div>
+        </div>
+      </div>
+      <div class="behavioral-item">
+        <div class="behavioral-item-title">Full Stack Ownership</div>
+        <div class="behavioral-desc">Demonstrated in: Solo-led Global Automation of Database Decommissioning ...</div>
+        <div class="behavioral-quote">
+          "Led end-to-end design of automated portal for database usage optimization."
+          <div class="behavioral-citation">— American Express, Software Engineer (Full Stack)</div>
+        </div>
+      </div>
+      <div class="behavioral-item">
+        <div class="behavioral-item-title">Technical Leadership</div>
+        <div class="behavioral-desc">Demonstrated in: Architecting a vendor-agnostic AI/ML platform through s...</div>
+        <div class="behavioral-quote">
+          "Led end-to-end architecture of AI/ML platform with vendor-agnostic, open-source philosophy."
+          <div class="behavioral-citation">— Keysight, Senior Machine Learning Engineer (R&amp;D)</div>
+        </div>
+      </div>
+      
+    </div>
+    
+    <!-- QUESTIONS THAT MATTER -->
+    <div class="questions-section">
+      <div class="section-label">❓ Questions That Matter</div>
+      <div class="questions-grid">
+        <!-- Evidence-Based Questions -->
+        <div>
+          <div class="questions-col-header">Evidence-Based</div>
+          <div class="question">
+            <div class="question-topic">Own features end-to-end</div>
+            <div class="question-text">"Tell me about a specific time you demonstrated Own features end-to-end."</div>
+            <div class="question-verifies">
+              <strong>Own features end-to-end</strong>
+            </div>
+          </div>
+          <div class="question">
+            <div class="question-topic">Build core systems</div>
+            <div class="question-text">"Tell me about a specific time you demonstrated Build core systems."</div>
+            <div class="question-verifies">
+              <strong>Build core systems</strong>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Verify Unknown Questions -->
+        <div>
+          <div class="questions-col-header">Verify Unknown</div>
+          <div class="question">
+            <div class="question-topic">Document work clearly</div>
+            <div class="question-text">"Tell me about a specific time you demonstrated Document work clearly."</div>
+            <div class="question-verifies">
+              <em>Document work clearly</em>
+            </div>
+          </div>
+          <div class="question">
+            <div class="question-topic">Technical documentation</div>
+            <div class="question-text">"Tell me about a specific time you demonstrated Technical documentation."</div>
+            <div class="question-verifies">
+              <em>Technical documentation</em>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="verify-note">Arrows (→) link questions to specific signals needing verification.</div>
+    </div>
+    
+    <!-- YOUR PRIORITIES → FIT -->
+    <div class="tradeoffs-section">
+      <div class="tradeoffs-header">↔ Your Priorities → Fit</div>
+      <table class="tradeoffs-table">
+        <thead>
+          <tr>
+            <th style="width: 50%">If You Need</th>
+            <th style="width: 50%">Then They Are</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="tradeoff-need">Own features end-to-end</td>
+            <td>
+              <span class="tradeoff-verdict strong">
+                Strong fit
+              </span>
+              <span class="tradeoff-reason"> — story-verified</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="tradeoff-need">Build core systems</td>
+            <td>
+              <span class="tradeoff-verdict strong">
+                Strong fit
+              </span>
+              <span class="tradeoff-reason"> — story-verified</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="tradeoff-need">Make technical decisions</td>
+            <td>
+              <span class="tradeoff-verdict strong">
+                Strong fit
+              </span>
+              <span class="tradeoff-reason"> — story-verified</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="tradeoff-need">Contribute to company direction</td>
+            <td>
+              <span class="tradeoff-verdict strong">
+                Strong fit
+              </span>
+              <span class="tradeoff-reason"> — story-verified</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="tradeoff-need">Prototype rapidly</td>
+            <td>
+              <span class="tradeoff-verdict strong">
+                Strong fit
+              </span>
+              <span class="tradeoff-reason"> — story-verified</span>
+            </td>
+          </tr>
+          <tr>
+            <td class="tradeoff-need">Manage technical risks</td>
+            <td>
+              <span class="tradeoff-verdict strong">
+                Strong fit
+              </span>
+              <span class="tradeoff-reason"> — story-verified</span>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    <!-- Watch For (if present) -->
+    <div class="verify-section">
+      <div class="section-label">👁 Watch For</div>
+      <div style="background: var(--amber-light); border-radius: 6px; padding: 6px 10px;">
+        <div style="font-size: 7.5pt; color: var(--amber-dark); margin-bottom: 3px;">• 1.2y avg tenure — verify retention conditions</div>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <span>Resume:Decoded by <span class="footer-brand">Careerspan</span> × CorridorX</span>
+      <span>2</span>
+    </div>
+  </div>
+</body>
+</html>

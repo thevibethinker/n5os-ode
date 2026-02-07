@@ -1,0 +1,1 @@
+{"entities": [{"name": "Human-Centered Design", "type": "CONCEPT", "context": "A design philosophy focused on helping people flourish"}], "relationships": [{"from": "V (Vrijen)", "to": "Human-Centered Design", "type": "BELIEVES", "context": "V believes in the principles of human-centered design to solve human problems"}]}

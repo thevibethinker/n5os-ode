@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "the person discussing insights"}, {"name": "insights", "type": "CONCEPT", "context": "the ideas or truths that emerge from discussions"}], "relationships": [{"from": "V (Vrijen)", "to": "insights", "type": "BELIEVES", "context": "V believes insights emerge from discussions across multiple conversations"}]}

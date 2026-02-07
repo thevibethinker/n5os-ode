@@ -1,0 +1,1 @@
+{"entities": [{"name": "Career Span", "type": "CONCEPT", "context": "integration for student-to-role matching"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "individual involved in knowledge system"}], "relationships": [{"from": "V (Vrijen)", "to": "Career Span", "type": "WORKS_WITH", "context": "exploring integration for development"}]}

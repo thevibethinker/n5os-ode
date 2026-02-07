@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual mentioned in relation to a knowledge system"}, {"name": "Nafisa Poonawala", "type": "PERSON", "context": "speaker discussing V and their fans"}], "relationships": [{"from": "Nafisa Poonawala", "to": "V", "type": "KNOWS", "context": "discussing V in the context of fans"}]}

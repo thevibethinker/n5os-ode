@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "vibe_debugger_persona.md", "type": "TOOL", "context": "previous version of knowledge system"}], "relationships": [{"from": "Vrijen", "to": "vibe_debugger_persona.md", "type": "USES", "context": "uses as a predecessor tool in the knowledge system"}]}

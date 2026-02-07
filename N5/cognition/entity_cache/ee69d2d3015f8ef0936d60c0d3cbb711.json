@@ -1,0 +1,1 @@
+{"entities": [{"name": "NIRA", "type": "ORG", "context": "infrastructure for anti-LinkedIn playbook"}], "relationships": [{"from": "V (Vrijen)", "to": "NIRA", "type": "USES", "context": "as infrastructure for anti-LinkedIn playbook"}]}

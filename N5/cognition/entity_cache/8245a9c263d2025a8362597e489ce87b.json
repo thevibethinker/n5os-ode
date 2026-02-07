@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ilya Kucherenko", "type": "PERSON", "context": "individual discussing technical writing and AI"}, {"name": "chat GPT", "type": "TOOL", "context": "AI tool used for technical writing assistance"}], "relationships": [{"from": "Ilya Kucherenko", "to": "chat GPT", "type": "USES", "context": "Ilya utilizes chat GPT for technical writing assistance"}]}

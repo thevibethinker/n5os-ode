@@ -1,0 +1,1 @@
+{"entities": [{"name": "Matchbox", "type": "ORG", "context": "an organization mentioned in relation to careers"}, {"name": "Careerspan", "type": "ORG", "context": "an organization working with Matchbox"}], "relationships": [{"from": "Matchbox", "to": "Careerspan", "type": "WORKS_WITH", "context": "collaborating on career-related initiatives"}]}

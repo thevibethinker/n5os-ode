@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ilse Funkhouser", "type": "PERSON", "context": "a speaker in the conversation"}, {"name": "Led Zeppelin", "type": "ORG", "context": "a band mentioned in the context of belief"}], "relationships": [{"from": "Ilse Funkhouser", "to": "Led Zeppelin", "type": "BELIEVES", "context": "Ilse expresses belief in Led Zeppelin"}]}

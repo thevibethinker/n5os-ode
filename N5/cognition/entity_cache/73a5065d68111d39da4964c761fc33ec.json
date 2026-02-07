@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual involved in execution approach"}, {"name": "Vrijen", "type": "ORG", "context": "organization associated with V"}], "relationships": [{"from": "V", "to": "Vrijen", "type": "WORKS_WITH", "context": "V is associated with Vrijen in the execution approach"}]}

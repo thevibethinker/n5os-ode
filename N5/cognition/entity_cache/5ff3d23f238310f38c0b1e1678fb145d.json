@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ilya", "type": "PERSON", "context": "Speaker discussing empirical data"}, {"name": "empirical data", "type": "CONCEPT", "context": "Type of data that is considered robust"}], "relationships": [{"from": "Ilya", "to": "empirical data", "type": "BELIEVES", "context": "Ilya believes empirical data is more robust than just data"}]}

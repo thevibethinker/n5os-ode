@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual associated with a knowledge system"}, {"name": "Recruiter Pain Points", "type": "CONCEPT", "context": "challenges faced by recruiters"}], "relationships": [{"from": "V", "to": "Recruiter Pain Points", "type": "KNOWS", "context": "understanding of challenges faced by recruiters"}]}

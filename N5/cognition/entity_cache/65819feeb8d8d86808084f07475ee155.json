@@ -1,0 +1,1 @@
+{"entities": [{"name": "Slack", "type": "TOOL", "context": "communication platform"}, {"name": "Scale AI", "type": "ORG", "context": "organization related to AI"}], "relationships": [{"from": "V", "to": "Slack", "type": "USES", "context": "V uses Slack for communication"}, {"from": "V", "to": "Scale AI", "type": "MENTIONS", "context": "V references Scale AI's founder session"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Caleb", "type": "PERSON", "context": "actively engaged in reducing costs for Careerspan"}, {"name": "Careerspan", "type": "ORG", "context": "organization Caleb is working to reduce costs for"}], "relationships": [{"from": "Caleb", "to": "Careerspan", "type": "WORKS_WITH", "context": "Caleb is working to reduce costs for Careerspan"}]}

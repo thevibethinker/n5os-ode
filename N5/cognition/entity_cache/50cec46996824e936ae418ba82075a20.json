@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "speaker discussing the hiring process"}, {"name": "stack ranking", "type": "CONCEPT", "context": "an approach to evaluating candidates that is criticized"}], "relationships": [{"from": "Vrijen Attawar", "to": "stack ranking", "type": "BELIEVES", "context": "criticizes stack ranking as not effective"}]}

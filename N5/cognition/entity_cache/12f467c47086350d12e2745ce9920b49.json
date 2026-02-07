@@ -1,0 +1,1 @@
+{"entities": [{"name": "Allie Cialeo", "type": "PERSON", "context": "Speaker expressing thoughts"}, {"name": "Ed", "type": "PERSON", "context": "Mentioned as screening applicants"}], "relationships": [{"from": "Allie Cialeo", "to": "Ed", "type": "WORKS_WITH", "context": "Collaboration in screening applicants"}]}

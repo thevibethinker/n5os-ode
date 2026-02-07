@@ -1,0 +1,6 @@
+
+--- Migration 2026-01-28T00:56:32.510570 ---
+migrated: /home/workspace/Knowledge/market and competitor intel/research/claude-code → /home/workspace/Research/market-intel/claude-code
+migrated: /home/workspace/Knowledge/market and competitor intel/due-diligence/teamworkonline → /home/workspace/Research/market-intel/due-diligence/teamworkonline
+migrated: /home/workspace/Knowledge/market and competitor intel/due-diligence/adam-alpert → /home/workspace/Research/market-intel/due-diligence/adam-alpert
+migrated: /home/workspace/Knowledge/market and competitor intel/due-diligence/permit-power-dd-research.md → /home/workspace/Research/market-intel/due-diligence/permit-power-dd-research.md

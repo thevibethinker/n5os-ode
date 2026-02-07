@@ -1,0 +1,1 @@
+{"entities": [{"name": "Zo", "type": "ORG", "context": "refers to the service providing secrets access"}, {"name": "Slack", "type": "TOOL", "context": "convenience function for communication"}, {"name": "Google", "type": "TOOL", "context": "convenience function for productivity"}], "relationships": []}

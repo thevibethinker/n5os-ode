@@ -1,0 +1,1 @@
+{"entities": [{"name": "Git", "type": "TOOL", "context": "a version control system used for tracking changes in files"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "the individual associated with the knowledge system"}], "relationships": [{"from": "V (Vrijen)", "to": "Git", "type": "USES", "context": "V uses Git to manage files and track changes"}]}

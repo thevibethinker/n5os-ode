@@ -1,0 +1,1 @@
+{"entities": [{"name": "David", "type": "PERSON", "context": "Combined transcripts into one document"}, {"name": "Zo", "type": "PERSON", "context": "Will split the combined transcripts back into individual files"}], "relationships": [{"from": "David", "to": "Zo", "type": "WORKS_WITH", "context": "Collaborating on transcript organization"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Inbox processing workflow", "type": "CONCEPT", "context": "Full workflow for processing inbox items"}, {"name": "review document", "type": "CONCEPT", "context": "Document generated for human oversight review"}], "relationships": []}

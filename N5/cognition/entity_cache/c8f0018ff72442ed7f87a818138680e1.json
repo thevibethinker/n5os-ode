@@ -1,0 +1,1 @@
+{"entities": [{"name": "N5", "type": "TOOL", "context": "internal storage and display system"}, {"name": "Howie", "type": "ORG", "context": "system mentioned for compatibility"}], "relationships": [{"from": "N5", "to": "Howie", "type": "USES", "context": "N5 maintains compatibility with Howie by using bracket notation"}]}

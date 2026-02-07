@@ -1,0 +1,10 @@
+{
+  "slug": "systematic-debugging-integration",
+  "timestamp": "2026-02-07T13:46:28.804340+00:00",
+  "total": 0,
+  "passed": 0,
+  "failed": 0,
+  "results": [],
+  "all_passed": true,
+  "message": "No integration tests defined"
+}

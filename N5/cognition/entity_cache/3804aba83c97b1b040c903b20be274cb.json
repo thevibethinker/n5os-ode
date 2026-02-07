@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Individual discussing the application process"}, {"name": "careerspan", "type": "TOOL", "context": "Application process tool mentioned by Vrijen"}], "relationships": [{"from": "Vrijen Attawar", "to": "careerspan", "type": "USES", "context": "Vrijen uses careerspan for the application process"}]}

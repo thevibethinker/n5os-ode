@@ -1,0 +1,1 @@
+{"entities": [{"name": "Logan Currie", "type": "PERSON", "context": "Speaker discussing acquisition and collaboration"}, {"name": "career span", "type": "TOOL", "context": "Proposed tool for collaboration in pilot"}], "relationships": [{"from": "Logan Currie", "to": "career span", "type": "MENTIONS", "context": "Discussing the use of career span in a pilot for collaboration"}]}

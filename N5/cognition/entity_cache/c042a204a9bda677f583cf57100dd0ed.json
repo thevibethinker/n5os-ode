@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "a coaching organization"}, {"name": "candidate quality", "type": "CONCEPT", "context": "a measure of a candidate's potential based on engagement"}], "relationships": [{"from": "Careerspan", "to": "candidate quality", "type": "RELATED_TO", "context": "High engagement with Careerspan predicts candidate quality"}]}

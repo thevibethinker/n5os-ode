@@ -1,0 +1,1 @@
+{"entities": [{"name": "Document Inbox", "type": "CONCEPT", "context": "system for managing transcript files"}, {"name": "processing request JSON files", "type": "TOOL", "context": "files used for processing transcripts"}, {"name": "detected transcripts", "type": "CONCEPT", "context": "output that the system logs"}], "relationships": []}

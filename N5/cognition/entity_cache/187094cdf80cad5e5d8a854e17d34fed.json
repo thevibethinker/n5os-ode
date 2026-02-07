@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "works on a knowledge system"}, {"name": "system", "type": "CONCEPT", "context": "focus of work"}], "relationships": [{"from": "V", "to": "system", "type": "WORKS_WITH", "context": "V focuses on and works within the system"}]}

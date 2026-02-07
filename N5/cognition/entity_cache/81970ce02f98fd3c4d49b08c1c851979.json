@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Author of the statement"}, {"name": "Persona", "type": "CONCEPT", "context": "Refers to the switching system in discussion"}], "relationships": [{"from": "Vrijen Attawar", "to": "Persona", "type": "BELIEVES", "context": "Reliability comes from explicit instructions within the persona definitions"}]}

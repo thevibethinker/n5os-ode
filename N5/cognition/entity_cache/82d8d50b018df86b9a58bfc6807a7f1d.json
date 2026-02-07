@@ -1,0 +1,1 @@
+{"entities": [{"name": "Validation Script Template", "type": "TOOL", "context": "A tool template for validating directory conventions"}, {"name": "guardian", "type": "CONCEPT", "context": "Daily operational concept related to monitoring"}], "relationships": []}

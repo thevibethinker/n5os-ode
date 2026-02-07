@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Individual with a knowledge system"}, {"name": "[CAL]", "type": "TOOL", "context": "Command for creating calendar events"}, {"name": "[RESCHEDULE]", "type": "TOOL", "context": "Flag for rescheduling events"}], "relationships": []}

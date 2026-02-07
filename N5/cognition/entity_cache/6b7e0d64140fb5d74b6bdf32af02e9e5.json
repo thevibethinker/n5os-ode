@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ayush", "type": "PERSON", "context": "recently married"}, {"name": "Vrijen", "type": "PERSON", "context": "acknowledged congratulations"}], "relationships": [{"from": "Vrijen", "to": "Ayush", "type": "KNOWS", "context": "acknowledged congratulations and shared experiences"}]}

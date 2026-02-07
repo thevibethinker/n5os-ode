@@ -1,0 +1,1 @@
+{"entities": [{"name": "Events Site", "type": "CONCEPT", "context": "platform for viewing events"}, {"name": "/api/sync", "type": "TOOL", "context": "endpoint for syncing decisions to the database"}], "relationships": [{"from": "Events Site", "to": "/api/sync", "type": "USES", "context": "syncs decisions made in UI to the database"}]}

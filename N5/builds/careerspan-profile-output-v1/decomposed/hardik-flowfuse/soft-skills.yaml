@@ -1,0 +1,53 @@
+# Soft Skills & Working Style
+# Source: Careerspan Intelligence Brief
+# DO NOT EDIT - Preserves Careerspan conclusions verbatim
+
+leadership:
+  level: "Strong"
+  evidence:
+    - "Scaled team from inception to ~20 engineers"
+    - "Led distributed teams across time zones"
+    - "Founding engineer role - set technical direction"
+  careerspan_assessment: "Demonstrated ability to lead and grow teams while maintaining hands-on contribution"
+
+ownership:
+  level: "Exceptional"
+  evidence:
+    - "Solo product owner at AmEx (150+ services)"
+    - "Built entire ML platform from scratch at Keysight"
+    - "End-to-end delivery without requiring oversight"
+  careerspan_assessment: "Highly autonomous - takes full ownership from ideation to production"
+
+collaboration:
+  level: "Strong"
+  evidence:
+    - "Cross-functional work with enterprise clients (Apple, Samsung, Volkswagen)"
+    - "Stakeholder management across engineering and business"
+  gaps:
+    - "Async-first collaboration artifacts not explicitly shown"
+    - "Written communication samples (RFCs, technical docs) not provided"
+  careerspan_assessment: "Strong synchronous collaboration; async-first patterns need probing"
+
+communication:
+  level: "Strong (synchronous), Unknown (async)"
+  evidence:
+    - "Led teams effectively"
+    - "Managed enterprise client relationships"
+  gaps:
+    - "No explicit examples of async decision-making"
+    - "No RFC or technical writing samples"
+  careerspan_assessment: "Likely strong communicator based on leadership success; async-specific habits unknown"
+
+adaptability:
+  level: "Strong"
+  evidence:
+    - "Moved from enterprise (AmEx) to founding role (Keysight)"
+    - "Handled ambiguity of greenfield development"
+    - "Learned and applied new technologies as needed"
+  careerspan_assessment: "Demonstrates ability to thrive in undefined environments"
+
+working_style_signals:
+  - "Prefers ownership over delegation"
+  - "Comfortable with ambiguity"
+  - "Results-oriented (quantifies impact)"
+  - "Full-stack generalist, not specialist"

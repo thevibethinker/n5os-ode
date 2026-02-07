@@ -1,0 +1,1 @@
+{"entities": [{"name": "python3", "type": "TOOL", "context": "programming language used in scripting"}, {"name": "N5/scripts/style_guide_manager.py", "type": "CONCEPT", "context": "script related to managing style guides"}], "relationships": []}

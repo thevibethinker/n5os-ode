@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Individual discussing their business focus"}, {"name": "universities", "type": "ORG", "context": "Target market for product sales"}], "relationships": [{"from": "Vrijen Attawar", "to": "universities", "type": "MENTIONS", "context": "Attempted to sell products to universities"}]}

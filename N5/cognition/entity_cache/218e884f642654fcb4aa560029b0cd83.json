@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker and coach"}, {"name": "career coach", "type": "TOOL", "context": "Coaching tool used for career development"}], "relationships": [{"from": "Vrijen Attawar", "to": "career coach", "type": "USES", "context": "V uses the coaching tool for career development"}]}

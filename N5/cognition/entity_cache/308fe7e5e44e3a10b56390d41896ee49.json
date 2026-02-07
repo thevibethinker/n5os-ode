@@ -1,0 +1,1 @@
+{"entities": [{"name": "N5", "type": "ORG", "context": "organization related to task management"}, {"name": "task_registry.jsonl", "type": "TOOL", "context": "file format for task registry management"}], "relationships": []}

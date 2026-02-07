@@ -1,0 +1,1 @@
+{"entities": [{"name": "raw data APIs", "type": "CONCEPT", "context": "commodities that provide data"}, {"name": "reasoning layer", "type": "CONCEPT", "context": "layer that determines value from data"}], "relationships": [{"from": "raw data APIs", "to": "reasoning layer", "type": "RELATED_TO", "context": "the reasoning layer determines the value of raw data APIs"}]}

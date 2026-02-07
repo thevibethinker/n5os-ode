@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "the subject using the property name"}, {"name": "Quoted Property Name", "type": "CONCEPT", "context": "the technique of using quoted property names in scripts"}, {"name": "Unquoted Style", "type": "CONCEPT", "context": "the alternative way to access properties in scripts"}], "relationships": []}

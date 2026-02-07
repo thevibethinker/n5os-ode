@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "individual providing approval on merges"}], "relationships": [{"from": "Vrijen", "to": "merge candidates", "type": "KNOWS", "context": "approves which merges make sense"}]}

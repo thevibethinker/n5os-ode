@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "mentioned as the subject of the knowledge system"}, {"name": "DAO", "type": "CONCEPT", "context": "mentioned as a prospect related to Vrijen's knowledge system"}], "relationships": [{"from": "Vrijen", "to": "DAO", "type": "MENTIONS", "context": "Vrijen mentions DAO in relation to prospects"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Aki", "type": "TOOL", "context": "Email interface for task requests"}, {"name": "Akiflow", "type": "TOOL", "context": "Related to Aki for task management"}], "relationships": [{"from": "Aki", "to": "Akiflow", "type": "USES", "context": "Aki routes task requests to Akiflow"}]}

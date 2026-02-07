@@ -1,0 +1,1 @@
+{"entities": [{"name": "Zo", "type": "ORG", "context": "organization involved in data partnerships"}, {"name": "V", "type": "PERSON", "context": "the individual with authority and advisory role"}], "relationships": [{"from": "V", "to": "Zo", "type": "WORKS_WITH", "context": "V advises Zo on partnerships"}]}

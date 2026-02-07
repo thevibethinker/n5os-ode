@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "the individual whose knowledge system is discussed"}, {"name": "comparative language", "type": "CONCEPT", "context": "the method of language that V advocates for"}, {"name": "existing solutions", "type": "CONCEPT", "context": "refers to previous methods or tools that V critiques"}], "relationships": []}

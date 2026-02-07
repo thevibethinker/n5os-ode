@@ -1,0 +1,1 @@
+{"entities": [{"name": "Auto-optimization", "type": "CONCEPT", "context": "process of improving system efficiency"}, {"name": "default tags", "type": "TOOL", "context": "labels used in the system"}, {"name": "historical data", "type": "CONCEPT", "context": "information from past events used for optimization"}], "relationships": []}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Darwin Box", "type": "ORG", "context": "an organization mentioned"}, {"name": "Careerspan", "type": "ORG", "context": "an organization mentioned"}], "relationships": [{"from": "Darwin Box", "to": "Careerspan", "type": "MENTIONS", "context": "Darwin Box stated that Careerspan is outside their expertise area"}]}

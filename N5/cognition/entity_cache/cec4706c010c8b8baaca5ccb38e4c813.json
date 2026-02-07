@@ -1,0 +1,1 @@
+{"entities": [{"name": "N5", "type": "ORG", "context": "The organization associated with V."}, {"name": "YAML", "type": "TOOL", "context": "A serialization format used for configuration."}, {"name": "[M] meetings", "type": "EVENT", "context": "Meetings that are part of V's knowledge system."}], "relationships": []}

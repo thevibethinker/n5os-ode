@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "fighting for company survival"}, {"name": "Skyline", "type": "ORG", "context": "potentially empathetic towards V"}], "relationships": [{"from": "V", "to": "Skyline", "type": "RELATED_TO", "context": "Skyline considers the implications of V's actions on company survival"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "service_api_key", "type": "CONCEPT", "context": "A key used for API authentication"}, {"name": "service_name", "type": "ORG", "context": "Name of the service associated with the API key"}, {"name": "api_key", "type": "CONCEPT", "context": "A type of credential for accessing services"}], "relationships": []}

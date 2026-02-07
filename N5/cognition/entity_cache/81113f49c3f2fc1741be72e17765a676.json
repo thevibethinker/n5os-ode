@@ -1,0 +1,1 @@
+{"entities": [{"name": "SmartBuffer", "type": "TOOL", "context": "a factory for creating instances of buffers"}, {"name": "writeXXX()", "type": "CONCEPT", "context": "a method for writing data"}, {"name": "insertXXX()", "type": "CONCEPT", "context": "a method for inserting data at a specific offset"}], "relationships": []}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "logger", "type": "TOOL", "context": "used for logging errors and actions"}, {"name": "api.py", "type": "CONCEPT", "context": "the component where the problem occurred"}, {"name": "Rate limit errors", "type": "EVENT", "context": "the issue being logged"}], "relationships": []}

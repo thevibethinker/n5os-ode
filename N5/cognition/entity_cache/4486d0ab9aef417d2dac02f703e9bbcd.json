@@ -1,0 +1,1 @@
+{"entities": [{"name": "inject_reminders.py", "type": "TOOL", "context": "Phase 1 (manual injection)"}, {"name": "This framework", "type": "CONCEPT", "context": "Phase 2 blueprint (platform-level)"}], "relationships": [{"from": "inject_reminders.py", "to": "This framework", "type": "RELATED_TO", "context": "Both pursue same goal via different mechanisms"}]}

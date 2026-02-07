@@ -1,0 +1,1 @@
+{"entities": [{"name": "N5", "type": "ORG", "context": "system or framework where commands are created"}, {"name": "incantum_shortcuts.json", "type": "TOOL", "context": "file for defining shortcuts"}], "relationships": []}

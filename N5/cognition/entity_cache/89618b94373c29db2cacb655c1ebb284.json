@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "person mentioned in the knowledge system"}, {"name": "Tope", "type": "PERSON", "context": "person mentioned in relation to morale"}], "relationships": [{"from": "V", "to": "Tope", "type": "RELATED_TO", "context": "positive signal affecting morale"}]}

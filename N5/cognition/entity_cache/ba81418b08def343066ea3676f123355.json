@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ryan Vanderbilt", "type": "PERSON", "context": "individual discussing ideas after leaving Google"}, {"name": "Blend", "type": "CONCEPT", "context": "idea being developed by Ryan Vanderbilt"}], "relationships": [{"from": "Ryan Vanderbilt", "to": "Blend", "type": "WORKS_WITH", "context": "Ryan is working on the concept called Blend"}]}

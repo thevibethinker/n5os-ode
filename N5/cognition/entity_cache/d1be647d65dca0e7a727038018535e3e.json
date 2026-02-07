@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "MeetingOrchestrator", "type": "TOOL", "context": "a tool used to adjust similarity thresholds"}], "relationships": [{"from": "V", "to": "MeetingOrchestrator", "type": "USES", "context": "V uses MeetingOrchestrator to adjust similarity thresholds"}]}

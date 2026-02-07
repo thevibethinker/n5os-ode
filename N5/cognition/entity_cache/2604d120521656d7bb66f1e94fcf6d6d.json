@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ilse Funkhouser", "type": "PERSON", "context": "Speaker in the conversation"}, {"name": "John Krasinski", "type": "PERSON", "context": "Husband of Ilse Funkhouser"}], "relationships": [{"from": "Ilse Funkhouser", "to": "John Krasinski", "type": "BELIEVES", "context": "Belief about resemblance"}]}

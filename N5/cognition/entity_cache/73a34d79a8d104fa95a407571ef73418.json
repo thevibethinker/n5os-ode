@@ -1,0 +1,1 @@
+{"entities": [{"name": "Zo", "type": "ORG", "context": "an organization discussed in relation to product development"}, {"name": "V", "type": "PERSON", "context": "the individual with a knack for making Zo work"}], "relationships": [{"from": "V", "to": "Zo", "type": "WORKS_WITH", "context": "V has a knack for making Zo work, leading to discussions about collaboration"}]}

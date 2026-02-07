@@ -1,0 +1,1583 @@
+﻿The Basics
+Careerspan: AI-Powered Candidate Assessment
+Transform your hiring process with interviews before resumes—equitable, efficient, and insightful.
+The Problem We Solve
+Traditional applicant screening relies heavily on resumes, which can be fabricated, AI-generated, or fail to reveal candidates' true capabilities. Most ATS and AI screening tools offer surface-level keyword matching or basic filters that don't provide actionable insights for decision-making. Careerspan goes deeper—delivering decision-ready candidate intelligence that reveals true capabilities, detects inconsistencies, and ensures fair, equitable evaluation. We provide the kind of comprehensive insights you'd normally only get after multiple interview rounds, but before you review a single resume.
+How It Works
+For Candidates
+Applicants create reusable career stories with our AI career coach. These stories become a portable professional narrative they can use across all future job applications, helping them present their best selves consistently.  Once they’ve told enough stories, applying is as simple as LinkedIn’s Easy Apply, but with deep, meaningful, and accurate insights and more transparency for both candidate and employer. 
+For Employers
+1. Deep Job Analysis We analyze your job description and generate 30+ assessment criteria including:
+
+
+* Key responsibilities
+* Hard skills
+* Soft skills
+
+
+… with clear assessment criteria for how the AI will assess whether an applicant satisfies those needs.  Example
+
+
+2. Optional, Customizable Assessment Framework Tailor the assessment criteria and assessments to your needs. Add specific requirements, modify assessment standards, or emphasize particular skills that matter most to your organization. 
+
+
+3. Transparent Candidate Experience Candidates see exactly what criteria they're being assessed against, allowing them to provide relevant stories and examples that demonstrate their qualifications. This transparency helps both parties: candidates can "fill in the gaps" by sharing experiences that showcase relevant skills they might not have thought to highlight otherwise, while you discover diamonds in the rough—talented individuals whose resumes might not scream "perfect fit" but whose actual experience and capabilities align beautifully with your needs. By prompting candidates to draw parallels between their background and your requirements, we help surface non-obvious matches that traditional screening would miss.
+
+
+
+
+4. Comprehensive Results Receive a stack-ranked list of applicants with:
+
+
+* Overall scores and category breakdowns (Background, Uniqueness, Responsibilities, Hard Skills, Soft Skills)
+* "Bottom line" executive summary for each candidate
+* Key strengths and development areas
+* Career trajectory context (promotion, lateral move, or career change)
+* And more!
+
+
+Here’s an example of our default output, which is customizable to satisfy your needs.
+
+
+The Application Process
+Once we've agreed on the assessment criteria for your position, we provide you with a unique application link to share with candidates. Applicants use this link to create a Careerspan account and begin their application for your specific role. From there, our AI career coach guides them through telling their professional story, ensuring they have opportunities to demonstrate how their experience aligns with your needs. The entire process is streamlined and candidate-friendly, while generating the deep insights you need to make informed decisions.
+
+
+Built-In Quality Assurance
+Full Transparency: Available upon request, access detailed analysis showing exactly how each assessment was made—approximately 50 pages of analysis per candidate, per position—ensuring consistent and accurate scoring. We don't do this as window-dressing, it's the full internal logic and reasoning the AI used to assess the applicant. You likely won't want it except to build trust in Careerspan's offerings.
+
+
+Pre-Interview Intelligence: For candidates advancing to interviews, we provide a one-page summary highlighting the applicant's key strengths, development areas, and recommended discussion topics to help you conduct more targeted, productive conversations.
+
+
+Post-Interview Fraud Detection: Provide us with a transcript or recording of your interview, and we'll automatically cross-reference it against everything we know about the candidate from their application. Our system flags inconsistencies, contradictions, and suspicious patterns that may indicate:
+
+
+* AI-assisted interview responses
+* Detect if it seems to be the same person based on speech patterns
+* Fabricated backgrounds or embellished resumes
+* Discrepancies between claimed experience and actual knowledge
+* Coaching or proxy interviewing
+
+
+This deep analysis protects you from sophisticated fraud that traditional screening misses entirely, giving you confidence in your hiring decisions.
+
+
+Bias Mitigation: We're actively developing tools and case studies to ensure cultural and gender-neutral assessments, making hiring more equitable.
+Custom Analysis Capabilities
+Beyond our standard assessment framework, we offer fully customized analyses tailored to your unique needs. Whether you're looking for specific technical competencies, cultural fit indicators, leadership potential, or even creative requests like evaluating how much a candidate might improve your company softball team—we can design bespoke scoring and analysis to answer the questions that matter most to your organization. Our AI can evaluate virtually any criterion you can articulate, giving you fast, direct insights into exactly what you want to know about your applicants.
+
+
+
+
+Flexible Integration
+Careerspan adapts to your hiring workflow. Use us as a standalone solution exclusively for managing referrals—keeping your existing ATS while adding powerful AI-driven insights for referred candidates. Or implement us as a complete drop-in replacement for traditional ATS applicant filtering across all your open positions.  Since we’re building case studies, we’re also willing to manually transfer any and all applicants from Careerspan into your current ATS system as needed. 
+
+The choice is yours, and we can scale with your needs as they evolve.
+
+
+
+
+________________
+
+
+
+
+Ready to see faster, deeper insights into your candidate pool? Contact us to learn more.
+
+
+Example Role Analysis
+Target Role Analysis
+The following is the level of detail by which we assess your target role, not even an applicant.   You can see, below, how we broke down an example Product Manager role into over 30 different areas and how the AI will look to assess an applicant. 
+
+
+Note that, in addition to these qualitative metrics, we also identify “dealbreakers” from the job description (e.g. an in-office position in Boston is not a good fit for a candidate unwilling to relocate from Seattle.  Another example is a dealbreaker of “must have 5 years of experience”) 
+We present a simple list of these dealbreakers for each user, but extract them from the job description. 
+Role Overview
+Title: Product Manager, Data & Product
+
+
+Company: Example Company
+
+
+Sector: Nonprofit, Disaster Relief and Employee Support Platform
+
+
+Seniority Level: Mid to senior-level product management role with data focus
+
+
+Career Track: Individual Contributor
+
+
+Description: This role is a Product Manager position at a nonprofit organization focused on disaster relief and employee support, based on the East Coast. The role requires bridging product management with data analytics, using data to inform decisions and measure product impact, specifically in workflow-heavy platforms supporting emergency financial relief programs. The position involves collaborating with multiple teams, defining metrics, managing product roadmaps, and ensuring compliance, with the goal of improving the speed and effectiveness of assistance delivery to users during crises.
+
+
+________________
+
+
+Quick Reference Summary
+Responsibilities
+Short Name
+	Importance
+	Skill Level Required
+	Determine next product steps
+	9/10
+	Advanced (applied theory)
+	Define and track metrics
+	9/10
+	Advanced (applied theory)
+	Cross-functional team collaboration
+	9/10
+	Advanced (applied theory)
+	Write user stories and requirements
+	9/10
+	Advanced (applied theory)
+	Product roadmap management
+	9/10
+	Advanced (applied theory)
+	Stakeholder expectation management
+	9/10
+	Advanced (applied theory)
+	Talk to platform users
+	8/10
+	Advanced (applied theory)
+	Analyze user data
+	8/10
+	Advanced (applied theory)
+	Write clear problems
+	8/10
+	Advanced (applied theory)
+	Launch and measure features
+	8/10
+	Advanced (applied theory)
+	Ensure compliance/privacy
+	8/10
+	Advanced (applied theory)
+	Risk identification and mitigation
+	8/10
+	Advanced (applied theory)
+	Continuous market awareness
+	5/10
+	Intermediate (practical application)
+	Hard Skills
+Skill
+	Importance
+	Level Required
+	Product Management
+	10/10
+	Intermediate (practical application)
+	Metrics Definition and Tracking
+	9/10
+	Advanced (applied theory)
+	Data-Driven Decision Making
+	9/10
+	Intermediate (practical application)
+	User Story Writing
+	8/10
+	Intermediate (practical application)
+	Roadmap Planning
+	8/10
+	Intermediate (practical application)
+	Product Analytics Tools
+	8/10
+	Intermediate (practical application)
+	Prioritization Methodologies
+	8/10
+	Intermediate (practical application)
+	User Interview Techniques
+	8/10
+	Intermediate (practical application)
+	Compliance Management
+	7/10
+	Intermediate (practical application)
+	SQL
+	6/10
+	Intermediate (practical application)
+	Social Impact Measurement
+	5/10
+	Novice (limited experience)
+	Business Intelligence (BI) Tools
+	4/10
+	Fundamental Awareness (basic knowledge)
+	R Programming
+	4/10
+	Not Applicable
+	Domain Knowledge: Fintech and Grants
+	4/10
+	Intermediate (practical application)
+	Python Programming
+	3/10
+	Not Applicable
+	Soft Skills
+Skill
+	Importance
+	Level Required
+	Problem Framing
+	9/10
+	Intermediate (practical application)
+	Prioritization
+	9/10
+	Advanced (applied theory)
+	Data-driven Decision Making
+	9/10
+	Intermediate (practical application)
+	User Research
+	8/10
+	Intermediate (practical application)
+	Cross-functional Collaboration
+	8/10
+	Advanced (applied theory)
+	Communication
+	8/10
+	Advanced (applied theory)
+	Stakeholder Management
+	8/10
+	Advanced (applied theory)
+	Strategic Thinking
+	8/10
+	Advanced (applied theory)
+	Adaptability
+	7/10
+	Intermediate (practical application)
+	Attention to Detail
+	7/10
+	Advanced (applied theory)
+	Curiosity
+	6/10
+	Advanced (applied theory)
+	
+
+________________
+
+
+Detailed Responsibilities
+1. Determine next product steps
+Full Description: Identify and prioritize what features or improvements should be built next by assessing platform needs and opportunities.
+
+
+Importance: 9/10
+
+
+Skill Level Required: Advanced (applied theory)
+
+
+Why Needed: This nonprofit must rapidly build and improve workflow tools in response to crisis situations, so rigorous and thoughtful feature prioritization is essential to deliver meaningful improvements with limited resources and maximize the impact for vulnerable users.
+
+
+Assessment Criteria:
+
+
+Interviewers will assess competency through examples of leading feature prioritization in complex environments, ideally with workflow-heavy, high-impact platforms (direct experience), and can evaluate transferable skills in structured decision-making, stakeholder engagement, tying features to measurable outcomes, and balancing competing priorities. Career changers should demonstrate relevant experience prioritizing projects with multiple stakeholders and resource constraints, using data to make choices even if the context was outside product, while career progression candidates should show evidence of contributing to prioritization frameworks at a junior level—such as owning sections of a backlog or performing user research that informed prioritization—along with readiness to take end-to-end ownership.
+
+
+Related Hard Skills:
+
+
+* Product Management (Intermediate (practical application))
+* Prioritization Methodologies (Intermediate (practical application))
+* Product Analytics Tools (Novice (limited experience))
+* Metrics Definition and Tracking (Intermediate (practical application))
+
+
+Related Soft Skills:
+
+
+* Problem Framing (Intermediate (practical application))
+* Strategic Thinking (Intermediate (practical application))
+* Prioritization (Advanced (applied theory))
+* Cross-functional Collaboration (Intermediate (practical application))
+* Data-driven Decision Making (Intermediate (practical application))
+
+
+________________
+
+
+2. Define and track metrics
+Full Description: Establish important product metrics (e.g., completion rates, decision time) and monitor them to guide priorities and measure impact.
+
+
+Importance: 9/10
+
+
+Skill Level Required: Advanced (applied theory)
+
+
+Why Needed: This nonprofit needs robust metric establishment and monitoring to ensure its workflow-heavy platforms deliver timely, measurable relief to people in crisis, enabling data-driven prioritization and continuous improvement that directly impacts mission success.
+
+
+Assessment Criteria:
+
+
+Interviewers will assess if candidates can (1) clearly articulate frameworks for defining product metrics in ambiguous or high-stakes domains; (2) provide examples of using metrics to inform prioritization and product iteration; and (3) demonstrate hands-on experience with analytics tools or working closely with data teams. For career changers, success may be shown through relevant experience in data-driven decision-making, process optimization, or similar metric-focused roles even outside product management (e.g., program management, operations, or analytics). For career progression candidates, interviewers should look for evidence of leading metric definition and monitoring in their prior roles as associate PMs or junior product analysts, even if at a smaller scale or under supervision.
+
+
+Related Hard Skills:
+
+
+* Product Management (Intermediate (practical application))
+* Metrics Definition and Tracking (Advanced (applied theory))
+* Data-Driven Decision Making (Intermediate (practical application))
+* Product Analytics Tools (Novice (limited experience))
+* Business Intelligence (BI) Tools (Fundamental Awareness (basic knowledge))
+
+
+Related Soft Skills:
+
+
+* Attention to Detail (Intermediate (practical application))
+* Prioritization (Intermediate (practical application))
+* Data-driven Decision Making (Intermediate (practical application))
+
+
+________________
+
+
+3. Cross-functional team collaboration
+Full Description: Work closely with tech, programs, and ImpactStack® teams to ensure solutions are feasible, effective, and aligned with organizational objectives.
+
+
+Importance: 9/10
+
+
+Skill Level Required: Advanced (applied theory)
+
+
+Why Needed: This nonprofit needs a product manager who can actively orchestrate collaboration between technology, program, and analytics teams to ensure every new feature or data-driven platform change delivers real, measurable impact to vulnerable aid recipients in a mission-critical, compliant, and resource-efficient manner.
+
+
+Assessment Criteria:
+
+
+Interviewers will look for clear examples of cross-team collaboration, successful translation of organizational objectives into actionable plans, experience driving alignment among technical and non-technical stakeholders, and demonstrated ability to balance feasibility, effectiveness, and mission-alignment of delivered solutions; for career changers, comparable experience leading cross-disciplinary projects and aligning diverse stakeholders (even outside traditional product settings) will be valued, while for career progression candidates, evidence of directly supporting or co-owning similar responsibilities and gradually stepping into broader coordination roles will be key.
+
+
+Related Hard Skills:
+
+
+* Product Management (Intermediate (practical application))
+* Metrics Definition and Tracking (Intermediate (practical application))
+* Compliance Management (Fundamental Awareness (basic knowledge))
+* Social Impact Measurement (Novice (limited experience))
+
+
+Related Soft Skills:
+
+
+* Cross-functional Collaboration (Advanced (applied theory))
+* Stakeholder Management (Intermediate (practical application))
+* Communication (Intermediate (practical application))
+* Adaptability (Intermediate (practical application))
+* Prioritization (Novice (limited experience))
+
+
+________________
+
+
+4. Write user stories and requirements
+Full Description: Translate problems and solutions into actionable user stories and requirements that can be implemented by the development team.
+
+
+Importance: 9/10
+
+
+Skill Level Required: Advanced (applied theory)
+
+
+Why Needed: Because the nonprofit's mission revolves around timely and effective aid delivery, precise translation of user needs into actionable development tasks ensures the technology directly addresses urgent needs and reliably serves those impacted by crises.
+
+
+Assessment Criteria:
+
+
+Interviewers will assess competency through behavioral interview questions and case scenarios requiring the candidate to break down complex, real-world problems into clear, prioritized user stories and acceptance criteria. For career changers, transferable evidence may include leading technical projects, requirements gathering, or process improvement in another industry (e.g., translating business needs into IT solutions). For candidates progressing from junior to mid/senior roles, the focus will be on breadth and depth: experience owning the entire lifecycle of requirements definition, collaborating directly with development, and managing feedback/iteration.
+
+
+Related Hard Skills:
+
+
+* User Story Writing (Intermediate (practical application))
+* Product Management (Intermediate (practical application))
+
+
+Related Soft Skills:
+
+
+* Problem Framing (Intermediate (practical application))
+* Communication (Intermediate (practical application))
+* Attention to Detail (Intermediate (practical application))
+
+
+________________
+
+
+5. Product roadmap management
+Full Description: Maintain and communicate the product roadmap, ensuring stakeholders are informed and priorities are clear.
+
+
+Importance: 9/10
+
+
+Skill Level Required: Advanced (applied theory)
+
+
+Why Needed: This nonprofit needs a clear, well-communicated product roadmap to ensure all teams can prioritize rapidly and focus resources during crisis response, directly impacting how quickly and effectively financial relief reaches those in need.
+
+
+Assessment Criteria:
+
+
+The interviewer will look for demonstrable experience maintaining and updating a detailed product roadmap, evidence of proactively communicating changes and priorities to diverse stakeholders, and examples of managing competing demands and trade-offs, ideally in similarly complex, high-stakes, or mission-driven environments.
+
+
+* For career changers: Assess ability to translate complex plans across stakeholders, even outside tech/product (e.g., operational project plans, program delivery schedules); look for structured communication, stakeholder management, and prioritization skills in parallel settings.
+* For career progression candidates: Seek experience with supporting or co-owning parts of roadmaps, presenting project updates, or collaborating across teams; evidence of stepping up to lead roadmap or status communication even in a secondary capacity.
+
+
+Related Hard Skills:
+
+
+* Product Management (Intermediate (practical application))
+* Roadmap Planning (Intermediate (practical application))
+* Prioritization Methodologies (Intermediate (practical application))
+
+
+Related Soft Skills:
+
+
+* Communication (Advanced (applied theory))
+* Stakeholder Management (Intermediate (practical application))
+* Prioritization (Intermediate (practical application))
+* Cross-functional Collaboration (Intermediate (practical application))
+
+
+________________
+
+
+6. Stakeholder expectation management
+Full Description: Actively manage and align expectations across leadership, client companies, and internal teams to ensure everyone is informed and on board with product direction and outcomes.
+
+
+Importance: 9/10
+
+
+Skill Level Required: Advanced (applied theory)
+
+
+Why Needed: Because disaster relief products require rapid, coordinated action between clients, leadership, and cross-functional teams, seamless alignment is essential to ensure everyone supports the product direction and can drive timely, effective user impact.
+
+
+Assessment Criteria:
+
+
+Candidates must demonstrate concrete experience building consensus between leadership, clients, and technical teams, handling conflicts, and keeping all parties aligned through evolving product priorities. For career changers: Illustrate strong stakeholder management in complex, fast-paced, multi-stakeholder environments (e.g., cross-departmental projects, client/account management, or external partnerships)—the focus should be on transferable skills like negotiation, expectation-setting, and facilitating difficult conversations. For career progression candidates: Provide examples from associate/junior PM, project coordinator, or business analyst roles where you supported senior PMs or led sub-projects involving stakeholder alignment; evidence of increasingly independent responsibility over time is key.
+
+
+Related Hard Skills:
+
+
+* Product Management (Intermediate (practical application))
+* Metrics Definition and Tracking (Novice (limited experience))
+* Roadmap Planning (Intermediate (practical application))
+
+
+Related Soft Skills:
+
+
+* Stakeholder Management (Advanced (applied theory))
+* Communication (Advanced (applied theory))
+* Cross-functional Collaboration (Intermediate (practical application))
+
+
+________________
+
+
+7. Talk to platform users
+Full Description: Engage with grant applicants, program administrators, and client companies to understand their pain points and goals.
+
+
+Importance: 8/10
+
+
+Skill Level Required: Advanced (applied theory)
+
+
+Why Needed: The company serves vulnerable users facing crises, so deeply understanding stakeholder pain points ensures the platforms and programs are genuinely responsive and effective during high-stakes situations.
+
+
+Assessment Criteria:
+
+
+Interviewers will look for evidence of strong stakeholder engagement skills—such as successfully leading user interviews, conducting needs assessments, or synthesizing user feedback into actionable product insights—ideally in complex or regulated environments. Career changers should demonstrate transferable skills such as client engagement, empathic interviewing, or UX research from adjacent industries (e.g., consulting, healthcare, public sector). Candidates progressing from associate/junior product or business analyst roles should show experience conducting stakeholder discovery sessions or iteratively refining requirements based on direct user feedback.
+
+
+Related Hard Skills:
+
+
+* User Interview Techniques (Intermediate (practical application))
+* Domain Knowledge: Fintech and Grants (Fundamental Awareness (basic knowledge))
+* Product Management (Fundamental Awareness (basic knowledge))
+
+
+Related Soft Skills:
+
+
+* User Research (Intermediate (practical application))
+* Stakeholder Management (Intermediate (practical application))
+* Communication (Intermediate (practical application))
+* Curiosity (Fundamental Awareness (basic knowledge))
+
+
+________________
+
+
+8. Analyze user data
+Full Description: Review and interpret data to pinpoint where users encounter problems or drop off in the application process.
+
+
+Importance: 8/10
+
+
+Skill Level Required: Advanced (applied theory)
+
+
+Why Needed: The nonprofit's mission—to deliver timely financial relief during crises—requires a constant focus on optimizing application workflows, and data-driven identification of user pain points ensures the product manager can drive improvements that maximize assistance effectiveness and speed.
+
+
+Assessment Criteria:
+
+
+The candidate should be able to describe past experiences where they used quantitative data (e.g., funnel analysis, drop-off rates, user journey mapping) to identify bottlenecks or failure points in application processes, including the analytics tools/methodologies they used, and demonstrate how their actions led to measurable improvements in user flow or product outcomes. For career changers, transferable evidence might come from process optimization, workflow improvements, or customer journey analysis in another industry or field. For career progression candidates, look for experience owning or directly contributing to data-driven problem-solving around process drop-offs, even if on a smaller scope.
+
+
+Related Hard Skills:
+
+
+* Product Analytics Tools (Intermediate (practical application))
+* SQL (Intermediate (practical application))
+* Metrics Definition and Tracking (Intermediate (practical application))
+
+
+Related Soft Skills:
+
+
+* Attention to Detail (Intermediate (practical application))
+* Curiosity (Intermediate (practical application))
+* Problem Framing (Intermediate (practical application))
+
+
+________________
+
+
+9. Write clear problems
+Full Description: Document clear, concise problem statements and evaluate which are worth addressing based on data and impact.
+
+
+Importance: 8/10
+
+
+Skill Level Required: Advanced (applied theory)
+
+
+Why Needed: This responsibility is essential to ensure product and data efforts are both focused on the highest-impact challenges during crisis response—helping the organization allocate resources effectively and deliver timely, meaningful relief to users.
+
+
+Assessment Criteria:
+
+
+The interviewer will look for concrete examples where the candidate has synthesized data to frame problems, written crisp problem statements, and prioritized them based on objective impact; career changers should demonstrate transferable analytics and problem-framing experience (e.g., using data to prioritize initiatives in a different sector), while career progression candidates should show increasing ownership of defining, scoping, and prioritizing problems versus executing on already-defined initiatives.
+
+
+Related Hard Skills:
+
+
+* Product Management (Intermediate (practical application))
+* Metrics Definition and Tracking (Intermediate (practical application))
+* Data-Driven Decision Making (Intermediate (practical application))
+* Prioritization Methodologies (Intermediate (practical application))
+* User Story Writing (Intermediate (practical application))
+
+
+Related Soft Skills:
+
+
+* Problem Framing (Intermediate (practical application))
+* Attention to Detail (Intermediate (practical application))
+* Communication (Intermediate (practical application))
+* Prioritization (Intermediate (practical application))
+* Data-driven Decision Making (Intermediate (practical application))
+
+
+________________
+
+
+10. Launch and measure features
+Full Description: Coordinate product launches and track their effectiveness to confirm improvements are making a measurable difference for users.
+
+
+Importance: 8/10
+
+
+Skill Level Required: Advanced (applied theory)
+
+
+Why Needed: The company needs this responsibility because delivering measurable, timely improvements to their relief platforms is essential for maximizing their positive impact during emergencies, requiring product releases to be carefully executed and outcomes rigorously evaluated.
+
+
+Assessment Criteria:
+
+
+Interviewers will look for candidates who can clearly describe end-to-end experiences launching workflow-heavy products, including setting launch criteria, cross-functional coordination (e.g., with Engineering, Data, Compliance, Operations), developing and tracking relevant impact metrics, and iterating based on user feedback and data. For career changers, assessment should focus on parallel experiences: leading complex initiatives, cross-team coordination, and using data to drive decisions; for career progression candidates, evidence of independently owning feature launches, structured post-launch follow-ups, and an ability to articulate lessons learned/improvements are key.
+
+
+Related Hard Skills:
+
+
+* Product Management (Intermediate (practical application))
+* Metrics Definition and Tracking (Intermediate (practical application))
+* Product Analytics Tools (Novice (limited experience))
+* Social Impact Measurement (Fundamental Awareness (basic knowledge))
+
+
+Related Soft Skills:
+
+
+* Attention to Detail (Intermediate (practical application))
+* Communication (Intermediate (practical application))
+* Prioritization (Novice (limited experience))
+* Cross-functional Collaboration (Intermediate (practical application))
+
+
+________________
+
+
+11. Ensure compliance/privacy
+Full Description: Make certain that all product changes adhere to privacy laws and nonprofit industry regulations, involving legal as appropriate.
+
+
+Importance: 8/10
+
+
+Skill Level Required: Advanced (applied theory)
+
+
+Why Needed: This nonprofit handles sensitive financial and personal data during crisis response, so adhering to legal and nonprofit regulations is essential to protect users, ensure program integrity, and maintain trust with funders and beneficiaries.
+
+
+Assessment Criteria:
+
+
+The interviewer will look for direct examples of managing regulated products, particularly handling sensitive data, demonstrating knowledge of privacy law, and proactively involving legal/compliance teams; career changers should be able to describe how they've adapted to new regulatory requirements in different sectors (e.g., HIPAA, GDPR, SOX, or similar), and articulate how their approach to legal/compliance transfer to nonprofit rules; for career progression candidates, look for demonstrated responsibility in escalating regulatory concerns, identifying compliance risks in smaller scopes, or shadowing compliance reviews on past projects.
+
+
+Related Hard Skills:
+
+
+* Compliance Management (Intermediate (practical application))
+* Product Management (Intermediate (practical application))
+
+
+Related Soft Skills:
+
+
+* Attention to Detail (Advanced (applied theory))
+* Communication (Intermediate (practical application))
+* Cross-functional Collaboration (Intermediate (practical application))
+* Stakeholder Management (Novice (limited experience))
+
+
+________________
+
+
+12. Risk identification and mitigation
+Full Description: Proactively identify potential risks—technical, operational, reputational, or regulatory—that may impact product development or delivery, and work with teams to develop mitigation strategies.
+
+
+Importance: 8/10
+
+
+Skill Level Required: Advanced (applied theory)
+
+
+Why Needed: This nonprofit must deliver critical emergency assistance swiftly and in full compliance; effective risk management ensures their products reliably reach those in need without regulatory or reputational setbacks.
+
+
+Assessment Criteria:
+
+
+An interviewer would look for: (1) specific examples where the candidate identified AND mitigated risks prior to them impacting product launch or delivery—especially across technical, operational, regulatory, and reputational domains; (2) their approach to risk frameworks and communication practices with cross-functional teams; (3) for career changers: transferable experience managing complex projects with high-stakes consequences (e.g., government, health, or finance sectors, where risk management is critical); (4) for career progression candidates: evidence of growing responsibility for risk identification, moving from flagging issues to leading risk mitigation strategies.
+
+
+Related Hard Skills:
+
+
+* Product Management (Intermediate (practical application))
+* Metrics Definition and Tracking (Intermediate (practical application))
+* Compliance Management (Intermediate (practical application))
+* Social Impact Measurement (Fundamental Awareness (basic knowledge))
+
+
+Related Soft Skills:
+
+
+* Strategic Thinking (Advanced (applied theory))
+* Attention to Detail (Intermediate (practical application))
+* Cross-functional Collaboration (Intermediate (practical application))
+* Problem Framing (Intermediate (practical application))
+
+
+________________
+
+
+13. Continuous market awareness
+Full Description: Stay abreast of industry trends, competitor offerings, and best practices in grants management and product analytics to inform ongoing product strategy and innovation.
+
+
+Importance: 5/10
+
+
+Skill Level Required: Intermediate (practical application)
+
+
+Why Needed: This nonprofit operates in a rapidly evolving disaster-relief and financial grants sector, so up-to-date knowledge of trends and best practices ensures their products remain impactful and competitive in delivering critical support quickly and effectively.
+
+
+Assessment Criteria:
+
+
+Interviewers should seek candidates who can discuss specific examples of regularly conducting industry research, benchmarking against competitors, or integrating external best practices into product strategy, especially relating to grants, workflow, or analytics-heavy environments. For career changers, look for evidence of analogous activities (e.g., market research, process benchmarking, or best practice implementation) in other sectors and an ability to quickly learn new industry specifics. For career progression candidates, assess experience tracking product or market trends within a focused segment or supporting a senior manager in similar research and innovation tasks.
+
+
+Related Hard Skills:
+
+
+* Product Management (Intermediate (practical application))
+* Domain Knowledge: Fintech and Grants (Intermediate (practical application))
+* Product Analytics Tools (Fundamental Awareness (basic knowledge))
+* Social Impact Measurement (Fundamental Awareness (basic knowledge))
+
+
+Related Soft Skills:
+
+
+* Curiosity (Advanced (applied theory))
+* Strategic Thinking (Intermediate (practical application))
+* Adaptability (Intermediate (practical application))
+
+
+________________
+
+
+Skills Summary
+Hard Skills
+1. Product Management
+Level Required: Intermediate (practical application)
+
+
+Importance: 10/10
+
+
+Why Needed: Example Company needs strong product management to ensure its disaster relief platform delivers faster, more effective assistance through clear problem definition, data-driven decisions, regulatory compliance, and impactful feature releases for vulnerable users in crisis.
+
+
+Assessment Criteria:
+
+
+* overall_success_criteria: A candidate has demonstrated the practical ability to manage workflow-heavy products by gathering user needs, defining metrics, prioritizing features, collaborating cross-functionally, using data to inform decisions, and successfully launching and iterating on impactful features, with observable results in process improvement or user experience. Transferable evidence can be drawn from similar work in platforms requiring complex stakeholder alignment, rapid cycles, and outcome measurement.
+* why_needed: Example Company needs strong product management to ensure its disaster relief platform delivers faster, more effective assistance through clear problem definition, data-driven decisions, regulatory compliance, and impactful feature releases for vulnerable users in crisis.
+* na_criteria: No evidence of product management responsibilities (e.g., no stories about managing a product, gathering requirements, defining features, shipping releases, or using metrics), even in adjacent or transferable settings. For career changers: No examples of owning or driving solutions, user problem-solving, or cross-functional project delivery. For career progression: No sign of exposure to key product tasks.
+* fundamental_awareness_criteria: Basic theoretical knowledge of the product management process (e.g., awareness of what PMs do, familiarity with product lifecycle or requirements writing) but no direct or indirect ownership of product outcomes. For career changers: Can articulate what product management is, maybe from following industry news or coursework, but lacks hands-on participation. For career progression: Has observed or supported product processes but not directly contributed beyond administrative tasks.
+* novice_criteria: Has participated in some product management tasks under supervision (e.g., helped collect requirements, reviewed user feedback, contributed to a feature launch as part of a team), but did not lead efforts or make key decisions. For career changers: Led or coordinated multi-stakeholder projects or processes (outside digital products), showing ability to define problems and facilitate delivery. For career progression: Actively contributed to PM work (e.g., user stories, bug triage, feature testing) but not yet accountable for roadmap or metrics.
+* intermediate_criteria: Shows practical, hands-on experience owning product features or releases—defining problems, engaging with users/stakeholders, setting and measuring success metrics, and collaborating to deliver improvements—with evidence of decision-making and iterations based on results. For career changers: Led end-to-end delivery of tools/processes/platforms (even outside traditional tech), using data to assess impact and iterate, with clear stakeholder feedback loops. For career progression: Progressed from supporting to independently managing substantial product workstreams, with measurable results and increasingly autonomous decision-making.
+* advanced_criteria: Has repeatedly managed multi-feature or platform-scale products, often in regulated, high-stakes, or workflow-heavy environments, demonstrating advanced ability to balance user needs, technical feasibility, compliance, and impact; mentors peers and influences strategy beyond their scope. For career changers: Successfully established or revamped major internal services or digital/workflow platforms with rigorous process measurement and continuous improvement, exceeding typical PM expectations for their background. For career progression: Took full responsibility for critical product areas, showing ownership of roadmap, cross-departmental alignment, and substantial impact.
+* expert_criteria: Recognized as a strategic product leader—sets product vision, defines organizational approach to measurement and improvement, and influences company or sector best practices; delivers sustained impact across releases and builds high-performing product teams. For career changers: Has transformed complex processes/products at scale, led major digital transformation as the product lead, and sets standards that others follow. For career progression: Advanced to principal or head-of-product roles, shaping company product philosophy, metrics, and frameworks, and mentoring others into leadership.
+
+
+________________
+
+
+2. Metrics Definition and Tracking
+Level Required: Advanced (applied theory)
+
+
+Importance: 9/10
+
+
+Why Needed: Example Company requires this skill to ensure their platform improvements are rigorously evaluated for real-world impact, allowing rapid, measurable enhancement of emergency financial relief delivery and smarter prioritization of change.
+
+
+Assessment Criteria:
+
+
+* overall_success_criteria: A successful candidate will have consistently defined meaningful product metrics, set up ongoing measurement frameworks, and used metric-driven insights to guide product decisions—ideally within workflow-heavy digital platforms—demonstrating both strategic and hands-on ability to connect data to user outcomes. Transferable success may include similar metric work in complex, regulated environments, or where measurement of program or product impact is integral to success.
+* why_needed: Example Company requires this skill to ensure their platform improvements are rigorously evaluated for real-world impact, allowing rapid, measurable enhancement of emergency financial relief delivery and smarter prioritization of change.
+* na_criteria: The candidate gives no specific examples of defining, tracking, or utilizing metrics to guide decisions. They may speak generally about outcomes without reference to measurement, or default to gut feeling, anecdote, or project completion as their main markers of success (whether in product, project, ops, or related fields).
+* fundamental_awareness_criteria: Candidate demonstrates basic awareness of what product or program metrics are and why they're important, perhaps referencing common industry metrics (e.g., DAU, NPS, conversion rate) but without direct involvement in creating or acting on them. For career changers: May have tracked basic outputs (e.g., volume of work, simple performance metrics) in a different function. For junior progression: May have absorbed metrics set by others and can describe why they matter.
+* novice_criteria: Candidate has participated in metric-tracking as a contributor—perhaps helping gather data, update tracking sheets, or report on pre-defined metrics set by others—but has not led metric definition or selected metrics for a project. For career changers: Provided input on which outcomes or outputs are relevant in their work context, even if not product-related (e.g., tracked quality or efficiency in another field). For career progression: Independently monitored KPIs or success criteria for small initiatives or features, possibly suggesting improvements but not owning the overall framework.
+* intermediate_criteria: Candidate has defined metrics for at least one meaningful product, project, or feature; has chosen, operationalized, and tracked some key metrics to monitor performance or outcomes; has used resulting data to guide prioritization or process change decisions, ideally through product analytics, SQL, or basic BI tools. For career changers: Led metric definition for a major workflow, process, or program and iterated based on quantitative/qualitative insights, even if not for digital products. For career progression: Owned or co-owned metrics for a limited-scope product area, and can describe how they chose metrics and what decisions followed from measurement.
+* advanced_criteria: Candidate has systemically defined and refined actionable metrics across multiple product initiatives, tailored them to user, client, and business goals, and established metric-tracking as a regular input to roadmap planning and success evaluation; has led the creation of measurement frameworks (e.g., OKRs, North Star metrics, outcome trees) and demonstrated change in approach or strategy based on learning from tracked data. Provides clear examples of how metric definition and iteration enabled faster, more effective problem-solving in complex, high-stakes environments. For career changers: Built and institutionalized robust metrics frameworks for impact-focused programs, service lines, or regulated processes—demonstrating how these drove outcomes or operational improvement. For career progression: Stepped up to own metric strategy at a team/department level (not just feature), trained peers, or advocated for improved data-driven practices.
+* expert_criteria: Candidate is recognized as a go-to authority for metrics definition and measurement strategy, regularly consulted by multiple teams or organizations; has driven cross-functional shifts toward metrics-driven decision making at a portfolio, business unit, or industry level; may have published, spoken, or mentored extensively on measuring product impact, especially in regulated or socially impactful domains. Can speak to the evolution and pitfalls of different measurement systems, and has influenced executive-level conversations on what to measure and why. For career changers: Shown to have instigated lasting measurement cultures in prior organizations/settings; recognized externally for innovative metrics work. For career progression: Served as mentor or change agent for rollout of advanced measurement practices across teams or multiple product lines.
+
+
+________________
+
+
+3. Data-Driven Decision Making
+Level Required: Intermediate (practical application)
+
+
+Importance: 9/10
+
+
+Why Needed: Example Company needs Product Managers who can use data-driven decision making to quickly identify bottlenecks and opportunities, so that product changes directly improve the speed and equity of financial relief delivery to people in crisis.
+
+
+Assessment Criteria:
+
+
+* overall_success_criteria: A candidate shows robust, practical experience using data to inform product decisions, can define, track, and interpret key metrics for product workflows, and has a demonstrated track record of using quantitative insights to prioritize the roadmap or ship features that improve business or user outcomes — preferably within workflow or compliance-heavy platforms (direct), or in similarly structured environments (transferable). For career changers, their ability to describe processes where data influenced outcomes, including metrics definition, is key, while career progression candidates should show clear steps from supporting to leading data-driven decisions.
+* why_needed: Example Company needs Product Managers who can use data-driven decision making to quickly identify bottlenecks and opportunities, so that product changes directly improve the speed and equity of financial relief delivery to people in crisis.
+* na_criteria: No mention of using data or metrics to inform decisions, lack of experience defining, tracking, or interpreting product- or workflow-specific data, or unable to articulate a data-informed process. For career changers: cannot relate prior work to evidence-based decisions; for progression: only followed others’ instructions, never interacted with product/process metrics.
+* fundamental_awareness_criteria: Candidate understands basic concepts: recognizes that data should play a role in product management and can name common metrics (e.g., conversion rate, funnel drop-off) but hasn’t applied them directly. They might refer to reports or dashboards others have created. For career changers: can describe routines where data numbers or basic reporting featured in their past work. For progression: observed team metrics meetings, pulled data, or tracked basic outcomes without influencing change.
+* novice_criteria: Candidate has had limited, supervised experience applying data—perhaps segmented a simple process, ran basic analyses (via Excel/Google Sheets/PM tools), or contributed to metric reporting, but was not responsible for defining key metrics or making decisions. They may have made recommendations or participated in ‘data reviews’ led by others. Career changers: perhaps performed ad hoc analysis, improved a process based on basic data trends, or created simple dashboards for prior roles. Career progression: supported a PM with collecting or presenting data, performed user analytics under direction, or tracked outcomes for a defined subset of product features.
+* intermediate_criteria: Candidate has demonstrable experience independently defining, tracking, and interpreting actionable metrics to inform product or process decisions, prioritizing roadmap items, or identifying workflow improvements. They can clearly explain a situation in which their analysis led to launching, iterating, or sunsetting a feature — describing how and why specific KPIs were set and what changed as a result. Comfortable with SQL, product analytics platforms, and communicating data insights to cross-functional teams. Career changers: can demonstrate driving projects or policy changes based on quantitative analysis, even in a non-product context; can articulate how their skills transfer to product workflows. Career progression: can illustrate the transition from supporting to leading product experiments, owning at least one key data-driven decision (metric selection, test design, measurement, or iteration), even if still in a junior PM or analyst role.
+* advanced_criteria: Candidate leads data-driven decision making across complex and/or regulated domains, often working with multiple product lines or stakeholders. Proactively identifies new key metrics, sets up or improves analytics frameworks, influences prioritization strategy at a portfolio level, or mentors others in data best practices. Has driven measurable product or process improvements with a high degree of ambiguity. Communicates confidently about experimenting, validating, and iterating on high-impact solutions. Career changers: led cross-functional data projects or enterprise initiatives with substantial operational outcomes, can clearly outline methodical measurement approaches; for progression: evidence of owning multiple roadmap pivots or launches grounded in their own data analyses and cross-org persuasion.
+* expert_criteria: Candidate is a recognized authority: built or significantly evolved data/product analytics culture or tools for organizations, published thought leadership or presented methodologies externally, or has been responsible for setting analytical standards in high-stakes settings. Has repeatedly delivered substantial impact through data-driven product strategies and is sought out to resolve the most complex product measurement problems. For career changers: established best practices or systems for evidence-based decision making at industry or company level; for progression: rare at this level, but might be observed in very rapid risers credited with transformative, high-visibility data-driven initiatives.
+
+
+________________
+
+
+4. User Story Writing
+Level Required: Intermediate (practical application)
+
+
+Importance: 8/10
+
+
+Why Needed: User story writing is crucial for Example Company's mission because it enables the product manager to translate complex, real-world user pain points into actionable requirements, ensuring the timely delivery of critical financial relief solutions in a compliant and measurable manner.
+
+
+Assessment Criteria:
+
+
+* overall_success_criteria: A successful candidate can consistently write clear, actionable, and context-sensitive user stories that address identified user needs, incorporate measurable acceptance criteria, and actively facilitate collaboration across technical and non-technical teams, preferably within workflow or platform-based environments.
+* why_needed: User story writing is crucial for Example Company's mission because it enables the product manager to translate complex, real-world user pain points into actionable requirements, ensuring the timely delivery of critical financial relief solutions in a compliant and measurable manner.
+* na_criteria: No evidence that the candidate has ever written user stories or similar structured requirements, nor any transferable experience in breaking down user or stakeholder needs into actionable tasks for a team.
+* fundamental_awareness_criteria: Candidate can describe what a user story is and its basic components (e.g., 'As a... I want... so that...'), perhaps from coursework, self-study, or observation, but lacks direct experience writing user stories or structuring requirements for real-world projects; career changers: may reference exposure in training or adjacent work (e.g., contributing ideas in brainstorming sessions); career progression: may have observed or minimally contributed to requirements documentation but not authored full user stories.
+* novice_criteria: Candidate has written a small number of user stories or closely related requirements in less complex environments (e.g., small projects, academic work, or non-production settings); stories may lack depth or full context (e.g., missing acceptance criteria); can discuss basic iteration based on feedback; career changers: offers transferable examples where they formalized user/customer needs into step-by-step guides, process flows, or task lists; career progression: has drafted user stories under supervision or contributed 'user story-like' requirements handed off to development teams.
+* intermediate_criteria: Candidate has reliably written user stories (including acceptance criteria) for live products or platforms, iterated based on feedback, and collaborated directly with cross-functional teams to ensure requirements are understood and deliverable; can provide examples of stories that improved user outcomes or informed sprint planning; shows understanding of tailoring stories for regulatory, compliance, or data-driven environments; career changers: can demonstrate relevant experience translating stakeholder needs into actionable requirements or automated processes and reflect an understanding of workflow products/platforms; career progression: has independently owned user story creation for features spanning multiple stakeholders or workflow aspects, with some experience tying stories to measurable success metrics.
+* advanced_criteria: Candidate has extensive experience leading user story creation at scale for complex, workflow-heavy platforms—often in regulated or multi-stakeholder settings—demonstrating ability to coach others on writing effective stories, drive continuous improvement through story refinement, and align user stories closely with strategic outcomes; stories are routinely used to drive impactful releases and integrate feedback loops; career changers: may have been the go-to requirements or process documentation expert in a data-driven, compliance-heavy environment; career progression: has managed user story process for significant product areas and contributed to cross-functional training or process enhancements.
+* expert_criteria: Candidate is a recognized authority in user story writing, having defined best practices, led organizational transformations in product requirements gathering, published or taught on the topic, and consistently delivered high-impact, data-informed user stories in roles where compliance, platform scalability, and measurable user benefits are critical; can show influence on product outcomes across teams or organizations; career changers: may have formal change management or enterprise process design expertise with strong ties back to user needs and measurable outcomes; career progression: has set the standard for user story writing within their team or company, mentoring others and innovating in how requirements support data-driven, compliant product development.
+
+
+________________
+
+
+5. Roadmap Planning
+Level Required: Intermediate (practical application)
+
+
+Importance: 8/10
+
+
+Why Needed: Example Company needs effective roadmap planning to ensure platform improvements directly result in faster and more reliable relief delivery during crises, requiring timely, data-informed feature prioritization and transparent progress communication across technical and program teams.
+
+
+Assessment Criteria:
+
+
+* overall_success_criteria: A hiring manager would identify roadmap planning skill in candidates who can articulate, with concrete examples, how they have created, communicated, and iterated on prioritized product roadmaps that balance user needs, technical feasibility, and business or mission outcomes, ideally showing direct experience in workflow-heavy or compliance-driven environments—or, if coming from another context, demonstrating strong transferable skills like structured prioritization, cross-functional stakeholder management, and data-driven decision making.
+* why_needed: Example Company needs effective roadmap planning to ensure platform improvements directly result in faster and more reliable relief delivery during crises, requiring timely, data-informed feature prioritization and transparent progress communication across technical and program teams.
+* na_criteria: No evidence provided of experience or knowledge in roadmap planning, prioritization frameworks, or managing any process for sequencing product or project work—even in unrelated roles. For career changers: no analogous experience managing multi-step deliverables or cross-team planning. For career progression: no involvement in any aspect of product/project planning beyond executing tasks.
+* fundamental_awareness_criteria: Candidate demonstrates basic awareness of what a product roadmap is and its general purpose. May reference observing roadmap processes or assisting with documentation but has not actively owned or contributed to prioritization or planning. For career changers: can describe analogous planning, such as scheduling or sequencing work, but only as an observer or assistant. For career progression: part of teams where a roadmap was shared, might mention following directions set by others but no active involvement.
+* novice_criteria: Candidate has participated in planning discussions, maybe contributed ideas or feedback, and can describe the general components of a roadmap. Has basic familiarity with at least one prioritization framework (e.g., MoSCoW, RICE) and may have managed a small project or feature from a provided roadmap. For career changers: shows transferable experience handling moderately complex planning (e.g., campaign calendars, IT rollouts) and can draw parallels. For career progression: owned a small part of a roadmap (e.g., a minor feature or sprint), may have documented or tracked progress under supervision.
+* intermediate_criteria: Candidate has practical experience creating and maintaining product roadmaps for workflow/platform products, including collaborating with cross-functional teams, using data and user feedback to inform tradeoffs, and iterating priorities as circumstances change. Can relay examples where roadmap choices influenced delivery speed, compliance, and measurable outcomes. For career changers: can detail transferable situations where multi-stakeholder input, data, and constraints guided a sequenced delivery (e.g., program launches, IT deployments). For career progression: promoted from executing to leading roadmap planning for a limited scope; owns stakeholder meetings, prioritization decisions, and transparent roadmap communication.
+* advanced_criteria: Candidate demonstrates ownership of multi-quarter or multi-product roadmaps, has successfully aligned multiple teams (product, tech, compliance, etc.), implemented feedback loops for continuous improvement, and quantitatively ties roadmap decisions to business/mission performance. May have instructed others in roadmap creation or standardized practices for a team/org. For career changers: led large, strategic plans involving numerous deliverables, conflicting requirements, and variable stakeholder interests. For career progression: moved from departmental to broader organizational roadmap responsibility, mentored others in planning.
+* expert_criteria: Candidate is recognized (internally or externally) for expertise in roadmap planning, perhaps developing novel prioritization frameworks or contributing to thought leadership (e.g., talks, publications), and has repeatedly delivered transformative product outcomes across organizations. Evidence includes teaching, consulting, or leading roadmap efforts for highly complex systems with regulatory/mission-driven constraints. For career changers: evidence of industry-wide influence or best-practice setting in strategic planning or portfolio management. For career progression: drove organizational change in roadmap methodology/success and recognized as a go-to expert by leadership.
+
+
+________________
+
+
+6. Product Analytics Tools
+Level Required: Intermediate (practical application)
+
+
+Importance: 8/10
+
+
+Why Needed: Example Company needs this skill because actionable use of product analytics directly drives improvements to platform efficiency and user outcomes—critical for delivering timely and effective emergency relief to people in crisis.
+
+
+Assessment Criteria:
+
+
+* overall_success_criteria: A successful candidate can directly demonstrate hands-on, practical experience using product analytics tools (such as Mixpanel, Amplitude, Google Analytics, or similar) to define, implement, and track product metrics, and can translate findings into actionable product decisions—ideally with workflow- or platform-based products. Where direct experience is lacking, transferrable evidence might include data-driven decision-making in similar digital environments, or the capacity to quickly learn and apply new analytics platforms, as shown through structured learning, side projects or adjacent professional responsibilities. Candidates for career progression should show progressive ownership of analytics application, while career changers should supply strong examples of using analytics in analogous roles or environments with an ability to articulate their transferability.
+* why_needed: Example Company needs this skill because actionable use of product analytics directly drives improvements to platform efficiency and user outcomes—critical for delivering timely and effective emergency relief to people in crisis.
+* na_criteria: No clear evidence in the candidate's resume, interview, or case responses that they have used any product analytics tools (even at a basic level), nor any transferrable experience using analytics to inform decisions; candidates speak in generalities about data or metrics without specific platform/tool knowledge; for career changers, no demonstration of any analytics-driven work; for career progressors, no increasing exposure to analytics responsibilities.
+* fundamental_awareness_criteria: Candidate mentions familiarity with the concept of product analytics and can name one or two tools (e.g., 'I'm aware of Mixpanel and Google Analytics'), possibly from training, self-study, coursework, or exposure through observation, not hands-on use; may describe how product analytics are used, without specific experience doing so themselves; for career changers, has taken relevant courses or participated in analytics bootcamps; for career progression, assisted with basic analytics reporting or reviewed dashboards with supervision.
+* novice_criteria: Candidate has limited, supervised, or support-based hands-on experience with product analytics tools (e.g., helped set up event tracking, pulled pre-built reports, or explored metrics but did not own end-to-end measurement); may have contributed to metric discussions or participated in analytics reviews; can describe basic use cases (like tracking completion rates or user drop-off) but lacks experience using insights to make decisions; for career changers, applied analytics as part of project teams or in related roles (e.g., marketing analytics, ops reporting); for career progression, ran queries or compiled data for more senior PMs and participated in decision-making meetings.
+* intermediate_criteria: Candidate can independently set up, use, and interpret key product analytics tools to define, track, and analyze product metrics in real workflow/platform environments; has used analytics insights to influence product decisions, prioritize roadmaps, or measure feature impact; can share concrete examples of setting up event tracking, defining cohort or funnel metrics, and iterating based on results; for career changers, drove analytics-driven decisions in another field (e.g., CRM/ERP implementation, health informatics, digital operations) and can describe how tools/processes directly map; for career progression, took ownership of analytics setup and reporting for key features/projects, influenced roadmaps or product outcomes, and was trusted to translate findings to non-technical stakeholders.
+* advanced_criteria: Candidate demonstrates leadership in designing and operationalizing analytics frameworks across products or teams, integrating analytics into business workflows, and mentoring others on best practices; led complex analytics initiatives, such as multivariate experiments, dashboard design for multiple audiences, or custom metric specification; can discuss tradeoffs and compliance/ethics in product analytics; for career changers, drove data strategy or analytics rollout at a program or department level, translated advanced analytics to business users; for career progressors, created or led a scalable measurement approach across multiple products/features, trained team members, and influenced organizational process with analytics.
+* expert_criteria: Recognized internally or externally as a thought leader in product analytics, has published, spoken, or advised on analytics strategy for mission-critical workflows; directly responsible for the analytics vision or significant transformation at an org-level, developed proprietary frameworks or standards, or consulted to optimize analytics practices for other teams/companies; for career changers, set organization-wide analytics approaches or shaped industry best practices in adjacent sectors; for career progression, recognized as the analytics expert/evangelist at their current org, led analytics transformation, or contributed to community or open-source analytics tools relevant to product management.
+
+
+________________
+
+
+7. Prioritization Methodologies
+Level Required: Intermediate (practical application)
+
+
+Importance: 8/10
+
+
+Why Needed: Example Company requires strong prioritization methodologies so product managers can quickly and effectively identify, justify, and sequence high-impact feature improvements—ensuring limited resources are focused on making measurable differences in emergency relief delivery, compliance, and user experience.
+
+
+Assessment Criteria:
+
+
+* overall_success_criteria: A successful candidate demonstrates the ability to rigorously assess and sequence product initiatives using formal prioritization methodologies (e.g., RICE, MoSCoW, value vs. effort), balancing business goals, user needs, data-driven insights, and compliance requirements to make and justify practical prioritization decisions in complex, workflow-heavy environments; additionally, they can clearly articulate their methodology and its impact to diverse stakeholders, and show an iterative approach driven by measurable outcomes.
+* why_needed: Example Company requires strong prioritization methodologies so product managers can quickly and effectively identify, justify, and sequence high-impact feature improvements—ensuring limited resources are focused on making measurable differences in emergency relief delivery, compliance, and user experience.
+* na_criteria: No evidence is provided (either directly or through analogous experience) of systematic or thoughtful decision-making in sequencing work, setting priorities, or making trade-offs between competing projects, nor any ability to structure or justify prioritization decisions; includes answers focusing solely on task completion or deferring all decisions to others.
+* fundamental_awareness_criteria: The candidate demonstrates a basic understanding of prioritization concepts (e.g., recognizing that not all tasks can be done at once), may reference simple to-do lists, gut instinct, manager direction, or ad hoc criteria; career changers may describe analogous decision-making in other domains (e.g., triaging support tickets), while progression candidates may cite exposure to PM prioritization discussions but minimal direct responsibility.
+* novice_criteria: The candidate has some direct experience contributing to prioritization discussions or applying basic frameworks in support roles (e.g., helping rank feature requests, organizing backlog grooming), but typically follows directions, applies informal or inconsistent logic, or struggles to reconcile conflicting priorities; career changers should describe a structured approach to prioritizing work in their domain (e.g., using urgency/impact grids in healthcare or education), and progression candidates may have led small internal initiatives or pilot prioritization under supervision.
+* intermediate_criteria: The candidate demonstrates practical application of formal prioritization methodologies (such as RICE, MoSCoW, or similar), can walk through specific instances where they independently evaluated trade-offs, justified choices to stakeholders, iteratively refined priorities based on data, and can clearly articulate how their decisions improved product outcomes; career changers must show transferable use of these frameworks in relevant business settings (e.g., managing process changes with resource constraints and clear metrics), while progression candidates should have led backlog or roadmap planning and owned outcomes for part of a product or a workflow-heavy service.
+* advanced_criteria: The candidate actively adapts and improves prioritization methodologies to fit organizational complexity, balancing short-term impact with long-term strategy, regularly resolving conflicts among stakeholders, weaving in compliance and risk, and using multi-factor analysis (e.g., integrating regulatory, operational, and user data); career changers should demonstrate pioneering new prioritization practices in complex, regulated environments, and progression candidates should have acted as the go-to for prioritization in multi-team/matrixed contexts.
+* expert_criteria: The candidate is recognized as a thought leader in prioritization methodologies, has established or trained others on custom frameworks, influenced cross-organizational prioritization (e.g., aligning company-wide investments), and uses advanced quantitative and qualitative models; career changers have led prioritization change management at scale, while progression candidates demonstrate mentorship and policy-setting for prioritization strategy.
+
+
+________________
+
+
+8. User Interview Techniques
+Level Required: Intermediate (practical application)
+
+
+Importance: 8/10
+
+
+Why Needed: Example Company needs strong user interview techniques so the Product Manager can directly understand the pain points of grant applicants, administrators, and client companies, ensuring that platform improvements truly speed up and smooth the process for people in crisis and result in measurable product impact.
+
+
+Assessment Criteria:
+
+
+* overall_success_criteria: A successful applicant demonstrates the ability to thoughtfully plan, conduct, and synthesize user interviews to extract actionable insights that directly inform product decisions, particularly for platforms supporting urgent workflows and compliance-bound programs; evidence may come from direct experience running user interviews in relevant contexts or from transferable experience leading structured user research, customer discovery, or qualitative research elsewhere.
+* why_needed: Example Company needs strong user interview techniques so the Product Manager can directly understand the pain points of grant applicants, administrators, and client companies, ensuring that platform improvements truly speed up and smooth the process for people in crisis and result in measurable product impact.
+* na_criteria: No evidence of user interview experience or understanding is provided, either through direct product roles, related research work, customer interaction, or relevant coursework; the candidate may refer to relying solely on data, assumptions, or secondhand input without validating with users directly.
+* fundamental_awareness_criteria: Candidate can describe what user interviews are in theory and why they are valuable, possibly referencing coursework, reading, or observation but without any practical experience running or participating directly in interviews; for career changers: awareness could come from academic, volunteer, or tangential roles; for career progression: may understand interviews from observing or assisting but not leading them.
+* novice_criteria: Candidate has assisted with or conducted a small number of user interviews under guidance, perhaps as a product analyst, associate PM, or in a side/supporting capacity; can articulate basic steps (e.g., asking questions, recording responses), though insights or actions derived are limited or generic; for career changers: may have led user research, focus groups, or client feedback sessions even if not called 'user interviews'; for career progression: led their first interviews but with limited scope or impact.
+* intermediate_criteria: Candidate has independently planned, executed, and synthesized findings from user interviews as a key part of the product process, tailoring questions and approach to context, and can cite specific cases where this led to well-defined problems or changes in product direction; demonstrates comfort interviewing diverse stakeholders (e.g., end users, administrators), asks unbiased questions, and uses findings to prioritize or measure success; for career changers: delivered structured qualitative research or feedback sessions directly informing decisions, showing adaptable method usage; for career progression: progressed from observing/assisting to taking ownership of interview planning and insight application, influencing product roadmaps.
+* advanced_criteria: Candidate not only conducts user interviews but builds repeatable frameworks, sets best practices, and mentors colleagues in interviewing techniques; demonstrates using advanced methods (e.g., iterative interviews, persona validation, triangulating with other data sources), resolves conflicting user feedback, and can show measurable impact on product outcomes attributed to user-driven insight; has conducted interviews in compliance-heavy or high-stakes contexts; for career changers: led research programs or client engagement initiatives at scale, adapting to technical or regulatory complexity; for career progression: expanded scope to cross-team collaboration and standardized practices.
+* expert_criteria: Candidate is recognized for authority in user interviewing (e.g., speaks at conferences, publishes resources, or is cited as an internal subject-matter expert), has implemented org-wide research strategies or frameworks, and demonstrates thought leadership on user insights impacting organizational or platform transformation, including in complex, high-impact, and regulated sectors; for career changers: reputation in change management, ethnographic research, or strategy consulting with clear, transferable methods; for career progression: built new functions or made lasting changes to how user interviews are conducted and integrated with product management.
+
+
+________________
+
+
+9. Compliance Management
+Level Required: Intermediate (practical application)
+
+
+Importance: 7/10
+
+
+Why Needed: Example Company needs a Product Manager who can ensure new features and processes comply with legal, privacy, and nonprofit-specific regulations, which is essential for protecting grant applicants’ data, maintaining eligibility for funding, and ensuring the rapid and lawful delivery of financial relief during crises.
+
+
+Assessment Criteria:
+
+
+* overall_success_criteria: The successful candidate demonstrates practical experience integrating compliance requirements into product management workflows, specifically ensuring product features and processes adhere to privacy/legal/regulatory standards, collaborating cross-functionally to address compliance gaps, and proactively managing compliance risks in the development and iteration of software products—ideally in workflow-heavy, regulated, or nonprofit contexts.
+* why_needed: Example Company needs a Product Manager who can ensure new features and processes comply with legal, privacy, and nonprofit-specific regulations, which is essential for protecting grant applicants’ data, maintaining eligibility for funding, and ensuring the rapid and lawful delivery of financial relief during crises.
+* na_criteria: No evidence in the candidate's resume, interview stories, or references of considering compliance, regulatory requirements, data privacy, or legal constraints within product development, operations, or related project work—regardless of industry; for career changers, no indication of adhering to policies or rules in past roles; for career progression, no support or observation of compliance measures in previous product or team tasks.
+* fundamental_awareness_criteria: Candidate expresses basic understanding of compliance as a concept, can articulate why privacy or regulatory requirements matter, and demonstrates awareness of general practices such as involving legal teams or following documented policies; for career changers, look for examples where the candidate followed rules or protocols in processes (e.g., HIPAA, SOX, FERPA, GDPR basics, or related workplace compliance); for career progression, candidate has observed or supported compliance checks led by others, but not yet owned or applied these directly.
+* novice_criteria: Candidate has limited but direct involvement in compliance management, such as supporting compliance reviews, updating documentation for audits, or flagging possible risks to managers; may have participated in, but not led, compliance-related meetings or basic risk assessments; transferable candidates might show experience in regulated environments (finance, healthcare, government, etc.), even in non-product roles, by contributing to compliant processes or escalating issues appropriately; for career progression, candidate has taken on minor responsibility for compliance (e.g., writing user stories with privacy acceptance criteria or running test cases for regulated features).
+* intermediate_criteria: Candidate can describe hands-on experience integrating compliance requirements into the product lifecycle—such as drafting requirements to fulfill legal mandates, running privacy impact assessments, collaborating with legal/compliance or programs teams to approve feature launches, or handling workflow or data protocols for regulated programs; provides examples of catching/addressing compliance gaps or adapting product specs in response to regulatory changes; for career changers, candidate shows clear transferable ownership of compliance in analogous settings (e.g., managing compliant operations, auditing processes, writing business requirements for regulated procedures); for career progression, candidate has independently led compliance management for a product area or significant feature, worked cross-functionally with compliance stakeholders, and ensured sign-off for releases.
+* advanced_criteria: Candidate offers direct examples of setting up or refining compliance frameworks or processes at the product org or company level and can speak to anticipating and proactively mitigating compliance risks—potentially influencing organization-wide culture/methodologies for data protection, consent, or nonprofit governance; may have partnered with external auditors, developed compliance training materials for teams, or managed high-stakes compliance incidents; for career changers, evidence includes designing or improving compliant systems, leading audits, or resolving regulatory breaches with demonstrable impact; for career progression, has handled the compliance oversight for multiple interconnected products/features or cross-team initiatives.
+* expert_criteria: Recognized as an authority internally or externally (e.g., led compliance strategy for a major platform, presented at conferences, published thought leadership on regulatory tech/data governance, frequently consulted by legal/compliance teams or industry peers); designed long-term compliance strategy aligning product vision with evolving regulations (GDPR, HIPAA, SOC2, etc.) and implemented structures enabling rapid adaptation to compliance changes with minimal disruption to users; for career changers, held senior compliance roles with system-wide or sector impact; for career progression, has mentored or trained others in compliance management, or led crisis response to major compliance challenges affecting organizational reputation or mission-critical outcomes.
+
+
+________________
+
+
+10. SQL
+Level Required: Intermediate (practical application)
+
+
+Importance: 6/10
+
+
+Why Needed: Example Company relies on SQL to enable Product Managers to independently analyze platform data, define and track product metrics, spot user flow issues, and ensure that product decisions are backed by accurate, actionable insights—ultimately speeding relief delivery in crisis situations.
+
+
+Assessment Criteria:
+
+
+* overall_success_criteria: A successful candidate demonstrates regular, hands-on use of SQL to query, extract, and analyze data sets for decision-making purposes, with articulated examples of writing, modifying, and troubleshooting SQL queries to inform product decisions, user flows, or key metrics—ideally in workflow-heavy or compliance-driven environments. Transferable evidence may include scenarios where candidates used SQL in adjacent roles such as business analysis, operations, or program evaluation, clearly showing how their SQL proficiency contributed to measurable project or product improvements.
+* why_needed: Example Company relies on SQL to enable Product Managers to independently analyze platform data, define and track product metrics, spot user flow issues, and ensure that product decisions are backed by accurate, actionable insights—ultimately speeding relief delivery in crisis situations.
+* na_criteria: No mention of SQL skills, nor any evidence of experience working directly with data using SQL or similar query languages; candidates may refer only to relying on others for data extraction or lack any hands-on data querying experience. For career changers: no transferable technical or data querying experience (e.g., reliance solely on Excel or high-level analytics tools). For career progression: no demonstration of progression from basic data tasks, or absence of recent SQL usage relevant to product or programmatic decision-making.
+* fundamental_awareness_criteria: Candidate has theoretical or classroom-based understanding of SQL (e.g., completed courses/tutorials, describes basic SQL concepts like SELECT statements) but has limited or no real-world application. Career changers: can explain how SQL could be used in a hypothetical workflow but lacks practical experience. Career progression: may have shadowed colleagues using SQL or performed basic querying from templates provided by others, but has not independently written queries that impacted deliverables.
+* novice_criteria: Candidate has executed basic SQL queries in a professional or project environment—such as running SELECT, WHERE, or JOIN queries on existing datasets for simple reporting, but typically with guidance or using templates. May have minor experience with platforms like Google BigQuery, Snowflake, or SQL Server. Career changers: has applied SQL to investigate data in adjacent roles (e.g., finance, marketing, analytics), or for side projects that required basic data extraction. Career progression: has begun to independently use SQL in current or previous roles (e.g., entry-level analyst, associate PM), possibly contributed data pulls for team use or small investigations, but not yet responsible for complex or multi-step queries directly driving product decisions.
+* intermediate_criteria: Candidate regularly writes, modifies, and troubleshoots multi-table SQL queries (e.g., JOINs, aggregations, GROUP BY, filters) to extract insights about user behavior, workflow bottlenecks, or product metrics, and makes product or process recommendations based on their findings. Demonstrates understanding of how to QA own queries and interpret results for business impact. Career changers: has transferred from related data-heavy roles (e.g., operations analyst, customer support lead, impact evaluator) where they used SQL to drive actionable recommendations, with clear connection to problem-solving in process or customer-facing contexts. Career progression: has grown from occasionally running queries to independently supporting larger features, roadmap prioritization, or metric tracking with SQL data, and can point to at least one scenario where their SQL work shaped product direction or uncovered key trends.
+* advanced_criteria: Candidate architected or owns processes for complex datasets (e.g., nested queries, window functions, advanced aggregations) and mentors others in SQL use; routinely leverages SQL to discover underlying trends, set up monitoring for KPIs, or support compliance/reporting needs. Demonstrates ability to optimize queries, document business logic in SQL, and explain trade-offs between data sources. Career changers: led analytics or reporting functions that were core to product/service evolution and shaped team best practices in SQL use. Career progression: took initiative to level up team's data maturity, e.g., by creating reusable query repositories, automating reporting workflows, or ensuring product releases are supported by robust, SQL-derived metrics.
+* expert_criteria: Nationally or organizationally recognized as a SQL/data querying authority—designs schemas or advanced analytics layers, collaborates on data tools, sets standards for SQL-based measurement in product organizations; regularly presents on how to leverage SQL for impact measurement or workflow optimization. Career changers: has led cross-disciplinary data transformation initiatives with SQL at the center, or published work on SQL/data-driven product management. Career progression: established as a 'go-to' expert who uplifts organizational data literacy, designs and enforces governance/validation for product analytics, and bridges SQL insights with executive decision-making and sector-wide best practices.
+
+
+________________
+
+
+11. Social Impact Measurement
+Level Required: Novice (limited experience)
+
+
+Importance: 5/10
+
+
+Why Needed: Example Company needs this skill to ensure that every product decision measurably improves crisis relief outcomes for vulnerable individuals, using data to guide, verify, and communicate the impact of platform changes.
+
+
+Assessment Criteria:
+
+
+* overall_success_criteria: A candidate demonstrates social impact measurement by providing evidence of defining, tracking, analyzing, and using impact metrics—especially those related to real-world outcomes of programs or products—and can relate these skills directly or transferably to evaluating the effectiveness and efficiency of disaster relief or support platforms; potential is shown by thoughtful discussion of methods to assess impact even if direct experience is limited.
+* why_needed: Example Company needs this skill to ensure that every product decision measurably improves crisis relief outcomes for vulnerable individuals, using data to guide, verify, and communicate the impact of platform changes.
+* na_criteria: No evidence of experience or knowledge in tracking, measuring, or analyzing the social, community, or programmatic outcomes of products or services; unable to discuss or hypothesize about methods for assessing whether a product makes a difference for end-users.
+* fundamental_awareness_criteria: Candidate demonstrates a basic understanding of what social impact measurement is (e.g., can define what it means to measure outcomes vs. outputs), perhaps having read about or discussed it, but has not directly set up or analyzed such metrics themselves; career changers may reference awareness from nonprofit volunteering or business impact statements, and career progression candidates may recall exposure from team projects but not as owners.
+* novice_criteria: Candidate has limited, concrete experience with social impact measurement: they have participated in efforts to track simple program or product outcomes (e.g., user completion rates, satisfaction scores, before/after comparisons) and contributed to discussions about what to measure or reviewed impact reports; career changers may describe analogous experience with business outcomes, user feedback, or basic program metrics, and career progression candidates might have assisted a manager in gathering or reporting impact data.
+* intermediate_criteria: Candidate has practical, hands-on experience defining impact metrics, setting up or refining measurement frameworks, independently gathering and analyzing impact data, and using those insights to inform product or program changes; career changers should show full responsibility for outcome measurement, even if not called 'social impact,' and career progression candidates must have taken ownership of at least some aspect of metric-setting or analysis beyond basic reporting duties.
+* advanced_criteria: Candidate has led the design and implementation of comprehensive social impact measurement systems, integrating qualitative and quantitative data, collaborating across teams, and iterating on metrics over time to optimize for real-world outcomes and organizational goals; for career changers, this may mean building robust outcome frameworks in other sectors (e.g., customer success metrics that map closely to end-user well-being), and for career progression, evidence includes driving changes in measurement approach and showing measurable improvements based on those insights.
+* expert_criteria: Candidate is recognized (internally or in the field) as a subject matter expert in social impact measurement, has published, taught, or consulted on designing outcome measurement frameworks, and can reference examples of influencing or setting standards in nonprofit, governmental, or social enterprise contexts; career changers may have held strategic enterprise-level roles in adjacent fields (e.g., ESG, public health evaluation) and for progression candidates, this would usually only be achieved after multiple cycles of leading and innovating in this domain.
+
+
+________________
+
+
+12. Business Intelligence (BI) Tools
+Level Required: Fundamental Awareness (basic knowledge)
+
+
+Importance: 4/10
+
+
+Why Needed: Example Company needs team members who can use BI tools to understand product usage, identify friction points, and monitor metrics, as this enables informed decision-making and helps guide improvements in platform efficiency and user outcomes for emergency relief programs.
+
+
+Assessment Criteria:
+
+
+* overall_success_criteria: A candidate with the required (fundamental awareness) level for BI Tools can demonstrate familiarity with core concepts—such as understanding what business intelligence tools are, general use cases, and how to read basic reports or dashboards—even if they haven't built complex analyses themselves. They should be able to describe common BI tools (like Tableau, Power BI, Looker, or similar), articulate why and when these might be used, and show readiness to use them with guidance.
+* why_needed: Example Company needs team members who can use BI tools to understand product usage, identify friction points, and monitor metrics, as this enables informed decision-making and helps guide improvements in platform efficiency and user outcomes for emergency relief programs.
+* na_criteria: There is no evidence (on resume, in interview, or in references) that the candidate is familiar with business intelligence tools, reporting tools, or any kind of data visualization/analytics software; does not recognize BI tool names or functions; is unable to discuss or describe any experience with analytics platforms. For career changers: no transferable skills (e.g., never worked with data reports or digital tools in any form). For career progression: no exposure to BI tools or relevant concepts even in observational/support roles.
+* fundamental_awareness_criteria: Can recognize, name, or briefly describe what business intelligence (BI) tools are (e.g., Tableau, Power BI, Looker, etc.), even if only used as an end user; may have viewed or interacted with dashboards or reports; can discuss how BI tools help organizations monitor performance or inform decisions at a basic level. For career changers: can relate prior exposure to reports or dashboards—even in non-product environments (e.g., sales, operations, or another industry)—and express understanding of how BI tools drive decisions. For career progression: has shadowed, reviewed, or worked alongside a team member using BI tools or participated in meetings involving dashboards, with clear understanding of their purpose.
+* novice_criteria: Has limited hands-on experience using BI tools—may have run simple queries, filtered reports, or built basic dashboards under supervision; can provide an example of using a BI tool to answer a business/product question, even if not independently; demonstrates awareness of the strengths and limitations of at least one BI platform. For career changers: has successfully self-trained or taken a course in a BI tool, or used one in a small project; can describe a relevant situation from another field (e.g., analyzing KPIs in retail or healthcare) where a BI tool was used. For career progression: has taken on initial BI responsibilities (e.g., building a simple dashboard for a team, presenting findings), showing foundational skills beyond observation.
+* intermediate_criteria: Has practical, independent experience using BI tools to gather, analyze, and visualize data to inform actionable decisions; can describe end-to-end use cases (from raw data to business insight), and has produced reports or dashboards used by others to make decisions; comfortable navigating multiple BI platforms and explaining basic data modeling concepts. For career changers: led or contributed to cross-functional projects using BI tools in another industry; can draw clear parallels to nonprofit/product context. For career progression: independently delivered insightful analyses or dashboards that affected product or process changes.
+* advanced_criteria: Extensive experience designing, implementing, and optimizing BI dashboards and reports for diverse stakeholders; proactively leverages BI data to identify trends, recommend product strategy, and drive business improvements; may mentor others, set data standards, or evaluate/recommend BI solutions; integrates BI insights with other data sources to generate holistic views. For career changers: drove BI transformation projects or taught others; brought BI best practices from another industry to a product setting. For career progression: established BI processes or acted as the resident BI tool expert within a product team.
+* expert_criteria: Recognized as an organizational or external authority/expert in BI tools and practices; may have developed new BI methodologies, spoken/published on BI in professional venues, or led enterprise-level BI strategy; builds BI capability across teams, evaluates/implements new tools, and sets the standard for data-driven decision-making. For career changers: recognized leader in BI application in prior field (e.g., architected analytics functions at scale, consulted across industries); for career progression: led major BI transformations or advised executives/boards using BI-driven insights.
+
+
+________________
+
+
+13. R Programming
+Level Required: Not Applicable
+
+
+Importance: 4/10
+
+
+Why Needed: Although proficiency in R is not required, Example Company values candidates who can leverage light data analysis skills for quick, impactful product insights, especially when measuring program outcomes and communicating results to stakeholders.
+
+
+Assessment Criteria:
+
+
+* overall_success_criteria: A successful candidate demonstrates either direct experience or clear transferable ability to use R for data analysis relevant to product management tasks, such as exploratory analysis, reporting, or basic modeling, even if R is only 'nice to have.' Interviewers should look for practical examples where candidates have used or could rapidly learn R for meaningful data exploration, insights generation, or impact measurement within products, with extra consideration for candidates transitioning from similar analytical or quantitative tools.
+* why_needed: Although proficiency in R is not required, Example Company values candidates who can leverage light data analysis skills for quick, impactful product insights, especially when measuring program outcomes and communicating results to stakeholders.
+* na_criteria: There is no mention of R (or any related scripting/statistical analysis) in the candidate's resume, application, or interview stories, and the candidate cannot describe how they would approach a relevant data analysis task; they also do not demonstrate use of analogous tools (Python, Excel scripting, SAS, etc.) nor express a willingness or aptitude to learn.
+* fundamental_awareness_criteria: Basic awareness of what R is and its general use cases in data analysis or reporting is evident. For direct experience, candidate might have used R briefly in coursework, an online course, or a one-off project. For transferable experience (such as from Excel, SQL, or Python), candidate demonstrates at least curiosity or familiarity with scripting in a data context. Career changers: Has basic understanding of how R is used for analysis in business or nonprofits, even if not used personally. Career progression: Has observed or shadowed colleagues using R, or completed introductory internal training but limited hands-on use.
+* novice_criteria: Candidate has used R in a structured environment (university course, minor work project, or self-paced learning) for basic data cleaning, visualization, or reporting tasks (e.g., summarizing datasets, generating descriptive statistics). Can discuss simple scripts or problems solved. Transferable: Demonstrated similar scripting logic in Python or another language, or advanced Excel (macro, Power Query), and can articulate how they would adapt that logic to R. Career changers: Has self-led a simple R learning project or participated in collaborative project using R. Career progression: Used R in supportive role, such as building a basic report or assisting with analysis in team projects.
+* intermediate_criteria: Candidate independently uses R for regular data analysis or problem-solving tasks tied to business questions—examples include creating custom reports, exploratory data analysis for product insights, or lightweight modeling/forecasting. Can integrate R analysis into workflow, e.g., extracting data via SQL, transforming/visualizing in R, and presenting results. Transferable: Has equivalent proficiency in Python for analysis and can demonstrate rapid adaptation to R environments. Career changers: Has applied R or an analogous tool in a previous career to inform business/operational decisions. Career progression: Has moved from observer/support to being responsible for preparing and presenting R-based analysis for product or business purposes.
+* advanced_criteria: Candidate has used R to design and implement robust analyses or reporting pipelines directly supporting product decisions; may have automated recurring dashboards, scripted regular reporting, or performed advanced statistical testing in R. Evidence of collaborating with stakeholders to define metrics, implement analytic solutions, and influence roadmap. Transferable: Built and maintained such solutions in Python with clear readiness to use R as needed. Career changers: Led analytic initiatives in previous roles using R or related tools to drive measurable business/program outcomes. Career progression: Initiated or led adoption/improvement of R-based analysis within their team/product area.
+* expert_criteria: Recognized as an authority or go-to resource for R-based analytics in their prior roles—not only using R for complex analysis but also mentoring, establishing best practices, or building reusable code packages. Has contributed to community (internal or external) with R training, open-source tools, or published thought leadership. Career changers: Recognized as an R expert in previous non-product field (e.g., academic, data science, economics) with evidence of skill transfer to product or nonprofit context. Career progression: Promoted or sought for leadership due to R expertise, with experience upskilling others or institutionalizing analytic standards.
+
+
+________________
+
+
+14. Domain Knowledge: Fintech and Grants
+Level Required: Intermediate (practical application)
+
+
+Importance: 4/10
+
+
+Why Needed: Example Company needs this skill so the Product Manager can design and improve disaster relief and grant distribution workflows that are efficient, compliant, and optimized using meaningful data, directly impacting how fast and accurately aid reaches people in crisis.
+
+
+Assessment Criteria:
+
+
+* overall_success_criteria: A successful candidate will demonstrate clear understanding of core concepts and typical processes in fintech and/or grants administration, including how these inform product decisions, compliance, and measurement of social outcomes; evidence may come from direct product work in such domains or from strongly analogous contexts (e.g., other compliance-heavy, financial, or regulated workflow platforms). For career changers, look for transferable knowledge of regulated transaction processing or B2B products; for career progression, watch for junior product or analyst roles supporting fintech or grant platforms with increasing responsibility.
+* why_needed: Example Company needs this skill so the Product Manager can design and improve disaster relief and grant distribution workflows that are efficient, compliant, and optimized using meaningful data, directly impacting how fast and accurately aid reaches people in crisis.
+* na_criteria: No evidence of understanding or exposure to fintech, grants management, or closely related regulatory/product domains—responses are generic, superficial, or ungrounded in sector realities; candidate cannot articulate differences in regulatory or compliance needs, and cannot connect their experience to core product challenges at Example Company.
+* fundamental_awareness_criteria: Has a basic theoretical understanding or topical exposure to fintech or grant programs (e.g., can define what a grant is, has read about fintech products), but lacks any practical application or decision-making experience; career changers may only reference high-level research or tangential knowledge, and junior candidates may only have participated minimally (e.g., as part of onboarding or coursework).
+* novice_criteria: Had limited or supporting involvement in fintech or grant-related products, such as contributing to a single feature or metric tracking; can identify some domain-specific requirements (e.g., knows basic compliance concerns or user flows), but has not made independently-driven product decisions; career changers may have touched upon comparable compliance/financial/benefits processes in another industry, and junior team members may have shadowed domain experts or handled basic data tasks with supervision.
+* intermediate_criteria: Has owned products or features in fintech, grants, or highly analogous domains (e.g., insurance benefits, payroll, compliance-driven platforms) where they directly defined requirements, measured impact, and handled regulatory considerations; can articulate how domain knowledge informed specific product decisions and metrics; for career changers, must show hands-on ownership of regulatory/data-driven features elsewhere with clear parallels to grant or fintech platforms; for career progression, look for progression from supporting to leading product work in the domain or performing hands-on work with direct user and compliance interaction.
+* advanced_criteria: Has meaningfully shaped product strategy in fintech or grant administration spaces (e.g., led major releases, established domain-specific best practices, set up robust outcome measurement mechanisms); has collaborated with legal/compliance at a strategic level, anticipated regulatory challenges, and can reference innovations or optimizations specifically for grant/fintech processes; career changers must show they've applied mastery of another regulated/transaction-heavy domain to successfully improve similarly complex products; career progression candidates may have stretched into strategic leadership or mentored others in domain matters.
+* expert_criteria: Recognized domain thought leader with deep expertise, such as speaking at conferences, publishing on grant/fintech product innovation, or being relied upon for strategic regulatory guidance; has directly influenced or set industry standards, created frameworks widely adopted, and is regularly sought for domain insight beyond their employer; career changers would have reached similar prominence in an analogous industry and demonstrated rapid cross-domain mastery; for in-house promotion, would be the go-to expert and potential mentor within Example Company or the broader field.
+
+
+________________
+
+
+15. Python Programming
+Level Required: Not Applicable
+
+
+Importance: 3/10
+
+
+Why Needed: While not required, light Python or R programming could help a Product Manager quickly analyze data, prototype insights, or automate reporting tasks, thereby accelerating data-driven product decisions and impact measurement at Example Company.
+
+
+Assessment Criteria:
+
+
+* overall_success_criteria: A hiring manager would identify that an applicant meets expectations for Python Programming only if the candidate demonstrates direct or transferable experience using Python to analyze, manipulate, or visualize data in a practical context (even if not their core job function), or otherwise shows an aptitude and motivation to pick up light scripting for data analysis or automation; however, for Example Company's Product Manager, Data & Product role, Python programming is not a core requirement, but a 'nice to have'. A candidate's depth may be signaled through example projects, usage in analytics/reporting, or articulation of when/why Python would be suitable for quick analysis within a product or compliance-heavy environment.
+* why_needed: While not required, light Python or R programming could help a Product Manager quickly analyze data, prototype insights, or automate reporting tasks, thereby accelerating data-driven product decisions and impact measurement at Example Company.
+* na_criteria: No mention or evidence of exposure to Python (or a similar programming language), data scripting, or any experience using code for analytics—even conceptually. This includes candidates who only work with point-and-click BI tools, spreadsheets, or rely fully on engineering/analytics teams for all coding tasks. Career changers and progression candidates show no curiosity about or exposure to simple coding for data manipulation/analysis.
+* fundamental_awareness_criteria: Candidate can describe in basic terms what Python is and how it can be used for data analysis (e.g., 'I know people use Python to process data sets or do quick analyses'); may have followed a tutorial, taken an online course, or observed colleagues use it but has not personally implemented any scripts. For career changers: candidate has dabbled in basic scripting (even in a non-work context) or completed a Python course. For career progression: candidate has shadowed a team member, attended a workshop, or completed internal training but has not built anything for work.
+* novice_criteria: Candidate has written or run simple Python scripts for personal learning, education, or to assist in small-scale data exploration (e.g., used Jupyter notebooks to manipulate CSVs, performed basic cleaning, or simple visualizations). Has used Python for one-off tasks, proof-of-concept analyses, or relied on shared scripts. For career changers: candidate has applied Python to a project/work sample in another field (e.g., ran analysis for a logistics company, nonprofit, classroom, etc.). For career progression: candidate supported a product/analytics team with entry-level data wrangling or analysis using Python, under guidance.
+* intermediate_criteria: Candidate has independently used Python to analyze real datasets (including cleaning, wrangling, basic statistics, or visualization) that informed product or business decisions—though this is done occasionally, not as a primary responsibility. Can describe how they've used Python to answer business/product questions or to supplement BI workflows. For career changers: candidate has used Python as a practical tool to solve operational or analytical problems, demonstrating initiative to bridge domain knowledge and tech. For career progression: candidate has delivered analytics, reporting, or test/experiment analysis using Python as a ‘helper tool’ alongside main PM responsibilities.
+* advanced_criteria: Candidate can efficiently use Python to automate recurring product analytics (such as creating dashboards, tracking KPIs, or preparing compliance/audit data), collaborate with data/engineering teams on data pipelines or integration, and has optimized their workflow with Python scripts. Can explain the value, limitations, and security/privacy considerations of using Python in relevant regulated environments. For career changers: candidate previously led cross-functional data-driven projects that involved significant Python scripting, showing ability to independently build analysis tools. For career progression: candidate introduced or standardized use of Python for analytics/reporting within their product or team, and mentored others.
+* expert_criteria: Candidate is recognized (internally or externally) as a Python-for-data subject matter expert—perhaps published content, given talks/workshops, developed reusable libraries, or architected significant analytics/automation tools using Python in compliance-heavy contexts. Can evaluate and guide teams on proper adoption of Python in analytics, product, and regulatory workflows. For career changers: candidate developed recognized Python tools for product analytics in another field and can articulate relevance to this nonprofit/data context. For career progression: candidate is the go-to person for leveraging/teaching Python to solve complex product analytics challenges, and may have driven adoption at the organizational level.
+
+
+________________
+
+
+Soft Skills
+1. Problem Framing
+Level Required: Intermediate (practical application)
+
+
+Importance: 9/10
+
+
+Why Needed: Example Company operates in high-stakes, fast-changing disaster relief and employee support, so the Product Manager must accurately frame complex, data-informed problems to ensure that platform improvements are impactful, user-centric, and compliant with regulations.
+
+
+Assessment Criteria:
+
+
+* overall_success_criteria: A candidate demonstrates strong problem framing by gathering input from users and stakeholders, analyzing data to clarify pain points, distilling information into clear, actionable problem statements, and prioritizing which challenges to address in a workflow-heavy, compliance-oriented product environment. Evidence may be found in stories of prior product work, cross-functional projects, or situations where the candidate systematically clarified ambiguous or complex issues to move solutions forward. For career changers, look for examples of structured issue clarification and prioritization in complex, mission-driven contexts; for career progression, look for increased ownership in problem definition and cross-team influence.
+* why_needed: Example Company operates in high-stakes, fast-changing disaster relief and employee support, so the Product Manager must accurately frame complex, data-informed problems to ensure that platform improvements are impactful, user-centric, and compliant with regulations.
+* na_criteria: No evidence of having systematically defined or clarified complex problems, either directly or transferably; candidate is unable to describe instances where they identified or articulated core issues in workflows, products, or projects. For career changers: no transferable examples of structured issue identification. For career progression: no sign of moving beyond assigned tasks to defining or influencing 'what problem to solve'.
+* fundamental_awareness_criteria: Shows basic understanding of what 'problem framing' means, possibly through academic study or observing others, but limited or no direct ownership; can describe the concept or recount a situation where others defined the problem. For career changers: evidence of understanding structured approaches to issue identification (e.g., basic project summaries or reflective course work). For career progression: awareness of the need to clarify problems, but little direct or leading involvement.
+* novice_criteria: Has contributed to or participated in teams where a problem was defined for them, can describe steps taken by others to clarify issues, shows basic attempts at identifying root causes, but mainly in supporting roles. For career changers: involvement in analyzing challenges or supporting decision processes in another industry, even if with guidance. For career progression: took limited initiative to clarify task goals, asked basic clarifying questions, or helped draft simple problem statements.
+* intermediate_criteria: Independently gathers qualitative and quantitative data to identify and frame core issues, articulates structured problem statements, distinguishes between symptoms and root causes, and prioritizes which user or platform problems should be tackled, with practical examples from product, program, or operational experience. Examples include owning discovery interviews, using data to re-define scope, or driving alignment on what success looks like. For career changers: transfer evidence from roles involving workflow/process issues, data analysis, or ambiguous project scoping, where the candidate led efforts to define and prioritize problems. For career progression: moved from task execution into roles/scenarios where they took responsibility for clarifying objectives, led problem definition sessions, or influenced roadmap priorities based on issue framing.
+* advanced_criteria: Routinely reframes ambiguous or conflicting stakeholder needs into clear, impact-driven problem definitions; integrates regulatory, user, and technical inputs; uses advanced data analysis to challenge existing assumptions; and facilitates workshops or structured discovery processes to align diverse teams around well-defined challenges. Direct evidence includes leading product/strategic discovery in complex environments, bridging silos, and iterating on problem frameworks. For career changers: led multidisciplinary or cross-functional teams through structured ambiguity in complex settings, introducing systematic problem framing methods. For career progression: mentored others in problem framing or built new frameworks for prioritizing platform work.
+* expert_criteria: Recognized internally or externally for shaping organizational or sector-level problem framing, often setting best practices or training others; contributes to industry/public domain thought leadership on issue identification, particularly in workflow/platform or compliance-heavy contexts. Demonstrates repeated ability to shift organizational or platform direction by reframing the core challenge, influencing executives or boards. For career changers: recognized leader of systemic change/innovation programs focused on clarifying complex challenges in other sectors. For career progression: institutionalized new problem framing or innovation processes within organization or as part of sector collaborations.
+
+
+________________
+
+
+2. Prioritization
+Level Required: Advanced (applied theory)
+
+
+Importance: 9/10
+
+
+Why Needed: Example Company needs advanced prioritization so its Product Manager can efficiently identify, sequence, and communicate the most impactful product improvements—ensuring their platform gets emergency assistance to people as quickly and compliantly as possible, even amidst frequent change and limited resources.
+
+
+Assessment Criteria:
+
+
+* overall_success_criteria: A candidate demonstrates advanced prioritization by consistently making data-informed product decisions that balance user needs, organizational goals, regulatory compliance, and technical feasibility in a mission-driven, workflow-heavy environment—especially under urgent conditions. They can provide clear frameworks or approaches (e.g., RICE, impact vs. effort matrices) suited to nonprofit/disaster relief products, show actual trade-off decisions made, and articulate how they measure and adjust priorities over time. Transferable evidence may include prioritizing complex project portfolios (outside product), leading process improvements in regulated or urgent delivery settings, or managing competing stakeholder needs with measurable impact.
+* why_needed: Example Company needs advanced prioritization so its Product Manager can efficiently identify, sequence, and communicate the most impactful product improvements—ensuring their platform gets emergency assistance to people as quickly and compliantly as possible, even amidst frequent change and limited resources.
+* na_criteria: No evidence of prioritization skills: The candidate fails to describe any situation where they identified, sequenced, or justified priorities (in product or otherwise); provides only generic or superficial answers; cannot cite tools, frameworks, or reflect on the 'why' behind decisions. For career changers: No relevant situations in any context where choices among competing actions or stakeholders were made. For career progression: No stories of stepping up on roadmap or backlog ordering in junior roles.
+* fundamental_awareness_criteria: Basic awareness of prioritization concepts, possibly only theoretical. The candidate can define prioritization or name frameworks (e.g., 'MoSCoW', 'high/low priority'), but lacks concrete examples of actually applying them to guide decisions. When pressed, stories are vague or at task-level (e.g., 'I did what my manager told me was most urgent'). Career changers: Can describe ordering of tasks or handling 'to-do lists' but not larger initiatives. Career progression: Only experience following priorities set by others, not setting or influencing them.
+* novice_criteria: Has made some prioritization decisions in limited contexts, typically within a predefined scope (e.g., reprioritizing bug tickets, juggling small projects, or reacting to urgent requests). Can recount a specific time they had to choose what to tackle first, but uses ad hoc methods (e.g., whoever 'yells loudest', deadline pressure, or gut feeling). Little use of structured frameworks, limited data or stakeholder input integration. For career changers: Examples of organizing competing requests, or process improvements, but not across platforms or impact programs. For career progression: Has helped prioritization effort (e.g., contributing to grooming meetings or updating priorities as a junior PM).
+* intermediate_criteria: Demonstrates regular application of prioritization at the product, feature, or cross-functional initiative level, using frameworks (even if basic) and some data input. Can give clear recent examples of weighing impact vs. effort, balancing technical input with user/corporate needs, and communicating priorities to stakeholders. May share concrete methods, like impact/urgency scoring or roadmap revision after new data/situations arise. Has experience adjusting when circumstances (deadlines, regulations, user needs) shift. For career changers: Led prioritization of complex projects, cross-team work, or compliance-heavy initiatives with measurable results. For career progression: Participated in or led product prioritization within a smaller scope (part of a larger platform), showing initiative or learning from feedback.
+* advanced_criteria: Consistently applies advanced prioritization theory in workflow-heavy, regulated, or mission-critical environments. Integrates diverse inputs (user research, analytics, compliance, technical feasibility) in an explicit, transparent decision-making process. Shows examples of developing or tailoring prioritization frameworks to suit organizational context (e.g., modifying RICE for social impact); regularly reassesses priorities post-shipment with metrics; navigates trade-offs with multiple high-stakes stakeholders (e.g., legal, operations, tech) effectively. Can articulate how prioritization aligns with both short- and long-term nonprofit goals under pressure. Career changers: Led such data- and stakeholder-driven prioritization in high-compliance, social-impact, or urgent-delivery settings outside product management, with a clear record of impact. Career progression: Has recently been the primary driver for cross-functional prioritization at the feature/platform level and can reflect on how their approach has grown beyond basic/generic practices.
+* expert_criteria: Recognized as a prioritization authority—creates or teaches prioritization frameworks, advises on prioritization in nonprofit/emergency product settings, or has driven organizational/cultural change in prioritization discipline (e.g., process overhaul, setting prioritization best practices for multiple teams). Routinely influences executive-level priorities, has a track record of navigating major crises through prioritization, and mentors others. Career changers: National/industry-level recognition for prioritizing complex initiatives. Career progression: Has led not just teams but the organization in redefining how priorities are established and operationalized.
+
+
+________________
+
+
+3. Data-driven Decision Making
+Level Required: Intermediate (practical application)
+
+
+Importance: 9/10
+
+
+Why Needed: Example Company relies on rapid, measurable improvements to its emergency relief platform, making data-driven decision making essential for identifying bottlenecks, prioritizing product changes, and demonstrating real-world impact on end users during crises.
+
+
+Assessment Criteria:
+
+
+* overall_success_criteria: A successful candidate demonstrates the ability to consistently use relevant data—both qualitative and quantitative—to inform product decisions, set and track meaningful metrics, assess impact, and iteratively improve workflow-heavy products, with clear practical examples from prior work or strong transferable experience indicating immediate ability to apply this in the Example Company context.
+* why_needed: Example Company relies on rapid, measurable improvements to its emergency relief platform, making data-driven decision making essential for identifying bottlenecks, prioritizing product changes, and demonstrating real-world impact on end users during crises.
+* na_criteria: The candidate provides no examples—either direct or transferable—of making decisions based on data, shows no understanding of using metrics in a product or project context, or relies solely on intuition or anecdotal evidence in their approach.
+* fundamental_awareness_criteria: Candidate demonstrates awareness of what data-driven decision making is, perhaps citing surface-level knowledge (e.g., mentioning the use of 'data' or 'metrics' generally) but with no concrete examples of having directly used data to inform decisions; career changers may reference basic analysis in any setting, and career progression candidates may describe exposure but not direct application to product or workflow outcomes.
+* novice_criteria: Candidate provides 1–2 examples of using basic data or metrics to support small-scale decisions (e.g., minor product tweaks, reporting insights to supervisors), perhaps via standardized reports or basic dashboards; career changers should describe transferable experiences such as optimizing a workflow or process based on tracked outcomes, and career progression candidates might have supported more senior PMs in measuring feature impact or tracking adoption rates.
+* intermediate_criteria: Candidate articulates multiple examples where they independently defined metrics, set up tracking, analyzed data to pinpoint friction points, and made prioritized product or workflow decisions as a result; should show evidence of measuring and iterating on product or process changes, with direct responsibility for data-driven outcomes; career changers must clearly show substantial responsibility for this in a related, complex context (e.g., leading process improvement in operations using data), while career progression candidates evidence decisions impacting users, not just internal stakeholders, under supervision but with ownership of product or feature areas.
+* advanced_criteria: Candidate demonstrates leadership in establishing data-driven practices within product or cross-functional teams (e.g., designing new KPIs aligned with organizational outcomes, spearheading analytics for multiple product areas, or guiding teams through successful pivots based on impact metrics); can speak to translating organizational strategy into data-informed product direction; for career changers, look for systemic influence (e.g., rolling out performance measurement across a program), and for career progression, evidence of mentoring others in using data to guide product decisions.
+* expert_criteria: Candidate is a recognized authority—internally or externally—in data-driven product management, regularly educating or advising others across the organization or industry, publishing best practices, or driving organizational culture shifts around data; demonstrates a track record of large-scale data-driven transformations in workflow-heavy products, and can articulate frameworks or case studies adopted by others; for career changers, this is rare but could include award-winning or published work on data-backed project turnarounds, while career progression candidates must evidence exceptional leadership, such as defining data strategy for multiple products or service lines.
+
+
+________________
+
+
+4. User Research
+Level Required: Intermediate (practical application)
+
+
+Importance: 8/10
+
+
+Why Needed: Example Company depends on strong user research skills to ensure their platform and grant delivery solutions actually address the real pain points of users in crisis—misunderstanding user needs would directly undermine the organization's ability to deliver effective, fast assistance.
+
+
+Assessment Criteria:
+
+
+* overall_success_criteria: Candidates demonstrate the ability to plan, conduct, and synthesize user research that directly impacts product decisions, with observable examples of how user insights were gathered (via interviews, surveys, shadowing, or analytics), interpreted, and translated into impactful product changes, preferably in workflow-driven or compliance-heavy contexts. Transferable potential may be shown through similar skillsets such as stakeholder interviewing, qualitative analysis, or empathy-driven process improvement, especially for career changers.
+* why_needed: Example Company depends on strong user research skills to ensure their platform and grant delivery solutions actually address the real pain points of users in crisis—misunderstanding user needs would directly undermine the organization's ability to deliver effective, fast assistance.
+* na_criteria: No evidence that the candidate has ever conducted, planned, or used the results of user research (interviews, surveys, user testing, shadowing, etc.) to inform decisions. For career changers, look for complete absence of empathetic inquiry or efforts to understand customer/user/patient/client perspectives in any context. For career progression, look for a lack of participation even as a junior contributor to any kind of user-facing feedback process.
+* fundamental_awareness_criteria: Candidate demonstrates a theoretical understanding of user research (can describe what it is or basic techniques like interviews or surveys) but provides no or only extremely limited direct experience. For career changers, look for signs that they have read about or been exposed to user-centered methods in another field. For career progression, look for shadowing or assisting in research but not designing or leading it.
+* novice_criteria: Candidate has participated in basic user research activities under supervision—e.g., has helped conduct interviews, shadowed users, or contributed to user feedback synthesis—without owning the process or translating insights into roadmaps. Transferable indicators for career changers include facilitating focus groups, conducting stakeholder interviews, or collecting customer feedback, even if not strictly called 'user research.' For career progression, look for involvement in research projects and small contributions to interpreting results but limited responsibility.
+* intermediate_criteria: Candidate has independently planned, conducted, and synthesized user research (interviews, surveys, usability testing, etc.) and can provide examples of how these insights changed product decisions or roadmaps, especially in situations with multiple user types or complex workflows. For career changers, look for analogous responsibilities: leading client discovery processes, performing needs analysis, or conducting field studies that resulted in changed processes/products. For career progression, seek clear evidence of stepping up from assisting to owning research activities, especially in cross-team or multi-stakeholder settings.
+* advanced_criteria: Candidate drives research strategy (which methods, research cadence, priority of user touchpoints) and mentors others in user research best practices; can share examples of guiding cross-functional teams through ambiguous user problems to resolution informed by research. For career changers, look for leadership of research or empathy-driven initiatives that had strategic impact. For career progression, look for examples of shifting from execution to influencing team or company practice in research.
+* expert_criteria: Candidate is recognized as a subject matter expert or thought leader in user research, having set up user research functions, published methodologies, or driven organizational change around user-centricity (internally or externally). For career changers, look for published work, conference talks, or industry-wide recognition of their research approach. For career progression, evidence might include formal stewardship of research culture or ongoing mentorship far beyond personal project scope.
+
+
+________________
+
+
+5. Cross-functional Collaboration
+Level Required: Advanced (applied theory)
+
+
+Importance: 8/10
+
+
+Why Needed: Cross-functional collaboration is essential at Example Company because the Product Manager must bridge technical, compliance, programmatic, and data-focused teams to deliver effective and compliant disaster relief solutions with measurable impact, often on tight deadlines.
+
+
+Assessment Criteria:
+
+
+* overall_success_criteria: A candidate demonstrates advanced cross-functional collaboration by providing multiple, concrete examples of facilitating alignment and effective communication between diverse teams (such as tech, programs, compliance, and data) to successfully deliver complex projects in workflow/data-heavy products, showing clear impact on project outcomes, and evidence of anticipating and resolving interdepartmental challenges. Transferable success indicators include leading collaborative initiatives in similarly complex, regulated, or impact-driven environments, even if outside the nonprofit or product domain.
+* why_needed: Cross-functional collaboration is essential at Example Company because the Product Manager must bridge technical, compliance, programmatic, and data-focused teams to deliver effective and compliant disaster relief solutions with measurable impact, often on tight deadlines.
+* na_criteria: No examples or vague statements about working with other teams; unable to describe situations where they collaborated with multiple functions; provides only solo achievements or cannot describe the roles and contributions of other participants; no evidence of influencing or aligning diverse stakeholders; career changers or progression candidates have not sought or contributed to cross-team projects in any form.
+* fundamental_awareness_criteria: Understands the basic concept of cross-functional collaboration and can speak to participating in team meetings or communicating with adjacent colleagues (e.g., worked with marketing and sales on a shared project component, or attended handoff meetings); career changers may mention being aware of how their previous role relied on other departments but have not directly contributed to integrated efforts; progression candidates might have supported a project led by others without significant ownership or influence.
+* novice_criteria: Has participated in a cross-team project in a supporting role, able to describe how two or more departments contributed to a shared goal, with some direct interaction and minor influence on group outcomes; may have communicated requirements or feedback between teams; career changers may have experience on project teams where cross-disciplinary input was needed, or have volunteered for interdepartmental tasks; progression candidates may have recently taken on projects requiring coordination with one or more other teams, with limited scope or oversight.
+* intermediate_criteria: Has actively facilitated collaboration between at least two distinct functions to achieve a project goal, clearly articulating their role in coordinating, aligning priorities, or bridging communication gaps; evidence of handling minor conflicts or trade-offs between teams (e.g., balancing tech feasibility and compliance requirements); transferable evidence includes leading working groups or committees spanning multiple areas; career changers may offer examples of managing multi-stakeholder projects (such as cross-departmental initiatives in operations, health, or education); progression candidates can point to specific projects where they owned the cross-functional process, drove meetings, or ensured clarity among teams.
+* advanced_criteria: Consistently drives alignment, decision-making, and delivery across three or more teams with divergent priorities in a regulated, high-impact, or data-intensive environment (such as nonprofit compliance or workflow software); describes tactics for managing stakeholder expectations, leading regular cross-functional meetings, creating shared documentation, and proactively mitigating risks or bottlenecks; demonstrates measurable results (e.g., faster launches, improved compliance, higher user adoption) directly attributable to their collaborative efforts; career changers must show having led or facilitated large-scale, multi-team projects with quantifiable impact, even if outside tech/product; progression candidates should have assumed lead facilitator/PM roles, harmonizing the work of technical, operational, and compliance staff to deliver major milestones.
+* expert_criteria: Recognized as a collaboration change agent—has instituted new company- or department-level cross-functional processes, mentored others in cross-team leadership, and is sought out to resolve complex alignment challenges; track record of repeatable frameworks for enabling high performance across diverse functions, with outcomes such as launching new business lines or consistently exceeding multi-team objectives; career changers at this level would have innovated collaboration systems or driven cultural change across functional boundaries in previous industries; career progression candidates demonstrate company-wide recognition for fostering strategic collaboration well beyond their immediate project teams.
+
+
+________________
+
+
+6. Communication
+Level Required: Advanced (applied theory)
+
+
+Importance: 8/10
+
+
+Why Needed: Example Company must ensure complicated product and data decisions are understood across teams and delivered in a way that accelerates, not impedes, relief delivery during urgent and sensitive situations; strong, adaptive communication is critical to align tech, programs, compliance, and user needs for effective, compliant solutions.
+
+
+Assessment Criteria:
+
+
+* overall_success_criteria: A successful candidate will consistently demonstrate the ability to communicate complex concepts clearly and empathetically across technical, program, compliance, and user audiences, using multiple channels and formats, and will have a track record of fostering understanding and coordination to deliver impactful product outcomes—especially in data-driven, high-stakes, or regulated environments. Assessors should look for evidence in resume achievements, behavioral interview answers, and case exercises of: translating data insights and user problems into actionable requirements, managing cross-functional stakeholder expectations, and creating clarity and alignment for delivery, even in ambiguous or stressful contexts. For career changers, equivalent evidence may come from relevant stakeholder management roles or communications in high-impact, mission-driven projects. For career progression candidates, look for growing breadth in audience types, complexity of issues communicated, and self-driven improvements in communications strategy.
+* why_needed: Example Company must ensure complicated product and data decisions are understood across teams and delivered in a way that accelerates, not impedes, relief delivery during urgent and sensitive situations; strong, adaptive communication is critical to align tech, programs, compliance, and user needs for effective, compliant solutions.
+* na_criteria: No evidence that the candidate has ever had to communicate technical or complex information to others, has collaborated with cross-functional teams, or has adjusted messaging to fit different audiences. Interview or resume shows no examples of communication challenges or stakeholder management. For career changers: No evidence of written/verbal communications outside immediate team or siloed environments. For career progression: All prior communication experience is unidirectional or minimal.
+* fundamental_awareness_criteria: Has basic awareness that communication is important in product or project work, but only demonstrates surface-level skills (e.g., sharing updates with team, relaying instructions) and hasn't needed to address misunderstandings, tailor messages to different roles, or handle pushback. Might mention communicating status to supervisor or sending routine emails. For career changers: Provides examples of basic reporting or simple updates; has not yet coordinated communications across diverse functions. For career progression: Has only communicated within peer groups or under supervision, with little or no responsibility for clarifying or building consensus across audiences.
+* novice_criteria: Has had to explain information or coordinate among different people, but generally in low-stakes, straightforward settings. Can describe sending out requirements, updates, or metrics to relevant stakeholders, but evidence is limited to following set protocols, not adapting communication channels, or resolving ambiguity. Has managed some misunderstandings with simple clarification. For career changers: Shows experience sharing project updates or process guidance to small cross-functional groups, but not at scale or in high-complexity settings. For career progression: Has started participating in meetings with other teams, perhaps taken on responsibility for small project communications, but hasn't yet led cross-team communications or handled significant ambiguity/resistance.
+* intermediate_criteria: Consistently communicates across varied audiences (e.g., tech, operations, compliance, end-users), with examples of translating product/data issues into clear language and influencing outcomes. Can describe times they managed conflicting stakeholder needs, clarified requirements, or built alignment for a product change, using multiple channels (meetings, written specs, reports, presentations). May have led user interviews or workshops, and adapts explanations based on audience. For career changers: Demonstrates leading communication or alignment efforts for complex projects with multiple stakeholder types, even if outside product context; has evidence of tailoring technical or process information for impact. For career progression: Has taken point on cross-team communications or led workstreams involving several disciplines, demonstrating initiative in surfacing and clarifying misunderstandings.
+* advanced_criteria: Demonstrates strategic, adaptive communication: proactively builds shared understanding across highly diverse, sometimes conflicting audiences; communicates product/data concepts with empathy for non-technical stakeholders in crisis-driven or compliance-heavy settings; documents, presents, and leads meetings that align disparate teams toward mission outcomes. Can describe iteratively refining how product insights and requirements are shared to improve speed, compliance, or clarity, and can cite measurable impacts (e.g., faster decisions, smoother launches, reduced errors). Handles difficult conversations, competing requests, or regulatory ambiguity with diplomacy and ensures all voices are heard. For career changers: Has driven successful alignment and product/service delivery through nuanced communication in high-stakes, regulated, or impact-oriented fields, showing transfer of soft skill sophistication. For career progression: Clearly demonstrates advanced growth from prior roles by independently leading cross-functional communication, adapting methods based on feedback, and coaching others in effective communication strategies.
+* expert_criteria: Is recognized as a communication leader in the organization or industry—establishes new best practices, mentors others on cross-functional/product communication, and leads critical, high-risk conversations with credibility and authority. Regularly influences major business/product outcomes via communication, such as crisis response management, navigating major compliance issues, or stakeholder buy-in on strategic pivots; known for clarity, transparency, and maintaining trust under pressure across all levels, from executives to front-line users. Has measurable track record of successful alignment at scale and is regularly sought out to solve communication breakdowns or train others. For career changers: Known in previous industry as the 'go-to' for high-impact communications and has transferred those skills to product-like or technical environments. For career progression: Has taken on organization-level communication challenges beyond immediate team, contributed to org-wide process improvements, or set new standards for data/product messaging.
+
+
+________________
+
+
+7. Stakeholder Management
+Level Required: Advanced (applied theory)
+
+
+Importance: 8/10
+
+
+Why Needed: Example Company’s Product Manager must coordinate, align, and gain buy-in from diverse internal and external stakeholders (engineering, programs, compliance, client companies, users) to ensure that products are not only built correctly but also meet compliance, data, and urgency needs in disaster/emergency relief situations.
+
+
+Assessment Criteria:
+
+
+* overall_success_criteria: A successful candidate will demonstrate the ability to identify, engage, align, and influence multiple stakeholders (technical, business, compliance, and user-facing teams) to collaboratively drive product decisions, prioritize needs, resolve conflicts, and ensure seamless product delivery, especially in a mission-driven, high-stakes nonprofit context with sensitive data and compliance requirements. Transferable evidence may include managing diverse teams across functions, shepherding projects in regulated industries, or leading cross-functional problem-solving meetings.
+* why_needed: Example Company’s Product Manager must coordinate, align, and gain buy-in from diverse internal and external stakeholders (engineering, programs, compliance, client companies, users) to ensure that products are not only built correctly but also meet compliance, data, and urgency needs in disaster/emergency relief situations.
+* na_criteria: No examples or only theoretical understanding of working with stakeholders; unable to describe situations where others' input or buy-in was necessary; responses indicate a lack of real interaction with stakeholders, reluctance to seek out consensus, or inability to balance competing needs.
+* fundamental_awareness_criteria: Describes basic knowledge of what stakeholders are (e.g., knows they exist or can name them), or shows awareness of the need to communicate with different groups, but lacks first-hand or applied experience; for career changers, may have observed this from adjacent roles without owning stakeholder relationships; for career progression, may describe observing or supporting others in stakeholder work but not taking initiative.
+* novice_criteria: Has some direct or transferable experience communicating with at least one type of stakeholder (e.g., team, client, supervisor) and recognizes that stakeholders may have different perspectives; can describe basic attempts at sharing updates or gathering feedback; for career changers, may have experience in roles like customer service, account management, or team projects where managing expectations was involved; for career progression, may have supported stakeholder work by conveying status or gathering limited input but not resolving conflict or driving alignment.
+* intermediate_criteria: Demonstrates direct ownership of engaging multiple stakeholder groups in at least one project (e.g., running meetings, collecting needs, updating on progress, facilitating feedback loops); shows ability to balance or prioritize between conflicting needs, maintain relationships, and adapt communication styles; career changers provide examples from cross-functional projects or regulated environments (e.g., healthcare, education, banking) requiring alignment across business/technical/legal teams; career progression candidates have led stakeholder meetings, negotiated trade-offs, or mediated differing priorities under supervision.
+* advanced_criteria: Shows repeated success in leading stakeholder management across multiple functions and/or projects, specifically in ambiguous, high-risk, compliance-heavy, or mission-driven contexts; provides clear examples of anticipating stakeholder concerns, proactively aligning teams, resolving conflicts, and driving consensus across technical, business, and customer/user groups; articulates strategies for stakeholder mapping, influence, and post-launch engagement; for career changers, brings advanced stakeholder experience from similarly complex/nonprofit/regulated settings and translates those lessons to the Company context; for career progression, demonstrates growing from basic engagement to leading cross-functional groups, self-directed negotiation of priorities, and obtaining buy-in for significant changes.
+* expert_criteria: Recognized (internally or externally) for exceptional stakeholder management, such as leading major organizational change, rescuing at-risk partnerships, driving cultural or process transformation, or serving as the 'go-to' person for complex alignment challenges; mentors others, designs stakeholder engagement frameworks, handles resistant or high-profile stakeholders, and integrates stakeholder perspectives at the strategic level; for career changers, played pivotal roles in industry-wide collaborations or public-private partnerships; for career progression, evidence of elevation into roles specifically to manage challenging stakeholder landscapes, presented at conferences, or authored published best-practice guidance.
+
+
+________________
+
+
+8. Strategic Thinking
+Level Required: Advanced (applied theory)
+
+
+Importance: 8/10
+
+
+Why Needed: Example Company requires strategic thinking to ensure its products contribute maximum positive impact during crises, balancing user needs, technical feasibility, data insights, and compliance requirements to deliver timely, effective relief to those in need.
+
+
+Assessment Criteria:
+
+
+* overall_success_criteria: A successful candidate demonstrates the ability to see the big picture, proactively anticipate challenges and opportunities, and use both qualitative and quantitative data to make product decisions that align with Example Company's mission (delivering emergency financial relief efficiently and compliantly). Evidence includes setting clear priorities, defining impactful metrics, and navigating cross-functional complexities to drive sustained improvements in social impact outcomes.
+* why_needed: Example Company requires strategic thinking to ensure its products contribute maximum positive impact during crises, balancing user needs, technical feasibility, data insights, and compliance requirements to deliver timely, effective relief to those in need.
+* na_criteria: No evidence of looking beyond immediate tasks, an inability to articulate the 'why' behind product decisions, or only responding to instructions/reacting to events; candidates can't describe examples where their thinking shaped priorities or anticipated larger needs, regardless of their background.
+* fundamental_awareness_criteria: Candidate can articulate what strategic thinking means and recognizes its importance in product management; may reference learning from observing others or coursework. Transferable: For career changers, evidence of recognizing broader impacts in their field (even if not directly responsible). For progression candidates, supporting strategic projects managed by others, with awareness of purpose but not owning the process.
+* novice_criteria: Candidate describes participation in processes where strategy was discussed (e.g., assisting in roadmapping), or can reference contributing ideas based on some data/user insights but lacks ownership of strategic decision-making. Transferable: For career changers, shows initiative to improve/optimize a process by considering broader implications (e.g., workflow improvement aiming for impact, even if small-scale). For progression, took stretch assignments to suggest improvements or helped synthesize feedback for team strategy sessions.
+* intermediate_criteria: Candidate independently identifies and evaluates trade-offs and prioritizes features or problems using a blend of data, stakeholder feedback, and organizational goals; has led the definition of success metrics and contributed significantly to shaping product direction. Transferable: For career changers, led projects/programs requiring balancing multiple objectives with limited resources, aligning a service or process to larger goals. For progression, evidence of leading a small product or module, making prioritization decisions, and setting/monitoring relevant metrics.
+* advanced_criteria: Candidate demonstrates repeated ownership of end-to-end strategic planning at the product level: setting product vision linked to organizational mission, defining/iterating on measurable goals, proactively identifying risks/opportunities through data synthesis, and orchestrating cross-functional alignment. Uses frameworks (e.g., OKRs, impact mapping) and can show how those led to meaningful improvements. Transferable: For career changers, led transformations/organizational change, aligning strategies with mission impact and using data to make difficult calls. For progression, was the primary driver for product strategy for a platform, including vision, metric selection, and stakeholder alignment across disciplines.
+* expert_criteria: Recognized as an authority in strategic product thinking (e.g., advisor to other PMs, speaker at conferences, published frameworks); known for pioneering approaches that set industry standards, influencing both internal and external best practices through data-informed, mission-driven strategies. For career changers, led industry-wide initiatives introducing new models for strategy in complex, high-stakes environments. For progression, mentored others in strategy, drove organizational-level changes across products/business units, and demonstrably changed the strategic trajectory of prior organizations.
+
+
+________________
+
+
+9. Adaptability
+Level Required: Intermediate (practical application)
+
+
+Importance: 7/10
+
+
+Why Needed: Example Company’s mission centers on responding rapidly to unpredictable disasters; adaptability is critical for this product management role to ensure solutions are quickly deployed to support people in crisis, even as requirements, technologies, and compliance constraints shift.
+
+
+Assessment Criteria:
+
+
+* overall_success_criteria: A successful candidate for this Product Manager, Data & Product position at Example Company will provide clear, contextual examples of their ability to adapt to evolving priorities, ambiguous problems, changing stakeholder needs, and time-sensitive delivery demands. Evidence could include stories about learning new skills, quickly pivoting in response to shifting goals, iterating solutions based on new data or user feedback, and thriving under uncertainty—ideally within workflow-heavy, cross-functional, or compliance-driven environments.
+* why_needed: Example Company’s mission centers on responding rapidly to unpredictable disasters; adaptability is critical for this product management role to ensure solutions are quickly deployed to support people in crisis, even as requirements, technologies, and compliance constraints shift.
+* na_criteria: If a candidate provides no examples of responding constructively to change, ambiguity, or shifting priorities—or shows discomfort with uncertainty or rigid adherence to fixed plans—they should be assessed as 'NA' for adaptability. For career changers or those seeking promotion, lack of any context (work, academic, volunteering) demonstrating flexibility, or resistance to new ways of working, is also NA.
+* fundamental_awareness_criteria: Look for rudimentary understanding or basic, one-off exposure to changing requirements (e.g., a candidate describes recognizing the need to adapt, but defers action to others, or describes being guided step-by-step through change by others). For career changers, this could include classroom projects with changing goals or participation in basic team initiatives requiring slight plan shifts. For career progression, this could show as assisting with, but not leading, responses to minor changes at work.
+* novice_criteria: Candidate describes adapting to change in their own work (such as updating a deliverable after a supervisor asks, or embracing a new tool when directed), but typically in response to external direction rather than proactively. Stories show a willingness to shift approach, learn, and overcome discomfort, but limited experience driving adaptation or managing stakeholders through it. Career changers might reference volunteering, internships, or diverse projects; career progression candidates may highlight small improvements or suggestions made in junior roles.
+* intermediate_criteria: Candidate gives detailed, practical examples of independently adapting processes, priorities, or plans to new data, user feedback, or changing requirements—in product, project, or cross-team contexts. Evidence includes iterating roadmaps, reprioritizing features, learning new analytics tools on the fly, or managing stakeholder expectations in ambiguous or shifting environments (ideally related to compliance, data, or workflow products). Career changers might transfer from roles like operations, consulting, healthcare, or tech where they had to pivot to meet urgent needs; for progression candidates, examples should show them not just following but leading changes in their domain or team.
+* advanced_criteria: Demonstrates leading teams or cross-functional groups through rapid pivots or high-stakes change (especially under crisis, regulatory, or data-intensive scenarios). Candidate shows ability to anticipate need for adaptation, set frameworks for others to navigate ambiguity, and influence stakeholders to embrace iterative cycles. Examples may include crisis management, launching MVPs in uncertain markets, or orchestrating compliance responses under tight deadlines. Career changers may offer directly transferable leadership in dynamic industries; career progressions should show mentoring staff or implementing organizational change.
+* expert_criteria: The candidate is recognized (internally or externally) as a role model for adaptive leadership—developing organizational strategies, training others in adaptability, or authoring processes/best practices for thriving in ambiguity (such as in disaster relief, rapid SaaS deployment, or cross-sector collaborations). Evidence may include speaking at conferences, consulting on crisis response, or leading company-wide transformation. For both career changers and career progression, look for system-level impact and public recognition.
+
+
+________________
+
+
+10. Attention to Detail
+Level Required: Advanced (applied theory)
+
+
+Importance: 7/10
+
+
+Why Needed: Attention to detail is critical at Example Company because errors or oversights in product requirements, data interpretation, or compliance can directly delay or jeopardize emergency relief for people in crisis; thus, this skill ensures accuracy, reliability, regulatory adherence, and prompt support for vulnerable users.
+
+
+Assessment Criteria:
+
+
+* overall_success_criteria: A candidate demonstrates advanced attention to detail by consistently identifying, articulating, and rectifying nuanced issues in data, requirements, and workflows—especially those impacting timely and compliant relief delivery—while proactively establishing processes and documentation standards that prevent errors and improve product outcomes. Evidence comes from precise communication of requirements, metric frameworks, audit trails, feedback loops, and examples of rigorous review habits.
+* why_needed: Attention to detail is critical at Example Company because errors or oversights in product requirements, data interpretation, or compliance can directly delay or jeopardize emergency relief for people in crisis; thus, this skill ensures accuracy, reliability, regulatory adherence, and prompt support for vulnerable users.
+* na_criteria: No examples provided of catching, correcting, or preventing mistakes, nor any evidence of thorough review, documentation detail, data accuracy, or process checks—candidate may be vague, overlook specifics, or give answers lacking concrete detail of careful work.
+* fundamental_awareness_criteria: Candidate can describe the importance of attention to detail and provides a simple example (direct or transferable) of following instructions or checking work; may mention double-checking data entries, reviewing documents, or using task lists. For career changers: Accept examples from roles with repetitive or process-driven tasks (retail, admin, etc.). For career progression: Look for basic stories of carefully completing assigned tasks as a junior team member.
+* novice_criteria: Candidate has limited but relevant experience identifying or fixing simple errors in their own work or in documented processes (e.g., catching a typo in a user story or reviewing a small dataset for inconsistencies); can articulate steps they take to avoid mistakes. For career changers: Evidence of careful review or error prevention in any prior field (e.g., QA testing, bookkeeping, compliance, customer service with sensitive information). For career progression: Look for early participation in peer reviews, checklists, or flagging of issues to supervisors.
+* intermediate_criteria: Candidate demonstrates regular and structured attention to detail in managing product requirements, data tracking, or compliance—can provide examples of catching significant errors, validating datasets, enforcing documentation standards, or updating processes following incidents. For career changers: Evidence of methodical review processes, implementing accuracy checks, or leading error reduction in former roles that are process- or data-driven. For career progression: Examples of increasing responsibility for reviewing others’ work, leading simple audits, or refining requirements for clarity and precision.
+* advanced_criteria: Candidate consistently applies advanced attention to detail by establishing robust review processes, designing detailed acceptance criteria, proactively identifying gaps or risks across cross-functional teams, and ensuring data accuracy drives impactful product changes; they demonstrate anticipating downstream effects, guiding others in best practices, tracking compliance with high reliability, and show measurable impact from their diligence. For career changers: Look for ownership of high-stakes, error-intolerant tasks, implementing detailed SOPs, or leading improvements that reduced defects or compliance issues. For career progression: Recent evidence of improving team processes, mentoring peers on documentation/audit practices, or managing complex, sensitive product deliverables with zero or rapidly resolved errors.
+* expert_criteria: Candidate is regarded as a standard-setter for attention to detail—has created or led organization-wide programs to reduce errors, ensure data integrity, or enhance compliance; acts as a reviewer of last resort, provides training, and is deferred to for guidance on best practices. Evidence includes published standards, external recognition, or driving cultural improvements in quality across organizations. For career changers: Recognized as a quality/compliance/data expert in prior field, presenter/author of best practices, or leader of process improvement teams. For career progression: Has formalized documentation, audit protocols, or error reporting frameworks in prior role, with demonstrable impact at cross-team or company-wide level.
+
+
+________________
+
+
+11. Curiosity
+Level Required: Advanced (applied theory)
+
+
+Importance: 6/10
+
+
+Why Needed: Example Company needs advanced curiosity in this PM role to ensure the platform adapts and improves continuously by uncovering novel insights from data and user experience, leading to more effective and timely disaster relief for employees during crises.
+
+
+Assessment Criteria:
+
+
+* overall_success_criteria: A hiring manager will recognize curiosity in a Product Manager by looking for candidates who consistently seek to deeply understand user pain points, proactively ask insightful questions about problems and data, demonstrate a hunger to learn from ambiguity or new situations, and regularly translate their inquisitiveness into real product learning and measurable improvements; this may be shown in experience running discovery interviews, iterating based on feedback, pursuing new information in compliance-heavy domains, or by initiating cross-functional collaboration to uncover hidden needs.
+* why_needed: Example Company needs advanced curiosity in this PM role to ensure the platform adapts and improves continuously by uncovering novel insights from data and user experience, leading to more effective and timely disaster relief for employees during crises.
+* na_criteria: No evidence of asking questions beyond the obvious, lack of examples where the candidate proactively sought new information or conducted discovery, or a purely task-oriented mindset; in career changers and progression candidates, no transferable stories involving going beyond assigned responsibilities or exploring unknowns.
+* fundamental_awareness_criteria: Shows some awareness of the value of learning from users or data, may reference basic user research or feedback, and displays willingness to ask for information when prompted; career changers may cite following established procedures or guidelines to learn new aspects; progression candidates may show shadowing team members or asking supervisors clarifying questions.
+* novice_criteria: Has taken steps to seek out answers beyond assigned tasks (e.g., basic user interviews, investigating data anomalies); may reference participation in structured discovery or root cause analysis; for career changers, stories could involve investigating problems or inefficiencies in prior roles; for progression candidates, examples could include suggesting new questions for existing processes or handling edge cases not in SOPs.
+* intermediate_criteria: Demonstrates habit of structured inquiry: conducts user interviews, analyzes product data to generate questions, and modifies approaches based on what they learn; describes formulating their own hypotheses and validating them; for career changers, evidence includes applying curiosity to rapidly understand new domains/processes, such as onboarding into regulated industries; for progression candidates, can show self-driven learning projects or leading discovery efforts on small features.
+* advanced_criteria: Consistently applies systematic curiosity to formulate penetrating, non-obvious questions about user needs, business goals, or compliance requirements, designs experiments or research to address these, and turns insights into clear product actions or measurable impact; demonstrates learning agility across novel situations, such as ramping up in new regulatory environments or quickly uncovering hidden blockers from data; career changers show translating curiosity and investigative rigor into new sectors quickly; progression candidates offer concrete examples leading structured discovery or influencing others by surfacing counterintuitive findings that shaped product or process direction.
+* expert_criteria: Recognized by peers or leadership as an exemplar of inquiry—drives organization-wide learning via curiosity; creates frameworks for uncovering user and data insights; mentors others in discovery methods; repeatedly identifies game-changing insights that transform product strategy; for career changers, evidence includes thought leadership in surfacing unknowns in multiple industries; for progression candidates, recognized for training/leading others in discovery and innovative questioning even before promotion.
+
+
+________________
+
+
+
+
+________________
+
+
+
+
+Generated on 2025-10-01 15:28:53 for lead: b806b075ba56662060ef3f2279cb636e
+
+
+
+
+Example Output
+Every candidate gets an overall score and a “bottom line” statement. 
+
+
+E.g.  
+
+
+ 72/100:  Strong senior-level contributor for a part-time contract who will add immediate value in research-led iteration, accessibility, design systems, and stakeholder alignment, with manageable gaps in domain (climate/0→1) and explicit funnel/behavior-change metrics.
+
+
+If nothing else, this should give you an immediate “pass or proceed” vision of the applicant. 
+
+
+Of course, you want more information.  Here’s the high-level information we provide about each candidate 
+
+
+Full Example Spreadsheet: https://docs.google.com/spreadsheets/d/1fW5cA0IpC_y3UEQViEOu1BgLJUJwGLMc77BUCzqFS8Y/edit?gid=1037647345#gid=1037647345
+
+
+
+
+
+
+
+
+(Note that the AI-detection work is still being tested internally, but Ilse considers it ready-enough that we can definitely launch it for a single client.  We will be manually reviewing any and all AI assessments, don’t worry!) 
+
+
+
+
+Interview Prep - Individualized Per Applicant
+Interview Prep - Individualized Per Applicant
+
+
+We can provide high-level overview interview help … or 70+ pages of analysis + example questions per user.  
+
+
+Here’s an example for the “deep analysis” for a Lead Strategic Pricing Analyst position and the responsibility “Pricing strategy ownership” 
+
+
+We think this level of detail is only helpful in two scenarios: 
+(1) when the people performing the interviews aren’t experienced
+(2) if the company needs a particularly rigorous or standardized interview process. 
+
+
+Pricing strategy ownership
+
+
+ExampleTechCompany requires this responsibility to ensure the company's diverse product portfolio is optimally monetized, stays competitive, and delivers sustainable revenue and customer value in fast-evolving SaaS and AI markets.
+
+
+🎯 Personalized Questions for EXAMPLE USER
+AI Reasoning & Interview Plan 
+Example User 's resume demonstrates strong analytical, financial modeling, and pricing strategy skills in complex, regulated and multi-product environments (EDF, ADENE, OLX). She has clearly partnered cross-functionally and delivered actionable pricing analytics. However, she hasn’t explicitly owned SaaS/PaaS pricing, nor end-to-end monetization strategies within a low-code or AI-enabled multi-product platform context. The questions therefore must: 1. Probe her ability and readiness to move from analytics-driven influence into final ownership of pricing and packaging decisions, especially for SaaS/PaaS portfolios. 2. Elicit examples where she iterated on pricing strategies, not just supported them analytically, especially in contexts analogous to SaaS. 3. Explore how she’s led cross-functional, end-to-end pricing/packaging initiatives in other sectors, including her regulatory experience. 4. Assess her comfort with ambiguity and product ownership, given her analytics background and sector transitions. 5. Tap into her proven strengths in financial modeling, value-based analysis, and revenue-impact assessment to see how she’d adapt these to ExampleTechCompany’ context. The tailored questions below aim to: - Address her experience gap (no direct SaaS/PaaS pricing ownership), by allowing her to narrate analogous experiences and outline how she'd bridge industry/context gaps. - Give opportunity to describe any strategic project where she had to lead, iterate, and own outcomes on monetization, even if in non-SaaS settings. - Assess thought process and leadership in cross-functional settings for developing/refining pricing strategies and responding to market/competitive signals, rather than just analyzing data. - Elicit scenarios of strategic decision-making in ambiguous and evolving commercial or tech contexts, indicative of readiness for the Lead Pricing Analyst role at ExampleTechCompany.
+
+
+Tailored Interview Questions
+Based on EXAMPLE USER's background and resume analysis
+Q1: Can you describe a time when you moved from providing pricing analytics or recommendations to actually owning the development and implementation of a new pricing or packaging strategy? How did you ensure alignment between business objectives, customer value, and monetization goals?
+Q2: At OLX, you analyzed the impact of pricing increases on revenue and customer segments. If given full ownership of a multi-product SaaS/PaaS pricing portfolio (including low-code and AI-based offerings), what would your approach be to designing, executing, and iterating the pricing model? What frameworks or data would you rely on, and how would you validate and refine your strategy over time?
+Q3: Tell us about a project where you had to design or adapt pricing/packaging in response to regulatory, competitive, or market changes (for example, your work at ADENE or EDF). What challenges did you face in driving cross-functional collaboration and stakeholder buy-in, and how did you measure success?
+Q4: Given that most of your pricing and monetization experience has been outside of pure SaaS/PaaS and low-code environments, what steps would you take in your first 90 days at ExampleTechCompany to quickly close any knowledge gaps and ensure you’re making sound, customer-centric pricing decisions for a tech-driven, B2B platform business?
+Q5: Can you share an instance where you led the end-to-end execution of a strategic initiative that significantly impacted revenue, margin, or customer retention—particularly one involving new product or business model innovation? How did you balance quantitative analysis with strategic judgment, and what results did you achieve?
+
+
+Interview Prep - Overall Job
+Interview Prep - Overall Job
+
+
+Here is an example Interview Prep document we can provide for your team.
+
+
+Example (it will take 10-15s to load, sorry!) 
+
+
+We find this useful when discussing interview and hiring strategies within your hiring team.  We don’t see it as a useful tool during an interview, just as a prep for your team to decide what to focus on and ask about / what is important. 
+
+
+  
+
+Candidate Analysis
+Here’s an example of our default output, which is customizable to satisfy your needs.
+
+
+What An Applicant Sees
+An applicant first sees our “Vibe Check” for the role, which includes some “dealbreakers” – things that may serve as an auto-rejection for the role – as well as an overall score and conclusion for them. 
+
+
+  
+
+
+
+If a user decides to continue, we run our deeper, full analysis
+
+
+The first thing they see is a list of major gaps that need to be addressed by telling stories.  This helps guide users towards filling out their background with stories so that we can all do less guesswork.  These are the same assessment criteria outlined in the first step of the process
+
+
+  
+
+
+
+As the user tells stories, we gather quantitative and qualitative outcomes from their jobs, and can provide those as references upon request.  We are also able to compare details shared in these stories with what they mention in interviews to ensure there isn’t any trickery going on. 
+
+
+
+
+Next, the user can explore narrative information and overall scores: 
+
+
+  
+
+
+
+That’s it!  Every time they tell another story to fill in more gaps, we update our scores and understanding of the user.  
+
+
+We can reach out throughout the process and ensure, manually, that applicants are satisfied and ready to go.  
+
+No resumes (unless you want resumes), just deep insights. 
+
+
+If you start this process after October 15th,  Applicants will have a button to click to actually submit themselves for consideration, rather than us manually checking things.

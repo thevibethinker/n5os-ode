@@ -1,0 +1,1 @@
+{"entities": [{"name": "Rochel Polter", "type": "PERSON", "context": "mentioned as a source of information"}], "relationships": [{"from": "V", "to": "Rochel Polter", "type": "KNOWS", "context": "V references Rochel Polter regarding their social media presence"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Google Meet", "type": "TOOL", "context": "video conferencing tool"}, {"name": "Zoom", "type": "TOOL", "context": "video conferencing tool"}], "relationships": [{"from": "Google Meet", "to": "Zoom", "type": "RELATED_TO", "context": "alternative tool used for video conferencing"}]}

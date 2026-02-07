@@ -1,0 +1,67 @@
+{
+  "drop_id": "D2.1",
+  "task": "Decomposer Alignment",
+  "status": "complete",
+  "timestamp": "2026-02-02T21:55:00-05:00",
+  "summary": "Aligned careerspan-decomposer output format with actual Intelligence Brief structure",
+  "changes": [
+    {
+      "file": "Skills/careerspan-decomposer/scripts/decompose.py",
+      "change": "Updated to output wrapped structure with overall_score, bottom_line, category_scores, signal_strength, and skills array instead of flat skills array"
+    },
+    {
+      "file": "Skills/careerspan-decomposer/scripts/validate.py",
+      "change": "Updated to handle both new wrapped structure and legacy flat array format"
+    },
+    {
+      "file": "Skills/careerspan-decomposer/assets/canonical_schema.json",
+      "change": "Updated schema to use actual field names (skill_name, required_level) and allow nullable fields for graceful handling"
+    },
+    {
+      "file": "Skills/careerspan-decomposer/SKILL.md",
+      "change": "Updated documentation with new wrapped output format, version bumped to 2.1"
+    },
+    {
+      "file": "Careerspan/meta-resumes/inbox/hardik-flowfuse/scores_complete.json",
+      "change": "Migrated existing data from flat array to wrapped structure"
+    }
+  ],
+  "schema_changes": {
+    "old_format": "array of skill objects",
+    "new_format": {
+      "overall_score": "integer 0-100",
+      "bottom_line": "string verdict",
+      "category_scores": {
+        "background": "score 0-10",
+        "uniqueness": "score 0-10",
+        "responsibilities": "score 0-10",
+        "hard_skills": "score 0-10",
+        "soft_skills": "score 0-10"
+      },
+      "signal_strength": {
+        "story_verified_pct": "percentage",
+        "resume_only_pct": "percentage",
+        "inferred_pct": "percentage"
+      },
+      "skills": "array of skill objects"
+    }
+  },
+  "validation": {
+    "hardik-flowfuse": {
+      "status": "passed",
+      "score": 89,
+      "skills": 45,
+      "warnings": ["bottom_line is empty/missing - legacy data did not have this field"]
+    }
+  },
+  "learnings": [
+    "The decomposer was outputting flat array but schema expected wrapped object - code and schema must be designed together",
+    "Field naming inconsistencies (name vs skill_name, level_required vs required_level) should be caught by validation tests earlier",
+    "Making schema fields nullable allows graceful migration of legacy data"
+  ],
+  "blockers": [],
+  "next_steps": [
+    "Overview extraction prompt now includes category_scores - future extractions will populate this",
+    "Downstream Meta-Resume generator should read from scores_data['skills'] not scores_data directly"
+  ]
+}

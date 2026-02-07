@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ayush", "type": "PERSON", "context": "Confirmed Google Sheets access"}], "relationships": [{"from": "V (Vrijen)", "to": "Ayush", "type": "KNOWS", "context": "Ayush confirmed Google Sheets access for V"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Chris Hanson", "type": "PERSON", "context": "Speaker expressing gratitude for coworkers"}], "relationships": [{"from": "Chris Hanson", "to": "V", "type": "WORKS_WITH", "context": "Chris works with V"}]}

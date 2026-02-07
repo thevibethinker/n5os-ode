@@ -1,0 +1,1 @@
+{"entities": [{"name": "folder-policy.md", "type": "CONCEPT", "context": "A document detailing folder policies"}, {"name": "naming-conventions.md", "type": "CONCEPT", "context": "A document that outlines naming conventions"}, {"name": "index.schema.json", "type": "CONCEPT", "context": "A JSON file containing schema definitions"}], "relationships": []}

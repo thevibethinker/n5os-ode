@@ -1,0 +1,1 @@
+{"entities": [{"name": "Jaya Pokuri", "type": "PERSON", "context": "mentioned as someone discussing a tool"}, {"name": "prompt optimizer", "type": "TOOL", "context": "a tool being discussed for generating IDs in an API"}], "relationships": [{"from": "Jaya Pokuri", "to": "prompt optimizer", "type": "USES", "context": "discussing the use of the tool"}]}

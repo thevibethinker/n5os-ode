@@ -1,0 +1,1 @@
+{"entities": [{"name": "Deeya", "type": "PERSON", "context": "Chief digital officer"}, {"name": "process AI", "type": "CONCEPT", "context": "Has budget and mandate for use"}], "relationships": [{"from": "Deeya", "to": "process AI", "type": "USES", "context": "Has budget and mandate for process AI"}]}

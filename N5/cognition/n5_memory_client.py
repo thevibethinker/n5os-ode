@@ -9,6 +9,8 @@ import time
 from typing import List, Dict, Optional, Tuple, Any
 import numpy as np
 import sys
+from pathlib import Path
+from N5.cognition.graph_store import GraphStore
 
 # Add N5 lib to path for imports
 sys.path.insert(0, '/home/workspace')
@@ -58,6 +60,13 @@ LOG = logging.getLogger("n5_memory_client")
 class N5MemoryClient:
     def __init__(self, db_path: str = str(BRAIN_DB)):
         self.db_path = db_path
+        
+        # Prefer vectors_v2.db if it exists (has OpenAI embeddings)
+        v2_path = str(Path(db_path).parent / "vectors_v2.db")
+        if os.path.exists(v2_path):
+            self.db_path = v2_path
+            LOG.info(f"Using v2 embedding store: {v2_path}")
+        
         self._conn = None
         self.provider = os.getenv("N5_EMBEDDING_PROVIDER", "local") # 'local' or 'openai'
         self.openai_model = os.getenv("N5_OPENAI_EMBEDDING_MODEL", "text-embedding-3-large")
@@ -157,6 +166,25 @@ class N5MemoryClient:
                 raise ImportError("sentence-transformers not installed for local embeddings.")
             self.local_model = SentenceTransformer(self.local_model_name)
             LOG.info(f"Using Local Embeddings: {self.local_model_name}")
+        
+        # Auto-detect provider from stored vector dimensions
+        if "vectors_v2" in self.db_path:
+            try:
+                conn = sqlite3.connect(self.db_path)
+                cursor = conn.cursor()
+                cursor.execute("SELECT embedding FROM vectors LIMIT 1")
+                row = cursor.fetchone()
+                conn.close()
+                if row:
+                    stored_dim = len(np.frombuffer(row[0], dtype=np.float32))
+                    if stored_dim == 3072 and self.provider == "local":
+                        LOG.info(f"Detected 3072-dim vectors, switching to OpenAI embeddings")
+                        self.provider = "openai"
+                        if HAS_OPENAI and os.getenv("OPENAI_API_KEY"):
+                            self.openai_client = OpenAI()
+                            self.local_model = None
+            except Exception as e:
+                LOG.debug(f"Could not auto-detect embedding dimension: {e}")
 
     def _init_db(self):
         self._conn = sqlite3.connect(self.db_path)
@@ -201,14 +229,24 @@ class N5MemoryClient:
         self._conn.commit()
 
     def _init_reranker(self):
-        """Initialize cross-encoder for reranking if available."""
-        if HAS_CROSS_ENCODER:
-            try:
-                self.cross_encoder = CrossEncoder('cross-encoder/ms-marco-MiniLM-L-6-v2')
-                LOG.info("Reranker initialized: cross-encoder/ms-marco-MiniLM-L-6-v2")
-            except Exception as e:
-                LOG.warning(f"Could not load cross-encoder: {e}")
-                self.cross_encoder = None
+        """Initialize reranker using abstraction layer."""
+        from N5.cognition.rerankers import create_reranker as get_reranker
+        
+        self.reranker_type = os.getenv("N5_RERANKER", "flashrank")
+        
+        try:
+            self.reranker = get_reranker(self.reranker_type)
+            if self.reranker and self.reranker.is_available():
+                LOG.info(f"Reranker initialized: {self.reranker.name}")
+            else:
+                LOG.warning(f"Reranker not available: {self.reranker_type}")
+                self.reranker = None
+        except Exception as e:
+            LOG.warning(f"Could not initialize reranker: {e}")
+            self.reranker = None
+        
+        # Keep cross_encoder for backward compatibility
+        self.cross_encoder = self.reranker if self.reranker and self.reranker.name == "cross-encoder" else None
 
     def _load_ann_index(self, check_freshness: bool = True) -> bool:
         """Load the pre-built HNSW index if available.
@@ -783,18 +821,20 @@ class N5MemoryClient:
         # Sort by combined score
         results.sort(key=lambda x: x['score'], reverse=True)
         
-        # Reranking with cross-encoder
-        if use_reranker and self.cross_encoder and results:
+        # Reranking with configured reranker (FlashRank or CrossEncoder)
+        if use_reranker and self.reranker and self.reranker.is_available() and results:
             top_candidates = results[:rerank_top_k]
-            pairs = [(query, r['content']) for r in top_candidates]
             
             try:
-                rerank_scores = self.cross_encoder.predict(pairs)
-                for i, score in enumerate(rerank_scores):
-                    top_candidates[i]['rerank_score'] = float(score)
-                    top_candidates[i]['score'] = float(score)  # Replace with rerank score
+                # rank() modifies candidates in-place, adding 'rerank_score'
+                self.reranker.rank(query, top_candidates)
                 
-                top_candidates.sort(key=lambda x: x['score'], reverse=True)
+                # Update score to use rerank_score
+                for r in top_candidates:
+                    if 'rerank_score' in r:
+                        r['score'] = r['rerank_score']
+                
+                top_candidates.sort(key=lambda x: x.get('score', 0), reverse=True)
                 results = top_candidates + results[rerank_top_k:]
             except Exception as e:
                 LOG.warning(f"Reranking failed: {e}")
@@ -849,28 +889,159 @@ class N5MemoryClient:
         all_results.sort(key=lambda x: x.get("score", 0.0), reverse=True)
         return all_results[:limit]
 
+
+    def search_temporal(self, query: str, before: str = None, after: str = None, limit: int = 10) -> List[Dict]:
+        """
+        Search with temporal constraints.
+        
+        Args:
+            query: Search query string
+            before: ISO date string — only return content indexed before this date
+            after: ISO date string — only return content indexed after this date
+            limit: Max results
+            
+        Returns:
+            List of results filtered by temporal constraints
+        """
+        # Get base search results (more than we need, then filter)
+        results = self.search(query, limit=limit * 3)
+        
+        filtered = []
+        cursor = self._get_db().cursor()
+        
+        for r in results:
+            block_id = r.get('block_id')
+            if not block_id:
+                # Try to get block_id from path
+                resource_id = r.get('resource_id')
+                if resource_id:
+                    cursor.execute("SELECT id, indexed_at FROM blocks WHERE resource_id = ? LIMIT 1", (resource_id,))
+                    row = cursor.fetchone()
+                    if row:
+                        block_id, indexed_at = row
+                    else:
+                        continue
+                else:
+                    continue
+            else:
+                cursor.execute("SELECT indexed_at FROM blocks WHERE id = ?", (block_id,))
+                row = cursor.fetchone()
+                indexed_at = row[0] if row else None
+            
+            if indexed_at is None:
+                continue
+                
+            # Apply temporal filters
+            if before and indexed_at > before:
+                continue
+            if after and indexed_at < after:
+                continue
+            
+            r['indexed_at'] = indexed_at
+            filtered.append(r)
+            
+            if len(filtered) >= limit:
+                break
+        
+        return filtered
+
+    def get_belief_history(self, topic: str, limit: int = 10) -> List[Dict]:
+        """
+        Show how content about a topic evolved over time.
+        
+        Args:
+            topic: Topic to search for
+            limit: Max versions to return
+            
+        Returns:
+            List of content versions, oldest first, with timestamps
+        """
+        cursor = self._get_db().cursor()
+        
+        # Search for the topic
+        results = self.search(topic, limit=limit * 2)
+        
+        history = []
+        seen_resources = set()
+        
+        for r in results:
+            path = r.get('path', '')
+            if not path:
+                continue
+            
+            # Get resource with version info
+            cursor.execute("""
+                SELECT r.id, r.path, r.first_indexed_at, r.last_indexed_at, r.version,
+                       b.content, b.indexed_at
+                FROM resources r
+                LEFT JOIN blocks b ON b.resource_id = r.id
+                WHERE r.path = ?
+                ORDER BY b.indexed_at DESC
+                LIMIT 1
+            """, (path,))
+            
+            row = cursor.fetchone()
+            if not row:
+                continue
+            
+            resource_id = row[0]
+            if resource_id in seen_resources:
+                continue
+            seen_resources.add(resource_id)
+            
+            history.append({
+                'path': row[1],
+                'first_indexed_at': row[2],
+                'last_indexed_at': row[3],
+                'version': row[4] or 1,
+                'content_preview': (row[5] or '')[:200] + '...' if row[5] else None,
+                'block_indexed_at': row[6],
+                'score': r.get('score', 0)
+            })
+        
+        # Sort by first_indexed_at (oldest first)
+        history.sort(key=lambda x: x.get('first_indexed_at') or '9999')
+        
+        return history[:limit]
     def index_file(self, file_path: str, content: str, content_date: Optional[str] = None):
-        """Full re-index of a file: update resource, delete old blocks, insert new blocks."""
+        """Full re-index of a file: update resource, delete old blocks, insert new blocks.
+        
+        Temporal tracking: Preserves first_indexed_at, increments version, tracks block evolution.
+        """
         # 1. Update Resource
         file_hash = hashlib.md5(content.encode('utf-8')).hexdigest()
         resource_id = hashlib.md5(file_path.encode('utf-8')).hexdigest()
         
         cursor = self._conn.cursor()
         
+        # Get existing resource info for temporal tracking
+        cursor.execute("SELECT first_indexed_at, version FROM resources WHERE id = ?", (resource_id,))
+        existing = cursor.fetchone()
+        first_indexed_at = None
+        new_version = 1
+        
+        if existing:
+            first_indexed_at = existing[0]
+            new_version = (existing[1] or 0) + 1
+        
+        # Store old block IDs before deletion for supersedes linking
+        cursor.execute("SELECT id FROM blocks WHERE resource_id = ?", (resource_id,))
+        old_block_ids = {row[0]: row[0] for row in cursor.fetchall()}
+        
         # First delete any existing resource with this path (handles both id and path uniqueness)
         cursor.execute("DELETE FROM resources WHERE path = ? OR id = ?", (file_path, resource_id))
         
-        # Then insert fresh
+        # Then insert fresh with temporal fields
         cursor.execute("""
-            INSERT INTO resources (id, path, hash, last_indexed_at, content_date)
-            VALUES (?, ?, ?, datetime('now'), ?)
-        """, (resource_id, file_path, file_hash, content_date))
+            INSERT INTO resources (id, path, hash, last_indexed_at, content_date, first_indexed_at, version)
+            VALUES (?, ?, ?, datetime('now'), ?, ?, ?)
+        """, (resource_id, file_path, file_hash, content_date, first_indexed_at, new_version))
         
         # 2. Clear old blocks AND vectors explicitly (CASCADE may not work)
         cursor.execute("DELETE FROM vectors WHERE block_id IN (SELECT id FROM blocks WHERE resource_id = ?)", (resource_id,))
         cursor.execute("DELETE FROM blocks WHERE resource_id = ?", (resource_id,))
         
-        # 3. Chunk & Embed
+        # 3. Chunk & Embed with temporal tracking
         chunks = self._chunk_content(content)
         
         for i, chunk in enumerate(chunks):
@@ -879,10 +1050,14 @@ class N5MemoryClient:
             cursor.execute("DELETE FROM vectors WHERE block_id = ?", (block_id,))
             embedding_blob = self.get_embedding(chunk['text'])
             
+            # Determine which old block this supersedes (by position)
+            old_block_id_for_pos = f"{resource_id}_{i}"
+            supersedes = old_block_ids.get(old_block_id_for_pos, None)
+            
             cursor.execute("""
-                INSERT INTO blocks (id, resource_id, block_type, content, start_line, end_line, token_count, content_date)
-                VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-            """, (block_id, resource_id, 'text', chunk['text'], chunk['start'], chunk['end'], len(chunk['text'])//4, content_date))
+                INSERT INTO blocks (id, resource_id, block_type, content, start_line, end_line, token_count, content_date, indexed_at, valid_from, supersedes_block_id)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, datetime('now'), datetime('now'), ?)
+            """, (block_id, resource_id, 'text', chunk['text'], chunk['start'], chunk['end'], len(chunk['text'])//4, content_date, supersedes))
             
             cursor.execute("""
                 INSERT INTO vectors (block_id, embedding)
@@ -890,7 +1065,7 @@ class N5MemoryClient:
             """, (block_id, embedding_blob))
             
         self._conn.commit()
-        LOG.info(f"Indexed {file_path}: {len(chunks)} blocks")
+        LOG.info(f"Indexed {file_path}: {len(chunks)} blocks (v{new_version})")
 
     def tag_resource(self, file_path: str, tag: str):
         resource_id = hashlib.md5(file_path.encode('utf-8')).hexdigest()
@@ -1054,6 +1229,95 @@ class N5MemoryClient:
         if row and row[0] == current_hash:
             return False
         return True
+
+    def search_graph(self, query: str, entity_type: str = None, limit: int = 10) -> List[Dict]:
+        """
+        Search for entities in the knowledge graph.
+        
+        Args:
+            query: Search query (fuzzy match on entity names)
+            entity_type: Filter by type (PERSON, CONCEPT, ORG, BELIEF, TOOL, EVENT)
+            limit: Max results
+            
+        Returns:
+            List of matching entities with their metadata
+        """
+        try:
+            graph = GraphStore(self.db_path.replace('vectors_v2.db', 'brain.db'))
+            entities = graph.search_entities(query, entity_type=entity_type, limit=limit)
+            graph.close()
+            
+            return [
+                {
+                    'id': e.id,
+                    'name': e.name,
+                    'type': e.type,
+                    'mention_count': e.mention_count,
+                    'first_seen': e.first_seen_at,
+                    'last_seen': e.last_seen_at
+                }
+                for e in entities
+            ]
+        except Exception as e:
+            LOG.error(f"Graph search failed: {e}")
+            return []
+    
+    def get_graph_connections(self, entity_name: str, depth: int = 1) -> Dict[str, Any]:
+        """
+        Get entities connected to the given entity.
+        
+        Args:
+            entity_name: Entity to start from
+            depth: How many hops (1 = direct connections)
+            
+        Returns:
+            Dict with 'center', 'entities', 'relationships'
+        """
+        try:
+            graph = GraphStore(self.db_path.replace('vectors_v2.db', 'brain.db'))
+            result = graph.get_connections(entity_name, depth=depth)
+            graph.close()
+            return result
+        except Exception as e:
+            LOG.error(f"Graph traversal failed: {e}")
+            return {"center": None, "entities": [], "relationships": []}
+    
+    def hybrid_search(self, query: str, limit: int = 10, graph_boost: float = 0.3) -> List[Dict]:
+        """
+        Combine vector search with graph context for enhanced results.
+        
+        Results that mention entities found in the graph get a score boost.
+        
+        Args:
+            query: Search query
+            limit: Max results  
+            graph_boost: Score boost for results with graph connections (0-1)
+            
+        Returns:
+            List of results with combined scoring
+        """
+        # Get vector search results
+        vector_results = self.search(query, limit=limit * 2)
+        
+        # Get graph entities matching query
+        graph_entities = self.search_graph(query, limit=20)
+        entity_names = {e['name'].lower() for e in graph_entities}
+        
+        # Boost results that mention graph entities
+        for r in vector_results:
+            content = r.get('content', '').lower()
+            entity_matches = sum(1 for name in entity_names if name in content)
+            
+            if entity_matches > 0:
+                # Boost score based on entity matches
+                boost = min(graph_boost * entity_matches, graph_boost * 2)
+                r['score'] = min(1.0, r.get('score', 0) + boost)
+                r['graph_matches'] = entity_matches
+        
+        # Re-sort by score
+        vector_results.sort(key=lambda x: x.get('score', 0), reverse=True)
+        
+        return vector_results[:limit]
 
 
 

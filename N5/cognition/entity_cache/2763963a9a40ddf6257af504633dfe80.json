@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "languages", "type": "CONCEPT", "context": "linguistic systems supported by the knowledge system"}], "relationships": [{"from": "V (Vrijen)", "to": "languages", "type": "USES", "context": "V's knowledge system supports multiple languages"}]}

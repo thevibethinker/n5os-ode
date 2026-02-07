@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "a person referenced in the knowledge system"}, {"name": "N5", "type": "ORG", "context": "the organization related to the digital folder structure"}, {"name": "meeting_requests", "type": "CONCEPT", "context": "a type of file being sorted and managed"}], "relationships": []}

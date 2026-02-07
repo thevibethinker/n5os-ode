@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "A solution positioned by V to address structural problems."}], "relationships": [{"from": "V", "to": "Careerspan", "type": "BELIEVES", "context": "V believes Careerspan is the only viable solution to the structural problem."}]}

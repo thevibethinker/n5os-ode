@@ -1,0 +1,1 @@
+{"entities": [{"name": "LD-INT", "type": "EVENT", "context": "Internal meeting (team building)"}, {"name": "GPT-E", "type": "CONCEPT", "context": "Exploratory phase (onboarding, relationship building)"}, {"name": "A-4", "type": "CONCEPT", "context": "Highly flexible (internal meeting, no scheduling constraints)"}], "relationships": []}

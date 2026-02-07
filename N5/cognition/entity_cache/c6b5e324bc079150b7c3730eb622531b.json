@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual involved in the knowledge system"}, {"name": "team", "type": "ORG", "context": "group seeking to understand candidates' behavior"}], "relationships": [{"from": "team", "to": "candidates", "type": "MENTIONS", "context": "team wants to know about candidates' storytelling behavior"}]}

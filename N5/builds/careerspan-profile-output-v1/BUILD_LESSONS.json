@@ -1,0 +1,49 @@
+{
+  "slug": "careerspan-profile-output-v1",
+  "learnings": [
+    {
+      "text": "FlowFuse culture signals for Panel 4: remote-first/async, informal/personality-forward, shipping incrementally, ownership, clear communication. These come from JD culture research and should inform culture fit assessment.",
+      "source": "manual",
+      "added_at": "2026-01-29T06:11:47.424618+00:00",
+      "tags": []
+    },
+    {
+      "text": "Evidence sufficiency levels for Panel 2: Strong (production work), Moderate (pre-production/indirect), Weak (educational/tangential), Not Found (no evidence). This framework helps standardize bar cleared assessments.",
+      "source": "manual",
+      "added_at": "2026-01-29T06:12:47.453544+00:00",
+      "tags": []
+    },
+    {
+      "text": "Panel 3 differentiators vs table stakes: Table stakes (generic soft skills like 'team player', 'communicator') should NOT be differentiators. Only include technical rarity, unusual combinations, domain expertise, achievement signals, or culture resonance.",
+      "source": "manual",
+      "added_at": "2026-01-29T06:13:17.050148+00:00",
+      "tags": []
+    },
+    {
+      "text": "Tool-list mentions (e.g., 'RAG techniques') without project evidence should be treated as 'Weak' or 'Not Found' evidence, not 'Moderate'. Production LLM experience requires explicit evidence of deployed features, not just tool familiarity.",
+      "source": "manual",
+      "added_at": "2026-01-29T06:31:30.705008+00:00",
+      "tags": []
+    },
+    {
+      "text": "Stack mismatch (Java/Python vs Node.js) should be flagged as 'Not Found' when candidate has no documented experience with required tech stack, even if they are strong generalists. RAG mentions without vector DB specificity should be downgraded from Strong to Weak or Not Found.",
+      "source": "manual",
+      "added_at": "2026-01-29T06:32:34.811902+00:00",
+      "tags": [
+        "panel-2,evidence-evaluation,stack-mismatch"
+      ]
+    },
+    {
+      "text": "Panel briefs in build documentation can be confused with actual panel content during assembly. When output files contain only task instructions (not synthesized content), quality gate should flag as blocking. Distinguish between 'brief' (instructions for what to produce) and 'content' (actual synthesized output ready for delivery).",
+      "source": "manual",
+      "added_at": "2026-01-29T06:39:41.696132+00:00",
+      "tags": []
+    },
+    {
+      "text": "When assembling multi-panel candidate profiles, verify that ALL panel content is available before proceeding. Missing panel content (e.g., Panel 4 from D2.4) creates blocking issues that require rework. Quality gate should check content existence, not just brief presence.",
+      "source": "manual",
+      "added_at": "2026-01-29T06:46:48.029142+00:00",
+      "tags": []
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "AI-skeptical recruiters", "type": "PERSON", "context": "recruiters who are skeptical of AI"}], "relationships": [{"from": "AI-skeptical recruiters", "to": "V (Vrijen)", "type": "BELIEVES", "context": "recruiters may hold beliefs about the capabilities of AI"}]}

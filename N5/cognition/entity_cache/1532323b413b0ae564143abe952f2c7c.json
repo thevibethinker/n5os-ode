@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "V's knowledge system"}, {"name": "user research", "type": "CONCEPT", "context": "the focus of the call"}], "relationships": [{"from": "V", "to": "user research", "type": "MENTIONS", "context": "V transformed the call into a potential career opportunity"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ben Guo", "type": "PERSON", "context": "Cofounder at Zo"}, {"name": "Zo", "type": "ORG", "context": "Organization related to software & personal computing"}], "relationships": [{"from": "V", "to": "Ben Guo", "type": "KNOWS", "context": "Ben Guo is a contact on LinkedIn"}, {"from": "V", "to": "Zo", "type": "WORKS_WITH", "context": "Cofounder of Zo"}]}

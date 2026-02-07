@@ -1,0 +1,1 @@
+{"entities": [{"name": "thread-export", "type": "CONCEPT", "context": "A system related to AAR generation"}, {"name": "thread-close-aar", "type": "CONCEPT", "context": "A system related to AAR generation"}, {"name": "conversation-end", "type": "CONCEPT", "context": "A system for full closure workflow"}], "relationships": []}

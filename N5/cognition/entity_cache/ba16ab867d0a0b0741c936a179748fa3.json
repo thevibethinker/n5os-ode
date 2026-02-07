@@ -1,0 +1,1 @@
+{"entities": [{"name": "Eastern Time (America/New_York)", "type": "CONCEPT", "context": "primary time zone"}, {"name": "deep work", "type": "CONCEPT", "context": "work sessions focused on productivity"}, {"name": "DW", "type": "TOOL", "context": "label for deep work sessions"}], "relationships": []}

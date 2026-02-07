@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "mentioned as having selling interests"}, {"name": "founders", "type": "PERSON", "context": "mentioned as parties willing to explore"}], "relationships": [{"from": "Vrijen", "to": "founders", "type": "MENTIONS", "context": "Vrijen mentioned that founders have selling interests"}]}

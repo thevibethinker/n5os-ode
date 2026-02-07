@@ -1,0 +1,1 @@
+{"entities": [{"name": "active persona", "type": "CONCEPT", "context": "a character torn between multiple identities"}, {"name": "human/LLM semantic judgment", "type": "CONCEPT", "context": "a comparison scenario in diagnostics"}, {"name": "heuristic routing", "type": "TOOL", "context": "a method used in evaluation scenarios"}], "relationships": []}

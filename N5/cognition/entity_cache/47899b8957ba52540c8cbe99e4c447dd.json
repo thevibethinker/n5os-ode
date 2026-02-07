@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual interested in hackathon-style events"}, {"name": "hackathon-style events", "type": "EVENT", "context": "type of event indicated in survey responses"}, {"name": "February happy hour", "type": "EVENT", "context": "previous event before mentioned hackathon-style events"}], "relationships": []}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Logan Currie", "type": "PERSON", "context": "individual providing praise"}, {"name": "Elsa", "type": "PERSON", "context": "individual being praised"}], "relationships": [{"from": "Logan Currie", "to": "Elsa", "type": "MENTIONS", "context": "praising Elsa's ability to identify a filtering issue"}]}

@@ -1,0 +1,61 @@
+{
+  "drop_id": "D2.3",
+  "status": "complete",
+  "summary": "Created comprehensive Block Picker Policy v2 documentation that formalizes all selection logic from D0.3 and D0.4. Document includes recipe selection rules, always/conditional framework, LLM analysis criteria, Zo Take Heed trigger patterns, priority relevance scoring, and complete decision flowchart.",
+  "artifacts": [
+    "Skills/meeting-ingestion/references/block-picker-v2-policy.md"
+  ],
+  "acceptance_criteria": {
+    "policy_documented": true,
+    "all_block_conditions_specified": true,
+    "trigger_patterns_listed": true,
+    "flowchart_included": true
+  },
+  "document_sections": [
+    {
+      "section": "Core Principles",
+      "description": "Content-driven selection, priority weighting, recipe foundation, trigger overrides"
+    },
+    {
+      "section": "Recipe Selection Logic",
+      "description": "Algorithm for choosing recipe based on meeting type and participants, with characteristics table"
+    },
+    {
+      "section": "Always/Conditional Block Framework", 
+      "description": "Definition and strategy for block categorization with distribution targets"
+    },
+    {
+      "section": "Conditional Block Selection Criteria",
+      "description": "LLM analysis framework with selection criteria by block type and quality thresholds"
+    },
+    {
+      "section": "Zo Take Heed Trigger Patterns",
+      "description": "Three trigger categories (B07, B14, B00) with patterns and behavior documentation"
+    },
+    {
+      "section": "Priority Relevance Scoring",
+      "description": "Domain weights, block priority mapping, and selection bias implementation"
+    },
+    {
+      "section": "Decision Flowchart",
+      "description": "Complete mermaid flowchart showing recipe selection → LLM analysis → trigger override → final selection"
+    },
+    {
+      "section": "Implementation Details",
+      "description": "Technical architecture, parameters, error handling, and performance characteristics"
+    }
+  ],
+  "policy_highlights": [
+    "6 recipes documented with always/conditional block distributions",
+    "27 total blocks categorized with selection criteria",
+    "3 trigger pattern categories with 10+ specific patterns",
+    "5 priority domains mapped to block relevance scoring",
+    "Complete decision flowchart with 20+ decision points",
+    "LLM analysis framework with structured JSON output format",
+    "Error handling and performance specifications included"
+  ],
+  "blockers": [],
+  "notes_for_orchestrator": "Policy document is comprehensive and ready for reference by future development. All logic from block_selector.py is formally documented with decision rationale. Document serves as both technical specification and operational guide for the block selection system.",
+  "dependencies": ["D0.3", "D0.4"],
+  "next_steps": []
+}

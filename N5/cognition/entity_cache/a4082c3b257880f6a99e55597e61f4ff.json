@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "co-founder and Head of AI"}, {"name": "Shane", "type": "PERSON", "context": "potential follow-up recipient"}], "relationships": [{"from": "V", "to": "Shane", "type": "MENTIONS", "context": "considering if Shane should be looped in"}]}

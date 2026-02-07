@@ -1,0 +1,1 @@
+{"entities": [{"name": "Brendan Clark", "type": "PERSON", "context": "real individual involved in an identity theft case"}, {"name": "Logan", "type": "PERSON", "context": "mentioned the identity theft case"}], "relationships": [{"from": "Logan", "to": "Brendan Clark", "type": "MENTIONS", "context": "Logan mentioned Brendan Clark in relation to an identity theft case"}]}

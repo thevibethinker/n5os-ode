@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "platform involved in potential product integration"}, {"name": "Nira", "type": "ORG", "context": "platform involved in potential product integration"}], "relationships": [{"from": "Careerspan", "to": "Nira", "type": "RELATED_TO", "context": "potential product integration"}]}

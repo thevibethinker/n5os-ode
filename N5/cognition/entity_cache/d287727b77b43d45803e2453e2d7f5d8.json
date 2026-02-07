@@ -1,0 +1,1 @@
+{"entities": [{"name": "Joe Burgess", "type": "PERSON", "context": "sold his company"}], "relationships": [{"from": "V", "to": "Joe Burgess", "type": "MENTIONS", "context": "in terms of running a process"}]}

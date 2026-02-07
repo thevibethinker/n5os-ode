@@ -1,0 +1,1 @@
+{"entities": [{"name": "Fti Nyc", "type": "PERSON", "context": "Email contact"}, {"name": "Googlegroups", "type": "ORG", "context": "Organization associated with the email"}], "relationships": [{"from": "Fti Nyc", "to": "Googlegroups", "type": "WORKS_WITH", "context": "Fti Nyc is associated with the organization Googlegroups"}]}

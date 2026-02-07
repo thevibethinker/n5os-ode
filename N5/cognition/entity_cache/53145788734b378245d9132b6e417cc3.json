@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "a person with a knowledge system"}, {"name": "Manually-crafted insight", "type": "CONCEPT", "context": "a type of insight referenced in the knowledge system"}, {"name": "Test Meeting", "type": "EVENT", "context": "an event in the interaction history"}], "relationships": []}

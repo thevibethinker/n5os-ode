@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker discussing a knowledge system"}, {"name": "ats", "type": "TOOL", "context": "Referencing a type of knowledge system where roles can be added and looked up"}], "relationships": [{"from": "Vrijen Attawar", "to": "ats", "type": "MENTIONS", "context": "Discussing its features and functionality"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Tiffany Huang", "type": "PERSON", "context": "member of the Zo team"}, {"name": "Future of Higher Education", "type": "CONCEPT", "context": "group mentioned by Tiffany Huang"}], "relationships": [{"from": "Tiffany Huang", "to": "Future of Higher Education", "type": "MENTIONS", "context": "suggested to connect regarding this group"}]}

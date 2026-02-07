@@ -1,0 +1,1 @@
+{"entities": [{"name": "Howie V-OS", "type": "TOOL", "context": "knowledge system related to V"}, {"name": "Sarah", "type": "PERSON", "context": "comparison for scheduling flexibility"}], "relationships": [{"from": "Howie V-OS", "to": "Sarah", "type": "RELATED_TO", "context": "comparison of scheduling flexibility"}]}

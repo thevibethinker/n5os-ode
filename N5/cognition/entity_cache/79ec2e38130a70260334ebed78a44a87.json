@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "organization that the guide is a tool for"}, {"name": "conversion tool", "type": "TOOL", "context": "the function of the guide"}], "relationships": []}

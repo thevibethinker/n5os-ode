@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ash Straughn", "type": "PERSON", "context": "a participant in the discussion"}, {"name": "partnership", "type": "CONCEPT", "context": "a potential collaboration mentioned"}], "relationships": [{"from": "Ash Straughn", "to": "partnership", "type": "MENTIONS", "context": "discussing pursuit of a partnership"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Zo", "type": "TOOL", "context": "a tool used for planning and code execution"}], "relationships": [{"from": "V", "to": "Zo", "type": "USES", "context": "V uses Zo for planning and code execution"}]}

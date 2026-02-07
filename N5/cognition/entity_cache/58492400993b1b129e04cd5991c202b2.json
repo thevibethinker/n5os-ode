@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual offering help"}, {"name": "tech", "type": "CONCEPT", "context": "referring to technology and its relevance"}], "relationships": [{"from": "V", "to": "tech", "type": "MENTIONS", "context": "self-deprecating about technology"}]}

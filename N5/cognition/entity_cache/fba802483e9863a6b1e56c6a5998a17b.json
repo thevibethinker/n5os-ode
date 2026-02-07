@@ -1,0 +1,1 @@
+{"entities": [{"name": "SourceMapGenerator", "type": "TOOL", "context": "A tool used for generating source maps"}, {"name": "SourceMapConsumer", "type": "TOOL", "context": "A tool for consuming source maps"}], "relationships": [{"from": "SourceMapGenerator", "to": "SourceMapConsumer", "type": "USES", "context": "SourceMapConsumer is created from SourceMapGenerator"}]}

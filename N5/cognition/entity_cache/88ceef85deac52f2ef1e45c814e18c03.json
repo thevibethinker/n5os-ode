@@ -1,0 +1,1 @@
+{"entities": [{"name": "fetchMethod", "type": "CONCEPT", "context": "A method that fetches data, with specific return behavior based on the AbortController's state."}, {"name": "AbortController", "type": "TOOL", "context": "An API that represents a controller object that allows you to abort one or more DOM requests."}], "relationships": []}

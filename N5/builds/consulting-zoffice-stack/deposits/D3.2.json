@@ -1,0 +1,29 @@
+{
+  "drop": "D3.2",
+  "status": "complete",
+  "summary": "Implemented Calendly → Zoffice Consultant integration as a real webhook receiver + stateful job scheduler. Adds signature verification (when CALENDLY_WEBHOOK_SIGNING_KEY is set), session/job persistence under N5/config/consulting/calendly_zoffice, notification queue emission, and a new `deactivate <worker>` command in zoffice_worker to support post-session shutdown.",
+  "tests": [
+    "python3 - <<'PY' | python3 Integrations/calendly-zoffice/webhook_handler.py\nimport json\nfrom datetime import datetime, timedelta, timezone\nstart=(datetime.now(timezone.utc)+timedelta(minutes=30)).isoformat()\npayload={\"event_type\":\"Zoffice Consulting\",\"start_time\":start,\"invitee\":{\"email\":\"client@example.com\",\"name\":\"Client Example\"}}\nprint(json.dumps(payload))\nPY",
+    "python3 Integrations/calendly-zoffice/scripts/session_prep.py tick",
+    "python3 - <<'PY' | python3 Integrations/calendly-zoffice/scripts/webhook_handler.py --stdin\nimport json\npayload={\n  \"event\":\"invitee.canceled\",\n  \"payload\":{\n    \"scheduled_event_uri\":\"6988ab71410a855d\",\n    \"email\":\"client@example.com\",\n    \"name\":\"Client Example\"\n  }\n}\nprint(json.dumps(payload))\nPY"
+  ],
+  "artifacts": [
+    "Integrations/calendly-zoffice/SKILL.md",
+    "Integrations/calendly-zoffice/AGENTS.md",
+    "Integrations/calendly-zoffice/config/event_types.json",
+    "Integrations/calendly-zoffice/scripts/webhook_handler.py",
+    "Integrations/calendly-zoffice/scripts/session_prep.py",
+    "Integrations/calendly-zoffice/webhook_handler.py",
+    "N5/scripts/zoffice_worker.py",
+    "N5/config/consulting/CONSULTING_MANIFEST.md",
+    "N5/config/consulting/calendly_zoffice/sessions.json",
+    "N5/config/consulting/calendly_zoffice/jobs.json",
+    "N5/config/consulting/calendly_zoffice/notifications.jsonl"
+  ],
+  "notes": [
+    "Webhook server accepts POST /api/calendly/webhook (also /webhook and /). Signature verification uses Calendly-Webhook-Signature header (t=...,v1=...) and CALENDLY_WEBHOOK_SIGNING_KEY.",
+    "This drop queues outbound notifications (prep email + SMS) to notifications.jsonl; delivery requires a separate notifier agent/service on zoputer.",
+    "To fully automate, schedule: `python3 Integrations/calendly-zoffice/scripts/session_prep.py tick` every 1 minute on zoputer.",
+    "Manual override supported via CLI: `python3 Integrations/calendly-zoffice/scripts/session_prep.py hold|resume` (SMS command wiring still needed)."
+  ]
+}

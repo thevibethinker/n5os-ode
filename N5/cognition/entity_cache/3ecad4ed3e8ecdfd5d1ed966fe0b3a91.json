@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "The individual speaking about career span and hiring issues."}, {"name": "Zo", "type": "ORG", "context": "Mentioned as a hiring resource or tool."}], "relationships": [{"from": "Vrijen Attawar", "to": "Zo", "type": "MENTIONS", "context": "Refers to Zo in the context of hiring and product experience."}]}

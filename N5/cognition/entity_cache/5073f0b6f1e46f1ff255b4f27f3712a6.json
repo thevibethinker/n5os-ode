@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "speaker"}, {"name": "Manus", "type": "TOOL", "context": "reference point for AI capabilities"}], "relationships": [{"from": "Vrijen Attawar", "to": "Manus", "type": "USES", "context": "uses as a baseline for AI reference"}]}

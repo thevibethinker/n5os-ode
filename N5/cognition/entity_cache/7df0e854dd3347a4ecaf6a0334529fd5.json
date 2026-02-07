@@ -1,0 +1,1 @@
+{"entities": [{"name": "N5/data/executables.db", "type": "TOOL", "context": "Index of recipe files (metadata only)"}, {"name": "AI", "type": "CONCEPT", "context": "Artificial Intelligence that reads and executes recipes"}], "relationships": [{"from": "AI", "to": "N5/data/executables.db", "type": "USES", "context": "AI utilizes the index of recipe files to execute instructions"}]}

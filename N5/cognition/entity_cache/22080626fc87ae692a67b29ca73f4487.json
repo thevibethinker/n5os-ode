@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "currently seeking employment"}, {"name": "Careerspan", "type": "TOOL", "context": "product used for tracking job search progress"}], "relationships": [{"from": "V", "to": "Careerspan", "type": "USES", "context": "to track interview progress and engagement"}]}

@@ -1,0 +1,46 @@
+{
+  "slug": "systematic-debugging-integration",
+  "timestamp": "2026-02-07T13:46:28.616980+00:00",
+  "drops": {
+    "D1.1": {
+      "claimed": [
+        "Skills/systematic-debugging/references/root-cause-tracing.md",
+        "Skills/systematic-debugging/references/defense-in-depth.md",
+        "Skills/systematic-debugging/references/condition-based-waiting.md"
+      ],
+      "verified": [
+        "Skills/systematic-debugging/references/root-cause-tracing.md",
+        "Skills/systematic-debugging/references/defense-in-depth.md",
+        "Skills/systematic-debugging/references/condition-based-waiting.md"
+      ],
+      "missing": []
+    },
+    "D1.2": {
+      "claimed": [
+        "Updated persona ID 17def82c-ca82-4c03-9c98-4994e79f785a"
+      ],
+      "verified": [],
+      "missing": [
+        "Updated persona ID 17def82c-ca82-4c03-9c98-4994e79f785a"
+      ]
+    },
+    "D1.3": {
+      "claimed": [
+        "Rule cc80a90d-734b-4b9e-83ed-689d69cda16e updated",
+        "N5/prefs/operations/debug-logging-auto-behavior.md enhanced"
+      ],
+      "verified": [],
+      "missing": [
+        "Rule cc80a90d-734b-4b9e-83ed-689d69cda16e updated",
+        "N5/prefs/operations/debug-logging-auto-behavior.md enhanced"
+      ]
+    }
+  },
+  "summary": {
+    "total_artifacts": 6,
+    "verified": 3,
+    "missing": 3,
+    "errors": 0
+  },
+  "passed": false
+}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Zo", "type": "ORG", "context": "the organization responsible for the recipe system"}, {"name": "Recipes/System", "type": "CONCEPT", "context": "subdirectory organization concept in Zo's recipe system"}], "relationships": [{"from": "Zo", "to": "Recipes/System", "type": "USES", "context": "Zo uses the Recipes/System directory for recipe organization"}]}

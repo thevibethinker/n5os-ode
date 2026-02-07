@@ -1,30 +1,35 @@
 ---
-created: 2026-01-25
-last_edited: 2026-01-25
+created: 2026-01-27
+last_edited: 2026-01-27
 version: 1.0
-provenance: con_xrhltA7BHuQGYNyw
+provenance: con_SLyvHKQQkdQAMUgO
 ---
 
 # Research
 
-Staging area for research outputs. Content here is:
-- ✅ Organized and accessible
-- ✅ Browsable by topic/build
-- ❌ NOT auto-indexed into semantic memory
-- ❌ NOT part of content library
+Working artifacts, investigations, product guides, and exploratory research. This is **not** for highly curated knowledge—that belongs in `Personal/Knowledge/`.
+
+## Principle
+
+**Knowledge ≠ Research**
+- `Research/` = working artifacts, investigations, throwaway exploration
+- `Personal/Knowledge/` = elevated, crystallized, curated wisdom
 
 ## Structure
 
-- `builds/` — Research artifacts tied to specific builds
-- `topics/` — Topic-based research (ongoing or one-off)
-- `intel/` — Market/competitor intelligence
-- `archive/` — Completed research for long-term reference
+Research is organized by high-level category. New categories are created when no existing category semantically matches the research topic.
 
-## Promotion Paths
+### Current Categories
 
-When research should become permanent knowledge:
-1. **To Content Library** — `python3 N5/scripts/content_ingest.py <file> --move`
-2. **To Semantic Memory** — Manual curation into `Knowledge/semantic-memory/`
-3. **Extract insights** — Create learnings via `pulse_learnings.py`
+| Category | Description |
+|----------|-------------|
+| `consumer-tech/` | Personal devices, gadgets, hardware guides |
+| `market-intel/` | Competitor analysis, due diligence, company research |
 
-Research stays here until explicitly promoted.
+## Routing
+
+Use `python3 N5/scripts/research_router.py "<topic>"` to get the canonical path for new research. The script uses LLM classification to match or create categories.
+
+## Migration
+
+Legacy research from `Knowledge/market and competitor intel/` was migrated here on 2026-01-27.

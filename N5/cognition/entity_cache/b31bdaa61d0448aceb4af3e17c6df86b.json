@@ -1,0 +1,1 @@
+{"entities": [{"name": "Pulse", "type": "TOOL", "context": "A system for controlling build tasks"}, {"name": "Sentinel", "type": "TOOL", "context": "A component associated with Pulse for managing builds"}], "relationships": [{"from": "Pulse", "to": "Sentinel", "type": "USES", "context": "Sentinel is used to manage builds within Pulse"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "the founder of the knowledge system"}, {"name": "career companion", "type": "CONCEPT", "context": "a source of personalized coaching and guidance"}], "relationships": [{"from": "V", "to": "career companion", "type": "BELIEVES", "context": "V believes in providing a career companion to everyone"}]}

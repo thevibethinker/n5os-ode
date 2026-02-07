@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "subject of the research"}, {"name": "Pioneering Minds", "type": "ORG", "context": "organization where V worked"}], "relationships": [{"from": "V (Vrijen)", "to": "Pioneering Minds", "type": "WORKS_WITH", "context": "time spent building at Pioneering Minds"}]}

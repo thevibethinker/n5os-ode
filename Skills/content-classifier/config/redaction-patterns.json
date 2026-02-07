@@ -1,0 +1,20 @@
+{
+  "tier2_keywords": [
+    "api_key",
+    "secret",
+    "password",
+    "token",
+    "credential",
+    "private",
+    "ssn",
+    "dob",
+    "social"  
+  ],
+  "tier1_keywords": [
+    "careerspan",
+    "vrijen",
+    "va.zo.computer",
+    "internal",
+    "confidential"
+  ]
+}

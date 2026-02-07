@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "V's knowledge system"}, {"name": "append-only logic", "type": "CONCEPT", "context": "a principle followed by the system to preserve intelligence"}], "relationships": [{"from": "Vrijen", "to": "append-only logic", "type": "BELIEVES", "context": "V believes in using append-only logic in the system"}]}

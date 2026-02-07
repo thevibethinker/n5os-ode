@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual discussing the knowledge system"}, {"name": "talent scanning", "type": "CONCEPT", "context": "strategic pivot being discussed"}], "relationships": [{"from": "V (Vrijen)", "to": "talent scanning", "type": "BELIEVES", "context": "V believes talent scanning is the key to strategic pivot"}]}

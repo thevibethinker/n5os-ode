@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "organization that may reduce costs"}, {"name": "JP Morgan", "type": "ORG", "context": "organization that may see strategic value"}], "relationships": [{"from": "JP Morgan", "to": "Careerspan", "type": "RELATED_TO", "context": "sees strategic value in accessing curated founder community"}]}

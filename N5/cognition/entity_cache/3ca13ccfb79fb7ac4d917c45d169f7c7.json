@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker expressing opinions on career tools"}, {"name": "career tools", "type": "TOOL", "context": "Refers to tools for career development"}], "relationships": [{"from": "Vrijen Attawar", "to": "career tools", "type": "USES", "context": "Discussing effectiveness of career tools"}]}

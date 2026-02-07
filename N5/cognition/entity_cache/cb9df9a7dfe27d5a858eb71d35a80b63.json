@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "contributor to the discussion"}, {"name": "Andrew Young events", "type": "EVENT", "context": "specific events mentioned by V"}], "relationships": [{"from": "Vrijen Attawar", "to": "Andrew Young events", "type": "MENTIONS", "context": "V speaks positively about the events"}]}

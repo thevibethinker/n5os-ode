@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "central figure in the knowledge system"}, {"name": "position tracking system", "type": "TOOL", "context": "system used for tracking beliefs"}], "relationships": [{"from": "V", "to": "position tracking system", "type": "USES", "context": "V uses this system to track positions and beliefs"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "emojiRegex", "type": "TOOL", "context": "a JavaScript module for matching emoji characters using regular expressions."}], "relationships": []}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "CareerSpan", "type": "ORG", "context": "company offering hiring solutions"}], "relationships": [{"from": "CareerSpan", "to": "cultural/fit assessment infrastructure", "type": "USES", "context": "CareerSpan's value proposition focuses on cultural fit assessment"}]}

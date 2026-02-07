@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "owner of the content library system"}, {"name": "Content Library & Block System", "type": "CONCEPT", "context": "name of the capability"}], "relationships": [{"from": "V", "to": "Content Library & Block System", "type": "USES", "context": "V is the owner and utilizes the content library system"}]}

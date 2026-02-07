@@ -1,0 +1,1 @@
+{"entities": [{"name": "Plaud", "type": "PERSON", "context": "Collaborative decision-maker"}, {"name": "Vrijen", "type": "PERSON", "context": "Clarifier of options"}], "relationships": [{"from": "Plaud", "to": "Vrijen", "type": "WORKS_WITH", "context": "Collaborative discussion about ideas"}]}

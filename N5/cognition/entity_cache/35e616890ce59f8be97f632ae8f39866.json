@@ -1,0 +1,1 @@
+{"entities": [{"name": "Nikita Komarov", "type": "PERSON", "context": "Participant in the conversation"}, {"name": "Roger", "type": "PERSON", "context": "Recipient of the question"}], "relationships": [{"from": "Nikita Komarov", "to": "Roger", "type": "RELATED_TO", "context": "Asks about document handling and information regarding contractors"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "Careerspan founder"}, {"name": "Ayush", "type": "PERSON", "context": "prospective contractor/team member"}], "relationships": [{"from": "Vrijen", "to": "Ayush", "type": "WORKS_WITH", "context": "defining operational responsibilities and establishing a working relationship"}]}

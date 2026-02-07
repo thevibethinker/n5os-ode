@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual with recent experience in health tech"}, {"name": "Health tech", "type": "CONCEPT", "context": "field of technology related to health"}], "relationships": [{"from": "V (Vrijen)", "to": "Health tech", "type": "KNOWS", "context": "V has experience in the health tech field"}]}

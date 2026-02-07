@@ -1,0 +1,1 @@
+{"entities": [{"name": "Gmail", "type": "TOOL", "context": "email service used to identify pending follow-up emails"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "the subject who is utilizing the knowledge system"}], "relationships": [{"from": "V (Vrijen)", "to": "Gmail", "type": "USES", "context": "V uses Gmail to check pending follow-up emails"}]}

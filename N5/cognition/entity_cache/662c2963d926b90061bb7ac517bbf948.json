@@ -1,0 +1,1 @@
+{"entities": [{"name": "OAuth token", "type": "TOOL", "context": "authentication method"}, {"name": "10.0.0.5", "type": "CONCEPT", "context": "IP address for connection"}], "relationships": []}

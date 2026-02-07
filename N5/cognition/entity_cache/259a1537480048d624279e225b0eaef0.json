@@ -1,0 +1,1 @@
+{"entities": [{"name": "N5", "type": "TOOL", "context": "a system to be updated"}, {"name": "V-OS tags", "type": "CONCEPT", "context": "tags to be understood and processed by N5"}], "relationships": [{"from": "N5", "to": "V-OS tags", "type": "USES", "context": "N5 will be updated to understand these tags"}]}

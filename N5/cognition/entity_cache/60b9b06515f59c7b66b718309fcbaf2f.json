@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ash", "type": "ORG", "context": "operating in the market with partnerships"}], "relationships": [{"from": "V", "to": "Ash", "type": "WORKS_WITH", "context": "partnerships that validate this approach"}]}

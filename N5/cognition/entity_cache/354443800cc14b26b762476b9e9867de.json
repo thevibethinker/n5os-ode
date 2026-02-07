@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "a participant in the onboarding review"}, {"name": "FOHE documentation", "type": "CONCEPT", "context": "a subject of V's comment during the onboarding review"}], "relationships": [{"from": "V", "to": "FOHE documentation", "type": "MENTIONS", "context": "V commented on the thoroughness of the documentation"}]}

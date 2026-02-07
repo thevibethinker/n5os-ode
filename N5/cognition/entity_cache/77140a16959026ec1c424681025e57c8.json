@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "a central figure discussing knowledge systems"}, {"name": "rules", "type": "CONCEPT", "context": "a fundamental concept in the discussion about learning mistakes"}], "relationships": [{"from": "V", "to": "rules", "type": "BELIEVES", "context": "V believes that rules represent mistakes"}]}

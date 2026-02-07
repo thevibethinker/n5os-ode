@@ -1,0 +1,1 @@
+{"entities": [{"name": "EmailComposer", "type": "TOOL", "context": "a tool used for composing emails"}, {"name": "HowieSignatureGenerator", "type": "TOOL", "context": "a tool for generating signatures"}], "relationships": []}

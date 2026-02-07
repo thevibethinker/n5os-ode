@@ -1,0 +1,1 @@
+{"entities": [{"name": "Fibe", "type": "ORG", "context": "Organization founded by the CEO"}, {"name": "V", "type": "PERSON", "context": "Vrijen, the individual in the context"}], "relationships": [{"from": "V", "to": "Fibe", "type": "WORKS_WITH", "context": "V supports operations for Fibe as the CEO"}]}

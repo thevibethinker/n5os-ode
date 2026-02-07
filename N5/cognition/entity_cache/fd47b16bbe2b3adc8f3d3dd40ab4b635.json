@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "a system that evaluates skills"}, {"name": "Reliance", "type": "ORG", "context": "an organization with an existing taxonomy"}], "relationships": [{"from": "Careerspan", "to": "Reliance", "type": "WORKS_WITH", "context": "mapping skills to an existing taxonomy"}]}

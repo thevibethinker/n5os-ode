@@ -1,0 +1,1 @@
+{"entities": [{"name": "CLI tool", "type": "TOOL", "context": "A tool designed to detect specific issues."}, {"name": "Drops", "type": "CONCEPT", "context": "Refers to instances that may be malfunctioning."}], "relationships": []}

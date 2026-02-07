@@ -1,0 +1,1 @@
+{"entities": [{"name": "process.env.http_proxy", "type": "TOOL", "context": "environment variable for setting a proxy server"}, {"name": "process.env.no_proxy", "type": "TOOL", "context": "environment variable for defining hosts that bypass the proxy"}], "relationships": []}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "acknowledged his Zo bill"}, {"name": "Zo bill", "type": "CONCEPT", "context": "a substantial monthly cost for services"}], "relationships": [{"from": "V", "to": "Zo bill", "type": "KNOWS", "context": "V acknowledges his Zo bill is substantial"}]}

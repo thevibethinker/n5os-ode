@@ -1,0 +1,1 @@
+{"entities": [{"name": "Chaitanya", "type": "PERSON", "context": "contact at Theagipany"}, {"name": "Theagipany", "type": "ORG", "context": "organization associated with Chaitanya"}], "relationships": [{"from": "Chaitanya", "to": "Theagipany", "type": "WORKS_WITH", "context": "Chaitanya is affiliated with Theagipany"}]}

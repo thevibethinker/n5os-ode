@@ -1,0 +1,20 @@
+{
+  "processed_ids": [
+    "736c6ad5d2c1c30dc396590ec799b1bd"
+  ],
+  "failed_ids": [],
+  "started_at": "2026-02-01T22:04:25.610145",
+  "last_updated": "2026-02-01T22:04:25.611845",
+  "stats": {
+    "content_library": {
+      "total": 0,
+      "processed": 0,
+      "failed": 0
+    },
+    "knowledge_tier": {
+      "total": 0,
+      "processed": 0,
+      "failed": 0
+    }
+  }
+}

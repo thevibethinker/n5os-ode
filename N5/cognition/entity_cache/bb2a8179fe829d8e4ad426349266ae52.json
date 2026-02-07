@@ -1,0 +1,1 @@
+{"entities": [{"name": "N5 Meeting Processing System", "type": "TOOL", "context": "a system that transforms meeting transcripts"}, {"name": "Zo", "type": "ORG", "context": "an organization integrated with the architecture"}], "relationships": [{"from": "N5 Meeting Processing System", "to": "Zo", "type": "USES", "context": "the system is integrated with Zo"}]}

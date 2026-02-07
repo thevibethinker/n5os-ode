@@ -1,0 +1,1 @@
+{"entities": [{"name": "engineer", "type": "CONCEPT", "context": "referring to 'soldier' engineer in the context of finding candidates"}, {"name": "technical lead", "type": "CONCEPT", "context": "role in relation to the engineer"}, {"name": "low-confidence candidates", "type": "CONCEPT", "context": "type of candidates being avoided"}], "relationships": []}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Core", "type": "CONCEPT", "context": "describes reusable procedures and efficiency multipliers"}, {"name": "Reusable procedures", "type": "CONCEPT", "context": "describes methods that improve efficiency"}, {"name": "Commands", "type": "TOOL", "context": "facilitates complex workflows"}], "relationships": []}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "the individual involved in the conversation"}, {"name": "SESSION_STATE.md", "type": "TOOL", "context": "document updated during the conversation"}], "relationships": [{"from": "V", "to": "SESSION_STATE.md", "type": "USES", "context": "V uses SESSION_STATE.md to document discussions and decisions"}]}

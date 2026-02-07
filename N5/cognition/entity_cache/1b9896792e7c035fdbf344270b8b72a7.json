@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "Virtual Deal Center", "type": "TOOL", "context": "tool for immediate access"}], "relationships": [{"from": "V", "to": "Virtual Deal Center", "type": "USES", "context": "V opts for the use of Virtual Deal Center for immediate access"}]}

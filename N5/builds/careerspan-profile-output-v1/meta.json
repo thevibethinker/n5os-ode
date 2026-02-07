@@ -1,0 +1,32 @@
+{
+  "slug": "careerspan-profile-output-v1",
+  "title": "Careerspan Trade-Offs Profile Output Demo",
+  "build_type": "content",
+  "status": "complete",
+  "created_at": "2026-01-29T05:55:00Z",
+  "completed_at": "2026-01-29T06:50:00Z",
+  "total_streams": 3,
+  "current_stream": 3,
+  "model": "anthropic:claude-sonnet-4-20250514",
+  "launch_mode": "orchestrated",
+  "output": {
+    "gamma_url": "https://gamma.app/docs/c19m6v2365s6fkd",
+    "short_url": null
+  },
+  "drops": {
+    "D1.1": {"name": "Design Capture", "stream": 1, "status": "complete"},
+    "D1.2": {"name": "FlowFuse Company Intel", "stream": 1, "status": "complete"},
+    "D1.3": {"name": "FlowFuse Culture Intel", "stream": 1, "status": "complete"},
+    "D1.4a": {"name": "Panel Purposes", "stream": 1, "status": "complete"},
+    "D1.4b": {"name": "Evaluation Rubrics", "stream": 1, "status": "complete"},
+    "D2.0": {"name": "Remarkable Scan", "stream": 2, "status": "complete"},
+    "D2.1": {"name": "Panel 1 - Thesis", "stream": 2, "status": "complete"},
+    "D2.2": {"name": "Panel 2 - Hard Skills", "stream": 2, "status": "complete"},
+    "D2.3": {"name": "Panel 3 - Differentiators", "stream": 2, "status": "complete"},
+    "D2.4": {"name": "Panel 4 - Why Meeting", "stream": 2, "status": "complete"},
+    "D3.1": {"name": "Quality Gate + Assembly", "stream": 3, "status": "complete"},
+    "D3.2": {"name": "Generate Gamma Page", "stream": 3, "status": "complete"},
+    "D3.3": {"name": "Generate PDF Fallback", "stream": 3, "status": "skipped"},
+    "D3.4": {"name": "Create Short Link", "stream": 3, "status": "skipped"}
+  }
+}

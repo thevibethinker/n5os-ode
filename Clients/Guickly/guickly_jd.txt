@@ -1,0 +1,80 @@
+Guickly: Autonomous AI Engineer
+Founding Team · Engineering · SF Bay Area / Bangalore
+
+The Dirty Secret of AI
+----------------------
+
+The world thinks AI is automated. You and I know the truth: It's manual labor.
+
+When training AI models, the most brilliant minds in our industry are currently spending 80% of their time acting as glorified data janitors - manually curating datasets, spotting edge cases, and babysitting training runs. It is slow, expensive, and fundamentally unscalable. We are the ones who kill this loop!
+
+Guickly is building the Autonomous AI Engineer. We are productizing the intuition of the top 1% of Applied AI Engineers into a system that automates the end to end model development workflow from data curation to model training to model deployment.
+
+> We are building the AI that builds the AI
+
+We aren't building another "MLOps Tool" or "Platform". We are building the infrastructure layer for the entire AI economy. When there's a gold rush, sell shovels and pick axes - just like Nvidia sells the hardware to run AI, we will sell the software to automatically train AI models.
+
+Why You Should Care
+-------------------
+
+You are smart. You know that joining a startup is an investment of your most valuable asset: your time. You are looking for Asymmetric Upside with Capped Downside. Here is why Guickly is the smartest bet you can make right now:
+
+### 1. We Have De-Risked The Failure Modes
+
+Most startups die because they can't raise money or can't find customers. We have solved both.
+
+Capitalized: We raised a multi-million dollar seed round. We have the runway to build aggressively without desperation.
+
+Validated: We aren't searching for Product-Market Fit. We are drowning in demand. We have signed LOIs and design partners - other well-funded and established AI companies - who are demanding this product yesterday.
+
+Backing: We are funded by well-renowned top-tier VCs in the Bay Area.
+
+### 2. You Are Joining a "Special Forces" Unit
+
+Hi, I'm Prashant. I came to the US in 2016 with a singular goal: to build something that changes the world. I didn't read about AI in a blog post; I lived it. I've been shipping ML for over a decade. I've optimized the runtime performance of deep learning models on Google's custom TPUs and spent 6 years as the AI Lead for Google Maps.
+
+The Scale: My team developed and deployed the Computer Vision models and LLMs that ingest Petabytes of Street View imagery to find all the traffic signs.
+
+The Impact: If you see a speed limit on Google Maps while navigating or your car's ADAS detects a stop sign - you're seeing our Applied AI in action.
+
+I had the golden handcuffs. I had the resources. But I left Google because I saw a multi-billion dollar gap in the market, a spot-on problem for a startup to solve. I was able to raise multi-million dollar seed round as a solo founder in less than 2 weeks, with multiple term-sheets to choose from top VCs in the Bay Area. I am not looking for the first few hires. I am building a team of peers - engineers who are technically elite but bring good vibes and lots of energy to the table.
+
+### 3. The "Best of Both Worlds"
+
+We are an India-first engineering team with a Silicon Valley commercial engine. We combine a deep engineering core in India with a high-velocity commercial engine in Silicon Valley.
+
+The Dynamic: In most global companies, the "real work" happens in the US, and India gets the maintenance tickets. We flip this. Our Bangalore HQ is the primary build center where the core product architecture is defined and developed.
+
+The Synergy: Our Bay Area team keeps us plugged into the heart of the AI market, driving customer strategy and rapid feedback loops.
+
+The Upside: The core product - the brain of the company - is being built in India. The customers and forward deployed engineers are in San Francisco. You get the Equity Upside of a valley startup with the Ownership of a founding engineer regardless of your location.
+
+The "Founding Engineer" Role
+----------------------------
+
+We are looking for Founding Engineers. We are looking for Partners. This is not a role for someone who wants to just "learn". This is a role for someone who wants to "lead".
+
+You Design the DNA: You aren't inheriting tech debt. You are making the architectural decisions that will survive for the next decade.
+
+Uncapped Trajectory: We are hiring our future CTO, VP of Engineering and Head of Product/Engineering right now. There is no ladder here; there is no promotional cycle. We are merit-first, where your contributions are immediately recognized and rewarded.
+
+Material Equity: We are generous with equity because we know how engineers think. Asymmetric upside often means life-changing rewards. We want you to be an owner.
+
+#### The Hard Truth (Read this carefully)
+
+This role is not for everyone.
+
+We work across time zones: Our customers are in SF and NY. Our engineers are in Bay Area and Bangalore. I live on a plane and in both US and India. We need people who are flexible enough to sync when the work demands it, not just when the clock hits 9.
+
+We handle ambiguity: There is no "Spec Doc". There is a problem and there is you. We need people who love building from scratch.
+
+High Intensity, High Support: We are an in-office team with immense energy. We support each other through the grind and believe greatness requires being in the trenches together.
+
+Are You Ready to Build?
+-----------------------
+
+If you are a Builder - if you have an itch to build something that defines the next decade of AI - this is the team you want to be in. We are looking for builders who want to do the best work of their lives without the typical startup chaos. We have the funding, the vision, and the customers. We want to partner with other good-vibes people who have a spark to build something great.
+
+We are building a lean core Founding Team now. Once these seats are filled, the opportunity to own this much of the company (and more) closes forever. We move fast. No 5-round HR interviews. Just a conversation and some hard problems to solve together.
+
+Are you ready to build the future?

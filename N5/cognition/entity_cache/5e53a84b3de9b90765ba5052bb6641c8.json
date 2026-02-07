@@ -1,0 +1,1 @@
+{"entities": [{"name": "Zo", "type": "CONCEPT", "context": "the mind, central orchestrator"}, {"name": "API", "type": "TOOL", "context": "elements that become part of the system"}], "relationships": [{"from": "Zo", "to": "API", "type": "USES", "context": "the mind orchestrator integrates everything with an API into the system"}]}

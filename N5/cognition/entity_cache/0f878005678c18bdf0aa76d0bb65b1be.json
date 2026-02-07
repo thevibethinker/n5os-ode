@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual managing a knowledge system"}, {"name": "AUTO-COMPLETE", "type": "TOOL", "context": "a feature for completing input automatically"}], "relationships": [{"from": "V", "to": "AUTO-COMPLETE", "type": "USES", "context": "V utilizes the auto-complete feature for high confidence levels"}]}

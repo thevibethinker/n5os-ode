@@ -1,0 +1,1 @@
+{"entities": [{"name": "SiriusXM", "type": "ORG", "context": "Organization offering discounts"}, {"name": "Cable/Internet", "type": "CONCEPT", "context": "Service with retention department for deals"}, {"name": "LinkedIn Premium", "type": "TOOL", "context": "Service with multiple guilt screens"}], "relationships": []}

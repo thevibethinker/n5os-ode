@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ayush", "type": "PERSON", "context": "individual showing initiative on automation"}, {"name": "GTM expansion", "type": "CONCEPT", "context": "strategic growth initiative"}], "relationships": [{"from": "Ayush", "to": "GTM expansion", "type": "WORKS_WITH", "context": "in the context of automation and lead generation"}]}

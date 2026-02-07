@@ -1,0 +1,1 @@
+{"entities": [{"name": "Alex", "type": "PERSON", "context": "provided the breakthrough insight"}, {"name": "business model", "type": "CONCEPT", "context": "the entire business model being reframed"}], "relationships": [{"from": "Alex", "to": "business model", "type": "RELATED_TO", "context": "Alex provided insight that reframes the business model"}]}

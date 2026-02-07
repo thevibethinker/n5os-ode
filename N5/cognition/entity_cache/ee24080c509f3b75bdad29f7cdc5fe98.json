@@ -1,0 +1,1 @@
+{"entities": [{"name": "Merisenda", "type": "PERSON", "context": "Contact who referenced prior informal conversation at timestamp 02:55"}], "relationships": [{"from": "V", "to": "Merisenda", "type": "RELATED_TO", "context": "One-on-one advisory conversation pattern"}]}

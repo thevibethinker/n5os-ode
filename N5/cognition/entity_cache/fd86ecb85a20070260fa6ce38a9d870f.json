@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "knowledge system creator"}, {"name": "SESSION_STATE", "type": "CONCEPT", "context": "a concise state management system"}], "relationships": [{"from": "V", "to": "SESSION_STATE", "type": "BELIEVES", "context": "V believes SESSION_STATE should be kept concise"}]}

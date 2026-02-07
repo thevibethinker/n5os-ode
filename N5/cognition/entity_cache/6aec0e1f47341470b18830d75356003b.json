@@ -1,0 +1,1 @@
+{"entities": [{"name": "Jane Smith", "type": "PERSON", "context": "VP Engineering at TechCorp"}, {"name": "TechCorp", "type": "ORG", "context": "Company where Jane Smith works"}], "relationships": [{"from": "Jane Smith", "to": "TechCorp", "type": "WORKS_WITH", "context": "VP Engineering at the organization"}]}

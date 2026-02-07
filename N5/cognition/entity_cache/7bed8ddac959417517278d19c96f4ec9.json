@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "an individual with a knowledge system"}, {"name": "con_ORCH_AUTH", "type": "ORG", "context": "the orchestrator involved in the build status dashboard"}], "relationships": [{"from": "V", "to": "con_ORCH_AUTH", "type": "USES", "context": "V uses the orchestrator in the build status dashboard"}]}

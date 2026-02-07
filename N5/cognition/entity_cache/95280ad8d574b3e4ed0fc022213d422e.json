@@ -1,0 +1,1 @@
+{"entities": [{"name": "David Speigel", "type": "PERSON", "context": "Product consultant, community connector"}], "relationships": [{"from": "David Speigel", "to": "hiring manager", "type": "MENTIONS", "context": "refers candidates to them with context"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "Organization involved in partnership coordination and marketing"}, {"name": "Vrijen", "type": "PERSON", "context": "Team member coordinating with Careerspan"}], "relationships": [{"from": "Vrijen", "to": "Careerspan", "type": "WORKS_WITH", "context": "Coordinates on promotional strategy and email campaigns"}]}

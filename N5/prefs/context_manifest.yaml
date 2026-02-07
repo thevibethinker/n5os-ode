@@ -61,6 +61,12 @@ groups:
     files:
       - "Knowledge/architectural/principles/core.md"
       - "N5/prefs/prefs.md"
+
+  zo:
+    description: "Zo identity, self-reflection, continuity, heartbeat work"
+    files:
+      - "Zo/SOUL.md"
+      - "N5/prefs/personas/zo.md"
       
 # PRINCIPLES CONFIG
 principles_dir: "N5/prefs/principles"

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Griffin", "type": "PERSON", "context": "Individual whose insights inform Vrijen's narrative"}, {"name": "Vrijen", "type": "PERSON", "context": "Individual leveraging narrative blurbs for investor conversations"}], "relationships": [{"from": "Vrijen", "to": "Griffin", "type": "KNOWS", "context": "Vrijen is informed by Griffin's resonance"}]}

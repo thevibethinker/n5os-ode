@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Individual associated with the persona system"}, {"name": "Persona System", "type": "CONCEPT", "context": "A system with multiple AI personas for various tasks"}], "relationships": [{"from": "V", "to": "Persona System", "type": "USES", "context": "V utilizes the persona system for tasks"}]}

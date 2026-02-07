@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Builder, idea generator, technical creator"}, {"name": "Logan", "type": "PERSON", "context": "Executor, systematizer, relationship maintainer"}], "relationships": [{"from": "V", "to": "Logan", "type": "WORKS_WITH", "context": "both have complementary roles"}]}

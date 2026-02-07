@@ -1,0 +1,1 @@
+{"entities": [{"name": "Mujgan Ozceylan", "type": "PERSON", "context": "Working with AGI"}], "relationships": [{"from": "Mujgan Ozceylan", "to": "AGI", "type": "WORKS_WITH", "context": "Working with AGI"}]}

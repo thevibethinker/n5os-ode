@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ash Straughn", "type": "PERSON", "context": "Speaker discussing fundraising"}, {"name": "Edmond", "type": "PERSON", "context": "Individual raising funds"}], "relationships": [{"from": "Ash Straughn", "to": "Edmond", "type": "MENTIONS", "context": "Discussing Edmond's fundraising efforts"}]}

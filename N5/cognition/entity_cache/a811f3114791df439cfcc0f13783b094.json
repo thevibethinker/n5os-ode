@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual responsible for managing the knowledge system"}, {"name": "bulletin_generator.py", "type": "TOOL", "context": "script used for generating bulletins"}], "relationships": [{"from": "V", "to": "bulletin_generator.py", "type": "USES", "context": "V uses the script to generate bulletins"}]}

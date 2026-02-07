@@ -1,0 +1,1 @@
+{"entities": [{"name": "Hei-Yue Pang", "type": "PERSON", "context": "Senior Director at Year Up United"}, {"name": "Year Up United", "type": "ORG", "context": "Organization where Hei-Yue Pang works"}], "relationships": [{"from": "Hei-Yue Pang", "to": "Year Up United", "type": "WORKS_WITH", "context": "Hei-Yue Pang is a Senior Director at Year Up United"}]}

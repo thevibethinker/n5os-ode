@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ilya Kucherenko", "type": "PERSON", "context": "a speaker in the discussion"}, {"name": "Logan", "type": "PERSON", "context": "a participant in the discussion"}], "relationships": [{"from": "Ilya Kucherenko", "to": "Logan", "type": "WORKS_WITH", "context": "discussing video production ideas together"}]}

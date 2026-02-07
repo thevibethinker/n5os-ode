@@ -1,0 +1,1 @@
+{"entities": [{"name": "coaching pool", "type": "CONCEPT", "context": "a group of candidates used for matching"}, {"name": "voice agent", "type": "TOOL", "context": "the tool that generates job descriptions"}], "relationships": []}

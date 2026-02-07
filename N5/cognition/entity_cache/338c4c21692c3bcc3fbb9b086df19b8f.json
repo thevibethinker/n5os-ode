@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "organization mentioned"}], "relationships": [{"from": "V", "to": "Careerspan", "type": "MENTIONS", "context": "suggested improvements for the organization"}]}

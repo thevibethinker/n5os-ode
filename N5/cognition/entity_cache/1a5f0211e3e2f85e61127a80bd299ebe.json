@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "The individual associated with the knowledge system"}, {"name": "meeting-transcript-scan", "type": "TOOL", "context": "Command related to the scanning of meeting transcripts"}, {"name": "list_scheduled_tasks", "type": "TOOL", "context": "Command used to check scheduled tasks"}], "relationships": []}

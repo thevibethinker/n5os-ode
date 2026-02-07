@@ -1,0 +1,81 @@
+{
+  "slug": "careerspan-pipeline-v2",
+  "title": "Careerspan Pipeline v2 \u2014 Action Flow Skills + Orchestrator Wiring",
+  "status": "complete",
+  "created": "2026-02-02T21:00:00Z",
+  "updated": "2026-02-02T21:30:00Z",
+  "provenance": "con_NLOu2MVInIYnuwuf",
+  "streams": [
+    {
+      "id": 1,
+      "name": "Action Flow Skills",
+      "drops": [
+        "D1.1",
+        "D1.2",
+        "D1.3"
+      ],
+      "parallel": true
+    },
+    {
+      "id": 2,
+      "name": "Decomposer Alignment",
+      "drops": [
+        "D2.1"
+      ],
+      "parallel": true
+    },
+    {
+      "id": 3,
+      "name": "Orchestrator Wiring",
+      "drops": [
+        "D3.1"
+      ],
+      "depends_on": [
+        1,
+        2
+      ]
+    }
+  ],
+  "drops": {
+    "D1.1": {
+      "title": "JD Intake Skill",
+      "status": "complete",
+      "spawn_mode": "manual",
+      "failure_reason": "",
+      "conversation_id": "con_FQc19CGDsjJs1XkS"
+    },
+    "D1.2": {
+      "title": "Resume Intake Skill",
+      "status": "complete",
+      "spawn_mode": "manual"
+    },
+    "D1.3": {
+      "title": "Update Handler Skill",
+      "status": "complete",
+      "spawn_mode": "manual",
+      "conversation_id": "con_ARKuceMxUhr4g89X"
+    },
+    "D2.1": {
+      "title": "Decomposer Alignment",
+      "status": "complete",
+      "spawn_mode": "manual",
+      "failure_reason": "",
+      "conversation_id": "con_cuDhXnKGQXylOuCY"
+    },
+    "D3.1": {
+      "title": "Orchestrator Wiring",
+      "status": "complete",
+      "spawn_mode": "manual",
+      "depends_on": [
+        "D1.1",
+        "D1.2",
+        "D1.3",
+        "D2.1"
+      ]
+    }
+  },
+  "objective": "Complete Careerspan-CorridorX pipeline with executable action flows",
+  "started_at": "2026-02-03T01:49:35.877208+00:00",
+  "finalized_at": "2026-02-03T02:54:50.099141+00:00",
+  "finalization_passed": true
+}

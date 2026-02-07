@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Individual with a knowledge system"}, {"name": "RAG/AI chat assistants", "type": "CONCEPT", "context": "Interest of V"}], "relationships": [{"from": "V", "to": "RAG/AI chat assistants", "type": "BELIEVES", "context": "Interest in technology"}]}

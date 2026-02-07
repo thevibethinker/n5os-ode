@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ashraf", "type": "PERSON", "context": "a connector to product talent ecosystem and tactical advisor"}, {"name": "LD-NET", "type": "ORG", "context": "lead discovery network type"}], "relationships": [{"from": "Ashraf", "to": "LD-NET", "type": "WORKS_WITH", "context": "Advises on community access strategies related to lead discovery"}]}

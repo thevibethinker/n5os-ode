@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Individual with physical limitation"}, {"name": "Brin", "type": "PERSON", "context": "Individual showing empathy response"}], "relationships": [{"from": "V", "to": "Brin", "type": "KNOWS", "context": "Both showing human-ness, establishing a peer dynamic"}]}

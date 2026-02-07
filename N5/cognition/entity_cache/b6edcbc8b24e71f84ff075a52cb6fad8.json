@@ -1,0 +1,1 @@
+{"entities": [{"name": "fps", "type": "CONCEPT", "context": "frames per second used in animation calculations"}, {"name": "springTiming", "type": "CONCEPT", "context": "a method for timing spring animations"}], "relationships": []}

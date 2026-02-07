@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "a figure discussing resumes"}, {"name": "resume tyranny", "type": "CONCEPT", "context": "the concept V opposes"}], "relationships": [{"from": "V", "to": "resume tyranny", "type": "BELIEVES", "context": "V believes that resumes are fundamentally terrible and wants to overthrow resume tyranny"}]}

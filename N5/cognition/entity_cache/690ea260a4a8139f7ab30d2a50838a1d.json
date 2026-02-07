@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual referenced in the knowledge system"}, {"name": "SHRM", "type": "ORG", "context": "organization involved in partnership"}], "relationships": [{"from": "V (Vrijen)", "to": "SHRM", "type": "WORKS_WITH", "context": "partnership that unlocks market segment at scale"}]}

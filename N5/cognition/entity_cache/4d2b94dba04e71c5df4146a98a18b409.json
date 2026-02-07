@@ -1,0 +1,1 @@
+{"entities": [{"name": "N", "type": "PERSON", "context": "N's opinion on hiring more SDRs"}, {"name": "SDRs", "type": "CONCEPT", "context": "Sales Development Representatives being considered for hiring"}], "relationships": [{"from": "N", "to": "SDRs", "type": "BELIEVES", "context": "N believes that hiring more SDRs is the solution"}]}

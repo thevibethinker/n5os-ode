@@ -1,0 +1,1 @@
+{"entities": [{"name": "the author", "type": "PERSON", "context": "refers to the individual responsible for the software"}, {"name": "software", "type": "TOOL", "context": "the software being discussed in the text"}], "relationships": [{"from": "the author", "to": "software", "type": "CREATES", "context": "the author provides and develops the software"}]}

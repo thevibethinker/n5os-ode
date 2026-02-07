@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ayush Jain", "type": "PERSON", "context": "Recipient of the message"}], "relationships": [{"from": "V (Vrijen)", "to": "Ayush Jain", "type": "WORKS_WITH", "context": "Colleagues with some personal context"}]}

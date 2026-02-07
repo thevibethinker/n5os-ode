@@ -1,0 +1,1 @@
+{"entities": [{"name": "Drive", "type": "TOOL", "context": "cloud storage platform used for file uploads"}, {"name": "Text reflection", "type": "CONCEPT", "context": "types of documents to be uploaded"}, {"name": "audio file", "type": "CONCEPT", "context": "type of files to be uploaded"}], "relationships": []}

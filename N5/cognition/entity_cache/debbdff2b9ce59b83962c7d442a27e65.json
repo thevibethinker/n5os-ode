@@ -1,0 +1,1 @@
+{"entities": [{"name": "JavaScript", "type": "CONCEPT", "context": "a programming language used for web development"}, {"name": "regexes", "type": "TOOL", "context": "a tool for pattern matching in strings"}], "relationships": []}

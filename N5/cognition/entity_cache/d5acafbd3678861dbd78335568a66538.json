@@ -1,0 +1,1 @@
+{"entities": [{"name": "Recall.ai", "type": "ORG", "context": "a tool that sends webhooks"}, {"name": "Personal/Meetings/", "type": "CONCEPT", "context": "a folder structure for organizing meetings"}], "relationships": [{"from": "Recall.ai", "to": "Personal/Meetings/", "type": "USES", "context": "stores meeting artifacts in folders after meetings"}]}

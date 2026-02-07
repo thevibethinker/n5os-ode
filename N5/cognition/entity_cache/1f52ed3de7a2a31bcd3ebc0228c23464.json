@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "the individual associated with the knowledge system"}, {"name": "ATS", "type": "CONCEPT", "context": "Applicant Tracking System, referenced in relation to job applications"}], "relationships": [{"from": "V (Vrijen)", "to": "ATS", "type": "KNOWS", "context": "V is aware of the ATS and discusses how to skip it"}]}

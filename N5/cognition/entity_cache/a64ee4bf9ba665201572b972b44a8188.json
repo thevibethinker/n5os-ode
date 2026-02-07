@@ -1,0 +1,1 @@
+{"entities": [{"name": "Nafisa Poonawala", "type": "PERSON", "context": "speaker in the conversation"}, {"name": "ChatGPT 5", "type": "TOOL", "context": "AI tool mentioned in relation to V"}], "relationships": [{"from": "Nafisa Poonawala", "to": "ChatGPT 5", "type": "MENTIONS", "context": "Nafisa mentions ChatGPT 5 in the conversation with V"}]}

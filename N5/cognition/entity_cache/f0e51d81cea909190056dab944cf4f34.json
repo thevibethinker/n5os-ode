@@ -1,0 +1,1 @@
+{"entities": [{"name": "Aspire", "type": "ORG", "context": "organization producing Careerspan content"}, {"name": "Careerspan", "type": "CONCEPT", "context": "content associated with coaching value"}], "relationships": [{"from": "Aspire", "to": "Careerspan", "type": "USES", "context": "Aspire uses Careerspan content to produce coaching-equivalent value"}]}

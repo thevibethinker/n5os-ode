@@ -1,0 +1,1 @@
+{"entities": [{"name": "config", "type": "CONCEPT", "context": "A parsed configuration object that can be undefined if the file is empty."}, {"name": "filepath", "type": "CONCEPT", "context": "The path to the configuration file that was found."}, {"name": "isEmpty", "type": "CONCEPT", "context": "Indicates if the configuration file is empty."}], "relationships": []}

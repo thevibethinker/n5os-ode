@@ -1,0 +1,1 @@
+{"entities": [{"name": "Andrew Yeung", "type": "PERSON", "context": "Founder and CEO of Fibe"}, {"name": "Fibe", "type": "ORG", "context": "Organization founded by Andrew Yeung"}], "relationships": [{"from": "Andrew Yeung", "to": "Fibe", "type": "WORKS_WITH", "context": "Founder and CEO of the organization"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "knowledge system expert"}, {"name": "Zo", "type": "TOOL", "context": "tool related to adoption signals"}], "relationships": [{"from": "V", "to": "Zo", "type": "USES", "context": "to gauge adoption signals"}]}

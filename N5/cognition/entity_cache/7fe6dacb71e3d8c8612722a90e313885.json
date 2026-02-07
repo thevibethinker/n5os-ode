@@ -1,0 +1,1 @@
+{"entities": [{"name": "W2", "type": "ORG", "context": "an organization involved in the update"}, {"name": "Orchestrator", "type": "ORG", "context": "an organization that clarified the specification"}], "relationships": [{"from": "Orchestrator", "to": "W2", "type": "WORKS_WITH", "context": "Orchestrator clarified spec, leading to W2's update"}]}

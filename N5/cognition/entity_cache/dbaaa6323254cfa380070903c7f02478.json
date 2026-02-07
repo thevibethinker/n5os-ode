@@ -1,0 +1,1 @@
+{"entities": [{"name": "Security", "type": "CONCEPT", "context": "meaning of the content type"}, {"name": "privacy", "type": "CONCEPT", "context": "meaning of the content type"}, {"name": "threads", "type": "CONCEPT", "context": "context of usage"}, {"name": "tasks", "type": "CONCEPT", "context": "context of usage"}], "relationships": []}

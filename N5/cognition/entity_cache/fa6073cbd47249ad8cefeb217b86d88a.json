@@ -1,0 +1,1 @@
+{"entities": [{"name": "Aviato", "type": "ORG", "context": "organization mentioned in the enrichment queue"}, {"name": "LinkedIn", "type": "ORG", "context": "organization mentioned in the enrichment queue"}, {"name": "gmail", "type": "TOOL", "context": "tool mentioned for searching email threads"}], "relationships": []}

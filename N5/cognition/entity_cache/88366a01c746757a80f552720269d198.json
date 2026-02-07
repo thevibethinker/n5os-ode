@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual discussing preparation for meetings"}, {"name": "Prep Completeness", "type": "CONCEPT", "context": "the concept being evaluated in meetings"}], "relationships": [{"from": "V", "to": "Prep Completeness", "type": "BELIEVES", "context": "V believes in the concept of being well prepared for meetings"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker expressing hope about technology"}, {"name": "deep fake tracking", "type": "TOOL", "context": "Technology V wants to deploy"}], "relationships": [{"from": "Vrijen Attawar", "to": "deep fake tracking", "type": "BELIEVES", "context": "V hopes to use this technology for tracking"}]}

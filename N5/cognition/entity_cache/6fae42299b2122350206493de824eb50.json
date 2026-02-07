@@ -1,0 +1,1 @@
+{"entities": [{"name": "Mai", "type": "PERSON", "context": "responsible for user acquisition and performance monitoring"}, {"name": "analyst team", "type": "ORG", "context": "team that monitors performance"}], "relationships": [{"from": "Mai", "to": "analyst team", "type": "WORKS_WITH", "context": "Mai monitors performance with the analyst team"}]}

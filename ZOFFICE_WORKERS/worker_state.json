@@ -1,0 +1,14 @@
+{
+  "librarian": {
+    "last_activated": "2026-02-06T17:50:31.065815+00:00",
+    "status": "active",
+    "persona": "1bb66f53-9e2a-4152-9b18-75c2ee2c25a3",
+    "command": "python3 N5/scripts/export_pipeline_worker.py"
+  },
+  "consultant": {
+    "last_activated": "2026-02-06T16:59:01.177405+00:00",
+    "status": "inactive",
+    "persona": "88d70597-80f3-4b3e-90c1-da2c99da7f1f",
+    "command": "python3 N5/scripts/consultant_worker.py"
+  }
+}

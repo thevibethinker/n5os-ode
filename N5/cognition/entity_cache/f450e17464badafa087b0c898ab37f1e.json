@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "referred to as Vrijen, possesses a knowledge system"}, {"name": "N5/scripts/bootstrap/", "type": "CONCEPT", "context": "directory path mentioned for placing scripts"}], "relationships": [{"from": "V", "to": "N5/scripts/bootstrap/", "type": "USES", "context": "V suggests using this directory for scripts"}]}

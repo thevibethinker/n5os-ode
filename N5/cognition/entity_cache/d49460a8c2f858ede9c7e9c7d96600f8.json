@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ash", "type": "PERSON", "context": "identified the key strategic insight"}, {"name": "dual-sided marketplaces", "type": "CONCEPT", "context": "create conflicts in sourcing"}], "relationships": [{"from": "Ash", "to": "dual-sided marketplaces", "type": "MENTIONS", "context": "discusses the strategic insight related to sourcing"}]}

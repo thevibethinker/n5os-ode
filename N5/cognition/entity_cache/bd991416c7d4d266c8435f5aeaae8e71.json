@@ -1,0 +1,1 @@
+{"entities": [{"name": "Alexander Farr", "type": "PERSON", "context": "individual associated with Getclera"}, {"name": "Getclera", "type": "ORG", "context": "organization related to Alexander Farr"}], "relationships": [{"from": "Alexander Farr", "to": "Getclera", "type": "WORKS_WITH", "context": "Alexander is affiliated with the organization"}]}

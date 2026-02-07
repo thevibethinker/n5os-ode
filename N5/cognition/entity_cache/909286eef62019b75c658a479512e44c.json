@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "the individual who has a knowledge system"}, {"name": "proxy server", "type": "CONCEPT", "context": "the server that V sends requests to in the CONNECT request"}], "relationships": []}

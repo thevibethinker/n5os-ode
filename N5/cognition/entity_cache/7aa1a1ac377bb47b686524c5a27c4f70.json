@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "individual who builds systems and uses AI"}, {"name": "AI", "type": "TOOL", "context": "cognitive amplifier that Vrijen uses"}], "relationships": [{"from": "Vrijen", "to": "AI", "type": "USES", "context": "uses AI as a cognitive amplifier"}]}

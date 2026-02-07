@@ -1,0 +1,1 @@
+{"entities": [{"name": "Logan Currie", "type": "PERSON", "context": "a person communicating about the schedule"}, {"name": "Ilsa", "type": "PERSON", "context": "a person being informed about the schedule"}], "relationships": [{"from": "Logan Currie", "to": "Ilsa", "type": "MENTIONS", "context": "informing Ilsa about the stand schedule"}]}

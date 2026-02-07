@@ -1,0 +1,1 @@
+{"entities": [{"name": "higher ed product community", "type": "CONCEPT", "context": "refers to a community related to higher education products"}], "relationships": [{"from": "Vrijen", "to": "higher ed product community", "type": "KNOWS", "context": "Vrijen is a connector to the community"}]}

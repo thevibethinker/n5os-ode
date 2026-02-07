@@ -2,7 +2,7 @@
   "slug": "b05-backfill-extended",
   "title": "B05 Extended Backfill (Dec 15 - Jan 18)",
   "build_type": "code_build",
-  "status": "active",
+  "status": "complete",
   "total_streams": 2,
   "current_stream": 2,
   "model": "anthropic:claude-sonnet-4-20250514",
@@ -74,9 +74,12 @@
         "D1.6"
       ],
       "spawn_mode": "manual",
-      "status": "pending"
+      "status": "complete",
+      "completed_at": "2026-02-01T18:34:56.294630+00:00"
     }
   },
   "currents": {},
-  "started_at": "2026-01-26T05:21:32.851526+00:00"
+  "started_at": "2026-01-26T05:21:32.851526+00:00",
+  "blocked_reason": "",
+  "completed_at": "2026-02-01T18:34:56.294638+00:00"
 }

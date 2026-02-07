@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "speaker discussing dual Zo"}, {"name": "dual Zo", "type": "CONCEPT", "context": "concept mentioned by Vrijen"}], "relationships": [{"from": "Vrijen Attawar", "to": "dual Zo", "type": "MENTIONS", "context": "Vrijen talks about dual Zo on social media"}]}

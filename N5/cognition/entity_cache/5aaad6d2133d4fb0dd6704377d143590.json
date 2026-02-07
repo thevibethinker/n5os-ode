@@ -1,0 +1,1 @@
+{"entities": [{"name": "John Terry", "type": "PERSON", "context": "a former football player"}], "relationships": [{"from": "Me", "to": "John Terry", "type": "MENTIONS", "context": "comparison of physical appearance and football skills"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Registry v1.4", "type": "TOOL", "context": "version of the block type registry"}, {"name": "N5/prefs/block_type_registry.json", "type": "CONCEPT", "context": "file path of the block type registry"}], "relationships": []}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "N5", "type": "PERSON", "context": "individual or system expected to understand V-OS tags"}, {"name": "V-OS tags", "type": "CONCEPT", "context": "tags associated with V's knowledge system"}], "relationships": [{"from": "N5", "to": "V-OS tags", "type": "KNOWS", "context": "N5 is expected to understand V-OS tags"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Superposition", "type": "ORG", "context": "a voice agent system"}, {"name": "Careerspan", "type": "ORG", "context": "platform that generates Magic Links"}], "relationships": [{"from": "Superposition", "to": "Careerspan", "type": "USES", "context": "outputs JDs that feed into Careerspan"}]}

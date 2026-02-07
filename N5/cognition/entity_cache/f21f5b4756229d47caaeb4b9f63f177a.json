@@ -1,0 +1,1 @@
+{"entities": [{"name": "Hamoon Ekhtiari", "type": "PERSON", "context": "Leadership at FutureFit"}, {"name": "FutureFit", "type": "ORG", "context": "Organization associated with Hamoon Ekhtiari"}], "relationships": [{"from": "Hamoon Ekhtiari", "to": "FutureFit", "type": "WORKS_WITH", "context": "Hamoon Ekhtiari's leadership role at FutureFit"}]}

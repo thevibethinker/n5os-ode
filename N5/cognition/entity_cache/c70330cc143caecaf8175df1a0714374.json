@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "refers to the individual with a knowledge system"}, {"name": "persona_router.py", "type": "TOOL", "context": "Python script related to persona routing"}, {"name": "persona_router_v1_backup.py", "type": "TOOL", "context": "backup of the persona_router.py script"}], "relationships": []}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Pam K", "type": "PERSON", "context": "individual applying for jobs"}, {"name": "CareersBand", "type": "TOOL", "context": "tool for job applications"}], "relationships": [{"from": "Pam K", "to": "CareersBand", "type": "USES", "context": "Pam K uses CareersBand for job applications"}]}

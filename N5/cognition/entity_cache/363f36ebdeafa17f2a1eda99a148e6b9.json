@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "speaking about software programs"}, {"name": "GitHub", "type": "ORG", "context": "platform that holds software programs"}], "relationships": [{"from": "Vrijen Attawar", "to": "GitHub", "type": "USES", "context": "referring to it as a source for building blocks of software"}]}

@@ -1,0 +1,52 @@
+{
+  "drop_id": "D1.2",
+  "build_slug": "careerspan-pipeline-v2",
+  "status": "complete",
+  "completed_at": "2026-02-02T21:25:00-05:00",
+  "summary": "Created careerspan-resume-intake skill with full processing pipeline",
+  "artifacts": [
+    {
+      "path": "Skills/careerspan-resume-intake/SKILL.md",
+      "type": "skill_manifest",
+      "description": "Skill documentation following Agent Skills spec"
+    },
+    {
+      "path": "Skills/careerspan-resume-intake/scripts/process_resume.py",
+      "type": "script",
+      "description": "Main processing script - extracts candidate info, matches to job openings, creates Airtable records, generates guides, uploads to Drive"
+    }
+  ],
+  "deliverables": {
+    "skill_created": true,
+    "skill_path": "Skills/careerspan-resume-intake/",
+    "cli_interface": "python3 Skills/careerspan-resume-intake/scripts/process_resume.py --help",
+    "features_implemented": [
+      "PDF resume text extraction via PyMuPDF",
+      "LLM-based candidate info extraction (name, email, skills, experience)",
+      "Airtable job opening query and LLM-based matching",
+      "Candidate record creation in Airtable",
+      "Candidate guide generation via existing careerspan-candidate-guide skill",
+      "Google Drive upload to shared folder structure",
+      "Email summary preparation for Shivam",
+      "Dry-run mode for testing",
+      "JSON output mode",
+      "Multiple attachment support"
+    ],
+    "dependencies_used": [
+      "PyMuPDF (fitz) - PDF extraction",
+      "requests - API calls",
+      "PyYAML - config loading"
+    ]
+  },
+  "decisions": [
+    "Used /zo/ask for all semantic work (extraction, matching, classification) per LLM-over-regex principle",
+    "Delegated candidate guide generation to existing careerspan-candidate-guide skill rather than duplicating",
+    "Created temporary JD file from job opening metadata for candidate guide skill compatibility",
+    "Used shared folder structure: <root>/<employer>/candidates/<candidate_name>/ for Drive uploads"
+  ],
+  "flags": [],
+  "blockers": [],
+  "lessons_for_ledger": [
+    "The existing careerspan-candidate-guide skill expects --jd-file to be a text file with the full JD, so when matching dynamically, we create a temporary JD from the job opening metadata"
+  ]
+}

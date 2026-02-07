@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "Logan", "type": "PERSON", "context": "community partner involved with V"}], "relationships": [{"from": "V", "to": "Logan", "type": "WORKS_WITH", "context": "joint involvement in community partnership"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Mira", "type": "PERSON", "context": "internal Year Up colleague"}, {"name": "Careerspan materials", "type": "TOOL", "context": "materials used in workshops"}], "relationships": [{"from": "Mira", "to": "Careerspan materials", "type": "USES", "context": "Mira has been using Careerspan materials in workshops"}]}

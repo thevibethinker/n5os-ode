@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "refers to a founder community and alumni network"}, {"name": "Nira", "type": "PERSON", "context": "receives referrals from Careerspan"}], "relationships": [{"from": "Careerspan", "to": "Nira", "type": "WORKS_WITH", "context": "refers contacts to Nira"}]}

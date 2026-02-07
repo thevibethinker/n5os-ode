@@ -1,0 +1,1 @@
+{"entities": [{"name": "reminder injection", "type": "CONCEPT", "context": "a process that can fail"}, {"name": "error logging", "type": "TOOL", "context": "a mechanism to log errors"}, {"name": "persona definition", "type": "CONCEPT", "context": "a backup for rules in the system"}], "relationships": []}

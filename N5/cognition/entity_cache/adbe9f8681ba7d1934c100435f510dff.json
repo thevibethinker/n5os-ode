@@ -1,0 +1,1 @@
+{"entities": [{"name": "Kamina Singh", "type": "PERSON", "context": "a person speaking about people high up from BML"}, {"name": "BML", "type": "ORG", "context": "an organization mentioned in relation to people in a panel"}], "relationships": [{"from": "Kamina Singh", "to": "BML", "type": "MENTIONS", "context": "referring to people from BML"}]}

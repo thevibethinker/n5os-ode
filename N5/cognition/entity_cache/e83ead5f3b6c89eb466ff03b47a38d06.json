@@ -1,0 +1,1 @@
+{"entities": [{"name": "v2_monolithic_backup", "type": "TOOL", "context": "A specific backup tool or method"}, {"name": "v1_backup", "type": "TOOL", "context": "An earlier version of a backup tool"}, {"name": "prefs.md.old", "type": "CONCEPT", "context": "An outdated preferences file"}], "relationships": []}

@@ -1,0 +1,7 @@
+name: consultant
+persona_id: 88d70597-80f3-4b3e-90c1-da2c99da7f1f
+type: event
+trigger: calendly-webhook
+activation: python3 N5/scripts/consultant_worker.py
+notifications: on_start=true,on_complete=true,on_error=true,method=email
+notes: Activate 15 min before booked session, stay active during meeting window

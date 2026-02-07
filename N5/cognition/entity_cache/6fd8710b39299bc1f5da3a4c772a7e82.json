@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "speaker discussing their task management approach"}, {"name": "Zoe", "type": "TOOL", "context": "mentioned as a system for task management"}], "relationships": [{"from": "Vrijen Attawar", "to": "Zoe", "type": "MENTIONS", "context": "discusses limitations of Zoe for task management"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Operator", "type": "ROLE", "context": "handles tasks and routes interview responses"}], "relationships": [{"from": "Operator", "to": "Task intake", "type": "USES", "context": "Operator handles the queue and classifies tasks"}, {"from": "Operator", "to": "Interview responses", "type": "USES", "context": "Operator routes responses to interview handler"}]}

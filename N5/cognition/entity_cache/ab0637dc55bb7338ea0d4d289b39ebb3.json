@@ -1,0 +1,1 @@
+{"entities": [{"name": "metaprompter", "type": "TOOL", "context": "a tool for learning prompting basics"}], "relationships": [{"from": "V", "to": "metaprompter", "type": "USES", "context": "recommends building it for learning prompting basics"}]}

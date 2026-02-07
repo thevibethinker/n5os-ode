@@ -1,0 +1,1 @@
+{"entities": [{"name": "gamma", "type": "TOOL", "context": "Skill for generating presentations, documents, social posts using Gamma's AI API"}, {"name": "bun", "type": "TOOL", "context": "JavaScript runtime used to execute TypeScript scripts"}], "relationships": [{"from": "gamma", "to": "bun", "type": "USES", "context": "Gamma skill scripts are executed via bun runtime"}]}

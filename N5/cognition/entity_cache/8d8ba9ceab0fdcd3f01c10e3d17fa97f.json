@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "an organization considering a case study"}, {"name": "Colin", "type": "PERSON", "context": "individual whose case is being evaluated"}], "relationships": [{"from": "Careerspan", "to": "Colin", "type": "RELATED_TO", "context": "Careerspan is considering using Colin's case as a study"}]}

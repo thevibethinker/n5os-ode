@@ -1,0 +1,8 @@
+{
+  "N5_EMBEDDING_STORE": "v2",
+  "N5_REASONING_ENABLED": true,
+  "N5_SURPRISAL_THRESHOLD": 0.3,
+  "N5_REASONING_MODEL": "anthropic:claude-sonnet-4-20250514",
+  "N5_BELIEF_HITL_THRESHOLD": 0.6,
+  "_comment": "Activated 2026-01-31 - Memory as Reasoning build complete"
+}

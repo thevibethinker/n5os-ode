@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual managing tasks and proposals"}, {"name": "Operations", "type": "ORG", "context": "project associated with the task"}], "relationships": [{"from": "V", "to": "Operations", "type": "WORKS_WITH", "context": "V is working on a task related to the Operations project"}]}

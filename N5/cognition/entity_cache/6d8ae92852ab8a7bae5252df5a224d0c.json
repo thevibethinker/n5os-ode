@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "knowledge system advocate"}, {"name": "Pilot trap", "type": "CONCEPT", "context": "term relating to unpaid pilots"}], "relationships": [{"from": "Vrijen", "to": "Pilot trap", "type": "BELIEVES", "context": "against endless unpaid pilots"}]}

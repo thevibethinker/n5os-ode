@@ -1,0 +1,1 @@
+{"entities": [{"name": "Jaya Pokuri", "type": "PERSON", "context": "Speaker discussing a knowledge system"}, {"name": "PubMed", "type": "ORG", "context": "Source of healthcare publications"}], "relationships": [{"from": "Jaya Pokuri", "to": "PubMed", "type": "MENTIONS", "context": "Discussing scraping articles from PubMed for insights"}]}

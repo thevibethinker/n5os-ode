@@ -1,0 +1,1 @@
+{"entities": [{"name": "Frontend Design", "type": "CONCEPT", "context": "Guides the creation of distinctive frontend interfaces"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "Author of the knowledge system"}], "relationships": [{"from": "V (Vrijen)", "to": "Frontend Design", "type": "KNOWS", "context": "V is knowledgeable about frontend design principles"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Danny Williams", "type": "PERSON", "context": "mentioned participant in the conversation"}, {"name": "REACT logo", "type": "TOOL", "context": "reference to a specific logo"}], "relationships": []}

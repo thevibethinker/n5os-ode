@@ -1,0 +1,8 @@
+{
+  "drop_id": "D1.1",
+  "status": "complete",
+  "summary": "Transformed Hardik v5 candidate profile into Gamma-optimized input text. Applied all required transformations: changed 'Score: 89' to 'Recommendation Confidence: 89%', renamed 'What You're Not Getting' to 'What You Shouldn't Expect', and restructured content into 6 visual sections (Hero/Verdict, Evidence, Gaps, Risk Profile, Meeting Questions, Decision Matrix). Used clear section headers with ## notation, kept bullet points concise for Gamma AI expansion, and ensured all data points are present with numbers and stats prominent for visualization.",
+  "artifacts": ["artifacts/gamma_input.md"],
+  "word_count": 935,
+  "notes_for_orchestrator": ""
+}

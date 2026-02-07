@@ -1,0 +1,1 @@
+{"entities": [{"name": "Employers", "type": "ORG", "context": "organizations looking for candidates"}, {"name": "ATS", "type": "TOOL", "context": "Applicant Tracking System used for resume filtering"}], "relationships": []}

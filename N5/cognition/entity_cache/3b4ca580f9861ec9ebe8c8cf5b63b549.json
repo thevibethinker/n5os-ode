@@ -1,0 +1,1 @@
+{"entities": [{"name": "Alex", "type": "PERSON", "context": "asked a clarifying question about product roles"}], "relationships": [{"from": "Alex", "to": "product roles", "type": "MENTIONS", "context": "seeking precision on target candidate profile"}]}

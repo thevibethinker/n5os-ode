@@ -1,0 +1,1 @@
+{"entities": [{"name": "attawar.v@gmail.com", "type": "PERSON", "context": "email address of the user querying"}, {"name": "gmail-find-email", "type": "TOOL", "context": "tool being used to find emails"}], "relationships": [{"from": "attawar.v@gmail.com", "to": "gmail-find-email", "type": "USES", "context": "user is employing the tool to find emails"}]}

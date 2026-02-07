@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ashraf", "type": "PERSON", "context": "experienced expensive mismatch in hiring"}, {"name": "Careerspan", "type": "ORG", "context": "organization validating its core value proposition"}], "relationships": [{"from": "Ashraf", "to": "Careerspan", "type": "MENTIONS", "context": "describes the mismatch experienced in hiring"}]}

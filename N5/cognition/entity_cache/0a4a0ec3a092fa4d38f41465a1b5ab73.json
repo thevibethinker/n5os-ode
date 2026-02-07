@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "the individual associated with the knowledge system"}, {"name": "luma_unified_pipeline", "type": "TOOL", "context": "a script used in the knowledge system"}], "relationships": [{"from": "V", "to": "luma_unified_pipeline", "type": "USES", "context": "V uses the luma_unified_pipeline script to run the full pipeline"}]}

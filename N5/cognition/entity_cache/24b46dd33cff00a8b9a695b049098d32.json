@@ -1,0 +1,1 @@
+{"entities": [{"name": "chalk", "type": "TOOL", "context": "a dependency used in the update"}, {"name": "cliui", "type": "ORG", "context": "repository related to the update"}], "relationships": [{"from": "cliui", "to": "chalk", "type": "USES", "context": "cliui updates for compatibility with chalk"}]}

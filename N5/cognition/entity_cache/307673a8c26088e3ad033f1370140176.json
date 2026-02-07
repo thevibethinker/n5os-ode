@@ -1,0 +1,1 @@
+{"entities": [{"name": "N5/scripts/howie_signature_generator.py", "type": "TOOL", "context": "A script for generating signatures for investors"}, {"name": "investor", "type": "CONCEPT", "context": "A recipient type in the signature generation system"}], "relationships": []}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Jane Smith", "type": "PERSON", "context": "mutual acquaintance"}, {"name": "Alex Caveny", "type": "PERSON", "context": "introduced V to others"}], "relationships": [{"from": "V", "to": "Jane Smith", "type": "KNOWS", "context": "mutual acquaintance"}, {"from": "V", "to": "Alex Caveny", "type": "WORKS_WITH", "context": "introduced V to others"}]}

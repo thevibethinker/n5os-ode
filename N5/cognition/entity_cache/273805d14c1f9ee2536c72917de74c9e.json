@@ -1,0 +1,1 @@
+{"entities": [{"name": "Logan", "type": "PERSON", "context": "owner of the project"}, {"name": "Twitter", "type": "ORG", "context": "platform for visibility targets"}], "relationships": [{"from": "Logan", "to": "Twitter", "type": "USES", "context": "to build visibility with targets"}]}

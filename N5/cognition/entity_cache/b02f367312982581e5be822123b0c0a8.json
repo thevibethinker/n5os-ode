@@ -1,0 +1,1 @@
+{"entities": [{"name": "Separate Orchestration", "type": "CONCEPT", "context": "a method for organizing complex systems without altering existing code"}, {"name": "Producer/consumer", "type": "CONCEPT", "context": "a design pattern for data processing with file markers"}], "relationships": []}

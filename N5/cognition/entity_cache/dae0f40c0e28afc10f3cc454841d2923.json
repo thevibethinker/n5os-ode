@@ -1,0 +1,1 @@
+{"entities": [{"name": "manager", "type": "TOOL", "context": "a software tool or component that updates artifact status"}, {"name": "backup_manager.py", "type": "TOOL", "context": "a script related to managing backups"}], "relationships": []}

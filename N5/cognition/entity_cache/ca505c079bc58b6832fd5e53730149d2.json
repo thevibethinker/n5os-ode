@@ -1,0 +1,1 @@
+{"entities": [{"name": "recruiting firms", "type": "ORG", "context": "industry being discussed as declining"}], "relationships": [{"from": "V (Vrijen)", "to": "recruiting firms", "type": "BELIEVES", "context": "V believes recruiting firms are a dying breed"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "sqlite3", "type": "TOOL", "context": "Python library used for connecting to and interacting with SQLite databases."}, {"name": "Path", "type": "TOOL", "context": "Python class used for handling filesystem paths."}], "relationships": []}

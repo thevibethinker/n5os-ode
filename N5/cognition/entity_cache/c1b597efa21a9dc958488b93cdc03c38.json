@@ -1,0 +1,1 @@
+{"entities": [{"name": "Node.js", "type": "ORG", "context": "A JavaScript runtime built on Chrome's V8 engine"}, {"name": "utf8", "type": "CONCEPT", "context": "A character encoding format used for text"}], "relationships": [{"from": "Node.js", "to": "utf8", "type": "USES", "context": "Node.js supports the utf8 encoding for handling text"}]}

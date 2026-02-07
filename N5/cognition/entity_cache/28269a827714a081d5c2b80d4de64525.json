@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual performing tasks in knowledge system"}, {"name": "LLM", "type": "TOOL", "context": "language model used for extracting content"}], "relationships": [{"from": "V", "to": "LLM", "type": "USES", "context": "V uses LLM to extract content for each block"}]}

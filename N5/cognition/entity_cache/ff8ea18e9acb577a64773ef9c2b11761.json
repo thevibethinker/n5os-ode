@@ -1,0 +1,1 @@
+{"entities": [{"name": "Content Library", "type": "CONCEPT", "context": "V's database of links and resources"}], "relationships": [{"from": "V", "to": "Content Library", "type": "USES", "context": "V uses the Content Library to ensure consistent delivery of resources"}]}

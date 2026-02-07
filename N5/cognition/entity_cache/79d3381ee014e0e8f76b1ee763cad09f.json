@@ -1,0 +1,1 @@
+{"entities": [{"name": "Zo", "type": "TOOL", "context": "A tool being called via subprocess"}, {"name": "N5/scripts/utils/zo_llm.py", "type": "TOOL", "context": "The script attempting to interact with Zo"}], "relationships": [{"from": "N5/scripts/utils/zo_llm.py", "to": "Zo", "type": "USES", "context": "The script uses Zo as part of its functionality"}]}

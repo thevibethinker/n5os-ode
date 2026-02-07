@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Decider of Wisdom object creation"}, {"name": "RAG", "type": "TOOL", "context": "Suggests roots and siblings for Wisdom objects"}], "relationships": [{"from": "RAG", "to": "V", "type": "WORKS_WITH", "context": "RAG suggests to V for Wisdom object decisions"}]}

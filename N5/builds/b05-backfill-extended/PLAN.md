@@ -1,164 +1,76 @@
 ---
 created: 2026-01-26
-last_edited: 2026-01-26
-version: 1.0
+last_edited: 2026-02-01
+version: 1.1
 type: build_plan
-status: draft
+status: complete
+provenance: con_BTFIhYsxr3P3CzaR
 ---
 
 # Plan: B05 Extended Backfill (Dec 15 - Jan 18)
 
-**Objective:** {{ONE_SENTENCE_OBJECTIVE}}
+**Objective:** Extract action items from 56 meetings (Dec 15, 2025 - Jan 18, 2026) and stage them in the task-system for review.
 
-**Trigger:** {{WHAT_PROMPTED_THIS_BUILD}}
-
-**Key Design Principle:** Plans are FOR AI execution, not human review. V sets up the plan; Zo reads and executes it step-by-step without human intervention.
+**Trigger:** Task backlog needed populating from historical meetings that occurred before the meeting → task pipeline was operational.
 
 ---
 
-## Open Questions
+## What Was Done
 
-<!-- Surface unknowns HERE at the TOP. Resolve before proceeding. -->
-- [ ] {{QUESTION_1}}
-- [ ] {{QUESTION_2}}
+### Stream 1: Parallel Extraction (D1.1 - D1.6)
 
----
+Six parallel drops processed meetings in batches:
 
-## Checklist
+| Drop | Date Range | Meetings | Items |
+|------|------------|----------|-------|
+| D1.1 | Dec 16-23 | 9 | 15 |
+| D1.2 | Jan 5-7 | 9 | 18 |
+| D1.3 | Jan 7-9 | 9 | 16 |
+| D1.4 | Jan 9-12 | 9 | 26 |
+| D1.5 | Jan 12-15 | 9 | 31 |
+| D1.6 | Jan 15-16 | 11 | 51 |
+| **Total** | | **56** | **157** |
 
-<!-- Concise one-liners. ☐ = pending, ☑ = complete. Zo updates as it executes. -->
+Each drop:
+1. Read `B05_ACTION_ITEMS.md` or `transcript.md` from each meeting
+2. Called LLM to extract V-owned action items
+3. Wrote structured deposit with items array
 
-### Phase 1: {{PHASE_1_NAME}}
-- ☐ {{TASK_1}}
-- ☐ {{TASK_2}}
-- ☐ Test: {{TEST_DESCRIPTION}}
+### Stream 2: Aggregation (D2.1)
 
-### Phase 2: {{PHASE_2_NAME}}
-- ☐ {{TASK_1}}
-- ☐ {{TASK_2}}
-- ☐ Test: {{TEST_DESCRIPTION}}
-
-<!-- Add more phases as needed. Keep to 2-4 phases that logically stack. -->
-
----
-
-## Phase 1: {{PHASE_1_NAME}}
-
-### Affected Files
-<!-- List EVERY file this phase touches. Format: path - ACTION - brief description -->
-- `path/to/file.py` - CREATE - description
-- `path/to/other.py` - UPDATE - description
-
-### Changes
-
-**1.1 {{SUBCHANGE_TITLE}}:**
-<!-- Describe what changes. Be specific enough for AI to execute without clarification. -->
-
-**1.2 {{SUBCHANGE_TITLE}}:**
-<!-- Continue as needed -->
-
-### Unit Tests
-<!-- Tests for THIS phase. Run after phase completion. -->
-- {{TEST_1}}: Expected outcome
-- {{TEST_2}}: Expected outcome
+1. Aggregated 157 items from 6 deposits
+2. Semantic deduplication via LLM → 140 unique items
+3. Generated `artifacts/REVIEW_CHECKLIST.md`
+4. Staged 139 tasks to task-system (1 minor error)
 
 ---
 
-## Phase 2: {{PHASE_2_NAME}}
+## Outcomes
 
-### Affected Files
-- `path/to/file.py` - CREATE/UPDATE/DELETE - description
-
-### Changes
-
-**2.1 {{SUBCHANGE_TITLE}}:**
-<!-- Describe changes -->
-
-### Unit Tests
-- {{TEST}}: Expected outcome
-
----
-
-## MECE Validation
-
-<!-- 
-MANDATORY for multi-worker builds.
-Reference: N5/prefs/operations/mece-worker-framework.md
-Run validator: python3 N5/scripts/mece_validator.py b05-backfill-extended
--->
-
-### Scope Coverage Matrix
-
-<!-- List ALL scope items from plan. Each must map to exactly ONE worker. -->
-
-| Scope Item | Worker | Status |
-|------------|--------|--------|
-| `{{FILE_1}}` | W1.1 | ✓ |
-| `{{FILE_2}}` | W1.2 | ✓ |
-| `{{RESPONSIBILITY}}` | W1.1 | ✓ |
-
-### Token Budget Summary
-
-<!-- Ensure each worker stays within context budget (target <30%, hard limit <40%). -->
-
-| Worker | Brief (tokens) | Files (tokens) | Total % | Status |
-|--------|----------------|----------------|---------|--------|
-| W1.1 | ~2,000 | ~8,000 | 5% | ✓ |
-| W1.2 | ~1,500 | ~6,000 | 3.75% | ✓ |
-
-### MECE Validation Result
-
-- [ ] All scope items assigned to exactly ONE worker (no overlaps)
-- [ ] All plan deliverables covered (no gaps)
-- [ ] All workers within 40% token budget
-- [ ] Wave dependencies are valid (no circular, no same-wave deps)
-- [ ] `python3 N5/scripts/mece_validator.py b05-backfill-extended` passes
+- **157 raw items** extracted from 56 meetings
+- **140 unique tasks** after deduplication
+- **139 staged** to task-system for review
+- **Breakdown:**
+  - Urgent: 40 items
+  - Strategic: 63 items
+  - Normal: 50 items
+  - External: 3 items
+- **Domains:** Careerspan (111), Zo (23), Personal (21), Other (2)
 
 ---
 
-## Worker Briefs
+## Artifacts
 
-<!-- For builds using v2 orchestrator: briefs are in `workers/` folder. -->
-<!-- Titles are pre-decided to enable easy thread management. -->
-
-| Wave | Worker | Title | Brief File |
-|------|--------|-------|------------|
-| 1 | W1.1 | {{W1.1_TITLE}} | `workers/W1.1-{{W1.1_SLUG}}.md` |
-| 1 | W1.2 | {{W1.2_TITLE}} | `workers/W1.2-{{W1.2_SLUG}}.md` |
-| 2 | W2.1 | {{W2.1_TITLE}} | `workers/W2.1-{{W2.1_SLUG}}.md` |
-
-<!-- Add rows as needed. Wave 2+ workers depend on Wave 1 completion. -->
+- `deposits/D1.1.json` through `deposits/D1.6.json` — Raw extraction results
+- `deposits/D2.1.json` — Aggregation summary
+- `artifacts/REVIEW_CHECKLIST.md` — Checkbox list for V's review
+- `artifacts/STAGED_TASKS.json` — Full task data for import
 
 ---
 
-## Success Criteria
+## Learnings
 
-<!-- How do we know we're done? Measurable outcomes. -->
-1. {{CRITERION_1}}
-2. {{CRITERION_2}}
-3. {{CRITERION_3}}
-
----
-
-## Risks & Mitigations
-
-| Risk | Mitigation |
-|------|------------|
-| {{RISK_1}} | {{MITIGATION_1}} |
-| {{RISK_2}} | {{MITIGATION_2}} |
-
----
-
-## Level Upper Review
-
-<!-- Architect invokes Level Upper before finalizing. Document the divergent input here. -->
-
-### Counterintuitive Suggestions Received:
-1. {{SUGGESTION_1}}
-2. {{SUGGESTION_2}}
-
-### Incorporated:
-- {{WHAT_WAS_INCORPORATED}}
-
-### Rejected (with rationale):
-- {{WHAT_WAS_REJECTED}}: {{WHY}}
+1. **B05_ACTION_ITEMS.md pre-processing** improved extraction quality vs raw transcripts
+2. **Parallel extraction** (6 drops) completed Stream 1 quickly
+3. **Semantic deduplication** reduced 157 → 140 (11% duplicate rate across meetings)
+4. **Many items from Dec 2025 are likely stale** — review needed before committing

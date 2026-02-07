@@ -1,0 +1,56 @@
+{
+  "slug": "n5-brain-v2",
+  "title": "N5 Brain v2: FlashRank + GraphRAG + Temporal Tracking",
+  "status": "active",
+  "created_at": "2026-02-01T05:00:00Z",
+  "streams": [
+    {
+      "id": 1,
+      "name": "Core Upgrades",
+      "drops": [
+        "D1.1",
+        "D1.2"
+      ],
+      "parallel": true
+    },
+    {
+      "id": 2,
+      "name": "GraphRAG",
+      "drops": [
+        "D2.1"
+      ],
+      "depends_on": [
+        1
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Backfill & Integration",
+      "drops": [
+        "D3.1"
+      ],
+      "depends_on": [
+        2
+      ]
+    }
+  ],
+  "drops": {
+    "D1.1": {
+      "status": "complete",
+      "title": "FlashRank Reranker"
+    },
+    "D1.2": {
+      "status": "complete",
+      "title": "Temporal Tracking"
+    },
+    "D2.1": {
+      "status": "complete",
+      "title": "GraphRAG Layer"
+    },
+    "D3.1": {
+      "status": "in_progress",
+      "title": "Backfill & Integration"
+    }
+  },
+  "current_stream": 3
+}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "LinkedIn", "type": "ORG", "context": "social networking platform"}, {"name": "Indeed", "type": "ORG", "context": "job board platform"}], "relationships": [{"from": "V", "to": "LinkedIn", "type": "USES", "context": "engagement metrics"}, {"from": "V", "to": "Indeed", "type": "USES", "context": "job board usage"}]}

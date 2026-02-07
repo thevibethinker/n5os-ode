@@ -1,0 +1,8 @@
+{
+  "drop_id": "D1.4a",
+  "status": "complete",
+  "summary": "Defined purpose, success criteria, and anti-patterns for all 4 panels of the candidate profile. Framework is candidate-agnostic, enabling evaluation rubric development (D1.4b) and subsequent candidate analysis.",
+  "artifacts": ["drops/D1.4a-panel-purposes.md"],
+  "issues": [],
+  "learnings": []
+}

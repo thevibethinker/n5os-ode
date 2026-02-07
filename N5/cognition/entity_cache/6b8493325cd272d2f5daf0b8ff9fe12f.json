@@ -1,0 +1,1 @@
+{"entities": [{"name": "Anna Bao", "type": "PERSON", "context": "Speaker in conversation discussing event logistics"}, {"name": "New York City", "type": "ORG", "context": "Location where a donut event is already happening"}, {"name": "donut event", "type": "EVENT", "context": "Existing event happening in New York City and throughout Bogey"}], "relationships": []}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Katie Zion", "type": "PERSON", "context": "Culanistas"}, {"name": "Melissa", "type": "PERSON", "context": "connected for talent operations"}], "relationships": [{"from": "Melissa", "to": "Katie Zion", "type": "WORKS_WITH", "context": "connecting for talent operations"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "angel investors", "type": "ORG", "context": "investors who provide capital for startups"}], "relationships": [{"from": "V", "to": "angel investors", "type": "KNOWS", "context": "V knows some angel investors"}]}

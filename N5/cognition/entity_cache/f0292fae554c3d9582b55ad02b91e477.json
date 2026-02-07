@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "individual mentioned in the text"}, {"name": "vendors", "type": "CONCEPT", "context": "entities with a skill for calling"}], "relationships": [{"from": "Vrijen Attawar", "to": "vendors", "type": "MENTIONS", "context": "discusses their skills"}]}

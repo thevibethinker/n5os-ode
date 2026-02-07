@@ -1,0 +1,1 @@
+{"entities": [{"name": "Gabi", "type": "PERSON", "context": "provided with signup code"}, {"name": "Zo Computer", "type": "TOOL", "context": "product demonstrated"}], "relationships": [{"from": "Vrijen", "to": "Gabi", "type": "MENTIONS", "context": "provided signup code to Gabi"}, {"from": "Vrijen", "to": "Zo Computer", "type": "USES", "context": "demonstrated product"}]}

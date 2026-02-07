@@ -1,0 +1,1 @@
+{"entities": [{"name": "Colin", "type": "PERSON", "context": "a speaker mentioning his wife"}, {"name": "Logan", "type": "PERSON", "context": "a speaker responding to Colin"}], "relationships": [{"from": "Colin", "to": "Logan", "type": "KNOWS", "context": "two people conversing"}]}

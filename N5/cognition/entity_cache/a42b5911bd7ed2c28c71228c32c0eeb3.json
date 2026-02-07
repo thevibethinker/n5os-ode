@@ -1,0 +1,1 @@
+{"entities": [{"name": "value", "type": "CONCEPT", "context": "Represents a numeric value to write"}, {"name": "offset", "type": "CONCEPT", "context": "An optional numeric offset for writing the value"}, {"name": "this", "type": "CONCEPT", "context": "Refers to the current instance or object in context"}], "relationships": []}

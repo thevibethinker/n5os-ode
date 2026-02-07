@@ -1,0 +1,1 @@
+{"entities": [{"name": "Aniket", "type": "PERSON", "context": "Exploring pricing pre-funding"}, {"name": "Vrijen", "type": "PERSON", "context": "Raised capital and in pivot phase with early validation"}], "relationships": [{"from": "Vrijen", "to": "Aniket", "type": "WORKS_WITH", "context": "Both are involved in exploring business opportunities in different stages"}]}

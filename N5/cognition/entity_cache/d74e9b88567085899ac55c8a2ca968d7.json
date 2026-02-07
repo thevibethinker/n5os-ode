@@ -1,0 +1,1 @@
+{"entities": [{"name": "MG intelligence blocks", "type": "CONCEPT", "context": "Method or structure used for meetings"}, {"name": "content_library.db", "type": "TOOL", "context": "Database queried for essential links"}, {"name": "FOLLOW_UP_EMAIL.md", "type": "TOOL", "context": "Document saved after composing an email"}], "relationships": []}

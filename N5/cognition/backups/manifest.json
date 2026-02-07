@@ -1,0 +1,11 @@
+{
+  "baseline_date": "2026-01-31",
+  "baseline_reason": "Pre-Memory-as-Reasoning upgrade",
+  "resources": 5310,
+  "blocks": 48647,
+  "vectors": 48561,
+  "embedding_model": "all-MiniLM-L6-v2",
+  "embedding_dim": 384,
+  "rollback_instructions": "cp backups/brain_pre-reasoning_*.db brain.db && rm -f beliefs.json reasoning_traces.db",
+  "build_slug": "memory-as-reasoning"
+}

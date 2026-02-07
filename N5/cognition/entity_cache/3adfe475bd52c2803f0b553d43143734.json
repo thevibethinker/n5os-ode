@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "participant in the discussion"}, {"name": "Yale community", "type": "ORG", "context": "refers to the organization he is engaged with"}], "relationships": [{"from": "Vrijen Attawar", "to": "Yale community", "type": "WORKS_WITH", "context": "interested in providing investment opportunities"}]}

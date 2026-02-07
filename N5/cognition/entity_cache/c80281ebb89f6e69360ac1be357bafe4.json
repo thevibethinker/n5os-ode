@@ -1,0 +1,1 @@
+{"entities": [{"name": "Gumroad", "type": "ORG", "context": "a platform model for launching products"}], "relationships": [{"from": "V", "to": "Gumroad", "type": "USES", "context": "suggested as a starting model for launching a business"}]}

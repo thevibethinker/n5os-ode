@@ -1,0 +1,1 @@
+{"entities": [{"name": "Cosmiconfig", "type": "TOOL", "context": "a tool that parses configuration files"}, {"name": "package.json", "type": "CONCEPT", "context": "a configuration file format for Node.js projects"}], "relationships": [{"from": "Cosmiconfig", "to": "package.json", "type": "USES", "context": "uses package.json for configuration parsing"}]}

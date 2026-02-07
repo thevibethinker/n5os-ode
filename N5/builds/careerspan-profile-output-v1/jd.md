@@ -1,0 +1,47 @@
+---
+created: 2026-01-29
+last_edited: 2026-01-29
+version: 1.0
+provenance: con_JTGSUg7MJeBHzmdq
+source: FlowFuse Job Posting (provided by V)
+---
+
+# AI Engineer — FlowFuse
+
+## Company
+
+FlowFuse
+
+## Location
+
+Remote
+
+## About the Role
+
+We're looking for an AI Engineer to help us build and scale intelligent features into FlowFuse. You'll work across the stack—designing prompts, integrating LLMs, building retrieval pipelines, and shipping user-facing AI capabilities. This is a generalist role with high ownership and direct impact on product direction.
+
+## What You'll Do
+
+- Design and implement AI-powered features end-to-end.
+- Build and maintain LLM integrations (prompt engineering, fine-tuning, evaluation).
+- Develop retrieval-augmented generation (RAG) systems for contextual intelligence.
+- Prototype, evaluate, and productionize AI features with clear scope and guardrails.
+- Design for AI failure modes, latency, cost, and operational constraints.
+- Ensure AI features align with privacy, security, and SOC 2 requirements.
+- Share best practices and patterns for applied AI across the engineering team.
+- Contribute to broader full-stack engineering work as needed.
+
+## What We're Looking For
+
+- Strong generalist engineering skills (we use Node.js heavily).
+- Hands-on experience building with LLMs in production.
+- Familiarity with vector databases, embeddings, and retrieval systems.
+- Comfort with ambiguity and a bias toward shipping incrementally.
+- Excellent written communication—you'll be documenting patterns and decisions.
+- Bonus: experience with Node-RED or low-code platforms.
+
+## Culture Signals (from Job Posting)
+
+- Small, remote team that works async in Slack
+- Values: ownership, shipping incrementally, clear communication
+- Interview question: "What's the first custom emoji you're adding?" (signals culture fit for informal, personality-forward team)

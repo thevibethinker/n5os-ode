@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual referred to in the text"}, {"name": "Obsidian", "type": "TOOL", "context": "working alternative system"}], "relationships": [{"from": "V", "to": "Obsidian", "type": "USES", "context": "V has a working alternative system"}]}

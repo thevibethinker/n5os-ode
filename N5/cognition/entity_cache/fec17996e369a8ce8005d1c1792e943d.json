@@ -1,0 +1,1 @@
+{"entities": [{"name": "N5", "type": "ORG", "context": "Organization related to the backup manager utility"}, {"name": "backup_manager.py", "type": "TOOL", "context": "Script for automated backup workflows"}], "relationships": []}

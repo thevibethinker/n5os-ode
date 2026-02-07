@@ -1,0 +1,1 @@
+{"entities": [{"name": "sarah-chen", "type": "PERSON", "context": "individual with a compatibility stub role"}], "relationships": [{"from": "V", "to": "sarah-chen", "type": "KNOWS", "context": "V has a relationship with Sarah Chen through the knowledge system"}]}

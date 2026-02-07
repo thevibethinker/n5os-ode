@@ -1,0 +1,1 @@
+{"entities": [{"name": "Nafisa Poonawala", "type": "PERSON", "context": "A person mentioned in the conversation"}, {"name": "Zone", "type": "CONCEPT", "context": "A concept that people are adopting"}], "relationships": [{"from": "Nafisa Poonawala", "to": "Zone", "type": "MENTIONS", "context": "Mentions the use of V as a launch pad for Zone"}]}

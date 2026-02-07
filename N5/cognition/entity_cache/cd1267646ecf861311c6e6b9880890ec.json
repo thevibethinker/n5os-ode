@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "founder of the system"}, {"name": "X", "type": "ORG", "context": "organization referenced in cold outreach"}], "relationships": [{"from": "V", "to": "X", "type": "WORKS_WITH", "context": "V reaches out to X due to overlapping interests"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Google Drive", "type": "TOOL", "context": "cloud storage and file management service"}, {"name": "local transcript files", "type": "CONCEPT", "context": "files in .txt format containing transcripts"}], "relationships": []}

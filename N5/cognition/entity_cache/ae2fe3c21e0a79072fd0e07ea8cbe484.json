@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "Individual associated with the knowledge system"}, {"name": "One-Pagers", "type": "CONCEPT", "context": "Executive summary format used for various meetings"}], "relationships": [{"from": "V (Vrijen)", "to": "One-Pagers", "type": "USES", "context": "V uses One-Pagers for executive summaries in multiple contexts"}]}

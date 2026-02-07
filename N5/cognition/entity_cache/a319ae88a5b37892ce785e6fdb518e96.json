@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual who has a knowledge system"}, {"name": "multi-step workflows", "type": "CONCEPT", "context": "a method used in V's knowledge system"}], "relationships": [{"from": "V (Vrijen)", "to": "multi-step workflows", "type": "USES", "context": "V employs multi-step workflows within the knowledge system"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "organization moving to a new sales model"}, {"name": "Next Play", "type": "ORG", "context": "existing community for founders"}], "relationships": [{"from": "Careerspan", "to": "Next Play", "type": "WORKS_WITH", "context": "embedding tech into existing communities"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "individual involved in developing the knowledge system"}, {"name": "meeting_duplicate_manager.py", "type": "TOOL", "context": "Python tool used in the knowledge system for managing meeting duplicates"}], "relationships": []}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "handles operational and quality aspects of resumes"}, {"name": "resumes", "type": "CONCEPT", "context": "manage formatting, consistency, and error-checking"}], "relationships": [{"from": "V (Vrijen)", "to": "resumes", "type": "USES", "context": "to handle operational and quality aspects"}]}

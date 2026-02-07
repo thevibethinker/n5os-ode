@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "individual requesting a change in file format"}, {"name": "B14", "type": "TOOL", "context": "system combining blurbs and strategic messaging"}], "relationships": [{"from": "Vrijen", "to": "B14", "type": "USES", "context": "Vrijen is using B14 to manage blurbs and messaging"}]}

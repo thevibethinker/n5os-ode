@@ -1,0 +1,1 @@
+{"entities": [{"name": "Stage 3", "type": "CONCEPT", "context": "a part of a knowledge system that processes input"}, {"name": "Stage 2", "type": "CONCEPT", "context": "a preceding part of a knowledge system that produces output"}], "relationships": [{"from": "Stage 3", "to": "Stage 2", "type": "USES", "context": "Stage 3 relies on the output of Stage 2"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ryan", "type": "PERSON", "context": "describes himself as humble"}], "relationships": [{"from": "Ryan", "to": "the humble person that knows there's so much more to know", "type": "BELIEVES", "context": "shares a belief in humility and the awareness of limited knowledge"}]}

@@ -6,7 +6,6 @@ last_edited: 2026-01-27
 version: 7.2
 provenance: con_iWYnvvOstEK9TrTG
 ---
-
 # Close Conversation
 
 Auto-detect context and close this conversation appropriately.

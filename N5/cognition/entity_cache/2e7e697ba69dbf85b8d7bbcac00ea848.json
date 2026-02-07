@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "the main individual associated with the knowledge system"}, {"name": "N5MemoryClient", "type": "TOOL", "context": "a client used to query memory for context"}], "relationships": [{"from": "V", "to": "N5MemoryClient", "type": "USES", "context": "V uses N5MemoryClient to enrich market analysis"}]}

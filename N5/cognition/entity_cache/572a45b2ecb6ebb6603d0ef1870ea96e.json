@@ -1,0 +1,1 @@
+{"entities": [{"name": "B11 Risks & Flags", "type": "CONCEPT", "context": "a block generated from meeting transcripts"}, {"name": "meeting transcript", "type": "TOOL", "context": "source material for generating the B11 Risks & Flags block"}], "relationships": []}

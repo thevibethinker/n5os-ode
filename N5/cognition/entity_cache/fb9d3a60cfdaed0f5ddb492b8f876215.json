@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "panel moderator and content strategy lead"}, {"name": "Chasing Waterfalls", "type": "EVENT", "context": "title of the webinar"}], "relationships": [{"from": "V", "to": "Chasing Waterfalls", "type": "WORKS_WITH", "context": "V is the moderator and content strategy lead for the webinar"}]}

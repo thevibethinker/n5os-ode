@@ -1,0 +1,1 @@
+{"entities": [{"name": "validate_file_path.py", "type": "TOOL", "context": "Pre-creation validation tool"}, {"name": "sandbox_enforcer.py", "type": "TOOL", "context": "Core validation engine"}, {"name": "session_state_manager.py", "type": "TOOL", "context": "Artifact declaration/tracking tool"}], "relationships": []}

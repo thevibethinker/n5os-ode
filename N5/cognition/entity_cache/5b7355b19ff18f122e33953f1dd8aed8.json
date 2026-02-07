@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "The individual associated with the knowledge system"}, {"name": "@channel/manager", "type": "TOOL", "context": "Used for communication and information distribution"}], "relationships": [{"from": "V", "to": "@channel/manager", "type": "USES", "context": "V provides consent for the usage of the tool"}]}

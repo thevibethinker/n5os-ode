@@ -1,0 +1,24 @@
+{
+  "989157659577ba32": {
+    "action": "deactivate_consultant",
+    "cancel_reason": "invitee.canceled",
+    "canceled_at_utc": "2026-02-06T18:21:42.110336+00:00",
+    "created_at_utc": "2026-02-06T18:21:09.851852+00:00",
+    "job_id": "989157659577ba32",
+    "last_error": null,
+    "run_at_utc": "2026-02-06T20:21:09.757145+00:00",
+    "session_id": "6988ab71410a855d",
+    "status": "canceled"
+  },
+  "b5d4fc81f112e75c": {
+    "action": "activate_consultant",
+    "cancel_reason": "invitee.canceled",
+    "canceled_at_utc": "2026-02-06T18:21:42.110339+00:00",
+    "created_at_utc": "2026-02-06T18:21:09.851834+00:00",
+    "job_id": "b5d4fc81f112e75c",
+    "last_error": null,
+    "run_at_utc": "2026-02-06T18:36:09.757145+00:00",
+    "session_id": "6988ab71410a855d",
+    "status": "canceled"
+  }
+}

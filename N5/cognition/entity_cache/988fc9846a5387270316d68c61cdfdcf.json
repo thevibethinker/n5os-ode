@@ -1,0 +1,1 @@
+{"entities": [{"name": "file 'Personal/Knowledge/Canon/Company/glossary.md'", "type": "TOOL", "context": "A preferred file for definitions in the knowledge system."}, {"name": "file 'Knowledge/stable/glossary.md'", "type": "TOOL", "context": "A fallback file for canonical definitions in the knowledge system."}], "relationships": []}

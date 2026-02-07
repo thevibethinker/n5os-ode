@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "individual discussing knowledge system"}, {"name": "LinkedIn", "type": "ORG", "context": "social media platform referenced"}], "relationships": [{"from": "Vrijen Attawar", "to": "LinkedIn", "type": "MENTIONS", "context": "describing limitations of LinkedIn's offerings"}]}

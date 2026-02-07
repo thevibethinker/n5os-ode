@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ilya", "type": "PERSON", "context": "has worked with multiple successful founder/CRO collaborations"}], "relationships": [{"from": "V", "to": "Ilya", "type": "KNOWS", "context": "Ilya has a proven track record in key collaborations"}]}

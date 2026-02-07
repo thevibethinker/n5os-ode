@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Vulnerable about company closure"}, {"name": "Skyline", "type": "ORG", "context": "Goes beyond policy to help"}], "relationships": [{"from": "V", "to": "Skyline", "type": "WORKS_WITH", "context": "Mutual respect and gratitude"}]}

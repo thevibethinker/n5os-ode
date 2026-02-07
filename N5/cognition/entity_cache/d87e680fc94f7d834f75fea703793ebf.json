@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "the individual using the knowledge system"}, {"name": "google_flights", "type": "TOOL", "context": "a tool used for flight reporting"}], "relationships": [{"from": "V", "to": "google_flights", "type": "USES", "context": "V uses google_flights for reporting flights"}]}

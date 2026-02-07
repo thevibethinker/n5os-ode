@@ -1,0 +1,1 @@
+{"entities": [{"name": "Michael", "type": "PERSON", "context": "High-signal contact: intellectually curious, community-active, intermediate technical skills, exploring AI strategically"}, {"name": "AI", "type": "CONCEPT", "context": "Strategic area Michael is exploring"}], "relationships": [{"from": "Michael", "to": "AI", "type": "USES", "context": "Exploring AI strategically"}]}

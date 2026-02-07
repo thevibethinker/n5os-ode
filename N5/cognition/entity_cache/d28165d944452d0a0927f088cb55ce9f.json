@@ -1,0 +1,1 @@
+{"entities": [{"name": "Quality gate", "type": "CONCEPT", "context": "criteria for worker integration"}, {"name": "tests", "type": "CONCEPT", "context": "validation measures for integration"}, {"name": "interfaces", "type": "CONCEPT", "context": "components to be verified during integration"}], "relationships": []}

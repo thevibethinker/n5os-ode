@@ -1,0 +1,40 @@
+{
+  "slug": "careerspan-pipeline-v2",
+  "learnings": [
+    {
+      "text": "Airtable checkbox fields have parenthetical suffixes like 'Salary Range (Checkbox)' - use exact field names from SCHEMA_TO_ADD.md in Integrations/careerspan-pipeline/",
+      "source": "manual",
+      "added_at": "2026-02-03T02:20:20.808351+00:00",
+      "tags": [
+        "airtable",
+        "schema"
+      ]
+    },
+    {
+      "text": "When integrating Zo app tools (Airtable, Google Drive, Gmail), scripts should output instructions/logs for the tools rather than directly calling them. The orchestrator can then execute these tool calls. This decouples the skill from app tool implementation details.",
+      "source": "manual",
+      "added_at": "2026-02-03T02:25:34.447660+00:00",
+      "tags": [
+        "integration,architecture"
+      ]
+    },
+    {
+      "text": "The decomposer was outputting flat array but schema expected wrapped object - code and schema must be designed together",
+      "source": "Drop:D2.1-deposit",
+      "added_at": "2026-02-03T02:54:50.083983+00:00",
+      "tags": []
+    },
+    {
+      "text": "Field naming inconsistencies (name vs skill_name, level_required vs required_level) should be caught by validation tests earlier",
+      "source": "Drop:D2.1-deposit",
+      "added_at": "2026-02-03T02:54:50.085004+00:00",
+      "tags": []
+    },
+    {
+      "text": "Making schema fields nullable allows graceful migration of legacy data",
+      "source": "Drop:D2.1-deposit",
+      "added_at": "2026-02-03T02:54:50.089475+00:00",
+      "tags": []
+    }
+  ]
+}

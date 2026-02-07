@@ -1,0 +1,1 @@
+{"entities": [{"name": "Rajesh Nerlikar", "type": "PERSON", "context": "Community builder"}, {"name": "API", "type": "TOOL", "context": "A tool for embedding functionalities"}], "relationships": [{"from": "Rajesh Nerlikar", "to": "API", "type": "MENTIONS", "context": "Suggests giving an API for ease of use"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Pre-flight protocol", "type": "CONCEPT", "context": "new paradigm for V"}, {"name": "session_state_manager.py", "type": "TOOL", "context": "not yet available"}, {"name": "Modal errors", "type": "CONCEPT", "context": "errors during heavy file operations"}], "relationships": []}

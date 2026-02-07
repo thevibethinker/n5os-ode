@@ -1,0 +1,1 @@
+{"entities": [{"name": "http.Agent", "type": "TOOL", "context": "A tool used for handling HTTP requests with proxy support."}, {"name": "LRU cache", "type": "CONCEPT", "context": "A caching algorithm that removes the least recently used items."}], "relationships": []}

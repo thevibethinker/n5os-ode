@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ben", "type": "PERSON", "context": "a person with authority in the context"}, {"name": "determinism", "type": "CONCEPT", "context": "a concept that is gravitated towards for exploration and stabilization"}], "relationships": [{"from": "Ben", "to": "determinism", "type": "BELIEVES", "context": "Ben gravitates toward determinism"}]}

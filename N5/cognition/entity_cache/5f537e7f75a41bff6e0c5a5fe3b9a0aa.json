@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ayush", "type": "PERSON", "context": "potentially leaving due to compensation concerns"}], "relationships": [{"from": "V (Vrijen)", "to": "Ayush", "type": "KNOWS", "context": "V is aware of Ayush's situation regarding compensation"}]}

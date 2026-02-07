@@ -1,0 +1,1 @@
+{"entities": [{"name": "CEO", "type": "PERSON", "context": "CEO of scheduling company admitting to challenges"}, {"name": "scheduling company", "type": "ORG", "context": "Company that the CEO leads"}], "relationships": [{"from": "CEO", "to": "scheduling company", "type": "WORKS_WITH", "context": "CEO leads the scheduling company"}]}

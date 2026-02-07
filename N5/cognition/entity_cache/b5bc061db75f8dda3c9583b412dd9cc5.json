@@ -1,0 +1,1 @@
+{"entities": [{"name": "LLM-side orchestration", "type": "CONCEPT", "context": "a method for managing changes in registry-like systems"}, {"name": "structured metadata", "type": "CONCEPT", "context": "metadata organization that aids in safe changes without altering the core system"}], "relationships": []}

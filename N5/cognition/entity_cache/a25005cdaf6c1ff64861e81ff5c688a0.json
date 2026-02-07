@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "described using AI to enhance cognitive abilities"}, {"name": "AI", "type": "TOOL", "context": "used as a cognitive amplifier to compensate for memory gaps and rashness"}], "relationships": [{"from": "Vrijen", "to": "AI", "type": "USES", "context": "to compensate for gaps in memory and enhance cognitive function"}]}

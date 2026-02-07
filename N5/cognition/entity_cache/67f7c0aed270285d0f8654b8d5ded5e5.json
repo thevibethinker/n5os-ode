@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "speaker in the conversation"}, {"name": "Florida", "type": "CONCEPT", "context": "location mentioned by Vrijen"}, {"name": "JFK", "type": "ORG", "context": "airport mentioned as a location"}], "relationships": []}

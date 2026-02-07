@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "The central figure associated with the knowledge system"}, {"name": "V's actual work", "type": "CONCEPT", "context": "The body of work that is tied to the concepts explained"}], "relationships": [{"from": "V", "to": "V's actual work", "type": "WORKS_WITH", "context": "Every concept ties to V's actual work"}]}

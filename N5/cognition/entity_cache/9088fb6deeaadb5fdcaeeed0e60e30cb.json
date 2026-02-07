@@ -1,0 +1,1 @@
+{"entities": [{"name": "Google Drive", "type": "ORG", "context": "cloud storage service used for file management"}, {"name": "local state tracking", "type": "CONCEPT", "context": "method for monitoring state in applications"}, {"name": "processed_meetings.jsonl", "type": "TOOL", "context": "file format used for storing meeting data"}], "relationships": []}

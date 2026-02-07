@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume:Decoded - Candidate</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    
+    :root {
+      --purple-primary: #7C3AED;
+      --purple-light: #EDE9FE;
+      --purple-muted: #C4B5FD;
+      --text-primary: #1F2937;
+      --text-muted: #6B7280;
+      --bg-card: #F9FAFB;
+      --border-light: #E5E7EB;
+      --amber: #F59E0B;
+      --amber-light: #FEF3C7;
+      --amber-dark: #D97706;
+    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 9.5pt;
+      line-height: 1.35;
+      color: var(--text-primary);
+    }
+    
+    .page {
+      width: 8.5in;
+      height: 11in;
+      padding: 0.4in 0.5in 0.5in 0.5in;
+      position: relative;
+      page-break-after: always;
+    }
+    
+    .page:last-child { page-break-after: avoid; }
+    
+    /* Header */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 6px;
+      border-bottom: 2.5px solid var(--purple-primary);
+      margin-bottom: 12px;
+    }
+    
+    .header-left {
+      font-size: 8pt;
+      font-weight: 700;
+      color: var(--purple-primary);
+      letter-spacing: 1.5px;
+    }
+    
+    .header-right {
+      font-size: 8pt;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    
+    /* Hero */
+    .hero {
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    
+    .candidate-name {
+      font-size: 24pt;
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+    
+    .candidate-role {
+      font-size: 11pt;
+      color: var(--purple-primary);
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+    
+    .candidate-meta {
+      font-size: 8.5pt;
+      color: var(--text-muted);
+    }
+    
+    /* Spikes Section */
+    .spikes-section {
+      background: var(--bg-card);
+      border-radius: 8px;
+      padding: 10px 14px;
+      margin-bottom: 10px;
+    }
+    
+    .spikes-header {
+      font-size: 7.5pt;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+    
+    .spikes-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    
+    .spikes-row:last-child { margin-bottom: 0; }
+    
+    .spike {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: white;
+      border-radius: 6px;
+      padding: 6px 10px;
+      flex: 1;
+      min-width: 140px;
+    }
+    
+    .spike-up { border-left: 3px solid var(--purple-primary); }
+    .spike-down { border-left: 3px solid var(--amber); }
+    
+    .spike-arrow {
+      font-size: 10pt;
+      font-weight: 700;
+    }
+    
+    .spike-up .spike-arrow { color: var(--purple-primary); }
+    .spike-down .spike-arrow { color: var(--amber-dark); }
+    
+    .spike-content {
+      flex: 1;
+    }
+    
+    .spike-label {
+      font-weight: 600;
+      font-size: 8.5pt;
+      margin-bottom: 2px;
+    }
+    
+    .spike-years {
+      font-size: 7.5pt;
+      color: var(--text-muted);
+    }
+    
+    .spike-bar {
+      height: 4px;
+      background: var(--border-light);
+      border-radius: 2px;
+      margin-top: 4px;
+      overflow: hidden;
+    }
+    
+    .spike-bar-fill {
+      height: 100%;
+      border-radius: 2px;
+    }
+    
+    .spike-up .spike-bar-fill { background: var(--purple-primary); }
+    .spike-down .spike-bar-fill { background: var(--amber); }
+    
+    /* Verdict Box */
+    .verdict-box {
+      background: var(--purple-primary);
+      color: white;
+      padding: 10px 16px;
+      border-radius: 6px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    
+    .verdict-title {
+      font-size: 12pt;
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+    
+    .verdict-summary {
+      font-size: 8.5pt;
+      opacity: 0.95;
+    }
+    
+    /* FIT CHECK */
+    .fitcheck-section {
+      margin-bottom: 10px;
+    }
+    
+    .section-label {
+      font-size: 8pt;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+    
+    .fitcheck-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 10px;
+    }
+    
+    .fitcheck-col {
+      background: var(--bg-card);
+      border-radius: 6px;
+      padding: 8px 10px;
+    }
+    
+    .fitcheck-col-header {
+      font-size: 7.5pt;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+      padding-bottom: 4px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    
+    .fitcheck-item {
+      font-size: 8pt;
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+    
+    .fitcheck-item:last-child { margin-bottom: 0; }
+    
+    .fitcheck-note {
+      font-size: 7pt;
+      color: var(--text-muted);
+      font-style: italic;
+      margin-top: 6px;
+      padding-top: 6px;
+      border-top: 1px solid var(--border-light);
+    }
+    
+    /* Two Column Layout */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+    
+    .col-header {
+      font-size: 9pt;
+      font-weight: 700;
+      margin-bottom: 6px;
+      padding-bottom: 3px;
+      border-bottom: 2px solid var(--purple-primary);
+    }
+    
+    .probe-item, .why-item {
+      margin-bottom: 8px;
+    }
+    
+    .probe-title, .why-title {
+      font-weight: 600;
+      font-size: 8.5pt;
+      margin-bottom: 2px;
+    }
+    
+    .probe-context {
+      font-size: 7.5pt;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+    
+    .why-story {
+      font-size: 7.5pt;
+      color: var(--text-muted);
+      margin-top: 3px;
+    }
+    
+    /* Signal Strength */
+    .signal-section {
+      margin-top: 10px;
+    }
+    
+    .signal-row {
+      display: flex;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+    
+    .signal-label {
+      width: 110px;
+      font-size: 8pt;
+      color: var(--text-muted);
+    }
+    
+    .signal-bar-container {
+      flex: 1;
+      height: 8px;
+      background: var(--border-light);
+      border-radius: 4px;
+      margin-right: 8px;
+    }
+    
+    .signal-bar {
+      height: 100%;
+      border-radius: 4px;
+      background: var(--purple-primary);
+    }
+    
+    .signal-value {
+      width: 40px;
+      text-align: right;
+      font-weight: 600;
+      font-size: 8pt;
+    }
+    
+    /* Page 2 Styles */
+    .behavioral-section {
+      margin-bottom: 12px;
+    }
+    
+    .behavioral-header {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 8px;
+      padding-bottom: 4px;
+      border-bottom: 2px solid var(--purple-primary);
+    }
+    
+    .behavioral-title {
+      font-size: 10pt;
+      font-weight: 700;
+    }
+    
+    .behavioral-subtitle {
+      font-size: 7.5pt;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+    
+    .behavioral-item {
+      margin-bottom: 10px;
+      padding-left: 10px;
+      border-left: 3px solid var(--purple-light);
+    }
+    
+    .behavioral-item-title {
+      font-weight: 600;
+      font-size: 9pt;
+      color: var(--purple-primary);
+      margin-bottom: 2px;
+    }
+    
+    .behavioral-desc {
+      font-size: 8pt;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+    
+    .behavioral-quote {
+      background: var(--bg-card);
+      padding: 5px 8px;
+      border-radius: 4px;
+      font-size: 8pt;
+      font-style: italic;
+    }
+    
+    .behavioral-citation {
+      font-size: 7pt;
+      color: var(--text-muted);
+      margin-top: 2px;
+      font-style: normal;
+    }
+    
+    /* Questions Section */
+    .questions-section {
+      margin-bottom: 12px;
+    }
+    
+    .questions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8px 12px;
+    }
+    
+    .question {
+      padding-left: 8px;
+      border-left: 2px solid var(--purple-light);
+    }
+    
+    .question-topic {
+      color: var(--purple-primary);
+      font-weight: 600;
+      font-size: 8pt;
+    }
+    
+    .question-text {
+      font-style: italic;
+      font-size: 8pt;
+    }
+    
+    /* Trade-offs */
+    .tradeoffs-section {
+      margin-bottom: 10px;
+    }
+    
+    .tradeoff-item {
+      margin-bottom: 6px;
+    }
+    
+    .tradeoff-title {
+      font-weight: 600;
+      font-size: 8.5pt;
+    }
+    
+    .tradeoff-verdict {
+      font-size: 8pt;
+      color: var(--text-muted);
+    }
+    
+    /* Footer */
+    .footer {
+      position: absolute;
+      bottom: 0.3in;
+      left: 0.5in;
+      right: 0.5in;
+      display: flex;
+      justify-content: space-between;
+      font-size: 7pt;
+      color: var(--text-muted);
+      padding-top: 6px;
+      border-top: 1px solid var(--border-light);
+    }
+    
+    .footer-brand { color: var(--purple-primary); font-weight: 600; }
+    
+    /* Utility */
+    .muted { color: var(--text-muted); }
+    .italic { font-style: italic; }
+    .bold { font-weight: 600; }
+  </style>
+</head>
+<body>
+  <!-- PAGE 1: DECISION -->
+  <div class="page">
+    <div class="header">
+      <div class="header-left">RESUME:DECODED</div>
+      <div class="header-right">Careerspan × CorridorX · Docsum · Feb 2026</div>
+    </div>
+    
+    <div class="hero">
+      <div class="candidate-name">Candidate</div>
+      <div class="candidate-role">Founding Engineer (Fullstack)</div>
+      <div class="candidate-meta">0.0y exp · 0.0y IC · 0.0y Lead · Various → IC→Lead trajectory</div>
+    </div>
+    
+    <!-- SPIKES -->
+    <div class="spikes-section">
+      <div class="spikes-header">At a Glance [bold = story-verified · italic = more signal needed]</div>
+      
+      <div class="spikes-row">
+        <div class="spike spike-up">
+          <span class="spike-arrow">▲</span>
+          <div class="spike-content">
+            <div class="spike-label"><strong>Own features end-to-end</strong></div>
+            <div class="spike-years"></div>
+            <div class="spike-bar">
+              <div class="spike-bar-fill" style="width: 100%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="spike spike-up">
+          <span class="spike-arrow">▲</span>
+          <div class="spike-content">
+            <div class="spike-label"><strong>Build core systems</strong></div>
+            <div class="spike-years"></div>
+            <div class="spike-bar">
+              <div class="spike-bar-fill" style="width: 100%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="spike spike-up">
+          <span class="spike-arrow">▲</span>
+          <div class="spike-content">
+            <div class="spike-label"><strong>Make technical decisions</strong></div>
+            <div class="spike-years"></div>
+            <div class="spike-bar">
+              <div class="spike-bar-fill" style="width: 90%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="spike spike-up">
+          <span class="spike-arrow">▲</span>
+          <div class="spike-content">
+            <div class="spike-label"><strong>Contribute to company direction</strong></div>
+            <div class="spike-years"></div>
+            <div class="spike-bar">
+              <div class="spike-bar-fill" style="width: 90%"></div>
+            </div>
+          </div>
+        </div>
+        <div class="spike spike-up">
+          <span class="spike-arrow">▲</span>
+          <div class="spike-content">
+            <div class="spike-label"><strong>Prototype Rapidly</strong></div>
+            <div class="spike-years"></div>
+            <div class="spike-bar">
+              <div class="spike-bar-fill" style="width: 90%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="spikes-row">
+      </div>
+    </div>
+    
+    <!-- VERDICT -->
+    <div class="verdict-box">
+      <div class="verdict-title">👍 Take This Meeting — 85/100</div>
+      <div class="verdict-summary">Strong recommend as a founding full-stack engineer with rare zero-to-one platform experience and immediate impact potential, with manageable ramp on Next.js/PostgreSQL specifics and contract-focused document processing.</div>
+    </div>
+    
+    <!-- FIT CHECK -->
+    <div class="fitcheck-section">
+      <div class="section-label">🚦 Fit Check</div>
+      <div class="fitcheck-grid">
+        <div class="fitcheck-col">
+          <div class="fitcheck-col-header">Dealbreakers</div>
+          <div class="fitcheck-item">None identified from candidate interviews</div>
+        </div>
+        <div class="fitcheck-col">
+          <div class="fitcheck-col-header">He Wants</div>
+          <div class="fitcheck-item italic">No preferences data yet</div>
+        </div>
+        <div class="fitcheck-col">
+          <div class="fitcheck-col-header">Watch For</div>
+        </div>
+      </div>
+      <div class="fitcheck-note">From candidate interviews. Address dealbreakers in first 5 min or skip.</div>
+    </div>
+    
+    <!-- TWO COLUMN: PROBE + WHY -->
+    <div class="two-col">
+      <div class="probe-col">
+        <div class="col-header">⚠ What to Verify</div>
+      </div>
+      <div class="why-col">
+        <div class="col-header">✦ Why Signal Is Strong</div>
+        <div class="why-item">
+          <div class="why-title"><strong>Own features end-to-end</strong></div>
+          <div class="why-story">— The story provides strong, direct evidence that the candidat...</div>
+        </div>
+        <div class="why-item">
+          <div class="why-title"><strong>Build core systems</strong></div>
+          <div class="why-story">— The transcript provides exceptionally strong and direct evid...</div>
+        </div>
+        <div class="why-item">
+          <div class="why-title"><strong>Make technical decisions</strong></div>
+          <div class="why-story">— The STAR story provides exceptionally strong and detailed ev...</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- SIGNAL STRENGTH -->
+    <div class="signal-section">
+      <div class="section-label">Signal Strength</div>
+      <div class="signal-row">
+        <span class="signal-label">Story-verified</span>
+        <div class="signal-bar-container"><div class="signal-bar" style="width: 78%"></div></div>
+        <span class="signal-value">78%</span>
+      </div>
+      <div class="signal-row">
+        <span class="signal-label">Resume-only</span>
+        <div class="signal-bar-container"><div class="signal-bar" style="width: 22%; opacity: 0.7"></div></div>
+        <span class="signal-value">22%</span>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <span>Resume:Decoded by <span class="footer-brand">Careerspan</span> × CorridorX</span>
+      <span>1</span>
+    </div>
+  </div>
+  
+  <!-- PAGE 2: PREP -->
+  <div class="page">
+    <div class="header">
+      <div class="header-left">RESUME:DECODED</div>
+      <div class="header-right">Careerspan × CorridorX · Docsum · Feb 2026</div>
+    </div>
+    
+    <!-- BEHAVIORAL SIGNALS -->
+    <div class="behavioral-section">
+      <div class="behavioral-header">
+        <span class="behavioral-title">🔍 What the Resume Can't Tell You</span>
+        <span class="behavioral-subtitle">— Behavioral signals from structured interviews</span>
+      </div>
+      <div class="behavioral-item">
+        <div class="behavioral-item-title">Proactive problem solving</div>
+        <div class="behavioral-desc">Strong evidence throughout both stories. Identified cloud waste problem at American Express and built automated solution</div>
+      </div>
+      <div class="behavioral-item">
+        <div class="behavioral-item-title">Self-motivation</div>
+        <div class="behavioral-desc">Operates as solo product leader at American Express. One of four founding engineers at Keysight driving platform from co</div>
+      </div>
+      <div class="behavioral-item">
+        <div class="behavioral-item-title">Clear written communication</div>
+        <div class="behavioral-desc">Scrum Master role, managing Jira, and cross-team coordination imply written communication. Presented at conferences. How</div>
+      </div>
+    </div>
+    
+    <!-- INTERVIEW QUESTIONS -->
+    <div class="questions-section">
+      <div class="section-label">Interview Questions That Matter</div>
+      <div class="questions-grid">
+      </div>
+    </div>
+    
+    <!-- TRADE-OFFS -->
+    <div class="tradeoffs-section">
+      <div class="section-label">Trade-Off Framework</div>
+      <div class="tradeoff-item">
+        <span class="tradeoff-title">If you need:</span>
+        <span class="tradeoff-verdict">Candidate is...</span>
+      </div>
+      <div class="tradeoff-item">
+        <span class="tradeoff-title">Speed over polish:</span>
+        <span class="tradeoff-verdict">Strong fit — proven 0→1 delivery</span>
+      </div>
+      <div class="tradeoff-item">
+        <span class="tradeoff-title">Deep AI expertise:</span>
+        <span class="tradeoff-verdict">Verify current depth in interview</span>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <span>Resume:Decoded by <span class="footer-brand">Careerspan</span> × CorridorX</span>
+      <span>2</span>
+    </div>
+  </div>
+</body>
+</html>

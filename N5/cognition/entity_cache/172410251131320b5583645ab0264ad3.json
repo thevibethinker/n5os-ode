@@ -1,0 +1,1 @@
+{"entities": [{"name": "Nicole Holubar", "type": "PERSON", "context": "Individual associated with Emory"}, {"name": "Emory", "type": "ORG", "context": "Organization affiliated with Nicole Holubar"}], "relationships": [{"from": "Nicole Holubar", "to": "Emory", "type": "WORKS_WITH", "context": "Nicole Holubar is associated with Emory"}]}

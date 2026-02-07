@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vibe Operator", "type": "TOOL", "context": "A tool used by V for assessing file operations"}, {"name": "Vibe Builder", "type": "TOOL", "context": "Another tool used by V for building assessments"}], "relationships": [{"from": "Vibe Operator", "to": "Vibe Builder", "type": "WORKS_WITH", "context": "Both tools are used by V for similar purposes"}]}

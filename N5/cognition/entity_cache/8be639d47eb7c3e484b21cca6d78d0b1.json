@@ -1,0 +1,1 @@
+{"entities": [{"name": "David", "type": "PERSON", "context": "wants to teach courses"}, {"name": "Vrijen", "type": "ORG", "context": "builds products for personal productivity"}], "relationships": [{"from": "David", "to": "Vrijen", "type": "MENTIONS", "context": "David expresses intention to teach courses, indicating a reference to Vrijen's productivity focus"}]}

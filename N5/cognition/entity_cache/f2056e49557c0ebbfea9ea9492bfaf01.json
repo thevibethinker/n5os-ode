@@ -1,0 +1,1 @@
+{"entities": [{"name": "Googlegroups", "type": "ORG", "context": "email group associated with V"}, {"name": "fti-nyc@googlegroups.com", "type": "TOOL", "context": "email address for communication"}], "relationships": []}

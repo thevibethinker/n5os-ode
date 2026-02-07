@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "an organization that can extend its reach"}, {"name": "Sam", "type": "PERSON", "context": "a person associated with Careerspan's distribution"}], "relationships": [{"from": "Careerspan", "to": "Sam", "type": "WORKS_WITH", "context": "Sam manages distribution for Careerspan"}]}

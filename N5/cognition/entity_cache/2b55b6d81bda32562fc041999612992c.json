@@ -1,0 +1,1 @@
+{"entities": [{"name": "cosmiconfig", "type": "TOOL", "context": "a tool used for configuration"}, {"name": "Node", "type": "TOOL", "context": "a JavaScript runtime that supports ESM"}], "relationships": [{"from": "cosmiconfig", "to": "Node", "type": "USES", "context": "cosmiconfig requires Node to function"}]}

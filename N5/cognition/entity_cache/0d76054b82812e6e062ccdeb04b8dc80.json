@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual known for knowledge system"}, {"name": "scheduled task", "type": "CONCEPT", "context": "task automation related to meetings"}], "relationships": [{"from": "V", "to": "scheduled task", "type": "USES", "context": "uses scheduled tasks to manage meeting types"}]}

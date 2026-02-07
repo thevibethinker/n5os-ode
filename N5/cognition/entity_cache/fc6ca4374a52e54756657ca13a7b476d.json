@@ -1,0 +1,1 @@
+{"entities": [{"name": "Bug fix or debugging", "type": "CONCEPT", "context": "meaning of the content type"}, {"name": "threads", "type": "CONCEPT", "context": "context for bug fix"}, {"name": "tasks", "type": "CONCEPT", "context": "context for bug fix"}, {"name": "issues", "type": "CONCEPT", "context": "context for bug fix"}], "relationships": []}

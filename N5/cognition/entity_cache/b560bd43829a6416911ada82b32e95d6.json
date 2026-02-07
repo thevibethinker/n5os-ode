@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "Subject of the text"}, {"name": "Careerspan", "type": "ORG", "context": "A tool used for job seeking and tracking placement outcomes"}], "relationships": [{"from": "V (Vrijen)", "to": "Careerspan", "type": "USES", "context": "V uses Careerspan for job seeking and tracking placements"}]}

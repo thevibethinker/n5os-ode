@@ -1,0 +1,1 @@
+{"entities": [{"name": "Jessica", "type": "PERSON", "context": "impact leader associated with pre-filtered networks"}], "relationships": [{"from": "V", "to": "Jessica", "type": "KNOWS", "context": "V is familiar with Jessica's role and influence"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "N5 File Protection System", "type": "TOOL", "context": "a multi-layer defense mechanism to prevent accidental overwrites and data loss"}, {"name": "N5.md", "type": "CONCEPT", "context": "name of the critical system file that was accidentally overwritten"}], "relationships": []}

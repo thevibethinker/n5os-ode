@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "Individual explaining his knowledge system"}, {"name": "Zo systems", "type": "CONCEPT", "context": "Detailed explanation by Vrijen"}], "relationships": [{"from": "Vrijen", "to": "Zo systems", "type": "MENTIONS", "context": "Vrijen explains his Zo systems and philosophy"}]}

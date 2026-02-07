@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "an organization discussed in relation to recruiting"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "the individual discussing the knowledge system"}], "relationships": [{"from": "V (Vrijen)", "to": "Careerspan", "type": "MENTIONS", "context": "V is mentioning Careerspan in the context of recruiting"}]}

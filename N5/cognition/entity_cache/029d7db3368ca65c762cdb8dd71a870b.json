@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vibe Builder", "type": "ORG", "context": "organization responsible for packaging"}, {"name": "V", "type": "PERSON", "context": "individual associated with the knowledge system"}], "relationships": [{"from": "V", "to": "Vibe Builder", "type": "WORKS_WITH", "context": "V is involved with the Vibe Builder organization for package management"}]}

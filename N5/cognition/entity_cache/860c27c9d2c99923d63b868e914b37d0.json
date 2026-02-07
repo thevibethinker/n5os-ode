@@ -1,0 +1,1 @@
+{"entities": [{"name": "Company Name", "type": "ORG", "context": "company associated with the job opening"}, {"name": "Role Title", "type": "CONCEPT", "context": "title of the position being filled"}], "relationships": []}

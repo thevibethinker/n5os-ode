@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker discussing their knowledge system"}, {"name": "magic", "type": "CONCEPT", "context": "Layer of knowledge or skill added by Vrijen"}], "relationships": [{"from": "Vrijen Attawar", "to": "magic", "type": "USES", "context": "Vrijen applies his own layer of magic in his work"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Sass", "type": "CONCEPT", "context": "A CSS preprocessor language"}, {"name": "SourceMapConsumer", "type": "TOOL", "context": "A tool for parsing source maps"}], "relationships": [{"from": "Sass", "to": "SourceMapConsumer", "type": "USES", "context": "SourceMapConsumer supports Sass source maps"}]}

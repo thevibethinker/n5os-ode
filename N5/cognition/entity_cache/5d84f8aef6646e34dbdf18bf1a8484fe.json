@@ -1,0 +1,1 @@
+{"entities": [{"name": "LinkedIn", "type": "TOOL", "context": "social media platform"}, {"name": "founder dinner", "type": "EVENT", "context": "event hosted by V"}], "relationships": [{"from": "V", "to": "LinkedIn", "type": "USES", "context": "platform for engagement"}, {"from": "V", "to": "founder dinner", "type": "HOSTS", "context": "event for networking"}]}

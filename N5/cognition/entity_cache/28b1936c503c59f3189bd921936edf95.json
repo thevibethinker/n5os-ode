@@ -1,0 +1,1 @@
+{"entities": [{"name": "Nemawashi", "type": "CONCEPT", "context": "a concept related to decision-making and consensus-building in organizations"}], "relationships": [{"from": "V (Vrijen)", "to": "Nemawashi", "type": "BELIEVES", "context": "V believes in the importance of Nemawashi for evaluating alternatives"}]}

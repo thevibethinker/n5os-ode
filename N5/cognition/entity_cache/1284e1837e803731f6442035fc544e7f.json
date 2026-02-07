@@ -1,0 +1,1 @@
+{"entities": [{"name": "Tidelift", "type": "ORG", "context": "provides professional support for open source packages"}, {"name": "npm-get-stream", "type": "TOOL", "context": "a package supported by Tidelift"}], "relationships": [{"from": "Tidelift", "to": "npm-get-stream", "type": "WORKS_WITH", "context": "provides support for the package"}]}

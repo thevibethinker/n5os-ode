@@ -31,6 +31,24 @@ provenance: con_LhnxuEVVapCNdXle
 2. **Teaching Integration**: Learning opportunities surfaced, not forced
 3. **Feedback → Learnings**: V's feedback becomes system improvement via lesson ledger
 
+## Building Fundamentals (P35-P39)
+
+Core principles from programming fundamentals, adapted for N5/Zo. See `file 'Personal/Knowledge/Architecture/principles/P35-P39_building_fundamentals.md'` for full details.
+
+1. **Version, Don't Overwrite (P35)**: Input artifacts are immutable; transforms create new outputs
+2. **Make State Visible (P36)**: Declare state dependencies; validate before proceeding
+3. **Design as Pipelines (P37)**: Clear stages; any stage can re-run from its inputs
+4. **Isolate & Parallelize (P38)**: Workers don't share state; proactively recommend Pulse for large tasks
+5. **Audit Everything (P39)**: Every output traceable to its source, trigger, and timestamp
+
+### Application to Pulse Builds
+
+- **P35 in Pulse:** Drops write to `deposits/` (new files), never modify shared state
+- **P36 in Pulse:** `meta.json` is explicit state; drops validate build exists before working
+- **P37 in Pulse:** Streams are pipeline stages; each stream's deposits feed the next
+- **P38 in Pulse:** Worker isolation is enforced; lesson ledger is the only cross-drop channel
+- **P39 in Pulse:** Every deposit has provenance; BUILD_LESSONS.json captures learnings
+
 ## Reference
 
 - Pulse v2 Skill: `Skills/pulse/SKILL.md`

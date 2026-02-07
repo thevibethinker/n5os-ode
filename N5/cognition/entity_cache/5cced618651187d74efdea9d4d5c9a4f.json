@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "The individual managing the knowledge system"}, {"name": "root_cleanup.py", "type": "TOOL", "context": "The Python script used for the root cleanup task"}], "relationships": [{"from": "V", "to": "root_cleanup.py", "type": "USES", "context": "V uses the script to perform daily root cleanup tasks"}]}

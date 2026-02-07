@@ -1,0 +1,1 @@
+{"entities": [{"name": "Inbox", "type": "TOOL", "context": "a system for managing files"}, {"name": "routing suggestions", "type": "CONCEPT", "context": "suggestions for file management"}], "relationships": []}

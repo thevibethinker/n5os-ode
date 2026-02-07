@@ -1,0 +1,1 @@
+{"entities": [{"name": "Krista Tan", "type": "PERSON", "context": "Member of Women in Product"}, {"name": "Women in Product", "type": "ORG", "context": "Organization focused on women in product management"}], "relationships": [{"from": "Krista Tan", "to": "Women in Product", "type": "WORKS_WITH", "context": "Krista is a member of the organization"}]}

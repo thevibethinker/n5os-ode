@@ -1,0 +1,19 @@
+{
+  "6988ab71410a855d": {
+    "activation_time_utc": "2026-02-06T18:36:09.757145+00:00",
+    "calendly_event": "invitee.created",
+    "cancel_reason": "invitee.canceled",
+    "canceled_at_utc": "2026-02-06T18:21:42.110312+00:00",
+    "client_email": "client@example.com",
+    "client_name": "Client Example",
+    "created_at_utc": "2026-02-06T18:21:09.850433+00:00",
+    "deactivation_time_utc": "2026-02-06T20:21:09.757145+00:00",
+    "end_time_utc": "2026-02-06T19:51:09.757145+00:00",
+    "event_type": "Zoffice Consulting",
+    "scheduled_event_uri": null,
+    "session_id": "6988ab71410a855d",
+    "source": "calendly",
+    "start_time_utc": "2026-02-06T18:51:09.757145+00:00",
+    "status": "canceled"
+  }
+}

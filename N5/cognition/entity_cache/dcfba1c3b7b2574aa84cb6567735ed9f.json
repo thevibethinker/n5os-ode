@@ -1,0 +1,1 @@
+{"entities": [{"name": "pytest.ini", "type": "TOOL", "context": "config file for testing"}, {"name": "pyproject.toml", "type": "TOOL", "context": "config file for Python project"}, {"name": "mypy.ini", "type": "TOOL", "context": "config file for type checking"}], "relationships": []}

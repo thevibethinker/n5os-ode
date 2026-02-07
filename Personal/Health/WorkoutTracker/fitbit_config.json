@@ -1,9 +1,9 @@
 {
-  "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyM1RMS1AiLCJzdWIiOiIzWVpMTkMiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJyYWN0IHJyZXMgcm94eSBybG9jIHJ3ZWkgcmhyIHJwcm8gcnRlbSByc2xlIiwiZXhwIjoxNzY5NTM2MjY1LCJpYXQiOjE3Njk1MDc0NjV9.cVR2Oaw2ZPbJh7Fzabiyx4Hw43n5xjbOnS1gsGj6C1w",
+  "access_token": "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIyM1RMS1AiLCJzdWIiOiIzWVpMTkMiLCJpc3MiOiJGaXRiaXQiLCJ0eXAiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZXMiOiJyYWN0IHJyZXMgcmxvYyByb3h5IHJ3ZWkgcmhyIHJwcm8gcnNsZSBydGVtIiwiZXhwIjoxNzcwNDk2NDU3LCJpYXQiOjE3NzA0Njc2NTd9.GzkghJ44F55oiFoMVVZrw7fF0tJuYFWj5fMyUxbwU1M",
   "client_id": "23TLKP",
   "client_secret_env": "FITBIT_APP_CLIENTSECRET",
   "redirect_uri": "https://localhost/fitbit/callback",
-  "refresh_token": "7de1d864a587784855ca14a688494384b33280656744a0596a1393b1800c5d25",
+  "refresh_token": "b222d0a5c0396499b4ffb994f82bda6ad546604d7e8ee553eeaf83bc9f2d1d93",
   "scopes": [
     "activity",
     "heartrate",
@@ -15,5 +15,5 @@
     "respiratory_rate",
     "temperature"
   ],
-  "token_expires_at": 1769536205
+  "token_expires_at": 1770496397
 }

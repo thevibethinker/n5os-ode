@@ -1,0 +1,1 @@
+{"entities": [{"name": "Logan Currie", "type": "PERSON", "context": "participant in the call"}, {"name": "Bernie's Mountain Dogs", "type": "CONCEPT", "context": "topic of discussion in the call"}], "relationships": [{"from": "Logan Currie", "to": "Bernie's Mountain Dogs", "type": "MENTIONS", "context": "Logan talks about Bernie's Mountain Dogs during the call"}]}

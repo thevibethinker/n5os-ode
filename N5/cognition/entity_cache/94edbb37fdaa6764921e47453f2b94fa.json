@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual involved in the call"}, {"name": "Partnership Health", "type": "CONCEPT", "context": "principle discussed during the call"}], "relationships": [{"from": "V", "to": "Partnership Health", "type": "KNOWS", "context": "V is familiar with the concept of Partnership Health"}]}

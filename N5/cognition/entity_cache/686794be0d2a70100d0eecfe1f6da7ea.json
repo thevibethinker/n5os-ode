@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "The person enabling the mangler"}, {"name": "--mangle", "type": "TOOL", "context": "A command-line option for enabling the mangler"}, {"name": "--mangle options", "type": "CONCEPT", "context": "Options supported for the mangle command"}], "relationships": []}

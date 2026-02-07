@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual with a strong systems thinking approach"}, {"name": "systems thinking", "type": "CONCEPT", "context": "approach likely used by V in workflows and team structures"}], "relationships": [{"from": "V", "to": "systems thinking", "type": "BELIEVES", "context": "V believes in a strong systems thinking approach"}]}

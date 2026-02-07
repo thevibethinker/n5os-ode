@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Individual evaluating an AI coaching opportunity"}, {"name": "Victor", "type": "PERSON", "context": "Person evaluating AI space"}], "relationships": [{"from": "V", "to": "Victor", "type": "KNOWS", "context": "V can provide resources for Victor's evaluation"}]}

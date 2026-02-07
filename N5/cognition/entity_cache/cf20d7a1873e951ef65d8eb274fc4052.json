@@ -1,0 +1,1 @@
+{"entities": [{"name": "Yargs", "type": "TOOL", "context": "A JavaScript library for building command line tools"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "The individual associated with this knowledge system"}], "relationships": [{"from": "V (Vrijen)", "to": "Yargs", "type": "USES", "context": "V (Vrijen) uses Yargs for building command line applications"}]}

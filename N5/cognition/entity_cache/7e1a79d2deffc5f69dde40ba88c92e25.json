@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "Knowledge system actor"}, {"name": "trusted collaborators", "type": "CONCEPT", "context": "Individuals V works with for internal brainstorms"}], "relationships": [{"from": "V (Vrijen)", "to": "trusted collaborators", "type": "WORKS_WITH", "context": "V collaborates with trusted individuals for brainstorming"}]}

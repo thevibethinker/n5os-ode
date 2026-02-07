@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Individual involved in the knowledge system"}, {"name": "worker", "type": "CONCEPT", "context": "Tag representing conversations related to work tasks"}], "relationships": [{"from": "V", "to": "worker", "type": "KNOWS", "context": "V is aware of the concept of worker in conversations"}]}

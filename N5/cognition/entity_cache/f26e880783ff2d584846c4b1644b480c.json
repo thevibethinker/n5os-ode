@@ -1,0 +1,1 @@
+{"entities": [{"name": "Magic EdTech", "type": "ORG", "context": "organization related to audience engagement patterns"}], "relationships": [{"from": "V", "to": "Magic EdTech", "type": "KNOWS", "context": "understanding of audience engagement patterns"}]}

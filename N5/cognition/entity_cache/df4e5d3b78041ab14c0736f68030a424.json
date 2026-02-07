@@ -1,0 +1,1 @@
+{"entities": [{"name": "printBoo", "type": "FUNCTION", "context": "a function that logs 'boo' to the console"}, {"name": "console", "type": "TOOL", "context": "an object used for logging output"}], "relationships": [{"from": "printBoo", "to": "console", "type": "USES", "context": "printBoo uses console to log output"}]}

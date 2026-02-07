@@ -1,0 +1,1 @@
+{"entities": [{"name": "alignment", "type": "CONCEPT", "context": "primary driver of application-time costs"}, {"name": "30 job-specific items", "type": "CONCEPT", "context": "criteria for evaluating alignment"}], "relationships": [{"from": "alignment", "to": "30 job-specific items", "type": "RELATED_TO", "context": "alignment is based on the 30 job-specific items"}]}

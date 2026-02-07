@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "The subject of the knowledge system being described"}, {"name": "conversational interface", "type": "TOOL", "context": "The means through which the capability is triggered"}], "relationships": []}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "audit trail", "type": "CONCEPT", "context": "A method for logging all file operations"}, {"name": "rollback capability", "type": "TOOL", "context": "A feature that allows reverting changes"}, {"name": "before/after state comparisons", "type": "TOOL", "context": "A method used to analyze changes made"}], "relationships": []}

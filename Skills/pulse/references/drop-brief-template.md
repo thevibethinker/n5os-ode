@@ -1,8 +1,8 @@
 ---
 created: 2026-01-24
-last_edited: 2026-01-25
-version: 1.1
-provenance: con_xrhltA7BHuQGYNyw
+last_edited: 2026-02-06
+version: 1.2
+provenance: con_oc65hnkkPKCOpDaB
 ---
 
 # Drop Brief Template
@@ -38,6 +38,31 @@ thread_title: "[<slug>] D<stream>.<seq>: <Task Name>"
 - Links to reference files if needed
 
 <IMPORTANT: Drops have NO context from the orchestrator. Everything needed must be here.>
+
+## Files to Read
+
+<List files the Drop should read, with WHY each matters>
+
+| File | Why Read It |
+|------|-------------|
+| `path/to/schema.py` | Shows existing data model pattern to follow |
+| `path/to/similar.py` | Reference implementation — use same approach |
+| `path/to/config.yaml` | Contains the flag you'll need to modify |
+
+## Files to Modify/Create
+
+| File | Action | What to Do |
+|------|--------|------------|
+| `path/to/new.py` | CREATE | New service implementing X |
+| `path/to/existing.py` | UPDATE | Add Y function following pattern in similar.py |
+
+## Files NOT to Touch
+
+<Explicit exclusions — prevents scope creep>
+
+- `path/to/routes.py` — Another Drop handles routing (D1.2)
+- `path/to/auth.py` — Out of scope for this build
+- `tests/` — Tests are a separate Drop (D2.1)
 
 ## Requirements
 
@@ -124,7 +149,34 @@ If blocked, use status "blocked" and explain in notes_for_orchestrator.
 
 ---
 
-## Current (Sequential Chain) Variant
+## Context Rationale Principle
+
+> "What's the *minimum* info a smart friend needs to solve this?"
+> — Theo, "AI Mistakes You're Probably Making"
+
+The **Files to Read** and **Files NOT to Touch** sections exist because:
+
+1. **Drops have zero context** from the orchestrator conversation
+2. **Listing files isn't enough** — the Drop needs to know *why* each file matters
+3. **Explicit exclusions prevent scope creep** — Drops will helpfully "fix" things they shouldn't
+
+### Good Context Rationale
+```markdown
+| `auth/middleware.py` | Shows the decorator pattern — use this exact approach |
+| `config/settings.yaml` | Contains feature flags you'll toggle |
+```
+
+### Bad Context Rationale (just file paths)
+```markdown
+- `auth/middleware.py`
+- `config/settings.yaml`
+```
+
+The difference: with rationale, the Drop knows what to *look for* in each file.
+
+---
+
+## Stream (Sequential Chain) Variant
 
 For Drops that must execute in sequence, add the `current_chain` field:
 

@@ -1,0 +1,1 @@
+{"entities": [{"name": "AI", "type": "CONCEPT", "context": "refers to artificial intelligence that interprets recipes"}, {"name": "bash command", "type": "TOOL", "context": "a command line interface used for executing scripts"}], "relationships": [{"from": "AI", "to": "bash command", "type": "USES", "context": "AI interprets recipes to execute bash commands"}]}

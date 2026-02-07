@@ -1,0 +1,1 @@
+{"entities": [{"name": "MENG Fund", "type": "ORG", "context": "organization working with V"}], "relationships": [{"from": "V", "to": "MENG Fund", "type": "WORKS_WITH", "context": "V is looking forward to reconnecting with the MENG Fund team"}]}

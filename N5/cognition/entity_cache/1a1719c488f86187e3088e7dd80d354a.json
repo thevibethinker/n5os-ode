@@ -1,0 +1,1 @@
+{"entities": [{"name": "employer dashboard", "type": "TOOL", "context": "a tool already partially implemented"}, {"name": "applicant-side form", "type": "TOOL", "context": "a form missing for deal breaker question submission"}, {"name": "test data", "type": "CONCEPT", "context": "data needed to validate output format/handling"}], "relationships": []}

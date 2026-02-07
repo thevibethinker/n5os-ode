@@ -1,0 +1,1 @@
+{"entities": [{"name": "Zapier", "type": "ORG", "context": "tool V compares against"}], "relationships": [{"from": "Vrijen", "to": "Zapier", "type": "MENTIONS", "context": "comparison of ease of use and power"}]}

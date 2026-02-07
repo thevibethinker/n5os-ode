@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "The individual described in the text"}, {"name": "safety", "type": "CONCEPT", "context": "Key market entry point valued by V"}], "relationships": [{"from": "V (Vrijen)", "to": "safety", "type": "BELIEVES", "context": "V values safety as a key market entry point"}]}

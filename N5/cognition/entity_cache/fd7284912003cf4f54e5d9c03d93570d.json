@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "individual confident about acquisition timeline"}, {"name": "MENG Fund", "type": "ORG", "context": "typical impact fund with specific hold expectations"}], "relationships": [{"from": "Vrijen", "to": "MENG Fund", "type": "MENTIONS", "context": "discussing acquisition scenarios and exit timelines"}]}

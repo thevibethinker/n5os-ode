@@ -1,0 +1,1 @@
+{"entities": [{"name": "Zoom", "type": "TOOL", "context": "video conferencing tool"}, {"name": "Otter", "type": "TOOL", "context": "transcription tool"}], "relationships": [{"from": "V", "to": "Zoom", "type": "USES", "context": "V uses Zoom for meetings"}, {"from": "V", "to": "Otter", "type": "USES", "context": "V uses Otter for transcription of meetings"}]}

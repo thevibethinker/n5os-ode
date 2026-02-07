@@ -1,0 +1,1 @@
+{"entities": [{"name": "vrijenattawar", "type": "PERSON", "context": "GitHub user who pushes commits"}, {"name": "GitHub", "type": "ORG", "context": "Platform for version control and collaboration"}], "relationships": [{"from": "vrijenattawar", "to": "GitHub", "type": "USES", "context": "Uses GitHub to upload and sync commits"}]}

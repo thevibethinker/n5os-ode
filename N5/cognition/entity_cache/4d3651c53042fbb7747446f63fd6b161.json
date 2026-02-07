@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "the speaker"}, {"name": "Borg-as-a-Service", "type": "CONCEPT", "context": "a metaphorical concept about product influence"}], "relationships": [{"from": "V", "to": "Borg-as-a-Service", "type": "MENTIONS", "context": "V refers to the concept in the context of product influence"}]}

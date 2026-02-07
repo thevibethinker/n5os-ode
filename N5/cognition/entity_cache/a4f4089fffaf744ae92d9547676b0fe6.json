@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "a person evaluating code quality"}, {"name": "code quality", "type": "CONCEPT", "context": "the subject being evaluated"}], "relationships": [{"from": "V (Vrijen)", "to": "code quality", "type": "KNOWS", "context": "V evaluates the quality of code"}]}

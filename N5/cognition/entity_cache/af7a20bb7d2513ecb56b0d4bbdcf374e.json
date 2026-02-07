@@ -1,0 +1,1 @@
+{"entities": [{"name": "careerspan", "type": "TOOL", "context": "a product version 1.0 created by V"}, {"name": "audit_log", "type": "CONCEPT", "context": "refers to a log file for auditing information related to careerspan"}], "relationships": []}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "Tool Vrijen has been experimenting with"}, {"name": "Zo", "type": "PERSON", "context": "Comparison point for Zo's capabilities"}], "relationships": [{"from": "Vrijen", "to": "Zo", "type": "RELATED_TO", "context": "Comparison point for capabilities"}]}

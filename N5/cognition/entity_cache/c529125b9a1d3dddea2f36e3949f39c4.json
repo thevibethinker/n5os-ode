@@ -1,0 +1,1 @@
+{"entities": [{"name": "FOLLOW_UP_EMAIL.md", "type": "TOOL", "context": "File related to communication"}, {"name": "meeting blocks", "type": "CONCEPT", "context": "Organization of information related to meetings"}], "relationships": []}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "bulletins", "type": "CONCEPT", "context": "automated messages or updates in a system"}, {"name": "session state", "type": "CONCEPT", "context": "the current status or context during user interaction"}], "relationships": []}

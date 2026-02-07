@@ -1,0 +1,1 @@
+{"entities": [{"name": "UDP relay", "type": "CONCEPT", "context": "a networking concept used for sending data"}, {"name": "proxy server", "type": "TOOL", "context": "a server that acts as an intermediary for requests from clients seeking resources from other servers"}], "relationships": []}

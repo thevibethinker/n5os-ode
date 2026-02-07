@@ -1,0 +1,1 @@
+{"entities": [{"name": "Aaron", "type": "PERSON", "context": "maintains the middle compression layer in documentation"}], "relationships": [{"from": "Aaron", "to": "middle compression layer", "type": "USES", "context": "enables team/future-self understanding"}]}

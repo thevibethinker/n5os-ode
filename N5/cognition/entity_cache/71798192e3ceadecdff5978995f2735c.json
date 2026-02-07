@@ -1,0 +1,1 @@
+{"entities": [{"name": "Resumes", "type": "CONCEPT", "context": "a concept with high accuracy in V's knowledge system"}, {"name": "Meetings", "type": "CONCEPT", "context": "a concept with low accuracy in V's knowledge system"}], "relationships": []}

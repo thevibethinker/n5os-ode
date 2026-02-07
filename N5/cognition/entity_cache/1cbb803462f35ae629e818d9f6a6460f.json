@@ -1,0 +1,1 @@
+{"entities": [{"name": "Slack", "type": "TOOL", "context": "standard communication method"}, {"name": "calendar invite", "type": "CONCEPT", "context": "for follow-up meeting"}], "relationships": [{"from": "V", "to": "Slack", "type": "USES", "context": "for ongoing communication"}, {"from": "V", "to": "calendar invite", "type": "USES", "context": "to schedule follow-up meeting"}]}

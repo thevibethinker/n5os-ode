@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "speaker in the conversation"}, {"name": "email", "type": "TOOL", "context": "method of communication used"}], "relationships": [{"from": "Vrijen Attawar", "to": "email", "type": "USES", "context": "uses email to engage with others"}]}

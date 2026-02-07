@@ -1,0 +1,1 @@
+{"entities": [{"name": "Google Fonts", "type": "TOOL", "context": "A library for loading fonts in web development"}, {"name": "Remotion", "type": "TOOL", "context": "A tool for creating videos using React"}], "relationships": [{"from": "Remotion", "to": "Google Fonts", "type": "USES", "context": "Remotion loads Google Fonts for typography"}]}

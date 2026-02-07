@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "involved in building a network"}, {"name": "Infrastructure provider", "type": "CONCEPT", "context": "role defined in the context of V's activities"}], "relationships": [{"from": "V", "to": "Infrastructure provider", "type": "WORKS_WITH", "context": "V is building the network as an infrastructure provider"}]}

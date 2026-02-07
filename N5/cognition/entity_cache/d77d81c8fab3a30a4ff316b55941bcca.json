@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "The speaker, lives close to a bridge"}, {"name": "ZO", "type": "ORG", "context": "Company with offices in Williamsburg near Meserole Street"}], "relationships": [{"from": "Vrijen Attawar", "to": "ZO", "type": "WORKS_WITH", "context": "Knows location of ZO offices, suggesting affiliation"}]}

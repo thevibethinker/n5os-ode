@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual referred to in the text"}, {"name": "LinkedIn copy", "type": "CONCEPT", "context": "specific content mentioned in the meeting"}, {"name": "simple planning artifacts", "type": "CONCEPT", "context": "tools or documents mentioned in the meeting"}], "relationships": []}

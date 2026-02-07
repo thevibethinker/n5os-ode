@@ -1,0 +1,1 @@
+{"entities": [{"name": "manifest.json", "type": "TOOL", "context": "a configuration file format commonly used in web development"}, {"name": "exit code 0", "type": "CONCEPT", "context": "a standard code indicating successful completion of a process"}, {"name": "error messages", "type": "CONCEPT", "context": "logs that indicate issues during execution"}], "relationships": []}

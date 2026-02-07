@@ -1,0 +1,1 @@
+{"entities": [{"name": "Corridorx.Io", "type": "ORG", "context": "organization mentioned"}, {"name": "Shivam", "type": "PERSON", "context": "email contact"}], "relationships": [{"from": "Shivam", "to": "Corridorx.Io", "type": "WORKS_WITH", "context": "contact associated with the organization"}]}

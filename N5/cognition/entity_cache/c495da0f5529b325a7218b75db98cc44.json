@@ -1,0 +1,1 @@
+{"entities": [{"name": "CommandProcessor", "type": "CONCEPT", "context": "A class or module referenced for processing commands."}, {"name": "GoogleChromeLabs", "type": "ORG", "context": "The organization associated with the GitHub link provided."}, {"name": "chromium-bidi", "type": "TOOL", "context": "A project on GitHub related to the Chromium Browser."}], "relationships": []}

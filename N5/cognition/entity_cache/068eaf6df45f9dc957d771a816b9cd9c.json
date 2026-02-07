@@ -1,0 +1,1 @@
+{"entities": [{"name": "node http module", "type": "TOOL", "context": "a module used for handling HTTP requests in Node.js"}, {"name": "request.js", "type": "TOOL", "context": "a library used for making HTTP requests in Node.js"}], "relationships": [{"from": "node http module", "to": "request.js", "type": "WORKS_WITH", "context": "both are used to handle HTTP requests"}]}

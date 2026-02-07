@@ -1,0 +1,1 @@
+{"entities": [{"name": "hypothesis_log", "type": "TOOL", "context": "system to track hypotheses"}, {"name": "constraint_register", "type": "TOOL", "context": "system to register constraints"}, {"name": "pattern_library", "type": "TOOL", "context": "system to store patterns"}], "relationships": []}

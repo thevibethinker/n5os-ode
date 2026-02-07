@@ -2,7 +2,7 @@
   "slug": "task-system-wiring",
   "title": "Task System Wiring - Meeting & Close Integration",
   "build_type": "code_build",
-  "status": "active",
+  "status": "abandoned",
   "total_streams": 2,
   "current_stream": 2,
   "model": "anthropic:claude-sonnet-4-20250514",
@@ -50,5 +50,7 @@
       "status": "running"
     }
   },
-  "currents": {}
+  "currents": {},
+  "abandoned_at": "2026-02-01T00:20:00Z",
+  "abandoned_reason": "Integration test (D2.2) never completed, no deposit created"
 }

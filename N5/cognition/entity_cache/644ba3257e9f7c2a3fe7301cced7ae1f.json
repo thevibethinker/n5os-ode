@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "organization involved in placement fees and partnerships"}], "relationships": [{"from": "Careerspan", "to": "community partners", "type": "WORKS_WITH", "context": "partnerships related to revenue share on placement fees"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "log file", "type": "TOOL", "context": "file used to check logs for errors"}, {"name": "extraction requests", "type": "CONCEPT", "context": "requests created for data extraction"}, {"name": "simulation mode", "type": "TOOL", "context": "mode used to simulate the process"}], "relationships": []}

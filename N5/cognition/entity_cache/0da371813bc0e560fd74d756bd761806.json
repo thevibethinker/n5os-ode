@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual using the knowledge system"}, {"name": "capability_graduation.py", "type": "TOOL", "context": "Python script for managing capabilities"}], "relationships": [{"from": "V (Vrijen)", "to": "capability_graduation.py", "type": "USES", "context": "V uses this script for capability graduation operations"}]}

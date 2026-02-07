@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "polling_agent.py", "type": "TOOL", "context": "script used for polling accounts"}], "relationships": [{"from": "Vrijen", "to": "polling_agent.py", "type": "USES", "context": "utilizes the script for polling accounts"}]}

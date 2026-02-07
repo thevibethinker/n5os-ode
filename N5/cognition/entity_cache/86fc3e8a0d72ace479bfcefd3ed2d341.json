@@ -1,0 +1,1 @@
+{"entities": [{"name": "SHRM", "type": "ORG", "context": "Society for Human Resource Management"}, {"name": "Careerspan", "type": "TOOL", "context": "A tool that helps evaluate candidates based on mission, culture, and development"}], "relationships": [{"from": "SHRM", "to": "Careerspan", "type": "MENTIONS", "context": "SHRM members use Careerspan for evaluating candidates"}]}

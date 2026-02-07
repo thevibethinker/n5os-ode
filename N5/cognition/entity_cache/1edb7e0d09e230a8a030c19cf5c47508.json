@@ -1,0 +1,1 @@
+{"entities": [{"name": "the company", "type": "ORG", "context": "refers to an organization involved in the practices"}, {"name": "metrics", "type": "CONCEPT", "context": "refers to evidence for decision-making"}, {"name": "evidence", "type": "CONCEPT", "context": "refers to data to support claims"}], "relationships": []}

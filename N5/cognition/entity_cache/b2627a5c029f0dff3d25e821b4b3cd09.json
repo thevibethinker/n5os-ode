@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "the speaker of the quote"}, {"name": "Tobe", "type": "PERSON", "context": "CEO mentioned in the quote"}], "relationships": [{"from": "V", "to": "Tobe", "type": "KNOWS", "context": "V mentions Tobe as the CEO"}]}

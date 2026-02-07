@@ -1,0 +1,43 @@
+{
+  "drop_id": "D2.2",
+  "title": "Document Decomposer Endpoint",
+  "status": "complete",
+  "spec_created": true,
+  "spec_path": "artifacts/decomposer-endpoint-spec.md",
+  "recommended_port": 8848,
+  "implementation_complexity": "medium",
+  "key_findings": [
+    "Existing v2 webhook (port 8847) currently only saves to inbox without triggering decomposer",
+    "Decomposer expects local files with --doc and --jd flags",
+    "Canonical schema well-defined in Skills/careerspan-decomposer/assets/canonical_schema.json",
+    "Existing webhook patterns (recall-webhook, fathom-webhook) use FastAPI with SQLite logging",
+    "Next available webhook port is 8848 per PORT_REGISTRY.md"
+  ],
+  "architecture_decisions": [
+    "Use port 8848 for new decomposer endpoint (keep v2 webhook as fallback)",
+    "Framework: FastAPI (matches existing N5 webhook patterns)",
+    "Auth: Bearer token (start simple, upgrade to Svix if needed)",
+    "Processing: Synchronous initially (add async if timeouts become issue)",
+    "Location: Integrations/careerspan-decompose-webhook/"
+  ],
+  "payload_schema": {
+    "required_fields": ["candidate.name", "role.title", "role.company"],
+    "document_fields": "Either text or URL for both careerspan_doc and job_description",
+    "optional_fields": ["candidate.email", "overall_assessment", "metadata.request_id"]
+  },
+  "processing_flow": [
+    "1. Validate auth and required fields",
+    "2. Store raw payload to inbox",
+    "3. Fetch documents from URLs if provided",
+    "4. Trigger decomposer script",
+    "5. Validate output against canonical schema",
+    "6. Trigger meta-resume generator",
+    "7. Respond with success details and send notification"
+  ],
+  "estimated_implementation_time": "4-6 hours",
+  "dependencies": [
+    "Skills/careerspan-decomposer (existing)",
+    "Skills/meta-resume-generator (existing)",
+    "FastAPI, uvicorn, aiohttp, jsonschema (new packages)"
+  ]
+}

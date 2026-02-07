@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker in the discussion"}, {"name": "nira", "type": "TOOL", "context": "A tool mentioned regarding usage"}], "relationships": [{"from": "Vrijen Attawar", "to": "nira", "type": "MENTIONS", "context": "Discussing the importance of nira's usage"}]}

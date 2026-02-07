@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "V is a person associated with knowledge and AI"}, {"name": "Zo", "type": "ORG", "context": "Zo is an AI system that V believes in"}], "relationships": [{"from": "V", "to": "Zo", "type": "BELIEVES", "context": "V has pride in Zo's capabilities"}]}

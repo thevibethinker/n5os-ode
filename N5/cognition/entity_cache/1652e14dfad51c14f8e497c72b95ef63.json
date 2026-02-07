@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "individual mentioned discussing knowledge system"}, {"name": "N5 instructions", "type": "CONCEPT", "context": "instructions that are not included in the resume context"}], "relationships": [{"from": "Vrijen", "to": "N5 instructions", "type": "MENTIONS", "context": "Vrijen mentioned investigating N5 instructions"}]}

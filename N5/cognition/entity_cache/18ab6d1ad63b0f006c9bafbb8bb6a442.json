@@ -1,0 +1,1 @@
+{"entities": [{"name": "LinkedIn", "type": "ORG", "context": "a professional networking platform"}, {"name": "Careerspan", "type": "ORG", "context": "a service providing candidate distribution"}], "relationships": [{"from": "Careerspan", "to": "LinkedIn", "type": "RELATED_TO", "context": "Careerspan provides candidates where LinkedIn fails"}]}

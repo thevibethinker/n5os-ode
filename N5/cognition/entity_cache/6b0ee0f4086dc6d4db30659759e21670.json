@@ -1,0 +1,1 @@
+{"entities": [{"name": "McKinsey", "type": "ORG", "context": "consulting organization"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "founder involved in community organizing"}], "relationships": [{"from": "V (Vrijen)", "to": "McKinsey", "type": "WORKS_WITH", "context": "affiliation with McKinsey as a founder community organizer"}]}

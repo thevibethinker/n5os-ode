@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen", "type": "ORG", "context": "Knowledge system associated with quality guarantee"}], "relationships": [{"from": "Vrijen", "to": "buyer", "type": "RELATED_TO", "context": "shifted risk from buyer to vendor"}, {"from": "Vrijen", "to": "vendor", "type": "RELATED_TO", "context": "removed purchase barrier"}]}

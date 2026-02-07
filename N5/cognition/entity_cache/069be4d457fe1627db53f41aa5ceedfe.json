@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "The speaker of the text."}, {"name": "Matt", "type": "PERSON", "context": "A friend of Vrijen Attawar mentioned in the text."}], "relationships": [{"from": "Vrijen Attawar", "to": "Matt", "type": "KNOWS", "context": "Vrijen Attawar refers to Matt as someone he is familiar with."}]}

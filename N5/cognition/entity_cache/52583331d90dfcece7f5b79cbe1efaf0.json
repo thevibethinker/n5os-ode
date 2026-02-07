@@ -1,0 +1,1 @@
+{"entities": [{"name": "Google Recorder", "type": "TOOL", "context": "A tool used for recording meetings"}, {"name": "Drive folder", "type": "TOOL", "context": "Storage solution used for saving transcripts"}], "relationships": []}

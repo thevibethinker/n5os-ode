@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Strong event curation and community building skills"}, {"name": "SF impact/tech ecosystem", "type": "CONCEPT", "context": "Well-connected in"}], "relationships": [{"from": "V", "to": "SF impact/tech ecosystem", "type": "KNOWS", "context": "Well-connected in the ecosystem"}]}

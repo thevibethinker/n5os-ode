@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "the subject of the knowledge system"}, {"name": "pandoc", "type": "TOOL", "context": "a tool used to convert document formats from docx to txt"}], "relationships": [{"from": "V", "to": "pandoc", "type": "USES", "context": "V uses pandoc to convert document formats"}]}

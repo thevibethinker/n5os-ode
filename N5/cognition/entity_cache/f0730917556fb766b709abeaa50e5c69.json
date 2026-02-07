@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ben", "type": "PERSON", "context": "cares about founder needs"}, {"name": "Zo", "type": "TOOL", "context": "built for 0-3 person teams"}], "relationships": [{"from": "Ben", "to": "Zo", "type": "USES", "context": "for founder needs"}]}

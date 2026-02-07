@@ -1,0 +1,1 @@
+{"entities": [{"name": "Edmund Cuthbert", "type": "PERSON", "context": "individual giving advice"}, {"name": "Sunset", "type": "ORG", "context": "company that provides consulting and partnerships with startups"}], "relationships": [{"from": "Edmund Cuthbert", "to": "Sunset", "type": "KNOWS", "context": "suggests they would give good advice"}]}

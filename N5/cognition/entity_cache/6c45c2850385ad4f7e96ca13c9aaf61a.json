@@ -1,0 +1,1 @@
+{"entities": [{"name": "Microsoft", "type": "ORG", "context": "organization providing security solutions"}, {"name": "PGP key", "type": "TOOL", "context": "tool for encrypting messages"}], "relationships": []}

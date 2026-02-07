@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "organization focused on career services"}, {"name": "data APIs", "type": "TOOL", "context": "technology used for data integration"}, {"name": "CRMs", "type": "TOOL", "context": "customer relationship management systems"}], "relationships": []}

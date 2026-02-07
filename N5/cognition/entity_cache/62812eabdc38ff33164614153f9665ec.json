@@ -1,0 +1,1 @@
+{"entities": [{"name": "Nholuba", "type": "PERSON", "context": "contact at Emory"}, {"name": "Emory", "type": "ORG", "context": "organization associated with Nholuba"}], "relationships": [{"from": "Nholuba", "to": "Emory", "type": "WORKS_WITH", "context": "employed at the organization"}]}

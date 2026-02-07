@@ -1,0 +1,1 @@
+{"entities": [{"name": "Handlebars", "type": "TOOL", "context": "A templating engine used for building HTML"}], "relationships": [{"from": "Handlebars", "to": "Browserify", "type": "RELATED_TO", "context": "Browserify users may link to the Handlebars runtime library"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Dry-run mode", "type": "TOOL", "context": "mode for simulating destructive operations"}, {"name": "Immediate state verification", "type": "CONCEPT", "context": "concept for verifying state after writes"}, {"name": "Real-time logs", "type": "TOOL", "context": "tool for logging information with context"}], "relationships": []}

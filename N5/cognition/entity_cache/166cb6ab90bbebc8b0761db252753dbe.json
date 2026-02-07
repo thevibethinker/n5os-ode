@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Subject of the text"}, {"name": "export folders", "type": "TOOL", "context": "Folders archived by V"}, {"name": "archive", "type": "CONCEPT", "context": "Compressed data storage concept"}], "relationships": []}

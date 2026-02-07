@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual involved in the knowledge system"}, {"name": "Fireflies.ai", "type": "TOOL", "context": "transcription platform used by V"}], "relationships": [{"from": "V", "to": "Fireflies.ai", "type": "USES", "context": "V utilizes Fireflies.ai for transcription purposes"}]}

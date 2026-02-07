@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "speaker in the text"}, {"name": "GPT5", "type": "TOOL", "context": "model mentioned by Vrijen"}], "relationships": [{"from": "Vrijen Attawar", "to": "GPT5", "type": "MENTIONS", "context": "Vrijen refers to GPT5 in the context of design patterns for models"}]}

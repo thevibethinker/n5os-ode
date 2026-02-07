@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ilia", "type": "PERSON", "context": "a person mentioned in relation to Ukrainian identity"}, {"name": "Ukrainians", "type": "PERSON", "context": "group of people mentioned in the text"}], "relationships": [{"from": "Ilia", "to": "Ukrainians", "type": "KNOWS", "context": "Ilia is acknowledged by Ukrainians regarding his identity"}]}

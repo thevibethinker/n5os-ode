@@ -1,0 +1,449 @@
+{
+  "schema_version": 3,
+  "slug": "meeting-system-v3",
+  "title": "Meeting Orchestrator v3: End-to-end Pulse-driven pipeline",
+  "build_type": "code_build",
+  "status": "active",
+  "model": "anthropic:claude-sonnet-4-20250514",
+  "launch_mode": "orchestrated",
+  "waves": {
+    "W1": [
+      "D0.1",
+      "D0.2",
+      "D0.3",
+      "D0.4"
+    ],
+    "W2": [
+      "D1.1",
+      "D1.2",
+      "D1.3",
+      "D1.4"
+    ],
+    "W3": [
+      "D2.1",
+      "D2.2",
+      "D2.3",
+      "D2.4",
+      "D2.5"
+    ],
+    "W4": [
+      "D3.1",
+      "D3.2",
+      "D3.3",
+      "D3.4",
+      "D3.5"
+    ],
+    "W5": [
+      "D4.1",
+      "D4.2",
+      "D4.3"
+    ],
+    "W6": [
+      "D5.1",
+      "D5.2",
+      "D5.3"
+    ],
+    "W7": [
+      "D6.1",
+      "D6.2",
+      "D6.3"
+    ]
+  },
+  "active_wave": "W5",
+  "drops": {
+    "D0.1": {
+      "name": "Prompt Audit",
+      "brief": "D0.1-prompt-audit.md",
+      "stream": 0,
+      "order": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete"
+    },
+    "D0.2": {
+      "name": "Merge B02+B05",
+      "brief": "D0.2-merge-commitments-actions.md",
+      "stream": 0,
+      "order": 2,
+      "depends_on": [
+        "D0.1"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete"
+    },
+    "D0.3": {
+      "name": "Block Index",
+      "brief": "D0.3-block-index.md",
+      "stream": 0,
+      "order": 3,
+      "depends_on": [
+        "D0.2"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "completed_at": "2026-02-01T17:37:39.015199+00:00"
+    },
+    "D0.4": {
+      "name": "Smart Selector",
+      "brief": "D0.4-smart-selector.md",
+      "stream": 0,
+      "order": 4,
+      "depends_on": [
+        "D0.3"
+      ],
+      "spawn_mode": "manual",
+      "blocking": true,
+      "status": "complete",
+      "launcher_path": "N5/builds/meeting-system-v3/launchers/D0.4.md"
+    },
+    "D1.1": {
+      "name": "Inventory Audit",
+      "brief": "D1.1-inventory-audit.md",
+      "stream": 1,
+      "order": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete"
+    },
+    "D1.2": {
+      "name": "Audit Verification",
+      "brief": "D1.2-audit-verification.md",
+      "stream": 1,
+      "order": 2,
+      "depends_on": [
+        "D1.1"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "completed_at": "2026-02-01T17:47:15.318551+00:00"
+    },
+    "D1.3": {
+      "name": "CRM Migration",
+      "brief": "D1.3-crm-migration.md",
+      "stream": 1,
+      "order": 3,
+      "depends_on": [
+        "D1.1"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "completed_at": "2026-02-01T17:53:25.723965+00:00"
+    },
+    "D1.4": {
+      "name": "Legacy Converter",
+      "brief": "D1.4-legacy-converter.md",
+      "stream": 1,
+      "order": 4,
+      "depends_on": [
+        "D1.2"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "completed_at": "2026-02-01T18:20:00Z"
+    },
+    "D2.1": {
+      "name": "Manifest Schema",
+      "brief": "D2.1-manifest-schema.md",
+      "stream": 2,
+      "order": 1,
+      "depends_on": [
+        "D1.4"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "started_at": "2026-02-01T18:36:55.786419+00:00",
+      "conversation_id": "con_CsaDr1SX2QUoD6ul",
+      "completed_at": "2026-02-01T18:37:24.927006+00:00"
+    },
+    "D2.2": {
+      "name": "Meeting ID Convention",
+      "brief": "D2.2-meeting-id-convention.md",
+      "stream": 2,
+      "order": 2,
+      "depends_on": [
+        "D2.1"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "started_at": "2026-02-01T18:39:13.353563+00:00",
+      "conversation_id": "con_MKZ5RVBt8uiFukI5",
+      "completed_at": "2026-02-01T18:43:22.527240+00:00"
+    },
+    "D2.3": {
+      "name": "Block Picker Policy",
+      "brief": "D2.3-block-picker-policy.md",
+      "stream": 2,
+      "order": 3,
+      "depends_on": [
+        "D2.1"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "started_at": "2026-02-01T18:45:56.363152+00:00",
+      "conversation_id": "con_DXPY9ahWLwQ8OG66",
+      "completed_at": "2026-02-01T18:48:23.553757+00:00"
+    },
+    "D2.4": {
+      "name": "Quality Harness Spec",
+      "brief": "D2.4-quality-harness-spec.md",
+      "stream": 2,
+      "order": 4,
+      "depends_on": [
+        "D2.1"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "started_at": "2026-02-01T18:52:11.595286+00:00",
+      "conversation_id": "con_qhrDdDyEQsQq6PCA",
+      "completed_at": "2026-02-01T18:54:30.091812+00:00"
+    },
+    "D2.5": {
+      "name": "HITL Queue Spec",
+      "brief": "D2.5-hitl-queue-spec.md",
+      "stream": 2,
+      "order": 5,
+      "depends_on": [
+        "D2.1"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "started_at": "2026-02-01T18:58:29.744908+00:00",
+      "conversation_id": "con_Fh23yPkleoCF45kZ",
+      "completed_at": "2026-02-01T19:00:17.797775+00:00"
+    },
+    "D3.1": {
+      "name": "Ingest Module",
+      "brief": "D3.1-ingest-module.md",
+      "stream": 3,
+      "order": 1,
+      "depends_on": [
+        "D2.1"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "completed_at": "2026-02-01T19:06:00Z"
+    },
+    "D3.2": {
+      "name": "Calendar Triangulation",
+      "brief": "D3.2-calendar-triangulation.md",
+      "stream": 3,
+      "order": 2,
+      "depends_on": [
+        "D2.1"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "completed_at": "2026-02-01T19:07:00Z"
+    },
+    "D3.3": {
+      "name": "CRM Enricher",
+      "brief": "D3.3-crm-enricher.md",
+      "stream": 3,
+      "order": 3,
+      "depends_on": [
+        "D1.3",
+        "D2.5"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "completed_at": "2026-02-01T19:08:00Z"
+    },
+    "D3.4": {
+      "name": "Quality Gate",
+      "brief": "D3.4-quality-gate.md",
+      "stream": 3,
+      "order": 4,
+      "depends_on": [
+        "D2.4",
+        "D2.5"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "completed_at": "2026-02-01T20:10:00Z"
+    },
+    "D3.5": {
+      "name": "CLI Update",
+      "brief": "D3.5-cli-update.md",
+      "stream": 3,
+      "order": 5,
+      "depends_on": [
+        "D3.1",
+        "D3.2",
+        "D3.3",
+        "D3.4"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "completed_at": "2026-02-01T20:39:00Z"
+    },
+    "D4.1": {
+      "name": "Block Picker v2",
+      "brief": "D4.1-block-picker-v2.md",
+      "stream": 4,
+      "order": 1,
+      "depends_on": [
+        "D2.3"
+      ],
+      "spawn_mode": "manual",
+      "blocking": true,
+      "status": "complete",
+      "launcher_path": "N5/builds/meeting-system-v3/launchers/D4.1.md"
+    },
+    "D4.2": {
+      "name": "Block Generator",
+      "brief": "D4.2-block-generator.md",
+      "stream": 4,
+      "order": 2,
+      "depends_on": [
+        "D4.1"
+      ],
+      "spawn_mode": "manual",
+      "blocking": true,
+      "status": "complete",
+      "launcher_path": "N5/builds/meeting-system-v3/launchers/D4.2.md"
+    },
+    "D4.3": {
+      "name": "Quality Check",
+      "brief": "D4.3-quality-check.md",
+      "stream": 4,
+      "order": 3,
+      "depends_on": [
+        "D2.4",
+        "D4.2"
+      ],
+      "spawn_mode": "manual",
+      "blocking": true,
+      "status": "pending"
+    },
+    "D5.1": {
+      "name": "Archive Module",
+      "brief": "D5.1-archive-module.md",
+      "stream": 5,
+      "order": 1,
+      "depends_on": [
+        "D4.3"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "pending"
+    },
+    "D5.2": {
+      "name": "Migration Execute",
+      "brief": "D5.2-migration-execute.md",
+      "stream": 5,
+      "order": 2,
+      "depends_on": [
+        "D1.4",
+        "D5.1"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "pending"
+    },
+    "D5.3": {
+      "name": "Cleanup",
+      "brief": "D5.3-cleanup.md",
+      "stream": 5,
+      "order": 3,
+      "depends_on": [
+        "D5.2"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "pending"
+    },
+    "D6.1": {
+      "name": "Integration Test",
+      "brief": "D6.1-integration-test.md",
+      "stream": 6,
+      "order": 1,
+      "depends_on": [
+        "D5.1"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "pending"
+    },
+    "D6.2": {
+      "name": "Scheduled Agent",
+      "brief": "D6.2-scheduled-agent.md",
+      "stream": 6,
+      "order": 2,
+      "depends_on": [
+        "D6.1"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "pending"
+    },
+    "D6.3": {
+      "name": "Documentation",
+      "brief": "D6.3-documentation.md",
+      "stream": 6,
+      "order": 3,
+      "depends_on": [
+        "D6.2"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "pending"
+    }
+  },
+  "lineage": {
+    "parent_type": "conversation",
+    "parent_ref": "con_TN9WOo9G9cY3zZuh",
+    "parent_conversation": "con_TN9WOo9G9cY3zZuh",
+    "moment": "V requested full meeting system rebuild with block refinement, CRM integration, and HITL queue",
+    "branched_at": "2026-02-01T02:50:00Z"
+  },
+  "started_at": "2026-02-01T08:51:21.266941+00:00",
+  "last_tick_data": {
+    "completed_drop_ids": [
+      "D0.1",
+      "D0.2",
+      "D0.3",
+      "D0.4",
+      "D1.1",
+      "D1.2",
+      "D1.3",
+      "D1.4",
+      "D2.1",
+      "D2.2",
+      "D2.3",
+      "D2.4",
+      "D2.5",
+      "D3.1",
+      "D3.2",
+      "D3.3",
+      "D3.4",
+      "D3.5",
+      "D4.1"
+    ],
+    "tick_timestamp": "2026-02-02T02:11:10.259810+00:00",
+    "email_sent": true,
+    "email_reason": "New completion: D4.2 Block Generator complete; Manual drop D4.3 now ready for V to spawn",
+    "manual_drops_ready": [
+      "D4.2"
+    ],
+    "auto_spawned": [],
+    "blocked": true,
+    "blocking_drop": "D4.2"
+  }
+}

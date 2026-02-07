@@ -1,0 +1,1 @@
+{"entities": [{"name": "AI", "type": "TOOL", "context": "execution engine that operationalizes architecture at scale"}], "relationships": [{"from": "V", "to": "AI", "type": "USES", "context": "AI makes V's architecture operational at scale"}]}

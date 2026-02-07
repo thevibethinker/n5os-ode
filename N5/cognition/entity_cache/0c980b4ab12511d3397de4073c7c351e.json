@@ -1,0 +1,1 @@
+{"entities": [{"name": "meeting prep", "type": "CONCEPT", "context": "process of preparing for meetings"}, {"name": "scheduled task", "type": "TOOL", "context": "task scheduled for automation"}, {"name": "dashboard", "type": "TOOL", "context": "tool for monitoring progress"}], "relationships": []}

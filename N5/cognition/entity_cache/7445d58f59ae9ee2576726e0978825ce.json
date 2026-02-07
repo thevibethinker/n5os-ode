@@ -1,0 +1,1 @@
+{"entities": [{"name": "Griffin Schultz", "type": "PERSON", "context": "Speaker discussing timeline and valuation"}, {"name": "V", "type": "PERSON", "context": "Implied as the subject of discussion regarding fundraising and revenue"}], "relationships": [{"from": "Griffin Schultz", "to": "V", "type": "KNOWS", "context": "Griffin is inquiring about V's revenue and valuation"}]}

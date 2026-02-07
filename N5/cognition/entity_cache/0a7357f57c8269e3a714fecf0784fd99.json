@@ -1,0 +1,1 @@
+{"entities": [{"name": "Timeline", "type": "CONCEPT", "context": "feature being built to provide user value"}, {"name": "AI Synthesis", "type": "CONCEPT", "context": "feature planned for Q2 after Timeline"}], "relationships": [{"from": "Timeline", "to": "AI Synthesis", "type": "RELATED_TO", "context": "Timeline is developed before AI Synthesis as part of the feature rollout"}]}

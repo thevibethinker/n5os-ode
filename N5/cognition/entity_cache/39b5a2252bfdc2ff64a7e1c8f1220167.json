@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "the individual conversing"}, {"name": "narrative-driven career development", "type": "CONCEPT", "context": "the believed future of career development"}], "relationships": [{"from": "V", "to": "narrative-driven career development", "type": "BELIEVES", "context": "V believes it is the future of career development"}]}

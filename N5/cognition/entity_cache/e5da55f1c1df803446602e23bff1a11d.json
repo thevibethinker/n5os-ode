@@ -1,0 +1,1 @@
+{"entities": [{"name": "Colin Navon", "type": "PERSON", "context": "individual involved in a conversation about AI"}, {"name": "AI", "type": "CONCEPT", "context": "technology discussed in relation to employment and utilization"}], "relationships": [{"from": "Colin Navon", "to": "AI", "type": "MENTIONS", "context": "discusses AI in relation to employment"}]}

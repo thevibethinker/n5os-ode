@@ -1,0 +1,15 @@
+{
+  "version": "1.0",
+  "default": {
+    "activation_offset_minutes": 15,
+    "deactivate_offset_minutes": 30,
+    "default_duration_minutes": 60
+  },
+  "by_event_type_name": {
+    "Zoffice Consulting": {
+      "activation_offset_minutes": 15,
+      "deactivate_offset_minutes": 30,
+      "default_duration_minutes": 60
+    }
+  }
+}

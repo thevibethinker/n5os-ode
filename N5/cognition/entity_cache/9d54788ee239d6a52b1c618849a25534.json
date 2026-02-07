@@ -1,0 +1,1 @@
+{"entities": [{"name": "Shane Murphy-Reuter", "type": "PERSON", "context": "attended the meeting"}, {"name": "Vrijen Attawar", "type": "PERSON", "context": "attended the meeting"}], "relationships": [{"from": "Vrijen Attawar", "to": "Shane Murphy-Reuter", "type": "WORKS_WITH", "context": "participants in the external meeting"}]}

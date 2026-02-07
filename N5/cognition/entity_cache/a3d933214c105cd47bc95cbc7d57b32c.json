@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "V is a specialist mode operator"}, {"name": "vibe_strategist_persona.md", "type": "TOOL", "context": "previous version of V's knowledge system"}], "relationships": [{"from": "Vrijen", "to": "vibe_strategist_persona.md", "type": "USES", "context": "V uses the vibe_strategist_persona.md tool as a predecessor"}]}

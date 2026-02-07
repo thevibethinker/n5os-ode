@@ -1,0 +1,1 @@
+{"entities": [{"name": "Logan Currie", "type": "PERSON", "context": "Speaker discussing job descriptions"}, {"name": "draft job description", "type": "CONCEPT", "context": "Type of job description"}, {"name": "active live listed JD", "type": "CONCEPT", "context": "Type of job description"}], "relationships": []}

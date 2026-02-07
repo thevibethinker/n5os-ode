@@ -1,0 +1,1 @@
+{"entities": [{"name": "registry", "type": "CONCEPT", "context": "single source of truth in V's knowledge system"}, {"name": "managed artifacts", "type": "CONCEPT", "context": "files in the directory that are maintained"}], "relationships": []}

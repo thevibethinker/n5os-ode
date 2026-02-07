@@ -1,0 +1,1 @@
+{"entities": [{"name": "Generator", "type": "TOOL", "context": "Component used in V's knowledge system"}, {"name": "Digest", "type": "TOOL", "context": "Component used in V's knowledge system"}, {"name": "Drop", "type": "TOOL", "context": "Component used in V's knowledge system"}], "relationships": []}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "NaN", "type": "CONCEPT", "context": "Value indicating 'at least' one value is expected for an array"}, {"name": "nargs", "type": "TOOL", "context": "Parameter expected for array in yargs-parser"}], "relationships": [{"from": "NaN", "to": "nargs", "type": "RELATED_TO", "context": "NaN is used as a value for nargs in yargs-parser"}]}

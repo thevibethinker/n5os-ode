@@ -1,0 +1,1 @@
+{"entities": [{"name": "DEBUG", "type": "CONCEPT", "context": "a variable indicating whether debugging is enabled"}, {"name": "PRODUCTION", "type": "CONCEPT", "context": "a variable indicating whether the production environment is active"}, {"name": "build/defines.js", "type": "TOOL", "context": "a file used to declare global constants"}], "relationships": []}

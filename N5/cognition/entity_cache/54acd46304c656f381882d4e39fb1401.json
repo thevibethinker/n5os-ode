@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ray", "type": "PERSON", "context": "has experience with earnouts"}, {"name": "earnout", "type": "CONCEPT", "context": "financial structure related to performance-based pay"}], "relationships": [{"from": "Ray", "to": "earnout", "type": "KNOWS", "context": "has experience with earnout potential and actual results"}]}

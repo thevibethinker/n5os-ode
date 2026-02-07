@@ -1,0 +1,1 @@
+{"entities": [{"name": "Team resilience", "type": "CONCEPT", "context": "a characteristic seen as an advantage"}, {"name": "competitive advantage", "type": "CONCEPT", "context": "the benefit gained over rivals"}], "relationships": [{"from": "Team resilience", "to": "competitive advantage", "type": "RELATED_TO", "context": "team resilience provides a competitive advantage"}]}

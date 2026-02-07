@@ -1,0 +1,1 @@
+{"entities": [{"name": "Consonant.Vc", "type": "ORG", "context": "organization associated with V"}, {"name": "Eric", "type": "PERSON", "context": "contact person for Consonant.Vc"}], "relationships": [{"from": "Eric", "to": "Consonant.Vc", "type": "WORKS_WITH", "context": "Eric is associated with Consonant.Vc"}]}

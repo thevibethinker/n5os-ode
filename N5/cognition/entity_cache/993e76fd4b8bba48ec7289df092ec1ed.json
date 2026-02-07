@@ -1,0 +1,1 @@
+{"entities": [{"name": "Lenny's", "type": "ORG", "context": "a professional community"}], "relationships": [{"from": "team", "to": "Lenny's", "type": "RELATED_TO", "context": "the team indicates a culture of learning while engaging with Lenny's"}]}

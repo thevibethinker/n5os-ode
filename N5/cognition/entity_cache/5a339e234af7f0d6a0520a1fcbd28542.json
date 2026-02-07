@@ -1,0 +1,1 @@
+{"entities": [{"name": "apt", "type": "TOOL", "context": "package manager used on Debian-based systems"}, {"name": "syncthing", "type": "TOOL", "context": "open-source file synchronization tool"}], "relationships": []}

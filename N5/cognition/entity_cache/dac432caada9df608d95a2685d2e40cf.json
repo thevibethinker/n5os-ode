@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "organization discussing go-to-market strategy"}, {"name": "Superposition", "type": "ORG", "context": "recruiting firm proposed for partnership"}], "relationships": [{"from": "Careerspan", "to": "Superposition", "type": "WORKS_WITH", "context": "partnership proposal discussion"}]}

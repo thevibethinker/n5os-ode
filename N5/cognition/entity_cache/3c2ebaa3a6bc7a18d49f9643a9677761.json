@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "Content/Marketing focus"}, {"name": "AI tools", "type": "TOOL", "context": "Used strategically to break blocks"}], "relationships": [{"from": "V (Vrijen)", "to": "AI tools", "type": "USES", "context": "Uses AI tools strategically in writing process"}]}

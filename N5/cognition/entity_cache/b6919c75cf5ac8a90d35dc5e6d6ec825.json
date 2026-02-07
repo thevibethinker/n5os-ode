@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "a high-signal talent platform for VCs"}, {"name": "high-signal talent platform", "type": "CONCEPT", "context": "platform model moving away from generic job boards"}], "relationships": [{"from": "Careerspan", "to": "high-signal talent platform", "type": "USES", "context": "transitioning service model"}]}

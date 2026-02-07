@@ -1,0 +1,1 @@
+{"entities": [{"name": "Orchestrators", "type": "CONCEPT", "context": "A role involved in managing worker handoffs and changes"}, {"name": "worker", "type": "CONCEPT", "context": "Entities that are handled by orchestrators during tasks"}], "relationships": []}

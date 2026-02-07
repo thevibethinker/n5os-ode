@@ -1,0 +1,1 @@
+{"entities": [{"name": "Zo Computer", "type": "ORG", "context": "organization involved in collaboration opportunity"}, {"name": "V", "type": "PERSON", "context": "individual engaged in conversations"}], "relationships": [{"from": "V", "to": "Zo Computer", "type": "WORKS_WITH", "context": "exploratory conversation about collaboration opportunity"}]}

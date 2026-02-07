@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "the main subject of the knowledge system"}, {"name": "BrowserStack", "type": "ORG", "context": "an organization related to web development and testing"}], "relationships": [{"from": "V", "to": "BrowserStack", "type": "USES", "context": "V likely utilizes BrowserStack's services for web testing"}]}

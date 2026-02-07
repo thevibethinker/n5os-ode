@@ -1,0 +1,20 @@
+{
+  "drop_id": "D1.2",
+  "build_slug": "careerspan-pipeline-v2",
+  "stream": 1,
+  "status": "complete",
+  "output": {
+    "skill_created": "Skills/careerspan-resume-intake/",
+    "script_path": "Skills/careerspan-resume-intake/scripts/process_resume.py",
+    "dry_run_tested": true,
+    "test_deposit": "N5/builds/careerspan-pipeline-v2/deposits/D1.2-deposit.json"
+  },
+  "summary": "Created careerspan-resume-intake skill that processes [RESUME] tagged emails. The skill extracts candidate info via LLM, matches to Job Openings, creates Airtable records, generates candidate guides via subprocess to careerspan-candidate-guide skill, uploads to Drive, and emails Shivam. Dry-run tested successfully.",
+  "notes": [
+    "Script outputs instructions for Zo app tools (Airtable, Drive, Gmail) rather than calling them directly",
+    "Uses subprocess to call careerspan-candidate-guide skill like pipeline_orchestrator.py does",
+    "LLM-over-regex approach for all semantic understanding (candidate extraction, job matching)",
+    "Deposit format: structured JSON with candidate_id, candidate_name, job_match_confidence, candidate_guide_link, email_sent, flags"
+  ],
+  "timestamp": "2026-02-03T02:25:00Z"
+}

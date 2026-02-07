@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "the speaker"}, {"name": "grandfather", "type": "PERSON", "context": "Vrijen's relative"}], "relationships": [{"from": "Vrijen Attawar", "to": "grandfather", "type": "RELATED_TO", "context": "Vrijen is the grandson of the grandfather"}]}

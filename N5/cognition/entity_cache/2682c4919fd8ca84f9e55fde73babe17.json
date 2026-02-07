@@ -1,0 +1,1 @@
+{"entities": [{"name": "Sam", "type": "PERSON", "context": "potential partner in partnership"}, {"name": "V", "type": "PERSON", "context": "referred to as Vrijen"}], "relationships": [{"from": "V", "to": "Sam", "type": "WORKS_WITH", "context": "partnership potential"}]}

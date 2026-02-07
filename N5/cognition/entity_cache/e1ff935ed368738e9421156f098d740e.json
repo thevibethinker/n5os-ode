@@ -1,0 +1,1 @@
+{"entities": [{"name": "N5", "type": "ORG", "context": "Organization adopting V-OS tag format"}, {"name": "Howie's V-OS", "type": "TOOL", "context": "Tag format adopted by N5"}], "relationships": [{"from": "N5", "to": "Howie's V-OS", "type": "USES", "context": "N5 adopts Howie's V-OS tag format"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Google Drive", "type": "TOOL", "context": "cloud storage service"}, {"name": "V", "type": "PERSON", "context": "subject of the knowledge system"}], "relationships": [{"from": "V", "to": "Google Drive", "type": "USES", "context": "attempted integration with Google Drive"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Microsoft", "type": "ORG", "context": "Organization that owns the repository"}, {"name": "security vulnerability", "type": "CONCEPT", "context": "Definition of a security issue"}], "relationships": []}

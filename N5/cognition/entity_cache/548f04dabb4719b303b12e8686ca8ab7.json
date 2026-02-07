@@ -1,0 +1,1 @@
+{"entities": [{"name": "Dylan Lieberman", "type": "PERSON", "context": "Participant in the conversation"}, {"name": "Kaggle", "type": "ORG", "context": "Company mentioned as similar to the discussed concept"}], "relationships": [{"from": "Dylan Lieberman", "to": "Kaggle", "type": "MENTIONS", "context": "Discussing companies similar to the topic"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "LLM", "type": "TOOL", "context": "Large Language Model used for content analysis"}, {"name": "feedback loop system", "type": "CONCEPT", "context": "system for improving processes through feedback"}, {"name": "routing rules", "type": "CONCEPT", "context": "rules for directing operations or information"}], "relationships": []}

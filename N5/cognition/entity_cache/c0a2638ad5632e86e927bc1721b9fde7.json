@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "owner of the email"}, {"name": "Teamwork Online", "type": "ORG", "context": "recipient of the email"}], "relationships": [{"from": "V", "to": "Teamwork Online", "type": "WORKS_WITH", "context": "recipient for open acquisition dialogue"}]}

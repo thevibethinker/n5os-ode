@@ -1,0 +1,15 @@
+{
+  "slug": "seminar-tactics-research",
+  "learnings": [
+    {
+      "text": "Context engineering is the emerging concept replacing prompt engineering. It's about treating the AI's 'attention budget' as a scarce resource and designing systems that provide the right information at the right time. This is crucial differentiation - most advice is still about crafting better prompts, but real power comes from architecting the entire information ecosystem.",
+      "source": "manual",
+      "added_at": "2026-01-29T15:36:43.270588+00:00",
+      "tags": [
+        "D1.4",
+        "context-engineering",
+        "differentiation"
+      ]
+    }
+  ]
+}

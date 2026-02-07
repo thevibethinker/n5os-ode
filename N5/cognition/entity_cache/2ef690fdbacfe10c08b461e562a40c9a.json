@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "the individual providing the commentary"}, {"name": "Zapier", "type": "TOOL", "context": "a tool that is marketed as accessible but has mixed user feedback"}], "relationships": [{"from": "Vrijen Attawar", "to": "Zapier", "type": "MENTIONS", "context": "discusses the user experiences with the tool"}]}

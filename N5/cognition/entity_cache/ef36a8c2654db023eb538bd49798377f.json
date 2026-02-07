@@ -1,0 +1,1 @@
+{"entities": [{"name": "Zo", "type": "ORG", "context": "organization that provides LLM calling capability"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "person implementing the knowledge system"}], "relationships": [{"from": "V (Vrijen)", "to": "Zo", "type": "USES", "context": "V uses Zo's LLM calling capability for implementation"}]}

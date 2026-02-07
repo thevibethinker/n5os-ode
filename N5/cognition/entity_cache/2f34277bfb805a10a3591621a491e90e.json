@@ -1,0 +1,1 @@
+{"entities": [{"name": "Victor", "type": "PERSON", "context": "Initiated platform switch in exchange with V"}, {"name": "V", "type": "PERSON", "context": "Accepted platform switch, cooperative in exchange"}], "relationships": [{"from": "V", "to": "Victor", "type": "WORKS_WITH", "context": "Friendly, professional exchange with good rapport; both cooperative"}]}

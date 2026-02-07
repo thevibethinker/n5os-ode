@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual involved in the knowledge system"}, {"name": "load_or_create_profile()", "type": "TOOL", "context": "method for reusing dossiers"}, {"name": "update_profile_from_email()", "type": "TOOL", "context": "new method for adding information"}], "relationships": []}

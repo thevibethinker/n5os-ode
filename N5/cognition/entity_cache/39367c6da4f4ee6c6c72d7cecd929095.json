@@ -1,0 +1,1 @@
+{"entities": [{"name": "Go Ahead Ventures", "type": "ORG", "context": "an investor mentioned in relation to the company's progress"}], "relationships": [{"from": "the company", "to": "Go Ahead Ventures", "type": "WORKS_WITH", "context": "the company is communicating progress to investors"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Victor Hu", "type": "PERSON", "context": "Investor at Lumos Capital Group"}, {"name": "Lumos Capital Group", "type": "ORG", "context": "Organization where Victor Hu works"}], "relationships": [{"from": "Victor Hu", "to": "Lumos Capital Group", "type": "WORKS_WITH", "context": "Victor Hu is an investor at Lumos Capital Group"}]}

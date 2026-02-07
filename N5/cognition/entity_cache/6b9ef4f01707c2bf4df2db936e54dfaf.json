@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "data layer for alumni offices"}, {"name": "universities", "type": "ORG", "context": "institutions that manage alumni records"}], "relationships": [{"from": "Careerspan", "to": "universities", "type": "USES", "context": "solving cost problems for alumni offices"}]}

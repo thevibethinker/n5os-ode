@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ilse", "type": "PERSON", "context": "standout engineering capability"}, {"name": "dumb models", "type": "CONCEPT", "context": "cheaper models used for problem-solving"}], "relationships": [{"from": "Ilse", "to": "dumb models", "type": "USES", "context": "atomizing tasks effectively"}]}

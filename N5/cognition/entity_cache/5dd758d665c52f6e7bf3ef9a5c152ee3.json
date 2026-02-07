@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "explained Careerspan's evolution"}, {"name": "Careerspan", "type": "ORG", "context": "company evolved from career tech to career tech + hiring"}], "relationships": [{"from": "Vrijen", "to": "Careerspan", "type": "KNOWS", "context": "Vrijen is associated with the evolution of Careerspan"}]}

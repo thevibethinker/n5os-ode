@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "a knowledge system that manages information"}, {"name": "Ingestion Workflow", "type": "CONCEPT", "context": "a process for handling new sources of information"}], "relationships": [{"from": "V", "to": "Ingestion Workflow", "type": "USES", "context": "V employs the Ingestion Workflow to manage new information sources"}]}

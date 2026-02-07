@@ -1,0 +1,278 @@
+{
+  "scan_timestamp": "2026-02-01T09:01:10.027789Z",
+  "inbox": {
+    "raw_files": [
+      {
+        "name": "2026-01-26_Collateral_Blitz-transcript-2026-01-26T16-03-38.000Z.md",
+        "date": "2026-01-26",
+        "size_bytes": 24160
+      },
+      {
+        "name": "2026-01-26_David_x_Careerspan-transcript-2026-01-26T17-35-23.000Z.md",
+        "date": "2026-01-26",
+        "size_bytes": 41354
+      },
+      {
+        "name": "2026-01-29_Maximilian_Kwok_and_Vrijen_Attawar-transcript-2026-01-29T23-00-00.000Z.md",
+        "date": "2026-01-29",
+        "size_bytes": 44178
+      },
+      {
+        "name": "2026-01-29_Vrijen_Attawar_and_Chris_Hanson-transcript-2026-01-29T00-30-00.000Z.md",
+        "date": "2026-01-29",
+        "size_bytes": 37000
+      },
+      {
+        "name": "2026-01-29_friends_of_next_play-_Fundamentals_of_AI_Productivity_w-transcript-2026-01-29T17-00-00.000Z.md",
+        "date": "2026-01-29",
+        "size_bytes": 61777
+      }
+    ],
+    "folders": [
+      {
+        "name": "2026-01-26_Collateral-Blitz_Logan",
+        "has_manifest": true,
+        "manifest_version": "v3",
+        "transcript_format": "jsonl",
+        "status": "manifest_generated",
+        "blocks": [],
+        "issues": [
+          "jsonl_transcript"
+        ]
+      },
+      {
+        "name": "_orphaned_blocks",
+        "has_manifest": true,
+        "manifest_version": "v3",
+        "transcript_format": null,
+        "status": "unknown",
+        "blocks": [
+          "B01",
+          "B02",
+          "B03",
+          "B04",
+          "B05",
+          "B06",
+          "B07",
+          "B08",
+          "B10",
+          "B13",
+          "B21",
+          "B25",
+          "B26",
+          "B28"
+        ],
+        "issues": [
+          "no_transcript"
+        ]
+      },
+      {
+        "name": "_quarantine",
+        "has_manifest": false,
+        "manifest_version": null,
+        "transcript_format": null,
+        "status": "unknown",
+        "blocks": [],
+        "issues": [
+          "no_manifest",
+          "no_transcript"
+        ]
+      }
+    ],
+    "issues": {
+      "no_transcript": [
+        "_orphaned_blocks",
+        "_quarantine"
+      ],
+      "jsonl_transcript": [
+        "2026-01-26_Collateral-Blitz_Logan"
+      ],
+      "legacy_manifest": [],
+      "no_manifest": [
+        "_quarantine"
+      ],
+      "invalid_manifest_json": [],
+      "orphaned_blocks": []
+    }
+  },
+  "root_level": {
+    "folders": [
+      {
+        "name": "2025-11-13_careerspan-strategy-hiring-discussion_[P]",
+        "date": "2025-11-13",
+        "target_week": "Week-of-2025-11-10",
+        "collision": false,
+        "type_guess": "internal"
+      },
+      {
+        "name": "2025-11-14_Nicole_Holubar_x_Vrijen_Attawar_emory-partnership_[P]",
+        "date": "2025-11-14",
+        "target_week": "Week-of-2025-11-10",
+        "collision": false,
+        "type_guess": "internal"
+      },
+      {
+        "name": "2025-11-15_gfq-ywpy-pgs_[P]",
+        "date": "2025-11-15",
+        "target_week": "Week-of-2025-11-10",
+        "collision": false,
+        "type_guess": "internal"
+      },
+      {
+        "name": "2025-11-21_fxw-zpuz-bqx_[P]",
+        "date": "2025-11-21",
+        "target_week": "Week-of-2025-11-17",
+        "collision": false,
+        "type_guess": "internal"
+      },
+      {
+        "name": "2025-12-23_Meeting-with-Vrijen-Ankit",
+        "date": "2025-12-23",
+        "target_week": "Week-of-2025-12-22",
+        "collision": false,
+        "type_guess": "unknown"
+      },
+      {
+        "name": "2026-01-12_2026-01-12-Impromptu-google-meet-meeting",
+        "date": "2026-01-12",
+        "target_week": "Week-of-2026-01-12",
+        "collision": true,
+        "type_guess": "unknown"
+      },
+      {
+        "name": "2026-01-12_Impromptu-Google-Meet-Meeting",
+        "date": "2026-01-12",
+        "target_week": "Week-of-2026-01-12",
+        "collision": false,
+        "type_guess": "unknown"
+      },
+      {
+        "name": "2026-01-15_debrief_on_selling_careerspan_from_ray",
+        "date": "2026-01-15",
+        "target_week": "Week-of-2026-01-12",
+        "collision": false,
+        "type_guess": "unknown"
+      },
+      {
+        "name": "2026-01-16_2026-01-16-asher-king-abramson",
+        "date": "2026-01-16",
+        "target_week": "Week-of-2026-01-12",
+        "collision": false,
+        "type_guess": "unknown"
+      },
+      {
+        "name": "2026-01-16_Thesis-Interview",
+        "date": "2026-01-16",
+        "target_week": "Week-of-2026-01-12",
+        "collision": false,
+        "type_guess": "unknown"
+      },
+      {
+        "name": "2026-01-19_CareerSpan-CorridorX-Scoping",
+        "date": "2026-01-19",
+        "target_week": "Week-of-2026-01-19",
+        "collision": false,
+        "type_guess": "unknown"
+      },
+      {
+        "name": "2026-01-20_Grind-oClock",
+        "date": "2026-01-20",
+        "target_week": "Week-of-2026-01-19",
+        "collision": false,
+        "type_guess": "unknown"
+      },
+      {
+        "name": "2026-01-20_Record-sesh",
+        "date": "2026-01-20",
+        "target_week": "Week-of-2026-01-19",
+        "collision": false,
+        "type_guess": "unknown"
+      },
+      {
+        "name": "2026-01-20_Trinayaan-Hariharan-x-Vrijen-Attawar",
+        "date": "2026-01-20",
+        "target_week": "Week-of-2026-01-19",
+        "collision": false,
+        "type_guess": "external"
+      },
+      {
+        "name": "2026-01-20_Trio-Standup",
+        "date": "2026-01-20",
+        "target_week": "Week-of-2026-01-19",
+        "collision": false,
+        "type_guess": "unknown"
+      },
+      {
+        "name": "2026-01-20_fwc-kfbq-dpv",
+        "date": "2026-01-20",
+        "target_week": "Week-of-2026-01-19",
+        "collision": false,
+        "type_guess": "unknown"
+      },
+      {
+        "name": "2026-01-25_external-tni-eqyh-sah-024646",
+        "date": "2026-01-25",
+        "target_week": "Week-of-2026-01-19",
+        "collision": false,
+        "type_guess": "external"
+      },
+      {
+        "name": "2026-01-25_external-tni-eqyh-sah-024754",
+        "date": "2026-01-25",
+        "target_week": "Week-of-2026-01-19",
+        "collision": false,
+        "type_guess": "external"
+      },
+      {
+        "name": "2026-01-26_Collateral-Blitz_Logan_P",
+        "date": "2026-01-26",
+        "target_week": "Week-of-2026-01-26",
+        "collision": false,
+        "type_guess": "unknown"
+      },
+      {
+        "name": "2026-01-26_Collateral-Blitz_Logan_[P]",
+        "date": "2026-01-26",
+        "target_week": "Week-of-2026-01-26",
+        "collision": true,
+        "type_guess": "internal"
+      }
+    ]
+  },
+  "migration_plan": {
+    "manifest_upgrades": 1,
+    "transcript_conversions": 1,
+    "archive_moves": 20,
+    "estimated_collisions": 2,
+    "details": {
+      "needs_manifest_upgrade": [
+        "_quarantine"
+      ],
+      "needs_transcript_conversion": [
+        "2026-01-26_Collateral-Blitz_Logan"
+      ],
+      "needs_archiving": [
+        "2025-11-13_careerspan-strategy-hiring-discussion_[P]",
+        "2025-11-14_Nicole_Holubar_x_Vrijen_Attawar_emory-partnership_[P]",
+        "2025-11-15_gfq-ywpy-pgs_[P]",
+        "2025-11-21_fxw-zpuz-bqx_[P]",
+        "2025-12-23_Meeting-with-Vrijen-Ankit",
+        "2026-01-12_2026-01-12-Impromptu-google-meet-meeting",
+        "2026-01-12_Impromptu-Google-Meet-Meeting",
+        "2026-01-15_debrief_on_selling_careerspan_from_ray",
+        "2026-01-16_2026-01-16-asher-king-abramson",
+        "2026-01-16_Thesis-Interview",
+        "2026-01-19_CareerSpan-CorridorX-Scoping",
+        "2026-01-20_Grind-oClock",
+        "2026-01-20_Record-sesh",
+        "2026-01-20_Trinayaan-Hariharan-x-Vrijen-Attawar",
+        "2026-01-20_Trio-Standup",
+        "2026-01-20_fwc-kfbq-dpv",
+        "2026-01-25_external-tni-eqyh-sah-024646",
+        "2026-01-25_external-tni-eqyh-sah-024754",
+        "2026-01-26_Collateral-Blitz_Logan_P",
+        "2026-01-26_Collateral-Blitz_Logan_[P]"
+      ]
+    }
+  }
+}

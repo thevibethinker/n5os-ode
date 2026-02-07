@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Founder building vibe-coded AI automation platforms"}, {"name": "AI automation platforms", "type": "TOOL", "context": "Platforms for AI-driven automation"}], "relationships": [{"from": "V", "to": "AI automation platforms", "type": "BUILDS", "context": "V is the founder of these platforms"}]}

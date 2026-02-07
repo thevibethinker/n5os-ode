@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ryan", "type": "PERSON", "context": "Has 12+ years in East Coast design agencies and worked at Google"}, {"name": "Google", "type": "ORG", "context": "Company where Ryan worked"}], "relationships": [{"from": "Ryan", "to": "Google", "type": "WORKS_WITH", "context": "Ryan worked at Google"}]}

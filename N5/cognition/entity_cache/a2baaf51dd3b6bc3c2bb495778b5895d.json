@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "refers to Vrijen, the subject of the text"}, {"name": "emojiRegex", "type": "TOOL", "context": "a tool used to match emoji in text"}], "relationships": [{"from": "V", "to": "emojiRegex", "type": "USES", "context": "V uses emojiRegex to match emoji in text"}]}

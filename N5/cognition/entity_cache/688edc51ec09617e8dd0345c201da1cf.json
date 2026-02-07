@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "an organization involved in signing partners"}, {"name": "Lensa", "type": "ORG", "context": "an organization involved in a pilot program"}], "relationships": [{"from": "Careerspan", "to": "Lensa", "type": "WORKS_WITH", "context": "potential collaboration if pilot succeeds"}]}

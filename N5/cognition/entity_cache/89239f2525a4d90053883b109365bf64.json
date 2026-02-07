@@ -1,0 +1,1 @@
+{"entities": [{"name": "SOCKS proxy", "type": "TOOL", "context": "A network protocol used for routing network packets between a client and server through a proxy server."}, {"name": "client", "type": "CONCEPT", "context": "Refers to the remote address that connects to the SOCKS proxy."}], "relationships": []}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "GoogleChromeLabs", "type": "ORG", "context": "organization mentioned in the example link"}, {"name": "PermissionsProcessor", "type": "TOOL", "context": "specific tool referenced for command logic"}], "relationships": []}

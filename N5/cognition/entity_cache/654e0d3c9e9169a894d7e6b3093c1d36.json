@@ -1,0 +1,1 @@
+{"entities": [{"name": "AI", "type": "CONCEPT", "context": "Context-based recall tool that helps find information"}, {"name": "context-based recall", "type": "CONCEPT", "context": "Method of finding information based on meaning"}], "relationships": [{"from": "AI", "to": "context-based recall", "type": "USES", "context": "AI enables context-based recall"}]}

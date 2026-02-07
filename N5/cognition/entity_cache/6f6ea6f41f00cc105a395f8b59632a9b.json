@@ -1,0 +1,1 @@
+{"entities": [{"name": "Internal - Product Synchronization", "type": "CONCEPT", "context": "Type of process within the knowledge system"}, {"name": "Daily Stand-up", "type": "EVENT", "context": "A recurring meeting related to the process"}, {"name": "INTERNAL", "type": "ORG", "context": "Stakeholder type involved in the process"}], "relationships": []}

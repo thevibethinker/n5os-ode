@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "speaker discussing work-related emotions"}, {"name": "company", "type": "ORG", "context": "organization causing emotional weight"}], "relationships": [{"from": "Vrijen Attawar", "to": "company", "type": "RELATED_TO", "context": "emotionally weighed down by the company"}]}

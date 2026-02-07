@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Individual implementing a workflow"}, {"name": "V workflow", "type": "CONCEPT", "context": "A method developed by V for creating content"}], "relationships": [{"from": "V", "to": "V workflow", "type": "KNOWS", "context": "V understands and applies this workflow"}]}

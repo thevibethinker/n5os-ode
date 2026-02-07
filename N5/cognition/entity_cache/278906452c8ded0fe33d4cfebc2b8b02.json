@@ -1,0 +1,1 @@
+{"entities": [{"name": "ttl", "type": "CONCEPT", "context": "time-expiring entries in caching systems"}, {"name": "get()", "type": "TOOL", "context": "method for retrieving items from cache"}], "relationships": []}

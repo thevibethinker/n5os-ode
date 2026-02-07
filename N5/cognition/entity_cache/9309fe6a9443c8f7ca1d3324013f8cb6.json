@@ -1,0 +1,1 @@
+{"entities": [{"name": "Logan Currie", "type": "PERSON", "context": "a person reading about ghost students"}, {"name": "ghost students", "type": "CONCEPT", "context": "the subject of the article being read"}], "relationships": [{"from": "Logan Currie", "to": "ghost students", "type": "MENTIONS", "context": "Logan is reading an article about ghost students"}]}

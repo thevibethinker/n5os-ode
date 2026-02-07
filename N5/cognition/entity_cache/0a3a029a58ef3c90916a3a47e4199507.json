@@ -1,0 +1,1 @@
+{"entities": [{"name": "David", "type": "PERSON", "context": "studied GTM as distinct discipline"}, {"name": "GTM", "type": "CONCEPT", "context": "a specialist field"}], "relationships": [{"from": "David", "to": "GTM", "type": "KNOWS", "context": "studied GTM as distinct discipline"}]}

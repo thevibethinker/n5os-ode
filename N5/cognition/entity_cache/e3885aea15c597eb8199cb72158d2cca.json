@@ -1,0 +1,1 @@
+{"entities": [{"name": "customer", "type": "PERSON", "context": "a member of the engaged community providing feedback"}], "relationships": [{"from": "V", "to": "customer", "type": "WORKS_WITH", "context": "V utilizes feedback from the customer"}]}

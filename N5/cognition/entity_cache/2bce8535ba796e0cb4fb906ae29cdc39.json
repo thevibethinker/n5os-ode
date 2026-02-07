@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual targeting acquisition"}], "relationships": [{"from": "V", "to": "acquisition", "type": "MENTIONS", "context": "discussing a financial target"}]}

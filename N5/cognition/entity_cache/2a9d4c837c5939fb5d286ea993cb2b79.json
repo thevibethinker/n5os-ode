@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "non-technical founder with strong system thinking"}, {"name": "software engineering", "type": "CONCEPT", "context": "field V is pushing boundaries to understand"}], "relationships": [{"from": "V", "to": "software engineering", "type": "RELATES_TO", "context": "V is pushing boundaries to understand software engineering"}]}

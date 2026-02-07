@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "person sending feedback"}, {"name": "Ray", "type": "PERSON", "context": "person receiving feedback"}], "relationships": [{"from": "Vrijen Attawar", "to": "Ray", "type": "WORKS_WITH", "context": "in the context of sending and receiving feedback"}]}

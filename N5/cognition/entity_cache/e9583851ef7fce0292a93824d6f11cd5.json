@@ -1,0 +1,1 @@
+{"entities": [{"name": "Theresa", "type": "PERSON", "context": "participant in the meeting"}, {"name": "Careerspan", "type": "ORG", "context": "organization related to the meeting"}], "relationships": [{"from": "Theresa", "to": "Careerspan", "type": "MENTIONS", "context": "Theresa's questions were about member value, related to Careerspan take rate"}]}

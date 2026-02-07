@@ -1,0 +1,1 @@
+{"entities": [{"name": "Python", "type": "TOOL", "context": "programming language used for classification"}, {"name": "Zo", "type": "TOOL", "context": "entity that processes the meeting transcripts"}], "relationships": [{"from": "Python", "to": "Zo", "type": "USES", "context": "Python classifies data that Zo processes"}]}

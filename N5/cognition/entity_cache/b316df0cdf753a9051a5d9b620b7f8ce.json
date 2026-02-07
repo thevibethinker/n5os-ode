@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "knowledge system user"}, {"name": "Careerspan", "type": "ORG", "context": "organization mentioned in GTM pivot"}], "relationships": [{"from": "V", "to": "Careerspan", "type": "MENTIONS", "context": "associated with GTM pivot"}]}

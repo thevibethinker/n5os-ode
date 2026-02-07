@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "organization involved in the partnership exploration"}, {"name": "FutureFit", "type": "ORG", "context": "organization involved in the partnership exploration"}], "relationships": [{"from": "Careerspan", "to": "FutureFit", "type": "WORKS_WITH", "context": "organizations exploring a partnership"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "workers", "type": "CONCEPT", "context": "a set of individuals whose status can be checked"}, {"name": "blocked", "type": "CONCEPT", "context": "a list of workers with a specific status"}, {"name": "id", "type": "TOOL", "context": "a unique identifier for each worker"}], "relationships": []}

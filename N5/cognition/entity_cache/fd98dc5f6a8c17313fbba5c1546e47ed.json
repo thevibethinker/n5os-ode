@@ -1,0 +1,1 @@
+{"entities": [{"name": "Jason", "type": "PERSON", "context": "Speaker discussing integration"}, {"name": "Generative UI engine", "type": "TOOL", "context": "Technology for powering websites"}], "relationships": [{"from": "Jason", "to": "Generative UI engine", "type": "MENTIONS", "context": "Discussing a technology for integration"}]}

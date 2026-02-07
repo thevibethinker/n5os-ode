@@ -1,0 +1,1 @@
+{"entities": [{"name": "Jacob", "type": "PERSON", "context": "Chief of Staff (strategic advisor)"}, {"name": "Sharon", "type": "PERSON", "context": "EA (operational support)"}], "relationships": [{"from": "Jacob", "to": "Sharon", "type": "WORKS_WITH", "context": "both have different types of access and relationship capital"}]}

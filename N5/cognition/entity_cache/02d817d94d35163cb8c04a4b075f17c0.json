@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "Individual with a knowledge system"}, {"name": "Markdown", "type": "TOOL", "context": "File format for documentation in the knowledge system"}], "relationships": [{"from": "V (Vrijen)", "to": "Markdown", "type": "USES", "context": "V employs Markdown for path to markdown file"}]}

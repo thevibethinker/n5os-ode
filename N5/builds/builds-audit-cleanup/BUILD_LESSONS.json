@@ -1,0 +1,11 @@
+{
+  "slug": "builds-audit-cleanup",
+  "learnings": [
+    {
+      "text": "Existing careerspan-webhook-v2 (port 8847) in Integrations/careerspan-webhook-v2/ currently only saves to inbox without triggering decomposer. New decomposer endpoint should use port 8848 to avoid conflicts. Existing FastAPI webhook patterns (recall-webhook, fathom-webhook) in N5/services/ use SQLite logging and should be referenced for consistency.",
+      "source": "manual",
+      "added_at": "2026-02-01T00:38:21.352717+00:00",
+      "tags": []
+    }
+  ]
+}

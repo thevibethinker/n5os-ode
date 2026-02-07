@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Founder with a specific mindset"}, {"name": "Ryan", "type": "PERSON", "context": "Embodies a facilitative, context-seeking mindset"}], "relationships": [{"from": "V", "to": "Ryan", "type": "MENTIONS", "context": "V questions if Ryan could help illuminate V's blind spots"}]}

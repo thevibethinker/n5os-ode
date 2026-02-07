@@ -1,0 +1,42 @@
+{
+  "schema_version": "1.0",
+  "slug": "even-realities-g2-guide",
+  "title": "Even Realities G2 & R1 Ring Combo Guide",
+  "objective": "Create comprehensive G2+R1 maximization guide at Research/consumer-tech/even-realities-g2-r1/",
+  "created": "2026-01-27",
+  "status": "complete",
+  "completed_at": "2026-01-27T20:00:00-05:00",
+  "type": "code_build",
+  "orchestrator_convo_id": null,
+  "workers": {
+    "total": 2,
+    "complete": 2,
+    "in_progress": 0,
+    "blocked": 0,
+    "pending": 2
+  },
+  "waves": [],
+  "worker_details": [],
+  "started_at": "2026-01-27T22:48:59.900359+00:00",
+  "drops": {
+    "D1.1": {
+      "id": "D1.1",
+      "wave": 1,
+      "status": "complete",
+      "title": "Forum Intelligence & Use Case Scraper",
+      "brief": "workers/D1.1-forum-intelligence.md",
+      "failure_reason": "",
+      "conversation_id": "con_tbbJKtr394qHCFZU"
+    },
+    "D1.2": {
+      "id": "D1.2",
+      "wave": 1,
+      "status": "complete",
+      "title": "R1 Gesture & HAO Optimization Map",
+      "brief": "workers/D1.2-gesture-mapping.md",
+      "failure_reason": "",
+      "conversation_id": "con_v19NvtHIYMYFFvOv"
+    }
+  },
+  "output_path": "Research/consumer-tech/even-realities-g2-r1/"
+}

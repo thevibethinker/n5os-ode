@@ -1,0 +1,1 @@
+{"entities": [{"name": "N5 scripts", "type": "TOOL", "context": "scripts used in V's knowledge system"}, {"name": "v3-aware helpers", "type": "TOOL", "context": "helpers compatible with V's system"}], "relationships": [{"from": "N5 scripts", "to": "v3-aware helpers", "type": "RELATED_TO", "context": "N5 scripts depend on v3-aware helpers"}]}

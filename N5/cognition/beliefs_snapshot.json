@@ -1,0 +1,74 @@
+{
+  "exported_at": "2026-02-01T02:52:11.319579",
+  "count": 5,
+  "beliefs": [
+    {
+      "id": "belief_5193bb3a0b33",
+      "content": "User prefers dark mode interfaces",
+      "confidence": 0.7000000000000001,
+      "domain": "preference",
+      "source": "inferred",
+      "evidence_json": "[\"block_001\", \"block_002\"]",
+      "created_at": "2026-02-01T02:43:12.732769",
+      "updated_at": "2026-02-01T02:43:12.734916",
+      "validation_count": 0,
+      "status": "active",
+      "evidence": [
+        "block_001",
+        "block_002"
+      ]
+    },
+    {
+      "id": "belief_1e85af0c992e",
+      "content": "User is a software engineer",
+      "confidence": 0.9,
+      "domain": "identity",
+      "source": "explicit",
+      "evidence_json": null,
+      "created_at": "2026-02-01T02:43:12.736333",
+      "updated_at": "2026-02-01T02:43:12.736333",
+      "validation_count": 0,
+      "status": "active",
+      "evidence": []
+    },
+    {
+      "id": "belief_d1460b3642eb",
+      "content": "User lives in New York",
+      "confidence": 0.4,
+      "domain": "identity",
+      "source": "inferred",
+      "evidence_json": null,
+      "created_at": "2026-02-01T02:43:12.737836",
+      "updated_at": "2026-02-01T02:43:12.737836",
+      "validation_count": 0,
+      "status": "active",
+      "evidence": []
+    },
+    {
+      "id": "belief_f06aed887e88",
+      "content": "User likes Python",
+      "confidence": 0.9,
+      "domain": "preference",
+      "source": "explicit",
+      "evidence_json": null,
+      "created_at": "2026-02-01T02:43:12.743143",
+      "updated_at": "2026-02-01T02:43:12.743143",
+      "validation_count": 0,
+      "status": "active",
+      "evidence": []
+    },
+    {
+      "id": "belief_8a8d4fd3881f",
+      "content": "User works at TechCorp",
+      "confidence": 0.7,
+      "domain": "identity",
+      "source": "inferred",
+      "evidence_json": null,
+      "created_at": "2026-02-01T02:43:12.744615",
+      "updated_at": "2026-02-01T02:43:12.744615",
+      "validation_count": 0,
+      "status": "active",
+      "evidence": []
+    }
+  ]
+}

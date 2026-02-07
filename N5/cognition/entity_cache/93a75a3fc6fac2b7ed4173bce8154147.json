@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Team member"}, {"name": "Kermit the Frog", "type": "CONCEPT", "context": "Identifies as spirit animal"}], "relationships": [{"from": "V", "to": "Kermit the Frog", "type": "BELIEVES", "context": "Identifies with Kermit the Frog as spirit animal"}]}

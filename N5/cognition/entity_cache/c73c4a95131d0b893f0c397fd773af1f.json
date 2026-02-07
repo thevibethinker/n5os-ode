@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual with a knowledge system"}, {"name": "Pangram", "type": "TOOL", "context": "software used for analysis"}], "relationships": [{"from": "V", "to": "Pangram", "type": "USES", "context": "V uses Pangram for analyzing AI detection"}]}

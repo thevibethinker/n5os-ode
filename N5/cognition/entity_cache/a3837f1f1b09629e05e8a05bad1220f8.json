@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Owner of the knowledge system"}, {"name": "Skyline", "type": "PERSON", "context": "Person that V wants to connect with on LinkedIn"}], "relationships": [{"from": "V", "to": "Skyline", "type": "KNOWS", "context": "V wants to add Skyline as a LinkedIn connection"}]}

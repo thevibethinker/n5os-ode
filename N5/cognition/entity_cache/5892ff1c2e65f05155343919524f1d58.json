@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual building a sourcing solution"}, {"name": "Careerspan", "type": "ORG", "context": "platform for candidate discovery/quality assurance"}], "relationships": [{"from": "V (Vrijen)", "to": "Careerspan", "type": "WORKS_WITH", "context": "partnership to improve candidate discovery and quality assurance"}]}

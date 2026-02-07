@@ -1,0 +1,1 @@
+{"entities": [{"name": "LD-INT", "type": "CONCEPT", "context": "Internal team coordination"}, {"name": "GPT-M", "type": "CONCEPT", "context": "Mid-stage operations (onboarding, documentation)"}, {"name": "A-1", "type": "CONCEPT", "context": "Structured/formal internal process documentation"}], "relationships": []}

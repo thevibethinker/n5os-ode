@@ -1,0 +1,1 @@
+{"entities": [{"name": "Gabi Zijderveld", "type": "PERSON", "context": "individual discussing subscription"}, {"name": "Claude", "type": "TOOL", "context": "AI tool for which a subscription is paid"}], "relationships": [{"from": "Gabi Zijderveld", "to": "Claude", "type": "USES", "context": "Gabi pays for and uses Claude"}]}

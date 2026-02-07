@@ -1,0 +1,268 @@
+{
+  "id": "jPQRwpT4nGus",
+  "name": "Next Play - Fundamentals of AI Productivity Pre-Event Survey",
+  "tags": [
+    "form"
+  ],
+  "questions": [
+    {
+      "id": "dGZw",
+      "name": "Are you a member of the Next Play community AND attending the Jan 29 Fundamentals of AI Productivity?",
+      "type": "MultipleChoice",
+      "options": [
+        {
+          "id": "cAzP",
+          "value": "Yes",
+          "label": "Yes"
+        },
+        {
+          "id": "oFQR",
+          "value": "No",
+          "label": "No"
+        }
+      ]
+    },
+    {
+      "id": "bxyM",
+      "name": "What AI tools or features are you currently using? (select all that apply)",
+      "type": "Checkboxes",
+      "options": [
+        {
+          "id": "kPwE",
+          "value": "I do not regularly use AI tools or features",
+          "label": "I do not regularly use AI tools or features"
+        },
+        {
+          "id": "3X18",
+          "value": "I use AI features within traditional products e.g. Word, Adobe, etc.",
+          "label": "I use AI features within traditional products e.g. Word, Adobe, etc."
+        },
+        {
+          "id": "trMV",
+          "value": "Consumer (Chatbot) AI: ChatGPT, Claude, Gemini, etc.",
+          "label": "Consumer (Chatbot) AI: ChatGPT, Claude, Gemini, etc."
+        },
+        {
+          "id": "nazB",
+          "value": "Consumer (non-Chatbot) AI: Canva, Jasper, etc.",
+          "label": "Consumer (non-Chatbot) AI: Canva, Jasper, etc."
+        },
+        {
+          "id": "cTeB",
+          "value": "AI Search: Perplexity, ChatGPT, Gemini, etc.",
+          "label": "AI Search: Perplexity, ChatGPT, Gemini, etc."
+        },
+        {
+          "id": "88gz",
+          "value": "Image/Video Gen: Nano Banana, Image 1.5, Midjourney, Sora, etc.",
+          "label": "Image/Video Gen: Nano Banana, Image 1.5, Midjourney, Sora, etc."
+        },
+        {
+          "id": "aRDB",
+          "value": "B2B AI: Copilot, Harvey AI, Figma, etc.",
+          "label": "B2B AI: Copilot, Harvey AI, Figma, etc."
+        },
+        {
+          "id": "v4fv",
+          "value": "Agentic AI: Claude Code, Manus, Zo.computer, etc.",
+          "label": "Agentic AI: Claude Code, Manus, Zo.computer, etc."
+        },
+        {
+          "id": "fja1",
+          "value": "IDE/ADEs: Cursor, Warp, Antigravity, etc.",
+          "label": "IDE/ADEs: Cursor, Warp, Antigravity, etc."
+        }
+      ]
+    },
+    {
+      "id": "qgxH",
+      "name": "What's your biggest challenge with AI tools right now?",
+      "type": "MultipleChoice",
+      "options": [
+        {
+          "id": "2uWi",
+          "value": "I don't know where to start",
+          "label": "I don't know where to start"
+        },
+        {
+          "id": "2ZAH",
+          "value": "I start but can't stick with it",
+          "label": "I start but can't stick with it"
+        },
+        {
+          "id": "hgki",
+          "value": "I get results but they're inconsistent",
+          "label": "I get results but they're inconsistent"
+        },
+        {
+          "id": "cvJB",
+          "value": "I know the basics but can't level up",
+          "label": "I know the basics but can't level up"
+        },
+        {
+          "id": "71Sv",
+          "value": "I'm overwhelmed by all the options",
+          "label": "I'm overwhelmed by all the options"
+        }
+      ]
+    },
+    {
+      "id": "sLMq",
+      "name": "How would you describe your current AI usage?",
+      "type": "MultipleChoice",
+      "options": [
+        {
+          "id": "8osb",
+          "value": "I rarely use AI tools",
+          "label": "I rarely use AI tools"
+        },
+        {
+          "id": "xr6i",
+          "value": "I use ChatGPT occasionally for basic tasks",
+          "label": "I use ChatGPT occasionally for basic tasks"
+        },
+        {
+          "id": "fdKv",
+          "value": "I use AI regularly but feel like I'm just scratching the surface",
+          "label": "I use AI regularly but feel like I'm just scratching the surface"
+        },
+        {
+          "id": "eZMY",
+          "value": "I use AI daily and have built some workflows",
+          "label": "I use AI daily and have built some workflows"
+        },
+        {
+          "id": "uN44",
+          "value": "I'm an advanced user looking to level up further",
+          "label": "I'm an advanced user looking to level up further"
+        }
+      ]
+    },
+    {
+      "id": "qurD",
+      "name": "How do you FEEL about AI right now?",
+      "type": "MultipleChoice",
+      "options": [
+        {
+          "id": "sJtA",
+          "value": "1 = 😰 Anxious / Overwhelmed",
+          "label": "1 = 😰 Anxious / Overwhelmed"
+        },
+        {
+          "id": "qDL2",
+          "value": "2 = 🤔 Skeptical / Cautious",
+          "label": "2 = 🤔 Skeptical / Cautious"
+        },
+        {
+          "id": "2sed",
+          "value": "3 = 😐 Neutral / Curious",
+          "label": "3 = 😐 Neutral / Curious"
+        },
+        {
+          "id": "pTwf",
+          "value": "4 = 😊 Optimistic / Interested",
+          "label": "4 = 😊 Optimistic / Interested"
+        },
+        {
+          "id": "dt9n",
+          "value": "5 = 🚀 Excited / All-in",
+          "label": "5 = 🚀 Excited / All-in"
+        }
+      ]
+    },
+    {
+      "id": "qJQ5",
+      "name": "What would make this session valuable for you?",
+      "type": "MultipleChoice",
+      "options": [
+        {
+          "id": "fcnw",
+          "value": "Simple tactics I can use immediately",
+          "label": "Simple tactics I can use immediately"
+        },
+        {
+          "id": "foXa",
+          "value": "Understanding how to think about AI differently",
+          "label": "Understanding how to think about AI differently"
+        },
+        {
+          "id": "ptvc",
+          "value": "Seeing what's possible at an advanced level",
+          "label": "Seeing what's possible at an advanced level"
+        },
+        {
+          "id": "pm3G",
+          "value": "Getting templates/prompts I can copy",
+          "label": "Getting templates/prompts I can copy"
+        },
+        {
+          "id": "j5Hv",
+          "value": "Learning how to build my own system over time",
+          "label": "Learning how to build my own system over time"
+        }
+      ]
+    },
+    {
+      "id": "nkxv",
+      "name": "What are 1-3 repetitive, computer-based tasks that drain your energy and reduce your productivity?",
+      "type": "ShortAnswer"
+    },
+    {
+      "id": "moGb",
+      "name": "How much time per week do you estimate you spend on repetitive computer tasks?",
+      "type": "MultipleChoice",
+      "options": [
+        {
+          "id": "uFkP",
+          "value": "Less than 1 hour",
+          "label": "Less than 1 hour"
+        },
+        {
+          "id": "8BWz",
+          "value": "1-3 hours",
+          "label": "1-3 hours"
+        },
+        {
+          "id": "hDSA",
+          "value": "3-5 hours",
+          "label": "3-5 hours"
+        },
+        {
+          "id": "waeg",
+          "value": "5-10 hours",
+          "label": "5-10 hours"
+        },
+        {
+          "id": "qGwn",
+          "value": "10+ hours",
+          "label": "10+ hours"
+        },
+        {
+          "id": "nNRx",
+          "value": "No idea",
+          "label": "No idea"
+        }
+      ]
+    },
+    {
+      "id": "tVXP",
+      "name": "What's your current role or title?",
+      "type": "ShortAnswer"
+    },
+    {
+      "id": "dfLX",
+      "name": "What function or department do you work in?",
+      "type": "ShortAnswer"
+    },
+    {
+      "id": "dYMW",
+      "name": "How would you describe your current career stage?",
+      "type": "ShortAnswer"
+    }
+  ],
+  "calculations": [],
+  "urlParameters": [],
+  "documents": [],
+  "scheduling": [],
+  "payments": []
+}

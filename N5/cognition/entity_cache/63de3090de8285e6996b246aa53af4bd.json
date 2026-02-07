@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "V is associated with the knowledge system mentioned."}, {"name": "Syncthing", "type": "TOOL", "context": "Syncthing is used as a web UI for device synchronization."}], "relationships": [{"from": "V", "to": "Syncthing", "type": "USES", "context": "V uses Syncthing as part of the knowledge system."}]}

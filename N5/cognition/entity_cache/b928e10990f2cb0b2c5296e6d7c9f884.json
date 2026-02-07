@@ -1,0 +1,1 @@
+{"entities": [{"name": "smart-buffer", "type": "TOOL", "context": "A light Buffer wrapper for managing data reading and writing"}, {"name": "Buffer", "type": "CONCEPT", "context": "The underlying data structure that smart-buffer operates on"}], "relationships": [{"from": "smart-buffer", "to": "Buffer", "type": "USES", "context": "smart-buffer operates on the underlying Buffer"}]}

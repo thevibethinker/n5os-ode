@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker in the dialogue"}, {"name": "custom job board", "type": "TOOL", "context": "Type of tool being discussed"}], "relationships": [{"from": "Vrijen Attawar", "to": "custom job board", "type": "MENTIONS", "context": "Talking about a possible solution or tool"}]}

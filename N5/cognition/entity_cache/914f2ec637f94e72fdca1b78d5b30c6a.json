@@ -1,0 +1,1 @@
+{"entities": [{"name": "FTPError", "type": "CONCEPT", "context": "an error reported by the FTP server"}, {"name": "Client", "type": "TOOL", "context": "the instance used to connect to the FTP server"}], "relationships": [{"from": "Client", "to": "FTPError", "type": "USES", "context": "the Client can continue to operate despite FTPError"}]}

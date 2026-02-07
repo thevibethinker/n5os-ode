@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Refers to Vrijen Attawar"}, {"name": "ChatGPT", "type": "TOOL", "context": "A tool that is being compared to V's knowledge system"}], "relationships": [{"from": "V", "to": "ChatGPT", "type": "RELATED_TO", "context": "V mentions ChatGPT as a reference point for explaining his knowledge system"}]}

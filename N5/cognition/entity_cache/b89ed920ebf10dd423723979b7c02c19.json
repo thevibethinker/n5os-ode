@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "has a knowledge system for product development"}], "relationships": [{"from": "Vrijen", "to": "user love as asset", "type": "BELIEVES", "context": "indicates a sign of product-market fit"}]}

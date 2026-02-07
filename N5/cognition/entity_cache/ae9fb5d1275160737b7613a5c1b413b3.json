@@ -1,0 +1,1 @@
+{"entities": [{"name": "The Movie Database", "type": "ORG", "context": "Online database for movies"}, {"name": "Zo Stream", "type": "ORG", "context": "Streaming service requiring user authentication"}, {"name": "subtitle languages", "type": "CONCEPT", "context": "List of supported languages for subtitles"}], "relationships": []}

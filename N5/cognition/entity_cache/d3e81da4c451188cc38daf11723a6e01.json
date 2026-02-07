@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "creator and maintainer of the knowledge system"}, {"name": "linkedin-kondo-integration", "type": "TOOL", "context": "integration capability for LinkedIn"}], "relationships": [{"from": "V (Vrijen)", "to": "linkedin-kondo-integration", "type": "USES", "context": "V uses this tool for integration"}]}

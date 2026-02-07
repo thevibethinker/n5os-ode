@@ -1,0 +1,1 @@
+{"entities": [{"name": "python3 N5/scripts/load_preferences.py", "type": "TOOL", "context": "Script for loading preferences"}, {"name": "python3 N5/scripts/validate_commands.py", "type": "TOOL", "context": "Script for validating command registry"}], "relationships": []}

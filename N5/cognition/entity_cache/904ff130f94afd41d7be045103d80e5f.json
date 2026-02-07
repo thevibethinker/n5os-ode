@@ -1,0 +1,1 @@
+{"entities": [{"name": "Griffin", "type": "PERSON", "context": "a person whose response indicates engagement"}, {"name": "MENG", "type": "ORG", "context": "organisation associated with the demo call"}], "relationships": [{"from": "Griffin", "to": "MENG", "type": "RELATED_TO", "context": "Griffin's response signals engagement, leading to actions involving MENG"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Nicole", "type": "PERSON", "context": "works with V to define the initial alumni segment"}], "relationships": [{"from": "V", "to": "Nicole", "type": "WORKS_WITH", "context": "collaborates on defining alumni segment"}]}

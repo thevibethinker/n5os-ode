@@ -1,0 +1,1 @@
+{"entities": [{"name": "MG-3 Agent", "type": "ORG", "context": "meeting blurb generation tool"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "individual with knowledge system"}], "relationships": [{"from": "V (Vrijen)", "to": "MG-3 Agent", "type": "USES", "context": "V utilizes MG-3 Agent for meeting blurb generation"}]}

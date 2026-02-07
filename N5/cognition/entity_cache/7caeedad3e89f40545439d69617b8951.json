@@ -1,0 +1,1 @@
+{"entities": [{"name": "JP Morgan", "type": "ORG", "context": "potential sponsor"}, {"name": "Caleb", "type": "PERSON", "context": "reaching out to investor network for sponsorship"}], "relationships": [{"from": "Caleb", "to": "JP Morgan", "type": "WORKS_WITH", "context": "potential sponsorship collaboration"}]}

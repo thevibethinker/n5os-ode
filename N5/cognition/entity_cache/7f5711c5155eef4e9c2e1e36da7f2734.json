@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "individual discussing his knowledge system"}, {"name": "Careerspan", "type": "ORG", "context": "team that Vrijen is part of"}], "relationships": [{"from": "Vrijen", "to": "Careerspan", "type": "WORKS_WITH", "context": "Vrijen is part of the Careerspan team"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Aspire alumni", "type": "PERSON", "context": "group of individuals who have completed Aspire program"}, {"name": "Careerspan", "type": "ORG", "context": "organization with which Aspire alumni engaged"}], "relationships": [{"from": "Aspire alumni", "to": "Careerspan", "type": "ENGAGES_WITH", "context": "Aspire alumni engaged meaningfully with Careerspan"}]}

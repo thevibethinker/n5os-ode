@@ -1,0 +1,1 @@
+{"entities": [{"name": "Zo Wrapped", "type": "TOOL", "context": "an automated year-in-review engine"}, {"name": "V", "type": "PERSON", "context": "the subject whose progress is being celebrated"}], "relationships": [{"from": "V", "to": "Zo Wrapped", "type": "USES", "context": "V uses Zo Wrapped to transform workspace activity into a visual narrative"}]}

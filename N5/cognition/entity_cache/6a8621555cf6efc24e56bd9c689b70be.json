@@ -1,0 +1,1 @@
+{"entities": [{"name": "You", "type": "PERSON", "context": "User interacting with the LLM"}, {"name": "LLM", "type": "TOOL", "context": "Language Model being used for interaction"}], "relationships": [{"from": "You", "to": "LLM", "type": "USES", "context": "User is using the LLM for conversation and commands"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Zo Computer", "type": "ORG", "context": "organization related to computer technology"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "the individual facilitating a connection"}], "relationships": [{"from": "V (Vrijen)", "to": "Zo Computer", "type": "WORKS_WITH", "context": "committed to connecting with the founders"}]}

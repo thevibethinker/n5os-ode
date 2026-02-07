@@ -1,0 +1,1 @@
+{"entities": [{"name": "QueueFullError", "type": "TOOL", "context": "exception raised when the queue is full"}, {"name": "entry", "type": "CONCEPT", "context": "data structure representing a meeting entry with a meeting_id"}], "relationships": []}

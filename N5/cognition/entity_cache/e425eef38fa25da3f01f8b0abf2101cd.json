@@ -1,0 +1,1 @@
+{"entities": [{"name": "Michael Maher", "type": "PERSON", "context": "participant in the source meeting"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "central figure in the knowledge system"}], "relationships": [{"from": "V (Vrijen)", "to": "Michael Maher", "type": "KNOWS", "context": "attended the same meeting"}]}

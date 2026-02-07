@@ -1,0 +1,1 @@
+{"entities": [{"name": "Garrettlang", "type": "PERSON", "context": "Email contact for V"}, {"name": "Personal (gmail.com)", "type": "ORG", "context": "Email organization associated with Garrettlang"}], "relationships": [{"from": "V", "to": "Garrettlang", "type": "KNOWS", "context": "V has contacted Garrettlang"}]}

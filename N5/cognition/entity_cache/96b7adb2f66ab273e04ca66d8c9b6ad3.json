@@ -1,0 +1,1 @@
+{"entities": [{"name": "Thomas Frank", "type": "PERSON", "context": "a great manager"}], "relationships": [{"from": "Vrijen Attawar", "to": "Thomas Frank", "type": "KNOWS", "context": "referring to his admiration for Thomas Frank's managerial skills"}]}

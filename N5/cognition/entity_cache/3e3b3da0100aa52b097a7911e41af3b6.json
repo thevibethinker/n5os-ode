@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual knowledgeable about a community approach"}, {"name": "Reforge", "type": "ORG", "context": "organization hesitant to work with third parties"}], "relationships": [{"from": "V", "to": "Reforge", "type": "WORKS_WITH", "context": "implies a cautious relationship towards collaboration"}]}

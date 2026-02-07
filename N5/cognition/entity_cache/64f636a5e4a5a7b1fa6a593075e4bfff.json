@@ -1,0 +1,1 @@
+{"entities": [{"name": "Griffin", "type": "PERSON", "context": "individual advocating for Careerspan"}, {"name": "Careerspan", "type": "ORG", "context": "the organization being championed by Griffin"}], "relationships": [{"from": "Griffin", "to": "Careerspan", "type": "MENTIONS", "context": "Griffin advocates for Careerspan"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "the individual sharing the insight"}, {"name": "insight", "type": "BELIEF", "context": "the knowledge shared by V regarding contacts and meetings"}], "relationships": [{"from": "V", "to": "insight", "type": "BELIEVES", "context": "V believes in the effectiveness of fewer contacts compared to meetings or emails"}]}

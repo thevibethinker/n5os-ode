@@ -1,0 +1,1 @@
+{"entities": [{"name": "Howie V-OS", "type": "TOOL", "context": "tags related to Howie V's knowledge system"}, {"name": "Marcus", "type": "PERSON", "context": "individual to coordinate with for meetings"}], "relationships": [{"from": "Howie V-OS", "to": "Marcus", "type": "WORKS_WITH", "context": "coordinate for scheduling meetings"}]}

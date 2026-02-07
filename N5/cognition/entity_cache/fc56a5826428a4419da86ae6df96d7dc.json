@@ -1,0 +1,1 @@
+{"entities": [{"name": "Micra Vandali", "type": "PERSON", "context": "discussing test roles for the Careerspan experiment"}], "relationships": [{"from": "V", "to": "Micra Vandali", "type": "WORKS_WITH", "context": "discussing test roles"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ashraf", "type": "PERSON", "context": "former admin of major product communities"}, {"name": "Careerspan", "type": "ORG", "context": "organization seeking advice on commercial partnerships"}], "relationships": [{"from": "Ashraf", "to": "Careerspan", "type": "WORKS_WITH", "context": "providing advice to avoid dead-ends in partnerships"}]}

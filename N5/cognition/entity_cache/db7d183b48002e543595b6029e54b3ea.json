@@ -1,0 +1,1 @@
+{"entities": [{"name": "Asher King-Abramson", "type": "PERSON", "context": "Founder of Warmer Jobs"}, {"name": "Warmer Jobs", "type": "ORG", "context": "Organization founded by Asher King-Abramson"}], "relationships": [{"from": "Asher King-Abramson", "to": "Warmer Jobs", "type": "FOUNDED", "context": "Asher is the founder of the organization"}]}

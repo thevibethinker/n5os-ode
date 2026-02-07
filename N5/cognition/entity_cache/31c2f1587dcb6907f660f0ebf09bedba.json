@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "a figure associated with a knowledge system"}, {"name": "not being precious", "type": "BELIEF", "context": "an attitude towards structure and flexibility"}], "relationships": [{"from": "V", "to": "not being precious", "type": "BELIEVES", "context": "V believes in being flexible and open to adjusting course"}]}

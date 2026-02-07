@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Individual with a proactive communication style"}, {"name": "Nira", "type": "ORG", "context": "Potential B2B SaaS company"}], "relationships": [{"from": "V", "to": "Nira", "type": "RELATED_TO", "context": "Interest in partnership/community GTM strategies"}]}

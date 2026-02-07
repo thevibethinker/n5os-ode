@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual associated with the knowledge system"}], "relationships": [{"from": "V", "to": "friend/early believer pricing", "type": "MENTIONS", "context": "specific pricing strategy mentioned by V"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "The individual whose knowledge system is being described"}, {"name": "Vrijen", "type": "ORG", "context": "The name associated with V's knowledge system in the context"}, {"name": "CLI", "type": "TOOL", "context": "The command line interface mentioned in relation to the search command"}], "relationships": []}

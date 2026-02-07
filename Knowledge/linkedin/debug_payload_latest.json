@@ -1,40 +1,29 @@
 {
   "data": {
-    "contact_first_name": "Holly",
-    "contact_last_name": "Sanders",
-    "contact_connected_at": "2025-08-07T15:12:10.000Z",
+    "contact_first_name": "Ryan",
+    "contact_last_name": "Herd",
+    "contact_connected_at": "2026-01-21T15:29:10.000Z",
     "contact_connected_by": "vrijenattawar",
     "contact_linkedin_handle": null,
-    "contact_linkedin_uid": "397232268",
-    "contact_linkedin_url": "https://www.linkedin.com/in/ACoAABetSIwBlI8hULKgPm7OMxTjjEwuH_Q8r6Q",
-    "contact_headline": "Founder @ Matchbox | Built for Startups",
+    "contact_linkedin_uid": "20607357",
+    "contact_linkedin_url": "https://www.linkedin.com/in/ACoAAAE6cX0BPOZIs0sF8kQ3SdUYS1NEWBEQOD0",
+    "contact_headline": "Relentless Builder of What Matters | Strategic Tech Executive | AI & IoT Leader | 3x Exited Founder | TEDx Speaker | $50M+ Impact | Former Mayor | Media Contributor (Fox, CNN) | Dad & IRONMAN",
     "contact_location": null,
-    "contact_picture": "https://media.licdn.com/dms/image/v2/D5603AQF_fewrhlJIKw/profile-displayphoto-shrink_200_200/B56ZX0A8fCHEAY-/0/1743555643822?e=1770854400&v=beta&t=1_gq-B4HXvXzaq95Uh5A6M1BVKkFt4tIivcP3UlNut8",
-    "conversation_latest_content": "Do send ",
-    "conversation_latest_timestamp": "2026-01-22T20:58:47.292Z",
-    "conversation_starred": true,
-    "conversation_status": "waiting_for_their_reply",
+    "contact_picture": "https://media.licdn.com/dms/image/v2/D4E03AQHbTeokm4yunQ/profile-displayphoto-scale_400_400/B4EZsP4Yz8HcAg-/0/1765497999155?e=1772064000&v=beta&t=XSYEWjIlxaWv7pu9OFifBfG8U4-aIvUIuYAq-O36atU",
+    "conversation_latest_content": "Appreciate the connection again, Vrijen.\n\nThe words I’ve been hearing a lot from CEOs going into 2026:\nPressure. Crazy. Uncertain. Downturn. Rebuild.\n\nIn my work with companies this past year, the path has been:\nStabilize → Normalize → Strategize.\n\nIf that resonates, I’d be glad to share what’s actually working across the board — leadership, ops, AI integration, client retention, whatever’s top of mind.\n\nHere’s my calendar to make it easy — pick the best day and time that works for you:\n👉 https://calendar.app.google/avTHxMEHzqdoEGTs8\n\nHope to chat soon.\n— Ryan",
+    "conversation_latest_timestamp": "2026-01-26T11:32:49.342Z",
+    "conversation_starred": false,
+    "conversation_status": "waiting_for_my_reply",
     "conversation_state": "in_inbox",
-    "kondo_url": "https://app.trykondo.com/inboxes/all/315826042%2B2-NWMxM2FkMzktZTExMy00ODk2LWE2NDEtYmFiYmY0NGMxZjAyXzEwMA%3D%3D",
-    "kondo_note": null,
-    "kondo_labels": [
-      {
-        "kondo_label_id": "33204022-157c-451c-98b1-26665d6562a1",
-        "kondo_label_name": "Founder",
-        "kondo_labeled_at": "2025-08-27T11:02:44.565Z"
-      },
-      {
-        "kondo_label_id": "4a5833e3-6d72-4234-867d-825f72d92d84",
-        "kondo_label_name": "Hiring-side",
-        "kondo_labeled_at": "2025-08-27T11:02:44.565Z"
-      }
-    ]
+    "kondo_url": "https://app.trykondo.com/inboxes/all/315826042%2B2-ODNkYjc5NzEtZWEyMy00NDlmLTgzNWMtM2MyODY3ZDVkYWM5XzEwMA%3D%3D",
+    "kondo_note": "",
+    "kondo_labels": []
   },
   "event": {
-    "_id": "VD8fMPdhF6XQAJwIZZ0ECC3oh1I4C-XN-zFUl7zUDew",
+    "_id": "Zv058Z7WsADg4grTXOCtxUsj9eeny0QsP5-PUx1u6Ik",
     "email": "attawar.v@gmail.com",
     "teamspace": "3de4a246-2706-4091-8197-02af81cc5411",
-    "timestamp": 1769117018156,
+    "timestamp": 1770224442413,
     "type": "general-update",
     "webhook": "550acaf9-638d-4c62-8758-7a750dc89313",
     "workspace": "6055c6e5-55d3-4bc6-b8a4-2f796a504c5a"

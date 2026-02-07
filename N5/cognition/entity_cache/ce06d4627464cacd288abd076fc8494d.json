@@ -1,0 +1,1 @@
+{"entities": [{"name": "auto-generation system", "type": "CONCEPT", "context": "system for creating thread titles"}, {"name": "emoji prefixes", "type": "TOOL", "context": "used for thread naming"}, {"name": "thread names", "type": "CONCEPT", "context": "names of discussion threads"}], "relationships": []}

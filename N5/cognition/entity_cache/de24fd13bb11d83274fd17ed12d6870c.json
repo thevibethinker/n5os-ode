@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "Chief Technology Officer and Head of AI Engineering"}, {"name": "V-OS system", "type": "TOOL", "context": "system used for coordination in V's role"}], "relationships": [{"from": "V (Vrijen)", "to": "V-OS system", "type": "USES", "context": "Using V-OS system for coordination in technology and AI engineering"}]}

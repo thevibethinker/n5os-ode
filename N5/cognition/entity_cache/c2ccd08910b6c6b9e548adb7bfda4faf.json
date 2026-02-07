@@ -1,0 +1,1 @@
+{"entities": [{"name": "Plaud", "type": "PERSON", "context": "joked about financial constraints"}, {"name": "retirement account", "type": "CONCEPT", "context": "financial investment mention"}], "relationships": [{"from": "Plaud", "to": "retirement account", "type": "MENTIONS", "context": "refers to financial investment options"}]}

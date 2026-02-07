@@ -1,0 +1,1 @@
+{"entities": [{"name": "Career Span", "type": "TOOL", "context": "A tool used by V for career-related tasks"}], "relationships": [{"from": "V", "to": "Career Span", "type": "USES", "context": "V uses Career Span for career management"}]}

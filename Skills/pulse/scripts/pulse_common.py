@@ -221,6 +221,53 @@ def list_builds(status: str = None) -> list[str]:
     return sorted(builds)
 
 
+def parse_drop_id(drop_id: str) -> tuple[int, int]:
+    """Parse drop ID into stream and order, supporting multi-digit streams and orders.
+    
+    Returns (0, 0) for invalid/unparseable IDs (e.g., checkpoints, malformed).
+    """
+    if not drop_id or not drop_id.startswith("D"):
+        return (0, 0)
+    parts = drop_id.split(".")
+    if len(parts) != 2:
+        return (0, 0)
+    try:
+        stream = int(parts[0][1:])
+        order = int(parts[1])
+        return (stream, order)
+    except (ValueError, IndexError):
+        return (0, 0)
+
+
+def parse_wave_key(wave_key: str) -> int:
+    """Parse wave key into index, supporting W<index>."""
+    if not wave_key.startswith("W"):
+        raise ValueError(f"Invalid wave key format: {wave_key}")
+    try:
+        index = int(wave_key[1:])
+    except ValueError:
+        raise ValueError(f"Invalid wave key format: {wave_key}")
+    return index
+
+
+def sort_wave_keys(keys: list[str]) -> list[str]:
+    """Sort wave keys in ascending order."""
+    return sorted(keys, key=lambda k: parse_wave_key(k))
+
+
+def get_drop_stream_order(drop_id: str, info: dict) -> tuple[int, int]:
+    """Get drop stream and order from info['stream']/info['order'] if present else parse_drop_id."""
+    if "stream" in info and "order" in info:
+        try:
+            stream = int(info["stream"])
+            order = int(info["order"])
+        except (ValueError, TypeError):
+            stream, order = parse_drop_id(drop_id)
+    else:
+        stream, order = parse_drop_id(drop_id)
+    return stream, order
+
+
 if __name__ == "__main__":
     # Quick test / info
     print("Pulse Common Module")

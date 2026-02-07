@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "refers to Vrijen"}, {"name": "meeting_cli.py", "type": "TOOL", "context": "a script used for meeting ingestion and processing"}], "relationships": [{"from": "V", "to": "meeting_cli.py", "type": "USES", "context": "V uses this tool to manage meeting data"}]}

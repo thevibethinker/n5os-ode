@@ -1,0 +1,1 @@
+{"entities": [{"name": "bash", "type": "TOOL", "context": "a command-line shell used for scripting"}, {"name": "jq", "type": "TOOL", "context": "a command-line JSON processor"}, {"name": "use_app_google_drive", "type": "TOOL", "context": "a tool for Google Drive operations"}], "relationships": []}

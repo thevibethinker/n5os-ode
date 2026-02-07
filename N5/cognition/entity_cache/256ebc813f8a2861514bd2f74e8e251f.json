@@ -1,0 +1,1 @@
+{"entities": [{"name": "Husain", "type": "PERSON", "context": "individual associated with Aspireleaders"}, {"name": "Aspireleaders", "type": "ORG", "context": "organization associated with Husain"}], "relationships": [{"from": "Husain", "to": "Aspireleaders", "type": "WORKS_WITH", "context": "Husain is affiliated with Aspireleaders"}]}

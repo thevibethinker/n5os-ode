@@ -1,0 +1,1 @@
+{"entities": [{"name": "Google Drive", "type": "TOOL", "context": "Cloud storage service used to store transcripts"}, {"name": "Fireflies/Transcripts", "type": "CONCEPT", "context": "Folder within Google Drive containing transcripts"}, {"name": "Python", "type": "TOOL", "context": "Programming language used for classification"}], "relationships": []}

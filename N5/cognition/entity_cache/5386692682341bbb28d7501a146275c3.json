@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker discussing knowledge work"}, {"name": "zero doc flow system", "type": "CONCEPT", "context": "Article written by Vrijen about knowledge work"}], "relationships": [{"from": "Vrijen Attawar", "to": "zero doc flow system", "type": "MENTIONS", "context": "Discussed in the context of knowledge work"}]}

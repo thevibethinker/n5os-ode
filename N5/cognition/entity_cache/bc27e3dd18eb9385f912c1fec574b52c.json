@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "opportunity pipeline"}, {"name": "Fohe", "type": "ORG", "context": "partnership pilot"}], "relationships": [{"from": "V", "to": "Fohe", "type": "WORKS_WITH", "context": "partnership pilot"}, {"from": "V", "to": "Careerspan", "type": "KNOWS", "context": "pipeline opportunity"}]}

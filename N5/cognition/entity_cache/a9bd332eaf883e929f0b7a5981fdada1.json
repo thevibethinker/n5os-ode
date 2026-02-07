@@ -1,0 +1,1 @@
+{"entities": [{"name": "Rocko", "type": "PERSON", "context": "individual seeking job search advice"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "individual providing personal job search advice"}], "relationships": [{"from": "V (Vrijen)", "to": "Rocko", "type": "MENTIONS", "context": "providing personal job search advice"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "person presenting use cases"}, {"name": "Equals", "type": "TOOL", "context": "tool discussed in use cases"}], "relationships": [{"from": "Vrijen", "to": "Equals", "type": "USES", "context": "Vrijen is demonstrating the use of the Equals tool"}]}
