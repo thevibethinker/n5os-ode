@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vibe Builder persona", "type": "ORG", "context": "Implementing persona for the system"}, {"name": "V", "type": "PERSON", "context": "The individual associated with the system"}], "relationships": [{"from": "V", "to": "Vibe Builder persona", "type": "USES", "context": "V implements the knowledge system with this persona"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "leads strategic direction"}, {"name": "Logan", "type": "PERSON", "context": "has significant autonomy in execution"}], "relationships": [{"from": "Vrijen", "to": "Logan", "type": "WORKS_WITH", "context": "mutual respect evident in how they work together"}]}

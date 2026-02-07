@@ -1,0 +1,1 @@
+{"entities": [{"name": "git-check", "type": "TOOL", "context": "Audit staged changes for overwrites/data loss"}, {"name": "git-audit", "type": "TOOL", "context": "Find untracked files that should be tracked"}, {"name": "placeholder-scan", "type": "TOOL", "context": "Scan for placeholders and incomplete code"}], "relationships": []}

@@ -1,0 +1,79 @@
+{
+  "$schema": "manifest-v3",
+  "meeting_id": "2025-11-11_min-call-with-edmund-between-edmund-cuth",
+  "status": "ingested",
+  "status_history": [
+    {
+      "status": "raw",
+      "at": "2026-02-06T16:37:00.331042+00:00"
+    },
+    {
+      "status": "ingested",
+      "at": "2026-02-06T16:37:00.331042+00:00"
+    }
+  ],
+  "source": {
+    "type": "manual",
+    "original_filename": "2025-11-11_30_Min_Call_with_Edmund_between_Edmund_Cuthbert_and_Vri-transcript-2025-11-11T16-34-16.600Z.md",
+    "ingested_at": "2026-02-06T16:37:00.331042+00:00"
+  },
+  "meeting": {
+    "date": "2025-11-11",
+    "time_utc": "12:00:00",
+    "duration_minutes": 36,
+    "title": "Min Call With Edmund Between Edmund Cuthbert And Vri Transcript 2025 11 11t16 34 16.600z",
+    "type": "external",
+    "summary": "Vrijen Attawar of Careerspan met with Edmund Cuthbert to discuss the company's strategic pivot from VC-focused growth to sustainable monetization and potential acquisition. Vrijen shared that Careerspan has achieved 1,500 coaching hours and launched a hiring portal that functions as a zero-touch ATS, allowing companies to generate job links and receive pre-filtered candidates for a monthly fee. Given the company's runway constraints, they agreed on a plan to minimize burn by cutting staff to essentials while focusing on revenue generation through the employer-side product. Edmund recommended connecting with Sunset, a firm specializing in helping startups navigate pivots and wind-downs, which could provide strategic guidance and potentially serve as a partnership channel for candidate placement."
+  },
+  "participants": {
+    "identified": [
+      {
+        "name": "Edmund Cuthbert",
+        "email": null,
+        "crm_id": null,
+        "role": "attendee",
+        "confidence": 0.8
+      },
+      {
+        "name": "V",
+        "email": null,
+        "crm_id": null,
+        "role": "host",
+        "confidence": 0.8
+      }
+    ],
+    "unidentified": [],
+    "confidence": 0.8
+  },
+  "calendar_match": null,
+  "quality_gate": {
+    "passed": true,
+    "checks": {
+      "has_transcript": true,
+      "participants_identified": true,
+      "meeting_type_determined": false,
+      "no_hitl_pending": true
+    },
+    "score": 0.7
+  },
+  "blocks": {
+    "policy": "external_standard",
+    "requested": [],
+    "generated": [],
+    "failed": [],
+    "skipped": []
+  },
+  "hitl": {
+    "queue_id": null,
+    "reason": null,
+    "resolved_at": null
+  },
+  "timestamps": {
+    "created_at": "2026-02-06T16:37:00.331042+00:00",
+    "ingested_at": "2026-02-06T16:37:00.331042+00:00",
+    "identified_at": null,
+    "gated_at": null,
+    "processed_at": null,
+    "archived_at": null
+  }
+}

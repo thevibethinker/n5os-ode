@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "the speaker of the statement"}, {"name": "zocomputer", "type": "ORG", "context": "mentioned organization related to fitness"}], "relationships": [{"from": "V", "to": "zocomputer", "type": "MENTIONS", "context": "V talks about zocomputer in relation to fitness motivation"}]}

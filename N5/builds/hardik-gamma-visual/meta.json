@@ -1,0 +1,54 @@
+{
+  "slug": "hardik-gamma-visual",
+  "title": "Hardik Profile Visual - Gamma Webpage",
+  "build_type": "content",
+  "status": "complete",
+  "total_streams": 2,
+  "current_stream": 2,
+  "model": "anthropic:claude-sonnet-4-20250514",
+  "launch_mode": "orchestrated",
+  "created_at": "2026-01-29T08:15:00Z",
+  "drops": {
+    "D1.1": {
+      "name": "Prepare Gamma Input Text",
+      "stream": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "status": "complete"
+    },
+    "D1.2": {
+      "name": "Select Theme and Visual Parameters",
+      "stream": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "status": "complete"
+    },
+    "D2.1": {
+      "name": "Generate Gamma Webpage",
+      "stream": 2,
+      "depends_on": [
+        "D1.1",
+        "D1.2"
+      ],
+      "spawn_mode": "auto",
+      "status": "complete"
+    },
+    "D2.2": {
+      "name": "QA Review",
+      "stream": 2,
+      "depends_on": [
+        "D2.1"
+      ],
+      "spawn_mode": "manual",
+      "status": "complete"
+    }
+  },
+  "artifacts": {
+    "expected": [
+      "gamma_input.md",
+      "gamma_params.json",
+      "gamma_url.txt"
+    ]
+  },
+  "completed_at": "2026-01-29T08:55:00Z"
+}

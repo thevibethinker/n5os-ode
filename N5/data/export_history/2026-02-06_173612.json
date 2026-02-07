@@ -1,0 +1,35 @@
+{
+  "started_at": "2026-02-06T17:36:12.198259+00:00",
+  "dry_run": false,
+  "exported": [
+    {
+      "skill": "security-gate",
+      "reason": "first_export",
+      "checksum": "sha256:615d65444fc490f1c106155b7d66d149350880cb2fbbbdce9194e81738ce8dd2"
+    },
+    {
+      "skill": "audit-system",
+      "reason": "first_export",
+      "checksum": "sha256:f17df3ce31008b5806b9e5c01f7053ca380af43bf57a79128590a4c2ae50b937"
+    },
+    {
+      "skill": "consulting-api",
+      "reason": "first_export",
+      "checksum": "sha256:56f56dff29b9c8f5e0edc29aaa98eb791f736059f9378553e69f0d0d322c916a"
+    },
+    {
+      "skill": "content-classifier",
+      "reason": "first_export",
+      "checksum": "sha256:544a2996d0e3f042c2cb7fef8fe408ee4c6c46fffeaf443897f0060a0fcee2b5"
+    },
+    {
+      "skill": "librarian-export",
+      "reason": "first_export",
+      "checksum": "sha256:d79bf8d64c2c521f4e8c56fc2af12b581ba45268006c61d0f10099bb185dca83"
+    }
+  ],
+  "skipped": [],
+  "failed": [],
+  "git_sha": "e323df0d76c0cc71e63e061394c1300d0f6201e4",
+  "completed_at": "2026-02-06T17:36:12.464568+00:00"
+}

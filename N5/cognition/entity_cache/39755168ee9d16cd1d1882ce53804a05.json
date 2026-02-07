@@ -1,0 +1,1 @@
+{"entities": [{"name": "Zo secrets", "type": "TOOL", "context": "single source of truth for all credentials"}, {"name": "N5 OS", "type": "CONCEPT", "context": "operating system related to credential storage"}], "relationships": [{"from": "Zo secrets", "to": "N5 OS", "type": "USES", "context": "eliminating filesystem credential storage"}]}

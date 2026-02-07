@@ -1,0 +1,23 @@
+{
+  "slug": "memory-as-reasoning",
+  "learnings": [
+    {
+      "text": "Actual migration rate is ~3.5 blocks/sec due to OpenAI API latency, not 8-10 blocks/sec estimated in brief. This means 52K blocks will take ~4 hours, not 60-90 min. Budget extra time for migration phases.",
+      "source": "manual",
+      "added_at": "2026-02-01T02:42:06.360231+00:00",
+      "tags": []
+    },
+    {
+      "text": "Schema architecture discovery: embeddings are stored as BLOB in vectors table (not separate embeddings table). vectors schema: block_id TEXT PRIMARY KEY, embedding BLOB NOT NULL, with FK to blocks(id). Migration script must decode/encode float32 arrays, not just copy rows. Embedding model: all-MiniLM-L6-v2, 384 dimensions. Verified counts: 5,310 resources, 48,700 blocks, 48,614 vectors.",
+      "source": "manual",
+      "added_at": "2026-02-01T02:42:07.099591+00:00",
+      "tags": []
+    },
+    {
+      "text": "Database initialization lesson: When creating SQLite databases via scripts, use Python's sqlite3 module directly (CREATE TABLE IF NOT EXISTS) rather than shell commands like 'sqlite3 < schema.sql'. The Python approach ensures the file is properly created and committed, avoiding empty DB files that cause 'no such table' errors.",
+      "source": "manual",
+      "added_at": "2026-02-01T02:47:52.927099+00:00",
+      "tags": []
+    }
+  ]
+}

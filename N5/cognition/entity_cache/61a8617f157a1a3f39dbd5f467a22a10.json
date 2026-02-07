@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "the person speaking"}, {"name": "Zoe", "type": "TOOL", "context": "the system that can perform actions based on commands"}], "relationships": [{"from": "Vrijen Attawar", "to": "Zoe", "type": "USES", "context": "Vrijen can command Zoe to perform actions"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Success", "type": "CONCEPT", "context": "Outcome related to the absence of meetings"}, {"name": "Validation failures", "type": "CONCEPT", "context": "Failures that allow for a graceful skip"}, {"name": "Critical failures", "type": "CONCEPT", "context": "Severe issues like move errors and database failures"}], "relationships": []}

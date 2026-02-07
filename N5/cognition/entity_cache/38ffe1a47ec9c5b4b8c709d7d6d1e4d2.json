@@ -1,0 +1,1 @@
+{"entities": [{"name": "Granola", "type": "CONCEPT", "context": "a format detected by the system using Me:/Them: tags"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "the person referenced who operates the knowledge system"}], "relationships": [{"from": "V (Vrijen)", "to": "Granola", "type": "KNOWS", "context": "V is aware of the Granola format"}]}

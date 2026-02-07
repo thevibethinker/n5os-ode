@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ash Straughn", "type": "PERSON", "context": "Speaker in the conversation"}, {"name": "V", "type": "PERSON", "context": "Subject of knowledge system"}, {"name": "Pakistan", "type": "CONCEPT", "context": "Mentioned in relation to V's knowledge system"}], "relationships": []}

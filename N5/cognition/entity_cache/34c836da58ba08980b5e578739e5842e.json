@@ -1,0 +1,1 @@
+{"entities": [{"name": "Zo", "type": "ORG", "context": "the platform where scanning and processing happens"}], "relationships": [{"from": "V", "to": "Zo", "type": "USES", "context": "V uses Zo for local scanning and processing of travel data"}]}

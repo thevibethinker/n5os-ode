@@ -1,0 +1,389 @@
+# Careerspan Scores - Single Source of Truth
+# Source: Hardik x FlowFuse Deep Dive Page PDF + Google Doc OCR
+# Generated: 2026-01-29
+# DO NOT EDIT - Generated from official Careerspan employer portal
+
+overview:
+  careerspan_score: 89
+  stories_told: 2
+  qualification: "Well-aligned"
+  career_trajectory: "Lateral Move"
+  referred_by: "Careerspan Admin Auto-Submission (Silent Database Scan)"
+  recommendation: "Strong fit for a senior, AI-focused full-stack role; advance to finals while probing AI guardrails/observability, SOC 2/privacy specifics, and concrete LLM/vectordb integration details."
+
+stories:
+  - id: "pROFGle1jTPdoivBHQUf"
+    type: "Transferable"
+    score: 6
+    max_score: 10
+    rating: "Good"
+  - id: "COKUmaqSITrBKdtxSgJp"
+    type: "Direct"
+    score: 10
+    max_score: 10
+    rating: "Excellent"
+    badge: "Best"
+
+responsibilities:
+  - name: "Deliver end-to-end solutions"
+    rating: "Excellent"
+    required_level: "Advanced"
+    required_score: 4
+    importance: 10
+    evidence: "Story + profile"
+    our_take: |
+      The candidate demonstrates strong, direct experience in owning and delivering fullstack, production-ready AI solutions. In the story, they were a founding engineer and architect for an ML SaaS platform, explicitly describing hands-on ownership across backend (architecting dataset storage, MLOps, infrastructure on AWS), frontend (UI development to ensure data transformations were intuitive), and AI components (automated hyperparameter tuning, metrics tracking, model storage, dynamic VM/resource orchestration for deep learning workloads). They also drove the microservice-based architecture (FastAPI), DevOps (CI/CD, containerization), and were hands-on through all product lifecycle phases: scoping, design, implementation, rollout, user feedback incorporation, and active usage by hundreds of internal and external users. The story specifically details how they delivered features from "whiteboard to production," worked with real users, owned iterative improvements, and directly impacted business and user outcomes. This surpasses the minimum bar for 'owning fullstack solutions' at an advanced level.
+    contributing_skills:
+      hard: ["Backend Development", "Fullstack Development", "Large Language Model (LLM) Integration", "AI Feature Deployment", "Frontend Development"]
+      soft: ["Collaboration", "Adaptability", "System-level thinking", "Problem-solving", "Attention to detail"]
+    support:
+      stories:
+        - id: "pROFGle1jTPdoivBHQUf"
+          type: "Transferable"
+          score: "6/10"
+          rating: "Good"
+        - id: "COKUmaqSITrBKdtxSgJp"
+          type: "Direct"
+          score: "10/10"
+          rating: "Excellent"
+          badge: "Best"
+      resume_match:
+        type: "Direct"
+        score: "9/10"
+        rating: "Excellent"
+        
+  - name: "Ensure feature reliability"
+    rating: "Excellent"
+    required_level: "Advanced"
+    required_score: 4
+    importance: 10
+    evidence: "Story + profile"
+    
+  - name: "Prototype and productionize AI"
+    rating: "Excellent"
+    required_level: "Advanced"
+    required_score: 4
+    importance: 10
+    evidence: "Story + profile"
+    
+  - name: "Develop AI features"
+    rating: "Excellent"
+    required_level: "Advanced"
+    required_score: 4
+    importance: 10
+    evidence: "Story + profile"
+    
+  - name: "User Feedback Integration"
+    rating: "Excellent"
+    required_level: "Intermediate"
+    required_score: 3
+    importance: 7
+    evidence: "Story + profile"
+    
+  - name: "Contribute to fullstack work"
+    rating: "Excellent"
+    required_level: "Intermediate"
+    required_score: 3
+    importance: 6
+    evidence: "Story + profile"
+    
+  - name: "Design for operational constraints"
+    rating: "Excellent"
+    required_level: "Advanced"
+    required_score: 4
+    importance: 9
+    evidence: "Story + profile"
+    
+  - name: "Build backend/frontend workflows"
+    rating: "Excellent"
+    required_level: "Advanced"
+    required_score: 4
+    importance: 10
+    evidence: "Story + profile"
+    
+  - name: "AI Technical Debt Management"
+    rating: "Excellent"
+    required_level: "Advanced"
+    required_score: 4
+    importance: 7
+    evidence: "Story + profile"
+    
+  - name: "Collaborate cross-functionally"
+    rating: "Excellent"
+    required_level: "Advanced"
+    required_score: 4
+    importance: 9
+    evidence: "Story + profile"
+    
+  - name: "Build AI capability patterns"
+    rating: "Excellent"
+    required_level: "Advanced"
+    required_score: 4
+    importance: 8
+    evidence: "Story + profile"
+    
+  - name: "Stay Current with AI Trends"
+    rating: "Excellent"
+    required_level: "Intermediate"
+    required_score: 3
+    importance: 5
+    evidence: "Profile"
+    
+  - name: "Share applied AI practices"
+    rating: "Good"
+    required_level: "Advanced"
+    required_score: 4
+    importance: 6
+    evidence: "Story + profile"
+    
+  - name: "Integrate LLM APIs"
+    rating: "Good"
+    required_level: "Advanced"
+    required_score: 4
+    importance: 10
+    evidence: "Story + profile"
+    flag: "High importance (10) but only Good rating - probe deeply"
+    
+  - name: "Onboarding and Mentoring"
+    rating: "Good"
+    required_level: "Advanced"
+    required_score: 4
+    importance: 6
+    evidence: "Profile"
+    
+  - name: "Ensure privacy and security"
+    rating: "Good"
+    required_level: "Advanced"
+    required_score: 4
+    importance: 8
+    evidence: "Story"
+
+soft_skills:
+  - name: "Attention to detail"
+    rating: "Excellent"
+    required_level: "Advanced"
+    required_score: 4
+    importance: 8
+    evidence: "Story + profile"
+    
+  - name: "Problem-solving"
+    rating: "Excellent"
+    required_level: "Advanced"
+    required_score: 4
+    importance: 8
+    evidence: "Story + profile"
+    
+  - name: "System-level thinking"
+    rating: "Excellent"
+    required_level: "Intermediate"
+    required_score: 3
+    importance: 8
+    evidence: "Story + profile"
+    
+  - name: "Prioritization and time management"
+    rating: "Excellent"
+    required_level: "Intermediate"
+    required_score: 3
+    importance: 7
+    evidence: "Story + profile"
+    
+  - name: "Collaboration"
+    rating: "Excellent"
+    required_level: "Advanced"
+    required_score: 4
+    importance: 8
+    evidence: "Story + profile"
+    
+  - name: "Pragmatism"
+    rating: "Excellent"
+    required_level: "Advanced"
+    required_score: 4
+    importance: 7
+    evidence: "Story + profile"
+    
+  - name: "Adaptability"
+    rating: "Excellent"
+    required_level: "Advanced"
+    required_score: 4
+    importance: 6
+    evidence: "Story + profile"
+    
+  - name: "Judgment"
+    rating: "Excellent"
+    required_level: "Advanced"
+    required_score: 4
+    importance: 9
+    evidence: "Story + profile"
+    
+  - name: "User-centric product thinking"
+    rating: "Excellent"
+    required_level: "Advanced"
+    required_score: 4
+    importance: 7
+    evidence: "Story + profile"
+    
+  - name: "Risk assessment and mitigation"
+    rating: "Excellent"
+    required_level: "Advanced"
+    required_score: 4
+    importance: 7
+    evidence: "Story + profile"
+    
+  - name: "Knowledge sharing"
+    rating: "Good"
+    required_level: "Advanced"
+    required_score: 4
+    importance: 6
+    evidence: "Profile"
+    
+  - name: "Effective asynchronous communication"
+    rating: "Good"
+    required_level: "Intermediate"
+    required_score: 3
+    importance: 8
+    evidence: "Profile"
+    flag: "Profile only, no story evidence - probe async communication practices"
+
+hard_skills:
+  - name: "Backend Development"
+    rating: "Excellent"
+    required_level: "Advanced"
+    required_score: 4
+    importance: 8
+    evidence: "Story + profile"
+    
+  - name: "Incremental Software Delivery"
+    rating: "Excellent"
+    required_level: "Intermediate"
+    required_score: 3
+    importance: 8
+    evidence: "Story + profile"
+    
+  - name: "AI Feature Deployment"
+    rating: "Excellent"
+    required_level: "Advanced"
+    required_score: 4
+    importance: 9
+    evidence: "Story + profile"
+    
+  - name: "AI Reliability Engineering"
+    rating: "Excellent"
+    required_level: "Advanced"
+    required_score: 4
+    importance: 9
+    evidence: "Story + profile"
+    
+  - name: "Large Language Model (LLM) Integration"
+    rating: "Excellent"
+    required_level: "Advanced"
+    required_score: 4
+    importance: 9
+    evidence: "Profile"
+    flag: "Profile only - probe specific LLM implementation depth"
+    
+  - name: "Production AI System Design"
+    rating: "Excellent"
+    required_level: "Intermediate"
+    required_score: 3
+    importance: 9
+    evidence: "Story + profile"
+    
+  - name: "Fullstack Development"
+    rating: "Excellent"
+    required_level: "Advanced"
+    required_score: 4
+    importance: 9
+    evidence: "Story + profile"
+    
+  - name: "Retrieval-Augmented Generation"
+    rating: "Excellent"
+    required_level: "Intermediate"
+    required_score: 3
+    importance: 6
+    evidence: "Profile"
+    
+  - name: "Software Design Patterns"
+    rating: "Excellent"
+    required_level: "Advanced"
+    required_score: 4
+    importance: 7
+    evidence: "Story + profile"
+    
+  - name: "Frontend Development"
+    rating: "Good"
+    required_level: "Advanced"
+    required_score: 4
+    importance: 7
+    evidence: "Story + profile"
+    
+  - name: "AI Observability and Monitoring"
+    rating: "Good"
+    required_level: "Advanced"
+    required_score: 4
+    importance: 8
+    evidence: "Profile"
+    flag: "Profile only, no story evidence - key gap area"
+    
+  - name: "Embeddings"
+    rating: "Good"
+    required_level: "Intermediate"
+    required_score: 3
+    importance: 6
+    evidence: "Profile"
+    
+  - name: "Privacy and Security Compliance"
+    rating: "Good"
+    required_level: "Advanced"
+    required_score: 4
+    importance: 8
+    evidence: "Story + profile"
+    
+  - name: "Vector Search Techniques"
+    rating: "Fair"
+    required_level: "Intermediate"
+    required_score: 3
+    importance: 6
+    evidence: "Profile"
+    
+  - name: "SOC 2 Compliance"
+    rating: "Fair"
+    required_level: "Advanced"
+    required_score: 4
+    importance: 5
+    evidence: "Gap"
+    flag: "No evidence found - explicit gap"
+
+overall_assessment:
+  strengths: |
+    Exceptionally strong end-to-end ownership of AI and full-stack systems, evidenced by architecting a greenfield Machine Learning SaaS platform serving hundreds of daily users with automated dataset/versioning, MLOps (Kubernetes/MLflow), containerized inference (FastAPI), Airflow pipelines, and dynamic cloud orchestration that reduced model-to-production from hours to minutes. Hands-on LLM/agent experience (LangChain + RAG) alongside proven backend/frontend delivery (React + Spring Boot) and SRE/DevOps rigor (CI/CD automation, high availability, zero-downtime rollouts) make him immediately effective in building reliable, user-facing AI features. Demonstrated ability to translate ambiguous problems into business impact—e.g., solo product leadership that delivered $50k/month cost savings at enterprise scale—combined with strong product judgment, stakeholder management, and measurable adoption.
+    
+  weaknesses: |
+    Key AI reliability and safety details are not explicitly documented: no concrete examples of LLM fallback strategies, cost/latency controls, prompt/version governance, or model/LLM-specific observability (drift, hallucination safeguards, metrics/dashboards). Privacy/security experience is present in regulated contexts, but there's no direct evidence of SOC 2 controls, audit participation, or named privacy frameworks (e.g., GDPR) applied to AI features. Knowledge-sharing/async-first practices are implied (Scrum Master, mentoring, inner-source ownership) but lack explicit artifacts (RFCs, playbooks, internal workshops) tied to AI patterns.
+
+summary:
+  total_items_assessed: 43
+  responsibilities:
+    total: 16
+    excellent: 12
+    good: 4
+  soft_skills:
+    total: 12
+    excellent: 10
+    good: 2
+  hard_skills:
+    total: 15
+    excellent: 9
+    good: 4
+    fair: 2
+
+areas_to_probe:
+  - skill: "Integrate LLM APIs"
+    reason: "Good rating on importance 10 responsibility"
+  - skill: "AI Observability and Monitoring"
+    reason: "Profile only, no story evidence"
+  - skill: "Effective asynchronous communication"
+    reason: "Profile only, critical for remote team"
+  - skill: "SOC 2 Compliance"
+    reason: "Gap - no evidence found"
+  - skill: "Vector Search Techniques"
+    reason: "Fair rating, may need depth"

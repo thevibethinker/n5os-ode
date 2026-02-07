@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "subject of the knowledge system"}, {"name": "naming conventions", "type": "CONCEPT", "context": "file and folder naming rules and execution naming patterns"}], "relationships": [{"from": "V", "to": "naming conventions", "type": "USES", "context": "utilizes naming conventions in the knowledge system"}]}

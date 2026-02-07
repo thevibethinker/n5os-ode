@@ -1,0 +1,1 @@
+{"entities": [{"name": "google_drive-list-files", "type": "TOOL", "context": "tool used for listing files in Google Drive"}], "relationships": [{"from": "V", "to": "google_drive-list-files", "type": "USES", "context": "V uses the tool to list files in Google Drive"}]}

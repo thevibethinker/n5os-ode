@@ -1,0 +1,1 @@
+{"entities": [{"name": "Brin", "type": "PERSON", "context": "provided a buying signal"}, {"name": "V", "type": "PERSON", "context": "has a limited window to act"}], "relationships": [{"from": "V", "to": "Brin", "type": "KNOWS", "context": "Brin is the person V is interacting with regarding the proposal"}]}

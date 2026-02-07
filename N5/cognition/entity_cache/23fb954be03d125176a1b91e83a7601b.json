@@ -1,0 +1,1 @@
+{"entities": [{"name": "Shivani", "type": "PERSON", "context": "background at FOHE"}, {"name": "FOHE", "type": "ORG", "context": "organization where Shivani works"}], "relationships": [{"from": "V", "to": "Shivani", "type": "KNOWS", "context": "knows Shivani"}, {"from": "Shivani", "to": "FOHE", "type": "WORKS_WITH", "context": "Shivani's role at FOHE"}]}

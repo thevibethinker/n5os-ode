@@ -1,0 +1,1 @@
+{"entities": [{"name": "Zo Computer", "type": "ORG", "context": "AI infrastructure"}, {"name": "Ben", "type": "PERSON", "context": "expertise in advanced workflows"}], "relationships": [{"from": "Ben", "to": "Zo Computer", "type": "WORKS_WITH", "context": "valuable for advanced workflows"}]}

@@ -1,0 +1,35 @@
+Responsibilities
+Excellent Prototype and productionize Al Required: Advanced 4/5 Importance: 10/10 Story+profile Yv «
+
+Ourtake Basedonresume ~~ Direct
+
+The resume provides multiple clear, end-to-end examples of taking Al features from concept/prototype into
+production with attention to evaluation and operational hardening. Direct evidence: at EclecticlQ the
+candidate led full Al initiatives, architected and shipped an Al assistant into a flagship product (six-month
+integration), built modular backends (decoupled Flask sync from async MCP), deployed an MCP server, and
+added Human-in-the-Loop approval, guardrails, and feedback loops — explicitly reducing token usage
+(cost/latency control) and improving correctness/recall/schema adherence (measured success metrics). At
+Cambridge University Press they built aRAG-based Student Companion and an Automatic Marking system
+with stated accuracy (~85%) and Chain-of-Thought generation (prototype > evaluation). At Cyware they was
+the sole MLengineer and built and served models via a Python/Django multi-threaded inference app witha
+feedback loop for retraining (operationalization and latency control). Early roles show production constraints:
+transactional anomaly detection returning risk scores <300ms, Random Forest on Spark credit model (F1
+~0.81), and high-accuracy table parsing/product matching systems at Dell. Ownership signals include
+founding an Al consultancy, being sole ML engineer, and leading an 8+ PhD research team. Taken together
+these map directly to the success criteria: rapid prototyping, iterative evaluation (quantified metrics), and
+methodical hardening with guardrails, observability and cost/latency controls. Minor gaps: explicit frontend UI
+framework experience (React/TypeScript) is not listed, and input-validation/ fallback behaviors are not always
+spelled out in detail, but similar operational practices (guardrails, human-in-the-loop, feedback loops, multi-
+LLM failover) are documented. Overall this is strong, direct evidence of the responsibility.
+
+Contributing skills
+Production AlSystem Design Large Language Model (LLM) Integration Al Observability and Monitoring Al Feature Deployment
+System-level thinking Problem-solving Adaptability Attention to detail
+
+Support
+Stories
+kftoWPdjyQB9CaisjIPn Direct 9/10 Excellent
+qoWHeLzqkOMMI5PwcHiL Direct 9/10 Excellent Best
+Resume
+
+Resume match Direct 9/10 Excellent

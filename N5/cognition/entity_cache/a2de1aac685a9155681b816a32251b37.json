@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual referred to as Vrijen"}, {"name": "first 5 hires", "type": "CONCEPT", "context": "concept suggesting to invest in initial hires"}], "relationships": [{"from": "V", "to": "first 5 hires", "type": "BELIEVES", "context": "V believes in investing in the first 5 hires"}]}

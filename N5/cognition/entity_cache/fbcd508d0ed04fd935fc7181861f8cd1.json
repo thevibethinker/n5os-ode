@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "a person discussed in the text"}, {"name": "get-caller-file", "type": "TOOL", "context": "a tool referenced in the text"}], "relationships": [{"from": "V (Vrijen)", "to": "get-caller-file", "type": "USES", "context": "V is associated with the usage of the tool mentioned in the text"}]}

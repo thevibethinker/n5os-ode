@@ -1,0 +1,1 @@
+{"entities": [{"name": "Operator", "type": "PERSON", "context": "entity that initiates the activation of Builder mode"}, {"name": "Builder mode", "type": "CONCEPT", "context": "mode activated for building functionality"}], "relationships": [{"from": "Operator", "to": "Builder mode", "type": "USES", "context": "Operator activates Builder mode"}]}

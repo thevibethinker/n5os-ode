@@ -1,0 +1,1 @@
+{"entities": [{"name": "N5/scripts/meeting_duplicate_manager.py", "type": "TOOL", "context": "Python script for managing duplicate meetings"}, {"name": "2025-10-31_client-kickoff", "type": "EVENT", "context": "A specific client kickoff meeting"}], "relationships": []}

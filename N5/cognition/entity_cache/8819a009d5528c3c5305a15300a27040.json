@@ -1,0 +1,1 @@
+{"entities": [{"name": "Griffin Seifman", "type": "PERSON", "context": "Individual associated with the organization Rho.Co"}, {"name": "Rho.Co", "type": "ORG", "context": "Organization where Griffin Seifman works"}], "relationships": [{"from": "Griffin Seifman", "to": "Rho.Co", "type": "WORKS_WITH", "context": "Griffin Seifman is associated with the organization Rho.Co"}]}

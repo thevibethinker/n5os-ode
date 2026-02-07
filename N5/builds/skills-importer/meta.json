@@ -1,0 +1,51 @@
+{
+  "schema_version": 3,
+  "slug": "skills-importer",
+  "title": "Skills.sh Importer for N5 OS",
+  "build_type": "code_build",
+  "status": "complete",
+  "model": "anthropic:claude-sonnet-4-20250514",
+  "launch_mode": "orchestrated",
+  "waves": {
+    "W1": [
+      "D1.1",
+      "D1.2"
+    ]
+  },
+  "active_wave": null,
+  "drops": {
+    "D1.1": {
+      "name": "Core Import Script",
+      "stream": 1,
+      "order": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "started_at": "2026-02-07T12:58:21.283140+00:00",
+      "conversation_id": "con_Q3OEFYLlEdhRwMj4",
+      "completed_at": "2026-02-07T13:06:19.865544+00:00"
+    },
+    "D1.2": {
+      "name": "Skill Documentation",
+      "stream": 2,
+      "order": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "started_at": "2026-02-07T13:02:19.907677+00:00",
+      "conversation_id": "con_JaqjmArOfsu6XrgC",
+      "completed_at": "2026-02-07T13:06:40.361688+00:00"
+    }
+  },
+  "lineage": {
+    "parent_type": "conversation",
+    "parent_ref": "con_UWx2xMNELdT6MUle",
+    "parent_conversation": "con_UWx2xMNELdT6MUle",
+    "moment": "V discovered skills.sh ecosystem, requested mass import capability",
+    "branched_at": "2026-02-07T12:50:00Z"
+  },
+  "started_at": "2026-02-07T12:55:17.163291+00:00",
+  "completed_at": "2026-02-07T13:06:40.364513+00:00"
+}

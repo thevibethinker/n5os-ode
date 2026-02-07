@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "Co-founder and Chief Operating Officer (COO) of the organization"}, {"name": "V-OS", "type": "TOOL", "context": "System used for coordination"}], "relationships": [{"from": "V (Vrijen)", "to": "V-OS", "type": "USES", "context": "V uses the V-OS system for coordination"}]}

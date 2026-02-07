@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "individual mentioning other founders"}, {"name": "Julia Dixon", "type": "PERSON", "context": "founder mentioned by Vrijen"}], "relationships": [{"from": "Vrijen Attawar", "to": "Julia Dixon", "type": "KNOWS", "context": "Vrijen mentions Julia as part of his circle of founders"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Howie Signature Generator", "type": "TOOL", "context": "A script used to generate a signature based on recipient type and other parameters."}, {"name": "N5/scripts", "type": "ORG", "context": "The organization or project structure under which the script is located."}], "relationships": []}

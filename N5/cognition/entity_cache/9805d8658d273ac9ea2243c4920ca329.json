@@ -1,0 +1,1 @@
+{"entities": [{"name": "Buffer", "type": "CONCEPT", "context": "The buffer value to write."}, {"name": "offset", "type": "CONCEPT", "context": "The offset to write the value to."}], "relationships": []}

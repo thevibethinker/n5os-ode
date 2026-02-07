@@ -1,0 +1,1 @@
+{"entities": [{"name": "Jake Weissbourd", "type": "PERSON", "context": "works for a startup"}, {"name": "Outsmart", "type": "ORG", "context": "a startup building a new university"}], "relationships": [{"from": "Jake Weissbourd", "to": "Outsmart", "type": "WORKS_WITH", "context": "works for the startup"}]}

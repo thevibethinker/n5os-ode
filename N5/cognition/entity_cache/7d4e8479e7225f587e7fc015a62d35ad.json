@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual related to talent scanning"}, {"name": "talent scanning", "type": "CONCEPT", "context": "core competency of V's knowledge system"}], "relationships": [{"from": "V", "to": "talent scanning", "type": "BELIEVES", "context": "V believes that talent scanning is essential and the only important focus"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Logan", "type": "PERSON", "context": "Collaborator/contact who asks clarifying questions and brings focus during conversations with V"}], "relationships": [{"from": "V", "to": "Logan", "type": "WORKS_WITH", "context": "High trust relationship with comfortable/casual interaction style, frequent interruptions, easy scheduling negotiation"}]}

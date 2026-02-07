@@ -1,0 +1,1 @@
+{"entities": [{"name": "Tiffany Huang", "type": "PERSON", "context": "Profile created in V's CRM system, high enrichment priority due to active partnership relationship and launch support"}], "relationships": [{"from": "V", "to": "Tiffany Huang", "type": "WORKS_WITH", "context": "Active partnership relationship, launch support, strategic value"}]}

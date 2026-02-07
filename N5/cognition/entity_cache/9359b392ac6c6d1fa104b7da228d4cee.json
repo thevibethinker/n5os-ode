@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Productivity philosopher"}, {"name": "Tweeks", "type": "TOOL", "context": "Empowerment tool enhancing user capabilities"}], "relationships": [{"from": "V", "to": "Tweeks", "type": "USES", "context": "V uses Tweeks as an empowerment tool"}]}

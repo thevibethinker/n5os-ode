@@ -1,0 +1,140 @@
+# JD ↔ Candidate Alignment
+# Source: Careerspan Intelligence Brief + FlowFuse JD
+# DO NOT EDIT - Preserves Careerspan conclusions verbatim
+
+responsibilities:
+  - jd_id: R1
+    jd_text: "Applied AI Feature Development: Designing and building AI-powered features and tooling"
+    careerspan_verdict: "Excellent"
+    careerspan_score: "9/10"
+    evidence_type: "Direct"
+    evidence_summary: |
+      Built ML SaaS platform with LangChain + RAG implementation.
+      Reduced model-to-production time from hours to minutes.
+      Platform serves enterprise customers (Apple, Samsung, Volkswagen).
+    source_experiences: ["EXP1"]
+
+  - jd_id: R2
+    jd_text: "End-to-End Delivery: Owning fullstack solutions (frontend, backend, AI)"
+    careerspan_verdict: "Excellent"
+    careerspan_score: "9/10"
+    evidence_type: "Direct"
+    evidence_summary: |
+      Full-stack ownership at both Keysight (React + Python + Kubernetes)
+      and AmEx (React + Spring Boot). Solo product owner pattern.
+    source_experiences: ["EXP1", "EXP2"]
+
+  - jd_id: R3
+    jd_text: "Capability Building: Establishing patterns and guardrails others can build on"
+    careerspan_verdict: "Strong"
+    careerspan_score: "7/10"
+    evidence_type: "Inferred"
+    evidence_summary: |
+      Scaled team from inception to ~20 engineers at Keysight.
+      As founding engineer, necessarily established initial patterns.
+      Explicit documentation of patterns/guardrails not provided.
+    source_experiences: ["EXP1"]
+    gap_note: "Pattern documentation not explicitly shown"
+
+  - jd_id: R4
+    jd_text: "Reliability and Safety: Ensuring AI features behave predictably (fallbacks, observability)"
+    careerspan_verdict: "Moderate"
+    careerspan_score: "5/10"
+    evidence_type: "Partial"
+    evidence_summary: |
+      Strong MLOps experience (MLflow, Airflow, Kubernetes).
+      Production AI systems at scale.
+      LLM-specific reliability patterns (fallbacks, guardrails) not documented.
+    source_experiences: ["EXP1"]
+    gap_note: "LLM observability and AI safety specifics need probing"
+
+  - jd_id: R5
+    jd_text: "Collaboration: Working with Product, Design, Engineering peers"
+    careerspan_verdict: "Strong"
+    careerspan_score: "7/10"
+    evidence_type: "Inferred"
+    evidence_summary: |
+      Cross-functional work with enterprise clients.
+      Stakeholder management at AmEx.
+      Async-first collaboration not evidenced.
+    source_experiences: ["EXP1", "EXP2"]
+    gap_note: "Async collaboration style unknown"
+
+requirements:
+  - jd_id: REQ1
+    jd_text: "Strong experience working across the full stack"
+    met: true
+    evidence: "React frontends, Python/Java backends, Kubernetes infra. Demonstrated at Keysight and AmEx."
+
+  - jd_id: REQ2
+    jd_text: "Demonstrated experience shipping AI-powered features to production"
+    met: true
+    evidence: "ML platform serving 400+ daily users including enterprise clients."
+
+  - jd_id: REQ3
+    jd_text: "Hands-on experience integrating LLM APIs into real systems"
+    met: true
+    evidence: "LangChain + RAG implementation at Keysight."
+
+  - jd_id: REQ4
+    jd_text: "Familiarity with embeddings, vector search, or RAG"
+    met: true
+    evidence: "RAG implementation explicitly mentioned. Vector database experience."
+
+  - jd_id: REQ5
+    jd_text: "Strong judgment around AI tradeoffs, failure modes, cost, observability"
+    met: "partial"
+    evidence: "MLOps experience strong. LLM-specific failure handling not documented."
+    gap_note: "Needs probing in interview"
+
+  - jd_id: REQ6
+    jd_text: "Ability to design AI systems that others can safely extend"
+    met: "partial"
+    evidence: "Scaled team to 20, so others did extend his work. Explicit design patterns not documented."
+    gap_note: "Needs probing in interview"
+
+  - jd_id: REQ7
+    jd_text: "Experience shipping small, well-scoped changes incrementally"
+    met: "unknown"
+    evidence: "Built large platforms; incremental shipping style not specifically evidenced."
+    gap_note: "May prefer big-bang over incremental"
+
+  - jd_id: REQ8
+    jd_text: "Comfort working in remote, async-first environment"
+    met: "unknown"
+    evidence: "Led distributed teams. Async-first artifacts not shown."
+    gap_note: "Critical to probe - FlowFuse is async-heavy"
+
+  - jd_id: REQ9
+    jd_text: "Pragmatic use of AI tools to accelerate development"
+    met: "likely"
+    evidence: "Built AI tools; likely uses them. Not explicitly stated."
+
+gaps:
+  - requirement: "Node.js / FlowFuse stack"
+    severity: "moderate"
+    careerspan_notes: "Stack is Python/Java/Spring Boot. No Node.js evidence. Transferable skills, but ramp time needed."
+
+  - requirement: "LLM-specific observability"
+    severity: "moderate"
+    careerspan_notes: "Strong MLOps background but LLM observability (LangSmith, etc.) not documented."
+
+  - requirement: "AI guardrails and fallback design"
+    severity: "moderate"
+    careerspan_notes: "Has shipped production AI but explicit guardrail strategies not detailed."
+
+  - requirement: "Async-first collaboration"
+    severity: "uncertain"
+    careerspan_notes: "No explicit evidence of async documentation habits or written decision-making."
+
+summary:
+  strengths_count: 5
+  gaps_count: 4
+  met_requirements: 4
+  partial_requirements: 3
+  unknown_requirements: 2
+  overall_fit: "Strong with caveats"
+  interview_priority: |
+    1. AI reliability depth (fallbacks, observability)
+    2. Stack transfer approach (Python/Java → Node.js)
+    3. Async collaboration style

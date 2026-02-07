@@ -1,0 +1,1 @@
+{"entities": [{"name": "Asher", "type": "PERSON", "context": "provides valuable introductions"}, {"name": "PE introductions", "type": "CONCEPT", "context": "valuable introductions in private equity"}], "relationships": [{"from": "Asher", "to": "PE introductions", "type": "WORKS_WITH", "context": "provides valuable connections in the network"}]}

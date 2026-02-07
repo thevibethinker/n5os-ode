@@ -1,0 +1,1 @@
+{"entities": [{"name": "Janky API endpoint", "type": "TOOL", "context": "A tool mentioned in relation to CSV updates."}, {"name": "magic links", "type": "CONCEPT", "context": "A concept related to real-time CSV updates."}, {"name": "CSV", "type": "CONCEPT", "context": "A format for data that is updated in real-time."}], "relationships": []}

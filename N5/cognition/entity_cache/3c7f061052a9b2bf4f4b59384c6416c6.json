@@ -1,0 +1,1 @@
+{"entities": [{"name": "Zo instances", "type": "CONCEPT", "context": "A concept within V's knowledge system referring to specific instances of a type."}, {"name": "meeting-process.md", "type": "TOOL", "context": "A command file written specifically for Zo instances."}], "relationships": []}

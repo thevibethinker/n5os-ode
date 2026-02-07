@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Knowledge system author"}, {"name": "Careerspan", "type": "ORG", "context": "Organization related to user-love metrics"}], "relationships": [{"from": "V", "to": "Careerspan", "type": "MENTIONS", "context": "Aligns with user-love metrics"}]}

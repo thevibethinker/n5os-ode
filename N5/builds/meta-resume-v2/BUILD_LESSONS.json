@@ -1,0 +1,11 @@
+{
+  "slug": "meta-resume-v2",
+  "learnings": [
+    {
+      "text": "CRITICAL: Pipeline must validate data alignment BEFORE execution. Check that decomposer JD employer matches target employer. Hardik\u00d7Docsum test failed because decomposer data was for FlowFuse, not Docsum. Add pre-flight validation gate to step1_gather.py.",
+      "source": "manual",
+      "added_at": "2026-02-03T18:49:31.775694+00:00",
+      "tags": []
+    }
+  ]
+}

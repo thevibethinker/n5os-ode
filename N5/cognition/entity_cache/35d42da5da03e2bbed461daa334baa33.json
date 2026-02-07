@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual building a knowledge system"}, {"name": "intersection of code, culture & commerce", "type": "CONCEPT", "context": "concept V is building around"}], "relationships": [{"from": "V", "to": "intersection of code, culture & commerce", "type": "BELIEVES", "context": "V is focused on this concept for her project"}]}

@@ -1,0 +1,43 @@
+Geos Privacy and Security Compliance Required: Advanced 4/5 importance: 8/10 Prome  ~
+
+Fair SOC 2 Compliance Required: Advanced 4/5 Importance:5/10 X Gap
+
+Ourtake Sasedonresume % Transtersbie
+
+Summary of evidence: The resume contains several security- and enterprise-oriented signals that are
+transferable to SOC 2 work: leadership of Al initiatives for an enterprise cybersecurity vendor (EclecticlQ) that
+produced structured security reports, work on SecureBERT 2.0, building guardrails / Human-in-the-Loop
+approval, deploying public MCP servers, and delivering Al features for enterprise customers with measurable
+correctness and workflow guarantees. The candidate also shows experience shipping production systems at
+scale (multi-threaded inference, public deployments, ES with 100M+ entities), collaborating with product and
+sales, and designing operational patterns (decoupling sync/async, token-usage optimizations, feedback
+loops) that map to availability, processing integrity, and security concerns in SOC 2's Trust Services Criteria.
+
+Why this is transferable but not direct: Nowhere in the resume is SOC 2 (or other compliance frameworks),
+audits, or explicit controls (access controls, encryption at rest/in transit, centralized logging/audit trails,
+incident response, vendor management, policy documentation, or interactions with auditors) mentioned. The
+existing items strongly imply security-minded engineering and enterprise-readiness, but they do not
+demonstrate direct ownership of SOC 2 scoping, requirements mapping, control implementation, audit
+evidence collection, or passing an audit.
+
+Judgment vs. role expectations: For a mid-to-senior Full Stack Developer (Al-focused) at FlowFuse, the
+resume suggests a solid foundation to implement SOC 2-relevant technical controls (secure deployments,
+data handling patterns, monitoring, and defense-in-depth) but does not provide the STAR-style, audit-related
+evidence required to convince an interviewer that the candidate has hands-on SOC 2 compliance experience
+or led compliance efforts.
+
+Missing evidence to reach higher levels: explicit mentions of SOC 2 or equivalent audits; implemented controls
+(RBAC, encryption, logging/monitoring, change management, data retention/privacy controls) ; working with
+auditors or producing SOC 2 evidence; or documented outcomes such as passing audits or enabling business
+via compliance.
+
+Recommendation: If the candidate has actual SOC 2 experience, they should add a concise STAR example
+(project, their role, specific controls implemented, rationale, and result e.g., “implemented X,Y.Z controls,
+produced audit evidence, and passed SOC 2 Type I! audit”), or otherwise call out specific controls and security
+practices they designed/owned when deploying enterprise Al systems.
+
+Support
+
+Resume
+
+Resume match “Transferable 40 Fair

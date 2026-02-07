@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual open to product consulting"}, {"name": "Careerspan", "type": "ORG", "context": "team that V prioritizes in exit"}], "relationships": [{"from": "V", "to": "Careerspan", "type": "MENTIONS", "context": "V's main priority is to take care of Careerspan in exit"}]}

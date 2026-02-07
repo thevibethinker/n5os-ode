@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Individual managing local chapter"}, {"name": "channel", "type": "CONCEPT", "context": "Platform for communication within the chapter"}], "relationships": [{"from": "V", "to": "channel", "type": "USES", "context": "V is allowed to manage local chapter with channel"}]}

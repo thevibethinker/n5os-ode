@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual managing the knowledge system"}, {"name": "Drive", "type": "TOOL", "context": "platform used to process reflection blocks"}], "relationships": [{"from": "V", "to": "Drive", "type": "USES", "context": "V uses Drive to process reflection blocks"}]}

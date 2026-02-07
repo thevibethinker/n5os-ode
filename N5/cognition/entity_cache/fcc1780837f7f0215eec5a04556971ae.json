@@ -1,0 +1,1 @@
+{"entities": [{"name": "Search Recipes", "type": "CONCEPT", "context": "A method for finding recipes using keywords or tags."}, {"name": "Recent Recipes", "type": "CONCEPT", "context": "A method for displaying recently used recipes."}, {"name": "Recipe Stats", "type": "CONCEPT", "context": "A method for showing usage patterns of recipes."}], "relationships": []}

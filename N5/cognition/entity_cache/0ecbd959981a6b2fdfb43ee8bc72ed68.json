@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "best-in-class career coaching product"}, {"name": "AI-native approach", "type": "CONCEPT", "context": "coaching methodology"}], "relationships": [{"from": "Careerspan", "to": "AI-native approach", "type": "USES", "context": "approach to coaching"}]}

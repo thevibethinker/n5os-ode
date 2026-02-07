@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "the speaker in the text"}, {"name": "Stardew Valley", "type": "CONCEPT", "context": "a game mentioned in relation to knowledge"}], "relationships": [{"from": "V", "to": "Stardew Valley", "type": "KNOWS", "context": "V is aware of what Stardew Valley is but does not play it"}]}

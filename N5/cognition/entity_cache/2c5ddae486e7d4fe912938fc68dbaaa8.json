@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Individual with a knowledge system"}, {"name": "CRM tags", "type": "TOOL", "context": "System for categorizing contacts with rationale"}], "relationships": []}

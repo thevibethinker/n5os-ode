@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "an organization that has staying power through solving integration challenges"}], "relationships": [{"from": "Careerspan", "to": "integration puzzle", "type": "RELATED_TO", "context": "the integration puzzle is a significant challenge for Careerspan"}]}

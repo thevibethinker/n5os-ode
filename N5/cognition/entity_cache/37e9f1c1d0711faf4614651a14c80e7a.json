@@ -1,0 +1,1 @@
+{"entities": [{"name": "Jeff Busking", "type": "PERSON", "context": "mentioned in relation to a lecture"}], "relationships": [{"from": "V", "to": "Jeff Busking", "type": "MENTIONS", "context": "referring to a lecture given by Jeff Busking"}]}

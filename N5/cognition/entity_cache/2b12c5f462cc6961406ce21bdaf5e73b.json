@@ -1,0 +1,1 @@
+{"entities": [{"name": "emoji-legend.json", "type": "TOOL", "context": "Source of truth for V's knowledge system"}, {"name": "emoji-legend.md", "type": "TOOL", "context": "Full documentation for V's knowledge system"}], "relationships": []}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "Subject discussing their knowledge system"}, {"name": "personalization", "type": "CONCEPT", "context": "Theme mentioned in relation to user experience"}], "relationships": [{"from": "Vrijen", "to": "personalization", "type": "BELIEVES", "context": "Vrijen believes personalization is important despite issues"}]}

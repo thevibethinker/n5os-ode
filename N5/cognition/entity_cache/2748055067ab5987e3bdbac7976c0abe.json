@@ -1,0 +1,1 @@
+{"entities": [{"name": "Zo UI", "type": "TOOL", "context": "User interface that allows for interaction with the recipes layer"}], "relationships": [{"from": "Zo UI", "to": "Layer 1: Recipes", "type": "USES", "context": "Zo UI provides access to the recipes layer"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "N5/lib/secrets.py", "type": "TOOL", "context": "Standard secrets management library"}, {"name": "N5/scripts/google_auth.py", "type": "TOOL", "context": "Google authentication helper"}, {"name": "N5/docs/credential-management-protocol.md", "type": "CONCEPT", "context": "Protocol documentation"}], "relationships": []}

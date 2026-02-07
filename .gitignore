@@ -114,3 +114,4 @@ N5/cognition/brain.hnsw
 N5/cognition/brain.hnsw.ids
 N5/cognition/models/
 .cache/
+.zo/conversations/zo_conversations.duckdb

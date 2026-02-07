@@ -1,0 +1,1 @@
+{"entities": [{"name": "[LOG]", "type": "TOOL", "context": "tool for aligning with others"}, {"name": "[ILS]", "type": "TOOL", "context": "tool for aligning with others"}, {"name": "[A-2]", "type": "TOOL", "context": "tool for increasing accommodation level"}, {"name": "[!!]", "type": "TOOL", "context": "tool for urgent override"}], "relationships": []}

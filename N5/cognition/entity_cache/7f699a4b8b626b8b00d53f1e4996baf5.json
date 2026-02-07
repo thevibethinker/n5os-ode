@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "registry", "type": "CONCEPT", "context": "system containing blocks of information"}], "relationships": [{"from": "Vrijen", "to": "registry", "type": "USES", "context": "Vrijen uses the registry to manage blocks of information"}]}

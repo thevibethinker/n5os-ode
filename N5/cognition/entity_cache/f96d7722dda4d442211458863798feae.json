@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "owner of the project log"}, {"name": "Project Log (System Wisdom)", "type": "TOOL", "context": "centralized log for capturing lessons"}], "relationships": [{"from": "V", "to": "Project Log (System Wisdom)", "type": "USES", "context": "V uses the tool to capture lessons"}]}

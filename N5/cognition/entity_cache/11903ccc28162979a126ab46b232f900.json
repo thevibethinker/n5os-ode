@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "Malvika Jethmalani", "type": "PERSON", "context": "person involved in meetings with V"}], "relationships": [{"from": "V", "to": "Malvika Jethmalani", "type": "WORKS_WITH", "context": "collaborative engagement during meetings"}]}

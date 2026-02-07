@@ -1,0 +1,1 @@
+{"entities": [{"name": "Superposition", "type": "ORG", "context": "an organization relevant to job flow, revenue, and market validation"}], "relationships": [{"from": "V", "to": "Superposition", "type": "USES", "context": "dependency for careerspan, revenue, and market validation"}]}

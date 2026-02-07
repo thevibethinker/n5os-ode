@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "Owner managing relationships and metrics"}, {"name": "Careerspan", "type": "ORG", "context": "Organization related to metrics and potential collaboration"}], "relationships": [{"from": "Vrijen", "to": "Careerspan", "type": "KNOWS", "context": "Monitor metrics and consider future collaboration"}]}

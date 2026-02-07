@@ -1,0 +1,1 @@
+{"entities": [{"name": "Tami Forman", "type": "PERSON", "context": "Speaker discussing engineers in India"}, {"name": "engineers", "type": "CONCEPT", "context": "Professionals in the field of engineering"}], "relationships": [{"from": "Tami Forman", "to": "engineers", "type": "MENTIONS", "context": "Discussing the various roles of engineers in India"}]}

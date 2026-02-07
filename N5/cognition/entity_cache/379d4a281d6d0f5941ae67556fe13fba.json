@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual mentioned in the text"}, {"name": "Lightspeed", "type": "ORG", "context": "organization mentioned in relation to backing"}], "relationships": [{"from": "V", "to": "Lightspeed", "type": "KNOWS", "context": "V has a confirmed relationship with Lightspeed backing"}]}

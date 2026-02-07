@@ -1,0 +1,1 @@
+{"entities": [{"name": "Voice settings", "type": "CONCEPT", "context": "File configuration for voice settings"}, {"name": "essential-links.json", "type": "TOOL", "context": "File containing essential links"}], "relationships": []}

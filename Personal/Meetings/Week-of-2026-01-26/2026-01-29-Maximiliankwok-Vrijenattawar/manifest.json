@@ -1,0 +1,72 @@
+{
+  "meeting_id": "2026-01-29_Maximiliankwok-Vrijenattawar",
+  "date": "2026-01-29",
+  "participants": [
+    "Maximiliankwok",
+    "Vrijenattawar"
+  ],
+  "meeting_type": "external",
+  "status": "archived",
+  "transcript_file": "transcript.md",
+  "blocks_requested": [],
+  "blocks_generated": [
+    "B33_DECISION_RATIONALE",
+    "B21_KEY_MOMENTS",
+    "B32_THOUGHT_PROVOKING_IDEAS",
+    "B26_MEETING_METADATA",
+    "B28_STRATEGIC_INTELLIGENCE",
+    "B08_STAKEHOLDER_INTELLIGENCE",
+    "B03_DECISIONS",
+    "B02_B05_COMMITMENTS_AND_ACTIONS",
+    "B01_DETAILED_RECAP",
+    "B06_BUSINESS_CONTEXT",
+    "B00_ZO_TAKE_HEED"
+  ],
+  "blocks_failed": [],
+  "staged_at": "2026-02-02T20:22:18.766799Z",
+  "processed_at": "2026-02-03T12:08:29.063469Z",
+  "archived_at": "2026-02-03T13:16:31.523548Z",
+  "error": null,
+  "block_selection": {
+    "selected_at": "2026-02-03T11:38:42.105876Z",
+    "method": "smart_selector_v2",
+    "recipe": "external_standard",
+    "always_blocks": [
+      "B00",
+      "B01",
+      "B02_B05",
+      "B03",
+      "B08",
+      "B21",
+      "B26"
+    ],
+    "conditional_selected": [
+      "B06",
+      "B28",
+      "B32",
+      "B33"
+    ],
+    "conditional_skipped": [
+      "B04",
+      "B07",
+      "B10",
+      "B13",
+      "B14",
+      "B25"
+    ],
+    "triggered": [],
+    "reasoning": {
+      "B06": "V discusses Careerspan's strategic positioning (3-person team, marketplace model, tech validation), current challenges (bootstrapping both sides), and their plan to generate revenue before a mid-year sale. Directly supports V's priority of driving recruiting revenue.",
+      "B28": "Conversation covers marketplace dynamics, the challenge of getting both sides bootstrapped, and how their technology validates Indian talent while providing deeper insights. Relevant to V's revenue-focused priorities.",
+      "B32": "Max's product concept of an experiential job simulation marketplace ('marketplace of all possible futures') where users can fail without consequence is a genuinely novel idea worth capturing.",
+      "B33": "V explains their nuanced decision to first generate revenue (via recruiting agency partnership with Shivam) before aiming for a mid-year sale to improve valuation. Shows clear strategic reasoning.",
+      "B04": "Skipped: Questions raised (e.g., about revenue obstacles) received substantive answers from V. No unresolved questions requiring follow-up.",
+      "B07": "Skipped: No verbal cues like 'intro me to' or 'connect me with.' The mention of Shivam was descriptive, not an introduction request.",
+      "B10": "Skipped: No discussion of future collaboration, partnership evolution, or relationship status beyond general catching up.",
+      "B13": "Skipped: No concrete next steps discussed. V mentioned general plans but no specific action items with timelines or ownership.",
+      "B14": "Skipped: No verbal cues like 'draft a blurb' or 'write a blurb' detected in the transcript.",
+      "B25": "Skipped: No explicit deliverables, artifacts, or outputs with owners and timelines were discussed during the meeting."
+    },
+    "total_blocks": 11
+  }
+}

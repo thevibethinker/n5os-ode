@@ -1,0 +1,65 @@
+---
+created: 2026-01-29
+last_edited: 2026-01-29
+version: 1.0
+schema_version: "1.0"
+normalized_at: "2026-01-30T03:00:00Z"
+provenance: con_ZDKmUou3ijDYJS13
+---
+
+# Decomposition Manifest
+
+candidate: Sridhar Agarwal
+company: FlowFuse
+position: Full Stack Developer (AI-focused)
+slug: sridhar-flowfuse
+
+source:
+  careerspan_brief: careerspan_source.pdf (55 pages, Google Doc export)
+  job_description: FlowFuse JD (scraped from Greenhouse)
+
+extraction:
+  method: "Pulse parallel orchestration + local OCR parsing"
+  ocr_tool: tesseract
+  ocr_resolution: 200 DPI
+  pages_processed: 55
+  skills_extracted: 33
+  skills_with_our_take: 33
+
+files:
+  # Core outputs
+  - scores_complete.json      # All skill assessments with full "Our Take" narratives
+  - scores_complete.csv       # Flat export for spreadsheets
+  - careerspan_cleaned.md     # Human-readable cleaned document
+  
+  # Structured YAML extractions
+  - overview.yaml             # Profile summary, recommendation, verdict
+  - profile.yaml              # Contact, education, credentials
+  - experience.yaml           # Work history with accomplishments
+  - hard_skills.yaml          # Technical competencies
+  - soft_skills.yaml          # Working style, leadership signals
+  - tools.yaml                # Technologies and frameworks
+  - achievements.yaml         # Awards, quantified accomplishments
+  - interests.yaml            # Hobbies, culture fit indicators
+  - alignment.yaml            # JD ↔ Candidate mapping
+  - jd.yaml                   # Job description (reference copy)
+  
+  # Source artifacts
+  - careerspan_source.pdf     # Original PDF export
+  - careerspan_full_ocr.txt   # Combined OCR output
+  - ocr_pages/                # Individual page OCR files (55 pages)
+
+scores_summary:
+  excellent: 26
+  good: 7
+  fair: 0
+  gap: 0
+  avg_importance: 7.8
+
+status: complete
+ready_for: "Meta-Resume Generator (Skill 2)"
+
+notes: |
+  Extracted via Pulse parallel orchestration.
+  All 33 skill assessments include full "Our Take" narratives preserved verbatim.
+  DO NOT manually edit extraction files - they preserve Careerspan's original analysis.

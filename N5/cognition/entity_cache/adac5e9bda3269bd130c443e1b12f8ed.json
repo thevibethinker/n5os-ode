@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Human involved in deployment"}, {"name": "Vibe Builder", "type": "ORG", "context": "AI organization involved in deployment"}], "relationships": [{"from": "V", "to": "Vibe Builder", "type": "WORKS_WITH", "context": "V deployed the system alongside Vibe Builder"}]}

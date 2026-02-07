@@ -1,0 +1,1 @@
+{"entities": [{"name": "SmartBuffer", "type": "TOOL", "context": "A tool used for creating buffers in the provided code."}, {"name": "buffer", "type": "CONCEPT", "context": "An existing Buffer referenced in the options for SmartBuffer."}], "relationships": [{"from": "SmartBuffer", "to": "buffer", "type": "USES", "context": "SmartBuffer is created using an existing buffer."}]}

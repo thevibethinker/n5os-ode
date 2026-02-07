@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Decision maker in the context"}, {"name": "Calendly", "type": "ORG", "context": "Mentioned as a tool that could provide funding"}], "relationships": [{"from": "V", "to": "Calendly", "type": "MENTIONS", "context": "V mentioned Calendly's ability to provide 3 million"}]}

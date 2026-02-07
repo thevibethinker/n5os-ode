@@ -1,0 +1,1 @@
+{"entities": [{"name": "USER", "type": "PERSON", "context": "person directed to a page if certain tokens are not set"}, {"name": "TWITTER_AUTH_TOKEN", "type": "TOOL", "context": "authentication token for Twitter"}, {"name": "TWITTER_CT0", "type": "TOOL", "context": "another token for Twitter authentication"}], "relationships": []}

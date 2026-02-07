@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "individual communicating about connections"}, {"name": "Google Suite", "type": "TOOL", "context": "software being referenced in the context of connections"}], "relationships": [{"from": "Vrijen Attawar", "to": "Google Suite", "type": "USES", "context": "discussing the software for relevant connections"}]}

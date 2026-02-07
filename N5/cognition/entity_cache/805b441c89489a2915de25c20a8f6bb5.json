@@ -1,0 +1,1 @@
+{"entities": [{"name": "Sam", "type": "ORG", "context": "partnership and competitor context"}], "relationships": [{"from": "Sam", "to": "competitors", "type": "RELATED_TO", "context": "describes the competitive landscape"}]}

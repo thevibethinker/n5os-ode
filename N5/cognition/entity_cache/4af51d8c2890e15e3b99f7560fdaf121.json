@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "Key contributor to acquire-hire value"}, {"name": "Careerspan", "type": "ORG", "context": "The organization involved in V's career journey"}], "relationships": [{"from": "V (Vrijen)", "to": "Careerspan", "type": "WORKS_WITH", "context": "V is involved with Careerspan"}]}

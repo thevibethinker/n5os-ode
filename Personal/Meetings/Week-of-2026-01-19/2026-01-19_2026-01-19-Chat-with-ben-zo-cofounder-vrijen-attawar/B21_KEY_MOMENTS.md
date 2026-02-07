@@ -1,11 +1,10 @@
 ---
 created: 2026-01-19
 last_edited: 2026-01-19
-version: 1.0
+version: 1
 provenance: con_e60XXcARp7P7wsBs
 block_type: B21
 ---
-
 # B21: Key Quotes & Strategic Questions
 
 ## Key Quotes

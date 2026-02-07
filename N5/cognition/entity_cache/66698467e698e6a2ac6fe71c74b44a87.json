@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Technical lead for their side of integration"}, {"name": "Shivam", "type": "PERSON", "context": "Collaborator on integration requirements"}], "relationships": [{"from": "V", "to": "Shivam", "type": "WORKS_WITH", "context": "Collaboration on integration requirements"}]}

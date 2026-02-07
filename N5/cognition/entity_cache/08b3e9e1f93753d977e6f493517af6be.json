@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "owner of the capability"}, {"name": "Pre-Build Discovery & PRD Protocol", "type": "CONCEPT", "context": "a specific workflow capability"}], "relationships": [{"from": "V", "to": "Pre-Build Discovery & PRD Protocol", "type": "USES", "context": "V is the owner of this protocol capability"}]}

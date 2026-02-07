@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "individual discussing knowledge system"}, {"name": "ChatGPT", "type": "TOOL", "context": "AI tool used for storing files and information"}], "relationships": [{"from": "Vrijen Attawar", "to": "ChatGPT", "type": "USES", "context": "uses ChatGPT to store files and information"}]}

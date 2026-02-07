@@ -1,0 +1,1 @@
+{"entities": [{"name": "Gabi Zijderveld", "type": "PERSON", "context": "Individual engaging in conversation"}, {"name": "Intermezzo", "type": "CONCEPT", "context": "Reference to a concept or term in discussion"}], "relationships": [{"from": "Gabi Zijderveld", "to": "Intermezzo", "type": "MENTIONS", "context": "Gabi asks about the concept of Intermezzo"}]}

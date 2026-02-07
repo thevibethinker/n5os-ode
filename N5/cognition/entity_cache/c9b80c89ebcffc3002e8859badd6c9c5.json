@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ash", "type": "PERSON", "context": "mentioned in the context of fundraising"}], "relationships": [{"from": "Ash", "to": "capital", "type": "MENTIONS", "context": "refers to fundraising as checks are starting to come in"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "knowledge system", "type": "CONCEPT", "context": "system used to detect discrepancies in data"}], "relationships": [{"from": "V", "to": "knowledge system", "type": "USES", "context": "V utilizes the knowledge system to detect discrepancies"}]}

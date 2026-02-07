@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "speaker expressing thoughts about a colleague"}, {"name": "the company", "type": "ORG", "context": "organization being discussed in the conversation"}], "relationships": [{"from": "Vrijen Attawar", "to": "the company", "type": "MENTIONS", "context": "discussing her thoughts about the company"}]}

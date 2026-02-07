@@ -1,0 +1,1 @@
+{"entities": [{"name": "Howie", "type": "PERSON", "context": "A person involved in activating the system"}, {"name": "V-OS", "type": "TOOL", "context": "The operating system being referenced"}], "relationships": [{"from": "V-OS", "to": "Howie", "type": "USES", "context": "Howie is a part of the activation process for V-OS"}]}

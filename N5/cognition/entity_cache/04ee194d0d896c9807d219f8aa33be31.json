@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ray Batra", "type": "PERSON", "context": "FOHE representative / community lead"}, {"name": "FOHE", "type": "ORG", "context": "organization represented by Ray Batra"}], "relationships": [{"from": "Ray Batra", "to": "FOHE", "type": "WORKS_WITH", "context": "Ray Batra is a representative of FOHE"}]}

@@ -1,0 +1,33 @@
+Integration
+
+Excellent’ Production Al System Design Required: intermediate 3/5 Importance: 9/10 Story+profie ~ a
+
+Ourtake Sasedonresume ~ Direct
+
+The resume contains multiple clear, direct examples of designing, building, deploying, and operating
+production Al systems across companies and contexts. Key evidence: as Principal ML Engineer at EclecticlO
+the candidate led end-to-end Al initiatives, architected and deployed a modular Al assistant integrated into a
+flagship product (decoupling synchronous Flask backends from async Al protocols, deployed a public MCP
+server), built a multi-stage pipeline for automated security report generation with Human-in-the-Loop
+approval and guardrails to reduce hallucinations and token usage (60% reduction), and delivered measurable
+production metrics (improvements in correctness, relevance, recall, schema adherence). Additional
+production examples include: a Text-to-Lucene RAG pipeline, scalable contextual search over 100M+ entities,
+SecureBERT fine-tuning for TTP classification (macro-F1 reported), and infrastructure/parallelization
+techniques (multiprocessing, Flash Attention). Earlier roles also show production delivery: at Cyware built a
+Django app serving ML models with multi-threaded inference and a feedback loop; at SquareOne delivered a
+low-latency (<300ms) transactional anomaly detection system in Scala; at Dell shipped time-series capacity
+planning and high-accuracy product-matching systems. The candidate repeatedly addresses production
+concerns: latency, cost/token usage tradeoffs, hallucination mitigation, human-in-loop review, scalability,
+modular architectures, and integration with product and sales stakeholders. Minor gaps: the resume rarely
+names specific observability/monitoring stacks (Prometheus/Grafana), Cl/CD/k8s details, or explicit frontend
+frameworks—so some implementation details around deployment/operational tooling are inferred rather than
+enumerated. Overall the profile demonstrates repeated, leadership-level delivery of production-grade Al
+systems and sensible tradeoffs typical of production Al system design.
+
+Support
+Stories
+qoWHeLzgkOMMISPwecHIL Dwect 9/10 Excellent Best
+kftoWPdjyQB9COQisjIPn Direct 8/10 Excellent
+Resume
+
+Resume match Direct 9/10 Excellent

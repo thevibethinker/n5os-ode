@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "individual expressing appreciation for intelligence"}], "relationships": [{"from": "Vrijen", "to": "detailed intelligence", "type": "BELIEVES", "context": "expressed strong appreciation for"}]}

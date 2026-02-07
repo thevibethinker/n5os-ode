@@ -1,0 +1,1 @@
+{"entities": [{"name": "shyam-chidamber", "type": "PERSON", "context": "individual in the CRM knowledge system"}, {"name": "CRM", "type": "CONCEPT", "context": "customer relationship management system"}], "relationships": [{"from": "shyam-chidamber", "to": "CRM", "type": "RELATED_TO", "context": "associated role in the knowledge system"}]}

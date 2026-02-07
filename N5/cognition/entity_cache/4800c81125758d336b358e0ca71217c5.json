@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker and referral source"}, {"name": "Future Fit", "type": "ORG", "context": "Organization contacted by Vrijen"}], "relationships": [{"from": "Vrijen Attawar", "to": "Future Fit", "type": "KNOWS", "context": "Vrijen has made contact with the CEO of Future Fit"}]}

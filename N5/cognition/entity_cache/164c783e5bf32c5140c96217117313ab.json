@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "a monetization layer for community organizers"}], "relationships": [{"from": "Careerspan", "to": "community organizers", "type": "RELATED_TO", "context": "positioning as a no-friction monetization layer"}]}

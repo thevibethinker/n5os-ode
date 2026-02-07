@@ -1,0 +1,1 @@
+{"entities": [{"name": ".secrets.key", "type": "TOOL", "context": "a file related to secrets management"}, {"name": "secure password manager", "type": "TOOL", "context": "software for storing passwords securely"}, {"name": "N5 Secrets Master Key", "type": "CONCEPT", "context": "label for a specific secrets management key"}], "relationships": []}

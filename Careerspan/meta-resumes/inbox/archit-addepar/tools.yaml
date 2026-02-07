@@ -1,0 +1,46 @@
+# Tools
+# Extracted: 2026-02-05T16:36:47.086084
+# Method: Structured extraction
+# DO NOT EDIT
+
+languages:
+- Java
+- Python
+- Kotlin
+- C++
+- Go
+frameworks:
+- Spring Boot
+- Gin
+databases:
+- ScyllaDB
+- RDS
+- Cassandra
+infrastructure:
+- AWS
+- Kubernetes
+- EKS
+- Terraform
+- Kafka
+- Airflow
+- Spark
+- Grafana
+ai_ml_tools:
+- LLM
+- RAG
+other:
+- Stripe
+- PayPal
+- Clutch
+- Slack
+- Shopify
+not_mentioned:
+- Lambda
+- Step Functions
+- API Gateway
+- DynamoDB
+- OpenSearch
+- Elasticsearch
+- CloudWatch
+- CloudFormation
+- Serverless Framework

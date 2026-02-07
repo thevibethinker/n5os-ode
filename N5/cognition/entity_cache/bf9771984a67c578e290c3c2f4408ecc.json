@@ -1,0 +1,1 @@
+{"entities": [{"name": "ChatGPT", "type": "TOOL", "context": "AI tool that is mentioned as having shallow data"}, {"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker discussing AI and its limitations"}], "relationships": [{"from": "Vrijen Attawar", "to": "ChatGPT", "type": "MENTIONS", "context": "Discussing the shortcomings of ChatGPT's data and technology"}]}

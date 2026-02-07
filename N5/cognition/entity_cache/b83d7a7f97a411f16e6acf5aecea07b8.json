@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "the person observing the use of tools"}, {"name": "tools", "type": "TOOL", "context": "tools used by people to produce documents"}], "relationships": [{"from": "V (Vrijen)", "to": "tools", "type": "KNOWS", "context": "V has observed the use of these tools"}]}

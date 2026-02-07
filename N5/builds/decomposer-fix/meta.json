@@ -1,0 +1,57 @@
+{
+  "slug": "decomposer-fix",
+  "title": "Careerspan Decomposer Schema Fix",
+  "created": "2026-01-30T03:15:00Z",
+  "status": "complete",
+  "streams": [
+    {
+      "id": 1,
+      "drops": [
+        "D1.1",
+        "D1.2"
+      ],
+      "status": "complete"
+    },
+    {
+      "id": 2,
+      "drops": [
+        "D2.1"
+      ],
+      "status": "complete",
+      "depends_on": [
+        1
+      ]
+    }
+  ],
+  "drops": {
+    "D1.1": {
+      "title": "Schema + Extraction Engine",
+      "brief": "drops/D1.1-schema-extraction.md",
+      "status": "complete",
+      "stream": 1,
+      "failure_reason": ""
+    },
+    "D1.2": {
+      "title": "Backfill Existing Outputs",
+      "brief": "drops/D1.2-backfill-outputs.md",
+      "status": "complete",
+      "stream": 1,
+      "failure_reason": ""
+    },
+    "D2.1": {
+      "title": "Documentation + Validation",
+      "brief": "drops/D2.1-docs-validation.md",
+      "status": "complete",
+      "stream": 2,
+      "depends_on": [
+        "D1.1",
+        "D1.2"
+      ]
+    }
+  },
+  "objective": "Fix decomposer skill to produce consistent, schema-validated outputs",
+  "trigger": "Hardik vs Sridhar comparison revealed schema drift and missing scores",
+  "provenance": "con_MYE5DZGKx6SDWH5A",
+  "started_at": "2026-01-30T03:00:16.970910+00:00",
+  "completed_at": "2026-01-30T03:18:17.205717+00:00"
+}

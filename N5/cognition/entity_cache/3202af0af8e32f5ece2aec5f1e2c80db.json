@@ -1,0 +1,1 @@
+{"entities": [{"name": "employers", "type": "ORG", "context": "refers to individuals or organizations involved in hiring"}, {"name": "impact report", "type": "CONCEPT", "context": "refers to a report assessing various impacts such as placement rate and hire quality"}], "relationships": []}

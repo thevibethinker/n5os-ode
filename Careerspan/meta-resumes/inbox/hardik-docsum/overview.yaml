@@ -1,0 +1,83 @@
+---
+created: 2026-02-03
+last_edited: 2026-02-03
+version: 1.0
+provenance: con_LFJ7YTSwxW5vh4bD
+
+careerspan_score:
+  overall: 85
+  max: 100
+  qualification: "Well-aligned"
+  qualification_detail: null
+  career_trajectory: "Progression Move"
+
+category_scores:
+  background:
+    score: 90
+    max: 100
+  uniqueness:
+    score: 92
+    max: 100
+  responsibilities:
+    score: 89
+    max: 100
+  hard_skills:
+    score: 69
+    max: 100
+  soft_skills:
+    score: 91
+    max: 100
+
+recommendation: "STRONG_YES"
+
+summary: |
+  Hardik is a proven zero-to-one builder with rare founding engineer experience at Keysight, 
+  where he architected and scaled an ML/MLOps SaaS platform from scratch to enterprise adoption 
+  by Apple, Samsung, and Volkswagen. Strong full-stack capabilities across Python, FastAPI, React, 
+  and AWS with demonstrated product leadership at American Express.
+
+bottom_line: |
+  Strong recommend as a founding full-stack engineer with rare zero-to-one platform experience 
+  and immediate impact potential, with manageable ramp on Next.js/PostgreSQL specifics and 
+  contract-focused document processing.
+
+elevator_pitch: null
+
+overall_strengths: |
+  Proven zero-to-one builder with end-to-end ownership across backend, frontend, and infrastructure.
+  As one of four founding engineers at Keysight, Hardik architected and shipped a vendor-agnostic
+  ML/MLOps SaaS platform (dataset versioning, MLflow-based model management, Kubernetes
+  execution, FastAPI microservices, Airflow ingestion) that reduced model-to-production time from
+  hours to minutes and scaled to 200–300 daily enterprise users, including adoption by Apple, Samsung
+  Semiconductor, and Volkswagen. At American Express, he operated as a solo product leader/full-stack
+  engineer, building a React + Spring Boot self-service portal and an automated decommissioning
+  pipeline that saved $50k/month, improved reliability for 70k+ daily jobs, and met zero-downtime and
+  compliance requirements. Strong judgment and risk management evident in open-source, vendor-agnostic 
+  architectural choices, cost/performance trade-offs, and measurable business outcomes.
+
+overall_weaknesses: |
+  Direct experience with PostgreSQL is not explicit (strong database background but skewed toward
+  Couchbase/BigQuery); advanced SQL tuning, relational schema design, and Postgres-specific
+  optimization may require a short ramp. Next.js is not called out (React is), so SSR/ISR patterns and
+  Next-specific performance practices are unproven. Event-driven architecture and queue/broker
+  experience (Kafka/pub-sub, idempotency, ordering guarantees) are not documented. Document-processing 
+  domain depth (OCR/PDF parsing, contract-specific entity extraction, legal workflows) is indirect—he 
+  has RAG/LLM experience but no explicit legaltech projects.
+
+potential_dealbreakers: []
+
+key_strengths:
+  - "Zero-to-one platform builder with founding engineer experience"
+  - "Full-stack ownership: backend, frontend, infrastructure, DevOps"
+  - "Production LLM/RAG integrations with LangChain"
+  - "Enterprise-scale delivery ($50k/month savings, 200-300 daily users)"
+  - "Strong async/remote work capability"
+
+key_concerns:
+  - "No direct PostgreSQL experience (transferable from Couchbase/BigQuery)"
+  - "Next.js not called out explicitly (React experience strong)"
+  - "No legaltech/contract domain experience"
+
+verdict: |
+  Strong recommend as a founding full-stack engineer with rare zero-to-one platform experience 
+  and immediate impact potential.

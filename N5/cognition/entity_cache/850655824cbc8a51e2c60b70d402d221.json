@@ -1,0 +1,1 @@
+{"entities": [{"name": "Jaya Pokuri", "type": "PERSON", "context": "individual involved in data gathering"}], "relationships": [{"from": "Jaya Pokuri", "to": "data", "type": "USES", "context": "gathering data from various sources"}]}

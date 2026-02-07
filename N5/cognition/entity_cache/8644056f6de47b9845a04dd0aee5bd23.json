@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual with a knowledge system"}, {"name": "yauzl", "type": "TOOL", "context": "a library mentioned in the context of development"}], "relationships": [{"from": "V (Vrijen)", "to": "yauzl", "type": "USES", "context": "V uses the yauzl tool for development purposes"}]}

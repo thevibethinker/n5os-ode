@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "a company that focuses on improving hiring methods"}, {"name": "PM hiring", "type": "CONCEPT", "context": "refers to product manager hiring practices"}], "relationships": [{"from": "Careerspan", "to": "PM hiring", "type": "RELATED_TO", "context": "Careerspan's value proposition addresses issues in PM hiring"}]}

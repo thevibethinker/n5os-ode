@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "author of the knowledge system"}, {"name": "Documents/System/personas/*.md", "type": "TOOL", "context": "location of the canonical persona briefs"}], "relationships": []}

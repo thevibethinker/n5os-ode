@@ -1,0 +1,1 @@
+{"entities": [{"name": "SocksClientOptions", "type": "CONCEPT", "context": "An object describing SOCKS proxy configuration"}, {"name": "Function", "type": "CONCEPT", "context": "A callback function for handling proxy connection events"}, {"name": "Promise", "type": "CONCEPT", "context": "A Promise related to proxy connection establishment"}], "relationships": []}

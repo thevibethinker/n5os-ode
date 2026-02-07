@@ -1,0 +1,1 @@
+{"entities": [{"name": "Chaitanya P", "type": "PERSON", "context": "individual mentioning a move"}, {"name": "parents", "type": "PERSON", "context": "Chaitanya P's parents are described as brave"}], "relationships": [{"from": "Chaitanya P", "to": "parents", "type": "MENTIONS", "context": "Chaitanya comments on the bravery of their parents"}]}

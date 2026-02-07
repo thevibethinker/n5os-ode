@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "Acts as a Career Agent"}], "relationships": [{"from": "Careerspan", "to": "Product Managers", "type": "WORKS_WITH", "context": "Actively scouting opportunities for them"}]}

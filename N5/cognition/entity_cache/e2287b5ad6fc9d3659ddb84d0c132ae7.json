@@ -1,0 +1,1 @@
+{"entities": [{"name": "Jason", "type": "PERSON", "context": "Speaker in the discussion"}, {"name": "Vibe coding", "type": "CONCEPT", "context": "Concept being pitched and discussed in relation to tools"}], "relationships": [{"from": "Jason", "to": "Vibe coding", "type": "MENTIONS", "context": "Discussing early experiences with Vibe coding during investor pitches"}]}

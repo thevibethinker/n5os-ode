@@ -1,0 +1,52 @@
+---
+created: 2026-02-03
+last_edited: 2026-02-03
+version: 1.0
+provenance: con_LFJ7YTSwxW5vh4bD
+
+candidate:
+  name: Hardik
+  email: hardikkhichi.iitd@gmail.com
+  referred_by: "Careerspan Admin Auto-Submission (Silent Database Scan)"
+  applied_date: "2026-02-01"
+
+education:
+  - degree: "B.Tech. & M.Tech. (Dual Degree)"
+    institution: "IIT Delhi"
+    field: "Computer Science"
+    dates: "May 2016 - Apr 2021"
+    notes: "Top-tier technical institution in India and globally respected for engineering talent"
+  
+  - certification: "Associate Cloud Engineer"
+    institution: "Google"
+    date: "Jan 2023"
+    field: "Google Cloud Platform (GCP)"
+
+background_summary: |
+  1. Educational Background: The candidate holds a prestigious Computer Science B.Tech & M.Tech (dual
+  degree) from IIT Delhi, a top-tier technical institution in India and globally respected for engineering
+  talent. For technical founding roles, particularly in AI/data, this is an ideal academic pedigree.
+  
+  2. Industry Experience Alignment: The bulk of the candidate's experience is in building AI/ML platforms
+  (Keysight), infrastructure and fullstack tools (American Express), and data-heavy engineering at scale
+  (Flipkart, Amex). While the industries are largely fintech/payments (Amex), e-commerce (Flipkart), and
+  enterprise SaaS (Keysight), there's strong alignment with SaaS product-building and platform
+  architecture, but not direct legaltech/document intelligence exposure.
+  
+  3. Company Type/Stage: At Keysight, the candidate joined as a founding engineer scaling a product
+  from R&D prototype to wide enterprise usage, mirroring the early-stage, build-from-zero ethos needed
+  at Docsum. Prior experience includes both startup-like (small founding team) and large enterprise
+  (Amex/Flipkart), with clear evidence of thriving in both.
+  
+  4. Geographic/Market: Based in India with experience at global-facing firms (Keysight with
+  Apple/Samsung as clients, Amex global scope). No explicit experience in US legaltech or
+  contract management.
+  
+  5. Career Trajectory: Logical upward growth from technical internships to software engineer, then to
+  senior/founding ML engineer with leadership in architecture and team scaling.
+  
+  6. Domain/Cultural Expertise: No explicit prior experience in legaltech, contract analysis, or B2B SaaS
+  with a legal/operations core market. However, clear record of building technical products for
+  enterprise needs and working in adjacent domains (AI document intelligence, ML, SaaS infra).
+
+location: "India"

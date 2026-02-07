@@ -1,0 +1,1 @@
+{"entities": [{"name": "SocksClient", "type": "TOOL", "context": "A client used to create network connections."}, {"name": "google.com", "type": "ORG", "context": "A web address for the Google organization."}], "relationships": [{"from": "SocksClient", "to": "google.com", "type": "USES", "context": "SocksClient is used to connect to the google.com server."}]}

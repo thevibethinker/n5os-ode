@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "a person with a knowledge system"}, {"name": "Recipes", "type": "CONCEPT", "context": "executable instructions"}], "relationships": [{"from": "V", "to": "Recipes", "type": "BELIEVES", "context": "V believes recipes are executable instructions"}]}

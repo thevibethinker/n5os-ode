@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "the speaker expressing their thoughts"}, {"name": "founders", "type": "CONCEPT", "context": "considered good people to know"}], "relationships": [{"from": "Vrijen Attawar", "to": "founders", "type": "BELIEVES", "context": "thinks they are good people to know and good founders"}]}

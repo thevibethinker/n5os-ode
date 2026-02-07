@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "The individual referred to as Vrijen"}, {"name": "main script", "type": "TOOL", "context": "A tool mentioned in the process of handling requests"}, {"name": "response file", "type": "TOOL", "context": "File where responses to requests are written"}], "relationships": []}

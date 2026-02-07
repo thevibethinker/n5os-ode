@@ -1,0 +1,47 @@
+# Tools
+# Extracted: 2026-01-30T02:22:04.136802
+
+languages:
+  - Python
+  - Scala
+  - SQL
+
+frameworks:
+  - Django
+  - Flask
+  - LangGraph
+  - MCP
+
+databases:
+  - Elasticsearch
+  - NoSQL
+  - SQL
+
+ai_ml:
+  - LLMs
+  - RAG
+  - BERT
+  - Stanza
+  - SecureBERT
+  - SecureBERT 2.0
+  - PICARD
+  - Faster R-CNN
+  - LSTM
+  - Random Forest
+  - Ollama
+  - Nomic-embed
+  - Flash Attention
+  - Embeddings
+  - Vector databases
+  - Few-shot prompting
+  - Chain-of-Thought
+  - Entity extraction
+  - Multi-label classification
+  - Named Entity Recognition (NER)
+
+infrastructure:
+  - MCP servers
+  - Vector databases
+  - Elasticsearch
+  - Lucene
+  - Spark

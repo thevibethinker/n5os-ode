@@ -1,0 +1,1 @@
+{"entities": [{"name": "Placeholder", "type": "TOOL", "context": "A tool used to manage tasks with specific attributes"}, {"name": "Work Manifest", "type": "CONCEPT", "context": "A documentation system where tasks are recorded"}], "relationships": []}

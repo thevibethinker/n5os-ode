@@ -1,0 +1,1 @@
+{"entities": [{"name": "Zo", "type": "ORG", "context": "Organization responsible for site creation"}, {"name": "zosite.json", "type": "TOOL", "context": "Configuration file used in site setup"}], "relationships": [{"from": "Zo", "to": "zosite.json", "type": "USES", "context": "Zo's site creation process involves zosite.json"}]}

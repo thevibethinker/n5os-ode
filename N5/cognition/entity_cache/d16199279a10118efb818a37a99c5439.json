@@ -1,0 +1,1 @@
+{"entities": [{"name": "Worker 3", "type": "PERSON", "context": "part of the completion process"}, {"name": "phase3_results.json", "type": "TOOL", "context": "file related to phase 3 results"}], "relationships": []}

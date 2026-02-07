@@ -1,0 +1,1 @@
+{"entities": [{"name": "Gmail", "type": "TOOL", "context": "email service used for scanning meetings"}, {"name": "Zoom", "type": "TOOL", "context": "video conferencing tool used for meetings"}], "relationships": []}

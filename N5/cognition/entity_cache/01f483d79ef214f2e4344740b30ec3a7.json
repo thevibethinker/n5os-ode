@@ -1,0 +1,1 @@
+{"entities": [{"name": "Claude", "type": "TOOL", "context": "a model that is being modified for different outcomes"}, {"name": "V", "type": "PERSON", "context": "the observer discussing uses of Claude"}], "relationships": [{"from": "V", "to": "Claude", "type": "USES", "context": "V is observing how Claude is being used in different ways"}]}

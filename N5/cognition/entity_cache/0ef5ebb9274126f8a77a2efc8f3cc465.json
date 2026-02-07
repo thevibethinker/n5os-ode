@@ -1,0 +1,1 @@
+{"entities": [{"name": "v2 router", "type": "TOOL", "context": "a router that achieves 100% reliability"}, {"name": "test suite", "type": "CONCEPT", "context": "a set of tests used to validate the router's performance"}], "relationships": [{"from": "v2 router", "to": "test suite", "type": "USES", "context": "the router uses the test suite to validate reliability"}]}

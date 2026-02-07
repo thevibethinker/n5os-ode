@@ -1,0 +1,1 @@
+{"entities": [{"name": "Dry-run mode", "type": "CONCEPT", "context": "a method used for testing operations"}, {"name": "Sample data", "type": "CONCEPT", "context": "used for testing before full execution"}, {"name": "Manual smoke tests", "type": "TOOL", "context": "tests conducted to ensure systems operate correctly before automation"}], "relationships": []}

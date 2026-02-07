@@ -1,0 +1,1 @@
+{"entities": [{"name": "Skillcraft", "type": "ORG", "context": "skills-focused organization that provided product feedback"}], "relationships": [{"from": "V", "to": "Skillcraft", "type": "MENTIONS", "context": "V refers to Skillcraft in the context of product feedback"}]}

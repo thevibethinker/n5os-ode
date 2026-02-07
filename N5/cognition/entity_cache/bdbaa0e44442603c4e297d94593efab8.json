@@ -1,0 +1,1 @@
+{"entities": [{"name": "argparse", "type": "TOOL", "context": "a Python library for parsing command-line arguments"}, {"name": "auto-detection logic", "type": "CONCEPT", "context": "a method for automatically detecting scripts"}], "relationships": []}

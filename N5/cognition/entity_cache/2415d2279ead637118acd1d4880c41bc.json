@@ -1,0 +1,1 @@
+{"entities": [{"name": "Drop", "type": "CONCEPT", "context": "A context validation concept for the process"}, {"name": "SESSION_STATE", "type": "CONCEPT", "context": "State management context for reading identifiers"}, {"name": "deposits", "type": "TOOL", "context": "Tool for storing deposit data as JSON files"}], "relationships": []}

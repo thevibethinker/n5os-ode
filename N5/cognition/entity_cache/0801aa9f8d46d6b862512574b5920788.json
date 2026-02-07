@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Founder with 20+ years coaching experience"}, {"name": "Logan Currie", "type": "PERSON", "context": "Co-founder and COO, involved in marketing and community"}], "relationships": [{"from": "Vrijen Attawar", "to": "Logan Currie", "type": "WORKS_WITH", "context": "Both are founders of the knowledge system"}]}

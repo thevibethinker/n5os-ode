@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "an organization gaining access to a competitor's system"}, {"name": "Getro", "type": "ORG", "context": "a competitor with an active contract"}], "relationships": [{"from": "Careerspan", "to": "Getro", "type": "WORKS_WITH", "context": "While gaining admin access to help the client"}]}

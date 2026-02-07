@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "Careerspan", "type": "TOOL", "context": "job seeking tool being used by V"}], "relationships": [{"from": "V", "to": "Careerspan", "type": "USES", "context": "V is using Careerspan for job seeking"}]}

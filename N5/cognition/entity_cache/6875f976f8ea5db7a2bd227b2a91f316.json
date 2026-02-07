@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual discussing technology"}, {"name": "tech", "type": "CONCEPT", "context": "refers to technology in general"}], "relationships": [{"from": "V", "to": "tech", "type": "BELIEVES", "context": "V believes technology is incredible but hard to objectively justify"}]}

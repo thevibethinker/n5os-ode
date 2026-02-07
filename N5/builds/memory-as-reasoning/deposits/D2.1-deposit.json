@@ -1,0 +1,18 @@
+{
+  "drop_id": "D2.1",
+  "status": "complete",
+  "completed_at": "2026-02-01T02:52:00Z",
+  "files_created": [
+    "N5/cognition/belief_store.py",
+    "N5/cognition/surprisal_detector.py",
+    "N5/cognition/reasoning.db",
+    "N5/review/beliefs/"
+  ],
+  "tests": {
+    "belief_crud": "pass",
+    "hitl_queue": "pass",
+    "surprisal_detection": "pass",
+    "trace_logging": "pass"
+  },
+  "notes": "Belief store and surprisal detector implemented. 5 test beliefs created. HITL queue ready. Awaiting D1.2 completion to enable reasoning layer."
+}

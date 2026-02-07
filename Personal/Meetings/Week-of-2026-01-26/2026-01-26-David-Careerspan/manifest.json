@@ -1,0 +1,72 @@
+{
+  "meeting_id": "2026-01-26_David-Careerspan",
+  "date": "2026-01-26",
+  "participants": [
+    "David",
+    "Careerspan"
+  ],
+  "meeting_type": "external",
+  "status": "archived",
+  "transcript_file": "transcript.md",
+  "blocks_requested": [],
+  "blocks_generated": [
+    "B32_THOUGHT_PROVOKING_IDEAS",
+    "B13_PLAN_OF_ACTION",
+    "B26_MEETING_METADATA",
+    "B08_STAKEHOLDER_INTELLIGENCE",
+    "B03_DECISIONS",
+    "B01_DETAILED_RECAP",
+    "B00_ZO_TAKE_HEED",
+    "B21_KEY_MOMENTS",
+    "B33_DECISION_RATIONALE",
+    "B04_OPEN_QUESTIONS",
+    "B02_B05_COMMITMENTS_AND_ACTIONS"
+  ],
+  "blocks_failed": [],
+  "staged_at": "2026-02-02T20:22:18.763229Z",
+  "processed_at": "2026-02-03T00:36:26.544998Z",
+  "archived_at": "2026-02-03T13:16:31.536518Z",
+  "error": null,
+  "block_selection": {
+    "selected_at": "2026-02-03T00:27:57.252356Z",
+    "method": "smart_selector_v2",
+    "recipe": "external_standard",
+    "always_blocks": [
+      "B00",
+      "B01",
+      "B02_B05",
+      "B03",
+      "B08",
+      "B21",
+      "B26"
+    ],
+    "conditional_selected": [
+      "B04",
+      "B13",
+      "B32",
+      "B33"
+    ],
+    "conditional_skipped": [
+      "B06",
+      "B07",
+      "B10",
+      "B14",
+      "B25",
+      "B28"
+    ],
+    "triggered": [],
+    "reasoning": {
+      "B04": "Unresolved technical implementation questions: David expresses uncertainty about systems architecture, database design, multi-threaded conversations, and how to keep user data separated. These require follow-up clarification before the AI coaching concept can be built.",
+      "B13": "Multiple next steps are explicitly discussed: David will send an introduction email to Ben Erez after the call; David wants to test an AI coaching bot concept first; technical implementation needs exploration; potential meetup with Ben needs coordination.",
+      "B32": "David is making a complex decision about product strategy - weighing whether to build an AI coaching tool, how to structure it (email vs. bot), and what constraints/permissions to set around his intellectual property. This requires capturing the nuanced reasoning behind his hesitation and requirements.",
+      "B33": "Novel AI coaching concept discussed: Using semantic search over David's materials to create a queryable \"David memory\" that can provide messaging guidance for job seekers. David identified the core problem (people getting stuck on what to message) and the solution architecture (LinkedIn commonality detection + messaging templates).",
+      "B06": "Skipped: No discussion of company-specific business strategy, market positioning, or company goals. The conversation focuses on personal coaching concepts and logistics, not corporate strategy.",
+      "B07": "Skipped: No verbal cue from V to make an introduction. David mentions he will send an email to Ben Erez himself, not requesting V/Zo to create one.",
+      "B10": "Skipped: The relationship discussed is with Ben Erez, but the conversation focuses on logistics (location, potential meetup) rather than analyzing relationship trajectory or collaboration momentum. This is preliminary relationship-building, not trajectory analysis.",
+      "B14": "Skipped: No verbal cue from V requesting blurb drafts. The concept of messaging templates is discussed as a product feature David wants to build, not as something V wants drafted now.",
+      "B25": "Skipped: While David mentions he will send an email to Ben, there are no explicit deliverables with owners and timelines beyond that immediate action. The rest is exploratory discussion, not committed deliverables.",
+      "B28": "Skipped: No discussion of industry trends, market dynamics, or competitive landscape. The conversation is about a specific personal coaching concept and technical implementation questions."
+    },
+    "total_blocks": 11
+  }
+}

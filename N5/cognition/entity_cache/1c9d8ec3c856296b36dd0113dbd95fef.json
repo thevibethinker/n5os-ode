@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Individual asking about a call"}, {"name": "Northwell", "type": "ORG", "context": "One of the biggest groups mentioned"}], "relationships": [{"from": "Vrijen Attawar", "to": "Northwell", "type": "MENTIONS", "context": "Asks about a call related to Northwell"}]}

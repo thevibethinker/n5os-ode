@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "The individual associated with the knowledge system."}, {"name": "Short Blurb template", "type": "TOOL", "context": "A template specified for generating short formats."}], "relationships": [{"from": "V", "to": "Short Blurb template", "type": "USES", "context": "V uses the Short Blurb template to generate content."}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "LLM", "type": "CONCEPT", "context": "Large Language Model used in integrations"}, {"name": "API", "type": "TOOL", "context": "Application Programming Interface for integrations"}], "relationships": []}

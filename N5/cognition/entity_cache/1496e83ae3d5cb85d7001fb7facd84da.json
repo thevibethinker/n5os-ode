@@ -1,0 +1,1 @@
+{"entities": [{"name": "Darius Goldman", "type": "PERSON", "context": "individual discussing design"}, {"name": "design", "type": "CONCEPT", "context": "subject of discussion"}], "relationships": [{"from": "Darius Goldman", "to": "design", "type": "MENTIONS", "context": "Darius discusses design"}]}

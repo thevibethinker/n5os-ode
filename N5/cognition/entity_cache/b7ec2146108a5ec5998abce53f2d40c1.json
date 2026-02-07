@@ -1,0 +1,1 @@
+{"entities": [{"name": "Emory", "type": "ORG", "context": "co-designer of a model for universities"}], "relationships": [{"from": "Emory", "to": "model", "type": "WORKS_WITH", "context": "co-designing a model other universities will follow"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Calendly", "type": "ORG", "context": "a scheduling tool"}, {"name": "cs-acq-calendly", "type": "CONCEPT", "context": "a specific acquisition context related to Calendly"}], "relationships": [{"from": "Calendly exec", "to": "cs-acq-calendly", "type": "WORKS_WITH", "context": "exec linked to acquisition context of Calendly"}]}

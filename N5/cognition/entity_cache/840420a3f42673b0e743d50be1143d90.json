@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual who has knowledge"}, {"name": "Eric", "type": "PERSON", "context": "end recipient met by V"}], "relationships": [{"from": "V", "to": "Eric", "type": "KNOWS", "context": "met directly via Zo demo"}]}

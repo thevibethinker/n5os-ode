@@ -1,0 +1,50 @@
+{
+  "schema_version": 3,
+  "slug": "pulse-smoke-test",
+  "title": "Smoke Test: Manual Launcher + Wave Gating",
+  "build_type": "code_build",
+  "status": "pending",
+  "model": "anthropic:claude-sonnet-4-20250514",
+  "launch_mode": "orchestrated",
+  "waves": {
+    "W1": [
+      "D1.1",
+      "D2.1"
+    ],
+    "W2": [
+      "D1.2"
+    ]
+  },
+  "active_wave": "W2",
+  "drops": {
+    "D1.1": {
+      "name": "Auto task (should spawn headless)",
+      "stream": 1,
+      "order": 1,
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "started_at": "2026-02-01T06:02:48.806945+00:00",
+      "conversation_id": "con_6mwAOjien1K8xvsd"
+    },
+    "D2.1": {
+      "name": "Manual task (voice preferences)",
+      "stream": 2,
+      "order": 1,
+      "spawn_mode": "manual",
+      "blocking": true,
+      "status": "complete",
+      "launcher_path": "N5/builds/pulse-smoke-test/launchers/D2.1.md"
+    },
+    "D1.2": {
+      "name": "Wave 2 task (should wait for W1)",
+      "stream": 1,
+      "order": 2,
+      "blocking": true,
+      "status": "running",
+      "spawn_recommendation": "auto",
+      "started_at": "2026-02-01T06:05:51.207079+00:00",
+      "conversation_id": "con_aQ2eoJoGXcX0BU9O"
+    }
+  }
+}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "AI", "type": "CONCEPT", "context": "artificial intelligence system that auto-approves quality"}, {"name": "human review", "type": "CONCEPT", "context": "process required when below quality threshold"}], "relationships": []}

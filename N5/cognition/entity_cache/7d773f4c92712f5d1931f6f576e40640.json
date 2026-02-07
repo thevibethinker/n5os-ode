@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "referring to Vrijen"}, {"name": "Careerspan", "type": "ORG", "context": "product offering mentioned as part of V's consulting"}], "relationships": [{"from": "V", "to": "Careerspan", "type": "USES", "context": "V offers consulting beyond Careerspan's product"}]}

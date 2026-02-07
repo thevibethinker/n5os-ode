@@ -1,0 +1,1 @@
+{"entities": [{"name": "meeting", "type": "CONCEPT", "context": "a scheduled event that can be marked as C-state or moved to the archive"}, {"name": "C-state", "type": "CONCEPT", "context": "a specific status for meetings"}, {"name": "archive", "type": "CONCEPT", "context": "a bucket for processed meetings"}], "relationships": []}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "greedy-arrays config", "type": "CONCEPT", "context": "configuration for specifying array behavior"}, {"name": "yargs-parser", "type": "ORG", "context": "a library for argument parsing in JavaScript"}], "relationships": [{"from": "yargs-parser", "to": "greedy-arrays config", "type": "MENTIONS", "context": "introducing a new configuration feature"}]}

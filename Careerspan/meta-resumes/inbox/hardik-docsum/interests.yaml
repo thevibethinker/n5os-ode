@@ -1,0 +1,27 @@
+---
+created: 2026-02-03
+last_edited: 2026-02-03
+version: 1.0
+provenance: con_LFJ7YTSwxW5vh4bD
+
+hobbies:
+  - name: "Plant Collecting"
+    notes: null
+  
+  - name: "Football"
+    notes: "Long-term following, strategic analysis"
+  
+  - name: "Digital Art"
+    notes: null
+  
+  - name: "UX Design"
+    notes: "With Figma, for team"
+  
+  - name: "Gaming"
+    notes: null
+
+culture_fit_signals:
+  - "Diverse intellectual interests beyond engineering"
+  - "Creative/design sensibility (digital art, UX)"
+  - "Strategic thinking (football analysis)"
+  - "Patience and care (plant collecting)"

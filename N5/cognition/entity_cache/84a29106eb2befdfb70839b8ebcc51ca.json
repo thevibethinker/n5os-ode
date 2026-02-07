@@ -1,0 +1,1 @@
+{"entities": [{"name": "UglifyJS", "type": "TOOL", "context": "JavaScript minification tool"}, {"name": "Math.floor", "type": "CONCEPT", "context": "Mathematical function used to round down numbers"}], "relationships": [{"from": "UglifyJS", "to": "Math.floor", "type": "USES", "context": "UglifyJS can use the Math.floor function to optimize code"}]}

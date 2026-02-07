@@ -1,0 +1,1 @@
+{"entities": [{"name": "P25", "type": "CONCEPT", "context": "Code Is Free"}, {"name": "P8", "type": "CONCEPT", "context": "Minimal Context"}], "relationships": [{"from": "P25", "to": "P8", "type": "RELATED_TO", "context": "Comparison between concepts regarding resolution and pattern"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ilsa", "type": "PERSON", "context": "mentioned as part of a group"}, {"name": "Amanda", "type": "PERSON", "context": "mentioned as a person to have a call with"}], "relationships": [{"from": "V", "to": "Ilsa", "type": "KNOWS", "context": "part of the same group"}, {"from": "V", "to": "Amanda", "type": "WORKS_WITH", "context": "having a call with Amanda"}]}

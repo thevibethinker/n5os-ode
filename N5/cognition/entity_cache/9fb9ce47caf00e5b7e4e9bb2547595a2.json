@@ -1,0 +1,1 @@
+{"entities": [{"name": "Micro", "type": "PERSON", "context": "person to discuss role selection and timeline"}], "relationships": [{"from": "V", "to": "Micro", "type": "WORKS_WITH", "context": "planning a call to align on work-related topics"}]}

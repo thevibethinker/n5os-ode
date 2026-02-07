@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "Coaching service engaged by candidates"}, {"name": "candidates", "type": "PERSON", "context": "Individuals engaging with Careerspan for coaching"}], "relationships": [{"from": "candidates", "to": "Careerspan", "type": "USES", "context": "Candidates use Careerspan for coaching"}]}

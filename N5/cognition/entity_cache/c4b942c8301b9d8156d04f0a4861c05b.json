@@ -1,0 +1,1 @@
+{"entities": [{"name": "Logan", "type": "PERSON", "context": "Owner of the document"}, {"name": "Jennifer one-pager", "type": "CONCEPT", "context": "Document related to V's knowledge system"}], "relationships": [{"from": "Logan", "to": "Jennifer one-pager", "type": "OWNS", "context": "Logan is the owner of the document"}]}

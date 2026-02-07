@@ -1,0 +1,1 @@
+{"entities": [{"name": "meeting ID prefix", "type": "CONCEPT", "context": "identifier for meetings"}, {"name": "meeting folder name", "type": "CONCEPT", "context": "specific reference for meetings"}], "relationships": []}

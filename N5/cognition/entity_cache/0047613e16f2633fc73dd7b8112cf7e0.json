@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ryan Vanderbilt", "type": "PERSON", "context": "Speaker sharing experiences about team building and hiring"}, {"name": "Google", "type": "ORG", "context": "Previous workplace of Ryan Vanderbilt"}], "relationships": [{"from": "Ryan Vanderbilt", "to": "Google", "type": "WORKS_WITH", "context": "Ryan's past employment at Google"}]}

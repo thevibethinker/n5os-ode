@@ -1,0 +1,1 @@
+{"entities": [{"name": "James", "type": "PERSON", "context": "mutual advisor"}, {"name": "V", "type": "PERSON", "context": "stakeholder"}], "relationships": [{"from": "James", "to": "V", "type": "WORKS_WITH", "context": "meeting facilitated by James"}, {"from": "V", "to": "James", "type": "KNOWS", "context": "mutual advisor relationship"}]}

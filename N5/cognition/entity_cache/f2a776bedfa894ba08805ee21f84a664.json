@@ -1,0 +1,1 @@
+{"entities": [{"name": "investor", "type": "CONCEPT", "context": "type of recipient"}, {"name": "hire", "type": "CONCEPT", "context": "type of recipient"}, {"name": "urgency level", "type": "CONCEPT", "context": "a factor indicating the urgency of tasks"}, {"name": "priority", "type": "CONCEPT", "context": "a factor indicating the importance of tasks"}], "relationships": []}

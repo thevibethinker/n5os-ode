@@ -1,0 +1,1 @@
+{"entities": [{"name": "Lensa", "type": "ORG", "context": "an organization providing data integration options"}], "relationships": [{"from": "V", "to": "Lensa", "type": "USES", "context": "for job data ingestion and integration"}]}

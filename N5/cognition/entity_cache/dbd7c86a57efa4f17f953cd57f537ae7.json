@@ -1,0 +1,1 @@
+{"entities": [{"name": "deep-research-due-diligence", "type": "CONCEPT", "context": "A personal prompt for conducting thorough research."}, {"name": "commands/deep-research-due-diligence.md", "type": "TOOL", "context": "A file that contains functions related to deep research due diligence."}], "relationships": []}

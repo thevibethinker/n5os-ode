@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "the individual whose preferences are being adhered to"}, {"name": "Voice Lessons", "type": "CONCEPT", "context": "the lessons that encapsulate V's preferences"}], "relationships": [{"from": "V", "to": "Voice Lessons", "type": "USES", "context": "V retrieves voice lessons to apply learned preferences"}]}

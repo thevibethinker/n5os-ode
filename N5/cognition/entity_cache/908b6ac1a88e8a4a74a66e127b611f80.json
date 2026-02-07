@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ilse Funkhouser", "type": "PERSON", "context": "participant in conversation"}, {"name": "Prod", "type": "ORG", "context": "organization V worked for"}, {"name": "MacBook", "type": "TOOL", "context": "laptop mentioned by Ilse"}, {"name": "2016 defective MacBook keyboards", "type": "CONCEPT", "context": "specific issue with the tool"}], "relationships": []}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Merge worker code", "type": "CONCEPT", "context": "a process for integrating code in a testing environment"}, {"name": "main workspace", "type": "CONCEPT", "context": "the primary environment for development"}, {"name": "isolated branch", "type": "CONCEPT", "context": "a separate environment for testing code"}], "relationships": []}

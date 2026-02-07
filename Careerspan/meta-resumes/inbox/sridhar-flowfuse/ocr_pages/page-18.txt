@@ -1,0 +1,31 @@
+Excellent Collaborate cross-functionally Required: Advanced 4/5 Importance: 9/10 Story+profile yv «
+
+Ourtake Basedonresume ~ Direct
+
+The resume contains multiple clear, concrete examples of scoping and delivering Al-driven, product-facing
+solutions in collaboration with non-research stakeholders. At EclecticlQ the candidate explicitly led all Al
+initiatives, oversaw feature scoping, success metrics, and deliverables, partnered closely with Product and
+Sales to align solutions, and drove the six-month integration of an Al assistant into the flagship product —
+delivering measurable business metrics (18% higher correctness, 84% prompt relevance, 27% better recall,
+97% schema adherence). Other roles show end-to-end ownership (building production ML services with
+Flask/MCP, Python/Django multi-threaded inference, deploying public MCP server, Text-to-Lucene,
+FaithfulRAG extensions), consulting/founding experience delivering 15+ client solutions, and being the first
+data scientist in Dell's Finance org to deliver a capacity-planning system for global regions. These examples
+demonstrate advanced applied-Al integration, cross-functional scoping with product/stakeholders, and
+measurable impact. Missing/weak points: the resume has fewer explicit callouts about working with Design
+teams or front-end UI implementation details; frontend technologies or concrete examples of tradeoffs
+between UX/product and engineering are not heavily documented. Overall, the evidence shows direct,
+advanced capability to work with Product/Engineering to scope and deliver high-impact Al solutions, with
+some room to better highlight product/design-level negotiations and frontend ownership.
+
+Contributing skills
+AlFeature Deployment Incremental Software Delivery Fullstack Development —_User-centric product thinking
+Prioritization and time management Problem-solving Collaboration
+
+Support
+Stories
+qoWHeLzqkOMMISPwcHIL ‘Transferable 7/10 Good
+kftoWPdjyQBSCaisjIPn Direct 8/10 Excellent Best
+Resume
+
+Resume match Direct 9/10 Excellent

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Logan", "type": "PERSON", "context": "managing the sales transition"}, {"name": "Careerspan Sales Transition", "type": "CONCEPT", "context": "represents company evolution phase requiring changes"}], "relationships": [{"from": "Logan", "to": "Careerspan Sales Transition", "type": "WORKS_WITH", "context": "managing the transition process"}]}

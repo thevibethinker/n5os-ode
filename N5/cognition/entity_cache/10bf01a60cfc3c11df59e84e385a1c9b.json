@@ -1,0 +1,1 @@
+{"entities": [{"name": "Inbox/", "type": "CONCEPT", "context": "directory for file management"}, {"name": "LLM", "type": "TOOL", "context": "language model used for analysis"}, {"name": "N5/logs/.inbox_analysis.jsonl", "type": "TOOL", "context": "file path for logging results"}], "relationships": []}

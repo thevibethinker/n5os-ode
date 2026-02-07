@@ -1,0 +1,1 @@
+{"entities": [{"name": "vc_ecosystem", "type": "CONCEPT", "context": "V's knowledge system related to the venture capital ecosystem"}, {"name": "data_loss_incident", "type": "EVENT", "context": "An incident V might reference in discussions"}, {"name": "low_quality_transcript", "type": "CONCEPT", "context": "A potential issue V identifies in data analysis"}], "relationships": []}

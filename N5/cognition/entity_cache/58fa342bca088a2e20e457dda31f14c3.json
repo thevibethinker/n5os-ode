@@ -1,0 +1,1 @@
+{"entities": [{"name": "Andy Moat", "type": "PERSON", "context": "mutual connection mentioned"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "main subject of the text"}], "relationships": [{"from": "V (Vrijen)", "to": "Andy Moat", "type": "WORKS_WITH", "context": "mutual connection used for context"}]}

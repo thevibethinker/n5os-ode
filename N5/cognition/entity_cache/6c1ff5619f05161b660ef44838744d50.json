@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "founder of X"}, {"name": "Pangram", "type": "ORG", "context": "recognizes templates"}], "relationships": [{"from": "V", "to": "Pangram", "type": "WORKS_WITH", "context": "recognizes templates together"}]}

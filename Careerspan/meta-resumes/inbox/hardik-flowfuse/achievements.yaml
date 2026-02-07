@@ -1,0 +1,75 @@
+# Achievements
+# Source: Careerspan Intelligence Brief
+# Extracted: 2026-01-29T20:49:03.992047
+# Method: LLM semantic extraction
+# DO NOT EDIT
+
+quantified_achievements:
+- achievement: Reduced model-to-production cycle time
+  metric: from hours to minutes
+  context: Keysight ML SaaS platform
+  verification: verifiable
+- achievement: Budget increase secured
+  metric: 5x
+  context: Keysight ML SaaS platform
+  verification: verifiable
+- achievement: Daily platform users
+  metric: hundreds
+  context: Keysight ML SaaS platform
+  verification: verifiable
+- achievement: Monthly cost savings
+  metric: $50,000
+  context: American Express cloud/database portal
+  verification: verifiable
+- achievement: Improvement in new feature and ticket delivery
+  metric: 35%
+  context: American Express ML story prioritization model
+  verification: verifiable
+- achievement: Engineering users served
+  metric: thousands
+  context: American Express automated portal
+  verification: verifiable
+- achievement: Global services supported
+  metric: 150+
+  context: American Express cloud/database portal
+  verification: verifiable
+- achievement: Team scaled to
+  metric: nearly 20 members
+  context: Keysight ML SaaS platform
+  verification: verifiable
+- achievement: Dev environment artifact engagement requests eliminated
+  metric: 100%
+  context: American Express automated portal
+  verification: verifiable
+- achievement: Mentored
+  metric: 4 SDE Interns
+  context: American Express
+  verification: self-reported
+- achievement: Hackathon position
+  metric: Top-5 out of 100+ participants
+  context: India Innovation Hackathon
+  verification: verifiable
+- achievement: GrowthHack position
+  metric: 3rd
+  context: GrowthHack 2021
+  verification: verifiable
+- achievement: IIT-JEE rank
+  metric: 47 out of 14 million candidates (99.97 percentile)
+  context: Academic
+  verification: verifiable
+awards_recognition:
+- award: 99.97 Percentile in IIT-JEE 2016 (Rank 47 in 14 million candidates)
+  significance: Top-tier academic achievement among 14 million candidates
+- award: 99.84 Percentile in KVPY Scholarship 2015
+  significance: National-level science talent recognition
+- award: NTSE Scholar in 2014
+  significance: National talent search examination recognition
+- award: GrowthHack 2021 - 3rd position
+  significance: Competitive innovation recognition leading to further project development
+- award: Top-5 position in India Innovation Hackathon
+  significance: Outperformed 100+ participants in innovation challenge
+- award: Associate Cloud Engineer - Google Cloud Platform (GCP) certification
+  significance: Professional cloud infrastructure credential
+academic_achievements:
+- achievement: B.Tech. & M.Tech. (Dual Degree), Computer Science
+- achievement: Associate Cloud Engineer, Google Cloud Platform (GCP)

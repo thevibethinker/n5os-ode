@@ -1,0 +1,1 @@
+{"entities": [{"name": "Gabi", "type": "PERSON", "context": "Someone curious about V's work and eager to explore what V has built"}, {"name": "V", "type": "PERSON", "context": "Builder/creator of something Gabi wants to see"}], "relationships": [{"from": "Gabi", "to": "V", "type": "KNOWS", "context": "Gabi expressed explicit curiosity about V's work and requested to see it"}]}

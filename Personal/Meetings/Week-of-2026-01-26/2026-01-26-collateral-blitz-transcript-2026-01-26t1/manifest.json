@@ -1,0 +1,72 @@
+{
+  "meeting_id": "2026-01-26_collateral-blitz-transcript-2026-01-26t1",
+  "date": "2026-01-26",
+  "participants": [
+    "Collateral",
+    "Blitz"
+  ],
+  "meeting_type": "external",
+  "status": "archived",
+  "transcript_file": "transcript.md",
+  "blocks_requested": [],
+  "blocks_generated": [
+    "B13_PLAN_OF_ACTION",
+    "B25_DELIVERABLE_MAP",
+    "B26_MEETING_METADATA",
+    "B08_STAKEHOLDER_INTELLIGENCE",
+    "B28_STRATEGIC_INTELLIGENCE",
+    "B03_DECISIONS",
+    "B01_DETAILED_RECAP",
+    "B00_ZO_TAKE_HEED",
+    "B21_KEY_MOMENTS",
+    "B06_BUSINESS_CONTEXT",
+    "B02_B05_COMMITMENTS_AND_ACTIONS"
+  ],
+  "blocks_failed": [],
+  "staged_at": "2026-02-02T20:22:18.764361Z",
+  "processed_at": "2026-02-03T00:50:03.296886Z",
+  "archived_at": "2026-02-03T13:16:31.608083Z",
+  "error": null,
+  "block_selection": {
+    "selected_at": "2026-02-03T00:37:06.323575Z",
+    "method": "smart_selector_v2",
+    "recipe": "external_standard",
+    "always_blocks": [
+      "B00",
+      "B01",
+      "B02_B05",
+      "B03",
+      "B08",
+      "B21",
+      "B26"
+    ],
+    "conditional_selected": [
+      "B06",
+      "B13",
+      "B28",
+      "B25"
+    ],
+    "conditional_skipped": [
+      "B04",
+      "B07",
+      "B10",
+      "B14",
+      "B32",
+      "B33"
+    ],
+    "triggered": [],
+    "reasoning": {
+      "B06": "Business Context is relevant - transcript discusses Careerspan's strategic positioning as a 'human data company', the market opportunity created by the Eightfold lawsuit, competitive differentiation around first-party vs third-party data, and strategy for outreach angle. This aligns with V's priority of driving Careerspan recruiting revenue.",
+      "B13": "Plan of Action has clear next steps discussed - V will prepare email body and compile email list, Logan will create demo video using Arcade, they'll ask Shivam to record a 30-second voice message, and V has a JD ready for a scan demonstration. These are concrete deliverables with ownership assignments.",
+      "B28": "Strategic Intelligence is present - discussion of the Eightfold lawsuit creating a market moment, the strategic importance of first-party vs third-party candidate data, and the opportunity this creates for Careerspan. This provides market insight that's relevant to Careerspan's growth strategy.",
+      "B25": "Deliverable Map applies - specific artifacts mentioned: email body (V's responsibility), email list of targets (V), demo video via Arcade (Logan), Shivam's 30-second voice message, and scan demonstration with JD (V). These are tangible deliverables with clear owners.",
+      "B04": "Skipped: No unresolved questions raised - the conversation flows through strategy and next steps without leaving open questions that need follow-up.",
+      "B07": "Skipped: No trigger phrases detected - scanned transcript for 'intro me to', 'introduce me to', 'connect me with' and found no warm introduction requests.",
+      "B10": "Skipped: This is internal team collaboration, not an external relationship trajectory. V and Logan are working together on outreach strategy, not discussing the evolution of a partnership with an external party.",
+      "B14": "Skipped: No blurb requests detected - scanned for 'draft a blurb', 'write a blurb', 'blurb about' and found no verbal cues requesting LinkedIn blurbs or other written blurbs.",
+      "B32": "Skipped: While there are good ideas, they're operational tactics (demo video, email approach) rather than novel, thought-provoking concepts worth capturing separately. The strategic insights are better captured in B28.",
+      "B33": "Skipped: Decisions were straightforward and tactical (create demo video, send Ray-style email) without complex nuanced reasoning requiring deep dive. The rationale is embedded in the strategic discussion captured in B06."
+    },
+    "total_blocks": 11
+  }
+}

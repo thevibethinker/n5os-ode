@@ -1,0 +1,1 @@
+{"entities": [{"name": "recipes", "type": "CONCEPT", "context": "A part of the knowledge system that is being referenced and used."}, {"name": "recipe-execution-guide.md", "type": "TOOL", "context": "A document that explains the new model for executing recipes."}], "relationships": []}

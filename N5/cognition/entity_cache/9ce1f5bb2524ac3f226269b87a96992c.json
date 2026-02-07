@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ilse", "type": "PERSON", "context": "a team member pushing for success stories"}, {"name": "success stories", "type": "CONCEPT", "context": "needed for team morale and recognition"}], "relationships": [{"from": "Ilse", "to": "success stories", "type": "BELIEVES", "context": "Ilse advocates for the importance of success stories"}]}

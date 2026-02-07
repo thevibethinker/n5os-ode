@@ -1,0 +1,1 @@
+{"entities": [{"name": "consolidation scripts", "type": "TOOL", "context": "scripts used for automated backups"}, {"name": ".archived_profiles_YYYYMMDD", "type": "CONCEPT", "context": "directory structure for storing archives"}, {"name": "30 days", "type": "CONCEPT", "context": "time frame for keeping archives before archiving"}], "relationships": []}

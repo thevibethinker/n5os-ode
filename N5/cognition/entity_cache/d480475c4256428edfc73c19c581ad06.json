@@ -1,0 +1,1 @@
+{"entities": [{"name": "makefile", "type": "TOOL", "context": "a tool used to manage build automation"}, {"name": "readline module", "type": "TOOL", "context": "a library for handling command line input"}], "relationships": []}

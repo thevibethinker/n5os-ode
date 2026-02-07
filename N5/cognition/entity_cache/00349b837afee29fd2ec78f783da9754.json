@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "predatory eagle", "type": "CONCEPT", "context": "metaphor used to describe personality"}], "relationships": [{"from": "V", "to": "predatory eagle", "type": "BELIEVES", "context": "describes personality test result relating to self-perception"}]}

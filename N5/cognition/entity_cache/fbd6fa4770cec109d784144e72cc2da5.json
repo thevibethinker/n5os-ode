@@ -1,0 +1,1 @@
+{"entities": [{"name": "Helper script", "type": "TOOL", "context": "A script used to identify meetings needing marking"}, {"name": "Step 4", "type": "CONCEPT", "context": "A step in a process related to scheduling tasks"}], "relationships": [{"from": "Helper script", "to": "Step 4", "type": "USES", "context": "The script is used by a scheduled task for Step 4"}]}

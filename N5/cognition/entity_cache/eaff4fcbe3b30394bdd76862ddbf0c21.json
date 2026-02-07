@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "Owner of the knowledge system"}, {"name": "Family communication", "type": "CONCEPT", "context": "Project pertaining to personal communication"}], "relationships": [{"from": "Vrijen", "to": "Family communication", "type": "WORKS_WITH", "context": "Project involving family communication"}]}

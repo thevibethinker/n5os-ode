@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Individual making decisions"}], "relationships": [{"from": "V", "to": "decision", "type": "BELIEVES", "context": "V's decision is crucial for proceeding"}, {"from": "V", "to": "error types", "type": "MENTIONS", "context": "V asked to see certain error types"}]}

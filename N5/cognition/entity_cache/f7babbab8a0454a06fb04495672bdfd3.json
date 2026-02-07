@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "person speaking"}, {"name": "Google", "type": "ORG", "context": "organization mentioned"}], "relationships": [{"from": "Vrijen Attawar", "to": "Google", "type": "MENTIONS", "context": "discussing Google\u2019s capabilities in speaker identification"}]}

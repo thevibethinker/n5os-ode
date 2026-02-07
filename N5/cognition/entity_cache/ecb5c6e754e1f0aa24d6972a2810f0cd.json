@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "a person discussing Femtech"}, {"name": "Femtech", "type": "CONCEPT", "context": "a focus of interest for Vrijen Attawar"}], "relationships": [{"from": "Vrijen Attawar", "to": "Femtech", "type": "MENTIONS", "context": "Vrijen is interested in Femtech and monitoring its founders"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Bennett", "type": "PERSON", "context": "individual with insider knowledge in education"}], "relationships": [{"from": "Bennett", "to": "insider knowledge", "type": "KNOWS", "context": "Bennett understands his competitive advantage through firsthand experience"}]}

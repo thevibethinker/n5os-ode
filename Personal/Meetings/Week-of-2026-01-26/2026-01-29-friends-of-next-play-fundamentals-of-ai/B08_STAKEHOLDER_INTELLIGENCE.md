@@ -1,0 +1,1 @@
+I need to first load semantic memory context before generating B08. Let me check for prior CRM profiles and meeting history for the stakeholders.Let me search for existing CRM profiles and meeting history:

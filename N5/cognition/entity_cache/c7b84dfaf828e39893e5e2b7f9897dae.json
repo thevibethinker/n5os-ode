@@ -1,0 +1,1 @@
+{"entities": [{"name": "N5OS", "type": "TOOL", "context": "agency that changed V's practice"}], "relationships": [{"from": "V", "to": "N5OS", "type": "USES", "context": "V uses N5OS as a tool for agency"}]}

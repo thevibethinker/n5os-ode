@@ -1,0 +1,51 @@
+---
+created: 2026-02-03
+last_edited: 2026-02-03
+version: 1.0
+provenance: con_LFJ7YTSwxW5vh4bD
+
+tools:
+  languages:
+    - Python
+    - Java
+    - SQL
+
+  frameworks:
+    - FastAPI
+    - Spring Boot
+    - ReactJS
+    - Airflow
+
+  databases:
+    - Couchbase
+    - BigQuery
+    - PostgreSQL (transferable)
+
+  cloud:
+    - AWS
+    - Google Cloud Platform (GCP)
+    - Kubernetes
+
+  ml_ai:
+    - MLflow
+    - LangChain
+    - RAG techniques
+
+  data:
+    - Hadoop
+    - Spark
+    - Apache Beam
+    - Dataflow
+    - Superset
+
+  devops:
+    - CI/CD pipelines
+    - Containerization
+    - Infrastructure automation
+
+  collaboration:
+    - Jira
+    - Rally
+    - Figma
+    - M-Zoom
+    - M-Biz

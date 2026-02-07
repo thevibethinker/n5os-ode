@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "the individual associated with the knowledge system"}, {"name": "B03 Decisions block", "type": "TOOL", "context": "a specific tool used by V to save decisions"}], "relationships": [{"from": "V", "to": "B03 Decisions block", "type": "USES", "context": "V uses the B03 Decisions block to save decisions"}]}

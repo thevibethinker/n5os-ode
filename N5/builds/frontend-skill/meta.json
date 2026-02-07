@@ -1,0 +1,103 @@
+{
+  "schema_version": 3,
+  "slug": "frontend-skill",
+  "title": "Frontend Design Skill for Landing Pages",
+  "build_type": "skill_build",
+  "status": "complete",
+  "model": "anthropic:claude-sonnet-4-20250514",
+  "launch_mode": "orchestrated",
+  "waves": {
+    "W1": [
+      "D1.1",
+      "D1.2"
+    ],
+    "W2": [
+      "D2.1",
+      "D2.2"
+    ],
+    "W3": [
+      "D3.1"
+    ]
+  },
+  "active_wave": null,
+  "drops": {
+    "D1.1": {
+      "name": "Core SKILL.md creation",
+      "stream": 1,
+      "order": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "started_at": "2026-02-06T20:29:13.381555+00:00",
+      "conversation_id": "con_sP24tAbHM7xz1RKH",
+      "completed_at": "2026-02-06T20:47:11.056311+00:00"
+    },
+    "D1.2": {
+      "name": "Anti-patterns reference",
+      "stream": 2,
+      "order": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "started_at": "2026-02-06T20:32:02.141706+00:00",
+      "conversation_id": "con_CL6Ut6zozBwS4d7f",
+      "completed_at": "2026-02-06T20:47:11.058925+00:00"
+    },
+    "D2.1": {
+      "name": "Template schema design",
+      "stream": 1,
+      "order": 2,
+      "depends_on": [
+        "D1.1"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "started_at": "2026-02-06T20:49:06.333959+00:00",
+      "conversation_id": "con_Aco8LqcupLAAwdkG",
+      "completed_at": "2026-02-06T20:49:50.144750+00:00"
+    },
+    "D2.2": {
+      "name": "Seed template + capture instructions",
+      "stream": 2,
+      "order": 2,
+      "depends_on": [
+        "D1.1",
+        "D2.1"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "started_at": "2026-02-06T20:51:31.731956+00:00",
+      "conversation_id": "con_bgu9XEmS52zy2HCC",
+      "completed_at": "2026-02-06T20:52:33.248843+00:00"
+    },
+    "D3.1": {
+      "name": "Validation tests",
+      "stream": 1,
+      "order": 3,
+      "depends_on": [
+        "D2.1",
+        "D2.2"
+      ],
+      "spawn_mode": "manual",
+      "blocking": true,
+      "status": "complete",
+      "launcher_path": "N5/builds/frontend-skill/launchers/D3.1.md",
+      "failed_at": "2026-02-06T20:55:45.154776+00:00",
+      "failure_reason": "Only Test 1 was actually executed (page deployed to /frontend-test). Tests 2-4 verified that SKILL.md documents the workflows but did NOT actually run them. No HTML file was generated for Cadence, no template capture was performed, no 3 variants of Stillness app were created. files_created: [] confirms no artifacts were produced for Tests 2-4.",
+      "completed_at": "2026-02-06T21:26:21.772121+00:00"
+    }
+  },
+  "lineage": {
+    "parent_type": "conversation",
+    "parent_ref": "con_6I5fKoKfq0TzVlzw",
+    "parent_conversation": "con_6I5fKoKfq0TzVlzw",
+    "moment": "V requested frontend design skill after watching Theo video",
+    "branched_at": "2026-02-06T20:20:00Z"
+  },
+  "started_at": "2026-02-06T20:24:49.663064+00:00",
+  "completed_at": "2026-02-06T21:26:21.772152+00:00"
+}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Alumni", "type": "ORG", "context": "massive funds organization"}], "relationships": [{"from": "V", "to": "Alumni", "type": "WORKS_WITH", "context": "engaging with massive funds"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "search()", "type": "TOOL", "context": "A function used for searching files."}, {"name": "searchPlaces", "type": "CONCEPT", "context": "A variable that holds locations to search files."}], "relationships": []}

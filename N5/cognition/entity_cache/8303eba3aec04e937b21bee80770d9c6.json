@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual developing knowledge system"}, {"name": "rubric/playbook", "type": "TOOL", "context": "framework for operationalizing patterns"}], "relationships": [{"from": "V (Vrijen)", "to": "rubric/playbook", "type": "USES", "context": "V uses rubric/playbook to operationalize knowledge system"}]}

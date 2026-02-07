@@ -1,0 +1,1 @@
+{"entities": [{"name": "Skyline", "type": "ORG", "context": "organization mentioned in relation to trust and alliance"}], "relationships": [{"from": "Skyline", "to": "V", "type": "WORKS_WITH", "context": "Skyline established as an ally to V"}]}

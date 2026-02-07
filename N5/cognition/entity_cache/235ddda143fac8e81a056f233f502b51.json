@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual mentioned in the text"}, {"name": "Nira", "type": "ORG", "context": "organization whose distribution channels are leveraged"}], "relationships": [{"from": "V", "to": "Nira", "type": "USES", "context": "V leverages Nira's distribution channels"}]}

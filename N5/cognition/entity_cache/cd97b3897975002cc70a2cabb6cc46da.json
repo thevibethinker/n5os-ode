@@ -1,0 +1,1 @@
+{"entities": [{"name": "Piketty", "type": "PERSON", "context": "economist discussed in relation to past assumptions"}], "relationships": [{"from": "V", "to": "Piketty", "type": "BELIEVES", "context": "V thinks Piketty was wrong about the past"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "V is the individual associated with the knowledge system."}, {"name": "Core + Specialist architecture", "type": "CONCEPT", "context": "A framework that V's knowledge system was refactored for."}, {"name": "MP1-MP7", "type": "TOOL", "context": "Standards that the knowledge system complies with."}], "relationships": []}

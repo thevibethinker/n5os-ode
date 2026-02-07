@@ -1,0 +1,1 @@
+{"entities": [{"name": "Pulse", "type": "TOOL", "context": "a system that requires monitoring"}, {"name": "Sentinel", "type": "TOOL", "context": "a scheduled agent for monitoring builds"}], "relationships": [{"from": "Pulse", "to": "Sentinel", "type": "USES", "context": "Pulse requires Sentinel for monitoring builds"}]}

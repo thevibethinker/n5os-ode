@@ -1,0 +1,1 @@
+{"entities": [{"name": "Drive API", "type": "TOOL", "context": "API for managing files in Google Drive"}, {"name": "query template", "type": "CONCEPT", "context": "a reusable framework for making queries"}], "relationships": []}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "UMass Eisenberg", "type": "ORG", "context": "organization involved in higher education pilot programs"}], "relationships": [{"from": "V", "to": "UMass Eisenberg", "type": "WORKS_WITH", "context": "collaborating on higher education pilots"}]}

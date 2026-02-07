@@ -1,0 +1,1 @@
+{"entities": [{"name": "performance", "type": "CONCEPT", "context": "optimization"}, {"name": "optimization", "type": "CONCEPT", "context": "process or result of making something as effective as possible"}, {"name": "threads", "type": "CONCEPT", "context": "related to tasks"}, {"name": "tasks", "type": "CONCEPT", "context": "context for optimization"}], "relationships": []}

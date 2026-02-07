@@ -1,0 +1,74 @@
+{
+  "meeting_id": "2026-01-29_vrijen-attawar-and-chris-hanson-transcri",
+  "date": "2026-01-29",
+  "participants": [
+    "Vrijen",
+    "Attawar",
+    "And"
+  ],
+  "meeting_type": "external",
+  "status": "archived",
+  "transcript_file": "transcript.md",
+  "blocks_requested": [],
+  "blocks_generated": [
+    "B26_MEETING_METADATA",
+    "B08_STAKEHOLDER_INTELLIGENCE",
+    "B21_KEY_MOMENTS",
+    "B02_B05_COMMITMENTS_AND_ACTIONS",
+    "B04_OPEN_QUESTIONS",
+    "B06_BUSINESS_CONTEXT",
+    "B32_THOUGHT_PROVOKING_IDEAS",
+    "B00_ZO_TAKE_HEED",
+    "B01_DETAILED_RECAP",
+    "B28_STRATEGIC_INTELLIGENCE",
+    "B03_DECISIONS",
+    "B10_RELATIONSHIP_TRAJECTORY"
+  ],
+  "blocks_failed": [],
+  "staged_at": "2026-02-02T20:22:18.772842Z",
+  "processed_at": "2026-02-03T16:24:01.914479Z",
+  "archived_at": "2026-02-03T16:24:02.093950Z",
+  "error": null,
+  "block_selection": {
+    "selected_at": "2026-02-03T16:11:25.224016Z",
+    "method": "smart_selector_v2",
+    "recipe": "external_standard",
+    "always_blocks": [
+      "B00",
+      "B01",
+      "B02_B05",
+      "B03",
+      "B08",
+      "B21",
+      "B26"
+    ],
+    "conditional_selected": [
+      "B04",
+      "B06",
+      "B10",
+      "B28",
+      "B32"
+    ],
+    "conditional_skipped": [
+      "B07",
+      "B13",
+      "B14",
+      "B25",
+      "B33"
+    ],
+    "triggered": [],
+    "reasoning": {
+      "B04": "Chris mentions the challenge of balancing novelty vs consistency and feature creep in product development, but doesn't provide clear resolution. Also mentions navigating organizational sales without clear path forward beyond current landing page setup.",
+      "B06": "Clear business strategy discussion: monetization via organizations/school districts/clinics, current pricing model ($10 individual, $20 supporter with 10 profiles, org quote requests), moral obligation to not burden teachers, cohesive organization rollout strategy.",
+      "B10": "Discussion of future collaboration possibilities - V shows interest in Chris's AI ADHD product, mentions own similar interests in building brain crutches for ADHD, and explores Chris's product journey. Relationship trajectory moving from discovery to potential alignment of interests.",
+      "B28": "Market insights: Chris identifies feature creep challenge, discusses tightrope between novelty and consistency for ADHD minds, mentions coaching expense barriers and need for different offers at different price points. Discusses organizational adoption dynamics.",
+      "B32": "Novel idea: Using AI as a \"brain crutch\" for ADHD to operate at more neurotypical level - alternative to therapy/medication/coaching that fills gaps. Also idea that ADHD minds thrive in chaos but paradoxically only because situations suck. Discussion of non-technical founders successfully building technical products.",
+      "B07": "Skipped: No verbal cue detected. No phrases like \"intro me to\", \"introduce me to\", or \"connect me with\" from V. While Joe Coleman is mentioned as Chris's technical help, V does not request an introduction.",
+      "B13": "Skipped: No explicit next steps discussed. V requests website link for memory refresh but no follow-up actions committed. No \"let's do X\" or specific action items with owners and timelines.",
+      "B14": "Skipped: No verbal cue detected. No phrases like \"draft a blurb\", \"write a blurb\", or \"blurb about\" from V. No request for drafting LinkedIn posts or blurbs.",
+      "B25": "Skipped: No specific deliverables with owners and timelines mentioned. Website link request is informational, not a deliverable. No artifacts, reports, or outputs assigned with deadlines.",
+      "B33": "Skipped: No complex decisions made in this conversation. Discussion is exploratory - sharing experiences, challenges, and strategies. No nuanced decision reasoning to capture beyond B06's business strategy context."
+    },
+    "total_blocks": 12
+  }
+}

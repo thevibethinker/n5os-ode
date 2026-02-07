@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "The user of the Session State System"}, {"name": "Session State System", "type": "TOOL", "context": "The system being used for distributed builds"}], "relationships": [{"from": "V", "to": "Session State System", "type": "USES", "context": "V is using the Session State System for distributed builds"}]}

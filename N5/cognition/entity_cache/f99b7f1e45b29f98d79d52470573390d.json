@@ -1,0 +1,1 @@
+{"entities": [{"name": "Zo Team", "type": "ORG", "context": "organization related to the meeting"}, {"name": "Demo Event Prep", "type": "EVENT", "context": "event being prepared for in the meeting"}, {"name": "V", "type": "PERSON", "context": "individual involved in the meeting"}], "relationships": []}

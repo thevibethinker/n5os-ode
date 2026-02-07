@@ -1,0 +1,1 @@
+{"entities": [{"name": "Zo Computer", "type": "ORG", "context": "the organization for which the tool is created"}, {"name": "skill-export", "type": "TOOL", "context": "automated pipeline for sanitizing and preparing skills"}], "relationships": [{"from": "skill-export", "to": "Zo Computer", "type": "USES", "context": "skill-export is created for Zo Computer"}]}

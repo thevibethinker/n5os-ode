@@ -1,0 +1,73 @@
+{
+  "meeting_id": "2026-01-26_Collateral-Blitz",
+  "date": "2026-01-26",
+  "participants": [
+    "Collateral",
+    "Blitz"
+  ],
+  "meeting_type": "external",
+  "status": "archived",
+  "transcript_file": "transcript.md",
+  "blocks_requested": [],
+  "blocks_generated": [
+    "B32_THOUGHT_PROVOKING_IDEAS",
+    "B13_PLAN_OF_ACTION",
+    "B25_DELIVERABLE_MAP",
+    "B26_MEETING_METADATA",
+    "B08_STAKEHOLDER_INTELLIGENCE",
+    "B28_STRATEGIC_INTELLIGENCE",
+    "B03_DECISIONS",
+    "B01_DETAILED_RECAP",
+    "B00_ZO_TAKE_HEED",
+    "B21_KEY_MOMENTS",
+    "B06_BUSINESS_CONTEXT",
+    "B02_B05_COMMITMENTS_AND_ACTIONS"
+  ],
+  "blocks_failed": [],
+  "staged_at": "2026-02-02T20:22:18.761925Z",
+  "processed_at": "2026-02-03T00:27:41.647707Z",
+  "archived_at": "2026-02-03T13:16:31.623059Z",
+  "error": null,
+  "block_selection": {
+    "selected_at": "2026-02-03T00:17:03.354194Z",
+    "method": "smart_selector_v2",
+    "recipe": "external_standard",
+    "always_blocks": [
+      "B00",
+      "B01",
+      "B02_B05",
+      "B03",
+      "B08",
+      "B21",
+      "B26"
+    ],
+    "conditional_selected": [
+      "B06",
+      "B13",
+      "B25",
+      "B28",
+      "B32"
+    ],
+    "conditional_skipped": [
+      "B04",
+      "B07",
+      "B10",
+      "B14",
+      "B33"
+    ],
+    "triggered": [],
+    "reasoning": {
+      "B06": "Strong discussion of Careerspan's strategic positioning as a 'human data company' vs third-party data approaches. Key strategic themes: first-party data advantage, timing around Eightfold lawsuit, and targeting firms who would benefit from this data approach. Directly supports revenue-driving positioning.",
+      "B13": "Clear next steps explicitly assigned: V will prepare email body and recipient list; Logan will create demo video using Arcade; V has JD ready for scan results recording. Actionable plan for outreach execution.",
+      "B25": "Specific deliverables identified with owners: demo video (Logan + Arcade), email body (V), recipient list (V), scan results recording (V). Clear deliverable mapping for outreach campaign.",
+      "B28": "Strategic market intelligence captured: Eightfold lawsuit creating moment for first-party data solutions, shift away from third-party data risks, competitive positioning opportunity. Informs outreach strategy.",
+      "B32": "Novel strategic ideas worth capturing: demo video approach instead of word-heavy emails, 'visceral' communication strategy showing data in action, leveraging Eightfold lawsuit timing as hook. Creative outreach innovation.",
+      "B04": "Skipped: No unresolved questions raised without clear answers. Conversation was strategic planning with clear direction, not exploratory questioning.",
+      "B07": "Skipped: No trigger phrases detected ('intro me to', 'introduce me to', 'connect me with'). Discussion was about outreach strategy to categories of firms, not warm introductions to specific contacts.",
+      "B10": "Skipped: Discussion focused on new outreach approach and strategy, not evolution of existing relationships or collaboration with current partners. This is about acquisition strategy, not relationship trajectory.",
+      "B14": "Skipped: No trigger phrases detected ('draft a blurb', 'write a blurb'). No requests for blurbs, LinkedIn content, or similar outputs.",
+      "B33": "Skipped: Discussion focused on forward-looking strategy and approach decisions, not analysis of past decision-making rationale. No complex decision deconstruction required."
+    },
+    "total_blocks": 12
+  }
+}

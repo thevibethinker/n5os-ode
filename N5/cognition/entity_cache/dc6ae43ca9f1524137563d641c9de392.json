@@ -1,0 +1,1 @@
+{"entities": [{"name": "FOHE", "type": "ORG", "context": "an organization that documents failures"}, {"name": "systematic documentation of failures", "type": "CONCEPT", "context": "a practice within FOHE's culture"}, {"name": "repeatable success", "type": "CONCEPT", "context": "the goal of FOHE's systematic documentation"}], "relationships": []}

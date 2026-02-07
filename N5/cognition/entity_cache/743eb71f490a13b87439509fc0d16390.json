@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker asking questions"}, {"name": "competitor", "type": "ORG", "context": "Reference to a company related to Vrijen's work"}], "relationships": [{"from": "Vrijen Attawar", "to": "competitor", "type": "WORKS_WITH", "context": "Vrijen identifies as working for a competitor"}]}

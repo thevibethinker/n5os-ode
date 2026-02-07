@@ -1,0 +1,33 @@
+---
+created: 2026-02-03
+last_edited: 2026-02-03
+version: 1.0
+provenance: con_LFJ7YTSwxW5vh4bD
+
+# Decomposition Manifest
+candidate: hardik
+company: docsum
+role: Founding Full-Stack Engineer
+decomposed_at: 2026-02-03T14:35:00-05:00
+source_document: /tmp/hardik-docsum-careerspan.txt
+extraction_method: manual
+careerspan_score: 85
+
+files:
+  - overview.yaml
+  - profile.yaml
+  - experience.yaml
+  - hard_skills.yaml
+  - soft_skills.yaml
+  - achievements.yaml
+  - tools.yaml
+  - interests.yaml
+  - alignment.yaml
+  - scores_complete.json
+  - jd.yaml
+
+skill_counts:
+  responsibilities: 15
+  hard_skills: 16
+  soft_skills: 14
+  total: 45

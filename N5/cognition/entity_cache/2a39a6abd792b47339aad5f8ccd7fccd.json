@@ -1,0 +1,1 @@
+{"entities": [{"name": "SQLite", "type": "TOOL", "context": "Single-user, local-first database mentioned in the context of V's knowledge system"}, {"name": "PostgreSQL", "type": "TOOL", "context": "Multi-user database with network access mentioned in the context of V's knowledge system"}], "relationships": []}

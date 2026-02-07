@@ -1,0 +1,1 @@
+{"entities": [{"name": "Aniket", "type": "PERSON", "context": "Recruiter-first, organic traction-driven"}, {"name": "Vrijen", "type": "PERSON", "context": "Consumer product pivot to B2B after 2.5 years"}], "relationships": [{"from": "Vrijen", "to": "Aniket", "type": "WORKS_WITH", "context": "Exploring market entry strategies"}]}

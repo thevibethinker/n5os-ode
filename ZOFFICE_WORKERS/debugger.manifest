@@ -1,0 +1,8 @@
+name: debugger
+persona_id: 17def82c-ccbf-47ff-8c50-cb61b3c2eae3
+type: scheduled
+schedule: "0 10 * * SUN"
+timezone: America/New_York
+activation: python3 N5/scripts/debugger_worker.py
+notifications: on_start=false,on_complete=true,on_error=true,method=email
+notes: Weekly health check and audit triage

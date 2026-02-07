@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker and knowledge system contributor"}, {"name": "Ashby", "type": "ORG", "context": "Mentioned organization related to hiring employees"}], "relationships": [{"from": "Vrijen Attawar", "to": "Ashby", "type": "MENTIONS", "context": "Refers to Ashby in the context of posting for employees"}]}

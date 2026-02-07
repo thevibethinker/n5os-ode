@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "career-pivoting technologist with expertise in multiple fields"}, {"name": "AI literacy", "type": "CONCEPT", "context": "emerging understanding of artificial intelligence"}], "relationships": [{"from": "V", "to": "AI literacy", "type": "BELIEVES", "context": "V is developing an understanding of AI"}]}

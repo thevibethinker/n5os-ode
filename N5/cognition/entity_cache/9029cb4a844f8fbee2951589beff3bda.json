@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual with design expertise and career development passion"}, {"name": "Dunning-Kruger inverse", "type": "CONCEPT", "context": "a psychological concept articulated by V"}], "relationships": [{"from": "V (Vrijen)", "to": "Dunning-Kruger inverse", "type": "BELIEVES", "context": "V articulates this concept"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ilse", "type": "PERSON", "context": "observator of quantifying soft skills"}, {"name": "Careerspan", "type": "ORG", "context": "enables quantification of soft skills through AI"}], "relationships": [{"from": "Ilse", "to": "Careerspan", "type": "MENTIONS", "context": "Ilse discusses Careerspan's role in enabling soft skills quantification"}]}

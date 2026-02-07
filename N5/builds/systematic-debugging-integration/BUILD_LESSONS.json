@@ -1,0 +1,35 @@
+{
+  "slug": "systematic-debugging-integration",
+  "learnings": [
+    {
+      "text": "All three reference files are properly scoped as focused technique guides, not duplicating SKILL.md content",
+      "source": "Drop:D1.1",
+      "added_at": "2026-02-07T13:46:17.845836+00:00",
+      "tags": []
+    },
+    {
+      "text": "Word counts (242-275) are well within the 200-300 word target range",
+      "source": "Drop:D1.1",
+      "added_at": "2026-02-07T13:46:17.846509+00:00",
+      "tags": []
+    },
+    {
+      "text": "Each file includes practical examples and anti-patterns as requested",
+      "source": "Drop:D1.1",
+      "added_at": "2026-02-07T13:46:17.847144+00:00",
+      "tags": []
+    },
+    {
+      "text": "Skill phase tracking adds semantic context to debug logs, making pattern analysis more meaningful",
+      "source": "Drop:D1.3",
+      "added_at": "2026-02-07T13:46:17.856906+00:00",
+      "tags": []
+    },
+    {
+      "text": "Rule updates that reference skills should include both the skill path and key checkpoints for immediate accessibility",
+      "source": "Drop:D1.3",
+      "added_at": "2026-02-07T13:46:17.857516+00:00",
+      "tags": []
+    }
+  ]
+}

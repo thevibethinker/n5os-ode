@@ -1,0 +1,72 @@
+{
+  "meeting_id": "2026-01-26_david-x-careerspan-transcript-2026-01-26",
+  "date": "2026-01-26",
+  "participants": [
+    "David",
+    "Careerspan"
+  ],
+  "meeting_type": "external",
+  "status": "archived",
+  "transcript_file": "transcript.md",
+  "blocks_requested": [],
+  "blocks_generated": [
+    "B32_THOUGHT_PROVOKING_IDEAS",
+    "B13_PLAN_OF_ACTION",
+    "B25_DELIVERABLE_MAP",
+    "B26_MEETING_METADATA",
+    "B08_STAKEHOLDER_INTELLIGENCE",
+    "B03_DECISIONS",
+    "B01_DETAILED_RECAP",
+    "B00_ZO_TAKE_HEED",
+    "B21_KEY_MOMENTS",
+    "B04_OPEN_QUESTIONS",
+    "B02_B05_COMMITMENTS_AND_ACTIONS"
+  ],
+  "blocks_failed": [],
+  "staged_at": "2026-02-02T20:22:18.765665Z",
+  "processed_at": "2026-02-03T01:03:52.486323Z",
+  "archived_at": "2026-02-03T13:16:31.639472Z",
+  "error": null,
+  "block_selection": {
+    "selected_at": "2026-02-03T00:51:12.760799Z",
+    "method": "smart_selector_v2",
+    "recipe": "external_standard",
+    "always_blocks": [
+      "B00",
+      "B01",
+      "B02_B05",
+      "B03",
+      "B08",
+      "B21",
+      "B26"
+    ],
+    "conditional_selected": [
+      "B13",
+      "B25",
+      "B32",
+      "B04"
+    ],
+    "conditional_skipped": [
+      "B06",
+      "B07",
+      "B10",
+      "B14",
+      "B28",
+      "B33"
+    ],
+    "triggered": [],
+    "reasoning": {
+      "B13": "David confirmed he will send an introduction email to Ben Erez after the call \u2014 an explicit next step with clear timing",
+      "B25": "Multiple deliverables explicitly discussed: David sending introduction email to Ben Erez, V offering to help build a bot/advice system, and testing the proposed email-based advice system",
+      "B32": "Novel concepts discussed: David Speiegel bot using semantic search/vector database, GitHub repos as AI-accessible knowledge storage, AI-powered messaging assistant that reads both parties' LinkedIn profiles, and AI@davidspiegel.com email-based advice system",
+      "B04": "Unresolved technical questions: how to handle multi-threaded conversations and user separation, database structure for the bot system, implementation of rule-based messaging system, and technical feasibility of the email-based approach",
+      "B06": "Skipped: No discussion of specific business strategy, market positioning, or company goals for David's business",
+      "B07": "Skipped: While David mentioned introducing Ben Erez, this lacks the specific verbal cue pattern required ('intro me to', 'introduce me to', 'connect me with') \u2014 David is taking this action himself",
+      "B10": "Skipped: Limited discussion of future collaboration trajectory beyond the immediate Ben Erez introduction",
+      "B14": "Skipped: No blurb drafting requested or mentioned",
+      "B28": "Skipped: No discussion of industry trends, market dynamics, or competitive landscape",
+      "B33": "Skipped: No complex decisions made during this conversation"
+    },
+    "total_blocks": 11
+  }
+}

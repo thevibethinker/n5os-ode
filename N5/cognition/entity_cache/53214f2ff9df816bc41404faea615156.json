@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "The individual discussing their preference for tools"}, {"name": "Todoist", "type": "TOOL", "context": "The application V wants to use for task management"}], "relationships": [{"from": "Vrijen Attawar", "to": "Todoist", "type": "USES", "context": "V wants to use the Todoist app for task management"}]}

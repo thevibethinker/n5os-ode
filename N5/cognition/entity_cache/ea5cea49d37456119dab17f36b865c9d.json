@@ -1,0 +1,1 @@
+{"entities": [{"name": "AI", "type": "CONCEPT", "context": "Artificial Intelligence and its limitations"}, {"name": "parent", "type": "CONCEPT", "context": "Role of a parent in shaping outcomes"}], "relationships": [{"from": "AI", "to": "parent", "type": "BELIEVES", "context": "AI reflects the kind of parent one chooses to be"}]}

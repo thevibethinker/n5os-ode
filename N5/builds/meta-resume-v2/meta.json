@@ -1,0 +1,40 @@
+{
+  "schema_version": "1.0",
+  "slug": "meta-resume-v2",
+  "title": "Meta Resume Generator v2: Schema Alignment + Design Evolution",
+  "objective": "Update meta-resume-generator to consume decomposer outputs + implement Spikes design",
+  "created": "2026-02-03",
+  "status": "active",
+  "completed_at": null,
+  "type": "general",
+  "orchestrator_convo_id": "con_NJlvnFnzUY6KsX9t",
+  "workers": {
+    "total": 1,
+    "complete": 0,
+    "in_progress": 0,
+    "blocked": 0,
+    "pending": 1
+  },
+  "waves": {
+    "W1": [
+      "D1"
+    ]
+  },
+  "drops": {
+    "D1": {
+      "id": "D1",
+      "title": "Schema Adapter",
+      "brief_path": "N5/builds/meta-resume-v2/drops/D1-schema-adapter.md",
+      "deposit_path": "N5/builds/meta-resume-v2/deposits/D1-deposit.md",
+      "status": "failed",
+      "spawn_mode": "auto",
+      "wave": "W1",
+      "started_at": null,
+      "completed_at": null,
+      "convo_id": null,
+      "failure_reason": ""
+    }
+  },
+  "started_at": "2026-02-03T17:30:38.277798+00:00",
+  "active_wave": "W1"
+}

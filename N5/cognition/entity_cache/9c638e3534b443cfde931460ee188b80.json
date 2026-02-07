@@ -1,0 +1,1 @@
+{"entities": [{"name": "parallel worker threads", "type": "CONCEPT", "context": "a method for executing tasks concurrently"}, {"name": "semantic context inheritance", "type": "CONCEPT", "context": "the capability of passing contextual information to threads"}], "relationships": []}

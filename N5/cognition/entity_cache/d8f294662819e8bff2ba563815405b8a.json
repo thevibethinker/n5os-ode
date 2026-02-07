@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual involved in a knowledge system"}, {"name": "Inbox", "type": "TOOL", "context": "directory for organizing meetings"}], "relationships": []}

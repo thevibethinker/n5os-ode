@@ -1,0 +1,1 @@
+{"entities": [{"name": "The old guard", "type": "ORG", "context": "a group referenced as optimizing for efficiency"}, {"name": "this crew", "type": "ORG", "context": "a group optimizing for self-advocacy and humanity"}], "relationships": [{"from": "The old guard", "to": "this crew", "type": "RELATED_TO", "context": "contrast in optimization focus"}]}

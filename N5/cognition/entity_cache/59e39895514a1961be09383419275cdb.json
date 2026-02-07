@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "The speaker who built a personal operating system."}, {"name": "Zoho", "type": "ORG", "context": "The platform used to build the personal operating system."}], "relationships": [{"from": "Vrijen Attawar", "to": "Zoho", "type": "USES", "context": "Vrijen uses Zoho to build a personal operating system."}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "alumni", "type": "PERSON", "context": "group of individuals who graduated"}, {"name": "subscriptions", "type": "TOOL", "context": "services offered to alumni"}], "relationships": [{"from": "alumni", "to": "subscriptions", "type": "USES", "context": "alumni access the subscriptions"}]}

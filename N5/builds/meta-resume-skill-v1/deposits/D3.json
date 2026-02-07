@@ -1,0 +1,22 @@
+{
+  "drop_id": "D3",
+  "status": "complete",
+  "completed_at": "2026-01-30T02:48:00Z",
+  "summary": "Designed GitHub integration module with REST+GraphQL APIs, output formats, and missing profile handling",
+  "artifacts": [
+    "GITHUB-INTEGRATION-SPEC.md"
+  ],
+  "decisions": [
+    "REST API for basic metrics (no auth required), GraphQL for contribution calendar (needs token)",
+    "Core metrics: repos, contributions, languages, account age, last active, followers",
+    "Extended metrics: calendar visualization, streaks, PRs, issues, reviews",
+    "Missing profile warning includes interview probe suggestion",
+    "Sparse profile (< 5 repos) gets contextual warning about private repos"
+  ],
+  "learnings": [
+    "GitHub REST API allows 60 req/hour unauthenticated — sufficient for single candidate processing",
+    "Language aggregation should weight by repo size, not just count",
+    "Contribution calendar can be rendered as emoji grid for markdown compatibility"
+  ],
+  "concerns": []
+}

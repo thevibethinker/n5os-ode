@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "organization responsible for launching the AI resume builder"}, {"name": "AI resume builder", "type": "TOOL", "context": "feature launched by Careerspan"}], "relationships": [{"from": "Careerspan", "to": "AI resume builder", "type": "LAUNCHED_FEATURE", "context": "Career span launched the AI resume builder"}]}

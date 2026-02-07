@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Individual with a knowledge system"}, {"name": "PR Intel Extractor", "type": "TOOL", "context": "Tool version 1.1 for analysis"}], "relationships": [{"from": "V", "to": "PR Intel Extractor", "type": "USES", "context": "V utilizes the PR Intel Extractor as part of their knowledge system"}]}

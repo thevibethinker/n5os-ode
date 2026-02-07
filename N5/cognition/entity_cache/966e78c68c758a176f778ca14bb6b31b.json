@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Former/current Product Manager and teacher"}, {"name": "PCA", "type": "ORG", "context": "Product Coach Academy where V coached"}], "relationships": [{"from": "V", "to": "PCA", "type": "WORKS_WITH", "context": "V coached at PCA"}]}

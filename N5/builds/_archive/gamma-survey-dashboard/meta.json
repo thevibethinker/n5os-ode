@@ -1,0 +1,65 @@
+{
+  "slug": "gamma-survey-dashboard",
+  "title": "Gamma Survey Dashboard - Daily Regeneration System",
+  "build_type": "code_build",
+  "status": "abandoned",
+  "total_streams": 3,
+  "current_stream": 1,
+  "model": "anthropic:claude-sonnet-4-20250514",
+  "launch_mode": "orchestrated",
+  "created_at": "2026-01-26T16:40:00Z",
+  "lineage": {
+    "parent_type": "conversation",
+    "parent_ref": "con_8niRcrOEmKFqImvb",
+    "moment": "V requested Gamma dashboard for survey analysis with daily updates"
+  },
+  "drops": {
+    "D1.1": {
+      "name": "Create gamma_survey_generator.py transformation script",
+      "stream": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "status": "pending"
+    },
+    "D1.2": {
+      "name": "Test initial Gamma generation with survey data",
+      "stream": 1,
+      "depends_on": [
+        "D1.1"
+      ],
+      "spawn_mode": "auto",
+      "status": "pending"
+    },
+    "D2.1": {
+      "name": "Create scheduled agent for daily regeneration",
+      "stream": 2,
+      "depends_on": [
+        "D1.2"
+      ],
+      "spawn_mode": "auto",
+      "status": "pending"
+    },
+    "D2.2": {
+      "name": "Set up URL tracking and notification system",
+      "stream": 2,
+      "depends_on": [
+        "D2.1"
+      ],
+      "spawn_mode": "auto",
+      "status": "pending"
+    },
+    "D3.1": {
+      "name": "Create documentation and usage guide",
+      "stream": 3,
+      "depends_on": [
+        "D2.2"
+      ],
+      "spawn_mode": "auto",
+      "status": "pending"
+    }
+  },
+  "currents": {},
+  "started_at": "2026-01-27T00:56:28.477450+00:00",
+  "abandoned_at": "2026-02-01T00:20:00Z",
+  "abandoned_reason": "No work executed, 0/5 drops started despite having a clear plan"
+}

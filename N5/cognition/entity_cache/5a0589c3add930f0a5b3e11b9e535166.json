@@ -1,0 +1,1 @@
+{"entities": [{"name": "Mark", "type": "PERSON", "context": "email author"}, {"name": "Fei", "type": "PERSON", "context": "email author"}], "relationships": [{"from": "V", "to": "Mark", "type": "KNOWS", "context": "V is aware of Mark's email engagement"}, {"from": "V", "to": "Fei", "type": "KNOWS", "context": "V is aware of Fei's email response"}]}

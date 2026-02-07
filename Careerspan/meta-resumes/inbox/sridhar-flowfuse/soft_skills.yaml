@@ -1,0 +1,29 @@
+# Soft Skills
+# Extracted: 2026-01-30T02:22:04.136495
+
+skills:
+  - name: "Technical leadership"
+    rating: "Excellent"
+    our_take: "led all AI initiatives at EclecticIQ, led technical efforts for cross-disciplinary teams, led team of 8+ PhD researchers"
+  - name: "Project guidance"
+    rating: "Excellent"
+    our_take: "The resume provides multiple clear, end-to-end examples of taking AI features from concept/prototype into production"
+  - name: "Collaboration"
+    rating: "Excellent"
+    our_take: "The resume contains multiple clear, concrete examples of scoping and delivering AI-driven, product-facing solutions in collaboration with non-research stakeholders"
+  - name: "Stakeholder management"
+    rating: "Excellent"
+    our_take: "partnered closely with Product and Sales to align solutions with analyst needs, oversaw feature scoping, success metrics, and deliverables"
+  - name: "Systematic problem-solving"
+    rating: "Excellent"
+    our_take: "The story provides strong, direct evidence of attention to detail. The candidate describes handling mission-critical, high-risk requirements and takes numerous, deliberate, technical actions explicitly aimed at ensuring factual accuracy, correctness, and trust in the output"
+working_style:
+  autonomy: "high"
+  collaboration: "Deep cross-functional partnership with product and sales, guiding technical execution and aligning on success metrics"
+leadership_signals:
+  - "Led all AI initiatives at EclecticIQ"
+  - "Oversaw feature scoping, success metrics, and deliverables"
+  - "Guided both domain and technical execution for 8+ PhD researchers"
+  - "Founder of AI consultancy delivering end-to-end solutions"
+  - "Student mentorship and event leadership"
+  - "Cross-functional leadership across product, sales, and research teams"

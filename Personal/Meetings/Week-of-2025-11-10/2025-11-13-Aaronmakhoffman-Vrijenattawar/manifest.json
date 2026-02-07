@@ -1,0 +1,45 @@
+{
+  "meeting_id": "2025-11-13_Aaronmakhoffman-Vrijenattawar",
+  "date": "2025-11-13",
+  "participants": [
+    "Aaronmakhoffman",
+    "Vrijenattawar"
+  ],
+  "meeting_type": "external",
+  "status": "archived",
+  "transcript_file": "transcript.md",
+  "blocks_requested": [],
+  "blocks_generated": [
+    "B02_B05_COMMITMENTS_AND_ACTIONS",
+    "B08_STAKEHOLDER_INTELLIGENCE",
+    "B26_MEETING_METADATA",
+    "B01_DETAILED_RECAP",
+    "B00_ZO_TAKE_HEED",
+    "B03_DECISIONS",
+    "B21_KEY_MOMENTS"
+  ],
+  "blocks_failed": [],
+  "staged_at": "2026-02-02T20:22:18.754100Z",
+  "processed_at": "2026-02-02T20:53:08.925774Z",
+  "archived_at": "2026-02-03T13:16:31.432239Z",
+  "error": null,
+  "block_selection": {
+    "selected_at": "2026-02-02T20:40:22.938854Z",
+    "method": "smart_selector_v2",
+    "recipe": "external_standard",
+    "always_blocks": [
+      "B00",
+      "B01",
+      "B02_B05",
+      "B03",
+      "B08",
+      "B21",
+      "B26"
+    ],
+    "conditional_selected": [],
+    "conditional_skipped": [],
+    "triggered": [],
+    "reasoning": {},
+    "total_blocks": 7
+  }
+}

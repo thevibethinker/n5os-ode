@@ -1,0 +1,1 @@
+{"entities": [{"name": "Rajesh Nerlikar", "type": "PERSON", "context": "speaker discussing matchmaking"}, {"name": "dating apps", "type": "TOOL", "context": "tools used for matchmaking"}], "relationships": [{"from": "Rajesh Nerlikar", "to": "dating apps", "type": "MENTIONS", "context": "talking about tools for matchmaking"}]}

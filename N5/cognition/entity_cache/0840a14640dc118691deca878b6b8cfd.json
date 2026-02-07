@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "individual known for her knowledge system"}], "relationships": [{"from": "Vrijen", "to": "burnout patterns", "type": "KNOWS", "context": "comfortable giving direct feedback"}, {"from": "Vrijen", "to": "mutual respect", "type": "BELIEVES", "context": "takes time to understand opportunities before committing"}]}

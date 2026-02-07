@@ -1,0 +1,1 @@
+{"entities": [{"name": "CRM Consolidation Phase 3", "type": "EVENT", "context": "Phase 3 of the CRM consolidation process"}, {"name": "integration tests", "type": "CONCEPT", "context": "tests performed to ensure integration functionality"}, {"name": "scripts", "type": "TOOL", "context": "5 scripts created as artifacts in the process"}], "relationships": []}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "highWaterMark", "type": "CONCEPT", "context": "maximum number of bytes to store in the internal buffer"}, {"name": "encoding", "type": "CONCEPT", "context": "specification for decoding buffers to strings"}], "relationships": []}

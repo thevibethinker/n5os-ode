@@ -1,0 +1,1 @@
+{"entities": [{"name": "Sam", "type": "PERSON", "context": "individual with preferences to evaluate options"}, {"name": "Careerspan", "type": "ORG", "context": "organization that understands Sam's preferences"}], "relationships": [{"from": "Careerspan", "to": "Sam", "type": "KNOWS", "context": "Careerspan understands Sam's preferences"}]}

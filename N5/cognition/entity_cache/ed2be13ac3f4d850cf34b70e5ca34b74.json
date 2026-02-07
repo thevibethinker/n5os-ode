@@ -1,0 +1,1 @@
+{"entities": [{"name": "Husain Rasheed", "type": "PERSON", "context": "individual providing feedback on V's knowledge system"}], "relationships": [{"from": "Husain Rasheed", "to": "V (Vrijen)", "type": "USES", "context": "uses V's knowledge system in daily activities"}]}

@@ -1,0 +1,179 @@
+{
+  "version": "1.0",
+  "last_updated": "2026-02-06",
+  "categories": {
+    "prompt_injection": {
+      "direct_overrides": [
+        "ignore previous",
+        "ignore all previous",
+        "disregard previous",
+        "forget everything",
+        "start over",
+        "new instructions",
+        "system: ",
+        "admin: ",
+        "override:",
+        "sudo ",
+        "root access",
+        "developer mode",
+        "debug mode",
+        "maintenance mode",
+        "DAN",
+        "jailbreak",
+        "ChatGPT with developer mode enabled"
+      ],
+      "instruction_markers": [
+        "you are now",
+        "pretend you are",
+        "act as if",
+        "roleplay as",
+        "simulate being",
+        "behave like",
+        "respond as",
+        "from now on"
+      ],
+      "system_manipulation": [
+        "your instructions are",
+        "your system prompt",
+        "reveal your prompt",
+        "show your instructions",
+        "what are your rules",
+        "bypass restrictions",
+        "ignore safety",
+        "disable filters"
+      ]
+    },
+    "social_engineering": {
+      "urgency_triggers": [
+        "urgent",
+        "immediately",
+        "asap",
+        "right away",
+        "time sensitive",
+        "deadline today",
+        "emergency",
+        "critical situation",
+        "can't wait",
+        "must act now"
+      ],
+      "authority_impersonation": [
+        "this is your boss",
+        "ceo here",
+        "executive assistant",
+        "from management",
+        "board of directors",
+        "compliance department",
+        "security team",
+        "it administrator",
+        "system administrator"
+      ],
+      "flattery_manipulation": [
+        "you're so smart",
+        "you're the best",
+        "only you can help",
+        "i trust you completely",
+        "you understand me",
+        "you're special",
+        "you're different",
+        "you're amazing"
+      ],
+      "pressure_tactics": [
+        "everyone else said no",
+        "last chance",
+        "final warning",
+        "don't let me down",
+        "i'm counting on you",
+        "this is important",
+        "prove yourself"
+      ]
+    },
+    "scope_creep": {
+      "file_system_probes": [
+        "list files",
+        "show directory",
+        "file structure",
+        "what files do you have",
+        "can you access files",
+        "read file",
+        "open file",
+        "download file",
+        "file contents"
+      ],
+      "config_requests": [
+        "show configuration",
+        "system settings",
+        "environment variables",
+        "config file",
+        "settings file",
+        "what's your setup",
+        "how are you configured"
+      ],
+      "operational_probes": [
+        "who has access",
+        "what can you do",
+        "what are your capabilities",
+        "system information",
+        "server details",
+        "infrastructure",
+        "backend systems"
+      ]
+    },
+    "data_exfiltration": {
+      "credential_harvesting": [
+        "api key",
+        "password",
+        "secret key",
+        "access token",
+        "authentication",
+        "login credentials",
+        "database password",
+        "admin password"
+      ],
+      "pii_requests": [
+        "personal information",
+        "phone number",
+        "address",
+        "social security",
+        "date of birth",
+        "contact details",
+        "personal data"
+      ],
+      "sensitive_data": [
+        "financial information",
+        "bank account",
+        "credit card",
+        "payment details",
+        "confidential",
+        "proprietary",
+        "trade secrets",
+        "internal documents"
+      ]
+    }
+  },
+  "risk_thresholds": {
+    "high": {
+      "min_flags": 2,
+      "critical_patterns": [
+        "ignore previous",
+        "sudo ",
+        "developer mode",
+        "api key",
+        "password",
+        "admin password"
+      ]
+    },
+    "medium": {
+      "min_flags": 1,
+      "suspicious_combinations": [
+        ["urgency_triggers", "authority_impersonation"],
+        ["flattery_manipulation", "scope_creep"],
+        ["instruction_markers", "system_manipulation"]
+      ]
+    },
+    "confidence_modifiers": {
+      "multiple_categories": 0.2,
+      "critical_pattern": 0.3,
+      "context_mismatch": 0.1
+    }
+  }
+}

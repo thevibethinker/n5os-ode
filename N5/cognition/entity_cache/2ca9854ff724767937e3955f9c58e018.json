@@ -1,0 +1,1 @@
+{"entities": [{"name": "regular expression", "type": "CONCEPT", "context": "A method for defining patterns in text"}, {"name": "property names", "type": "CONCEPT", "context": "Names of attributes in a data structure"}, {"name": "--mangle-props", "type": "TOOL", "context": "A command-line option for mangling property names"}], "relationships": []}

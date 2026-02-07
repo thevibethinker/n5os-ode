@@ -1,0 +1,209 @@
+{
+  "candidate_name": "Hardik",
+  "role": "Founding Engineer (Fullstack)",
+  "partner": "CorridorX",
+  "company": "Docsum",
+  "date": "Feb 2026",
+  "tenure_summary": "4.7y exp \u00b7 3.5y IC \u00b7 1.2y Lead",
+  "trajectory": "Keysight (1y) \u2192 American Express (3y)",
+  "trajectory_type": "IC\u2192Lead",
+  "avg_tenure": 1.1666666666666667,
+  "verdict_emoji": "\ud83d\udc4d",
+  "verdict": "Take This Meeting",
+  "confidence_score": 85,
+  "verdict_summary": "Strong recommend as a founding full-stack engineer with rare zero-to-one platform experience and immediate impact potential, with manageable ramp on Next.js/PostgreSQL specifics and contract-focused document processing.",
+  "signal_story": 78,
+  "signal_resume": 22,
+  "signal_inferred": 0,
+  "skills_assessed": 45,
+  "interviews_count": 3,
+  "spikes_up": [
+    {
+      "label": "Own features end-to-end",
+      "years": "(4y)",
+      "bar_width": 100,
+      "story_verified": true
+    },
+    {
+      "label": "Build core systems",
+      "years": "(1y)",
+      "bar_width": 100,
+      "story_verified": true
+    },
+    {
+      "label": "Proactive problem solving",
+      "years": "",
+      "bar_width": 100,
+      "story_verified": true
+    },
+    {
+      "label": "Self-motivation",
+      "years": "",
+      "bar_width": 100,
+      "story_verified": true
+    },
+    {
+      "label": "Clear written communication",
+      "years": "",
+      "bar_width": 100,
+      "story_verified": true
+    }
+  ],
+  "spikes_down": [
+    {
+      "label": "Document work clearly",
+      "years": "",
+      "bar_width": 90,
+      "story_verified": false,
+      "action": "verify depth"
+    },
+    {
+      "label": "Technical documentation",
+      "years": "",
+      "bar_width": 80,
+      "story_verified": false,
+      "action": "verify depth"
+    },
+    {
+      "label": "Next.js",
+      "years": "",
+      "bar_width": 70,
+      "story_verified": false,
+      "action": "verify depth"
+    }
+  ],
+  "dealbreakers": [],
+  "probes": [
+    {
+      "area": "Document work clearly",
+      "context": "Resume-only signal for Document work clearly.",
+      "prompt": "Verify depth: ask for specific example of Document work clearly in practice.",
+      "signal_type": "resume"
+    },
+    {
+      "area": "Technical documentation",
+      "context": "Resume-only signal for Technical documentation.",
+      "prompt": "Verify depth: ask for specific example of Technical documentation in practice.",
+      "signal_type": "resume"
+    },
+    {
+      "area": "Next.js",
+      "context": "Resume-only signal for Next.js.",
+      "prompt": "Verify depth: ask for specific example of Next.js in practice.",
+      "signal_type": "resume"
+    },
+    {
+      "area": "PostgreSQL",
+      "context": "Resume-only signal for PostgreSQL.",
+      "prompt": "Verify depth: ask for specific example of PostgreSQL in practice.",
+      "signal_type": "resume"
+    }
+  ],
+  "watch_for": [
+    "1.2y avg tenure \u2014 verify retention conditions"
+  ],
+  "why_signal": [
+    {
+      "title": "Leading End-to-End Development and Scaling of a Hi",
+      "story": "One of first engineers architecting ML SaaS platform from ground up. Designed Dataset Storage \nlayer with versioning, MLOps and Model Storage layers with automated hyperparameter tuning, \ndynamic reso",
+      "story_verified": true
+    },
+    {
+      "title": "Solo-led Global Automation of Database Decommissio",
+      "story": "Led end-to-end design of automated portal for database usage optimization. Solo product leader \nresponsible for architecture, Python/Couchbase data aggregation, Java/Spring Boot backend, \nReactJS UI. ",
+      "story_verified": true
+    },
+    {
+      "title": "Architecting a vendor-agnostic AI/ML platform thro",
+      "story": "Led end-to-end architecture of AI/ML platform with vendor-agnostic, open-source philosophy. \nBuilt dataset storage with MinIO, model management with MLflow, execution layer with Kubernetes. \nGuided by",
+      "story_verified": true
+    }
+  ],
+  "preferences": [],
+  "behavioral_signals": [
+    {
+      "title": "Zero To One Building",
+      "description": "Demonstrated in: Leading End-to-End Development and Scaling of a High-Im...",
+      "quote": "One of first engineers architecting ML SaaS platform from ground up.",
+      "citation": "Keysight, Senior Machine Learning Engineer (R&D)"
+    },
+    {
+      "title": "Full Stack Ownership",
+      "description": "Demonstrated in: Solo-led Global Automation of Database Decommissioning ...",
+      "quote": "Led end-to-end design of automated portal for database usage optimization.",
+      "citation": "American Express, Software Engineer (Full Stack)"
+    },
+    {
+      "title": "Technical Leadership",
+      "description": "Demonstrated in: Architecting a vendor-agnostic AI/ML platform through s...",
+      "quote": "Led end-to-end architecture of AI/ML platform with vendor-agnostic, open-source philosophy.",
+      "citation": "Keysight, Senior Machine Learning Engineer (R&D)"
+    }
+  ],
+  "questions_evidence": [
+    {
+      "topic": "Own features end-to-end",
+      "question": "Tell me about a specific time you demonstrated Own features end-to-end.",
+      "verifies": "Own features end-to-end",
+      "signal_type": "story",
+      "category": "evidence"
+    },
+    {
+      "topic": "Build core systems",
+      "question": "Tell me about a specific time you demonstrated Build core systems.",
+      "verifies": "Build core systems",
+      "signal_type": "story",
+      "category": "evidence"
+    }
+  ],
+  "questions_verify": [
+    {
+      "topic": "Document work clearly",
+      "question": "Tell me about a specific time you demonstrated Document work clearly.",
+      "verifies": "Document work clearly",
+      "signal_type": "resume",
+      "category": "verify"
+    },
+    {
+      "topic": "Technical documentation",
+      "question": "Tell me about a specific time you demonstrated Technical documentation.",
+      "verifies": "Technical documentation",
+      "signal_type": "resume",
+      "category": "verify"
+    }
+  ],
+  "tradeoffs": [
+    {
+      "need": "Own features end-to-end",
+      "verdict": "Strong fit",
+      "reason": "story-verified"
+    },
+    {
+      "need": "Build core systems",
+      "verdict": "Strong fit",
+      "reason": "story-verified"
+    },
+    {
+      "need": "Make technical decisions",
+      "verdict": "Strong fit",
+      "reason": "story-verified"
+    },
+    {
+      "need": "Contribute to company direction",
+      "verdict": "Strong fit",
+      "reason": "story-verified"
+    },
+    {
+      "need": "Prototype rapidly",
+      "verdict": "Strong fit",
+      "reason": "story-verified"
+    },
+    {
+      "need": "Manage technical risks",
+      "verdict": "Strong fit",
+      "reason": "story-verified"
+    }
+  ],
+  "overall_strengths": "Proven zero-to-one builder with end-to-end ownership across backend, frontend, and infrastructure.\nAs one of four founding engineers at Keysight, Hardik architected and shipped a vendor-agnostic\nML/MLOps SaaS platform (dataset versioning, MLflow-based model management, Kubernetes\nexecution, FastAPI microservices, Airflow ingestion) that reduced model-to-production time from\nhours to minutes and scaled to 200\u2013300 daily enterprise users, including adoption by Apple, Samsung\nSemiconductor, and Volkswagen. At American Express, he operated as a solo product leader/full-stack\nengineer, building a React + Spring Boot self-service portal and an automated decommissioning\npipeline that saved $50k/month, improved reliability for 70k+ daily jobs, and met zero-downtime and\ncompliance requirements. Strong judgment and risk management evident in open-source, vendor-agnostic \narchitectural choices, cost/performance trade-offs, and measurable business outcomes.\n",
+  "overall_weaknesses": "Direct experience with PostgreSQL is not explicit (strong database background but skewed toward\nCouchbase/BigQuery); advanced SQL tuning, relational schema design, and Postgres-specific\noptimization may require a short ramp. Next.js is not called out (React is), so SSR/ISR patterns and\nNext-specific performance practices are unproven. Event-driven architecture and queue/broker\nexperience (Kafka/pub-sub, idempotency, ordering guarantees) are not documented. Document-processing \ndomain depth (OCR/PDF parsing, contract-specific entity extraction, legal workflows) is indirect\u2014he \nhas RAG/LLM experience but no explicit legaltech projects.\n"
+}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker discussing sourcing from the Internet"}, {"name": "careerspan links", "type": "TOOL", "context": "Proposed tool for A/B testing in recruitment"}], "relationships": [{"from": "Vrijen Attawar", "to": "careerspan links", "type": "USES", "context": "Suggests using for A/B testing in recruitment"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "David", "type": "PERSON", "context": "providing strategic counsel"}, {"name": "Careerspan", "type": "ORG", "context": "acquisition strategy"}], "relationships": [{"from": "David", "to": "Careerspan", "type": "WORKS_WITH", "context": "providing strategic counsel on acquisition strategy"}]}

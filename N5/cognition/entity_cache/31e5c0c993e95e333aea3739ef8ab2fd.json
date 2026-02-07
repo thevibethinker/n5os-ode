@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vibe Builder", "type": "TOOL", "context": "a system building tool"}, {"name": "Vibe Teacher", "type": "TOOL", "context": "a technical learning tool"}, {"name": "Vibe Writer", "type": "TOOL", "context": "a content creation tool"}], "relationships": []}

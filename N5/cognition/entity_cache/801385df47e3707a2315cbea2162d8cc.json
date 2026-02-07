@@ -1,0 +1,1 @@
+{"entities": [{"name": "Debugger", "type": "TOOL", "context": "QA, principle checks, finding issues."}, {"name": "Librarian", "type": "TOOL", "context": "Coherence, state crystallization, filing."}, {"name": "Vibe Nutritionist", "type": "TOOL", "context": "Bio-optimization, labs, and supplements auditor."}], "relationships": []}

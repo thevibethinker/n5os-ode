@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual with AI/ML responsibilities"}, {"name": "Theresa meeting", "type": "EVENT", "context": "meeting where V was mentioned as technical lead"}], "relationships": [{"from": "V (Vrijen)", "to": "Theresa meeting", "type": "MENTIONS", "context": "V was mentioned as technical lead"}]}

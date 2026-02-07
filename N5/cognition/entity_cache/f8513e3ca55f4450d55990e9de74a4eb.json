@@ -1,0 +1,1 @@
+{"entities": [{"name": "Product School", "type": "ORG", "context": "community offering free access"}, {"name": "Ashraf", "type": "PERSON", "context": "actively sending links during the call"}], "relationships": [{"from": "Ashraf", "to": "Product School", "type": "MENTIONS", "context": "sending links to join the community"}]}

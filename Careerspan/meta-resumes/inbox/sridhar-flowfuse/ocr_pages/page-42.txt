@@ -1,0 +1,31 @@
+‘Excellent Retrieval-Augmented Generation Required: intermediate 3/5 Importance: 6/10 Story+prole
+
+Ourtake Basedonresume v Direct
+
+Alignment to skill: Retrieval-Augmented Generation (RAG) requires combining retrieval (embeddings/vector
+DB/search) with LLM generation, designing chunking/indices, ranking, guardrails to reduce hallucination, and
+productionizing for latency, cost, reliability, and privacy. Evidence in resume: multiple direct, production-
+focused RAG references. At Cambridge University Press the candidate "Built a Student Companion System
+using RAG" with “semantic search (via vector DB)" and agentic response verification, plus quiz generation and
+pedagogical adaptation—explicit RAG usage for a multimodal product. At EclecticiO they extended the
+“FaithfulRAG research framework to generate cybersecurity reports with reduced hallucinations,” built multi-
+index RAG (Text-to-Lucene), created scalable contextual search over 100M+ entities, used nomic-embed for
+retrieval, and applied BERT-based cross-encoder reranking. They also implemented dual-LLM support,
+guardrails, feedback loops, Human-in-the-Loop approval, and achieved concrete metrics (e.g., 18% higher
+correctness, 84% prompt relevance, 27% recall, 97% schema adherence, 60% token reduction), all indicating
+practical production-grade RAG work. Additional supporting experience: Text-to-NoSQL and PICARD for query
+generation, semantic search and retrieval mentions across roles, and research-to-production leadership.
+Evaluation vs criteria: the resume shows design, integration, scaling, hallucination mitigation,
+observability/guardrail patterns, and shipped features used by customers/analysts—matching the
+Intermediate~Advanced criteria. Missing/limited evidence: explicit references to specific vector DB products
+(beyond “vector DB and "nomic-embed") or low-level observability stacks and SLOs, and public
+OSS/academic publications on RAG. Overall judgment: direct. strong, production-level RAG experience with
+measurable impact and architectural leadership.
+
+Support
+Stories
+
+kftoWPdjyQB9caisiiPn ‘Deect 9/10 Excellent Best
+Resume
+
+Resumematch “Direct 9/10 Excellent

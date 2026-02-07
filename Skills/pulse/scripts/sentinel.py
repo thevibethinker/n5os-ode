@@ -15,8 +15,10 @@ Control signals (set via N5/config/pulse_control.json):
 
 import json
 import sys
+import argparse
 from pathlib import Path
 from datetime import datetime, timezone
+import os
 from pulse_common import PATHS, WORKSPACE
 
 BUILDS_DIR = PATHS.BUILDS
@@ -52,40 +54,51 @@ def find_active_builds() -> list[str]:
     return active
 
 def main():
+    parser = argparse.ArgumentParser(description="Pulse Sentinel")
+    parser.add_argument("--dry-run", action="store_true", help="Report what would be ticked without mutating builds")
+    args = parser.parse_args()
+
     # Check control state
     control = get_control_state()
     state = control.get("state", "active")
-    
+
     if state == "stopped":
         print("[SENTINEL] Stop signal detected. Agent should be deleted.")
         sys.exit(0)
-    
+
     if state == "paused":
         print("[SENTINEL] Paused. Skipping tick.")
         sys.exit(0)
-    
+
     # Find active builds
     active_builds = find_active_builds()
-    
+
     if not active_builds:
         print("[SENTINEL] No active builds. Idle.")
         sys.exit(0)
-    
+
+    token_present = bool(os.environ.get("ZO_CLIENT_IDENTITY_TOKEN"))
     print(f"[SENTINEL] Found {len(active_builds)} active build(s): {', '.join(active_builds)}")
-    
+    print(f"[SENTINEL] Token present: {token_present}")
+
+    if args.dry_run:
+        print("[SENTINEL] Dry-run: not ticking builds.")
+        sys.exit(0)
+
     # Import and run pulse tick for each
     # We import here to avoid loading heavy deps when idle
     from pulse import tick
     import asyncio
-    
+
     for slug in active_builds:
         print(f"[SENTINEL] Ticking {slug}...")
         try:
             asyncio.run(tick(slug))
         except Exception as e:
             print(f"[SENTINEL] Error ticking {slug}: {e}")
-    
+
     print("[SENTINEL] Tick cycle complete.")
+
 
 if __name__ == "__main__":
     main()

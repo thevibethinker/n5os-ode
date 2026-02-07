@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "the speaker discussing sports strategy"}, {"name": "Tottenham", "type": "ORG", "context": "a team mentioned in the context of sports"}], "relationships": [{"from": "Vrijen Attawar", "to": "Tottenham", "type": "MENTIONS", "context": "discussing a sports team in relation to game strategy"}]}

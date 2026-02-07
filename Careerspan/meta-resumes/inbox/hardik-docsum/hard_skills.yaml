@@ -1,0 +1,130 @@
+---
+created: 2026-02-03
+last_edited: 2026-02-03
+version: 1.0
+provenance: con_LFJ7YTSwxW5vh4bD
+
+hard_skills:
+  # Listed from document
+  listed:
+    - System Architecture
+    - Machine Learning
+    - MLOps
+    - Model Training
+    - Model Deployment
+    - Dataset Storage & Versioning
+    - Cloud Engineering
+    - Data Ingestion
+    - Feature Engineering
+    - Microservices Development
+    - CI/CD Pipeline Optimization
+    - Process Automation
+    - DevOps
+    - Product Management
+    - Scrum Mastery
+    - User Story Prioritization
+    - Mentoring
+    - R&D Operations
+    - Infrastructure Automation
+    - SRE (Site Reliability Engineering)
+    - Database Management
+    - Project Delivery
+    - Data Analysis
+    - Data Engineering
+    - Agile Methodologies
+    - Stakeholder Management
+    - Software Engineering
+    - Open-source Architecture
+    - UX Design
+
+  # Assessed skills with scores
+  assessed:
+    - skill: "Full-stack development"
+      rating: "Excellent"
+      importance: 10
+      experience: 9
+      type: "Direct"
+    
+    - skill: "Python"
+      rating: "Excellent"
+      importance: 9
+      experience: 9
+      type: "Direct"
+    
+    - skill: "Schema design"
+      rating: "Excellent"
+      importance: 8
+      experience: 8
+      type: "Direct"
+    
+    - skill: "Technical documentation"
+      rating: "Good"
+      importance: 8
+      experience: 6
+      type: "Transferable"
+    
+    - skill: "Next.js"
+      rating: "Good"
+      importance: 7
+      experience: 6
+      type: "Transferable"
+    
+    - skill: "PostgreSQL"
+      rating: "Good"
+      importance: 7
+      experience: 6
+      type: "Transferable"
+    
+    - skill: "React"
+      rating: "Excellent"
+      importance: 7
+      experience: 8
+      type: "Direct"
+    
+    - skill: "Document processing"
+      rating: "Good"
+      importance: 6
+      experience: 6
+      type: "Transferable"
+    
+    - skill: "AI and Large Language Model (LLM) integration"
+      rating: "Excellent"
+      importance: 6
+      experience: 8
+      type: "Direct"
+    
+    - skill: "AWS"
+      rating: "Excellent"
+      importance: 6
+      experience: 9
+      type: "Direct"
+    
+    - skill: "Async job processing"
+      rating: "Excellent"
+      importance: 6
+      experience: 9
+      type: "Direct"
+    
+    - skill: "SQL query optimization"
+      rating: "Good"
+      importance: 6
+      experience: 6
+      type: "Transferable"
+    
+    - skill: "FastAPI"
+      rating: "Excellent"
+      importance: 6
+      experience: 9
+      type: "Direct"
+    
+    - skill: "Data extraction"
+      rating: "Good"
+      importance: 6
+      experience: 7
+      type: "Transferable"
+    
+    - skill: "Event-driven architecture"
+      rating: "Good"
+      importance: 5
+      experience: 6
+      type: "Transferable"

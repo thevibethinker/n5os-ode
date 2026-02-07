@@ -1,0 +1,31 @@
+Good Ensure privacy and security Required: Advanced 4/5 Importance: 8/10 Profile S «
+
+Ourtake Basedonresume + Transferable
+
+Evidence supporting capability (transferable): The candidate has multiple roles working in security-sensitive
+domains and delivered technical controls that map to privacy/security responsibilities. At EclecticlQ and
+Cyware they led/owned Al for cybersecurity products (SecureBERT fine-tuning, FaithfulRAG, entity-based
+context, human-in-the-loop approval, guardrails, feedback loops, reduced hallucinations, schema adherence,
+enterprise workflows, contextual search for 100M+ entities) — these show design-for-trust, mitigation of
+model hallucinations, and operational controls typical in secure Al deployments. Earlier roles show handling
+regulated/financial data (transactional anomaly detection, credit-risk modeling, migrating banking databases
+for 18 banks supporting 100M+ users, capacity planning in Finance at Dell) which implies experience with data
+sensitivity, risk-aware engineering, and production controls for high-stakes systems. The resume repeatedly
+highlights production deployment, modular/secure architectures, and close collaboration with
+product/sales/analysts — suggesting experience working with stakeholders on correctness, observability, and
+reliability of Al features. Missing/weak direct evidence: there are no explicit mentions of SOC 2, GDPR, HIPAA,
+formal risk assessments, audits, policy documentation, encryption/access-control implementations, threat
+modeling, or direct collaboration with compliance/security teams. There is also no explicit STAR story about
+implementing controls, responding to incidents, or producing compliance artifacts. Conclusion: The
+background provides reasonable, transferable evidence that the candidate can design and implement Al
+features with security and privacy concerns in mind (especially given cybersecurity and finance experience),
+but it lacks explicit, direct proof of having owned formal compliance (SOC 2/GDPR/HIPAA) processes or audits.
+
+Contributing skills
+“SOC 2Compliance Privacy and Security Compliance Risk assessment and mitigation Attention to detail
+
+Support
+
+Resume
+
+Resume match ‘Transferable 6/10 Good

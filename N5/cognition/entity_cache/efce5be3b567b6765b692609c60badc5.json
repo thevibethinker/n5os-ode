@@ -1,0 +1,1 @@
+{"entities": [{"name": "Zo", "type": "ORG", "context": "technology platform supporting models"}, {"name": "Claude", "type": "TOOL", "context": "code integration tool used within Zo"}], "relationships": [{"from": "Zo", "to": "Claude", "type": "INTEGRATES", "context": "Zo integrates Claude code natively"}]}

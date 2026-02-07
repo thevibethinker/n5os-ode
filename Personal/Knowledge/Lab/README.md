@@ -26,7 +26,6 @@ The Idea Lab is a dedicated environment for taking "sparks" (from `file 'Lists/i
 | Date | Exploration | Status | Goal |
 | :--- | :--- | :--- | :--- |
 | 2026-01-04 | [Recursive Cultural Feedback Loop: The phenomenon where AI training data latency drives fashion/meme resurgences.](./Explorations/2026-01-04_recursive_cultural_feedback_loop_the_phenomenon_wh/README.md) | Active | Explore |
-| 2026-01-05 | [Test move item](./Explorations/2026-01-05_test_move_item/README.md) | Active | Explore |
 | 2026-01-04 | System Bootstrap | Setup | Initialize the Lab |
 
 

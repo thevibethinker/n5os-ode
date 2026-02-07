@@ -1,0 +1,1 @@
+{"entities": [{"name": "FOUNDER_AUTH_TOKEN", "type": "CONCEPT", "context": "An authentication token required for access"}, {"name": "Records/Exports/Leads/", "type": "TOOL", "context": "Directory for saving exported data"}], "relationships": []}

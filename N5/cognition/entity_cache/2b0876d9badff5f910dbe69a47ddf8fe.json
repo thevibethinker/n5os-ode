@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Speaker in the context of the hiring market"}, {"name": "Longitudinal data", "type": "CONCEPT", "context": "Method of data collection endorsed by V"}], "relationships": [{"from": "V", "to": "Longitudinal data", "type": "BELIEVES", "context": "V believes that longitudinal data is superior to snapshots"}]}

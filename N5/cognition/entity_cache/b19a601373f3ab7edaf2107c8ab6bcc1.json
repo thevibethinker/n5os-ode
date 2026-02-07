@@ -1,0 +1,1 @@
+{"entities": [{"name": "RLM reasoning", "type": "CONCEPT", "context": "a type of reasoning that V believes can improve quality/cost tradeoff when explicit training is applied"}], "relationships": [{"from": "V", "to": "RLM reasoning", "type": "BELIEVES", "context": "V believes explicit training on RLM reasoning would improve the quality/cost tradeoff"}]}

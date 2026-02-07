@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Co-founder of an e-commerce brand"}, {"name": "Unnamed e-commerce brand", "type": "ORG", "context": "Business scaled to $30-40K/month revenue"}], "relationships": [{"from": "V", "to": "Unnamed e-commerce brand", "type": "WORKS_WITH", "context": "V is a co-founder of the organization"}]}

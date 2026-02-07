@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ankit Mittal", "type": "PERSON", "context": "individual associated with Zeni.Ai"}, {"name": "Zeni.Ai", "type": "ORG", "context": "organization connected to Ankit Mittal"}], "relationships": [{"from": "Ankit Mittal", "to": "Zeni.Ai", "type": "WORKS_WITH", "context": "Ankit Mittal is associated with Zeni.Ai"}]}

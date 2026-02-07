@@ -1,0 +1,1 @@
+{"entities": [{"name": "Flow Over Pools", "type": "CONCEPT", "context": "Information management system describing the flow of items through stages"}, {"name": "ZT2", "type": "TOOL", "context": "System that implements Flow Over Pools concept"}], "relationships": []}

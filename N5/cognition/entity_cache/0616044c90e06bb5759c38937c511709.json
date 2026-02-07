@@ -1,0 +1,1 @@
+{"entities": [{"name": "Whitney Jones", "type": "PERSON", "context": "Partnerships expert"}, {"name": "partnership tools", "type": "TOOL", "context": "tools used for partnerships"}], "relationships": [{"from": "Whitney Jones", "to": "partnership tools", "type": "MENTIONS", "context": "Discusses the effectiveness of partnership tools"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "the main subject of the text"}, {"name": "gmail_monitor.py", "type": "TOOL", "context": "a Python script used for monitoring Gmail"}], "relationships": [{"from": "V", "to": "gmail_monitor.py", "type": "USES", "context": "V utilizes this script for email monitoring"}]}

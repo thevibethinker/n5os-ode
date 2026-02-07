@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "a community-first sourcing model"}, {"name": "Community X", "type": "ORG", "context": "the community from which vetted members are sourced"}], "relationships": [{"from": "Careerspan", "to": "Community X", "type": "MENTIONS", "context": "source of vetted members"}]}

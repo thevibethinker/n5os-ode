@@ -1,0 +1,1 @@
+{"entities": [{"name": "Google Drive", "type": "TOOL", "context": "a cloud storage service used for file storage and synchronization"}, {"name": "Analytics dashboard", "type": "TOOL", "context": "a tool for data visualization and analysis"}], "relationships": []}

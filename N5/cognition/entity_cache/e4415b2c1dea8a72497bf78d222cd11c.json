@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "persona of a type of candidate/issue"}, {"name": "Careerspan", "type": "ORG", "context": "organization that could have intervened at various steps"}], "relationships": [{"from": "V", "to": "Careerspan", "type": "RELATED_TO", "context": "V's persona relates to the interventions Careerspan could have made"}]}

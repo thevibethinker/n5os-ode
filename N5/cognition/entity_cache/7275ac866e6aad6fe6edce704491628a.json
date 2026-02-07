@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "A person mentioned in the text related to knowledge system"}, {"name": "gdrive_transcript_workflow.py", "type": "TOOL", "context": "A script mentioned for processing data"}], "relationships": []}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Individual associated with Careerspan"}, {"name": "Careerspan", "type": "ORG", "context": "Organization that V is involved with"}], "relationships": [{"from": "V", "to": "Careerspan", "type": "WORKS_WITH", "context": "V is currently working with Careerspan"}]}

@@ -1,0 +1,26 @@
+Bcallent Al Reliability Engineering Required: Advanced 4/5 Importance: 9/10 Story+prome v ~
+
+Ourtake Basedonstory: kitowPalyBSCaIs\IPn v Direct
+
+This story provides strong, direct evidence of Al Reliability Engineering at a high level. The candidate
+described architecting and implementing a multi-stage Al pipeline for critical cybersecurity reporting,
+explicitly detailing numerous reliability-first engineering decisions. They ensured accuracy and factual
+traceability with FaithfulRAG, citations, and source chunk linking—directly addressing safety and trust. They
+implemented robust mechanisms to prevent A! ‘hallucinations,’ handled infrastructure limitations robustly
+(model/token constraints, multiprocessing as an asynchronous fallback), and measured/monitored key
+performance and structural correctness (18% improvement in correctness, schema adherence, quantifiable
+recall/relevance). The pipeline's design accounted for human-in-the-loop trust (traceability), scalable robust
+processing (parallelization), and adaptive development under real-world production requirements (release
+cycles, iterative validation). While the story does not dwell deeply on runtime observability/alerting specifics,
+it gives sufficient evidence of ownership for both preventative and detective controls in Al reliability. The
+impact was both measurable and business-critical; the work demonstrates the candidate's ability to design,
+build, and deliver reliable Al-powered features into production under significant constraints—squarely
+matching the needs of FlowFuse's Al-focused Full Stack Developer role.
+
+Support
+Stories
+qoWHeLzqkOMMISPweHIL ‘Direct 8/10 Excellent
+kftoWPdjyQB9CaisjiPn ‘Drect 9/10 Excellent Best
+Resume
+
+Resumematch ‘Direct 8/10 Excellent

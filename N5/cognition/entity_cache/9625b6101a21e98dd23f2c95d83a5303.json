@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "NYC", "type": "LOCATION", "context": "location of the event"}, {"name": "informal demo/jam session", "type": "EVENT", "context": "format of the event"}], "relationships": []}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Block categorization", "type": "CONCEPT", "context": "classification of blocks into categories"}, {"name": "User preferences", "type": "CONCEPT", "context": "individual choices regarding block generation"}, {"name": "Dynamic block sets", "type": "CONCEPT", "context": "adaptive collections of blocks based on meeting purpose"}], "relationships": []}

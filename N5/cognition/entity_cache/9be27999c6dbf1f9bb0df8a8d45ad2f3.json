@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Individual involved in analysis and decision-making"}, {"name": "Option B", "type": "CONCEPT", "context": "Selected option in the decision-making process"}], "relationships": [{"from": "V", "to": "Option B", "type": "KNOWS", "context": "V is aware of and has selected Option B in decision-making"}]}

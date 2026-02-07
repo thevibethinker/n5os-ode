@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "referring to the individual with the knowledge system"}, {"name": "FOLLOW_UP_EMAIL.md", "type": "TOOL", "context": "file generated for follow-up emails based on action items"}], "relationships": []}

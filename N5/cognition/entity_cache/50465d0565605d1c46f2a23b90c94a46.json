@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual referred to in the text"}, {"name": "N5 OS", "type": "TOOL", "context": "tool related to reclaiming agency"}], "relationships": [{"from": "V", "to": "N5 OS", "type": "USES", "context": "V uses N5 OS to reclaim agency"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "individual discussing a coaching approach"}, {"name": "AI", "type": "TOOL", "context": "intermediary for getting to know someone"}], "relationships": [{"from": "Vrijen Attawar", "to": "AI", "type": "USES", "context": "to facilitate getting to know someone"}]}

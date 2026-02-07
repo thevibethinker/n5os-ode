@@ -1,0 +1,24 @@
+{
+  "drop_id": "D1.3",
+  "status": "complete",
+  "summary": "CRM migration executed successfully with findings on internal team data location. Tasks completed: (1) Backup created at N5/data/crm_backup_20260201.db, (2) CRM copied to canonical location N5/data/crm.db, (3) is_internal column added to individuals table. Key finding: Internal team members (Vrijen, Logan, Ilse, Shivam, Ankit) are stored in N5/data/profiles.db, NOT in the legacy CRM. The CRM only contains 57 external contacts. Successfully flagged 3 internal team members in CRM (Logan Currie, Ilse Funkhouser, Shivam Desai) who had external-facing entries. Vrijen (Attawar V, Vrijen Attawar) and Ankit Mittal do not have entries in the CRM - they exist only in profiles.db. Recommendation: Either (a) add internal team to CRM for unified SSOT, or (b) use profiles system as internal team source of truth and CRM for external contacts only.",
+  "artifacts": [
+    "N5/data/crm.db",
+    "N5/data/crm_backup_20260201.db"
+  ],
+  "internal_team_flagged_in_crm": [
+    "Ilse Funkhouser",
+    "Logan Currie",
+    "Shivam Desai"
+  ],
+  "internal_team_not_in_crm": [
+    "Vrijen Attawar",
+    "Ankit Mittal"
+  ],
+  "findings": {
+    "crm_records": 57,
+    "internal_team_in_profiles": 10,
+    "internal_team_in_crm": 3,
+    "is_internal_column_added": true
+  }
+}

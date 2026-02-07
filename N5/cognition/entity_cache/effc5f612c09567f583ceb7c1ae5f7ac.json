@@ -1,0 +1,1 @@
+{"entities": [{"name": "Nira", "type": "ORG", "context": "company exploring collaboration with V"}], "relationships": [{"from": "V", "to": "Nira", "type": "WORKS_WITH", "context": "exploring co-selling and co-distribution motion"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Zapier", "type": "TOOL", "context": "platform for automation"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "individual preparing for a demo"}], "relationships": [{"from": "V (Vrijen)", "to": "Zapier", "type": "USES", "context": "for demo"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "the individual discussed in the text"}, {"name": "Gmail API", "type": "TOOL", "context": "the tool used for gathering email activity"}], "relationships": [{"from": "V", "to": "Gmail API", "type": "USES", "context": "V uses Gmail API to gather email activity"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Russ", "type": "PERSON", "context": "founder of the knowledge system"}], "relationships": [{"from": "Pam K", "to": "Russ", "type": "MENTIONS", "context": "refers to the founder of the knowledge system"}]}

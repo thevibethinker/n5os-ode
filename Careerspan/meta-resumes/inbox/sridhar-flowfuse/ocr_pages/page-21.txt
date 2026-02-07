@@ -1,0 +1,31 @@
+Excellent Contribute to fullstack work Required: Intermediate 3/5 Importance: 6/10 Profile Y «A
+
+Ourtake Basedonresume v Direct
+
+Resume contains multiple concrete examples of stepping beyond pure ML research into full-stack and general
+engineering work: * Built Python/Django application to serve ML models with multi-threaded inference and
+feedback loops (explicit web/backend application development and production serving). * Upgraded SQL
+stored procedures and migrated databases for 18 banking clients (classic backend/data engineering at scale,
+100M+ users). + Architected and deployed Flask backends decoupled from async Al protocols (MCP) anda
+public MCP server—shows backend service design, deployment, and third-party integration. + Implemented
+Text-to-Lucene and Text-to-NoSQL systems, Elasticsearch-based contextual search (100M+ entities), and
+other infra (embedding stores, cross-encoders, nomic-embed) —demonstrates building infra and
+observability/production retrieval systems used by product features. + As founder/consultant delivered end-
+to-end client solutions (chatbots, recommendation engines, retail systems), implying full-stack product
+delivery and taking on non-ML engineering tasks. » Leadership and product collaboration: led feature scoping,
+success metrics, partnered with product and sales, and led technical efforts for cross-disciplinary teams—
+indicates cross-functional product work. Missing/limited evidence: explicit frontend/UI framework work
+(React/Vue/etc.) is not mentioned. Overall, the resume demonstrates direct experience contributing to
+broader fullstack engineering and product work (backend, infra, integrations, production deployments) with
+measurable impacts, while frontend-specific experience is less explicit.
+
+Contributing skills
+
+Incremental Software Delivery FullstackDevelopment Problem-solving Adaptability Collaboration
+Prioritization and time management
+
+Support
+
+Resume
+
+Resume match Direct 8/10 Excellent

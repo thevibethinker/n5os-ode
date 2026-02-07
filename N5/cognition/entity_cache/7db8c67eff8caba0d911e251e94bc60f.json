@@ -1,0 +1,1 @@
+{"entities": [{"name": "Candidate", "type": "PERSON", "context": "individuals being assessed for fit"}, {"name": "Founder", "type": "PERSON", "context": "individuals aiding candidates in providing information"}], "relationships": [{"from": "Founder", "to": "Candidate", "type": "WORKS_WITH", "context": "founders collaborate with candidates in the assessment process"}]}

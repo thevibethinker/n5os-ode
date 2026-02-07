@@ -1,0 +1,45 @@
+Goos Privacy and Security Compliance Required: Advanced 4/5 importance: 8/10 Profie % «
+
+Ourtake Sasedonresume -S Transterable_
+
+Alignment to skill: The resume shows repeated, practical attention to security-related concerns in Al systems
+— @.g., designing Human-in-the-Loop approval systems, building guardrails and feedback loops for RAG/report
+generation to reduce hallucinations, and producing a SecureBERT 2.0 model for TTP classification. Working at
+EclecticlQ (cybersecurity product) and on finance-related systems (transactional anomaly detection, credit
+risk modeling, and a banking DB migration affecting 100M¢ users) implies familiarity with handling sensitive
+data and risk-aware engineering.
+
+Evidence for transferable experience: While no explicit compliance frameworks (SOC 2, PCI, HIPAA) or
+audit/pass outcomes are stated, multiple projects suggest security-minded architecture: modular/async
+decoupling to manage constraints, token-usage reduction (privacy/cost control), enterprise workfiows with
+approval flows, and deployment of public MCP server with guardrails. The cybersecurity domain work (entity
+extraction, TTP classification, FaithfulRAG) strongly implies working under higher security expectations. The
+banking migration and finance roles are transferable examples of regulated-domain experience that typically
+require secure data handling.
+
+Proficiency vs. success criteria: The candidate demonstrates practical implementations that mitigate Al-
+specific risks (hallucination reduction, human approvals, factual accuracy) and builds “SecureBERT" models —
+indicating hands-on secure-model development. However, there is no mention of formal compliance
+ownership, policy creation, 3rd-party audits, encryption/key management, access control implementations,
+incident response, or documented compliance outcomes.
+
+Contextualization: For a Full Stack Developer (Al-focused) at FlowFuse, the resume signals solid, practical
+security awareness and application in Al pipelines and regulated domains. The depth is stronger on
+engineering controls and model-level guardrails than on formal compliance program leadership.
+
+Confidence assessment: | infer these skills reasonably from domain and project descriptions (cybersecurity
+employer, finance/banking projects, guardrails and Human-in-the-Loop systems), but because the resume
+lacks explicit statements about compliance frameworks, audits, or policy ownership, the inference is not
+certain.
+
+Clear judgment: The profile demonstrates transferable, practical competence in privacy/security engineering
+for Al systems (data handling and model guardrails) but does not demonstrate leadership or explicit ownership
+of formal compliance programs or standards. To reach Advanced/Expert levels, the resume would need explicit
+mentions of compliance frameworks, audits, policy design, encryption/access-control implementations,
+incident response, or measurable compliance outcomes.
+
+Support
+
+Resume
+
+Resume match “Transterable 6/10 Good

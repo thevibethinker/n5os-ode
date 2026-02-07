@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Individual speaking about their experience and network"}, {"name": "NYC/Boston founder/VC ecosystem", "type": "CONCEPT", "context": "The environment V is active in"}], "relationships": [{"from": "V", "to": "NYC/Boston founder/VC ecosystem", "type": "KNOWS", "context": "V is an active networker in this ecosystem"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Prompts", "type": "CONCEPT", "context": "Directory for workflow prompts"}, {"name": "workflow prompt", "type": "TOOL", "context": "Execution unit for tasks"}], "relationships": []}

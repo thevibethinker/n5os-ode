@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "V is a person mentioned in relation to a knowledge system"}, {"name": "enrich_section_safely", "type": "TOOL", "context": "Function for enriching profile sections with new content"}], "relationships": []}

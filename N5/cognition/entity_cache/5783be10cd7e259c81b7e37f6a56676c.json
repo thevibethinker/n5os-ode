@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "a context related to meeting notes"}, {"name": "resume", "type": "DOCUMENT", "context": "type of document referenced"}], "relationships": []}

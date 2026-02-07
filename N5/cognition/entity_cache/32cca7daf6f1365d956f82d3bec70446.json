@@ -1,0 +1,1 @@
+{"entities": [{"name": "Griffin", "type": "PERSON", "context": "individual asking questions about defensibility and scale in V's knowledge system"}], "relationships": [{"from": "Griffin", "to": "defensibility and scale", "type": "BELIEVES", "context": "Griffin is focused on the ideas of defensibility and scalability in V's product direction"}]}

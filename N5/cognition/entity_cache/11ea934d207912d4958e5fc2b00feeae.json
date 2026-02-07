@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "the speaker"}, {"name": "badass", "type": "CONCEPT", "context": "a description of a person who is impressive or cool"}], "relationships": [{"from": "Vrijen Attawar", "to": "badass", "type": "MENTIONS", "context": "describing a person as impressive"}]}

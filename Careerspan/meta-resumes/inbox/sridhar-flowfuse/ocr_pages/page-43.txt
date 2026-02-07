@@ -1,0 +1,45 @@
+Excellent Al Feature Deployment Required: Advanced 4/5 Importance: 9/10 Storytprofie Y «
+
+Ourtake Sasedonresume ~ Direct
+
+The resume contains multiple, direct examples of designing, building, and shipping Al-powered features into
+production-like environments with end-to-end ownership. Key evidence:
+
+- EclecticiQ (Principal ML Engineer): Led Al initiatives and architected a production Al assistant (6-month
+integration) that decoupled synchronous Flask backends from async Al protocols (MCP), deployed a public
+MCP server, built Human-in-the-Loop approval, entity-based context, and implemented guardrails that
+reduced token usage by 60% while delivering measurable improvements (accuracy, recall, schema
+adherence). This shows end-to-end design, deployment, operational constraints handling
+(latency/cost/token usage), and production-grade reliability/quardrails.
+
+- Cambridge University Press (Al/ML Specialist): Built a RAG-based Student Companion with vector DB
+semantic search, quiz generation, and an Automatic Marking System (=85% accuracy) using few-shot
+prompting and CoT — demonstrating applied LLM/embedding integration for user-facing features.
+
+- Cyware Labs (Senior Data Scientist): As sole ML engineer, built end-to-end ML products and a Python/Django
+app to serve models with multi-threaded inference and a feedback loop for retraining — demonstrating
+serving, latency reduction, and operational improvement practices.
+
+- SquareOne & Dell: Built low-latency transactional anomaly system (<300ms) and Spark-based credit risk
+model, plus table-parsing/product-matching systems (»95% accuracy) and time-series capacity forecasting.
+These show engineering for performance, scale, and production constraints.
+
+- Ponderbot (Consultancy) : Delivered 15+ end-to-end Al solutions for clients across domains, indicating
+repeated production deployments and product-focused delivery.
+
+Collectively these items demonstrate not just prototyping but shipping robust Al features, attention to
+operational concerns (latency, token cost, guardrails, feedback loops), scaling (ES with 100M+ entities),
+security/factuality emphasis (FaithfulRAG, SecureBERT), and integration choices (LangGraph, MCP. Ollama,
+Flask/Django). Missing/less-explicit areas: concrete frontend/UI ownership is not detailed, and low-level
+Cl/CD/monitoring tooling (e.g., specific observability stacks, automated testing pipelines) is not spelled out.
+However given the depth of backend/Al production work and collaboration with product/sales, these are
+reasonable gaps to probe in interviews rather than disqualifying omissions.
+
+‘Support
+Stories
+qoWHelzqkOMMISPwcHIL Direct 9/10 Excellent
+kftoWPdjyQB9CQiSjIPn Dect 9/10 Excellent Best
+Resume
+Resumematch Direct 9/10 Excellent
+
+Excellent Embeddings Required: intermediate 3/5 Importance: 6/10 Storytprofie Y“ v

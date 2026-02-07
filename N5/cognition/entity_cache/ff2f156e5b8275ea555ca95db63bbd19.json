@@ -1,0 +1,1 @@
+{"entities": [{"name": "Level Upper", "type": "ORG", "context": "an organization mentioned for reasoning quality engagement"}, {"name": "V", "type": "PERSON", "context": "the subject of the text discussing knowledge system"}], "relationships": [{"from": "V", "to": "Level Upper", "type": "MENTIONS", "context": "V is considering engaging Level Upper for reasoning quality"}]}

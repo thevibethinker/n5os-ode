@@ -1,0 +1,1 @@
+{"entities": [{"name": "Griffin", "type": "PERSON", "context": "suggests he will champion this internally"}, {"name": "MENG Fund", "type": "ORG", "context": "depends on their appetite and other deal flow"}], "relationships": [{"from": "Griffin", "to": "MENG Fund", "type": "MENTIONS", "context": "whether MENG Fund bites depends on their appetite"}]}

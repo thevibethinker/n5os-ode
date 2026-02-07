@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "an organization providing RAG solutions"}, {"name": "RAG solution", "type": "TOOL", "context": "a solution related to the field mentioned"}], "relationships": []}

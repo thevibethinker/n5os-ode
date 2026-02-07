@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Individual discussing business endeavors."}, {"name": "Zoho", "type": "ORG", "context": "Platform for building out business solutions."}], "relationships": [{"from": "Vrijen Attawar", "to": "Zoho", "type": "MENTIONS", "context": "Discussing the use of Zoho for building out business solutions."}]}

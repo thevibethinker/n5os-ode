@@ -1,6 +1,6 @@
 # Scan Results Briefing: 2026-01-26_scan-completed-founding-gtm-sales-lead-at-wayo_top_vibe_check.csv
 
-**Generated:** 2026-01-27T02:07:36.659995
+**Generated:** 2026-01-28T16:10:03.240053
 **Total Candidates:** 7
 
 ## Top Candidates

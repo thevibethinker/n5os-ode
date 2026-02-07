@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Individual involved in the knowledge system"}, {"name": "Calendly", "type": "TOOL", "context": "Scheduling tool used for conversations"}], "relationships": [{"from": "V", "to": "Calendly", "type": "USES", "context": "V uses Calendly for scheduling conversations"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Rochel", "type": "PERSON", "context": "speaker in the conversation"}, {"name": "chiropractor", "type": "CONCEPT", "context": "type of healthcare professional"}], "relationships": [{"from": "Rochel", "to": "chiropractor", "type": "MENTIONS", "context": "Rochel mentions that her roommate was on the way to a chiropractor"}]}

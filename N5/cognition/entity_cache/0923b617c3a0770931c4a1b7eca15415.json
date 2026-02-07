@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ilse", "type": "PERSON", "context": "individual making an offer"}], "relationships": [{"from": "Ilse", "to": "project management board", "type": "MENTIONS", "context": "offers to formalize into a project management board"}]}

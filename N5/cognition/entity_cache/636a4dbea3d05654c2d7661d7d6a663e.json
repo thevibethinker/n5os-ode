@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "An organization that makes use of rich job descriptions."}, {"name": "ChatGPT", "type": "TOOL", "context": "An AI tool used for generating outputs."}], "relationships": [{"from": "Careerspan", "to": "ChatGPT", "type": "USES", "context": "Careerspan uses ChatGPT for generating job descriptions."}]}

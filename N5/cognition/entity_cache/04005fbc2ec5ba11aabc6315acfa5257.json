@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "the individual responsible for performing analysis"}, {"name": "Python scripts", "type": "TOOL", "context": "used to provide format templates for analysis"}], "relationships": [{"from": "V", "to": "Python scripts", "type": "USES", "context": "V uses Python scripts for formatting templates in analysis"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Zo", "type": "ORG", "context": "knowledge system designed to enhance personal branding"}, {"name": "LLM", "type": "TOOL", "context": "generic large language model used for processing resumes"}], "relationships": [{"from": "Zo", "to": "LLM", "type": "USES", "context": "Zo utilizes LLM but differs in approach"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "an organization or system for career development"}, {"name": "AI models", "type": "CONCEPT", "context": "artificial intelligence models used in the system"}], "relationships": [{"from": "Careerspan", "to": "AI models", "type": "USES", "context": "Careerspan incorporates AI models in its architecture"}]}

@@ -1,0 +1,28 @@
+Excelent PTODIEM-SOIVING Kequirea: Agvanceg 4/5 Importance: o/1U Stwwrytprome vy v
+
+Excellent Pragmatism Required: Advanced 4/5 Importance: 7/10 Story+profile Y «A
+
+Ourtake Basedonresume ~ Direct
+
+The resume repeatedly shows pragmatic, delivery-focused decision making across backend, frontend, and Al
+components. Concrete examples: choosing rule-based statistical models in Scala to return transaction risk
+scores under 300ms (performance-driven tradeoff); using Random Forest on Spark for a credit-risk model
+(practical, scalable model choice) ; building multi-threaded inference and low-latency services as the sole ML
+engineer; upgrading SQL procedures for a large banking migration (practical correctness and impact); and
+founding a consultancy delivering 15+ client solutions (client-driven, outcome-focused work). At EclecticlQ
+the candidate explicitly reports shipping under infrastructure constraints—decoupling sync Flask backends
+from async Al protocols, introducing Human-in-the-Loop approvals, enabling dual LLM support, and reducing
+token usage by 60%—all examples of balancing accuracy, cost, latency, and operational constraints. Measured
+outcomes (F1 scores, accuracy, token reduction, schema adherence improvements) support that choices
+were effective, not just experimental. Missing for an “expert” label: limited evidence of organization-wide
+policy creation or formal mentoring programs that codified pragmatic best practices across multiple orgs.
+Overall the evidence shows systematic, context-aware tradeoffs and repeatable production-focused delivery
+consistent with the Advanced level.
+
+Support
+Stories
+qoWHeLzqkOMMI5PwcHiL Direct 9/10 Excellent Best
+kftowPdjyQBSCaisjIPn Direct 8/10 Excellent
+Resume
+
+Resume match Direct 9/10 Excellent

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Zain", "type": "PERSON", "context": "focuses on human support systems"}, {"name": "human support systems", "type": "CONCEPT", "context": "thesis topic in an automated world"}], "relationships": [{"from": "Zain", "to": "human support systems", "type": "KNOWS", "context": "thesis focus on the concept"}]}

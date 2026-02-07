@@ -1,0 +1,1 @@
+{"entities": [{"name": "Asher", "type": "PERSON", "context": "individual who visits NYC"}, {"name": "NYC", "type": "CONCEPT", "context": "location of the in-person meetup"}], "relationships": [{"from": "V", "to": "Asher", "type": "KNOWS", "context": "V has a relationship with Asher"}, {"from": "Asher", "to": "NYC", "type": "RELATED_TO", "context": "Asher's visit location"}]}

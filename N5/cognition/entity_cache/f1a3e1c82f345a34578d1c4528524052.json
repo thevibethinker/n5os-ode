@@ -1,0 +1,1 @@
+{"entities": [{"name": "Calendly", "type": "ORG", "context": "a company focused on scheduling and relationship management"}], "relationships": [{"from": "V", "to": "Calendly", "type": "MENTIONS", "context": "discussing their business strategy"}]}

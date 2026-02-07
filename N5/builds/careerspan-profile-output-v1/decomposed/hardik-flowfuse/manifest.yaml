@@ -1,0 +1,76 @@
+version: "1.0"
+created: "2026-01-29"
+framework: "careerspan-decomposer"
+framework_version: "1.0"
+
+provenance:
+  source_doc: "https://docs.google.com/document/d/1LqwU6cu_2tUwtDz5IuzFOOd3t8Ep-NNNoijmR4kwgBk"
+  decomposition_conversation: "con_JTGSUg7MJeBHzmdq"
+  original_analysis_conversation: "con_4yp5BoXoZM2YzXXN"
+  careerspan_analysis_date: "2026-01-29"
+
+candidate:
+  name: "Hardik Choudhary"
+  slug: "hardik"
+  display_name: "H."  # For anonymized sharing
+  
+company:
+  name: "FlowFuse"
+  slug: "flowfuse"
+  role: "Fullstack Engineer (AI-Focused)"
+
+files:
+  - name: "manifest.yaml"
+    category: "index"
+    description: "This file - index of all decomposed data"
+    
+  - name: "jd.yaml"
+    category: "context"
+    description: "Job description structured for alignment checking"
+    
+  - name: "overview.yaml"
+    category: "summary"
+    description: "Careerspan overall score, recommendation, key points"
+    
+  - name: "profile.yaml"
+    category: "background"
+    description: "Education, contact, basic candidate info"
+    
+  - name: "experience.yaml"
+    category: "history"
+    description: "Work experience with Careerspan story references"
+    
+  - name: "hard-skills.yaml"
+    category: "competencies"
+    description: "Technical skills with evidence and gaps"
+    
+  - name: "soft-skills.yaml"
+    category: "competencies"
+    description: "Leadership, collaboration, working style"
+    
+  - name: "tools.yaml"
+    category: "competencies"
+    description: "Languages, frameworks, infrastructure"
+    
+  - name: "achievements.yaml"
+    category: "evidence"
+    description: "Awards, quantified accomplishments"
+    
+  - name: "interests.yaml"
+    category: "personal"
+    description: "Hobbies, culture fit indicators"
+    
+  - name: "alignment.yaml"
+    category: "analysis"
+    description: "JD requirements mapped to candidate evidence"
+
+data_quality:
+  completeness: "high"
+  confidence: "high"
+  gaps_documented: true
+  source_fidelity: "Careerspan conclusions preserved verbatim"
+
+usage:
+  next_skill: "careerspan-meta-resume"
+  purpose: "Generate Meta-Resume output from this indexed data"
+  note: "Do not modify these files - they are the source of truth from Careerspan"

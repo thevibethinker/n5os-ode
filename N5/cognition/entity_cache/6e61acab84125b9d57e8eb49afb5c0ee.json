@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "an organization that influenced Cooper Easley"}, {"name": "Cooper Easley", "type": "PERSON", "context": "an individual in Operations & Supply Chain"}], "relationships": [{"from": "Cooper Easley", "to": "Careerspan", "type": "MENTIONS", "context": "Cooper Easley acknowledges influence from Careerspan"}]}

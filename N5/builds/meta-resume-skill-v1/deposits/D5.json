@@ -1,0 +1,25 @@
+{
+  "drop_id": "D5",
+  "status": "complete",
+  "completed_at": "2026-01-30T02:45:00Z",
+  "summary": "Created github_fetch.py module that fetches GitHub profile data via REST (no auth) and GraphQL (with token), outputs structured JSON with profile metrics, languages, top repos, contribution calendar, and streaks.",
+  "artifacts": [
+    "Skills/meta-resume-generator/scripts/github_fetch.py"
+  ],
+  "decisions": [
+    "Used stdlib only (urllib, json) to avoid external dependencies as specified",
+    "Implemented graceful degradation: REST-only mode when no token, full data with token",
+    "Handle 404 by returning response body instead of raising exception to match spec error format",
+    "Aggregate languages by repo size (bytes) not count for more accurate weighting",
+    "Calculate streaks from contribution calendar with current streak tracking from today/yesterday backwards",
+    "Output matches exact JSON schema from brief including warnings array and error handling"
+  ],
+  "learnings": [
+    "GitHub GraphQL requires bearer token, REST works without auth but has lower rate limits",
+    "Rate limit retry_after calculation needs to handle X-RateLimit-Reset header which is epoch timestamp",
+    "Streak calculation is complex: current streak requires checking today/yesterday as starting point then counting backwards",
+    "ISO week format (YYYY-W##) requires isocalendar() week number extraction",
+    "Sparse profile warning threshold of <5 repos helps identify candidates with private repos"
+  ],
+  "concerns": []
+}

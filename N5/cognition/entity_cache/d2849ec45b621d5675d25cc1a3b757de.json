@@ -1,0 +1,1 @@
+{"entities": [{"name": "Operator", "type": "PERSON", "context": "the individual or system performing tasks"}, {"name": "P36", "type": "TOOL", "context": "the orchestration tool used by the Operator"}], "relationships": [{"from": "Operator", "to": "P36", "type": "USES", "context": "Operator applies P36 for orchestration"}]}

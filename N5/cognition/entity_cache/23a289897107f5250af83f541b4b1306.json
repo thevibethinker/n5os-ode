@@ -1,0 +1,1 @@
+{"entities": [{"name": "Pam K", "type": "PERSON", "context": "A person mentioned in the conversation"}, {"name": "angel squad", "type": "ORG", "context": "A group associated with the person mentioned"}], "relationships": [{"from": "Pam K", "to": "angel squad", "type": "MENTIONS", "context": "Pam K mentions being part of the angel squad"}]}

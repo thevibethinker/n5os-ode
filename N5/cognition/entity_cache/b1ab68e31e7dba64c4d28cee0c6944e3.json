@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ben Guo", "type": "PERSON", "context": "Person discussing the model issue"}], "relationships": [{"from": "Ben Guo", "to": "the selected model", "type": "MENTIONS", "context": "Discussing an issue related to the model used"}]}

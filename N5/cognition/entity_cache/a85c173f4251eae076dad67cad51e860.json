@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual involved in the knowledge system evaluation"}, {"name": "Careerspan", "type": "ORG", "context": "organization associated with AI methodology"}], "relationships": [{"from": "V (Vrijen)", "to": "Careerspan", "type": "KNOWS", "context": "V is evaluating an organization associated with AI"}]}

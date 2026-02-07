@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "referring to an individual involved in the discussion"}, {"name": "Handshake", "type": "ORG", "context": "partnership mentioned in the context of distribution"}], "relationships": [{"from": "V (Vrijen)", "to": "Handshake", "type": "WORKS_WITH", "context": "partnership for distribution purposes"}]}

@@ -1,0 +1,72 @@
+{
+  "meeting_id": "2026-01-29_Friends-Next",
+  "date": "2026-01-29",
+  "participants": [
+    "Friends",
+    "Next",
+    "Play"
+  ],
+  "meeting_type": "external",
+  "status": "archived",
+  "transcript_file": "transcript.md",
+  "blocks_requested": [],
+  "blocks_generated": [
+    "B21_KEY_MOMENTS",
+    "B32_THOUGHT_PROVOKING_IDEAS",
+    "B26_MEETING_METADATA",
+    "B28_STRATEGIC_INTELLIGENCE",
+    "B08_STAKEHOLDER_INTELLIGENCE",
+    "B03_DECISIONS",
+    "B02_B05_COMMITMENTS_AND_ACTIONS",
+    "B01_DETAILED_RECAP",
+    "B06_BUSINESS_CONTEXT",
+    "B00_ZO_TAKE_HEED"
+  ],
+  "blocks_failed": [],
+  "staged_at": "2026-02-02T20:22:18.770593Z",
+  "processed_at": "2026-02-03T11:36:43.019155Z",
+  "archived_at": "2026-02-03T13:16:31.567097Z",
+  "error": null,
+  "block_selection": {
+    "selected_at": "2026-02-03T11:20:53.490282Z",
+    "method": "smart_selector_v2",
+    "recipe": "external_standard",
+    "always_blocks": [
+      "B00",
+      "B01",
+      "B02_B05",
+      "B03",
+      "B08",
+      "B21",
+      "B26"
+    ],
+    "conditional_selected": [
+      "B06",
+      "B28",
+      "B32"
+    ],
+    "conditional_skipped": [
+      "B04",
+      "B07",
+      "B10",
+      "B13",
+      "B14",
+      "B25",
+      "B33"
+    ],
+    "triggered": [],
+    "reasoning": {
+      "B06": "V discusses Careerspan's positioning and mission (helping users be advocates for themselves through conversational coaching), demonstrates thought leadership in AI productivity space, and presents competitive positioning context (Zo vs Claudebot comparison)",
+      "B28": "V shares market intelligence: 80% of users feel stuck despite AI tool adoption, surveys show widespread ChatGPT/Claude Code usage but poor outcomes, frames the problem as a mental model issue not a technology/tactics issue, presents context engineering framework as market insight",
+      "B32": "Novel concepts introduced: reframing AI as \"magic\" by collapsing gap between intent and outcome, context engineering framework (conversation/environment/pipeline levels), AI as teacher strategy, threshold rubric strategy, vibe thinking concept",
+      "B04": "Skipped: No substantive business questions raised without answers - early technical chatter about Zoom/echoes was resolved, no follow-up needed",
+      "B07": "Skipped: No trigger phrases detected (\"intro me to\", \"introduce me to\", \"connect me with\"). Participants already know each other (Ben met V through Zo, Logan is V's co-founder), no new introductions requested",
+      "B10": "Skipped: This is a presentation/demo meeting, not a strategic partnership discussion. No future collaboration or relationship evolution discussed beyond competitive feature comparison between Zo and Claudebot",
+      "B13": "Skipped: Presentation agenda items (Ben demoing Zo, Logan demoing Claude Code) are session activities, not post-meeting action items. No explicit next steps for follow-up were discussed",
+      "B14": "Skipped: No trigger phrases detected (\"draft a blurb\", \"write a blurb\"). V did not request any blurbs be drafted during the meeting",
+      "B25": "Skipped: This is a presentation meeting, not a project planning session. No explicit deliverables with owners and timelines mentioned - agenda items are in-session demonstrations",
+      "B33": "Skipped: No complex decisions requiring nuanced reasoning were discussed. V's rationale for the \"head fake\" title and presenter selection is straightforward, not requiring deep decision analysis"
+    },
+    "total_blocks": 10
+  }
+}

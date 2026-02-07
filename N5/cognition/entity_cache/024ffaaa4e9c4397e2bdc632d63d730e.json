@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "individual mentioned in the text"}, {"name": "Discord", "type": "ORG", "context": "platform suggested for issue reporting"}], "relationships": [{"from": "Vrijen Attawar", "to": "Discord", "type": "MENTIONS", "context": "suggested to join for reporting an issue"}]}

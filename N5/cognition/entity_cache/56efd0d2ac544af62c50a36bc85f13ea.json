@@ -1,0 +1,1 @@
+{"entities": [{"name": "Griffin", "type": "PERSON", "context": "provided positive feedback on the product"}, {"name": "product-market fit", "type": "CONCEPT", "context": "validated by institutional hiring experience"}], "relationships": [{"from": "Griffin", "to": "product-market fit", "type": "BELIEVES", "context": "Griffin believes the product has market fit"}]}

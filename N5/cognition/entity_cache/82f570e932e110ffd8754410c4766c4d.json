@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "name of the individual speaking"}, {"name": "Rise", "type": "ORG", "context": "a big community"}], "relationships": [{"from": "Vrijen Attawar", "to": "Rise", "type": "KNOWS", "context": "meeting with the founder of Rise"}]}

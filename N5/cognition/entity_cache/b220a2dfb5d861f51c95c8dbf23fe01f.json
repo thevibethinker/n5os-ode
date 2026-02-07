@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "an organization offering an AI-powered career development platform"}, {"name": "AI-powered platform", "type": "TOOL", "context": "the core product of Careerspan that facilitates coaching-style conversations"}], "relationships": []}

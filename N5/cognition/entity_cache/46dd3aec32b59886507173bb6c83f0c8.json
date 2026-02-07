@@ -1,0 +1,1 @@
+{"entities": [{"name": "convo_supervisor", "type": "TOOL", "context": "tool used for grouping and summarizing conversations"}, {"name": "n5_conversation_end.py", "type": "TOOL", "context": "a specific script or tool related to conversation management"}], "relationships": []}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Nicole Holubar", "type": "PERSON", "context": "Emory Career Services representative"}, {"name": "Emory Career Services", "type": "ORG", "context": "organization providing career support"}], "relationships": [{"from": "Nicole Holubar", "to": "Emory Career Services", "type": "WORKS_WITH", "context": "role as representative of the organization"}]}

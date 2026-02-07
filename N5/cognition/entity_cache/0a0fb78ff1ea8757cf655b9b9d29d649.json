@@ -1,0 +1,1 @@
+{"entities": [{"name": "ZO", "type": "ORG", "context": "A connected system or organization involved in the bootstrap process."}, {"name": "Bootstrap", "type": "TOOL", "context": "A procedure or tool that initiates the connection process."}], "relationships": [{"from": "ZO", "to": "Bootstrap", "type": "USES", "context": "ZO uses Bootstrap to start the connection process."}]}

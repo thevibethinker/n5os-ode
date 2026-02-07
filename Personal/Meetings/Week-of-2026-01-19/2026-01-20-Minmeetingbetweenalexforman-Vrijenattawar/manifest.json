@@ -1,0 +1,72 @@
+{
+  "meeting_id": "2026-01-20_Minmeetingbetweenalexforman-Vrijenattawar",
+  "date": "2026-01-20",
+  "participants": [
+    "Minmeetingbetweenalexforman",
+    "Vrijenattawar"
+  ],
+  "meeting_type": "external",
+  "status": "archived",
+  "transcript_file": "transcript.md",
+  "blocks_requested": [],
+  "blocks_generated": [
+    "B02_B05_COMMITMENTS_AND_ACTIONS",
+    "B10_RELATIONSHIP_TRAJECTORY",
+    "B08_STAKEHOLDER_INTELLIGENCE",
+    "B26_MEETING_METADATA",
+    "B32_THOUGHT_PROVOKING_IDEAS",
+    "B33_DECISION_RATIONALE",
+    "B01_DETAILED_RECAP",
+    "B00_ZO_TAKE_HEED",
+    "B03_DECISIONS",
+    "B21_KEY_MOMENTS",
+    "B06_BUSINESS_CONTEXT"
+  ],
+  "blocks_failed": [],
+  "staged_at": "2026-02-02T20:22:18.757016Z",
+  "processed_at": "2026-02-02T21:14:42.745405Z",
+  "archived_at": "2026-02-03T13:16:31.511792Z",
+  "error": null,
+  "block_selection": {
+    "selected_at": "2026-02-02T21:01:29.682936Z",
+    "method": "smart_selector_v2",
+    "recipe": "external_standard",
+    "always_blocks": [
+      "B00",
+      "B01",
+      "B02_B05",
+      "B03",
+      "B08",
+      "B21",
+      "B26"
+    ],
+    "conditional_selected": [
+      "B06",
+      "B10",
+      "B32",
+      "B33"
+    ],
+    "conditional_skipped": [
+      "B04",
+      "B07",
+      "B13",
+      "B14",
+      "B25",
+      "B28"
+    ],
+    "triggered": [],
+    "reasoning": {
+      "B06": "Parse's business context discussed: target market (non-technical users, industries without APIs), move to usage-based pricing, sponsorship of Carnegie Mellon hackathon",
+      "B10": "Relationship momentum clear: V describes evolving relationship with Zo (power user \u2192 partnership seeker), proposes Parse-Zo integration, Alex receptive ('really cool')",
+      "B32": "Novel ideas worth capturing: software development democratization for unssexy industries, developer environment diversity impacts innovation, garbage collector with 20-year app idea example",
+      "B33": "Pricing decision rationale: Parse moving to usage-based because variable backend costs (network bandwidth, captcha frequency, result set size) make monthly pricing difficult to calculate",
+      "B04": "Skipped: No unresolved questions raised requiring follow-up",
+      "B07": "Skipped: V mentions Zo founders Ben and Rob but does NOT ask Zo to introduce Alex to them\u2014no verbal cue like 'intro me to' or 'connect me with'",
+      "B13": "Skipped: Discussion exploratory, not action-oriented\u2014no clear next steps synthesized across parties",
+      "B14": "Skipped: No trigger phrases detected ('draft a blurb', 'write a blurb', 'blurb about')",
+      "B25": "Skipped: No explicit deliverables with clear owners and timelines\u2014repo sharing and integration mentioned but not formalized",
+      "B28": "Skipped: Discussion focuses on Parse's business and potential Zo integration, not broader market landscape or competitive dynamics"
+    },
+    "total_blocks": 11
+  }
+}

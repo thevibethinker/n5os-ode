@@ -1,0 +1,236 @@
+---
+created: 2026-02-01
+last_edited: 2026-02-01
+version: 2.0
+provenance: con_7fR5qWFds2TAonyD
+---
+
+# N5 Knowledge Graph Taxonomy
+# Finalized with V on 2026-02-01
+
+entity_types:
+
+  PERSON:
+    description: "People in V's network"
+    subtypes:
+      - Inner Circle    # Co-founders, closest collaborators
+      - Team            # Employees, contractors, direct reports
+      - Advisor         # Domain experts, formal/informal advisors
+      - Mentor          # Long-term developmental relationships
+      - Champion        # Actively advocates for V/Careerspan
+      - Friend          # Personal relationship, not primarily professional
+      - Network         # Professional contacts, conference connections
+      - Acquaintance    # Met once, weak tie
+      - Lead            # Sales prospects, potential customers
+    notes: |
+      Subtypes are PRIMARY role. Additional roles captured via relationships.
+      Someone can be Friend (subtype) + CHAMPIONS + ADVISES (relationships).
+
+  CONCEPT:
+    description: "Ideas, beliefs, frameworks V holds or references"
+    subtypes:
+      - Principle       # Action guides ("Preventative > reactive")
+      - Framework       # Structured tools (MECE, Jobs to be Done)
+      - Mental Model    # Deep integrated worldviews (most complex)
+      - Thesis          # Held beliefs ("Resumes will be obsolete")
+      - Hypothesis      # Being tested ("AI coaches can match humans 80%")
+    notes: |
+      Complexity hierarchy: Principle < Framework < Mental Model
+      Mental Model contains frameworks, principles, beliefs - integrated worldview.
+
+  OBJECTIVE:
+    description: "V's goals, projects, initiatives"
+    subtypes: null  # Intentionally no subtypes - keep simple
+    notes: |
+      Examples: "Sell Careerspan to Cornell", "Close seed round", 
+      "Build N5 knowledge graph"
+
+  ORGANIZATION:
+    description: "Companies, communities, institutions"
+    subtypes:
+      - Startup         # Early-stage companies
+      - Company         # Established businesses
+      - Community       # Networks, groups (On Deck, South Park Commons)
+      - Institution     # Universities, government
+      - Fund            # VCs, investors, accelerators
+    notes: null
+
+  TOOL:
+    description: "Software, techniques, processes V uses"
+    subtypes:
+      - Software        # Zo, Notion, Linear
+      - Technique       # Cognitive techniques, prompting strategies
+      - Process         # Workflows, SOPs
+      - Template        # Reusable artifacts
+    notes: null
+
+  EVENT:
+    description: "Significant moments to track"
+    subtypes:
+      - Career Milestone   # Promotions, launches, exits
+      - Meeting            # Important conversations
+      - Speaking           # Talks, podcasts, panels
+      - Publication        # Articles, posts
+      - Personal           # Autobiographical moments
+    notes: |
+      Phase 2: Dynamic watchlist will drive event tracking.
+      For now, extract events found during backfill.
+
+relationship_types:
+
+  # Tier 1: Daily Use
+  tier_1:
+    KNOWS:
+      from: [PERSON]
+      to: [PERSON]
+      description: "Basic connection exists"
+    
+    WORKS_WITH:
+      from: [PERSON]
+      to: [PERSON]
+      description: "Active collaboration"
+      temporal: true  # Can have valid_from/valid_until
+    
+    CHAMPIONS:
+      from: [PERSON]
+      to: [PERSON]
+      description: "Actively advocates for"
+    
+    INTRODUCED_BY:
+      from: [PERSON]
+      to: [PERSON]
+      description: "How V met this person"
+    
+    SHARES_BELIEF:
+      from: [PERSON]
+      to: [CONCEPT]
+      description: "Both V and person hold this belief"
+    
+    SUPPORTS:
+      from: [PERSON, ORGANIZATION]
+      to: [OBJECTIVE]
+      description: "Actively helping achieve this goal"
+    
+    BELIEVES:
+      from: [PERSON]
+      to: [CONCEPT]
+      description: "Person holds this belief/thesis"
+
+  # Tier 2: Weekly Use
+  tier_2:
+    ADVISES:
+      from: [PERSON]
+      to: [PERSON, ORGANIZATION]
+      description: "Formal or informal advisory"
+    
+    MENTORS:
+      from: [PERSON]
+      to: [PERSON]
+      description: "Long-term developmental relationship"
+    
+    WORKS_AT:
+      from: [PERSON]
+      to: [ORGANIZATION]
+      description: "Employment/affiliation"
+      temporal: true
+    
+    LEAD_FOR:
+      from: [PERSON]
+      to: [OBJECTIVE]
+      description: "Sales prospect for this objective"
+    
+    STAKEHOLDER_IN:
+      from: [PERSON]
+      to: [OBJECTIVE, ORGANIZATION]
+      description: "Has decision-making power"
+    
+    PROMISED_INTRO:
+      from: [PERSON]
+      to: [PERSON]
+      description: "Committed to making introduction"
+    
+    CAN_INTRO_TO:
+      from: [PERSON]
+      to: [PERSON]
+      description: "Potential warm intro path"
+
+  # Tier 3: Periodic Use
+  tier_3:
+    FRIENDS_WITH:
+      from: [PERSON]
+      to: [PERSON]
+      description: "Personal friendship"
+    
+    MET_THROUGH:
+      from: [PERSON]
+      to: [PERSON, EVENT, ORGANIZATION]
+      description: "Context of first meeting"
+    
+    TAUGHT:
+      from: [PERSON]
+      to: [PERSON]
+      description: "Learning attribution"
+      context_entity: CONCEPT  # What was taught
+    
+    FOUNDED:
+      from: [PERSON]
+      to: [ORGANIZATION]
+      description: "Founder relationship"
+    
+    INVESTED_IN:
+      from: [PERSON, ORGANIZATION]
+      to: [ORGANIZATION]
+      description: "Financial investment"
+    
+    MEMBER_OF:
+      from: [PERSON]
+      to: [ORGANIZATION]
+      description: "Community/org membership"
+    
+    COMPETES_WITH:
+      from: [ORGANIZATION]
+      to: [ORGANIZATION]
+      description: "Competitive relationship"
+
+  # Tier 4: Future
+  tier_4:
+    BLOCKS:
+      from: [PERSON]
+      to: [OBJECTIVE]
+      description: "Obstacle to achieving goal"
+      status: planned
+    
+    DISAGREES_ON:
+      from: [PERSON]
+      to: [PERSON]
+      description: "Known disagreement"
+      context_entity: CONCEPT
+      status: planned
+    
+    DERIVED_FROM:
+      from: [CONCEPT]
+      to: [CONCEPT]
+      description: "Intellectual lineage"
+      status: planned
+    
+    LED_TO:
+      from: [EVENT]
+      to: [EVENT, CONCEPT]
+      description: "Causal relationship"
+      status: planned
+
+# Phase 2 Feature
+event_watchlist:
+  description: |
+    Dynamic tracking system. When items are added here,
+    the system looks for related events during extraction.
+  status: planned
+  schema:
+    tracked_items:
+      - name: string
+        type: entity_type
+        track_events: [event_subtypes]
+
+priorities:
+  _source: "Personal/config/priorities.yaml"
+  # Load from canonical source — do not duplicate here

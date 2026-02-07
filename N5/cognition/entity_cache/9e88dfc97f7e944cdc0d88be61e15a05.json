@@ -1,0 +1,1 @@
+{"entities": [{"name": "W-2 form", "type": "CONCEPT", "context": "a tax document for wage and salary information"}, {"name": "Visa", "type": "CONCEPT", "context": "a document permitting entry into a country"}, {"name": "Jan 10", "type": "EVENT", "context": "specific return date related to travel logistics"}], "relationships": []}

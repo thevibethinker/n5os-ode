@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ben", "type": "PERSON", "context": "Needs full name and context"}, {"name": "Pamela", "type": "PERSON", "context": "Wanted Ben to meet others"}, {"name": "coffee meeting", "type": "EVENT", "context": "Offer and meeting signal detected"}], "relationships": [{"from": "Pamela", "to": "Ben", "type": "WORKS_WITH", "context": "Pamela wants Ben to meet others"}]}

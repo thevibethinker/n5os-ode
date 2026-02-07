@@ -1,0 +1,1 @@
+{"entities": [{"name": "Deliverable Orchestrator", "type": "TOOL", "context": "A refactored tool for managing deliverables"}, {"name": "N5/scripts/generate_deliverables.py", "type": "FILE", "context": "The specific script related to the tool"}], "relationships": []}

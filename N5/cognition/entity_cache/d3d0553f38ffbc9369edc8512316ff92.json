@@ -1,0 +1,1 @@
+{"entities": [{"name": "Eric", "type": "PERSON", "context": "from Consonant VC"}, {"name": "Consonant VC", "type": "ORG", "context": "venture capital firm"}], "relationships": [{"from": "V", "to": "Eric", "type": "KNOWS", "context": "brief connection call"}, {"from": "V", "to": "Consonant VC", "type": "WORKS_WITH", "context": "maintains contact in the VC ecosystem"}]}

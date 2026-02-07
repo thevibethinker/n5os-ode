@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "Software Engineer with Product Management experience"}, {"name": "University of Wollongong", "type": "ORG", "context": "CS education institution"}], "relationships": [{"from": "V (Vrijen)", "to": "University of Wollongong", "type": "RELATED_TO", "context": "Educational background"}]}

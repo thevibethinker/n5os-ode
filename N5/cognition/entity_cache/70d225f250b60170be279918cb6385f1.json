@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "TOOL", "context": "Usage for measuring job searching success"}], "relationships": [{"from": "V", "to": "Careerspan", "type": "USES", "context": "To measure success rate in job seeking status"}]}

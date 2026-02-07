@@ -1,0 +1,1 @@
+{"entities": [{"name": "Husain Rasheed", "type": "PERSON", "context": "user asking about Career span"}, {"name": "Career span", "type": "TOOL", "context": "tool being referenced for daily use"}], "relationships": [{"from": "Husain Rasheed", "to": "Career span", "type": "USES", "context": "user inquiring about the usage of Career span"}]}

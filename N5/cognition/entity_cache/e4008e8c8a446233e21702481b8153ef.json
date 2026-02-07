@@ -1,0 +1,1 @@
+{"entities": [{"name": "email scanner", "type": "TOOL", "context": "a tool used for discovering information from emails"}, {"name": "meeting monitor", "type": "TOOL", "context": "a tool used for monitoring meetings"}], "relationships": [{"from": "email scanner", "to": "meeting monitor", "type": "USES", "context": "V integrates or separates these tools for discovery purposes"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "The speaker discussing the knowledge system"}, {"name": "ai-automation", "type": "CONCEPT", "context": "A domain V is involved in"}, {"name": "epistemology", "type": "CONCEPT", "context": "A domain V is involved in"}, {"name": "productivity", "type": "CONCEPT", "context": "A domain V is involved in"}], "relationships": []}

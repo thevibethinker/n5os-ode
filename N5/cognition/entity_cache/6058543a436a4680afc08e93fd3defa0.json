@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "individual mentioned regarding their knowledge system"}, {"name": "Griffin", "type": "PERSON", "context": "individual mentioned in relation to direct communication"}], "relationships": [{"from": "Vrijen", "to": "Griffin", "type": "MENTIONS", "context": "context of communication and advice on tactfulness"}]}

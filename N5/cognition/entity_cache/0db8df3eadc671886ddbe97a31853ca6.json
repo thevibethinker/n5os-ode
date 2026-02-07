@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "name of the individual associated with the knowledge system"}, {"name": "n5-os-zo", "type": "ORG", "context": "the name of the GitHub repository"}], "relationships": [{"from": "Vrijen", "to": "n5-os-zo", "type": "USES", "context": "Vrijen is using this GitHub repository for setting up the knowledge system"}]}

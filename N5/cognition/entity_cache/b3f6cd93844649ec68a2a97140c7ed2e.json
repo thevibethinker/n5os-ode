@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ben Guo", "type": "PERSON", "context": "person mentioned in the context"}, {"name": "Persona", "type": "CONCEPT", "context": "concept of switching modes or identities"}], "relationships": [{"from": "Ben Guo", "to": "Persona", "type": "MENTIONS", "context": "suggests switching to this Persona for different functionality"}]}

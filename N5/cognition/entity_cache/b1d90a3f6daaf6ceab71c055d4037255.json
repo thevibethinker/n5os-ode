@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual working on a knowledge system"}, {"name": "Zo's tools", "type": "TOOL", "context": "tools associated with Zo that need integration"}], "relationships": [{"from": "V (Vrijen)", "to": "Zo's tools", "type": "WORKS_WITH", "context": "needs to integrate with Zo's tools"}]}

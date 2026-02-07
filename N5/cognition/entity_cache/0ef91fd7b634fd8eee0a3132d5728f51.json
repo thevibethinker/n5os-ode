@@ -1,0 +1,1 @@
+{"entities": [{"name": "Microsoft", "type": "ORG", "context": "Referenced as source for additional security information"}, {"name": "MSRC", "type": "ORG", "context": "Microsoft Security Response Center - referenced via URL microsoft.com/msrc"}], "relationships": [{"from": "MSRC", "to": "Microsoft", "type": "RELATED_TO", "context": "MSRC is Microsoft's security response center"}]}

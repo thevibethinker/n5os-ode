@@ -1,0 +1,1 @@
+{"entities": [{"name": "Erika Underwood", "type": "PERSON", "context": "Full name of the individual"}, {"name": "Careerspan", "type": "ORG", "context": "Organization associated with Erika Underwood"}], "relationships": [{"from": "Erika Underwood", "to": "Careerspan", "type": "WORKS_WITH", "context": "Erika Underwood is associated with Careerspan"}]}

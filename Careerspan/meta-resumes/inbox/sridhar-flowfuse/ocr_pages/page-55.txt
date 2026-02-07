@@ -1,0 +1,28 @@
+Weak Frontend Development Required: Advanced 4/5 importance: 7/10 x Gap ~
+
+Ourtake Sasedonresume S Transterabie-
+
+Summary judgment: The resume shows strong full-stack and product-facing Al experience but contains little
+to.no explicit frontend engineering evidence (no mention of HTML/CSS/JavaScript/TypeScript or frontend
+frameworks, no UI architecture, no frontend performance/observability/security details). Relevant evidence
+that supports a transferable frontend skillset: (1) multiple statements about building “full-stack products” and
+integrating Al assistants into flagship products (EclecticiQ, Cambridge UP. consultancy), which typically
+require frontend integration; (2) building a Python/Django application to serve ML models and multi-threaded
+inference (Cyware) and developing public MCP servers and decoupled Flask backends (EclecticlQ) — these
+demonstrate practical backend~client integration experience and likely collaboration with or basic
+implementation of client interfaces; (3) close partnerships with Product and Sales and responsibility for end-
+to-end delivery and feature scoping, which imply exposure to UI/UX tradeoffs and shipping user-facing
+features. However, the resume lacks concrete, hands-on frontend artifacts: no named frontend frameworks
+(React/Angular/Vue), no JavaScript/TypeScript, no examples of designing Uls, creating component libraries,
+accessibility, client-side state management, front-end observability, or measurable Ul outcomes. Given
+FlowFuse’s requirement for an applied, production-grade frontend developer (mid-senior), the existing
+background provides reasonable transferable awareness and some adjacent full-stack experience but does
+not demonstrate the direct, hands-on frontend competency needed to convince an interviewer for a frontend-
+heavy role.
+
+Recommendation: To strengthen candidacy, explicitly add frontend work: list frameworks/languages used, link
+to deployed Ul demos or GitHub repos, describe specific frontend components/features shipped (e.g., Al
+assistant UI, embedding-based semantic search Ul, interactive grading Ul), note
+performance/observability/security tradeoffs addressed, and quantify user-facing impact.
+
+Resumematch Transterabie 3/10 Weak

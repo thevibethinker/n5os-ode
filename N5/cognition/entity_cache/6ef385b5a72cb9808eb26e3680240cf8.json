@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Individual associated with the knowledge system"}, {"name": "N5", "type": "TOOL", "context": "Command used to suggest thread titles"}], "relationships": [{"from": "V", "to": "N5", "type": "USES", "context": "V uses N5 to suggest thread titles"}]}

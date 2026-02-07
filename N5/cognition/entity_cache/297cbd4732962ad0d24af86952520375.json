@@ -1,0 +1,1 @@
+{"entities": [{"name": "write stream", "type": "CONCEPT", "context": "a programming concept related to data streaming"}, {"name": "end option", "type": "CONCEPT", "context": "an option that affects the behavior of a write stream"}], "relationships": []}

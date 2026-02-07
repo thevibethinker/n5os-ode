@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker introducing the conversation"}, {"name": "GitHub", "type": "ORG", "context": "Platform for version control and collaboration"}], "relationships": [{"from": "Vrijen Attawar", "to": "GitHub", "type": "MENTIONS", "context": "Asks if the listener has an account on the platform"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Logan Currie", "type": "PERSON", "context": "friend of V"}, {"name": "Brady", "type": "PERSON", "context": "contact of V"}], "relationships": [{"from": "Logan Currie", "to": "Brady", "type": "KNOWS", "context": "Logan was informed about V by Brady"}, {"from": "Brady", "to": "V", "type": "MENTIONS", "context": "Brady messaged Logan about V"}]}

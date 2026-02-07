@@ -1,0 +1,1 @@
+{"entities": [{"name": "Oleksandra", "type": "PERSON", "context": "owner responsible for granting permissions"}, {"name": "Local Leads", "type": "PERSON", "context": "owners responsible for adhering to the decision"}], "relationships": [{"from": "Oleksandra", "to": "Local Leads", "type": "WORKS_WITH", "context": "Oleksandra grants permissions to Local Leads"}]}

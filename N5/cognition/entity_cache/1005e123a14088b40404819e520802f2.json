@@ -1,0 +1,1 @@
+{"entities": [{"name": "Zo", "type": "ORG", "context": "solution provider aligned with budget holder's pain"}], "relationships": [{"from": "V", "to": "Zo", "type": "BELIEVES", "context": "V identifies high-probability GTM channels aligned with Zo's solution"}]}

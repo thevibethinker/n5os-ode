@@ -1,0 +1,1 @@
+{"entities": [{"name": "Pam K", "type": "PERSON", "context": "person discussing job screening ideas"}, {"name": "AI", "type": "TOOL", "context": "technology for enhancing job screening"}], "relationships": [{"from": "Pam K", "to": "AI", "type": "MENTIONS", "context": "discussing the use of AI in job screening"}]}

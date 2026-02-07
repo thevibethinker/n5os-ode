@@ -1,0 +1,1 @@
+{"entities": [{"name": "v1.3", "type": "TOOL", "context": "Version of the knowledge system with rigid templates"}, {"name": "v1.4", "type": "TOOL", "context": "Version of the knowledge system with guidance principles"}], "relationships": [{"from": "v1.3", "to": "v1.4", "type": "RELATED_TO", "context": "v1.4 restores quality after degradation in v1.3"}]}

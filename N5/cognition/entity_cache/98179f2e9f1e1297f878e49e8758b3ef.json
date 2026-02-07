@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "discussing GTM strategies"}, {"name": "community partnerships", "type": "CONCEPT", "context": "focus of mutual strategies"}], "relationships": [{"from": "V", "to": "community partnerships", "type": "KNOWS", "context": "involved in discussions about them"}]}

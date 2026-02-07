@@ -1,0 +1,1 @@
+{"entities": [{"name": "opts", "type": "CONCEPT", "context": "configuration options for handling command-line arguments"}, {"name": "argv", "type": "TOOL", "context": "array storing command-line arguments"}], "relationships": []}

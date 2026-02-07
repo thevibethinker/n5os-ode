@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vibe Builder bootstrap", "type": "TOOL", "context": "tool used for building new features"}, {"name": "Vibe Debugger", "type": "TOOL", "context": "tool used for general debugging"}], "relationships": []}

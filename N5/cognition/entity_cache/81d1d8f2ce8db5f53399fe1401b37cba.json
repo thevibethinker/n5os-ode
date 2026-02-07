@@ -1,0 +1,1 @@
+{"entities": [{"name": "The Junto Club", "type": "EVENT", "context": "a monthly gathering of interesting people in NYC"}, {"name": "Andrew", "type": "PERSON", "context": "the host of The Junto Club"}], "relationships": [{"from": "Andrew", "to": "The Junto Club", "type": "HOSTS", "context": "Andrew organizes and facilitates The Junto Club events"}]}

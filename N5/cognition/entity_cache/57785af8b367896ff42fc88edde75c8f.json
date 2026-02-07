@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "a person with a knowledge system"}, {"name": "B01_DETAILED_RECAP.md", "type": "TOOL", "context": "a document containing full meeting context"}], "relationships": [{"from": "V (Vrijen)", "to": "B01_DETAILED_RECAP.md", "type": "USES", "context": "uses the document for meeting context"}]}

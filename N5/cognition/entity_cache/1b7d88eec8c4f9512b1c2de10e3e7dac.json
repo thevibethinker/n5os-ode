@@ -1,0 +1,1 @@
+{"entities": [{"name": "Meeting Intelligence Generator", "type": "TOOL", "context": "This tool is used in the log entry process."}, {"name": "MG-2", "type": "CONCEPT", "context": "This is the specific meeting stage referenced."}], "relationships": []}

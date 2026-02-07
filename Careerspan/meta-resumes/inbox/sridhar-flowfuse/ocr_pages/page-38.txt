@@ -1,0 +1,34 @@
+Good User-centric product thinking Required: Advanced 4/5 Importance: 7/10 Story+profile yw «
+
+Ourtake Basedonresume ~ Direct
+
+Evidence of user-centric product thinking appears repeatedly across the resume in both explicit statements
+and reasonable role-based inferences. Strong direct evidence: at EclecticlQ the candidate “partnered closely
+with product and sales to align solutions with analyst needs,” designed a Human-in-the-Loop approval system
+and entity-based context to fit analyst workflows, and reports product-facing metrics (18% higher
+correctness, 84% prompt relevance, 27% better recall, 97% schema adherence). These points show deliberate
+prioritization of user needs, cross-functional collaboration, and measurable user-facing outcomes. At
+Cambridge University Press the Student Companion System (pedagogical-style adaptation, quiz generation,
+semantic search) and an Automatic Marking System (~85% accuracy) indicate design choices made for real
+learners and teachers rather than purely technical proofs-of-concept. In consulting (Ponderbot) the
+candidate delivered customer-facing chatbots and 15+ Al solutions for marketing—work that typically requires
+understanding client/customer needs and tailoring features. At Cyware the candidate built a production
+Python/Django app with multi-threaded inference and a feedback loop for ongoing model improvement, which
+signals attention to latency, operability, and continuous improvement driven by usage/feedback. Dell work
+(capacity planning, product matching) likewise implies building tools to solve business-user problems.
+Together these show repeated instances of prioritizing user/workflow requirements, cross-functional
+alignment, and delivering measurable improvements. Gaps: there is little explicit mention of primary user
+research (user interviews, usability testing, A/B experiments), broader cross-team evangelism of user
+research methods, or adoption/engagement metrics beyond accuracy/relevance-type signals. That makes
+advanced/expert claims (proactive user research leadership or organisation-wide advocacy) less supported.
+Overall the profile demonstrates solid, pragmatic user-centric product thinking: shaping features with
+stakeholders, optimizing for real user/workflow constraints, and delivering measurable user-facing
+improvements, matching the “Intermediate” success criteria.
+
+Support
+Stories
+kftowPdjyQBSCaisjIPn Direct 6/10 Good
+qoWHeLzqkOMMI5PwcHIL Direct 6/10 Good Best
+Resume
+
+Resume match Direct 7/10 Good

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Mujgan Ozceylan", "type": "PERSON", "context": "Speaker expressing interest"}, {"name": "Zoe", "type": "TOOL", "context": "Tool being explored by Mujgan Ozceylan"}], "relationships": [{"from": "Mujgan Ozceylan", "to": "Zoe", "type": "MENTIONS", "context": "Mujgan expresses curiosity about Zoe"}]}

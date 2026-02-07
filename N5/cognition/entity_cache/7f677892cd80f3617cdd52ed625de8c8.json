@@ -1,0 +1,1 @@
+{"entities": [{"name": "yargs", "type": "TOOL", "context": "A tool used for command-line argument parsing in Node.js"}, {"name": "process", "type": "CONCEPT", "context": "Refers to the current running Node.js process"}], "relationships": []}

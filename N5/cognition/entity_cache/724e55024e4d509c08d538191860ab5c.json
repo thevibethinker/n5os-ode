@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "the speaker and owner of the knowledge system"}, {"name": "Condo", "type": "TOOL", "context": "a tool used by Vrijen in connection with LinkedIn"}], "relationships": [{"from": "Vrijen Attawar", "to": "Condo", "type": "USES", "context": "Vrijen uses Condo for engaging with LinkedIn"}]}

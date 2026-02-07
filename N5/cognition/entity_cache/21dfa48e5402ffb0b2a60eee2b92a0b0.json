@@ -1,0 +1,1 @@
+{"entities": [{"name": "Websigmaglobal", "type": "ORG", "context": "Organization associated with V"}, {"name": "V", "type": "PERSON", "context": "The individual related to the knowledge system"}], "relationships": [{"from": "V", "to": "Websigmaglobal", "type": "WORKS_WITH", "context": "V hosts podcasts for Websigmaglobal"}]}

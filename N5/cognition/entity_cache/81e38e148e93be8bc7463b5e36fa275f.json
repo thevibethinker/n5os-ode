@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "He is heavily involved in community activities."}, {"name": "Hampton", "type": "ORG", "context": "He is ahead of events for this organization."}], "relationships": [{"from": "Vrijen Attawar", "to": "Hampton", "type": "WORKS_WITH", "context": "He is ahead of events for Hampton."}]}

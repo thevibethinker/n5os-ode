@@ -1,0 +1,1 @@
+{"entities": [{"name": "Logan Currie", "type": "PERSON", "context": "a person mentioned in the dialogue"}, {"name": "Virgin", "type": "CONCEPT", "context": "a term or concept referenced in the dialogue"}], "relationships": [{"from": "Logan Currie", "to": "Virgin", "type": "MENTIONS", "context": "Logan mentions Virgin in the context of better halves."}]}

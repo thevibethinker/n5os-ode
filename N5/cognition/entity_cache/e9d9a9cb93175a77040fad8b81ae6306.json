@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Zo partnerships lead"}, {"name": "Jan", "type": "PERSON", "context": "Needle founding team member"}], "relationships": [{"from": "V", "to": "Jan", "type": "WORKS_WITH", "context": "Mutual agreement between V and Jan"}]}

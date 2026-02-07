@@ -1,0 +1,1 @@
+{"entities": [{"name": "Max", "type": "PERSON", "context": "contact associated with Dayoneme"}, {"name": "Dayoneme", "type": "ORG", "context": "organization associated with Max"}], "relationships": [{"from": "Max", "to": "Dayoneme", "type": "WORKS_WITH", "context": "Max is affiliated with the organization"}]}

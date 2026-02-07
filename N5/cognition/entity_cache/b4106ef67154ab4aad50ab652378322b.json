@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker of the text"}, {"name": "persuasion mechanism", "type": "CONCEPT", "context": "Concept discussed in relation to persuasion"}], "relationships": [{"from": "Vrijen Attawar", "to": "persuasion mechanism", "type": "BELIEVES", "context": "Believes in the importance of visualization in persuasion"}]}

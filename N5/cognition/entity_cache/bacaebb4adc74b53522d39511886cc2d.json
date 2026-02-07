@@ -1,0 +1,1 @@
+{"entities": [{"name": "Two-Step Root Cleanup", "type": "EVENT", "context": "A process for cleaning up conversation artifacts"}, {"name": "n5_workspace_root_cleanup.py", "type": "TOOL", "context": "The script used to delete conversation artifacts"}], "relationships": []}

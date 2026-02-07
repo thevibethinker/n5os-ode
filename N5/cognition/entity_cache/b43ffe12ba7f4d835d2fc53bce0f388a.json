@@ -1,0 +1,1 @@
+{"entities": [{"name": "HR", "type": "ORG", "context": "Human Resources department"}], "relationships": [{"from": "HR", "to": "V", "type": "KNOWS", "context": "HR's lack of knowledge about roles or teams affecting the process"}]}

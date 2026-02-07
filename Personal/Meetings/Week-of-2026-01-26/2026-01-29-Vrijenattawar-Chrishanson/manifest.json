@@ -1,0 +1,67 @@
+{
+  "meeting_id": "2026-01-29_Vrijenattawar-Chrishanson",
+  "date": "2026-01-29",
+  "participants": [
+    "Vrijenattawar",
+    "Chrishanson"
+  ],
+  "meeting_type": "external",
+  "status": "archived",
+  "transcript_file": "transcript.md",
+  "blocks_requested": [],
+  "blocks_generated": [
+    "B21_KEY_MOMENTS",
+    "B26_MEETING_METADATA",
+    "B08_STAKEHOLDER_INTELLIGENCE",
+    "B03_DECISIONS",
+    "B02_B05_COMMITMENTS_AND_ACTIONS",
+    "B01_DETAILED_RECAP",
+    "B00_ZO_TAKE_HEED"
+  ],
+  "blocks_failed": [],
+  "staged_at": "2026-02-02T20:22:18.768034Z",
+  "processed_at": "2026-02-03T12:29:02.297760Z",
+  "archived_at": "2026-02-03T13:16:31.665846Z",
+  "error": null,
+  "block_selection": {
+    "selected_at": "2026-02-03T12:09:09.326427Z",
+    "method": "smart_selector_v2",
+    "recipe": "external_standard",
+    "always_blocks": [
+      "B00",
+      "B01",
+      "B02_B05",
+      "B03",
+      "B08",
+      "B21",
+      "B26"
+    ],
+    "conditional_selected": [],
+    "conditional_skipped": [
+      "B04",
+      "B06",
+      "B07",
+      "B10",
+      "B13",
+      "B14",
+      "B25",
+      "B28",
+      "B32",
+      "B33"
+    ],
+    "triggered": [],
+    "reasoning": {
+      "B04": "Skipped: No open questions raised in transcript. Questions asked were exploratory but received answers or moved conversation forward.",
+      "B06": "Skipped: Chris discussed business strategy (monetization via organizations, B2B focus), but this is about HIS product, not Careerspan. Not relevant to V's priorities.",
+      "B07": "Skipped: No verbal cue for warm introductions detected. V did not say phrases like 'intro me to', 'introduce me to', or 'connect me with'.",
+      "B10": "Skipped: Relationship trajectory unclear - initial connection conversation with no clear future collaboration discussed.",
+      "B13": "Skipped: No next steps or action items discussed between parties. Conversational, not action-oriented.",
+      "B14": "Skipped: No verbal cue for blurbs detected. V did not say phrases like 'draft a blurb' or 'write a blurb'.",
+      "B25": "Skipped: No explicit deliverables, artifacts, or outputs mentioned with owners and timelines.",
+      "B28": "Skipped: Strategic intelligence discussed (ADHD tools market, feature creep), but this is general industry insight not directly relevant to Careerspan recruiting revenue.",
+      "B32": "Skipped: Interesting ideas discussed (AI as brain crutch for ADHD), but these are creative thoughts without clear action items for V.",
+      "B33": "Skipped: No complex decisions with nuanced reasoning discussed. V and Chris shared experiences and perspectives, but no major decisions analyzed."
+    },
+    "total_blocks": 7
+  }
+}

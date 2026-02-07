@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ilse", "type": "PERSON", "context": "Owner of the task"}, {"name": "Webhook notification", "type": "CONCEPT", "context": "Type of notification being investigated"}], "relationships": [{"from": "Ilse", "to": "Webhook notification", "type": "WORKS_WITH", "context": "Ilse is responsible for investigating the webhook notification"}]}

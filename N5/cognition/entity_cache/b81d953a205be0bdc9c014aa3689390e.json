@@ -1,0 +1,1 @@
+{"entities": [{"name": "LD-ADVISORY", "type": "EVENT", "context": "Consulting session on information management and AI systems"}, {"name": "GPT-DISCOVERY", "type": "EVENT", "context": "Initial conversation about potential engagement"}, {"name": "A-PRACTITIONER", "type": "CONCEPT", "context": "Domain expert in personal library science"}], "relationships": []}

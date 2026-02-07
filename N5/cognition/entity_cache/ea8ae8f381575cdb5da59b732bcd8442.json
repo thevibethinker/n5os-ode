@@ -1,0 +1,1 @@
+{"entities": [{"name": "Msergentps", "type": "PERSON", "context": "Individual with email contact"}, {"name": "gmail.com", "type": "ORG", "context": "Email service provider mentioned"}], "relationships": [{"from": "Msergentps", "to": "gmail.com", "type": "USES", "context": "Uses Gmail as personal email service"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "talent verification platform"}], "relationships": [{"from": "V", "to": "Careerspan", "type": "USES", "context": "V is introducing the talent verification platform to others"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "a person associated with the knowledge system"}, {"name": "edge case Z", "type": "CONCEPT", "context": "a specific scenario to be verified"}], "relationships": [{"from": "V", "to": "edge case Z", "type": "BELIEVES", "context": "V expresses belief that edge case Z should be verified"}]}

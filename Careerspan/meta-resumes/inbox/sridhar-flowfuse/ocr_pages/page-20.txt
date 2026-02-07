@@ -1,0 +1,30 @@
+Excellent User Feedback Integration Required: Intermediate 3/5 Importance: 7/10 Profile Y «
+
+Ourtake Basedonresume Direct
+
+The resume contains multiple direct indicators that the candidate has run feedback-driven, iterative
+improvement cycles for Al features used by real users. Explicit evidence: at EclecticlQ they built a custom
+Human-in-the-Loop approval system, described “feedback looping,” and state they partnered closely with
+Product and Sales to align solutions with analyst needs—producing measurable improvements (e.g., 18%
+higher correctness, 84% prompt relevance, 27% better recall, 97% schema adherence). At Cyware they
+implemented a feedback loop for future retraining and served models via a Django app with multi-threaded
+inference to reduce latency for users. The Cambridge University Press role delivered a Student Companion
+and Automatic Marking System (with ~85% accuracy), which implies user-facing testing and refinement to
+reach that accuracy. As founder/consultant, they delivered >15 client solutions and client-facing chatbots,
+which typically require collecting client/user feedback and iterating. Together these show ownership of
+post-launch/model feedback, synthesis, and concrete iterative improvements that improved metrics and
+product fit. Missing / weaker points: the resume rarely calls out specific feedback-gathering methods (e.g.,
+user interviews, surveys, analytics instrumentation, support-ticket analysis) or a full STAR narrative of how
+feedback was collected, prioritized, and converted into specific feature changes. However, the
+human-in-the-loop systems, feedback loops, cross-functional partnering, and measured outcome
+improvements are strong direct evidence that they gather and interpret user feedback to improve Al
+experiences.
+
+Contributing skills
+Incremental Software Delivery AlFeatureDeployment Adaptability User-centric product thinking
+
+Support
+
+Resume
+
+Resume match Direct 8/10 Excellent

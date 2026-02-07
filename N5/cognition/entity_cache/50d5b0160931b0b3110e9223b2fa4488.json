@@ -1,0 +1,1 @@
+{"entities": [{"name": "N5 system architecture", "type": "CONCEPT", "context": "A system architecture that V is tasked to summarize."}, {"name": "N5", "type": "TOOL", "context": "A system whose architecture and key concepts are to be reviewed."}], "relationships": []}

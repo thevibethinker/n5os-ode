@@ -1,0 +1,1 @@
+{"entities": [{"name": "Median", "type": "ORG", "context": "organization referenced regarding user activity"}, {"name": "self-disclosure", "type": "CONCEPT", "context": "concept related to user experience and data input"}], "relationships": [{"from": "Median", "to": "self-disclosure", "type": "RELATED_TO", "context": "Median users engage in self-disclosure through data input"}]}

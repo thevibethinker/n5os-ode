@@ -1,0 +1,1 @@
+{"entities": [{"name": "Timeline feature", "type": "CONCEPT", "context": "product feature related to decision-making"}, {"name": "AI synthesis", "type": "CONCEPT", "context": "strategic framework for decision-making"}], "relationships": [{"from": "Timeline feature", "to": "AI synthesis", "type": "RELATED_TO", "context": "both frameworks conflicted in product decision-making"}]}

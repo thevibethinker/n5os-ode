@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "the speaker who has an AI assistant"}, {"name": "Bridgent", "type": "ORG", "context": "organization referenced in the context of communication"}], "relationships": [{"from": "V", "to": "Bridgent", "type": "MENTIONS", "context": "V refers to Bridgent in the context of communication"}]}

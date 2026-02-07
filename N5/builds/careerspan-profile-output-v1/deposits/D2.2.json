@@ -1,0 +1,13 @@
+{
+  "drop_id": "D2.2",
+  "status": "complete",
+  "summary": "Panel 2: Hard Skills (Bar Cleared) — Evaluated 5 required JD requirements against candidate data. Verdict: Bar Not Cleared. Candidate clears LLM production experience (Strong) and ambiguity/shipping comfort (Strong), but fails on Node.js (Not Found), vector databases (Weak - RAG mentioned but no DB specifics), and written communication (Not Found - no documented writing artifacts). Key blockers are tech stack mismatch and lack of vector DB specificity.",
+  "artifacts": [
+    "drops/D2.2-panel-2-content.md",
+    "drops/D2.2-panel-2-reasoning.md"
+  ],
+  "issues": [],
+  "learnings": [
+    "Stack mismatch (Java/Python vs Node.js) should be flagged as 'Not Found' when candidate has no documented experience with required tech stack, even if they are strong generalists. RAG mentions without vector DB specificity should be downgraded from Strong to Weak or Not Found."
+  ]
+}

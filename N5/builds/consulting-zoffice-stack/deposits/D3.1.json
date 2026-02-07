@@ -1,0 +1,27 @@
+{
+  "drop": "D3.1",
+  "status": "complete",
+  "summary": "Built the daily export pipeline that bundles curated skills from va and ships them to zoputer via the Consulting API. Pipeline runs automatically at 9 AM ET via DAILY_EXPORT_LIBRARIAN scheduled agent, exports only Tier 0 skills with changes since last export, creates tarballs with metadata and checksums, logs to audit system, and notifies V via SMS.",
+  "tests": [
+    "python3 Skills/librarian-export/scripts/bundle_skill.py --skill content-classifier --output /tmp --dry-run --json",
+    "python3 Skills/librarian-export/scripts/daily_export.py --dry-run --verbose",
+    "python3 Skills/librarian-export/scripts/daily_export.py --verbose"
+  ],
+  "artifacts": [
+    "Skills/librarian-export/SKILL.md",
+    "Skills/librarian-export/scripts/daily_export.py",
+    "Skills/librarian-export/scripts/bundle_skill.py",
+    "Skills/consulting-api/SKILL.md",
+    "N5/data/last_export.json",
+    "N5/data/bundles/",
+    "N5/data/export_history/"
+  ],
+  "scheduled_agents": [
+    "DAILY_EXPORT_LIBRARIAN (9 AM ET daily)"
+  ],
+  "learnings": [
+    "bundle_manager.py (D1.3) created JSON bundles but daily export needs tarballs - updated transmit_bundle to handle both formats",
+    "Temp directories get cleaned up before async operations - use persistent bundle storage (N5/data/bundles/)",
+    "Git-based change detection works well for skills but requires tracking last_export.json state"
+  ]
+}

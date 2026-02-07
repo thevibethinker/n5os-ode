@@ -1,0 +1,1 @@
+{"entities": [{"name": "LLM", "type": "TOOL", "context": "Large Language Model used for parsing"}, {"name": "user shortcuts", "type": "CONCEPT", "context": "Overrides defaults in the knowledge system"}], "relationships": [{"from": "LLM", "to": "user shortcuts", "type": "USES", "context": "LLM incorporates user shortcuts to customize behavior"}]}

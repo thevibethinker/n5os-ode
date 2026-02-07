@@ -1,0 +1,31 @@
+Report generationSummarization (extractive and abstractive)Retrieval-Augmented
+Generation (RAG)Entity extractionTranslationWeb enrichmentWeb searchMulti-label
+classificationRecommendation enginesCustomer segmentationCampaign targetingFeed
+composition optimization (Linear Programming)Time-series forecasting Table
+parsingProduct matchingData augmentationTransactional anomaly detectionCredit risk
+modelingSQL stored procedures upgrade and migrationAccounting migration
+(single-entry to double-entry)End-to-end ML product developmentResearch to
+production deploymentFew-shot promptingChain-of-Thought reasoning (CoT)Custom
+dataset creationSchema adherence measurementFine-tuning modelsNamed Entity
+Recognition (NER)Sentence classificationSequential logistic regressionParallel logistic
+regressionMulti-threaded inference serving Text-to-NoSQL query generationGuardrails
+
+implementationParallel processing using multiprocessingFeedback loop for retraining
+Soft skills
+
+Project guidance from concept to productionTechnical leadershipFeature
+scopingDefining success metricsDelivery managementTeam leadership (led team of 8+
+PhDs)Collaboration with product and salesStakeholder managementClient
+consultingEvent managementFundraisingStudent mentorshipPublic representation
+
+(debate, competitions)
+Hobbies
+
+Event management (cultural/tech fests)
+Fundraising
+
+Basketball
+
+Chess
+
+Debate competitions

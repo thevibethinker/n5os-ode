@@ -1,0 +1,1 @@
+{"entities": [{"name": "name normalizer", "type": "TOOL", "context": "a tool used for normalizing names"}, {"name": "validation logs", "type": "CONCEPT", "context": "logs that preserve validation results"}], "relationships": []}

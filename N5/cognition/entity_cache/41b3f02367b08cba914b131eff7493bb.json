@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "job_seeking", "type": "CONCEPT", "context": "state of being actively looking for a job"}], "relationships": [{"from": "V", "to": "job_seeking", "type": "BELIEVES", "context": "V believes job seeking is a state, not a type"}]}

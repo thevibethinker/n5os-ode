@@ -1,0 +1,1 @@
+{"entities": [{"name": "Brady", "type": "PERSON", "context": "a high-trust network node"}], "relationships": [{"from": "Brady", "to": "value exchange", "type": "RELATED_TO", "context": "enables rapid value exchange by eliminating trust-building overhead"}]}

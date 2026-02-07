@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "The individual associated with the knowledge system"}, {"name": "positions.py", "type": "TOOL", "context": "Python script used for managing positions"}, {"name": "N5", "type": "ORG", "context": "Organization related to the workspace mentioned"}], "relationships": []}

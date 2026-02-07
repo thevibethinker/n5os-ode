@@ -1,0 +1,1 @@
+{"entities": [{"name": "Husain Rasheed", "type": "PERSON", "context": "speaking about challenges and access"}, {"name": "Career span", "type": "CONCEPT", "context": "a program or platform related to career access"}], "relationships": [{"from": "Husain Rasheed", "to": "Career span", "type": "MENTIONS", "context": "discussing challenges for access"}]}

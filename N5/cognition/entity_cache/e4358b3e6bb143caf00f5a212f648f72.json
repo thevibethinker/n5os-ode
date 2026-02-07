@@ -1,0 +1,1 @@
+{"entities": [{"name": "Aaron Mak Hoffman", "type": "PERSON", "context": "contact information"}, {"name": "gmail.com", "type": "ORG", "context": "email domain"}], "relationships": [{"from": "V", "to": "Aaron Mak Hoffman", "type": "KNOWS", "context": "contact interaction"}, {"from": "Aaron Mak Hoffman", "to": "gmail.com", "type": "USES", "context": "email provider"}]}

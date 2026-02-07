@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ben Guo", "type": "PERSON", "context": "mentioned in conversation"}, {"name": "claudebot", "type": "TOOL", "context": "reference to a popular tool"}], "relationships": [{"from": "Ben Guo", "to": "claudebot", "type": "MENTIONS", "context": "Ben talks about claudebot being popular"}]}

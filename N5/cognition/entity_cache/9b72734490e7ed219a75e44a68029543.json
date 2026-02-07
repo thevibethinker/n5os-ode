@@ -1,0 +1,1 @@
+{"entities": [{"name": "Inbox processing workflow", "type": "CONCEPT", "context": "full workflow for processing inbox items"}, {"name": "high-confidence items", "type": "CONCEPT", "context": "items that are confidently identified for routing"}], "relationships": []}

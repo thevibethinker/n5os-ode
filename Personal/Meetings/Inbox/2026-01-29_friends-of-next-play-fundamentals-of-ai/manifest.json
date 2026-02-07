@@ -1,0 +1,72 @@
+{
+  "$schema": "manifest-v3",
+  "meeting_id": "2026-01-29_friends-of-next-play-fundamentals-of-ai",
+  "status": "ingested",
+  "status_history": [
+    {
+      "status": "raw",
+      "at": "2026-02-06T16:32:08.154672+00:00"
+    },
+    {
+      "status": "ingested",
+      "at": "2026-02-06T16:32:08.154672+00:00"
+    }
+  ],
+  "source": {
+    "type": "manual",
+    "original_filename": "2026-01-29_friends_of_next_play-_Fundamentals_of_AI_Productivity_w-transcript-2026-01-29T17-00-00.000Z.md",
+    "ingested_at": "2026-02-06T16:32:08.154672+00:00"
+  },
+  "meeting": {
+    "date": "2026-01-29",
+    "time_utc": "12:00:00",
+    "duration_minutes": 75,
+    "title": "Friends Of Next Play Fundamentals Of Ai Productivity W Transcript 2026 01 29t17 00 00.000z",
+    "type": "external",
+    "summary": "Vrijen Attawar and Logan Currie of Careerspan joined Ben Guo of Zo Computer to discuss fundamentals of AI productivity, emphasizing that the core challenge isn't a lack of tools or tactics but rather developing proper mental models for working with AI systems. The session covered three levels of context adaptation\u2014conversation level, environmental/product level, and pipeline level\u2014to help attendees move beyond collecting isolated techniques toward building coherent AI systems. Ben demonstrated Claudebot capabilities while Logan planned to showcase Claude code applications for personal data visualization, with the overall goal of helping participants collapse the gap between intent and outcome in their AI workflows."
+  },
+  "participants": {
+    "identified": [
+      {
+        "name": "V",
+        "email": null,
+        "crm_id": null,
+        "role": "host",
+        "confidence": 0.8
+      }
+    ],
+    "unidentified": [],
+    "confidence": 0.8
+  },
+  "calendar_match": null,
+  "quality_gate": {
+    "passed": true,
+    "checks": {
+      "has_transcript": true,
+      "participants_identified": true,
+      "meeting_type_determined": false,
+      "no_hitl_pending": true
+    },
+    "score": 0.7
+  },
+  "blocks": {
+    "policy": "external_standard",
+    "requested": [],
+    "generated": [],
+    "failed": [],
+    "skipped": []
+  },
+  "hitl": {
+    "queue_id": null,
+    "reason": null,
+    "resolved_at": null
+  },
+  "timestamps": {
+    "created_at": "2026-02-06T16:32:08.154672+00:00",
+    "ingested_at": "2026-02-06T16:32:08.154672+00:00",
+    "identified_at": null,
+    "gated_at": null,
+    "processed_at": null,
+    "archived_at": null
+  }
+}

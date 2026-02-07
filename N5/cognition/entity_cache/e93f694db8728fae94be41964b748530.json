@@ -1,0 +1,1 @@
+{"entities": [{"name": "David", "type": "PERSON", "context": "noted a specific tool"}, {"name": "Email Tone Detector GPT", "type": "TOOL", "context": "tool mentioned by David"}], "relationships": [{"from": "David", "to": "Email Tone Detector GPT", "type": "MENTIONS", "context": "David noted that he built this tool"}]}

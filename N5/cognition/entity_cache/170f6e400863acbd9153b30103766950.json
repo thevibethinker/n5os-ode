@@ -1,0 +1,1 @@
+{"entities": [{"name": "Strategist", "type": "TOOL", "context": "analyzes and provides strategic analysis"}], "relationships": [{"from": "V", "to": "Strategist", "type": "USES", "context": "V uses Strategist to analyze and provide analysis"}]}

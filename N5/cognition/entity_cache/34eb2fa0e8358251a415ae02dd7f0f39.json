@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "The subject of the knowledge system"}, {"name": "llm_query", "type": "TOOL", "context": "A tool used to query for summaries"}], "relationships": [{"from": "V (Vrijen)", "to": "llm_query", "type": "USES", "context": "V uses llm_query to summarize sections"}]}

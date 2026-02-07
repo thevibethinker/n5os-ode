@@ -1,0 +1,1 @@
+{"entities": [{"name": "REPL", "type": "TOOL", "context": "A tool used for building answers in V's knowledge system."}, {"name": "FINAL", "type": "CONCEPT", "context": "A concept related to generating final answers."}, {"name": "FINAL_VAR", "type": "CONCEPT", "context": "A concept related to variables in the generation of answers."}], "relationships": []}

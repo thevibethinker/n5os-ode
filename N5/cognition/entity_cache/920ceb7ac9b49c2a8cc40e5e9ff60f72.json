@@ -1,0 +1,1 @@
+{"entities": [{"name": "Yale", "type": "ORG", "context": "a university with an alumni office"}, {"name": "alumni offices", "type": "ORG", "context": "organizations that manage alumni relations"}], "relationships": [{"from": "alumni offices", "to": "Yale", "type": "USES", "context": "track alumni and gather career data"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "User involved in providing Drive folder ID"}, {"name": "Google Drive", "type": "TOOL", "context": "Platform used for storing and sharing files"}], "relationships": [{"from": "V (Vrijen)", "to": "Google Drive", "type": "USES", "context": "Uses Google Drive to manage files"}]}

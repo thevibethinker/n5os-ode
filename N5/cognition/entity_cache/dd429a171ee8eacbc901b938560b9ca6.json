@@ -1,0 +1,1 @@
+{"entities": [{"name": "vibe checks", "type": "CONCEPT", "context": "method for assessing candidate fit"}, {"name": "candidate pool", "type": "CONCEPT", "context": "group of potential job candidates"}], "relationships": [{"from": "vibe checks", "to": "candidate pool", "type": "RELATED_TO", "context": "influences candidate evaluation process"}]}

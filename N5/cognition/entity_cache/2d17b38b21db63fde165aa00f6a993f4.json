@@ -1,0 +1,1 @@
+{"entities": [{"name": "thread-checkpoint", "type": "TOOL", "context": "a component used in the knowledge system"}, {"name": "conversation-end", "type": "CONCEPT", "context": "a concept related to the knowledge system"}], "relationships": [{"from": "thread-checkpoint", "to": "conversation-end", "type": "USES", "context": "thread-checkpoint is used by conversation-end"}]}

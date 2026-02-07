@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ilsa", "type": "PERSON", "context": "mentioned setting up webhooks"}], "relationships": [{"from": "V", "to": "Ilsa", "type": "KNOWS", "context": "V is aware of Ilsa"}]}

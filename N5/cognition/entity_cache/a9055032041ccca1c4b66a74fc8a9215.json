@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Person referenced in the knowledge system"}, {"name": "Three-Layer Moat", "type": "CONCEPT", "context": "A concept within V's knowledge system"}], "relationships": [{"from": "V", "to": "Three-Layer Moat", "type": "KNOWS", "context": "V understands this concept as part of their knowledge system"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "WorkItem", "type": "CONCEPT", "context": "Individual task with ID, status, path, notes"}, {"name": "Thread", "type": "CONCEPT", "context": "Decision branches with reasoning"}, {"name": "Placeholder", "type": "CONCEPT", "context": "TODO/STUB/FIXME markers in code"}], "relationships": []}

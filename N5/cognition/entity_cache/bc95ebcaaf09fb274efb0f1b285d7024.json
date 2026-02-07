@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "career data", "type": "CONCEPT", "context": "the concept of data related to an individual's career path"}], "relationships": [{"from": "V", "to": "career data", "type": "BELIEVES", "context": "V believes career data should be viewed longitudinally"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Meadows", "type": "PERSON", "context": "a person whose diagnosis regarding sustainable AI ROI is mentioned"}], "relationships": [{"from": "Meadows", "to": "sustainable AI ROI", "type": "BELIEVES", "context": "Meadows' diagnosis is about the need for change in sustainable AI ROI"}]}

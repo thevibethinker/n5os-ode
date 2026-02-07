@@ -1,0 +1,1 @@
+{"entities": [{"name": "MG-7C", "type": "TOOL", "context": "automatically archives meetings"}, {"name": "C-state marking workflow", "type": "CONCEPT", "context": "workflow to transition meetings to a specific state"}, {"name": "Meetings", "type": "CONCEPT", "context": "context of the meetings being transitioned"}], "relationships": []}

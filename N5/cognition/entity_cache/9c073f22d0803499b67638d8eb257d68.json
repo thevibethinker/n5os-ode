@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "a person's name in the context of their knowledge system"}, {"name": "content library", "type": "CONCEPT", "context": "a repository for reusable content"}], "relationships": [{"from": "V", "to": "content library", "type": "USES", "context": "V promotes outputs into the content library for reuse"}]}

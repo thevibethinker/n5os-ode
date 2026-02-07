@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "the speaker of the text"}, {"name": "Ash", "type": "PERSON", "context": "mentioned as someone V is trying to invite other founders with"}], "relationships": [{"from": "Vrijen Attawar", "to": "Ash", "type": "WORKS_WITH", "context": "V is trying to collaborate with Ash to invite other founders"}]}

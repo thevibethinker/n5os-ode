@@ -1,0 +1,1 @@
+{"entities": [{"name": "FutureFit", "type": "ORG", "context": "partner organization for distribution strategy"}], "relationships": [{"from": "V", "to": "FutureFit", "type": "WORKS_WITH", "context": "partner for better distribution strategy"}]}

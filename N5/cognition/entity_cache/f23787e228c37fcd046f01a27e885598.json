@@ -1,0 +1,1 @@
+{"entities": [{"name": "zero", "type": "CONCEPT", "context": "a concept being verified"}], "relationships": [{"from": "V", "to": "zero", "type": "BELIEVES", "context": "V is verifying the existence of 'zero'"}]}

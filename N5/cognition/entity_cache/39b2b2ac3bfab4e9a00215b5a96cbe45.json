@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Individual involved in decision-making"}, {"name": "decision", "type": "CONCEPT", "context": "Final decision that can be discussed"}, {"name": "execution", "type": "CONCEPT", "context": "Concerns related to the implementation of the decision"}], "relationships": []}

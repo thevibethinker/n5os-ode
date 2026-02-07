@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "A person involved in strategic work"}, {"name": "Complex strategic work", "type": "CONCEPT", "context": "The type of work being analyzed and recommended on"}], "relationships": [{"from": "V", "to": "Complex strategic work", "type": "KNOWS", "context": "V is involved in complex strategic work"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "an organization with a technical discipline"}, {"name": "Sonnet", "type": "TOOL", "context": "a tool mentioned in the context of expensive approaches"}], "relationships": [{"from": "Careerspan", "to": "Sonnet", "type": "USES", "context": "Careerspan's approaches involve how Sonnet is utilized"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "speaker in the text"}, {"name": "Edmond", "type": "PERSON", "context": "mentioned as someone who influenced Vrijen"}], "relationships": [{"from": "Vrijen Attawar", "to": "Edmond", "type": "KNOWS", "context": "Vrijen credits Edmond for influencing his thoughts"}]}

@@ -1,10 +1,9 @@
 ---
 created: 2025-11-14
 last_edited: 2025-11-14
-version: 1.0
+version: 1
 provenance: con_mkXCI3q6QuKBrc9P
 ---
-
 # B21 Key Moments
 
 **Meeting:** Nicole Holubar (Emory Alumni Association) x Vrijen Attawar (Careerspan)

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ben Guo", "type": "PERSON", "context": "individual discussing workflows"}, {"name": "SQLite", "type": "TOOL", "context": "database management system"}], "relationships": [{"from": "Ben Guo", "to": "SQLite", "type": "MENTIONS", "context": "suggesting to incorporate into workflow"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "humble bundle concept", "type": "CONCEPT", "context": "a business model or idea discussed"}], "relationships": [{"from": "V", "to": "humble bundle concept", "type": "BELIEVES", "context": "V is excited about the humble bundle concept"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "rs", "type": "ORG", "context": "The organization associated with the GitHub repository"}, {"name": "node-netmask", "type": "TOOL", "context": "The software tool mentioned in the context of the GitHub repository"}], "relationships": []}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Cisco", "type": "ORG", "context": "role and investment focus"}, {"name": "LinkedIn", "type": "TOOL", "context": "proactively provided for follow-up"}], "relationships": [{"from": "V", "to": "Cisco", "type": "WORKS_WITH", "context": "role and investment focus"}, {"from": "V", "to": "LinkedIn", "type": "USES", "context": "provided for follow-up"}]}

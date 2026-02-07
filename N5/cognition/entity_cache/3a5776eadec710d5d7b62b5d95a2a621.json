@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "author of the knowledge system"}, {"name": "prefs.md", "type": "TOOL", "context": "file containing guidelines and preferences"}, {"name": "safety and file protection rules", "type": "CONCEPT", "context": "rules referenced in the knowledge system"}], "relationships": []}

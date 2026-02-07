@@ -1,0 +1,1 @@
+{"entities": [{"name": "meme", "type": "TOOL", "context": "tool used for generating posts based on deployment results"}, {"name": "slack_message", "type": "CONCEPT", "context": "message format for deployment results"}], "relationships": []}

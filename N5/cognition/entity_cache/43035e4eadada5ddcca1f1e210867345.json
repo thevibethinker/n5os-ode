@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "a person reflecting on their ability to help others"}, {"name": "management", "type": "CONCEPT", "context": "the act of managing one's own and others' work"}], "relationships": [{"from": "V", "to": "management", "type": "BELIEVES", "context": "V questions their ability to manage work"}]}

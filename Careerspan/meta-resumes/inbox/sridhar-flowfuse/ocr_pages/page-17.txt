@@ -1,0 +1,30 @@
+Excellent Al Technical Debt Management Required: Advanced 4/5 Importance: 7/10 Story+profile Y «A
+
+Ourtake Basedon story: qoWHelLzqkOMMISPwcHIL =~ Direct
+
+The story demonstrates that the candidate proactively identified maintainability and scalability challenges in
+areal-world, Al-powered production system. The candidate led a shift from a monolithic, prototype-like
+implementation to a modular three-service architecture, which decoupled dependencies and addressed long-
+term maintainability and scalability concerns (e.g., the move from a monolithic langgraph agent to an
+architecture allowing replaceable components and easier upgrades). The implementation of patterns like
+entity_id passing (to avoid context window overflow and reduce model strain) directly speaks to scalable
+design in Al contexts. The custom HITL system for reliability shows forethought about future maintainers and
+feature extensibility. The candidate discusses iterative improvements, documentation use, evaluating
+frameworks, and making technical tradeoffs—all pointing to a systemic mindset around technical debt and
+evolving requirements. Results such as reduced token use and production reliability further reinforce that this
+was not just feature delivery, but sustainable, production-minded engineering. There is repeated reference to
+the evolution of requirements and architecture to support ongoing product scaling and maintainability,
+directly matching the advanced proficiency required in the target responsibility.
+
+Contributing skills
+AlReliability Engineering AlFeature Deployment Production AlSystemDesign Problem-solving Attention to detail
+
+System-level thinking Pragmatism
+
+Support
+Stories
+kftowPdjyQBSCaisjIPn Direct 8/10 Excellent
+qoWHeLzqkOMMI5PwcHiIL Direct 9/10 Excellent Best
+Resume
+
+Resume match ‘Transferable 8/10 Excellent

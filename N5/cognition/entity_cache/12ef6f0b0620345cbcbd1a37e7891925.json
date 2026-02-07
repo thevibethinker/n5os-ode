@@ -1,0 +1,1 @@
+{"entities": [{"name": "MIO", "type": "TOOL", "context": "the system being rewritten"}], "relationships": [{"from": "V", "to": "MIO", "type": "USES", "context": "V is rewriting the MIO system"}]}

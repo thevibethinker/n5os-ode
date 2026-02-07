@@ -1,0 +1,1 @@
+{"entities": [{"name": "Mediabunny", "type": "TOOL", "context": "tool for extracting frames from videos"}], "relationships": [{"from": "V", "to": "Mediabunny", "type": "USES", "context": "V uses Mediabunny to extract frames from videos"}]}

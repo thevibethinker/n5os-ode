@@ -1,0 +1,1 @@
+{"entities": [{"name": "Gabi", "type": "PERSON", "context": "Collaborator who joins call; dealing with insurance and admin tasks"}, {"name": "V", "type": "PERSON", "context": "Vrijen; participant in the call, acknowledges vendor annoyances"}], "relationships": [{"from": "V", "to": "Gabi", "type": "WORKS_WITH", "context": "On a call together with time blocked until noon"}]}

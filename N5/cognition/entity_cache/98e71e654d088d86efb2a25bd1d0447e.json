@@ -1,0 +1,1 @@
+{"entities": [{"name": "Elaine P", "type": "PERSON", "context": "Primary stakeholder transitioning to software development"}, {"name": "Organization Unknown - needs research", "type": "ORG", "context": "Organization associated with Elaine P"}], "relationships": [{"from": "V", "to": "Elaine P", "type": "KNOWS", "context": "Warm introduction from mutual friend"}]}

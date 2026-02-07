@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ryan", "type": "PERSON", "context": "provides UX feedback on major features"}, {"name": "V", "type": "PERSON", "context": "shares learnings about user psychology"}], "relationships": [{"from": "V", "to": "Ryan", "type": "WORKS_WITH", "context": "Ryan provides UX feedback while V shares insights"}]}

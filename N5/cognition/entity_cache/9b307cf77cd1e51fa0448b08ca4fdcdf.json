@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker discussing networking efforts"}, {"name": "networking", "type": "CONCEPT", "context": "Focus of discussion on improving connections"}], "relationships": [{"from": "Vrijen Attawar", "to": "networking", "type": "BELIEVES", "context": "Supports the idea of improving networking"}]}

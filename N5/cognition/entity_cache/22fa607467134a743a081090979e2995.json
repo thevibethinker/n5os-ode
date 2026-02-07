@@ -1,0 +1,1 @@
+{"entities": [{"name": "Tally Survey", "type": "TOOL", "context": "A tool for generating Tally forms from natural language"}, {"name": "spawn-worker", "type": "CONCEPT", "context": "A concept for spawning parallel worker threads"}], "relationships": []}

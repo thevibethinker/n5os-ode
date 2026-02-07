@@ -1,0 +1,74 @@
+# Technical Competencies (Hard Skills)
+# Source: Careerspan Intelligence Brief
+# DO NOT EDIT - Preserves Careerspan conclusions verbatim
+
+skill_categories:
+  machine_learning:
+    level: "Expert"
+    evidence:
+      - "Built ML platform serving Apple, Samsung, Volkswagen"
+      - "LangChain + RAG implementation"
+      - "MLflow for model lifecycle"
+      - "Reduced model-to-production time dramatically"
+    technologies:
+      - "LangChain"
+      - "RAG (Retrieval-Augmented Generation)"
+      - "MLflow"
+      - "Vector databases"
+      - "Embeddings"
+
+  backend:
+    level: "Expert"
+    evidence:
+      - "Python backend architecture at Keysight"
+      - "Java/Spring Boot at AmEx"
+      - "Microservices architecture"
+    technologies:
+      - "Python"
+      - "Java"
+      - "Spring Boot"
+      - "REST APIs"
+      - "Microservices"
+
+  frontend:
+    level: "Strong"
+    evidence:
+      - "React frontends at Keysight and AmEx"
+      - "Full-stack ownership of user-facing products"
+    technologies:
+      - "React"
+      - "JavaScript"
+      - "TypeScript" # Inferred from React - mark as needing verification
+
+  infrastructure:
+    level: "Strong"
+    evidence:
+      - "Kubernetes deployment and management"
+      - "CI/CD pipeline design"
+      - "Cloud infrastructure (AWS implied)"
+    technologies:
+      - "Kubernetes"
+      - "Docker"
+      - "CI/CD"
+      - "AWS"
+
+  data_engineering:
+    level: "Strong"
+    evidence:
+      - "Airflow for orchestration"
+      - "Data pipelines for ML workflows"
+    technologies:
+      - "Airflow"
+      - "Data pipelines"
+      - "ETL"
+
+gaps_identified:
+  - skill: "Node.js"
+    status: "Not evidenced"
+    note: "FlowFuse primary stack - no direct experience shown"
+  - skill: "LLM observability tooling"
+    status: "Not explicitly documented"
+    note: "MLOps experience strong, but LLM-specific monitoring unclear"
+  - skill: "AI guardrails/safety"
+    status: "Not explicitly documented"
+    note: "Has built production AI, but fallback strategies not detailed"

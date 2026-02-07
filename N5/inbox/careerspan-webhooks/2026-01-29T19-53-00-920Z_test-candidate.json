@@ -1,0 +1,95 @@
+{
+  "received_at": "2026-01-29T19:53:00.920Z",
+  "headers": {
+    "accept": "*/*",
+    "authorization": "Bearer YummyYummyDataNomNomNom",
+    "content-length": "1313",
+    "content-type": "application/json",
+    "host": "p1.proxy.zo.computer:19316",
+    "user-agent": "curl/7.88.1"
+  },
+  "payload": {
+    "candidate": {
+      "name": "Test Candidate",
+      "email": "test@example.com",
+      "referral_name": null,
+      "referral_company_connection": null,
+      "applied_at": "2026-01-29"
+    },
+    "role": {
+      "title": "Software Engineer",
+      "company": "Acme Corp",
+      "summary": "Building great stuff"
+    },
+    "overall_assessment": {
+      "score": 85,
+      "qualification_level": "Well-aligned",
+      "career_trajectory": "Progression Move",
+      "bottom_line": "Strong fit for the role",
+      "strengths": "Great technical skills",
+      "weaknesses": "Could improve communication"
+    },
+    "scores": {
+      "background": {
+        "score": 80,
+        "reasoning": "Good"
+      },
+      "hard_skills": {
+        "score": 90
+      },
+      "responsibilities": {
+        "score": 85
+      },
+      "soft_skills": {
+        "score": 75
+      },
+      "uniqueness": {
+        "score": 88
+      }
+    },
+    "dealbreakers": [],
+    "gap_analysis_summary": {
+      "responsibilities": [],
+      "hard_skills": [],
+      "soft_skills": []
+    },
+    "skills_and_tools": {
+      "tools": [
+        "Python",
+        "JavaScript"
+      ],
+      "hard_skills": [
+        "API Design"
+      ],
+      "soft_skills": [
+        "Leadership"
+      ]
+    },
+    "achievements": [
+      "Built a thing"
+    ],
+    "awards_and_honors": [],
+    "work_history": [
+      {
+        "title": "Engineer",
+        "company": "Previous Co",
+        "start_date": "2022-01",
+        "end_date": null,
+        "summary": "Did stuff"
+      }
+    ],
+    "education": [
+      {
+        "degree": "BS",
+        "institution": "MIT",
+        "field": "CS",
+        "start_date": "2018",
+        "end_date": "2022"
+      }
+    ],
+    "stories": [],
+    "hobbies": [
+      "Coding"
+    ]
+  }
+}

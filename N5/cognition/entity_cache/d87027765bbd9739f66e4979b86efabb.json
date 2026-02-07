@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual referring to Vrijen"}, {"name": "thread-retitle", "type": "TOOL", "context": "command-line tool for retitling threads"}], "relationships": [{"from": "V", "to": "thread-retitle", "type": "USES", "context": "V utilizes the tool to improve thread titles"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Piketty", "type": "PERSON", "context": "referenced for economic recommendations"}], "relationships": [{"from": "V", "to": "Piketty", "type": "MENTIONS", "context": "refers to Piketty's recommendation on taxation"}]}

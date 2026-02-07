@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ben Guo", "type": "PERSON", "context": "Speaker who expresses agreement"}, {"name": "crazy", "type": "BELIEF", "context": "Concept referenced in the conversation"}], "relationships": [{"from": "Ben Guo", "to": "crazy", "type": "BELIEVES", "context": "Ben expresses that perceiving an unusual thought is not necessarily a sign of craziness"}]}

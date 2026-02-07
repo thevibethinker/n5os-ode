@@ -1,0 +1,71 @@
+{
+  "meeting_id": "2026-01-29_maximilian-kwok-and-vrijen-attawar-trans",
+  "date": "2026-01-29",
+  "participants": [
+    "Maximilian",
+    "Kwok",
+    "And"
+  ],
+  "meeting_type": "external",
+  "status": "archived",
+  "transcript_file": "transcript.md",
+  "blocks_requested": [],
+  "blocks_generated": [
+    "B21_KEY_MOMENTS",
+    "B26_MEETING_METADATA",
+    "B13_PLAN_OF_ACTION",
+    "B08_STAKEHOLDER_INTELLIGENCE",
+    "B03_DECISIONS",
+    "B02_B05_COMMITMENTS_AND_ACTIONS",
+    "B01_DETAILED_RECAP",
+    "B06_BUSINESS_CONTEXT",
+    "B00_ZO_TAKE_HEED"
+  ],
+  "blocks_failed": [],
+  "staged_at": "2026-02-02T20:22:18.771847Z",
+  "processed_at": "2026-02-03T13:16:31.263948Z",
+  "archived_at": "2026-02-03T13:16:31.550851Z",
+  "error": null,
+  "block_selection": {
+    "selected_at": "2026-02-03T13:00:37.912639Z",
+    "method": "smart_selector_v2",
+    "recipe": "external_standard",
+    "always_blocks": [
+      "B00",
+      "B01",
+      "B02_B05",
+      "B03",
+      "B08",
+      "B21",
+      "B26"
+    ],
+    "conditional_selected": [
+      "B06",
+      "B13"
+    ],
+    "conditional_skipped": [
+      "B04",
+      "B07",
+      "B10",
+      "B14",
+      "B25",
+      "B28",
+      "B32",
+      "B33"
+    ],
+    "triggered": [],
+    "reasoning": {
+      "B06": "Transcript contains detailed discussion of Careerspan's business model (marketplace for recruiting Indian talent), strategic positioning (tech validates talent and provides deeper insights), and current strategic direction (aiming to sell mid-year while pursuing B2B revenue generation in the next few months). This directly supports V's priority of driving Careerspan recruiting revenue.",
+      "B13": "Both speakers outline specific next steps: V plans to generate revenue through the recruiter partnership in India over the next few months to improve valuation before a potential mid-year sale; Max plans to launch his product marketplace in approximately one month. These are clear, time-bound action items discussed explicitly.",
+      "B04": "Skipped: All questions in the transcript were answered during conversation. No unresolved strategic questions remain that require follow-up.",
+      "B07": "Skipped: No trigger phrases detected. Transcript does not contain requests for introductions such as 'intro me to', 'connect me with', or 'introduce me to'.",
+      "B10": "Skipped: Conversation is a casual catch-up between two entrepreneurs discussing their respective situations, not a discussion of evolving collaboration or partnership trajectory between the speakers.",
+      "B14": "Skipped: No trigger phrases detected. Transcript does not contain requests for blurbs such as 'draft a blurb', 'write a blurb', or 'create a blurb'.",
+      "B25": "Skipped: While both speakers describe ongoing work (V's recruiter partnership, Max's product launch), no specific deliverables with assigned owners and timelines were explicitly defined that would warrant this block.",
+      "B28": "Skipped: Transcript contains incidental market observations (vet space opportunity, SF pricing dynamics) and Max's view of the job market challenges. While interesting, these are tangential to V's core priority of Careerspan recruiting revenue and don't constitute substantive strategic intelligence for V's business.",
+      "B32": "Skipped: Max's product concept (experiential learning through simulation) and the insight that 'jobs is learning' are interesting ideas, but they relate to Max's business not V's Careerspan objectives. Not directly actionable for V's current priorities.",
+      "B33": "Skipped: V's decision rationale (pursuing revenue generation to improve valuation before potential sale) is captured within the B13 Plan of Action block. Not substantive enough on its own to warrant a separate deep-dive block."
+    },
+    "total_blocks": 9
+  }
+}

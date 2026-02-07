@@ -1,0 +1,1 @@
+{"entities": [{"name": "Gmail", "type": "TOOL", "context": "email service used to fetch emails"}, {"name": "Drive", "type": "TOOL", "context": "cloud storage service used to fetch files"}], "relationships": []}

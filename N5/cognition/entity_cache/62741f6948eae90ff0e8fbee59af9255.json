@@ -1,0 +1,1 @@
+{"entities": [{"name": "Chinese village", "type": "CONCEPT", "context": "Refers to the cultural background related to community and sharing"}], "relationships": [{"from": "Chinese village", "to": "reputation", "type": "BELIEVES", "context": "Believes that reputation affects individual happiness after acquiring wealth"}]}

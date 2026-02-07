@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "Thread Documentation", "type": "CONCEPT", "context": "a method of documentation for tracking approaches"}], "relationships": [{"from": "V", "to": "Thread Documentation", "type": "USES", "context": "V uses Thread Documentation to track approaches"}]}

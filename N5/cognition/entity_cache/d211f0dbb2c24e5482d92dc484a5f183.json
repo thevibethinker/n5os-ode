@@ -1,0 +1,1 @@
+{"entities": [{"name": "SocksClient", "type": "TOOL", "context": "a tool used for creating network connections"}, {"name": "Socket", "type": "CONCEPT", "context": "a type of network socket established through proxy servers"}], "relationships": []}

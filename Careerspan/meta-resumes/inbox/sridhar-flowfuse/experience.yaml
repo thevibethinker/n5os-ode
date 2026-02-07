@@ -1,0 +1,119 @@
+# Experience
+# Extracted: 2026-01-30T02:22:04.097929
+
+positions:
+  - company: "EclecticIQ"
+    title: "Principal ML Engineer"
+    duration: "Jul 2024 - Present"
+    summary: "Led all AI initiatives from research adaptation through production deployment. Spearheaded multi-stage pipeline for automated structured security report generation from unstructured data. Led 6-month integration of AI assistant into flagship product, architecting modular solution decoupling synchronous Flask backends from async AI protocols."
+    accomplishments:
+      - "Reduced token usage by 60% through entity-based context and custom Human-in-the-Loop approval system"
+      - "Achieved 18% higher correctness, 84% prompt relevance, 27% better recall, 97% schema adherence"
+      - "Architected and deployed public MCP server for third-party AI clients"
+      - "Implemented FaithfulRAG for cybersecurity to reduce hallucinations"
+      - "Built scalable contextual search system supporting 100M+ entities"
+      - "Fine-tuned SecureBERT 2.0 for cybersecurity applications"
+    technologies:
+      - "LangGraph"
+      - "MCP"
+      - "Flask"
+      - "Entity-based context"
+      - "Human-in-the-Loop"
+      - "FaithfulRAG"
+      - "Elasticsearch"
+      - "SecureBERT 2.0"
+      - "Text-to-Lucene"
+
+  - company: "Cambridge University Press And Assessment"
+    title: "AI/ML Specialist"
+    duration: "Apr 2023 - Jun 2024"
+    summary: "Built Student Companion System leveraging retrieval-augmented generation for multimodal course Q&A, semantic search, quiz generation, and pedagogical adaptation. Developed Automatic Marking System using advanced prompting techniques."
+    accomplishments:
+      - "Implemented RAG-based system with agentic response verification for accurate Q&A"
+      - "Built semantic search using vector databases for course content retrieval"
+      - "Developed Automatic Marking System achieving 85% accuracy on short answers"
+      - "Implemented chain-of-thought reasoning for score generation"
+    technologies:
+      - "RAG (Retrieval-Augmented Generation)"
+      - "Vector databases"
+      - "Few-shot prompting"
+      - "Chain-of-thought (CoT)"
+      - "Agentic response verification"
+
+  - company: "Ponderbot Analytics"
+    title: "AI Consultant"
+    duration: "Aug 2022 - Apr 2023"
+    summary: "Founded and operated AI-focused consultancy delivering end-to-end intelligent solutions across travel, retail, marketing, and agriculture sectors."
+    accomplishments:
+      - "Delivered 15+ AI solutions for marketing client including recommendation engines and customer segmentation"
+      - "Built travel recommendation chatbot using personality-based quiz approach"
+      - "Developed grocery retail chatbot for real-time product information and customer queries"
+      - "Created feed composition optimization system using linear programming to reduce CO2 emissions"
+    technologies:
+      - "Linear programming"
+      - "Recommendation engines"
+      - "Customer segmentation"
+      - "Chatbots"
+      - "Campaign targeting"
+
+  - company: "Cyware Labs"
+    title: "Senior Data Scientist"
+    duration: "Jul 2021 - Aug 2022"
+    summary: "Served as sole ML engineer, designing and building end-to-end ML products from ground up. Focused on cybersecurity applications including entity extraction and multi-label classification."
+    accomplishments:
+      - "Developed cybersecurity entity extraction model achieving 0.78 F1 score using spaCy"
+      - "Created multi-label classification system for Tactics & Techniques identification"
+      - "Built Python/Django application for multi-threaded inference with feedback loop for retraining"
+      - "Engineered Text-to-NoSQL system using pretrained PICARD model for Elasticsearch queries"
+    technologies:
+      - "spaCy"
+      - "BERT"
+      - "Stanza"
+      - "Python"
+      - "Django"
+      - "PICARD"
+      - "Elasticsearch"
+      - "Logistic regression"
+      - "Multi-threaded inference"
+
+  - company: "Dell Technologies"
+    title: "Data Scientist"
+    duration: "Mar 2019 - Jun 2021"
+    summary: "Pioneered data science initiatives as first data scientist in Finance Department. Built forecasting and data extraction systems for financial operations."
+    accomplishments:
+      - "Built capacity planning system using time-series forecasting for global resource prediction"
+      - "Developed table parsing system using deep learning (Faster R-CNN, LSTM) for purchase order data extraction"
+      - "Designed high-accuracy product matching system using BERT and data augmentation techniques"
+    technologies:
+      - "Time-series forecasting"
+      - "Faster R-CNN"
+      - "LSTM"
+      - "BERT"
+      - "Data augmentation"
+      - "Product matching"
+
+  - company: "SquareOne Insights Pvt Ltd"
+    title: "Data Scientist"
+    duration: "May 2017 - Feb 2019"
+    summary: "Built transactional anomaly detection and credit risk modeling systems for financial applications."
+    accomplishments:
+      - "Developed transactional anomaly detection system returning risk scores in under 300ms"
+      - "Built credit risk model using Random Forest on Spark achieving 0.81 F1 score"
+    technologies:
+      - "Scala"
+      - "Random Forest"
+      - "Spark"
+      - "Rule-based statistical models"
+      - "Transactional anomaly detection"
+
+  - company: "Loylty Rewards Pvt Ltd"
+    title: "Software Engineer"
+    duration: "Jun 2016 - May 2017"
+    summary: "Managed database migration project for banking clients, upgrading accounting systems."
+    accomplishments:
+      - "Upgraded SQL stored procedures from single-entry to double-entry accounting"
+      - "Migrated databases for 18 banking clients supporting over 100 million users"
+    technologies:
+      - "SQL"
+      - "Database migration"
+      - "Accounting systems"

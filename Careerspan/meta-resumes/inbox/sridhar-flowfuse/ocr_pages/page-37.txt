@@ -1,0 +1,32 @@
+Excellent Judgment Required: Advanced 4/5 Importance: 9/10 Story+profile yv «A
+
+Ourtake Basedonresume Direct
+
+Multiple roles in the resume show repeated, concrete examples of making tradeoffs, anticipating failure
+modes, and aligning technical choices with product/stakeholder needs—all core to judgment for an Al-focused
+fullstack role. At EclecticlQ the candidate explicitly describes designing around severe infrastructure
+constraints (smaller LLMs, limited async support, legacy systems), decoupling synchronous Flask backends
+from async Al protocols, introducing entity-based context, and creating a Human-in-the-Loop approval
+system and guardrails that reduced token usage by 60% and improved correctness/recall/schema adherence.
+Those are clear design decisions balancing latency, cost, reliability, and factuality. As a founder/consultant
+and as the sole ML engineer at Cyware, they repeatedly owned end-to-end product decisions (model choices
+like spaCy vs BERT, multi-threaded inference to reduce latency, feedback loops for retraining) and delivered
+tradeoff-driven solutions for clients. At Dell and SquareOne they delivered production systems with strict non-
+functional constraints (time-series capacity forecasting, 300ms risk scoring, high-accuracy product matching
+and table parsing), which implies prioritization and risk assessment in architecture and implementation. Work
+on FaithfulRAG, guardrails, agentic response verification, and Human-in-the-Loop shows explicit attention to
+failure modes, hallucinations, and user-facing correctness—important for safe Al feature shipping. The
+resume also cites partnering with product and sales and defining success metrics, indicating stakeholder
+communication and justification of choices. Missing or weaker evidence: limited explicit mention of
+privacy/regulatory tradeoffs or formalized decision frameworks, and fewer examples of mentoring others on
+judgment frameworks beyond leading teams. Overall this maps to the Advanced criteria: sophisticated,
+autonomous decision-making in ambiguous/high-impact Al projects with measurable outcomes and pattern-
+setting technical choices.
+
+Support
+Stories
+kftowPdjyQBSCaisjIPn Direct 8/10 Excellent
+qoWHeLzqkOMMI5PwcH iL Direct 8/10 Excellent Best
+Resume
+
+Resume match Direct 8/10 Excellent

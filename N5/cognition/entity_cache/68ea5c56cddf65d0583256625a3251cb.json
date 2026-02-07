@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "The individual who has a knowledge system"}, {"name": "Anna Bao", "type": "PERSON", "context": "An example of a community leader and part of the intended audience"}], "relationships": [{"from": "V (Vrijen)", "to": "Anna Bao", "type": "KNOWS", "context": "V knows community leaders like Anna Bao"}]}

@@ -1,0 +1,86 @@
+---
+created: 2026-02-03
+last_edited: 2026-02-03
+version: 1.0
+provenance: con_LFJ7YTSwxW5vh4bD
+
+work_history:
+  - title: "Senior Machine Learning Engineer (R&D)"
+    company: "Keysight"
+    dates: "Dec 2024 - Present"
+    summary: |
+      Architected and led the end-to-end development of a comprehensive AI/ML SaaS platform, 
+      joining as one of four founding engineers and scaling it to a mature solution trusted by 
+      global leaders such as Apple, Samsung Semiconductor, and Volkswagen. Drove the design of 
+      core components like advanced dataset storage with versioning, modular model management 
+      using MLflow, and a scalable execution layer enabling rapid, vendor-agnostic AWS and 
+      on-prem resource provisioning.
+    highlights:
+      - "Founding engineer (1 of 4) → scaled team to ~20"
+      - "Platform scaled from 20 test users to 200-300 daily enterprise users"
+      - "Adopted by Apple, Samsung Semiconductor, Volkswagen"
+      - "Reduced model-to-production cycles from hours to minutes"
+      - "Budget grew from $200k to $1M"
+
+  - title: "Software Engineer (Full Stack)"
+    company: "American Express"
+    dates: "Jul 2021 - Nov 2024"
+    summary: |
+      Operated as a solo product leader and full-stack engineer, leading the end-to-end design 
+      and implementation of an automated portal that optimized database usage and eliminated 
+      cloud waste across thousands of engineers and over 150 global services.
+    highlights:
+      - "Solo product leader for self-service database portal"
+      - "$50,000/month cost savings via automated decommissioning"
+      - "Zero downtime and regulatory compliance"
+      - "CI/CD optimization for 70k+ daily jobs"
+      - "Managed 150+ inner-source services"
+
+  - title: "Software Engineer Intern"
+    company: "American Express"
+    dates: "Apr 2020 - May 2020"
+    summary: |
+      Developed a machine learning model to prioritize and recommend user stories for Agile tools 
+      like Rally and Jira. Boosted developer productivity with 35% improvement in feature delivery.
+    highlights:
+      - "Top-5 finish in India Innovation Hackathon (100+ participants)"
+
+  - title: "Data Science Intern"
+    company: "Flipkart"
+    dates: "Apr 2019 - May 2019"
+    summary: |
+      Conducted research using scalable anomaly detection tools (M-Zoom, M-Biz) to analyze 
+      over 20,000 cohorts for fraud and marketplace abuse detection.
+    highlights:
+      - "Analyzed 20,000+ cohorts"
+      - "Early detection of suspicious activities"
+
+stories:
+  - id: "COKUmaqSITrBKdtxSgJp"
+    title: "Leading End-to-End Development and Scaling of a High-Impact ML SaaS Platform"
+    company: "Keysight"
+    role: "Senior Machine Learning Engineer (R&D)"
+    summary: |
+      One of first engineers architecting ML SaaS platform from ground up. Designed Dataset Storage 
+      layer with versioning, MLOps and Model Storage layers with automated hyperparameter tuning, 
+      dynamic resource provisioning on AWS. Team grew from 4 to ~20, platform scaled to 200-300 
+      daily users including Apple, Samsung, Volkswagen.
+
+  - id: "pROFGle1jTPdoivBHQUf"
+    title: "Solo-led Global Automation of Database Decommissioning Enabling $50K Monthly Savings"
+    company: "American Express"
+    role: "Software Engineer (Full Stack)"
+    summary: |
+      Led end-to-end design of automated portal for database usage optimization. Solo product leader 
+      responsible for architecture, Python/Couchbase data aggregation, Java/Spring Boot backend, 
+      ReactJS UI. Automated tracking and decommissioning of underutilized databases across 150+ 
+      services, supporting 2,000-3,000 engineers globally.
+
+  - id: "tkFXDWkFazVlCkPwFxuk"
+    title: "Architecting a vendor-agnostic AI/ML platform through strategic stakeholder-driven design"
+    company: "Keysight"
+    role: "Senior Machine Learning Engineer (R&D)"
+    summary: |
+      Led end-to-end architecture of AI/ML platform with vendor-agnostic, open-source philosophy. 
+      Built dataset storage with MinIO, model management with MLflow, execution layer with Kubernetes. 
+      Guided by stakeholder feedback from internal teams and external clients (Apple, Samsung).

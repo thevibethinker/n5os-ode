@@ -1,7 +1,7 @@
 {
-  "last_update": "2026-01-27T10:30:00.499359",
-  "last_gamma_url": "https://gamma.app/docs/v16ocjglmkwht8w",
-  "response_count": 12,
+  "last_update": "2026-02-02T16:20:20.245124",
+  "last_gamma_url": "https://gamma.app/docs/pkl5iqh8270s4s3",
+  "response_count": 28,
   "history": [
     {
       "timestamp": "2026-01-27T10:26:20.667202",
@@ -14,7 +14,43 @@
       "url": "https://gamma.app/docs/v16ocjglmkwht8w",
       "response_count": 12,
       "config": "Zo Computer Style"
+    },
+    {
+      "timestamp": "2026-01-28T04:07:25.477907",
+      "url": "https://gamma.app/docs/s6jtoi169upw1q0",
+      "response_count": 15,
+      "config": "Zo Computer Style"
+    },
+    {
+      "timestamp": "2026-01-28T16:06:54.996864",
+      "url": "https://gamma.app/docs/xphxru60bai4e6f",
+      "response_count": 16,
+      "config": "Zo Computer Style"
+    },
+    {
+      "timestamp": "2026-01-29T04:13:21.607142",
+      "url": "https://gamma.app/docs/1ejtlhxqzp38egt",
+      "response_count": 17,
+      "config": "Zo Computer Style"
+    },
+    {
+      "timestamp": "2026-01-29T16:07:07.005704",
+      "url": "https://gamma.app/docs/nxgg8rqflf8ujfq",
+      "response_count": 25,
+      "config": "Zo Computer Style"
+    },
+    {
+      "timestamp": "2026-01-30T04:07:35.318194",
+      "url": "https://gamma.app/docs/v8rtfthqwoh8u5n",
+      "response_count": 27,
+      "config": "Zo Computer Style"
+    },
+    {
+      "timestamp": "2026-02-02T16:20:20.245124",
+      "url": "https://gamma.app/docs/pkl5iqh8270s4s3",
+      "response_count": 28,
+      "config": "Zo Computer Style"
     }
   ],
-  "config_used": "/home/workspace/Skills/survey-dashboard/assets/configs/zo-style.json"
+  "config_used": "Skills/survey-dashboard/assets/configs/zo-style.json"
 }

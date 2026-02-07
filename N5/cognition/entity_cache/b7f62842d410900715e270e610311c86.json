@@ -1,0 +1,1 @@
+{"entities": [{"name": "Zo", "type": "ORG", "context": "a chatbot"}, {"name": "Core", "type": "CONCEPT", "context": "the idea of context accumulation as a knowledge system"}], "relationships": [{"from": "Core", "to": "Zo", "type": "RELATED_TO", "context": "Core is necessary for Zo to not be just another chatbot"}]}

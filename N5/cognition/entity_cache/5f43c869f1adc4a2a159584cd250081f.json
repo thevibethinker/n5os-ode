@@ -1,0 +1,1 @@
+{"entities": [{"name": "meeting-process", "type": "CONCEPT", "context": "command for processing meeting transcripts"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "individual associated with the knowledge system"}], "relationships": [{"from": "V (Vrijen)", "to": "meeting-process", "type": "USES", "context": "V uses the meeting-process command to handle transcripts"}]}

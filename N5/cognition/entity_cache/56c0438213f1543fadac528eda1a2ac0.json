@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "speaker in the conversation"}, {"name": "Ray", "type": "PERSON", "context": "was involved in the hearth activity"}], "relationships": [{"from": "Vrijen Attawar", "to": "Ray", "type": "WORKS_WITH", "context": "collaborating on the hearth activity"}]}

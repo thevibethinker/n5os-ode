@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "subject of the knowledge-tier system"}, {"name": "knowledge-tier system", "type": "TOOL", "context": "system for capturing and storing worldview positions"}], "relationships": [{"from": "V", "to": "knowledge-tier system", "type": "USES", "context": "V uses this system to capture and store worldview positions"}]}

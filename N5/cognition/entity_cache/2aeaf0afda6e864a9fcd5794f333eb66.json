@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual mentioned in the text"}, {"name": "tech", "type": "CONCEPT", "context": "type of technology related to investment"}], "relationships": [{"from": "V", "to": "tech", "type": "KNOWS", "context": "V knows about the type of tech the company is investing in"}]}

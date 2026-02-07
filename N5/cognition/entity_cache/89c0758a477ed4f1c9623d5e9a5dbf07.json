@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "known individual in the context"}, {"name": "Careerspan Company", "type": "ORG", "context": "organization mentioned in the text"}], "relationships": [{"from": "V", "to": "Careerspan Company", "type": "WORKS_WITH", "context": "V's focus on the Careerspan Company LinkedIn page"}]}

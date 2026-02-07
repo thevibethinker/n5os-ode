@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker providing information about a knowledge system"}, {"name": "Marvin Ventures", "type": "ORG", "context": "McKinsey's unofficial alumni fund"}], "relationships": [{"from": "Vrijen Attawar", "to": "Marvin Ventures", "type": "MENTIONS", "context": "Discussing job postings through Careers Fan"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Shivam", "type": "PERSON", "context": "person outlining the value chain"}, {"name": "CareerSpan", "type": "ORG", "context": "organization that receives the JDs as output"}], "relationships": [{"from": "Shivam", "to": "CareerSpan", "type": "MENTIONS", "context": "organization to which JDs are routed"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "Person who initiates the knowledge system process"}, {"name": "update_dashboard.py", "type": "TOOL", "context": "Script used to update the dashboard"}], "relationships": [{"from": "V (Vrijen)", "to": "update_dashboard.py", "type": "USES", "context": "V uses the script to update the dashboard"}]}

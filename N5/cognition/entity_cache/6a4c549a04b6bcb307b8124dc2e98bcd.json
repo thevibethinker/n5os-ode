@@ -1,0 +1,1 @@
+{"entities": [{"name": "Jake Weissbourd", "type": "PERSON", "context": "mentioned speaker"}, {"name": "Distance Education Accrediting Commission", "type": "ORG", "context": "organization related to education accreditation"}], "relationships": [{"from": "Jake Weissbourd", "to": "Distance Education Accrediting Commission", "type": "MENTIONS", "context": "advises against"}]}

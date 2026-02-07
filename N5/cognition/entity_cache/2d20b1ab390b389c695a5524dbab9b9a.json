@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ryan", "type": "PERSON", "context": "Teaches through stories and shares experiences"}, {"name": "Blend project", "type": "CONCEPT", "context": "Project related to Ryan's burnout experience"}], "relationships": [{"from": "Ryan", "to": "Blend project", "type": "RELATED_TO", "context": "Ryan's experience relates to the Blend project"}]}

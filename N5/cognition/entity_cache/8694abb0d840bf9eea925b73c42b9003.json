@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual making decisions"}, {"name": "Tope", "type": "PERSON", "context": "person V is excited to work with"}], "relationships": [{"from": "V", "to": "Tope", "type": "WORKS_WITH", "context": "V is excited to work directly with Tope"}]}

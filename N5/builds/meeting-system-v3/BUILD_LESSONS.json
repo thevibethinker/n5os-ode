@@ -1,0 +1,49 @@
+{
+  "slug": "meeting-system-v3",
+  "learnings": [
+    {
+      "text": "When merging prompts: Preserve the richer structure (B05's decomposition) while adding the distinct value from the simpler prompt (B02's accountability chain). Link them with a new field (Commitment: Yes/No) rather than duplicating content.",
+      "source": "manual",
+      "added_at": "2026-02-01T09:01:47.243748+00:00",
+      "tags": []
+    },
+    {
+      "text": "D1.1: Inbox state differs significantly from earlier debugging context: 5 raw files and 3 folders (vs expected 6 files and 67 folders). State may have changed or earlier context was from different path. Always re-scan before assuming.",
+      "source": "manual",
+      "added_at": "2026-02-01T09:01:53.530592+00:00",
+      "tags": []
+    },
+    {
+      "text": "Trigger structure in BLOCK_INDEX.yaml: B00 includes self-referential 'deferred_intent' trigger pattern (zo take heed, zo remember) that maps back to B00. This allows B00 to capture Zo Take Heed moments while also serving as trigger source for B07/B14. D0.4 Smart Selector should handle this pattern where B00 is both a trigger scanner AND a trigger target.",
+      "source": "manual",
+      "added_at": "2026-02-01T17:38:09.605874+00:00",
+      "tags": [
+        "D0.3 triggers"
+      ]
+    },
+    {
+      "text": "D1.2: '2026-01-26_Collateral-Blitz_Logan_[P]' is already in Week-of-2026-01-26/ and should be removed from needs_archiving. Both flagged collisions are false positives - no true naming conflicts.",
+      "source": "manual",
+      "added_at": "2026-02-01T17:45:56.911287+00:00",
+      "tags": [
+        "migration,audit"
+      ]
+    },
+    {
+      "text": "D1.2: Audit tool issues found: (1) checks 'version' field instead of 'manifest_version' for version detection, (2) counts manifest entries instead of actual block files. These are minor and don't affect migration integrity.",
+      "source": "manual",
+      "added_at": "2026-02-01T17:46:15.529041+00:00",
+      "tags": [
+        "audit-tool,bug"
+      ]
+    },
+    {
+      "text": "D1.2: _quarantine folder exists with 4 transcript files but no manifest.json. Appears to be a staging area but needs decision from V before migration (delete or preserve?). Not auto-migratable.",
+      "source": "manual",
+      "added_at": "2026-02-01T17:47:46.404428+00:00",
+      "tags": [
+        "D1.2 quarantine staging"
+      ]
+    }
+  ]
+}

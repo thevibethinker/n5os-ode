@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "a career platform"}, {"name": "university strategy", "type": "CONCEPT", "context": "strategic approach of universities"}], "relationships": [{"from": "Careerspan", "to": "university strategy", "type": "RELATED_TO", "context": "Careerspan's moat against other career platforms is tied to university strategy"}]}

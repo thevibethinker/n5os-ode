@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "the individual discussing engineering hires"}, {"name": "engineering hires", "type": "CONCEPT", "context": "reference to recruiting for engineering positions"}, {"name": "burnout", "type": "CONCEPT", "context": "describing a state of mental or physical collapse due to overwork"}], "relationships": []}

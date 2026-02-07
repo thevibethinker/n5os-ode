@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "individual with coding capabilities"}, {"name": "Emory meeting", "type": "EVENT", "context": "meeting without technical blockers"}], "relationships": [{"from": "Vrijen", "to": "Emory meeting", "type": "KNOWS", "context": "attended a meeting"}]}

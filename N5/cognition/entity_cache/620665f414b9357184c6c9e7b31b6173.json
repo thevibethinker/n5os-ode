@@ -1,0 +1,1 @@
+{"entities": [{"name": "Manifest", "type": "CONCEPT", "context": "a classification system"}, {"name": "B14_BLURBS_REQUESTED.jsonl", "type": "TOOL", "context": "a file set related to output generation"}], "relationships": [{"from": "Manifest", "to": "B14_BLURBS_REQUESTED.jsonl", "type": "RELATED_TO", "context": "Manifest classification relates to the B14 generation process"}]}

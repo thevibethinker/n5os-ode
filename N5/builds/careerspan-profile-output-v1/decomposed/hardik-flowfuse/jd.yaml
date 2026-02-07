@@ -1,0 +1,103 @@
+company: FlowFuse
+role: Fullstack Engineer (AI-Focused)
+type: fulltime
+location: remote
+remote_details: US-based, async-first, distributed across time zones
+
+responsibilities:
+  - id: R1
+    text: "Applied AI Feature Development: Designing and building AI-powered features and tooling used by customers and internal teams"
+    category: core
+  - id: R2
+    text: "End-to-End Delivery: Owning fullstack solutions that include frontend, backend, and AI components"
+    category: core
+  - id: R3
+    text: "Capability Building: Establishing patterns, guardrails, and examples that other engineers can safely build on"
+    category: core
+  - id: R4
+    text: "Reliability and Safety: Ensuring AI features behave predictably in production, including fallback behavior and observability"
+    category: core
+  - id: R5
+    text: "Collaboration: Working closely with Product, Design, and Engineering peers to scope and deliver AI-driven solutions"
+    category: core
+
+core_tasks:
+  - id: T1
+    text: "Integrate LLM APIs and AI services into FlowFuse features and tooling"
+  - id: T2
+    text: "Build backend services and frontend interfaces that support AI-powered workflows"
+  - id: T3
+    text: "Prototype, evaluate, and productionize AI features with clear scope and guardrails"
+  - id: T4
+    text: "Design for AI failure modes, latency, cost, and operational constraints"
+  - id: T5
+    text: "Ensure AI features align with privacy, security, and SOC 2 requirements"
+  - id: T6
+    text: "Share best practices and patterns for applied AI across the engineering team"
+  - id: T7
+    text: "Contribute to broader fullstack product work as priorities evolve"
+
+not_responsible_for:
+  - "Training or fine-tuning foundational models"
+  - "Conducting academic or exploratory ML research"
+  - "Owning company-wide AI strategy"
+  - "Replacing sound engineering judgment with automation"
+
+requirements:
+  - id: REQ1
+    text: "Strong experience working across the full stack"
+    type: required
+  - id: REQ2
+    text: "Demonstrated experience shipping AI-powered features to production"
+    type: required
+  - id: REQ3
+    text: "Hands-on experience integrating LLM APIs into real systems"
+    type: required
+  - id: REQ4
+    text: "Familiarity with embeddings, vector search, or retrieval-augmented generation"
+    type: required
+  - id: REQ5
+    text: "Strong judgment around AI tradeoffs, failure modes, cost, and observability"
+    type: required
+  - id: REQ6
+    text: "Ability to design AI systems that others can safely extend"
+    type: required
+  - id: REQ7
+    text: "Experience shipping small, well-scoped changes incrementally"
+    type: required
+  - id: REQ8
+    text: "Comfort working in a remote, async-first environment across multiple time zones"
+    type: required
+  - id: REQ9
+    text: "Pragmatic use of AI tools to accelerate development and improve outcomes"
+    type: preferred
+
+culture_signals:
+  - "Remote-first"
+  - "Async-first"
+  - "Small team"
+  - "Slack-based collaboration"
+  - "Personality-forward (custom emoji question)"
+  - "AI tools encouraged"
+  - "Pragmatic over perfect"
+
+hiring_process:
+  - stage: "Resume Review"
+    description: "Review resumes and relevant experience. Conducted by hiring manager."
+  - stage: "Screening Call"
+    duration: "15 minutes"
+    description: "Role fit, communication, alignment with FlowFuse way of working"
+  - stage: "Engineering Manager Call"
+    duration: "45 minutes"
+    description: "FlowFuse direction, applied AI use cases, team dynamics, role expectations"
+  - stage: "Take-Home Assignment"
+    duration: "2-3 hours (unpaid)"
+    description: "Build AI-powered feature/tool OR contribute AI-related PR. AI tools explicitly allowed."
+  - stage: "Technical Interview"
+    duration: "60 minutes"
+    description: "Review take-home with 2-3 team members. Focus on AI design decisions, tradeoffs, reliability."
+  - stage: "Team Interview"
+    duration: "45 minutes"
+    description: "Collaboration, communication style, cross-functional working"
+  - stage: "Offer"
+    description: "Extend offer to selected candidate"

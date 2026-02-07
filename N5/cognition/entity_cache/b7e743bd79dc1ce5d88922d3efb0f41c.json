@@ -1,0 +1,1 @@
+{"entities": [{"name": "Teal", "type": "ORG", "context": "organization presence suggesting shared network/market"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "the subject of the knowledge system analysis"}], "relationships": [{"from": "Teal", "to": "V (Vrijen)", "type": "RELATED_TO", "context": "Teal's presence indicates a potential connection with V's network"}]}

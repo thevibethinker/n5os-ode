@@ -1,0 +1,1 @@
+{"entities": [{"name": "Slack", "type": "ORG", "context": "a communication tool"}, {"name": "Stuart", "type": "PERSON", "context": "a colleague known for being empathetic"}], "relationships": [{"from": "V", "to": "Stuart", "type": "WORKS_WITH", "context": "worked together at Slack"}, {"from": "V", "to": "Slack", "type": "USES", "context": "refers to Slack as a tool they love"}]}

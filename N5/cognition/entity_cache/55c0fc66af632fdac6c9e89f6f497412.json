@@ -1,0 +1,1 @@
+{"entities": [{"name": "Mishal", "type": "PERSON", "context": "individual connected to Uber"}, {"name": "Uber", "type": "ORG", "context": "company associated with transportation and technology"}], "relationships": [{"from": "Mishal", "to": "Uber", "type": "KNOWS", "context": "Mishal can introduce key contacts within Uber"}]}

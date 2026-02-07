@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "owner of the Meeting Intelligence Generator"}, {"name": "Meeting Intelligence Generator [MG-2]", "type": "TOOL", "context": "a capability focused on meeting intelligence"}], "relationships": [{"from": "V", "to": "Meeting Intelligence Generator [MG-2]", "type": "OWNS", "context": "V is the owner of the tool"}]}

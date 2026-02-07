@@ -1,0 +1,1 @@
+{"entities": [{"name": "AAR generation", "type": "CONCEPT", "context": "A process or method for generating AARs."}, {"name": "thread-pause", "type": "TOOL", "context": "A command used in the knowledge system."}], "relationships": [{"from": "thread-pause", "to": "AAR generation", "type": "USES", "context": "thread-pause command runs AAR generation."}]}

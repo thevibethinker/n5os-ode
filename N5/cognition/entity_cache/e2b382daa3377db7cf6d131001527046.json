@@ -1,0 +1,1 @@
+{"entities": [{"name": "v2.0", "type": "CONCEPT", "context": "the version of the knowledge system being discussed"}, {"name": "v1.0 system", "type": "CONCEPT", "context": "the previous version of the knowledge system"}], "relationships": [{"from": "v1.0 system", "to": "v2.0", "type": "RELATED_TO", "context": "v2.0 rebuild replaces v1.0 system"}]}

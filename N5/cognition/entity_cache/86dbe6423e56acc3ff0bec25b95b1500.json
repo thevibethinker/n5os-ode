@@ -1,0 +1,1 @@
+{"entities": [{"name": "Shivam", "type": "PERSON", "context": "network in India"}], "relationships": [{"from": "V", "to": "Shivam", "type": "KNOWS", "context": "Shivam's network in India is leveraged"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "executables.db", "type": "TOOL", "context": "registry that stores data for AI"}, {"name": "Reference files", "type": "CONCEPT", "context": "living documents providing contextual knowledge to AI"}], "relationships": []}

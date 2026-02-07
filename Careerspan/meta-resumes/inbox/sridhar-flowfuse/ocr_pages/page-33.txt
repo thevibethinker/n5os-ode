@@ -1,0 +1,48 @@
+Excellent System-level thinking Required: Intermediate 3/4 Importance: 8/10 Story+profile wv ~
+
+Ourtake Basedonresume ~ Direct
+
+Alignment to skill: System-level thinking requires understanding interdependent components, making
+architecture tradeoffs (reliability, cost, security, UX), and designing solutions that consider downstream
+effects. The resume includes multiple examples where the candidate designed multi-stage pipelines,
+architectural patterns, and operational controls rather than isolated features.
+
+Direct evidence from resume: At EclecticlQ the candidate describes architecting a modular, scalable Al
+assistant that decoupled synchronous Flask backends from asynchronous Al protocols (MCP), introduced
+entity-based context, and implemented a custom Human-in-the-Loop approval system — explicitly citing
+tradeoffs (reduced token usage by 60%) and operational constraints (smaller LLMs, limited async support,
+legacy systems). They also built a multi-stage automated report-generation pipeline, FaithfulRAG extensions
+to reduce hallucinations, dual-LLM support, a public MCP server for third-party Al clients, Text-to-Lucene
+multi-index RAG, guardrails and feedback loops, and a contextual search system for 100M+ entities. These are
+architectural decisions that account for scale, cost, reliability, and integration across Al, backend, and
+product.
+
+Transferable & supporting experience: Earlier roles show system-aware work: built a capacity planning system
+(time-series forecasting across global regions), transactional anomaly detection with strict latency targets
+(<300ms), multi-threaded model serving (Python/Django) to reduce latency, table parsing and product
+matching systems at scale (>95% acc), and end-to-end product delivery as the sole ML engineer at Cyware.
+Running an Al consultancy and leading Al initiatives (including guiding a team of 8+ researchers) further
+supports experience balancing product, engineering, and stakeholder needs.
+
+Proficiency & outcomes: The resume reports measurable system-level outcomes (token reduction,
+correctness/recall improvements, schema adherence, production deployments, latency targets, accuracy
+metrics) indicating the candidate not only designed systems but measured their cross-cutting impact. They
+also describe building reusable patterns (guardrails, feedback loops, dual LLM support, MCP server) that
+suggest influence beyond single components.
+
+Gaps / caveats: The resume has strong backend and Al-architecture evidence; explicit frontend/UX tradeoff
+examples are less prominent. While many entries indicate cross-functional collaboration with product and
+sales, there is less explicit evidence of organization-wide policy codification or external recognition as a
+systems architect.
+
+Judgment: The resume convincingly demonstrates system-level thinking through repeated architectural
+decisions, operational tradeoffs, and measurable cross-component outcomes, with direct examples of
+designing for constraints, reliability, and scalability.
+
+Support
+Stories
+kftowPdjyQB3CaisjIPn Direct 7/10 Good
+qoWHeLzqkOMMI5PwcH IL Direct 8/10 Excellent Best
+Resume
+
+Resume match Direct 8/10 Excellent

@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Referencing the individual using the knowledge system"}, {"name": "Akiflow", "type": "TOOL", "context": "Calendar reader tool being set up as a workflow"}], "relationships": [{"from": "V", "to": "Akiflow", "type": "USES", "context": "V is setting up Akiflow as a tool for the workflow"}]}

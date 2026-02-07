@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual involved in knowledge system"}, {"name": "Claude Sonnet 4.5", "type": "TOOL", "context": "model used for meeting transcript processing"}], "relationships": [{"from": "V", "to": "Claude Sonnet 4.5", "type": "USES", "context": "V employs Claude Sonnet 4.5 for processing meetings"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "organization mentioned that has PM/Designer roles"}], "relationships": [{"from": "Vrijen", "to": "Careerspan", "type": "KNOWS", "context": "Vrijen noted the roles in Careerspan"}]}

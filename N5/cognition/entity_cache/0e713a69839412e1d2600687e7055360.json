@@ -1,0 +1,1 @@
+{"entities": [{"name": "CalculateMetadataFunction", "type": "CONCEPT", "context": "a function used for calculating metadata"}, {"name": "staticFile", "type": "TOOL", "context": "a method for accessing static files"}, {"name": "animation.gif", "type": "TOOL", "context": "a GIF file used in the calculation"}], "relationships": []}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual mentioned"}, {"name": "puppeteer", "type": "TOOL", "context": "npm package for browser automation"}], "relationships": [{"from": "V (Vrijen)", "to": "puppeteer", "type": "USES", "context": "V uses puppeteer as a tool for browser automation"}]}

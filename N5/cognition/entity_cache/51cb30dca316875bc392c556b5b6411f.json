@@ -1,0 +1,1 @@
+{"entities": [{"name": "well-funded players", "type": "ORG", "context": "entities V is positioning for acquisition by"}], "relationships": [{"from": "V", "to": "well-funded players", "type": "RELATED_TO", "context": "V is focusing on positioning for acquisition"}]}

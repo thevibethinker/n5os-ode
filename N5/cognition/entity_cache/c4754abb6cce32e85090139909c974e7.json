@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Main subject of the knowledge system"}, {"name": "Lensa", "type": "ORG", "context": "Partnership involved in the exploration pilot"}, {"name": "Partnership exploration pilot", "type": "EVENT", "context": "Specific project related to Lensa"}], "relationships": []}

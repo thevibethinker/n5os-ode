@@ -1,0 +1,20 @@
+# Candidate Profile - Background & Education
+# Source: Careerspan Intelligence Brief
+# DO NOT EDIT - Preserves Careerspan conclusions verbatim
+
+name: "Hardik Choudhary"
+display_name: "H."  # Anonymized for external sharing
+current_role: "Founding Engineer"
+current_company: "Keysight Technologies"
+
+education:
+  - institution: "IIT Delhi"
+    degree: "B.Tech + M.Tech (Dual Degree)"
+    field: "Computer Science"
+    dates: "May 2016 - Apr 2021"
+    honors:
+      - "JEE Advanced Rank: 47 out of 14 million (99.97 percentile)"
+
+location: "India (Remote-capable)"
+
+linkedin: "linkedin.com/in/hardik-choudhary"

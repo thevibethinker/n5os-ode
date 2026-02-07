@@ -1,0 +1,35 @@
+languages:
+  - "Python"
+  - "Java"
+  - "JavaScript"
+frameworks:
+  - "Spring Boot"
+  - "React"
+  - "LangChain"
+  - "FastAPI"
+databases:
+  - "Couchbase"
+  - "BigQuery"
+infrastructure:
+  - "AWS"
+  - "Kubernetes"
+  - "MLflow"
+  - "Airflow"
+  - "CI/CD"
+  - "Google Cloud Platform"
+  - "Hadoop"
+  - "Spark"
+  - "Apache Beam"
+  - "Dataflow"
+  - "Superset"
+ai_ml:
+  - "MLflow"
+  - "LangChain"
+  - "RAG techniques"
+  - "MLOps"
+not_mentioned:
+  - "SOC 2"
+  - "GDPR"
+  - "Vector stores"
+  - "Embedding stacks"
+  - "LLM providers"

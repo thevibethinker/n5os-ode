@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Careerspan founder"}, {"name": "Dylan Lieberman", "type": "PERSON", "context": "Amphoria co-founder, Cornell student"}], "relationships": [{"from": "Vrijen Attawar", "to": "Dylan Lieberman", "type": "WORKS_WITH", "context": "both involved in organizations related to career development"}]}

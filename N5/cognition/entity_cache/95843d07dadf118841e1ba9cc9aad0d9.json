@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "Founder with a focus on founder needs"}, {"name": "Pam", "type": "PERSON", "context": "Partner aligned with Vrijen on founder needs"}], "relationships": [{"from": "V (Vrijen)", "to": "Pam", "type": "WORKS_WITH", "context": "Both focus on founder needs over feature bloat"}]}

@@ -1,0 +1,66 @@
+---
+created: 2026-02-03
+last_edited: 2026-02-03
+version: 1.0
+provenance: con_LFJ7YTSwxW5vh4bD
+
+# JD ↔ Candidate Alignment Analysis
+
+role: "Founding Full-Stack Engineer"
+company: "Docsum"
+
+alignment_summary: |
+  Hardik is well-aligned for this founding engineer role. His zero-to-one experience at Keysight
+  (scaling ML platform from 4 engineers to 20, adopted by Apple/Samsung/Volkswagen) directly 
+  mirrors what Docsum needs. Strong full-stack capabilities across Python, FastAPI, React, and 
+  AWS. Manageable gaps in Next.js and PostgreSQL specifics (React and database experience 
+  are transferable). Main domain gap is contract/legaltech experience.
+
+strengths_aligned:
+  - requirement: "Own features end-to-end"
+    evidence: "10/10 - Founding engineer at Keysight, solo product leader at AmEx"
+    
+  - requirement: "Build core systems"
+    evidence: "10/10 - Architected ML SaaS platform from scratch"
+    
+  - requirement: "Make technical decisions"
+    evidence: "10/10 - MinIO over S3, Kubernetes, vendor-agnostic architecture"
+    
+  - requirement: "Ship rapidly"
+    evidence: "9/10 - Model-to-production from hours to minutes, CI/CD 95% automation"
+    
+  - requirement: "Python + FastAPI"
+    evidence: "9/10 - Primary stack at Keysight, production microservices"
+    
+  - requirement: "AWS"
+    evidence: "9/10 - Dynamic resource provisioning, infrastructure automation"
+    
+  - requirement: "Ownership mindset"
+    evidence: "10/10 - Strongest signal in profile"
+
+gaps_to_address:
+  - requirement: "Next.js"
+    gap: "Not explicitly called out (React is strong)"
+    mitigation: "Short ramp expected - SSR/ISR patterns learnable"
+    
+  - requirement: "PostgreSQL"
+    gap: "Experience skewed toward Couchbase/BigQuery"
+    mitigation: "Strong database fundamentals, Postgres-specific tuning learnable"
+    
+  - requirement: "Document processing"
+    gap: "No OCR/PDF parsing/contract extraction experience"
+    mitigation: "RAG/LLM experience provides foundation"
+    
+  - requirement: "Legaltech domain"
+    gap: "No prior legaltech or contract analysis work"
+    mitigation: "Quick learner, adjacent ML/document experience"
+
+interview_focus_areas:
+  - "Probe Next.js/SSR experience or willingness to ramp"
+  - "Explore database design thinking (relational specifically)"
+  - "Discuss document processing approaches"
+  - "Validate async-first remote work style"
+  - "Understand what draws him to contract/legal domain"
+
+hiring_recommendation: "STRONG_YES"
+confidence: "High"

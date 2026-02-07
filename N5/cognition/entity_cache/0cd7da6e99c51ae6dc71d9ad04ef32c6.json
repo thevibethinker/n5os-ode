@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual discussed in the conversation"}, {"name": "senior IC roles", "type": "CONCEPT", "context": "type of job role mentioned in interest"}], "relationships": [{"from": "V (Vrijen)", "to": "senior IC roles", "type": "MENTIONS", "context": "expressed interest in senior IC roles"}]}

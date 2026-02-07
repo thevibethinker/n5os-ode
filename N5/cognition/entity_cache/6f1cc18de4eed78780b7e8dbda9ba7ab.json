@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "Community Leader with valuable operations knowledge"}, {"name": "Andrew", "type": "PERSON", "context": "Direct decision-maker for network access"}], "relationships": [{"from": "V (Vrijen)", "to": "Andrew", "type": "WORKS_WITH", "context": "V is not the decision-maker but relies on Andrew for network access"}]}

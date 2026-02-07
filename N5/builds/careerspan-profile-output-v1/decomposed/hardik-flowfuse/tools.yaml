@@ -1,0 +1,56 @@
+# Tools & Technologies
+# Source: Careerspan Intelligence Brief
+# DO NOT EDIT - Preserves Careerspan conclusions verbatim
+
+languages:
+  proficient:
+    - "Python"
+    - "Java"
+    - "JavaScript"
+  familiar:
+    - "TypeScript"  # Inferred from React work
+  not_evidenced:
+    - "Node.js"  # Gap for FlowFuse
+
+frameworks:
+  backend:
+    - "Spring Boot"
+    - "FastAPI"  # Inferred from Python ML work
+  frontend:
+    - "React"
+  ml_ai:
+    - "LangChain"
+    - "MLflow"
+    - "Airflow"
+
+infrastructure:
+  containers:
+    - "Docker"
+    - "Kubernetes"
+  cloud:
+    - "AWS"
+  cicd:
+    - "CI/CD pipelines (unspecified tooling)"
+
+databases:
+  evidenced:
+    - "Vector databases (for RAG)"
+  likely:
+    - "PostgreSQL"
+    - "MongoDB"
+  not_documented: true
+
+ai_ml_specific:
+  llm_integration:
+    - "LangChain"
+    - "RAG implementation"
+  embeddings: true
+  vector_search: true
+  mlops:
+    - "MLflow"
+    - "Model versioning"
+    - "Experiment tracking"
+  not_evidenced:
+    - "LLM observability platforms (LangSmith, etc.)"
+    - "AI guardrail frameworks"
+    - "Prompt management systems"

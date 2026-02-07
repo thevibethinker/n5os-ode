@@ -1,0 +1,1 @@
+{"entities": [{"name": "Employer Password API", "type": "TOOL", "context": "API used to set employer passwords"}, {"name": "lead/role", "type": "CONCEPT", "context": "Default role provisioned for an employer"}], "relationships": []}

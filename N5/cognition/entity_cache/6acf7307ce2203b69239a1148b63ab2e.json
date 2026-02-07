@@ -1,0 +1,1 @@
+{"entities": [{"name": "Daniel Williams", "type": "PERSON", "context": "Stakeholder in networking from a meeting"}, {"name": "meeting", "type": "EVENT", "context": "Meeting held on 2025-09-08"}], "relationships": [{"from": "Daniel Williams", "to": "meeting", "type": "WORKS_WITH", "context": "Participated in a networking meeting"}]}

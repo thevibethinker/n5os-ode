@@ -1,0 +1,1 @@
+{"entities": [{"name": "error report", "type": "CONCEPT", "context": "a report generated when blocked"}, {"name": "error-tracking-guide.md", "type": "TOOL", "context": "a file referenced for generating error reports"}], "relationships": [{"from": "error report", "to": "error-tracking-guide.md", "type": "USED", "context": "the report references the guide for generation"}]}

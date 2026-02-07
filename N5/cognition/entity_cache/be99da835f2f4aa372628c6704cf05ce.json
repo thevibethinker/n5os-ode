@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual establishing knowledge system"}, {"name": "Successful", "type": "CONCEPT", "context": "status of the knowledge system"}], "relationships": [{"from": "V", "to": "Successful", "type": "BELIEVES", "context": "V believes the status is successful"}]}

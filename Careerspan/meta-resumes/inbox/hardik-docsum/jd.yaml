@@ -1,0 +1,84 @@
+---
+created: 2026-02-04
+last_edited: 2026-02-04
+version: "1.0"
+provenance: con_OrHj3khmdmCmJQOB
+---
+
+title: Founding Engineer (Fullstack)
+company: Docsum
+company_description: |
+  Early-stage, well-funded startup building an AI-powered contract repository 
+  to help businesses organize and analyze contracts efficiently.
+
+overview: |
+  Docsum seeks a founding full-stack engineer to own critical features end-to-end, 
+  influence technical direction, ship rapidly, communicate clearly in an async 
+  remote environment, and engage directly with users to shape the product. 
+  This role requires strong ownership, passion for building, problem-solving 
+  resilience, and a pragmatic approach to development in a fast-moving startup.
+
+responsibilities:
+  - Own features end-to-end
+  - Build core systems
+  - Make technical decisions
+  - Contribute to company direction
+  - Prototype rapidly
+  - Manage technical risks
+  - Solve problems pragmatically
+  - Communicate constantly
+  - Document work clearly
+  - Set engineering culture
+  - Talk to users directly
+  - Work collaboratively
+  - Improve the codebase
+  - Grow with the team
+  - Support onboarding
+
+hard_skills:
+  - Full-stack development
+  - Python
+  - Schema design
+  - Technical documentation
+  - Next.js
+  - PostgreSQL
+  - React
+  - Document processing
+  - AI and Large Language Model (LLM) integration
+  - AWS
+  - Async job processing
+  - SQL query optimization
+  - FastAPI
+  - Data extraction
+  - Event-driven architecture
+
+soft_skills:
+  - Proactive problem solving
+  - Self-motivation
+  - Clear written communication
+  - Ownership
+  - Proactive communication
+  - Pragmatic decision making
+  - Low ego collaboration
+  - Fast-paced delivery
+  - Remote and asynchronous work
+  - Attention to detail
+  - Curiosity
+  - Technical explanation
+  - Optimism and resilience
+  - Continuous improvement
+  - Customer collaboration
+
+work_environment:
+  - Remote-first
+  - Async communication
+  - Fast-paced startup
+  - Early-stage company
+
+tech_stack:
+  - Next.js
+  - PostgreSQL
+  - Python
+  - FastAPI
+  - AWS
+  - React

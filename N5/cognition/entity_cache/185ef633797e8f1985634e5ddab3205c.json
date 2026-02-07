@@ -1,0 +1,1 @@
+{"entities": [{"name": "Cora", "type": "TOOL", "context": "Knowledge system explored by V"}], "relationships": [{"from": "V", "to": "Cora", "type": "USES", "context": "V is exploring Cora"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Zo", "type": "ORG", "context": "demo link and website related to power users"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "the individual associated with the knowledge system"}], "relationships": [{"from": "V (Vrijen)", "to": "Zo", "type": "USES", "context": "V utilizes Zo for demo and information about power users"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Marcus Williams", "type": "PERSON", "context": "Recruiting Lead at Quantum Labs"}, {"name": "Quantum Labs", "type": "ORG", "context": "Organization where Marcus Williams works"}], "relationships": [{"from": "Marcus Williams", "to": "Quantum Labs", "type": "WORKS_WITH", "context": "Marcus is the Recruiting Lead at Quantum Labs"}]}

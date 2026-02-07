@@ -1,0 +1,32 @@
+---
+created: 2026-02-01
+last_edited: 2026-02-01
+version: 1.0
+provenance: con_7fR5qWFds2TAonyD
+description: V's high-level life priorities — canonical source referenced by all N5 systems
+---
+
+# V's Priority Domains
+
+priorities:
+  - id: career
+    name: Career
+    description: Professional growth, reputation, opportunities
+    
+  - id: business
+    name: Business
+    description: Careerspan success, revenue, partnerships, product
+    current_focus:
+      - Driving Careerspan recruiting revenue
+    
+  - id: personal
+    name: Personal
+    description: Learning, creativity, projects, identity
+    
+  - id: health
+    name: Health
+    description: Physical, mental, energy, longevity
+    
+  - id: relationship
+    name: Relationship
+    description: Family, friends, community, social bonds

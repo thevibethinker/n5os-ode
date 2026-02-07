@@ -1,0 +1,1 @@
+{"entities": [{"name": "transform function", "type": "CONCEPT", "context": "a process applied to data to obtain a transformed result"}, {"name": "filesystem I/O", "type": "CONCEPT", "context": "input/output operations related to file storage"}, {"name": "configuration", "type": "CONCEPT", "context": "settings or parameters used in a system or application"}], "relationships": []}

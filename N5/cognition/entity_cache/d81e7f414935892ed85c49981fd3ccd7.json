@@ -1,0 +1,1 @@
+{"entities": [{"name": "FutureFit", "type": "ORG", "context": "a startup"}, {"name": "Uber", "type": "ORG", "context": "current employer"}], "relationships": [{"from": "V", "to": "FutureFit", "type": "WORKS_WITH", "context": "V is associated with the startup FutureFit"}, {"from": "V", "to": "Uber", "type": "WORKS_WITH", "context": "V's current employer is Uber"}]}

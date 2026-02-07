@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ryan", "type": "PERSON", "context": "go-to person for UX feedback"}, {"name": "Careerspan", "type": "ORG", "context": "executed early feedback"}], "relationships": [{"from": "Ryan", "to": "Careerspan", "type": "WORKS_WITH", "context": "executes on early feedback"}]}

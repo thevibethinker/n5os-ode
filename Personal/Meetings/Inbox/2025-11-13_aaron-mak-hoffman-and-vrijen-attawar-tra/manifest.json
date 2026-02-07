@@ -1,0 +1,79 @@
+{
+  "$schema": "manifest-v3",
+  "meeting_id": "2025-11-13_aaron-mak-hoffman-and-vrijen-attawar-tra",
+  "status": "ingested",
+  "status_history": [
+    {
+      "status": "raw",
+      "at": "2026-02-06T16:33:22.291181+00:00"
+    },
+    {
+      "status": "ingested",
+      "at": "2026-02-06T16:33:22.291181+00:00"
+    }
+  ],
+  "source": {
+    "type": "manual",
+    "original_filename": "2025-11-13_Aaron_Mak_Hoffman_and_Vrijen_Attawar-transcript-2025-11-13T21-28-17.185Z.md",
+    "ingested_at": "2026-02-06T16:33:22.291181+00:00"
+  },
+  "meeting": {
+    "date": "2025-11-13",
+    "time_utc": "12:00:00",
+    "duration_minutes": 36,
+    "title": "Aaron Mak Hoffman And Vrijen Attawar Transcript 2025 11 13t21 28 17.185z",
+    "type": "external",
+    "summary": "Vrijen Attawar demonstrated his AI automation system to Aaron Mak Hoffman, showcasing an automated pipeline that ingests meeting transcripts from Google Drive to generate personalized follow-up emails and analytical \"B blocks\" using customizable AI personas. The discussion centered on two approaches to AI workflow management: Vrijen's multi-persona system (Vibe Operator, Builder, Writer, and Teacher) that automatically switches contexts based on tasks, versus Aaron's repository-based approach embedding repeatable processes as prompts within rules and agents. Both participants explored their knowledge management architectures, with Vrijen describing a three-tier system of raw data, content library, and sacred knowledge base, while comparing strategies for making AI interactions more reliable and context-aware through persona switching and embedded prompt libraries."
+  },
+  "participants": {
+    "identified": [
+      {
+        "name": "Aaron Mak Hoffman",
+        "email": null,
+        "crm_id": null,
+        "role": "attendee",
+        "confidence": 0.8
+      },
+      {
+        "name": "V",
+        "email": null,
+        "crm_id": null,
+        "role": "host",
+        "confidence": 0.8
+      }
+    ],
+    "unidentified": [],
+    "confidence": 0.8
+  },
+  "calendar_match": null,
+  "quality_gate": {
+    "passed": true,
+    "checks": {
+      "has_transcript": true,
+      "participants_identified": true,
+      "meeting_type_determined": false,
+      "no_hitl_pending": true
+    },
+    "score": 0.7
+  },
+  "blocks": {
+    "policy": "external_standard",
+    "requested": [],
+    "generated": [],
+    "failed": [],
+    "skipped": []
+  },
+  "hitl": {
+    "queue_id": null,
+    "reason": null,
+    "resolved_at": null
+  },
+  "timestamps": {
+    "created_at": "2026-02-06T16:33:22.291181+00:00",
+    "ingested_at": "2026-02-06T16:33:22.291181+00:00",
+    "identified_at": null,
+    "gated_at": null,
+    "processed_at": null,
+    "archived_at": null
+  }
+}

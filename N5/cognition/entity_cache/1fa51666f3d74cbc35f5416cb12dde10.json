@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual related to the knowledge system"}, {"name": "Superposition", "type": "ORG", "context": "organization associated with coaching roles and gaps"}], "relationships": [{"from": "V (Vrijen)", "to": "Superposition", "type": "MENTIONS", "context": "refers to Superposition in the context of coaching roles"}]}

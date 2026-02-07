@@ -1,0 +1,1 @@
+{"entities": [{"name": "Mai Flynn", "type": "PERSON", "context": "Participant in the conversation"}, {"name": "appcast", "type": "TOOL", "context": "A tool mentioned for setting up a test"}], "relationships": [{"from": "Mai Flynn", "to": "appcast", "type": "MENTIONS", "context": "Mai Flynn mentions the tool appcast for setting up a test"}]}

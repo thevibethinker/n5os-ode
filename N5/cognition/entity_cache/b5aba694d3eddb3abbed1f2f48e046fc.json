@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "subject of the text"}, {"name": "McKinsey", "type": "ORG", "context": "organization Vrijen worked with"}], "relationships": [{"from": "Vrijen Attawar", "to": "McKinsey", "type": "WORKS_WITH", "context": "Vrijen was associated with McKinsey"}]}

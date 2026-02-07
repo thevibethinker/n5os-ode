@@ -1,0 +1,1 @@
+{"entities": [{"name": "Google Drive", "type": "TOOL", "context": "cloud storage platform"}, {"name": "Fireflies", "type": "TOOL", "context": "transcription service"}], "relationships": [{"from": "V", "to": "Google Drive", "type": "USES", "context": "to monitor folder"}, {"from": "V", "to": "Fireflies", "type": "USES", "context": "to auto-download transcripts"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "AI consultant"}, {"name": "Blue Tulip", "type": "ORG", "context": "independent consulting practice"}], "relationships": [{"from": "V", "to": "Blue Tulip", "type": "WORKS_WITH", "context": "V runs this consulting practice"}]}

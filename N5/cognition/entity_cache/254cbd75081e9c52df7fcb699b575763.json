@@ -1,0 +1,1 @@
+{"entities": [{"name": "Fei", "type": "PERSON", "context": "A person discussing workplace efficiencies and hiring practices."}, {"name": "nira", "type": "ORG", "context": "An organization mentioned in the context of employee satisfaction."}], "relationships": [{"from": "Fei", "to": "nira", "type": "MENTIONS", "context": "Fei discusses the workplace environment at nira."}]}

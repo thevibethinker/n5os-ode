@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "knowledge system provider"}, {"name": "Bennett", "type": "PERSON", "context": "seeking strategic guidance"}], "relationships": [{"from": "V", "to": "Bennett", "type": "WORKS_WITH", "context": "V provided advice to Bennett"}]}

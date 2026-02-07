@@ -1,0 +1,1 @@
+{"entities": [{"name": "Jacob Bank", "type": "PERSON", "context": "mentioned in relation to an automated process"}, {"name": "model", "type": "CONCEPT", "context": "related to automation in creating processes"}], "relationships": [{"from": "Jacob Bank", "to": "model", "type": "BELIEVES", "context": "discussion about automating creation processes"}]}

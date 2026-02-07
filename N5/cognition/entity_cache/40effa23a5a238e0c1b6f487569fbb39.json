@@ -1,0 +1,1 @@
+{"entities": [{"name": "UglifyJS", "type": "TOOL", "context": "JavaScript minification tool"}, {"name": "pure_getters", "type": "CONCEPT", "context": "default option for UglifyJS regarding property access"}], "relationships": [{"from": "UglifyJS", "to": "pure_getters", "type": "USES", "context": "UglifyJS uses pure_getters as an option to handle property access"}]}

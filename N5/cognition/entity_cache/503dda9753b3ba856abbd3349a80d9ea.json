@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "author of the guide"}, {"name": "guide", "type": "CONCEPT", "context": "everything you need to know guide"}], "relationships": [{"from": "Vrijen Attawar", "to": "guide", "type": "KNOWS", "context": "authoring the best guide on the Internet"}]}

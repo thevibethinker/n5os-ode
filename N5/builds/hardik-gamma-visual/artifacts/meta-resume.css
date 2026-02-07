@@ -1,0 +1,156 @@
+/* Careerspan + CorridorX Meta Resume - 2 Page Layout */
+
+:root {
+  --careerspan-lavender: #E8D4F8;
+  --careerspan-lavender-light: #F5EBFC;
+  --careerspan-navy: #1E1E3F;
+  --careerspan-purple: #6B21A8;
+}
+
+@page {
+  size: A4;
+  margin: 14mm 16mm 14mm 16mm;
+}
+
+body {
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  font-size: 8.5pt;
+  line-height: 1.4;
+  color: #1a1a2e;
+}
+
+/* Logo and branding */
+.logo img, img.logo {
+  display: block;
+  margin: 0 auto 2mm auto;
+  height: 12mm;
+}
+
+.brand-line {
+  text-align: center;
+  font-size: 7pt;
+  color: #64748b;
+  margin-bottom: 3mm;
+  letter-spacing: 0.5px;
+}
+
+/* Main title */
+h1 {
+  font-size: 16pt;
+  color: var(--careerspan-navy);
+  margin: 0 0 1mm 0;
+  text-align: center;
+}
+
+.role-line {
+  text-align: center;
+  font-size: 9pt;
+  color: #64748b;
+  margin-bottom: 3mm;
+}
+
+/* Verdict box */
+.verdict-box {
+  background: linear-gradient(135deg, var(--careerspan-lavender) 0%, var(--careerspan-lavender-light) 100%);
+  border-left: 3px solid var(--careerspan-purple);
+  padding: 3mm 4mm;
+  margin: 3mm 0;
+  text-align: center;
+  border-radius: 0 3px 3px 0;
+}
+
+.verdict-box strong {
+  font-size: 11pt;
+  color: var(--careerspan-navy);
+}
+
+/* Section headers */
+h2 {
+  font-size: 11pt;
+  color: var(--careerspan-navy);
+  border-bottom: 1.5px solid var(--careerspan-lavender);
+  padding-bottom: 1mm;
+  margin: 4mm 0 2mm 0;
+}
+
+h3 {
+  font-size: 9pt;
+  color: var(--careerspan-navy);
+  margin: 2mm 0 1mm 0;
+}
+
+/* Two column layout */
+.two-col {
+  display: flex;
+  gap: 4mm;
+}
+
+.col {
+  flex: 1;
+}
+
+.col ul {
+  margin: 0;
+  padding-left: 4mm;
+}
+
+.col li {
+  margin-bottom: 1mm;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 8pt;
+  margin: 2mm 0;
+}
+
+th {
+  background: var(--careerspan-lavender-light);
+  color: var(--careerspan-navy);
+  padding: 2mm 2mm;
+  text-align: left;
+  font-weight: 600;
+  border-bottom: 1px solid var(--careerspan-lavender);
+}
+
+td {
+  padding: 2mm 2mm;
+  border-bottom: 1px solid #e2e8f0;
+  vertical-align: top;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+/* Blockquotes for questions */
+blockquote {
+  background: #f8fafc;
+  border-left: 2px solid var(--careerspan-lavender);
+  margin: 2mm 0;
+  padding: 2mm 3mm;
+  font-size: 8pt;
+}
+
+blockquote strong {
+  color: var(--careerspan-navy);
+}
+
+/* Footer */
+.footer {
+  margin-top: 4mm;
+  padding-top: 2mm;
+  border-top: 1px solid var(--careerspan-lavender);
+  font-size: 7pt;
+  color: #64748b;
+  text-align: center;
+}
+
+/* Page break control */
+h2 { page-break-after: avoid; }
+h2 + *, h3 + * { page-break-before: avoid; }
+p { orphans: 3; widows: 3; }
+table { page-break-inside: avoid; }
+blockquote { page-break-inside: avoid; }

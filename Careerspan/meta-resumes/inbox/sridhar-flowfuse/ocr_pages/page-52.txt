@@ -1,0 +1,45 @@
+Good Incremental Software Delivery Required: Intermediate 3/5 Importance: 8/10 Story+profie  v
+
+Good Al Observability and Monitoring Required: Advanced 4/5 Importance: 8/10 Profle ~ «
+
+Ourtake Sasedonresume ~ Direct”
+
+Alignment to skill: Core components of Al observability include instrumentation (logs/metrics), detection of
+
+bad/edge-case outputs (hallucinations, schema violations), verification/approval workflows, feedback loops
+for retraining, and operational monitoring (latency, errors). Resume evidence: Multiple roles describe direct,
+
+production-facing work on Al systems with explicit emphasis on reliability and detection/mitigation of bad Al
+
+behavior. Examples:
+
+- EclecticiQ: built FaitnfulRAG to reduce hallucinations, introduced a custom Human-in-the-Loop approval
+system, implemented guardrails and feedback looping, measured outcomes (18% higher correctness, 84%
+prompt relevance, 97% schema adherence), and deployed a public MCP server for third-party Al clients — all
+indicating instrumentation, output verification, and production controls.
+
+- Cambridge University Press: implemented agentic response verification for the Student Companion System
+and an Automatic Marking System with accuracy tracking (~85%), showing verification and metric-driven
+assessment of Al outputs.
+
+~ Cyware Labs & Dell: built feedback loops for model improvement, multi-threaded inference to minimize
+latency, and transactional anomaly detection/capacity planning systems — demonstrating operational,
+production-oriented monitoring and detection experience (even if some is for non-LLM domains).
+
+Evaluate evidence for transferability: Much of the evidence is directly tied to Al/LLM features (RAG,
+hallucination mitigation, HITL. verification, schema adherence). Other examples (anomaly detection, capacity
+planning) are strong transferable parallels for building alerting/monitoring around production systems.
+
+Gaps vs. success criteria: The resume lacks explicit mention of observability tooling (e.g., Prometheus,
+Grafana, SLI/SLO design, alerting rules), explicit model-drift detection frameworks, dashboards, incident
+response/playbooks, or company-wide observability frameworks. However, the candidate clearly designed
+verification & feedback mechanisms, measured key output metrics, and built production controls—matching
+many Intermediate-level criteria.
+
+Judgment: The profile demonstrates practical, production-focused Al observability capabilities
+(instrumentation of outputs, verification/HITL workflows, feedback loops, and measured reliability
+improvements). This fits an Intermediate level: the candidate has implemented observability-relevant systems
+and metrics for Al features but does not document ownership of dedicated observability tooling, drift
+detection systems, or org-wide monitoring frameworks that would indicate Advanced/Expert levels.
+
+Resume match Dwect 7/10 Good

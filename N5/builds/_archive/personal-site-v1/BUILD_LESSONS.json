@@ -1,0 +1,13 @@
+{
+  "slug": "personal-site-v1",
+  "learnings": [
+    {
+      "text": "Career experience inconsistency: Some sources mention '10 years' of coaching while others say '20+ years' or 'decade+'. The authoritative source (careerspan-positioning.md) uses '20+ years', so default to that. Cross-reference other claims against positioning doc.",
+      "source": "manual",
+      "added_at": "2026-01-27T21:24:01.570350+00:00",
+      "tags": [
+        "career-span,facts,consistency"
+      ]
+    }
+  ]
+}

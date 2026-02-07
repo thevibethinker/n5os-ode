@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "Person involved in the knowledge system"}, {"name": "India talent pipeline", "type": "CONCEPT", "context": "Potential ecosystem for partnerships"}], "relationships": [{"from": "V (Vrijen)", "to": "India talent pipeline", "type": "WORKS_WITH", "context": "Exploring partnership for talent integration"}]}

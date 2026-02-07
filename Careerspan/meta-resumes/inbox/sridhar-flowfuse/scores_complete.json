@@ -1,0 +1,701 @@
+[
+  {
+    "skill_name": "Prototype and productionize Al",
+    "rating": "Excellent",
+    "required_level": "Advanced",
+    "required_score": 4,
+    "max_score": 5,
+    "importance": 10,
+    "max_importance": 10,
+    "evidence_type": "Story+profile",
+    "our_take": "The resume provides multiple clear, end-to-end examples of taking Al features from concept/prototype into production with attention to evaluation and operational hardening. Direct evidence: at EclecticlQ the candidate led full Al initiatives, architected and shipped an Al assistant into a flagship product (six-month integration), built modular backends (decoupled Flask sync from async MCP), deployed an MCP server, and added Human-in-the-Loop approval, guardrails, and feedback loops — explicitly reducing token usage (cost/latency control) and improving correctness/recall/schema adherence (measured success metrics). At Cambridge University Press they built aRAG-based Student Companion and an Automatic Marking system with stated accuracy (~85%) and Chain-of-Thought generation (prototype > evaluation). At Cyware they was the sole MLengineer and built and served models via a Python/Django multi-threaded inference app witha feedback loop for retraining (operationalization and latency control). Early roles show production constraints: transactional anomaly detection returning risk scores <300ms, Random Forest on Spark credit model (F1 ~0.81), and high-accuracy table parsing/product matching systems at Dell. Ownership signals include founding an Al consultancy, being sole ML engineer, and leading an 8+ PhD research team. Taken together these map directly to the success criteria: rapid prototyping, iterative evaluation (quantified metrics), and methodical hardening with guardrails, observability and cost/latency controls. Minor gaps: explicit frontend UI framework experience (React/TypeScript) is not listed, and input-validation/ fallback behaviors are not always spelled out in detail, but similar operational practices (guardrails, human-in-the-loop, feedback loops, multi- LLM failover) are documented. Overall this is strong, direct evidence of the responsibility.",
+    "support": [
+      {
+        "source": "kftoWPdjyQB9CaisjIPn",
+        "type": "Direct",
+        "score": "9/10",
+        "rating": "Excellent"
+      },
+      {
+        "source": "qoWHeLzqkOMMI5PwcHiL",
+        "type": "Direct",
+        "score": "9/10",
+        "rating": "Excellent"
+      }
+    ],
+    "source_page": "page-11",
+    "category": "Hard Skill"
+  },
+  {
+    "skill_name": "Develop Al features",
+    "rating": "Excellent",
+    "required_level": "Advanced",
+    "required_score": 4,
+    "max_score": 5,
+    "importance": 10,
+    "max_importance": 10,
+    "evidence_type": "Story+profile",
+    "our_take": "The resume provides multiple clear, production-focused examples that match the responsibility. Direct evidence: at EclecticlQ the candidate led end-to-end Al initiatives, architected and deployed an Al assistant into a flagship product (multi-stage pipeline, Flask backends decoupled from async Al protocols, public MCP server), implemented Human-in-the-Loop approval, reduced token usage by 60%, and reported measurable improvements (accuracy, recall, prompt relevance, schema adherence). At Cambridge University Press they built a Student Companion System using RAG, semantic search (vector DB), quiz generation and pedagogical adaptation, and an Automatic Marking System (~85% accuracy) using few-shot/CoT — all applied Al features with real product value. At Cyware and Dell they built production ML products and serving infrastructure (Python/Django multi-threaded inference, Text-to-NoSQL, table parsing, capacity planning). As founder of an Alconsultancy they delivered 15+ Al solutions and customer-facing chatbots. These examples show scoping, model selection/integration (RAG, LLMs, embeddings, BERT, SecureBERT), building backend serving layers, deployment, and iteration based on metrics and stakeholder collaboration — meeting the STAR-style success criteria. Transferable/full-stack evidence is strong on backend and Al integration (Flask, Django, ES, Lucene, MCP, LangGraph, vector DBs); frontend-specific frameworks or explicit Ul work are less documented, and observability/security tooling details are implied (guardrails, feedback loops, emphasis on factual accuracy and security) but not exhaustively listed. Overall, the candidate demonstrates advanced, direct experience designing and building Al-powered product features and internal tooling from scoping through production and measurement, with minor gaps around explicitly stated frontend tech and monitoring stacks.",
+    "support": [
+      {
+        "source": "kftowPdjyQBSCGisjIPn",
+        "type": "Direct",
+        "score": "9/10",
+        "rating": "Excellent"
+      },
+      {
+        "source": "qoWHeLzqkOMMI5PwcHIL",
+        "type": "Direct",
+        "score": "9/10",
+        "rating": "Excellent"
+      }
+    ],
+    "source_page": "page-12",
+    "category": "Responsibility"
+  },
+  {
+    "skill_name": "Integrate LLM APIs",
+    "rating": "Excellent",
+    "required_level": "Advanced",
+    "required_score": 4,
+    "max_score": 5,
+    "importance": 10,
+    "max_importance": 10,
+    "evidence_type": "Story+profile",
+    "our_take": "The resume provides multiple, concrete examples of integrating LLMs and external Al services into production products—not just experiments. At EclecticlQ the candidate: built an Al assistant using LangGraph and MCP frameworks, deployed a public MCP server for third-party Al clients, enabled dual LLM",
+    "support": [
+      {
+        "source": "qoWHeLzqkOMMI5PwcHiL",
+        "type": "Direct",
+        "score": "9/10",
+        "rating": "Excellent"
+      },
+      {
+        "source": "kftowPdjyQB9CQiSjIPn",
+        "type": "Direct",
+        "score": "9/10",
+        "rating": "Excellent"
+      }
+    ],
+    "source_page": "page-14",
+    "category": "Hard Skill"
+  },
+  {
+    "skill_name": "Deliver end-to-end solutions",
+    "rating": "Excellent",
+    "required_level": "Advanced",
+    "required_score": 4,
+    "max_score": 5,
+    "importance": 10,
+    "max_importance": 10,
+    "evidence_type": "Story+profile",
+    "our_take": "Summary judgment: The resume provides solid evidence that the candidate has repeatedly owned end-to-end Al product deliveries (design > implementation > deployment) across backend and Al components and has integrated those into user-facing products. Concrete examples: - Cyware: built an end-to-end ML product and a Python/Django application to serve models with multi-threaded inference and a feedback loop (production- serving, backend + model integration). - EclecticlQ: led Al initiatives from research to production, architected and deployed an Al assistant into the flagship product (designed modular backends, MCP server, entity-based context, human-in-the-loop approval, and product integrations), and deployed backend services (Flask, async protocols, LangGraph). - Ponderbot (own consultancy) and Cambridge University Press: delivered chatbots and a Student Companion (RAG + vector DBs) and an Automatic Marking System—all end-to-end Al solutions delivered to clients/users. These roles demonstrate scoping, design, technical implementation, and product integration, and include measurable outcomes (accuracy, latency, token reduction, correctness/relevance metrics). Why transferable rather than fully direct: the resume strongly demonstrates backend+Al ownership and product integration, but explicit, standalone evidence of building or owning frontend Ul code (React/Angular, client-side frameworks, or shipping client web/mobile interfaces) is limited or not called out. Several projects likely involved frontend/user-facing components (chatbots, product integration), but the candidate primarily documents backend, API, model, and platform work. Overall, this background meets the “Advanced” proficiency in owning multi-layer solutions in practice (backend + Al + product integration) and would reasonably convince an interviewer—especially for an Al-focused full-stack role—though calling out direct frontend ownership would strengthen the case further.",
+    "support": [
+      {
+        "source": "qoWHeLzqkOMMISPwcHIL",
+        "type": "Transferable",
+        "score": "5/10",
+        "rating": "Fair"
+      }
+    ],
+    "source_page": "page-22",
+    "category": "Responsibility"
+  },
+  {
+    "skill_name": "Ensure feature reliability",
+    "rating": "Excellent",
+    "required_level": "Advanced",
+    "required_score": 4,
+    "max_score": 5,
+    "importance": 10,
+    "max_importance": 10,
+    "evidence_type": "Story+profile",
+    "our_take": "The resume contains multiple, concrete examples of building and operating Al systems with production-facing reliability, latency, and fallback considerations. Relevant evidence: (1) Transactional anomaly detection returned risk scores under 300ms (SquareOne) — direct work on low-latency, predictable inference. (2) Built a Python/Django service with multi-threaded inference to reduce latency and included a feedback loop for retraining (Cyware) — shows operationalization and iterative observability. (3) At EclecticlQ, architected a modular assistant that decoupled synchronous Flask backends from async Al protocols, deployed MCP servers, enabled dual-LLM",
+    "support": [
+      {
+        "source": "qoWHeLzqkOMMI5PwcHIL",
+        "type": "Direct",
+        "score": "8/10",
+        "rating": "Excellent"
+      },
+      {
+        "source": "kftowPdjyQBscaisjlPn",
+        "type": "Direct",
+        "score": "8/10",
+        "rating": "Excellent"
+      }
+    ],
+    "source_page": "page-23",
+    "category": "Responsibility"
+  },
+  {
+    "skill_name": "Build backend/frontend workflows",
+    "rating": "Good",
+    "required_level": "Advanced",
+    "required_score": 4,
+    "max_score": 5,
+    "importance": 10,
+    "max_importance": 10,
+    "evidence_type": "Profile",
+    "our_take": "The resume provides strong, concrete evidence of building and operating production backend services that power Al workflows: e.g., a Scala transactional scoring system with <300ms latency, a Python/Django multi- threaded model-serving app with a feedback loop, Flask backends decoupled from async Al protocols (MCP), a public MCP server, Text-to-Lucene and ES-based contextual search (100M+ entities), and multiple RAG/LLM integrations (FaithfulRAG, vector DBs, few-shot prompting). These items demonstrate end-to-end ownership of backend architecture, performance/latency optimization, Al integration, deployment, and operational reliability. The resume also shows cross-functional collaboration (product/sales), measurable impact metrics, and leadership of technical delivery—all aligned with the role’s expectations. However, explicit evidence of building frontend interfaces (React/Vue or similar Ul work) is missing; frontend ownership is implied by product-facing features but not directly stated. Because the candidate clearly meets the advanced backend + Alintegration criteria and likely has transferable fullstack product experience, | infer they can fulfill the full- stack (Al-focused) responsibility but would benefit from explicit frontend examples on the resume.",
+    "support": [],
+    "source_page": "page-25",
+    "category": "Hard Skill"
+  },
+  {
+    "skill_name": "Design for operational constraints",
+    "rating": "Excellent",
+    "required_level": "Advanced",
+    "required_score": 4,
+    "max_score": 5,
+    "importance": 9,
+    "max_importance": 10,
+    "evidence_type": "Story+profile",
+    "our_take": "The resume provides multiple direct, production-first examples showing the candidate designed Al systems while explicitly addressing Al-specific failure modes, latency, cost, and operational concerns. Key evidence: (1) EclecticlQ (Principal ML Engineer) — led end-to-end Al integration under infrastructure constraints, implemented FaithfulRAG and guardrails to reduce hallucinations, built a Human-in-the-Loop approval system (operational/fallback), decoupled synchronous Flask backends from async Al protocols (architectural decision to manage latency/availability), and reduced token usage by 60% (direct cost optimization). Results cited (18% higher correctness, 84% prompt relevance, 27% better recall, 97% schema adherence) show measurable reliability improvements. (2) Cambridge University Press — built RAG-based Student Companion with agentic response verification (mitigating hallucinations) and an Automatic Marking System achieving ~85% accuracy (performance/QA). (3) Cyware & Dell — built production multi-threaded inference services (latency reduction), feedback loops for retraining (operational observability/continuous improvement), and a transactional anomaly system returning risk scores under 300ms (strict latency constraint). (4) Additional work: Text-to-Lucene, scalable contextual search (100M+ entities) and dual-LLM",
+    "support": [
+      {
+        "source": "qoWHeLzqkOMMI5PwcHiL",
+        "type": "Direct",
+        "score": "9/10",
+        "rating": "Excellent"
+      },
+      {
+        "source": "kftowPdjyQB9CaisjIPn",
+        "type": "Direct",
+        "score": "9/10",
+        "rating": "Excellent"
+      }
+    ],
+    "source_page": "page-15",
+    "category": "Hard Skill"
+  },
+  {
+    "skill_name": "Collaborate cross-functionally",
+    "rating": "Excellent",
+    "required_level": "Advanced",
+    "required_score": 4,
+    "max_score": 5,
+    "importance": 9,
+    "max_importance": 10,
+    "evidence_type": "Story+profile",
+    "our_take": "The resume contains multiple clear, concrete examples of scoping and delivering Al-driven, product-facing solutions in collaboration with non-research stakeholders. At EclecticlQ the candidate explicitly led all Al initiatives, oversaw feature scoping, success metrics, and deliverables, partnered closely with Product and Sales to align solutions, and drove the six-month integration of an Al assistant into the flagship product — delivering measurable business metrics (18% higher correctness, 84% prompt relevance, 27% better recall, 97% schema adherence). Other roles show end-to-end ownership (building production ML services with Flask/MCP, Python/Django multi-threaded inference, deploying public MCP server, Text-to-Lucene, FaithfulRAG extensions), consulting/founding experience delivering 15+ client solutions, and being the first data scientist in Dell's Finance org to deliver a capacity-planning system for global regions. These examples demonstrate advanced applied-Al integration, cross-functional scoping with product/stakeholders, and measurable impact. Missing/weak points: the resume has fewer explicit callouts about working with Design teams or front-end UI implementation details; frontend technologies or concrete examples of tradeoffs between UX/product and engineering are not heavily documented. Overall, the evidence shows direct, advanced capability to work with Product/Engineering to scope and deliver high-impact Al solutions, with some room to better highlight product/design-level negotiations and frontend ownership.",
+    "support": [
+      {
+        "source": "kftoWPdjyQBSCaisjIPn",
+        "type": "Direct",
+        "score": "8/10",
+        "rating": "Excellent"
+      }
+    ],
+    "source_page": "page-18",
+    "category": "Soft Skill"
+  },
+  {
+    "skill_name": "Judgment",
+    "rating": "Excellent",
+    "required_level": "Advanced",
+    "required_score": 4,
+    "max_score": 5,
+    "importance": 9,
+    "max_importance": 10,
+    "evidence_type": "Story+profile",
+    "our_take": "Multiple roles in the resume show repeated, concrete examples of making tradeoffs, anticipating failure modes, and aligning technical choices with product/stakeholder needs—all core to judgment for an Al-focused fullstack role. At EclecticlQ the candidate explicitly describes designing around severe infrastructure constraints (smaller LLMs, limited async",
+    "support": [
+      {
+        "source": "kftowPdjyQBSCaisjIPn",
+        "type": "Direct",
+        "score": "8/10",
+        "rating": "Excellent"
+      }
+    ],
+    "source_page": "page-37",
+    "category": "Responsibility"
+  },
+  {
+    "skill_name": "Al Feature Deployment",
+    "rating": "Excellent",
+    "required_level": "Advanced",
+    "required_score": 4,
+    "max_score": 5,
+    "importance": 9,
+    "max_importance": 10,
+    "evidence_type": "Story",
+    "our_take": "The resume contains multiple, direct examples of designing, building, and shipping Al-powered features into production-like environments with end-to-end ownership. Key evidence: - EclecticiQ (Principal ML Engineer): Led Al initiatives and architected a production Al assistant (6-month integration) that decoupled synchronous Flask backends from async Al protocols (MCP), deployed a public MCP server, built Human-in-the-Loop approval, entity-based context, and implemented guardrails that reduced token usage by 60% while delivering measurable improvements (accuracy, recall, schema adherence). This shows end-to-end design, deployment, operational constraints handling (latency/cost/token usage), and production-grade reliability/quardrails. - Cambridge University Press (Al/ML Specialist): Built a RAG-based Student Companion with vector DB semantic search, quiz generation, and an Automatic Marking System (=85% accuracy) using few-shot prompting and CoT — demonstrating applied LLM/embedding integration for user-facing features. - Cyware Labs (Senior Data Scientist): As sole ML engineer, built end-to-end ML products and a Python/Django app to serve models with multi-threaded inference and a feedback loop for retraining — demonstrating serving, latency reduction, and operational improvement practices. - SquareOne & Dell: Built low-latency transactional anomaly system (<300ms) and Spark-based credit risk model, plus table-parsing/product-matching systems (»95% accuracy) and time-series capacity forecasting. These show engineering for performance, scale, and production constraints. - Ponderbot (Consultancy) : Delivered 15+ end-to-end Al solutions for clients across domains, indicating repeated production deployments and product-focused delivery.",
+    "support": [
+      {
+        "source": "qoWHelzqkOMMISPwcHIL",
+        "type": "Direct",
+        "score": "9/10",
+        "rating": "Excellent"
+      }
+    ],
+    "source_page": "page-43",
+    "category": "Responsibility"
+  },
+  {
+    "skill_name": "Al Reliability Engineering",
+    "rating": "Excellent",
+    "required_level": "Advanced",
+    "required_score": 4,
+    "max_score": 5,
+    "importance": 9,
+    "max_importance": 10,
+    "evidence_type": "Story",
+    "our_take": "Alignment to skill: The resume explicitly describes multiple embedding/vector-retrieval use cases: “semantic search (via vector DB)\" in the Cambridge University Press role (RAG-powered Student Companion), use of nomic-embed for retrieval, multi-index RAG and Text-to-Lucene work, and a scalable contextual search over 100M-+ entities at EclecticlQ. The candidate also mentions retrieval + cross-encoder BERT re-ranking, selecting embedding tooling (nomic-embed), and production deployment patterns (multi-index, reranking, guardrails, feedback loops). Evidence & transferability: These entries show hands-on design and implementation of embedding-based retrieval in production-grade systems (RAG, semantic search, contextual search, entity-based context). The work spans full-stack responsibilities (feature design, indexing, retrieval, reranking, and production deployment), and addresses scale (100M+ entities) and efficiency (token reduction, modular pipelines). This aligns with FlowFuse’s need for applied vector search expertise. Proficiency & success criteria: The candidate describes end-to-end ownership, choice of embedding/retrieval components, and practical performance/accuracy outcomes (improvements in relevance, schema adherence, and recall). Use of cross-encoder reranking, multi-index strategies, and embedding tooling indicates deeper than basic integration — they've optimized retrieval pipelines and handled large/heterogeneous datasets. Contextualization: While the resume shows advanced. production-facing vector search experience, it does not claim external leadership in the retrieval community (open-source vector search libraries, publications, or company-wide standardization beyond team-level leadership). That would be needed to justify an “expert” label.",
+    "support": [
+      {
+        "source": "kftoWPdjyOBSCQisjIPn",
+        "type": "Direct",
+        "score": "8/10",
+        "rating": "Excellent"
+      }
+    ],
+    "source_page": "page-46",
+    "category": "Responsibility"
+  },
+  {
+    "skill_name": "Fullstack Development",
+    "rating": "Excellent",
+    "required_level": "Advanced",
+    "required_score": 4,
+    "max_score": 5,
+    "importance": 9,
+    "max_importance": 10,
+    "evidence_type": "Story",
+    "our_take": "Alignment to skill: The resume repeatedly describes end-to-end ownership and production delivery of Al- powered systems that require fullstack engineering: model development, serving, APIs, data pipelines, and integration with product workflows. Core components of Fullstack Development (backend services, data/API layers, Al integration, and product integration) are present across multiple roles.",
+    "support": [
+      {
+        "source": "qoWHelzqkOMMISPwcHIL",
+        "type": "Direct",
+        "score": "7/10",
+        "rating": "Good"
+      }
+    ],
+    "source_page": "page-50",
+    "category": "Hard Skill"
+  },
+  {
+    "skill_name": "Build Al capability patterns",
+    "rating": "Excellent",
+    "required_level": "Advanced",
+    "required_score": 4,
+    "max_score": 5,
+    "importance": 8,
+    "max_importance": 10,
+    "evidence_type": "Story+profile",
+    "our_take": "The resume provides direct, concrete evidence that the candidate has created patterns, guardrails, and reusable components to enable other engineers and scale Al features. The Principal ML Engineer role at EclecticlQ explicitly describes architecting a modular, decoupled Al assistant (separating synchronous Flask backends from async Al protocols), introducing entity-based context and a Human-in-the-Loop approval system, and building guardrails/feedback loops (Text-to-Lucene with guardrails). It also notes deploying a public MCP server to",
+    "support": [],
+    "source_page": "page-19",
+    "category": "Responsibility"
+  },
+  {
+    "skill_name": "Attention to detail",
+    "rating": "Excellent",
+    "required_level": "Advanced",
+    "required_score": 4,
+    "max_score": 5,
+    "importance": 8,
+    "max_importance": 10,
+    "evidence_type": "Story+profile",
+    "our_take": "The story provides strong, direct evidence of attention to detail. The candidate describes handling mission- critical, high-risk requirements (zero tolerance for hallucinations, reports critical to security analysts) and takes numerous, deliberate, technical actions explicitly aimed at ensuring factual accuracy, correctness, and trust in the output. Key actions that indicate advanced attention to detail include: 1) implementing multi- stage context reduction to retain only high-signal information, 2) using hybrid selection methods (vector and centroid similarity) to maximize thematic coherence, 3) aligning model outputs with verified, retrievable knowledge to avoid drift or hallucination, 4) engineering rigorous traceability systems so every claim is backed by a source reference, and 5) achieving high scores in correctness, relevance, and schema adherence (all measured). The candidate anticipates nuanced risks (model drift, reliability under infra constraints, prompt window limitations), proactively institutes rigorous quality checks, and designs for human-in-the-loop verification. This goes beyond routine QA and demonstrates sophisticated, system-level detail orientation highly relevant for a Full Stack Al developer. There is clear, direct, advanced application rather than merely following instructions or reacting to mistakes.",
+    "support": [
+      {
+        "source": "kftoWPdjyQB9CaisjIPn",
+        "type": "Direct",
+        "score": "9/10",
+        "rating": "Excellent"
+      },
+      {
+        "source": "qoWHeLzqkOMMI5PwcHIL",
+        "type": "Direct",
+        "score": "8/10",
+        "rating": "Excellent"
+      }
+    ],
+    "source_page": "page-29",
+    "category": "Hard Skill"
+  },
+  {
+    "skill_name": "Problem-solving",
+    "rating": "Excellent",
+    "required_level": "Advanced",
+    "required_score": 4,
+    "max_score": 5,
+    "importance": 8,
+    "max_importance": 10,
+    "evidence_type": "Story+profile",
+    "our_take": "Alignment to skill: Problem-solving for FlowFuse requires identifying ambiguous, cross-stack technical challenges in applied Al, scoping them, choosing tradeoffs, and delivering reliable production solutions. Shridhar’s resume contains multiple STAR-like examples showing exactly this pattern.",
+    "support": [
+      {
+        "source": "kftowPdjyQBSCaisjIPn",
+        "type": "Direct",
+        "score": "9/10",
+        "rating": "Excellent"
+      },
+      {
+        "source": "qoWHeLzqkOMMI5PwcHIL",
+        "type": "Direct",
+        "score": "9/10",
+        "rating": "Excellent"
+      }
+    ],
+    "source_page": "page-30",
+    "category": "Soft Skill"
+  },
+  {
+    "skill_name": "Collaboration",
+    "rating": "Excellent",
+    "required_level": "Advanced",
+    "required_score": 4,
+    "max_score": 5,
+    "importance": 8,
+    "max_importance": 10,
+    "evidence_type": "Profile",
+    "our_take": "Core components of Collaboration for this role include cross-functional partnering (Product, Design, Engineering), co-defining scope, aligning on success metrics, and ongoing coordination to deliver Al-enabled fullstack features. The resume contains multiple direct signals of these behaviors: at EclecticlQ the candidate “led all Al initiatives,” “partnered closely with product and sales to align solutions with analyst needs,” and “currently leading technical efforts for a team of 8+ PhD researchers,” which indicates strategic, multi- discipline collaboration, feature scoping, and stakeholder alignment. The Human-in-the-Loop approval system and entity-based context design were created to meet analyst workflows — evidence of working with domain users to iterate requirements. As an Al consultant and founder of Ponderbot Analytics, the candidate delivered 15+ client solutions across industries, implying repeated client-facing collaboration and requirement gathering. At Cambridge University Press they built a Student Companion and Automatic Marking System (features that require pedagogical/product input) and achieved measurable accuracy—suggesting iterative product-focused development. Earlier roles (Dell Finance: first data scientist in Finance; Cyware: sole ML engineer but built production apps and feedback loops) imply cross-team coordination with finance, engineering, and product stakeholders. Extra-curriculars (student senator, event marketing coordinator) further",
+    "support": [],
+    "source_page": "page-36",
+    "category": "Responsibility"
+  },
+  {
+    "skill_name": "Ensure privacy and security",
+    "rating": "Good",
+    "required_level": "Advanced",
+    "required_score": 4,
+    "max_score": 5,
+    "importance": 8,
+    "max_importance": 10,
+    "evidence_type": "Profile",
+    "our_take": "Evidence supporting capability (transferable): The candidate has multiple roles working in security-sensitive domains and delivered technical controls that map to privacy/security responsibilities. At EclecticlQ and Cyware they led/owned Al for cybersecurity products (SecureBERT fine-tuning, FaithfulRAG, entity-based context, human-in-the-loop approval, guardrails, feedback loops, reduced hallucinations, schema adherence, enterprise workflows, contextual search for 100M+ entities) — these show design-for-trust, mitigation of model hallucinations, and operational controls typical in secure Al deployments. Earlier roles show handling regulated/financial data (transactional anomaly detection, credit-risk modeling, migrating banking databases for 18 banks supporting 100M+ users, capacity planning in Finance at Dell) which implies experience with data sensitivity, risk-aware engineering, and production controls for high-stakes systems. The resume repeatedly highlights production deployment, modular/secure architectures, and close collaboration with product/sales/analysts — suggesting experience working with stakeholders on correctness, observability, and reliability of Al features. Missing/weak direct evidence: there are no explicit mentions of SOC 2, GDPR, HIPAA, formal risk assessments, audits, policy documentation, encryption/access-control implementations, threat modeling, or direct collaboration with compliance/security teams. There is also no explicit STAR story about implementing controls, responding to incidents, or producing compliance artifacts. Conclusion: The background provides reasonable, transferable evidence that the candidate can design and implement Al features with security and privacy concerns in mind (especially given cybersecurity and finance experience), but it lacks explicit, direct proof of having owned formal compliance (SOC 2/GDPR/HIPAA) processes or audits.",
+    "support": [],
+    "source_page": "page-27",
+    "category": "Responsibility"
+  },
+  {
+    "skill_name": "Incremental Software Delivery",
+    "rating": "Good",
+    "required_level": "Intermediate",
+    "required_score": 3,
+    "max_score": 5,
+    "importance": 8,
+    "max_importance": 10,
+    "evidence_type": "Story",
+    "our_take": "Alignment to skill: Core components of Al observability include instrumentation (logs/metrics), detection of bad/edge-case outputs (hallucinations, schema violations), verification/approval workflows, feedback loops for retraining, and operational monitoring (latency, errors). Resume evidence: Multiple roles describe direct, production-facing work on Al systems with explicit emphasis on reliability and detection/mitigation of bad Al behavior. Examples: - EclecticiQ: built FaitnfulRAG to reduce hallucinations, introduced a custom Human-in-the-Loop approval system, implemented guardrails and feedback looping, measured outcomes (18% higher correctness, 84% prompt relevance, 97% schema adherence), and deployed a public MCP server for third-party Al clients — all indicating instrumentation, output verification, and production controls. - Cambridge University Press: implemented agentic response verification for the Student Companion System and an Automatic Marking System with accuracy tracking (~85%), showing verification and metric-driven assessment of Al outputs. ~ Cyware Labs & Dell: built feedback loops for model improvement, multi-threaded inference to minimize latency, and transactional anomaly detection/capacity planning systems — demonstrating operational, production-oriented monitoring and detection experience (even if some is for non-LLM domains).",
+    "support": [],
+    "source_page": "page-52",
+    "category": "Responsibility"
+  },
+  {
+    "skill_name": "Al Technical Debt Management",
+    "rating": "Excellent",
+    "required_level": "Advanced",
+    "required_score": 4,
+    "max_score": 5,
+    "importance": 7,
+    "max_importance": 10,
+    "evidence_type": "Story+profile",
+    "our_take": "The story demonstrates that the candidate proactively identified maintainability and scalability challenges in areal-world, Al-powered production system. The candidate led a shift from a monolithic, prototype-like implementation to a modular three-service architecture, which decoupled dependencies and addressed long- term maintainability and scalability concerns (e.g., the move from a monolithic langgraph agent to an architecture allowing replaceable components and easier upgrades). The implementation of patterns like entity_id passing (to avoid context window overflow and reduce model strain) directly speaks to scalable design in Al contexts. The custom HITL system for reliability shows forethought about future maintainers and feature extensibility. The candidate discusses iterative improvements, documentation use, evaluating frameworks, and making technical tradeoffs—all pointing to a systemic mindset around technical debt and evolving requirements. Results such as reduced token use and production reliability further reinforce that this was not just feature delivery, but sustainable, production-minded engineering. There is repeated reference to the evolution of requirements and architecture to",
+    "support": [
+      {
+        "source": "kftowPdjyQBSCaisjIPn",
+        "type": "Direct",
+        "score": "8/10",
+        "rating": "Excellent"
+      },
+      {
+        "source": "qoWHeLzqkOMMI5PwcHiIL",
+        "type": "Direct",
+        "score": "9/10",
+        "rating": "Excellent"
+      }
+    ],
+    "source_page": "page-17",
+    "category": "Hard Skill"
+  },
+  {
+    "skill_name": "User Feedback Integration",
+    "rating": "Excellent",
+    "required_level": "Intermediate",
+    "required_score": 3,
+    "max_score": 5,
+    "importance": 7,
+    "max_importance": 10,
+    "evidence_type": "Profile",
+    "our_take": "The resume contains multiple direct indicators that the candidate has run feedback-driven, iterative improvement cycles for Al features used by real users. Explicit evidence: at EclecticlQ they built a custom Human-in-the-Loop approval system, described “feedback looping,” and state they partnered closely with Product and Sales to align solutions with analyst needs—producing measurable improvements (e.g., 18% higher correctness, 84% prompt relevance, 27% better recall, 97% schema adherence). At Cyware they implemented a feedback loop for future retraining and served models via a Django app with multi-threaded inference to reduce latency for users. The Cambridge University Press role delivered a Student Companion and Automatic Marking System (with ~85% accuracy), which implies user-facing testing and refinement to reach that accuracy. As founder/consultant, they delivered >15 client solutions and client-facing chatbots, which typically require collecting client/user feedback and iterating. Together these show ownership of post-launch/model feedback, synthesis, and concrete iterative improvements that improved metrics and product fit. Missing / weaker points: the resume rarely calls out specific feedback-gathering methods (e.g., user interviews, surveys, analytics instrumentation,",
+    "support": [],
+    "source_page": "page-20",
+    "category": "Soft Skill"
+  },
+  {
+    "skill_name": "Pragmatism",
+    "rating": "Excellent",
+    "required_level": "Advanced",
+    "required_score": 4,
+    "max_score": 5,
+    "importance": 7,
+    "max_importance": 10,
+    "evidence_type": "Story+profile",
+    "our_take": "The resume repeatedly shows pragmatic, delivery-focused decision making across backend, frontend, and Al components. Concrete examples: choosing rule-based statistical models in Scala to return transaction risk scores under 300ms (performance-driven tradeoff); using Random Forest on Spark for a credit-risk model (practical, scalable model choice) ; building multi-threaded inference and low-latency services as the sole ML engineer; upgrading SQL procedures for a large banking migration (practical correctness and impact); and founding a consultancy delivering 15+ client solutions (client-driven, outcome-focused work). At EclecticlQ the candidate explicitly reports shipping under infrastructure constraints—decoupling sync Flask backends from async Al protocols, introducing Human-in-the-Loop approvals, enabling dual LLM",
+    "support": [
+      {
+        "source": "qoWHeLzqkOMMI5PwcHiL",
+        "type": "Direct",
+        "score": "9/10",
+        "rating": "Excellent"
+      },
+      {
+        "source": "kftowPdjyQBSCaisjIPn",
+        "type": "Direct",
+        "score": "8/10",
+        "rating": "Excellent"
+      }
+    ],
+    "source_page": "page-31",
+    "category": "Soft Skill"
+  },
+  {
+    "skill_name": "Risk assessment and mitigation",
+    "rating": "Excellent",
+    "required_level": "Advanced",
+    "required_score": 4,
+    "max_score": 5,
+    "importance": 7,
+    "max_importance": 10,
+    "evidence_type": "Story+profile",
+    "our_take": "Alignment to skill: The resume repeatedly shows identification and mitigation of risks across Al, product, and operational domains. Examples include: designing FaithfulRAG and guardrails to reduce hallucinations; building a Human-in-the-Loop approval system to ensure factual accuracy and enterprise workflow safety; decoupling synchronous Flask backends from async Al protocols to handle infrastructure constraints and improve reliability; reducing token usage by 60% (cost mitigation); and adding feedback loops and schema enforcement (97% schema adherence) to improve correctness and contain failure modes. Earlier roles show risk-aware work in finance (transactional anomaly detection, credit risk modeling) and operational risk management (capacity planning for global resources, migrating banking DB accounting procedures). Evidence & transferability: Many mitigations are explicit (guardrails, HITL, cost reduction, accuracy/recall metrics, feedback loops). The finance and DevOps-adjacent projects (capacity planning, multi-threaded inference to reduce latency) provide transferable experience managing availability, correctness, and performance risks. Some inferences were made about monitoring/observability practices (feedback loops, metrics reported) since explicit tools/processes (e.g., incident response, monitoring stacks, compliance frameworks) are not listed. Proficiency & success criteria: The candidate demonstrates strategic, end-to-end mitigation (designing systems to avoid hallucinations, establishing approval flows, architecting around infra limits, producing measurable improvements in correctness/recall/schema adherence). This maps to the “Advanced” criteria: designing for failure tolerance, implementing guardrails and feedback/approval processes, and delivering measurable outcomes that reduce Al-specific risks. Contextualization: For a Full Stack Developer (Al-focused) at FlowFuse, these capabilities are highly relevant— ownership across backend, frontend, and Al components and emphasis on reliability, observability, and security. The resume shows applied judgement across those areas, though it lacks explicit mentions of some corporate compliance/regulatory processes (e.g., SOC2) or specific monitoring/alerting stacks.",
+    "support": [
+      {
+        "source": "qoWHeLzqkOMMI5PwcHiL",
+        "type": "Direct",
+        "score": "8/10",
+        "rating": "Excellent"
+      },
+      {
+        "source": "kftoWPdjyQB9CaisjIPn",
+        "type": "Direct",
+        "score": "8/10",
+        "rating": "Excellent"
+      }
+    ],
+    "source_page": "page-34",
+    "category": "Responsibility"
+  },
+  {
+    "skill_name": "Prioritization and time management",
+    "rating": "Excellent",
+    "required_level": "Intermediate",
+    "required_score": 3,
+    "max_score": 5,
+    "importance": 7,
+    "max_importance": 10,
+    "evidence_type": "Story+profile",
+    "our_take": "The candidate provides clear, situational evidence of prioritization and time management directly relevant to the demands of a Full Stack Developer (Al-focused) at FlowFuse. The story describes operating under strict, pre-defined release cycles, stating: ‘any experimental work | do | tend to start with a simple solution and then try more advanced solutions so as to not overshoot timelines.’ This demonstrates the ability to assess risk, sequence tasks, and actively balance scope versus deadline—hallmarks of independent prioritization. Additionally, the candidate consulted with product and sales early in the process to understand requirements, suggesting proactive task selection and coordination. The iterative approach (starting simple, then increasing complexity as time permits) shows strong awareness of time/resource constraints and evidence-based prioritization tied to business impact. Results are measurable and directly tied to on-time, improved delivery. Compared to the job’s needs (start-up pace, competing feature/infra priorities, cross-functional team integration), this display is both direct and at an advanced level: the candidate owns their sequencing, adapts proactively, and delivers reliable results. There is no evidence of broader leadership or team-wide frameworks for prioritization (which would signal expert level), but the story convincingly demonstrates advanced, individual contributor prioritization and time management.",
+    "support": [
+      {
+        "source": "kftowPdjyQB9CCQisjIPn",
+        "type": "Direct",
+        "score": "8/10",
+        "rating": "Excellent"
+      },
+      {
+        "source": "qoWHeLzqkOMMI5PwcHiL",
+        "type": "Direct",
+        "score": "6/10",
+        "rating": "Good"
+      }
+    ],
+    "source_page": "page-35",
+    "category": "Soft Skill"
+  },
+  {
+    "skill_name": "+Software Design Patterns",
+    "rating": "Excellent",
+    "required_level": "Advanced",
+    "required_score": 4,
+    "max_score": 5,
+    "importance": 7,
+    "max_importance": 10,
+    "evidence_type": "Story",
+    "our_take": "Core components of the skill: intentional selection and combination of architecture/design pattems to produce modular, extensible, scalable full-stack systems; decoupling of concerns (sync vs async), pipeline structuring, concurrency/parallelism patterns, human-in-the-loop workflows, and reuse/quardrails for Al integrations. Resume evidence: Multiple roles describe architectural decisions and reusable system patterns rather than one-off scripts. At EclecticiO the candidate: architected a modular, scalable Al assistant that decoupled synchronous Flask backends from async Al protocols (an explicit decoupling/adapter-style architecture), introduced entity-based context and a custom Human-in-the-Loop approval system, implemented multi-stage pipelines for report generation, reduced token usage (design tradeoff/optimization), and built multi-index RAG/Text-to-Lucene with guardrails and feedback loops for reuse and reliability. At Cyware and Dell they built end-to-end ML products and production services: a Python/Django multi-threaded inference app with feedback loop (concurrency and deployment patterns), table-parsing combining model + rule-based layers (composite/adapter pattern), product-matching and capacity-planning systems addressing scalability and data-flow concerns. Consulting work and founding an Al firm show repeated delivery of end-to-end, production-grade solutions across domains. These examples demonstrate applied architectural thinking, pattern-driven decisions (decoupling, pipeline stages, modularization, concurrency, HITL, guardrails) and measurable outcomes (accuracy, token reduction, latency). Missing/limited evidence: explicit naming of canonical design patterns (@.g., factory, observer, dependency injection) or artifacts like design docs, org-wide pattern adoption, or published best-practice guidelines. Also, while the resume shows leadership and reuse at product/team level, it stops short of evidencing organization-wide pattern establishment or external recognition. Judgment: The resume convincingly shows advanced, applied use of software design patterns and architectural principles in full- stack/Al systems (strategic selection, combination, and adaptation to constraints) but not evidence of being an authority who codified patterns across many teams or externally.",
+    "support": [
+      {
+        "source": "goWHelzqkOMMISPwcHIL",
+        "type": "Direct",
+        "score": "8/10",
+        "rating": "Excellent"
+      },
+      {
+        "source": "kftoWPdjyQBSCQisjIPn",
+        "type": "Direct",
+        "score": "8/10",
+        "rating": "Excellent"
+      }
+    ],
+    "source_page": "page-49",
+    "category": "Responsibility"
+  },
+  {
+    "skill_name": "User-centric product thinking",
+    "rating": "Good",
+    "required_level": "Advanced",
+    "required_score": 4,
+    "max_score": 5,
+    "importance": 7,
+    "max_importance": 10,
+    "evidence_type": "Story+profile",
+    "our_take": "Evidence of user-centric product thinking appears repeatedly across the resume in both explicit statements and reasonable role-based inferences. Strong direct evidence: at EclecticlQ the candidate “partnered closely with product and sales to align solutions with analyst needs,” designed a Human-in-the-Loop approval system and entity-based context to fit analyst workflows, and reports product-facing metrics (18% higher correctness, 84% prompt relevance, 27% better recall, 97% schema adherence). These points show deliberate prioritization of user needs, cross-functional collaboration, and measurable user-facing outcomes. At Cambridge University Press the Student Companion System (pedagogical-style adaptation, quiz generation, semantic search) and an Automatic Marking System (~85% accuracy) indicate design choices made for real learners and teachers rather than purely technical proofs-of-concept. In consulting (Ponderbot) the candidate delivered customer-facing chatbots and 15+ Al solutions for marketing—work that typically requires understanding client/customer needs and tailoring features. At Cyware the candidate built a production Python/Django app with multi-threaded inference and a feedback loop for ongoing model improvement, which signals attention to latency, operability, and continuous improvement driven by usage/feedback. Dell work (capacity planning, product matching) likewise implies building tools to solve business-user problems. Together these show repeated instances of prioritizing user/workflow requirements, cross-functional alignment, and delivering measurable improvements. Gaps: there is little explicit mention of primary user research (user interviews, usability testing, A/B experiments), broader cross-team evangelism of user research methods, or adoption/engagement metrics beyond accuracy/relevance-type signals. That makes advanced/expert claims (proactive user research leadership or organisation-wide advocacy) less",
+    "support": [
+      {
+        "source": "kftowPdjyQBSCaisjIPn",
+        "type": "Direct",
+        "score": "6/10",
+        "rating": "Good"
+      },
+      {
+        "source": "qoWHeLzqkOMMI5PwcHIL",
+        "type": "Direct",
+        "score": "6/10",
+        "rating": "Good"
+      }
+    ],
+    "source_page": "page-38",
+    "category": "Responsibility"
+  },
+  {
+    "skill_name": "Contribute to fullstack work",
+    "rating": "Excellent",
+    "required_level": "Intermediate",
+    "required_score": 3,
+    "max_score": 5,
+    "importance": 6,
+    "max_importance": 10,
+    "evidence_type": "Profile",
+    "our_take": "Resume contains multiple concrete examples of stepping beyond pure ML research into full-stack and general engineering work: * Built Python/Django application to serve ML models with multi-threaded inference and feedback loops (explicit web/backend application development and production serving). * Upgraded SQL stored procedures and migrated databases for 18 banking clients (classic backend/data engineering at scale, 100M+ users). + Architected and deployed Flask backends decoupled from async Al protocols (MCP) anda public MCP server—shows backend service design, deployment, and third-party integration. + Implemented Text-to-Lucene and Text-to-NoSQL systems, Elasticsearch-based contextual search (100M+ entities), and other infra (embedding stores, cross-encoders, nomic-embed) —demonstrates building infra and observability/production retrieval systems used by product features. + As founder/consultant delivered end- to-end client solutions (chatbots, recommendation engines, retail systems), implying full-stack product delivery and taking on non-ML engineering tasks. » Leadership and product collaboration: led feature scoping, success metrics, partnered with product and sales, and led technical efforts for cross-disciplinary teams— indicates cross-functional product work. Missing/limited evidence: explicit frontend/UI framework work (React/Vue/etc.) is not mentioned. Overall, the resume demonstrates direct experience contributing to broader fullstack engineering and product work (backend, infra, integrations, production deployments) with measurable impacts, while frontend-specific experience is less explicit.",
+    "support": [],
+    "source_page": "page-21",
+    "category": "Hard Skill"
+  },
+  {
+    "skill_name": "Adaptability",
+    "rating": "Excellent",
+    "required_level": "Advanced",
+    "required_score": 4,
+    "max_score": 5,
+    "importance": 6,
+    "max_importance": 10,
+    "evidence_type": "Story+profile",
+    "our_take": "This story convincingly demonstrates direct, advanced-level adaptability in a highly relevant technical environment. The candidate describes not just responding to changing requirements and technology constraints, but proactively driving iterative architectural changes in response to customer needs (e.g., transitioning from a monolithic assistant to a distributed, three-service architecture as new demands for interoperability appeared). They also actively pivoted technology frameworks based on real-world performance and maintainability, weighing pros/cons through research and hands-on experimentation. Their solutions required ongoing adaptation (custom HITL layer, evolving multi-agent to more performant tool logic) and were repeatedly tested and improved based on stakeholder feedback. The evidence points to leading team-level adaptation in a high-ambiguity, Al-driven context, with significant impact on both product scalability and business success. This is exactly the sort of adaptability a hiring manager at FlowFuse would seek.",
+    "support": [
+      {
+        "source": "kftowPdjyQBSCaisjIPn",
+        "type": "Direct",
+        "score": "8/10",
+        "rating": "Excellent"
+      },
+      {
+        "source": "qoWHeLzqkOMMI5PwcHIL",
+        "type": "Direct",
+        "score": "9/10",
+        "rating": "Excellent"
+      }
+    ],
+    "source_page": "page-32",
+    "category": "Soft Skill"
+  },
+  {
+    "skill_name": "Retrieval-Augmented Generation",
+    "rating": "Excellent",
+    "required_level": "Intermediate",
+    "required_score": 3,
+    "max_score": 5,
+    "importance": 6,
+    "max_importance": 10,
+    "evidence_type": "Story",
+    "our_take": "Alignment to skill: Retrieval-Augmented Generation (RAG) requires combining retrieval (embeddings/vector DB/search) with LLM generation, designing chunking/indices, ranking, guardrails to reduce hallucination, and productionizing for latency, cost, reliability, and privacy. Evidence in resume: multiple direct, production- focused RAG references. At Cambridge University Press the candidate \"Built a Student Companion System using RAG\" with “semantic search (via vector DB)\" and agentic response verification, plus quiz generation and pedagogical adaptation—explicit RAG usage for a multimodal product. At EclecticiO they extended the “FaithfulRAG research framework to generate cybersecurity reports with reduced hallucinations,” built multi- index RAG (Text-to-Lucene), created scalable contextual search over 100M+ entities, used nomic-embed for retrieval, and applied BERT-based cross-encoder reranking. They also implemented dual-LLM",
+    "support": [],
+    "source_page": "page-42",
+    "category": "Responsibility"
+  },
+  {
+    "skill_name": "Embeddings",
+    "rating": "Excellent",
+    "required_level": "Intermediate",
+    "required_score": 3,
+    "max_score": 5,
+    "importance": 6,
+    "max_importance": 10,
+    "evidence_type": "story",
+    "our_take": "Alignment to skill: Embeddings core components include generating vector representations, storing/indexing vectors (vector DBs), using embeddings for retrieval/semantic search/RAG, reranking, and operational concerns (latency, scaling, accuracy). Resume evidence: Multiple roles explicitly describe embedding-based work—Cambridge University Press: built a Student Companion System using RAG and “semantic search (via vector DB)\"; EclecticlQ: built contextual search with nomic-embed for retrieval, BERT-based cross-encoder embeddings for reranking, Text-to-Lucene multi-index RAG, and a 100M+ entity search deployment. Additional evidence: work on retrieval-augmented generation (RAG), FaithfulRAG extensions, hybrid dual-LLM",
+    "support": [],
+    "source_page": "page-44",
+    "category": "Responsibility"
+  },
+  {
+    "skill_name": "Onboarding and Mentoring",
+    "rating": "Good",
+    "required_level": "Advanced",
+    "required_score": 4,
+    "max_score": 5,
+    "importance": 6,
+    "max_importance": 10,
+    "evidence_type": "Profile",
+    "our_take": "Resume shows repeated leadership and knowledge-transfer responsibilities but lacks an explicit statement of formal onboarding or training activities. Evidence: led all Al initiatives and technical efforts for a team of 8+ PhD researchers at EclecticlQ (overseeing feature scoping, success metrics, deliverables, and guiding domain & technical execution), introduced new architectural patterns (entity-based context, Human-in-the-Loop, decoupled async patterns) and deployed shared infra (public MCP server) — all activities that typically require teaching peers, documenting patterns, and enabling others to adopt them. Additional signals: as the first data scientist in Dell's finance team he likely evangelized applied-ML practices across a non-ML org; founding an Al consultancy and delivering 15+ client solutions implies client enablement and knowledge transfer; earlier campus roles (student guide) show mentoring experience. Missing: explicit STAR-style examples of running workshops, mentoring named engineers, creating onboarding docs/examples, or measured outcomes (improved velocity/code quality tied to training). Overall this is a reasonable transferable match — strong evidence of leading and disseminating patterns but not direct, explicit claims of structured onboarding programs or measurable upskilling outcomes.",
+    "support": [],
+    "source_page": "page-24",
+    "category": "Soft Skill"
+  },
+  {
+    "skill_name": "Share applied Al practices",
+    "rating": "Good",
+    "required_level": "Advanced",
+    "required_score": 4,
+    "max_score": 5,
+    "importance": 6,
+    "max_importance": 10,
+    "evidence_type": "Profile",
+    "our_take": "Evidence for knowledge-sharing and codifying Al best practices is present but indirect. Strong signals: as Principal ML Engineer at EclecticlQ Shridhar led all Al initiatives, ‘oversaw feature scoping, success metrics, deliverables, and guide[d] both domain and technical execution’ for an 8+ PhD researcher team, architected reusable patterns (entity-based context, Human-in-the-Loop, modular decoupling), deployed a public MCP server (",
+    "support": [],
+    "source_page": "page-26",
+    "category": "Soft Skill"
+  },
+  {
+    "skill_name": "Knowledge sharing",
+    "rating": "Good",
+    "required_level": "Advanced",
+    "required_score": 4,
+    "max_score": 5,
+    "importance": 6,
+    "max_importance": 10,
+    "evidence_type": "Profile",
+    "our_take": "Alignment to skill: Knowledge sharing involves proactively teaching, documenting, and enabling others to apply technical knowledge (patterns, practices, tooling). Primary evidence in the resume: (1) At EclecticlQ the candidate ‘led all Al initiatives’, is ‘currently leading technical efforts for a team of 8+ PhD researchers’, and ‘oversee[s] feature scoping, success metrics, deliverables, and guide both domain and technical execution’ — responsibilities that typically include mentoring, code/research review, and transferring knowledge to team members. (2) Multiple cross-functional collaborations are called out (partnering closely with product and sales at EclecticlQ; delivering client solutions as founder of Ponderbot Analytics; building Al features used in products at Cambridge University Press & Dell) which imply explaining Al design trade-offs, integration patterns, and operational constraints to non-engineers. (3) Founder/consultant experience delivering 15+ Al solutions and running a consultancy implies repeated client enablement, onboarding, and handover of solutions—activities that require structured knowledge transfer. (4) Earlier roles show pioneering positions (first data scientist in Dell Finance; sole ML engineer at Cyware) which often require creating documentation, standards, or runbooks to enable others after initial delivery. Evidence evaluation: The resume demonstrates repeated, practical instances where the candidate would need to teach, guide, and enable others (mentorship, cross-functional alignment, client enablement). However, there is limited explicit mention of formal knowledge-sharing artifacts or programs (no explicit references to running workshops/brown-bags, authoring company-wide playbooks, internal training curricula, or measurable outcomes specifically attributed to knowledge-sharing). Proficiency judgment: Given leadership of an R&D/engineering group, consultancy handovers, and cross-functional collaboration, the candidate shows regular, proactive knowledge-sharing behaviors consistent with the ‘Intermediate’ level (running walkthroughs, guiding teams, documenting solutions) and in places bordering on Advanced but lacks explicit measurable org-wide impact or authored standards. Confidence assessment: This is a reasonable inference from role seniority and responsibilities rather than explicit STAR stories; therefore confidence is moderate. Missing evidence if rating higher: explicit examples of internal workshops, training programs, authored playbooks/guidelines, mentorship outcomes, or metrics showing improved team performance due to knowledge-sharing.",
+    "support": [],
+    "source_page": "page-39",
+    "category": "Responsibility"
+  },
+  {
+    "skill_name": "Stay Current with Al Trends",
+    "rating": "Excellent",
+    "required_level": "Intermediate",
+    "required_score": 3,
+    "max_score": 5,
+    "importance": 5,
+    "max_importance": 10,
+    "evidence_type": "Story+profile",
+    "our_take": "The resume contains multiple direct examples of tracking, evaluating, and adopting emerging Al/LLM tools and practices, and shows measurable outcomes from those choices. Examples: at EclecticlQ the candidate led Al initiatives “from research adaptation to production,” adopted LangGraph and MCP frameworks, enabled dual LLM",
+    "support": [
+      {
+        "source": "qoWHeLzqkOMMISPwcHIL",
+        "type": "Direct",
+        "score": "5/10",
+        "rating": "Fair"
+      },
+      {
+        "source": "kftoWPdjyQB9CaisjIPn",
+        "type": "Transferable",
+        "score": "5/10",
+        "rating": "Fair"
+      }
+    ],
+    "source_page": "page-13",
+    "category": "Responsibility"
+  }
+]

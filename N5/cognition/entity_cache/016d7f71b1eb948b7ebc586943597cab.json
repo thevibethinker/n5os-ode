@@ -1,0 +1,1 @@
+{"entities": [{"name": "Drive folder", "type": "TOOL", "context": "a tool used for storage and access"}, {"name": "classify-reflection.prompt.md", "type": "CONCEPT", "context": "a prompt for classification and reflection"}, {"name": "existing content", "type": "CONCEPT", "context": "reference material for mining transformation pairs"}], "relationships": []}

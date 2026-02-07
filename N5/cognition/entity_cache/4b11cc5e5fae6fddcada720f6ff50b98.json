@@ -1,0 +1,1 @@
+{"entities": [{"name": "Nyne", "type": "ORG", "context": "organization needing enrichment for LinkedIn"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "person involved in the knowledge system"}], "relationships": [{"from": "V (Vrijen)", "to": "Nyne", "type": "MENTIONS", "context": "V is looking to enrich Nyne's profile"}]}

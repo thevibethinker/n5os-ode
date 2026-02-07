@@ -1,0 +1,1 @@
+{"entities": [{"name": "Pam K", "type": "PERSON", "context": "Speaker in the conversation"}, {"name": "Tesla", "type": "ORG", "context": "Company where a known person worked"}], "relationships": [{"from": "Pam K", "to": "Tesla", "type": "KNOWS", "context": "Pam knows someone who worked at Tesla"}]}

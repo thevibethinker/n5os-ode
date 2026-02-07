@@ -1,10 +1,9 @@
 ---
 created: 2025-12-23
 last_edited: 2025-12-23
-version: 1.0
+version: 1
 provenance: con_szqcvdDdlJxj9e3r
 ---
-
 # B21: Key Moments
 
 *   **The Translation Problem:** V noting that groups like vets and college athletes "kick ass on the court" but need a tool to help them "translate that stuff into a white-collar context."

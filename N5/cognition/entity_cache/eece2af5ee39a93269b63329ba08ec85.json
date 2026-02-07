@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "The person associated with the knowledge system"}, {"name": "FOLLOW_UP_EMAIL.md", "type": "TOOL", "context": "A tool used for follow-up communication"}, {"name": "BLURBS_GENERATED.md", "type": "TOOL", "context": "A tool for generating blurbs"}], "relationships": []}

@@ -1,6 +1,6 @@
 # Scan Results Briefing: 2026-01-26_scan-completed-founding-gtm-sales-lead-at-wayo_quick_check_rejections.csv
 
-**Generated:** 2026-01-27T02:07:36.657454
+**Generated:** 2026-01-28T16:10:03.244807
 **Total Candidates:** 135
 
 ## Top Candidates

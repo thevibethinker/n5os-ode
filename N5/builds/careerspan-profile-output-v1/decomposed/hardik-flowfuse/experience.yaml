@@ -1,0 +1,62 @@
+# Work Experience
+# Source: Careerspan Intelligence Brief  
+# DO NOT EDIT - Preserves Careerspan conclusions verbatim
+
+experiences:
+  - id: EXP1
+    company: "Keysight Technologies"
+    role: "Founding Engineer → Tech Lead"
+    dates: "Oct 2021 - Present"
+    type: "founding"
+    summary: |
+      Built ML SaaS platform from first commit to hundreds of daily users.
+      Scaled team from inception to ~20 engineers. Serves enterprise clients
+      including Apple, Samsung, Volkswagen.
+    key_achievements:
+      - "Built platform from zero → 400+ daily users"
+      - "Reduced model-to-production time from hours to minutes"
+      - "Earned 5x budget increase based on demonstrated ROI"
+      - "Architected end-to-end: React frontend, Python backend, Kubernetes infra"
+    technologies:
+      - "Python"
+      - "React"
+      - "Kubernetes"
+      - "MLflow"
+      - "Airflow"
+      - "LangChain"
+    careerspan_stories:
+      - story_id: "COKUmaqSITrBKdtxSgJp"
+        relevance: "Direct"
+        score: "8/10"
+      - story_id: "pROFGle1jTPdoivBHQUf"
+        relevance: "Direct"
+        score: "9/10"
+
+  - id: EXP2
+    company: "American Express"
+    role: "Senior Engineer"
+    dates: "Jun 2021 - Oct 2021"
+    type: "enterprise"
+    summary: |
+      Solo product owner for internal developer portal serving 150+ services.
+      Delivered independently validated $50k/month cost savings.
+    key_achievements:
+      - "$50k/month cost savings (independently validated)"
+      - "Solo ownership of portal used across 150+ services"
+      - "Full-stack delivery: frontend, backend, infrastructure"
+    technologies:
+      - "Java"
+      - "Spring Boot"
+      - "React"
+      - "AWS"
+
+  - id: EXP3
+    company: "Sprinklr"
+    role: "Software Engineer"
+    dates: "Jan 2021 - Jun 2021"
+    type: "growth_stage"
+    summary: |
+      Contributed to enterprise SaaS platform.
+    technologies:
+      - "Java"
+      - "Microservices"

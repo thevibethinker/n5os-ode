@@ -1,0 +1,43 @@
+# Careerspan Overall Assessment
+# Source: Careerspan Intelligence Brief
+# Extracted: 2026-01-29T21:03:43.790803
+# Method: Structured extraction
+# DO NOT EDIT
+
+candidate:
+  name: "Hardik"
+  position_applied: "Full Stack Developer (AI-focused)"
+  company: "FlowFuse"
+  status: "Referred"
+  application_date: "2026-01-26"
+  referred_by: "Careerspan Admin Auto-Submission (Silent Database Scan)"
+
+careerspan_score:
+  overall: 89
+  max: 100
+  qualification: "Well-aligned"
+  career_trajectory: "Lateral Move"
+
+evidence_summary:
+  stories_told: 2
+  story_ids:
+    - id: "COKUmaqSITrBKdtxSgJp"
+      type: "Direct"
+      description: "ML SaaS platform founding engineer"
+    - id: "pROFGle1jTPdoivBHQUf"
+      type: "Transferable"
+      description: "American Express portal development"
+  
+  resume_match:
+    type: "Direct"
+    score: 9
+    max: 10
+    rating: "Excellent"
+
+recommendation:
+  verdict: "Advance to finals"
+  summary: "Strong fit for a senior, AI-focused full-stack role"
+  probe_areas:
+    - "AI guardrails/observability"
+    - "SOC 2/privacy specifics"
+    - "Concrete LLM/vectordb integration details"

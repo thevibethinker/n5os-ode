@@ -1,0 +1,41 @@
+Contact
+
+Shridhar Agarwal
+
+Email: shridhar11agarwal@gmail.com
+Phone: +91 7755057736
+
+Location: Gurugram
+
+LinkedIn: linkedin.com/in/shridhar-agarwal
+
+Tools
+
+LangGraphMCPOllamaElasticsearchSpaCyBERTStanzaPythonDjangoPICARDFaster
+R-CNNLSTMScalaRandom ForestSparkSQL
+
+Work experience
+
+Principal ML Engineer
+EclecticlQ
+
+Jul 2024 - Present
+Since August 2024, | have led all Al initiatives at EclecticlQ, overseeing projects from
+
+research adaptation through to production deployment. | spearheaded the design and
+implementation of a multi-stage pipeline to automate structured security report
+generation from large-scale unstructured data, despite significant infrastructure
+constraints like smaller LLMs, limited async support, and legacy systems. Notably, | led
+the six-month integration of a sophisticated Al assistant into our flagship product,
+architecting a modular, scalable solution that decoupled synchronous Flask backends
+from async Al protocols (MCP) and introduced innovative patterns like entity-based
+context and a custom Human-in-the-Loop approval system—reducing token usage by
+60% and enabling robust enterprise workflows. | emphasized factual accuracy and
+transparency, partnering closely with product and sales to align solutions with analyst
+needs, which led to impactful, measurable results: 18% higher correctness, 84% prompt
+relevance, 27% better recall, and 97% schema adherence. My work on LangGraph,
+MCP server deployments, FaithfulRAG for cybersecurity, advanced summarization,
+Text-to-Lucene, scalable contextual search (100M+ entities), and SecureBERT 2.0
+fine-tuning further showcased my strength in architectural innovation, constraint-driven
+
+problem solving, and high-stakes delivery across multidisciplinary teams.

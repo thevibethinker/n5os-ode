@@ -1,0 +1,1 @@
+{"entities": [{"name": "SESSION_STATE", "type": "CONCEPT", "context": "part of the context for the process"}, {"name": "worker assignment", "type": "CONCEPT", "context": "output of the deliberate scoping process"}, {"name": "script", "type": "TOOL", "context": "tool used to save the worker assignments"}], "relationships": []}

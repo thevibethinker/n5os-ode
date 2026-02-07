@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "referring to Vrijen"}, {"name": "Careerspan", "type": "TOOL", "context": "AI career coaching platform and recruiting tool"}], "relationships": [{"from": "V", "to": "Careerspan", "type": "MENTIONS", "context": "describes Careerspan's function"}]}

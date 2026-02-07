@@ -1,0 +1,1 @@
+{"entities": [{"name": "Zo", "type": "ORG", "context": "organization with valuable architecture for personal data management"}, {"name": "V", "type": "PERSON", "context": "describing the value of Zo's architecture"}], "relationships": [{"from": "V", "to": "Zo", "type": "USES", "context": "V describes Zo's architecture for personal data management"}]}

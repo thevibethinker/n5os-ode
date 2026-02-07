@@ -1,0 +1,1 @@
+{"entities": [{"name": "Zo", "type": "PERSON", "context": "individual involved in command documentation"}, {"name": "JSON", "type": "TOOL", "context": "structure used for extraction templates"}], "relationships": [{"from": "Zo", "to": "JSON", "type": "USES", "context": "Zo uses JSON structures for extraction templates"}]}

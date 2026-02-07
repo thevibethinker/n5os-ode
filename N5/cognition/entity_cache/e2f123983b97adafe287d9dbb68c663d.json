@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "Organization providing a value proposition around skill matching"}], "relationships": [{"from": "V", "to": "Careerspan", "type": "KNOWS", "context": "V recognizes Careerspan's value proposition in addressing hiring manager pain"}]}

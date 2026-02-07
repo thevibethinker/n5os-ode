@@ -1,0 +1,1 @@
+{"entities": [{"name": "Logan", "type": "PERSON", "context": "founder involved in meetings"}, {"name": "founders", "type": "CONCEPT", "context": "group of people on the call"}], "relationships": [{"from": "V", "to": "Logan", "type": "WORKS_WITH", "context": "both are founders"}, {"from": "V", "to": "founders", "type": "BELIEVES", "context": "the founders should work together"}]}

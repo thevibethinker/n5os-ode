@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "the individual behind the knowledge system"}, {"name": "POLICY.md", "type": "TOOL", "context": "a document to refer to before any interaction"}], "relationships": [{"from": "V (Vrijen)", "to": "POLICY.md", "type": "USES", "context": "refers to this document for guidance"}]}

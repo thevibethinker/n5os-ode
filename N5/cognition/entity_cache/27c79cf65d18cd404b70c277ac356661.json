@@ -1,0 +1,1 @@
+{"entities": [{"name": "contradiction_detector.py", "type": "TOOL", "context": "a tool that scans existing system learnings for contradictions"}], "relationships": []}

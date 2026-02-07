@@ -1,0 +1,1 @@
+{"entities": [{"name": "Sarah Chen", "type": "PERSON", "context": "VP Engineering"}], "relationships": [{"from": "V", "to": "Sarah Chen", "type": "WORKS_WITH", "context": "V collaborates with Sarah Chen for engineering insights"}]}

@@ -1,0 +1,49 @@
+Large Language Model (LLM)
+
+Sectors Integration
+
+Required: Advanced 4/5 Importance: 9/10 Story+profie ~ «
+
+Ourtake Sasedonresume ~ Direct
+
+Alignment to skill: The resume contains multiple direct, concrete examples of designing, implementing, and
+shipping systems that integrate LLMs or LLM-like pipelines into production products. Evidence includes
+building RAG-based Student Companion (semantic search via vector DB, quiz generation, agentic response
+verification), an Automatic Marking System using few-shot prompting and chain-of-thought, FaithfulRAG-
+based report generation to reduce hallucinations, dual LLM support (OpenAl + open-source via Ollama), and
+deploying a public MCP server for third-party Al clients.
+
+End-to-end/full-stack evidence: The candidate describes full-stack work repeatedly — decoupling
+synchronous Flask backends from async Al protocols (MCP), deploying servers, building Python/Django
+model-serving apps with multi-threaded inference, Text-to-Lucene and Text-to-NoSQL integrations, and
+contextual search (ES + retrieval + reranking). These indicate hands-on backend engineering, API integration,
+and production deployment of LLM-powered features.
+
+System-level considerations: The resume explicitly addresses production constraints and system-level
+tradeoffs: reducing token usage by 60%, lowering hallucinations (FaithfulRAG), operating with smaller LLMs
+and legacy infra, improving correctness/relevance/recall/schema adherence with measured metrics, and
+building human-in-the-loop approval systems and guardrails/feedback loops. Latency and scalability
+concerns are shown elsewhere (@.g., sub-300ms scoring in an earlier role and scalable contextual search for
+100M+¢ entities).
+
+Scope and impact: At EclecticlO the candidate led all Al initiatives, integrated an Al assistant into flagship
+product over six months, deployed frameworks (LangGraph, MCP), and led technical efforts for a team of 8+
+researchers — demonstrating ownership, architecture, and product impact rather than just prototypes.
+Cambridge role shows applied LLM prompting in an education product with measurable accuracy (~85%).
+
+Gaps / caveats: The resume is strong, but details about specific observability stacks (e.g., Prometheus,
+Opentelemetry), explicit security/compliance certifications (SOC2/GDPR implementation), and frontend UX
+integration specifics are not named. There is solid evidence of backend and integration work, less explicit
+mention of client-side Ul implementation or specific monitoring tooling.
+
+Judgment: This background meets the Advanced criteria. The candidate has clearly designed, delivered, and
+productionized LLM-powered features with attention to cost. hallucination mitigation, latency and operational
+constraints, and created reusable patterns and servers that others can use.
+
+Support
+Stories
+qoWHeLzqkOMMISPweHIL Direct 8/10 Excellent
+kftoWPdjyQB9CQisjIPn Dwect 9/10 Excellent Best
+Resume
+
+Resume match ‘Direct 9/10 Excellent

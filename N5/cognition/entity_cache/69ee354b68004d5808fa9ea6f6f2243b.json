@@ -1,0 +1,1 @@
+{"entities": [{"name": "Work Manifest", "type": "TOOL", "context": "tracks changes"}, {"name": "risk assessment", "type": "CONCEPT", "context": "evaluates safety"}], "relationships": [{"from": "V", "to": "Work Manifest", "type": "USES", "context": "to track changes"}, {"from": "V", "to": "risk assessment", "type": "USES", "context": "to evaluate safety"}]}

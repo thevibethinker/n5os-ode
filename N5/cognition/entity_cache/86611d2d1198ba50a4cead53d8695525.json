@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "organization setting up webhooks"}, {"name": "CorridorX", "type": "ORG", "context": "organization receiving notifications from Careerspan"}], "relationships": [{"from": "Careerspan", "to": "CorridorX", "type": "WORKS_WITH", "context": "setting up webhooks for notification"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Calendar Sync", "type": "TOOL", "context": "A tool for synchronizing calendar events"}, {"name": "Email Intelligence System", "type": "TOOL", "context": "A tool for analyzing and leveraging email data"}, {"name": "CRM v4", "type": "TOOL", "context": "A version of a Customer Relationship Management tool"}], "relationships": []}

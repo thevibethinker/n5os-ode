@@ -1,0 +1,1 @@
+{"entities": [{"name": "Short.io Link Service", "type": "TOOL", "context": "A link shortener integration service used by V."}, {"name": "V", "type": "PERSON", "context": "The owner of the Short.io Link Service."}], "relationships": [{"from": "V", "to": "Short.io Link Service", "type": "USES", "context": "V is the owner of the Short.io Link Service."}]}

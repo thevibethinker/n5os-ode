@@ -1,0 +1,1 @@
+{"entities": [{"name": "David Speigel", "type": "PERSON", "context": "individual discussing passive candidate engagement"}], "relationships": [{"from": "David Speigel", "to": "passive candidate engagement", "type": "MENTIONS", "context": "discussing the approach to engaging candidates"}]}

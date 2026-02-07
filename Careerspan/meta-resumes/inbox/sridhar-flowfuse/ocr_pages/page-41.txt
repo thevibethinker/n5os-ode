@@ -1,0 +1,24 @@
+Excelent Backend Development Required: Advanced 4/5 Importance: 8/10 Story+profie
+
+Ourtake Sasedon story: ktowPd|yQBgCais\IPn v Direct:
+
+This story demonstrates strong direct, hands-on backend development at an advanced level, centered around
+productionizing a complex Al-powered pipeline. The candidate describes architecting and implementing a
+multi-stage Retrieval-Augmented Generation (RAG) pipeline with several backend-heavy responsibilities:
+intelligent context compression, multiprocessing for parallel execution (including refactoring code for
+backend GPU workers), pipeline modularity, and traceability features. Explicitly, the candidate had to own
+architectural decisions under technical and infrastructure constraints, deliver operational features for high-
+stakes reports, and ensure the system was robust, traceable, and reliable in production for external analysts.
+The context (startup, release cycles, production use) further indicates real-world experienced backend
+development, not just experimentation. Key advanced aspects are: end-to-end ownership, LLM/AI integration,
+architectural tradeoffs (handling infrastructure limits, maximizing GPU throughput, schema adherence for
+trust), and quantifiable results (impact on correctness, relevance, recall, reliability). There's also a clear
+engagement with operational/production reliability and constraints — crucial for FlowFuse's requirements.
+
+Support
+Stories
+qoWHelzqkOMMISPwcHIL ‘Direct 9/10 Excellent:
+kftoWPdjyOB9CQisjIPn ‘Dwect 9/10 Excellent Best
+Resume
+
+Resume match ‘Direct: 8/0 ‘Excellent,

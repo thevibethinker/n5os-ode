@@ -1,0 +1,1 @@
+{"entities": [{"name": "drop_console", "type": "CONCEPT", "context": "a setting to control console function calls"}, {"name": "console.*", "type": "CONCEPT", "context": "functions related to logging in JavaScript"}], "relationships": []}

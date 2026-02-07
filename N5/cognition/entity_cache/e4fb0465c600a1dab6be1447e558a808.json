@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "founder and key perspective holder"}, {"name": "Careerspan", "type": "ORG", "context": "organization related to hiring and career development"}], "relationships": [{"from": "Vrijen", "to": "Careerspan", "type": "BELIEVES", "context": "Vrijen discusses the role of Careerspan in future careers"}]}

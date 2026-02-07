@@ -1,0 +1,1 @@
+{"entities": [{"name": "CRM", "type": "ORG", "context": "Customer Relationship Management system used for managing stakeholder records"}], "relationships": [{"from": "Records/stakeholder_discovery/*.jsonl", "to": "CRM", "type": "USES", "context": "feeds data into the CRM for management"}]}

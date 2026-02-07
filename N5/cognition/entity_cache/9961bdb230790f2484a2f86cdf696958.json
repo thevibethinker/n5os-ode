@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual with a knowledge system"}, {"name": "JDs", "type": "CONCEPT", "context": "job descriptions used for criteria"}], "relationships": [{"from": "V (Vrijen)", "to": "JDs", "type": "USES", "context": "breaks down JDs into separate criteria"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Alex", "type": "PERSON", "context": "selective about engagement and values quality relationships"}, {"name": "Careerspan project", "type": "CONCEPT", "context": "genuine enthusiasm for the project"}], "relationships": [{"from": "Alex", "to": "Careerspan project", "type": "BELIEVES", "context": "enthusiasm for the project"}]}

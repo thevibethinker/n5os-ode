@@ -1,0 +1,35 @@
+schema_version: '1.0'
+created: '2026-02-05T16:36:47.111475'
+framework: careerspan-decomposer
+extraction_method: llm-semantic
+candidate: archit
+company: addepar
+slug: archit-addepar
+source_doc: /home/.z/workspaces/con_Lm2vqXjxi9QnVl8m/archit_addepar_brief.txt
+careerspan_score: 75
+files:
+- overview.yaml
+- profile.yaml
+- experience.yaml
+- hard_skills.yaml
+- soft_skills.yaml
+- tools.yaml
+- achievements.yaml
+- interests.yaml
+- alignment.yaml
+- jd.yaml
+- scores_complete.json
+- scores_complete.csv
+counts:
+  total_skills: 36
+  by_rating:
+    Excellent: 18
+    Fair: 4
+    Good: 13
+    Weak: 1
+validation:
+  schema_valid: false
+  errors:
+  - '''Weak'' is not one of [''Excellent'', ''Good'', ''Fair'', ''Gap'', None]'
+status: complete
+notes: Extracted via LLM semantic analysis. DO NOT manually edit extraction files.

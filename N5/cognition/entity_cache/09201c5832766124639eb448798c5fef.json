@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual demonstrating technical capabilities"}, {"name": "startup environment", "type": "ORG", "context": "workplace context where V may fit culturally"}], "relationships": [{"from": "V (Vrijen)", "to": "startup environment", "type": "RELATED_TO", "context": "cultural fit in a startup"}]}

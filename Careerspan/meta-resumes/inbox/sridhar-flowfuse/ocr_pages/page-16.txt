@@ -1,0 +1,36 @@
+Excellent Design for operational constraints Required: Advanced 4/5 Importance: 9/10 Story+profile Y «
+
+Ourtake Basedonresume ~~ Direct
+
+The resume provides multiple direct, production-first examples showing the candidate designed Al systems
+while explicitly addressing Al-specific failure modes, latency, cost, and operational concerns. Key evidence: (1)
+EclecticlQ (Principal ML Engineer) — led end-to-end Al integration under infrastructure constraints,
+implemented FaithfulRAG and guardrails to reduce hallucinations, built a Human-in-the-Loop approval system
+(operational/fallback), decoupled synchronous Flask backends from async Al protocols (architectural decision
+to manage latency/availability), and reduced token usage by 60% (direct cost optimization). Results cited
+(18% higher correctness, 84% prompt relevance, 27% better recall, 97% schema adherence) show measurable
+reliability improvements. (2) Cambridge University Press — built RAG-based Student Companion with agentic
+response verification (mitigating hallucinations) and an Automatic Marking System achieving ~85% accuracy
+(performance/QA). (3) Cyware & Dell — built production multi-threaded inference services (latency
+reduction), feedback loops for retraining (operational observability/continuous improvement), anda
+transactional anomaly system returning risk scores under 300ms (strict latency constraint). (4) Additional
+work: Text-to-Lucene, scalable contextual search (100M+ entities) and dual-LLM support (cost/availability
+tradeoffs). Together these show Situation/Task ownership, Actions that anticipated and mitigated
+hallucination/timeouts/cost (guardrails, HITL, token optimization, async architecture, inference parallelism),
+and quantifiable Results. Minor gaps: the resume doesn't list specific observability tooling (e.g., Prometheus,
+SLOs) or explicit monitoring dashboards, but it does describe feedback loops, deployed MCP servers, and
+measured metrics—strong proxies for operational considerations. Overall this is direct, high-quality evidence
+that the candidate meets the advanced proficiency criteria for designing Al-aware features with attention to
+failure modes, latency, cost, and operational requirements.
+
+Contributing skills
+AlObservability and Monitoring AlReliabilityEngineering Production Al System Design Attention to detail
+Risk assessment and mitigation  System-level thinking
+
+Support
+Stories
+qoWHeLzqkOMMISPwcHIL Direct 9/10 Excellent Best
+kftowPdjyQB9CaisjIPn Direct 9/10 Excellent
+Resume
+
+Resume match Direct 9/10 Excellent

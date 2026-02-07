@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "Owner of the relationship maintenance check-in"}, {"name": "Ryan", "type": "PERSON", "context": "Individual who stays engaged and provides ongoing feedback"}], "relationships": [{"from": "Vrijen", "to": "Ryan", "type": "WORKS_WITH", "context": "Engages with Ryan for feedback and relationship maintenance"}]}

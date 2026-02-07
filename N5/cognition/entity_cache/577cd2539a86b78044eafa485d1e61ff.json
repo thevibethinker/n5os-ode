@@ -1,0 +1,1 @@
+{"entities": [{"name": "Shanna X Liu", "type": "PERSON", "context": "contact for V"}, {"name": "Personal (gmail.com)", "type": "ORG", "context": "organization associated with Shanna X Liu"}], "relationships": [{"from": "V", "to": "Shanna X Liu", "type": "KNOWS", "context": "contact established on first contact date"}]}

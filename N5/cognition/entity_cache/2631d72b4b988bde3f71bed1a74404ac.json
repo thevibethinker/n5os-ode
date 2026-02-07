@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan/Zo", "type": "TOOL", "context": "a product to be leveraged within community cohorts"}], "relationships": [{"from": "V", "to": "Careerspan/Zo", "type": "USES", "context": "to leverage within cohort communities"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "the individual associated with the knowledge system"}, {"name": "backup_manager.py", "type": "TOOL", "context": "the script being created or modified"}], "relationships": [{"from": "V", "to": "backup_manager.py", "type": "USES", "context": "V is creating or modifying the backup_manager.py script"}]}

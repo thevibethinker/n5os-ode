@@ -1,0 +1,1 @@
+{"entities": [{"name": "Education at Work", "type": "ORG", "context": "Organization where V works"}, {"name": "V", "type": "PERSON", "context": "Career Development Director"}], "relationships": [{"from": "V", "to": "Education at Work", "type": "WORKS_WITH", "context": "V's role at the organization"}]}

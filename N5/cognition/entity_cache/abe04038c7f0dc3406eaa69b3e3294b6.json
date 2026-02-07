@@ -1,0 +1,1 @@
+{"entities": [{"name": "Emory", "type": "ORG", "context": "an organization aligned with alumni success"}, {"name": "Careerspan", "type": "TOOL", "context": "a tool that can serve Emory's strategic goals"}], "relationships": [{"from": "Emory", "to": "Careerspan", "type": "USES", "context": "Careerspan can serve Emory's strategic goals"}]}

@@ -1,0 +1,26 @@
+{
+  "meeting_id": "2026-01-26 Vrijen Attawar - Zoom with RBV (Dan and Gus)_[B]",
+  "date": "2026-01-26",
+  "participants": [
+    "Vrijen Attawar  Zoom With Rbv Dan",
+    "Gusb"
+  ],
+  "meeting_type": "external",
+  "status": "archived",
+  "transcript_file": "transcript.md",
+  "blocks_requested": [],
+  "blocks_generated": [
+    "B08_STAKEHOLDER_INTELLIGENCE",
+    "B02_COMMITMENTS",
+    "B03_DECISIONS",
+    "B25_DELIVERABLES",
+    "B01_DETAILED_RECAP",
+    "B05_ACTION_ITEMS",
+    "B26_MEETING_METADATA"
+  ],
+  "blocks_failed": [],
+  "staged_at": "2026-01-27T15:19:17.461815Z",
+  "processed_at": "2026-01-27T15:19:17.461833Z",
+  "archived_at": "2026-01-27T15:19:31.554739Z",
+  "error": null
+}

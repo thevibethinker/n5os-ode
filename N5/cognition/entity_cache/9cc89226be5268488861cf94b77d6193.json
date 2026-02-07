@@ -1,0 +1,1 @@
+{"entities": [{"name": "Zo", "type": "ORG", "context": "organization that executes scheduled tasks via LLM"}, {"name": "V", "type": "PERSON", "context": "the individual who has a knowledge system"}], "relationships": [{"from": "V", "to": "Zo", "type": "USES", "context": "V uses Zo's LLM for executing scheduled tasks"}]}

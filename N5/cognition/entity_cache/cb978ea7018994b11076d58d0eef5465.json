@@ -1,0 +1,1 @@
+{"entities": [{"name": "Aspire", "type": "ORG", "context": "an organization that buys coaching-equivalent value"}, {"name": "coaching-equivalent value", "type": "CONCEPT", "context": "the value derived from coaching"}], "relationships": [{"from": "Aspire", "to": "coaching-equivalent value", "type": "USES", "context": "Aspire buys coaching-equivalent value"}]}

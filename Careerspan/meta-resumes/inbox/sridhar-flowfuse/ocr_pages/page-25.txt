@@ -1,0 +1,27 @@
+Good Build backend/frontend workflows Required: Advanced 4/5 Importance: 10/10 Profile S
+
+Ourtake Basedonresume 5 Transferable
+
+The resume provides strong, concrete evidence of building and operating production backend services that
+power Al workflows: e.g., a Scala transactional scoring system with <300ms latency, a Python/Django multi-
+threaded model-serving app with a feedback loop, Flask backends decoupled from async Al protocols (MCP), a
+public MCP server, Text-to-Lucene and ES-based contextual search (100M+ entities), and multiple RAG/LLM
+integrations (FaithfulRAG, vector DBs, few-shot prompting). These items demonstrate end-to-end ownership
+of backend architecture, performance/latency optimization, Al integration, deployment, and operational
+reliability. The resume also shows cross-functional collaboration (product/sales), measurable impact metrics,
+and leadership of technical delivery—all aligned with the role’s expectations. However, explicit evidence of
+building frontend interfaces (React/Vue or similar Ul work) is missing; frontend ownership is implied by
+product-facing features but not directly stated. Because the candidate clearly meets the advanced backend +
+Alintegration criteria and likely has transferable fullstack product experience, | infer they can fulfill the full-
+stack (Al-focused) responsibility but would benefit from explicit frontend examples on the resume.
+
+Contributing skills
+
+AlFeature Deployment Production AlSystemDesign BackendDevelopment FrontendDevelopment _Fullstack Development
+Attention to detail Prioritizationand time management Collaboration Problem-solving
+
+Support
+
+Resume
+
+Resume match Transferable 7/10 Good

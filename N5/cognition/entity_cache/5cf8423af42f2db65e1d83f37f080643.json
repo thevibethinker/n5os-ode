@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "the individual engaged in the conversation"}, {"name": "experiments", "type": "CONCEPT", "context": "a method of exploration and testing"}], "relationships": [{"from": "V", "to": "experiments", "type": "BELIEVES", "context": "V expresses a willingness to participate in experimental activities"}]}

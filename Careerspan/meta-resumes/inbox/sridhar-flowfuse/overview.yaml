@@ -1,0 +1,23 @@
+# Overview
+# Extracted: 2026-01-30T02:22:04.097291
+
+careerspan_score:
+  overall: 80
+  max: 100
+  qualification: "Well-aligned"
+  career_trajectory: "Career Pivot"
+recommendation: "YES"
+summary: "Shridhar is a strong AI-focused fullstack candidate with standout backend/LLM integration experience, including building modular architectures, implementing reliability patterns, and achieving measurable production gains. While his frontend depth needs probing, he brings nine years of applied AI/ML delivery with a track record of turning ideas into production features under real constraints."
+elevator_pitch: "You get a builder who reliably turns ambiguous AI ideas into production features under real constraints—bridging legacy sync backends with modern async protocols, inventing entity-based context to cut tokens by 60%, and adding a human-in-the-loop layer that made sensitive actions 100% correct. You also get someone who listens to users, translates fresh research into pragmatic pipelines, and ships measurable gains (+18% correctness, +27% recall) across domains—bringing the mix of product empathy, systems thinking, and delivery speed you need to bootstrap your AI foundation."
+key_strengths:
+  - "Nine years of applied AI/ML delivery with strong record of productionizing features under real constraints"
+  - "Deep backend/LLM integration expertise with concrete reliability patterns (FaithfulRAG, guardrails, HITL approvals)"
+  - "Measurable production impact across domains (+18% correctness, +27% recall, 60% token reduction)"
+  - "End-to-end ownership as sole ML engineer, founder, and first data scientist in finance org"
+  - "Pragmatic problem solving with cross-functional alignment on success metrics"
+key_concerns:
+  - "Limited explicit evidence of modern frontend implementation (React/Vue/TypeScript, UI state management)"
+  - "Missing formal privacy/security compliance experience (SOC 2/GDPR, audit artifacts, incident response)"
+  - "Lack of concrete observability tooling specifics (OpenTelemetry/Prometheus, SLOs/alerts, drift monitoring)"
+  - "Lighter on explicit async-first communication artifacts (RFCs, design docs) and formalized knowledge-sharing programs"
+verdict: "Proceed with the candidate while probing hands-on frontend depth and formal privacy/observability practices."

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Zo", "type": "PERSON", "context": "entity that creates, processes, and organizes files"}, {"name": "voice memo", "type": "TOOL", "context": "the tool used to initiate the process"}], "relationships": [{"from": "Zo", "to": "voice memo", "type": "USES", "context": "uses a voice memo to create, process, and organize files"}]}

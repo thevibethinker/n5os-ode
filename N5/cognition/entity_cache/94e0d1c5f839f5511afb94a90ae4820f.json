@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "the individual related to the knowledge system"}, {"name": "git", "type": "TOOL", "context": "version control system used for managing code"}], "relationships": []}

@@ -1,0 +1,69 @@
+{
+  "schema_version": 3,
+  "slug": "decomposer-reliability",
+  "title": "Careerspan Decomposer Reliability",
+  "objective": "Eliminate hallucinations in careerspan-decomposer via evidence-locked extraction with fail-fast validation",
+  "created": "2026-02-01",
+  "status": "complete",
+  "completed_at": null,
+  "build_type": "code_build",
+  "model": "anthropic:claude-sonnet-4-20250514",
+  "launch_mode": "orchestrated",
+  "orchestrator_convo_id": "con_VrZWyEvkDHZu2bES",
+  "waves": {
+    "W1": [
+      "D1.1",
+      "D1.2"
+    ],
+    "W2": [
+      "D2.1"
+    ]
+  },
+  "active_wave": "W2",
+  "drops": {
+    "D1.1": {
+      "name": "Provenance Verification Layer",
+      "brief": "drops/D1.1-verify-layer.md",
+      "stream": 1,
+      "order": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "started_at": "2026-02-01T21:37:21.069883+00:00",
+      "conversation_id": "con_mriKSXUv6EfRMgJO"
+    },
+    "D1.2": {
+      "name": "Fail-Fast Extraction Refactor",
+      "brief": "drops/D1.2-fail-fast-extraction.md",
+      "stream": 2,
+      "order": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "failure_reason": null
+    },
+    "D2.1": {
+      "name": "Structured Input Mode",
+      "brief": "drops/D2.1-structured-input.md",
+      "stream": 1,
+      "order": 1,
+      "depends_on": [
+        "D1.1",
+        "D1.2"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete"
+    }
+  },
+  "lineage": {
+    "parent_type": "conversation",
+    "parent_ref": "con_VrZWyEvkDHZu2bES",
+    "parent_conversation": "con_VrZWyEvkDHZu2bES",
+    "moment": "V reported hallucinations in decomposer output",
+    "branched_at": "2026-02-01T21:30:00Z"
+  },
+  "started_at": "2026-02-01T21:31:05.284917+00:00"
+}

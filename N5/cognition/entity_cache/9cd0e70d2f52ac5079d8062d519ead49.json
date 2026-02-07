@@ -1,0 +1,1 @@
+{"entities": [{"name": "SmartBuffer", "type": "TOOL", "context": "A tool used for creating buffers of specified size."}], "relationships": [{"from": "V", "to": "SmartBuffer", "type": "USES", "context": "V uses SmartBuffer to create instances with specified internal buffer sizes."}]}

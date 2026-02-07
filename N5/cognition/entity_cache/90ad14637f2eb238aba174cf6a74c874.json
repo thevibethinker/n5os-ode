@@ -1,0 +1,1 @@
+{"entities": [{"name": "Colby College", "type": "ORG", "context": "sponsorship contact"}], "relationships": [{"from": "V", "to": "Colby College", "type": "KNOWS", "context": "sponsorship contact"}]}

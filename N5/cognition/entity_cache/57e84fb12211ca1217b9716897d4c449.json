@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "knows as a peer designer/product person"}], "relationships": [{"from": "Vrijen", "to": "Mentorship", "type": "MENTIONS", "context": "recipient of mentorship on visibility/professional development"}]}

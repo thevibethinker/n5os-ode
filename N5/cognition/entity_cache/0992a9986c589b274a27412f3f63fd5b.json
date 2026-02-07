@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "founder of a knowledge system"}, {"name": "Careerspan", "type": "ORG", "context": "mentioned as part of V's credentials"}], "relationships": [{"from": "V", "to": "Careerspan", "type": "MENTIONS", "context": "mentioned as a founder credential for a demo"}]}

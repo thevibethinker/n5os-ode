@@ -1,0 +1,1 @@
+{"entities": [{"name": "N5 OS", "type": "TOOL", "context": "Operating system related to V's knowledge system"}, {"name": "emoji legend", "type": "CONCEPT", "context": "Centralized interpretation of emoji meanings"}], "relationships": [{"from": "N5 OS", "to": "emoji legend", "type": "USES", "context": "N5 OS utilizes a centralized emoji legend for meaning consistency"}]}

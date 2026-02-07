@@ -1,0 +1,43 @@
+Al/ML Specialist
+Cambridge University Press And Assessment
+
+Apr 2023 - Jun 2024
+During my time in this position, | built a Student Companion System leveraging
+
+retrieval-augmented generation (RAG) to enhance multimodal course Q&A, implement
+semantic search using vector databases, ensure agentic response verification, and
+support both quiz generation and pedagogical-style adaptation. Additionally, | developed
+an Automatic Marking System that utilizes few-shot prompting to accurately score short
+answers—achieving around 85% accuracy—and to generate reasoning using
+chain-of-thought techniques.
+
+Al Consultant
+
+Ponderbot Analytics
+
+Aug 2022 - Apr 2023
+| founded and owned an Al-focused firm where | delivered end-to-end intelligent
+
+solutions for clients in travel, retail, marketing, and agriculture. During my time there, |
+designed and built a travel recommendation chatbot that uses a personality-based quiz
+to suggest personalized destinations and activities. | also created over 15 Al solutions
+for a marketing client, such as recommendation engines, customer retention tools,
+campaign targeting, and customer segmentation. Additionally, | developed a grocery
+retail chatbot capable of providing real-time product information and answering
+customer queries accurately. | also built a feed composition optimization system for
+cattle that used linear programming to balance nutritional requirements and reduce CO2
+emissions.
+
+Senior Data Scientist
+
+Cyware Labs
+
+Jul 2021 - Aug 2022
+In this role, | served as the sole machine learning engineer, designing and building
+
+end-to-end ML products from the ground up. | developed a cybersecurity entity
+extraction model using spaCy, achieving approximately a 0.78 F1 score by integrating
+named entity recognition and sentence classification, and also explored BERT and
+Stanza alternatives. | created a multi-label classification system for identifying Tactics &
+
+Techniques using a custom ML pipeline with various logistic regression models.

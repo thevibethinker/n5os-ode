@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "knowledge system developer"}, {"name": "Network Effect", "type": "CONCEPT", "context": "relationship that enhances predictions and outcomes in hiring"}], "relationships": [{"from": "V", "to": "Network Effect", "type": "BELIEVES", "context": "V believes in the network effect for improving hiring predictions"}]}

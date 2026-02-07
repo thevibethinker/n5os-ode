@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "the speaker discussing technical debt"}, {"name": "technical debt", "type": "CONCEPT", "context": "a problem related to software development"}], "relationships": [{"from": "Vrijen Attawar", "to": "technical debt", "type": "MENTIONS", "context": "discussing issues arising from technical debt"}]}

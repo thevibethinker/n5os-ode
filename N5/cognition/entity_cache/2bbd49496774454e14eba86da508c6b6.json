@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Individual mentioning their professional profile"}, {"name": "Calendly", "type": "ORG", "context": "Organization founded by V"}], "relationships": [{"from": "V", "to": "Calendly", "type": "FOUNDED", "context": "V is the founder of Calendly"}]}

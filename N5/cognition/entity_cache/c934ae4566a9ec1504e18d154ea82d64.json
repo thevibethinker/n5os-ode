@@ -1,0 +1,1 @@
+{"entities": [{"name": "state-session", "type": "CONCEPT", "context": "a concept related to tracking the status of sessions"}, {"name": "Command: check-state-session", "type": "TOOL", "context": "a tool used for checking the state of a session"}], "relationships": []}

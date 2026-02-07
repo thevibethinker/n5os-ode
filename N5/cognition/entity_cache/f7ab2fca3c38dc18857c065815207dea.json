@@ -1,0 +1,1 @@
+{"entities": [{"name": "Aaron Mak Hoffman", "type": "PERSON", "context": "speaker in the conversation"}, {"name": "Replit", "type": "TOOL", "context": "platform mentioned for learning and development"}], "relationships": [{"from": "Aaron Mak Hoffman", "to": "Replit", "type": "USES", "context": "Aaron uses Replit for learning and development"}]}

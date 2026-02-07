@@ -1,0 +1,1 @@
+{"entities": [{"name": "prerelease tag", "type": "CONCEPT", "context": "a tag that indicates a version is not yet officially released"}, {"name": "comparator sets", "type": "CONCEPT", "context": "sets of rules used to compare version numbers"}, {"name": "[major, minor, patch]", "type": "CONCEPT", "context": "a tuple representing version number components"}], "relationships": []}

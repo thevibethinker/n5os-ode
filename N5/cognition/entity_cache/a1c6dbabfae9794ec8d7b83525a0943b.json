@@ -1,0 +1,1 @@
+{"entities": [{"name": "N5/scripts/meeting_*.py", "type": "TOOL", "context": "Python scripts referenced for processing meetings"}, {"name": "/home/workspace/Personal/Meetings/", "type": "CONCEPT", "context": "Canonical location for post-processing scripts"}], "relationships": []}

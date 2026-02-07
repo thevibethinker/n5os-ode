@@ -1,0 +1,1 @@
+{"entities": [{"name": "Strategic Question", "type": "CONCEPT", "context": "Core question raised about direction"}, {"name": "Operational Question", "type": "CONCEPT", "context": "Question about how team operates"}, {"name": "Market Question", "type": "CONCEPT", "context": "Question about market or customers"}], "relationships": []}

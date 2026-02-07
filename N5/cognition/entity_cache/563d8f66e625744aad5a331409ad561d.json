@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual with a knowledge system"}, {"name": "Function [XX] files", "type": "TOOL", "context": "AI prompt templates and function definitions"}], "relationships": [{"from": "V", "to": "Function [XX] files", "type": "USES", "context": "utilizes AI prompt templates and function definitions"}]}

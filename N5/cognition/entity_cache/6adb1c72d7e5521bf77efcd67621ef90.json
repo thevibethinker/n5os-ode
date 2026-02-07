@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "owner of the system design workflow"}, {"name": "System Design Workflow", "type": "CONCEPT", "context": "capability in system design"}], "relationships": [{"from": "V", "to": "System Design Workflow", "type": "OWNS", "context": "V is the owner of the system design workflow"}]}

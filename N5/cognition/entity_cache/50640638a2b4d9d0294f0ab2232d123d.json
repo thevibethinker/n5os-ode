@@ -1,0 +1,1 @@
+{"entities": [{"name": "Melissa", "type": "PERSON", "context": "Contact undergoing a career transition; V is supporting with intro emails and networking"}], "relationships": [{"from": "V", "to": "Melissa", "type": "RELATED_TO", "context": "Supporting Melissa's career transition with intro emails and pacing guidance"}]}

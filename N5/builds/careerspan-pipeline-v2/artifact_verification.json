@@ -1,0 +1,61 @@
+{
+  "slug": "careerspan-pipeline-v2",
+  "timestamp": "2026-02-03T02:54:49.796290+00:00",
+  "drops": {
+    "D1.1-deposit": {
+      "claimed": [
+        "Skills/careerspan-jd-intake/SKILL.md",
+        "Skills/careerspan-jd-intake/scripts/process_jd.py"
+      ],
+      "verified": [
+        "Skills/careerspan-jd-intake/SKILL.md",
+        "Skills/careerspan-jd-intake/scripts/process_jd.py"
+      ],
+      "missing": []
+    },
+    "D1.2-deposit": {
+      "claimed": [
+        "Skills/careerspan-resume-intake/SKILL.md",
+        "Skills/careerspan-resume-intake/scripts/process_resume.py"
+      ],
+      "verified": [
+        "Skills/careerspan-resume-intake/SKILL.md",
+        "Skills/careerspan-resume-intake/scripts/process_resume.py"
+      ],
+      "missing": []
+    },
+    "D1.3-deposit": {
+      "claimed": [],
+      "verified": [],
+      "missing": []
+    },
+    "D1.2-drop-deposit": {
+      "claimed": [],
+      "verified": [],
+      "missing": []
+    },
+    "D3.1-deposit": {
+      "claimed": [
+        "Integrations/careerspan-pipeline/scripts/pipeline_orchestrator.py",
+        "Integrations/careerspan-pipeline/AGENTS.md"
+      ],
+      "verified": [
+        "Integrations/careerspan-pipeline/scripts/pipeline_orchestrator.py",
+        "Integrations/careerspan-pipeline/AGENTS.md"
+      ],
+      "missing": []
+    },
+    "D2.1-deposit": {
+      "claimed": [],
+      "verified": [],
+      "missing": []
+    }
+  },
+  "summary": {
+    "total_artifacts": 6,
+    "verified": 6,
+    "missing": 0,
+    "errors": 0
+  },
+  "passed": true
+}

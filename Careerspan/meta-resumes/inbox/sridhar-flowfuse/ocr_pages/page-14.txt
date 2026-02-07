@@ -1,0 +1,37 @@
+Excellent Integrate LLM APIs Required: Advanced 4/5 Importance: 10/10 Story+profile Y «A
+
+Ourtake Basedonresume v Direct
+
+The resume provides multiple, concrete examples of integrating LLMs and external Al services into production
+products—not just experiments. At EclecticlQ the candidate: built an Al assistant using LangGraph and MCP
+frameworks, deployed a public MCP server for third-party Al clients, enabled dual LLM support (OpenAl and
+hosted open-source models via Ollama), and implemented FaithfulRAG and guardrails to reduce
+hallucinations. These points show selection and lifecycle management of LLMs, deployment of LLM endpoints,
+cost/efficiency work (token usage reduced by ~60%), and safety/verification (Human-in-the-Loop approval,
+guardrails, feedback loops). At Cambridge University Press they built a Student Companion using RAG, vector
+DBs, semantic search, agentic response verification, and an Automatic Marking System using few-shot
+prompting and chain-of-thought—demonstrating prompt engineering, embeddings, retrieval integration, and
+model output evaluation (~85% accuracy). Additional evidence: building Text-to-Lucene/RAG, a scalable
+contextual search (100M+ entities), and a Python/Django multi-threaded inference service with feedback
+loops (shows production serving, latency management and lifecycle/retraining). Minor gaps: the resume
+doesn't explicitly call out low-level operational details like auth/role-based access, error-handling patterns, or
+full observability dashboards, though deploying a public MCP server and production services implies handling
+many of those concerns. Overall, the resume meets the Advanced proficiency criteria through direct,
+production-grade LLM/API integrations, prompt engineering, cost/latency optimizations, safety guardrails,
+and measurable business impact.
+
+Contributing skills
+
+AlFeature Deployment Al Observability and Monitoring Vector Search Techniques _Fullstack Development
+
+Large Language Model (LLM) integration _Retrieval-AugmentedGeneration _ Effective asynchronous communication _Problem-solving
+Attentionto detail Adaptability
+
+Support
+Stories
+qoWHeLzqkOMMI5PwcHiL Direct 9/10 Excellent
+kftowPdjyQB9CQiSjIPn Direct 9/10 Excellent Best
+Resume
+Resume match Direct 9/10 Excellent
+
+Excellent Design for operational constraints Required: Advanced 4/5 Importance: 9/10 Story+profile yv v

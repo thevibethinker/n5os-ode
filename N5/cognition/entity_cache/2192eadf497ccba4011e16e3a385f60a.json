@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Individual associated with the knowledge system"}, {"name": "AI", "type": "CONCEPT", "context": "Field related to artificial intelligence"}], "relationships": [{"from": "V", "to": "AI", "type": "KNOWS", "context": "V is the head of AI, implying knowledge in the field"}]}

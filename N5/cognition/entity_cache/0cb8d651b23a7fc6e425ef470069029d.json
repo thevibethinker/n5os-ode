@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "founder of Careerspan"}, {"name": "Careerspan", "type": "ORG", "context": "organization focused on career coaching"}], "relationships": [{"from": "Vrijen Attawar", "to": "Careerspan", "type": "WORKS_WITH", "context": "founder of the organization"}]}

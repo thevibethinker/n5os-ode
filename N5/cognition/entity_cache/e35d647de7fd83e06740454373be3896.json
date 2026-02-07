@@ -1,0 +1,1 @@
+{"entities": [{"name": "brain.db", "type": "TOOL", "context": "database where files are indexed"}, {"name": "RAG queries", "type": "CONCEPT", "context": "type of queries for searching indexed files"}], "relationships": []}

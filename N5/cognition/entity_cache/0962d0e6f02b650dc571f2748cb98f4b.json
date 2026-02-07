@@ -1,0 +1,1 @@
+{"entities": [{"name": "P5 (Anti-Overwrite)", "type": "CONCEPT", "context": "Rule about not copying files to AAR"}, {"name": "P23 (Artifact Provenance)", "type": "CONCEPT", "context": "Rule about symlinking deliverables"}, {"name": "Phase 0.5", "type": "CONCEPT", "context": "Stage in the process that is automated during conversation-end"}], "relationships": []}

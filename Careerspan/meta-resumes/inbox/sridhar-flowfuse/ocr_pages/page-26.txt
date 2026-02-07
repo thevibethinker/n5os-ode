@@ -1,0 +1,26 @@
+Good Share applied Al practices Required: Advanced 4/5 Importance:6/10 Profile S «A
+
+Ourtake Basedonresume + Transferable
+
+Evidence for knowledge-sharing and codifying Al best practices is present but indirect. Strong signals: as
+Principal ML Engineer at EclecticlQ Shridhar led all Al initiatives, ‘oversaw feature scoping, success metrics,
+deliverables, and guide[d] both domain and technical execution’ for an 8+ PhD researcher team, architected
+reusable patterns (entity-based context, Human-in-the-Loop, modular decoupling), deployed a public MCP
+server (supporting third-party clients), and introduced guardrails/feedback loops and Text-to-Lucene/multi-
+index RAG patterns. Running an Al consultancy and being the first data scientist in Dell's finance org also imply
+he established processes and reusable solutions across teams. These items imply he created and propagated
+internal patterns, standards and operational practices typical for those roles (transferable demonstration).
+Missing: explicit statements that he authored internal docs, wikis, runbooks, onboarding guides, ran
+workshops/mentoring sessions, or measured adoption/reduced onboarding time. Because the resume shows
+leadership, pattern design, and cross-functional collaboration but not explicit documentation/knowledge-
+dissemination artifacts or quantified team adoption, this is a transferable (not direct) endorsement at a
+moderate-strong level.
+
+Contributing skills
+Software Design Patterns Knowledge sharing Effective asynchronous communication
+
+Support
+
+Resume
+
+Resume match ‘Transferable 6/10 Good

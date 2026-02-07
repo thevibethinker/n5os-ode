@@ -1,0 +1,1 @@
+{"entities": [{"name": "Aspire", "type": "ORG", "context": "organization discussing monetization"}, {"name": "Careerspan", "type": "ORG", "context": "potential reseller of Aspire's services"}], "relationships": [{"from": "Aspire", "to": "Careerspan", "type": "MENTIONS", "context": "Aspire may become a reseller for Careerspan if successful"}]}

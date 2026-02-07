@@ -1,0 +1,47 @@
+Additionally, | built a Python/Django application to serve these ML models with
+multi-threaded inference to minimize latency, incorporating a feedback loop for ongoing
+model improvement. | also engineered a Text-to-NoSQL system leveraging the
+pretrained PICARD model for Elasticsearch queries.
+
+Data Scientist
+
+Dell Technologies
+
+Mar 2019 - Jun 2021
+| was the first data scientist in the Finance Department, where | pioneered several
+
+impactful initiatives. | built a capacity planning system that used time-series forecasting
+to predict global resource needs for the next two quarters. Additionally, | developed a
+table parsing system, leveraging deep learning models like Faster R-CNN and LSTM, to
+accurately extract structured data from purchase orders. | also designed a highly
+accurate product matching system utilizing BERT and data augmentation techniques to
+match line items on purchase orders with quotes.
+
+Data Scientist
+
+SquareOne Insights Pvt Ltd
+
+May 2017 - Feb 2019
+During my time in this role, | built a transactional anomaly detection system in Scala that
+
+leveraged rule-based statistical models to return risk scores in under 300ms. | also
+developed a credit risk model using Random Forest on Spark, achieving an F1 score of
+approximately 0.81.
+
+Software Engineer
+
+Loylty Rewards Pvt Ltd
+
+Jun 2016 - May 2017
+During my time in this role, | was responsible for upgrading SQL stored procedures from
+
+single-entry to double-entry (credit and debit) accounting. This migration project
+
+impacted the databases of 18 banking clients, supporting over 100 million users.
+
+Education
+
+B-Tech, Indian Institute of Technology - Kanpur
+Jun 2012 - May 2016
+
+Mechanical Engineering

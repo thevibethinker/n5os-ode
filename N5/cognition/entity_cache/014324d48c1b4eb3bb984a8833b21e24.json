@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual mentioned in the text"}, {"name": "CRM Records", "type": "TOOL", "context": "system for managing records of individuals and organizations"}, {"name": "organizations", "type": "ORG", "context": "50+ organizations mentioned in CRM records"}], "relationships": []}

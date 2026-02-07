@@ -1,0 +1,1 @@
+{"entities": [{"name": "executable_manager.py", "type": "TOOL", "context": "a script for managing executables"}, {"name": "executables.db", "type": "TOOL", "context": "a database file for storing executable information"}], "relationships": []}

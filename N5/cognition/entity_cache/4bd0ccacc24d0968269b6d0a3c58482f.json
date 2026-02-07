@@ -1,0 +1,1 @@
+{"entities": [{"name": "LinkedIn", "type": "ORG", "context": "social media platform for professional networking"}, {"name": "Gmail", "type": "TOOL", "context": "email service provider"}, {"name": "meeting intelligence", "type": "CONCEPT", "context": "analyzing insights from meetings"}], "relationships": []}

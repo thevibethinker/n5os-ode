@@ -1,0 +1,44 @@
+Category,Skill,Rating,Required Level,Required Score,Max Score,Importance,Max Importance,Evidence
+Responsibility,Deliver end-to-end solutions,Excellent,Advanced,4,5,10,10,Story + profile
+Responsibility,Ensure feature reliability,Excellent,Advanced,4,5,10,10,Story + profile
+Responsibility,Prototype and productionize AI,Excellent,Advanced,4,5,10,10,Story + profile
+Responsibility,Develop AI features,Excellent,Advanced,4,5,10,10,Story + profile
+Responsibility,User Feedback Integration,Excellent,Intermediate,3,5,7,10,Story + profile
+Responsibility,Contribute to fullstack work,Excellent,Intermediate,3,5,6,10,Story + profile
+Responsibility,Design for operational constraints,Excellent,Advanced,4,5,9,10,Story + profile
+Responsibility,Build backend/frontend workflows,Excellent,Advanced,4,5,10,10,Story + profile
+Responsibility,AI Technical Debt Management,Excellent,Advanced,4,5,7,10,Story + profile
+Responsibility,Collaborate cross-functionally,Excellent,Advanced,4,5,9,10,Story + profile
+Responsibility,Build AI capability patterns,Excellent,Advanced,4,5,8,10,Story + profile
+Responsibility,Stay Current with AI Trends,Excellent,Intermediate,3,5,5,10,Profile
+Responsibility,Share applied AI practices,Good,Advanced,4,5,6,10,Story + profile
+Responsibility,Integrate LLM APIs,Good,Advanced,4,5,10,10,Story + profile
+Responsibility,Onboarding and Mentoring,Good,Advanced,4,5,6,10,Profile
+Responsibility,Ensure privacy and security,Good,Advanced,4,5,8,10,Story
+Soft Skill,Attention to detail,Excellent,Advanced,4,5,8,10,Story + profile
+Soft Skill,Problem-solving,Excellent,Advanced,4,5,8,10,Story + profile
+Soft Skill,System-level thinking,Excellent,Intermediate,3,5,8,10,Story + profile
+Soft Skill,Prioritization and time management,Excellent,Intermediate,3,5,7,10,Story + profile
+Soft Skill,Collaboration,Excellent,Advanced,4,5,8,10,Story + profile
+Soft Skill,Pragmatism,Excellent,Advanced,4,5,7,10,Story + profile
+Soft Skill,Adaptability,Excellent,Advanced,4,5,6,10,Story + profile
+Soft Skill,Judgment,Excellent,Advanced,4,5,9,10,Story + profile
+Soft Skill,User-centric product thinking,Excellent,Advanced,4,5,7,10,Story + profile
+Soft Skill,Risk assessment and mitigation,Excellent,Advanced,4,5,7,10,Story + profile
+Soft Skill,Knowledge sharing,Good,Advanced,4,5,6,10,Profile
+Soft Skill,Effective asynchronous communication,Good,Intermediate,3,5,8,10,Profile
+Hard Skill,Backend Development,Excellent,Advanced,4,5,8,10,Story + profile
+Hard Skill,Incremental Software Delivery,Excellent,Intermediate,3,5,8,10,Story + profile
+Hard Skill,AI Feature Deployment,Excellent,Advanced,4,5,9,10,Story + profile
+Hard Skill,AI Reliability Engineering,Excellent,Advanced,4,5,9,10,Story + profile
+Hard Skill,Large Language Model (LLM) Integration,Excellent,Advanced,4,5,9,10,Profile
+Hard Skill,Production AI System Design,Excellent,Intermediate,3,5,9,10,Story + profile
+Hard Skill,Fullstack Development,Excellent,Advanced,4,5,9,10,Story + profile
+Hard Skill,Retrieval-Augmented Generation,Excellent,Intermediate,3,5,6,10,Profile
+Hard Skill,Software Design Patterns,Excellent,Advanced,4,5,7,10,Story + profile
+Hard Skill,Frontend Development,Good,Advanced,4,5,7,10,Story + profile
+Hard Skill,AI Observability and Monitoring,Good,Advanced,4,5,8,10,Profile
+Hard Skill,Embeddings,Good,Intermediate,3,5,6,10,Profile
+Hard Skill,Privacy and Security Compliance,Good,Advanced,4,5,8,10,Story + profile
+Hard Skill,Vector Search Techniques,Fair,Intermediate,3,5,6,10,Profile
+Hard Skill,SOC 2 Compliance,Fair,Advanced,4,5,5,10,Gap

@@ -1,0 +1,1 @@
+{"entities": [{"name": "UglifyJS", "type": "TOOL", "context": "JavaScript minification tool used for processing files"}, {"name": "fs", "type": "TOOL", "context": "File system module used for reading and writing files"}], "relationships": []}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "auth", "type": "CONCEPT", "context": "name of the project being initialized"}, {"name": "python3", "type": "TOOL", "context": "programming language and version used in the command"}, {"name": "build_orchestrator_v2.py", "type": "TOOL", "context": "the script being executed"}], "relationships": []}

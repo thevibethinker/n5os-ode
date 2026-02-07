@@ -1,0 +1,1 @@
+{"entities": [{"name": "Jim Conti", "type": "PERSON", "context": "a well-known individual in the people collective"}], "relationships": [{"from": "Vrijen Attawar", "to": "Jim Conti", "type": "KNOWS", "context": "Vrijen recognizes Jim as a well-known person"}]}

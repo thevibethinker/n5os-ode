@@ -1,0 +1,1 @@
+{"entities": [{"name": "Superposition", "type": "ORG", "context": "an organization involved in revenue sharing"}, {"name": "Careerspan", "type": "ORG", "context": "an organization related to candidate sourcing"}], "relationships": [{"from": "Superposition", "to": "Careerspan", "type": "WORKS_WITH", "context": "Superposition shares revenue with candidates from Careerspan"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Worker 1", "type": "PERSON", "context": "output producer"}, {"name": "Worker 2", "type": "PERSON", "context": "output consumer"}], "relationships": [{"from": "Worker 2", "to": "Worker 1", "type": "USES", "context": "attempting to utilize the output from Worker 1"}]}

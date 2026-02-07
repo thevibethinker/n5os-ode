@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "individual transitioning to next meeting"}, {"name": "team communication", "type": "CONCEPT", "context": "maintaining communication within the team"}], "relationships": [{"from": "Vrijen", "to": "team communication", "type": "USES", "context": "managing communication while multitasking"}]}

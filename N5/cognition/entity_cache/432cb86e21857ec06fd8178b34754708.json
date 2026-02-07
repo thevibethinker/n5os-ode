@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "knowledge system"}, {"name": "Reforge", "type": "ORG", "context": "membership organization"}], "relationships": [{"from": "Vrijen", "to": "Reforge", "type": "USES", "context": "paying for membership"}]}

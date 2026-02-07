@@ -1,0 +1,34 @@
+---
+created: 2026-02-03
+last_edited: 2026-02-03
+version: 1.0
+provenance: con_LFJ7YTSwxW5vh4bD
+
+achievements:
+  professional:
+    - "Led end-to-end development of enterprise AI/ML SaaS platform at Keysight"
+    - "Drove platform adoption from 20 test users to 200–300+ daily enterprise users"
+    - "Enabled R&D operations at global clients (Apple, Samsung Semiconductor, Volkswagen)"
+    - "Reduced model-to-production cycle time from hours to minutes"
+    - "Scaled team from 4 to nearly 20 members"
+    - "Delivered $50,000/month cost savings for American Express via automated database decommissioning"
+    - "Eliminated 100% dev environment and reduced 40% higher environments artifact engagement requests"
+    - "Reduced provisioning time and deployment errors for 125+ services"
+    - "Implemented CI-CD automation reducing manual intervention and time by 95% for 70k+ daily jobs"
+    - "Mentored 4 SDE Interns to successful professional journeys"
+    - "Analyzed over 20,000 cohorts for fraud/abuse detection at Flipkart"
+    - "Triggered early detection of suspicious activities (fraud, marketplace abuse)"
+    - "Engineered ML user-story prioritization model (35% improvement in new feature & ticket delivery)"
+
+  academic:
+    - "99.97 Percentile in IIT-JEE 2016 (Rank 47 in 14 million candidates)"
+    - "99.84 Percentile in KVPY Scholarship 2015"
+    - "NTSE Scholar in 2014"
+    - "B.Tech. & M.Tech. (Dual Degree) from IIT Delhi in Computer Science"
+
+  certifications:
+    - "Associate Cloud Engineer - Google Cloud Platform (GCP)"
+
+  competitions:
+    - "GrowthHack 2021 - 3rd position for RASA NLU voice virtual assistant"
+    - "India Innovation Hackathon Top-5 Finish (2020) out of 100+ participants"

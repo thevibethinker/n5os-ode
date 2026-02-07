@@ -1,0 +1,1 @@
+{"entities": [{"name": "N5", "type": "ORG", "context": "Organization related to the meeting duplicate management"}, {"name": "meeting_duplicate_manager.py", "type": "TOOL", "context": "Script used for managing meeting duplicates"}], "relationships": []}

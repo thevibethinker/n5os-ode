@@ -1,0 +1,50 @@
+Excellent Problem-solving Required: Advanced 4/5 Importance: 8/10 Story+profile Y «
+
+Ourtake Basedonresume - Direct
+
+Alignment to skill: Problem-solving for FlowFuse requires identifying ambiguous, cross-stack technical
+challenges in applied Al, scoping them, choosing tradeoffs, and delivering reliable production solutions.
+Shridhar’s resume contains multiple STAR-like examples showing exactly this pattern.
+
+Evidence from resume: + Led design and production of a multi-stage pipeline and Al assistant at EclecticlQ
+under infrastructure constraints (smaller LLMs, limited async support, legacy systems). He architected
+modular, decoupled backends, introduced entity-based context and a Human-in-the-Loop approval system,
+and reduced token usage by 60% while improving correctness, relevance, recall, and schema adherence —
+showing problem definition, trade-off analysis (cost/token use vs. quality), architectural decisions, and
+measurable impact. + Built a transactional anomaly detection system in Scala returning risk scores under
+300ms — demonstrates performance-constrained problem solving and system-level optimization. +
+Developed product matching and table-parsing systems (BERT + augmentation; Faster R-CNN + LSTM +
+spatial rules) achieving high accuracy — shows combining models, heuristics, and engineering to solve messy
+real-world data challenges. + Implemented capacity planning (time-series forecasting), credit risk modeling
+(Random Forest on Spark), multi-threaded model serving (Python/Django with feedback loops), Text-to-
+NoSQL, and contextual search for 100M+ entities — a broad set of examples where he scoped problems,
+selected appropriate approaches, handled scale/reliability, and delivered production-ready solutions. + As
+founder/consultant, delivered 15+ client solutions across domains and an LP-based optimization for feed
+composition — indicates independent problem-framing and cross-domain solution design.
+
+Proficiency and success criteria: The examples show tackling ambiguous, high-impact Al engineering
+problems, evaluating tradeoffs (latency, token cost, model fidelity), architecting end-to-end systems, and
+delivering measurable outcomes (F1 scores, accuracy metrics, % reductions/improvements). He also
+partnered with product and sales and led teams, demonstrating stakeholder collaboration and transferable
+patterns.
+
+Contextualization: The problems described map closely to FlowFuse’s needs: applied LLM/embeddings
+integration, reliability/observability, security (Human-in-the-Loop, guardrails), and ownership across
+frontend/backend/Al. The resume demonstrates repeated, independent problem-solving across model
+research, systems engineering, and product constraints at mid-to-senior complexity.
+
+Limits / why not "Expert": While Shridhar shows repeated high-impact problem-solving and leadership of
+technical teams, the resume stops short of claiming organization- or industry-wide canonical frameworks or
+sustained program-level influence that would indicate an “expert/recognized authority” (e.g., public
+standards, widely adopted internal frameworks, or repeated cross-organization change at scale).
+
+Judgment: The resume directly and convincingly demonstrates strong problem-solving capabilities at an
+advanced level suitable for a mid-to-senior Full Stack (Al-focused) role. Strength: 9/10. Confidence: 9/10.
+
+Support
+Stories
+kftowPdjyQBSCaisjIPn Direct 9/10 Excellent Best
+qoWHeLzqkOMMI5PwcHIL Direct 9/10 Excellent
+Resume
+
+Resume match Direct 9/10 Excellent

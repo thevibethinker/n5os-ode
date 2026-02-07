@@ -1,0 +1,1 @@
+{"entities": [{"name": "MG-7C script", "type": "TOOL", "context": "used for archiving meetings"}, {"name": "archive_completed_meetings.py", "type": "TOOL", "context": "script for archiving completed meetings"}], "relationships": []}

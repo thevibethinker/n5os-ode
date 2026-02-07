@@ -1,0 +1,1 @@
+{"entities": [{"name": "Victor", "type": "PERSON", "context": "Learning about Careerspan"}, {"name": "Careerspan", "type": "ORG", "context": "Evaluating fit for portfolio company needs"}], "relationships": [{"from": "Victor", "to": "Careerspan", "type": "KNOWS", "context": "Learning about Careerspan's capabilities"}]}

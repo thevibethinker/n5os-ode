@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual testing the product"}], "relationships": [{"from": "V", "to": "product", "type": "USES", "context": "proactively tested the product"}]}

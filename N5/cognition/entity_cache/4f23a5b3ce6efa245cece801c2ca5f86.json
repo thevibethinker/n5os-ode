@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "a user sending tasks"}, {"name": "Zo", "type": "TOOL", "context": "formats tasks with smart defaults"}], "relationships": [{"from": "V", "to": "Zo", "type": "USES", "context": "V sends tasks to be formatted by Zo"}]}

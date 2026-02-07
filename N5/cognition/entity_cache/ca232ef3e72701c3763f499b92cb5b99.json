@@ -1,0 +1,1 @@
+{"entities": [{"name": "registry", "type": "TOOL", "context": "System for logging issues"}, {"name": "database", "type": "CONCEPT", "context": "Failed connection in the system"}], "relationships": []}

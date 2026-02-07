@@ -1,0 +1,1 @@
+{"entities": [{"name": "systemic_risk.py", "type": "TOOL", "context": "a Python script used for assessing systemic risk"}, {"name": "audit trail", "type": "CONCEPT", "context": "a record-keeping system to log operations"}], "relationships": []}

@@ -1,0 +1,49 @@
+{
+  "slug": "personal-site-v1",
+  "name": "Personal Site and Seminar Landing Page",
+  "status": "blocked",
+  "build_type": "hybrid",
+  "launch_mode": "orchestrated",
+  "total_streams": 2,
+  "current_stream": 1,
+  "drops": {
+    "D1.1": {
+      "name": "Identity Synthesis",
+      "stream": 1,
+      "status": "awaiting_manual",
+      "spawn_mode": "manual",
+      "depends_on": [],
+      "persona": "Researcher"
+    },
+    "D1.2": {
+      "name": "Seminar Planning",
+      "stream": 1,
+      "status": "awaiting_manual",
+      "spawn_mode": "manual",
+      "depends_on": [],
+      "persona": "Strategist"
+    },
+    "D2.1": {
+      "name": "Site Construction",
+      "stream": 2,
+      "status": "pending",
+      "spawn_mode": "manual",
+      "depends_on": [
+        "D1.1",
+        "D1.2"
+      ],
+      "persona": "Builder"
+    },
+    "D2.2": {
+      "name": "Link Generation",
+      "stream": 2,
+      "status": "pending",
+      "spawn_mode": "manual",
+      "depends_on": [
+        "D2.1"
+      ],
+      "persona": "Operator"
+    }
+  },
+  "blocked_reason": "Waiting on D1.2 (manual): Seminar Planning - only D1.1 has a deposit"
+}

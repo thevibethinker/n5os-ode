@@ -1,0 +1,1 @@
+{"entities": [{"name": "Melissa", "type": "PERSON", "context": "individual who set up a Careerspan account"}, {"name": "Careerspan", "type": "ORG", "context": "account where resumes are assessed"}], "relationships": [{"from": "Melissa", "to": "Careerspan", "type": "USES", "context": "for uploading her resume for assessment"}]}

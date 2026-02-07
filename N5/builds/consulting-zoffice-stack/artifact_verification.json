@@ -1,0 +1,184 @@
+{
+  "slug": "consulting-zoffice-stack",
+  "timestamp": "2026-02-06T19:59:21.865567+00:00",
+  "drops": {
+    "D2.3": {
+      "claimed": [
+        "Skills/zoffice-workers/SKILL.md",
+        "N5/scripts/zoffice_worker.py",
+        "N5/scripts/export_pipeline_worker.py",
+        "N5/scripts/consultant_worker.py",
+        "N5/scripts/debugger_worker.py",
+        "ZOFFICE_WORKERS/librarian.manifest",
+        "ZOFFICE_WORKERS/consultant.manifest",
+        "ZOFFICE_WORKERS/debugger.manifest",
+        "Integrations/calendly-zoffice/webhook_handler.py",
+        "ZOFFICE_WORKERS/worker_state.json"
+      ],
+      "verified": [
+        "Skills/zoffice-workers/SKILL.md",
+        "N5/scripts/zoffice_worker.py",
+        "N5/scripts/export_pipeline_worker.py",
+        "N5/scripts/consultant_worker.py",
+        "N5/scripts/debugger_worker.py",
+        "ZOFFICE_WORKERS/librarian.manifest",
+        "ZOFFICE_WORKERS/consultant.manifest",
+        "ZOFFICE_WORKERS/debugger.manifest",
+        "Integrations/calendly-zoffice/webhook_handler.py",
+        "ZOFFICE_WORKERS/worker_state.json"
+      ],
+      "missing": []
+    },
+    "D2.1": {
+      "claimed": [
+        "Documents/consulting/archetype-setup-guide.md",
+        "Documents/consulting/zoputer-inventory.md",
+        "N5/scripts/zoputer_client.py"
+      ],
+      "verified": [
+        "Documents/consulting/archetype-setup-guide.md",
+        "Documents/consulting/zoputer-inventory.md",
+        "N5/scripts/zoputer_client.py"
+      ],
+      "missing": []
+    },
+    "D1.3": {
+      "claimed": [
+        "Skills/consulting-api/scripts/bundle_manager.py"
+      ],
+      "verified": [
+        "Skills/consulting-api/scripts/bundle_manager.py"
+      ],
+      "missing": []
+    },
+    "D1.2": {
+      "claimed": [
+        "Skills/audit-system/scripts/audit_logger.py",
+        "N5/config/consulting/audit_log.db"
+      ],
+      "verified": [
+        "Skills/audit-system/scripts/audit_logger.py",
+        "N5/config/consulting/audit_log.db"
+      ],
+      "missing": []
+    },
+    "D2.2": {
+      "claimed": [
+        "Skills/content-classifier/SKILL.md",
+        "Skills/content-classifier/scripts/scan.py",
+        "Skills/content-classifier/config/tiers.json",
+        "Skills/content-classifier/config/redaction-patterns.json",
+        "N5/builds/consulting-zoffice-stack/CONSULTING_MANIFEST.json"
+      ],
+      "verified": [
+        "Skills/content-classifier/SKILL.md",
+        "Skills/content-classifier/scripts/scan.py",
+        "Skills/content-classifier/config/tiers.json",
+        "Skills/content-classifier/config/redaction-patterns.json",
+        "N5/builds/consulting-zoffice-stack/CONSULTING_MANIFEST.json"
+      ],
+      "missing": []
+    },
+    "D1.1": {
+      "claimed": [
+        "Skills/security-gate/scripts/security_scanner.py"
+      ],
+      "verified": [
+        "Skills/security-gate/scripts/security_scanner.py"
+      ],
+      "missing": []
+    },
+    "D3.1": {
+      "claimed": [
+        "Skills/librarian-export/SKILL.md",
+        "Skills/librarian-export/scripts/daily_export.py",
+        "Skills/librarian-export/scripts/bundle_skill.py",
+        "Skills/consulting-api/SKILL.md",
+        "N5/data/last_export.json",
+        "N5/data/bundles/",
+        "N5/data/export_history/"
+      ],
+      "verified": [
+        "Skills/librarian-export/SKILL.md",
+        "Skills/librarian-export/scripts/daily_export.py",
+        "Skills/librarian-export/scripts/bundle_skill.py",
+        "Skills/consulting-api/SKILL.md",
+        "N5/data/last_export.json",
+        "N5/data/bundles/",
+        "N5/data/export_history/"
+      ],
+      "missing": []
+    },
+    "D4.1": {
+      "claimed": [
+        "Documents/consulting/localization-protocol.md (v1.2 with locked decisions)",
+        "Documents/consulting/templates/LOCALIZATION-simple.md",
+        "Documents/consulting/templates/LOCALIZATION-complex.md",
+        "Skills/localization-maintainer/SKILL.md",
+        "Skills/localization-maintainer/scripts/refresh_context.py",
+        "Skills/localization-maintainer/scripts/query_context.py"
+      ],
+      "verified": [
+        "Documents/consulting/templates/LOCALIZATION-simple.md",
+        "Documents/consulting/templates/LOCALIZATION-complex.md",
+        "Skills/localization-maintainer/SKILL.md",
+        "Skills/localization-maintainer/scripts/refresh_context.py",
+        "Skills/localization-maintainer/scripts/query_context.py"
+      ],
+      "missing": [
+        "Documents/consulting/localization-protocol.md (v1.2 with locked decisions)"
+      ]
+    },
+    "D3.2": {
+      "claimed": [
+        "Integrations/calendly-zoffice/SKILL.md",
+        "Integrations/calendly-zoffice/AGENTS.md",
+        "Integrations/calendly-zoffice/config/event_types.json",
+        "Integrations/calendly-zoffice/scripts/webhook_handler.py",
+        "Integrations/calendly-zoffice/scripts/session_prep.py",
+        "Integrations/calendly-zoffice/webhook_handler.py",
+        "N5/scripts/zoffice_worker.py",
+        "N5/config/consulting/CONSULTING_MANIFEST.md",
+        "N5/config/consulting/calendly_zoffice/sessions.json",
+        "N5/config/consulting/calendly_zoffice/jobs.json",
+        "N5/config/consulting/calendly_zoffice/notifications.jsonl"
+      ],
+      "verified": [
+        "Integrations/calendly-zoffice/SKILL.md",
+        "Integrations/calendly-zoffice/AGENTS.md",
+        "Integrations/calendly-zoffice/config/event_types.json",
+        "Integrations/calendly-zoffice/scripts/webhook_handler.py",
+        "Integrations/calendly-zoffice/scripts/session_prep.py",
+        "Integrations/calendly-zoffice/webhook_handler.py",
+        "N5/scripts/zoffice_worker.py",
+        "N5/config/consulting/CONSULTING_MANIFEST.md",
+        "N5/config/consulting/calendly_zoffice/sessions.json",
+        "N5/config/consulting/calendly_zoffice/jobs.json",
+        "N5/config/consulting/calendly_zoffice/notifications.jsonl"
+      ],
+      "missing": []
+    },
+    "D4.2": {
+      "claimed": [
+        "Documents/consulting/templates/welcome-email.md",
+        "Documents/consulting/templates/intake-questionnaire.md",
+        "Documents/consulting/templates/30-day-roadmap.md",
+        "Documents/consulting/templates/onboarding-checklist.md"
+      ],
+      "verified": [
+        "Documents/consulting/templates/welcome-email.md",
+        "Documents/consulting/templates/intake-questionnaire.md",
+        "Documents/consulting/templates/30-day-roadmap.md",
+        "Documents/consulting/templates/onboarding-checklist.md"
+      ],
+      "missing": []
+    }
+  },
+  "summary": {
+    "total_artifacts": 50,
+    "verified": 49,
+    "missing": 1,
+    "errors": 0
+  },
+  "passed": false
+}

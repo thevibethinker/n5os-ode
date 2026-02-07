@@ -1,0 +1,1 @@
+{"entities": [{"name": "FOHE", "type": "ORG", "context": "organization involved in the onboarding meeting"}, {"name": "Vrijen", "type": "PERSON", "context": "individual associated with the knowledge system"}], "relationships": [{"from": "Vrijen", "to": "FOHE", "type": "WORKS_WITH", "context": "Vrijen is associated with the organization FOHE for local lead onboarding"}]}

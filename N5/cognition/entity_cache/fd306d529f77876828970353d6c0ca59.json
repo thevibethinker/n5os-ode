@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "refers to Vrijen, the individual behind the knowledge system"}, {"name": "central system", "type": "CONCEPT", "context": "represents the main system that aggregates communication"}], "relationships": [{"from": "V", "to": "central system", "type": "USES", "context": "V utilizes the central system for communications"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "speaker discussing their knowledge system"}, {"name": "company's website", "type": "ORG", "context": "reference to the organization associated with V"}], "relationships": [{"from": "V", "to": "company's website", "type": "USES", "context": "V uses the company's website to open up careers"}]}

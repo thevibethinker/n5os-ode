@@ -1,7 +1,7 @@
 # Debug Logging Auto-Behavior
 
-**Version:** 1.1  
-**Updated:** 2025-10-29  
+**Version:** 1.2  
+**Updated:** 2026-02-07  
 **Purpose:** Explicit reflexes for USING debug log during problem-solving
 
 ---
@@ -32,6 +32,7 @@ python3 /home/workspace/N5/scripts/debug_logger.py append \
   --hypothesis "<what you think will fix it>" \
   --actions "<what you just did>" \
   --outcome <success|failure|partial> \
+  --skill-phase "<root_cause|pattern|hypothesis|implementation>" \
   --notes "<any insights>"
 ```
 
@@ -83,6 +84,7 @@ python3 /home/workspace/N5/scripts/debug_logger.py append \
   --hypothesis "<expected vs actual behavior>" \
   --actions "<what steps completed before failure>" \
   --outcome <failure|partial> \
+  --skill-phase "<root_cause|pattern|hypothesis|implementation>" \
   --notes "<missing deps, config issues, etc>"
 ```
 
@@ -96,7 +98,32 @@ python3 /home/workspace/N5/scripts/debug_logger.py append \
   --hypothesis "Prompt file should be readable but tool errored" \
   --actions "Called read_file on Prompts/drive_meeting_ingestion.md" \
   --outcome failure \
+  --skill-phase root_cause \
   --notes "Switched to manual tool calls instead of prompt orchestration"
+```
+
+---
+
+## Skill Phase Tracking
+
+When logging debug attempts, include the skill phase from `systematic-debugging`:
+
+| Phase | Value | When to Use |
+|-------|-------|-------------|
+| Root Cause | `root_cause` | Investigating before any fix |
+| Pattern Analysis | `pattern` | Comparing working vs broken |
+| Hypothesis Testing | `hypothesis` | Testing a specific theory |
+| Implementation | `implementation` | Applying a fix |
+
+Example:
+```bash
+python3 /home/workspace/N5/scripts/debug_logger.py append \
+  --convo-id con_xyz --component "api-auth" \
+  --problem "Token validation failing" \
+  --hypothesis "Token format changed in v2" \
+  --actions "Compared v1 and v2 token structures" \
+  --outcome partial --skill-phase root_cause \
+  --notes "Found format difference, need to trace source"
 ```
 
 ---
@@ -124,7 +151,9 @@ Think → Log hypothesis → Try fix → Log outcome → Check patterns → Next
 python3 /home/workspace/N5/scripts/debug_logger.py append \
   --convo-id $CONVO_ID --component "$COMPONENT" \
   --problem "$PROBLEM" --hypothesis "$HYPOTHESIS" \
-  --actions "$ACTIONS" --outcome success --notes "$NOTES"
+  --actions "$ACTIONS" --outcome success \
+  --skill-phase "root_cause|pattern|hypothesis|implementation" \
+  --notes "$NOTES"
 ```
 
 ### Failure
@@ -132,7 +161,9 @@ python3 /home/workspace/N5/scripts/debug_logger.py append \
 python3 /home/workspace/N5/scripts/debug_logger.py append \
   --convo-id $CONVO_ID --component "$COMPONENT" \
   --problem "$PROBLEM" --hypothesis "$HYPOTHESIS" \
-  --actions "$ACTIONS" --outcome failure --notes "$NOTES"
+  --actions "$ACTIONS" --outcome failure \
+  --skill-phase "root_cause|pattern|hypothesis|implementation" \
+  --notes "$NOTES"
 ```
 
 ### Check Recent + Patterns (After 2nd Failure)
@@ -169,7 +200,7 @@ Before claiming "done" on any debugging session:
 ---
 
 **Status:** Explicit reflexes defined  
-**Version:** 1.1 (added explicit triggers)  
+**Version:** 1.2 (added skill phase tracking)  
 **Load:** This should be in system prompt for build/debug conversations
 
-*Updated: 2025-10-29T04:12 ET*
+*Updated: 2026-02-07T08:30 ET*

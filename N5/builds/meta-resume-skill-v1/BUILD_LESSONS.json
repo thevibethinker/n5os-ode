@@ -1,0 +1,27 @@
+{
+  "slug": "meta-resume-skill-v1",
+  "learnings": [
+    {
+      "text": "The scores_complete.json structure contains 3 evidence_type values (Story+profile, Profile, Transferable) that enable evidence quality differentiation - use this for any trust/transparency visualizations",
+      "source": "manual",
+      "added_at": "2026-01-30T02:17:43.364010+00:00",
+      "tags": []
+    },
+    {
+      "text": "Importance weighting (1-10 scale in scores_complete.json) enables weighted scoring algorithms that show strategic fit rather than raw match percentages - incorporate into fit metrics",
+      "source": "manual",
+      "added_at": "2026-01-30T02:17:49.597352+00:00",
+      "tags": []
+    },
+    {
+      "text": "GitHub profile activity cadence (recent engagement) matters more than total historical numbers - consistent recent commits signal active developer, while 100 commits/year with no activity in 6 months signals lapsed engagement",
+      "source": "D3",
+      "added_at": "2026-01-30T02:35:00.000000+00:00",
+      "tags": [
+        "github",
+        "activity-cadence",
+        "red-flags"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "slug": "careerspan-pipeline-v2",
+  "timestamp": "2026-02-03T02:54:49.989521+00:00",
+  "total": 0,
+  "passed": 0,
+  "failed": 0,
+  "results": [],
+  "all_passed": true,
+  "message": "No integration tests defined"
+}

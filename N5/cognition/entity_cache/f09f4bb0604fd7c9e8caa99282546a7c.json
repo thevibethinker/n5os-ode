@@ -1,0 +1,1 @@
+{"entities": [{"name": "Gamma", "type": "ORG", "context": "organization that creates new URLs"}, {"name": "Fillout", "type": "ORG", "context": "organization that provides surveys"}], "relationships": [{"from": "Gamma", "to": "Fillout", "type": "WORKS_WITH", "context": "Gamma is currently supporting Fillout surveys"}]}

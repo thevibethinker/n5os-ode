@@ -1,0 +1,72 @@
+{
+  "meeting_id": "2026-01-21_Merisendaalatorre-Vrijenattawar",
+  "date": "2026-01-21",
+  "participants": [
+    "Merisendaalatorre",
+    "Vrijenattawar"
+  ],
+  "meeting_type": "external",
+  "status": "archived",
+  "transcript_file": "transcript.md",
+  "blocks_requested": [],
+  "blocks_generated": [
+    "B02_B05_COMMITMENTS_AND_ACTIONS",
+    "B08_STAKEHOLDER_INTELLIGENCE",
+    "B26_MEETING_METADATA",
+    "B32_THOUGHT_PROVOKING_IDEAS",
+    "B33_DECISION_RATIONALE",
+    "B28_STRATEGIC_INTELLIGENCE",
+    "B01_DETAILED_RECAP",
+    "B00_ZO_TAKE_HEED",
+    "B03_DECISIONS",
+    "B21_KEY_MOMENTS",
+    "B06_BUSINESS_CONTEXT"
+  ],
+  "blocks_failed": [],
+  "staged_at": "2026-02-02T20:22:18.758464Z",
+  "processed_at": "2026-02-02T21:30:32.579605Z",
+  "archived_at": "2026-02-03T13:16:31.487783Z",
+  "error": null,
+  "block_selection": {
+    "selected_at": "2026-02-02T21:15:29.438621Z",
+    "method": "smart_selector_v2",
+    "recipe": "external_standard",
+    "always_blocks": [
+      "B00",
+      "B01",
+      "B02_B05",
+      "B03",
+      "B08",
+      "B21",
+      "B26"
+    ],
+    "conditional_selected": [
+      "B06",
+      "B28",
+      "B32",
+      "B33"
+    ],
+    "conditional_skipped": [
+      "B04",
+      "B07",
+      "B10",
+      "B13",
+      "B14",
+      "B25"
+    ],
+    "triggered": [],
+    "reasoning": {
+      "B06": "Business strategy discussion: Merisenda shares Ace Fitness AI strategy (study coach/mentor, content repository, just-in-time learning, role-playing scenarios) and positioning in fitness education market. While not directly about Careerspan, this strategic context about AI in adjacent industry could inform V's perspective on AI opportunities.",
+      "B28": "Strategic intelligence captured: Discussion of AI strategy in fitness/education market, user experience patterns (learner profiles, centralized data), and competitive positioning. V shares insights on how AI coaching differs from static content delivery and the importance of dynamic user relationships.",
+      "B32": "Thought-provoking ideas: V demonstrates Zoe's capabilities with learner profiles that compound knowledge over time, AI personas that extend learning, and the concept of AI as an 'actual computer' not just a text generator. The idea that 'advantage comes from dynamic interview/relationship with user' is a novel perspective on AI product design.",
+      "B33": "Decision rationale captured: V provides nuanced reasoning on AI development strategy - advocating for in-house technical leadership vs. fully outsourcing to dev companies. Explains the tradeoffs: need internal technical leader who can guide development, validate developer claims, and bring product intuition. This is a complex decision with clear reasoning.",
+      "B04": "Skipped: No unresolved questions identified. All questions asked in the conversation were answered (e.g., Merisenda's question about V's learnings, V's question about Ace's AI strategy). No follow-up questions needed.",
+      "B07": "Skipped: No trigger phrases detected. Scanning for 'intro me to', 'introduce me to', 'connect me with', 'make an introduction' - none found. V offers to be helpful ('feel free to tap on me') but does not request introductions to specific contacts.",
+      "B10": "Skipped: Limited relationship trajectory discussion. V offers informal AI advisory support and Merisenda expresses appreciation, but there's no discussion of formal partnership, collaboration evolution, or clear relationship status progression. This was primarily a catch-up call with some AI strategy exchange.",
+      "B13": "Skipped: No explicit next steps or plan of action. The conversation ends with V sharing his decision rationale on in-house AI development. There's an implied possibility of future AI advisory from V, but no concrete action items, timelines, or commitments made.",
+      "B14": "Skipped: No trigger phrases detected. Scanning for 'draft a blurb', 'write a blurb', 'blurb about', 'create a blurb' - none found. V does not request any blurbs to be created.",
+      "B25": "Skipped: No specific deliverables, artifacts, or outputs discussed with owners and timelines. The conversation is strategic/discussion-focused rather than project-oriented."
+    },
+    "total_blocks": 11
+  }
+}

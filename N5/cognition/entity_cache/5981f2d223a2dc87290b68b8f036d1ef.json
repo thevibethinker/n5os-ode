@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual managing the tracking system"}, {"name": "Progress section", "type": "CONCEPT", "context": "concept related to tracking progress manually"}], "relationships": [{"from": "V", "to": "Progress section", "type": "USES", "context": "uses manual tracking when creation fails"}]}

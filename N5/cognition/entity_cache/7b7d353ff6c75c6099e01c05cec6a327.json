@@ -1,0 +1,1 @@
+{"entities": [{"name": "Meri A. Latorre", "type": "PERSON", "context": "Identified from LinkedIn URL"}], "relationships": [{"from": "V (Vrijen)", "to": "Meri A. Latorre", "type": "KNOWS", "context": "Connection identified in the dataset"}]}

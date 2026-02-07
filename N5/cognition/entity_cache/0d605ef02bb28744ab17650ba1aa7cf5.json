@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "User discussing their knowledge system"}, {"name": "vibe checks", "type": "CONCEPT", "context": "User engagement method in their system"}], "relationships": [{"from": "Vrijen Attawar", "to": "vibe checks", "type": "USES", "context": "Incorporating vibe checks to enhance user experience"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "SerpApi", "type": "ORG", "context": "potential strategic partner/integration opportunity"}], "relationships": [{"from": "V", "to": "SerpApi", "type": "WORKS_WITH", "context": "researching as a potential partner"}]}

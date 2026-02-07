@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "proposed a pricing system"}], "relationships": [{"from": "Vrijen", "to": "tiered early pricing", "type": "MENTIONS", "context": "proposed a pricing structure"}]}

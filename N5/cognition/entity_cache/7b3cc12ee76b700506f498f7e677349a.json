@@ -1,0 +1,1 @@
+{"entities": [{"name": "V-OS", "type": "CONCEPT", "context": "Knowledge system related to V's calendar description"}, {"name": "calendar description", "type": "TOOL", "context": "Input used in the tag extraction function"}], "relationships": []}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Zo", "type": "CONCEPT", "context": "capabilities being explored"}], "relationships": [{"from": "Both Participants", "to": "Zo", "type": "WORKS_WITH", "context": "comparing notes on workflows"}]}

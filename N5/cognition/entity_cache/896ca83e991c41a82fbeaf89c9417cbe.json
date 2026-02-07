@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "individual being referenced in the conversation"}, {"name": "Raleigh", "type": "ORG", "context": "location mentioned where Vrijen was for a short period"}], "relationships": [{"from": "Vrijen Attawar", "to": "Raleigh", "type": "MENTIONS", "context": "Vrijen mentions being in Raleigh"}]}

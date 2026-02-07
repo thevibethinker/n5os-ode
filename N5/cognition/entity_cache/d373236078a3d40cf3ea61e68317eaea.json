@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "The subject of the knowledge system"}, {"name": "Voice Profile", "type": "CONCEPT", "context": "A concept related to communication preferences"}, {"name": "Auto-Approve Threshold", "type": "CONCEPT", "context": "A defined threshold for block approval"}], "relationships": []}

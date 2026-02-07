@@ -1,0 +1,1 @@
+{"entities": [{"name": "LLM", "type": "TOOL", "context": "A tool providing structured JSON context."}], "relationships": []}

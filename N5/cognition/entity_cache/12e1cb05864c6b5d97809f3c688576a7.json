@@ -1,0 +1,1 @@
+{"entities": [{"name": "Sarah", "type": "PERSON", "context": "providing integration update"}], "relationships": [{"from": "Sarah", "to": "V", "type": "WORKS_WITH", "context": "integration update related to V's knowledge system"}]}

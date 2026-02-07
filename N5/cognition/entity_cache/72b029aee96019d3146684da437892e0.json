@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ilya", "type": "PERSON", "context": "acknowledged the mockup isn't perfect"}], "relationships": [{"from": "Ilya", "to": "mockup", "type": "MENTIONS", "context": "acknowledged the mockup isn't perfect"}]}

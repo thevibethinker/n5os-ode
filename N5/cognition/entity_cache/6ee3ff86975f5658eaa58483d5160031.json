@@ -1,0 +1,1 @@
+{"entities": [{"name": "Google Drive", "type": "TOOL", "context": "cloud storage service"}, {"name": "Google Drive fetch failed", "type": "EVENT", "context": "error related to Google Drive operation"}], "relationships": []}

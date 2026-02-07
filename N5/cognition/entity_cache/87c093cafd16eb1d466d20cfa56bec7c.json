@@ -1,0 +1,1 @@
+{"entities": [{"name": "2025 Travel Wrapped", "type": "TOOL", "context": "A tool for generating visual summaries of travel"}], "relationships": [{"from": "2025 Travel Wrapped", "to": "Gmail", "type": "USES", "context": "It scans Gmail data for travel information"}]}

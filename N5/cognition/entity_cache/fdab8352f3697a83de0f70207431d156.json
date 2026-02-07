@@ -1,0 +1,1 @@
+{"entities": [{"name": "CMC Team Members", "type": "ORG", "context": "A group involved in the assessment process"}, {"name": "Chase", "type": "PERSON", "context": "A CMC team member noted for wedding planning"}], "relationships": [{"from": "CMC Team Members", "to": "Chase", "type": "WORKS_WITH", "context": "Both are part of the CMC team"}]}

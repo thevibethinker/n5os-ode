@@ -1,0 +1,1 @@
+{"entities": [{"name": "Amanda", "type": "PERSON", "context": "person mentioned in relation to job search"}, {"name": "resume", "type": "TOOL", "context": "tool needed for job search"}], "relationships": [{"from": "Amanda", "to": "resume", "type": "USES", "context": "Amanda needs a resume for her job search"}]}

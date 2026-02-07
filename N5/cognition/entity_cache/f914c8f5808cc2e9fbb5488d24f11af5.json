@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Strategic lead"}, {"name": "Career Tech", "type": "CONCEPT", "context": "Major area in the technology space"}], "relationships": [{"from": "V", "to": "Career Tech", "type": "RELATED_TO", "context": "Represents a major player in the Career Tech space"}]}

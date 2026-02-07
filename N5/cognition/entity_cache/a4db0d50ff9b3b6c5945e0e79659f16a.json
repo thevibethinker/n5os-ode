@@ -1,0 +1,1 @@
+{"entities": [{"name": "Fibe", "type": "ORG", "context": "organization related to operations"}, {"name": "Chief of Staff", "type": "CONCEPT", "context": "role held by an individual"}], "relationships": [{"from": "V", "to": "Fibe", "type": "KNOWS", "context": "involved in operations"}, {"from": "V", "to": "Chief of Staff", "type": "WORKS_WITH", "context": "role played by V"}]}

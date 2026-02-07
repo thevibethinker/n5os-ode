@@ -1,0 +1,140 @@
+# Alignment
+# Extracted: 2026-02-05T16:36:47.091205
+# Method: Structured extraction
+# DO NOT EDIT
+
+requirements_alignment:
+- requirement_id: R1
+  jd_text: Deep expertise in Java or Python backend development
+  category: core
+  verdict: CLEAR
+  evidence: Java and Spring Boot explicitly listed; led design of Orders/Payments
+    Platforms across 12+ microservices; 100k+ daily orders, 5× peak spikes. Python
+    listed but no concrete STAR examples of Python backend architecture.
+  confidence: high
+  note: Strong Java evidence; Python is claimed but not demonstrated with specific
+    production examples
+- requirement_id: R2
+  jd_text: Experience with NoSQL databases
+  category: core
+  verdict: PARTIAL
+  evidence: Direct ScyllaDB/Cassandra experience at Embibe—schema redesign, partitioning,
+    query optimization, zero-downtime migration for 10M+ user timeline. No DynamoDB
+    or AWS-native NoSQL experience.
+  confidence: high
+  note: Strong NoSQL fundamentals but not on AWS-native NoSQL (DynamoDB/OpenSearch)
+    which Addepar likely uses
+- requirement_id: R3
+  jd_text: Infrastructure as code experience (preferably Terraform)
+  category: core
+  verdict: PARTIAL
+  evidence: Terraform explicitly listed in skills; upgraded EKS replicas, RDS instances,
+    cache optimizations for Black Friday scaling. No detailed IaC module authorship
+    or CI/CD integration examples.
+  confidence: medium
+  note: Terraform mentioned and infra work described, but depth of IaC ownership unclear
+- requirement_id: R4
+  jd_text: AWS experience
+  category: core
+  verdict: CLEAR
+  evidence: AWS explicitly listed; operated EKS (Kubernetes on AWS), RDS; drove infra
+    upgrades for 5× traffic spikes; Terraform for cloud provisioning.
+  confidence: high
+  note: Solid AWS operations experience; lacks explicit serverless (Lambda/API Gateway)
+    evidence
+- requirement_id: R5
+  jd_text: Solutions-oriented mindset
+  category: core
+  verdict: CLEAR
+  evidence: Greenfield checkout system replacing Shopify (saved millions); backend
+    redesign removing scaling bottlenecks with zero-downtime migration; LLM-powered
+    fraud pipeline; extensible post-order workflow framework.
+  confidence: high
+  note: Repeatedly demonstrates solving complex problems with measurable business
+    impact
+- requirement_id: R6
+  jd_text: Experience or interest in financial data systems
+  category: secondary
+  verdict: PARTIAL
+  evidence: Payments platform experience (Stripe, PayPal integration, millions in
+    daily transaction volume, secure idempotent processing). No investment/portfolio
+    management or alternative assets experience.
+  confidence: medium
+  note: Payments/e-commerce fintech-adjacent but not investment data domain
+- requirement_id: R7
+  jd_text: Architect, implement, and maintain engineering solutions to solve complex
+    problems
+  category: core
+  verdict: CLEAR
+  evidence: Founded Assignment platform PoC→production; led Orders/Payments architecture
+    for 100k+ daily orders; designed LLM fraud pipeline; zero-downtime schema migrations;
+    12+ microservices ownership.
+  confidence: high
+  note: Strong architecture and implementation track record at scale
+- requirement_id: R8
+  jd_text: Work in a collaborative team environment across engineering, product, and
+    data science teams
+  category: core
+  verdict: CLEAR
+  evidence: Cross-functional collaboration explicitly mentioned multiple times; coordinated
+    inventory/ops teams for checkout migration; LLM fraud pipeline implies ML team
+    coordination; mentored 8-engineer team.
+  confidence: high
+  note: ML collaboration is inferred from fraud pipeline work rather than explicitly
+    stated ongoing practice
+- requirement_id: R9
+  jd_text: Design and build scalable backend services
+  category: core
+  verdict: CLEAR
+  evidence: 100k+ daily orders, 5× Black Friday spikes, $15M/day peaks; user timeline
+    for 10M+ learners with hourly→yearly aggregation; architectural patterns (pre/post-order
+    decoupling, workflow visibility, soft inventory reservation).
+  confidence: high
+  note: Demonstrated scale matches or exceeds typical senior backend expectations
+culture_alignment:
+- signal: 'Act Like an Owner: Think and act like an owner. Own outcomes over actions.'
+  candidate_fit: strong
+  evidence: Founded Assignment platform end-to-end; owned Order Platform workflows;
+    created SOPs for peak events; drove scaling and reliability proactively rather
+    than reactively.
+- signal: 'Build Together: Collaborate to unlock the best solutions. Deliver lasting
+    value.'
+  candidate_fit: strong
+  evidence: Collaborated cross-functionally for business alignment; coordinated zero-downtime
+    migrations across teams; negotiated soft inventory reservation with inventory
+    team.
+- signal: 'Champion Clients: Exceed client expectations. Our clients'' success is
+    our success.'
+  candidate_fit: moderate
+  evidence: Customer-centric design mentioned; checkout SLAs matched Shopify; Template
+    Service for educators. No direct evidence of client-facing work or client feedback
+    loops in investment context.
+- signal: 'Drive Innovation: Be bold and unconstrained in problem solving. Transform
+    the industry.'
+  candidate_fit: strong
+  evidence: LLM-powered fraud review pipeline with RAG; greenfield checkout replacing
+    Shopify; extensible post-order workflow framework enabling future features without
+    core changes.
+- signal: 'Embrace Learning: Engage our community to broaden perspective. Bring a
+    growth mindset.'
+  candidate_fit: moderate
+  evidence: Adopted LLM/RAG techniques; learned and applied new architectural patterns;
+    shifted from 'make it work' to design-first thinking. No explicit evidence of
+    formal learning programs or community engagement.
+overall_alignment:
+  core_requirements_met: 5 of 6
+  critical_gaps:
+  - No serverless architecture experience (Lambda, Step Functions, API Gateway)—central
+    to role's stated stack
+  - No DynamoDB or OpenSearch experience—role likely requires AWS-native NoSQL
+  - No investment/alternative assets domain experience—will need ramp on fintech-specific
+    concepts
+  interview_priorities:
+  - Probe depth of Python backend work—is it production-grade or secondary language?
+  - Assess serverless learning curve—how quickly can he adapt to Lambda/Step Functions
+    patterns?
+  - Evaluate domain interest—what draws him to investment data vs. e-commerce/payments?
+  - Explore security/compliance awareness—payments experience is adjacent but not
+    identical to fintech regulatory requirements
+  - Test NoSQL design skills with DynamoDB-specific scenarios (GSIs, capacity modes,
+    streams)

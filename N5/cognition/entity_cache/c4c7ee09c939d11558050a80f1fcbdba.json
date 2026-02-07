@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "a founder giving advice"}, {"name": "Google's startup program", "type": "ORG", "context": "an organization offering support for startups"}], "relationships": [{"from": "Vrijen Attawar", "to": "Google's startup program", "type": "MENTIONS", "context": "suggesting to apply for the program"}]}

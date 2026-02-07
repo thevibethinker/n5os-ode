@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ash Straughn", "type": "PERSON", "context": "represents decision-making authority on Sam's side"}, {"name": "Sam", "type": "PERSON", "context": "involved in decision-making process"}], "relationships": [{"from": "Ash Straughn", "to": "Sam", "type": "WORKS_WITH", "context": "Ash represents decision-making authority related to Sam"}]}

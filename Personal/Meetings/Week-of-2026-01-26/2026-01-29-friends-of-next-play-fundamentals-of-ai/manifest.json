@@ -1,0 +1,71 @@
+{
+  "meeting_id": "2026-01-29_friends-of-next-play-fundamentals-of-ai",
+  "date": "2026-01-29",
+  "participants": [
+    "Friends",
+    "Next",
+    "Play"
+  ],
+  "meeting_type": "external",
+  "status": "archived",
+  "transcript_file": "transcript.md",
+  "blocks_requested": [],
+  "blocks_generated": [
+    "B21_KEY_MOMENTS",
+    "B32_THOUGHT_PROVOKING_IDEAS",
+    "B26_MEETING_METADATA",
+    "B08_STAKEHOLDER_INTELLIGENCE",
+    "B03_DECISIONS",
+    "B02_B05_COMMITMENTS_AND_ACTIONS",
+    "B01_DETAILED_RECAP",
+    "B06_BUSINESS_CONTEXT",
+    "B00_ZO_TAKE_HEED"
+  ],
+  "blocks_failed": [],
+  "staged_at": "2026-02-02T20:22:18.769446Z",
+  "processed_at": "2026-02-03T12:58:41.069105Z",
+  "archived_at": "2026-02-03T13:16:31.653808Z",
+  "error": null,
+  "block_selection": {
+    "selected_at": "2026-02-03T12:30:26.188133Z",
+    "method": "smart_selector_v2",
+    "recipe": "external_standard",
+    "always_blocks": [
+      "B00",
+      "B01",
+      "B02_B05",
+      "B03",
+      "B08",
+      "B21",
+      "B26"
+    ],
+    "conditional_selected": [
+      "B06",
+      "B32"
+    ],
+    "conditional_skipped": [
+      "B04",
+      "B07",
+      "B10",
+      "B13",
+      "B14",
+      "B25",
+      "B28",
+      "B33"
+    ],
+    "triggered": [],
+    "reasoning": {
+      "B06": "Vrijen presents detailed business context about Careerspan's mission, value proposition ('help you be a better advocate for yourself through conversational coaching with AI'), and product positioning. He also discusses Zo Computer as a similar tool to Claudebot with more managed, secure AI personal assistance. This qualifies as company-specific strategic context.",
+      "B32": "The transcript introduces several novel concepts worth capturing: (1) Mental model framing - 'You do not have a technology problem. You have a mental model problem' - positioning AI productivity gap as cognitive rather than technical, (2) Context engineering theory - three levels (conversation, environment, pipeline) for cultivating AI context, (3) Offensive vs defensive prompting ('vibe thinking') - expanding options vs critical analysis, (4) Threshold rubric strategy - asking AI to create evaluation rubrics and iterate outputs to highest level, (5) AI as teacher persona - building in explanation instructions at environment level. These are innovative framing concepts for AI productivity.",
+      "B04": "Skipped: No unresolved questions were raised without answers. The transcript contains rhetorical questions and discussion prompts (e.g., 'Which one was which?', 'Right?') but no genuine open questions requiring follow-up.",
+      "B07": "Skipped: No verbal trigger phrases detected for warm introductions. Vrijen did not say anything like 'intro me to', 'introduce me to', or 'connect me with'. No specific contacts were mentioned who need introductions.",
+      "B10": "Skipped: No discussion of future collaboration trajectory or partnership evolution. While there are three presenters (Vrijen from Careerspan, Ben from Zo Computer, Logan from Careerspan) working together, the transcript shows them presenting jointly rather than discussing relationship development or future partnership direction.",
+      "B13": "Skipped: No explicit next steps were discussed or implied. The transcript appears to be the opening section of a presentation introducing the topic and presenters. No action items, follow-up tasks, or future plans were mentioned.",
+      "B14": "Skipped: No verbal trigger phrases detected for blurbs. Vrijen did not say anything like 'draft a blurb', 'write a blurb', or 'blurb about'. No requests for LinkedIn content or other blurbs were made.",
+      "B25": "Skipped: No specific deliverables, artifacts, or outputs were mentioned with owners or timelines. Ben mentioned he would be 'demoing claudebot' but this is a demo during the session, not a deliverable with timeline and owner assignment.",
+      "B28": "Skipped: While there's discussion of AI productivity landscape, this is more tactical/educational content than strategic intelligence about market dynamics or competitive landscape. The content focuses on methodology (mental models, context engineering) rather than industry trends or competitive analysis.",
+      "B33": "Skipped: No complex decisions with nuanced reasoning were presented. The transcript consists of introductory remarks and presentation of conceptual frameworks. No decisions were made during this portion of the meeting that would warrant deep rationale analysis."
+    },
+    "total_blocks": 9
+  }
+}

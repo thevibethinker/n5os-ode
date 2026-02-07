@@ -1,0 +1,1 @@
+{"entities": [{"name": "Conversation Registry", "type": "CONCEPT", "context": "a central SQLite database that tracks conversations and their metadata"}], "relationships": []}

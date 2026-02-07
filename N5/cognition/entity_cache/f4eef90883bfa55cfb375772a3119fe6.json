@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual with a knowledge system"}, {"name": "knowledge system", "type": "CONCEPT", "context": "V's framework for understanding"}, {"name": "meeting", "type": "EVENT", "context": "occurs on a Monday between Jan 27-30, 2026"}], "relationships": []}

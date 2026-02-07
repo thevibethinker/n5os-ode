@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "individual discussing knowledge system"}, {"name": "hr", "type": "CONCEPT", "context": "field in which relationships are being built"}], "relationships": [{"from": "Vrijen Attawar", "to": "hr", "type": "WORKS_WITH", "context": "building relationships in hr"}]}

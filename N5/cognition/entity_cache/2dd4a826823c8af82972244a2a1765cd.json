@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "the individual issuing the directive"}, {"name": "Gmail", "type": "TOOL", "context": "an email service used for scanning"}], "relationships": []}

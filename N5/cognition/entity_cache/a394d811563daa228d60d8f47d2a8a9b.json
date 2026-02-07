@@ -1,0 +1,1 @@
+{"entities": [{"name": "X", "type": "ORG", "context": "a platform that rewards irreverence"}, {"name": "LinkedIn", "type": "ORG", "context": "a platform that rewards polish"}], "relationships": [{"from": "X", "to": "LinkedIn", "type": "RELATED_TO", "context": "different platforms with different focuses"}]}

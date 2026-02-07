@@ -1,0 +1,66 @@
+{
+  "schema_version": 3,
+  "slug": "systematic-debugging-integration",
+  "title": "Systematic Debugging Integration",
+  "build_type": "code_build",
+  "status": "complete",
+  "model": "anthropic:claude-sonnet-4-20250514",
+  "launch_mode": "orchestrated",
+  "waves": {
+    "W1": [
+      "D1.1",
+      "D1.2",
+      "D1.3"
+    ]
+  },
+  "active_wave": null,
+  "drops": {
+    "D1.1": {
+      "name": "Complete Skill References",
+      "stream": 1,
+      "order": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "started_at": "2026-02-07T13:29:14.715154+00:00",
+      "conversation_id": "con_UwPdfJnhEbY43ECT",
+      "completed_at": "2026-02-07T13:45:17.065473+00:00"
+    },
+    "D1.2": {
+      "name": "Update Debugger Persona",
+      "stream": 2,
+      "order": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "started_at": "2026-02-07T13:30:55.298356+00:00",
+      "conversation_id": "con_FuoKTZO3JEyHj1rV",
+      "completed_at": "2026-02-07T13:45:40.371272+00:00"
+    },
+    "D1.3": {
+      "name": "Update Rules & Docs",
+      "stream": 3,
+      "order": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "started_at": "2026-02-07T13:33:10.638859+00:00",
+      "conversation_id": "con_snzOOrzzbAQ9qyPa",
+      "completed_at": "2026-02-07T13:45:58.936322+00:00"
+    }
+  },
+  "lineage": {
+    "parent_type": "conversation",
+    "parent_ref": "con_wkacyZHKp1aqxMqv",
+    "parent_conversation": "con_wkacyZHKp1aqxMqv",
+    "moment": "V imported systematic-debugging skill and wanted deep integration",
+    "branched_at": "2026-02-07T13:15:00Z"
+  },
+  "started_at": "2026-02-07T13:27:42.276875+00:00",
+  "completed_at": "2026-02-07T13:45:58.938034+00:00",
+  "finalized_at": "2026-02-07T13:46:28.905895+00:00",
+  "finalization_passed": true
+}

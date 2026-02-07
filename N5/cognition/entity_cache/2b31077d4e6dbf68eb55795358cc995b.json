@@ -1,0 +1,1 @@
+{"entities": [{"name": "Edmund Cuthbert", "type": "PERSON", "context": "a person involved in the discussion"}, {"name": "API", "type": "TOOL", "context": "a tool for delivering candidates into recruiting systems"}], "relationships": [{"from": "Edmund Cuthbert", "to": "API", "type": "MENTIONS", "context": "suggesting the use of API in recruitment"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "the subject discussing their knowledge system"}, {"name": "AI", "type": "CONCEPT", "context": "referring to artificial intelligence"}], "relationships": [{"from": "V", "to": "AI", "type": "BELIEVES", "context": "V expresses a belief about AI communication"}]}

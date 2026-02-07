@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "speaker discussing GitHub authentication"}, {"name": "GitHub", "type": "TOOL", "context": "a platform for version control that V is setting up"}], "relationships": [{"from": "Vrijen Attawar", "to": "GitHub", "type": "USES", "context": "V is discussing the setup of GitHub"}]}

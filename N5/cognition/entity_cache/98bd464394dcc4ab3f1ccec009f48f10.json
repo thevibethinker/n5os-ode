@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ray Batra", "type": "PERSON", "context": "Speaker of the quote"}, {"name": "Jake", "type": "PERSON", "context": "Person referenced by Ray Batra"}], "relationships": [{"from": "Ray Batra", "to": "Jake", "type": "MENTIONS", "context": "Ray expresses concern similar to Jake's"}]}

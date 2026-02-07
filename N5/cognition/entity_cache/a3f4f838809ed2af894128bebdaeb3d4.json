@@ -1,0 +1,1 @@
+{"entities": [{"name": "Python", "type": "TOOL", "context": "Programming language used for script commands"}, {"name": "Script commands", "type": "CONCEPT", "context": "Instructions for executing file operations"}], "relationships": []}

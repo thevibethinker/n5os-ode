@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "a person involved in knowledge systems"}, {"name": "CalendarIntelligence", "type": "TOOL", "context": "a tool used for scheduling tasks"}], "relationships": [{"from": "V", "to": "CalendarIntelligence", "type": "USES", "context": "V uses CalendarIntelligence for scheduling tasks"}]}

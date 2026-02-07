@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "the subject of the knowledge system"}, {"name": "/zo/ask", "type": "TOOL", "context": "API used for spawning workers"}], "relationships": [{"from": "V (Vrijen)", "to": "/zo/ask", "type": "USES", "context": "V uses the /zo/ask API for spawning workers"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Builders", "type": "ORG", "context": "group responsible for claiming project status"}, {"name": "Debugger", "type": "TOOL", "context": "entity that verifies project status"}], "relationships": [{"from": "Builders", "to": "Debugger", "type": "USES", "context": "Builders use Debugger to verify project completion status"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "emphasizes the importance of personality traits"}, {"name": "Erica", "type": "PERSON", "context": "exemplifies the balance of traits V values"}], "relationships": [{"from": "V", "to": "Erica", "type": "MENTIONS", "context": "describes Erica as exemplifying the balance of traits"}]}

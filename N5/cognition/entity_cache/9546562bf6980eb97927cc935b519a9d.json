@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "Organization referenced in the technical document"}, {"name": "Q24", "type": "CONCEPT", "context": "Tech stack referenced in the document"}], "relationships": [{"from": "Careerspan", "to": "Q24", "type": "MENTIONS", "context": "Referenced in the context of the tech stack"}]}

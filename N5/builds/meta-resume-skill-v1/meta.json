@@ -1,0 +1,68 @@
+{
+  "build_slug": "meta-resume-skill-v1",
+  "created": "2026-01-29T21:15:00Z",
+  "status": "complete",
+  "description": "Build the Meta Resume Generator skill - transforms decomposed Careerspan data into employer-facing profiles",
+  "parent_build": "careerspan-profile-output-v1",
+  "drops": [
+    {
+      "id": "D1",
+      "title": "Finalize Meta Resume Outline Structure",
+      "status": "complete",
+      "spawn_mode": "auto"
+    },
+    {
+      "id": "D2",
+      "title": "Creative Quantitative Data Strategy",
+      "status": "complete",
+      "spawn_mode": "auto"
+    },
+    {
+      "id": "D3",
+      "title": "GitHub Profile Integration",
+      "status": "complete",
+      "spawn_mode": "auto"
+    },
+    {
+      "id": "D4",
+      "title": "Main Generator Script",
+      "status": "complete",
+      "spawn_mode": "auto",
+      "depends_on": [
+        "D1",
+        "D2"
+      ]
+    },
+    {
+      "id": "D5",
+      "title": "GitHub Fetch Module",
+      "status": "complete",
+      "spawn_mode": "auto",
+      "depends_on": [
+        "D3"
+      ]
+    }
+  ],
+  "streams": [
+    {
+      "id": "S1",
+      "drops": [
+        "D1",
+        "D2",
+        "D3"
+      ],
+      "parallel": true,
+      "status": "complete"
+    },
+    {
+      "id": "S2",
+      "drops": [
+        "D4",
+        "D5"
+      ],
+      "parallel": true,
+      "status": "complete"
+    }
+  ],
+  "completed_at": "2026-01-30T04:00:00Z"
+}

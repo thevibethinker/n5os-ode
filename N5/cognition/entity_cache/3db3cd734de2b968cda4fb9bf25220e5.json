@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "a person providing instructions"}, {"name": "tool", "type": "TOOL", "context": "a field mentioned in the context of a knowledge system"}], "relationships": [{"from": "Vrijen Attawar", "to": "tool", "type": "USES", "context": "introducing the usage of a tool in the knowledge system"}]}

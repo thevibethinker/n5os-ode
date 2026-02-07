@@ -1,0 +1,1 @@
+{"entities": [{"name": "Sam", "type": "PERSON", "context": "individual acquiring and integrating Careerspan"}, {"name": "Careerspan", "type": "ORG", "context": "organization providing sourcing tech"}], "relationships": [{"from": "Sam", "to": "Careerspan", "type": "USES", "context": "Sam acquires and integrates Careerspan for sourcing technology"}]}

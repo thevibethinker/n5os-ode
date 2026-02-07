@@ -1,0 +1,29 @@
+Excellent Collaboration Required: Advanced 4/5 Importance: 8/10 Profile Y A
+
+Ourtake Basedonresume ~ Direct
+
+Core components of Collaboration for this role include cross-functional partnering (Product, Design,
+Engineering), co-defining scope, aligning on success metrics, and ongoing coordination to deliver Al-enabled
+fullstack features. The resume contains multiple direct signals of these behaviors: at EclecticlQ the candidate
+“led all Al initiatives,” “partnered closely with product and sales to align solutions with analyst needs,” and
+“currently leading technical efforts for a team of 8+ PhD researchers,” which indicates strategic, multi-
+discipline collaboration, feature scoping, and stakeholder alignment. The Human-in-the-Loop approval system
+and entity-based context design were created to meet analyst workflows — evidence of working with domain
+users to iterate requirements. As an Al consultant and founder of Ponderbot Analytics, the candidate
+delivered 15+ client solutions across industries, implying repeated client-facing collaboration and requirement
+gathering. At Cambridge University Press they built a Student Companion and Automatic Marking System
+(features that require pedagogical/product input) and achieved measurable accuracy—suggesting iterative
+product-focused development. Earlier roles (Dell Finance: first data scientist in Finance; Cyware: sole ML
+engineer but built production apps and feedback loops) imply cross-team coordination with finance,
+engineering, and product stakeholders. Extra-curriculars (student senator, event marketing coordinator)
+further support collaboration experience. Taken together these show more than passive teamwork: they
+refiect proactive partnership, cross-functional influence, and leadership in shaping requirements and delivery
+—matching the "Advanced" criteria. Missing/limited evidence: explicit mentions of pairing with Design
+engineers, code reviews, or regular joint rituals (e.g., sprint planning) are absent, so some assumptions about
+day-to-day engineering collaboration are inferred from leadership and product-facing statements.
+
+Support
+
+Resume
+
+Resume match Direct 8/10 Excellent

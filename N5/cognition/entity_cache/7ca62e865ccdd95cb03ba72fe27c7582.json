@@ -1,0 +1,1 @@
+{"entities": [{"name": "meeting-prep-digest", "type": "TOOL", "context": "Daily automated meeting preparation tool"}, {"name": "research-prompt-generator", "type": "TOOL", "context": "Tool for generating deep research prompts"}, {"name": "extract-careerspan-insights", "type": "TOOL", "context": "Tool for extracting strategic insights"}], "relationships": []}

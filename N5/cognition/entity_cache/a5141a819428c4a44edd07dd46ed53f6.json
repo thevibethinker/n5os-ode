@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "the individual involved in the conversation"}, {"name": "last_edited", "type": "CONCEPT", "context": "a concept referring to the date of edits made"}], "relationships": [{"from": "V", "to": "last_edited", "type": "MENTIONS", "context": "discusses the concept of the last edited date"}]}

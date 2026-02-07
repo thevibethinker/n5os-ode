@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual whose knowledge system is discussed"}, {"name": "Darwinbox", "type": "ORG", "context": "platform mentioned related to enterprise focus"}], "relationships": [{"from": "V", "to": "Darwinbox", "type": "KNOWS", "context": "V's knowledge system aligns with Darwinbox's enterprise focus"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Nafisa Poonawala", "type": "PERSON", "context": "Individual mentioned in the conversation"}, {"name": "financial Runway", "type": "CONCEPT", "context": "Duration of financial sustainability"}], "relationships": [{"from": "Nafisa Poonawala", "to": "financial Runway", "type": "MENTIONS", "context": "Discussing financial runway duration"}]}

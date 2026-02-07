@@ -1,0 +1,1 @@
+{"entities": [{"name": "Elaine P", "type": "PERSON", "context": "participant in conversation"}, {"name": "markdown", "type": "TOOL", "context": "formatting tool referenced for converting sources"}], "relationships": [{"from": "Elaine P", "to": "markdown", "type": "MENTIONS", "context": "Elaine P mentions the use of markdown for conversion"}]}

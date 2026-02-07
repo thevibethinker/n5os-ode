@@ -1,0 +1,26 @@
+{
+  "tier2_dirs": [
+    "Personal",
+    "Zo",
+    "Inbox",
+    "Datasets",
+    "Health",
+    "Trash",
+    "Secrets",
+    ".git",
+    "ZoComputer",
+    "ZOFFICE_WORKERS",
+    "CONSULTING_MANIFEST.json"
+  ],
+  "tier1_dirs": [
+    "Documents/System",
+    "N5/docs",
+    "Prompts",
+    "Careerspan"
+  ],
+  "tier0_dirs": [
+    "Skills",
+    "Documents",
+    "Projects"
+  ]
+}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "individual sharing insights"}, {"name": "Career span", "type": "TOOL", "context": "a free tool for job seekers"}], "relationships": [{"from": "Vrijen Attawar", "to": "Career span", "type": "MENTIONS", "context": "encouraging its use for job seekers"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "referenced as a knowledgeable individual"}, {"name": "N5", "type": "ORG", "context": "file organizational reference"}, {"name": "social-media-voice.md", "type": "TOOL", "context": "specific file used as a fallback in communication preferences"}], "relationships": []}

@@ -1,0 +1,31 @@
+# Hobbies & Personal Interests
+# Source: Careerspan Intelligence Brief
+# DO NOT EDIT - Preserves Careerspan conclusions verbatim
+
+# Note: Limited personal interest data in source document
+# This section captures what was available
+
+interests:
+  - category: "Technology"
+    items:
+      - "AI/ML applications"
+      - "Platform building"
+    inference: "Strong professional alignment with personal interests"
+
+personal_signals:
+  - "Results-oriented (quantifies everything)"
+  - "Builder mentality (prefers creating from scratch)"
+  - "Ownership-driven (solo product owner pattern)"
+
+culture_fit_indicators:
+  positive:
+    - "Comfortable with ambiguity (founding engineer pattern)"
+    - "Self-directed (AmEx solo ownership)"
+    - "Pragmatic (business impact focus)"
+  uncertain:
+    - "Async communication style"
+    - "Written documentation habits"
+    - "Remote-first experience"
+
+data_completeness: "Limited"
+note: "Source document focused on professional history; personal interests sparsely documented"

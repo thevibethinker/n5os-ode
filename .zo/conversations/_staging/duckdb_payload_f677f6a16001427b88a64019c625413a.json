@@ -1,0 +1,1 @@
+{"conversation_id": "con_6I5fKoKfq0TzVlzw", "messages": ["{\"parts\":[{\"tool_name\":\"grep_search\",\"content\":\"No files found\",\"tool_call_id\":\"toolu_0168qRn4V7LzukMcxbgARmm6\",\"metadata\":null,\"timestamp\":\"2026-02-06T20:25:18.554588Z\",\"part_kind\":\"tool-return\"}],\"timestamp\":null,\"instructions\":\"\",\"kind\":\"request\",\"run_id\":null,\"metadata\":null}"]}

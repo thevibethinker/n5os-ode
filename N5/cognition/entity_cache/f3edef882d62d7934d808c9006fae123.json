@@ -1,0 +1,1 @@
+{"entities": [{"name": "Dave Pino", "type": "PERSON", "context": "A person V refers to in a negative context"}], "relationships": [{"from": "V", "to": "Dave Pino", "type": "MENTIONS", "context": "V expresses a desire to avoid interacting with Dave Pino in a submissive manner"}]}

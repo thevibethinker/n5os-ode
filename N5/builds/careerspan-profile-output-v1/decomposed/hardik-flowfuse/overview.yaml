@@ -1,0 +1,30 @@
+# Careerspan Overall Assessment
+# Source: Careerspan Intelligence Brief
+# DO NOT EDIT - Preserves Careerspan conclusions verbatim
+
+score: 89
+recommendation: "Strong Recommend"
+match_quality: "High"
+
+summary: |
+  Highly qualified candidate with extensive full-stack and ML engineering experience.
+  Strong technical background from IIT Delhi (JEE Rank 47 out of 14 million).
+  Has built and scaled ML platforms from scratch, demonstrating both founding-level
+  ownership and enterprise delivery capability.
+
+key_strengths:
+  - "Built ML SaaS platform from zero to hundreds of daily users"
+  - "Full-stack ownership: React, Spring Boot, Kubernetes, CI/CD"
+  - "Proven business impact: $50k/month savings at AmEx, 5x budget increase at Keysight"
+  - "Elite problem-solving credentials (JEE Rank 47/14M)"
+
+key_gaps:
+  - "Node.js/TypeScript stack (FlowFuse primary stack) - no direct evidence"
+  - "LLM-specific observability and guardrails - not explicitly documented"
+  - "Async-first remote collaboration artifacts - not showcased"
+
+careerspan_verdict: |
+  Strong technical foundation with demonstrated ability to build AI/ML systems
+  from scratch and deliver business value. Stack alignment (Python/Java vs Node.js)
+  is the primary gap to probe. Recommended for interview with focus on stack
+  transfer and AI reliability depth.

@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Refers to Vrijen's knowledge system"}, {"name": "metaprompter", "type": "TOOL", "context": "A tool recommended by V to learn basics"}], "relationships": [{"from": "V", "to": "metaprompter", "type": "USES", "context": "V recommends using a metaprompter to learn"}]}

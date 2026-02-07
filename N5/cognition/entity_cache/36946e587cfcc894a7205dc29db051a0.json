@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker discussing worldview"}, {"name": "gestalt", "type": "CONCEPT", "context": "Idea related to the whole being greater than the sum of its parts"}], "relationships": [{"from": "Vrijen Attawar", "to": "gestalt", "type": "BELIEVES", "context": "Considers it important in their worldview"}]}

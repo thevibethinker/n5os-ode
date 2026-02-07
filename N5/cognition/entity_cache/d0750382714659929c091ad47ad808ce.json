@@ -1,0 +1,1 @@
+{"entities": [{"name": "Danny", "type": "PERSON", "context": "individual departing from the team"}, {"name": "Team", "type": "ORG", "context": "group executing tasks"}], "relationships": [{"from": "Team", "to": "Danny", "type": "RELATED_TO", "context": "Team has tasks to complete before Danny's departure"}]}

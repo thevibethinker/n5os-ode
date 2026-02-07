@@ -1,11 +1,10 @@
 ---
 created: 2026-01-09
 last_edited: 2026-01-09
-version: 1.0
+version: 1
 provenance: agt_074838b3-3b6f-4e5c-a843-858a7d072141
 block_type: B01_DETAILED_RECAP
 ---
-
 # B01: Detailed Recap — Ivor Stratford x Vrijen Attawar
 
 ## Meeting Overview

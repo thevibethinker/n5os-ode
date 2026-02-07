@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ilse Funkhouser", "type": "PERSON", "context": "the person suggesting finding a spirit animal"}], "relationships": [{"from": "Ilse Funkhouser", "to": "spirit animal", "type": "MENTIONS", "context": "suggests a method to find it"}]}

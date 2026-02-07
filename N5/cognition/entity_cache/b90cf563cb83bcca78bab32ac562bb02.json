@@ -1,0 +1,1 @@
+{"entities": [{"name": "Danny Williams", "type": "PERSON", "context": "individual speaking in the conversation"}, {"name": "Logan labor", "type": "CONCEPT", "context": "mentioned as something to put into practice"}], "relationships": [{"from": "Danny Williams", "to": "Logan labor", "type": "MENTIONS", "context": "discussing implementation"}]}

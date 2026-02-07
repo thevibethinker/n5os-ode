@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "the subject of the knowledge system"}, {"name": "bootstrap_conversations.jsonl", "type": "TOOL", "context": "the file being monitored for conversation data"}], "relationships": [{"from": "V", "to": "bootstrap_conversations.jsonl", "type": "USES", "context": "V monitors the file to respond to questions"}]}

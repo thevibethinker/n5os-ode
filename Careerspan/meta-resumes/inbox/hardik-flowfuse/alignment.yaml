@@ -1,0 +1,118 @@
+# Alignment Analysis
+# Source: Careerspan + JD
+# Extracted: 2026-01-29T20:51:04.474418
+# Method: LLM semantic extraction
+# DO NOT EDIT
+
+requirements_alignment:
+- requirement: Design and implement AI-powered features end-to-end
+  verdict: CLEAR
+  evidence: Architected end-to-end Machine Learning SaaS platform from first commit
+    to hundreds of daily users; built robust data ingestion and feature engineering
+    pipelines at terabyte scale; developed containerized microservices for high availability
+    and low latency inference
+  confidence: high
+- requirement: Build and maintain LLM integrations (prompt engineering, fine-tuning,
+    evaluation)
+  verdict: PARTIAL
+  evidence: Explicitly lists 'LLM/agent experience (LangChain + RAG)' but no concrete
+    examples of prompt engineering workflows, fine-tuning projects, or evaluation
+    frameworks/metrics
+  confidence: medium
+- requirement: Develop retrieval-augmented generation (RAG) systems for contextual
+    intelligence
+  verdict: CLEAR
+  evidence: Explicitly states 'LLM/agent experience (LangChain + RAG)' with RAG techniques
+    listed in tools; terabyte-scale data engineering suggests capacity to build retrieval
+    pipelines
+  confidence: high
+- requirement: Prototype, evaluate, and productionize AI features with clear scope
+    and guardrails
+  verdict: PARTIAL
+  evidence: Proven productionization track record (reduced model-to-production from
+    hours to minutes; secured 5x budget increase by proving value) but no explicit
+    mention of scope definition, guardrails, or evaluation frameworks
+  confidence: medium
+- requirement: Design for AI failure modes, latency, cost, and operational constraints
+  verdict: GAP
+  evidence: No concrete examples of LLM fallback strategies, cost/latency controls,
+    prompt/version governance, or model/LLM-specific observability (drift, hallucination
+    safeguards, metrics/dashboards)
+  confidence: medium
+- requirement: Ensure AI features align with privacy, security, and SOC 2 requirements
+  verdict: PARTIAL
+  evidence: Experience in regulated environments (American Express - 'regulatory compliance')
+    and 'zero-downtime automation' but no direct evidence of SOC 2 controls, audit
+    participation, or named privacy frameworks (e.g., GDPR) applied to AI features
+  confidence: low
+- requirement: Share best practices and patterns for applied AI across the engineering
+    team
+  verdict: PARTIAL
+  evidence: Mentored 4 SDE interns; Scrum Master experience; 'establish reusable platforms/patterns
+    and enabling large engineering audiences' but lacks explicit artifacts (RFCs,
+    playbooks, internal workshops) tied to AI patterns
+  confidence: medium
+- requirement: Contribute to broader full-stack engineering work as needed
+  verdict: CLEAR
+  evidence: Full-stack integration listed as hard skill; built backend (Java/Spring
+    Boot) and frontend (ReactJS) delivering self-service solutions; microservices,
+    DevOps, and CI/CD experience across stack
+  confidence: high
+- requirement: Strong generalist engineering skills (we use Node.js heavily)
+  verdict: PARTIAL
+  evidence: Strong generalist credentials (Java, Spring Boot, React, Python, Kubernetes,
+    CI/CD, SRE) but no Node.js experience listed; core full-stack principles transferable
+    but lacks Node.js-specific velocity
+  confidence: medium
+- requirement: Hands-on experience building with LLMs in production
+  verdict: CLEAR
+  evidence: States 'LLM/agent experience (LangChain + RAG)' combined with production
+    SaaS platform delivering to Apple, Samsung Semiconductor, and Volkswagen; proven
+    productionization at scale
+  confidence: high
+- requirement: Familiarity with vector databases, embeddings, and retrieval systems
+  verdict: PARTIAL
+  evidence: RAG experience stated but no specific vector databases, embedding providers,
+    or retrieval stack named; terabyte-scale data engineering and Couchbase experience
+    suggests retrieval capacity
+  confidence: medium
+- requirement: Comfort with ambiguity and a bias toward shipping incrementally
+  verdict: CLEAR
+  evidence: Founding engineer on greenfield ML platform starting from 'first commit';
+    solo product leader who drove $50k/month savings; proven ability to translate
+    ambiguous problems into business impact
+  confidence: high
+- requirement: Excellent written communication—you'll be documenting patterns and
+    decisions
+  verdict: CLEAR
+  evidence: Achievements and resume demonstrate clear, structured communication; product
+    leadership and stakeholder management roles imply documentation aptitude; IIT
+    Delhi academic credentials signal strong written skills
+  confidence: high
+critical_gaps:
+- 'No documented AI reliability practices: failure mode handling, fallback strategies,
+  hallucination detection, drift monitoring, or latency/cost controls'
+- No explicit SOC 2 compliance experience or named privacy framework application to
+  AI systems
+- No Node.js experience (JD specifies 'we use Node.js heavily')
+- LLM/vectordb implementation depth not specified (no providers, no vector store names,
+  no embedding stacks)
+interview_priorities:
+- 'Probe AI failure mode handling: ''Tell me about a time an LLM-based feature failed
+  in production. How did you detect it? What was your fallback strategy? What metrics
+  do you track for reliability?'''
+- 'Probe observability practices: ''How do you monitor LLM outputs for drift or quality
+  degradation? What dashboards or alerts do you have in place?'''
+- 'Prompt engineering depth: ''Walk me through your prompt engineering workflow. How
+  do you version prompts? How do you evaluate prompt changes before production?'''
+- 'SOC 2/privacy specifics: ''Describe your experience with SOC 2 compliance. What
+  controls have you implemented for AI features? How do you handle data privacy in
+  RAG systems?'''
+- 'LLM stack specifics: ''Which LLM providers have you integrated? Which vector databases
+  have you used? Why did you choose those stacks?'''
+- 'Node.js adaptability: ''This role uses Node.js heavily. Given your background in
+  Java/Spring Boot, how quickly could you ramp up? Have you used JavaScript/TypeScript
+  outside of React?'''
+- 'Knowledge-sharing artifacts: ''Can you share examples of internal docs, RFCs, or
+  playbooks you''ve written for AI patterns? How do you document decisions for team
+  adoption?'''

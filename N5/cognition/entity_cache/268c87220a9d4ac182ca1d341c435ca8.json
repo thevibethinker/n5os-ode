@@ -1,0 +1,1 @@
+{"entities": [{"name": "N5/Zo", "type": "TOOL", "context": "a tool positioned as a Chief of Staff layer"}, {"name": "Jared Dunn", "type": "PERSON", "context": "a character referenced in relation to N5/Zo"}], "relationships": [{"from": "N5/Zo", "to": "Jared Dunn", "type": "MENTIONS", "context": "refers to the character to illustrate its role"}]}

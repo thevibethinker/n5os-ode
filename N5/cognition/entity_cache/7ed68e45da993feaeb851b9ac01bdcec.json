@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "early-stage founder in recruiting/talent tech"}, {"name": "SIEM", "type": "ORG", "context": "organization co-founded by V"}], "relationships": [{"from": "V", "to": "SIEM", "type": "WORKS_WITH", "context": "V is a co-founder of SIEM"}]}

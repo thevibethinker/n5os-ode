@@ -1,0 +1,71 @@
+{
+  "meeting_id": "2026-01-23_Annabao-Vrijenattawar",
+  "date": "2026-01-23",
+  "participants": [
+    "Annabao",
+    "Vrijenattawar"
+  ],
+  "meeting_type": "external",
+  "status": "archived",
+  "transcript_file": "transcript.md",
+  "blocks_requested": [],
+  "blocks_generated": [
+    "B32_THOUGHT_PROVOKING_IDEAS",
+    "B13_PLAN_OF_ACTION",
+    "B25_DELIVERABLE_MAP",
+    "B26_MEETING_METADATA",
+    "B08_STAKEHOLDER_INTELLIGENCE",
+    "B03_DECISIONS",
+    "B01_DETAILED_RECAP",
+    "B00_ZO_TAKE_HEED",
+    "B21_KEY_MOMENTS",
+    "B02_B05_COMMITMENTS_AND_ACTIONS"
+  ],
+  "blocks_failed": [],
+  "staged_at": "2026-02-02T20:22:18.759693Z",
+  "processed_at": "2026-02-03T00:14:35.824673Z",
+  "archived_at": "2026-02-03T13:16:31.467461Z",
+  "error": null,
+  "block_selection": {
+    "selected_at": "2026-02-03T00:08:18.372180Z",
+    "method": "smart_selector_v2",
+    "recipe": "external_standard",
+    "always_blocks": [
+      "B00",
+      "B01",
+      "B02_B05",
+      "B03",
+      "B08",
+      "B21",
+      "B26"
+    ],
+    "conditional_selected": [
+      "B25",
+      "B13",
+      "B32"
+    ],
+    "conditional_skipped": [
+      "B04",
+      "B06",
+      "B07",
+      "B10",
+      "B14",
+      "B28",
+      "B33"
+    ],
+    "triggered": [],
+    "reasoning": {
+      "B25": "Transcript contains explicit deliverables with owners and timelines: February happy hour (Anna leading), newsletter (quarterly, need template), outreach to survey respondents (Anna started, V can support), sponsorship package (Anna will go over). These are concrete artifacts with assigned responsibilities.",
+      "B13": "Clear next steps synthesized: V to review survey documentation and Fohi materials over the weekend, Anna continues outreach to potential sponsors and organizations, they'll discuss sponsorship package details before Anna leaves at 12:30, and they're planning February happy hour execution.",
+      "B32": "Decision-making present: Choosing February happy hour as first event based on survey feedback showing high demand for casual meetups; deciding on quarterly vs monthly newsletter based on email preference data; targeting specific sectors (HR, LnD, journalism) to grow representation. These are nuanced decisions worth capturing the rationale for.",
+      "B04": "Skipped: No unresolved questions requiring follow-up. V asked clarifying questions during the walkthrough (about apartment rent/buy, hearth pods location) which were answered immediately. The meeting ended with clear action items, not open questions.",
+      "B06": "Skipped: While there's strategic discussion about community growth and sector diversity, this is about the specific community organization's strategy, not company-specific business context for V's priorities. No discussion of Careerspan, revenue strategy, or market positioning relevant to V's current priorities.",
+      "B07": "Skipped: No verbal introduction cues detected. V never said phrases like 'intro me to', 'connect me with', or 'introduce me to'. Anna mentioned organizations they could work with, but this is general outreach, not a request for V to make introductions.",
+      "B10": "Skipped: This is an initial onboarding/planning meeting, not a relationship trajectory analysis. The relationship is in early formation phase\u2014Anna is giving V ownership and trust, but there's no established baseline trajectory to analyze or evolve from. This is more about establishing direction than analyzing momentum.",
+      "B14": "Skipped: No blurb drafting cues detected. V never said phrases like 'draft a blurb', 'write a blurb', or 'blurb about'. No request for LinkedIn content, intro blurbs, or other written communications to be drafted.",
+      "B28": "Skipped: Discussion is community-focused and operational (survey results, event planning, outreach), not about broader market intelligence, industry trends, or competitive landscape. No analysis of market dynamics or strategic landscape implications relevant to V's priorities.",
+      "B33": "Skipped: While there's discussion about event types and priorities, the decisions are straightforward (happy hour first because it's easiest, quarterly newsletter based on data). No complex decisions with nuanced reasoning that warrant deep-dive analysis. The rationale is clear from survey feedback."
+    },
+    "total_blocks": 10
+  }
+}

@@ -1,7 +1,8 @@
 ---
 created: 2025-12-12
-last_edited: 2025-12-12
-version: 1.0
+last_edited: 2026-01-29
+version: 1.1
+note: REFERENCE DOC - Live persona (ID 3700edcc-9785-4dee-9530-ad4a440293d9) is in Zo settings. This doc provides extended guidance for complex situations.
 ---
 
 # Vibe Operator Persona

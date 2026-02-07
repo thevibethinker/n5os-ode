@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual known for their knowledge system"}, {"name": "system_bulletins.jsonl", "type": "TOOL", "context": "file used in V's knowledge system"}], "relationships": [{"from": "V (Vrijen)", "to": "system_bulletins.jsonl", "type": "USES", "context": "V uses the file for data in the knowledge system"}]}

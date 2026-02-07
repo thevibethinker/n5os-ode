@@ -1,0 +1,1 @@
+{"entities": [{"name": "Maca Baigorria", "type": "PERSON", "context": "Co-Founder of Jack and Jill"}, {"name": "Jack and Jill", "type": "ORG", "context": "Organization co-founded by Maca Baigorria"}], "relationships": [{"from": "Maca Baigorria", "to": "Jack and Jill", "type": "WORKS_WITH", "context": "Co-Founder of the organization"}]}

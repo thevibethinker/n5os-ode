@@ -1,0 +1,1 @@
+{"entities": [{"name": "N5", "type": "ORG", "context": "an organization associated with the software tools"}, {"name": "session state manager", "type": "TOOL", "context": "a tool mentioned for managing sessions in the knowledge system"}], "relationships": []}

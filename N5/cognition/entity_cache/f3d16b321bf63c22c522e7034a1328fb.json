@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual asking the questions"}, {"name": "Lumos", "type": "ORG", "context": "organization mentioned for partnership opportunity"}], "relationships": [{"from": "V", "to": "Lumos", "type": "WORKS_WITH", "context": "partnership opportunity with Lumos portfolio"}]}

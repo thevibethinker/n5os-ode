@@ -1,0 +1,1 @@
+{"entities": [{"name": "Tope", "type": "PERSON", "context": "runs productivity company"}, {"name": "productivity company", "type": "ORG", "context": "company run by Tope"}], "relationships": [{"from": "Tope", "to": "productivity company", "type": "WORKS_WITH", "context": "Tope runs this company"}]}

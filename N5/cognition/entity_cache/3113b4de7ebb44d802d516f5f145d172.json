@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Founder of the knowledge system"}, {"name": "CRM", "type": "TOOL", "context": "Customer Relationship Management system"}], "relationships": [{"from": "V", "to": "CRM", "type": "USES", "context": "V utilizes the CRM tool in the knowledge system"}]}

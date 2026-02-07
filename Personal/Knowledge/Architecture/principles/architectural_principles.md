@@ -36,7 +36,7 @@ See individual principle files in `principles/` directory for details:
 
 ---
 
-## New Principles (P23-P34)
+## New Principles (P23-P39)
 
 ### Design Philosophy
 - **P24:** Simulation Over Doing - Dry-run everything before execution
@@ -55,18 +55,33 @@ See individual principle files in `principles/` directory for details:
 ### Security
 - **P34:** Centralized Secrets Management - Encrypted, audited, rotated
 
+### Building Fundamentals (NEW - Jan 2026)
+- **P35:** Version, Don't Overwrite - Create new versions, never mutate inputs
+- **P36:** Make State Visible - Hidden state causes bugs; declare and validate
+- **P37:** Design as Pipelines - Input → Transform → Output with recoverable stages
+- **P38:** Isolate by Default, Parallelize Proactively - Workers don't share state; bias toward Pulse
+- **P39:** Audit Everything - Every change traceable to cause, trigger, and timestamp
+
+See `file 'Personal/Knowledge/Architecture/principles/P35-P39_building_fundamentals.md'` for full details.
+
 ---
 
 ## Principle Categories
 
 ### Safety & Reliability
-P5, P7, P11, P15, P18, P19
+P5, P7, P11, P15, P18, P19, P35, P36
 
 ### Design & Architecture
-P1, P2, P8, P20, P24, P25, P27, P32, P33
+P1, P2, P8, P20, P24, P25, P27, P32, P33, P37
 
 ### Development Practice
 P0, P16, P17, P21, P22, P26, P28, P29, P30, P31
+
+### Concurrency & Orchestration
+P38
+
+### Auditability & Trust
+P39
 
 ### Security
 P34

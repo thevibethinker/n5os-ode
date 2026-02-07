@@ -1,0 +1,1 @@
+{"entities": [{"name": "AuthService", "type": "CONCEPT", "context": "A service for authentication and token validation"}, {"name": "Token", "type": "TOOL", "context": "Represents an authorization token"}, {"name": "User", "type": "CONCEPT", "context": "Refers to a user in the system"}], "relationships": []}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Commands", "type": "CONCEPT", "context": "mapping in the context of a protocol"}, {"name": "GoogleChromeLabs", "type": "ORG", "context": "organization related to the webdriver-bidi-protocol"}], "relationships": [{"from": "GoogleChromeLabs", "to": "Commands", "type": "MENTIONS", "context": "related to the webdriver-bidi-protocol"}]}

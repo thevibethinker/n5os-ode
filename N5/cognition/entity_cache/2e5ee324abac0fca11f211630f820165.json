@@ -1,0 +1,1 @@
+{"entities": [{"name": "Aviato", "type": "ORG", "context": "organization whose API was integrated"}, {"name": "API", "type": "TOOL", "context": "technology used for integration"}], "relationships": [{"from": "V", "to": "Aviato", "type": "WORKS_WITH", "context": "integrated Aviato's API"}, {"from": "V", "to": "API", "type": "USES", "context": "used API for integration"}]}

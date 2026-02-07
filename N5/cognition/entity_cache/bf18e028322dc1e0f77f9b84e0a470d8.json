@@ -1,0 +1,1 @@
+{"entities": [{"name": "smart_meme_generation", "type": "TOOL", "context": "a tool for generating memes based on input descriptions"}], "relationships": [{"from": "V", "to": "smart_meme_generation", "type": "USES", "context": "V uses smart_meme_generation to create memes for various scenarios"}]}

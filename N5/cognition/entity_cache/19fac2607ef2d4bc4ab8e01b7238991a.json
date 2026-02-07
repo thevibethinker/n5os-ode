@@ -1,0 +1,1 @@
+{"entities": [{"name": "Laura", "type": "PERSON", "context": "addressed concern about positioning"}, {"name": "commodity positioning", "type": "CONCEPT", "context": "concern related to business strategy"}], "relationships": [{"from": "Laura", "to": "commodity positioning", "type": "RELATED_TO", "context": "Laura's concern about drifting into this concept"}]}

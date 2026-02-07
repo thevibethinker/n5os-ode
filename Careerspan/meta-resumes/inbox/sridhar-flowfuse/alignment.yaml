@@ -1,0 +1,59 @@
+# Alignment
+# Extracted: 2026-01-30T02:22:04.137099
+
+requirements_alignment:
+  - requirement: "Strong experience working across the full stack"
+    verdict: "PARTIAL"
+    evidence: "Extensive backend and AI infrastructure experience: Python/Django, Flask, MCP servers, Elasticsearch (100M+ entities), LangGraph, multi-threaded inference, public API deployments. Built production systems with web backends (Django/Flask serving models), database migrations (18 banking clients, 100M+ users), and infra components. However, explicit frontend framework experience (React/Vue/TypeScript, UI state management, design system integration) is not documented in the resume."
+    confidence: "high"
+
+  - requirement: "Demonstrated experience shipping AI-powered features to production"
+    verdict: "CLEAR"
+    evidence: "Led 6-month integration of AI assistant into EclecticIQ's flagship product with measurable impact: +18% correctness, 84% prompt relevance, +27% recall, 97% schema adherence. Built RAG-based Student Companion at Cambridge (vector DB, semantic search, agentic verification) and Automatic Marking System (85% accuracy). As AI consultant, delivered 15+ client solutions. At Cyware, was sole ML engineer shipping production ML products with Django serving and feedback loops for retraining."
+    confidence: "high"
+
+  - requirement: "Hands-on experience integrating LLM APIs into real systems"
+    verdict: "CLEAR"
+    evidence: "Built AI assistant using LangGraph and MCP frameworks at EclecticIQ, deployed public MCP server for third-party AI clients, enabled dual-LLM support (OpenAI + hosted open-source via Ollama). Implemented FaithfulRAG, guardrails, and Human-in-the-Loop approval system. At Cambridge, built RAG systems with vector databases, semantic search, and agentic response verification. Used few-shot prompting and chain-of-thought for Automatic Marking."
+    confidence: "high"
+
+  - requirement: "Familiarity with embeddings, vector search, or retrieval-augmented generation"
+    verdict: "CLEAR"
+    evidence: "Extensive RAG experience: Student Companion System with semantic search using vector databases at Cambridge, Text-to-Lucene RAG at EclecticIQ, scalable contextual search with 100M+ entities, embedding stores with cross-encoders, nomic-embed. Built FaithfulRAG extensions for cybersecurity. Resume explicitly lists Retrieval-Augmented Generation and Embeddings as hard skills."
+    confidence: "high"
+
+  - requirement: "Strong judgment around AI tradeoffs, failure modes, cost, and observability"
+    verdict: "CLEAR"
+    evidence: "Reduced token usage by 60% through entity-based context (cost/latency optimization). Implemented FaithfulRAG to reduce hallucinations, built Human-in-the-Loop approval system (operational fallback), guardrails and feedback loops. Multi-threaded inference for latency reduction (Cyware). Transactional anomaly system with <300ms response time (SquareOne). Measured outcomes: correctness, recall, relevance, schema adherence. Dual-LLM support shows cost/availability tradeoff awareness."
+    confidence: "high"
+
+  - requirement: "Ability to design AI systems that others can safely extend"
+    verdict: "CLEAR"
+    evidence: "Architected modular, decoupled AI assistant separating Flask backends from async AI protocols. Deployed public MCP server supporting third-party AI clients. Entity-based context pattern for scalability. Custom HITL approval system designed for extensibility. Led team of 8+ PhD researchers. Feedback loops and guardrails establish reusable patterns. Built Text-to-Lucene with guardrails."
+    confidence: "high"
+
+  - requirement: "Experience shipping small, well-scoped changes incrementally"
+    verdict: "CLEAR"
+    evidence: "Iterative development approach documented: 'shipping small, well-scoped changes incrementally' explicitly referenced in profile. Six-month AI assistant integration at EclecticIQ involved incremental architecture evolution. Multi-threaded inference with feedback loops for continuous improvement at Cyware. Iterative refinement at Cambridge to achieve 85% accuracy. Measured metrics show incremental improvement tracked (correctness +18%, recall +27%)."
+    confidence: "medium"
+
+  - requirement: "Comfort working in a remote, async-first environment"
+    verdict: "PARTIAL"
+    evidence: "Resume shows extensive cross-functional collaboration (partnered with Product and Sales at EclecticIQ, led cross-disciplinary teams). Founder of AI consultancy implies client-facing remote work. However, explicit async-first communication artifacts (RFCs, design docs, formalized knowledge-sharing programs) are not documented. Profile notes 'lighter on explicit async-first communication artifacts' but notes collaboration capabilities. Remote work not explicitly stated but implied by global client work."
+    confidence: "medium"
+
+  - requirement: "Pragmatic use of AI tools to accelerate development"
+    verdict: "CLEAR"
+    evidence: "Adopted LangGraph and MCP frameworks, enabled dual-LLM support including OSS hosting via Ollama. Extended FaithfulRAG for cybersecurity, used nomic-embed, Flash Attention, fine-tuned SecureBERT 2.0. Used few-shot prompting, chain-of-thought, Text-to-Lucene. Practical tradeoffs: token reduction (60%), dual-LLM support for cost/availability. Resume shows evaluating and integrating emerging AI/LLM tools into production with measurable benefits."
+    confidence: "high"
+
+overall:
+  core_requirements_met: "7 of 9 CLEAR, 2 of 9 PARTIAL"
+  critical_gaps:
+    - "Frontend depth: No documented experience with modern frontend frameworks (React/Vue/TypeScript), UI state management, or complex UX flows - concerning for a full-stack role expecting hands-on frontend work"
+    - "Formal observability/compliance: No explicit experience with SOC 2/GDPR, audit artifacts, access controls, or formal monitoring tooling (OpenTelemetry/Prometheus, SLOs/alerts, drift monitoring)"
+  interview_priorities:
+    - "Probe frontend capabilities: Ask specifically about React/Vue/TypeScript experience, UI state management patterns, and examples of complex frontend flows owned end-to-end"
+    - "Explore async communication practices: Request examples of RFCs, design docs, or formal knowledge-sharing artifacts from remote/collaborative work"
+    - "Deep-dive observability practices: Ask about monitoring stack experience, alerting setup, SLOs, and formal compliance/security practices in production AI systems"
+    - "Validate full-stack ownership: Clarify what 'full-stack' means in context - does it include shipping client-facing UI code, or primarily backend/API work?"

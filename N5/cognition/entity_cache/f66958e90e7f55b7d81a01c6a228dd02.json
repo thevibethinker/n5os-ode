@@ -1,0 +1,1 @@
+{"entities": [{"name": "Beth Roan", "type": "PERSON", "context": "individual for whom the alumni network vendors list is compiled"}], "relationships": [{"from": "V (Vrijen)", "to": "Beth Roan", "type": "WORKS_WITH", "context": "collaborating on compiling the vendors list"}]}

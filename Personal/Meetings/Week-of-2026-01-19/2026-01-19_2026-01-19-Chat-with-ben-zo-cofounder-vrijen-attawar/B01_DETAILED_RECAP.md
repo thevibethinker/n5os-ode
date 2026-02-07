@@ -1,11 +1,10 @@
 ---
 created: 2026-01-19
 last_edited: 2026-01-19
-version: 1.0
+version: 1
 provenance: con_e60XXcARp7P7wsBs
 block_type: B01
 ---
-
 ## B01 Detailed Recap
 - The call opened with a warm catch-up: Vrijen confirmed he will be in Puerto Rico from January 20–27 to attend the race, and Ben explained he will be in SF in early February for a Zo event, so they agreed to sync wherever their paths cross.  
 - Vrijen walked Ben through recent selling conversations (Calendly partner, syncing with Howie, the Tope meeting on the 30th) and explained how he is demoing Zoe across those relationships to show both the productivity layer and the human concierge (email + demos).  

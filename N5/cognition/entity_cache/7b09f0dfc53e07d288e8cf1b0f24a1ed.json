@@ -1,0 +1,1 @@
+{"entities": [{"name": "git", "type": "TOOL", "context": "version control system used for tracking changes in code"}, {"name": "bulletin file", "type": "CONCEPT", "context": "file created to summarize significant changes"}, {"name": "state file", "type": "CONCEPT", "context": "file that tracks the last run timestamp"}], "relationships": []}

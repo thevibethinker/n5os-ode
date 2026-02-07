@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "owner of the productivity tracker"}, {"name": "Productivity Tracker", "type": "TOOL", "context": "relative productivity index & XP system used by V"}], "relationships": [{"from": "V", "to": "Productivity Tracker", "type": "USES", "context": "V is the owner of the productivity tracker"}]}

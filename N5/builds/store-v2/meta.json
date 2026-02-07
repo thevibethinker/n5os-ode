@@ -2,7 +2,7 @@
   "slug": "store-v2",
   "title": "Store Enhancements: Export Pipeline + UX",
   "build_type": "code_build",
-  "status": "active",
+  "status": "complete",
   "total_streams": 2,
   "current_stream": 2,
   "model": "anthropic:claude-sonnet-4-20250514",

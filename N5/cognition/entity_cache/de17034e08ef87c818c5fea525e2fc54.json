@@ -1,0 +1,1 @@
+{"entities": [{"name": "Duplicate Detection", "type": "CONCEPT", "context": "A process to identify duplicate files"}, {"name": "Function.pdf", "type": "FILE", "context": "An example of a filename that is kept"}, {"name": "Function (1).pdf", "type": "FILE", "context": "An example of a duplicate filename marked for deletion"}], "relationships": []}

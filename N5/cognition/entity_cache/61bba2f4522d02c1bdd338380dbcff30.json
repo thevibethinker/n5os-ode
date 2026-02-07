@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "speaker of the text"}, {"name": "Uber", "type": "ORG", "context": "organization mentioned in relation to alumni group"}], "relationships": [{"from": "Vrijen Attawar", "to": "Uber", "type": "MENTIONS", "context": "suggesting a value offering to the Uber alumni group"}]}

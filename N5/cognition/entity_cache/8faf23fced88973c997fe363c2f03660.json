@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual involved in knowledge system"}, {"name": "high_dist_primitives", "type": "CONCEPT", "context": "a collection of high distinctiveness primitives"}], "relationships": [{"from": "V", "to": "high_dist_primitives", "type": "USES", "context": "V uses high distinctiveness primitives in knowledge system"}]}

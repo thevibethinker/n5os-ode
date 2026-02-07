@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "the individual being referenced"}, {"name": "technical students", "type": "CONCEPT", "context": "students with a focus on technology"}], "relationships": [{"from": "V", "to": "technical students", "type": "KNOWS", "context": "V is likely connected to individuals who are studying technology"}]}

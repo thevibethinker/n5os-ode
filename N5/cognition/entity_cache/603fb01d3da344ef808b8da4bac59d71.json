@@ -1,0 +1,1 @@
+{"entities": [{"name": "Abby", "type": "PERSON", "context": "CEO of Season"}, {"name": "Season", "type": "ORG", "context": "B2B conversational AI platform"}], "relationships": [{"from": "Abby", "to": "Season", "type": "WORKS_WITH", "context": "Abby is the CEO of Season"}]}

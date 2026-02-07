@@ -2,7 +2,7 @@
   "slug": "workos-integration",
   "title": "WorkOS AuthKit for Where's V (invite-only)",
   "build_type": "code_build",
-  "status": "active",
+  "status": "complete",
   "stage": "building",
   "total_streams": 2,
   "current_stream": 1,

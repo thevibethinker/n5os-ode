@@ -1,0 +1,1 @@
+{"entities": [{"name": "drive_file_id", "type": "CONCEPT", "context": "field intended to be used for identifying files"}, {"name": "gdrive_id", "type": "CONCEPT", "context": "actual field used in the registry for identifying files"}], "relationships": [{"from": "drive_file_id", "to": "gdrive_id", "type": "RELATED_TO", "context": "incorrect field reference leading to an issue"}]}

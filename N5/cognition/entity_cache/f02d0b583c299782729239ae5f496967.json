@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "the individual testing the AI-to-AI conversation system"}, {"name": "Mobius Maneuver", "type": "CONCEPT", "context": "the scenario Parent Zo is preparing for"}], "relationships": [{"from": "V", "to": "Mobius Maneuver", "type": "KNOWS", "context": "V is familiar with the concept that Parent Zo is preparing for"}]}

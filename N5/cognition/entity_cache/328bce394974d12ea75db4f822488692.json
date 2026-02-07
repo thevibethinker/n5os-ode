@@ -1,0 +1,1 @@
+{"entities": [{"name": "McKinsey Founders Orbit", "type": "ORG", "context": "organization associated with V"}], "relationships": [{"from": "V", "to": "McKinsey Founders Orbit", "type": "WORKS_WITH", "context": "V is a co-organizer/lead coordinator at the organization"}]}

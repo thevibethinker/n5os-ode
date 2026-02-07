@@ -1,0 +1,14 @@
+{
+  "slug": "careerspan-pipeline-v2",
+  "timestamp": "2026-02-03T02:54:49.720419+00:00",
+  "verification": {
+    "passed": true,
+    "output": "\u2705 verify passed for careerspan-pipeline-v2\n   Artifacts: 6/6 verified, 0 missing\n"
+  },
+  "integration_tests": {
+    "passed": true,
+    "output": "\n==================================================\nIntegration Tests: careerspan-pipeline-v2\n==================================================\n\nNo tests defined. Run 'generate' to auto-create from artifacts.\n\nResults saved to /home/workspace/N5/builds/careerspan-pipeline-v2/INTEGRATION_RESULTS.json\n"
+  },
+  "learnings_harvested": 3,
+  "success": true
+}

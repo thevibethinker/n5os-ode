@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Described vibe coding and Zo"}], "relationships": [{"from": "V", "to": "AI", "type": "BELIEVES", "context": "Acknowledges V as ahead on the AI curve"}]}

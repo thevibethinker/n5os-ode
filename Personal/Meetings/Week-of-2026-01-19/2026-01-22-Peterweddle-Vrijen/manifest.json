@@ -1,0 +1,32 @@
+{
+  "meeting_id": "2026-01-22_Peterweddle-Vrijen",
+  "date": "2026-01-22",
+  "participants": [
+    "Peterweddle",
+    "Vrijen"
+  ],
+  "meeting_type": "external",
+  "status": "archived",
+  "transcript_file": "transcript.md",
+  "blocks_requested": [],
+  "blocks_generated": [
+    "B01_DETAILED_RECAP",
+    "B03_DECISIONS",
+    "B05_ACTION_ITEMS",
+    "B08_STAKEHOLDER_INTELLIGENCE",
+    "B25_DELIVERABLES",
+    "B26_MEETING_METADATA",
+    "B04_OPEN_QUESTIONS",
+    "B10_RISKS_AND_FLAGS"
+  ],
+  "blocks_failed": [
+    {
+      "block": "B02_COMMITMENTS",
+      "error": "Zo API error: 500 - modal-http: internal error: function was terminated by signal\n"
+    }
+  ],
+  "staged_at": "2026-01-31T00:25:27.592541Z",
+  "processed_at": "2026-01-31T00:36:29.923889Z",
+  "archived_at": "2026-01-31T20:09:53.686449Z",
+  "error": null
+}

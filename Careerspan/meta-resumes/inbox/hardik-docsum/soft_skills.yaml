@@ -1,0 +1,117 @@
+---
+created: 2026-02-03
+last_edited: 2026-02-03
+version: 1.0
+provenance: con_LFJ7YTSwxW5vh4bD
+
+soft_skills:
+  # Listed from document
+  listed:
+    - Team Leadership
+    - Strategic Stakeholder Engagement
+    - Project/People Management
+    - Communication
+    - Planning (Sprint, PI, project)
+    - Presentation
+    - Systematic Approach
+    - Creative Perspective
+    - Mentorship
+    - Collaborative Leadership
+    - Iterative Product Development
+    - Adaptability
+    - Attention to Detail
+    - Organizational Skills
+    - Patience
+    - Team Discipline
+
+  # Assessed skills with scores
+  assessed:
+    - skill: "Proactive problem solving"
+      rating: "Excellent"
+      importance: 10
+      experience: 9
+      type: "Direct"
+    
+    - skill: "Self-motivation"
+      rating: "Excellent"
+      importance: 10
+      experience: 9
+      type: "Direct"
+    
+    - skill: "Clear written communication"
+      rating: "Good"
+      importance: 10
+      experience: 6
+      type: "Transferable"
+    
+    - skill: "Ownership"
+      rating: "Excellent"
+      importance: 10
+      experience: 10
+      type: "Direct"
+    
+    - skill: "Proactive communication"
+      rating: "Excellent"
+      importance: 9
+      experience: 9
+      type: "Direct"
+    
+    - skill: "Pragmatic decision making"
+      rating: "Excellent"
+      importance: 9
+      experience: 9
+      type: "Direct"
+    
+    - skill: "Low ego collaboration"
+      rating: "Excellent"
+      importance: 9
+      experience: 8
+      type: "Direct"
+    
+    - skill: "Fast-paced delivery"
+      rating: "Excellent"
+      importance: 9
+      experience: 9
+      type: "Direct"
+    
+    - skill: "Remote and asynchronous work"
+      rating: "Good"
+      importance: 8
+      experience: 7
+      type: "Direct"
+    
+    - skill: "Attention to detail"
+      rating: "Excellent"
+      importance: 8
+      experience: 8
+      type: "Direct"
+    
+    - skill: "Curiosity"
+      rating: "Excellent"
+      importance: 8
+      experience: 9
+      type: "Direct"
+    
+    - skill: "Technical explanation"
+      rating: "Excellent"
+      importance: 8
+      experience: 9
+      type: "Direct"
+    
+    - skill: "Optimism and resilience"
+      rating: "Excellent"
+      importance: 8
+      experience: 8
+      type: "Direct"
+    
+    - skill: "Continuous improvement"
+      rating: "Excellent"
+      importance: 7
+      experience: 9
+      type: "Direct"
+    
+    - skill: "Customer collaboration"
+      rating: "Good"
+      importance: 7
+      experience: 7
+      type: "Transferable"

@@ -1,0 +1,73 @@
+{
+  "meeting_id": "2025-11-11_Mincallwithedmundbetweenedmundcuthbert-Vri",
+  "date": "2025-11-11",
+  "participants": [
+    "Mincallwithedmundbetweenedmundcuthbert",
+    "Vri"
+  ],
+  "meeting_type": "external",
+  "status": "archived",
+  "transcript_file": "transcript.md",
+  "blocks_requested": [],
+  "blocks_generated": [
+    "B02_B05_COMMITMENTS_AND_ACTIONS",
+    "B10_RELATIONSHIP_TRAJECTORY",
+    "B08_STAKEHOLDER_INTELLIGENCE",
+    "B26_MEETING_METADATA",
+    "B32_THOUGHT_PROVOKING_IDEAS",
+    "B33_DECISION_RATIONALE",
+    "B28_STRATEGIC_INTELLIGENCE",
+    "B01_DETAILED_RECAP",
+    "B00_ZO_TAKE_HEED",
+    "B03_DECISIONS",
+    "B21_KEY_MOMENTS",
+    "B06_BUSINESS_CONTEXT"
+  ],
+  "blocks_failed": [],
+  "staged_at": "2026-02-02T20:22:18.752600Z",
+  "processed_at": "2026-02-02T20:38:47.320606Z",
+  "archived_at": "2026-02-03T13:16:31.414940Z",
+  "error": null,
+  "block_selection": {
+    "selected_at": "2026-02-02T20:25:57.704006Z",
+    "method": "smart_selector_v2",
+    "recipe": "external_standard",
+    "always_blocks": [
+      "B00",
+      "B01",
+      "B02_B05",
+      "B03",
+      "B08",
+      "B21",
+      "B26"
+    ],
+    "conditional_selected": [
+      "B06",
+      "B10",
+      "B28",
+      "B32",
+      "B33"
+    ],
+    "conditional_skipped": [
+      "B04",
+      "B07",
+      "B14",
+      "B25",
+      "B13"
+    ],
+    "triggered": [],
+    "reasoning": {
+      "B06": "Rich discussion of Careerspan's current state (1500 hours of coaching, accelerating), product features (hiring portal, ATS functionality, semantic evaluation), monetization strategy (company-side, $200/month), and strategic pivot from VC-focused to acquisition-target approach",
+      "B10": "Clear discussion of potential partnership with Sunset company, including mutual benefits: V mentions Careerspan can 'feed folks to you' with qualified candidates, positioning as 'theoretically a partner as well'",
+      "B28": "V shares key insights about the startup ecosystem: trying to 'contort ourselves into a state that appeals to VCs has effectively led us to run out of Runway' - valuable market context about VC-chasing vs. fundamental building",
+      "B32": "The Careerspan product concept has innovative elements: zero-touch ATS with semantic evaluation (not keyword nonsense), stealth job posting options, fully explainable AI recommendations ('no recommendation made by our system is not going to be grounded in some explanation')",
+      "B33": "Clear reasoning behind strategic pivot: 'let's create cut staff to bare minimum, keep the product running and essentially start to slowly focus on monetization with an eye towards... building momentum until we're a juicy target for acquisition' - transparent about why they're shifting approach",
+      "B04": "Skipped: All questions raised were answered: Edmund asked about Andy Moat ('Who's that?'), monetization approach ('company side or candidate side?'), and email availability ('Do you have their email address?') - all received clear responses",
+      "B07": "Skipped: While V expressed interest in connecting with Sunset ('Would love that connection'), there's NO verbal trigger cue like 'Zo, intro me to' - this is interest expressed, not a command",
+      "B14": "Skipped: No verbal cues detected - V never asked to 'draft a blurb' or similar",
+      "B25": "Skipped: No explicit deliverables with owners and timelines - though V mentions upcoming work (interstitial pages, smoothing signup process), there's no clear assignment or deadline",
+      "B13": "Skipped: No clear next steps discussed or implied - the conversation ends with product demo and clarification questions, but no actionable next steps are outlined"
+    },
+    "total_blocks": 12
+  }
+}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Darwinbox", "type": "ORG", "context": "strategic partnership to watch"}], "relationships": [{"from": "V", "to": "Darwinbox", "type": "WORKS_WITH", "context": "tracking strategic partnerships"}]}

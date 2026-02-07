@@ -1,0 +1,1 @@
+{"entities": [{"name": "Shivam", "type": "PERSON", "context": "a person associated with Corridorx.Io"}, {"name": "Corridorx.Io", "type": "ORG", "context": "an organization that Shivam is affiliated with"}], "relationships": [{"from": "Shivam", "to": "Corridorx.Io", "type": "WORKS_WITH", "context": "Shivam is affiliated with Corridorx.Io"}]}

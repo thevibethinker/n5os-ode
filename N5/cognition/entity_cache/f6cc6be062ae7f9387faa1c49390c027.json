@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "The speaker discussing numbers related to signups and licenses."}, {"name": "licenses", "type": "CONCEPT", "context": "Referring to types of access or authorizations issued."}, {"name": "signups", "type": "CONCEPT", "context": "Referring to the number of registrations or enrollments."}], "relationships": []}

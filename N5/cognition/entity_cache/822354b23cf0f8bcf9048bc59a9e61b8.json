@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "CareerSpan", "type": "ORG", "context": "upstream filtering tool mentioned"}], "relationships": [{"from": "Vrijen", "to": "CareerSpan", "type": "USES", "context": "Vrijen uses CareerSpan to reduce hiring friction"}]}

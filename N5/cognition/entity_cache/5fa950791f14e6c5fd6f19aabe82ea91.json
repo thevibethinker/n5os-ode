@@ -1,0 +1,1 @@
+{"entities": [{"name": "Voice transformation system", "type": "TOOL", "context": "A system used for transforming voice"}, {"name": "Transformation pair library", "type": "TOOL", "context": "Embedded library within the voice transformation system"}, {"name": "Authentic sample archive", "type": "TOOL", "context": "Archive of worker conversation samples"}], "relationships": []}

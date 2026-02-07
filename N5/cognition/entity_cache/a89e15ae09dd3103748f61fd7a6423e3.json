@@ -1,0 +1,1 @@
+{"entities": [{"name": "Hello.Cv", "type": "ORG", "context": "Organization associated with the provided details"}, {"name": "alex@hello.cv", "type": "PERSON", "context": "Email associated with the organization"}], "relationships": []}

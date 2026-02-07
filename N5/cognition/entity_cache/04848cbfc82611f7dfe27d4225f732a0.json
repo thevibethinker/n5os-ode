@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "a system that replaces unqualified gatekeepers with qualified analysis"}, {"name": "LLM", "type": "TOOL", "context": "represents qualified analysis used by Careerspan"}], "relationships": [{"from": "Careerspan", "to": "LLM", "type": "USES", "context": "Careerspan uses LLM for analysis"}]}

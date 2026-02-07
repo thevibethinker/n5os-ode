@@ -1,0 +1,1 @@
+{"entities": [{"name": "B14", "type": "TOOL", "context": "Semantic analysis tool"}], "relationships": [{"from": "V", "to": "B14", "type": "USES", "context": "Semantic analysis for analyzing purpose field"}]}

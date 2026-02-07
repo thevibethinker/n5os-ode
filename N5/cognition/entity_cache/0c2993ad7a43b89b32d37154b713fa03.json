@@ -1,0 +1,1 @@
+{"entities": [{"name": "Dylan Lieberman", "type": "PERSON", "context": "individual expressing a desire to connect with the community"}], "relationships": [{"from": "V (Vrijen)", "to": "Dylan Lieberman", "type": "KNOWS", "context": "Dylan is looking to connect with V's community"}]}

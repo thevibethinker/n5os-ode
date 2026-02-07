@@ -1,0 +1,1 @@
+{"entities": [{"name": "Weekly Workspace Cleanup", "type": "EVENT", "context": "A scheduled event for cleaning up the workspace weekly."}, {"name": "Full inbox processing workflow", "type": "CONCEPT", "context": "A process with 3 steps added to enhance productivity."}], "relationships": []}

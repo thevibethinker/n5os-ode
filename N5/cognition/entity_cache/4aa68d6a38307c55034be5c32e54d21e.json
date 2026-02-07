@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "name of the individual discussing the knowledge system"}, {"name": "Howie", "type": "TOOL", "context": "tool that is being standardized across AI systems"}], "relationships": [{"from": "Vrijen Attawar", "to": "Howie", "type": "USES", "context": "how Vrijen utilizes the tool in his AI systems"}]}

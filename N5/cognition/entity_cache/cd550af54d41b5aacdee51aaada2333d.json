@@ -1,0 +1,1 @@
+{"entities": [{"name": "Husain", "type": "PERSON", "context": "Proposed the model"}, {"name": "Vrijen", "type": "PERSON", "context": "Accepted the model immediately"}], "relationships": [{"from": "Husain", "to": "Vrijen", "type": "WORKS_WITH", "context": "Proposed model which Vrijen accepted"}]}

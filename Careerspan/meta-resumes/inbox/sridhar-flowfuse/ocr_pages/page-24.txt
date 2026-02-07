@@ -1,0 +1,28 @@
+Good Onboarding and Mentoring Required: Advanced 4/5 Importance:6/10 Profile SG «
+
+Ourtake Basedonresume 5 Transferable
+
+Resume shows repeated leadership and knowledge-transfer responsibilities but lacks an explicit statement of
+formal onboarding or training activities. Evidence: led all Al initiatives and technical efforts for a team of 8+ PhD
+researchers at EclecticlQ (overseeing feature scoping, success metrics, deliverables, and guiding domain &
+technical execution), introduced new architectural patterns (entity-based context, Human-in-the-Loop,
+decoupled async patterns) and deployed shared infra (public MCP server) — all activities that typically require
+teaching peers, documenting patterns, and enabling others to adopt them. Additional signals: as the first data
+scientist in Dell's finance team he likely evangelized applied-ML practices across a non-ML org; founding an Al
+consultancy and delivering 15+ client solutions implies client enablement and knowledge transfer; earlier
+campus roles (student guide) show mentoring experience. Missing: explicit STAR-style examples of running
+workshops, mentoring named engineers, creating onboarding docs/examples, or measured outcomes
+(improved velocity/code quality tied to training). Overall this is a reasonable transferable match — strong
+evidence of leading and disseminating patterns but not direct, explicit claims of structured onboarding
+programs or measurable upskilling outcomes.
+
+Contributing skills
+
+“SOC 2Compliance AlObservability and Monitoring Al Feature Deployment Large Language Model (LLM) integration Knowledge sharing
+Effective asynchronous communication Adaptability Collaboration
+
+Support
+
+Resume
+
+Resume match Transferable 7/10 Good

@@ -1,0 +1,1 @@
+{"entities": [{"name": "ceren", "type": "PERSON", "context": "a person mentioned in the knowledge system"}, {"name": "compatibility_stub", "type": "CONCEPT", "context": "a role defined in the knowledge system"}, {"name": "Personal/Knowledge/CRM/individuals/ceren.md", "type": "TOOL", "context": "a document related to the personal knowledge system"}], "relationships": []}

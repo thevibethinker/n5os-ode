@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "organization that evaluates the vibe of a person at scale"}, {"name": "AI", "type": "CONCEPT", "context": "technology used for screening in recruitment"}], "relationships": [{"from": "Careerspan", "to": "AI", "type": "USES", "context": "Careerspan uses AI for screening candidates"}]}

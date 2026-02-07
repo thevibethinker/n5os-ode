@@ -1,0 +1,1 @@
+{"entities": [{"name": "intelligence.md", "type": "TOOL", "context": "A file containing intelligence information"}, {"name": "dest_folder", "type": "CONCEPT", "context": "A variable representing the destination folder for archiving"}], "relationships": []}

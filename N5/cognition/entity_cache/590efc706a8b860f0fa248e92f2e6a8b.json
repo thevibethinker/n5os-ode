@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Full name of the individual discussing the knowledge system"}, {"name": "Haiku", "type": "CONCEPT", "context": "A Claude model mentioned as an example of a tool"}], "relationships": [{"from": "Vrijen Attawar", "to": "Haiku", "type": "MENTIONS", "context": "Discusses Haiku as a Claude model"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "person discussing integration before hiring"}, {"name": "integration", "type": "CONCEPT", "context": "a concept V wants to understand before hiring"}], "relationships": [{"from": "V (Vrijen)", "to": "integration", "type": "KNOWS", "context": "V wants to understand this concept before the next hire"}]}

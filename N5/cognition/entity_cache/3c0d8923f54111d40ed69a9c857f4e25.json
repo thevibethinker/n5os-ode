@@ -1,0 +1,1 @@
+{"entities": [{"name": "Pamela Kavalam", "type": "PERSON", "context": "Portfolio Manager at Next Play"}, {"name": "Next Play", "type": "ORG", "context": "McKinsey Alumni community and venture network"}], "relationships": [{"from": "Pamela Kavalam", "to": "Next Play", "type": "WORKS_WITH", "context": "Manages community relationships and partnerships at Next Play"}]}

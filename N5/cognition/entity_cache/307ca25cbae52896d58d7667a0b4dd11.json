@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual who provides feedback"}, {"name": "zo-feedback", "type": "TOOL", "context": "system mentioned for feedback handling"}], "relationships": [{"from": "V", "to": "zo-feedback", "type": "USES", "context": "V uses the zo-feedback tool for processing user feedback"}]}

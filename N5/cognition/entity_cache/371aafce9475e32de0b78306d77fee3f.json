@@ -1,0 +1,1 @@
+{"entities": [{"name": "Python 3.12", "type": "TOOL", "context": "programming language version"}], "relationships": [{"from": "V", "to": "Python 3.12", "type": "USES", "context": "knows the syntax for the programming language"}]}

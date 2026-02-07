@@ -126,6 +126,7 @@ def find_semantically_similar(position: dict, all_positions: list[dict], thresho
 def detect_tension_llm(pos1: dict, pos2: dict) -> dict:
     """Use LLM to detect if two positions are in tension."""
     import requests
+    import time
     
     prompt = f"""Analyze whether these two positions are in TENSION (contradiction, conflict, or incompatibility).
 
@@ -152,33 +153,47 @@ Only mark is_tension=true if there is a genuine logical conflict or incompatibil
 Positions can both be true without tension if they apply to different contexts.
 """
 
-    response = requests.post(
-        "https://api.zo.computer/zo/ask",
-        headers={
-            "authorization": os.environ.get("ZO_CLIENT_IDENTITY_TOKEN", ""),
-            "content-type": "application/json"
-        },
-        json={
-            "input": prompt,
-            "output_format": {
-                "type": "object",
-                "properties": {
-                    "is_tension": {"type": "boolean"},
-                    "confidence": {"type": "number"},
-                    "tension_type": {"type": "string"},
-                    "explanation": {"type": "string"},
-                    "synthesis_hint": {"type": "string"}
+    max_retries = 3
+    for attempt in range(max_retries):
+        try:
+            response = requests.post(
+                "https://api.zo.computer/zo/ask",
+                headers={
+                    "authorization": os.environ.get("ZO_CLIENT_IDENTITY_TOKEN", ""),
+                    "content-type": "application/json"
                 },
-                "required": ["is_tension", "confidence", "tension_type", "explanation"]
-            }
-        },
-        timeout=60
-    )
+                json={
+                    "input": prompt,
+                    "output_format": {
+                        "type": "object",
+                        "properties": {
+                            "is_tension": {"type": "boolean"},
+                            "confidence": {"type": "number"},
+                            "tension_type": {"type": "string"},
+                            "explanation": {"type": "string"},
+                            "synthesis_hint": {"type": "string"}
+                        },
+                        "required": ["is_tension", "confidence", "tension_type", "explanation"]
+                    }
+                },
+                timeout=120
+            )
+            
+            if response.status_code == 200:
+                return response.json().get("output", {})
+            elif response.status_code == 429:
+                time.sleep(5 * (attempt + 1))
+            else:
+                return {"is_tension": False, "confidence": 0, "tension_type": "error", "explanation": f"API error: {response.status_code}"}
+        except (requests.exceptions.ReadTimeout, requests.exceptions.ConnectTimeout):
+            if attempt < max_retries - 1:
+                time.sleep(5 * (attempt + 1))
+                continue
+            return {"is_tension": False, "confidence": 0, "tension_type": "timeout", "explanation": "API timeout after retries"}
+        except Exception as e:
+            return {"is_tension": False, "confidence": 0, "tension_type": "error", "explanation": str(e)}
     
-    if response.status_code == 200:
-        return response.json().get("output", {})
-    else:
-        return {"is_tension": False, "confidence": 0, "tension_type": "error", "explanation": f"API error: {response.status_code}"}
+    return {"is_tension": False, "confidence": 0, "tension_type": "error", "explanation": "Max retries reached"}
 
 
 def cmd_scan(args):

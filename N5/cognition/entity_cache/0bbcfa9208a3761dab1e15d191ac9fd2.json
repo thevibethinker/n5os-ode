@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ryan Vanderbilt", "type": "PERSON", "context": "Individual discussing concepts related to the knowledge system."}], "relationships": [{"from": "Ryan Vanderbilt", "to": "E", "type": "MENTIONS", "context": "Discusses the concept of E in relation to people's likes and connections."}]}

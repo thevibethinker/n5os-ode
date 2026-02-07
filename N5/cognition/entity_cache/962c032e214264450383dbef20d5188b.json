@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ryan", "type": "PERSON", "context": "passion for helping people find ikigai, long history of mentoring"}, {"name": "Careerspan", "type": "TOOL", "context": "potential value for coaches, advisors, or career counselors"}], "relationships": [{"from": "Ryan", "to": "Careerspan", "type": "MENTIONS", "context": "potential value for coaches and advisors"}]}

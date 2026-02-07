@@ -1,0 +1,1 @@
+{"entities": [{"name": "Slava Vladimirov", "type": "PERSON", "context": "Person speaking in the conversation"}, {"name": "defense", "type": "CONCEPT", "context": "Area of activity related to business and humanity"}], "relationships": [{"from": "Slava Vladimirov", "to": "defense", "type": "MENTIONS", "context": "Discussing the area of activity in relation to business"}]}

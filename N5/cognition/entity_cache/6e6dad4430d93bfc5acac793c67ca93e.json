@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "refers to the individual Vrijen"}, {"name": "Linguistic Primitives", "type": "CONCEPT", "context": "a concept related to V's voice check methodology"}], "relationships": [{"from": "V", "to": "Linguistic Primitives", "type": "USES", "context": "V applies Linguistic Primitives in voice checks"}]}

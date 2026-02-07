@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "the individual associated with the knowledge system"}, {"name": "Incantum", "type": "ORG", "context": "an organization relevant to the compatibility of IDs"}], "relationships": [{"from": "V", "to": "Incantum", "type": "USES", "context": "uses Incantum for compatibility of IDs"}]}

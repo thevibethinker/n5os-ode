@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "organization involved in candidate sourcing"}, {"name": "SIEM", "type": "ORG", "context": "organization related to security information and event management"}], "relationships": [{"from": "Careerspan", "to": "SIEM", "type": "WORKS_WITH", "context": "alignment in candidate sourcing"}]}

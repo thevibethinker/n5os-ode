@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Attendee from Careerspan"}, {"name": "Amy Quan", "type": "PERSON", "context": "Attendee"}], "relationships": [{"from": "Vrijen Attawar", "to": "Amy Quan", "type": "WORKS_WITH", "context": "Collaborating in the meeting"}]}

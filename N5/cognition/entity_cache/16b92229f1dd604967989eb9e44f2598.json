@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "The individual managing the knowledge system."}, {"name": "transcripts", "type": "CONCEPT", "context": "The documents being processed."}], "relationships": [{"from": "V", "to": "transcripts", "type": "USES", "context": "V uses transcripts as input for processing."}]}

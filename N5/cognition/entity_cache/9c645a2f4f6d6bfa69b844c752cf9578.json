@@ -1,0 +1,1 @@
+{"entities": [{"name": "bootstrap", "type": "CONCEPT", "context": "a development methodology related to software and programming"}], "relationships": [{"from": "V", "to": "bootstrap", "type": "BELIEVES", "context": "V believes the risks of false positives in bootstrap are more dangerous than false negatives"}]}

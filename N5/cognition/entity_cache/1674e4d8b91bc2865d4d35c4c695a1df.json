@@ -1,0 +1,1 @@
+{"entities": [{"name": "N5OS", "type": "ORG", "context": "a system that treats organization as a side-effect of good flows"}], "relationships": [{"from": "N5OS", "to": "organization", "type": "BELIEVES", "context": "treats organization as a side-effect of good flows"}]}

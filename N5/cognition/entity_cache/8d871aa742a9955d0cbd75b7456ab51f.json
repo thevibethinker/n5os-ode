@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "influencer and partner"}, {"name": "Andrew", "type": "PERSON", "context": "provides external validation"}], "relationships": [{"from": "Vrijen", "to": "Andrew", "type": "WORKS_WITH", "context": "needs external validation for risk-tolerance"}]}

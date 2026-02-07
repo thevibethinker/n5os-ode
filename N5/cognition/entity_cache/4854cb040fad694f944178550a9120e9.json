@@ -1,0 +1,1 @@
+{"entities": [{"name": "Session state file", "type": "TOOL", "context": "updated every 3-5 exchanges"}, {"name": "Audit log", "type": "TOOL", "context": "contains full history"}, {"name": "Registry", "type": "TOOL", "context": "source of truth"}], "relationships": []}

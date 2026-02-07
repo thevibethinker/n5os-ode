@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual with knowledge system"}, {"name": "Darwin Box", "type": "ORG", "context": "organization related to follow-up conversation"}], "relationships": [{"from": "V", "to": "Darwin Box", "type": "KNOWS", "context": "engaged in follow-up conversation"}]}

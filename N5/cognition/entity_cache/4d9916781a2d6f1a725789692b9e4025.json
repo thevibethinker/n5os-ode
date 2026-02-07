@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "an individual associated with the knowledge system"}, {"name": "N5", "type": "ORG", "context": "the organization related to the knowledge system"}], "relationships": [{"from": "V (Vrijen)", "to": "N5", "type": "WORKS_WITH", "context": "V is associated with the N5 organization"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "escalade", "type": "TOOL", "context": "a tool that stops iteration when a specific condition is met"}, {"name": "dir", "type": "CONCEPT", "context": "a directory from which paths are resolved"}], "relationships": []}

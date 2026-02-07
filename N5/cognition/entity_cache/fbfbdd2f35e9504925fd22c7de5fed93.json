@@ -1,0 +1,1 @@
+{"entities": [{"name": "N5/schemas/", "type": "TOOL", "context": "Path to schema files for validation"}, {"name": "Knowledge/schemas/", "type": "TOOL", "context": "Alternative path to schema files for validation"}, {"name": "audit log", "type": "TOOL", "context": "System for recording changes made"}], "relationships": []}
