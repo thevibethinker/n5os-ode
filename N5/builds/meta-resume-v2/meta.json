@@ -4,7 +4,7 @@
   "title": "Meta Resume Generator v2: Schema Alignment + Design Evolution",
   "objective": "Update meta-resume-generator to consume decomposer outputs + implement Spikes design",
   "created": "2026-02-03",
-  "status": "active",
+  "status": "jettisoned",
   "completed_at": null,
   "type": "general",
   "orchestrator_convo_id": "con_NJlvnFnzUY6KsX9t",
@@ -36,5 +36,7 @@
     }
   },
   "started_at": "2026-02-03T17:30:38.277798+00:00",
-  "active_wave": "W1"
+  "active_wave": "W1",
+  "jettisoned_at": "2026-02-09T08:55:00+00:00",
+  "jettison_reason": "Superseded by improvements made since build was created"
 }

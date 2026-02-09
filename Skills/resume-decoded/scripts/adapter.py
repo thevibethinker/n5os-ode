@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Resume:Decoded Adapter v4.0
+Resume:Decoded Adapter v4.3
 Maps decomposer output to template data structure.
 
 Key principles:
@@ -599,6 +599,26 @@ def generate_culture_alignment(data: Dict[str, Any]) -> Tuple[List[Dict], List[D
     culture_mismatch = []
     culture_unknown = []
     
+    # Transform culture value names to noun phrases
+    def transform_culture_title(title: str) -> str:
+        """Convert action-phrase culture values to noun-phrase format."""
+        transforms = {
+            "act like an owner": "Ownership Mentality",
+            "build together": "Collaborative Mindset",
+            "drive innovation": "Drive for Innovation",
+            "champion clients": "Client Centricity",
+            "embrace learning": "Learning Orientation",
+            "move fast": "Bias for Action",
+            "think big": "Ambitious Vision",
+            "be curious": "Intellectual Curiosity",
+            "take risks": "Risk Tolerance",
+            "stay humble": "Humility",
+            "be transparent": "Transparency",
+            "deliver results": "Results Orientation",
+        }
+        lower = title.lower().strip()
+        return transforms.get(lower, title)
+    
     # Primary source: culture_alignment from alignment.yaml
     culture_alignment = alignment.get("culture_alignment", [])
     
@@ -608,7 +628,8 @@ def generate_culture_alignment(data: Dict[str, Any]) -> Tuple[List[Dict], List[D
         evidence = item.get("evidence", "")
         
         # Extract short name from signal (often "Value Name: description")
-        short_name = signal.split(":")[0].strip() if ":" in signal else signal[:40]
+        raw_name = signal.split(":")[0].strip() if ":" in signal else signal[:40]
+        short_name = transform_culture_title(raw_name)
         
         entry = {
             "name": short_name,
@@ -625,12 +646,119 @@ def generate_culture_alignment(data: Dict[str, Any]) -> Tuple[List[Dict], List[D
     # If no culture alignment found, fall back to deriving from explicit_values
     if not culture_alignment and culture_signals.get("explicit_values"):
         for value in culture_signals.get("explicit_values", [])[:5]:
+            raw_name = value.get("name", "")[:30]
             culture_unknown.append({
-                "name": value.get("name", "")[:30],
+                "name": transform_culture_title(raw_name),
                 "note": "Not yet assessed"
             })
     
     return culture_match[:5], culture_mismatch[:5], culture_unknown[:5]
+
+
+def enhance_bottom_line_with_screening_attribution(
+    raw_bottom_line: str,
+    overall_score: int,
+    role_title: str,
+    behavioral_signals: List[Dict],
+    strong_skills: List[Dict]
+) -> str:
+    """Generate a tight, source-bound bottom line in V's required format (v4.3)."""
+    quality = "strong" if overall_score >= 80 else "conditional" if overall_score >= 60 else "weak"
+
+    # Build evidence from behavioral signals and strong skills
+    evidence_lines: List[str] = []
+
+    for sig in (behavioral_signals or [])[:3]:
+        title = (sig.get("title") or "").strip()
+        quote = (sig.get("quote") or "").strip()
+        if title and quote:
+            evidence_lines.append(f"- {title}: \"{quote}\"")
+        elif title:
+            evidence_lines.append(f"- {title}")
+
+    for s in sorted(strong_skills or [], key=lambda x: x.get("importance", 0), reverse=True)[:3]:
+        name = (s.get("skill_name") or "").strip()
+        our_take = (s.get("our_take") or "").strip()
+        if name and our_take:
+            first_sentence = our_take.split(". ")[0] if ". " in our_take else our_take[:100]
+            evidence_lines.append(f"- {name}: {first_sentence}")
+
+    evidence_block = "\n".join(evidence_lines) if evidence_lines else "(no evidence provided)"
+
+    prompt = f"""Write ONE sentence summarizing this candidate.
+
+EXACT FORMAT:
+"This {{3-4 word descriptor}} is a {quality} fit based on my screens because {{differentiator}}."
+
+RULES:
+- Descriptor: 3-4 words capturing their professional identity (e.g., "zero-to-one backend architect", "platform migration specialist")
+- Differentiator: what makes them worth meeting, drawn ONLY from EVIDENCE below
+- Use "who has" phrasing, never "they" or "he/she" (e.g., "...they've shipped X" → "...who has shipped X")
+- Total length: ≤180 characters
+- Must NOT mention Careerspan, screen count, or numbers
+- Must NOT restate job requirements
+
+EVIDENCE:
+{evidence_block}
+
+Return ONLY the sentence (no quotes, no bullets, no commentary)."""
+
+    try:
+        response = call_llm(prompt)
+        text = " ".join(response.strip().strip('"').strip("'").split())
+
+        if not text.lower().startswith("this "):
+            raise ValueError("Bottom line did not start with 'This'")
+        if "careerspan" in text.lower():
+            raise ValueError("Bottom line mentioned Careerspan")
+
+        # Strip parenthetical numeric claims to reduce drift
+        import re
+        text = re.sub(r"\([^)]*\d[^)]*\)", "", text)
+        text = " ".join(text.split())
+
+        # If still contains numbers or currency markers, fail to fallback
+        if re.search(r"\d|\$", text):
+            raise ValueError("Bottom line contained numbers")
+
+        if len(text) > 200:
+            cut = text[:180]
+            cut = cut.rsplit(" ", 1)[0] if " " in cut else cut
+            text = cut.rstrip(" ,;:-") + "..."
+
+        return text
+
+    except Exception as e:
+        print(f"Warning: LLM bottom line enhancement failed: {e}")
+
+        # Structural fallback using top story-verified strong skills
+        role_lower = (role_title or "").lower()
+        if "backend" in role_lower and ("senior" in role_lower or "sr" in role_lower):
+            fallback_descriptor = "senior backend engineer"
+        elif "backend" in role_lower:
+            fallback_descriptor = "backend engineer"
+        elif "frontend" in role_lower:
+            fallback_descriptor = "frontend engineer"
+        else:
+            fallback_descriptor = "software engineer"
+
+        top = []
+        for s in sorted(strong_skills or [], key=lambda x: x.get("importance", 0), reverse=True):
+            if s.get("rating") in ["Excellent", "Good"] and classify_skill_signal(s) == "story":
+                n = (s.get("skill_name") or "").strip()
+                if n:
+                    top.append(n.lower())
+            if len(top) >= 2:
+                break
+
+        if len(top) >= 2:
+            evidence = f"screens show strength in {top[0]} and {top[1]}"
+        elif len(top) == 1:
+            evidence = f"screens show strength in {top[0]}"
+        else:
+            evidence = "screens show relevant execution patterns"
+
+        return f"This {fallback_descriptor} is a {quality} fit based on my screens because {evidence}."
 
 
 # === MAIN MAPPING FUNCTION ===
@@ -697,6 +825,16 @@ def map_to_template_data(data: Dict[str, Any], use_llm: bool = True) -> Dict:
         
         print("  Extracting culture alignment...")
         culture_match, culture_mismatch, culture_unknown = generate_culture_alignment(data)
+        
+        print("  Enhancing bottom line...")
+        jd_title_for_bl = jd.get("title", "")
+        enhanced_bottom_line = enhance_bottom_line_with_screening_attribution(
+            scores.get("bottom_line", ""),
+            overall_score,
+            jd_title_for_bl,
+            behavioral_signals,
+            strong_skills
+        )
     else:
         # Fallback to structural extraction
         behavioral_signals = []
@@ -707,6 +845,7 @@ def map_to_template_data(data: Dict[str, Any], use_llm: bool = True) -> Dict:
         culture_match = []
         culture_mismatch = []
         culture_unknown = []
+        enhanced_bottom_line = scores.get("bottom_line", "")
     
     # Limit behavioral signals to 4 for 2x2 grid
     behavioral_signals = behavioral_signals[:4]
@@ -805,7 +944,7 @@ def map_to_template_data(data: Dict[str, Any], use_llm: bool = True) -> Dict:
         "verdict_emoji": verdict_emoji,
         "verdict": verdict,
         "confidence_score": overall_score,
-        "verdict_summary": scores.get("bottom_line", ""),
+        "verdict_summary": enhanced_bottom_line,
         "signal_story": signal_story,
         "signal_resume": signal_resume,
         "skills_assessed": skills_count,

@@ -328,7 +328,7 @@
         "D2.4",
         "D4.2"
       ],
-      "spawn_mode": "manual",
+      "spawn_mode": "auto",
       "blocking": true,
       "status": "pending"
     },

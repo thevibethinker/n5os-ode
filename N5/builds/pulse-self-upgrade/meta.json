@@ -1,0 +1,118 @@
+{
+  "schema_version": 3,
+  "slug": "pulse-self-upgrade",
+  "title": "Pulse Self-Upgrade: Agent Teams Features",
+  "build_type": "code_build",
+  "status": "finalized",
+  "model": "anthropic:claude-sonnet-4-20250514",
+  "launch_mode": "orchestrated",
+  "delegate_only": true,
+  "waves": {
+    "W1": [
+      "D1.1",
+      "D2.1",
+      "D3.1",
+      "D4.1"
+    ],
+    "W2": [
+      "D1.2",
+      "D2.2"
+    ]
+  },
+  "active_wave": "W2",
+  "drops": {
+    "D1.1": {
+      "name": "Forward Broadcast",
+      "stream": 1,
+      "order": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "started_at": "2026-02-08T00:47:39.641759+00:00",
+      "conversation_id": "con_qQGc6My3SVUASPRW",
+      "completed_at": "2026-02-08T00:57:44.353253+00:00"
+    },
+    "D2.1": {
+      "name": "Hypothesis Racing",
+      "stream": 2,
+      "order": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "started_at": "2026-02-08T00:51:12.590059+00:00",
+      "conversation_id": "con_CUgBEPDgZAiR1E1L",
+      "completed_at": "2026-02-08T00:57:44.355290+00:00"
+    },
+    "D3.1": {
+      "name": "Delegate-Only Mode Docs",
+      "stream": 3,
+      "order": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "started_at": "2026-02-08T00:52:13.122334+00:00",
+      "conversation_id": "con_G4jPimsdPM1Szi1M",
+      "completed_at": "2026-02-08T00:57:44.356589+00:00"
+    },
+    "D4.1": {
+      "name": "Dynamic Task Claiming",
+      "stream": 4,
+      "order": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "started_at": "2026-02-08T00:57:13.335406+00:00",
+      "conversation_id": "timeout_D4.1_1770512233",
+      "completed_at": "2026-02-08T00:57:44.357600+00:00"
+    },
+    "D1.2": {
+      "name": "Integration Tests",
+      "stream": 1,
+      "order": 2,
+      "depends_on": [
+        "D1.1",
+        "D2.1",
+        "D3.1",
+        "D4.1"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "completed_at": "2026-02-07T20:00:00-05:00"
+    },
+    "D2.2": {
+      "name": "SKILL.md Update",
+      "stream": 2,
+      "order": 2,
+      "depends_on": [
+        "D1.1",
+        "D2.1",
+        "D3.1",
+        "D4.1"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "started_at": "2026-02-08T01:04:26.542104+00:00",
+      "conversation_id": "pulse_pulse-self-upgrade_D2.2_1770512565",
+      "completed_at": "2026-02-08T01:04:30+00:00"
+    }
+  },
+  "lineage": {
+    "parent_type": "conversation",
+    "parent_ref": "con_BjZjM1PHgM7UO3tZ",
+    "parent_conversation": "con_BjZjM1PHgM7UO3tZ",
+    "moment": "Claude Agent Teams research \u2192 Pulse upgrade plan",
+    "branched_at": "2026-02-07T21:35:00Z"
+  },
+  "broadcasts": [],
+  "created_at": "2026-02-07T21:35:00Z",
+  "updated_at": "2026-02-07T21:35:00Z",
+  "started_at": "2026-02-08T00:44:56.662046+00:00",
+  "finalized_at": "2026-02-09T00:55:12.190563+00:00",
+  "finalization_passed": true
+}

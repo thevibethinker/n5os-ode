@@ -2,15 +2,15 @@
 name: resume-decoded
 description: |
   Generates Careerspan "Resume:Decoded" candidate briefs as 2-page branded PDFs.
-  Takes decomposer output directory → Outputs signal-based analysis with v4.0 linguistic framing.
+  Takes decomposer output directory → Outputs signal-based analysis with v4.3 linguistic framing.
   Uses Puppeteer for pixel-perfect PDF rendering. No deficit language — only "what we know" and "what to verify."
-  v4.0: Extracts behavioral signals from "our_take" narratives, uses actual culture alignment from alignment.yaml.
+  v4.3: Extracts behavioral signals from "our_take" narratives, uses actual culture alignment from alignment.yaml.
 compatibility: Created for Zo Computer
 metadata:
   author: va.zo.computer
-  version: "4.0"
+  version: "4.3"
   created: "2026-02-04"
-  updated: "2026-02-05"
+  updated: "2026-02-07"
 ---
 
 # Resume:Decoded
@@ -50,8 +50,8 @@ Decomposer output directory containing:
 - `experience.yaml` — Work history with positions[] and duration fields
 - `hard_skills.yaml` — Technical skills with Direct/Transferable classification
 - `tools.yaml` — Tools and technologies
-- `alignment.yaml` — JD ↔ Candidate alignment including culture_alignment (v4.0)
-- `culture_signals.yaml` — Culture requirements extracted from JD (v4.0)
+- `alignment.yaml` — JD ↔ Candidate alignment including culture_alignment (v4.3)
+- `culture_signals.yaml` — Culture requirements extracted from JD (v4.3)
 
 ## Output
 
@@ -74,15 +74,15 @@ Decomposer output directory containing:
 Skills/resume-decoded/
 ├── SKILL.md              # This file
 ├── scripts/
-│   ├── adapter.py        # Decomposer → Template data (LLM-powered, v4.0)
+│   ├── adapter.py        # Decomposer → Template data (LLM-powered, v4.3)
 │   └── render.ts         # Template data → PDF (Puppeteer)
 ├── templates/
-│   └── template.html     # Handlebars HTML template (v4.0)
+│   └── template.html     # Handlebars HTML template (v4.3)
 └── examples/
     └── hardik-reference.json  # Known-good template data
 ```
 
-## v4.0 Changes
+## v4.3 Changes
 
 | Area | Before | After |
 |------|--------|-------|
@@ -92,7 +92,7 @@ Skills/resume-decoded/
 | Behavioral signals | Empty or from `stories[]` | Extracted from `our_take` narratives via LLM |
 | Culture Alignment | Used skills as proxies | Uses actual `culture_alignment` from alignment.yaml |
 
-## Linguistic Principles (v4.0)
+## Linguistic Principles (v4.3)
 
 | Instead of... | Use... |
 |---------------|--------|
@@ -139,4 +139,4 @@ See `examples/hardik-reference.json` for known-good template data structure.
 
 ---
 
-*Careerspan Proprietary Skill — v4.0*
+*Careerspan Proprietary Skill — v4.3*

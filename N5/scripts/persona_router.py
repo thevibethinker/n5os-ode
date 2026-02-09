@@ -19,7 +19,7 @@ from pathlib import Path
 # Persona definitions with routing triggers
 PERSONAS = {
     "operator": {
-        "id": "90a7486f-46f9-41c9-a98c-21931fa5c5f6",
+        "id": "3700edcc-9785-4dee-9530-ad4a440293d9",
         "name": "Vibe Operator",
         "domains": ["execution", "file operations", "navigation", "state tracking", "workflow execution"],
         "triggers": [

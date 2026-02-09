@@ -1,0 +1,21 @@
+companies: []
+#  - url: stripe.com
+#    label: Stripe
+#  - url: canva.com
+#    label: Canva
+
+roles: []
+#  - "product manag"
+#  - "chief of staff"
+#  - "head of"
+
+filters:
+  countries: []
+  # - "United States"
+  seniority: []
+  # - "Senior IC"
+  # - "Manager"
+  # - "Director"
+  # - "VP"
+  # - "C-Suite"
+  remote_only: false

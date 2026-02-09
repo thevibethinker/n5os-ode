@@ -1,7 +1,7 @@
 {
   "slug": "n5-brain-v2",
   "title": "N5 Brain v2: FlashRank + GraphRAG + Temporal Tracking",
-  "status": "active",
+  "status": "finalized",
   "created_at": "2026-02-01T05:00:00Z",
   "streams": [
     {
@@ -48,9 +48,11 @@
       "title": "GraphRAG Layer"
     },
     "D3.1": {
-      "status": "in_progress",
-      "title": "Backfill & Integration"
+      "status": "complete",
+      "title": "Backfill & Integration",
+      "completed_at": "2026-02-09T03:55:00+00:00"
     }
   },
-  "current_stream": 3
+  "current_stream": 3,
+  "finalized_at": "2026-02-09T08:55:00+00:00"
 }

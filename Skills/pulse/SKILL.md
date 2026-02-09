@@ -215,6 +215,16 @@ Wave 2 can start once D1.1 completes, even if D1.2 is still running.
   "status": "pending",
   "model": "anthropic:claude-sonnet-4-20250514",
   "launch_mode": "orchestrated|manual|jettison",
+  "delegate_only": false,
+  "first_wins": false,
+  "hypothesis_group": [],
+  "broadcasts": [],
+  "task_pool": {
+    "enabled": false,
+    "tasks": [],
+    "max_concurrent_claims": 4,
+    "worker_drops": []
+  },
   
   "waves": {
     "W1": ["D1.1", "D1.2", "D2.1"],
@@ -426,6 +436,158 @@ python3 Skills/pulse/scripts/pulse_learnings.py inject <slug>
 # Harvest learnings from deposits
 python3 Skills/pulse/scripts/pulse_learnings.py harvest <slug>
 ```
+
+## Forward Broadcast
+
+Drops can share findings with subsequent Drops via the `broadcast` field in deposits.
+
+### How It Works
+
+1. Drop includes `broadcast` string in deposit JSON
+2. Pulse collects all broadcasts from completed Drops
+3. New Drops receive a "## Broadcasts from Prior Drops" section in their brief
+
+### Deposit Schema
+
+```json
+{
+  "drop_id": "D1.1",
+  "status": "complete",
+  "broadcast": "Auth tokens expire after 30 min—don't cache beyond that",
+  ...
+}
+```
+
+### Injected Format
+
+```markdown
+## Broadcasts from Prior Drops
+
+These findings were shared by earlier Drops in this build:
+
+- **D1.1:** Auth tokens expire after 30 min—don't cache beyond that
+```
+
+### Best Practices
+
+- Keep broadcasts short (~500 chars max)
+- Broadcast discoveries that affect other Drops
+- Don't broadcast obvious things already in briefs
+
+## Hypothesis Racing
+
+For debugging or exploration builds where you want to test multiple theories in parallel.
+
+### Enabling
+
+In `meta.json`:
+
+```json
+{
+  "first_wins": true,
+  "hypothesis_group": ["D1.1", "D1.2", "D1.3"]  // optional
+}
+```
+
+### Verdict Field
+
+Racing Drops include `verdict` in their deposit:
+
+```json
+{
+  "drop_id": "D1.2",
+  "status": "complete",
+  "verdict": "confirmed",
+  "summary": "Theory confirmed: rate limit is client-side"
+}
+```
+
+Valid verdicts: `confirmed`, `rejected`, `inconclusive`
+
+### Behavior
+
+- When a Drop deposits `verdict: "confirmed"`, other Drops in the race are marked `superseded`
+- Superseded Drops are not spawned (if pending) or ignored (if running)
+- Wave can advance once winner confirms — superseded Drops don't block
+
+### Use Cases
+
+- Debugging with multiple theories
+- A/B testing approaches
+- Finding the first working solution among alternatives
+
+## Delegate-Only Mode
+
+Prevents the orchestrator from directly editing code, keeping all work in Drops.
+
+### Enabling
+
+In `meta.json`:
+
+```json
+{
+  "delegate_only": true
+}
+```
+
+### Constraints
+
+When enabled, the orchestrator:
+- **MAY**: Run pulse.py commands, read files, create/modify briefs, retry Drops
+- **MUST NOT**: Edit source files, run application code, "fix" issues directly
+
+### Why Use It
+
+- Clear provenance (every change has a Drop source)
+- Prevents long-build confusion
+- Better audit trail
+
+See `file 'Skills/pulse/references/delegate-only-mode.md'` for full details.
+
+## Task Pool (Dynamic Claiming)
+
+For builds with many similar tasks, Drops can claim work from a shared pool.
+
+### Enabling
+
+In `meta.json`:
+
+```json
+{
+  "task_pool": {
+    "enabled": true,
+    "tasks": [
+      {"id": "T001", "type": "enrich", "target": "file1.json", "status": "pending"},
+      {"id": "T002", "type": "enrich", "target": "file2.json", "status": "pending"}
+    ],
+    "max_concurrent_claims": 4,
+    "worker_drops": ["D1.1", "D1.2", "D1.3", "D1.4"]
+  }
+}
+```
+
+### Task States
+
+- `pending` — Available for claiming
+- `claimed` — Assigned to a Drop
+- `complete` — Finished successfully
+- `failed` — Failed, may be re-claimable
+
+### Claiming
+
+Pool workers claim tasks atomically (file-locked to prevent races):
+
+```python
+task = claim_task(slug, drop_id)
+if task is None:
+    # Pool exhausted, exit
+```
+
+### Use Cases
+
+- Processing batches of similar items
+- Parallelizing uniform work without pre-planning assignments
+- Variable-duration tasks where fast Drops should grab more work
 
 ## Integration Tests
 

@@ -1,0 +1,35 @@
+{
+  "started_at": "2026-02-08T19:07:08.003152+00:00",
+  "dry_run": false,
+  "exported": [
+    {
+      "skill": "security-gate",
+      "reason": "git_changes",
+      "checksum": "sha256:0be24794dd52d86c59e6fd59c2965afdc9044d7b9a77644d13e2431714285a89"
+    },
+    {
+      "skill": "audit-system",
+      "reason": "git_changes",
+      "checksum": "sha256:cfe3b916afa943df93371f19236d54a9973421d5d754112e532e353d8399dbd9"
+    },
+    {
+      "skill": "consulting-api",
+      "reason": "git_changes",
+      "checksum": "sha256:5afd6ad8fb9a8663fc70256237494accacc496f0c407dcba5144f4de7a50fdc7"
+    },
+    {
+      "skill": "content-classifier",
+      "reason": "git_changes",
+      "checksum": "sha256:14bedd688c2c21810b68cede56a5429375c36d402301c19b741c105c899bb1a1"
+    },
+    {
+      "skill": "librarian-export",
+      "reason": "git_changes",
+      "checksum": "sha256:26baa062382d5602e98e5b72f21a7b237dcbb6b07cd17ca58d4e8433cbd867d7"
+    }
+  ],
+  "skipped": [],
+  "failed": [],
+  "git_sha": "05cfbf6fa86878bd2c45efc0380830a28110848a",
+  "completed_at": "2026-02-08T19:07:08.463970+00:00"
+}

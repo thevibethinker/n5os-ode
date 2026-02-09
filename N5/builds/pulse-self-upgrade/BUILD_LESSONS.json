@@ -1,0 +1,83 @@
+{
+  "slug": "pulse-self-upgrade",
+  "learnings": [
+    {
+      "text": "File locking with fcntl provides simple, reliable atomicity for concurrent task claiming",
+      "source": "Drop:D4.1",
+      "added_at": "2026-02-09T00:50:29.315444+00:00",
+      "tags": []
+    },
+    {
+      "text": "Injecting instructions into briefs is more flexible than requiring template files",
+      "source": "Drop:D4.1",
+      "added_at": "2026-02-09T00:50:29.316075+00:00",
+      "tags": []
+    },
+    {
+      "text": "Pool exhaustion handling is critical for graceful worker termination",
+      "source": "Drop:D4.1",
+      "added_at": "2026-02-09T00:50:29.316650+00:00",
+      "tags": []
+    },
+    {
+      "text": "Forward Broadcast enables async knowledge sharing between Drops without coordination overhead",
+      "source": "Drop:D2.2",
+      "added_at": "2026-02-09T00:50:29.317356+00:00",
+      "tags": []
+    },
+    {
+      "text": "Hypothesis Racing provides clean competition mechanism for parallel theory testing",
+      "source": "Drop:D2.2",
+      "added_at": "2026-02-09T00:50:29.317916+00:00",
+      "tags": []
+    },
+    {
+      "text": "Delegate-Only Mode enforces clear provenance and prevents orchestrator interference",
+      "source": "Drop:D2.2",
+      "added_at": "2026-02-09T00:50:29.318413+00:00",
+      "tags": []
+    },
+    {
+      "text": "Task Pool enables dynamic work distribution for uniform tasks without pre-planning",
+      "source": "Drop:D2.2",
+      "added_at": "2026-02-09T00:50:29.318914+00:00",
+      "tags": []
+    },
+    {
+      "text": "Integration tests require careful isolation using temporary directories and module patching",
+      "source": "Drop:D1.2",
+      "added_at": "2026-02-09T00:50:29.319492+00:00",
+      "tags": []
+    },
+    {
+      "text": "Testing parallel features like task pool claiming can be simulated without actual concurrency",
+      "source": "Drop:D1.2",
+      "added_at": "2026-02-09T00:50:29.320019+00:00",
+      "tags": []
+    },
+    {
+      "text": "Flexible test configuration keys improve backward compatibility",
+      "source": "Drop:D1.2",
+      "added_at": "2026-02-09T00:50:29.320543+00:00",
+      "tags": []
+    },
+    {
+      "text": "First-wins pattern is useful for debugging scenarios where multiple parallel theories need testing",
+      "source": "Drop:D2.1",
+      "added_at": "2026-02-09T00:50:29.321343+00:00",
+      "tags": []
+    },
+    {
+      "text": "Superseded Drops should be clearly distinguished from failed/dead Drops since they were actively canceled",
+      "source": "Drop:D2.1",
+      "added_at": "2026-02-09T00:50:29.321900+00:00",
+      "tags": []
+    },
+    {
+      "text": "The verdict field provides a clean way for Drops to signal hypothesis confirmation vs rejection",
+      "source": "Drop:D2.1",
+      "added_at": "2026-02-09T00:50:29.322448+00:00",
+      "tags": []
+    }
+  ]
+}
