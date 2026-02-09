@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume:Decoded - Archit</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    
+    :root {
+      --purple-primary: #7C3AED;
+      --purple-light: #EDE9FE;
+      --purple-dark: #5B21B6;
+      --text-primary: #1F2937;
+      --text-muted: #6B7280;
+      --text-light: #9CA3AF;
+      --bg-card: #F9FAFB;
+      --bg-white: #FFFFFF;
+      --border-light: #E5E7EB;
+      --amber: #F59E0B;
+      --amber-light: #FEF3C7;
+      --amber-dark: #D97706;
+      --green: #10B981;
+      --green-light: #D1FAE5;
+    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 10pt;
+      line-height: 1.45;
+      color: var(--text-primary);
+      background: white;
+    }
+    
+    .page {
+      width: 8.5in;
+      height: 11in;
+      padding: 0.4in 0.5in 0.45in 0.5in;
+      position: relative;
+      page-break-after: always;
+      overflow: hidden;
+    }
+    
+    .page:last-child { page-break-after: avoid; }
+    
+    /* === HEADER === */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 8px;
+      border-bottom: 3px solid var(--purple-primary);
+      margin-bottom: 14px;
+    }
+    
+    .header-left {
+      font-size: 9pt;
+      font-weight: 700;
+      color: var(--purple-primary);
+      letter-spacing: 1.5px;
+    }
+    
+    .header-right {
+      font-size: 8pt;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    
+    /* === HERO === */
+    .hero {
+      text-align: center;
+      margin-bottom: 14px;
+    }
+    
+    .candidate-name {
+      font-size: 26pt;
+      font-weight: 700;
+      margin-bottom: 3px;
+      color: var(--text-primary);
+    }
+    
+    .candidate-role {
+      font-size: 12pt;
+      color: var(--purple-primary);
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+    
+    .candidate-meta {
+      font-size: 10pt;
+      color: var(--text-muted);
+    }
+    
+    /* === CANDIDATE BOTTOM LINE === */
+    .bottom-line-section {
+      margin-bottom: 14px;
+    }
+    
+    .bottom-line-header {
+      display: flex;
+      flex-direction: column;
+      margin-bottom: 8px;
+    }
+    
+    .bottom-line-main {
+      font-size: 9pt;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .bottom-line-sub {
+      font-size: 8pt;
+      font-weight: 500;
+      color: var(--text-light);
+      margin-top: 3px;
+      margin-left: 20px;
+    }
+    
+    .bottom-line-box {
+      background: var(--purple-light);
+      border-left: 4px solid var(--purple-primary);
+      border-radius: 6px;
+      padding: 12px 16px;
+    }
+    
+    .bottom-line-text {
+      font-size: 10.5pt;
+      color: var(--text-primary);
+      line-height: 1.5;
+      font-style: italic;
+    }
+    
+    /* === VERDICT === */
+    .verdict-section {
+      margin-bottom: 14px;
+    }
+    
+    .verdict-box {
+      background: var(--purple-primary);
+      color: white;
+      padding: 12px 18px;
+      border-radius: 6px;
+      text-align: center;
+    }
+    
+    .verdict-title {
+      font-size: 14pt;
+      font-weight: 600;
+    }
+    
+    /* === SIGNAL SECTION === */
+    .signal-section {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: var(--bg-card);
+      border-radius: 6px;
+      padding: 10px 16px;
+      margin-bottom: 14px;
+    }
+    
+    .signal-label-main {
+      font-size: 9pt;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+    
+    .signal-bars {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex: 1;
+    }
+    
+    .signal-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .signal-item-label {
+      font-size: 9pt;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+    
+    .signal-bar-mini {
+      width: 90px;
+      height: 7px;
+      background: var(--border-light);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    
+    .signal-bar-fill {
+      height: 100%;
+      background: var(--purple-primary);
+      border-radius: 4px;
+    }
+    
+    .signal-bar-fill.resume { opacity: 0.5; }
+    
+    .signal-value {
+      font-size: 10pt;
+      font-weight: 700;
+      color: var(--text-primary);
+      min-width: 40px;
+    }
+    
+    .signal-meta {
+      font-size: 9pt;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+    
+    /* === SECTION HEADERS === */
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 10px;
+      padding-bottom: 5px;
+      border-bottom: 2px solid var(--purple-primary);
+    }
+    
+    .section-title {
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    
+    .section-subtitle {
+      font-size: 8pt;
+      color: var(--text-muted);
+    }
+    
+    /* === PRIORITY ALIGNMENT MATRIX (formerly Trade-offs) === */
+    .priority-matrix-section {
+      margin-bottom: 14px;
+    }
+    
+    .priority-matrix-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    
+    .priority-card {
+      background: var(--bg-card);
+      border-radius: 6px;
+      padding: 10px 12px;
+    }
+    
+    .priority-need {
+      font-weight: 700;
+      font-size: 9.5pt;
+      color: var(--text-primary);
+      margin-bottom: 4px;
+    }
+    
+    .priority-verdict {
+      font-size: 9.5pt;
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+    
+    .priority-verdict.strong { color: var(--green); }
+    .priority-verdict.verify { color: var(--amber-dark); }
+    .priority-verdict.gap { color: var(--text-muted); }
+    
+    .priority-reason {
+      font-size: 8.5pt;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
+    
+    /* === CULTURE ALIGNMENT === */
+    .culture-section {
+      margin-bottom: 0;
+    }
+    
+    .culture-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    
+    .culture-column {
+      background: var(--bg-card);
+      border-radius: 6px;
+      padding: 10px 12px;
+    }
+    
+    .culture-column-header {
+      font-size: 9pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    
+    .culture-column.match .culture-column-header { color: var(--green); }
+    .culture-column.mismatch .culture-column-header { color: #DC2626; }
+    .culture-column.unknown .culture-column-header { color: var(--text-muted); }
+    
+    .culture-item {
+      font-size: 9.5pt;
+      padding: 4px 0;
+      border-bottom: 1px solid var(--border-light);
+      font-weight: 500;
+      color: var(--text-primary);
+    }
+    
+    .culture-item:last-child { border-bottom: none; }
+    
+    .culture-empty {
+      font-size: 9pt;
+      color: var(--text-light);
+      font-style: italic;
+    }
+    
+    /* === PAGE 2: BEHAVIORAL EVIDENCE === */
+    .behavioral-section {
+      margin-bottom: 14px;
+    }
+    
+    .behavioral-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 16px;
+    }
+    
+    .behavioral-item {
+      padding-left: 12px;
+      border-left: 3px solid var(--purple-light);
+      padding-bottom: 12px;
+      min-height: 100px;
+    }
+    
+    .behavioral-item-title {
+      font-weight: 700;
+      font-size: 10pt;
+      color: var(--purple-primary);
+      margin-bottom: 3px;
+    }
+    
+    .behavioral-quote {
+      font-size: 9pt;
+      font-style: italic;
+      color: var(--text-primary);
+      margin-bottom: 3px;
+      line-height: 1.35;
+    }
+    
+    .behavioral-description {
+      font-size: 9pt;
+      color: var(--text-primary);
+      margin-bottom: 3px;
+      line-height: 1.35;
+    }
+    
+    .behavioral-citation {
+      font-size: 7.5pt;
+      color: var(--text-muted);
+      font-style: normal;
+    }
+    
+    /* === QUESTIONS === */
+    .questions-section {
+      margin-bottom: 0;
+    }
+    
+    .questions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    
+    .question {
+      padding-left: 12px;
+      border-left: 2px solid var(--purple-light);
+    }
+    
+    .question-topic {
+      color: var(--purple-primary);
+      font-weight: 700;
+      font-size: 9.5pt;
+      margin-bottom: 3px;
+    }
+    
+    .question-text {
+      font-style: italic;
+      font-size: 9pt;
+      line-height: 1.4;
+      color: var(--text-primary);
+    }
+    
+    /* === FOOTER === */
+    .footer {
+      position: absolute;
+      bottom: 0.35in;
+      left: 0.5in;
+      right: 0.5in;
+      display: flex;
+      justify-content: space-between;
+      font-size: 8pt;
+      color: var(--text-muted);
+      padding-top: 8px;
+      border-top: 1px solid var(--border-light);
+    }
+    
+    .footer-brand { color: var(--purple-primary); font-weight: 600; }
+  </style>
+</head>
+<body>
+  <!-- ==================== PAGE 1: THE DECISION PAGE ==================== -->
+  <div class="page">
+    <div class="header">
+      <div class="header-left">RESUME:DECODED</div>
+      <div class="header-right">Careerspan × CorridorX · Addepar · Feb 2026</div>
+    </div>
+    
+    <!-- HERO -->
+    <div class="hero">
+      <div class="candidate-name">Archit</div>
+      <div class="candidate-role">Sr. Backend Software Engineer</div>
+      <div class="candidate-meta">5.0y exp · 3.7y IC · 1.3y Lead</div>
+    </div>
+    
+    <!-- CANDIDATE BOTTOM LINE -->
+    <div class="bottom-line-section">
+      <div class="bottom-line-header">
+        <span class="bottom-line-main">📋 Candidate Bottom Line</span>
+        <span class="bottom-line-sub">Based on 3 Careerspan Screens (~60 min)</span>
+      </div>
+      <div class="bottom-line-box">
+        <div class="bottom-line-text">Senior backend engineer and zero-to-one platform founder with distributed systems and ML integration chops. Three Careerspan screens: immediate impact on alternatives data workflows, light ramp on serverless specifics.</div>
+      </div>
+    </div>
+    
+    <!-- VERDICT -->
+    <div class="verdict-section">
+      <div class="verdict-box">
+        <div class="verdict-title">🤔 Proceed with Caution — 75/100</div>
+      </div>
+    </div>
+    
+    <!-- SIGNAL -->
+    <div class="signal-section">
+      <div class="signal-label-main">📊 Skills Signal</div>
+      <div class="signal-bars">
+        <div class="signal-item">
+          <span class="signal-item-label">Screen-verified</span>
+          <div class="signal-bar-mini">
+            <div class="signal-bar-fill" style="width: 58%"></div>
+          </div>
+          <span class="signal-value">58%</span>
+        </div>
+        <div class="signal-item">
+          <span class="signal-item-label">Resume-only</span>
+          <div class="signal-bar-mini">
+            <div class="signal-bar-fill resume" style="width: 36%"></div>
+          </div>
+          <span class="signal-value">36%</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- PRIORITY ALIGNMENT MATRIX (moved from Page 2) -->
+    <div class="priority-matrix-section">
+      <div class="section-header">
+        <span class="section-title">↔ Priority Alignment Matrix</span>
+      </div>
+      
+      <div class="priority-matrix-grid">
+        <div class="priority-card">
+          <div class="priority-need">System architecture &amp; technical leadership</div>
+          <div class="priority-verdict strong">Strong fit</div>
+          <div class="priority-reason">Candidate demonstrates proven ability to architect solutions, define tech stack, and lead initiatives—core backend engineer responsibilities.</div>
+        </div>
+        <div class="priority-card">
+          <div class="priority-need">Cross-functional ML collaboration</div>
+          <div class="priority-verdict verify">Verify in meeting</div>
+          <div class="priority-reason">Strong collaboration score but Python is flagged as a gap. Probe how they collaborate without strong Python—are they API/integration focused or is Python fluency understated?</div>
+        </div>
+        <div class="priority-card">
+          <div class="priority-need">Python for backend development</div>
+          <div class="priority-verdict gap">Gap</div>
+          <div class="priority-reason">Python is fundamental for most backend roles, especially ML-adjacent ones. This is a material skills gap requiring upskilling or role redefinition.</div>
+        </div>
+        <div class="priority-card">
+          <div class="priority-need">Database &amp; search technologies (DynamoDB, OpenSearch)</div>
+          <div class="priority-verdict gap">More signal needed</div>
+          <div class="priority-reason">Gaps in specific technologies may be offset by strengths in &#x27;define technical stack&#x27;—did they choose alternatives (PostgreSQL, Solr) or lack exposure entirely? Context matters.</div>
+        </div>
+        <div class="priority-card">
+          <div class="priority-need">Security compliance</div>
+          <div class="priority-verdict verify">Verify in meeting</div>
+          <div class="priority-reason">Gap in security is risky for backend roles. Assess: Is this awareness gap (knows but hasn&#x27;t owned) or skills gap (doesn&#x27;t know)? Former is manageable; latter is concerning.</div>
+        </div>
+        <div class="priority-card">
+          <div class="priority-need">Technical documentation</div>
+          <div class="priority-verdict gap">More signal needed</div>
+          <div class="priority-reason">Documentation gap conflicts with &#x27;lead project initiatives.&#x27; Probe whether they delegate docs or if leadership claims are overstated.</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- CULTURE ALIGNMENT SIGNALS -->
+    <div class="culture-section">
+      <div class="section-header">
+        <span class="section-title">🎯 Culture Alignment Signals</span>
+      </div>
+      
+      <div class="culture-grid">
+        <div class="culture-column match">
+          <div class="culture-column-header">✓ Strong Fit</div>
+          <div class="culture-item">Ownership Mentality</div>
+          <div class="culture-item">Collaborative Mindset</div>
+          <div class="culture-item">Drive for Innovation</div>
+          
+        </div>
+        
+        <div class="culture-column mismatch">
+          <div class="culture-column-header">✗ Concerns</div>
+          <div class="culture-empty">None identified</div>
+        </div>
+        
+        <div class="culture-column unknown">
+          <div class="culture-column-header">? Verify</div>
+          <div class="culture-item">Client Centricity</div>
+          <div class="culture-item">Learning Orientation</div>
+          
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <span>Resume:Decoded by <span class="footer-brand">Careerspan</span> × CorridorX</span>
+      <span>1</span>
+    </div>
+  </div>
+  
+  <!-- ==================== PAGE 2: THE INSIGHT PAGE ==================== -->
+  <div class="page">
+    <div class="header">
+      <div class="header-left">RESUME:DECODED</div>
+      <div class="header-right">Careerspan × CorridorX · Addepar · Feb 2026</div>
+    </div>
+    
+    <!-- WHAT OUR SCREENING VALIDATED (moved from Page 1) -->
+    <div class="behavioral-section">
+      <div class="section-header">
+        <span class="section-title">🔍 What Our Screening Validated</span>
+      </div>
+      
+      <div class="behavioral-grid">
+        <div class="behavioral-item">
+          <div class="behavioral-item-title">Zero-To-One Platform Founder</div>
+          <div class="behavioral-quote">"Founded Assignment platform from PoC to full product while leading and mentoring a team of 8 enginee"</div>
+          <div class="behavioral-citation">— At Embibe, transforming a nascent idea into a production system serving millions of learners, requiring iterative development cycles and stakeholder a</div>
+        </div>
+        <div class="behavioral-item">
+          <div class="behavioral-item-title">High-Stakes Migration Architect</div>
+          <div class="behavioral-quote">"Led critical redesign of user timeline backend, overhauling database schemas with zero-downtime migr"</div>
+          <div class="behavioral-citation">— During Quince&#x27;s mission-critical exit from Shopify to handle $15M daily revenue and 100k+ orders, where any downtime would mean direct revenue loss</div>
+        </div>
+        <div class="behavioral-item">
+          <div class="behavioral-item-title">Operational Intelligence Builder</div>
+          <div class="behavioral-quote">"Designed LLM-powered fraud review pipeline using RAG to generate investigation reports delivered to "</div>
+          <div class="behavioral-citation">— At Quince, creating human-in-the-loop automation that combined order data, payment signals, and historical patterns to streamline operational workflow</div>
+        </div>
+        <div class="behavioral-item">
+          <div class="behavioral-item-title">Peak-Load Scaling Strategist</div>
+          <div class="behavioral-quote">"Built SOPs and infrastructure automation to support 5× traffic spikes during Black Friday and Cyber "</div>
+          <div class="behavioral-citation">— Leading up to Quince&#x27;s highest-revenue events, proactively driving EKS replicas, RDS sizing, and cache optimizations to ensure system resilience under</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- QUESTIONS THAT REMAIN (moved from Page 1) -->
+    <div class="questions-section">
+      <div class="section-header">
+        <span class="section-title">❓ Questions That Remain</span>
+      </div>
+      
+      <div class="questions-grid">
+        <div class="question">
+          <div class="question-topic">Architect and maintain solutions</div>
+          <div class="question-text">"Tell me about a complex system you architected from the ground up that had to handle significant scale or technical constraints. Walk me through the key architectural decisions you made, what tradeoffs you considered, and how the system evolved over time based on real-world usage."</div>
+        </div>
+        <div class="question">
+          <div class="question-topic">Lead project initiatives</div>
+          <div class="question-text">"Describe a time you led a project that involved coordinating multiple teams or stakeholders with competing priorities. How did you align everyone toward a common goal, what challenges arose during execution, and what would you do differently?"</div>
+        </div>
+        <div class="question">
+          <div class="question-topic">Security Compliance</div>
+          <div class="question-text">"What&#x27;s your approach to embedding security and compliance considerations into the systems you build? Can you walk me through how you&#x27;ve handled security reviews, compliance requirements (like SOC 2, GDPR, etc.), or vulnerability management in a past project?"</div>
+        </div>
+        <div class="question">
+          <div class="question-topic">Python Programming &amp; DynamoDB</div>
+          <div class="question-text">"Walk me through a recent Python project where you worked with DynamoDB. How did you model your data, handle query patterns, and manage operational concerns like capacity planning or performance optimization?"</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <span>Resume:Decoded by <span class="footer-brand">Careerspan</span> × CorridorX</span>
+      <span>2</span>
+    </div>
+  </div>
+</body>
+</html>

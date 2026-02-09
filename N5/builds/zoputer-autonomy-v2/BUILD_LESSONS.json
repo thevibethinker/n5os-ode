@@ -1,0 +1,23 @@
+{
+  "slug": "zoputer-autonomy-v2",
+  "learnings": [
+    {
+      "text": "Git substrate sync skill uses content-classifier for Tier 0 filtering. Integration requires sys.path.insert(0, '/path/to/classifier') and importing scan.classify_path, build_manifest functions. No external dependencies like audit-system are required for basic operation.",
+      "source": "manual",
+      "added_at": "2026-02-07T17:41:51.052502+00:00",
+      "tags": []
+    },
+    {
+      "text": "Mentor escalation uses va_client.py for reverse API communication - mirrors structure of zoputer_client.py but with reversed direction and longer timeouts for complex questions",
+      "source": "manual",
+      "added_at": "2026-02-08T00:42:18.699808+00:00",
+      "tags": []
+    },
+    {
+      "text": "Pending decisions store uses SQLite constraints for data validation, enabling robust decision tracking across conversations. JSON context structure supports complex escalation scenarios.",
+      "source": "manual",
+      "added_at": "2026-02-08T01:00:53.380584+00:00",
+      "tags": []
+    }
+  ]
+}

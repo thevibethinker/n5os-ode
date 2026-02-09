@@ -1,8 +1,8 @@
 {
-  "scan_date": "2026-02-07T13:08:18.117679+00:00",
+  "scan_date": "2026-02-08T13:09:07.050514+00:00",
   "window_days": 30,
-  "meetings_scanned": 23,
-  "total_ideas": 112,
+  "meetings_scanned": 19,
+  "total_ideas": 76,
   "candidates": [
     {
       "meeting_folder": "Week-of-2026-01-19/2026-01-23_2026-01-23-Anna-bao",
@@ -105,6 +105,37 @@
         {
           "title": "Proactive planning for next steps",
           "idea": "Proactive planning for next steps",
+          "provocation": "",
+          "category": "Uncategorized"
+        }
+      ]
+    },
+    {
+      "meeting_folder": "Week-of-2026-01-12/2026-01-16_2026-01-16-Vrijen-Attawar-And-Asher-King-Abramson",
+      "meeting_date": "2026-01-16",
+      "meeting_name": "2026-01-16_2026-01-16-Vrijen-Attawar-And-Asher-King-Abramson",
+      "ideas": [
+        {
+          "title": "Exits happen through networks, not markets",
+          "idea": "Exits happen through networks, not markets",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Platforms derive power from relationship monopoly",
+          "idea": "Platforms derive power from relationship monopoly",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Relationship quality is the next data frontier",
+          "idea": "Relationship quality is the next data frontier",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Semi-technical founders lower barriers to entry",
+          "idea": "Semi-technical founders lower barriers to entry",
           "provocation": "",
           "category": "Uncategorized"
         }
@@ -240,75 +271,6 @@
       ]
     },
     {
-      "meeting_folder": "Week-of-2026-01-12/2026-01-16_2026-01-16-Vrijen-Attawar-And-Asher-King-Abramson",
-      "meeting_date": "2026-01-16",
-      "meeting_name": "2026-01-16_2026-01-16-Vrijen-Attawar-And-Asher-King-Abramson",
-      "ideas": [
-        {
-          "title": "Exits happen through networks, not markets",
-          "idea": "Exits happen through networks, not markets",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Platforms derive power from relationship monopoly",
-          "idea": "Platforms derive power from relationship monopoly",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Relationship quality is the next data frontier",
-          "idea": "Relationship quality is the next data frontier",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Semi-technical founders lower barriers to entry",
-          "idea": "Semi-technical founders lower barriers to entry",
-          "provocation": "",
-          "category": "Uncategorized"
-        }
-      ]
-    },
-    {
-      "meeting_folder": "Week-of-2026-01-12/2026-01-15_2026-01-15-Trio-standup",
-      "meeting_date": "2026-01-15",
-      "meeting_name": "2026-01-15_2026-01-15-Trio-standup",
-      "ideas": [
-        {
-          "title": "Hair care product conversation: Personal, not stra...",
-          "idea": "Hair care product conversation: Personal, not strategic",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Tax optimization: Important but operational, not t...",
-          "idea": "Tax optimization: Important but operational, not thought-provoking",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Specific company assessments: Tactical intel, not ...",
-          "idea": "Specific company assessments: Tactical intel, not conceptual insight",
-          "provocation": "",
-          "category": "Uncategorized"
-        }
-      ]
-    },
-    {
-      "meeting_folder": "Week-of-2026-01-12/2026-01-15_2026-01-15-Chat",
-      "meeting_date": "2026-01-15",
-      "meeting_name": "2026-01-15_2026-01-15-Chat",
-      "ideas": [
-        {
-          "title": "Calendly's Quiet Pivot Signals Category Collapse",
-          "idea": "**Concept:** Scheduling company reorienting toward \"relationship management\" **Pattern:** When adjacent categories (scheduling, CRM, email, AI assistants) all converge on \"relationship management,\" the boundaries dissolve. Every productivity tool becomes a CRM. **Question:** Does Zo win by racing to relationship management, or by remaining the integration layer while others fight for CRM positioning? --- *Note: These ideas are observation-level, not recommendation-level. No actions implied.*",
-          "provenance": "",
-          "category": "Uncategorized"
-        }
-      ]
-    },
-    {
       "meeting_folder": "Week-of-2026-01-12/2026-01-15_2026-01-15-Acuity-Scheduler-Features-And-Conversion-Rate-Ins",
       "meeting_date": "2026-01-15",
       "meeting_name": "2026-01-15_2026-01-15-Acuity-Scheduler-Features-And-Conversion-Rate-Ins",
@@ -364,6 +326,44 @@
         {
           "title": "Empathy in AI may mean empathy for the *user*, not...",
           "idea": "Empathy in AI may mean empathy for the *user*, not just AI that seems empathetic",
+          "provocation": "",
+          "category": "Uncategorized"
+        }
+      ]
+    },
+    {
+      "meeting_folder": "Week-of-2026-01-12/2026-01-15_2026-01-15-Chat",
+      "meeting_date": "2026-01-15",
+      "meeting_name": "2026-01-15_2026-01-15-Chat",
+      "ideas": [
+        {
+          "title": "Calendly's Quiet Pivot Signals Category Collapse",
+          "idea": "**Concept:** Scheduling company reorienting toward \"relationship management\" **Pattern:** When adjacent categories (scheduling, CRM, email, AI assistants) all converge on \"relationship management,\" the boundaries dissolve. Every productivity tool becomes a CRM. **Question:** Does Zo win by racing to relationship management, or by remaining the integration layer while others fight for CRM positioning? --- *Note: These ideas are observation-level, not recommendation-level. No actions implied.*",
+          "provenance": "",
+          "category": "Uncategorized"
+        }
+      ]
+    },
+    {
+      "meeting_folder": "Week-of-2026-01-12/2026-01-15_2026-01-15-Trio-standup",
+      "meeting_date": "2026-01-15",
+      "meeting_name": "2026-01-15_2026-01-15-Trio-standup",
+      "ideas": [
+        {
+          "title": "Hair care product conversation: Personal, not stra...",
+          "idea": "Hair care product conversation: Personal, not strategic",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Tax optimization: Important but operational, not t...",
+          "idea": "Tax optimization: Important but operational, not thought-provoking",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Specific company assessments: Tactical intel, not ...",
+          "idea": "Specific company assessments: Tactical intel, not conceptual insight",
           "provocation": "",
           "category": "Uncategorized"
         }
@@ -589,250 +589,6 @@
           "title": "State Management as Moat (Not Just Technical Challenge)",
           "idea": "**The Idea:** V's repeated concern about auth/state management reveals something deeper: > \"I'm afraid of like building something with Auth that has like a login and a state.\" **What's Provocative:** State management—knowing who a user is across sessions—is typically framed as technical overhead. But V's concern suggests the opposite: whoever solves elegant state for AI tools gets defensibility. Per-use tools are commodities (anyone can build). Persistent-state tools create lock-in through accumulated context. The technical challenge IS the moat. **Strategic Implication:** The winning career AI tool won't be the one with best prompts—it'll be the one that remembers your voice, history, and goals without requiring you to re-explain. First to solve lightweight auth wins the category. --- ## Threshold Check All three ideas are: - Non-actionable in immediate context (no clear next step) - Strategically weird (challenge conventional thinking) - Original framing (not standard business advice)",
           "provenance": "",
-          "category": "Uncategorized"
-        }
-      ]
-    },
-    {
-      "meeting_folder": "Week-of-2026-01-05/2026-01-09_2026-01-09-Ivor-stratford-x-vrijen-attawar",
-      "meeting_date": "2026-01-09",
-      "meeting_name": "2026-01-09_2026-01-09-Ivor-stratford-x-vrijen-attawar",
-      "ideas": [
-        {
-          "title": "Inverts the entire career tech industry model (whi...",
-          "idea": "Inverts the entire career tech industry model (which is built on urgency/desperation)",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Requires 6+ year patience before peak value",
-          "idea": "Requires 6+ year patience before peak value",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "The asset becomes the user's life story, not a res...",
-          "idea": "The asset becomes the user's life story, not a resume",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Monetization happens through compounding relations...",
-          "idea": "Monetization happens through compounding relationship, not transaction",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Implies geographic/institutional monopoly on talen...",
-          "idea": "Implies geographic/institutional monopoly on talent pipelines",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Companies don't recruit; they cultivate from early...",
-          "idea": "Companies don't recruit; they cultivate from early stages",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Shrinking workforce + AI amplification = massive l...",
-          "idea": "Shrinking workforce + AI amplification = massive leverage for the locked-in",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Current hiring paradigm (post-job, resume, intervi...",
-          "idea": "Current hiring paradigm (post-job, resume, interview) becomes obsolete",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "AI didn't improve talent assessment; it may have m...",
-          "idea": "AI didn't improve talent assessment; it may have made it worse",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Information asymmetry is increasing, not decreasin...",
-          "idea": "Information asymmetry is increasing, not decreasing",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "The ATS is a *permanent* ceiling, not a problem to...",
-          "idea": "The ATS is a *permanent* ceiling, not a problem to solve",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Conversational modality (Careerspan's bet) may be ...",
-          "idea": "Conversational modality (Careerspan's bet) may be the only escape hatch",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "❌ Handshake as acquirer (strategic, not provocativ...",
-          "idea": "❌ Handshake as acquirer (strategic, not provocative)",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "❌ Scale concerns (practical business challenge)",
-          "idea": "❌ Scale concerns (practical business challenge)",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "❌ University budget timing (external constraint, n...",
-          "idea": "❌ University budget timing (external constraint, not idea)",
-          "provocation": "",
-          "category": "Uncategorized"
-        }
-      ]
-    },
-    {
-      "meeting_folder": "Week-of-2026-01-05/2026-01-09_2026-01-09-Ilse-X-Vrijen",
-      "meeting_date": "2026-01-09",
-      "meeting_name": "2026-01-09_2026-01-09-Ilse-X-Vrijen",
-      "ideas": [
-        {
-          "title": "Standard observations about recruiter trust issues",
-          "idea": "Standard observations about recruiter trust issues",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Tactical notes about technical debt",
-          "idea": "Tactical notes about technical debt",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Obvious conclusions about product-market fit",
-          "idea": "Obvious conclusions about product-market fit",
-          "provocation": "",
-          "category": "Uncategorized"
-        }
-      ]
-    },
-    {
-      "meeting_folder": "Week-of-2026-01-05/2026-01-09_2026-01-09-Daily-team-stand-up",
-      "meeting_date": "2026-01-09",
-      "meeting_name": "2026-01-09_2026-01-09-Daily-team-stand-up",
-      "ideas": [
-        {
-          "title": "The Legitimacy Arbitrage",
-          "idea": "> **Core insight:** In talent marketplaces, having the *name* of a prestigious firm on your website may be worth more than their actual business contribution. Superposition wouldn't bring users. They might not even bring significant revenue. But their logo creates a trust cascade. This is pure signaling economics—the brand IS the product. **Provocative question:** What other \"empty calories\" legitimacy plays exist? Could Careerspan collect prestigious recruiter logos without meaningful partnerships? ---",
-          "provenance": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "The 500-User Moat",
-          "idea": "> **Counterintuitive reframe:** Small user bases can be positioning strengths, not weaknesses. V's counter to \"you only have 500 users\" was essentially: \"Yes, but they're the *right* 500.\" This inverts the network effects playbook. Instead of \"we're valuable because we're big,\" it's \"we're valuable because we're exclusive.\" **Provocative question:** What if Careerspan *capped* user signups to maintain exclusivity positioning? The Soho House model for talent platforms. ---",
-          "provenance": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "The Cadaver Supply Chain Problem",
-          "idea": "> **From tangent, but applicable:** Logan's biotech friend disrupted her industry by going directly to morgues instead of through middlemen. \"My middleman is charging me too much money\" → go direct to source. **Provocative question:** Who is Careerspan's \"middleman\" that could be bypassed? Alumni associations themselves? Recruiters? LinkedIn? --- *Note: These are provocations for strategic reflection, not action items. The B32 block captures \"strategic weirdness\" worth sitting with.*",
-          "provenance": "",
-          "category": "Uncategorized"
-        }
-      ]
-    },
-    {
-      "meeting_folder": "Week-of-2026-01-05/2026-01-09_2026-01-09-Ivor-stratford-x-vrijen-attawar/2026-01-09_Ivor-Stratford-x-Vrijen-Attawar_[M]",
-      "meeting_date": "2026-01-09",
-      "meeting_name": "2026-01-09_Ivor-Stratford-x-Vrijen-Attawar_[M]",
-      "ideas": [
-        {
-          "title": "Inverts the entire career tech industry model (whi...",
-          "idea": "Inverts the entire career tech industry model (which is built on urgency/desperation)",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Requires 6+ year patience before peak value",
-          "idea": "Requires 6+ year patience before peak value",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "The asset becomes the user's life story, not a res...",
-          "idea": "The asset becomes the user's life story, not a resume",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Monetization happens through compounding relations...",
-          "idea": "Monetization happens through compounding relationship, not transaction",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Implies geographic/institutional monopoly on talen...",
-          "idea": "Implies geographic/institutional monopoly on talent pipelines",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Companies don't recruit; they cultivate from early...",
-          "idea": "Companies don't recruit; they cultivate from early stages",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Shrinking workforce + AI amplification = massive l...",
-          "idea": "Shrinking workforce + AI amplification = massive leverage for the locked-in",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Current hiring paradigm (post-job, resume, intervi...",
-          "idea": "Current hiring paradigm (post-job, resume, interview) becomes obsolete",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "AI didn't improve talent assessment; it may have m...",
-          "idea": "AI didn't improve talent assessment; it may have made it worse",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Information asymmetry is increasing, not decreasin...",
-          "idea": "Information asymmetry is increasing, not decreasing",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "The ATS is a *permanent* ceiling, not a problem to...",
-          "idea": "The ATS is a *permanent* ceiling, not a problem to solve",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Conversational modality (Careerspan's bet) may be ...",
-          "idea": "Conversational modality (Careerspan's bet) may be the only escape hatch",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "❌ Handshake as acquirer (strategic, not provocativ...",
-          "idea": "❌ Handshake as acquirer (strategic, not provocative)",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "❌ Scale concerns (practical business challenge)",
-          "idea": "❌ Scale concerns (practical business challenge)",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "❌ University budget timing (external constraint, n...",
-          "idea": "❌ University budget timing (external constraint, not idea)",
-          "provocation": "",
           "category": "Uncategorized"
         }
       ]

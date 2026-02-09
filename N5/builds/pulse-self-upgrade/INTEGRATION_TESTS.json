@@ -1,0 +1,67 @@
+{
+  "version": "1.0",
+  "created": "2026-02-07",
+  "tests": [
+    {
+      "id": "T001",
+      "type": "broadcast_injection",
+      "name": "Broadcasts collected and injected",
+      "config": {
+        "test_broadcast": "Integration test broadcast"
+      }
+    },
+    {
+      "id": "T002",
+      "type": "first_wins",
+      "name": "Hypothesis racing supersedes correctly",
+      "config": {
+        "hypothesis_drops": ["H1", "H2", "H3"],
+        "winner": "H2"
+      }
+    },
+    {
+      "id": "T003",
+      "type": "task_pool_claim",
+      "name": "Task pool atomic claiming",
+      "config": {
+        "pool_tasks": 10,
+        "concurrent_claims": 3
+      }
+    },
+    {
+      "id": "T004",
+      "type": "file_exists",
+      "name": "Delegate-only docs exist",
+      "config": {
+        "path": "Skills/pulse/references/delegate-only-mode.md"
+      }
+    },
+    {
+      "id": "T005",
+      "type": "file_contains",
+      "name": "Pulse.py has broadcast collection",
+      "config": {
+        "path": "Skills/pulse/scripts/pulse.py",
+        "pattern": "collect_broadcasts"
+      }
+    },
+    {
+      "id": "T006",
+      "type": "file_contains",
+      "name": "Pulse.py has first_wins logic",
+      "config": {
+        "path": "Skills/pulse/scripts/pulse.py",
+        "pattern": "first_wins"
+      }
+    },
+    {
+      "id": "T007",
+      "type": "file_contains",
+      "name": "Pulse.py has task pool claiming",
+      "config": {
+        "path": "Skills/pulse/scripts/pulse.py",
+        "pattern": "claim_task"
+      }
+    }
+  ]
+}

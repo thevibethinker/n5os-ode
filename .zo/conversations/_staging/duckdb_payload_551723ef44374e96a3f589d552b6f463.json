@@ -1,0 +1,1 @@
+{"conversation_id": "con_fWh6HWacrRTD9ykn", "messages": ["{\"parts\":[{\"tool_name\":\"create_or_rewrite_file\",\"content\":\"\",\"tool_call_id\":\"toolu_014FKRWZoaQf1gWQTCFnjynC\",\"metadata\":null,\"timestamp\":\"2026-02-09T09:09:14.470812Z\",\"part_kind\":\"tool-return\"}],\"timestamp\":null,\"instructions\":\"\",\"kind\":\"request\",\"run_id\":null,\"metadata\":null}"]}

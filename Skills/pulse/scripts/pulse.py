@@ -19,6 +19,7 @@ import os
 import sys
 import sqlite3
 import subprocess
+import fcntl
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from typing import Optional
@@ -36,6 +37,178 @@ DEFAULT_POLL_INTERVAL = 180  # 3 minutes
 DEFAULT_DEAD_THRESHOLD = 900  # 15 minutes
 DEFAULT_SPAWN_TIMEOUT = 300  # 5 minutes for API call to return
 ZO_API_URL = "https://api.zo.computer/zo/ask"
+
+
+def claim_task(slug: str, drop_id: str) -> dict | None:
+    """Atomically claim a task from the pool."""
+    meta_path = BUILDS_DIR / slug / "meta.json"
+    
+    if not meta_path.exists():
+        return None
+    
+    with open(meta_path, "r+") as f:
+        # Acquire exclusive lock
+        fcntl.flock(f.fileno(), fcntl.LOCK_EX)
+        try:
+            meta = json.load(f)
+            pool = meta.get("task_pool", {})
+            
+            if not pool.get("enabled"):
+                return None
+            
+            # Find first pending task
+            for task in pool.get("tasks", []):
+                if task["status"] == "pending":
+                    task["status"] = "claimed"
+                    task["claimed_by"] = drop_id
+                    task["claimed_at"] = datetime.now(timezone.utc).isoformat()
+                    
+                    # Write back
+                    f.seek(0)
+                    f.truncate()
+                    json.dump(meta, f, indent=2)
+                    
+                    return task
+            
+            return None  # Pool exhausted
+        finally:
+            fcntl.flock(f.fileno(), fcntl.LOCK_UN)
+
+
+def update_task_status(slug: str, task_id: str, status: str, drop_id: str = None) -> bool:
+    """Update a task's status in the pool."""
+    meta_path = BUILDS_DIR / slug / "meta.json"
+    
+    if not meta_path.exists():
+        return False
+    
+    with open(meta_path, "r+") as f:
+        fcntl.flock(f.fileno(), fcntl.LOCK_EX)
+        try:
+            meta = json.load(f)
+            pool = meta.get("task_pool", {})
+            
+            if not pool.get("enabled"):
+                return False
+            
+            # Find and update task
+            for task in pool.get("tasks", []):
+                if task["id"] == task_id:
+                    old_status = task["status"]
+                    task["status"] = status
+                    if status in ("complete", "failed"):
+                        task["completed_at"] = datetime.now(timezone.utc).isoformat()
+                        if drop_id:
+                            task["completed_by"] = drop_id
+                    
+                    # Write back
+                    f.seek(0)
+                    f.truncate()
+                    json.dump(meta, f, indent=2)
+                    
+                    print(f"[TASK_POOL] Task {task_id}: {old_status} → {status}")
+                    return True
+            
+            return False
+        finally:
+            fcntl.flock(f.fileno(), fcntl.LOCK_UN)
+
+
+def get_pool_status(meta: dict) -> dict:
+    """Get task pool status summary for STATUS.md."""
+    pool = meta.get("task_pool", {})
+    if not pool.get("enabled"):
+        return None
+    
+    tasks = pool.get("tasks", [])
+    status_counts = {
+        "pending": 0,
+        "claimed": 0,
+        "complete": 0,
+        "failed": 0
+    }
+    
+    active_claims = []
+    
+    for task in tasks:
+        status = task["status"]
+        status_counts[status] = status_counts.get(status, 0) + 1
+        
+        if status == "claimed":
+            claimed_at = task.get("claimed_at")
+            claimed_by = task.get("claimed_by", "unknown")
+            duration = ""
+            if claimed_at:
+                try:
+                    claimed_time = datetime.fromisoformat(claimed_at.replace("Z", "+00:00"))
+                    duration_min = int((datetime.now(timezone.utc) - claimed_time).total_seconds() / 60)
+                    duration = f"({duration_min} min)"
+                except:
+                    pass
+            
+            active_claims.append(f"- {claimed_by} → {task['id']} {duration}")
+    
+    return {
+        "counts": status_counts,
+        "active_claims": active_claims,
+        "total": len(tasks)
+    }
+
+
+def inject_pool_claim_instructions(brief_content: str, slug: str, drop_id: str = "UNKNOWN") -> str:
+    """Inject task pool claiming instructions for pool workers."""
+    pool_instructions = f"""
+
+## Task Pool Worker Instructions
+
+You are pool worker **{drop_id}**. Your execution pattern:
+
+1. **Claim a task** by running:
+```bash
+python3 -c "
+import sys; sys.path.insert(0, '/home/workspace/Skills/pulse/scripts')
+from pulse import claim_task
+task = claim_task('{slug}', '{drop_id}')
+if task:
+    print(f'CLAIMED: {{task[\"id\"]}}')
+    print(f'TYPE: {{task.get(\"type\", \"unknown\")}}')
+    print(f'TARGET: {{task.get(\"target\", \"unknown\")}}')
+else:
+    print('POOL_EXHAUSTED')
+"
+```
+
+2. **Execute the claimed task** according to its type and target
+3. **Mark complete** when done by running:
+```bash
+python3 -c "
+import sys; sys.path.insert(0, '/home/workspace/Skills/pulse/scripts')
+from pulse import update_task_status
+update_task_status('{slug}', 'TASK_ID_HERE', 'complete', '{drop_id}')
+"
+```
+4. **Repeat**: Claim another task until pool is exhausted (POOL_EXHAUSTED)
+5. **Deposit summary**: Write deposit with summary of ALL completed tasks
+
+## On Pool Exhaustion
+
+When claiming returns POOL_EXHAUSTED, write your final deposit summarizing all work completed.
+
+"""
+    
+    # Insert after brief frontmatter or at beginning of content
+    lines = brief_content.split('\n')
+    insert_idx = 0
+    
+    # Skip frontmatter if present
+    if lines[0].strip() == '---':
+        for i, line in enumerate(lines[1:], 1):
+            if line.strip() == '---':
+                insert_idx = i + 1
+                break
+    
+    lines.insert(insert_idx, pool_instructions)
+    return '\n'.join(lines)
 
 
 def load_meta(slug: str) -> dict:
@@ -185,6 +358,7 @@ def update_status_md(slug: str, meta: dict):
     running = [d for d, info in drops.items() if info.get("status") == "running"]
     awaiting_manual = [d for d, info in drops.items() if info.get("status") == "awaiting_manual"]
     pending = [d for d, info in drops.items() if info.get("status") == "pending"]
+    superseded = [d for d, info in drops.items() if info.get("status") == "superseded"]
     dead = [d for d, info in drops.items() if info.get("status") == "dead"]
     failed = [d for d, info in drops.items() if info.get("status") == "failed"]
 
@@ -206,13 +380,40 @@ def update_status_md(slug: str, meta: dict):
         for d in sorted(awaiting_manual)
     )
 
+    # Build superseded lines with superseded_by info
+    superseded_lines = "\n".join(
+        f"- [~] {d} (superseded by {drops[d].get('superseded_by', '?')})"
+        for d in sorted(superseded)
+    )
+
+    # Add task pool status if enabled
+    pool_status = get_pool_status(meta)
+    pool_section = ""
+    if pool_status:
+        counts = pool_status["counts"]
+        active_claims = pool_status["active_claims"]
+        
+        pool_section = f"""
+## Task Pool
+| Status | Count |
+|--------|-------|
+| Pending | {counts['pending']} |
+| Claimed | {counts['claimed']} |
+| Complete | {counts['complete']} |
+| Failed | {counts['failed']} |
+
+Active claims:
+{chr(10).join(active_claims) if active_claims else '(none)'}
+
+"""
+
     content = f"""# Build Status: {slug}
 
 **Updated:** {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M:%S UTC')}
 **Status:** {meta.get('status', 'unknown')}
 {gate_line}{gate_text}
 **Progress:** {len(complete)}/{total} Drops ({pct}%)
-
+{pool_section}
 ## Awaiting Manual ({len(awaiting_manual)})
 {awaiting_lines or '(none)'}
 
@@ -221,6 +422,9 @@ def update_status_md(slug: str, meta: dict):
 
 ## Pending ({len(pending)})
 {chr(10).join(f'- [ ] {d}' for d in sorted(pending)) or '(none)'}
+
+## Superseded ({len(superseded)})
+{superseded_lines or '(none)'}
 
 ## Complete ({len(complete)})
 {chr(10).join(f'- [x] {d}' for d in sorted(complete)) or '(none)'}
@@ -258,6 +462,57 @@ async def send_sms(message: str):
             return result
 
 
+def collect_broadcasts(slug: str) -> list[dict]:
+    """Collect all broadcasts from completed deposits."""
+    broadcasts = []
+    deposits_dir = BUILDS_DIR / slug / "deposits"
+    
+    if not deposits_dir.exists():
+        return broadcasts
+    
+    for deposit_path in deposits_dir.glob("*.json"):
+        # Skip filter results
+        if "_filter" in deposit_path.name:
+            continue
+        
+        try:
+            with open(deposit_path) as f:
+                deposit = json.load(f)
+            
+            # Check if deposit has broadcast field
+            if deposit.get("broadcast"):
+                broadcasts.append({
+                    "drop_id": deposit.get("drop_id", deposit_path.stem),
+                    "broadcast": deposit["broadcast"],
+                    "timestamp": deposit.get("timestamp")
+                })
+        except (json.JSONDecodeError, IOError) as e:
+            print(f"[BROADCAST] Warning: Could not read {deposit_path.name}: {e}")
+    
+    return broadcasts
+
+
+def inject_broadcasts(brief_content: str, broadcasts: list[dict]) -> str:
+    """Inject broadcasts section into brief before spawning."""
+    if not broadcasts:
+        return brief_content
+    
+    # Create broadcasts section
+    section = "\n\n## Broadcasts from Prior Drops\n\n"
+    section += "These findings were shared by earlier Drops in this build:\n\n"
+    
+    for b in broadcasts:
+        section += f"- **{b['drop_id']}:** {b['broadcast']}\n"
+    
+    # Insert before common section markers or at end
+    for marker in ["## Requirements", "## Context", "## Files to Read"]:
+        if marker in brief_content:
+            return brief_content.replace(marker, section + marker, 1)
+    
+    # If no markers found, append at end
+    return brief_content + section
+
+
 async def spawn_drop(slug: str, drop_id: str, brief: str, model: str = None) -> str:
     """Spawn a Drop via /zo/ask, return conversation_id
     
@@ -268,18 +523,24 @@ async def spawn_drop(slug: str, drop_id: str, brief: str, model: str = None) -> 
     if not token:
         raise RuntimeError("ZO_CLIENT_IDENTITY_TOKEN not set")
     
-    # Build deposit format as separate string to avoid f-string escaping issues
-    deposit_format = '''
-{
-  "drop_id": "''' + drop_id + '''",
-  "status": "complete",
-  "summary": "What you accomplished",
-  "artifacts": ["list", "of", "files", "created"],
-  "learnings": ["any lessons for other workers"],
-  "errors": []
-}'''
+    # Collect and inject broadcasts from prior Drops
+    broadcasts = collect_broadcasts(slug)
+    brief_with_broadcasts = inject_broadcasts(brief, broadcasts)
     
-    full_prompt = f"""You are a Pulse Drop executing build "{slug}", task "{drop_id}".
+    # Check if this is a pool worker and inject pool instructions
+    meta = load_meta(slug)
+    pool = meta.get("task_pool", {})
+    drops = meta.get("drops", {})
+    drop_info = drops.get(drop_id, {})
+    
+    if pool.get("enabled") and drop_id in pool.get("worker_drops", []):
+        print(f"[POOL] Injecting pool claim instructions for {drop_id}")
+        brief_with_broadcasts = inject_pool_claim_instructions(brief_with_broadcasts, slug, drop_id)
+    
+    # Build deposit format as separate string to avoid f-string escaping issues
+    deposit_format = '''{\n  \"drop_id\": \"''' + drop_id + '''\",\n  \"status\": \"complete\",\n  \"summary\": \"What you accomplished\",\n  \"artifacts\": [\"list\", \"of\", \"files\", \"created\"],\n  \"learnings\": [\"any lessons for other workers\"],\n  \"errors\": []\n}'''
+    
+    full_prompt = f"""You are a Pulse Drop executing build \"{slug}\", task \"{drop_id}\".
 
 **YOUR IDENTITY:**
 - Build: {slug}
@@ -291,269 +552,265 @@ async def spawn_drop(slug: str, drop_id: str, brief: str, model: str = None) -> 
 2. Execute the task completely
 3. When done, write your deposit JSON to: N5/builds/{slug}/deposits/{drop_id}.json
 4. DO NOT commit code (orchestrator handles commits)
-5. If blocked, write deposit with status "blocked" and explain why
+5. If blocked, write deposit with status \"blocked\" and explain why
 
 **DEPOSIT FORMAT:**
-```json{deposit_format}
-```
+{deposit_format}
 
-Status can be "complete", "blocked", or "partial".
+Status can be \"complete\", \"blocked\", or \"partial\".
 
 ---
 BRIEF:
-{brief}
 ---
-
-Execute the brief now. Write deposit when done."""
-
-    # Create timeout
-    timeout = aiohttp.ClientTimeout(total=DEFAULT_SPAWN_TIMEOUT)
+{brief_with_broadcasts}"""
     
-    try:
-        async with aiohttp.ClientSession(timeout=timeout) as session:
-            async with session.post(
-                ZO_API_URL,
-                headers={
-                    "authorization": token,
-                    "content-type": "application/json"
-                },
-                json={
-                    "input": full_prompt,
-                    "model_name": model
-                }
-            ) as resp:
-                result = await resp.json()
-                # Extract conversation_id from response if available
-                convo_id = result.get("conversation_id")
-                if not convo_id:
-                    convo_id = f"spawn_{drop_id}_{int(datetime.now().timestamp())}"
-                return convo_id
-    except asyncio.TimeoutError:
-        # API call timed out - worker may still be running
-        print(f"[SPAWN TIMEOUT] {drop_id} - API call timed out after {DEFAULT_SPAWN_TIMEOUT}s")
-        return f"timeout_{drop_id}_{int(datetime.now().timestamp())}"
-    except Exception as e:
-        print(f"[SPAWN ERROR] {drop_id}: {e}")
-        raise
-
-
-async def run_filter(slug: str, drop_id: str, brief: str, deposit: dict) -> dict:
-    """Run LLM Filter to validate a Deposit against its brief"""
-    token = os.environ.get("ZO_CLIENT_IDENTITY_TOKEN")
-    if not token:
-        # Fallback: auto-pass
-        return {"drop_id": drop_id, "verdict": "PASS", "reason": "Filter skipped (no token)"}
+    request_body = {"input": full_prompt}
+    if model:
+        request_body["model_name"] = model
     
-    # Build JSON template separately to avoid f-string conflicts
-    json_template = """{
-  "drop_id": "DROP_ID_HERE",
-  "verdict": "PASS or FAIL",
-  "reason": "Brief explanation",
-  "artifacts_verified": true or false,
-  "concerns": ["any concerns for orchestrator"]
-}"""
+    print(f"[SPAWN] Spawning Drop {drop_id} via /zo/ask...")
     
-    prompt = f"""You are a Pulse Filter validating a Drop's work.
-
-## Drop Brief (what was requested):
-{brief}
-
-## Deposit (what was delivered):
-{json.dumps(deposit, indent=2)}
-
-## Your Task:
-1. Compare the deposit against the brief's success criteria
-2. Check if artifacts were actually created (you can read files to verify)
-3. Determine PASS or FAIL
-
-Respond with ONLY this JSON (no other text):
-{json_template}
-
-Replace DROP_ID_HERE with "{drop_id}"."""
-
-    async with aiohttp.ClientSession() as session:
+    start = datetime.now()
+    async with aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=DEFAULT_SPAWN_TIMEOUT)) as session:
         async with session.post(
             ZO_API_URL,
             headers={
                 "authorization": token,
                 "content-type": "application/json"
             },
-            json={"input": prompt}
+            json=request_body
         ) as resp:
+            if resp.status != 200:
+                raise RuntimeError(f"API returned {resp.status}: {await resp.text()}")
+            
             result = await resp.json()
-            output = result.get("output", "")
+            elapsed = datetime.now() - start
             
-            # Try to parse JSON from response
-            try:
-                # Find JSON in response
-                start = output.find("{")
-                end = output.rfind("}") + 1
-                if start >= 0 and end > start:
-                    return json.loads(output[start:end])
-            except:
-                pass
+            # Generate tracking ID
+            tracking_id = f"pulse_{slug}_{drop_id}_{int(start.timestamp())}"
             
-            # Fallback
-            return {
-                "drop_id": drop_id,
-                "verdict": "PASS",
-                "reason": "Filter parse failed, auto-passing",
-                "raw_response": output[:500]
-            }
+            print(f"[SPAWN] Drop {drop_id} spawned (tracking: {tracking_id}, {elapsed.total_seconds():.1f}s)")
+            return tracking_id
 
 
-async def run_dredge(slug: str, drop_id: str, meta: dict):
-    """Spawn forensics worker to investigate dead Drop"""
-    token = os.environ.get("ZO_CLIENT_IDENTITY_TOKEN")
-    if not token:
+def start_build(slug: str):
+    """Start a build"""
+    meta = load_meta(slug)
+    meta["status"] = "active"
+    meta["started_at"] = datetime.now(timezone.utc).isoformat()
+    save_meta(slug, meta)
+    update_status_md(slug, meta)
+    print(f"[PULSE] Build {slug} started")
+
+
+def stop_build(slug: str):
+    """Stop a build"""
+    meta = load_meta(slug)
+    meta["status"] = "stopped"
+    meta["stopped_at"] = datetime.now(timezone.utc).isoformat()
+    save_meta(slug, meta)
+    update_status_md(slug, meta)
+    print(f"[PULSE] Build {slug} stopped")
+
+
+def resume_build(slug: str):
+    """Resume a stopped build"""
+    meta = load_meta(slug)
+    if meta.get("status") != "stopped":
+        print(f"[ERROR] Build {slug} is not stopped (current: {meta.get('status')})")
         return
     
-    drop_info = meta.get("drops", {}).get(drop_id, {})
-    convo_id = drop_info.get("conversation_id", "unknown")
+    meta["status"] = "active"
+    meta["resumed_at"] = datetime.now(timezone.utc).isoformat()
+    save_meta(slug, meta)
+    update_status_md(slug, meta)
+    print(f"[PULSE] Build {slug} resumed")
+
+
+def _normalize_meta_for_waves(meta: dict) -> None:
+    """Normalize legacy meta structure into waves structure in memory."""
+    if meta.get("waves"):
+        return  # Already using waves
     
-    prompt = f"""You are a Pulse Dredge worker investigating a dead Drop.
-
-Build: {slug}
-Dead Drop: {drop_id}
-Conversation ID: {convo_id}
-Started at: {drop_info.get('started_at', 'unknown')}
-
-## Your Task:
-1. Check if the Drop created any partial artifacts
-2. Check if there's a partial deposit in N5/builds/{slug}/deposits/
-3. Look for any error indicators
-4. Write a forensics report to: N5/builds/{slug}/deposits/{drop_id}_forensics.json
-
-Report format:
-{
-  "drop_id": "{drop_id}",
-  "partial_artifacts": ["list of any files created"],
-  "partial_work": "description of what was started",
-  "likely_cause": "timeout/error/stuck",
-  "recommendation": "retry/skip/manual",
-  "cleanup_needed": true/false
-}
-
-Investigate now."""
-
-    async with aiohttp.ClientSession() as session:
-        async with session.post(
-            ZO_API_URL,
-            headers={
-                "authorization": token,
-                "content-type": "application/json"
-            },
-            json={"input": prompt}
-        ) as resp:
-            print(f"[DREDGE] Forensics worker spawned for {drop_id}")
-
-
-def recommend_spawn_mode(brief: str) -> str:
-    """Heuristics-first recommendation: return 'manual' or 'auto'.
-
-    This is intentionally cheap/deterministic. If we add LLM-based classification later,
-    it should be config-gated.
-    """
-    t = (brief or "").lower()
-    manual_signals = [
-        "human-in-the-loop",
-        "hitl",
-        "requires v",
-        "ask v",
-        "need v",
-        "needs v",
-        "voice protocol",
-        "careerspan voice",
-        "high-risk",
-        "close control",
-        "manual",
-        "human judgment",
-        "v review",
-        "v approval",
-        "preferences",
-    ]
-    return "manual" if any(s in t for s in manual_signals) else "auto"
+    # Build waves from currents or drop stream/order
+    waves = {}
+    drops = meta.get("drops", {})
+    
+    if meta.get("currents"):
+        # currents = {"chain1": ["D1.1", "D1.2"], "chain2": ["D2.1"]}
+        wave_num = 1
+        for chain_name, chain_drops in meta["currents"].items():
+            for drop_id in chain_drops:
+                wave_key = f"W{wave_num}"
+                if wave_key not in waves:
+                    waves[wave_key] = []
+                waves[wave_key].append(drop_id)
+            wave_num += 1
+    else:
+        # Group by stream number
+        streams = {}
+        for drop_id, info in drops.items():
+            try:
+                stream_num, order = get_drop_stream_order(drop_id, info)
+                if stream_num not in streams:
+                    streams[stream_num] = []
+                streams[stream_num].append((order, drop_id))
+            except Exception:
+                # Fallback: put in stream 1
+                if 1 not in streams:
+                    streams[1] = []
+                streams[1].append((1, drop_id))
+        
+        # Convert streams to waves
+        for stream_num in sorted(streams.keys()):
+            wave_key = f"W{stream_num}"
+            waves[wave_key] = [drop_id for _, drop_id in sorted(streams[stream_num])]
+    
+    meta["waves"] = waves
+    meta["active_wave"] = "W1"
 
 
-def _is_blocking(info: dict) -> bool:
-    return info.get("blocking", True) is not False
+def _get_active_wave(meta: dict) -> str | None:
+    """Get the currently active wave."""
+    waves = meta.get("waves", {})
+    if not waves:
+        return None
+    
+    active = meta.get("active_wave")
+    if active and active in waves:
+        return active
+    
+    # Default to first wave
+    sorted_waves = sort_wave_keys(list(waves.keys()))
+    return sorted_waves[0] if sorted_waves else None
 
 
-def _build_stream_chains(drops: dict) -> dict[int, list[str]]:
-    chains: dict[int, list[tuple[int, str]]] = {}
+def _can_advance_wave(meta: dict) -> bool:
+    """Check if current wave is complete and can advance."""
+    waves = meta.get("waves", {})
+    active_wave = _get_active_wave(meta)
+    
+    if not active_wave or active_wave not in waves:
+        return False
+    
+    drops = meta.get("drops", {})
+    
+    # Check if all blocking Drops in active wave are complete
+    for drop_id in waves[active_wave]:
+        info = drops.get(drop_id, {})
+        if info.get("blocking", True):  # Default to blocking=True
+            status = info.get("status", "pending")
+            if status not in ("complete", "failed", "dead", "superseded"):
+                return False
+    
+    return True
+
+
+def _advance_wave(meta: dict) -> bool:
+    """Advance to the next wave if possible. Returns True if advanced."""
+    if not _can_advance_wave(meta):
+        return False
+    
+    waves = meta.get("waves", {})
+    active_wave = meta.get("active_wave")
+    
+    if not active_wave:
+        return False
+    
+    sorted_waves = sort_wave_keys(list(waves.keys()))
+    try:
+        current_idx = sorted_waves.index(active_wave)
+        if current_idx + 1 < len(sorted_waves):
+            next_wave = sorted_waves[current_idx + 1]
+            meta["active_wave"] = next_wave
+            print(f"[WAVE] Advanced from {active_wave} to {next_wave}")
+            return True
+    except ValueError:
+        pass
+    
+    return False
+
+
+def _build_stream_chains(drops: dict) -> dict:
+    """Build mapping of stream_num -> [(order, drop_id), ...]"""
+    streams = {}
     for drop_id, info in drops.items():
         try:
-            stream, order = get_drop_stream_order(drop_id, info)
+            stream_num, order = get_drop_stream_order(drop_id, info)
+            if stream_num not in streams:
+                streams[stream_num] = []
+            streams[stream_num].append((order, drop_id))
         except Exception:
             continue
-        chains.setdefault(stream, []).append((order, drop_id))
-    return {s: [d for _, d in sorted(items, key=lambda t: t[0])] for s, items in chains.items()}
+    
+    # Sort by order within each stream
+    for stream_num in streams:
+        streams[stream_num].sort()
+    
+    return streams
 
 
-def _can_run_stream_order(drop_id: str, drops: dict, stream_chains: dict[int, list[str]], complete: set[str]) -> bool:
-    info = drops.get(drop_id, {})
+def _can_run_stream_order(drop_id: str, drops: dict, stream_chains: dict, complete: set) -> bool:
+    """Check if Drop can run based on stream sequential ordering."""
     try:
-        stream, _ = get_drop_stream_order(drop_id, info)
+        stream_num, order = get_drop_stream_order(drop_id, drops.get(drop_id, {}))
     except Exception:
         return True
-
-    chain = stream_chains.get(stream, [])
-    if drop_id not in chain:
+    
+    if stream_num not in stream_chains:
         return True
-    idx = chain.index(drop_id)
-    if idx == 0:
-        return True
-    prev_drop = chain[idx - 1]
-    return prev_drop in complete
+    
+    chain = stream_chains[stream_num]
+    
+    for chain_order, chain_drop_id in chain:
+        if chain_drop_id == drop_id:
+            break
+        if chain_order < order and chain_drop_id not in complete:
+            return False
+    
+    return True
 
 
-def _get_active_wave(meta: dict) -> Optional[str]:
-    waves = meta.get("waves")
-    if not isinstance(waves, dict) or not waves:
-        meta.pop("active_wave", None)
-        meta.pop("gate", None)
-        return None
-
+def check_build_complete(meta: dict) -> bool:
+    """Check if all blocking Drops are complete"""
     drops = meta.get("drops", {})
-    wave_keys = sort_wave_keys(list(waves.keys()))
+    
+    for drop_id, info in drops.items():
+        # Skip non-blocking Drops
+        if not info.get("blocking", True):
+            continue
+        
+        status = info.get("status", "pending")
+        if status not in ("complete", "failed", "dead", "superseded"):
+            return False
+    
+    return True
 
-    for wk in wave_keys:
-        wave_drop_ids = list(waves.get(wk, []) or [])
-        blocking_ids = [d for d in wave_drop_ids if _is_blocking(drops.get(d, {}))]
 
-        # If any blocking drop failed/dead, block the build at this wave.
-        for d in blocking_ids:
-            st = drops.get(d, {}).get("status")
-            if st in ["failed", "dead"]:
-                meta["active_wave"] = wk
-                meta["gate"] = {
-                    "type": "wave_blocked",
-                    "wave": wk,
-                    "drop_id": d,
-                    "reason": f"Blocking drop {d} is {st}; later waves cannot start."
-                }
-                return wk
-
-        # If any blocking drop is not complete, this is the active wave.
-        if any(drops.get(d, {}).get("status") != "complete" for d in blocking_ids):
-            meta["active_wave"] = wk
-            meta.pop("gate", None)
-            return wk
-
-    # All blocking drops complete
-    meta["active_wave"] = None
-    meta.pop("gate", None)
-    return None
+def _check_pool_complete(meta: dict) -> bool:
+    """Check if task pool is exhausted (no pending tasks)."""
+    pool = meta.get("task_pool", {})
+    if not pool.get("enabled"):
+        return True  # No pool, consider complete
+    
+    tasks = pool.get("tasks", [])
+    for task in tasks:
+        if task["status"] == "pending":
+            return False
+    
+    return True
 
 
 def get_ready_drops(meta: dict) -> list[str]:
-    """Get list of Drops ready to spawn (dependencies met, not started).
-
-    v3 mode (meta.waves):
-      - Hard barrier waves: only consider drops in the earliest active wave
-      - blocking:false drops do not block wave advancement
-      - If a blocking drop in the active wave failed/dead, gate the build and spawn nothing
-      - Streams are sequential: within a stream, order k+1 waits for order k to be complete
+    """Get list of Drops ready to spawn.
+    
+    Rules:
+    - waves mode: only drops in active wave, not blocked by dependencies or stream order
+    - legacy mode: respects currents, stream sequencing as before
+    
+    In waves mode:
+      - parallel: drops in same wave can run in parallel
+      - sequential: within a stream, order k+1 waits for order k to be complete
 
     legacy mode (no meta.waves):
       - If current_stream is present, only consider drops in that stream
@@ -592,7 +849,7 @@ def get_ready_drops(meta: dict) -> list[str]:
 
     for drop_id in sorted(allowed):
         info = drops.get(drop_id, {})
-        if info.get("status") != "pending":
+        if info.get("status") not in ("pending",):
             continue
 
         # Dependencies
@@ -678,6 +935,45 @@ def advance_stream(meta: dict) -> bool:
     return False
 
 
+def check_first_wins(slug: str, meta: dict) -> bool:
+    """Check if a hypothesis was confirmed and supersede others."""
+    if not meta.get("first_wins"):
+        return False
+    
+    hypothesis_group = meta.get("hypothesis_group") or list(meta.get("drops", {}).keys())
+    
+    # Find confirmed hypothesis
+    winner = None
+    for drop_id in hypothesis_group:
+        deposit = get_deposit(slug, drop_id)
+        if deposit and deposit.get("verdict") == "confirmed":
+            winner = drop_id
+            break
+    
+    if not winner:
+        return False
+    
+    # Supersede others
+    drops = meta.get("drops", {})
+    superseded_count = 0
+    for drop_id in hypothesis_group:
+        if drop_id == winner:
+            continue
+        if drops.get(drop_id, {}).get("status") in ("pending", "running"):
+            drops[drop_id]["status"] = "superseded"
+            drops[drop_id]["superseded_by"] = winner
+            drops[drop_id]["superseded_at"] = datetime.now(timezone.utc).isoformat()
+            superseded_count += 1
+            print(f"[FIRST_WINS] {drop_id} superseded by {winner}")
+    
+    if superseded_count > 0:
+        save_meta(slug, meta)
+        print(f"[FIRST_WINS] {superseded_count} Drops superseded by {winner}")
+        return True
+    
+    return False
+
+
 async def summarize_build(slug: str, meta: dict) -> str:
     """Generate completion summary"""
     deposits_dir = BUILDS_DIR / slug / "deposits"
@@ -707,190 +1003,149 @@ async def tick(slug: str):
     
     # 1. Check for new deposits from running Drops
     running = get_running_drops(meta)
+    broadcasts_updated = False
+    
     for drop_id, info in running:
         deposit = get_deposit(slug, drop_id)
         if deposit:
-            print(f"[DEPOSIT] Found deposit for {drop_id}")
+            print(f"[DEPOSIT] Found deposit for {drop_id}: {deposit.get('status', 'unknown')}")
             
-            # Run Filter
-            try:
-                brief = load_drop_brief(slug, drop_id)
-                filter_result = await run_filter(slug, drop_id, brief, deposit)
-                
-                # Save filter result
-                filter_path = BUILDS_DIR / slug / "deposits" / f"{drop_id}_filter.json"
-                with open(filter_path, "w") as f:
-                    json.dump(filter_result, f, indent=2)
-                
-                convo_id = info.get("conversation_id")
-                
-                if filter_result.get("verdict") == "PASS":
-                    meta["drops"][drop_id]["status"] = "complete"
-                    meta["drops"][drop_id]["completed_at"] = datetime.now(timezone.utc).isoformat()
-                    update_drop_conversation_status(convo_id, "complete")
-                    print(f"[FILTER PASS] {drop_id}")
-                else:
-                    meta["drops"][drop_id]["status"] = "failed"
-                    meta["drops"][drop_id]["failed_at"] = datetime.now(timezone.utc).isoformat()
-                    meta["drops"][drop_id]["failure_reason"] = filter_result.get("reason", "Unknown")
-                    update_drop_conversation_status(convo_id, "failed")
-                    print(f"[FILTER FAIL] {drop_id}: {filter_result.get('reason')}")
-                    await send_sms(f"[PULSE] {slug}: {drop_id} FAILED filter. Reason: {filter_result.get('reason', 'Unknown')[:50]}")
-            except Exception as e:
-                print(f"[FILTER ERROR] {drop_id}: {e}")
-                # Auto-pass on filter error
-                meta["drops"][drop_id]["status"] = "complete"
-                meta["drops"][drop_id]["completed_at"] = datetime.now(timezone.utc).isoformat()
+            # Update Drop status based on deposit
+            old_status = info.get("status", "unknown")
+            new_status = deposit.get("status", "complete")
+            
+            # For pool workers, check if they completed tasks
+            pool = meta.get("task_pool", {})
+            if pool.get("enabled") and drop_id in pool.get("worker_drops", []):
+                # Update completed tasks in pool
+                completed_tasks = deposit.get("completed_tasks", [])
+                for task_info in completed_tasks:
+                    task_id = task_info.get("id")
+                    task_status = task_info.get("status", "complete")
+                    if task_id:
+                        update_task_status(slug, task_id, task_status, drop_id)
+            
+            if new_status == "complete":
+                info["status"] = "complete"
+                info["completed_at"] = datetime.now(timezone.utc).isoformat()
                 update_drop_conversation_status(info.get("conversation_id"), "complete")
+            elif new_status == "blocked":
+                info["status"] = "failed"
+                info["failure_reason"] = deposit.get("summary", "Blocked")
+                info["failed_at"] = datetime.now(timezone.utc).isoformat()
+                update_drop_conversation_status(info.get("conversation_id"), "failed")
+            elif new_status == "partial":
+                info["status"] = "failed"
+                info["failure_reason"] = "Partial completion"
+                info["failed_at"] = datetime.now(timezone.utc).isoformat()
+                update_drop_conversation_status(info.get("conversation_id"), "failed")
+            
+            print(f"[STATUS] {drop_id}: {old_status} → {info['status']}")
+            broadcasts_updated = True
     
     # 2. Check for dead Drops (running too long)
-    dead_threshold = meta.get("dead_threshold_seconds", DEFAULT_DEAD_THRESHOLD)
+    now = datetime.now(timezone.utc)
     for drop_id, info in running:
         if info.get("status") != "running":
-            continue  # Already processed above
+            continue  # Skip if already processed above
         
-        started_at = info.get("started_at")
-        if started_at:
-            started = datetime.fromisoformat(started_at.replace("Z", "+00:00"))
-            elapsed = (datetime.now(timezone.utc) - started).total_seconds()
-            
-            if elapsed > dead_threshold:
-                print(f"[DEAD] {drop_id} - no deposit after {int(elapsed)}s")
-                meta["drops"][drop_id]["status"] = "dead"
-                meta["drops"][drop_id]["died_at"] = datetime.now(timezone.utc).isoformat()
-                
-                # Spawn Dredge
-                await run_dredge(slug, drop_id, meta)
-                
-                # SMS escalation
-                complete_count = sum(1 for d in meta["drops"].values() if d.get("status") == "complete")
-                total_count = len(meta["drops"])
-                await send_sms(f"[PULSE] {slug}: {drop_id} DEAD after {int(elapsed/60)}m. {complete_count}/{total_count} complete. Reply RESUME or STOP.")
+        started_str = info.get("started_at")
+        if not started_str:
+            continue
+        
+        try:
+            started = datetime.fromisoformat(started_str.replace("Z", "+00:00"))
+            elapsed = now - started
+            if elapsed.total_seconds() > DEFAULT_DEAD_THRESHOLD:
+                print(f"[DEAD] {drop_id} has been running for {elapsed.total_seconds()/60:.0f} minutes")
+                info["status"] = "dead"
+                info["dead_at"] = now.isoformat()
+                info["dead_reason"] = f"Running for {elapsed.total_seconds()/60:.0f} minutes"
+                update_drop_conversation_status(info.get("conversation_id"), "failed")
+                broadcasts_updated = True
+        except ValueError:
+            continue
     
-    # 3. Legacy stream gating (only when no waves)
-    if not meta.get("waves"):
+    # 3. Check for first-wins supersession
+    if check_first_wins(slug, meta):
+        broadcasts_updated = True
+    
+    # 4. Normalize legacy meta to waves for processing
+    _normalize_meta_for_waves(meta)
+    
+    # 5. Advance wave/stream if current is complete
+    wave_advanced = False
+    if meta.get("waves"):
+        if _advance_wave(meta):
+            wave_advanced = True
+            broadcasts_updated = True
+    else:
         if advance_stream(meta):
-            print(f"[STREAM] Advanced to Stream {meta['current_stream']}")
+            wave_advanced = True
+            broadcasts_updated = True
     
-    # 4. Check if build complete
-    all_terminal = all(
-        info.get("status") in ["complete", "failed", "dead"]
-        for info in meta.get("drops", {}).values()
-    )
-    if all_terminal:
-        complete_count = sum(1 for d in meta["drops"].values() if d.get("status") == "complete")
-        total_count = len(meta["drops"])
-        
-        if complete_count == total_count:
-            meta["status"] = "complete"
-            meta["completed_at"] = datetime.now(timezone.utc).isoformat()
-            summary = await summarize_build(slug, meta)
-            print(f"[BUILD COMPLETE] {slug}")
-            await send_sms(f"[PULSE] {slug} BUILD COMPLETE. {complete_count}/{total_count} Drops succeeded.")
-        else:
-            meta["status"] = "partial"
-            meta["completed_at"] = datetime.now(timezone.utc).isoformat()
-            failed = [d for d, i in meta["drops"].items() if i.get("status") in ["failed", "dead"]]
-            await send_sms(f"[PULSE] {slug} PARTIAL. {complete_count}/{total_count} succeeded. Failed: {', '.join(failed[:3])}")
-    
-    # 5. Spawn ready Drops
+    # 6. Spawn ready Drops
     ready = get_ready_drops(meta)
-    model = meta.get("model")
-
+    spawned = []
+    
     for drop_id in ready:
         try:
-            brief = load_drop_brief(slug, drop_id)
-            print(f"[SPAWN] {drop_id}")
-
-            drop_info = meta.get("drops", {}).get(drop_id, {})
-
-            # Recommendation (only if not explicitly set)
-            if "spawn_mode" not in drop_info:
-                rec = recommend_spawn_mode(brief)
-                drop_info["spawn_recommendation"] = rec
-                if rec == "manual":
-                    drop_info["spawn_mode"] = "manual"
-
-            spawn_mode = drop_info.get("spawn_mode", "auto")
-
+            info = meta["drops"][drop_id]
+            spawn_mode = info.get("spawn_mode", "auto")
+            
             if spawn_mode == "manual":
+                # Create launcher and mark as awaiting manual
                 launcher_path = ensure_launcher(slug, drop_id)
-                drop_info["launcher_path"] = f"N5/builds/{slug}/launchers/{drop_id}.md"
-                print(f"[SPAWN] {drop_id} is waiting for manual launch (launcher: {launcher_path})")
-                meta["drops"][drop_id]["status"] = "awaiting_manual"
-                continue
-
-            convo_id = await spawn_drop(slug, drop_id, brief, model)
-
-            meta["drops"][drop_id]["status"] = "running"
-            meta["drops"][drop_id]["started_at"] = datetime.now(timezone.utc).isoformat()
-            meta["drops"][drop_id]["conversation_id"] = convo_id
-
-            register_drop_conversation(drop_id, slug, convo_id)
-
+                info["status"] = "awaiting_manual"
+                info["launcher_created_at"] = datetime.now(timezone.utc).isoformat()
+                print(f"[MANUAL] {drop_id} → launcher at {launcher_path}")
+            else:
+                # Auto spawn
+                brief = load_drop_brief(slug, drop_id)
+                model = meta.get("model")
+                
+                conversation_id = await spawn_drop(slug, drop_id, brief, model)
+                
+                info["status"] = "running"
+                info["started_at"] = datetime.now(timezone.utc).isoformat()
+                info["conversation_id"] = conversation_id
+                
+                register_drop_conversation(drop_id, slug, conversation_id)
+                spawned.append(drop_id)
+                
         except Exception as e:
-            print(f"[SPAWN ERROR] {drop_id}: {e}")
+            print(f"[ERROR] Failed to spawn {drop_id}: {e}")
             meta["drops"][drop_id]["status"] = "failed"
-            meta["drops"][drop_id]["failure_reason"] = str(e)
-
+            meta["drops"][drop_id]["failure_reason"] = f"Spawn error: {e}"
+            meta["drops"][drop_id]["failed_at"] = datetime.now(timezone.utc).isoformat()
     
-    # 6. Save state
-    save_meta(slug, meta)
-    update_status_md(slug, meta)
+    if spawned:
+        print(f"[SPAWN] Spawned: {', '.join(spawned)}")
+        broadcasts_updated = True
     
-    if meta.get("waves"):
-        print(f"[PULSE TICK DONE] Wave {meta.get('active_wave')}")
-    else:
-        print(f"[PULSE TICK DONE] Stream {meta.get('current_stream')}/{meta.get('total_streams')}")
-
-
-async def start_build(slug: str):
-    """Initialize and start a build"""
-    meta = load_meta(slug)
+    # 7. Check if build is complete
+    build_complete = check_build_complete(meta)
+    pool_complete = _check_pool_complete(meta)
     
-    if meta.get("status") == "active":
-        print(f"Build {slug} already active")
-        return
+    if build_complete and pool_complete:
+        if meta.get("status") != "complete":
+            print(f"[COMPLETE] Build {slug} is complete!")
+            meta["status"] = "complete"
+            meta["completed_at"] = datetime.now(timezone.utc).isoformat()
+            
+            # Generate summary
+            summary = await summarize_build(slug, meta)
+            meta["summary"] = summary
+            
+            await send_sms(f"[PULSE] {slug} COMPLETE ✅")
+            broadcasts_updated = True
     
-    meta["status"] = "active"
-    meta["started_at"] = datetime.now(timezone.utc).isoformat()
+    # 8. Save and update
+    if broadcasts_updated:
+        save_meta(slug, meta)
+        update_status_md(slug, meta)
     
-    # Initialize all drops to pending if not set
-    for drop_id, info in meta.get("drops", {}).items():
-        if "status" not in info:
-            info["status"] = "pending"
-    
-    save_meta(slug, meta)
-    update_status_md(slug, meta)
-    
-    print(f"[PULSE] Build {slug} started")
-    await send_sms(f"[PULSE] Build {slug} STARTED. {len(meta.get('drops', {}))} Drops queued.")
-    
-    # Run first tick
-    await tick(slug)
-
-
-def stop_build(slug: str):
-    """Stop a build gracefully"""
-    meta = load_meta(slug)
-    meta["status"] = "stopped"
-    meta["stopped_at"] = datetime.now(timezone.utc).isoformat()
-    save_meta(slug, meta)
-    update_status_md(slug, meta)
-    print(f"[PULSE] Build {slug} stopped")
-
-
-def resume_build(slug: str):
-    """Resume a stopped build"""
-    meta = load_meta(slug)
-    if meta.get("status") != "stopped":
-        print(f"Build {slug} is not stopped (status: {meta.get('status')})")
-        return
-    
-    meta["status"] = "active"
-    meta["resumed_at"] = datetime.now(timezone.utc).isoformat()
-    save_meta(slug, meta)
-    print(f"[PULSE] Build {slug} resumed")
+    print(f"[PULSE] Tick complete. Ready: {len(ready)}, Spawned: {len(spawned)}")
 
 
 def show_status(slug: str):
@@ -902,6 +1157,7 @@ def show_status(slug: str):
     running = sum(1 for d in drops.values() if d.get("status") == "running")
     awaiting_manual = sum(1 for d in drops.values() if d.get("status") == "awaiting_manual")
     pending = sum(1 for d in drops.values() if d.get("status") == "pending")
+    superseded = sum(1 for d in drops.values() if d.get("status") == "superseded")
     dead = sum(1 for d in drops.values() if d.get("status") == "dead")
     failed = sum(1 for d in drops.values() if d.get("status") == "failed")
 
@@ -915,6 +1171,19 @@ def show_status(slug: str):
     else:
         gate_scope = f"Legacy Stream Gate: {meta.get('current_stream', '?')}/{meta.get('total_streams', '?')}\n"
 
+    # Add pool status if enabled
+    pool_status = get_pool_status(meta)
+    pool_text = ""
+    if pool_status:
+        counts = pool_status["counts"]
+        pool_text = f"""
+Task Pool:
+  Pending: {counts['pending']}
+  Claimed: {counts['claimed']}
+  Complete: {counts['complete']}
+  Failed: {counts['failed']}
+"""
+
     print(f"""
 Build: {slug}
 Status: {meta.get('status', 'unknown')}
@@ -924,10 +1193,11 @@ Drops:
   Running:         {running}
   Awaiting Manual: {awaiting_manual}
   Pending:         {pending}
+  Superseded:      {superseded}
   Dead:            {dead}
   Failed:          {failed}
   Total:           {len(drops)}
-
+{pool_text}
 Progress: {complete}/{len(drops)} ({int(complete/len(drops)*100) if drops else 0}%)
 """)
 
@@ -1118,12 +1388,36 @@ async def finalize_build(slug: str):
     with open(finalize_path, "w") as f:
         json.dump(results, f, indent=2)
     
-    # 5. Update meta
+    # 5. Sync drop statuses from deposits
+    deposits_dir = BUILDS_DIR / slug / "deposits"
+    if deposits_dir.exists():
+        for deposit_file in deposits_dir.glob("*.json"):
+            try:
+                with open(deposit_file) as f:
+                    deposit = json.load(f)
+                drop_id = deposit.get("drop_id")
+                deposit_status = deposit.get("status")
+                if drop_id and drop_id in meta.get("drops", {}):
+                    current = meta["drops"][drop_id].get("status")
+                    # Only update if deposit says complete and meta doesn't
+                    if deposit_status == "complete" and current != "complete":
+                        meta["drops"][drop_id]["status"] = "complete"
+                        meta["drops"][drop_id]["completed_at"] = deposit.get("timestamp", datetime.now(timezone.utc).isoformat())
+                        # Clean up failure fields if present
+                        meta["drops"][drop_id].pop("failure_reason", None)
+                        meta["drops"][drop_id].pop("failed_at", None)
+                        print(f"[FINALIZE] Synced {drop_id} → complete from deposit")
+            except Exception as e:
+                print(f"[FINALIZE] Warning: Could not read deposit {deposit_file.name}: {e}")
+    
+    # 6. Update meta status
     meta["finalized_at"] = datetime.now(timezone.utc).isoformat()
     meta["finalization_passed"] = results["success"]
+    if results["success"]:
+        meta["status"] = "finalized"
     save_meta(slug, meta)
     
-    # 6. SMS summary
+    # 7. SMS summary
     if results["success"]:
         await send_sms(f"[PULSE] {slug} FINALIZED ✅ Artifacts verified, tests passed.")
     else:

@@ -1,0 +1,52 @@
+{
+  "slug": "pulse-self-upgrade",
+  "timestamp": "2026-02-09T01:11:38.037695+00:00",
+  "total": 7,
+  "passed": 7,
+  "failed": 0,
+  "results": [
+    {
+      "name": "Broadcasts collected and injected",
+      "type": "broadcast_injection",
+      "passed": true,
+      "message": "Broadcast injection working correctly"
+    },
+    {
+      "name": "Hypothesis racing supersedes correctly",
+      "type": "first_wins",
+      "passed": true,
+      "message": "First-wins hypothesis racing working correctly"
+    },
+    {
+      "name": "Task pool atomic claiming",
+      "type": "task_pool_claim",
+      "passed": true,
+      "message": "Task pool claiming working correctly"
+    },
+    {
+      "name": "Delegate-only docs exist",
+      "type": "file_exists",
+      "passed": true,
+      "message": "File exists: Skills/pulse/references/delegate-only-mode.md"
+    },
+    {
+      "name": "Pulse.py has broadcast collection",
+      "type": "file_contains",
+      "passed": true,
+      "message": "File contains expected content"
+    },
+    {
+      "name": "Pulse.py has first_wins logic",
+      "type": "file_contains",
+      "passed": true,
+      "message": "File contains expected content"
+    },
+    {
+      "name": "Pulse.py has task pool claiming",
+      "type": "file_contains",
+      "passed": true,
+      "message": "File contains expected content"
+    }
+  ],
+  "all_passed": true
+}

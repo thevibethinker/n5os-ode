@@ -1,8 +1,8 @@
 ---
 created: 2025-11-29
-last_edited: 2026-01-29
-version: 1.3
-provenance: con_LhnxuEVVapCNdXle
+last_edited: 2026-02-08
+version: 1.4
+provenance: con_ZEHFBcGBGSVDzqZR
 ---
 
 # Persona Routing Contract (System-Level)
@@ -385,4 +385,48 @@ These personas are designed for public distribution and must remain N5-free.
 - Vibe Researcher [CE] (`df9d8993-48b8-495c-bfba-c56405ae4158`)
 - Vibe Teacher [CE] (`ec461248-6230-4c6e-81a7-88c171b33a84`)
 
+---
+
+## 11. Hybrid Switching Model (Added 2026-02-08)
+
+Persona switching uses two complementary mechanisms, chosen based on whether the persona provides a distinct **cognitive stance** or a reusable **methodology**.
+
+### 11.1 Hard-Switch Rules (Mechanical)
+
+These personas receive conditional rules that **force** a `set_active_persona()` call before substantive work begins. The rules use "MUST" language and include explicit trigger signals and exclusions.
+
+| Persona | Rule ID | Trigger Pattern | Exclusions |
+|---------|---------|-----------------|------------|
+| **Debugger** | `866b1ec2` | Debug, troubleshoot, fix broken, errors, repeated failures | Typo fixes, one-line corrections, inline build errors |
+| **Writer** | `c498e973` | External-facing text >2 sentences | Internal docs, code comments, chat responses |
+| **Strategist** | `77b48c04` | Consequential decisions, tradeoffs, multi-path thinking | Simple preferences, obvious yes/no, implementation choices |
+| **Builder** | `f145a902` | Build, create, implement code/scripts/systems | Markdown docs, running existing scripts, file ops |
+
+**Design rationale:** These personas provide a genuine cognitive stance shift (skeptic, voice-conscious communicator, multi-path thinker, engineering discipline) that Operator cannot replicate by just loading a file.
+
+### 11.2 Methodology Injection Rules (Load-and-Apply)
+
+These personas have useful frameworks, but Operator's stance is sufficient to apply them. Instead of switching, Operator loads the methodology file and applies the techniques.
+
+| Domain | Rule ID | Methodology File | Behavior |
+|--------|---------|-------------------|----------|
+| **Research** | `8d17445b` | `Documents/System/personas/vibe_researcher_persona.md` | Load search methodology, stay as current persona |
+| **Teaching** | `f39f560d` | `Documents/System/personas/vibe_teacher_persona.md` | Load scaffolding framework, stay as current persona |
+
+**Design rationale:** These methodologies enhance technique without requiring a stance change. Loading the file gives Operator access to the framework; switching personas would add overhead without proportional benefit.
+
+### 11.3 Unchanged Routing
+
+These personas retain their existing routing mechanisms:
+
+- **Architect** — Already gated via build planning protocol (Section 7.1)
+- **Level Upper** — Meta-persona invoked explicitly for complex/high-risk work (Section 4)
+- **Librarian** — Invoked by Operator at semantic breakpoints (Section 5.1)
+
+### 11.4 Provenance
+
+This model was informed by:
+- V + Aaron Mak conversation (2025-11-13): "explicit routing >> implicit semantic routing"
+- Observed failure pattern: LLMs don't naturally self-interrupt for metacognitive tool calls
+- Level Upper analysis (con_ZEHFBcGBGSVDzqZR): Pathway 3 (Hybrid) selected over pure hard rules or pure methodology injection
 

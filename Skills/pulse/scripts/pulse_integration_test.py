@@ -46,6 +46,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
 from pulse_common import PATHS, WORKSPACE
+import sys
 
 BUILDS_DIR = WORKSPACE / "N5" / "builds"
 
@@ -83,9 +84,14 @@ def run_test_file_contains(config: dict) -> tuple[bool, str]:
     with open(path) as f:
         content = f.read()
     
-    if config["contains"] in content:
+    # Support both "pattern" and "contains" for backward compatibility
+    search_text = config.get("pattern", config.get("contains"))
+    if not search_text:
+        return False, "No search pattern specified (missing 'pattern' or 'contains' key)"
+    
+    if search_text in content:
         return True, f"File contains expected content"
-    return False, f"File missing expected content: {config['contains'][:50]}..."
+    return False, f"File missing expected content: {search_text[:50]}..."
 
 
 def run_test_command(config: dict) -> tuple[bool, str]:
@@ -151,12 +157,244 @@ def run_test_service_running(config: dict) -> tuple[bool, str]:
         return False, f"Check failed: {str(e)}"
 
 
+def run_test_broadcast_injection(config: dict) -> tuple[bool, str]:
+    """Test that broadcast injection works correctly"""
+    try:
+        import tempfile
+        import shutil
+        from pulse_common import WORKSPACE
+        
+        # Import the functions we need to test
+        sys.path.insert(0, str(WORKSPACE / "Skills" / "pulse" / "scripts"))
+        from pulse import collect_broadcasts, inject_broadcasts
+        
+        # Create a temporary build directory structure
+        with tempfile.TemporaryDirectory() as temp_dir:
+            temp_path = Path(temp_dir)
+            build_path = temp_path / "test_build"
+            deposits_path = build_path / "deposits"
+            deposits_path.mkdir(parents=True)
+            
+            # Create a mock deposit with broadcast
+            deposit_data = {
+                "drop_id": "TEST1",
+                "status": "complete",
+                "broadcast": config.get("test_broadcast", "Test broadcast message")
+            }
+            
+            with open(deposits_path / "TEST1.json", "w") as f:
+                json.dump(deposit_data, f)
+            
+            # Test collect_broadcasts
+            # Temporarily patch BUILDS_DIR to point to our temp directory
+            original_builds_dir = sys.modules['pulse'].BUILDS_DIR
+            sys.modules['pulse'].BUILDS_DIR = temp_path
+            
+            broadcasts = collect_broadcasts("test_build")
+            
+            # Restore original path
+            sys.modules['pulse'].BUILDS_DIR = original_builds_dir
+            
+            if not broadcasts:
+                return False, "collect_broadcasts returned empty list"
+            
+            if len(broadcasts) != 1:
+                return False, f"Expected 1 broadcast, got {len(broadcasts)}"
+            
+            if broadcasts[0]["broadcast"] != deposit_data["broadcast"]:
+                return False, "Broadcast content mismatch"
+            
+            # Test inject_broadcasts
+            sample_brief = "# Test Brief\n\n## Requirements\n\nSome requirements here."
+            injected_brief = inject_broadcasts(sample_brief, broadcasts)
+            
+            expect_section = config.get("expect_in_brief", "## Broadcasts from Prior Drops")
+            if expect_section not in injected_brief:
+                return False, f"Expected section '{expect_section}' not found in injected brief"
+            
+            # Look for the broadcast content (be flexible about format)
+            broadcast_text = deposit_data["broadcast"]
+            if "TEST1" not in injected_brief or broadcast_text not in injected_brief:
+                return False, f"Broadcast content not properly injected. Expected 'TEST1' and '{broadcast_text}' in: {injected_brief}"
+            
+            return True, "Broadcast injection working correctly"
+            
+    except Exception as e:
+        return False, f"Broadcast injection test failed: {str(e)}"
+
+
+def run_test_first_wins(config: dict) -> tuple[bool, str]:
+    """Test that first-wins hypothesis racing works correctly"""
+    try:
+        import tempfile
+        from pulse_common import WORKSPACE
+        
+        # Import the functions we need to test
+        sys.path.insert(0, str(WORKSPACE / "Skills" / "pulse" / "scripts"))
+        from pulse import check_first_wins, get_deposit, save_meta
+        
+        # Create a temporary build directory structure
+        with tempfile.TemporaryDirectory() as temp_dir:
+            temp_path = Path(temp_dir)
+            build_path = temp_path / "test_build"
+            deposits_path = build_path / "deposits"
+            deposits_path.mkdir(parents=True)
+            
+            # Create mock meta.json with first_wins enabled
+            meta = {
+                "first_wins": True,
+                "hypothesis_group": ["H1", "H2", "H3"],
+                "drops": {
+                    "H1": {"status": "pending"},
+                    "H2": {"status": "running"}, 
+                    "H3": {"status": "pending"}
+                }
+            }
+            
+            with open(build_path / "meta.json", "w") as f:
+                json.dump(meta, f, indent=2)
+            
+            # Create a deposit with confirmed verdict for H2
+            deposit_data = {
+                "drop_id": "H2",
+                "status": "complete",
+                "verdict": "confirmed"
+            }
+            
+            with open(deposits_path / "H2.json", "w") as f:
+                json.dump(deposit_data, f)
+            
+            # Temporarily patch BUILDS_DIR
+            original_builds_dir = sys.modules['pulse'].BUILDS_DIR
+            sys.modules['pulse'].BUILDS_DIR = temp_path
+            
+            # Test check_first_wins
+            result = check_first_wins("test_build", meta)
+            
+            # Restore original path
+            sys.modules['pulse'].BUILDS_DIR = original_builds_dir
+            
+            if not result:
+                return False, "check_first_wins should have returned True"
+            
+            # Read updated meta to verify superseding worked
+            with open(build_path / "meta.json") as f:
+                updated_meta = json.load(f)
+            
+            # Verify H1 and H3 were superseded
+            if updated_meta["drops"]["H1"]["status"] != "superseded":
+                return False, "H1 should be superseded"
+            
+            if updated_meta["drops"]["H3"]["status"] != "superseded":
+                return False, "H3 should be superseded"
+            
+            if updated_meta["drops"]["H2"]["status"] != "running":
+                return False, "H2 should remain running (winner)"
+            
+            # Verify superseded_by field
+            if updated_meta["drops"]["H1"].get("superseded_by") != "H2":
+                return False, "H1 should be superseded by H2"
+            
+            return True, "First-wins hypothesis racing working correctly"
+            
+    except Exception as e:
+        return False, f"First-wins test failed: {str(e)}"
+
+
+def run_test_task_pool_claim(config: dict) -> tuple[bool, str]:
+    """Test that task pool claiming works correctly"""
+    try:
+        import tempfile
+        from pulse_common import WORKSPACE
+        
+        # Import the functions we need to test
+        sys.path.insert(0, str(WORKSPACE / "Skills" / "pulse" / "scripts"))
+        from pulse import claim_task
+        
+        # Create a temporary build directory structure
+        with tempfile.TemporaryDirectory() as temp_dir:
+            temp_path = Path(temp_dir)
+            build_path = temp_path / "test_build"
+            build_path.mkdir(parents=True)
+            
+            # Create mock meta.json with task pool
+            pool_size = config.get("pool_size", 5)
+            tasks = []
+            for i in range(pool_size):
+                tasks.append({
+                    "id": f"task_{i}",
+                    "description": f"Test task {i}",
+                    "status": "pending"
+                })
+            
+            meta = {
+                "task_pool": {
+                    "enabled": True,
+                    "tasks": tasks
+                }
+            }
+            
+            with open(build_path / "meta.json", "w") as f:
+                json.dump(meta, f, indent=2)
+            
+            # Temporarily patch BUILDS_DIR
+            original_builds_dir = sys.modules['pulse'].BUILDS_DIR
+            sys.modules['pulse'].BUILDS_DIR = temp_path
+            
+            # Test claiming a task
+            claimed_task = claim_task("test_build", "DROP1")
+            
+            if not claimed_task:
+                return False, "claim_task should have returned a task"
+            
+            if claimed_task["status"] != "claimed":
+                return False, f"Task status should be 'claimed', got '{claimed_task['status']}'"
+            
+            if claimed_task["claimed_by"] != "DROP1":
+                return False, f"Task should be claimed by DROP1, got '{claimed_task['claimed_by']}'"
+            
+            # Test claiming another task
+            claimed_task2 = claim_task("test_build", "DROP2")
+            
+            if not claimed_task2:
+                return False, "Second claim_task should have returned a task"
+            
+            if claimed_task2["id"] == claimed_task["id"]:
+                return False, "Second claim should return a different task"
+            
+            if claimed_task2["claimed_by"] != "DROP2":
+                return False, f"Second task should be claimed by DROP2, got '{claimed_task2['claimed_by']}'"
+            
+            # Verify meta.json was updated
+            with open(build_path / "meta.json") as f:
+                updated_meta = json.load(f)
+            
+            claimed_count = 0
+            for task in updated_meta["task_pool"]["tasks"]:
+                if task["status"] == "claimed":
+                    claimed_count += 1
+            
+            if claimed_count != 2:
+                return False, f"Expected 2 claimed tasks, got {claimed_count}"
+            
+            # Restore original path
+            sys.modules['pulse'].BUILDS_DIR = original_builds_dir
+            
+            return True, "Task pool claiming working correctly"
+            
+    except Exception as e:
+        return False, f"Task pool claiming test failed: {str(e)}"
+
+
 TEST_RUNNERS = {
     "file_exists": run_test_file_exists,
     "file_contains": run_test_file_contains,
     "command": run_test_command,
     "http": run_test_http,
     "service_running": run_test_service_running,
+    "broadcast_injection": run_test_broadcast_injection,
+    "first_wins": run_test_first_wins,
+    "task_pool_claim": run_test_task_pool_claim,
 }
 
 

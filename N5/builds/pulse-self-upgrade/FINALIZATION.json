@@ -1,0 +1,14 @@
+{
+  "slug": "pulse-self-upgrade",
+  "timestamp": "2026-02-09T00:55:11.790070+00:00",
+  "verification": {
+    "passed": true,
+    "output": "\u2705 verify passed for pulse-self-upgrade\n   Artifacts: 7/7 verified, 0 missing\n"
+  },
+  "integration_tests": {
+    "passed": true,
+    "output": "[FIRST_WINS] H1 superseded by H2\n[FIRST_WINS] H3 superseded by H2\n[FIRST_WINS] 2 Drops superseded by H2\n\n==================================================\nIntegration Tests: pulse-self-upgrade\n==================================================\n\n\u2705 Broadcasts collected and injected\n\u2705 Hypothesis racing supersedes correctly\n\u2705 Task pool atomic claiming\n\u2705 Delegate-only docs exist\n\u2705 Pulse.py has broadcast collection\n\u2705 Pulse.py has first_wins logic\n\u2705 Pulse.py has task pool claiming\n\n==================================================\nResults: 7/7 passed\n\u2705 ALL TESTS PASSED\n\nResults saved to /home/workspace/N5/builds/pulse-self-upgrade/INTEGRATION_RESULTS.json\n"
+  },
+  "learnings_harvested": 13,
+  "success": true
+}

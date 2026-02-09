@@ -1,0 +1,52 @@
+{
+  "precedents": [
+    {
+      "id": "prec_001",
+      "created": "2026-02-08T00:47:20.746507+00:00",
+      "situation_pattern": "Client requests removing security review gate for faster deployments",
+      "guidance_given": "deny",
+      "outcome": "pending",
+      "reusable": true,
+      "context_factors": [
+        "client_tier",
+        "change_type",
+        "risk_level"
+      ],
+      "confidence_used": 0.65,
+      "original_request": {
+        "situation": "Client requests removing security review gate for faster deployments",
+        "context": {
+          "client_tier": "enterprise",
+          "change_type": "security_gate_change",
+          "risk_level": "medium"
+        },
+        "question": "Should we allow disabling the security review gate for this enterprise client?",
+        "zoputer_confidence": 0.4
+      }
+    },
+    {
+      "id": "prec_002",
+      "created": "2026-02-08T00:47:29.837609+00:00",
+      "situation_pattern": "Client wants to remove security review gates",
+      "guidance_given": "deny",
+      "outcome": "pending",
+      "reusable": true,
+      "context_factors": [
+        "client_tier",
+        "change_type",
+        "risk_level"
+      ],
+      "confidence_used": 0.795,
+      "original_request": {
+        "situation": "Client wants to remove security review gates",
+        "context": {
+          "client_tier": "enterprise",
+          "change_type": "security_gate_change",
+          "risk_level": "low"
+        },
+        "question": "Can we skip security gates for this client?",
+        "zoputer_confidence": 0.3
+      }
+    }
+  ]
+}

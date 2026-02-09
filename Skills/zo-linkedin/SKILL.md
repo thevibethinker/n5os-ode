@@ -1,14 +1,13 @@
 ---
 name: linkedin
 description: LinkedIn tool for searching profiles, checking messages, and summarizing your feed using session cookies.
-homepage: https://github.com/clawdbot/linkedin-cli
+homepage: "https://github.com/clawdbot/linkedin-cli"
 compatibility: see metadata.clawdbot.requires
 metadata:
   author: Zo
   category: Connections
   display-name: LinkedIn
 ---
-
 `lk`: Fast LinkedIn CLI using cookie auth.
 
 ## Updating
