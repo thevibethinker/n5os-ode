@@ -1,3 +1,13 @@
+---
+created: 2026-02-09
+last_edited: 2026-02-09
+version: 1.0
+provenance: con_INJlXkhdqltQPigQ
+employer: KloudGin
+role: Java Lead
+source_url: https://kloudgin.com/career/java-lead/
+---
+
 # Hiring POV: Java Lead @ KloudGin
 
 ## Role Overview

@@ -1,0 +1,40 @@
+{
+  "slug": "semantic-memory-fix",
+  "learnings": [
+    {
+      "text": "Provider init order matters: Loading SentenceTransformer before checking vector dimensions wasted ~55s on every init. Auto-detection should ALWAYS happen before loading heavyweight models. The fix: check vectors_v2.db dimensions first, only load local model if actually needed. (D1.3)",
+      "source": "manual",
+      "added_at": "2026-02-09T15:12:16.708867+00:00",
+      "tags": [
+        "provider-init",
+        "performance",
+        "optimization"
+      ]
+    },
+    {
+      "text": "D1.2: Audit vs actual cleanup discrepancy. Audit showed 2,504 stale resources in vectors_v2.db, but actual cleanup only found 2. brain.db audit showed 839 orphaned resources but cleanup found 0. This suggests concurrent cleanup activity or the audit was from a different database state. Always verify baseline before cleanup operations.",
+      "source": "manual",
+      "added_at": "2026-02-09T15:25:28.030334+00:00",
+      "tags": [
+        "cleanup",
+        "audit",
+        "discrepancy"
+      ]
+    },
+    {
+      "text": "D1.1: Database lock contention during ANN index rebuild - vectors_v2.db was locked by other processes. Use sqlite3.connect(timeout=60) or wait for locks to clear.",
+      "source": "manual",
+      "added_at": "2026-02-09T15:25:28.418318+00:00",
+      "tags": []
+    },
+    {
+      "text": "D1.2: Audit data can go stale fast. The D1.1 ANN rebuild may have been preceded by a cleanup that resolved all staleness (9,683\u21927,145 resources, 0 stale). Always re-check counts at purge time rather than relying on earlier audit snapshots.",
+      "source": "manual",
+      "added_at": "2026-02-09T15:26:50.836891+00:00",
+      "tags": [
+        "data-integrity",
+        "audit"
+      ]
+    }
+  ]
+}

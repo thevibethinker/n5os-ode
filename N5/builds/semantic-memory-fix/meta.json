@@ -1,0 +1,125 @@
+{
+  "schema_version": 3,
+  "slug": "semantic-memory-fix",
+  "title": "Semantic Memory System \u2014 Performance & Quality Fix",
+  "build_type": "code_build",
+  "status": "complete",
+  "model": "anthropic:claude-sonnet-4-20250514",
+  "launch_mode": "orchestrated",
+  "delegate_only": true,
+  "first_wins": false,
+  "hypothesis_group": [],
+  "broadcasts": [],
+  "task_pool": {
+    "enabled": false,
+    "tasks": [],
+    "max_concurrent_claims": 4,
+    "worker_drops": []
+  },
+  "waves": {
+    "W1": [
+      "D1.1",
+      "D1.2",
+      "D1.3"
+    ],
+    "W2": [
+      "D2.1",
+      "D2.2"
+    ],
+    "W3": [
+      "D3.1"
+    ]
+  },
+  "active_wave": "W3",
+  "drops": {
+    "D1.1": {
+      "name": "Install hnswlib + rebuild ANN index",
+      "stream": 1,
+      "order": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "started_at": "2026-02-09T15:16:18.178428+00:00",
+      "completed_at": "2026-02-09T15:26:12.099078+00:00"
+    },
+    "D1.2": {
+      "name": "Purge stale resources & orphaned data",
+      "stream": 2,
+      "order": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "failure_reason": "timeout",
+      "started_at": "2026-02-09T15:20:51.444226+00:00",
+      "completed_at": "2026-02-09T15:27:07.416655+00:00"
+    },
+    "D1.3": {
+      "name": "Fix provider init order & startup waste",
+      "stream": 3,
+      "order": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "started_at": "2026-02-09T15:05:36.013517+00:00",
+      "completed_at": "2026-02-09T15:15:36.903524+00:00"
+    },
+    "D2.1": {
+      "name": "Enable reranker by default + fix n5_load_context.py",
+      "stream": 1,
+      "order": 2,
+      "depends_on": [
+        "D1.1",
+        "D1.2"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "started_at": "2026-02-10T00:58:09Z",
+      "completed_at": "2026-02-10T01:07:10Z"
+    },
+    "D2.2": {
+      "name": "Index Documents/ gap + fix chunk overlap",
+      "stream": 2,
+      "order": 2,
+      "depends_on": [
+        "D1.2"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "completed_at": "2026-02-10T02:47:29.185817+00:00"
+    },
+    "D3.1": {
+      "name": "End-to-end verification & benchmark",
+      "stream": 1,
+      "order": 3,
+      "depends_on": [
+        "D2.1",
+        "D2.2"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "completed_at": "2026-02-10T03:01:13.936428+00:00"
+    }
+  },
+  "lineage": {
+    "parent_type": "conversation",
+    "parent_ref": "con_NhzJGKzQlSxmOBXT",
+    "parent_conversation": "con_NhzJGKzQlSxmOBXT",
+    "moment": "Debug audit revealed 8 bugs in semantic memory system; decomposed into 6-drop fix build",
+    "branched_at": "2026-02-09T13:35:00Z"
+  },
+  "recovery": {
+    "max_auto_retries": 2,
+    "dead_threshold_seconds": 900,
+    "stale_threshold_hours": 4,
+    "stale_no_progress_minutes": 60,
+    "enable_ai_judgment": true
+  },
+  "started_at": "2026-02-09T14:00:29.878843+00:00",
+  "completed_at": "2026-02-10T03:01:13.936446+00:00"
+}

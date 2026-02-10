@@ -1,79 +1,19 @@
 {
-  "$schema": "manifest-v3",
   "meeting_id": "2026-02-02_alex-x-vrijen-wisdom-partners-coaching-t",
-  "status": "ingested",
-  "status_history": [
-    {
-      "status": "raw",
-      "at": "2026-02-06T16:31:34.634069+00:00"
-    },
-    {
-      "status": "ingested",
-      "at": "2026-02-06T16:31:34.634069+00:00"
-    }
+  "date": "2026-02-02",
+  "participants": [
+    "Alex",
+    "Vrijen",
+    "Wisdom"
   ],
-  "source": {
-    "type": "manual",
-    "original_filename": "2026-02-02_Alex_x_Vrijen_-_Wisdom_Partners_Coaching-transcript-2026-02-02T22-00-00.000Z.md",
-    "ingested_at": "2026-02-06T16:31:34.634069+00:00"
-  },
-  "meeting": {
-    "date": "2026-02-02",
-    "time_utc": "12:00:00",
-    "duration_minutes": 61,
-    "title": "Alex X Vrijen Wisdom Partners Coaching Transcript 2026 02 02t22 00 00.000z",
-    "type": "external",
-    "summary": "Vrijen Attawar and Alex Caveny discussed an advisor introduction for Julie, a family tech expert with Boston scene connections, to a founder who is currently taking a break due to personal circumstances. Vrijen shared that he is in Puerto Rico participating in the Zo team's offsite as an advisor and power user, noting the 7-8 person team may pursue fundraising. They analyzed the recent rise of autonomous AI agents like Claudebot, attributing its viral appeal to the \"alive\" feeling created by heartbeat features and long-standing memory, while contrasting Zo's more secure, robust approach with Claudebot's customizable but security-risk-prone \"wild west\" ecosystem."
-  },
-  "participants": {
-    "identified": [
-      {
-        "name": "Alex",
-        "email": null,
-        "crm_id": null,
-        "role": "attendee",
-        "confidence": 0.8
-      },
-      {
-        "name": "V",
-        "email": null,
-        "crm_id": null,
-        "role": "host",
-        "confidence": 0.8
-      }
-    ],
-    "unidentified": [],
-    "confidence": 0.8
-  },
-  "calendar_match": null,
-  "quality_gate": {
-    "passed": true,
-    "checks": {
-      "has_transcript": true,
-      "participants_identified": true,
-      "meeting_type_determined": false,
-      "no_hitl_pending": true
-    },
-    "score": 0.7
-  },
-  "blocks": {
-    "policy": "external_standard",
-    "requested": [],
-    "generated": [],
-    "failed": [],
-    "skipped": []
-  },
-  "hitl": {
-    "queue_id": null,
-    "reason": null,
-    "resolved_at": null
-  },
-  "timestamps": {
-    "created_at": "2026-02-06T16:31:34.634069+00:00",
-    "ingested_at": "2026-02-06T16:31:34.634069+00:00",
-    "identified_at": null,
-    "gated_at": null,
-    "processed_at": null,
-    "archived_at": null
-  }
+  "meeting_type": "external",
+  "status": "staged",
+  "transcript_file": "transcript.md",
+  "blocks_requested": [],
+  "blocks_generated": [],
+  "blocks_failed": [],
+  "staged_at": "2026-02-09T10:55:49.194487Z",
+  "processed_at": null,
+  "archived_at": null,
+  "error": null
 }

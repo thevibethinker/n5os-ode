@@ -1,8 +1,8 @@
 ---
 created: 2026-01-24
-last_edited: 2026-01-24
-version: 1.0
-provenance: con_T0QGg2ryaDjCTxVj
+last_edited: 2026-02-09
+version: 2.0
+provenance: con_8HSoybIvJ0AA2vPW
 ---
 
 # Escalation Protocol
@@ -19,6 +19,22 @@ Pulse escalates via SMS when human attention is required.
 | Drop dead (15min) | HIGH | `[PULSE] {slug} D{x.y} DEAD. No response in 15min. Forensics spawned.` |
 | All Drops in Stream dead | CRITICAL | `[PULSE] {slug} Stream {n} DEAD. Build halted. Intervention required.` |
 | Build blocked | CRITICAL | `[PULSE] {slug} BLOCKED. No Drops can advance. Human needed.` |
+
+## Recovery Events (Smart Sentinel)
+
+| Event | Severity | Message Format |
+|-------|----------|----------------|
+| Drop auto-retried (R1/R2) | INFO | `[RECOVERY] {slug} {drop_id} auto-retried ({n}/{max})` |
+| Drop retry exhausted | HIGH | `[RECOVERY] {slug} {drop_id} retries exhausted — needs manual review` |
+| Drop needs AI judgment (R3) | HIGH | `[RECOVERY] {slug} {drop_id} content error — needs judgment` |
+| Wave death (R4) | CRITICAL | `[RECOVERY] {slug} BLOCKED — all Wave {wave} drops failed` |
+| Build stale (R5) | HIGH | `[RECOVERY] {slug} stale — no progress in >{n} min` |
+
+### Recovery vs Escalation
+
+Recovery events are logged to `RECOVERY_LOG.jsonl` and surfaced in STATUS.md.
+Only escalation-level events (R3, R4, R5, retry exhausted) trigger email/SMS.
+Auto-retries (R1, R2) are logged silently — no notification unless they exhaust.
 
 ## Message Guidelines
 

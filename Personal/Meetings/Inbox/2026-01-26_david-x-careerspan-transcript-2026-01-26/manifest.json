@@ -1,79 +1,18 @@
 {
-  "$schema": "manifest-v3",
   "meeting_id": "2026-01-26_david-x-careerspan-transcript-2026-01-26",
-  "status": "ingested",
-  "status_history": [
-    {
-      "status": "raw",
-      "at": "2026-02-06T16:35:05.304583+00:00"
-    },
-    {
-      "status": "ingested",
-      "at": "2026-02-06T16:35:05.304583+00:00"
-    }
+  "date": "2026-01-26",
+  "participants": [
+    "David",
+    "Careerspan"
   ],
-  "source": {
-    "type": "manual",
-    "original_filename": "2026-01-26_David_x_Careerspan-transcript-2026-01-26T17-35-23.000Z.md",
-    "ingested_at": "2026-02-06T16:35:05.304583+00:00"
-  },
-  "meeting": {
-    "date": "2026-01-26",
-    "time_utc": "12:00:00",
-    "duration_minutes": 48,
-    "title": "David X Careerspan Transcript 2026 01 26t17 35 23.000z",
-    "type": "external",
-    "summary": "Vrijen Attawar and David Speigel discussed coordinating an introduction between Ben Erez of Recalculate and the Zo team for an upcoming offsite in Brooklyn, with Vrijen offering to meet with Ben in either the Metro Tech or Williamsburg areas. David committed to sending an introductory email connecting Ben to Vrijen and the Zo founders, noting Ben's interest in AI and founder collaboration. Vrijen also shared DeepWiki.com as a tool that converts GitHub repositories into Wikipedia-style documentation, demonstrating its utility using his N5OS repository to clarify the system's architecture and capabilities."
-  },
-  "participants": {
-    "identified": [
-      {
-        "name": "David",
-        "email": null,
-        "crm_id": null,
-        "role": "attendee",
-        "confidence": 0.8
-      },
-      {
-        "name": "V",
-        "email": null,
-        "crm_id": null,
-        "role": "host",
-        "confidence": 0.8
-      }
-    ],
-    "unidentified": [],
-    "confidence": 0.8
-  },
-  "calendar_match": null,
-  "quality_gate": {
-    "passed": true,
-    "checks": {
-      "has_transcript": true,
-      "participants_identified": true,
-      "meeting_type_determined": false,
-      "no_hitl_pending": true
-    },
-    "score": 0.7
-  },
-  "blocks": {
-    "policy": "external_standard",
-    "requested": [],
-    "generated": [],
-    "failed": [],
-    "skipped": []
-  },
-  "hitl": {
-    "queue_id": null,
-    "reason": null,
-    "resolved_at": null
-  },
-  "timestamps": {
-    "created_at": "2026-02-06T16:35:05.304583+00:00",
-    "ingested_at": "2026-02-06T16:35:05.304583+00:00",
-    "identified_at": null,
-    "gated_at": null,
-    "processed_at": null,
-    "archived_at": null
-  }
+  "meeting_type": "external",
+  "status": "staged",
+  "transcript_file": "transcript.md",
+  "blocks_requested": [],
+  "blocks_generated": [],
+  "blocks_failed": [],
+  "staged_at": "2026-02-09T10:55:49.187895Z",
+  "processed_at": null,
+  "archived_at": null,
+  "error": null
 }

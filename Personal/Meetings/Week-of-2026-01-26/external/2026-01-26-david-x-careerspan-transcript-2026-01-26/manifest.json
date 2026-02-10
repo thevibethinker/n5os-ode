@@ -1,0 +1,22 @@
+{
+  "meeting_id": "2026-01-26_david-x-careerspan-transcript-2026-01-26_[B]",
+  "date": "2026-01-26",
+  "participants": [
+    "David",
+    "Careerspan"
+  ],
+  "meeting_type": "external",
+  "status": "archived",
+  "transcript_file": "transcript.md",
+  "blocks_requested": [],
+  "blocks_generated": [
+    "B01_DETAILED_RECAP",
+    "B05_ACTION_ITEMS",
+    "B03_DECISIONS"
+  ],
+  "blocks_failed": [],
+  "staged_at": "2026-02-09T10:55:49.188709Z",
+  "processed_at": "2026-02-09T10:55:49.188720Z",
+  "archived_at": "2026-02-09T11:02:23.596476Z",
+  "error": null
+}

@@ -1,79 +1,60 @@
 {
-  "$schema": "manifest-v3",
   "meeting_id": "2026-02-05_david-x-careerspan-transcript-2026-02-05",
-  "status": "ingested",
-  "status_history": [
-    {
-      "status": "raw",
-      "at": "2026-02-06T16:38:59.800900+00:00"
-    },
-    {
-      "status": "ingested",
-      "at": "2026-02-06T16:38:59.800900+00:00"
-    }
+  "date": "2026-02-05",
+  "participants": [
+    "David",
+    "Careerspan"
   ],
-  "source": {
-    "type": "manual",
-    "original_filename": "2026-02-05_David_x_Careerspan-transcript-2026-02-05T17-39-43.000Z.md",
-    "ingested_at": "2026-02-06T16:38:59.800900+00:00"
-  },
-  "meeting": {
-    "date": "2026-02-05",
-    "time_utc": "12:00:00",
-    "duration_minutes": 19,
-    "title": "David X Careerspan Transcript 2026 02 05t17 39 43.000z",
-    "type": "external",
-    "summary": "David Speigel and Vrijen Attawar discussed Vrijen's career coaching business focused on networking, with David emphasizing that Vrijen's deep understanding of networking makes him an outlier in a crowded space where most people falsely claim expertise. David advised Vrijen to lean more heavily into his personal story\u2014having used networking to land roles he wasn't fully qualified for\u2014as a powerful differentiator, and suggested developing a productized tool or \"micro product\" alongside his Maven course to distinguish himself from competitors and provide clients with something tangible beyond coaching sessions."
-  },
-  "participants": {
-    "identified": [
-      {
-        "name": "David",
-        "email": null,
-        "crm_id": null,
-        "role": "attendee",
-        "confidence": 0.8
-      },
-      {
-        "name": "V",
-        "email": null,
-        "crm_id": null,
-        "role": "host",
-        "confidence": 0.8
-      }
+  "meeting_type": "external",
+  "status": "processing",
+  "transcript_file": "transcript.md",
+  "blocks_requested": [],
+  "blocks_generated": [],
+  "blocks_failed": [],
+  "staged_at": "2026-02-09T10:55:49.199495Z",
+  "processed_at": null,
+  "archived_at": null,
+  "error": null,
+  "block_selection": {
+    "selected_at": "2026-02-09T11:02:49.783617Z",
+    "method": "smart_selector_v2",
+    "recipe": "external_standard",
+    "always_blocks": [
+      "B00",
+      "B01",
+      "B02_B05",
+      "B03",
+      "B08",
+      "B21",
+      "B26"
     ],
-    "unidentified": [],
-    "confidence": 0.8
-  },
-  "calendar_match": null,
-  "quality_gate": {
-    "passed": true,
-    "checks": {
-      "has_transcript": true,
-      "participants_identified": true,
-      "meeting_type_determined": false,
-      "no_hitl_pending": true
+    "conditional_selected": [
+      "B06",
+      "B10",
+      "B13",
+      "B25",
+      "B28",
+      "B32"
+    ],
+    "conditional_skipped": [
+      "B04",
+      "B07",
+      "B14",
+      "B33"
+    ],
+    "triggered": [],
+    "reasoning": {
+      "B06": "Extensive discussion of V's business positioning: LinkedIn content strategy dynamics (polarizing vs. substantive), the crowded networking coaching space, differentiation through outlier positioning, and the 'Spiegel in a box' micro-product concept as a market entry strategy. David explicitly frames V's competitive advantage ('you are far more of an outlier when it comes to your understanding of networking') and discusses go-to-market via Maven course integration.",
+      "B10": "Clear collaborative relationship with forward momentum. David offers to 'scream about it' to help V make a case to Mitchell, suggests reconnecting V with Logan for product development, and actively engages in V's product strategy. The tone is peer-advisory with genuine investment in V's success \u2014 not transactional.",
+      "B13": "Multiple implied and explicit next steps: (1) V to review Logan's Claude Code GitHub work David shared, (2) V to get on a call with Logan when she's back from vacation re: data analysis product, (3) Explore building a LinkedIn network analysis tool as onboarding/assessment (on Zo or Claude Code), (4) David offered to advocate to Mitchell on V's behalf, (5) V to consider reframing brand around the 'networking outlier' narrative David articulated.",
+      "B25": "Specific deliverables discussed: (1) LinkedIn data analysis skill/tool \u2014 either Zo skill or Claude Code artifact \u2014 that assesses networking capabilities from export data, (2) 'Spiegel in a box' micro-product concept for Maven course integration, (3) Privacy-preserving self-service analysis flow where users run the analysis themselves and return the report. Owners and timelines are loose but the artifacts are concrete enough to map.",
+      "B28": "Several strategic intelligence threads: (1) LinkedIn algorithm dynamics \u2014 polarizing content outperforms substantive advice, creating a structural disadvantage for quality practitioners, (2) Claude Coworkers launch and how Zo differentiates (file system, always-on server, cost/performance advantages vs. integrations-driven strategy), (3) Low barrier to entry in networking coaching creating a crowded, undifferentiated market \u2014 David identifies this as V's core strategic challenge.",
+      "B32": "Multiple novel ideas worth capturing: (1) LinkedIn data export \u2192 automated networking assessment as onboarding funnel \u2014 'download this, it's part of our onboarding', (2) Privacy-preserving analysis model where the user runs analysis on their own Zo instance and V never sees raw data, (3) V's personal narrative reframe \u2014 'got roles he didn't want through networking skill, realized networking IS the skill' as brand origin story, (4) Zo's dataset capability as the infrastructure layer for a self-service networking analysis product, (5) The 'Spiegel in a box' concept \u2014 productized coaching that reduces hours while increasing per-hour value through tooling.",
+      "B04": "Skipped: While the conversation is exploratory, the open questions are more strategic brainstorming than unresolved blockers needing follow-up. The 'questions' are embedded in the action items and strategic context blocks \u2014 duplicating them as open questions adds noise without new signal.",
+      "B07": "Skipped: No verbal cue from V requesting introductions. David offers to introduce V to Logan but immediately realizes they already know each other. David suggests V reconnect with Logan \u2014 this is an action item (captured in B13), not a warm introduction request.",
+      "B14": "Skipped: No verbal cues detected. V does not request any blurbs, drafts, or written artifacts during the meeting.",
+      "B33": "Skipped: No complex decisions with nuanced reasoning were made. The conversation was exploratory and advisory \u2014 brainstorming product ideas and positioning, not deliberating between defined options with tradeoff analysis."
     },
-    "score": 0.7
-  },
-  "blocks": {
-    "policy": "external_standard",
-    "requested": [],
-    "generated": [],
-    "failed": [],
-    "skipped": []
-  },
-  "hitl": {
-    "queue_id": null,
-    "reason": null,
-    "resolved_at": null
-  },
-  "timestamps": {
-    "created_at": "2026-02-06T16:38:59.800900+00:00",
-    "ingested_at": "2026-02-06T16:38:59.800900+00:00",
-    "identified_at": null,
-    "gated_at": null,
-    "processed_at": null,
-    "archived_at": null
+    "total_blocks": 13
   }
 }

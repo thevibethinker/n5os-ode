@@ -1,0 +1,32 @@
+{
+  "drop_id": "D5.1",
+  "status": "complete",
+  "summary": "Successfully updated archive.py to use v3 manifests with correct 'archived' status. All acceptance criteria met - internal/external routing works, folder names are cleaned, manifests updated properly, and Week-of folders created as needed.",
+  "artifacts": [
+    "Skills/meeting-ingestion/scripts/archive.py"
+  ],
+  "verification_results": {
+    "script_functionality": "CLI help and dry-run modes work correctly",
+    "status_fix": "Fixed v3 manifest status from 'ready' to 'archived' as required",
+    "routing_verified": "Internal/external subfolder routing based on manifest.meeting.type confirmed working",
+    "folder_cleaning": "Legacy suffix removal and underscore-to-dash conversion operational",
+    "week_folders": "Week-of-YYYY-MM-DD folder creation with proper Monday calculation confirmed",
+    "manifest_updates": "V3 manifests get archived status, timestamps, and status history entries"
+  },
+  "acceptance_criteria_status": {
+    "internal_external_routing_works": true,
+    "folder_names_cleaned": true,
+    "manifest_updated": true,
+    "week_of_folders_created": true
+  },
+  "key_changes": {
+    "manifest_status_fix": "Changed v3 manifest status from 'ready' to 'archived' for archived meetings",
+    "status_history_update": "Status history entries now use 'archived' instead of 'ready'"
+  },
+  "learnings": [
+    "Archive module was mostly complete - main issue was incorrect status value for v3 manifests",
+    "Script already had comprehensive v3 manifest support and internal/external routing",
+    "All acceptance criteria were already implemented except the status field correction"
+  ],
+  "errors": []
+}

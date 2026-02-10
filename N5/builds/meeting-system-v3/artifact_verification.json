@@ -1,0 +1,238 @@
+{
+  "slug": "meeting-system-v3",
+  "timestamp": "2026-02-09T13:22:03.375396+00:00",
+  "drops": {
+    "D5.3": {
+      "claimed": [
+        "/home/.z/workspaces/con_f40Or0DHa3vpSVuF/final_structure_report.md",
+        "/home/.z/workspaces/con_f40Or0DHa3vpSVuF/cleanup_report.json",
+        "/home/.z/workspaces/con_f40Or0DHa3vpSVuF/quarantine_summary.json",
+        "/home/workspace/Personal/Meetings/_orphaned/quarantine_manifest.json"
+      ],
+      "verified": [
+        "/home/.z/workspaces/con_f40Or0DHa3vpSVuF/final_structure_report.md",
+        "/home/.z/workspaces/con_f40Or0DHa3vpSVuF/cleanup_report.json",
+        "/home/.z/workspaces/con_f40Or0DHa3vpSVuF/quarantine_summary.json",
+        "/home/workspace/Personal/Meetings/_orphaned/quarantine_manifest.json"
+      ],
+      "missing": []
+    },
+    "D3.2": {
+      "claimed": [],
+      "verified": [],
+      "missing": []
+    },
+    "D3.3": {
+      "claimed": [],
+      "verified": [],
+      "missing": []
+    },
+    "D2.5": {
+      "claimed": [],
+      "verified": [],
+      "missing": []
+    },
+    "D3.1": {
+      "claimed": [],
+      "verified": [],
+      "missing": []
+    },
+    "D3.4": {
+      "claimed": [],
+      "verified": [],
+      "missing": []
+    },
+    "D1.2": {
+      "claimed": [],
+      "verified": [],
+      "missing": []
+    },
+    "D6.1": {
+      "claimed": [
+        "Personal/Meetings/2025-11-05_Testuser",
+        "Personal/Meetings/2025-09-22_Heatherwixson_Vrijen",
+        "N5/data/meeting_registry.db"
+      ],
+      "verified": [
+        "Personal/Meetings/2025-11-05_Testuser",
+        "Personal/Meetings/2025-09-22_Heatherwixson_Vrijen",
+        "N5/data/meeting_registry.db"
+      ],
+      "missing": []
+    },
+    "D0.4": {
+      "claimed": [
+        "Skills/meeting-ingestion/scripts/block_selector.py"
+      ],
+      "verified": [
+        "Skills/meeting-ingestion/scripts/block_selector.py"
+      ],
+      "missing": []
+    },
+    "D1.1": {
+      "claimed": [
+        "N5/builds/meeting-system-v3/artifacts/inventory-audit.json"
+      ],
+      "verified": [
+        "N5/builds/meeting-system-v3/artifacts/inventory-audit.json"
+      ],
+      "missing": []
+    },
+    "D4.1": {
+      "claimed": [
+        "Skills/meeting-ingestion/scripts/process.py"
+      ],
+      "verified": [
+        "Skills/meeting-ingestion/scripts/process.py"
+      ],
+      "missing": []
+    },
+    "D4.3": {
+      "claimed": [
+        "Skills/meeting-ingestion/scripts/block_quality_check.py",
+        "Skills/meeting-ingestion/references/quality-thresholds-rationale.md"
+      ],
+      "verified": [
+        "Skills/meeting-ingestion/scripts/block_quality_check.py",
+        "Skills/meeting-ingestion/references/quality-thresholds-rationale.md"
+      ],
+      "missing": []
+    },
+    "D2.4": {
+      "claimed": [],
+      "verified": [],
+      "missing": []
+    },
+    "D0.3": {
+      "claimed": [
+        "Prompts/Blocks/BLOCK_INDEX.yaml"
+      ],
+      "verified": [
+        "Prompts/Blocks/BLOCK_INDEX.yaml"
+      ],
+      "missing": []
+    },
+    "D4.2": {
+      "claimed": [
+        "Skills/meeting-ingestion/scripts/block_generator.py"
+      ],
+      "verified": [
+        "Skills/meeting-ingestion/scripts/block_generator.py"
+      ],
+      "missing": []
+    },
+    "D3.5": {
+      "claimed": [],
+      "verified": [],
+      "missing": []
+    },
+    "D1.4": {
+      "claimed": [
+        "Skills/meeting-ingestion/scripts/manifest_converter.py"
+      ],
+      "verified": [
+        "Skills/meeting-ingestion/scripts/manifest_converter.py"
+      ],
+      "missing": []
+    },
+    "D0.2": {
+      "claimed": [
+        "Prompts/Blocks/Generate_B02.prompt.md"
+      ],
+      "verified": [
+        "Prompts/Blocks/Generate_B02.prompt.md"
+      ],
+      "missing": []
+    },
+    "D5.2": {
+      "claimed": [
+        "N5/builds/meeting-system-v3/artifacts/D5.2-backup-plan.md",
+        "N5/builds/meeting-system-v3/artifacts/D5.2-migration-preview.md"
+      ],
+      "verified": [
+        "N5/builds/meeting-system-v3/artifacts/D5.2-backup-plan.md",
+        "N5/builds/meeting-system-v3/artifacts/D5.2-migration-preview.md"
+      ],
+      "missing": []
+    },
+    "D2.3": {
+      "claimed": [
+        "Skills/meeting-ingestion/references/block-picker-v2-policy.md"
+      ],
+      "verified": [
+        "Skills/meeting-ingestion/references/block-picker-v2-policy.md"
+      ],
+      "missing": []
+    },
+    "D5.1": {
+      "claimed": [
+        "Skills/meeting-ingestion/scripts/archive.py"
+      ],
+      "verified": [
+        "Skills/meeting-ingestion/scripts/archive.py"
+      ],
+      "missing": []
+    },
+    "D2.1": {
+      "claimed": [],
+      "verified": [],
+      "missing": []
+    },
+    "D1.3": {
+      "claimed": [
+        "N5/data/crm.db",
+        "N5/data/crm_backup_20260201.db"
+      ],
+      "verified": [
+        "N5/data/crm.db",
+        "N5/data/crm_backup_20260201.db"
+      ],
+      "missing": []
+    },
+    "D0.1": {
+      "claimed": [
+        "N5/builds/meeting-system-v3/artifacts/prompt-audit-report.md"
+      ],
+      "verified": [
+        "N5/builds/meeting-system-v3/artifacts/prompt-audit-report.md"
+      ],
+      "missing": []
+    },
+    "D2.2": {
+      "claimed": [
+        "Skills/meeting-ingestion/references/meeting-id-convention.md"
+      ],
+      "verified": [
+        "Skills/meeting-ingestion/references/meeting-id-convention.md"
+      ],
+      "missing": []
+    },
+    "D6.2": {
+      "claimed": [
+        "Agent e14728fc-cdf2-4a98-87d5-a50f87eac9ed (Meeting Orchestrator v3)"
+      ],
+      "verified": [],
+      "missing": [
+        "Agent e14728fc-cdf2-4a98-87d5-a50f87eac9ed (Meeting Orchestrator v3)"
+      ]
+    },
+    "D6.3": {
+      "claimed": [
+        "Skills/meeting-ingestion/SKILL.md",
+        "Skills/meeting-ingestion/references/v3-troubleshooting-runbook.md"
+      ],
+      "verified": [
+        "Skills/meeting-ingestion/SKILL.md",
+        "Skills/meeting-ingestion/references/v3-troubleshooting-runbook.md"
+      ],
+      "missing": []
+    }
+  },
+  "summary": {
+    "total_artifacts": 27,
+    "verified": 26,
+    "missing": 1,
+    "errors": 0
+  },
+  "passed": false
+}

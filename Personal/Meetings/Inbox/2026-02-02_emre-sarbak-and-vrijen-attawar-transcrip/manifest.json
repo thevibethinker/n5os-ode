@@ -1,100 +1,19 @@
 {
-  "$schema": "manifest-v3",
   "meeting_id": "2026-02-02_emre-sarbak-and-vrijen-attawar-transcrip",
-  "status": "ingested",
-  "status_history": [
-    {
-      "status": "raw",
-      "at": "2026-02-06T16:37:39.868850+00:00"
-    },
-    {
-      "status": "ingested",
-      "at": "2026-02-06T16:37:39.868850+00:00"
-    }
+  "date": "2026-02-02",
+  "participants": [
+    "Emre",
+    "Sarbak",
+    "And"
   ],
-  "source": {
-    "type": "manual",
-    "original_filename": "2026-02-02_Emre_Sarbak_and_Vrijen_Attawar-transcript-2026-02-02T21-04-19.000Z.md",
-    "ingested_at": "2026-02-06T16:37:39.868850+00:00"
-  },
-  "meeting": {
-    "date": "2026-02-02",
-    "time_utc": "12:00:00",
-    "duration_minutes": 51,
-    "title": "Emre Sarbak And Vrijen Attawar Transcript 2026 02 02t21 04 19.000z",
-    "type": "external",
-    "summary": "Vrijen Attawar met with Emre Sarbak to discuss Careerspan's talent matching platform and demonstrate his use of Zo Computer as a personal automation system. Vrijen explained how Careerspan is building synthetic talent pipelines and leveraging deep candidate data to improve job matching, while critiquing the current ATS ecosystem as increasingly ineffective due to AI-generated resumes. He showcased his Zo workflows for processing meeting transcripts via Fireflies webhooks and integrating diverse data sources into local databases for analysis. The conversation also explored why knowledge workers remain overwhelmed despite widespread access to AI automation tools."
-  },
-  "participants": {
-    "identified": [
-      {
-        "name": "Emre",
-        "email": null,
-        "crm_id": null,
-        "role": "attendee",
-        "confidence": 0.8
-      },
-      {
-        "name": "Sarbak",
-        "email": null,
-        "crm_id": null,
-        "role": "attendee",
-        "confidence": 0.8
-      },
-      {
-        "name": "And",
-        "email": null,
-        "crm_id": null,
-        "role": "attendee",
-        "confidence": 0.8
-      },
-      {
-        "name": "V",
-        "email": null,
-        "crm_id": null,
-        "role": "host",
-        "confidence": 0.8
-      },
-      {
-        "name": "Attawar",
-        "email": null,
-        "crm_id": null,
-        "role": "attendee",
-        "confidence": 0.8
-      }
-    ],
-    "unidentified": [],
-    "confidence": 0.8
-  },
-  "calendar_match": null,
-  "quality_gate": {
-    "passed": true,
-    "checks": {
-      "has_transcript": true,
-      "participants_identified": true,
-      "meeting_type_determined": false,
-      "no_hitl_pending": true
-    },
-    "score": 0.7
-  },
-  "blocks": {
-    "policy": "external_standard",
-    "requested": [],
-    "generated": [],
-    "failed": [],
-    "skipped": []
-  },
-  "hitl": {
-    "queue_id": null,
-    "reason": null,
-    "resolved_at": null
-  },
-  "timestamps": {
-    "created_at": "2026-02-06T16:37:39.868850+00:00",
-    "ingested_at": "2026-02-06T16:37:39.868850+00:00",
-    "identified_at": null,
-    "gated_at": null,
-    "processed_at": null,
-    "archived_at": null
-  }
+  "meeting_type": "external",
+  "status": "staged",
+  "transcript_file": "transcript.md",
+  "blocks_requested": [],
+  "blocks_generated": [],
+  "blocks_failed": [],
+  "staged_at": "2026-02-09T10:55:49.196674Z",
+  "processed_at": null,
+  "archived_at": null,
+  "error": null
 }

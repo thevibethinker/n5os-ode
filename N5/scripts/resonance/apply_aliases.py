@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-Apply Idea Aliases: Consolidate duplicate idea slugs in edges.db.
+Apply Idea Aliases: Consolidate duplicate idea slugs in brain.db.
 
-Reads aliases from N5/config/idea_aliases.json and updates edges.db
+Reads aliases from N5/config/idea_aliases.json and updates brain.db
 to use canonical slugs instead of variants.
 
 Usage:
@@ -18,7 +18,7 @@ from datetime import datetime, timezone
 
 N5_ROOT = Path("/home/workspace/N5")
 ALIASES_FILE = N5_ROOT / "config" / "idea_aliases.json"
-EDGES_DB = N5_ROOT / "data" / "edges.db"
+EDGES_DB = Path("/home/workspace/N5/cognition/brain.db")
 
 
 def load_aliases() -> dict:

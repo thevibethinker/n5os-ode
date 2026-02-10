@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Sync positions.db → entities table in edges.db
+Sync positions.db → entities table in brain.db
 
 Phase 4.5: Position Integration
 Registers positions as first-class entities in the context graph.
@@ -13,7 +13,7 @@ from pathlib import Path
 from datetime import datetime, timezone
 
 POSITIONS_DB = Path(__file__).parent.parent / "data" / "positions.db"
-EDGES_DB = Path(__file__).parent.parent / "data" / "edges.db"
+EDGES_DB = Path("/home/workspace/N5/cognition/brain.db")
 
 
 def get_positions() -> list[dict]:
@@ -34,7 +34,7 @@ def get_positions() -> list[dict]:
 
 
 def sync_to_entities(positions: list[dict], dry_run: bool = False) -> dict:
-    """Upsert positions into entities table in edges.db."""
+    """Upsert positions into entities table in brain.db."""
     if dry_run:
         return {
             "action": "dry_run",
@@ -83,7 +83,7 @@ def sync_to_entities(positions: list[dict], dry_run: bool = False) -> dict:
 
 
 def sync_single_position(position_id: str) -> bool:
-    """Sync a single position to edges.db entities table.
+    """Sync a single position to brain.db entities table.
     
     Called by positions.py after add/update operations.
     Returns True if successful.
@@ -121,7 +121,7 @@ def sync_single_position(position_id: str) -> bool:
 
 
 def delete_position_entity(position_id: str) -> bool:
-    """Remove a position from edges.db entities table.
+    """Remove a position from brain.db entities table.
     
     Called by positions.py after delete operations.
     Returns True if a row was deleted.
@@ -169,7 +169,7 @@ def main():
     if args.verify:
         result = verify_sync()
         print(f"Positions in positions.db: {result['positions_count']}")
-        print(f"Position entities in edges.db: {result['entities_count']}")
+        print(f"Position entities in brain.db: {result['entities_count']}")
         if result["in_sync"]:
             print("✓ In sync")
         else:

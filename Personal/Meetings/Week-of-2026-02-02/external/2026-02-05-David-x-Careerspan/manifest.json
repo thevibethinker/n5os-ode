@@ -1,0 +1,29 @@
+{
+  "meeting_id": "2026-02-05_David-x-Careerspan",
+  "date": "2026-02-05",
+  "participants": [
+    "David",
+    "Careerspan"
+  ],
+  "meeting_type": "external",
+  "status": "archived",
+  "transcript_file": "transcript.md",
+  "blocks_requested": [],
+  "blocks_generated": [
+    "B01_DETAILED_RECAP",
+    "B08_STAKEHOLDER_INTELLIGENCE"
+  ],
+  "blocks_failed": [],
+  "staged_at": "2026-02-09T10:55:49.198565Z",
+  "processed_at": "2026-02-09T11:02:17.984716Z",
+  "archived_at": "2026-02-09T11:02:23.685530Z",
+  "error": null,
+  "block_selection": {
+    "selected_at": "2026-02-09T10:56:01.571393Z",
+    "method": "manual_override",
+    "blocks": [
+      "B01",
+      "B08"
+    ]
+  }
+}

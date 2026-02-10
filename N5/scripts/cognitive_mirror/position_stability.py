@@ -24,7 +24,7 @@ from _base import query_edges, ask_zo, write_report
 
 # Paths
 POSITIONS_DB = Path(__file__).parent.parent.parent / "data" / "positions.db"
-EDGES_DB = Path(__file__).parent.parent.parent / "data" / "edges.db"
+EDGES_DB = Path("/home/workspace/N5/cognition/brain.db")
 
 
 ANALYSIS_PROMPT = """You are analyzing V's documented positions (beliefs, insights, worldview) by examining their evidential support in the context graph.

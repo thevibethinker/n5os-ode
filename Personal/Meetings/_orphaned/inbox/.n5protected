@@ -1,0 +1,12 @@
+{
+  "protected": true,
+  "reason": "Meeting transcripts with attendee information",
+  "created": "2026-01-15T03:02:53.165562+00:00",
+  "created_by": "user",
+  "contains_pii": true,
+  "pii_categories": [
+    "email"
+  ],
+  "pii_note": "PII detected during conversation close (con_NhzJGKzQlSxmOBXT)",
+  "pii_marked_at": "2026-02-10T07:48:58.495276+00:00"
+}

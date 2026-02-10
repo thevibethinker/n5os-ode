@@ -37,7 +37,90 @@
       "last_updated_by": "MG-5_v3"
     }
   },
-  "last_updated_at": "2025-12-26T01:41:50.380096",
+  "last_updated_at": "2026-02-09T09:29:12.407121+00:00",
   "crm_synced": true,
-  "processed_at": "2026-01-13T22:50:23.609988Z"
+  "processed_at": "2026-01-13T22:50:23.609988Z",
+  "quality_gate": {
+    "block_quality": {
+      "last_check": "2026-02-09T09:29:12.406872+00:00",
+      "overall_score": 0.9570384615384615,
+      "overall_passed": true,
+      "blocks_checked": 13,
+      "blocks_passed": 13,
+      "low_confidence": [],
+      "retry_needed": [],
+      "hitl_needed": [],
+      "per_block_scores": {
+        "B01": {
+          "score": 1.0,
+          "passed": true,
+          "issues_count": 0
+        },
+        "B02": {
+          "score": 0.9375,
+          "passed": true,
+          "issues_count": 1
+        },
+        "B03": {
+          "score": 1.0,
+          "passed": true,
+          "issues_count": 0
+        },
+        "B05": {
+          "score": 0.994,
+          "passed": true,
+          "issues_count": 1
+        },
+        "B06": {
+          "score": 0.9375,
+          "passed": true,
+          "issues_count": 1
+        },
+        "B07": {
+          "score": 0.9475,
+          "passed": true,
+          "issues_count": 1
+        },
+        "B08": {
+          "score": 0.9375,
+          "passed": true,
+          "issues_count": 1
+        },
+        "B14": {
+          "score": 0.8125,
+          "passed": true,
+          "issues_count": 1
+        },
+        "B21": {
+          "score": 1.0,
+          "passed": true,
+          "issues_count": 0
+        },
+        "B25": {
+          "score": 0.9375,
+          "passed": true,
+          "issues_count": 1
+        },
+        "B26": {
+          "score": 1.0,
+          "passed": true,
+          "issues_count": 0
+        },
+        "B31": {
+          "score": 0.9375,
+          "passed": true,
+          "issues_count": 2
+        },
+        "B32": {
+          "score": 1.0,
+          "passed": true,
+          "issues_count": 0
+        }
+      }
+    },
+    "checks": {
+      "block_quality_passed": true
+    },
+    "score": 0.9570384615384615
+  }
 }

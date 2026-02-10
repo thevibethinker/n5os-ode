@@ -57,7 +57,7 @@ def search_memory(query: str, limit: int = 3) -> str:
         if len(query.split()) < 2:
             return "" 
             
-        results = client.search(query, limit=limit)
+        results = client.search(query, limit=limit, use_reranker=True, rerank_top_k=30)
         if not results:
             return ""
             

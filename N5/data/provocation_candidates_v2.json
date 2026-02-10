@@ -1,5 +1,5 @@
 {
-  "scan_date": "2026-02-08T13:09:07.050514+00:00",
+  "scan_date": "2026-02-09T13:11:41.991206+00:00",
   "window_days": 30,
   "meetings_scanned": 19,
   "total_ideas": 76,
@@ -111,105 +111,6 @@
       ]
     },
     {
-      "meeting_folder": "Week-of-2026-01-12/2026-01-16_2026-01-16-Vrijen-Attawar-And-Asher-King-Abramson",
-      "meeting_date": "2026-01-16",
-      "meeting_name": "2026-01-16_2026-01-16-Vrijen-Attawar-And-Asher-King-Abramson",
-      "ideas": [
-        {
-          "title": "Exits happen through networks, not markets",
-          "idea": "Exits happen through networks, not markets",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Platforms derive power from relationship monopoly",
-          "idea": "Platforms derive power from relationship monopoly",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Relationship quality is the next data frontier",
-          "idea": "Relationship quality is the next data frontier",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Semi-technical founders lower barriers to entry",
-          "idea": "Semi-technical founders lower barriers to entry",
-          "provocation": "",
-          "category": "Uncategorized"
-        }
-      ]
-    },
-    {
-      "meeting_folder": "Week-of-2026-01-12/2026-01-16_2026-01-16-Tope-awotona-x-vrijen",
-      "meeting_date": "2026-01-16",
-      "meeting_name": "2026-01-16_2026-01-16-Tope-awotona-x-vrijen",
-      "ideas": [
-        {
-          "title": "Blog",
-          "idea": "\"Why the CEO of Calendly Feels Unqualified to Talk About Productivity\"",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Thread",
-          "idea": "\"The Interview Extinction Event: What Happens When Agents Do Round 1?\"",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Deep Thought",
-          "idea": "Agent coordination as a new form of diplomacy",
-          "provocation": "",
-          "category": "Uncategorized"
-        }
-      ]
-    },
-    {
-      "meeting_folder": "Week-of-2026-01-12/2026-01-16_2026-01-16-Therapy-Scheduling-Tools-Exploration-With-Beth-An",
-      "meeting_date": "2026-01-16",
-      "meeting_name": "2026-01-16_2026-01-16-Therapy-Scheduling-Tools-Exploration-With-Beth-An",
-      "ideas": [
-        {
-          "title": "Some markets may resist efficiency improvements no...",
-          "idea": "Some markets may resist efficiency improvements not from ignorance but from economic rationality",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "\"Premium\" in service industries may partly be payi...",
-          "idea": "\"Premium\" in service industries may partly be paying for intentional inefficiency",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Scheduling automation companies may inadvertently ...",
-          "idea": "Scheduling automation companies may inadvertently commoditize their customers' services",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Privacy requirements have hidden productivity cost...",
-          "idea": "Privacy requirements have hidden productivity costs rarely quantified",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Solutions that solve the *workflow* of privacy (no...",
-          "idea": "Solutions that solve the *workflow* of privacy (not just the compliance) may be undervalued",
-          "provocation": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "The therapy market may be more receptive to schedu...",
-          "idea": "The therapy market may be more receptive to scheduling tools that understand this tax",
-          "provocation": "",
-          "category": "Uncategorized"
-        }
-      ]
-    },
-    {
       "meeting_folder": "Week-of-2026-01-12/2026-01-16_2026-01-16-Vrijen-attawar-and-jonny-coreson",
       "meeting_date": "2026-01-16",
       "meeting_name": "2026-01-16_2026-01-16-Vrijen-attawar-and-jonny-coreson",
@@ -265,6 +166,105 @@
         {
           "title": "This engagement pattern could be valuable in conte...",
           "idea": "This engagement pattern could be valuable in contexts far beyond career development",
+          "provocation": "",
+          "category": "Uncategorized"
+        }
+      ]
+    },
+    {
+      "meeting_folder": "Week-of-2026-01-12/2026-01-16_2026-01-16-Tope-awotona-x-vrijen",
+      "meeting_date": "2026-01-16",
+      "meeting_name": "2026-01-16_2026-01-16-Tope-awotona-x-vrijen",
+      "ideas": [
+        {
+          "title": "Blog",
+          "idea": "\"Why the CEO of Calendly Feels Unqualified to Talk About Productivity\"",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Thread",
+          "idea": "\"The Interview Extinction Event: What Happens When Agents Do Round 1?\"",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Deep Thought",
+          "idea": "Agent coordination as a new form of diplomacy",
+          "provocation": "",
+          "category": "Uncategorized"
+        }
+      ]
+    },
+    {
+      "meeting_folder": "Week-of-2026-01-12/2026-01-16_2026-01-16-Vrijen-Attawar-And-Asher-King-Abramson",
+      "meeting_date": "2026-01-16",
+      "meeting_name": "2026-01-16_2026-01-16-Vrijen-Attawar-And-Asher-King-Abramson",
+      "ideas": [
+        {
+          "title": "Exits happen through networks, not markets",
+          "idea": "Exits happen through networks, not markets",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Platforms derive power from relationship monopoly",
+          "idea": "Platforms derive power from relationship monopoly",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Relationship quality is the next data frontier",
+          "idea": "Relationship quality is the next data frontier",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Semi-technical founders lower barriers to entry",
+          "idea": "Semi-technical founders lower barriers to entry",
+          "provocation": "",
+          "category": "Uncategorized"
+        }
+      ]
+    },
+    {
+      "meeting_folder": "Week-of-2026-01-12/2026-01-16_2026-01-16-Therapy-Scheduling-Tools-Exploration-With-Beth-An",
+      "meeting_date": "2026-01-16",
+      "meeting_name": "2026-01-16_2026-01-16-Therapy-Scheduling-Tools-Exploration-With-Beth-An",
+      "ideas": [
+        {
+          "title": "Some markets may resist efficiency improvements no...",
+          "idea": "Some markets may resist efficiency improvements not from ignorance but from economic rationality",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "\"Premium\" in service industries may partly be payi...",
+          "idea": "\"Premium\" in service industries may partly be paying for intentional inefficiency",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Scheduling automation companies may inadvertently ...",
+          "idea": "Scheduling automation companies may inadvertently commoditize their customers' services",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Privacy requirements have hidden productivity cost...",
+          "idea": "Privacy requirements have hidden productivity costs rarely quantified",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Solutions that solve the *workflow* of privacy (no...",
+          "idea": "Solutions that solve the *workflow* of privacy (not just the compliance) may be undervalued",
+          "provocation": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "The therapy market may be more receptive to schedu...",
+          "idea": "The therapy market may be more receptive to scheduling tools that understand this tax",
           "provocation": "",
           "category": "Uncategorized"
         }
@@ -332,6 +332,43 @@
       ]
     },
     {
+      "meeting_folder": "Week-of-2026-01-12/2026-01-15_Ray-Acquisition-Debrief",
+      "meeting_date": "2026-01-15",
+      "meeting_name": "2026-01-15_Ray-Acquisition-Debrief",
+      "ideas": [
+        {
+          "title": "\"Earnout doesn't come out the way you hope for and dream for\"",
+          "idea": "**Source**: Ray (from direct experience) Ray's company had $1M+ earnout potential but he \"walked away with basically nothing\" because \"the company fucked it up.\" This is a sobering reminder that earnout-heavy structures shift execution risk to the acquirer while tying up the seller's potential upside. **Implication**: Push for more upfront value vs. earnout. If forced into earnout structure, be extremely conservative in expectations. ---",
+          "provenance": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "\"It's like negotiating job offers\"",
+          "idea": "**Source**: Ray The acquisition process parallels job negotiations - leverage comes from having multiple options. Ray was \"hopeful for 2-3\" competing offers but only got one, which reduced his leverage. **Implication**: Don't go exclusive early. Cultivate multiple conversations simultaneously, even if some feel less promising. ---",
+          "provenance": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Pace Management as Strategic Tool",
+          "idea": "**Source**: Ray \"You got to be smart with your timing... slow play some conversations and try to speed up other conversations such that they end up getting to roughly the same point in time.\" **Implication**: This isn't just about having multiple options - it's about orchestrating them to create a moment of maximum leverage. Response time is a negotiation tool. ---",
+          "provenance": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "Personal Commitment as Non-Negotiable",
+          "idea": "**Source**: Ray \"Do you want to get tied to this company for X number of years? I did not.\" Ray capped his commitment at 1 year max. This wasn't just about minimizing risk - it was about maintaining personal freedom and optionality. **Implication**: Determine maximum acceptable commitment period BEFORE negotiations. This becomes a constraint that shapes which deals are acceptable. ---",
+          "provenance": "",
+          "category": "Uncategorized"
+        },
+        {
+          "title": "\"General Purpose Tech\" as Double-Edged Sword",
+          "idea": "**Source**: V's framing Careerspan's tech being \"general purpose\" opens doors to diverse acquirers (Calendly to Future Fit), but may also make it harder to command premium pricing since the value proposition varies by buyer. **Implication**: May need different positioning/pitch for different acquirer types. Mission-aligned (Future Fit) vs. capability acquisition (Calendly) require different value narratives. --- ## Questions This Raises 1. **What's V's maximum acceptable commitment period?** 1 year like Ray? 2 years? This shapes the deal landscape. 2. **How to balance upfront certainty vs. earnout upside?** Given Ray's experience, what's the minimum acceptable upfront component? 3. **Who is the \"one other potential\" Ray mentioned?** Follow up on materials to understand this opportunity. 4. **What makes Careerspan's tech defensible?** If it's truly general purpose, what prevents acquirers from building vs. buying?",
+          "provenance": "",
+          "category": "Uncategorized"
+        }
+      ]
+    },
+    {
       "meeting_folder": "Week-of-2026-01-12/2026-01-15_2026-01-15-Chat",
       "meeting_date": "2026-01-15",
       "meeting_name": "2026-01-15_2026-01-15-Chat",
@@ -365,43 +402,6 @@
           "title": "Specific company assessments: Tactical intel, not ...",
           "idea": "Specific company assessments: Tactical intel, not conceptual insight",
           "provocation": "",
-          "category": "Uncategorized"
-        }
-      ]
-    },
-    {
-      "meeting_folder": "Week-of-2026-01-12/2026-01-15_Ray-Acquisition-Debrief",
-      "meeting_date": "2026-01-15",
-      "meeting_name": "2026-01-15_Ray-Acquisition-Debrief",
-      "ideas": [
-        {
-          "title": "\"Earnout doesn't come out the way you hope for and dream for\"",
-          "idea": "**Source**: Ray (from direct experience) Ray's company had $1M+ earnout potential but he \"walked away with basically nothing\" because \"the company fucked it up.\" This is a sobering reminder that earnout-heavy structures shift execution risk to the acquirer while tying up the seller's potential upside. **Implication**: Push for more upfront value vs. earnout. If forced into earnout structure, be extremely conservative in expectations. ---",
-          "provenance": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "\"It's like negotiating job offers\"",
-          "idea": "**Source**: Ray The acquisition process parallels job negotiations - leverage comes from having multiple options. Ray was \"hopeful for 2-3\" competing offers but only got one, which reduced his leverage. **Implication**: Don't go exclusive early. Cultivate multiple conversations simultaneously, even if some feel less promising. ---",
-          "provenance": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Pace Management as Strategic Tool",
-          "idea": "**Source**: Ray \"You got to be smart with your timing... slow play some conversations and try to speed up other conversations such that they end up getting to roughly the same point in time.\" **Implication**: This isn't just about having multiple options - it's about orchestrating them to create a moment of maximum leverage. Response time is a negotiation tool. ---",
-          "provenance": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "Personal Commitment as Non-Negotiable",
-          "idea": "**Source**: Ray \"Do you want to get tied to this company for X number of years? I did not.\" Ray capped his commitment at 1 year max. This wasn't just about minimizing risk - it was about maintaining personal freedom and optionality. **Implication**: Determine maximum acceptable commitment period BEFORE negotiations. This becomes a constraint that shapes which deals are acceptable. ---",
-          "provenance": "",
-          "category": "Uncategorized"
-        },
-        {
-          "title": "\"General Purpose Tech\" as Double-Edged Sword",
-          "idea": "**Source**: V's framing Careerspan's tech being \"general purpose\" opens doors to diverse acquirers (Calendly to Future Fit), but may also make it harder to command premium pricing since the value proposition varies by buyer. **Implication**: May need different positioning/pitch for different acquirer types. Mission-aligned (Future Fit) vs. capability acquisition (Calendly) require different value narratives. --- ## Questions This Raises 1. **What's V's maximum acceptable commitment period?** 1 year like Ray? 2 years? This shapes the deal landscape. 2. **How to balance upfront certainty vs. earnout upside?** Given Ray's experience, what's the minimum acceptable upfront component? 3. **Who is the \"one other potential\" Ray mentioned?** Follow up on materials to understand this opportunity. 4. **What makes Careerspan's tech defensible?** If it's truly general purpose, what prevents acquirers from building vs. buying?",
-          "provenance": "",
           "category": "Uncategorized"
         }
       ]

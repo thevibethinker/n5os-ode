@@ -23,7 +23,7 @@ Workflow:
 1. scan → Find meetings with B01 but no B33
 2. prepare → Create batch file with meeting contexts
 3. (Zo runs B33 on batch) → Generates JSONL edges
-4. edge_reviewer.py commit → Commits to edges.db
+4. edge_reviewer.py commit → Commits to brain.db
 """
 
 import argparse
@@ -47,7 +47,7 @@ except ImportError:
 MEETINGS_ROOT = Path("/home/workspace/Personal/Meetings")
 REVIEW_DIR = N5_ROOT / "review" / "edges"
 BACKFILL_DIR = REVIEW_DIR / "backfill"
-EDGES_DB = N5_DATA_DIR / "edges.db"
+EDGES_DB = Path("/home/workspace/N5/cognition/brain.db")
 
 
 def get_processed_meetings() -> set:

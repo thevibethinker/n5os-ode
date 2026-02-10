@@ -142,13 +142,14 @@ class N5MemoryClient:
             self._load_ann_index()
 
     def _init_provider(self):
-        # Check for API Key in secret file if not in Env
+        # Step 1: Check for API Key in secret file if not in Env
         key_path = "/home/workspace/N5/config/secrets/openai.key"
         if not os.getenv("OPENAI_API_KEY") and os.path.exists(key_path):
             with open(key_path, 'r') as f:
                 os.environ["OPENAI_API_KEY"] = f.read().strip()
-                self.provider = "openai" # Force switch if key found
+                self.provider = "openai"  # Force switch if key found
         
+        # Step 2: If provider is explicitly "openai" and key exists, init and return
         if self.provider == "openai":
             if not HAS_OPENAI:
                 LOG.error("OpenAI provider requested but 'openai' package not installed.")
@@ -160,15 +161,10 @@ class N5MemoryClient:
                 self.openai_client = OpenAI()
                 LOG.info(f"Using OpenAI Embeddings: {self.openai_model}")
                 return
-
-        if self.provider == "local":
-            if not HAS_SBERT:
-                raise ImportError("sentence-transformers not installed for local embeddings.")
-            self.local_model = SentenceTransformer(self.local_model_name)
-            LOG.info(f"Using Local Embeddings: {self.local_model_name}")
         
-        # Auto-detect provider from stored vector dimensions
-        if "vectors_v2" in self.db_path:
+        # Step 3: BEFORE loading local model, auto-detect from stored vector dimensions
+        # This avoids wasting ~2s loading SentenceTransformer only to discard it
+        if self.provider == "local" and "vectors_v2" in self.db_path:
             try:
                 conn = sqlite3.connect(self.db_path)
                 cursor = conn.cursor()
@@ -177,14 +173,25 @@ class N5MemoryClient:
                 conn.close()
                 if row:
                     stored_dim = len(np.frombuffer(row[0], dtype=np.float32))
-                    if stored_dim == 3072 and self.provider == "local":
+                    if stored_dim == 3072:
                         LOG.info(f"Detected 3072-dim vectors, switching to OpenAI embeddings")
                         self.provider = "openai"
                         if HAS_OPENAI and os.getenv("OPENAI_API_KEY"):
                             self.openai_client = OpenAI()
-                            self.local_model = None
+                            LOG.info(f"Using OpenAI Embeddings: {self.openai_model}")
+                            return
+                        else:
+                            LOG.warning("OpenAI key not available for 3072-dim vectors, falling back to local")
+                            self.provider = "local"
             except Exception as e:
                 LOG.debug(f"Could not auto-detect embedding dimension: {e}")
+        
+        # Step 4: Only load local model if we're actually using local embeddings
+        if self.provider == "local":
+            if not HAS_SBERT:
+                raise ImportError("sentence-transformers not installed for local embeddings.")
+            self.local_model = SentenceTransformer(self.local_model_name)
+            LOG.info(f"Using Local Embeddings: {self.local_model_name}")
 
     def _init_db(self):
         self._conn = sqlite3.connect(self.db_path)
@@ -580,9 +587,9 @@ class N5MemoryClient:
         
         cursor = self._get_db().cursor()
         cursor.execute("""
-            INSERT INTO blocks (id, resource_id, block_type, content, start_line, end_line, token_count, content_date)
-            VALUES (?, ?, ?, ?, ?, ?, ?, ?)
-        """, (block_id, resource_id, block_type, content, start_line, end_line, len(content)//4, content_date))
+            INSERT INTO blocks (id, resource_id, block_type, content, start_line, end_line, token_count, content_date, indexed_at, valid_from, supersedes_block_id)
+            VALUES (?, ?, ?, ?, ?, ?, ?, ?, datetime('now'), datetime('now'), ?)
+        """, (block_id, resource_id, block_type, content, start_line, end_line, len(content)//4, content_date, supersedes))
         
         cursor.execute("""
             INSERT INTO vectors (block_id, embedding)
@@ -618,7 +625,7 @@ class N5MemoryClient:
     def search(self, query: str, limit: int = 10, tag_filter: Optional[str] = None,
                recency_weight: float = 0.2, use_hybrid: bool = True,
                semantic_weight: float = 0.7, bm25_weight: float = 0.3,
-               use_reranker: bool = False, rerank_top_k: int = 50,
+               use_reranker: bool = True, rerank_top_k: int = 50,
                metadata_filters: Optional[Dict[str, Any]] = None,
                _query_embedding: Optional[bytes] = None) -> List[Dict]:
         """
@@ -1099,13 +1106,25 @@ class N5MemoryClient:
             nonlocal current_chunk_lines, current_chunk_size, start_line
             if current_chunk_lines:
                 text = '\n'.join(current_chunk_lines)
-                if len(text.strip()) >= min_chunk_size // 2:  # Don't discard very short meaningful chunks
+                if len(text.strip()) >= min_chunk_size // 2:
                     chunks.append({
                         'text': text,
                         'start': start_line,
                         'end': end_idx,
                         'type': 'text'
                     })
+                    if overlap > 0:
+                        overlap_lines = []
+                        overlap_size = 0
+                        for ol in reversed(current_chunk_lines):
+                            if overlap_size + len(ol) > overlap:
+                                break
+                            overlap_lines.insert(0, ol)
+                            overlap_size += len(ol)
+                        if overlap_lines:
+                            current_chunk_lines = overlap_lines.copy()
+                            current_chunk_size = overlap_size
+                            return
             current_chunk_lines = []
             current_chunk_size = 0
         
@@ -1166,7 +1185,7 @@ class N5MemoryClient:
         
         return chunks
 
-    def _chunk_content(self, content: str, chunk_size: int = 1000, overlap: int = 100) -> List[Dict]:
+    def _chunk_content(self, content: str, max_chunk_size: int = 1000, overlap: int = 100) -> List[Dict]:
         """
         Smart chunker - uses markdown-aware chunking for markdown files,
         falls back to simple line-based chunking otherwise.
@@ -1177,10 +1196,11 @@ class N5MemoryClient:
         has_bullets = bool(re.search(r'^[\s]*[-*•]\s', content, re.MULTILINE))
         
         if has_headers or has_code_blocks or has_bullets:
-            return self._chunk_content_markdown(content, max_chunk_size=chunk_size * 1.5,
-                                                 min_chunk_size=chunk_size // 5)
+            return self._chunk_content_markdown(content, max_chunk_size=max_chunk_size * 1.5,
+                                                 min_chunk_size=max_chunk_size // 5,
+                                                 overlap=overlap)
         
-        # Fallback: simple line-based chunking
+        # Fallback: simple line-based chunking with overlap
         lines = content.splitlines()
         chunks = []
         current_chunk = []
@@ -1189,17 +1209,33 @@ class N5MemoryClient:
         
         for i, line in enumerate(lines):
             line_len = len(line)
-            if current_len + line_len > chunk_size and current_chunk:
-                # Flush
+            if current_len + line_len > max_chunk_size and current_chunk:
                 text = "\n".join(current_chunk)
                 chunks.append({
                     'text': text,
                     'start': start_line,
                     'end': start_line + len(current_chunk) - 1
                 })
-                current_chunk = []
-                current_len = 0
-                start_line = i + 1
+                if overlap > 0:
+                    overlap_lines = []
+                    overlap_size = 0
+                    for ol in reversed(current_chunk):
+                        if overlap_size + len(ol) > overlap:
+                            break
+                        overlap_lines.insert(0, ol)
+                        overlap_size += len(ol)
+                    if overlap_lines:
+                        current_chunk = overlap_lines.copy()
+                        current_len = overlap_size
+                        start_line = i + 1 - len(overlap_lines)
+                    else:
+                        current_chunk = []
+                        current_len = 0
+                        start_line = i + 1
+                else:
+                    current_chunk = []
+                    current_len = 0
+                    start_line = i + 1
             
             current_chunk.append(line)
             current_len += line_len
@@ -1243,7 +1279,7 @@ class N5MemoryClient:
             List of matching entities with their metadata
         """
         try:
-            graph = GraphStore(self.db_path.replace('vectors_v2.db', 'brain.db'))
+            graph = GraphStore()
             entities = graph.search_entities(query, entity_type=entity_type, limit=limit)
             graph.close()
             
@@ -1274,7 +1310,7 @@ class N5MemoryClient:
             Dict with 'center', 'entities', 'relationships'
         """
         try:
-            graph = GraphStore(self.db_path.replace('vectors_v2.db', 'brain.db'))
+            graph = GraphStore()
             result = graph.get_connections(entity_name, depth=depth)
             graph.close()
             return result

@@ -33,7 +33,7 @@ from typing import Dict, List, Optional
 # Paths
 N5_ROOT = Path("/home/workspace/N5")
 N5_DATA = N5_ROOT / "data"
-EDGES_DB = N5_DATA / "edges.db"
+EDGES_DB = Path("/home/workspace/N5/cognition/brain.db")
 TRACKING_FILE = N5_DATA / "secondpass_tracking.json"
 BATCH_DIR = N5_ROOT / "review" / "edges" / "secondpass"
 PROGRESS_LOG = N5_ROOT / "data" / "secondpass_progress.log"

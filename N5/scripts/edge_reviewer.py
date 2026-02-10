@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Edge Reviewer: Process review queue, commit approved edges to edges.db.
+Edge Reviewer: Process review queue, commit approved edges to brain.db.
 
 Usage:
     # List pending edge files
@@ -36,7 +36,7 @@ from typing import Dict, List, Any, Optional
 # Paths
 WORKSPACE = Path("/home/workspace")
 REVIEW_QUEUE = WORKSPACE / "N5/review/edges"
-EDGES_DB = WORKSPACE / "N5/data/edges.db"
+EDGES_DB = Path("/home/workspace/N5/cognition/brain.db")
 
 # Import edge writer
 sys.path.insert(0, str(WORKSPACE / "N5/scripts"))

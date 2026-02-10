@@ -1,0 +1,18 @@
+{
+  "meeting_id": "2026-02-08_Vrijen-Shivam",
+  "date": "2026-02-08",
+  "participants": [
+    "Vrijen",
+    "Shivam"
+  ],
+  "meeting_type": "external",
+  "status": "staged",
+  "transcript_file": "transcript.md",
+  "blocks_requested": [],
+  "blocks_generated": [],
+  "blocks_failed": [],
+  "staged_at": "2026-02-09T10:55:49.200670Z",
+  "processed_at": null,
+  "archived_at": null,
+  "error": null
+}

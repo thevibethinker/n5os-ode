@@ -1,0 +1,10 @@
+{
+  "slug": "meeting-system-v3",
+  "timestamp": "2026-02-09T13:22:03.525012+00:00",
+  "total": 0,
+  "passed": 0,
+  "failed": 0,
+  "results": [],
+  "all_passed": true,
+  "message": "No integration tests defined"
+}

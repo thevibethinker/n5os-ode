@@ -1,79 +1,19 @@
 {
-  "$schema": "manifest-v3",
   "meeting_id": "2026-02-03_vrijen-attawar-and-matthew-cohen-transcr",
-  "status": "ingested",
-  "status_history": [
-    {
-      "status": "raw",
-      "at": "2026-02-06T16:38:30.022842+00:00"
-    },
-    {
-      "status": "ingested",
-      "at": "2026-02-06T16:38:30.022842+00:00"
-    }
+  "date": "2026-02-03",
+  "participants": [
+    "Vrijen",
+    "Attawar",
+    "And"
   ],
-  "source": {
-    "type": "manual",
-    "original_filename": "2026-02-03_Vrijen_Attawar__and_Matthew_Cohen-transcript-2026-02-03T15-00-00.000Z.md",
-    "ingested_at": "2026-02-06T16:38:30.022842+00:00"
-  },
-  "meeting": {
-    "date": "2026-02-03",
-    "time_utc": "12:00:00",
-    "duration_minutes": 55,
-    "title": "Vrijen Attawar And Matthew Cohen Transcript 2026 02 03t15 00 00.000z",
-    "type": "external",
-    "summary": "Vrijen Attawar and Matthew Cohen discussed Matthew's daughter's recent nursing school acceptance and their upcoming graduation trip to Egypt, while reflecting on themes of resilience and self-esteem in young adults. The conversation shifted to a critique of higher education marketing, with Matthew sharing insights from his dual perspective as both a parent navigating college admissions and a longtime higher education service provider. They agreed that colleges disproportionately emphasize campus amenities over career outcomes, with both expressing puzzlement that institutions don't lead conversations with their career services and job placement capabilities rather than superficial features like on-campus coffee shops."
-  },
-  "participants": {
-    "identified": [
-      {
-        "name": "V",
-        "email": null,
-        "crm_id": null,
-        "role": "host",
-        "confidence": 0.8
-      },
-      {
-        "name": "Matthew Cohen",
-        "email": null,
-        "crm_id": null,
-        "role": "attendee",
-        "confidence": 0.8
-      }
-    ],
-    "unidentified": [],
-    "confidence": 0.8
-  },
-  "calendar_match": null,
-  "quality_gate": {
-    "passed": true,
-    "checks": {
-      "has_transcript": true,
-      "participants_identified": true,
-      "meeting_type_determined": false,
-      "no_hitl_pending": true
-    },
-    "score": 0.7
-  },
-  "blocks": {
-    "policy": "external_standard",
-    "requested": [],
-    "generated": [],
-    "failed": [],
-    "skipped": []
-  },
-  "hitl": {
-    "queue_id": null,
-    "reason": null,
-    "resolved_at": null
-  },
-  "timestamps": {
-    "created_at": "2026-02-06T16:38:30.022842+00:00",
-    "ingested_at": "2026-02-06T16:38:30.022842+00:00",
-    "identified_at": null,
-    "gated_at": null,
-    "processed_at": null,
-    "archived_at": null
-  }
+  "meeting_type": "external",
+  "status": "staged",
+  "transcript_file": "transcript.md",
+  "blocks_requested": [],
+  "blocks_generated": [],
+  "blocks_failed": [],
+  "staged_at": "2026-02-09T10:55:49.197873Z",
+  "processed_at": null,
+  "archived_at": null,
+  "error": null
 }

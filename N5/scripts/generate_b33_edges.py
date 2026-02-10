@@ -5,7 +5,7 @@ Generate B33 Decision Edges: Extract context graph edges from meeting intelligen
 This script integrates B33 edge extraction into the meeting processing pipeline.
 It reads existing intelligence blocks (B01, B03, B32) from a meeting folder,
 invokes the B33 extraction prompt via LLM, writes edges to JSONL, commits to
-edges.db, and updates manifest.json.
+brain.db (meeting_edges table), and updates manifest.json.
 
 Usage:
     # Process a single meeting
@@ -19,7 +19,7 @@ Usage:
 
 Output:
     - B33_DECISION_EDGES.jsonl in meeting folder
-    - Edges committed to edges.db (unless --dry-run)
+    - Edges committed to brain.db (meeting_edges table) (unless --dry-run)
     - manifest.json updated with B33 status
 """
 
@@ -490,7 +490,7 @@ def main():
     parser.add_argument(
         "--auto-commit",
         action="store_true",
-        help="Automatically commit edges to edges.db (skip review queue)"
+        help="Automatically commit edges to brain.db (meeting_edges table) (skip review queue)"
     )
     parser.add_argument(
         "--verbose",

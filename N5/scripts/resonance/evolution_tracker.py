@@ -36,7 +36,7 @@ N5_ROOT = SCRIPT_DIR.parent.parent
 DATA_DIR = N5_ROOT / "data"
 RESONANCE_INDEX_PATH = DATA_DIR / "resonance_index.json"
 EVOLUTION_LOG_PATH = DATA_DIR / "evolution_log.jsonl"
-EDGES_DB_PATH = DATA_DIR / "edges.db"
+EDGES_DB_PATH = Path("/home/workspace/N5/cognition/brain.db")
 
 # Evolution types
 EVOLUTION_TYPES = {
@@ -62,14 +62,14 @@ def load_resonance_index() -> Dict:
 
 
 def get_known_contexts(idea_slug: str) -> Set[str]:
-    """Get all known contexts/domains for an idea from edges.db."""
+    """Get all known contexts/domains for an idea from brain.db."""
     conn = get_db_connection()
     cursor = conn.cursor()
     
     # Get all evidence/contexts for this idea
     cursor.execute("""
         SELECT DISTINCT evidence, context_meeting_id
-        FROM edges
+        FROM meeting_edges
         WHERE (source_type = 'idea' AND source_id = ?)
            OR (target_type = 'idea' AND target_id = ?)
     """, (idea_slug, idea_slug))
@@ -239,7 +239,7 @@ def check_idea_evolution(idea_slug: str) -> Dict:
     cursor = conn.cursor()
     cursor.execute("""
         SELECT relation, evidence, context_meeting_id, evolution_type, captured_at
-        FROM edges
+        FROM meeting_edges
         WHERE (source_type = 'idea' AND source_id = ?)
            OR (target_type = 'idea' AND target_id = ?)
         ORDER BY captured_at DESC
@@ -315,7 +315,7 @@ def get_challenge_status(idea_slug: Optional[str] = None) -> Dict:
                 captured_at,
                 resolution_status,
                 outcome_note
-            FROM edges
+            FROM meeting_edges
             WHERE relation = 'challenged_by'
               AND source_id = ?
             ORDER BY captured_at DESC
@@ -332,7 +332,7 @@ def get_challenge_status(idea_slug: Optional[str] = None) -> Dict:
                 captured_at,
                 resolution_status,
                 outcome_note
-            FROM edges
+            FROM meeting_edges
             WHERE relation = 'challenged_by'
             ORDER BY captured_at DESC
         """)
@@ -417,7 +417,7 @@ def resolve_challenge(edge_id: int, resolution: str, note: Optional[str] = None)
     cursor = conn.cursor()
     
     cursor.execute("""
-        UPDATE edges
+        UPDATE meeting_edges
         SET resolution_status = ?,
             outcome_note = ?,
             updated_at = datetime('now')
@@ -467,7 +467,7 @@ def build_genealogy(idea_id: str) -> Dict:
         # Find parent: idea derives_from X means X is parent
         cursor.execute("""
             SELECT target_id, evidence, context_meeting_id
-            FROM edges
+            FROM meeting_edges
             WHERE source_type = 'idea' 
               AND source_id = ?
               AND target_type = 'idea'
@@ -495,7 +495,7 @@ def build_genealogy(idea_id: str) -> Dict:
     # Get descendants: find all ideas that derive from this one (direct children)
     cursor.execute("""
         SELECT source_id, evidence, context_meeting_id
-        FROM edges
+        FROM meeting_edges
         WHERE target_type = 'idea'
           AND target_id = ?
           AND source_type = 'idea'
@@ -518,7 +518,7 @@ def build_genealogy(idea_id: str) -> Dict:
     # First, find the direct parent of this idea
     cursor.execute("""
         SELECT target_id
-        FROM edges
+        FROM meeting_edges
         WHERE source_type = 'idea'
           AND source_id = ?
           AND target_type = 'idea'
@@ -534,7 +534,7 @@ def build_genealogy(idea_id: str) -> Dict:
         # Find all other children of this parent
         cursor.execute("""
             SELECT source_id, evidence
-            FROM edges
+            FROM meeting_edges
             WHERE target_type = 'idea'
               AND target_id = ?
               AND source_type = 'idea'
@@ -583,7 +583,7 @@ def detect_potential_duplicates(co_occurrence_threshold: float = 0.70) -> List[D
                  WHEN target_type='idea' THEN target_id 
             END as idea_id,
             context_meeting_id
-        FROM edges
+        FROM meeting_edges
         WHERE (source_type = 'idea' OR target_type = 'idea')
           AND context_meeting_id IS NOT NULL
     """)
@@ -602,7 +602,7 @@ def detect_potential_duplicates(co_occurrence_threshold: float = 0.70) -> List[D
             CASE WHEN source_type='person' THEN source_id 
                  WHEN target_type='person' THEN target_id 
                  ELSE NULL END as person_id
-        FROM edges
+        FROM meeting_edges
         WHERE source_type = 'idea' OR target_type = 'idea'
     """)
     

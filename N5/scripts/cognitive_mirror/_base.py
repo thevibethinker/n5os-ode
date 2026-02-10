@@ -3,7 +3,7 @@
 Cognitive Mirror Base: Shared infrastructure for LLM-powered insight scripts.
 
 Provides:
-- query_edges(): Execute SQL against edges.db
+- query_edges(): Execute SQL against brain.db
 - ask_zo(): Call /zo/ask API for semantic reasoning
 - write_report(): Save dated Markdown reports
 - format_edges_table(): Format edges for LLM context
@@ -17,13 +17,13 @@ from pathlib import Path
 from typing import Optional
 
 # Paths
-DB_PATH = Path(__file__).parent.parent.parent / "data" / "edges.db"
+DB_PATH = Path("/home/workspace/N5/cognition/brain.db")
 INSIGHTS_DIR = Path(__file__).parent.parent.parent / "insights" / "cognitive_mirror"
 
 
 def query_edges(sql: str) -> list[dict]:
     """
-    Execute SQL against edges.db, return list of dicts.
+    Execute SQL against brain.db, return list of dicts.
     
     Args:
         sql: SQL query to execute

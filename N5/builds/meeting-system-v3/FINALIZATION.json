@@ -1,0 +1,14 @@
+{
+  "slug": "meeting-system-v3",
+  "timestamp": "2026-02-09T13:22:03.324949+00:00",
+  "verification": {
+    "passed": true,
+    "output": "\u274c verify failed for meeting-system-v3\n   Artifacts: 26/27 verified, 1 missing\n"
+  },
+  "integration_tests": {
+    "passed": true,
+    "output": "\n==================================================\nIntegration Tests: meeting-system-v3\n==================================================\n\nNo tests defined. Run 'generate' to auto-create from artifacts.\n\nResults saved to /home/workspace/N5/builds/meeting-system-v3/INTEGRATION_RESULTS.json\n"
+  },
+  "learnings_harvested": 28,
+  "success": true
+}

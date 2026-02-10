@@ -1,0 +1,19 @@
+{
+  "drop_id": "D6.1",
+  "status": "complete",
+  "summary": "Successfully ran 5 core integration tests validating end-to-end meeting pipeline. Tested: (1) JSONL transcript ingestion, (2) Folder-based transcript ingestion, (3) Duplicate detection with 100% similarity matching, (4) Archive structure validation, (5) Registry statistics. All core pipeline components functioning correctly.",
+  "artifacts": [
+    "Personal/Meetings/2025-11-05_Testuser",
+    "Personal/Meetings/2025-09-22_Heatherwixson_Vrijen",
+    "N5/data/meeting_registry.db"
+  ],
+  "learnings": [
+    "Meeting orchestrator successfully processes both JSONL and folder transcripts",
+    "Duplicate detection working with 100% similarity scoring",
+    "Registry correctly tracking meetings with comprehensive statistics",
+    "Block generation requires separate script execution - not automatic in orchestrator",
+    "Archive structure verified showing full B** block ecosystem in existing meetings",
+    "Integration tests should focus on core pipeline validation rather than exhaustive edge cases"
+  ],
+  "errors": []
+}

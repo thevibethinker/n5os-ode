@@ -1,0 +1,23 @@
+{
+  "meeting_id": "2026-01-29_friends-of-next-play-fundamentals-of-ai_[B]",
+  "date": "2026-01-29",
+  "participants": [
+    "Friends",
+    "Next",
+    "Play"
+  ],
+  "meeting_type": "external",
+  "status": "archived",
+  "transcript_file": "transcript.md",
+  "blocks_requested": [],
+  "blocks_generated": [
+    "B05_ACTION_ITEMS",
+    "B01_DETAILED_RECAP",
+    "B03_DECISIONS"
+  ],
+  "blocks_failed": [],
+  "staged_at": "2026-02-09T10:55:49.190106Z",
+  "processed_at": "2026-02-09T10:55:49.190115Z",
+  "archived_at": "2026-02-09T11:02:23.587948Z",
+  "error": null
+}

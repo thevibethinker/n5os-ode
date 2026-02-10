@@ -1,0 +1,34 @@
+{
+  "meeting_id": "2026-02-02_alex-x-vrijen-wisdom-partners-coaching-t_[B]",
+  "date": "2026-02-02",
+  "participants": [
+    "Alex",
+    "Vrijen",
+    "Wisdom"
+  ],
+  "meeting_type": "external",
+  "status": "archived",
+  "transcript_file": "transcript.md",
+  "blocks_requested": [],
+  "blocks_generated": [
+    "B13_PLAN_OF_ACTION",
+    "B10_RISKS_AND_FLAGS",
+    "B21_KEY_MOMENTS",
+    "B03_DECISIONS",
+    "B01_DETAILED_RECAP",
+    "B08_STAKEHOLDER_INTELLIGENCE",
+    "B25_DELIVERABLES",
+    "B26_MEETING_METADATA",
+    "B28_STRATEGIC_INTELLIGENCE",
+    "B02_COMMITMENTS",
+    "B05_ACTION_ITEMS",
+    "B06_BUSINESS_CONTEXT",
+    "B04_OPEN_QUESTIONS",
+    "B07_TONE_AND_CONTEXT"
+  ],
+  "blocks_failed": [],
+  "staged_at": "2026-02-09T10:55:49.195389Z",
+  "processed_at": "2026-02-09T10:55:49.195400Z",
+  "archived_at": "2026-02-09T11:02:23.664503Z",
+  "error": null
+}

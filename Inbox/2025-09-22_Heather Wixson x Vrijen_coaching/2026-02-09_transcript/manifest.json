@@ -1,0 +1,72 @@
+{
+  "$schema": "manifest-v3",
+  "meeting_id": "2026-02-09_transcript",
+  "status": "ingested",
+  "status_history": [
+    {
+      "status": "raw",
+      "at": "2026-02-09T10:34:10.403366+00:00"
+    },
+    {
+      "status": "ingested",
+      "at": "2026-02-09T10:34:10.403366+00:00"
+    }
+  ],
+  "source": {
+    "type": "manual",
+    "original_filename": "transcript.md",
+    "ingested_at": "2026-02-09T10:34:10.403366+00:00"
+  },
+  "meeting": {
+    "date": "2026-02-09",
+    "time_utc": "12:00:00",
+    "duration_minutes": 22,
+    "title": "Transcript",
+    "type": "external",
+    "summary": "Vrijen Attawar and Heather Wixson reconnected to discuss a potential partnership between Careerspan and Landedly, a career services company where Heather recently joined as one of three coaches supporting approximately 61 active mid-career job seekers under a pay-upon-placement model. Heather identified interview preparation and job posting analysis as key gaps in Landedly's current offering and expressed interest in integrating Careerspan to fill those needs, while Vrijen demoed Careerspan's latest features including vibe check job-fit analysis, recommended stories, and pro-tier capabilities. The conversation established mutual interest in a collaboration where Careerspan could serve as a value-add tool for Landedly's clients, with next steps pending Heather's further onboarding and alignment with her returning supervisor.  --- *2025-02-09 05:30 ET*"
+  },
+  "participants": {
+    "identified": [
+      {
+        "name": "V",
+        "email": null,
+        "crm_id": null,
+        "role": "host",
+        "confidence": 0.8
+      }
+    ],
+    "unidentified": [],
+    "confidence": 0.8
+  },
+  "calendar_match": null,
+  "quality_gate": {
+    "passed": true,
+    "checks": {
+      "has_transcript": true,
+      "participants_identified": true,
+      "meeting_type_determined": false,
+      "no_hitl_pending": true
+    },
+    "score": 0.7
+  },
+  "blocks": {
+    "policy": "external_standard",
+    "requested": [],
+    "generated": [],
+    "failed": [],
+    "skipped": []
+  },
+  "hitl": {
+    "queue_id": null,
+    "reason": null,
+    "resolved_at": null
+  },
+  "timestamps": {
+    "created_at": "2026-02-09T10:34:10.403366+00:00",
+    "ingested_at": "2026-02-09T10:34:10.403366+00:00",
+    "identified_at": null,
+    "gated_at": null,
+    "processed_at": null,
+    "archived_at": null
+  }
+}
