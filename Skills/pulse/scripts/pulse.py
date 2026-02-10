@@ -24,7 +24,7 @@ from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from typing import Optional
 
-from pulse_common import PATHS, WORKSPACE, parse_drop_id, sort_wave_keys, get_drop_stream_order
+from pulse_common import PATHS, WORKSPACE, parse_drop_id, sort_wave_keys, get_drop_stream_order, RECOVERY_DEFAULTS
 
 # Paths
 # WORKSPACE = Path("/home/workspace")  # Now imported from pulse_common
@@ -413,7 +413,41 @@ Active claims:
 **Status:** {meta.get('status', 'unknown')}
 {gate_line}{gate_text}
 **Progress:** {len(complete)}/{total} Drops ({pct}%)
-{pool_section}
+{pool_section}"""
+
+    recovery_section = ""
+    recovery_log_path = BUILDS_DIR / slug / "RECOVERY_LOG.jsonl"
+    if recovery_log_path.exists():
+        try:
+            recent_actions = []
+            with open(recovery_log_path) as f:
+                for line in f:
+                    line = line.strip()
+                    if line:
+                        recent_actions.append(json.loads(line))
+            last_5 = recent_actions[-5:] if len(recent_actions) > 5 else recent_actions
+            if last_5:
+                action_lines = []
+                for a in last_5:
+                    icon = "🔄" if a.get("action") == "auto_retry" else "⚠️" if a.get("action") == "escalate" else "🔍"
+                    ts = a.get("timestamp", "")[:16]
+                    action_lines.append(f"- {icon} {a.get('drop_id', '?')}: {a.get('reason', '?')} ({ts})")
+                recovery_section = f"""
+## 🔄 Recovery Actions ({len(recent_actions)} total)
+{chr(10).join(action_lines)}
+"""
+        except Exception:
+            pass
+
+    if meta.get("status") == "blocked":
+        blocked_reason = meta.get("blocked_reason", "Unknown")
+        content += f"""
+## 🚫 BUILD BLOCKED
+**Reason:** {blocked_reason}
+**Action required:** Manual intervention needed.
+"""
+
+    content += f"""{recovery_section}
 ## Awaiting Manual ({len(awaiting_manual)})
 {awaiting_lines or '(none)'}
 
@@ -430,10 +464,10 @@ Active claims:
 {chr(10).join(f'- [x] {d}' for d in sorted(complete)) or '(none)'}
 
 ## Dead ({len(dead)})
-{chr(10).join(f'- [!] {d}' for d in sorted(dead)) or '(none)'}
+{chr(10).join(f'- [!] {d} (retry:{drops[d].get("retry_count", 0)}/{_get_recovery_config(meta).get("max_auto_retries", 2)})' for d in sorted(dead)) or '(none)'}
 
 ## Failed ({len(failed)})
-{chr(10).join(f'- [x] {d}' for d in sorted(failed)) or '(none)'}
+{chr(10).join(f'- [!] {d} (retry:{drops[d].get("retry_count", 0)}/{_get_recovery_config(meta).get("max_auto_retries", 2)})' for d in sorted(failed)) or '(none)'}
 """
 
     status_path.write_text(content)
@@ -1142,6 +1176,7 @@ async def tick(slug: str):
     
     # 8. Save and update
     if broadcasts_updated:
+        meta["last_progress_at"] = datetime.now(timezone.utc).isoformat()
         save_meta(slug, meta)
         update_status_md(slug, meta)
     
@@ -1309,6 +1344,273 @@ def validate_plan(slug: str):
         print(f"   Run: python3 {validator_path} {slug} --fix")
 
 
+# ============================================================================
+# SMART SENTINEL: RECOVERY ENGINE
+# ============================================================================
+
+def _get_recovery_config(meta: dict) -> dict:
+    """Get recovery config from meta.json, falling back to RECOVERY_DEFAULTS."""
+    config = dict(RECOVERY_DEFAULTS)
+    build_overrides = meta.get("recovery", {})
+    config.update(build_overrides)
+    return config
+
+
+def _classify_failure(drop_id: str, info: dict, slug: str) -> str:
+    """Classify a failure type for recovery rule matching.
+
+    Returns one of: 'dead_timeout', 'spawn_error', 'content_error', 'unknown'
+    """
+    status = info.get("status", "")
+
+    if status == "dead":
+        return "dead_timeout"
+
+    reason = info.get("failure_reason", "") or ""
+    reason_lower = reason.lower()
+
+    spawn_signals = ["spawn error", "api returned", "timeout", "connection", "zo_client_identity_token"]
+    if any(sig in reason_lower for sig in spawn_signals):
+        return "spawn_error"
+
+    deposit = get_deposit(slug, drop_id)
+    if deposit:
+        dep_status = deposit.get("status", "")
+        if dep_status in ("blocked", "partial"):
+            return "content_error"
+
+    if reason:
+        return "content_error"
+
+    return "unknown"
+
+
+def _log_recovery_action(slug: str, action: dict) -> None:
+    """Append a recovery action to RECOVERY_LOG.jsonl (P39: Audit Everything)."""
+    log_path = BUILDS_DIR / slug / "RECOVERY_LOG.jsonl"
+    action["timestamp"] = datetime.now(timezone.utc).isoformat()
+    with open(log_path, "a") as f:
+        f.write(json.dumps(action) + "\n")
+
+
+def _check_build_stale(slug: str, meta: dict, config: dict) -> bool:
+    """Check if a build is stale (active too long with no progress)."""
+    started_str = meta.get("started_at")
+    if not started_str:
+        return False
+
+    now = datetime.now(timezone.utc)
+    try:
+        started = datetime.fromisoformat(started_str.replace("Z", "+00:00"))
+    except ValueError:
+        return False
+
+    stale_hours = config.get("stale_threshold_hours", 4)
+    if (now - started).total_seconds() < stale_hours * 3600:
+        return False
+
+    last_progress_str = meta.get("last_progress_at")
+    if not last_progress_str:
+        return True
+
+    try:
+        last_progress = datetime.fromisoformat(last_progress_str.replace("Z", "+00:00"))
+    except ValueError:
+        return True
+
+    no_progress_minutes = config.get("stale_no_progress_minutes", 60)
+    return (now - last_progress).total_seconds() > no_progress_minutes * 60
+
+
+def _check_wave_death(meta: dict, config: dict) -> bool:
+    """Check if all blocking Drops in the current wave are dead/failed with retries exhausted."""
+    waves = meta.get("waves", {})
+    active_wave = meta.get("active_wave")
+    if not waves or not active_wave:
+        return False
+
+    wave_drops = waves.get(active_wave, [])
+    if not wave_drops:
+        return False
+
+    drops = meta.get("drops", {})
+    max_retries = config.get("max_auto_retries", 2)
+    terminal_statuses = {"dead", "failed"}
+
+    blocking_drops = [d for d in wave_drops if drops.get(d, {}).get("blocking", True)]
+    if not blocking_drops:
+        return False
+
+    for drop_id in blocking_drops:
+        info = drops.get(drop_id, {})
+        status = info.get("status", "pending")
+        if status not in terminal_statuses:
+            return False
+        if info.get("retry_count", 0) < max_retries:
+            return False
+
+    return True
+
+
+def assess_and_recover(slug: str, meta: dict = None, dry_run: bool = False) -> list[dict]:
+    """Assess build health and execute recovery actions.
+
+    Deterministic rules applied in priority order:
+      R1: dead + retry_count < max → auto-retry with timeout context
+      R2: failed + spawn_error + retry_count < max → auto-retry
+      R3: failed + content_error → needs AI judgment (escalate)
+      R4: all blocking drops in wave dead/failed + retries exhausted → build blocked
+      R5: build active > threshold with no recent progress → stale escalation
+
+    Returns list of action dicts describing what was done.
+    """
+    if meta is None:
+        meta = load_meta(slug)
+
+    if meta.get("status") not in ("active",):
+        return []
+
+    config = _get_recovery_config(meta)
+    max_retries = config.get("max_auto_retries", 2)
+    actions: list[dict] = []
+    drops = meta.get("drops", {})
+    now = datetime.now(timezone.utc)
+
+    # Scan for dead/failed drops needing recovery
+    for drop_id, info in drops.items():
+        status = info.get("status", "")
+        if status not in ("dead", "failed"):
+            continue
+
+        retry_count = info.get("retry_count", 0)
+        failure_type = _classify_failure(drop_id, info, slug)
+
+        # R1: Dead timeout — auto-retry if under limit
+        if failure_type == "dead_timeout" and retry_count < max_retries:
+            action = {
+                "drop_id": drop_id,
+                "rule": "R1",
+                "action": "auto_retry",
+                "failure_type": failure_type,
+                "reason": f"Dead (timeout), auto-retry {retry_count + 1}/{max_retries}",
+                "retry_number": retry_count + 1,
+            }
+            if not dry_run:
+                retry_reason = (
+                    "Previous attempt died (no response within timeout). "
+                    "Focus on completing the core requirement first. "
+                    "If blocked, write a deposit with status 'blocked' immediately."
+                )
+                retry_drop(slug, drop_id, reason=retry_reason)
+                info["auto_retried_at"] = now.isoformat()
+                info["auto_retry_reason"] = action["reason"]
+                info["recovery_source"] = "sentinel_auto"
+            _log_recovery_action(slug, action)
+            actions.append(action)
+            print(f"[RECOVERY] R1: {drop_id} auto-retried ({retry_count + 1}/{max_retries})")
+            continue
+
+        # R2: Spawn error — auto-retry if under limit
+        if failure_type == "spawn_error" and retry_count < max_retries:
+            action = {
+                "drop_id": drop_id,
+                "rule": "R2",
+                "action": "auto_retry",
+                "failure_type": failure_type,
+                "reason": f"Spawn error (transient), auto-retry {retry_count + 1}/{max_retries}",
+                "retry_number": retry_count + 1,
+            }
+            if not dry_run:
+                retry_reason = (
+                    "Previous attempt failed during spawn (transient API error). "
+                    "This is likely a temporary issue. Proceed normally."
+                )
+                retry_drop(slug, drop_id, reason=retry_reason)
+                info["auto_retried_at"] = now.isoformat()
+                info["auto_retry_reason"] = action["reason"]
+                info["recovery_source"] = "sentinel_auto"
+            _log_recovery_action(slug, action)
+            actions.append(action)
+            print(f"[RECOVERY] R2: {drop_id} auto-retried (spawn error, {retry_count + 1}/{max_retries})")
+            continue
+
+        # R3: Content/logic error — escalate for judgment
+        if failure_type == "content_error":
+            action = {
+                "drop_id": drop_id,
+                "rule": "R3",
+                "action": "needs_judgment",
+                "failure_type": failure_type,
+                "reason": info.get("failure_reason", "Content/logic failure"),
+            }
+            _log_recovery_action(slug, action)
+            actions.append(action)
+            print(f"[RECOVERY] R3: {drop_id} needs AI judgment (content error)")
+            continue
+
+        # Retries exhausted — escalate
+        if retry_count >= max_retries:
+            action = {
+                "drop_id": drop_id,
+                "rule": "R1/R2_exhausted",
+                "action": "escalate",
+                "failure_type": failure_type,
+                "reason": f"Retries exhausted ({retry_count}/{max_retries})",
+            }
+            _log_recovery_action(slug, action)
+            actions.append(action)
+            print(f"[RECOVERY] {drop_id} retries exhausted — escalating")
+            continue
+
+        # Unknown failure — escalate
+        action = {
+            "drop_id": drop_id,
+            "rule": "R_unknown",
+            "action": "escalate",
+            "failure_type": failure_type,
+            "reason": info.get("failure_reason", "Unknown failure type"),
+        }
+        _log_recovery_action(slug, action)
+        actions.append(action)
+
+    # R4: Wave death — all blocking drops in current wave failed with retries exhausted
+    if _check_wave_death(meta, config):
+        action = {
+            "drop_id": "*",
+            "rule": "R4",
+            "action": "escalate",
+            "failure_type": "wave_death",
+            "reason": f"All blocking drops in {meta.get('active_wave', '?')} are dead/failed with retries exhausted",
+        }
+        if not dry_run:
+            meta["status"] = "blocked"
+            meta["blocked_at"] = now.isoformat()
+            meta["blocked_reason"] = action["reason"]
+        _log_recovery_action(slug, action)
+        actions.append(action)
+        print(f"[RECOVERY] R4: Build BLOCKED — {action['reason']}")
+
+    # R5: Stale build detection
+    if _check_build_stale(slug, meta, config) and meta.get("status") != "blocked":
+        action = {
+            "drop_id": "*",
+            "rule": "R5",
+            "action": "escalate",
+            "failure_type": "stale",
+            "reason": f"Build active >{config.get('stale_threshold_hours', 4)}h with no progress in >{config.get('stale_no_progress_minutes', 60)}min",
+        }
+        _log_recovery_action(slug, action)
+        actions.append(action)
+        print(f"[RECOVERY] R5: Build stale — {action['reason']}")
+
+    # Save meta if mutations occurred (non-dry-run)
+    if actions and not dry_run:
+        save_meta(slug, meta)
+        update_status_md(slug, meta)
+
+    return actions
+
+
 async def finalize_build(slug: str):
     """Run post-build finalization: safety checks, integration tests, harvest learnings"""
     print(f"\n[FINALIZE] {slug}")
@@ -1469,7 +1771,7 @@ def main():
     args = parser.parse_args()
     
     if args.command == "start":
-        asyncio.run(start_build(args.slug))
+        start_build(args.slug)
     elif args.command == "status":
         show_status(args.slug)
     elif args.command == "stop":

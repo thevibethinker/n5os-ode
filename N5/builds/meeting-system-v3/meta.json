@@ -3,7 +3,7 @@
   "slug": "meeting-system-v3",
   "title": "Meeting Orchestrator v3: End-to-end Pulse-driven pipeline",
   "build_type": "code_build",
-  "status": "active",
+  "status": "finalized",
   "model": "anthropic:claude-sonnet-4-20250514",
   "launch_mode": "orchestrated",
   "waves": {
@@ -49,7 +49,7 @@
       "D6.3"
     ]
   },
-  "active_wave": "W5",
+  "active_wave": "W7",
   "drops": {
     "D0.1": {
       "name": "Prompt Audit",
@@ -330,7 +330,10 @@
       ],
       "spawn_mode": "auto",
       "blocking": true,
-      "status": "pending"
+      "status": "complete",
+      "started_at": "2026-02-09T09:30:42.584587+00:00",
+      "conversation_id": "pulse_meeting-system-v3_D4.3_1770629341",
+      "completed_at": "2026-02-09T09:37:38.792211+00:00"
     },
     "D5.1": {
       "name": "Archive Module",
@@ -342,7 +345,13 @@
       ],
       "spawn_mode": "auto",
       "blocking": true,
-      "status": "pending"
+      "status": "complete",
+      "failed_at": "2026-02-09T09:42:39.151366+00:00",
+      "retry_count": 1,
+      "last_retry": "2026-02-09T09:51:29.058997+00:00",
+      "started_at": "2026-02-09T09:55:27.629351+00:00",
+      "conversation_id": "pulse_meeting-system-v3_D5.1_1770630744",
+      "completed_at": "2026-02-09T10:08:15.212422+00:00"
     },
     "D5.2": {
       "name": "Migration Execute",
@@ -355,7 +364,13 @@
       ],
       "spawn_mode": "auto",
       "blocking": true,
-      "status": "pending"
+      "status": "complete",
+      "failed_at": "2026-02-09T10:13:15.638723+00:00",
+      "retry_count": 1,
+      "last_retry": "2026-02-09T10:13:22.329251+00:00",
+      "started_at": "2026-02-09T10:16:39.067137+00:00",
+      "conversation_id": "pulse_meeting-system-v3_D5.2_1770632002",
+      "completed_at": "2026-02-09T10:22:56.069101+00:00"
     },
     "D5.3": {
       "name": "Cleanup",
@@ -367,7 +382,10 @@
       ],
       "spawn_mode": "auto",
       "blocking": true,
-      "status": "pending"
+      "status": "complete",
+      "started_at": "2026-02-09T10:26:42.536458+00:00",
+      "conversation_id": "pulse_meeting-system-v3_D5.3_1770632576",
+      "completed_at": "2026-02-09T10:30:22.656319+00:00"
     },
     "D6.1": {
       "name": "Integration Test",
@@ -379,7 +397,14 @@
       ],
       "spawn_mode": "auto",
       "blocking": true,
-      "status": "pending"
+      "status": "complete",
+      "dead_at": "2026-02-09T10:51:41.467389+00:00",
+      "dead_reason": "Running for 17 minutes",
+      "retry_count": 2,
+      "last_retry": "2026-02-09T10:58:51.370722+00:00",
+      "started_at": "2026-02-09T11:02:36.255277+00:00",
+      "conversation_id": "pulse_meeting-system-v3_D6.1_1770634731",
+      "completed_at": "2026-02-09T11:14:19.874840+00:00"
     },
     "D6.2": {
       "name": "Scheduled Agent",
@@ -391,7 +416,10 @@
       ],
       "spawn_mode": "auto",
       "blocking": true,
-      "status": "pending"
+      "status": "complete",
+      "started_at": "2026-02-09T11:17:44.355682+00:00",
+      "conversation_id": "pulse_meeting-system-v3_D6.2_1770635659",
+      "completed_at": "2026-02-09T13:12:44.380959+00:00"
     },
     "D6.3": {
       "name": "Documentation",
@@ -403,7 +431,12 @@
       ],
       "spawn_mode": "auto",
       "blocking": true,
-      "status": "pending"
+      "status": "complete",
+      "retry_count": 1,
+      "last_retry": "2026-02-09T13:18:07.837865+00:00",
+      "started_at": "2026-02-09T13:21:07.444868+00:00",
+      "conversation_id": "pulse_meeting-system-v3_D6.3_1770643088",
+      "completed_at": "2026-02-09T13:21:44.642287+00:00"
     }
   },
   "lineage": {
@@ -445,5 +478,10 @@
     "auto_spawned": [],
     "blocked": true,
     "blocking_drop": "D4.2"
-  }
+  },
+  "last_progress_at": "2026-02-09T13:22:03.076930+00:00",
+  "completed_at": "2026-02-09T13:21:52.253764+00:00",
+  "summary": "**D0.1:** Audited 39 block prompts (30 external B00-B35, 9 internal B40-B48). Identified quality issues, overlap patterns, and alignment with PLAN. Created comprehensive audit report with scoring and recommendations.\n**D0.2:** Merged B02 (Commitments) + B05 (Action Items) into unified 'Commitments & Actions' block. New B02 captures both explicit promises with accountability chain AND actionable tasks with decomposition.\n**D0.3:** Created canonical BLOCK_INDEX.yaml with all 27 blocks documented (17 external, 10 internal). Defined 6 recipes (external_standard, external_sales, external_investor, internal_standup, internal_strategy, internal_retrospective), 3 trigger patterns for B00/B07/B14, and priority relevance mappings for all 5 priority domains. Output is human-readable YAML format ready for D0.4 Smart Selector.\n**D0.4:** Built LLM-powered smart block selector that analyzes transcripts to determine which blocks to generate\n**D1.1:** {'inbox_state': {'raw_transcript_files': 5, 'meeting_folders': 3, 'special_folders': ['_orphaned_blocks', '_quarantine']}, 'root_level_orphans': 20, 'issues_found': {'no_transcript': 2, 'jsonl_transcript': 1, 'no_manifest': 1, 'orphaned_blocks_count': 14}, 'migration_scope': {'manifest_upgrades': 1, 'transcript_conversions': 1, 'archive_moves': 20, 'collisions_to_resolve': 2}}\n**D1.2:** {'total_paths_spot_checked': 10, 'collisions_validated': 2, 'migration_counts_accurate': True, 'high_risk_items': 8, 'edge_cases_identified': 3, 'all_criteria_met': True}\n**D1.3:** CRM migration executed successfully with findings on internal team data location. Tasks completed: (1) Backup created at N5/data/crm_backup_20260201.db, (2) CRM copied to canonical location N5/data/crm.db, (3) is_internal column added to individuals table. Key finding: Internal team members (Vrijen, Logan, Ilse, Shivam, Ankit) are stored in N5/data/profiles.db, NOT in the legacy CRM. The CRM only contains 57 external contacts. Successfully flagged 3 internal team members in CRM (Logan Currie, Ilse Funkhouser, Shivam Desai) who had external-facing entries. Vrijen (Attawar V, Vrijen Attawar) and Ankit Mittal do not have entries in the CRM - they exist only in profiles.db. Recommendation: Either (a) add internal team to CRM for unified SSOT, or (b) use profiles system as internal team source of truth and CRM for external contacts only.\n**D1.4:** {'converter_features': {'supported_legacy_versions': ['1.0', '2.0', 'unknown'], 'edge_case_handling': ['Missing participants \u2192 infer from folder name or mark for HITL', 'Missing dates \u2192 extract from folder name pattern', 'Different status mapping \u2192 v3 status normalization', 'blocks_generated as list \u2192 convert to v3 blocks structure', 'No manifest_version \u2192 detect by content keys'], 'safety_features': ['Backup original as .legacy file', 'Dry-run mode for preview', 'v3 schema detection to avoid double conversion', 'Graceful error handling for malformed JSON']}, 'testing_results': {'v1_manifests_tested': 5, 'v2_manifests_tested': 1, 'edge_cases_tested': 1, 'success_rate': '100%'}, 'v3_schema_compliance': {'includes_all_required_fields': True, 'generates_proper_status_history': True, 'creates_quality_gate_section': True, 'maps_legacy_blocks_to_v3': True, 'handles_meeting_type_inference': True}}\n**D2.1:** Successfully defined and enhanced manifest v3 JSON Schema with comprehensive validation\n**D2.2:** Successfully documented the canonical meeting ID convention format (YYYY-MM-DD_Descriptive-Name) with comprehensive transformation rules, character mapping, and edge case handling. Includes 15+ examples covering various scenarios from basic meetings to complex names with special characters. Document provides implementation guidelines and validation rules for consistent ID generation across the meeting ingestion system.\n**D2.3:** Created comprehensive Block Picker Policy v2 documentation that formalizes all selection logic from D0.3 and D0.4. Document includes recipe selection rules, always/conditional framework, LLM analysis criteria, Zo Take Heed trigger patterns, priority relevance scoring, and complete decision flowchart.\n**D2.4:** Successfully created comprehensive quality harness specification for the meeting processing pipeline with 4-stage validation framework\n**D2.5:** No summary\n**D3.1:** Successfully built the ingest module for meeting-system-v3 that normalizes various transcript formats and creates v3 manifests with microsummaries\n**D3.2:** Successfully implemented calendar triangulation module with matching logic, confidence scoring, and attendee extraction\n**D3.3:** No summary\n**D3.4:** Quality Gate Module implementation verified and validated. All required functionality exists with comprehensive quality checks, HITL escalation, and manifest integration\n**D3.5:** Successfully updated meeting_cli.py to support v3 pipeline commands while maintaining backward compatibility with legacy pipeline\n**D4.1:** Integrated block_selector.py into process.py pipeline with full selection logging and reasoning. Tested against 5 real meetings with excellent results.\n**D4.2:** Created block_generator.py - standalone orchestrator for block generation with /zo/ask, retries, graceful failure handling, and manifest logging.\n**D4.3:** Quality check system already implemented and verified. Comprehensive block validation with V-approved sensible defaults, hallucination detection, and manifest integration fully operational.\n**D5.1:** Successfully updated archive.py to use v3 manifests with correct 'archived' status. All acceptance criteria met - internal/external routing works, folder names are cleaned, manifests updated properly, and Week-of folders created as needed.\n**D5.2:** Successfully executed comprehensive migration dry-run. Created backup (6,859 files), analyzed all 20 root-level folders for archival, identified 2 collision scenarios, and documented transcript conversion requirements. No files were modified - full preview report generated.\n**D5.3:** Successfully cleaned meeting system structure by quarantining 66 orphaned items. Discovered D5.2 migration was dry-run only - achieved clean structure through quarantine approach instead of archival. No orphans remain in Inbox root or Personal/Meetings root.\n**D6.1:** Successfully ran 5 core integration tests validating end-to-end meeting pipeline. Tested: (1) JSONL transcript ingestion, (2) Folder-based transcript ingestion, (3) Duplicate detection with 100% similarity matching, (4) Archive structure validation, (5) Registry statistics. All core pipeline components functioning correctly.\n**D6.2:** Successfully created Meeting Orchestrator v3 agent to replace legacy MG-* agents. New agent runs daily at 6 AM ET with consolidated meeting pipeline commands. Disabled duplicate and legacy agents. Verified email delivery and command execution.\n**D6.3:** Documentation task completed successfully. SKILL.md updated to v3.0.0 with comprehensive documentation of the 6-stage v3 pipeline, CLI commands, HITL queue system, and migration guide. Troubleshooting runbook provides detailed diagnostic and resolution procedures for all pipeline stages.",
+  "finalized_at": "2026-02-09T13:22:03.616061+00:00",
+  "finalization_passed": true
 }

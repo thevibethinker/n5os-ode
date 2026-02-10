@@ -27,7 +27,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Optional, Dict, Any
 
-DB_PATH = Path(__file__).parent.parent / "data" / "edges.db"
+DB_PATH = Path("/home/workspace/N5/cognition/brain.db")
 
 
 def get_connection() -> sqlite3.Connection:

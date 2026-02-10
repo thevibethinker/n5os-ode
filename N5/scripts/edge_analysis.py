@@ -30,7 +30,7 @@ from pathlib import Path
 from collections import defaultdict
 from datetime import datetime
 
-DB_PATH = Path(__file__).parent.parent / "data" / "edges.db"
+DB_PATH = Path("/home/workspace/N5/cognition/brain.db")
 
 
 def get_connection():
@@ -45,7 +45,7 @@ def originated_vs_adopted():
     # Get all originated_by edges
     cursor.execute("""
         SELECT target_id, source_type, source_id, e.name as entity_name
-        FROM edges
+        FROM meeting_edges
         JOIN entities e ON e.entity_type = 'person' AND e.entity_id = edges.target_id
         WHERE relation = 'originated_by' AND status = 'active'
     """)
@@ -54,7 +54,7 @@ def originated_vs_adopted():
     # Get all supported_by edges
     cursor.execute("""
         SELECT target_id, source_type, source_id, e.name as entity_name
-        FROM edges
+        FROM meeting_edges
         JOIN entities e ON e.entity_type = 'person' AND e.entity_id = edges.target_id
         WHERE relation = 'supported_by' AND status = 'active'
     """)
@@ -114,7 +114,7 @@ def stance_analysis():
     # Get V's supported edges
     cursor.execute("""
         SELECT source_type, source_id, evidence, context_meeting_id
-        FROM edges
+        FROM meeting_edges
         WHERE relation = 'supported_by' AND target_id = 'vrijen' AND status = 'active'
     """)
     supported = cursor.fetchall()
@@ -122,7 +122,7 @@ def stance_analysis():
     # Get V's challenged edges
     cursor.execute("""
         SELECT source_type, source_id, evidence, context_meeting_id
-        FROM edges
+        FROM meeting_edges
         WHERE relation = 'challenged_by' AND target_id = 'vrijen' AND status = 'active'
     """)
     challenged = cursor.fetchall()
@@ -162,7 +162,7 @@ def outcome_review():
     cursor.execute("""
         SELECT id, source_type, source_id, relation, target_type, target_id,
                evidence, context_meeting_id, outcome_status, created_at
-        FROM edges
+        FROM meeting_edges
         WHERE relation IN ('hoped_for', 'concerned_about') AND status = 'active'
         ORDER BY created_at ASC
     """)
@@ -216,7 +216,7 @@ def idea_clusters():
     # Get all idea -> person edges
     cursor.execute("""
         SELECT source_id, target_id, relation
-        FROM edges
+        FROM meeting_edges
         WHERE source_type = 'idea' 
           AND target_type = 'person'
           AND relation IN ('originated_by', 'supported_by')
@@ -377,7 +377,7 @@ def trace_chain(entity: str):
         # Get edges from this entity
         cursor.execute("""
             SELECT relation, target_type, target_id, evidence, context_meeting_id
-            FROM edges
+            FROM meeting_edges
             WHERE source_type = ? AND source_id = ? AND status = 'active'
         """, (etype, eid))
         outgoing = cursor.fetchall()

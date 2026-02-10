@@ -79,6 +79,18 @@ This three-part system represents the **working model for modern AI-enabled prod
 2. **Transformation layer** (workflows and scripts that process)
 3. **Synthesis layer** (output that combines and intersects data)
 
+#### Evolution of the Metaphor: Pools → Plumbing → Cenotes *(Feb 2026)*
+
+The water metaphor matured through three distinct phases:
+
+**Phase 1 — Pools:** Data scattered in disconnected containers. "All the public pools in your house." Each tool held its own water with no connection to any other.
+
+**Phase 2 — Plumbing (Integrations):** Data could flow between places, but through rigid pipes with fixed schemas. Not everyone could set up those schemas, so the system remained janky. Better than pools, but still brittle.
+
+**Phase 3 — Cenotes:** The underground water system *is* the data. The surface-level tools and products are just holes — access points into a shared data substrate. The strategic move is not to own the pool, but to **position yourself at a checkpoint of valuable data** where the underground system surfaces.
+
+This reframes what it means to build a productivity tool: you're not building a container for data. You're building an access point into someone's data substrate. The companies that win will be the ones that sit at the most valuable checkpoints — the places where people *must* surface to interact with a particular dimension of their data.
+
 ### Principle 2: The Minimal Touch Model
 
 **Goal**: Set up once, touch minimally thereafter.
@@ -100,6 +112,16 @@ Check: Verify file in git
 ↓
 If empty → Log error → Trace cause → Auto-correct
 ```
+
+#### Sharpening: Review → Approval → Instruction Collapsing *(Feb 2026)*
+
+The minimal touch model has a deeper implication than originally articulated. As digital labor automation advances, the essence of that automation is **reasoning and judgment in non-programmed contexts**. This means:
+
+- The human's role shifts from "process the task" to "collapse the work into an instruction"
+- Review becomes approval — not reviewing the work itself, but approving whether the instruction was executed correctly
+- The cognitive work moves upstream: crafting the right instruction is the high-value activity, not executing or even reviewing execution
+
+This is not just efficiency. It's a fundamental change in what "work" means for knowledge workers: **your job is to think clearly enough to issue good instructions, then approve the outcomes.**
 
 ### Principle 3: The System Must Be Self-Aware
 
@@ -546,6 +568,31 @@ This is engineering thinking applied to knowledge work systems.
 - Coordinates information flow
 
 This is distributed systems thinking applied to personal productivity.
+
+### On the Individual Data Manager (IDM) *(Feb 2026)*
+
+**Strategic thesis**: The next Salesforce is not a CRM — it's an Individual Data Manager.
+
+Salesforce captured value by becoming the system of record for customer relationships. The equivalent opportunity in AI-age productivity is becoming the system of record for an **individual's total data profile** — their productivity patterns, preferences, communication style, decision history, and working rhythms across every tool and context they operate in.
+
+**Why this matters**: As data becomes a substrate (see Cenotes metaphor, Principle 1), every tool becomes an access point into someone's data. But no tool currently owns the holistic view of who someone is and how they work. The company that captures that profile — and lets the individual control it — captures the highest-value position in the productivity stack.
+
+**Connection to Zo**: This is what Zo is reaching for. Not another productivity app, but the orchestration layer that, over time, accumulates the richest understanding of how an individual thinks and works.
+
+**Connection to GDPR/data governance**: Giving individuals governance over their own data profile is not just ethical — it's a competitive moat. The IDM that says "we know you deeply but we never use your data to help anyone else" wins.
+
+### On Knock-On Tasks and Working Style Decomposition *(Feb 2026)*
+
+**Key insight**: The real intelligence isn't tracking what someone does — it's tracking the **cascade**. Every task has knock-on tasks, and the pattern of those cascades reveals someone's working style.
+
+**What becomes learnable over time**:
+- **Ambient task size**: How big are your typical work chunks? Do you break things into 5-minute sprints or 2-hour deep dives?
+- **Ambient execution order**: What sequence do you naturally follow? Do you always check email before deep work, or do you batch communications at day's end?
+- **Cascade patterns**: When you finish a meeting, what do you typically do next? When you draft a document, what follow-up tasks does that generate?
+
+**Why this matters**: An orchestration layer that understands your knock-on patterns can anticipate what you need before you know you need it. This is the difference between a system that responds to instructions and one that genuinely assists.
+
+**Representational idea**: These patterns could be tracked as graphs — nodes (tasks) connected by edges (knock-on relationships) — making working style decomposition a computable, visualizable property of an individual.
 
 ### On Averaging Across Contexts
 

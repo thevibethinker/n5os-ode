@@ -1,0 +1,31 @@
+{
+  "drop_id": "D1.2",
+  "status": "complete",
+  "summary": "Ran full purge pipeline on both vectors_v2.db and brain.db. Both databases were already clean — zero stale resources (all paths exist on disk), zero orphaned resources (all have blocks), zero orphaned blocks (all have vectors). The audit data (9,683 resources, 2,504 stale) predates a prior cleanup or re-index that already resolved the issues. Current state: vectors_v2.db has 7,145 resources / 173,061 vectors; brain.db has 2,855 resources / 47,880 vectors. Both VACUUM'd and PRAGMA integrity_check passed. Entities (25,919) and relationships (32,752) in brain.db untouched. Backups created as safety net.",
+  "artifacts": [
+    "N5/cognition/vectors_v2.db.bak.20260209",
+    "N5/cognition/brain.db.bak.20260209"
+  ],
+  "metrics": {
+    "v2_resources_before": 7145,
+    "v2_resources_after": 7145,
+    "v2_resources_purged": 0,
+    "v2_blocks_before": 173061,
+    "v2_blocks_after": 173061,
+    "v2_vectors_before": 173061,
+    "v2_vectors_after": 173061,
+    "v2_vectors_purged": 0,
+    "brain_resources_before": 2855,
+    "brain_resources_after": 2855,
+    "brain_resources_purged": 0,
+    "brain_blocks_before": 47880,
+    "brain_blocks_after": 47880,
+    "brain_blocks_purged": 0,
+    "brain_entities": 25919,
+    "brain_relationships": 32752
+  },
+  "broadcast": "Purged 0 stale resources and 0 orphaned entries — both DBs were already clean (prior cleanup/re-index resolved audit findings). vectors_v2.db: 7,145 resources / 173,061 vectors. brain.db: 2,855 resources / 47,880 vectors. Graph (25,919 entities / 32,752 relationships) untouched. Both VACUUM'd, integrity checks passed. Backups created at *.bak.20260209.",
+  "issues": [
+    "Audit data was stale: vectors_v2.db had 7,145 resources (not 9,683), and 0 stale (not 2,504). The original audit likely ran against a pre-cleanup state. The D1.1 ANN index rebuild (which re-indexed from scratch) or a prior operation already resolved the staleness."
+  ]
+}

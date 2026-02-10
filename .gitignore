@@ -116,3 +116,9 @@ N5/cognition/models/
 .cache/
 .zo/conversations/zo_conversations.duckdb
 .zo/conversations/zo_conversations.duckdb.wal
+
+# DuckDB staging payloads (auto-generated, ephemeral)
+.zo/conversations/_staging/duckdb_payload_*.json
+Build Exports/
+Sites/keanu-to-market-staging/
+N5/cognition/vectors_v2.db.bak.*

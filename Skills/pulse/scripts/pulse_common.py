@@ -94,6 +94,14 @@ PATHS = PulsePaths
 # CONFIG MANAGEMENT
 # ============================================================================
 
+RECOVERY_DEFAULTS = {
+    "max_auto_retries": 2,
+    "dead_threshold_seconds": 900,
+    "stale_threshold_hours": 4,
+    "stale_no_progress_minutes": 60,
+    "enable_ai_judgment": True,
+}
+
 DEFAULT_CONFIG = {
     "validation": {
         "enabled": True,

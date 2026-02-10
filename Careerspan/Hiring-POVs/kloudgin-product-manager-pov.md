@@ -1,3 +1,13 @@
+---
+created: 2026-02-08
+last_edited: 2026-02-09
+version: 1.0
+provenance: con_INJlXkhdqltQPigQ
+employer: KloudGin
+role: Product Manager
+source_url: https://kloudgin.com/career/product-manager/
+---
+
 # Hiring POV: Product Manager @ KloudGin
 
 ## Role Overview

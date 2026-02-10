@@ -1,6 +1,6 @@
 ---
 created: 2026-01-13
-last_edited: 2026-01-16
+last_edited: 2026-02-09
 version: 1
 provenance: con_hWUkUaBob3ANoY27
 name: Tope Awotona
@@ -24,11 +24,12 @@ status: active
 ## Relationship Context
 
 ### How We Met
-V is meeting with Tope on Friday, January 16, 2026.
+V connected with Tope through Shane Murphy-Reuter (Jan 12, 2026). First meeting Jan 16, 2026 — exploratory, two founders trading ideas about AI productivity. Second meeting Feb 9, 2026 — substantive strategy discussion that shifted from acquisition exploration to Tope evaluating V as a potential contributor/hire.
 
 ### Key Objectives
 **V's asks:**
-- Background preparation for upcoming meeting.
+- Explore working relationship at Calendly (scheduling, product strategy)
+- Demonstrate product thinking and domain expertise
 
 ---
 
@@ -67,6 +68,17 @@ V is meeting with Tope on Friday, January 16, 2026.
 ---
 
 ## Interaction History
+
+### 2026-02-09 | Video + Phone Call
+- **Context:** Second meeting. V in Vail, Tope post-company kickoff in Tucson.
+- **Key Intel:** Calendly targeting July for two big launches — AI scheduling assistant and AI CRM for solopreneurs. 18 months of rebuilding.
+- **What Happened:** V presented cenotes/IDM framing. Tope shared his CRM thesis (4 points on AI breaking open VSMB). V raised onboarding/cognitive installation problem — Tope agreed strongly ("told you so" moment internally). Discussed private instruction problem, competitive dynamics (cal.com snapshot migration), enterprise vs VSMB strategy.
+- **THE TURN:** Tope laid out org structure and open roles. Explicitly said "maybe that is an opportunity for us to explore some ideas." Considering V for a scheduling role (was planning to hire staff PM).
+- **Tope's Assessment of V:** Knows — great product thinking, domain expertise, knowledge of emerging shifts. Doesn't know — can V translate ideas into execution?
+- **Tope's Words:** Called V's document "profound in a lot of ways." Said "I like the way you think about product."
+- **Next Step:** Tope to think about it and get back before end of week.
+- **Shift:** Conversation has moved from "should Calendly acquire Careerspan" to "should Calendly hire Vrijen."
+- **Source:** con_9cwgvFcEstfjUIMd analysis
 
 ### 2026-01-16 | internal: None
 - **Source:** 2026-01-16_pkr-qzco-jhz_[M]/B03_STAKEHOLDER_INTELLIGENCE.md

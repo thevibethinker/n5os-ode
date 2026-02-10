@@ -381,6 +381,106 @@ app.get("/health", (c) => {
   });
 });
 
+app.get("/refresh", async (c) => {
+  const tokens = await loadTokens();
+  if (!tokens || !tokens.refresh_token) {
+    return c.json({ error: "No refresh token available. Re-authorize at /" }, 400);
+  }
+
+  if (!CALENDLY_CLIENT_ID || !CALENDLY_CLIENT_SECRET) {
+    return c.json({ error: "Missing CALENDLY_CLIENT_ID / CALENDLY_CLIENT_SECRET" }, 500);
+  }
+
+  const resp = await fetch("https://auth.calendly.com/oauth/token", {
+    method: "POST",
+    headers: { "Content-Type": "application/x-www-form-urlencoded" },
+    body: new URLSearchParams({
+      grant_type: "refresh_token",
+      refresh_token: tokens.refresh_token,
+      client_id: CALENDLY_CLIENT_ID,
+      client_secret: CALENDLY_CLIENT_SECRET,
+    }).toString(),
+  });
+
+  if (!resp.ok) {
+    const text = await resp.text();
+    console.error(`Token refresh failed: ${resp.status} ${text}`);
+    return c.json({ error: "Refresh failed", status: resp.status, detail: text }, 502);
+  }
+
+  const data = await resp.json() as any;
+  const newTokens: TokenData = {
+    access_token: data.access_token,
+    refresh_token: data.refresh_token || tokens.refresh_token,
+    token_type: data.token_type || "Bearer",
+    expires_at: Date.now() + (data.expires_in * 1000),
+    created_at: tokens.created_at,
+    owner_uri: data.owner || tokens.owner_uri,
+    organization_uri: data.organization || tokens.organization_uri,
+  };
+
+  await saveTokens(newTokens);
+
+  return c.json({
+    refreshed: true,
+    expires_at: new Date(newTokens.expires_at).toISOString(),
+    expires_in_hours: ((newTokens.expires_at - Date.now()) / 1000 / 3600).toFixed(1),
+  });
+});
+
+app.get("/status", async (c) => {
+  const tokens = await loadTokens();
+  const now = Date.now();
+  const tokenExpired = tokens ? now > tokens.expires_at : true;
+  const expiresIn = tokens ? ((tokens.expires_at - now) / 1000 / 3600).toFixed(1) : "N/A";
+
+  return c.html(`
+    <!DOCTYPE html>
+    <html>
+    <head>
+      <title>Calendly Integration Status</title>
+      <style>
+        body { font-family: system-ui, sans-serif; max-width: 700px; margin: 50px auto; padding: 20px; }
+        h1 { color: #006bff; }
+        .card { padding: 16px; border-radius: 8px; margin: 12px 0; }
+        .ok { background: #e8f5e9; border-left: 4px solid #00c853; }
+        .warn { background: #fff3e0; border-left: 4px solid #ff9800; }
+        .err { background: #ffebee; border-left: 4px solid #f44336; }
+        .btn { display: inline-block; background: #006bff; color: white; padding: 10px 20px;
+               text-decoration: none; border-radius: 6px; font-weight: 600; margin: 4px; }
+        .btn:hover { background: #0052cc; }
+        code { background: #f5f5f5; padding: 2px 6px; border-radius: 4px; }
+      </style>
+    </head>
+    <body>
+      <h1>🗓️ Calendly Integration Status</h1>
+
+      <div class="card ${tokens ? (tokenExpired ? 'err' : 'ok') : 'err'}">
+        <strong>OAuth Token:</strong>
+        ${tokens ? (tokenExpired
+          ? `❌ Expired (${expiresIn}h ago)`
+          : `✅ Valid (expires in ${expiresIn}h)`)
+        : '❌ No tokens found'}
+      </div>
+
+      <div class="card ok">
+        <strong>Service:</strong> ✅ Running on port ${port}
+      </div>
+
+      <div class="card ok">
+        <strong>Webhook Endpoint:</strong> <code>POST /webhook</code>
+      </div>
+
+      <p>
+        ${tokenExpired
+          ? '<a href="/refresh" class="btn">🔄 Refresh Token</a><a href="/" class="btn">🔑 Re-Authorize</a>'
+          : '<a href="/refresh" class="btn">🔄 Refresh Token</a>'}
+      </p>
+    </body>
+    </html>
+  `);
+});
+
 const port = parseInt(process.env.PORT || "50001");
 console.log(`[${new Date().toISOString()}] Calendly integration server starting on port ${port}`);
 

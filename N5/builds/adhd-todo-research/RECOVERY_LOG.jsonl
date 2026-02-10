@@ -1,0 +1,6 @@
+{"drop_id": "D1.1", "rule": "R1", "action": "auto_retry", "failure_type": "dead_timeout", "reason": "Dead (timeout), auto-retry 1/2", "retry_number": 1, "timestamp": "2026-02-09T10:33:15.505746+00:00"}
+{"drop_id": "D1.2", "rule": "R1", "action": "auto_retry", "failure_type": "dead_timeout", "reason": "Dead (timeout), auto-retry 1/2", "retry_number": 1, "timestamp": "2026-02-09T10:33:15.506201+00:00"}
+{"drop_id": "D1.3", "rule": "R1", "action": "auto_retry", "failure_type": "dead_timeout", "reason": "Dead (timeout), auto-retry 1/2", "retry_number": 1, "timestamp": "2026-02-09T10:33:15.506302+00:00"}
+{"drop_id": "D1.4", "rule": "R1", "action": "auto_retry", "failure_type": "dead_timeout", "reason": "Dead (timeout), auto-retry 1/2", "retry_number": 1, "timestamp": "2026-02-09T10:33:15.506375+00:00"}
+{"drop_id": "D1.5", "rule": "R_unknown", "action": "escalate", "failure_type": "unknown", "reason": "", "timestamp": "2026-02-09T10:33:15.506765+00:00"}
+{"drop_id": "*", "rule": "R5", "action": "escalate", "failure_type": "stale", "reason": "Build active >4h with no progress in >60min", "timestamp": "2026-02-09T10:33:15.506926+00:00"}

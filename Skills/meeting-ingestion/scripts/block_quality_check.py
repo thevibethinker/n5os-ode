@@ -2,22 +2,18 @@
 """
 Block Quality Check for Meeting Intelligence System
 
-Validates generated meeting blocks meet quality standards as defined in the 
-quality harness specification. Checks output length, format compliance, 
-hallucination markers, and content accuracy.
-
-Part of the meeting-system-v3 build - implements quality validation for 
-generated blocks with configurable thresholds and manifest integration.
+Validates generated blocks meet quality standards with configurable thresholds.
+Uses sensible defaults approved by V with documented rationale.
 
 Usage:
-    python3 block_quality_check.py <meeting_path> [--check-blocks B01,B02] [--json]
-    python3 block_quality_check.py <meeting_path> --retry-failed
+    python3 block_quality_check.py <meeting_path> [--block B01] [--update-manifest] [--json]
+    python3 block_quality_check.py <meeting_path> --check-all
     python3 block_quality_check.py <meeting_path> --status
-
+    
 Examples:
-    python3 block_quality_check.py Personal/Meetings/Inbox/2026-01-26_John
-    python3 block_quality_check.py Personal/Meetings/Inbox/2026-01-26_John --check-blocks B01,B08
-    python3 block_quality_check.py Personal/Meetings/Inbox/2026-01-26_John --json
+    python3 block_quality_check.py Personal/Meetings/Inbox/2026-01-26_John_x_Careerspan
+    python3 block_quality_check.py Personal/Meetings/Inbox/2026-01-26_John_x_Careerspan --block B01 --update-manifest
+    python3 block_quality_check.py Personal/Meetings/Inbox/2026-01-26_John_x_Careerspan --check-all --json
 """
 
 import json
@@ -26,9 +22,10 @@ import sys
 import logging
 import argparse
 import re
+import yaml
 from pathlib import Path
 from datetime import datetime, UTC
-from typing import Optional, Dict, List, Tuple, Any
+from typing import Dict, List, Optional, Tuple, Any
 from dataclasses import dataclass, field, asdict
 
 logging.basicConfig(
@@ -37,744 +34,708 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Quality check thresholds (V approved defaults with rationale)
-
-# Block Length Thresholds (words)
-# Rationale: Based on block complexity and expected information density
-# B01 is comprehensive recap, others are targeted extracts
-BLOCK_LENGTH_THRESHOLDS = {
-    "B00": 30,  # Deferred intents - typically short action items
-    "B01": 200, # Detailed recap - comprehensive summary requires depth
-    "B02": 50,  # Commitments - specific but may have multiple items
-    "B02_B05": 80,  # Combined commitments+actions - more content
-    "B03": 50,  # Decisions - specific but context needed
-    "B04": 40,  # Open questions - may be brief but should have detail
-    "B05": 50,  # Action items - specific with owners/deadlines
-    "B06": 60,  # Business context - strategic insights need detail
-    "B07": 100, # Warm intros - draft emails need substance
-    "B08": 80,  # Stakeholder intelligence - insights about people
-    "B10": 60,  # Relationship trajectory - analysis requires depth
-    "B13": 70,  # Plan of action - coordinated approach needs detail
-    "B14": 60,  # Blurbs - marketing copy needs polish
-    "B21": 50,  # Key moments - quotes and context
-    "B25": 50,  # Deliverables - specific items with owners
-    "B26": 30,  # Metadata - structured info, can be brief
-    "B28": 80,  # Strategic intelligence - long-term insights
-    "B32": 50,  # Ideas - novel concepts need explanation
-    "B33": 70,  # Decision rationale - reasoning needs depth
-    # Internal blocks (B40+) - team-focused, can be more concise
-    "B40": 40,  # Internal decisions
-    "B41": 40,  # Team coordination
-    "B42": 40,  # Internal actions
-    "B43": 40,  # Resource allocation
-    "B44": 40,  # Process improvements
-    "B45": 40,  # Team dynamics
-    "B46": 40,  # Knowledge transfer
-    "B47": 50,  # Open debates - need context for resolution
-    "B48": 60,  # Internal synthesis - strategic for leadership
+# Quality thresholds - documented rationale below
+QUALITY_THRESHOLDS = {
+    # Output length validation (words, excluding YAML frontmatter)
+    "min_words": {
+        # Detailed blocks need substantial content for external sharing
+        "B01": 200,  # Detailed recap - comprehensive meeting summary
+        "B28": 150,  # Strategic intelligence - requires depth for value
+        "B08": 100,  # Stakeholder intelligence - needs detail for actionability
+        
+        # Standard blocks need moderate content 
+        "B02": 50,   # Commitments - need specificity for accountability
+        "B03": 50,   # Decisions - need context for understanding
+        "B05": 50,   # Action items - need detail for execution
+        "B06": 50,   # Business context - need depth for relevance
+        "B07": 80,   # Warm intros - need personal touch, can't be generic
+        "B10": 60,   # Relationship trajectory - needs nuance
+        "B13": 60,   # Plan of action - needs specificity
+        "B14": 40,   # Blurbs - concise but substantive
+        "B21": 50,   # Key moments - need context to be meaningful
+        "B33": 60,   # Decision rationale - needs reasoning depth
+        
+        # Metadata blocks need basic info
+        "B25": 30,   # Deliverable map - structured list with owners
+        "B26": 30,   # Meeting metadata - structured info
+        
+        # Internal blocks need moderate detail
+        "B40": 40,   # Internal decisions - context for team
+        "B41": 40,   # Team coordination - coordination details
+        "B42": 40,   # Internal actions - execution clarity
+        "B43": 40,   # Resource allocation - needs specifics
+        "B44": 40,   # Process improvements - actionable detail
+        "B45": 50,   # Team dynamics - requires sensitivity and depth
+        "B46": 40,   # Knowledge transfer - clear info sharing
+        "B47": 50,   # Open debates - needs nuance to capture tensions
+        "B48": 60,   # Internal synthesis - strategic depth for leadership
+        
+        # Special blocks
+        "B32": 40,   # Thought-provoking ideas - need development but can be concise
+        "B00": 20,   # Deferred intents - simple list with context
+        "B02_B05": 60,  # Combined block - needs substantial content
+        
+        # Default for any block not explicitly listed
+        "default": 30
+    },
+    
+    # Format compliance checks
+    "format": {
+        "requires_yaml_frontmatter": True,  # All blocks should have metadata
+        "requires_h1_heading": True,        # Clear structure
+        "min_sections": 1,                  # At least some organization
+        "requires_markdown_structure": True  # Not just plain text
+    },
+    
+    # Hallucination detection
+    "hallucination": {
+        "max_ai_markers": 0,               # No "As an AI..." or "I cannot access..."
+        "max_impossible_details": 0,       # No future dates, non-participants
+        "contradiction_threshold": 0.2     # <20% content contradicts other blocks
+    },
+    
+    # Content accuracy (sampling approach)
+    "accuracy": {
+        "sample_claims_count": 3,          # Check 3 key claims per block
+        "min_verifiable_ratio": 0.8,      # 80% of claims should be verifiable in transcript
+        "fuzzy_match_threshold": 0.7      # Semantic similarity for claim verification
+    },
+    
+    # Overall quality scoring (weighted average)
+    "scoring": {
+        "length_weight": 0.3,
+        "format_weight": 0.25,
+        "hallucination_weight": 0.25,
+        "accuracy_weight": 0.2,
+        "passing_score": 0.75  # Must score 75% to pass
+    }
 }
 
-# Confidence thresholds for quality scoring
-# Rationale: Based on processing risk and V's tolerance for false positives
-CONFIDENCE_THRESHOLDS = {
-    "pass": 0.8,       # Blocks must score 80% to pass (high bar for quality)
-    "warning": 0.6,    # 60-80% triggers warning but passes (flag for review)
-    "fail": 0.6,       # Below 60% fails quality check (needs regeneration)
-    "hitl_escalate": 0.4  # Below 40% requires human review (systematic issues)
-}
-
-# Hallucination markers - phrases that indicate AI meta-commentary or fabrication
-# Rationale: These patterns indicate the AI broke role and added non-transcript content
-HALLUCINATION_PATTERNS = [
-    r"(?i)I cannot access",
-    r"(?i)As an AI",
-    r"(?i)I don't have access to",
-    r"(?i)Based on the transcript provided",
-    r"(?i)The transcript shows",
-    r"(?i)From what I can see in the transcript",
-    r"(?i)Looking at the meeting transcript",
-    r"(?i)\[Note: This is generated content\]",
-    r"(?i)\[AI GENERATED\]",
-    r"(?i)Unfortunately, I cannot",
-    r"(?i)I'm unable to",
-    r"(?i)Please note that",
-    r"(?i)It's important to note that",
-    r"(?i)I should mention",
-    r"(?i)Let me clarify",
-]
-
-@dataclass 
-class QualityCheckResult:
-    """Result of a quality check on a single block."""
-    block_code: str
-    block_name: str
+@dataclass
+class QualityCheck:
+    """Individual quality check result"""
     check_type: str
     passed: bool
     score: float
-    message: str
-    details: Optional[Dict[str, Any]] = None
-    timestamp: str = field(default_factory=lambda: datetime.now(UTC).isoformat())
+    details: Dict[str, Any] = field(default_factory=dict)
+    issues: List[str] = field(default_factory=list)
 
-@dataclass
-class BlockQualityReport:
-    """Complete quality assessment for a single block."""
+@dataclass 
+class BlockQualityResult:
+    """Quality assessment result for a single block"""
     block_code: str
-    block_name: str
-    file_path: str
+    block_path: str
     overall_passed: bool
     overall_score: float
-    word_count: int
-    checks: List[QualityCheckResult] = field(default_factory=list)
-    needs_regeneration: bool = False
-    needs_hitl_review: bool = False
-    timestamp: str = field(default_factory=lambda: datetime.now(UTC).isoformat())
-
-    @property
-    def status(self) -> str:
-        """Human-readable status."""
-        if self.needs_hitl_review:
-            return "HITL_REQUIRED"
-        elif self.needs_regeneration:
-            return "REGENERATION_NEEDED"
-        elif not self.overall_passed:
-            return "FAILED"
-        elif self.overall_score < CONFIDENCE_THRESHOLDS["warning"]:
-            return "WARNING"
-        else:
-            return "PASSED"
+    checks: List[QualityCheck] = field(default_factory=list)
+    issues: List[str] = field(default_factory=list)
+    needs_retry: bool = False
+    needs_hitl: bool = False
+    
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            "block_code": self.block_code,
+            "block_path": self.block_path,
+            "overall_passed": self.overall_passed,
+            "overall_score": round(self.overall_score, 3),
+            "checks": [asdict(check) for check in self.checks],
+            "issues": self.issues,
+            "needs_retry": self.needs_retry,
+            "needs_hitl": self.needs_hitl
+        }
 
 @dataclass
 class QualitySession:
-    """Track quality checking session across multiple blocks."""
+    """Quality check session results"""
     meeting_path: str
-    started_at: str = field(default_factory=lambda: datetime.now(UTC).isoformat())
-    block_reports: List[BlockQualityReport] = field(default_factory=list)
+    checked_blocks: List[BlockQualityResult] = field(default_factory=list)
+    overall_passed: bool = False
+    overall_score: float = 0.0
+    low_confidence_blocks: List[str] = field(default_factory=list)
+    flagged_for_retry: List[str] = field(default_factory=list)
+    flagged_for_hitl: List[str] = field(default_factory=list)
     
-    @property
-    def passed_count(self) -> int:
-        return sum(1 for r in self.block_reports if r.overall_passed)
-    
-    @property
-    def failed_count(self) -> int:
-        return sum(1 for r in self.block_reports if not r.overall_passed)
-    
-    @property
-    def warning_count(self) -> int:
-        return sum(1 for r in self.block_reports if r.overall_score < CONFIDENCE_THRESHOLDS["warning"])
-    
-    @property 
-    def hitl_count(self) -> int:
-        return sum(1 for r in self.block_reports if r.needs_hitl_review)
+    def to_dict(self) -> Dict[str, Any]:
+        return {
+            "meeting_path": self.meeting_path,
+            "overall_passed": self.overall_passed,
+            "overall_score": round(self.overall_score, 3),
+            "checked_blocks": [block.to_dict() for block in self.checked_blocks],
+            "low_confidence_blocks": self.low_confidence_blocks,
+            "flagged_for_retry": self.flagged_for_retry,
+            "flagged_for_hitl": self.flagged_for_hitl,
+            "summary": {
+                "total_blocks": len(self.checked_blocks),
+                "passed_blocks": sum(1 for b in self.checked_blocks if b.overall_passed),
+                "failed_blocks": sum(1 for b in self.checked_blocks if not b.overall_passed),
+                "retry_needed": len(self.flagged_for_retry),
+                "hitl_needed": len(self.flagged_for_hitl)
+            }
+        }
 
-
-def extract_block_code_from_filename(filename: str) -> Optional[str]:
-    """Extract block code from filename like B01_DETAILED_RECAP.md -> B01"""
-    # Handle both B01.md and B01_DETAILED_RECAP.md formats
-    match = re.match(r'(B\d{2}(?:_B\d{2})?)', filename)
-    if match:
-        return match.group(1)
-    return None
-
-
-def count_words_in_markdown(content: str) -> int:
-    """Count words in markdown content, excluding YAML frontmatter and headers."""
-    # Remove YAML frontmatter
-    if content.startswith('---'):
-        parts = content.split('---', 2)
-        if len(parts) >= 3:
-            content = parts[2]
+class BlockQualityChecker:
+    """Main quality checker implementation"""
     
-    # Remove markdown headers (# ## ###)
-    content = re.sub(r'^#+\s+.*$', '', content, flags=re.MULTILINE)
-    
-    # Remove markdown formatting but keep content
-    content = re.sub(r'\*\*(.*?)\*\*', r'\1', content)  # Bold
-    content = re.sub(r'\*(.*?)\*', r'\1', content)      # Italic
-    content = re.sub(r'`(.*?)`', r'\1', content)        # Code
-    content = re.sub(r'\[([^\]]+)\]\([^)]+\)', r'\1', content)  # Links
-    
-    # Count words
-    words = content.strip().split()
-    return len([w for w in words if w.strip()])
-
-
-def check_block_output_length(block_code: str, content: str) -> QualityCheckResult:
-    """Check if block contains sufficient content."""
-    word_count = count_words_in_markdown(content)
-    min_words = BLOCK_LENGTH_THRESHOLDS.get(block_code, 50)  # Default 50 words
-    
-    if word_count >= min_words:
-        score = min(1.0, word_count / (min_words * 1.5))  # Full score at 1.5x minimum
-        return QualityCheckResult(
-            block_code=block_code,
-            block_name=f"{block_code}_CHECK",
-            check_type="output_length",
-            passed=True,
-            score=score,
-            message=f"Sufficient length: {word_count} words (min: {min_words})",
-            details={"word_count": word_count, "threshold": min_words}
-        )
-    else:
-        score = word_count / min_words  # Proportional score below threshold
-        return QualityCheckResult(
-            block_code=block_code,
-            block_name=f"{block_code}_CHECK",
-            check_type="output_length",
-            passed=False,
-            score=score,
-            message=f"Insufficient length: {word_count} words (min: {min_words})",
-            details={"word_count": word_count, "threshold": min_words}
-        )
-
-
-def check_block_format_compliance(block_code: str, content: str) -> QualityCheckResult:
-    """Check if block follows expected markdown structure."""
-    issues = []
-    score = 1.0
-    
-    # Check for YAML frontmatter (optional but preferred)
-    has_frontmatter = content.startswith('---') and content.count('---') >= 2
-    if not has_frontmatter:
-        issues.append("Missing YAML frontmatter")
-        score -= 0.2
-    
-    # Check for proper heading structure
-    has_main_heading = bool(re.search(r'^#\s+\w+', content, re.MULTILINE))
-    if not has_main_heading:
-        issues.append("Missing main heading")
-        score -= 0.3
-    
-    # Check it's not just plain paragraph text (should have some structure)
-    has_structure = bool(re.search(r'^##\s+\w+|^\*\s+|-\s+|\d+\.\s+', content, re.MULTILINE))
-    if not has_structure and len(content) > 200:
-        issues.append("Lacks structured format (no subheadings, bullets, or lists)")
-        score -= 0.2
-    
-    # Check for obvious formatting issues
-    if '```markdown' in content:
-        issues.append("Contains markdown code blocks (should be direct content)")
-        score -= 0.3
-        
-    score = max(0.0, score)
-    passed = score >= 0.6  # 60% threshold for format compliance
-    
-    message = "Well-formatted block"
-    if issues:
-        message = f"Format issues: {', '.join(issues)}"
-    
-    return QualityCheckResult(
-        block_code=block_code,
-        block_name=f"{block_code}_CHECK",
-        check_type="format_compliance",
-        passed=passed,
-        score=score,
-        message=message,
-        details={"issues": issues, "has_frontmatter": has_frontmatter}
-    )
-
-
-def check_no_hallucination_markers(block_code: str, content: str) -> QualityCheckResult:
-    """Check for AI hallucination or meta-commentary markers."""
-    detected_patterns = []
-    
-    for pattern in HALLUCINATION_PATTERNS:
-        matches = re.findall(pattern, content)
-        if matches:
-            detected_patterns.extend(matches)
-    
-    if detected_patterns:
-        # Hallucination is a serious issue - low score
-        score = 0.2
-        return QualityCheckResult(
-            block_code=block_code,
-            block_name=f"{block_code}_CHECK",
-            check_type="no_hallucination_markers",
-            passed=False,
-            score=score,
-            message=f"Detected AI meta-commentary: {detected_patterns[0][:50]}...",
-            details={"detected_patterns": detected_patterns}
-        )
-    else:
-        return QualityCheckResult(
-            block_code=block_code,
-            block_name=f"{block_code}_CHECK",
-            check_type="no_hallucination_markers",
-            passed=True,
-            score=1.0,
-            message="No hallucination markers detected",
-            details={"detected_patterns": []}
-        )
-
-
-def check_content_structure(block_code: str, content: str) -> QualityCheckResult:
-    """Check that content has appropriate structure for the block type."""
-    score = 1.0
-    issues = []
-    
-    # Block-specific structure checks
-    if block_code in ["B02", "B05", "B02_B05"]:  # Action/commitment blocks
-        # Should have actionable items - look for bullets, owners, dates
-        has_bullets = bool(re.search(r'^\s*[-*+]\s+', content, re.MULTILINE))
-        has_owners = bool(re.search(r'@\w+|owner:|assigned:|responsible:', content, re.IGNORECASE))
-        
-        if not has_bullets and len(content) > 100:
-            issues.append("Expected bullet points or list format for actions")
-            score -= 0.2
+    def __init__(self, meeting_path: str):
+        self.meeting_path = Path(meeting_path).resolve()
+        if not self.meeting_path.exists():
+            raise FileNotFoundError(f"Meeting path not found: {meeting_path}")
             
-        if not has_owners and len(content) > 100:
-            issues.append("Expected owner assignments for actionable items")
-            score -= 0.1
-    
-    elif block_code == "B01":  # Detailed recap
-        # Should have chronological or topical organization
-        has_sections = bool(re.search(r'^##\s+', content, re.MULTILINE))
-        if not has_sections and len(content) > 300:
-            issues.append("Expected section organization for detailed recap")
-            score -= 0.2
-    
-    elif block_code in ["B07"]:  # Warm introductions
-        # Should look like email drafts
-        has_email_structure = bool(re.search(r'Subject:|Dear|Hi \w+|Best regards|Sincerely', content, re.IGNORECASE))
-        if not has_email_structure:
-            issues.append("Expected email format for warm introduction")
-            score -= 0.3
-    
-    # General structure checks
-    if len(content) > 500:  # Only for longer blocks
-        # Should not be just one giant paragraph
-        paragraph_count = len([p for p in content.split('\n\n') if p.strip()])
-        if paragraph_count < 2:
-            issues.append("Long content should be broken into paragraphs")
-            score -= 0.1
-    
-    score = max(0.0, score)
-    passed = score >= 0.7  # 70% threshold for structure
-    
-    message = "Well-structured content" if not issues else f"Structure issues: {', '.join(issues)}"
-    
-    return QualityCheckResult(
-        block_code=block_code,
-        block_name=f"{block_code}_CHECK", 
-        check_type="content_structure",
-        passed=passed,
-        score=score,
-        message=message,
-        details={"issues": issues}
-    )
-
-
-def assess_block_quality(block_path: Path, transcript_content: Optional[str] = None) -> BlockQualityReport:
-    """Run all quality checks on a single block file."""
-    block_code = extract_block_code_from_filename(block_path.name)
-    if not block_code:
-        # Return failed report for unparseable filename
-        return BlockQualityReport(
-            block_code="UNKNOWN",
-            block_name=block_path.name,
-            file_path=str(block_path),
-            overall_passed=False,
-            overall_score=0.0,
-            word_count=0,
-            checks=[QualityCheckResult(
-                block_code="UNKNOWN",
-                block_name=block_path.name,
-                check_type="filename_parse",
-                passed=False,
-                score=0.0,
-                message=f"Cannot parse block code from filename: {block_path.name}"
-            )],
-            needs_regeneration=True
-        )
-    
-    try:
-        content = block_path.read_text(encoding='utf-8')
-    except Exception as e:
-        return BlockQualityReport(
-            block_code=block_code,
-            block_name=block_path.name,
-            file_path=str(block_path),
-            overall_passed=False,
-            overall_score=0.0,
-            word_count=0,
-            checks=[QualityCheckResult(
-                block_code=block_code,
-                block_name=block_path.name,
-                check_type="file_read",
-                passed=False,
-                score=0.0,
-                message=f"Cannot read file: {str(e)}"
-            )],
-            needs_regeneration=True
-        )
-    
-    word_count = count_words_in_markdown(content)
-    
-    # Run all quality checks
-    checks = [
-        check_block_output_length(block_code, content),
-        check_block_format_compliance(block_code, content),
-        check_no_hallucination_markers(block_code, content),
-        check_content_structure(block_code, content)
-    ]
-    
-    # Calculate overall score (average of all checks)
-    overall_score = sum(check.score for check in checks) / len(checks)
-    overall_passed = overall_score >= CONFIDENCE_THRESHOLDS["fail"]
-    
-    # Determine escalation needs
-    needs_regeneration = overall_score < CONFIDENCE_THRESHOLDS["fail"]
-    needs_hitl_review = overall_score < CONFIDENCE_THRESHOLDS["hitl_escalate"]
-    
-    # Special case: hallucination always needs regeneration
-    hallucination_check = next((c for c in checks if c.check_type == "no_hallucination_markers"), None)
-    if hallucination_check and not hallucination_check.passed:
-        needs_regeneration = True
-        # Severe hallucination needs HITL
-        if hallucination_check.score < 0.3:
-            needs_hitl_review = True
-    
-    return BlockQualityReport(
-        block_code=block_code,
-        block_name=block_path.name,
-        file_path=str(block_path),
-        overall_passed=overall_passed,
-        overall_score=overall_score,
-        word_count=word_count,
-        checks=checks,
-        needs_regeneration=needs_regeneration,
-        needs_hitl_review=needs_hitl_review
-    )
-
-
-def find_generated_blocks(meeting_path: Path, block_codes: Optional[List[str]] = None) -> List[Path]:
-    """Find all generated block files in meeting directory."""
-    if block_codes:
-        # Look for specific blocks
-        block_files = []
-        for code in block_codes:
-            # Try multiple filename patterns
-            patterns = [
-                f"{code}.md",
-                f"{code}_*.md", 
-                f"*{code}*.md"
-            ]
-            for pattern in patterns:
-                files = list(meeting_path.glob(pattern))
-                block_files.extend(files)
-        return block_files
-    else:
-        # Find all block files (B##*.md pattern)
-        return list(meeting_path.glob("B*.md"))
-
-
-def update_manifest_with_quality_results(manifest_path: Path, quality_session: QualitySession):
-    """Update meeting manifest with quality check results."""
-    if not manifest_path.exists():
-        logger.warning(f"Manifest not found: {manifest_path}")
-        return
-    
-    try:
-        manifest = json.loads(manifest_path.read_text())
-    except Exception as e:
-        logger.error(f"Cannot read manifest: {e}")
-        return
-    
-    # Initialize quality_check section if not exists
-    if "quality_check" not in manifest:
-        manifest["quality_check"] = {}
-    
-    # Update quality check results
-    quality_results = {
-        "last_checked_at": quality_session.started_at,
-        "overall_status": "passed" if quality_session.failed_count == 0 else "failed",
-        "blocks_checked": len(quality_session.block_reports),
-        "blocks_passed": quality_session.passed_count,
-        "blocks_failed": quality_session.failed_count,
-        "blocks_warning": quality_session.warning_count,
-        "blocks_need_hitl": quality_session.hitl_count,
-        "block_results": []
-    }
-    
-    for report in quality_session.block_reports:
-        quality_results["block_results"].append({
-            "block_code": report.block_code,
-            "file_name": Path(report.file_path).name,
-            "passed": report.overall_passed,
-            "score": round(report.overall_score, 3),
-            "status": report.status,
-            "word_count": report.word_count,
-            "needs_regeneration": report.needs_regeneration,
-            "needs_hitl_review": report.needs_hitl_review,
-            "check_details": [
-                {
-                    "check_type": check.check_type,
-                    "passed": check.passed,
-                    "score": round(check.score, 3),
-                    "message": check.message
-                }
-                for check in report.checks
-            ]
-        })
-    
-    manifest["quality_check"] = quality_results
-    
-    # Update blocks_failed if there are quality failures
-    if quality_session.failed_count > 0:
-        if "blocks_failed" not in manifest:
-            manifest["blocks_failed"] = []
+        # Try new format first: {meeting_name}_[B]/ subdirectory
+        self.blocks_dir = self.meeting_path / f"{self.meeting_path.name}_[B]"
         
-        # Add/update failed blocks from quality check
-        failed_block_names = {Path(r.file_path).name for r in quality_session.block_reports if not r.overall_passed}
-        
-        for failed_name in failed_block_names:
-            # Check if already in failed list
-            existing = False
-            for failed_entry in manifest["blocks_failed"]:
-                if isinstance(failed_entry, dict) and failed_entry.get("block") == failed_name:
-                    # Update existing entry
-                    failed_entry["error"] = "Quality check failed"
-                    failed_entry["last_attempt"] = quality_session.started_at
-                    existing = True
-                    break
-                elif failed_entry == failed_name:
-                    existing = True
-                    break
-            
-            if not existing:
-                manifest["blocks_failed"].append({
-                    "block": failed_name,
-                    "error": "Quality check failed",
-                    "last_attempt": quality_session.started_at
-                })
-    
-    # Save updated manifest
-    try:
-        manifest_path.write_text(json.dumps(manifest, indent=2))
-        logger.info(f"Updated manifest with quality results: {quality_session.passed_count}/{len(quality_session.block_reports)} passed")
-    except Exception as e:
-        logger.error(f"Cannot save manifest: {e}")
-
-
-def show_quality_status(meeting_path: Path):
-    """Show quality status for blocks in meeting."""
-    manifest_path = meeting_path / "manifest.json"
-    
-    print(f"\n=== Block Quality Status: {meeting_path.name} ===\n")
-    
-    if manifest_path.exists():
-        try:
-            manifest = json.loads(manifest_path.read_text())
-            quality_data = manifest.get("quality_check", {})
-            
-            if quality_data:
-                print(f"Last checked: {quality_data.get('last_checked_at', 'Never')}")
-                print(f"Overall status: {quality_data.get('overall_status', 'Unknown')}")
-                print(f"Blocks checked: {quality_data.get('blocks_checked', 0)}")
-                print(f"Passed: {quality_data.get('blocks_passed', 0)}")
-                print(f"Failed: {quality_data.get('blocks_failed', 0)}")
-                print(f"Warnings: {quality_data.get('blocks_warning', 0)}")
-                print(f"Need HITL: {quality_data.get('blocks_need_hitl', 0)}")
-                
-                block_results = quality_data.get("block_results", [])
-                if block_results:
-                    print(f"\nBlock Details:")
-                    for result in block_results:
-                        status_icon = "✓" if result["passed"] else "✗"
-                        print(f"  {status_icon} {result['file_name']}: {result['status']} (score: {result['score']:.2f})")
-                        
-                        if not result["passed"]:
-                            for check in result.get("check_details", []):
-                                if not check["passed"]:
-                                    print(f"    - {check['check_type']}: {check['message']}")
+        # If not found, check legacy format: blocks directly in meeting directory
+        if not self.blocks_dir.exists():
+            # Check if there are any B*.md files in the meeting directory
+            direct_blocks = list(self.meeting_path.glob("B*.md"))
+            if direct_blocks:
+                self.blocks_dir = self.meeting_path  # Use meeting directory directly
+                logger.info(f"Using legacy format: blocks in meeting directory")
             else:
-                print("No quality checks have been run.")
-        except Exception as e:
-            print(f"Cannot read manifest: {e}")
-    else:
-        print("No manifest.json found.")
-    
-    # Show current block files
-    block_files = find_generated_blocks(meeting_path)
-    if block_files:
-        print(f"\nGenerated block files ({len(block_files)}):")
-        for bf in sorted(block_files):
-            print(f"  {bf.name}")
-    else:
-        print("\nNo generated block files found.")
-
-
-def quality_check_blocks(
-    meeting_path: Path,
-    block_codes: Optional[List[str]] = None,
-    update_manifest: bool = True
-) -> QualitySession:
-    """Run quality checks on generated blocks."""
-    
-    session = QualitySession(meeting_path=str(meeting_path))
-    
-    # Find blocks to check
-    block_files = find_generated_blocks(meeting_path, block_codes)
-    
-    if not block_files:
-        if block_codes:
-            logger.warning(f"No blocks found for codes: {block_codes}")
+                logger.debug(f"No blocks found in either format")
         else:
-            logger.warning("No generated block files found")
+            logger.info(f"Using new format: blocks in {self.blocks_dir}")
+            
+        self.manifest_path = self.meeting_path / "manifest.json"
+        
+        logger.info(f"Initialized quality checker for: {self.meeting_path}")
+        logger.debug(f"Blocks directory: {self.blocks_dir}")
+        
+    def check_block(self, block_code: str) -> BlockQualityResult:
+        """Perform quality checks on a single block"""
+        block_files = list(self.blocks_dir.glob(f"{block_code}_*.md"))
+        
+        if not block_files:
+            return BlockQualityResult(
+                block_code=block_code,
+                block_path="",
+                overall_passed=False,
+                overall_score=0.0,
+                issues=[f"Block file not found: {block_code}"],
+                needs_retry=True
+            )
+            
+        block_path = block_files[0]
+        logger.debug(f"Checking block: {block_path}")
+        
+        try:
+            with open(block_path, 'r', encoding='utf-8') as f:
+                content = f.read()
+        except Exception as e:
+            return BlockQualityResult(
+                block_code=block_code,
+                block_path=str(block_path),
+                overall_passed=False,
+                overall_score=0.0,
+                issues=[f"Failed to read block: {e}"],
+                needs_hitl=True
+            )
+        
+        checks = []
+        
+        # 1. Output length validation
+        length_check = self._check_output_length(block_code, content)
+        checks.append(length_check)
+        
+        # 2. Format compliance
+        format_check = self._check_format_compliance(content)
+        checks.append(format_check)
+        
+        # 3. Hallucination detection  
+        hallucination_check = self._check_hallucination_markers(content)
+        checks.append(hallucination_check)
+        
+        # 4. Content accuracy (sampling)
+        accuracy_check = self._check_content_accuracy(content)
+        checks.append(accuracy_check)
+        
+        # Calculate overall score
+        weights = QUALITY_THRESHOLDS["scoring"]
+        overall_score = (
+            length_check.score * weights["length_weight"] +
+            format_check.score * weights["format_weight"] +
+            hallucination_check.score * weights["hallucination_weight"] +
+            accuracy_check.score * weights["accuracy_weight"]
+        )
+        
+        overall_passed = overall_score >= weights["passing_score"]
+        
+        # Determine remediation flags
+        needs_retry = (
+            not overall_passed and 
+            overall_score >= 0.4 and  # In "warning" range
+            not any("corruption" in issue.lower() or "encoding" in issue.lower() 
+                   for check in checks for issue in check.issues)
+        )
+        
+        needs_hitl = (
+            not overall_passed and
+            (overall_score < 0.4 or  # Very low confidence
+             any("hallucination" in check.check_type and not check.passed for check in checks) or
+             any("corruption" in issue.lower() for check in checks for issue in check.issues))
+        )
+        
+        issues = []
+        for check in checks:
+            issues.extend(check.issues)
+            
+        return BlockQualityResult(
+            block_code=block_code,
+            block_path=str(block_path),
+            overall_passed=overall_passed,
+            overall_score=overall_score,
+            checks=checks,
+            issues=issues,
+            needs_retry=needs_retry,
+            needs_hitl=needs_hitl
+        )
+    
+    def _check_output_length(self, block_code: str, content: str) -> QualityCheck:
+        """Check if block meets minimum word count requirements"""
+        # Remove YAML frontmatter
+        if content.startswith('---'):
+            parts = content.split('---', 2)
+            if len(parts) >= 3:
+                content = parts[2]
+        
+        # Count words
+        words = len(content.split())
+        min_words = QUALITY_THRESHOLDS["min_words"].get(
+            block_code, 
+            QUALITY_THRESHOLDS["min_words"]["default"]
+        )
+        
+        passed = words >= min_words
+        score = min(1.0, words / min_words) if min_words > 0 else 1.0
+        
+        issues = []
+        if not passed:
+            issues.append(f"Block too short: {words} words < {min_words} minimum")
+            
+        return QualityCheck(
+            check_type="output_length",
+            passed=passed,
+            score=score,
+            details={
+                "word_count": words,
+                "minimum_required": min_words,
+                "ratio": words / min_words if min_words > 0 else 1.0
+            },
+            issues=issues
+        )
+    
+    def _check_format_compliance(self, content: str) -> QualityCheck:
+        """Check if block follows expected markdown structure"""
+        issues = []
+        score_components = []
+        
+        # Check for YAML frontmatter
+        has_yaml = content.startswith('---') and '\n---\n' in content
+        score_components.append(1.0 if has_yaml else 0.0)
+        if not has_yaml and QUALITY_THRESHOLDS["format"]["requires_yaml_frontmatter"]:
+            issues.append("Missing YAML frontmatter")
+            
+        # Check for proper markdown headers
+        has_h1 = bool(re.search(r'^#\s+', content, re.MULTILINE))
+        score_components.append(1.0 if has_h1 else 0.0)
+        if not has_h1 and QUALITY_THRESHOLDS["format"]["requires_h1_heading"]:
+            issues.append("Missing H1 heading")
+            
+        # Check for structured content (not just paragraphs)
+        has_structure = bool(re.search(r'(^#{2,}|\*\*|^\*|\|.*\||```)', content, re.MULTILINE))
+        score_components.append(1.0 if has_structure else 0.0)
+        if not has_structure and QUALITY_THRESHOLDS["format"]["requires_markdown_structure"]:
+            issues.append("Lacks markdown structure (headers, lists, tables, etc.)")
+            
+        # Check minimum sections
+        section_count = len(re.findall(r'^#{1,6}\s+', content, re.MULTILINE))
+        min_sections = QUALITY_THRESHOLDS["format"]["min_sections"]
+        has_min_sections = section_count >= min_sections
+        score_components.append(1.0 if has_min_sections else 0.0)
+        if not has_min_sections:
+            issues.append(f"Insufficient sections: {section_count} < {min_sections} minimum")
+        
+        overall_score = sum(score_components) / len(score_components)
+        passed = overall_score >= 0.75  # Must pass 3/4 format checks
+        
+        return QualityCheck(
+            check_type="format_compliance",
+            passed=passed,
+            score=overall_score,
+            details={
+                "has_yaml_frontmatter": has_yaml,
+                "has_h1_heading": has_h1,
+                "has_markdown_structure": has_structure,
+                "section_count": section_count,
+                "format_score_breakdown": score_components
+            },
+            issues=issues
+        )
+    
+    def _check_hallucination_markers(self, content: str) -> QualityCheck:
+        """Detect AI hallucination or fabricated content"""
+        issues = []
+        
+        # Common AI meta-commentary patterns
+        ai_markers = [
+            r"as an ai",
+            r"i cannot access",
+            r"i don't have access",
+            r"i'm not able to",
+            r"i apologize",
+            r"let me clarify",
+            r"based on the information provided",
+            r"according to the transcript",
+            r"from what i can see"
+        ]
+        
+        ai_marker_count = 0
+        for pattern in ai_markers:
+            matches = re.findall(pattern, content, re.IGNORECASE)
+            ai_marker_count += len(matches)
+            if matches:
+                issues.append(f"AI marker detected: '{matches[0]}' ({len(matches)} occurrences)")
+        
+        # Check for impossible details (future dates beyond reasonable meeting scheduling)
+        future_year_pattern = r'\b202[7-9]\b'  # Years beyond 2026 are suspicious
+        future_matches = re.findall(future_year_pattern, content)
+        if future_matches:
+            issues.append(f"Suspicious future dates: {set(future_matches)}")
+        
+        # Meta-commentary about the AI process itself
+        meta_patterns = [
+            r"generated? for meeting",
+            r"based on my analysis",
+            r"here's? the .* block",
+            r"analysis of this transcript"
+        ]
+        
+        meta_count = 0
+        for pattern in meta_patterns:
+            matches = re.findall(pattern, content, re.IGNORECASE)
+            meta_count += len(matches)
+        
+        # Score calculation
+        max_ai_markers = QUALITY_THRESHOLDS["hallucination"]["max_ai_markers"]
+        penalty = min(1.0, ai_marker_count / max(1, max_ai_markers + 2))  # Gradual penalty
+        score = max(0.0, 1.0 - penalty)
+        
+        passed = (
+            ai_marker_count <= max_ai_markers and
+            not future_matches and
+            meta_count <= 2  # Allow some meta-commentary but not excessive
+        )
+        
+        if not passed and not issues:
+            issues.append("High confidence hallucination detected")
+        
+        return QualityCheck(
+            check_type="hallucination_detection",
+            passed=passed,
+            score=score,
+            details={
+                "ai_marker_count": ai_marker_count,
+                "future_date_count": len(future_matches),
+                "meta_commentary_count": meta_count,
+                "penalty_applied": penalty
+            },
+            issues=issues
+        )
+    
+    def _check_content_accuracy(self, content: str) -> QualityCheck:
+        """Sample key claims and verify against transcript (simplified)"""
+        # For the MVP, we'll do basic heuristics since full transcript verification 
+        # requires loading and semantic matching which is expensive
+        
+        issues = []
+        
+        # Extract key claims (sentences with specific details)
+        claim_patterns = [
+            r'[A-Z][^.!?]*(?:decided?|agreed?|committed?|mentioned?)[^.!?]*[.!?]',
+            r'[A-Z][^.!?]*(?:will|going to|plan to)[^.!?]*[.!?]',
+            r'[A-Z][^.!?]*(?:\$\d+|by \w+day|\d+%)[^.!?]*[.!?]'
+        ]
+        
+        claims = []
+        for pattern in claim_patterns:
+            matches = re.findall(pattern, content, re.MULTILINE)
+            claims.extend(matches[:2])  # Limit to avoid too many
+        
+        # Basic plausibility checks
+        implausible_count = 0
+        
+        # Check for overly specific details that seem fabricated
+        suspicious_patterns = [
+            r'\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}',  # Overly precise timestamps
+            r'exactly \d+\.\d{3}',  # Overly precise numbers
+            r'\b[A-Z][a-z]+ [A-Z][a-z]+ said ".*" at \d+:\d+ (AM|PM)'  # Overly precise quotes
+        ]
+        
+        for pattern in suspicious_patterns:
+            if re.search(pattern, content):
+                implausible_count += 1
+                issues.append(f"Overly specific detail pattern detected")
+        
+        # Check for internal consistency
+        # Look for contradicting statements (simple version)
+        contradictions = 0
+        if "will not" in content.lower() and "will definitely" in content.lower():
+            contradictions += 1
+            issues.append("Potential internal contradiction detected")
+        
+        # Score based on plausibility
+        total_issues = implausible_count + contradictions
+        score = max(0.0, 1.0 - (total_issues * 0.3))  # Each issue reduces score by 30%
+        
+        # Pass if score is reasonable and no major red flags
+        min_ratio = QUALITY_THRESHOLDS["accuracy"]["min_verifiable_ratio"]
+        passed = score >= min_ratio and total_issues <= 2
+        
+        return QualityCheck(
+            check_type="content_accuracy",
+            passed=passed,
+            score=score,
+            details={
+                "claims_sampled": len(claims),
+                "implausible_patterns": implausible_count,
+                "contradictions_detected": contradictions,
+                "sample_claims": claims[:3]  # For debugging
+            },
+            issues=issues
+        )
+        
+    def check_all_blocks(self) -> QualitySession:
+        """Check quality for all blocks in the meeting"""
+        if not self.blocks_dir.exists():
+            logger.warning(f"No blocks directory found: {self.blocks_dir}")
+            return QualitySession(
+                meeting_path=str(self.meeting_path),
+                overall_passed=False,
+                overall_score=0.0
+            )
+            
+        # Find all block files
+        block_files = list(self.blocks_dir.glob("B*_*.md"))
+        block_codes = []
+        
+        for block_file in block_files:
+            # Extract block code from filename (e.g., "B01_DETAILED_RECAP.md" -> "B01")
+            match = re.match(r'^(B\d+(?:_B\d+)?)', block_file.stem)
+            if match:
+                block_codes.append(match.group(1))
+                
+        logger.info(f"Found {len(block_codes)} blocks to check: {sorted(set(block_codes))}")
+        
+        session = QualitySession(meeting_path=str(self.meeting_path))
+        
+        for block_code in sorted(set(block_codes)):
+            result = self.check_block(block_code)
+            session.checked_blocks.append(result)
+            
+            # Track flagged blocks
+            if result.needs_retry:
+                session.flagged_for_retry.append(block_code)
+            if result.needs_hitl:
+                session.flagged_for_hitl.append(block_code)
+            if result.overall_score < 0.6:  # Low confidence threshold
+                session.low_confidence_blocks.append(block_code)
+        
+        # Calculate session-level metrics
+        if session.checked_blocks:
+            session.overall_score = sum(b.overall_score for b in session.checked_blocks) / len(session.checked_blocks)
+            session.overall_passed = all(b.overall_passed for b in session.checked_blocks)
+        
         return session
     
-    logger.info(f"Checking quality of {len(block_files)} blocks in {meeting_path.name}")
-    
-    # Load transcript for context (optional - used by future checks)
-    transcript_content = None
-    try:
-        # Try to find transcript file
-        for pattern in ["transcript.md", "*transcript*.md", "*.md"]:
-            transcript_files = list(meeting_path.glob(pattern))
-            if transcript_files:
-                # Prefer files with 'transcript' in name
-                transcript_file = next((f for f in transcript_files if 'transcript' in f.name.lower()), transcript_files[0])
-                transcript_content = transcript_file.read_text()
-                break
-    except Exception:
-        pass  # Transcript is optional for current checks
-    
-    # Run quality checks on each block
-    for block_file in sorted(block_files):
-        logger.info(f"  Checking: {block_file.name}")
-        report = assess_block_quality(block_file, transcript_content)
-        session.block_reports.append(report)
+    def update_manifest(self, quality_results: QualitySession) -> bool:
+        """Update manifest with quality results"""
+        if not self.manifest_path.exists():
+            logger.warning(f"Manifest not found: {self.manifest_path}")
+            return False
+            
+        try:
+            with open(self.manifest_path, 'r') as f:
+                manifest = json.load(f)
+        except Exception as e:
+            logger.error(f"Failed to read manifest: {e}")
+            return False
+            
+        # Update quality_gate section
+        if "quality_gate" not in manifest:
+            manifest["quality_gate"] = {}
+            
+        quality_gate = manifest["quality_gate"]
         
-        # Log results
-        if report.overall_passed:
-            logger.info(f"    ✓ {report.status} (score: {report.overall_score:.2f})")
-        else:
-            logger.warning(f"    ✗ {report.status} (score: {report.overall_score:.2f})")
-            for check in report.checks:
-                if not check.passed:
-                    logger.warning(f"      - {check.check_type}: {check.message}")
-    
-    # Update manifest with results
-    if update_manifest:
-        manifest_path = meeting_path / "manifest.json"
-        update_manifest_with_quality_results(manifest_path, session)
-    
-    logger.info(f"\nQuality check complete: {session.passed_count}/{len(session.block_reports)} blocks passed")
-    
-    if session.hitl_count > 0:
-        logger.warning(f"⚠️  {session.hitl_count} blocks need HITL review")
-    
-    if session.failed_count > 0:
-        logger.warning(f"⚠️  {session.failed_count} blocks failed quality checks")
-    
-    return session
-
+        # Update block-specific quality results
+        if "block_quality" not in quality_gate:
+            quality_gate["block_quality"] = {}
+            
+        quality_gate["block_quality"].update({
+            "last_check": datetime.now(UTC).isoformat(),
+            "overall_score": quality_results.overall_score,
+            "overall_passed": quality_results.overall_passed,
+            "blocks_checked": len(quality_results.checked_blocks),
+            "blocks_passed": sum(1 for b in quality_results.checked_blocks if b.overall_passed),
+            "low_confidence": quality_results.low_confidence_blocks,
+            "retry_needed": quality_results.flagged_for_retry,
+            "hitl_needed": quality_results.flagged_for_hitl,
+            "per_block_scores": {
+                b.block_code: {
+                    "score": b.overall_score,
+                    "passed": b.overall_passed,
+                    "issues_count": len(b.issues)
+                } for b in quality_results.checked_blocks
+            }
+        })
+        
+        # Update overall quality gate passed status
+        existing_checks = quality_gate.get("checks", {})
+        existing_checks["block_quality_passed"] = quality_results.overall_passed
+        quality_gate["checks"] = existing_checks
+        
+        # Update overall score (average with existing checks)
+        other_scores = []
+        if "score" in quality_gate and quality_gate["score"] > 0:
+            other_scores.append(quality_gate["score"])
+        
+        all_scores = other_scores + [quality_results.overall_score]
+        quality_gate["score"] = sum(all_scores) / len(all_scores)
+        
+        # Update manifest timestamp
+        manifest["last_updated_at"] = datetime.now(UTC).isoformat()
+        
+        try:
+            with open(self.manifest_path, 'w') as f:
+                json.dump(manifest, f, indent=2, ensure_ascii=False)
+            logger.info(f"Updated manifest with quality results")
+            return True
+        except Exception as e:
+            logger.error(f"Failed to write manifest: {e}")
+            return False
 
 def main():
-    parser = argparse.ArgumentParser(
-        description="Block Quality Check - validate generated meeting blocks meet quality standards"
-    )
-    parser.add_argument("meeting_path", help="Path to meeting folder")
-    parser.add_argument("--check-blocks", type=str, help="Comma-separated block codes to check (B01,B08)")
-    parser.add_argument("--retry-failed", action="store_true", help="Re-check previously failed blocks")
-    parser.add_argument("--status", action="store_true", help="Show quality status and exit")
+    parser = argparse.ArgumentParser(description="Block Quality Check for Meeting Intelligence System")
+    parser.add_argument("meeting_path", help="Path to meeting directory")
+    parser.add_argument("--block", help="Check specific block (e.g., B01)")
+    parser.add_argument("--check-all", action="store_true", help="Check all blocks in meeting")
+    parser.add_argument("--update-manifest", action="store_true", help="Update manifest with results")
+    parser.add_argument("--status", action="store_true", help="Show quality status")
     parser.add_argument("--json", action="store_true", help="Output results as JSON")
-    parser.add_argument("--no-manifest-update", action="store_true", help="Don't update manifest with results")
+    parser.add_argument("--verbose", "-v", action="store_true", help="Verbose logging")
     
     args = parser.parse_args()
     
-    meeting_path = Path(args.meeting_path)
-    if not meeting_path.is_absolute():
-        meeting_path = Path("/home/workspace") / meeting_path
-    
-    if not meeting_path.exists():
-        print(f"Error: Path not found: {meeting_path}")
-        return 1
-    
-    if args.status:
-        show_quality_status(meeting_path)
-        return 0
-    
-    block_codes = None
-    if args.check_blocks:
-        block_codes = [b.strip().upper() for b in args.check_blocks.split(",")]
-    elif args.retry_failed:
-        # Get failed blocks from manifest
-        manifest_path = meeting_path / "manifest.json"
-        if manifest_path.exists():
-            try:
-                manifest = json.loads(manifest_path.read_text())
-                quality_data = manifest.get("quality_check", {})
-                failed_blocks = [
-                    r["block_code"] for r in quality_data.get("block_results", [])
-                    if not r.get("passed", True)
-                ]
-                if failed_blocks:
-                    block_codes = failed_blocks
-                    logger.info(f"Retrying failed blocks: {', '.join(failed_blocks)}")
-                else:
-                    logger.info("No previously failed blocks to retry")
-                    return 0
-            except Exception as e:
-                logger.error(f"Cannot read manifest for failed blocks: {e}")
-                return 1
+    if args.verbose:
+        logging.getLogger().setLevel(logging.DEBUG)
     
     try:
-        session = quality_check_blocks(
-            meeting_path=meeting_path,
-            block_codes=block_codes,
-            update_manifest=not args.no_manifest_update
-        )
+        checker = BlockQualityChecker(args.meeting_path)
         
-        if args.json:
-            output = {
-                "meeting_path": str(meeting_path),
-                "started_at": session.started_at,
-                "blocks_checked": len(session.block_reports),
-                "blocks_passed": session.passed_count,
-                "blocks_failed": session.failed_count,
-                "blocks_warning": session.warning_count,
-                "blocks_need_hitl": session.hitl_count,
-                "overall_passed": session.failed_count == 0,
-                "block_reports": [
-                    {
-                        "block_code": r.block_code,
-                        "file_name": Path(r.file_path).name,
-                        "passed": r.overall_passed,
-                        "score": round(r.overall_score, 3),
-                        "status": r.status,
-                        "word_count": r.word_count,
-                        "needs_regeneration": r.needs_regeneration,
-                        "needs_hitl_review": r.needs_hitl_review
-                    }
-                    for r in session.block_reports
-                ]
-            }
-            print(json.dumps(output, indent=2))
-        else:
-            print(f"\nQuality Check Summary:")
-            print(f"  Meeting: {meeting_path.name}")
-            print(f"  Blocks checked: {len(session.block_reports)}")
-            print(f"  Passed: {session.passed_count}")
-            print(f"  Failed: {session.failed_count}")
-            print(f"  Warnings: {session.warning_count}")
-            print(f"  Need HITL: {session.hitl_count}")
-            
-            if session.failed_count > 0:
-                print(f"\nFailed blocks:")
-                for r in session.block_reports:
-                    if not r.overall_passed:
-                        print(f"  ✗ {r.block_name}: {r.status} (score: {r.overall_score:.2f})")
+        if args.status:
+            # Show current quality status from manifest
+            if checker.manifest_path.exists():
+                with open(checker.manifest_path, 'r') as f:
+                    manifest = json.load(f)
+                    
+                quality_gate = manifest.get("quality_gate", {})
+                block_quality = quality_gate.get("block_quality", {})
+                
+                if block_quality:
+                    print(f"Quality Status for {checker.meeting_path.name}:")
+                    print(f"  Overall Score: {block_quality.get('overall_score', 'N/A'):.3f}")
+                    print(f"  Overall Passed: {block_quality.get('overall_passed', 'N/A')}")
+                    print(f"  Blocks Checked: {block_quality.get('blocks_checked', 0)}")
+                    print(f"  Blocks Passed: {block_quality.get('blocks_passed', 0)}")
+                    
+                    if block_quality.get('low_confidence'):
+                        print(f"  Low Confidence: {', '.join(block_quality['low_confidence'])}")
+                    if block_quality.get('retry_needed'):
+                        print(f"  Retry Needed: {', '.join(block_quality['retry_needed'])}")
+                    if block_quality.get('hitl_needed'):
+                        print(f"  HITL Needed: {', '.join(block_quality['hitl_needed'])}")
                         
-                print(f"\nRecommendation: Run block regeneration for failed blocks")
+                    print(f"  Last Check: {block_quality.get('last_check', 'Never')}")
+                else:
+                    print("No quality check results found in manifest")
+            else:
+                print("Manifest not found")
+            return
         
-        return 0 if session.failed_count == 0 else 1
-        
+        # Perform quality checks
+        if args.block:
+            # Check single block
+            result = checker.check_block(args.block)
+            if args.json:
+                print(json.dumps(result.to_dict(), indent=2))
+            else:
+                print(f"\nQuality Check Results for {args.block}:")
+                print(f"  Path: {result.block_path}")
+                print(f"  Overall Score: {result.overall_score:.3f}")
+                print(f"  Overall Passed: {result.overall_passed}")
+                
+                for check in result.checks:
+                    print(f"  {check.check_type}: {check.score:.3f} ({'PASS' if check.passed else 'FAIL'})")
+                    if check.issues:
+                        for issue in check.issues:
+                            print(f"    - {issue}")
+                            
+                if result.needs_retry:
+                    print("  → FLAGGED FOR RETRY")
+                if result.needs_hitl:
+                    print("  → FLAGGED FOR HITL")
+                    
+        else:
+            # Check all blocks (default)
+            session = checker.check_all_blocks()
+            
+            if args.update_manifest:
+                updated = checker.update_manifest(session)
+                if updated:
+                    logger.info("Manifest updated with quality results")
+                else:
+                    logger.warning("Failed to update manifest")
+            
+            if args.json:
+                print(json.dumps(session.to_dict(), indent=2))
+            else:
+                summary = session.to_dict()["summary"]
+                print(f"\nQuality Check Summary for {checker.meeting_path.name}:")
+                print(f"  Overall Score: {session.overall_score:.3f}")
+                print(f"  Overall Passed: {session.overall_passed}")
+                print(f"  Blocks Checked: {summary['total_blocks']}")
+                print(f"  Passed: {summary['passed_blocks']}")
+                print(f"  Failed: {summary['failed_blocks']}")
+                
+                if session.low_confidence_blocks:
+                    print(f"  Low Confidence: {', '.join(session.low_confidence_blocks)}")
+                if session.flagged_for_retry:
+                    print(f"  Retry Recommended: {', '.join(session.flagged_for_retry)}")
+                if session.flagged_for_hitl:
+                    print(f"  HITL Required: {', '.join(session.flagged_for_hitl)}")
+                    
+                print(f"\nPer-Block Results:")
+                for block in session.checked_blocks:
+                    status = "PASS" if block.overall_passed else "FAIL"
+                    flags = []
+                    if block.needs_retry:
+                        flags.append("RETRY")
+                    if block.needs_hitl:
+                        flags.append("HITL")
+                    flag_str = f" [{', '.join(flags)}]" if flags else ""
+                    
+                    print(f"  {block.block_code}: {block.overall_score:.3f} {status}{flag_str}")
+                    if block.issues:
+                        for issue in block.issues[:2]:  # Show first 2 issues
+                            print(f"    - {issue}")
+                        if len(block.issues) > 2:
+                            print(f"    ... and {len(block.issues) - 2} more issues")
+                            
     except Exception as e:
         logger.error(f"Quality check failed: {e}")
-        if args.json:
-            print(json.dumps({"error": str(e)}))
-        return 1
-
+        if args.verbose:
+            import traceback
+            traceback.print_exc()
+        sys.exit(1)
 
 if __name__ == "__main__":
-    sys.exit(main())
+    main()

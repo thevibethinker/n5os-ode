@@ -209,10 +209,10 @@ def create_candidate_record(
     
     # Prepare record data
     record = {
-        "Name": candidate_info['candidate_name'],
-        "Email": candidate_info.get('candidate_email', ''),
-        "Status": "Interested",
-        "Ball In Court": "Shivam"
+        "Full Name": candidate_info['candidate_name'],
+        "Email Address": candidate_info.get('candidate_email', ''),
+        "Current Status": "Applied",
+        "Source Tag": "[RESUME]"
     }
     
     # Link to job opening if found

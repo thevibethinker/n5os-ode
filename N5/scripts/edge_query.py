@@ -30,7 +30,7 @@ from collections import defaultdict
 sys.path.insert(0, str(Path(__file__).parent))
 from edge_types import get_inverse, EdgeCategory, EDGE_TYPES
 
-DB_PATH = Path(__file__).parent.parent / "data" / "edges.db"
+DB_PATH = Path("/home/workspace/N5/cognition/brain.db")
 
 
 def get_connection() -> sqlite3.Connection:

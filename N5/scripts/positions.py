@@ -656,7 +656,7 @@ def format_evidence_for_display(evidence: list[dict]) -> list[str]:
 
 
 def sync_position_to_entities(position_id: str, delete: bool = False):
-    """Sync a single position to edges.db entities table.
+    """Sync a single position to brain.db meeting_edges table.
     
     Called automatically after add/update/delete operations.
     """

@@ -410,6 +410,96 @@ Text these to control Pulse:
 - `pulse resume` — Resume ticking
 - `n5 task <description>` — Add task to queue (v2)
 
+## Smart Sentinel (Recovery)
+
+The Sentinel includes a **recovery engine** that automatically handles failed/dead Drops using deterministic rules, with AI judgment as a fallback.
+
+### Recovery Rules
+
+| Rule | Condition | Action |
+|------|-----------|--------|
+| R1 | Drop dead (timeout) + retry_count < max | Auto-retry with timeout context |
+| R2 | Drop failed (spawn error) + retry_count < max | Auto-retry (transient failure) |
+| R3 | Drop failed (content/logic error) | Needs AI judgment → escalate |
+| R4 | All blocking Drops in current Wave dead/failed + retries exhausted | Build set to BLOCKED, escalate |
+| R5 | Build active >threshold with no progress | Stale build escalation |
+
+### How It Works
+
+After each `tick()` cycle, the Sentinel calls `assess_and_recover()` which:
+
+1. Scans all dead/failed Drops
+2. Classifies each failure (dead_timeout, spawn_error, content_error, unknown)
+3. Applies rules R1-R5 in priority order
+4. Auto-retries eligible Drops via the existing `retry_drop()` function
+5. Logs every action to `RECOVERY_LOG.jsonl` (P39 audit trail)
+6. Updates STATUS.md with recovery indicators
+
+### Configuration
+
+Per-build overrides in `meta.json`:
+
+```json
+{
+  "recovery": {
+    "max_auto_retries": 2,
+    "dead_threshold_seconds": 900,
+    "stale_threshold_hours": 4,
+    "stale_no_progress_minutes": 60,
+    "enable_ai_judgment": true
+  }
+}
+```
+
+All fields are optional — defaults from `RECOVERY_DEFAULTS` in `pulse_common.py` are used for any missing field. Set `max_auto_retries: 0` to disable auto-recovery for a specific build.
+
+### RECOVERY_LOG.jsonl Format
+
+Append-only log at `N5/builds/<slug>/RECOVERY_LOG.jsonl`:
+
+```json
+{"timestamp": "ISO", "drop_id": "D1.1", "rule": "R1", "action": "auto_retry", "failure_type": "dead_timeout", "reason": "Dead (timeout), auto-retry 1/2", "retry_number": 1}
+{"timestamp": "ISO", "drop_id": "D2.1", "rule": "R3", "action": "needs_judgment", "failure_type": "content_error", "reason": "Schema mismatch in output"}
+{"timestamp": "ISO", "drop_id": "*", "rule": "R4", "action": "escalate", "failure_type": "wave_death", "reason": "All blocking drops in W2 dead/failed"}
+```
+
+### Commands
+
+```bash
+# Dry-run: see what recovery would do without mutations
+python3 Skills/pulse/scripts/sentinel.py --dry-run
+
+# Check token availability
+python3 Skills/pulse/scripts/sentinel.py --check-token
+```
+
+### Enhanced Sentinel Agent Prompt Template
+
+```
+Pulse Smart Sentinel for build: <slug>
+
+1. Run: python3 Skills/pulse/scripts/sentinel.py
+2. The script handles tick + auto-recovery for all active builds.
+3. Read its output to understand what happened.
+
+POST-SCRIPT JUDGMENT (only if output reports items needing AI judgment):
+
+If the script reports Drops needing AI assessment:
+- Read the Drop's brief and any archived deposits
+- Assess: Is this a transient failure (retry) or a fundamental issue (escalate)?
+- If retry: run `python3 Skills/pulse/scripts/pulse.py retry <slug> <drop_id> --reason "<assessment>"`
+- If escalate: include in your email with specific guidance for V
+
+REPORT:
+- Only email if: recovery actions taken, drops needing attention, build complete, or wave advanced
+- Stay silent for routine ticks with no changes
+
+GUARDRAILS:
+- Max 2 auto-retries per Drop (script enforces this)
+- Never retry a Drop retried 2x — escalate instead
+- If build is BLOCKED, always escalate to V
+```
+
 ## Learnings System
 
 Two tiers:

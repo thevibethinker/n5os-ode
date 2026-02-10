@@ -1,0 +1,2 @@
+{"drop_id": "*", "rule": "R5", "action": "escalate", "failure_type": "stale", "reason": "Build active >4h with no progress in >60min", "timestamp": "2026-02-09T10:33:37.464139+00:00"}
+{"drop_id": "D6.1", "rule": "R1", "action": "auto_retry", "failure_type": "dead_timeout", "reason": "Dead (timeout), auto-retry 1/2", "retry_number": 1, "timestamp": "2026-02-09T10:51:50.194240+00:00"}

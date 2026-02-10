@@ -10,9 +10,11 @@ import os
 import hashlib
 import logging
 import requests
+from requests import RequestException
 from typing import List, Dict, Optional, Any
-from dataclasses import dataclass, asdict
+from dataclasses import dataclass
 from pathlib import Path
+import time
 
 LOG = logging.getLogger("entity_extractor")
 
@@ -20,6 +22,11 @@ CACHE_DIR = Path("/home/workspace/N5/cognition/entity_cache")
 
 # Set to True to skip OpenAI entirely (e.g., when rate limited for the day)
 SKIP_OPENAI = os.environ.get("SKIP_OPENAI", "").lower() in ("1", "true", "yes")
+
+RATE_LIMIT_STATE = {
+    "consecutive_failures": 0,
+    "last_backoff_seconds": 0
+}
 
 @dataclass
 class Entity:
@@ -101,6 +108,17 @@ def cache_extraction(text: str, result: Dict):
         LOG.warning(f"Failed to cache extraction: {e}")
 
 
+def apply_backoff():
+    """Apply exponential backoff based on rate limit state."""
+    failures = RATE_LIMIT_STATE["consecutive_failures"]
+    failure_number = failures + 1
+    backoff_seconds = 1 << min(failure_number, 6)
+    LOG.info(f"Rate limit hit. Sleeping for {backoff_seconds} seconds...")
+    time.sleep(backoff_seconds)
+    RATE_LIMIT_STATE["consecutive_failures"] = min(failure_number, 6)
+    RATE_LIMIT_STATE["last_backoff_seconds"] = backoff_seconds
+
+
 def extract_entities_via_zo(text: str, use_cache: bool = True) -> Dict[str, List]:
     """
     Extract entities and relationships using /zo/ask API.
@@ -175,22 +193,33 @@ def extract_entities_via_zo(text: str, use_cache: bool = True) -> Dict[str, List
             timeout=60
         )
         
-        if response.status_code != 200:
-            LOG.error(f"Zo API error: {response.status_code} - {response.text}")
-            return {"entities": [], "relationships": []}
+        if response.status_code == 429:
+            LOG.warning("Zo API rate limited (429). Response: %s", response.text)
+            apply_backoff()
+            return None
         
-        result = response.json()
-        output = result.get("output", {})
+        if not response.ok:
+            LOG.error("Zo API error: %s - %s", response.status_code, response.text)
+            apply_backoff()
+            return None
         
-        # Handle both string and dict responses
-        if isinstance(output, str):
-            try:
-                output = json.loads(output)
-            except:
-                LOG.warning(f"Failed to parse output as JSON: {output[:200]}")
-                return {"entities": [], "relationships": []}
+        try:
+            result = response.json()
+        except ValueError as exc:
+            LOG.warning(
+                "Zo response not JSON (len=%d). Preview: %s...",
+                len(response.text),
+                response.text[:160]
+            )
+            apply_backoff()
+            return None
         
-        # Validate and normalize
+        output = result.get("output")
+        if not isinstance(output, dict):
+            LOG.warning("Zo output missing expected structure: %r", output)
+            apply_backoff()
+            return None
+        
         entities = output.get("entities", [])
         relationships = output.get("relationships", [])
         
@@ -216,17 +245,30 @@ def extract_entities_via_zo(text: str, use_cache: bool = True) -> Dict[str, List
         if use_cache:
             cache_extraction(text, result)
         
+        RATE_LIMIT_STATE["consecutive_failures"] = 0
+        RATE_LIMIT_STATE["last_backoff_seconds"] = 0
+        
         return result
         
+    except RequestException as exc:
+        LOG.error("Zo API request failed: %s", exc)
+        apply_backoff()
+        return None
     except Exception as e:
-        LOG.error(f"Entity extraction failed: {e}")
-        return {"entities": [], "relationships": []}
+        LOG.error(f"Unexpected Zo extraction failure: {e}")
+        apply_backoff()
+        return None
 
 
 def extract_entities_via_openai(text: str, use_cache: bool = True) -> Dict[str, List]:
     """
     Extract entities using direct OpenAI API call.
     Faster and more reliable than /zo/ask for batch processing.
+    
+    Returns:
+        Dict with entities/relationships on success.
+        None on rate limit or truncated response (caller falls back to /zo/ask).
+        Empty dict on other errors.
     """
     if not text or len(text.strip()) < 50:
         return {"entities": [], "relationships": []}
@@ -239,7 +281,7 @@ def extract_entities_via_openai(text: str, use_cache: bool = True) -> Dict[str, 
             return cached
     
     try:
-        from openai import OpenAI
+        from openai import OpenAI, RateLimitError, APITimeoutError
         client = OpenAI()
         
         # Truncate very long text
@@ -271,19 +313,43 @@ Only include entities that are clearly named or defined. Skip vague references."
             timeout=30
         )
         
-        result = json.loads(response.choices[0].message.content)
+        content = response.choices[0].message.content
+        
+        if content is None or len(content.strip()) < 20:
+            LOG.warning(f"OpenAI returned truncated/empty response (len={len(content) if content else 0}), treating as rate limit")
+            apply_backoff()
+            return None
+        
+        try:
+            result = json.loads(content)
+        except json.JSONDecodeError as e:
+            LOG.warning(f"OpenAI returned malformed JSON (len={len(content)}, preview={content[:80]!r}): {e}")
+            apply_backoff()
+            return None
         
         # Cache result
         if use_cache:
             cache_extraction(text, result)
         
+        RATE_LIMIT_STATE["consecutive_failures"] = 0
+        RATE_LIMIT_STATE["last_backoff_seconds"] = 0
+        
         return result
         
+    except RateLimitError as e:
+        LOG.warning(f"OpenAI rate limit hit: {e}")
+        apply_backoff()
+        return None
+    except APITimeoutError as e:
+        LOG.warning(f"OpenAI timeout: {e}")
+        apply_backoff()
+        return None
     except Exception as e:
         error_str = str(e)
         LOG.error(f"OpenAI extraction failed: {e}")
         # Return None on rate limits so caller falls back to /zo/ask
-        if "429" in error_str or "rate_limit" in error_str.lower():
+        if "429" in error_str or "rate_limit" in error_str.lower() or "rate limit" in error_str.lower():
+            apply_backoff()
             return None
         return {"entities": [], "relationships": []}
 
@@ -308,6 +374,9 @@ def extract_entities(text: str, use_cache: bool = True) -> tuple[List[Entity], L
             raw = extract_entities_via_zo(text, use_cache=use_cache)
         elif not raw:  # Empty result
             raw = extract_entities_via_zo(text, use_cache=use_cache)
+    
+    if not isinstance(raw, dict):
+        raw = {"entities": [], "relationships": []}
     
     entities = [
         Entity(

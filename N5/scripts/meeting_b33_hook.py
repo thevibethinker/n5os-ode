@@ -68,7 +68,7 @@ def generate_b33_for_meeting(
     
     Args:
         meeting_folder: Path to meeting folder
-        auto_commit: If True, commit edges directly to edges.db
+        auto_commit: If True, commit edges directly to brain.db (meeting_edges table)
         timeout: Max seconds to wait for generation
         
     Returns:

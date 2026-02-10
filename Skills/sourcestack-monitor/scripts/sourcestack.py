@@ -7,7 +7,7 @@ import os
 import sqlite3
 import sys
 from dataclasses import dataclass
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional, Tuple
 
@@ -242,9 +242,22 @@ def persist_jobs(
     scan_id: str,
     dry_run: bool,
 ) -> Dict[str, int]:
-    stats = {"found": 0, "new": 0}
+    stats = {"found": 0, "new": 0, "updated": 0}
+    if dry_run:
+        for job in jobs:
+            if not job.post_uuid:
+                continue
+            stats["found"] += 1
+            cursor = conn.cursor()
+            cursor.execute("SELECT 1 FROM jobs WHERE post_uuid = ?", (job.post_uuid,))
+            if cursor.fetchone():
+                stats["updated"] += 1
+            else:
+                stats["new"] += 1
+        return stats
+
     cursor = conn.cursor()
-    now = datetime.utcnow().isoformat()
+    now = datetime.now(timezone.utc).isoformat()
     for job in jobs:
         if not job.post_uuid:
             continue
@@ -252,6 +265,7 @@ def persist_jobs(
         cursor.execute("SELECT post_uuid FROM jobs WHERE post_uuid = ?", (job.post_uuid,))
         row = cursor.fetchone()
         if row:
+            stats["updated"] += 1
             cursor.execute(
                 """
                 UPDATE jobs
@@ -262,41 +276,39 @@ def persist_jobs(
             )
         else:
             stats["new"] += 1
-            if not dry_run:
-                cursor.execute(
-                    """
-                    INSERT INTO jobs(
-                        post_uuid, job_name, company_name, company_url, post_url, post_apply_url,
-                        post_full_text, department, seniority, remote, comp_range, city, country,
-                        first_indexed, last_indexed, job_created_at, job_published_at,
-                        first_seen, last_seen, scan_id
-                    ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-                    """,
-                    (
-                        job.post_uuid,
-                        job.job_name,
-                        job.company_name,
-                        job.company_url,
-                        job.post_url,
-                        job.post_apply_url,
-                        job.post_full_text,
-                        job.department,
-                        job.seniority,
-                        job.remote,
-                        job.comp_range,
-                        job.city,
-                        job.country,
-                        job.first_indexed,
-                        job.last_indexed,
-                        job.job_created_at,
-                        job.job_published_at,
-                        now,
-                        now,
-                        scan_id,
-                    ),
-                )
-    if not dry_run:
-        conn.commit()
+            cursor.execute(
+                """
+                INSERT INTO jobs(
+                    post_uuid, job_name, company_name, company_url, post_url, post_apply_url,
+                    post_full_text, department, seniority, remote, comp_range, city, country,
+                    first_indexed, last_indexed, job_created_at, job_published_at,
+                    first_seen, last_seen, scan_id
+                ) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+                """,
+                (
+                    job.post_uuid,
+                    job.job_name,
+                    job.company_name,
+                    job.company_url,
+                    job.post_url,
+                    job.post_apply_url,
+                    job.post_full_text,
+                    job.department,
+                    job.seniority,
+                    job.remote,
+                    job.comp_range,
+                    job.city,
+                    job.country,
+                    job.first_indexed,
+                    job.last_indexed,
+                    job.job_created_at,
+                    job.job_published_at,
+                    now,
+                    now,
+                    scan_id,
+                ),
+            )
+    conn.commit()
     return stats
 
 
@@ -309,7 +321,7 @@ def scan_watchlist(args: argparse.Namespace) -> None:
         "fields": JOB_FIELDS,
         "limit": 2000,
     }
-    scan_id = f"scan-{datetime.utcnow().isoformat()}"
+    scan_id = f"scan-{datetime.now(timezone.utc).isoformat()}"
     LOG.info("Starting daily scan (%s).", scan_id)
     if args.dry_run:
         LOG.info("Dry-run: query will not persist results.")
@@ -320,7 +332,7 @@ def scan_watchlist(args: argparse.Namespace) -> None:
     stats = persist_jobs(conn, job_records, scan_id, args.dry_run)
     if not args.dry_run:
         record_scan(conn, scan_id, "daily", stats["found"], stats["new"], payload, credits)
-    LOG.info("Scan complete. Found %s jobs (%s new).", stats["found"], stats["new"])
+    LOG.info("Scan complete. Found %s jobs (%s new, %s updated).", stats["found"], stats["new"], stats.get("updated", 0))
 
 
 def record_scan(
@@ -341,7 +353,7 @@ def record_scan(
         (
             scan_id,
             scan_type,
-            datetime.utcnow().isoformat(),
+            datetime.now(timezone.utc).isoformat(),
             credits_used,
             found,
             new,
@@ -366,7 +378,7 @@ def adhoc_search(args: argparse.Namespace) -> None:
         "limit": args.limit,
     }
     LOG.info("Running ad hoc search: %s", args)
-    response_data, _ = post_to_api("jobs", payload, get_api_key())
+    response_data, _ = post_to_api("jobs", payload, api_key)
     jobs = response_data.get("data") or response_data.get("results") or []
     for job in jobs:
         LOG.info("%s | %s | %s", job.get("company_name"), job.get("job_name"), job.get("post_url"))
@@ -387,7 +399,7 @@ def query_local_db(args: argparse.Namespace) -> None:
         clauses.append("post_full_text LIKE ?")
         params.append(f"%{args.text}%")
     if args.since_days:
-        cutoff = (datetime.utcnow() - timedelta(days=args.since_days)).isoformat()
+        cutoff = (datetime.now(timezone.utc) - timedelta(days=args.since_days)).isoformat()
         clauses.append("last_seen >= ?")
         params.append(cutoff)
     if clauses:
@@ -437,7 +449,7 @@ def report_watchlist(args: argparse.Namespace) -> None:
 
 def delta_report(args: argparse.Namespace) -> None:
     conn = connect_db()
-    cutoff = datetime.utcnow() - timedelta(days=args.since_days)
+    cutoff = datetime.now(timezone.utc) - timedelta(days=args.since_days)
     cursor = conn.execute(
         "SELECT post_uuid, company_name, job_name, post_url, status FROM jobs WHERE last_seen >= ? ORDER BY last_seen DESC",
         (cutoff.isoformat(),),

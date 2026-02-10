@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Pattern Surfacer: Analyze edges.db to classify ideas by resonance level.
+Pattern Surfacer: Analyze brain.db to classify ideas by resonance level.
 
 Resonance Hierarchy:
 - L0 Cornerstone: 10+ meetings (foundational beliefs)
@@ -50,7 +50,7 @@ except ImportError:
 
 # Paths
 N5_ROOT = Path("/home/workspace/N5")
-EDGES_DB = N5_ROOT / "data" / "edges.db"
+EDGES_DB = Path("/home/workspace/N5/cognition/brain.db")
 RESONANCE_INDEX = N5_ROOT / "data" / "resonance_index.json"
 INSIGHTS_DIR = N5_ROOT / "insights" / "resonance"
 
@@ -83,7 +83,7 @@ def get_db_connection():
 
 def get_idea_frequencies() -> Dict[str, Dict]:
     """
-    Query edges.db for idea frequencies across extraction sessions.
+    Query brain.db for idea frequencies across extraction sessions.
     Returns dict of idea_slug -> {frequency, sessions, first_seen, last_seen, label, contexts}
     
     Note: context_meeting_id stores batch/session IDs (e.g., 'backfill-2026-01-05-1230'),
@@ -97,7 +97,7 @@ def get_idea_frequencies() -> Dict[str, Dict]:
         SELECT 
             source_type, source_id, target_type, target_id,
             relation, context_meeting_id, evidence, created_at
-        FROM edges
+        FROM meeting_edges
         WHERE source_type = 'idea' OR target_type = 'idea'
     """)
     
@@ -233,7 +233,7 @@ def compute_weekly_mentions() -> Dict[str, Dict[str, int]]:
     cursor.execute("""
         SELECT 
             source_type, source_id, target_type, target_id, created_at
-        FROM edges
+        FROM meeting_edges
         WHERE (source_type = 'idea' OR target_type = 'idea')
           AND created_at IS NOT NULL
     """)
@@ -357,7 +357,7 @@ def build_co_occurrence_matrix(min_shared_meetings: int = MIN_SHARED_MEETINGS) -
                  WHEN target_type='idea' THEN target_id 
             END as idea_slug,
             created_at
-        FROM edges
+        FROM meeting_edges
         WHERE context_meeting_id IS NOT NULL
           AND (source_type = 'idea' OR target_type = 'idea')
     """)
