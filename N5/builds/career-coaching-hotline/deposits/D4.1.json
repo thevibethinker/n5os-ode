@@ -1,0 +1,49 @@
+{
+  "drop_id": "D4.1",
+  "name": "Integration Testing + End-to-End Verification",
+  "wave": "W4",
+  "stream": 1,
+  "status": "complete",
+  "completed_at": "2026-02-14T08:55:00Z",
+  "conversation_id": "con_nynLDLuDcCOLw8XD",
+  "success_criteria": {
+    "server_startup_checks_pass": true,
+    "all_tool_handlers_respond_correctly": true,
+    "all_database_operations_work": true,
+    "webhook_routing_works_all_types": true,
+    "intake_pipeline_processes_correctly": true,
+    "test_results_documented": true
+  },
+  "test_summary": {
+    "total_tests": 51,
+    "passed": 51,
+    "failed": 0,
+    "expect_calls": 152,
+    "duration_seconds": 4.43,
+    "categories": {
+      "server_startup": { "passed": 10, "total": 10 },
+      "tool_handlers": { "passed": 11, "total": 11 },
+      "database_coaching_db": { "passed": 6, "total": 6 },
+      "database_hotline_db": { "passed": 5, "total": 5 },
+      "webhook_integration": { "passed": 6, "total": 6 },
+      "intake_pipeline": { "passed": 10, "total": 10 },
+      "caller_lookup": { "passed": 3, "total": 3 }
+    }
+  },
+  "artifacts_produced": [
+    "Skills/career-coaching-hotline/tests/integration-tests.ts",
+    "N5/builds/career-coaching-hotline/artifacts/test-results.md"
+  ],
+  "observations": [
+    "Two DuckDB files in use: career-hotline-calls (webhook/call-logger) and career-coaching-calls (intake-webhook). Both function correctly but have schema divergence in escalations and feedback tables.",
+    "All 150+ concept map aliases resolve to existing files on disk (20+ unique knowledge base files).",
+    "Phone normalization handles all tested formats including international numbers.",
+    "Tool handler classification logic correctly routes all 5 career stages plus edge cases (calibration detection, pain point identification)."
+  ],
+  "blockers": [],
+  "recommendations_for_next_drops": [
+    "D5.1 can proceed — all components verified functional.",
+    "Consider consolidating the two DuckDB files into one to avoid schema drift.",
+    "Consider harmonizing the escalations and feedback table schemas across both DBs."
+  ]
+}
