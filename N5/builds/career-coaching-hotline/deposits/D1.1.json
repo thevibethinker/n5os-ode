@@ -1,0 +1,47 @@
+{
+  "drop_id": "D1.1",
+  "build_slug": "career-coaching-hotline",
+  "name": "Download + Extract Source Material",
+  "status": "complete",
+  "completed_at": "2026-02-14T08:12:00Z",
+  "objectives": {
+    "download_all_files": {
+      "status": "complete",
+      "detail": "All 24 files downloaded from Google Drive folder 1vVnZDVlL7gfto_ZiCHYBprFHyDKX2rXt to artifacts/source-pdfs/"
+    },
+    "extract_text": {
+      "status": "complete",
+      "detail": "All 24 files extracted to markdown with YAML frontmatter in artifacts/extracted/ using pdftotext with page deduplication"
+    },
+    "create_manifest": {
+      "status": "complete",
+      "detail": "extraction-manifest.json written with complete inventory, word counts, and status for all 24 files"
+    }
+  },
+  "artifacts": {
+    "source_pdfs": "N5/builds/career-coaching-hotline/artifacts/source-pdfs/",
+    "extracted_markdown": "N5/builds/career-coaching-hotline/artifacts/extracted/",
+    "manifest": "N5/builds/career-coaching-hotline/artifacts/extraction-manifest.json"
+  },
+  "metrics": {
+    "files_downloaded": 24,
+    "files_extracted": 24,
+    "files_failed": 0,
+    "total_word_count": 31133,
+    "largest_file": "Summary_of_Peeling_the_Career_Services_Onion.md (5,198 words)",
+    "smallest_file": "Prompting_Claude_for_LinkedIn.md (222 words)"
+  },
+  "success_criteria": {
+    "all_24_downloaded": true,
+    "all_24_extracted": true,
+    "manifest_valid": true,
+    "no_empty_extractions": true
+  },
+  "notes": [
+    "PDFs had significant page duplication (same content repeated across pages) - deduplication applied during extraction",
+    "Used pdftotext (poppler) for extraction rather than read_file to avoid token-expensive page-by-page extraction",
+    "Google Drive download tool creates both original-name and specified-name copies; originals were cleaned up",
+    "TXT file (ALERT_INSERT_ME_prompting_file.txt) contained OAI Career Brain system prompt instructions"
+  ],
+  "learnings": []
+}
