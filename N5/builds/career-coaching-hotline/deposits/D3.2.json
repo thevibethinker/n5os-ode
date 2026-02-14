@@ -1,0 +1,69 @@
+{
+  "drop_id": "D3.2",
+  "build_slug": "career-coaching-hotline",
+  "name": "Fillout Intake Form + Webhook Pipeline",
+  "status": "complete",
+  "completed_at": "2026-02-14T08:42:00Z",
+  "conversation_id": "con_rtlPcFWFEM54FqNh",
+  "commit": "cf8633873",
+  "artifacts": {
+    "fillout_form_spec": "N5/builds/career-coaching-hotline/artifacts/fillout-form-spec.md",
+    "intake_webhook": "Skills/career-coaching-hotline/scripts/intake-webhook.ts",
+    "caller_lookup": "Skills/career-coaching-hotline/scripts/caller-lookup.ts",
+    "package_json": "Skills/career-coaching-hotline/scripts/package.json"
+  },
+  "deliverables": {
+    "fillout_form_spec": {
+      "status": "complete",
+      "path": "N5/builds/career-coaching-hotline/artifacts/fillout-form-spec.md",
+      "notes": "8 fields documented with types, validation, and Fillout-specific config. Dropdown options sourced from career-stages.md. Webhook payload shape documented with field extraction strategy."
+    },
+    "webhook_handler": {
+      "status": "complete",
+      "path": "Skills/career-coaching-hotline/scripts/intake-webhook.ts",
+      "notes": "Bun HTTP server on configurable port (default 8421). Receives Fillout webhook POST at /intake, extracts fields by name pattern matching, normalizes phone to E.164, downloads+extracts resume text (PDF via pdftotext, DOCX via pandoc), generates caller brief via /zo/ask, stores in DuckDB with upsert on phone, sends SMS notification to V. Health check at /health."
+    },
+    "duckdb_schema": {
+      "status": "complete",
+      "notes": "caller_profiles table already existed from D3.3 parallel work. D3.2 ensured UNIQUE index on phone column (was non-unique). ensureTable() in intake-webhook.ts is idempotent with CREATE TABLE IF NOT EXISTS + CREATE UNIQUE INDEX IF NOT EXISTS."
+    },
+    "phone_lookup_function": {
+      "status": "complete",
+      "path": "Skills/career-coaching-hotline/scripts/caller-lookup.ts",
+      "notes": "Exports: lookupCaller(phone) → CallerProfile|null, updateCallerLastCall(phone), normalizePhone(raw) → E.164 string, CallerProfile interface, generateUUID(). Uses libphonenumber-js for robust phone parsing. D3.1 webhook server should import from this module."
+    }
+  },
+  "success_criteria": {
+    "form_spec_complete": true,
+    "webhook_processes_submissions": true,
+    "phone_normalized_e164": true,
+    "resume_text_extraction": true,
+    "caller_brief_generation": true,
+    "duckdb_table_with_schema": true,
+    "phone_lookup_returns_matches": true,
+    "sms_notification_to_v": true
+  },
+  "tests_run": {
+    "phone_normalization": "6/6 passed — US formats (+1, parenthesized, dotted, 10-digit, 11-digit), empty string, international",
+    "uuid_generation": "Valid UUID v4 format confirmed",
+    "lookup_null_for_missing": "Returns null for non-existent phone — PASS",
+    "insert_and_lookup": "Insert profile then lookup by phone — PASS",
+    "e2e_fillout_webhook": "Full Fillout payload → extracted fields → normalized phone (+16175559876) → career stage resolved (outreach) → brief generated → stored in DuckDB → verified via query — PASS",
+    "invalid_payload_rejected": "Missing name/phone returns 400 — PASS",
+    "unknown_route_404": "Non-existent path returns 404 — PASS",
+    "server_startup": "Starts cleanly, logs port and DB path — PASS"
+  },
+  "dependencies_for_downstream": {
+    "D3.1": "Import { lookupCaller, updateCallerLastCall, CallerProfile } from './caller-lookup'. On assistant-request, call lookupCaller(callerPhone) and inject caller_brief into system prompt if matched.",
+    "D4.1": "Integration test should verify: (1) Fillout webhook stores profile, (2) lookupCaller returns it, (3) main webhook uses it for personalized greeting."
+  },
+  "learnings": [
+    "DuckDB ON CONFLICT requires UNIQUE index on conflict column. D3.3 brief specifies CREATE INDEX (non-unique) — fixed to CREATE UNIQUE INDEX. Logged to build ledger.",
+    "Fillout webhook payload uses 'questions' array with name/type/value — extract by name pattern rather than field ID since IDs are opaque."
+  ],
+  "known_limitations": [
+    "Resume extraction depends on pdftotext (for PDF) and pandoc (for DOCX) being installed — both are pre-installed on Zo.",
+    "Caller brief generation requires ZO_CLIENT_IDENTITY_TOKEN — falls back to template brief if unavailable.",
+    "Intake webhook runs as separate server (port 8421) — D3.1 may choose to integrate it as a route on the main webhook server instead."
+  ]
+}
