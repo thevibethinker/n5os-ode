@@ -1,0 +1,54 @@
+{
+  "drop_id": "D2.3",
+  "build_slug": "career-coaching-hotline",
+  "name": "Career Diagnostic Tool Design",
+  "status": "complete",
+  "completed_at": "2026-02-14T03:30:00-05:00",
+  "artifacts": [
+    {
+      "path": "N5/builds/career-coaching-hotline/artifacts/career-stages.md",
+      "description": "5-stage career framework (Groundwork, Materials, Outreach, Performance, Transition) grounded in V's coaching philosophy, 4 Levers model, and 24 source documents. Each stage includes profile, signals, pain points, V's coaching angle, and primary knowledge base topics.",
+      "type": "framework"
+    },
+    {
+      "path": "N5/builds/career-coaching-hotline/artifacts/diagnostic-questions.md",
+      "description": "3-question Socratic diagnostic designed for voice delivery. Q1 (Where are you?), Q2 (What have you tried?), Q3 (What's the goal?). Each with scoring guides mapping natural language answers to career stages. Includes delivery scripts, follow-up probes, anti-patterns, and voice discipline rules matching Zoseph's one-at-a-time approach.",
+      "type": "diagnostic"
+    },
+    {
+      "path": "N5/builds/career-coaching-hotline/artifacts/tool-specs.json",
+      "description": "6 VAPI function-calling tool schemas: assessCareerStage (diagnostic processor), getCareerRecommendations (stage-based advice), explainCareerConcept (knowledge base retrieval), requestCareerSession (Careerspan booking escalation), collectFeedback (call feedback), lookupCaller (Fillout phone matching). All follow Zoseph's existing tool schema format.",
+      "type": "tool_specs"
+    },
+    {
+      "path": "N5/builds/career-coaching-hotline/artifacts/value-prop-tree.md",
+      "description": "Maps all 5 career stages to specific Careerspan offerings with natural transition language V would use. Includes timing rules (no pitch in first 3 min, max 1 per call), key stats to deploy, and a fallback for ambiguous stages. Every transition is phrased in V's direct, unmuzzled coaching voice.",
+      "type": "value_prop"
+    }
+  ],
+  "decisions": [
+    {
+      "decision": "5 career stages instead of the brief's suggested 4-5",
+      "rationale": "V's source material reveals 5 distinct clusters: pure beginners (Groundwork), materials-focused seekers (Materials), strategy/networking gap (Outreach), interview/conversion (Performance), and career changers (Transition). These map cleanly to V's 4 Levers plus the cross-cutting transition concern."
+    },
+    {
+      "decision": "3 diagnostic questions instead of Zoseph's 4",
+      "rationale": "Career callers have more urgency and less patience for meta-assessment than Zo users. 3 open-ended questions (situation, effort, goal) capture equivalent signal to Zoseph's 4 structured A/B/C/D questions while feeling more like a coaching conversation."
+    },
+    {
+      "decision": "Open-ended questions rather than A/B/C/D format",
+      "rationale": "Zoseph's A/B/C/D worked for the Meta-OS framework where levels are well-defined. Career coaching needs to capture nuance — the same 'I'm applying to jobs' answer could indicate Stage 2 or Stage 3 depending on context. Open questions + LLM scoring captures this better than forced categories."
+    },
+    {
+      "decision": "assessCareerStage takes natural language summaries, not coded answers",
+      "rationale": "Aligns with the open-ended question design. The AI summarizes what it heard into structured fields. The webhook server processes these summaries semantically (via LLM or rule-based matching) rather than requiring rigid answer codes."
+    },
+    {
+      "decision": "Value prop tree uses V's actual coaching voice for transition language",
+      "rationale": "D2.2 (system prompt) is marked MANUAL — voice-sensitive. The value prop transition scripts are written in V's direct, unmuzzled style as documented across the source material, but D2.2 will ultimately calibrate the exact tone. These scripts serve as strong starting points."
+    }
+  ],
+  "dependencies_consumed": ["D1.1"],
+  "downstream_consumers": ["D2.2", "D3.1", "D4.2"],
+  "notes": "The tool-specs.json follows the exact VAPI function-calling schema used in Zoseph's hotline-assistant.json. D3.1 (webhook server) should implement the server-side logic for each tool. D2.2 (system prompt) should reference the diagnostic questions, career stages, and value prop tree. D4.2 (funnel finalization) should review and refine the value prop transition language with V."
+}
