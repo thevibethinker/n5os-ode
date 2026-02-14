@@ -347,6 +347,52 @@ async function getCareerRecommendations(params: {
     painPointAdvice.push("AI tools are great for drafting, but they create sameness. Your competitive edge is specificity — your stories, your numbers, your context.");
   }
 
+  const careerspan: Record<string, {
+    offering: string;
+    opening_hook: string;
+    pitch: string;
+    transition_phrase: string;
+    key_stat: string;
+  }> = {
+    groundwork: {
+      offering: "Discovery Session",
+      opening_hook: "Most people skip this step entirely — and it costs them months.",
+      pitch: "Figuring out your direction takes real conversation — digging into your story, your experiences. That's what Careerspan coaching sessions are for.",
+      transition_phrase: "I'm giving you the framework, but the real magic is when someone maps this out with you specifically.",
+      key_stat: "49% of professionals say a lack of good career advice has negatively impacted their trajectory."
+    },
+    materials: {
+      offering: "Resume & Materials Review",
+      opening_hook: "Your resume is sending a signal right now. The question is whether it's the signal you intend.",
+      pitch: "I can teach you the principles, but the real magic is when someone who's reviewed thousands of resumes looks at yours specifically and tells you exactly what to fix.",
+      transition_phrase: "I can't see your resume on this call. If you want expert eyes on it, that's literally what Careerspan does.",
+      key_stat: "Only 2% of resumes result in an interview. 63% of recruiters want resumes tailored to the specific role."
+    },
+    outreach: {
+      offering: "Job Search Strategy Session",
+      opening_hook: "You're working hard. The question is whether you're working smart.",
+      pitch: "You need someone who can look at your specific situation and build you a plan — who exactly to reach out to, what your weekly rhythm should look like.",
+      transition_phrase: "The framework is universal. The execution has to be specific to YOUR industry and YOUR network.",
+      key_stat: "Referrals make candidates 4x more likely to get hired. Each job posting averages 250 applications."
+    },
+    performance: {
+      offering: "Interview Coaching",
+      opening_hook: "You're getting in the room. That's the hard part, and you're already past it.",
+      pitch: "You need someone who can watch you answer questions and tell you exactly where you're losing people. A single session can flip your odds.",
+      transition_phrase: "I can give you the frameworks. What I can't do is watch you deliver and tell you where you're losing them.",
+      key_stat: "89% of new hire failures are about attitude and fit, not skills."
+    },
+    transition: {
+      offering: "Career Transition Strategy",
+      opening_hook: "Career transitions are the hardest coaching work — and the most rewarding. You're not starting over. You're translating.",
+      pitch: "The question isn't whether you're qualified, it's how you tell the story. That's not a 15-minute conversation — that's real coaching work.",
+      transition_phrase: "I can teach you the concept of a bridge story. Building YOUR bridge story — that's coaching.",
+      key_stat: "46% of new hires fail in 18 months, and 89% of those failures are attitudinal, not technical."
+    }
+  };
+
+  const stageCareerspan = careerspan[primary_stage] || careerspan.groundwork;
+
   return {
     stage: primary_stage,
     timeframe: stageRecs.timeframe,
@@ -354,7 +400,14 @@ async function getCareerRecommendations(params: {
     actions: stageRecs.actions,
     urgency_note: urgencyAdjustment || null,
     pain_point_advice: painPointAdvice.length > 0 ? painPointAdvice : null,
-    careerspan_hint: `When ready to go deeper on ${stageRecs.priority.toLowerCase()}, Careerspan sessions provide hands-on coaching with V.`
+    careerspan_recommendation: {
+      offering: stageCareerspan.offering,
+      opening_hook: stageCareerspan.opening_hook,
+      pitch: stageCareerspan.pitch,
+      transition_phrase: stageCareerspan.transition_phrase,
+      key_stat: stageCareerspan.key_stat,
+      booking_link: BOOKING_LINK
+    }
   };
 }
 
