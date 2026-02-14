@@ -1,0 +1,71 @@
+{
+  "drop_id": "D2.2",
+  "drop_name": "System Prompt Authoring",
+  "build_slug": "career-coaching-hotline",
+  "wave": "W2",
+  "stream": 2,
+  "status": "complete",
+  "completed_at": "2026-02-14T08:20:00Z",
+  "conversation_id": "con_w0iAPXH4MgmquoQL",
+  "artifacts": [
+    {
+      "path": "N5/builds/career-coaching-hotline/artifacts/career-coach-system-prompt.md",
+      "type": "system_prompt",
+      "description": "Full system prompt for the Career Coaching Hotline voice AI, modeled on V's coaching voice and style",
+      "word_count": 3867,
+      "sections": 22
+    }
+  ],
+  "inputs_consumed": [
+    "N5/builds/career-coaching-hotline/artifacts/v-coaching-profile.md",
+    "N5/builds/career-coaching-hotline/artifacts/extracted/ (24 source documents)",
+    "Skills/zo-hotline/prompts/zoseph-system-prompt.md",
+    "Careerspan/references/ANTI-RESUME-FRAMEWORK.md",
+    "N5/prefs/voice/anti-patterns.md"
+  ],
+  "success_criteria": {
+    "all_required_sections_covered": true,
+    "voice_discipline_present": true,
+    "reads_as_v_not_generic": true,
+    "careerspan_positioning_natural": true,
+    "pre_briefed_mode_defined": true,
+    "all_tools_described": true
+  },
+  "design_decisions": [
+    {
+      "decision": "Carried over Zoseph's voice discipline rules verbatim — they're battle-tested for phone",
+      "rationale": "These rules (1 question per turn, max 2 options, 2-3 sentences) are about phone voice constraints, not personality. They apply regardless of domain."
+    },
+    {
+      "decision": "Mapped Zoseph's Discover/Guide modes to Explore/Coach/Pre-briefed",
+      "rationale": "Career coaching needs more mode granularity. Explore handles curiosity, Coach handles specific problems, Pre-briefed skips triage entirely for callers who submitted intake forms."
+    },
+    {
+      "decision": "Domain Knowledge organized by career activity, not by source document",
+      "rationale": "The voice agent needs topic-organized knowledge for real-time retrieval, not document-organized knowledge. Grouped into: Resume, Interview, Job Search, Networking, LinkedIn, Career Pivots, Cover Letters, Salary, Self-Reflection, The System."
+    },
+    {
+      "decision": "Value Prop Tree uses situation-based matching, not feature-based selling",
+      "rationale": "V's coaching philosophy is 'the phone call IS the marketing.' Each Careerspan pitch is matched to the caller's specific situation so it feels like a natural next step, not a sales pitch."
+    },
+    {
+      "decision": "Character section uses numeric voice profile scores from D1.2 as guardrails",
+      "rationale": "Directness 0.85, Warmth 0.88 for job seekers, profanity natural-not-performative — these empirical scores from the voice profile ground the personality in V's actual communication patterns rather than generic descriptions."
+    },
+    {
+      "decision": "Included V's Contrarian Views as a standalone section",
+      "rationale": "These are what differentiate V from every generic career advisor. The agent needs to know when to challenge conventional wisdom and have V's actual positions ready to deploy."
+    },
+    {
+      "decision": "Added 'What You Are NOT' section at the end",
+      "rationale": "Boundary-setting prevents the agent from drifting into therapist mode, recruiter mode, or trying to do work the caller should do themselves. Clear guardrails on scope."
+    }
+  ],
+  "notes_for_downstream": [
+    "D3.1 (VAPI Agent Configuration) should reference this prompt as the system prompt to inject",
+    "Tool names in the prompt (runCareerDiagnostic, getCareerRecommendations, explainConcept, requestEscalation, collectFeedback) need to match VAPI tool definitions in D2.3",
+    "Pre-briefed mode requires D2.1's Fillout form to provide structured context via phone number matching",
+    "The firstMessage is NOT defined in this prompt — it will be configured in D3.1's VAPI agent setup",
+    "Voice discipline rules are identical to Zoseph's — any TTS voice tuning from the existing hotline applies"
+  ]
+}
