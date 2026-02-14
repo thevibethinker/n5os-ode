@@ -1,0 +1,38 @@
+{
+  "slug": "career-coaching-hotline",
+  "learnings": [
+    {
+      "text": "Google Drive download-file tool creates BOTH an original-named copy AND your specified filePath copy. Clean up originals after download to avoid duplicates.",
+      "source": "manual",
+      "added_at": "2026-02-14T08:12:27.109427+00:00",
+      "tags": []
+    },
+    {
+      "text": "Parallel /zo/ask generation with 15-semaphore concurrency works well for knowledge base files. 26 files generated in one batch with zero failures. Each child invocation needs full source content + clear voice guidelines + specific topic instructions to produce consistent output. Source: D2.1",
+      "source": "manual",
+      "added_at": "2026-02-14T08:23:09.597113+00:00",
+      "tags": [
+        "parallelization",
+        "knowledge-base"
+      ]
+    },
+    {
+      "text": "DuckDB ON CONFLICT requires UNIQUE index, not regular index, on the conflict column. D3.3 drop brief specifies CREATE INDEX (non-unique) on caller_profiles.phone \u2014 D3.2 fixed to CREATE UNIQUE INDEX. Other drops consuming this table should ensure unique index exists.",
+      "source": "manual",
+      "added_at": "2026-02-14T08:40:42.182088+00:00",
+      "tags": [
+        "duckdb",
+        "schema"
+      ]
+    },
+    {
+      "text": "Career coaching dataset has 6 tables (vs zo-hotline 5): added caller_profiles for Fillout intake. daily_analysis has career_stages_json, topics_json, careerspan_conversions columns. DB path: Datasets/career-coaching-calls/data.duckdb. Init: python3 Skills/career-coaching-hotline/scripts/init_db.py",
+      "source": "manual",
+      "added_at": "2026-02-14T08:40:50.515481+00:00",
+      "tags": [
+        "schema",
+        "database"
+      ]
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 ---
 created: 2026-02-14
 last_edited: 2026-02-14
-version: 2.0
+version: 2
 provenance: con_DCvrwywO5e7BuQRl
 drop_id: D1.2
 sources:
@@ -20,7 +20,6 @@ sources:
   - Documents/System/personas/ (writer, strategist)
   - N5/data/voice_library.db (419 approved primitives)
 ---
-
 # V Psychographics + Voice Profile for Career Coaching Persona
 
 ## 1. Psychographic Profile
