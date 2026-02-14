@@ -1,0 +1,53 @@
+{
+  "drop_id": "D1.2",
+  "build_slug": "career-coaching-hotline",
+  "name": "V Psychographics + Voice Profile",
+  "wave": "W1",
+  "stream": 2,
+  "status": "complete",
+  "completed_at": "2026-02-14T08:10:00Z",
+  "conversation_id": "con_DCvrwywO5e7BuQRl",
+  "artifacts": [
+    {
+      "path": "N5/builds/career-coaching-hotline/artifacts/v-coaching-profile.md",
+      "type": "profile_document",
+      "version": "2.0",
+      "description": "Comprehensive psychographic and voice profile of V as career coach, synthesized from voice system, X corpus, Careerspan methodology, persona docs, identity records, and 419 approved voice primitives"
+    }
+  ],
+  "sources_analyzed": [
+    "N5/prefs/communication/voice-lessons.md",
+    "N5/prefs/communication/voice-profiles.json",
+    "N5/prefs/communication/voice-primitives-system.md",
+    "N5/prefs/communication/x-voice/X_VOICE_FINGERPRINT.md",
+    "N5/prefs/voice/anti-patterns.md",
+    "Personal/Knowledge/Identity/v_autobiography.yaml",
+    "Documents/vibe-thinking/vibe-thinking-theory-summary.md",
+    "Careerspan/references/ANTI-RESUME-FRAMEWORK.md",
+    "Careerspan/ADVISOR-FEEDBACK-ANALYSIS.md",
+    "Careerspan/TEMPLATE-SKETCH-v3.5.md",
+    "Careerspan/CANDIDATE-OUTPUT-REALIGNMENT.md",
+    "Skills/zo-hotline/prompts/zoseph-system-prompt.md",
+    "Documents/System/personas/vibe_strategist_persona.md",
+    "Documents/System/personas/vibe_writer_persona.md",
+    "N5/data/voice_library.db"
+  ],
+  "success_criteria": {
+    "psychographic_specific_to_v": true,
+    "voice_rules_concrete_for_llm": true,
+    "coaching_personality_actual_not_aspirational": true,
+    "file_written_and_complete": true
+  },
+  "key_findings": [
+    "V's directness score is 0.85 (empirically measured from 381 tweets) — this should be preserved in career coaching voice",
+    "Warmth dial for candidates/job seekers is 0.88 (highest of all audiences) but edge drops to 0.28 — career coaching V is warmer and less spicy than X/general V",
+    "419 approved voice primitives available, with 15+ career-specific signature phrases and conceptual frames that should be seeded into the system prompt",
+    "Anti-Resume Framework (negative space over positive space) is V's core intellectual contribution to career coaching — the system prompt must embody this philosophy",
+    "Key difference from Zoseph: career coaching callers may be in crisis, requiring Crisis Mode with emotional bandwidth before tactical advice",
+    "V's em-dash pivot, parenthetical asides, and escalating specificity patterns translate to phone as natural pauses and 'kind of like...' asides",
+    "Profanity should be present but dialed down vs. X — occasional 'honestly, that's bullshit' when warranted, not frequent"
+  ],
+  "lessons": [],
+  "blockers": [],
+  "notes": "Previous v1.0 existed from an earlier attempt. This v2.0 is significantly enhanced with real voice data (X corpus analysis, 419 primitives, numeric voice profiles), Careerspan methodology integration (Anti-Resume framework, signal-strength measurement, advisor feedback), and concrete V-isms throughout. The profile is now grounded in empirical evidence rather than generic career coach attributes."
+}
