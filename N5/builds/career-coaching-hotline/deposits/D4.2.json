@@ -1,0 +1,55 @@
+{
+  "drop_id": "D4.2",
+  "build_slug": "career-coaching-hotline",
+  "name": "Value Prop Tree + Careerspan Funnel Logic",
+  "wave": "W4",
+  "stream": 2,
+  "status": "complete",
+  "completed_at": "2026-02-14T03:50:00-05:00",
+  "provenance": "con_CRv7HoHCsbK1FMcq",
+  "commit": "1bb96b453",
+  "deliverables": {
+    "value_prop_tree": {
+      "path": "N5/builds/career-coaching-hotline/artifacts/value-prop-tree.md",
+      "version": "2.0",
+      "description": "Finalized value prop tree with opening hooks, Careerspan pitch, CTA, transition language, and objection handling for all 5 career stages. Added soft close protocol, timing rules, cross-stage objection master list, and fallback for ambiguous stages."
+    },
+    "system_prompt_update": {
+      "path": "N5/builds/career-coaching-hotline/artifacts/career-coach-system-prompt.md",
+      "version": "2.0",
+      "description": "Updated Value Prop Tree section with stage-specific positioning table (opening hooks + pitches). Updated Careerspan Positioning section with DO/DON'T timing rules, soft close protocol, and objection handling. Removed old generic pitch table."
+    },
+    "tool_handler_update": {
+      "path": "Skills/career-coaching-hotline/scripts/hotline-webhook.ts",
+      "function": "getCareerRecommendations",
+      "description": "Replaced generic careerspan_hint string with structured careerspan_recommendation object containing: offering (name), opening_hook, pitch, transition_phrase, key_stat, and booking_link — all stage-specific. Enables the AI model to deliver personalized Careerspan positioning during calls."
+    }
+  },
+  "success_criteria": {
+    "value_prop_tree_covers_all_stages": true,
+    "each_stage_has_specific_language": true,
+    "system_prompt_updated_with_positioning": true,
+    "transition_feels_natural": true,
+    "tool_handler_returns_correct_recs": true
+  },
+  "artifacts_modified": [
+    "N5/builds/career-coaching-hotline/artifacts/value-prop-tree.md",
+    "N5/builds/career-coaching-hotline/artifacts/career-coach-system-prompt.md",
+    "Skills/career-coaching-hotline/scripts/hotline-webhook.ts"
+  ],
+  "decisions": [
+    {
+      "decision": "Replaced flat careerspan_hint string with structured careerspan_recommendation object",
+      "rationale": "Structured data gives the AI model more control over which element to use when — opening hook for rapport-building moments, pitch for the sell moment, transition_phrase for natural bridge, key_stat for credibility."
+    },
+    {
+      "decision": "Added soft close protocol as separate section from main value prop tree",
+      "rationale": "Soft close is a universal end-of-call behavior independent of stage assessment. Separating it from stage-specific pitches prevents double-pitching (timing rule: skip if pitch already delivered)."
+    },
+    {
+      "decision": "Added cross-stage objection master list in addition to per-stage objections",
+      "rationale": "Some objections (cost, sales pitch suspicion, AI vs coaching) occur regardless of stage. Master list prevents repetitive per-stage entries while stage-specific objections handle targeted pushback."
+    }
+  ],
+  "notes": "Manual drop — voice-sensitive, Careerspan funnel logic requires judgment. All transition language reviewed for V's voice: direct, non-salesy, honest. Objection handling follows V's 'unmuzzled' philosophy: acknowledge, don't pressure, leave the door open. D5.1 depends on this drop."
+}
