@@ -1,0 +1,126 @@
+{
+  "drop_id": "D3.1",
+  "build_slug": "career-coaching-hotline",
+  "name": "Webhook Server + VAPI Config",
+  "status": "complete",
+  "completed_at": "2026-02-14T03:55:00-05:00",
+  "provenance": "con_950lHuRPYCrmECof",
+  "commit": "0d3cba254",
+
+  "deliverables": {
+    "webhook_server": {
+      "path": "Skills/career-coaching-hotline/scripts/hotline-webhook.ts",
+      "status": "complete",
+      "description": "Full Bun/TypeScript webhook server handling VAPI webhooks for career coaching",
+      "port": 8848,
+      "endpoints": [
+        "POST / (assistant-request, tool-calls, end-of-call-report)",
+        "GET /health"
+      ]
+    },
+    "call_logger": {
+      "path": "Skills/career-coaching-hotline/scripts/call-logger.ts",
+      "status": "complete",
+      "description": "Call logging utilities with CLI (health, analytics, escalations)"
+    },
+    "vapi_config": {
+      "path": "Skills/career-coaching-hotline/config/hotline-assistant.json",
+      "status": "complete",
+      "description": "Reference VAPI assistant config (webhook is source of truth)"
+    },
+    "skill_definition": {
+      "path": "Skills/career-coaching-hotline/SKILL.md",
+      "status": "complete"
+    },
+    "database": {
+      "path": "Datasets/career-hotline-calls/data.duckdb",
+      "status": "complete",
+      "tables": ["calls", "escalations", "feedback", "caller_lookup", "caller_insights"]
+    },
+    "port_registry": {
+      "path": "N5/config/PORT_REGISTRY.md",
+      "status": "updated",
+      "port": 8848,
+      "range": "webhooks"
+    }
+  },
+
+  "tools_implemented": {
+    "assessCareerStage": {
+      "status": "complete",
+      "tested": true,
+      "description": "Processes 3 diagnostic question answers → primary_stage, secondary_concerns, pain_points, urgency, effort_level, calibration_needed"
+    },
+    "getCareerRecommendations": {
+      "status": "complete",
+      "tested": true,
+      "description": "Returns stage-appropriate actions, timeframe, priority, urgency adjustments, pain point advice"
+    },
+    "explainCareerConcept": {
+      "status": "complete",
+      "tested": true,
+      "description": "Resolves concept via concept-map.json → loads knowledge base file content. Handles files and directories."
+    },
+    "requestCareerSession": {
+      "status": "complete",
+      "tested": true,
+      "description": "Logs escalation to DuckDB, sends SMS to V, returns booking link"
+    },
+    "lookupCaller": {
+      "status": "complete",
+      "tested": true,
+      "description": "Checks phone number against caller_lookup table (Fillout form submissions) and caller_insights (returning callers)"
+    },
+    "collectFeedback": {
+      "status": "complete",
+      "tested": true,
+      "description": "Logs helpful, rating, feedback_text, would_recommend to feedback table"
+    }
+  },
+
+  "verification": {
+    "compiles": true,
+    "starts_without_errors": true,
+    "assistant_request_returns_config": true,
+    "all_6_tools_tested": true,
+    "knowledge_base_resolution": true,
+    "caller_lookup_works": true,
+    "call_logging_writes_to_duckdb": true,
+    "health_endpoint_works": true,
+    "webhook_auth_validates": true,
+    "sms_relay_configured": true
+  },
+
+  "success_criteria_met": {
+    "webhook_server_compiles_and_starts": true,
+    "all_6_tools_have_working_handlers": true,
+    "knowledge_base_concept_resolution_works": true,
+    "caller_lookup_by_phone_number_works": true,
+    "call_logging_writes_to_duckdb": true,
+    "sms_notification_relay_works": true,
+    "server_binds_to_correct_port": true,
+    "webhook_auth_validates_correctly": true
+  },
+
+  "env_vars_required": [
+    "CAREER_HOTLINE_VOICE_ID",
+    "VAPI_API_KEY",
+    "CAREER_HOTLINE_SECRET",
+    "ZO_CLIENT_IDENTITY_TOKEN"
+  ],
+  "env_vars_optional": [
+    "CAREER_HOTLINE_PORT (default: 8848)",
+    "CAREER_HOTLINE_BOOKING_LINK (default: https://mycareerspan.com/book)",
+    "CAREER_HOTLINE_VERBOSITY (default: normal)"
+  ],
+
+  "notes_for_downstream": [
+    "D4.1 (service registration): Use port 8848, entrypoint 'bun Skills/career-coaching-hotline/scripts/hotline-webhook.ts'",
+    "D4.2 (VAPI dashboard config): Point webhook URL to the registered service, set X-Vapi-Secret header to CAREER_HOTLINE_SECRET value",
+    "V needs to create CAREER_HOTLINE_SECRET env var in Zo secrets before the service goes live",
+    "The caller_lookup table is empty — D4 should document how Fillout form submissions get loaded (manual or webhook)",
+    "concept-map.json is loaded from the build artifacts directory — if this moves, update the path in hotline-webhook.ts"
+  ],
+
+  "learnings": []
+}
