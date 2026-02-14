@@ -1,0 +1,85 @@
+{
+  "_comment": "Reference config (v1.0). The webhook (hotline-webhook.ts) is the source of truth for runtime configuration.",
+  "assistant": {
+    "name": "V (Career Coach)",
+    "firstMessage": "Hey — this is V on the Careerspan Career Coaching Hotline. I've been coaching professionals for over a decade, and this is a free resource to help you with whatever's going on in your career right now. If at any point you want deeper help, just say so and I'll connect you. So — what's going on?",
+
+    "transcriber": {
+      "provider": "deepgram",
+      "keywords": [
+        "Careerspan:10", "resume:8", "LinkedIn:8", "cover letter:8",
+        "interview:8", "ATS:8", "networking:8", "job search:8",
+        "career:8", "Vrijen:10", "AISS:8", "recruiter:6",
+        "salary:6", "negotiation:6"
+      ]
+    },
+
+    "model": {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001",
+      "messages": [
+        {
+          "role": "system",
+          "content": "LOAD_FROM: N5/builds/career-coaching-hotline/artifacts/career-coach-system-prompt.md"
+        }
+      ],
+      "tools": "LOAD_FROM: N5/builds/career-coaching-hotline/artifacts/tool-specs.json"
+    },
+
+    "voice": {
+      "provider": "11labs",
+      "voiceId": "ENV:CAREER_HOTLINE_VOICE_ID",
+      "model": "eleven_flash_v2_5",
+      "stability": 0.45,
+      "similarityBoost": 0.75,
+      "style": 0.65,
+      "useSpeakerBoost": true,
+      "optimizeStreamingLatency": 4,
+      "chunkPlan": {
+        "enabled": true,
+        "minCharacters": 20,
+        "punctuationBoundaries": [".", "!", "?", ",", ";", ":"]
+      }
+    },
+
+    "startSpeakingPlan": {
+      "waitSeconds": 0.4,
+      "smartEndpointingEnabled": true,
+      "transcriptionEndpointingPlan": {
+        "onPunctuationSeconds": 0.1,
+        "onNoPunctuationSeconds": 0.8,
+        "onNumberSeconds": 0.4
+      }
+    },
+
+    "stopSpeakingPlan": {
+      "numWords": 0,
+      "voiceSeconds": 0.2,
+      "backoffSeconds": 1.0
+    },
+
+    "backchannelingEnabled": true,
+    "backgroundSound": "off",
+
+    "voicemailMessage": "Hey, this is V from the Careerspan Career Coaching Hotline. Leave a message or call back anytime.",
+    "endCallMessage": "Good luck out there. You've got this.",
+    "endCallPhrases": ["goodbye", "bye", "thanks", "talk to you later", "that's all", "I'm good"],
+
+    "responseDelaySeconds": 0.1,
+    "silenceTimeoutSeconds": 15,
+    "maxDurationSeconds": 1800,
+    "serverMessages": ["end-of-call-report", "tool-calls"],
+
+    "metadata": {
+      "version": "1.0",
+      "securityModel": "read-only",
+      "promptSource": "N5/builds/career-coaching-hotline/artifacts/career-coach-system-prompt.md",
+      "toolSpecSource": "N5/builds/career-coaching-hotline/artifacts/tool-specs.json",
+      "conceptMapSource": "N5/builds/career-coaching-hotline/artifacts/concept-map.json",
+      "knowledgeBase": "Knowledge/career-coaching-hotline/",
+      "bookingLinkEnvVar": "CAREER_HOTLINE_BOOKING_LINK",
+      "portEnvVar": "CAREER_HOTLINE_PORT",
+      "defaultPort": 8848
+    }
+  }
+}

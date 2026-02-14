@@ -1,7 +1,7 @@
 ---
 created: 2026-01-14
-last_edited: 2026-01-30
-version: 1.4
+last_edited: 2026-02-12
+version: 1.5
 provenance: con_xMvzWKgpZHS5XdCn
 ---
 
@@ -36,6 +36,7 @@ provenance: con_xMvzWKgpZHS5XdCn
 
 | Port | Service Label | Protocol | Source | Purpose |
 |------|---------------|----------|--------|---------|
+| 4242 | vapi-webhook | http | service | Vapi voice AI webhook server |
 | 3000 | did-i-get-it | http | service | Did I Get It app |
 | 3001 | productivity-dashboard-staging | http | service | Productivity dashboard staging |
 | 3047 | events-calendar | http | service | Events calendar |
@@ -66,6 +67,7 @@ provenance: con_xMvzWKgpZHS5XdCn
 | 8845 | fillout-webhook | http | service | Fillout form webhook |
 | 8846 | recall-webhook | http | service | Recall.ai meeting webhook (replaces Fireflies) |
 | 8847 | careerspan-webhook | http | service | Careerspan data webhook |
+| 8848 | career-coaching-hotline | http | service | Career Coaching Hotline VAPI webhook |
 | 8900 | zapier-webhook | http | service | Zapier webhook receiver |
 | 9090 | prometheus | http | service | Prometheus monitoring |
 | 19999 | semantic-reindex | tcp | service | Semantic reindex service |
@@ -102,7 +104,7 @@ provenance: con_xMvzWKgpZHS5XdCn
 ## Next Available Ports by Range
 
 - **n5-services (8763-8844)** — next: 8791
-- **webhooks (8845-8899)** — next: 8848
+- **webhooks (8845-8899)** — next: 8849
 - **mid-ephemeral (50000-51999)** — next: 50841
 - **high-ephemeral (52000-58999)** — next: 53829
 
