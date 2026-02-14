@@ -1,0 +1,80 @@
+{
+  "name": "career-coaching-calls",
+  "title": "Career Coaching Hotline Call Logs",
+  "description": "Call patterns, escalation tracking, and coaching analytics from the Career Coaching Hotline. Tracks career stage distribution, Careerspan conversions, and topic analysis for continuous improvement.",
+  "version": "1.0.0",
+  "created": "2026-02-14",
+  "sources": [
+    {
+      "name": "vapi_webhook",
+      "description": "VAPI webhook integration for Career Coaching Hotline calls",
+      "url": "Skills/career-coaching-hotline/scripts/hotline-webhook.ts"
+    },
+    {
+      "name": "fillout_intake",
+      "description": "Fillout form intake for caller profiles",
+      "url": "Skills/career-coaching-hotline/scripts/fillout-webhook.ts"
+    }
+  ],
+  "contributors": [
+    {
+      "name": "Career Coaching Hotline System",
+      "role": "data_collector"
+    }
+  ],
+  "resources": [
+    {
+      "name": "calls",
+      "path": "data.duckdb",
+      "table": "calls",
+      "description": "Call log with career stage assessment and topic tracking"
+    },
+    {
+      "name": "escalations",
+      "path": "data.duckdb",
+      "table": "escalations",
+      "description": "Careerspan session escalation requests"
+    },
+    {
+      "name": "feedback",
+      "path": "data.duckdb",
+      "table": "feedback",
+      "description": "Post-call satisfaction feedback"
+    },
+    {
+      "name": "daily_analysis",
+      "path": "data.duckdb",
+      "table": "daily_analysis",
+      "description": "Daily LLM-generated analysis of call patterns and career stage trends"
+    },
+    {
+      "name": "caller_profiles",
+      "path": "data.duckdb",
+      "table": "caller_profiles",
+      "description": "Caller profiles from Fillout intake form"
+    },
+    {
+      "name": "caller_insights",
+      "path": "data.duckdb",
+      "table": "caller_insights",
+      "description": "Merged caller intelligence from calls and profiles"
+    }
+  ],
+  "privacy": {
+    "level": "mixed",
+    "description": "Calls table stores anonymous patterns. Caller profiles contain PII with explicit consent. Escalations contain contact info for Careerspan follow-up.",
+    "pii_policy": "PII exists in caller_profiles and escalations only, with explicit user consent via Fillout intake form.",
+    "escalation_policy": "Escalation contact info used solely for Careerspan booking follow-up."
+  },
+  "keywords": [
+    "career-coaching",
+    "careerspan",
+    "call-patterns",
+    "vapi",
+    "career-stages",
+    "job-search",
+    "analytics"
+  ],
+  "license": "Private",
+  "profile": "data-package"
+}

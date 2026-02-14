@@ -1,0 +1,83 @@
+{
+  "drop_id": "D3.3",
+  "name": "DuckDB Dataset + Call Logging",
+  "status": "complete",
+  "completed_at": "2026-02-14T08:42:00Z",
+  "build_slug": "career-coaching-hotline",
+  "wave": "W3",
+  "stream": 3,
+  "deliverables": {
+    "dataset_directory": {
+      "path": "Datasets/career-coaching-calls/",
+      "files": [
+        "datapackage.json",
+        "data.duckdb",
+        "schema.yaml",
+        "README.md",
+        "source/"
+      ],
+      "status": "complete"
+    },
+    "database_schema": {
+      "path": "Datasets/career-coaching-calls/data.duckdb",
+      "tables": {
+        "calls": {"columns": 10, "indexes": ["idx_calls_started", "idx_calls_career_stage"]},
+        "escalations": {"columns": 8, "indexes": ["idx_escalations_call"]},
+        "feedback": {"columns": 6, "indexes": ["idx_feedback_call"]},
+        "daily_analysis": {"columns": 15, "indexes": ["idx_daily_analysis_date"]},
+        "caller_profiles": {"columns": 13, "indexes": ["idx_caller_phone"]},
+        "caller_insights": {"columns": 10, "indexes": ["idx_insights_phone"]}
+      },
+      "total_columns": 62,
+      "total_indexes": 7,
+      "status": "complete"
+    },
+    "init_script": {
+      "path": "Skills/career-coaching-hotline/scripts/init_db.py",
+      "features": ["idempotent", "dry-run", "verify", "timestamped-logging", "exit-codes"],
+      "tested": {
+        "create": true,
+        "idempotent_rerun": true,
+        "dry_run": true,
+        "verify": true
+      },
+      "status": "complete"
+    },
+    "call_analysis_loop": {
+      "path": "Skills/career-coaching-hotline/scripts/call_analysis_loop.py",
+      "adapted_from": "Skills/zo-hotline/scripts/call_analysis_loop.py",
+      "career_coaching_adaptations": [
+        "5 career stages (Groundwork, Materials, Outreach, Performance, Transition)",
+        "career_stage_distribution in daily analysis",
+        "Careerspan conversion tracking (escalations → booked sessions)",
+        "24 career coaching topic categories",
+        "Career-context drop-off classification",
+        "career_stages_json and topics_json columns in daily_analysis",
+        "careerspan_conversions column tracking escalation count"
+      ],
+      "features": ["dry-run", "date-range", "multi-day", "timestamped-logging", "zo-ask-json"],
+      "status": "complete"
+    },
+    "schema_documentation": {
+      "schema_yaml": "Datasets/career-coaching-calls/schema.yaml",
+      "readme": "Datasets/career-coaching-calls/README.md",
+      "status": "complete"
+    }
+  },
+  "success_criteria": {
+    "database_created_all_tables": true,
+    "init_script_idempotent": true,
+    "datapackage_json_valid": true,
+    "schema_yaml_documents_all_tables": true,
+    "call_analysis_loop_adapted": true,
+    "readme_explains_dataset": true
+  },
+  "notes": [
+    "Schema adds caller_profiles and caller_insights beyond zo-hotline (which had 5 tables, this has 6)",
+    "daily_analysis table has career_stages_json, topics_json, careerspan_conversions columns not in zo-hotline",
+    "calls table adds caller_phone, caller_profile_id, career_stage_assessed columns for career context",
+    "escalations table adds career_stage and booking_link_sent for Careerspan tracking",
+    "Analysis loop produces reports in Skills/career-coaching-hotline/analysis/ directory"
+  ],
+  "downstream_dependencies": ["D4.1"]
+}
