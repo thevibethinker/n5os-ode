@@ -1,0 +1,96 @@
+{
+  "drop_id": "D2.1",
+  "name": "Knowledge Base Structuring",
+  "build_slug": "career-coaching-hotline",
+  "status": "complete",
+  "completed_at": "2026-02-14T08:20:00Z",
+  "provenance": "con_TvvUKG3GMHxFBbnc",
+  "summary": "Created a 26-file voice-optimized knowledge base at Knowledge/career-coaching-hotline/ from 24 extracted source documents (31,133 words → 11,307 words distilled). Each file follows the zo-hotline reference architecture: YAML frontmatter with provenance, trigger phrases section, concise voice-optimized content (avg 434 words), and actionable takeaways in V's voice.",
+  "deliverables": {
+    "knowledge_base_dir": "Knowledge/career-coaching-hotline/",
+    "concept_map": "N5/builds/career-coaching-hotline/artifacts/concept-map.json",
+    "total_kb_files": 26,
+    "total_kb_words": 11307,
+    "avg_words_per_file": 434,
+    "concept_aliases": 241
+  },
+  "structure": {
+    "00-career-coaching-philosophy.md": "V's overall coaching approach and beliefs",
+    "10-resume/": {
+      "aiss-bullet-construction.md": "AISS (Action, Impact, Scale, Skill) framework",
+      "resume-customization.md": "Tailoring resumes per application",
+      "resume-optimization.md": "Beyond keywords — ATS + human optimization",
+      "materials-preparation.md": "Overall job materials preparation",
+      "ats-systems.md": "How ATS actually works"
+    },
+    "20-cover-letters/": {
+      "cover-letter-strategy.md": "When, why, and how for cover letters",
+      "ai-cover-letters.md": "Using AI to create cover letters",
+      "cover-letter-guide.md": "Detailed paragraph-by-paragraph guide"
+    },
+    "30-linkedin/": {
+      "linkedin-strategy.md": "V's honest take on LinkedIn",
+      "prompting-for-linkedin.md": "AI-assisted LinkedIn optimization"
+    },
+    "40-job-search/": {
+      "career-preparation.md": "Strategic job search readiness",
+      "breaking-into-new-industries.md": "Career change/pivot advice",
+      "networking-modern-era.md": "Modern networking and cold outreach",
+      "internship-strategy.md": "Getting valuable internships",
+      "job-market-thoughts.md": "V's market perspective"
+    },
+    "50-self-development/": {
+      "self-reflection.md": "Introspection as career foundation",
+      "art-of-the-brag.md": "Self-advocacy without being an asshole",
+      "career-statistics.md": "Key data points for coaching calls"
+    },
+    "60-assessment/": {
+      "questions.md": "4-question career readiness diagnostic",
+      "scoring.md": "Score interpretation and next steps"
+    },
+    "70-careerspan/": {
+      "what-is-careerspan.md": "Product description",
+      "when-to-use-careerspan.md": "Funnel logic — when to escalate",
+      "groundwork-philosophy.md": "Why self-work comes first"
+    },
+    "80-podcast-interviews/": {
+      "damon-cassidy-tactics.md": "Tactical advice from podcast",
+      "applyai-advice.md": "4 levers framework presentation"
+    }
+  },
+  "success_criteria": {
+    "all_24_sources_mapped": true,
+    "clear_topic_hierarchy": true,
+    "voice_optimized": true,
+    "concept_map_with_aliases": true,
+    "careerspan_natural_escalation": true
+  },
+  "source_mapping": {
+    "ALERT_INSERT_ME_prompting_file.md": ["00-career-coaching-philosophy.md", "70-careerspan/what-is-careerspan.md"],
+    "Summary_of_Peeling_the_Career_Services_Onion.md": ["00-career-coaching-philosophy.md", "60-assessment/questions.md", "60-assessment/scoring.md", "70-careerspan/what-is-careerspan.md", "70-careerspan/when-to-use-careerspan.md", "70-careerspan/groundwork-philosophy.md"],
+    "V_Thoughts_on_the_Job_Market.md": ["00-career-coaching-philosophy.md", "40-job-search/job-market-thoughts.md"],
+    "The_AISS_Resume_Bullet_Construction.md": ["10-resume/aiss-bullet-construction.md"],
+    "On_Resume_Customization.md": ["10-resume/resume-customization.md"],
+    "Beyond_Keywords_Resume_Optimization.md": ["10-resume/resume-optimization.md"],
+    "How_ATS_Systems_Work.md": ["10-resume/resume-optimization.md", "10-resume/ats-systems.md"],
+    "Materials_Preparation_OG.md": ["10-resume/materials-preparation.md"],
+    "Job_Hunt_Materials_Preparation_Advice.md": ["10-resume/materials-preparation.md"],
+    "Strategic_Guide_Modern_Cover_Letters.md": ["20-cover-letters/cover-letter-strategy.md"],
+    "Emory_University_AI_Cover_Letters.md": ["20-cover-letters/ai-cover-letters.md"],
+    "Cover_Letter_Guide_with_commentary.md": ["20-cover-letters/cover-letter-guide.md"],
+    "On_LinkedIn_and_The_Reality_Thereof.md": ["30-linkedin/linkedin-strategy.md"],
+    "Prompting_Claude_for_LinkedIn.md": ["30-linkedin/prompting-for-linkedin.md"],
+    "Art_of_Career_Preparation.md": ["40-job-search/career-preparation.md", "60-assessment/scoring.md", "70-careerspan/groundwork-philosophy.md"],
+    "On_Breaking_Into_New_Industries.md": ["40-job-search/breaking-into-new-industries.md"],
+    "On_Networking_in_the_Modern_Era.md": ["40-job-search/networking-modern-era.md"],
+    "How_to_get_an_Internship.md": ["40-job-search/internship-strategy.md"],
+    "On_Self_Reflection_and_Careers.md": ["50-self-development/self-reflection.md", "60-assessment/questions.md", "70-careerspan/groundwork-philosophy.md"],
+    "The_Art_of_The_Brag.md": ["50-self-development/art-of-the-brag.md"],
+    "Essential_Career_Development_Statistics.md": ["50-self-development/career-statistics.md"],
+    "Public_Facing_Stats.md": ["50-self-development/career-statistics.md", "70-careerspan/what-is-careerspan.md", "70-careerspan/when-to-use-careerspan.md"],
+    "Tactical_Career_Advice_Damon_Cassidy.md": ["80-podcast-interviews/damon-cassidy-tactics.md"],
+    "Advice_for_Modern_Jobseeker_ApplyAI.md": ["80-podcast-interviews/applyai-advice.md"]
+  },
+  "downstream_dependencies": ["D3.1", "D3.3"],
+  "lessons_logged": []
+}
