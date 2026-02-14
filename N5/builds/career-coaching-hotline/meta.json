@@ -1,0 +1,139 @@
+{
+  "schema_version": 3,
+  "slug": "career-coaching-hotline",
+  "title": "Career Coaching Hotline - Voice AI Career Advisor",
+  "build_type": "code_build",
+  "status": "pending",
+  "model": "anthropic:claude-sonnet-4-20250514",
+  "launch_mode": "orchestrated",
+  "delegate_only": true,
+
+  "waves": {
+    "W1": ["D1.1", "D1.2"],
+    "W2": ["D2.1", "D2.2", "D2.3"],
+    "W3": ["D3.1", "D3.2", "D3.3"],
+    "W4": ["D4.1", "D4.2"],
+    "W5": ["D5.1"]
+  },
+  "active_wave": "W1",
+
+  "drops": {
+    "D1.1": {
+      "name": "Download + Extract Source Material",
+      "stream": 1,
+      "order": 1,
+      "wave": "W1",
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "pending"
+    },
+    "D1.2": {
+      "name": "V Psychographics + Voice Profile",
+      "stream": 2,
+      "order": 1,
+      "wave": "W1",
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "pending"
+    },
+    "D2.1": {
+      "name": "Knowledge Base Structuring",
+      "stream": 1,
+      "order": 2,
+      "wave": "W2",
+      "depends_on": ["D1.1"],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "pending"
+    },
+    "D2.2": {
+      "name": "System Prompt Authoring",
+      "stream": 2,
+      "order": 2,
+      "wave": "W2",
+      "depends_on": ["D1.1", "D1.2"],
+      "spawn_mode": "manual",
+      "blocking": true,
+      "status": "pending"
+    },
+    "D2.3": {
+      "name": "Career Diagnostic Tool Design",
+      "stream": 3,
+      "order": 1,
+      "wave": "W2",
+      "depends_on": ["D1.1"],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "pending"
+    },
+    "D3.1": {
+      "name": "Webhook Server + VAPI Config",
+      "stream": 1,
+      "order": 3,
+      "wave": "W3",
+      "depends_on": ["D2.1", "D2.2", "D2.3"],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "pending"
+    },
+    "D3.2": {
+      "name": "Fillout Intake Form + Webhook Pipeline",
+      "stream": 2,
+      "order": 3,
+      "wave": "W3",
+      "depends_on": ["D2.3"],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "pending"
+    },
+    "D3.3": {
+      "name": "DuckDB Dataset + Call Logging",
+      "stream": 3,
+      "order": 3,
+      "wave": "W3",
+      "depends_on": ["D2.1"],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "pending"
+    },
+    "D4.1": {
+      "name": "Integration Testing + End-to-End Verification",
+      "stream": 1,
+      "order": 4,
+      "wave": "W4",
+      "depends_on": ["D3.1", "D3.2", "D3.3"],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "pending"
+    },
+    "D4.2": {
+      "name": "Value Prop Tree + Careerspan Funnel Logic",
+      "stream": 2,
+      "order": 4,
+      "wave": "W4",
+      "depends_on": ["D3.1"],
+      "spawn_mode": "manual",
+      "blocking": true,
+      "status": "pending"
+    },
+    "D5.1": {
+      "name": "Deploy + Service Registration + Documentation",
+      "stream": 1,
+      "order": 5,
+      "wave": "W5",
+      "depends_on": ["D4.1", "D4.2"],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "pending"
+    }
+  },
+
+  "recovery": {
+    "max_auto_retries": 2,
+    "dead_threshold_seconds": 900,
+    "stale_threshold_hours": 4,
+    "enable_ai_judgment": true
+  }
+}
