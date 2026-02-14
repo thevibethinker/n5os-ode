@@ -1,0 +1,102 @@
+{
+  "drop_id": "D5.1",
+  "build_slug": "career-coaching-hotline",
+  "name": "Deploy + Service Registration + Documentation",
+  "wave": "W5",
+  "stream": 1,
+  "status": "complete",
+  "completed_at": "2026-02-14T09:00:00Z",
+  "provenance": "con_N1rOFo8HKrFCGfXW",
+
+  "success_criteria": {
+    "service_registered_and_running": true,
+    "service_doctor_healthy": true,
+    "port_registry_updated": true,
+    "skill_md_complete": true,
+    "vapi_setup_guide_complete": true,
+    "fillout_setup_guide_complete": true,
+    "env_vars_documented": true,
+    "git_committed": true,
+    "v_has_clear_next_steps": true
+  },
+
+  "artifacts": {
+    "service": {
+      "service_id": "svc_JKqkUI_p4bQ",
+      "label": "career-coaching-hotline",
+      "port": 8848,
+      "public_url": "https://career-coaching-hotline-va.zocomputer.io",
+      "entrypoint": "bun Skills/career-coaching-hotline/scripts/hotline-webhook.ts",
+      "status": "RUNNING"
+    },
+    "documentation": [
+      "Skills/career-coaching-hotline/SKILL.md",
+      "Skills/career-coaching-hotline/references/vapi-setup.md",
+      "Skills/career-coaching-hotline/references/fillout-setup.md",
+      "Skills/career-coaching-hotline/references/env-vars.md"
+    ],
+    "git_commit": "b97a6800e",
+    "git_branch": "feature/career-coaching-hotline"
+  },
+
+  "v_action_items": [
+    {
+      "priority": 1,
+      "action": "Create VAPI assistant",
+      "guide": "Skills/career-coaching-hotline/references/vapi-setup.md",
+      "summary": "Create assistant in VAPI dashboard, set webhook URL to https://career-coaching-hotline-va.zocomputer.io"
+    },
+    {
+      "priority": 2,
+      "action": "Set webhook secret",
+      "guide": "Skills/career-coaching-hotline/references/vapi-setup.md#step-3",
+      "summary": "Generate secret with openssl rand -hex 32, set in both VAPI Bearer Token credential and Zo secrets as CAREER_HOTLINE_SECRET"
+    },
+    {
+      "priority": 3,
+      "action": "Provision phone number",
+      "guide": "Skills/career-coaching-hotline/references/vapi-setup.md#step-5",
+      "summary": "Buy/import phone number in VAPI and assign to the V (Career Coach) assistant"
+    },
+    {
+      "priority": 4,
+      "action": "Create Fillout intake form",
+      "guide": "Skills/career-coaching-hotline/references/fillout-setup.md",
+      "summary": "Create 8-field form in Fillout.com, set webhook to https://career-coaching-hotline-va.zocomputer.io/intake"
+    },
+    {
+      "priority": 5,
+      "action": "Add voice ID to service env vars",
+      "summary": "The CAREER_HOTLINE_VOICE_ID is in Zo secrets but needs to be added to the service env_vars for the running process to pick it up"
+    },
+    {
+      "priority": 6,
+      "action": "Test end-to-end",
+      "summary": "Test call from VAPI dashboard, then test from provisioned phone number. Verify SMS notification, call logging, and intake form matching."
+    }
+  ],
+
+  "notes": [
+    "Service registered and confirmed healthy via service_doctor",
+    "CAREER_HOTLINE_VOICE_ID exists in system env but user services need it explicitly in env_vars — documented as V action item",
+    "CAREER_HOTLINE_SECRET not yet created — V must generate and set in both VAPI + Zo",
+    "Intake webhook (port 8421) not separately registered as a service — it can be started manually or V can decide to register it later",
+    "Database path inconsistency noted: hotline-webhook.ts uses career-hotline-calls, intake-webhook.ts uses career-coaching-calls — both DBs exist",
+    "All 51 integration tests passing as of build"
+  ],
+
+  "build_summary": {
+    "total_drops": 11,
+    "completed_drops": 11,
+    "total_artifacts": {
+      "webhook_server_lines": 904,
+      "intake_webhook_lines": 492,
+      "knowledge_base_files": 26,
+      "knowledge_base_categories": 9,
+      "tools": 6,
+      "database_tables": 6,
+      "integration_tests": 51,
+      "documentation_files": 4
+    }
+  }
+}
