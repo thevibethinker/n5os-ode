@@ -335,7 +335,7 @@ def main():
     # query command
     query_parser = subparsers.add_parser("query", help="Query conversations")
     query_parser.add_argument("--type", help="Filter by type (build, research, discussion, planning)")
-    query_parser.add_parser("--status", help="Filter by status (active, complete)")
+    query_parser.add_argument("--status", help="Filter by status (active, complete)")
     query_parser.add_argument("--limit", type=int, default=20, help="Max results")
     
     # init command - just initialize the database
