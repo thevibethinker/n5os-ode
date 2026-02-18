@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "slug": "zo-hotline-v5",
+  "title": "Zoseph V5: Post-call email & tools",
+  "objective": null,
+  "created": "2026-02-18",
+  "status": "complete",
+  "completed_at": "2026-02-18",
+  "type": "general",
+  "build_mode": "learning",
+  "learning_landscape_generated": false,
+  "orchestrator_convo_id": "con_EHHcYV8gXu7Dk9Zb",
+  "workers": {
+    "total": 0,
+    "complete": 0,
+    "in_progress": 0,
+    "blocked": 0,
+    "pending": 0
+  },
+  "waves": [],
+  "worker_details": []
+}
