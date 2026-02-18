@@ -32,10 +32,13 @@ Lists every knowledge file with concept key and 1-line summary.
 | clarification-gates | 10-level-1-conversation/clarification-gates.md | 10-level-1-conversation | "Ask me 5 clarifying questions before you respond." |
 | delay-the-draft | 10-level-1-conversation/delay-the-draft.md | 10-level-1-conversation | AI wants to collapse to an answer immediately. You ask for a proposal, it spits out generic bullet points. You ask fo... |
 | threshold-rubrics | 10-level-1-conversation/threshold-rubrics.md | 10-level-1-conversation | Don't just engineer what AI says—engineer when it's allowed to say it. |
+| community-use-cases | 50-use-case-inspiration/community-use-cases.md | 50-use-case-inspiration | Actual things real Zo users have built and shared publicly. These are not hypothetical — each one was posted by a rea... |
+| competitive-landscape | 50-use-case-inspiration/competitive-landscape.md | 50-use-case-inspiration | Honest feature-by-feature comparison. Use this when callers ask "how is Zo different from X?" Remember the Challenger... |
 | content-pipeline | 50-use-case-inspiration/content-pipeline.md | 50-use-case-inspiration | Transform ideas in your notes into polished LinkedIn posts automatically with consistent brand voice. |
 | crm-automation | 50-use-case-inspiration/crm-automation.md | 50-use-case-inspiration | Automatically track client interactions, follow-ups, and project status from email conversations. |
 | daily-briefing-agent | 50-use-case-inspiration/daily-briefing-agent.md | 50-use-case-inspiration | Get personalized morning briefings with calendar, weather, news, and priorities automatically every day at 7 AM. |
 | flight-search | 50-use-case-inspiration/flight-search.md | 50-use-case-inspiration | "I say 'flights to LA next weekend' and get results filtered by MY preferences—avoid Spirit, prefer JetBlue, use LaGu... |
+| gap-analysis-d3 | 50-use-case-inspiration/gap-analysis-d3.md | 50-use-case-inspiration | \| Caller Question \| Previously Known? \| D3 Artifact \| |
 | health-tracking-alerts | 50-use-case-inspiration/health-tracking-alerts.md | 50-use-case-inspiration | Monitor health metrics and send personalized alerts when patterns suggest needed interventions. |
 | meeting-intelligence | 50-use-case-inspiration/meeting-intelligence.md | 50-use-case-inspiration | Every meeting becomes searchable organizational memory. Transcripts get processed into structured intelligence: atten... |
 | survey-dashboard | 50-use-case-inspiration/survey-dashboard.md | 50-use-case-inspiration | Automatically generates visual dashboards from survey responses. New submissions trigger analysis updates every 12 ho... |
@@ -104,7 +107,9 @@ Lists every knowledge file with concept key and 1-line summary.
 | challenger-pathway | 97-conversational-playbook/challenger-pathway.md | 97-conversational-playbook | **Trigger:** Caller asks "how is this different from Claude/ChatGPT/Zapier?" or says "I already use X." |
 | danger-zones | 97-conversational-playbook/danger-zones.md | 97-conversational-playbook | Patterns that caused callers to disengage, push back, or hang up. Observed from actual call data. |
 | explorer-pathway | 97-conversational-playbook/explorer-pathway.md | 97-conversational-playbook | **Trigger:** Caller says "just checking it out," "what is this for," "what can it do," or can't name a specific task. |
+| idealism-talking-points | 97-conversational-playbook/idealism-talking-points.md | 97-conversational-playbook | For the Challenger pathway's idealism vector. Use when callers are philosophically minded, care about lock-in, or ask... |
+| messaging-cheat-sheet | 97-conversational-playbook/messaging-cheat-sheet.md | 97-conversational-playbook | What works, what doesn't, and when to concede honestly. For Zoseph to reference during calls. |
 | proven-phrases | 97-conversational-playbook/proven-phrases.md | 97-conversational-playbook | Specific language that generated engagement, trust, or "aha" moments across hotline calls. Use these as templates, no... |
 
-**Total entries:** 93
+**Total entries:** 98
 **Generated:** 2026-02-18

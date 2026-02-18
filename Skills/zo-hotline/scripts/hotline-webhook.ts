@@ -692,7 +692,7 @@ const TOPIC_TAXONOMY = [
   "calendar_automation", "meeting_intelligence", "email_management",
   "getting_started", "troubleshooting", "use_cases", "concepts",
   "escalation", "persona_setup", "skill_building", "data_pipelines",
-  "integrations", "general_advisory"
+  "integrations", "general_advisory", "competitor_comparison"
 ];
 
 function classifyTopicsAsync(callId: string, transcript: string): void {
@@ -860,13 +860,18 @@ const server = Bun.serve({
         const response = {
           assistant: {
             name: "Zoseph",
-            firstMessage: "Hey — this is Zoseph on the Vibe Thinker Hotline, built by the Vibe Thinker on Twitter. This is a tool to help Zo Computer users make the most of this product. If at any point you want a real person's help, just say so and I'll connect you. So — are you exploring what Zo can do, or working on something specific?",
+            firstMessage: "Hey — this is Zoseph on the Vibe Thinker Hotline. I help people figure out what to build on Zo Computer. If you need a real person at any point, just say so. So — are you exploring what's possible, working on something specific, or comparing Zo to another tool?",
 
             transcriber: {
               provider: "deepgram",
               keywords: [
                 "Zo:10", "Computer:10", "Zoseph:10", "zospace:10",
-                "vibe:8", "thinking:8", "thinker:8"
+                "vibe:8", "thinking:8", "thinker:8",
+                "Claude:6", "Anthropic:5", "ChatGPT:6", "OpenAI:5",
+                "Cursor:5", "Windsurf:5", "Zapier:5", "Notion:5",
+                "OpenClaw:6", "Clawdbot:5",
+                "scheduled:6", "agent:6", "webhook:5",
+                "Careerspan:8", "Attawar:8"
               ]
             },
 
