@@ -1371,7 +1371,7 @@ const server = Bun.serve({
               }
             },
 
-            serverMessages: ["end-of-call-report", "tool-calls"]
+            serverMessages: ["end-of-call-report", "tool-calls", "status-update"]
           }
         };
 
@@ -1583,6 +1583,19 @@ con.close()
         // Topic classification (async)
         classifyTopicsAsync(callId, transcript);
 
+        return new Response(JSON.stringify({ success: true }), {
+          status: 200, headers: { "Content-Type": "application/json" }
+        });
+      }
+
+      if (messageType === "status-update") {
+        const status = data.message?.status || data.status || "unknown";
+        const error = data.message?.error || data.message?.messages || data.error || null;
+        console.log(`[STATUS-UPDATE] Status: ${status}`);
+        if (error) {
+          console.error(`[STATUS-UPDATE] Error details: ${JSON.stringify(error).substring(0, 1000)}`);
+        }
+        console.log(`[STATUS-UPDATE] Full payload: ${JSON.stringify(data).substring(0, 2000)}`);
         return new Response(JSON.stringify({ success: true }), {
           status: 200, headers: { "Content-Type": "application/json" }
         });
