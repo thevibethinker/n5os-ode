@@ -1,0 +1,59 @@
+{
+  "drop": "D3",
+  "build": "zo-hotline-v4",
+  "title": "Use Case Research + Competitive Landscape",
+  "status": "complete",
+  "completed_at": "2026-02-18T04:40:00Z",
+  "provenance": "con_gyCwCxjGJ0Yiy6wQ",
+  "deliverables": [
+    {
+      "name": "Community Use Case Synthesis",
+      "path": "Knowledge/zo-hotline/50-use-case-inspiration/community-use-cases.md",
+      "description": "12 real-world use cases documented from X/Twitter, Reddit, and YouTube with Zo features used, complexity level, and role/profession for each",
+      "acceptance_met": true
+    },
+    {
+      "name": "Competitive Landscape Table",
+      "path": "Knowledge/zo-hotline/50-use-case-inspiration/competitive-landscape.md",
+      "description": "Feature-by-feature comparison of 6 competitors (Claude, ChatGPT, OpenClaw, Cursor/Windsurf, Zapier/Make, Notion AI) with honest assessments, concessions, and one-line differentiators",
+      "acceptance_met": true
+    },
+    {
+      "name": "Messaging Cheat Sheet",
+      "path": "Knowledge/zo-hotline/97-conversational-playbook/messaging-cheat-sheet.md",
+      "description": "Proven phrases + new recommendations + concession-pivot framework + caller-type messaging matrix. Voice-friendly format ready for D4 to wire into system prompt",
+      "acceptance_met": true
+    },
+    {
+      "name": "Idealism / Open Source Talking Points",
+      "path": "Knowledge/zo-hotline/97-conversational-playbook/idealism-talking-points.md",
+      "description": "Zo's open ecosystem positioning, closed vs open comparison table, three philosophical pillars, community signal from real user posts",
+      "acceptance_met": true
+    },
+    {
+      "name": "Gap Analysis",
+      "path": "Knowledge/zo-hotline/50-use-case-inspiration/gap-analysis-d3.md",
+      "description": "Cross-reference of what callers ask about vs what Zoseph knows. 8 gaps filled by D3, 6 remaining gaps identified for D4",
+      "acceptance_met": true
+    }
+  ],
+  "acceptance_criteria": {
+    "minimum_10_use_cases": true,
+    "competitive_landscape_5_competitors": true,
+    "messaging_cheat_sheet": true,
+    "idealism_angle": true,
+    "voice_friendly_format": true
+  },
+  "sources": {
+    "x_twitter": ["@0thernet (ben guo)", "@devagrawal09", "@joeljohn", "@bytheophana", "@acolombiadev", "@ZhengYixian", "@uint256b", "@0xb33bs", "@UnforcedBreath"],
+    "reddit": ["r/ZoComputerClub", "r/vibecoding", "r/ManusOfficial"],
+    "youtube": ["Stack Snacks - 'Why I Prefer Zo Over OpenClaw'"],
+    "web": ["docs.zocomputer.com", "zocomputer.com", "nxcode.io", "medium.com/stackademic", "everydev.ai", "spectrumailab.com", "datacamp.com", "intuitionlabs.ai"]
+  },
+  "d4_handoff": {
+    "system_prompt_integration": "One-line differentiators and concession-pivot framework ready for prompt wiring",
+    "challenger_pathway_expansion": "Now covers 6 competitors (was Claude-only)",
+    "explorer_pathway_expansion": "12 real use cases with profession-based quick reference",
+    "concept_mapping_needed": ["community-use-cases", "competitive-landscape", "messaging-cheat-sheet", "idealism-talking-points", "gap-analysis-d3"]
+  }
+}

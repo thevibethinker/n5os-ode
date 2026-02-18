@@ -1,12 +1,27 @@
 ---
 created: 2026-02-17
 last_edited: 2026-02-18
-version: 2.0
+version: 2.1
 provenance: con_D22Ewo8OGuQrMBrx
 spawn_mode: manual
 status: pending
 ---
 # D3: Use Case Research + Competitive Landscape
+
+## Context from Prior Drops
+
+**D5 (Zo Docs) delivered:**
+- 93-entry knowledge index: `Knowledge/zo-hotline/00-knowledge-index.md` — this is what Zoseph currently knows. Your gap analysis should diff against this.
+- 41 platform docs in `Knowledge/zo-hotline/96-zo-platform/` — current Zo features already documented.
+- 6 conversational playbook files in `Knowledge/zo-hotline/97-conversational-playbook/` — includes Explorer, Challenger, Builder pathways. Your messaging/competitive work feeds the Challenger pathway directly.
+- Thematic analysis from 8 real calls: `Research/zo-hotline/hotline-thematic-analysis.md` — proven phrases and what resonated already documented here.
+
+**D1 (Infrastructure) delivered:**
+- Trimmed system prompt (901 words): `Skills/zo-hotline/prompts/zoseph-system-prompt.md`
+- Tool usage logging at `Datasets/zo-hotline-calls/tool_usage.jsonl` — this is where messaging effectiveness data will accumulate. Your messaging cheat sheet sets the baseline that gets measured here.
+- Call spotlights table in DuckDB — flags notable calls for the daily digest.
+
+**Don't duplicate what exists.** Build on the knowledge index, fill its gaps, and produce competitive/messaging artifacts that D4 can wire into the system prompt and playbook.
 
 ## Objective
 Discover what real Zo users are building AND map the competitive landscape so Zoseph can speak credibly about both.

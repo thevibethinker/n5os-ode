@@ -1,12 +1,37 @@
 ---
 created: 2026-02-17
 last_edited: 2026-02-18
-version: 2.0
+version: 2.1
 provenance: con_D22Ewo8OGuQrMBrx
 spawn_mode: manual
 status: pending
+dependencies: [D1]
 ---
 # D2: Model Cost Optimization
+
+## Context from Prior Drops
+
+**Current baseline (from VAPI dashboard + D1):**
+- Model: Claude Haiku 4.5 (Anthropic) via VAPI
+- Cost: ~$0.18/min
+- Latency: ~1,075ms
+- System prompt: 901 words / ~5,800 chars (trimmed 53% in D1)
+- Prompt path: `Skills/zo-hotline/prompts/zoseph-system-prompt.md`
+
+**From D3 (competitive landscape):**
+- Callers frequently compare Zo to free ChatGPT/Claude — cost sensitivity matters for the product, and for us operationally
+- The messaging cheat sheet (`Knowledge/zo-hotline/97-conversational-playbook/messaging-cheat-sheet.md`) contains concession-pivot patterns that require **nuance** — the model must acknowledge competitor strengths then pivot gracefully, not just blindly promote Zo
+- Idealism talking points require the model to hold a philosophical position convincingly
+
+**Quality bar from D1 infrastructure:**
+- Model must trigger tool calls reliably (assessCallerLevel, explainConcept, requestEscalation, collectFeedback)
+- Model must respect voice discipline (1 question per turn, max 2 options, 2-3 sentences)
+- Model must handle the knowledge index lookup pattern (explainConcept reads files from disk)
+
+**Test material for evaluation:**
+- System prompt: `Skills/zo-hotline/prompts/zoseph-system-prompt.md`
+- Messaging patterns: `Knowledge/zo-hotline/97-conversational-playbook/messaging-cheat-sheet.md`
+- Competitive responses: `Knowledge/zo-hotline/50-use-case-inspiration/competitive-landscape.md`
 
 ## Objective
 Find a cheaper model that maintains Zoseph's voice quality. Test AFTER D1's prompt trim (testing a bloated prompt on a cheaper model is the wrong experiment).

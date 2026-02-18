@@ -1,7 +1,7 @@
 ---
 created: 2026-02-17
 last_edited: 2026-02-18
-version: 2.0
+version: 2
 provenance: con_D22Ewo8OGuQrMBrx
 spawn_mode: manual
 status: pending
