@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual with a knowledge system"}, {"name": "Single Source of Truth", "type": "CONCEPT", "context": "architectural principle ensuring no duplicate data"}], "relationships": [{"from": "V", "to": "Single Source of Truth", "type": "BELIEVES", "context": "principle followed in their knowledge system"}]}

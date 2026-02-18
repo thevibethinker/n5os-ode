@@ -1,1 +1,0 @@
-Generated `file 'Personal/Meetings/2025-11-13_careerspan-strategy-hiring-discussion_[P]/B21_KEY_MOMENTS.md'` with high-leverage quotes and turning points from the conversation.

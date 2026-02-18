@@ -6,13 +6,13 @@ version: 5.1
 updated: 2026-01-24
 ---
 
-> **Note (2026-01-24):** This specification is now implemented via three skills:
+> **Note (2026-02-14):** This specification is implemented via three close skills, and execution is coordinated through the Close Conversation prompt:
 > - `Skills/thread-close/` — Interactive threads (Full Close)
 > - `Skills/drop-close/` — Pulse Drop workers (Worker Close)  
 > - `Skills/build-close/` — Post-Pulse build synthesis (Build Close)
 >
-> The original prompt at `Prompts/Close Conversation.prompt.md` is deprecated.
-> Shared logic lives in `N5/lib/close/`.
+> Canonical operator entrypoint: `file 'Prompts/Close Conversation.prompt.md'`.
+> Shared close logic lives in `N5/lib/close/`.
 
 # Conversation End Workflow v5
 
@@ -281,4 +281,3 @@ Or via prompt: `@Close Conversation`
 - **v4.0** (2026-01-12): AAR generation owned by Librarian
 - **v3.2** (2026-01-09): Capability graduation flow
 - **v3.0** (2025-12-18): Tiered system with Librarian ownership
-

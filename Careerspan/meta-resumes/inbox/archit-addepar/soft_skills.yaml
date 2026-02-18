@@ -1,58 +1,47 @@
 # Soft Skills
-# Extracted: 2026-02-05T16:36:47.084023
+# Extracted: 2026-02-15T01:59:23.337894
 # Method: Structured extraction
 # DO NOT EDIT
 
 demonstrated_strengths:
-- trait: Ownership Mindset
-  evidence: Founded Assignment platform from PoC to full product, owned Order Platform
-    workflows end-to-end, led design and development of Payments Platform handling
-    $15M daily revenue
+- trait: Ownership mindset
+  evidence: Led greenfield checkout/orders/payments platform work at Quince, including
+    zero-downtime migration off Shopify and peak-event SOPs.
   confidence: high
-- trait: Problem Solving
-  evidence: Diagnosed ScyllaDB scaling bottleneck caused by 'allow filtering' queries,
-    implemented dual-table architecture with zero-downtime migration; designed resilient
-    checkout system with idempotency and consistency patterns
+- trait: Cross-functional collaboration
+  evidence: Worked closely with product, QA, inventory, and ops teams to align workflows
+    like soft inventory reservation and post-order processing.
   confidence: high
-- trait: Analytical Thinking
-  evidence: Separated pre-order (consistency-critical) from post-order (eventually
-    consistent) workflows; designed priority-based task processing with abstract classes
-    and concurrent execution
+- trait: Analytical problem solving
+  evidence: At Embibe, diagnosed ScyllaDB performance bottlenecks (allow filtering),
+    redesigned schemas, and executed dual-write migration with stable monitors after
+    fix.
   confidence: high
-- trait: Cross-functional Collaboration
-  evidence: Negotiated soft inventory reservation process with inventory team; collaborated
-    with engineering, product, QA, and ops to deliver greenfield checkout; coordinated
-    cross-team database schema overhaul
+- trait: Leadership and mentoring
+  evidence: Founded and scaled the Assignment platform and mentored a team of 8 engineers.
   confidence: high
-- trait: Innovation
-  evidence: Built LLM/RAG-powered fraud review pipeline that aggregates multi-source
-    signals and delivers concise reports to Slack for human action; created extensible
-    Post-Order Workflow framework
-  confidence: high
-- trait: Mentorship
-  evidence: Grew and mentored a team of 8 engineers end-to-end at Embibe
+- trait: Process and operational rigor
+  evidence: Built resilient workflow patterns (idempotency, task prioritization, fallback
+    paths) and operationalized fraud-review reporting for human action.
   confidence: medium
 working_style:
   autonomy: high
-  collaboration: async-native
-  communication: written-strong
+  collaboration: unknown
+  communication: both
   ambiguity_tolerance: high
 leadership_signals:
-- Led team of 8 engineers through all stages of product development
-- Earned increased recognition and autonomy as a technical leader after backend redesign
-  success
-- Created SOPs for major peak events (Black Friday scaling)
-- Drove architectural decisions that enabled business exit from Shopify
+- Founded a platform from PoC to full product at Embibe.
+- Led architecture decisions for mission-critical systems handling 100k+ daily orders.
+- Mentored and coached an 8-engineer team.
+- Owned high-risk migrations and peak-readiness planning.
 potential_concerns:
-- Technical communication rated only 7/10 - lacks explicit evidence of architecture
-  presentations or design doc authorship
-- Mentorship details sparse - no STAR examples of specific coaching actions or measurable
-  mentee outcomes
-- Story support for mentoring junior engineers is 0/10 in one assessment despite resume
-  claim
+- Documentation ownership appears present (SOPs) but less consistently explicit at
+  architecture/API level.
+- Collaboration with ML teams is implied by ML pipeline delivery, but formal ML-team
+  operating practices are not clearly documented.
 unknown_factors:
-- Sync meeting effectiveness and verbal communication in real-time discussions
-- Conflict resolution approach when technical decisions are contested
-- Response to direct critical feedback
-- Remote/hybrid work patterns and timezone flexibility
-- Documentation discipline beyond SOPs (design docs, API specs, runbooks)
+- Preferred collaboration cadence (async vs synchronous rituals).
+- Conflict management style during cross-team technical disagreements.
+- How feedback is given/received in day-to-day team settings.
+- Communication effectiveness with non-technical executives/customers outside engineering
+  contexts.

@@ -11,7 +11,8 @@ import sys
 import time
 from pathlib import Path
 
-sys.path.insert(0, '/home/workspace/N5/cognition')
+# Add workspace to path FIRST
+sys.path.insert(0, '/home/workspace')
 os.chdir('/home/workspace')
 
 LOG_FILE = "/home/workspace/N5/logs/reindex_large_model.log"
@@ -54,7 +55,7 @@ def collect_files():
 
 def main():
     # Import here to control memory
-    from n5_memory_client import N5MemoryClient
+    from N5.cognition.n5_memory_client import N5MemoryClient
     
     LOG.info("=" * 70)
     LOG.info("N5 FULL RE-INDEX WITH text-embedding-3-large")

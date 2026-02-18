@@ -1,0 +1,1 @@
+{"entities": [{"name": "recruiter", "type": "CONCEPT", "context": "a professional who helps in finding candidates for jobs"}], "relationships": [{"from": "recruiter", "to": "V", "type": "KNOWS", "context": "V relies on recruiters for expertise in hiring"}]}

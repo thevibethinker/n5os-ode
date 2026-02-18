@@ -1,0 +1,35 @@
+{
+  "slug": "n5os-bootstrap",
+  "learnings": [
+    {
+      "text": "The P24-P39 principle files also included wisdom_roots_operational_view.md which is valuable N5OS content, so I kept it in the payload (14 principle files instead of 13)",
+      "source": "manual",
+      "added_at": "2026-02-13T04:08:11.313225+00:00",
+      "tags": []
+    },
+    {
+      "text": "install.py successfully handles merging mode and conflict detection - 37 conflicts shown properly in dry-run, 39 files installed with --force",
+      "source": "manual",
+      "added_at": "2026-02-13T04:12:26.203732+00:00",
+      "tags": []
+    },
+    {
+      "text": "The verify.py script correctly detects placeholder markers ({{, }}, WORKSPACE, HANDLE) that need personalization - this is expected behavior until D3 implements the personalization engine",
+      "source": "manual",
+      "added_at": "2026-02-13T04:13:40.074765+00:00",
+      "tags": []
+    },
+    {
+      "text": "Jinja2 templates work well for N5OS personalization - allows flexible instance configuration while maintaining structured output",
+      "source": "manual",
+      "added_at": "2026-02-13T04:15:38.358004+00:00",
+      "tags": []
+    },
+    {
+      "text": "Template engine without Jinja2 dependency can handle basic conditional blocks, for loops, and filters. Key was processing loops before variable substitution and handling {{ var | filter }} patterns within loop content.",
+      "source": "manual",
+      "added_at": "2026-02-13T04:18:51.103524+00:00",
+      "tags": []
+    }
+  ]
+}

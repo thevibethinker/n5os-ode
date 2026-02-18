@@ -1,0 +1,1 @@
+{"entities": [{"name": "investor", "type": "CONCEPT", "context": "stakeholder with critical priority"}, {"name": "partner", "type": "CONCEPT", "context": "stakeholder with neutral affiliation"}, {"name": "advisor", "type": "CONCEPT", "context": "stakeholder with negative affiliation"}], "relationships": []}

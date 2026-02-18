@@ -1,39 +1,39 @@
-version: '2.0'
-created: '2026-01-29'
-updated: '2026-01-30'
-schema_version: "1.0"
-normalized_at: "2026-01-30T03:00:00Z"
-source: Hardik x FlowFuse Careerspan Deep Dive (Google Doc + PDF export)
-candidate:
-  name: Hardik
-  role: Full Stack Developer (AI-focused)
-  company: FlowFuse
-  overall_score: 89
-  qualification: Well-aligned
-  career_trajectory: Lateral Move
-  recommendation: Proceed
-  stories_told: 2
+schema_version: '1.0'
+created: '2026-02-14T17:45:53.406883'
+framework: careerspan-decomposer
+extraction_method: chunked-parallel
+candidate: Hardik
+company: FlowFuse
+slug: hardik-flowfuse
+source_doc: Careerspan/meta-resumes/inbox/hardik-flowfuse/careerspan_full_ocr.txt
+careerspan_score: 89
 files:
-  scores_complete.json: ✅ CANONICAL - All 45 skills with Our Take assessments
-  scores_complete.csv: Flat CSV export of scores (Our Take truncated)
-  our_takes_parsed.json: Raw LLM-parsed Our Take data
-  careerspan_full_ocr.txt: Full OCR of 56-page PDF
-  alignment.yaml: JD ↔ Candidate mapping
-  experience.yaml: Work history
-  hard_skills.yaml: Technical competencies (context)
-  soft_skills.yaml: Working style (context)
-  achievements.yaml: Awards and accomplishments
-  profile.yaml: Background info
-  overview.yaml: Summary metrics
-  jd.yaml: Job description requirements
+- overview.yaml
+- profile.yaml
+- experience.yaml
+- hard_skills.yaml
+- soft_skills.yaml
+- tools.yaml
+- achievements.yaml
+- interests.yaml
+- alignment.yaml
+- culture_signals.yaml
+- jd.yaml
+- scores_complete.json
+- scores_complete.csv
+- careerspan_full_ocr.txt
 counts:
-  total_skills: 45
-  responsibilities: 15
-  soft_skills: 13
-  hard_skills: 17
-  excellent: 32
-  good: 11
-  fair: 2
-  gaps:
-  - SOC 2 Compliance
-  - Vector Search Techniques
+  total_skills: 43
+  by_rating:
+    Excellent: 31
+    Good: 10
+    Fair: 2
+validation:
+  schema_valid: true
+  errors: []
+status: complete
+notes: Extracted via LLM semantic analysis. DO NOT manually edit extraction files.
+processing:
+  mode: chunked_parallel
+  line_count: 1765
+  threshold: 1500

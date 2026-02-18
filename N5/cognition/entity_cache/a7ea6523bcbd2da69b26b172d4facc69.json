@@ -1,0 +1,1 @@
+{"entities": [{"name": "N5", "type": "ORG", "context": "Knowledge system and artifact management"}, {"name": "Recipes", "type": "CONCEPT", "context": "New terminology for previously used command-focused documentation"}], "relationships": [{"from": "N5", "to": "Recipes", "type": "USES", "context": "N5 is transitioning to a recipe-based index from a command-based structure"}]}

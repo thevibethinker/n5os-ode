@@ -1,0 +1,1 @@
+{"entities": [{"name": "va push", "type": "TOOL", "context": "A script that detects if no Tier 0 content has changed since last push"}, {"name": "zoputer pull", "type": "TOOL", "context": "A script that detects if GitHub has no new commits since last pull"}], "relationships": []}

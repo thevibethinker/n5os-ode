@@ -51,6 +51,52 @@ except ImportError:
 INBOX_PATH = Path("/home/workspace/Careerspan/meta-resumes/inbox")
 SCHEMA_PATH = Path(__file__).parent.parent / "assets" / "canonical_schema.json"
 
+
+def classify_signal_type(evidence_type: str) -> str:
+    """Map evidence_type to signal_type category."""
+    et = (evidence_type or "").lower().replace("+", "_").replace(" ", "_")
+    if "story" in et:
+        return "story_verified"
+    elif "inferred" in et:
+        return "inferred"
+    elif "resume" in et or "profile" in et:
+        return "resume_only"
+    elif "gap" in et:
+        return "resume_only"  # Gap = assessed but no evidence, not inferred
+    else:
+        return "resume_only"
+
+
+def largest_remainder_round(signal_counts: dict, total: int) -> dict:
+    """Round percentages to 1 decimal place, always summing to exactly 100.0%.
+    
+    Uses the largest remainder method: floor all values, then distribute
+    the deficit to entries with the largest fractional remainders.
+    """
+    if total == 0:
+        return {"story_verified_pct": 0.0, "resume_only_pct": 0.0, "inferred_pct": 0.0}
+
+    keys = ["story_verified", "resume_only", "inferred"]
+    exact = {k: 100.0 * signal_counts.get(k, 0) / total for k in keys}
+    # Floor to 1 decimal place
+    floored = {k: int(v * 10) / 10 for k in keys for v in [exact[k]]}
+    remainders = {k: round(exact[k] - floored[k], 10) for k in keys}
+
+    deficit = round(100.0 - sum(floored.values()), 1)
+    steps = int(round(deficit * 10))
+    for k in sorted(keys, key=lambda k: -remainders[k]):
+        if steps <= 0:
+            break
+        floored[k] = round(floored[k] + 0.1, 1)
+        steps -= 1
+
+    return {
+        "story_verified_pct": floored["story_verified"],
+        "resume_only_pct": floored["resume_only"],
+        "inferred_pct": floored["inferred"],
+    }
+
+
 # LLM extraction prompts for each category
 EXTRACTION_PROMPTS = {
     "overview": """You are extracting structured data from a Careerspan Intelligence Brief.
@@ -245,64 +291,6 @@ SOURCE DOCUMENT:
 
 Return ONLY the YAML, nothing else.""",
 
-    "tools": """You are extracting structured data from a Careerspan Intelligence Brief.
-
-Extract ALL TOOLS and TECHNOLOGIES mentioned and return ONLY valid YAML.
-
-The YAML structure must be:
-```
-languages:
-  - "<language 1>"
-frameworks:
-  - "<framework 1>"
-databases:
-  - "<db 1>"
-infrastructure:
-  - "<tool 1>"
-ai_ml_tools:
-  - "<tool 1>"
-other:
-  - "<tool 1>"
-not_mentioned:
-  - "<common tool in their domain that's absent>"
-```
-
-List everything explicitly mentioned. Note significant absences.
-
-SOURCE DOCUMENT:
-{doc}
-
-Return ONLY the YAML, nothing else.""",
-
-    "achievements": """You are extracting structured data from a Careerspan Intelligence Brief.
-
-Extract ACHIEVEMENTS, AWARDS, and NOTABLE ACCOMPLISHMENTS and return ONLY valid YAML.
-
-The YAML structure must be:
-```
-quantified_achievements:
-  - achievement: "<what they did>"
-    metric: "<the number/percentage>"
-    context: "<where/when>"
-    verification: "<independently verifiable|self-reported|unclear>"
-awards_recognition:
-  - award: "<award name>"
-    year: "<year or null>"
-    significance: "<why this matters>"
-academic_achievements:
-  - achievement: "<achievement>"
-    context: "<context>"
-patterns:
-  - "<pattern observed across achievements>"
-```
-
-Focus on QUANTIFIED results. Note verification level.
-
-SOURCE DOCUMENT:
-{doc}
-
-Return ONLY the YAML, nothing else.""",
-
     "interests": """You are extracting structured data from a Careerspan Intelligence Brief.
 
 Extract HOBBIES, INTERESTS, and PERSONAL INFORMATION and return ONLY valid YAML.
@@ -351,7 +339,7 @@ requirements_alignment:
 culture_alignment:
   - signal: "<culture element from JD>"
     candidate_fit: "<strong|moderate|weak|unknown>"
-    evidence: "<evidence>"
+    evidence: "<evidence or 'Insufficient data to assess'>"
 
 overall_alignment:
   core_requirements_met: "<X of Y>"
@@ -360,6 +348,13 @@ overall_alignment:
   interview_priorities:
     - "<what to probe>"
 ```
+
+IMPORTANT RULES:
+- The culture_alignment section is REQUIRED. You MUST include it.
+- Extract culture signals from the JD (values, working style, team dynamics, pace, autonomy level).
+- If the JD has no explicit culture signals, infer them from the role type, company stage, and team structure.
+- If candidate evidence is insufficient, use candidate_fit: "unknown" with evidence: "Insufficient data to assess" — but still include the signal.
+- Include at least 3 culture alignment entries.
 
 Be rigorous. Don't inflate alignment.
 
@@ -388,7 +383,8 @@ Each skill must have this EXACT structure:
   "direct_experience_score": <integer 1-10 from "Direct experience: X/10">,
   "max_experience_score": 10,
   "experience_type": "<Direct|Transferable>",
-  "evidence_type": "<Story + profile|Story|Profile|Resume|Gap>",
+  "evidence_type": "<Story + profile|Story|Profile|Resume|Gap|Inferred>",
+  "signal_type": "<story_verified|resume_only|inferred>",
   "our_take": "<FULL verbatim Our Take text - do NOT summarize, preserve complete text>",
   "contributing_skills": ["<skill that contributes to this assessment>", ...],
   "support": [
@@ -404,6 +400,16 @@ Each skill must have this EXACT structure:
   "source_page": "<page reference or null>"
 }}
 
+SIGNAL TYPE CLASSIFICATION (set signal_type for each skill):
+- "story_verified": Skill was verified through a Careerspan story/interview AND/OR profile data (evidence_type contains "Story")
+- "resume_only": Skill evidence comes only from resume or LinkedIn profile, with no story verification (evidence_type is "Profile" or "Resume")
+- "inferred": Skill is NOT explicitly assessed in the document but is contextually implied by the candidate's background. Examples:
+  * A candidate who built production Kubernetes infrastructure likely knows Docker even if Docker is not mentioned
+  * A candidate at a fintech company handling sensitive data likely has privacy/compliance exposure
+  * A candidate who architected microservices likely understands API design patterns
+  * A candidate using LangChain/RAG almost certainly works with embeddings even if not explicitly stated
+  Look actively for these implied skills — they are valuable intelligence beyond the document's explicit claims.
+
 CRITICAL RULES:
 1. Extract EVERY skill mentioned (typically 30-50 skills)
 2. Preserve "Our Take" text VERBATIM - this is the core value
@@ -412,6 +418,7 @@ CRITICAL RULES:
 5. Mark is_best: true for any story marked as "Best" in the document
 6. If a field is unclear, use null, never guess
 7. Contributing skills appear under "Contributing skills" heading for each skill
+8. Set signal_type for each skill based on the SIGNAL TYPE CLASSIFICATION above
 
 CRITICAL: The "our_take" field MUST be copied CHARACTER-FOR-CHARACTER from the source.
 Do not paraphrase, summarize, or rephrase. If you cannot find the exact text, return null for that skill.
@@ -439,7 +446,8 @@ Each skill must have this EXACT structure:
   "direct_experience_score": <integer 1-10 from "Direct experience: X/10">,
   "max_experience_score": 10,
   "experience_type": "<Direct|Transferable>",
-  "evidence_type": "<Story + profile|Story|Profile|Resume|Gap>",
+  "evidence_type": "<Story + profile|Story|Profile|Resume|Gap|Inferred>",
+  "signal_type": "<story_verified|resume_only|inferred>",
   "our_take": "<FULL verbatim Our Take text - do NOT summarize, preserve complete text>",
   "contributing_skills": ["<skill that contributes to this assessment>", ...],
   "support": [
@@ -454,6 +462,8 @@ Each skill must have this EXACT structure:
   "support_note": "<'No strong support found' or similar note if present, otherwise null>",
   "source_page": "<page reference or null>"
 }}
+
+SIGNAL TYPE: Set signal_type to "story_verified" if evidence includes Story data, "resume_only" if only Resume/Profile, or "inferred" if contextually implied but not explicitly assessed.
 
 CRITICAL: The "our_take" field MUST be copied CHARACTER-FOR-CHARACTER from the source.
 Do not paraphrase, summarize, or rephrase. If you cannot find the exact text, return null for that skill.
@@ -504,6 +514,112 @@ JOB DESCRIPTION:
 {jd}
 
 Return ONLY the YAML, nothing else.""",
+
+    "tools": """You are extracting structured data from a Careerspan Intelligence Brief.
+
+Extract TOOLS and TECHNOLOGIES used by the candidate and return ONLY valid YAML.
+
+The YAML structure must be:
+```
+tool_categories:
+  languages:
+    - name: "<language>"
+      proficiency: "<expert|proficient|familiar|claimed>"
+      evidence: "<where/how used>"
+  frameworks:
+    - name: "<framework>"
+      proficiency: "<level>"
+      evidence: "<evidence>"
+  databases:
+    - name: "<database>"
+      proficiency: "<level>"
+      evidence: "<evidence>"
+  cloud_infrastructure:
+    - name: "<tool>"
+      proficiency: "<level>"
+      evidence: "<evidence>"
+  devops:
+    - name: "<tool>"
+      proficiency: "<level>"
+      evidence: "<evidence>"
+  other:
+    - name: "<tool>"
+      proficiency: "<level>"
+      evidence: "<evidence>"
+```
+
+Be thorough. Include all technologies, tools, and platforms mentioned.
+
+SOURCE DOCUMENT:
+{doc}
+
+Return ONLY the YAML, nothing else.""",
+
+    "achievements": """You are extracting structured data from a Careerspan Intelligence Brief.
+
+Extract ACHIEVEMENTS, AWARDS, and RECOGNITION and return ONLY valid YAML.
+
+The YAML structure must be:
+```
+achievements:
+  - description: "<achievement description>"
+    type: "<award|recognition|milestone|quantified_impact>"
+    context: "<company or context where achieved>"
+    quantified: <true|false>
+    impact: "<business impact if stated>"
+patterns:
+  - "<pattern observed across achievements>"
+data_availability: "<rich|moderate|sparse>"
+note: "<any caveat about limited achievement data>"
+```
+
+Include quantified impacts (revenue, users, performance improvements) as achievements.
+If achievement data is sparse, say so explicitly.
+
+SOURCE DOCUMENT:
+{doc}
+
+Return ONLY the YAML, nothing else.""",
+
+    "gaps_and_caveats": """You are extracting cross-cutting GAPS, CAVEATS, and RISK AREAS from a Careerspan Intelligence Brief.
+
+These are NOT individual skill assessments — they are standalone analytical sections that appear between or after skill assessments, providing synthesis-level observations about missing capabilities, untested areas, or interview priorities.
+
+Look for sections titled "Gaps / caveats:", "Gaps & limits:", or similar standalone analysis blocks that are NOT part of an individual skill's "Our take" section.
+
+Return ONLY valid YAML (no markdown code fences, no explanation).
+
+The YAML structure must be:
+```
+cross_cutting_gaps:
+  - area: "<what capability or experience area is missing>"
+    severity: "<critical|significant|moderate|minor>"
+    detail: "<verbatim or near-verbatim text from the gap analysis>"
+    interview_probes:
+      - "<question to ask in interview about this gap>"
+    affected_skills:
+      - "<skill name this gap relates to>"
+
+untested_areas:
+  - area: "<area that couldn't be assessed from available data>"
+    reason: "<why it couldn't be assessed>"
+    recommendation: "<how to evaluate in interview>"
+
+stories_told: <integer — number of stories mentioned, e.g. 'Stories told: 2'>
+story_ids:
+  - "<story ID referenced in the document>"
+```
+
+IMPORTANT:
+- Extract the "Stories told: N" count from the document header
+- Collect all story IDs (alphanumeric strings like COKUmaqSITrBKdtxSgJp) referenced anywhere in the document
+- For gaps, preserve the analytical detail — these are high-value synthesis observations
+- If no standalone gap sections exist, return empty arrays
+
+SOURCE DOCUMENT:
+{doc}
+
+Return ONLY the YAML, nothing else.""",
 }
 
 
@@ -530,16 +646,26 @@ async def call_llm(session: aiohttp.ClientSession, prompt: str, timeout: int = 1
 
 
 def clean_response(response: str, format: str = "yaml") -> str:
-    """Remove markdown code fences if present."""
+    """Remove markdown code fences and other LLM artifacts that break parsing."""
     response = response.strip()
-    fence_start = f"```{format}"
-    if response.startswith(fence_start):
-        response = response[len(fence_start):]
-    elif response.startswith("```"):
-        response = response[3:]
-    if response.endswith("```"):
-        response = response[:-3]
-    return response.strip()
+
+    # Strip all code fence blocks — extract content between first ``` and last ```
+    # Handles: ```yaml, ```json, ```text, ```, and fences with trailing content
+    fence_pattern = re.compile(r'```[a-zA-Z]*\s*\n(.*?)```', re.DOTALL)
+    match = fence_pattern.search(response)
+    if match:
+        response = match.group(1).strip()
+    else:
+        # Fallback: strip leading/trailing fences even without newline
+        response = re.sub(r'^```[a-zA-Z]*\s*', '', response)
+        response = re.sub(r'\s*```\s*$', '', response)
+        response = response.strip()
+
+    # Remove any remaining code fences (``` on its own line)
+    # This catches orphaned fences that survived the regex extraction
+    response = re.sub(r'\n```\s*\n?.*$', '', response, flags=re.DOTALL).strip()
+
+    return response
 
 
 def extract_score_from_text(doc_content: str) -> int | None:
@@ -864,6 +990,8 @@ async def extract_category(
     
     if category == "alignment":
         prompt = prompt_template.format(doc=doc_content, jd=jd_content)
+    elif category == "culture_signals":
+        prompt = prompt_template.format(jd=doc_content)
     else:
         prompt = prompt_template.format(doc=doc_content)
     
@@ -877,7 +1005,22 @@ async def extract_category(
         return data
     except yaml.YAMLError as e:
         print(f"  WARNING: YAML parse error for {category}: {e}")
-        return {"_raw": cleaned, "_error": str(e)}
+        print(f"  Retrying {category} extraction with stricter instructions...")
+
+        # Retry with explicit "no code fences" instruction
+        retry_prompt = (
+            f"The following YAML has a syntax error. Fix it and return ONLY valid YAML.\n"
+            f"Do NOT wrap in code fences (no ```). Return raw YAML only.\n\n{cleaned}"
+        )
+        try:
+            retry_response = await call_llm(session, retry_prompt, timeout=120)
+            retry_cleaned = clean_response(retry_response, "yaml")
+            data = yaml.safe_load(retry_cleaned)
+            print(f"  ✓ Retry succeeded for {category}")
+            return data
+        except Exception as retry_err:
+            print(f"  ✗ Retry also failed for {category}: {retry_err}")
+            return {"_raw": cleaned, "_error": str(e)}
 
 
 async def extract_skills_assessment(session: aiohttp.ClientSession, doc_content: str) -> list:
@@ -970,110 +1113,38 @@ async def decompose(doc_path: str, jd_input: str, candidate: str, company: str,
     line_count = doc_content.count('\n') + 1
     use_chunked = HAS_CHUNK_PROCESSOR and should_use_chunked_processing(doc_content)
     
+    # Track extraction method for manifest
+    extraction_method = None
+    # chunked_overview holds overview data from chunk processor (used later for overview.yaml)
+    chunked_overview = None
+
     if use_chunked:
         # MODE C: Chunked parallel processing for large documents
+        # Chunk processor handles skills extraction (parallel, fast for large docs)
+        # Then we fall through to the standard contextual extraction loop below
+        # for profile, experience, alignment, culture_signals, etc.
         print(f"Using chunked processing mode ({line_count} lines > {CHUNK_THRESHOLD} threshold)")
         work_dir = output_dir / ".work"
         overview_data, skills = await process_document_chunked(doc_content, work_dir)
-        
+
         # Use overview from chunk processor, fall back to detected score
         if not overview_data.get("overall_score") and detected_score:
             overview_data["overall_score"] = detected_score
-        
-        # Build scores_data using chunk processor helper
-        scores_data = build_scores_complete(overview_data, skills)
-        
-        # Write scores_complete.json
-        scores_path = output_dir / "scores_complete.json"
-        with open(scores_path, 'w') as f:
-            json.dump(scores_data, f, indent=2, ensure_ascii=False)
-        print(f"  Wrote scores_complete.json ({len(skills)} skills)")
-        
-        # Copy JD and source
-        jd_filepath = output_dir / "jd.yaml"
-        with open(jd_filepath, 'w') as f:
-            f.write(f"# Job Description\n# Source: Provided JD\n\nraw_jd: |\n")
-            for line in jd_content.split('\n'):
-                f.write(f"  {line}\n")
-        print(f"  Wrote jd.yaml")
-        
+
+        # Save chunked overview for later use in overview.yaml
+        chunked_overview = overview_data
+
         # Write source OCR
         ocr_path = output_dir / "careerspan_full_ocr.txt"
         with open(ocr_path, 'w') as f:
             f.write(doc_content)
         print(f"  Wrote careerspan_full_ocr.txt")
-        
-        # Write overview.yaml for backward compatibility
-        overview_yaml_path = output_dir / "overview.yaml"
-        with open(overview_yaml_path, 'w') as f:
-            yaml.dump({
-                "candidate": candidate,
-                "company": company,
-                "careerspan_score": {
-                    "overall": scores_data.get("overall_score"),
-                    **{k: v.get("score") for k, v in scores_data.get("category_scores", {}).items()}
-                },
-                "bottom_line": scores_data.get("bottom_line"),
-                "overall_strengths": scores_data.get("overall_strengths"),
-                "overall_weaknesses": scores_data.get("overall_weaknesses"),
-                "potential_dealbreakers": scores_data.get("potential_dealbreakers", [])
-            }, f, default_flow_style=False, allow_unicode=True, sort_keys=False)
-        print(f"  Wrote overview.yaml")
-        
-        # Validate
-        is_valid, errors = validate_scores(scores_data)
-        if not is_valid:
-            print(f"  WARNING: Schema validation failed: {errors[:3]}")
-        else:
-            print(f"  ✓ Schema validation passed")
-        
-        # Count ratings
-        rating_counts = {}
-        for skill in skills:
-            if isinstance(skill, dict):
-                r = skill.get("rating", "Unknown")
-                rating_counts[r] = rating_counts.get(r, 0) + 1
-        
-        # Write manifest
-        manifest = {
-            "schema_version": "1.0",
-            "created": datetime.now().isoformat(),
-            "framework": "careerspan-decomposer",
-            "extraction_method": "chunked-parallel",
-            "candidate": candidate,
-            "company": company,
-            "slug": slug,
-            "source_doc": str(doc_path),
-            "careerspan_score": scores_data.get("overall_score"),
-            "processing": {
-                "mode": "chunked_parallel",
-                "line_count": line_count,
-                "threshold": CHUNK_THRESHOLD
-            },
-            "files": ["overview.yaml", "jd.yaml", "scores_complete.json", "careerspan_full_ocr.txt"],
-            "counts": {
-                "total_skills": len(skills),
-                "by_rating": rating_counts
-            },
-            "validation": {
-                "schema_valid": is_valid,
-                "errors": errors[:5] if errors else []
-            },
-            "status": "complete"
-        }
-        
-        manifest_path = output_dir / "manifest.yaml"
-        with open(manifest_path, 'w') as f:
-            yaml.dump(manifest, f, default_flow_style=False, allow_unicode=True, sort_keys=False)
-        print(f"  Wrote manifest.yaml")
-        
-        print()
-        print(f"✓ Decomposition complete (chunked mode): {output_dir}")
-        print(f"  Skills: {len(skills)} ({rating_counts})")
-        print(f"  Score: {scores_data.get('overall_score')}/100")
-        
-        return str(output_dir)
-    
+
+        extraction_method = "chunked-parallel"
+        print(f"  Skills extracted via chunked mode. Now extracting contextual data...")
+
+        # Fall through to contextual extraction below
+
     elif input_json:
         # MODE B: Structured input - minimal LLM, maximum trust
         print("Using structured input mode (--input-json)")
@@ -1100,19 +1171,26 @@ async def decompose(doc_path: str, jd_input: str, candidate: str, company: str,
                 # Original extraction method
                 skills = await extract_skills_assessment(session, doc_content)
     
-    # Continue with rest of extraction for both modes
+    # Continue with contextual extraction for all modes (A, B, and C)
+    # In chunked mode (C), skills + overview are already extracted — we only need contextual YAMLs
+    # In standard modes (A, B), we need everything
     async with aiohttp.ClientSession() as session:
         results = {}
-        
-        # Run first batch in parallel
-        batch1 = ["overview", "profile", "experience", "tools"]
+
+        if use_chunked:
+            # Chunked mode: skip overview (already extracted by chunk_processor)
+            print("  Extracting contextual data (profile, experience, alignment, culture)...")
+            batch1 = ["profile", "experience", "tools"]
+        else:
+            batch1 = ["overview", "profile", "experience", "tools"]
+
         tasks1 = [extract_category(session, cat, doc_content) for cat in batch1]
         batch1_results = await asyncio.gather(*tasks1)
         for cat, result in zip(batch1, batch1_results):
             results[cat] = result
-        
-        # Inject detected score if overview extraction missed it
-        if detected_score and results.get("overview"):
+
+        # Inject detected score if overview extraction missed it (non-chunked only)
+        if not use_chunked and detected_score and results.get("overview"):
             if isinstance(results["overview"], dict):
                 if not results["overview"].get("careerspan_score") or \
                    results["overview"].get("careerspan_score", {}).get("overall") is None:
@@ -1123,21 +1201,42 @@ async def decompose(doc_path: str, jd_input: str, candidate: str, company: str,
                         "career_trajectory": results["overview"].get("careerspan_score", {}).get("career_trajectory", "Unknown")
                     }
                     print(f"  Injected detected score {detected_score} into overview")
-        
+
         # Run second batch in parallel
-        batch2 = ["hard_skills", "soft_skills", "achievements", "interests"]
+        batch2 = ["hard_skills", "soft_skills", "achievements", "interests", "gaps_and_caveats"]
         tasks2 = [extract_category(session, cat, doc_content) for cat in batch2]
         batch2_results = await asyncio.gather(*tasks2)
         for cat, result in zip(batch2, batch2_results):
             results[cat] = result
-        
+
         # Alignment needs both doc and JD
-        print("  Extracting alignment...")
         results["alignment"] = await extract_category(session, "alignment", doc_content, jd_content)
-        
-        # Culture signals extraction from JD only
-        print("  Extracting culture signals from JD...")
-        results["culture_signals"] = await extract_category(session, "culture_signals", jd_content, None)
+
+        # Culture signals extraction from JD only (jd_content passed as doc_content,
+        # mapped to {jd} template var inside extract_category)
+        results["culture_signals"] = await extract_category(session, "culture_signals", doc_content=jd_content)
+
+    # For chunked mode: inject the overview from chunk_processor into results
+    # Always inject even if chunked_overview is empty — prevents KeyError when writing overview.yaml
+    if use_chunked:
+        co = chunked_overview or {}
+        results["overview"] = {
+            "careerspan_score": {
+                "overall": co.get("overall_score") or detected_score,
+                "max": 100,
+                "qualification": co.get("qualification"),
+                "qualification_detail": co.get("qualification_detail"),
+                "career_trajectory": co.get("career_trajectory"),
+            },
+            "category_scores": co.get("category_scores", {}),
+            "bottom_line": co.get("bottom_line"),
+            "elevator_pitch": co.get("elevator_pitch"),
+            "recommendation": co.get("recommendation"),
+            "overall_strengths": co.get("overall_strengths"),
+            "overall_weaknesses": co.get("overall_weaknesses"),
+            "potential_dealbreakers": co.get("potential_dealbreakers", []),
+            "summary": co.get("bottom_line", ""),
+        }
     
     # Write YAML files
     file_mapping = {
@@ -1150,7 +1249,8 @@ async def decompose(doc_path: str, jd_input: str, candidate: str, company: str,
         "achievements": "achievements.yaml",
         "interests": "interests.yaml",
         "alignment": "alignment.yaml",
-        "culture_signals": "culture_signals.yaml"
+        "culture_signals": "culture_signals.yaml",
+        "gaps_and_caveats": "gaps_and_caveats.yaml"
     }
     
     for category, filename in file_mapping.items():
@@ -1173,25 +1273,32 @@ async def decompose(doc_path: str, jd_input: str, candidate: str, company: str,
             f.write(f"  {line}\n")
     print(f"  Wrote jd.yaml")
     
-    # Build signal_strength from evidence_type distribution
+    # Classify each skill's signal_type and build signal_strength
     signal_counts = {"story_verified": 0, "resume_only": 0, "inferred": 0}
     for skill in skills:
         if isinstance(skill, dict):
-            et = skill.get("evidence_type", "").lower().replace("+", "_").replace(" ", "_")
-            if "story" in et:
-                signal_counts["story_verified"] += 1
-            elif "resume" in et or "profile" in et:
-                signal_counts["resume_only"] += 1
-            else:
-                signal_counts["inferred"] += 1
-    
+            st = classify_signal_type(skill.get("evidence_type", ""))
+            skill["signal_type"] = st
+            signal_counts[st] += 1
+
     total_signals = sum(signal_counts.values()) or 1
-    signal_strength = {
-        "story_verified_pct": round(100 * signal_counts["story_verified"] / total_signals, 1),
-        "resume_only_pct": round(100 * signal_counts["resume_only"] / total_signals, 1),
-        "inferred_pct": round(100 * signal_counts["inferred"] / total_signals, 1)
-    }
-    
+    signal_strength = largest_remainder_round(signal_counts, total_signals)
+
+    # Validate required_level and other expected fields on skills
+    missing_required_level = 0
+    for skill in skills:
+        if isinstance(skill, dict):
+            if not skill.get("required_level"):
+                missing_required_level += 1
+            # Ensure contributing_skills is always an array
+            if skill.get("contributing_skills") is None:
+                skill["contributing_skills"] = []
+            # Ensure support is always an array
+            if skill.get("support") is None:
+                skill["support"] = []
+    if missing_required_level > 0:
+        print(f"  WARNING: {missing_required_level}/{len(skills)} skills missing required_level")
+
     # Get category scores from overview extraction or default
     category_scores = {}
     if isinstance(results.get("overview"), dict):
@@ -1205,12 +1312,17 @@ async def decompose(doc_path: str, jd_input: str, candidate: str, company: str,
         for cat in ["background", "uniqueness", "responsibilities", "hard_skills", "soft_skills"]:
             category_scores[cat] = {"score": None, "max": 100}
     
-    # Get bottom_line from overview
+    # Get overview fields for scores_complete.json
     bottom_line = ""
     overall_strengths = None
     overall_weaknesses = None
     potential_dealbreakers = []
-    
+    qualification = None
+    qualification_detail = None
+    career_trajectory = None
+    elevator_pitch = None
+    recommendation = None
+
     if isinstance(results.get("overview"), dict):
         overview = results["overview"]
         # Try multiple fields for bottom_line
@@ -1218,16 +1330,46 @@ async def decompose(doc_path: str, jd_input: str, candidate: str, company: str,
         overall_strengths = overview.get("overall_strengths")
         overall_weaknesses = overview.get("overall_weaknesses")
         potential_dealbreakers = overview.get("potential_dealbreakers", [])
-    
+        elevator_pitch = overview.get("elevator_pitch")
+        recommendation = overview.get("recommendation")
+        # qualification fields may be nested under careerspan_score
+        cs = overview.get("careerspan_score", {})
+        if isinstance(cs, dict):
+            qualification = cs.get("qualification")
+            qualification_detail = cs.get("qualification_detail")
+            career_trajectory = cs.get("career_trajectory")
+        # Also check top-level (non-chunked mode may put them there)
+        qualification = qualification or overview.get("qualification")
+        qualification_detail = qualification_detail or overview.get("qualification_detail")
+        career_trajectory = career_trajectory or overview.get("career_trajectory")
+
+    # Extract gaps/caveats and story metadata for scores_complete
+    gaps_data = results.get("gaps_and_caveats", {})
+    cross_cutting_gaps = []
+    stories_told = None
+    story_ids = []
+    if isinstance(gaps_data, dict) and "_raw" not in gaps_data:
+        cross_cutting_gaps = gaps_data.get("cross_cutting_gaps", [])
+        stories_told = gaps_data.get("stories_told")
+        story_ids = gaps_data.get("story_ids", [])
+
     # Build the wrapped scores structure
     scores_data = {
         "overall_score": detected_score,
         "bottom_line": bottom_line,
+        "qualification": qualification,
+        "qualification_detail": qualification_detail,
+        "career_trajectory": career_trajectory,
+        "elevator_pitch": elevator_pitch,
+        "recommendation": recommendation,
         "overall_strengths": overall_strengths,
         "overall_weaknesses": overall_weaknesses,
         "potential_dealbreakers": potential_dealbreakers,
         "category_scores": category_scores,
         "signal_strength": signal_strength,
+        "stories_told": stories_told,
+        "story_ids": story_ids,
+        "cross_cutting_gaps": cross_cutting_gaps,
         "skills": skills
     }
     
@@ -1272,13 +1414,13 @@ async def decompose(doc_path: str, jd_input: str, candidate: str, company: str,
         "schema_version": "1.0",
         "created": datetime.now().isoformat(),
         "framework": "careerspan-decomposer",
-        "extraction_method": "structured-json" if input_json else ("llm-semantic-batched" if fail_fast else "llm-semantic"),
+        "extraction_method": extraction_method or ("structured-json" if input_json else ("llm-semantic-batched" if fail_fast else "llm-semantic")),
         "candidate": candidate,
         "company": company,
         "slug": slug,
         "source_doc": str(doc_path),
         "careerspan_score": detected_score,
-        "files": list(file_mapping.values()) + ["jd.yaml", "scores_complete.json", "scores_complete.csv"],
+        "files": list(file_mapping.values()) + ["jd.yaml", "scores_complete.json", "scores_complete.csv"] + (["careerspan_full_ocr.txt"] if use_chunked else []),
         "counts": {
             "total_skills": len(skills),
             "by_rating": rating_counts
@@ -1290,6 +1432,12 @@ async def decompose(doc_path: str, jd_input: str, candidate: str, company: str,
         "status": "complete",
         "notes": "Extracted via LLM semantic analysis. DO NOT manually edit extraction files." if not input_json else "Extracted from structured JSON input with validation. DO NOT manually edit extraction files."
     }
+    if use_chunked:
+        manifest["processing"] = {
+            "mode": "chunked_parallel",
+            "line_count": line_count,
+            "threshold": CHUNK_THRESHOLD
+        }
     
     manifest_path = output_dir / "manifest.yaml"
     with open(manifest_path, 'w') as f:

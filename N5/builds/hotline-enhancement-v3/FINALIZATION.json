@@ -1,0 +1,82 @@
+{
+  "slug": "hotline-enhancement-v3",
+  "title": "Vibe Thinker Hotline Enhancement v3",
+  "status": "complete",
+  "finalized_at": "2026-02-14T05:03:16.786345+00:00",
+  "execution_mode": "claude_code",
+  "drops_total": 7,
+  "drops_complete": 7,
+  "deposits": [
+    {
+      "drop_id": "D1.1",
+      "build_slug": "hotline-enhancement-v3",
+      "status": "complete",
+      "summary": "Created call_analyzer.py with analyze/patterns/report subcommands. Report shows 19 calls, 124.8s avg duration, 31.6% are substantive (2-5min). Pattern extraction uses /zo/ask for semantic topic/quality classification. All topics currently hardcoded general_advisory - confirms D2.3 need.",
+      "broadcast": "Call data: 19 calls, 6 substantive (>2min), 5 drop-offs (<10s). Topics all general_advisory. Transcript field at message.artifact.transcript in raw_data.",
+      "artifacts": [],
+      "timestamp": "2026-02-14T04:46:50.228439+00:00",
+      "execution_mode": "claude_code"
+    },
+    {
+      "drop_id": "D1.2",
+      "build_slug": "hotline-enhancement-v3",
+      "status": "complete",
+      "summary": "Created dropoff_analyzer.py with analyze/report subcommands. 7/19 calls (36.8%) are drop-offs under 60s. Classifications: 2 test_call, 2 lost_interest, 1 immediate_hangup, 1 wrong_number, 1 greeting_only. Wasted cost: $0.17. Rule-based classification using duration + endedReason + transcript presence.",
+      "broadcast": "Drop-off rate is 36.8% (7/19). Most common reasons: test calls and lost interest. SIP-completed calls are connection tests. Drop-offs cluster in evening hours.",
+      "artifacts": [],
+      "timestamp": "2026-02-14T04:46:53.521560+00:00",
+      "execution_mode": "claude_code"
+    },
+    {
+      "drop_id": "D1.3",
+      "build_slug": "hotline-enhancement-v3",
+      "status": "complete",
+      "summary": "Created calendly-setup.md reference doc with exact settings: 15min, max 2/day, weekdays 12-4pm ET, 4hr minimum notice, 2-week rolling window, 5min buffer. Includes custom questions (name, help needed, source). No code changes needed - webhook already reads ZO_HOTLINE_CALENDLY_LINK env var. V needs to create event type in Calendly UI and set the env var.",
+      "broadcast": "",
+      "artifacts": [],
+      "timestamp": "2026-02-14T04:46:58.032853+00:00",
+      "execution_mode": "claude_code"
+    },
+    {
+      "drop_id": "D2.1",
+      "build_slug": "hotline-enhancement-v3",
+      "status": "complete",
+      "summary": "Created weekly scheduled agent (Sunday 11pm ET) that runs call_analyzer.py and dropoff_analyzer.py, compiles consolidated hotline performance report with volume, drop-off analysis, patterns, escalations, and recommendations, and emails it to V.",
+      "broadcast": "",
+      "artifacts": [],
+      "timestamp": "2026-02-14T05:01:22.890603+00:00",
+      "execution_mode": "claude_code"
+    },
+    {
+      "drop_id": "D2.2",
+      "build_slug": "hotline-enhancement-v3",
+      "status": "complete",
+      "summary": "Added collectFeedback tool to webhook: feedback DuckDB table in initDb(), collectFeedback function with optional caller_name/satisfaction/comment params, tool definition in assistant-request config, switch case in tool-calls handler. System prompt already updated in prior session with feedback collection guidance.",
+      "broadcast": "",
+      "artifacts": [],
+      "timestamp": "2026-02-14T04:59:10.533330+00:00",
+      "execution_mode": "claude_code"
+    },
+    {
+      "drop_id": "D2.3",
+      "build_slug": "hotline-enhancement-v3",
+      "status": "complete",
+      "summary": "Replaced hardcoded general_advisory with async LLM topic classification via Zo API. Defined 13-topic taxonomy. classifyTopicsAsync fires after call insert for calls >=30s with transcript, extracts topics from first 1500 chars, validates against taxonomy, updates DB record. Falls back gracefully on failure \u2014 initial insert always uses general_advisory default.",
+      "broadcast": "",
+      "artifacts": [],
+      "timestamp": "2026-02-14T04:59:52.058857+00:00",
+      "execution_mode": "claude_code"
+    },
+    {
+      "drop_id": "D2.4",
+      "build_slug": "hotline-enhancement-v3",
+      "status": "complete",
+      "summary": "Created hotline_build_init.py template script for Pulse-orchestrated hotline improvements. Supports --dry-run. Auto-generates hotline- prefixed slugs. Pre-populates 5 standard drops (analyze, identify, implement, test, deploy). Updated SKILL.md with Pulse Build Workflow documentation.",
+      "broadcast": "",
+      "artifacts": [],
+      "timestamp": "2026-02-14T05:01:22.969983+00:00",
+      "execution_mode": "claude_code"
+    }
+  ],
+  "learnings": []
+}

@@ -1,80 +1,104 @@
 # Achievements
-# Extracted: 2026-02-05T16:36:47.086848
+# Extracted: 2026-02-15T01:59:23.343860
 # Method: Structured extraction
 # DO NOT EDIT
 
-quantified_achievements:
-- achievement: Led greenfield checkout and order workflow system
-  metric: 100,000+ daily orders, 20 orders/second peak
-  context: Quince, 2024
-  verification: self-reported
-- achievement: Handled Black Friday/Cyber Monday traffic spikes
-  metric: 5× normal traffic volume
-  context: Quince, 2024
-  verification: self-reported
-- achievement: Managed peak daily revenue during sales events
-  metric: $15M/day
-  context: Quince, Black Friday 2024
-  verification: self-reported
-- achievement: Built and led engineering team
-  metric: 8 engineers mentored end-to-end
-  context: Embibe, Assignment platform
-  verification: self-reported
-- achievement: Developed user timeline system
-  metric: 10M+ learners tracked
-  context: Embibe
-  verification: self-reported
-- achievement: Achieved system uptime matching Shopify SLA
-  metric: 99.9% (three nines)
-  context: Quince checkout system
-  verification: self-reported
-- achievement: Built microservices architecture
-  metric: 12+ microservices
+achievements:
+- description: Led greenfield off-Shopify checkout and order workflow build, enabling
+    migration off Shopify and saving the company millions in platform fees.
+  type: quantified_impact
   context: Quince
-  verification: self-reported
-- achievement: Data aggregation processing
-  metric: millions of activity rows processed (hourly to yearly rollups)
+  quantified: true
+  impact: Major cost savings and increased platform flexibility.
+- description: Built and scaled checkout/payments systems to support 100,000+ daily
+    orders and peak traffic spikes of 5x (including Black Friday/Cyber Monday).
+  type: quantified_impact
+  context: Quince
+  quantified: true
+  impact: Sustained high-throughput reliability during peak revenue periods.
+- description: Handled transaction peaks around $15M/day during major sales events.
+  type: quantified_impact
+  context: Quince
+  quantified: true
+  impact: Supported mission-critical revenue operations at scale.
+- description: Achieved ~99.9% uptime (three nines), matching Shopify SLA after migration.
+  type: quantified_impact
+  context: Quince
+  quantified: true
+  impact: Maintained enterprise-grade reliability post-platform transition.
+- description: Executed zero-downtime backend/schema migration to resolve scaling
+    bottlenecks.
+  type: milestone
   context: Embibe
-  verification: self-reported
-- achievement: Google Kickstart Round F 2019
-  metric: 194th place
-  context: Global competitive programming
-  verification: independently verifiable
-- achievement: Google Kickstart Round E 2019
-  metric: 462nd place
-  context: Global competitive programming
-  verification: independently verifiable
-- achievement: ACM-ICPC 2019 Online Round
-  metric: 856th among 4,400 teams
-  context: International Collegiate Programming Contest
-  verification: independently verifiable
-- achievement: JEE Main 2016
-  metric: Top 0.3% among 1.3 million candidates
-  context: India national engineering entrance exam
-  verification: independently verifiable
-- achievement: JEE Advanced 2016
-  metric: Top 3% among 200,000 candidates
-  context: India premier engineering entrance exam
-  verification: independently verifiable
-awards_recognition:
-- award: NTSE Scholar
-  year: '2012'
-  significance: National Talent Search Examination - prestigious Indian scholarship
-    recognizing academic excellence at secondary level
-academic_achievements:
-- achievement: Bachelor of Technology from IIIT Hyderabad
-  context: Electronics and Communications, 2016-2020; strong and respected technical
-    institution nationally in India
-- achievement: JEE Main Top 0.3%
-  context: Qualified among 1.3 million candidates for premier engineering institutes
-- achievement: JEE Advanced Top 3%
-  context: Qualified for elite IITs among 200,000 candidates
+  quantified: false
+  impact: Improved system reliability and scalability without user disruption.
+- description: Developed user timeline and aggregation systems serving 10M+ learners.
+  type: quantified_impact
+  context: Embibe
+  quantified: true
+  impact: Enabled large-scale engagement tracking and actionable analytics.
+- description: Founded and scaled the Assignment platform from proof-of-concept to
+    full product.
+  type: milestone
+  context: Embibe
+  quantified: false
+  impact: Created a production platform and expanded product capability.
+- description: Mentored and led a team of 8 engineers.
+  type: milestone
+  context: Embibe
+  quantified: true
+  impact: Increased team delivery capacity and technical leadership leverage.
+- description: Designed and operated an LLM/RAG-powered fraud review pipeline integrating
+    multi-source signals with human-review routing.
+  type: milestone
+  context: Quince
+  quantified: false
+  impact: Improved fraud operations workflow efficiency and decision support.
+- description: Earned recognition and increased autonomy as a technical leader following
+    successful architecture and migration initiatives.
+  type: recognition
+  context: Embibe
+  quantified: false
+  impact: Expanded leadership scope and ownership of critical initiatives.
+- description: NTSE Scholar (2012).
+  type: award
+  context: Academic
+  quantified: false
+  impact: National academic distinction.
+- description: 'Google Kick Start Round F 2019: 194th place.'
+  type: award
+  context: Competitive programming
+  quantified: true
+  impact: Demonstrated strong algorithmic problem-solving.
+- description: 'Google Kick Start Round E 2019: 462nd place.'
+  type: award
+  context: Competitive programming
+  quantified: true
+  impact: Demonstrated competitive coding performance.
+- description: 'ACM-ICPC 2019 online round: team rank 856 among 4,400 teams.'
+  type: award
+  context: Competitive programming
+  quantified: true
+  impact: Top-tier performance in large-field programming competition.
+- description: 'JEE Main 2016: top 0.3% among 1.3 million candidates.'
+  type: award
+  context: Academic entrance exam
+  quantified: true
+  impact: Exceptional percentile performance at national scale.
+- description: 'JEE Advanced 2016: top 3% among 200k candidates.'
+  type: award
+  context: Academic entrance exam
+  quantified: true
+  impact: High national ranking in a selective engineering exam.
 patterns:
-- Consistent scale orientation - achievements measured in millions (users, transactions,
-  dollars)
-- Strong competitive programming foundation translating to problem-solving in production
-  systems
-- End-to-end ownership pattern - from PoC to production, from design to scaling
-- Business impact quantification - cost savings, revenue enablement, SLA achievement
-- Zero-downtime execution on critical migrations indicating operational maturity
-- Team growth and mentorship alongside individual technical contributions
+- Repeated ownership of high-scale, mission-critical backend systems with clear business
+  impact.
+- Strong concentration of quantified outcomes (orders, revenue, users, uptime, competition
+  ranks).
+- Achievements combine technical architecture leadership with cross-functional execution
+  and operational reliability.
+- Recognition appears both as formal awards (academic/competitive) and internal leadership
+  trust expansion.
+data_availability: rich
+note: Achievement evidence is extensive and mostly self-reported within the intelligence
+  brief; formal third-party verification is limited in-document.

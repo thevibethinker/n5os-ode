@@ -1,0 +1,638 @@
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+Intel
+l
+i
+g
+ence
+Bri
+e
+f
+Addepar - Sr. Backend Software Engineer @ Addepar
+
+This role is for a Senior Backend Software Engineer at Addepar, a global FinTech company specializing in investment data
+aggregation and analysis tools for wealth managers. The position centers on developing scalable, serverless backend
+solutions to process machine learning-extracted data related to alternative investments. The engineer will work closely
+with product managers, data scientists, and cross-functional engineering teams to design, implement, and maintain
+robust backend services, ensuring high-quality software delivery in a hybrid work environment based primarily in Pune.
+The ideal candidate possesses deep expertise in Java or Python backend development, NoSQL databases, infrastructure
+as code (preferably Terraform), and AWS, combined with a solutions-oriented mindset and experience or interest in
+financial data systems.
+
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+1/76
+
+The Candidate
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+Archit
+
+architjenn@gmail.com
+Referred by: Careerspan Admin Auto-Submission (Silent
+Database Scan)
+Applied Feb 5, 2026
+75 Overall score
+
+Bottom line
+Strong senior backend hire with standout distributed
+systems and ML‑adjacent integration experience who can
+add immediate value to Addepar’s alternatives data
+workflows, with a manageable ramp on
+serverless/DynamoDB and investment‑domain specifics.
+Qualification: Well-aligned — Atypical Background
+Career trajectory: Industry Shift
+
+Background: 78/100
+Responsibilities: 74/100
+Uniqueness: 85/100
+
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+Hard skills: 58/100
+Soft skills: 97/100
+
+2/76
+
+Overall strengths
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+Proven senior-level backend engineer with strong architecture and delivery track record on mission‑critical,
+high‑throughput systems. Led greenfield checkout, orders, and payments platforms (100k+ daily orders, 5× BFCM
+spikes, ~$15M/day peaks) with robust consistency, idempotency, and resilience patterns; executed zero‑downtime
+migrations and created SOPs for peak events. Demonstrated ML integration by designing and operating an
+LLM/RAG‑based fraud review pipeline that aggregates multi‑source signals and routes concise reports for human action
+—directly relevant to ML‑extracted data ingestion and document‑style workflows. Hands-on experience across
+microservices, AWS/EKS/RDS, Terraform, Kafka‑like patterns, and Java/Spring Boot with additional Python/Go exposure,
+plus substantial NoSQL design and optimization (Scylla/Cassandra family). Consistent ownership, cross‑functional
+alignment (payments, inventory, ops), and team leadership/mentoring (grew and coached an 8‑engineer team) indicate
+immediate impact in a senior IC role.
+
+Overall weaknesses
+
+No explicit production experience with serverless primitives (Lambda, Step Functions, API Gateway) or
+DynamoDB/OpenSearch, which are central to this role’s stack; NoSQL experience is strong but not AWS‑native. Limited
+evidence of writing, debugging, and optimizing SQL beyond inferred use (RDS operations, schema redesigns) and
+minimal explicit CI/CD and documentation ownership narratives (beyond SOPs and migrations). Security/compliance
+exposure is adjacent via payments and fraud prevention but lacks direct ownership of frameworks such as PCI‑DSS,
+SOC2, or GDPR. Collaboration with ML engineers is implied through the LLM fraud pipeline, but formal, ongoing ML team
+integration practices (model monitoring, data contracts, validation) are not detailed; fintech domain depth is primarily in
+payments/e‑commerce rather than investment/alternatives data.
+
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+3/76
+
+Role Match Breakdown
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+Responsibilities
+
+Architect and maintain solutions Excellent Required: Advanced Importance: 10/10 Direct experience: 9/10
+Source: Story + profile
+Story support: 9/10 (direct)
+Resume support: 9/10 (direct)
+
+Collaborate with ML engineers Excellent Required: Advanced Importance: 9/10 Direct experience: 8/10 Source: Profile
+Story support: 4/10 (transferable)
+Resume support: 8/10 (direct)
+
+Lead project initiatives Excellent Required: Advanced Importance: 9/10 Direct experience: 8/10 Source: Story + profile
+Story support: 8/10 (direct)
+Resume support: 8/10 (direct)
+
+Define technical stack Excellent Required: Advanced Importance: 8/10 Transferrable experience: 8/10 Source: Story + profile
+Story support: 8/10 (direct)
+Resume support: 8/10 (transferable)
+
+Ensure Security Compliance Fair Required: Advanced Importance: 8/10 Transferrable experience: 5/10 Source: Profile
+No direct support
+
+Story support: 3/10 (transferable)
+Resume support: 5/10 (transferable)
+
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+4/76
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+Monitor System Performance Good Required: Advanced Importance: 8/10 Transferrable experience: 7/10
+Source: Story + profile
+Story support: 7/10 (direct)
+Resume support: 7/10 (transferable)
+
+Collaborate with product teams Good Required: Advanced Importance: 8/10 Transferrable experience: 7/10
+Source: Story + profile No direct support
+Story support: 6/10 (transferable)
+Resume support: 7/10 (transferable)
+
+Iterate new product offerings Excellent Required: Advanced Importance: 8/10 Direct experience: 9/10
+Source: Story + profile
+Story support: 5/10 (transferable)
+Resume support: 9/10 (direct)
+
+Document software functionality Good Required: Advanced Importance: 7/10 Transferrable experience: 6/10
+Source: Profile No direct support
+Story support: 4/10 (transferable)
+Resume support: 6/10 (transferable)
+
+Automate workflow with operations Excellent Required: Intermediate Importance: 6/10 Direct experience: 8/10
+Source: Story + profile
+Story support: 5/10 (transferable)
+Resume support: 8/10 (direct)
+
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+5/76
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+Mentor Junior Engineers Good Required: Advanced Importance: 6/10 Direct experience: 7/10 Source: Profile
+Story support: 0/10 (transferable)
+Resume support: 7/10 (direct)
+
+Promote engineering best practices Excellent Required: Advanced Importance: 6/10 Direct experience: 8/10
+Source: Story + profile
+Story support: 7/10 (direct)
+Resume support: 8/10 (direct)
+
+Soft Skills
+Problem Solving Excellent Required: Advanced Importance: 9/10 Direct experience: 9/10 Source: Story + profile
+Story support: 8/10 (direct)
+Resume support: 9/10 (direct)
+
+Teamwork Excellent Required: Advanced Importance: 8/10 Direct experience: 9/10 Source: Story + profile
+Story support: 9/10 (direct)
+Resume support: 8/10 (direct)
+
+Analytical Thinking Excellent Required: Advanced Importance: 8/10 Direct experience: 9/10 Source: Story + profile
+Story support: 9/10 (direct)
+Resume support: 9/10 (direct)
+
+Cross-functional Collaboration Excellent Required: Advanced Importance: 8/10 Direct experience: 8/10
+Source: Story + profile
+Story support: 8/10 (direct)
+Resume support: 8/10 (direct)
+
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+6/76
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+Ownership Mindset Excellent Required: Advanced Importance: 8/10 Direct experience: 9/10 Source: Story + profile
+Story support: 9/10 (direct)
+Resume support: 9/10 (direct)
+
+Technical Communication Good Required: Advanced Importance: 8/10 Direct experience: 7/10 Source: Story + profile
+Story support: 7/10 (direct)
+Resume support: 7/10 (direct)
+
+Innovation Excellent Required: Advanced Importance: 7/10 Direct experience: 9/10 Source: Story + profile
+Story support: 8/10 (direct)
+Resume support: 9/10 (direct)
+
+Continuous Learning Good Required: Advanced Importance: 7/10 Direct experience: 7/10 Source: Story + profile
+Story support: 7/10 (direct)
+Resume support: 7/10 (direct)
+
+Client Focus Excellent Required: Intermediate Importance: 6/10 Direct experience: 8/10 Source: Story + profile
+Story support: 8/10 (direct)
+Resume support: 8/10 (direct)
+
+Hard Skills
+Backend Development Excellent Required: Advanced Importance: 10/10 Direct experience: 9/10 Source: Story + profile
+Story support: 9/10 (direct)
+Resume support: 9/10 (direct)
+
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+7/76
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+Software Architecture Excellent Required: Expert Importance: 9/10 Direct experience: 8/10 Source: Story + profile
+Story support: 8/10 (direct)
+Resume support: 8/10 (direct)
+
+Python Programming Fair Required: Advanced Importance: 8/10 Transferrable experience: 5/10 Source: Profile
+No direct support
+
+Story support: 0/10 (transferable)
+Resume support: 5/10 (transferable)
+
+Java Programming Excellent Required: Advanced Importance: 8/10 Direct experience: 8/10 Source: Profile
+Story support: 0/10 (transferable)
+Resume support: 8/10 (direct)
+
+NoSQL Databases Good Required: Intermediate Importance: 7/10 Direct experience: 6/10 Source: Story
+Story support: 6/10 (direct)
+Resume support: 2/10 (transferable)
+
+Serverless Architecture Good Required: Advanced Importance: 7/10 Transferrable experience: 6/10 Source: Profile
+No direct support
+
+Story support: 2/10 (transferable)
+Resume support: 6/10 (transferable)
+
+Amazon Web Services (AWS) Good Required: Advanced Importance: 6/10 Direct experience: 7/10 Source: Profile
+Story support: 0/10 (transferable)
+Resume support: 7/10 (direct)
+
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+8/76
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+Technical Documentation Fair Required: Advanced Importance: 6/10 Transferrable experience: 5/10 Source: Profile
+No direct support
+
+Story support: 0/10 (transferable)
+Resume support: 5/10 (transferable)
+
+Continuous Integration/Continuous Deployment (CI/CD) Good Required: Advanced Importance: 6/10
+Transferrable experience: 6/10 Source: Profile No direct support
+Story support: 0/10 (transferable)
+Resume support: 6/10 (transferable)
+
+Workflow Automation Excellent Required: Expert Importance: 6/10 Direct experience: 9/10 Source: Story + profile
+Story support: 9/10 (direct)
+Resume support: 8/10 (direct)
+
+Machine Learning Integration Good Required: Advanced Importance: 6/10 Direct experience: 7/10 Source: Profile
+Story support: 0/10 (transferable)
+Resume support: 7/10 (direct)
+
+DynamoDB Fair Required: Intermediate Importance: 6/10 Lacking experience: 4/10
+Story support: 4/10 (transferable)
+Resume support: 4/10 (transferable)
+
+Infrastructure as Code (Terraform) Good Required: Intermediate Importance: 5/10 Direct experience: 6/10 Source: Profile
+Story support: 0/10 (transferable)
+Resume support: 6/10 (direct)
+
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+9/76
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+SQL Querying and Optimization Good Required: Intermediate Importance: 5/10 Transferrable experience: 6/10
+Source: Profile No direct support
+Story support: 4/10 (transferable)
+Resume support: 6/10 (transferable)
+
+OpenSearch / Elasticsearch Weak Required: Intermediate Importance: 4/10 Lacking experience: 3/10
+Story support: 0/10 (transferable)
+Resume support: 3/10 (transferable)
+
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+10/76
+
+Experience & Background
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+11/76
+
+Background summary
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+1. EDUCATIONAL BACKGROUND: The candidate has a Bachelor of Technology from IIIT Hyderabad (India), which is a
+strong and respected technical institution nationally but lacks the global brand recognition of top US universities (like
+Stanford, MIT, or Carnegie Mellon) often seen among top fintech and Silicon Valley firms. The degree is in Electronics
+and Communications, which is a rigorous and relevant technical field, albeit more hardware/electronics-oriented than
+software/CS per se, but this gap is minor at senior levels with strong experience.
+2. INDUSTRY EXPERIENCE: The candidate has experience at Quince (e-commerce/B2C scale) and Embibe (ed-tech),
+with deep exposure to large-scale backend and distributed systems. However, there is no direct fintech or financial
+services sector experience, and no direct involvement with portfolio management, investment data, or alternative
+investments, which are core to Addepar's market. Experience leading backend platforms, payments, fraud detection,
+and scaling for massive events overlaps well with needed skills but not as much with domain context.
+3. COMPANY TYPE/SIZE: Both Quince and Embibe are high-scale tech firms, but neither are large, mature enterprises or
+established fintechs. Quince in particular is a rapidly growing startup; Embibe is high-scale ed-tech. Both are good
+analogs for engineering rigor, but candidates from major fintechs (Bloomberg, Stripe, Plaid) or investment platforms
+(BlackRock, Morningstar) may be more familiar to hiring managers in this domain.
+4. GEOGRAPHY/MARKET: The candidate is India-based and has not worked for US-based companies until Quince;
+however, there is no explicit international/US work experience. Addepar is a US-based fintech primarily serving North
+American institutional/wealth clients, so a US fintech background could be favored.
+5. CAREER TRAJECTORY: Strong and logical progression—key contributor, team lead, system architect on challenging
+backend problems at scale, stepping up responsibility each time. Titles match (SDE-3, Product Engineer leading
+platform builds), showing readiness for a senior backend engineering role.
+6. CULTURAL/DOMAIN EXPERTISE: No explicit evidence of financial industry, alternative investments, or portfolio
+management exposure. Deep experience building distributed payment systems and data aggregation pipelines are
+tangentially related, but the lack of direct fintech or investment data-domain work limits domain alignment.
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+12/76
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+Overall: This background is strong for general distributed backend engineering, notably with payment and ecommerce/ed-tech scale, but less directly matched for a senior role at a fintech like Addepar focused on investment
+data/portfolio management. Not a “perfect mold” fintech/domain fit; strong technically, but minor gaps in sector and
+domain experience that hiring managers may flag.
+
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+13/76
+
+Candidate Stories
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+14/76
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+Designing and Leading a Resilient, Flexible Greenfield E-Commerce Checkout System
+SDE-3 (E-Commerce Platform/Checkout Systems) @ Quince
+
+As a Senior Developer (SDE-3) at Gwent in 2024, I played a pivotal role in leading the development of a Greenfield
+checkout and order workflow system that enabled the business to move off Shopify, a crucial initiative given our
+rapid growth and the significant costs associated with Shopify’s platform. My responsibilities centered around
+designing and building the order and payment workflows from the ground up, with a focus on ensuring system
+consistency, reliability, and scalability. I implemented architectural improvements such as separating highly
+consistent pre-order processes from eventually consistent post-order tasks, introducing workflow visibility and
+prioritization to improve latency and monitoring. This work required close collaboration with cross-functional teams
+—including engineering, product, QA, and inventory—to create new systems like soft inventory reservation and to
+achieve business alignment.
+The resulting system supported 100,000+ daily orders (peaking at 20 orders per second) primarily for US
+customers, achieved SLAs on par with Shopify, and proved its resilience during key events like Black Friday. Beyond
+technical delivery, this experience honed my systems thinking, reinforced the importance of customer-centric
+design, and deepened my proficiency in distributed, stateful system design, orchestration via message queues, and
+collaborative problem-solving. Ultimately, our work not only saved the company millions but also unlocked greater
+flexibility for feature development and improved overall business agility.
+STAR Analysis
+Situation: When I joined Gwent in February 2024 as a Senior Developer (SDE-3), the company was at a pivotal point. Despite
+generating $300 million in revenue, we were projecting an ambitious growth to $1 billion in that year – a 3x increase. However, our
+E-Commerce platform’s checkout system was still running on Shopify, which posed both financial and technical limitations.
+Continuing on Shopify would have cost the company millions in fees and restricted our ability to build new features and scale
+rapidly, making it imperative to build our own in-house checkout system from the ground up before Black Friday, our peak sales
+period.
+Task: The critical task our team faced was to architect and deliver a Greenfield checkout system, encompassing everything from
+adding items to cart, capturing payment, all the way through to order confirmation. I specifically owned the order workflows,
+payment workflow, as well as post-order activities such as sending emails and awarding loyalty points. A particular challenge was
+determining how to build robust, highly consistent order workflows while managing an expanding list of post-order tasks—
+ensuring system resilience and customer satisfaction at massive scale, handling up to 100,000 orders daily at peak volume.
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+15/76
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+Action: To address these challenges, I helped lead the design and implementation of a dual-phase workflow. First, the critical
+order process (inventory blocking, promo application, payment capture) was split from non-critical post-order tasks (emails,
+loyalty points), ensuring that the former maintained strict consistency. We introduced a concept of eventual consistency for postorder actions, improving latency without sacrificing reliability. To manage these tasks flexibly, I created an abstract post-order
+class with a priority mechanism, allowing high-priority tasks to run concurrently and lower-priority tasks to queue appropriately. I
+also worked cross-functionally, negotiating new processes with teams like inventory (introducing soft inventory reservations to
+minimize overselling) and ensuring data and operational contracts stayed in sync across the platform as we migrated off Shopify.
+Results: Within six months, our team of six core engineers, product, and QA delivered a production-ready system, incrementally
+ramping traffic before going fully live before Black Friday. The new checkout successfully supported 100,000 daily orders and
+processed up to 20 orders per second, with measured uptime at three nines (99.9%), matching Shopify’s SLA. Not only did the
+company save millions in Shopify fees, but we also gained the agility to roll out new features (like store credit and gifting) that
+previously weren’t possible. The system proved resilient even during external vendor outages (e.g., fallback to backup tax
+calculation if Applara was unavailable), ultimately earning satisfaction among customers, leadership, and internal stakeholders.
+Takeaways: This experience taught me the critical importance of systems thinking and customer focus in large-scale product
+engineering. I learned to look beyond isolated features and understand how changes ripple across an interconnected ecosystem –
+ensuring pricing integrity, operational correctness, and recovery mechanisms were in place. I developed deeper skills around
+consistency patterns, idempotency, distributed system design, and asynchronous workflow orchestration. I also experienced the
+value of sustained, open collaboration with cross-functional partners to deliver enterprise-scale outcomes. Ultimately, this project
+reinforced my commitment to engineering for both business impact and exceptional customer experiences.
+
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+16/76
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+Leading scalable schema redesign and migration to optimize timeline data processing
+Product Engineer @ Embibe
+
+In my role as a Product Engineer at Embibe, I was primarily responsible for designing and scaling the user timeline
+feature, which aggregated activities for over 10 million learners on our platform. Initially, our Spark-based
+aggregation jobs—backed by ScyllaDB and orchestrated with Airflow—worked well, but as our user base grew, I
+noticed significant performance issues, largely due to inefficiencies in how our database schema supported
+different access patterns. I led the troubleshooting, collaborating with infra engineers, and identified that using
+'allow filtering' in our queries was the root cause due to improper schema design. My solution was to separate our
+storage for user-centric and aggregation-centric queries, introducing new tables, dual writes, and a careful
+migration that avoided downtime and user impact.
+Throughout this project, I owned not just the implementation but also proposed and executed design changes,
+demonstrating system-level thinking, resourcefulness, and initiative—especially as I moved from a junior to a midlevel role. My decisions reduced tech debt and kept our infrastructure efficient, resulting in stable, scalable
+performance, as evidenced by our monitors never being triggered again post-fix. This experience was pivotal in
+changing my approach: I shifted from simply 'making it work' to deeply understanding design and scalability,
+questioning assumptions, and communicating more openly about technical choices. The project’s success brought
+me the recognition and autonomy to lead other important initiatives and solidified my confidence as a designer of
+scalable, robust systems.
+
+STAR Analysis
+Paragraph 1 (Situation): At Embibe, I worked as a Product Engineer on the user timeline system—an essential feature for our
+learning platform’s millions of users in India, with potential for global reach. The system aggregated all user activities—such as
+watching videos, practicing questions, and taking tests—at multiple granularities (hourly to yearly). Initially, we used a single
+ScyllaDB table to store these activities and Spark jobs, orchestrated by Airflow, to process aggregations. The system operated
+smoothly at first, but as user numbers rapidly increased—especially after onboarding entire state school boards—the demands on
+our infrastructure escalated significantly.
+Paragraph 2 (Task): The main challenge arose when our hourly aggregation Spark job began to consistently fail as the platform
+scaled, especially during the peak influx of new users. The issue was identified by monitoring tools like Grafana, which showed
+severe CPU spikes in the ScyllaDB cluster during those jobs. Our internal metrics flagged response times and aggregation
+completion durations approaching unacceptable thresholds, although user-facing SLAs were still maintained. The central task was
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+17/76
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+to diagnose and resolve these performance bottlenecks, ensuring our aggregation jobs ran reliably at scale without introducing
+unnecessary complexity, infrastructure changes, or downtime.
+Paragraph 3 (Action): I took ownership of investigating the problem, collaborating closely with infra engineers to distinguish
+whether the issue stemmed from Spark’s resource allocation or deeper database access problems. By analyzing our ScyllaDB
+usage, I discovered that our Spark aggregation query used the `allow filtering` keyword, which forced inefficient scans across all
+SSTables due to schema design that didn’t align with the analytics access pattern. As an immediate mitigation, I extended the
+compaction window from one to six hours, reducing the number of SSTables scanned and temporarily improving job performance.
+Recognizing this was only a partial fix, I then led a more structural solution: separating user-facing and aggregation-centric access
+patterns into distinct tables, architecting new schemas partitioned optimally for each case, implementing dual writes to both
+tables, and orchestrating safe backfills and migration—all with minimal downtime and user impact.
+Paragraph 4 (Results): These changes eliminated the need for inefficient queries altogether, dramatically stabilized system
+performance, and ensured hourly, daily, and larger aggregations could complete reliably as user load grew. After the fix, our
+internal monitors for job completion times no longer triggered, and long-running Spark jobs became a thing of the past. Due to my
+hands-on leadership and thoughtful tradeoffs (such as not introducing new infrastructure or tech debt), I gained greater
+recognition within the engineering team and from leadership, leading to opportunities like leading the proof-of-concept for a
+school lab feature with expanded autonomy and responsibility.
+Paragraph 5 (Takeaways): This experience was transformative for me. I moved from a “make it work” mindset—where I initially
+used `allow filtering` just to get queries running—to a deep focus on design correctness, scalability, and questioning root causes. I
+developed confidence in raising concerns, driving design changes, and rigorously planning migrations and dual writes to ensure
+data consistency and availability. I realized the importance of aligning schema with use cases, closely monitoring system health,
+and taking ownership beyond coding: collaborating, communicating, and pushing for durable technical solutions. These lessons
+continue to shape my engineering approach, making me more proactive, technically rigorous, and effective as both a contributor
+and a technical leader.
+
+Tools
+
+Stripe PayPal Clutch Slack Java Kotlin C++ Go Python Spring Boot Gin AWS Kubernetes
+Kafka Terraform
+
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+18/76
+
+Work experience
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+SDE-3 (E-Commerce Platform/Checkout Systems), Quince
+Jan 2024 - May 2025
+
+During my time here, I was part of the core team leading the development of a Greenfield off-Shopify checkout and order
+workflow system, a mission-critical initiative that enabled the business to move off Shopify, save millions in costs, and
+support our rapid growth and scaling needs. I led both the design and build out of the Orders and Payments Platforms,
+architecting the end-to-end workflows with high system consistency, reliability, and scalability—including architectural
+improvements like decoupling pre-order and post-order processes, introducing workflow visibility, and soft inventory
+reservation. My work spanned integration of major payment instruments (Stripe, PayPal), secure transaction processing,
+and robust distributed system orchestration, while ensuring SLAs and system resilience that matched Shopify, even
+under the pressures of key events such as Black Friday. Beyond engineering delivery, I collaborated cross-functionally to
+drive business alignment and customer-centric design, created automation for fraud review using LLMs, built an
+extensible post-order workflow framework, scaled for major sales events, and delivered a flexible, integrated gift card
+service. This experience deepened my expertise in distributed, stateful systems and reinforced the business and user
+impact of well-designed platform infrastructure.
+Product Engineer, Embibe
+May 2020 - Jan 2024
+
+During my time there, I founded the Assignment platform, taking it from an initial proof of concept to a robust, full-scale
+product, while leading and mentoring a team of eight engineers through every stage. I also developed the Template
+Service that enabled educators to easily create custom templates for generating personalized tests at scale.
+Additionally, I created a user timeline system that tracked engagement for over 10 million learners, and engineered data
+aggregation processes to transform large volumes of activity data into actionable insights. Notably, I led a critical
+redesign of the user timeline’s backend architecture to overcome scaling bottlenecks, collaborating across teams to
+overhaul database schemas and implement a smooth migration with zero downtime—an effort that significantly
+improved system reliability and earned me increased recognition and autonomy as a technical leader.
+
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+19/76
+
+Education
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+Bachelor of Technology, IIIT Hyderabad
+Jul 2016 - Mar 2020
+
+Electronics and Communications
+
+Hard skills
+
+System design Integration with payment gateways Fraud detection system design Scaling distributed systems
+Service integration Task scheduling Workflow management Product development Data aggregation
+Backend redesign and migration Microservices architecture Payment processing API integrations
+LLM and RAG-based solutions Secure transaction processing Workflow orchestration Customer-centric design
+Post-order workflow design Automation for fraud review Cross-functional collaboration Infrastructure upgrades
+Cache optimization Procedure development (SOPs) Database schema migration
+
+Soft skills
+
+Team leadership Mentorship Ownership Project leadership Collaboration Business alignment Analytical skills
+Communication skills
+
+Awards & honors
+NTSE scholar 2012
+
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+20/76
+
+Achievements
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+Founded and scaled the Assignment platform at Embibe
+Built Template Service for custom test creation
+Developed user timeline system for 10M+ learners
+Engineered data aggregation processes for actionable insights
+Redesigned backend architecture for scalability and reliability
+Mentored and led a team of 8 engineers
+Earned recognition and autonomy as a technical leader
+Core team member for Greenfield off-Shopify checkout at Quince
+Led design and development of Orders and Payments Platforms
+Architected end-to-end order and payment workflows
+Integrated major payment instruments (Stripe, PayPal, gift cards, BNPL, store credit)
+Handled millions of dollars in daily transaction volume
+Supported 100k+ daily orders and 5× traffic spikes
+Designed LLM-powered fraud review pipeline
+Created extensible Post-Order Workflow framework
+Delivered Gift Card Service with Clutch integration
+Drove scaling for Black Friday ($15M daily revenue, 5× spike)
+Created SOPs for major peak events
+Google Kickstart: 194th place in Round F 2019
+Google Kickstart: 462nd place in Round E 2019
+ACM-ICPC: 856th team rank in 2019 online round among 4,400 teams
+JEE Main: Top 0.3% among 1.3 million in 2016
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+21/76
+
+2/5/26, 10:51 AM
+
+JEE Advanced: Top 3% among 200k in 2016
+
+Careerspan Employers
+
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+22/76
+
+Full Role Match Detail
+
+2/5/26, 10:51 AM
+
+Careerspan Employers

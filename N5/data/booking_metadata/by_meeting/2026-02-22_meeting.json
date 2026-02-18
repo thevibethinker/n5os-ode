@@ -1,0 +1,30 @@
+{
+  "meeting_id": "2026-02-22_meeting",
+  "title": "   ",
+  "start": "2026-02-22T10:00:00-05:00",
+  "end": "2026-02-22T10:30:00-05:00",
+  "timezone": "America/New_York",
+  "attendees": [],
+  "metadata": {
+    "meeting_intent": "other",
+    "strategic_importance": "medium",
+    "expected_outputs": [
+      "clarity on next step"
+    ],
+    "relationship_goal": "other",
+    "promotion_bias": "promote-if-novel",
+    "parser_version": "1.0.0",
+    "raw_booking_message": "hello",
+    "parsed_at_utc": "2026-02-16T20:27:00.335514+00:00"
+  },
+  "calendar": {
+    "calendar_event_id": null,
+    "title": "   ",
+    "start": "2026-02-22T10:00:00-05:00",
+    "end": "2026-02-22T10:30:00-05:00",
+    "timezone": "America/New_York",
+    "attendees": [],
+    "description": "BOOKING_METADATA\nmeeting_id: 2026-02-22_meeting\nintent: other\nstrategic_importance: medium\npromotion_bias: promote-if-novel\nmetadata_ref: /home/workspace/N5/data/booking_metadata/by_meeting/2026-02-22_meeting.json\n"
+  },
+  "stored_at_utc": "2026-02-16T20:27:00.335739+00:00"
+}

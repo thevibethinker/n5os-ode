@@ -1,0 +1,114 @@
+{
+  "schema_version": 3,
+  "slug": "n5os-bootstrap",
+  "title": "N5OS Bootstrap Skill - Distributable Operating System Substrate",
+  "build_type": "code_build",
+  "status": "complete",
+  "model": "anthropic:claude-sonnet-4-20250514",
+  "launch_mode": "orchestrated",
+  "delegate_only": false,
+  "first_wins": false,
+  "hypothesis_group": [],
+  "broadcasts": [],
+  "task_pool": {
+    "enabled": false,
+    "tasks": [],
+    "max_concurrent_claims": 4,
+    "worker_drops": []
+  },
+  "waves": {
+    "W1": [
+      "D1"
+    ],
+    "W2": [
+      "D2",
+      "D3"
+    ],
+    "W3": [
+      "D4",
+      "D5"
+    ]
+  },
+  "active_wave": "W3",
+  "drops": {
+    "D1": {
+      "name": "Payload Curation",
+      "stream": 1,
+      "order": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "brief_file": "drops/D1-payload-curation.md",
+      "started_at": "2026-02-13T04:08:34.089077+00:00",
+      "conversation_id": "pulse_n5os-bootstrap_D1_1770955442",
+      "completed_at": "2026-02-13T04:10:08.710992+00:00"
+    },
+    "D2": {
+      "name": "Bootloader Core",
+      "stream": 1,
+      "order": 1,
+      "depends_on": [
+        "D1"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "brief_file": "drops/D2-bootloader-core.md",
+      "started_at": "2026-02-13T04:14:06.852952+00:00",
+      "conversation_id": "pulse_n5os-bootstrap_D2_1770955808",
+      "completed_at": "2026-02-13T04:30:00+00:00"
+    },
+    "D3": {
+      "name": "Personalization Engine",
+      "stream": 2,
+      "order": 1,
+      "depends_on": [
+        "D1"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "brief_file": "drops/D3-personalization.md",
+      "completed_at": "2026-02-13T04:30:00+00:00"
+    },
+    "D4": {
+      "name": "Update Mechanism",
+      "stream": 1,
+      "order": 1,
+      "depends_on": [
+        "D2",
+        "D3"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "brief_file": "drops/D4-update-mechanism.md",
+      "completed_at": "2026-02-13T04:50:27.440080+00:00"
+    },
+    "D5": {
+      "name": "Documentation & Integration",
+      "stream": 2,
+      "order": 1,
+      "depends_on": [
+        "D2",
+        "D3"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "brief_file": "drops/D5-documentation.md",
+      "completed_at": "2026-02-13T04:50:27.440080+00:00"
+    }
+  },
+  "lineage": {
+    "parent_type": "conversation",
+    "parent_ref": "con_yHQOT2aDTp1VO81V",
+    "parent_conversation": "con_yHQOT2aDTp1VO81V",
+    "moment": "V requested n5os-bootstrap build for distributing N5OS to zoputer and others",
+    "branched_at": "2026-02-13T03:55:00Z"
+  },
+  "started_at": "2026-02-13T04:01:54.413026+00:00",
+  "last_progress_at": "2026-02-13T04:50:27.440080+00:00",
+  "completed_at": "2026-02-13T04:50:27.440080+00:00"
+}

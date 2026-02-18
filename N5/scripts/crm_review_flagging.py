@@ -21,7 +21,7 @@ import logging
 logging.basicConfig(level=logging.INFO, format='%(asctime)sZ %(levelname)s %(message)s')
 logger = logging.getLogger(__name__)
 
-CRM_DB = Path("/home/workspace/N5/data/crm_v3.db")
+CRM_DB = Path("/home/workspace/N5/data/n5_core.db")
 CRM_PROFILES = Path("/home/workspace/N5/crm_v3/profiles")
 
 def get_profiles_missing_email():

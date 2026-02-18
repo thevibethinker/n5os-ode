@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "The individual referenced in the knowledge system"}, {"name": "DD_Adam_Alpert_Pangea.md", "type": "TOOL", "context": "File associated with the work or system of V"}, {"name": "aviato_dd_adam_alpert.py", "type": "TOOL", "context": "File associated with the work or system of V"}], "relationships": []}

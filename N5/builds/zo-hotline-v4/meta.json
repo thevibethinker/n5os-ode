@@ -1,0 +1,79 @@
+{
+  "schema_version": "1.0",
+  "slug": "zo-hotline-v4",
+  "title": "Zo Hotline V4 \u2014 Prime Time",
+  "objective": "Take Zo Hotline from working prototype to prime time: faster, cheaper, smarter, better-informed, self-improving",
+  "created": "2026-02-17",
+  "status": "complete",
+  "completed_at": "2026-02-18",
+  "type": "interactive",
+  "orchestrator_convo_id": "con_D22Ewo8OGuQrMBrx",
+  "spawn_mode": "manual",
+  "workers": {
+    "total": 6,
+    "complete": 6,
+    "pending": 0
+  },
+  "drops": [
+    {
+      "id": "D0",
+      "slug": "zozie-architecture-migration",
+      "title": "Zozie Dashboard \u2192 Code-Controlled Migration",
+      "status": "complete",
+      "wave": 0,
+      "spawn_mode": "manual",
+      "notes": "Migrated Zozie from VAPI assistantId to serverUrl. Both hotlines now use identical architecture."
+    },
+    {
+      "id": "D1",
+      "slug": "ws1-infrastructure",
+      "title": "Webhook Infrastructure Upgrades",
+      "status": "complete",
+      "wave": 1,
+      "spawn_mode": "manual",
+      "notes": "Delivered: caller profiles (phone-hash), knowledge index (93 entries), call spotlights, tool usage logging, prompt trim (53% reduction). Commit abe770a9f."
+    },
+    {
+      "id": "D2",
+      "slug": "ws2-model",
+      "title": "Model Cost Optimization",
+      "status": "complete",
+      "wave": 2,
+      "spawn_mode": "manual",
+      "notes": "Recommendation: Stay with Claude Haiku 4.5. Tone quality (25% weight) and tool calling reliability (20%) outweigh 30-85% model savings from cheaper alternatives. Real savings only ~$0.05/min on $0.18/min total. GPT-4o-mini documented as contingency if cost becomes critical. Voice provider swap (ElevenLabs → Cartesia) is a better cost lever."
+    },
+    {
+      "id": "D3",
+      "slug": "ws3-research",
+      "title": "Use Case Research + Competitive Landscape",
+      "status": "complete",
+      "wave": 1,
+      "spawn_mode": "manual",
+      "notes": "Delivered: 12 real community use cases, 6-competitor landscape table, messaging cheat sheet with concession-pivot framework, idealism/open-source talking points, gap analysis with 6 remaining gaps. 5 new knowledge files need concept mapping + index regen in D4."
+    },
+    {
+      "id": "D4",
+      "slug": "ws5-conversation",
+      "title": "Conversation Design v3 \u2014 Capstone",
+      "status": "complete",
+      "wave": 3,
+      "spawn_mode": "manual",
+      "dependencies": [
+        "D1",
+        "D2",
+        "D3",
+        "D5"
+      ],
+      "notes": "Capstone complete. System prompt v4.0 (2,231 words). 3 pathways (Explorer/Builder/Comparison) with Socratic sequences. 3 new modes (Troubleshoot/Compare/Onboard). Master Pattern, anti-pattern blockers, emotional detection, technical calibration, competitive framework. Knowledge index regenerated to 98 entries. Daily analysis enhanced with messaging effectiveness tracking. Service restarted and verified with live test call."
+    },
+    {
+      "id": "D5",
+      "slug": "ws4-zo-docs",
+      "title": "Zo Documentation Ingestion",
+      "status": "complete",
+      "wave": 1,
+      "spawn_mode": "manual",
+      "notes": "Delivered: 41 platform docs, 5 skills registry docs, 6 conversational playbook files, ~280 concept mappings, freshness agent."
+    }
+  ]
+}

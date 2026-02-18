@@ -1,73 +1,140 @@
+# Experience
+# Extracted: 2026-02-14T17:45:53.369666
+# Method: Structured extraction
+# DO NOT EDIT
+
 positions:
-  - company: "KEYSIGHT"
-    title: "Senior Machine Learning Engineer (R&D)"
-    duration: "Dec 2024 - Present"
-    type: "founding"
-    scope: "End-to-end architecture and development of Machine Learning SaaS platform, leading team scaling from inception to nearly 20 members"
-    achievements:
-      - metric: "5x budget increase"
-        context: "Secured budget expansion by proving platform value in production"
-      - metric: "Hundreds of daily users"
-        context: "Extended platform use to external industry leaders including Apple, Samsung Semiconductor, and Volkswagen"
-      - metric: "Reduced model-to-production from hours to minutes"
-        context: "Built automated MLOps stack with Kubernetes, MLFlow, and dynamic AWS resource provisioning"
-    technologies:
-      - "AWS"
-      - "Kubernetes"
-      - "MLFlow"
-      - "FastAPI"
-      - "Airflow"
-      - "LangChain"
-      - "RAG techniques"
-      - "Python"
-
-  - company: "AMERICAN EXPRESS"
-    title: "Software Engineer (Full Stack)"
-    duration: "Jul 2021 - Nov 2024"
-    type: "fulltime"
-    scope: "Solo product leader and full-stack engineer, leading end-to-end design and implementation of automated cloud/database portal"
-    achievements:
-      - metric: "$50,000/month cost savings"
-        context: "Delivered self-service portal that optimized database usage for thousands of engineers across 150+ global services"
-      - metric: "Zero downtime"
-        context: "Ensured regulatory compliance while maintaining high availability"
-      - metric: "150+ global services"
-        context: "Scaled solution across enterprise with automated decommissioning pipeline"
-    technologies:
-      - "Python"
-      - "Couchbase"
-      - "Java"
-      - "Spring Boot"
-      - "ReactJS"
-      - "DevOps"
-      - "SRE"
-
-  - company: "AMERICAN EXPRESS"
-    title: "Software Engineer Intern"
-    duration: "Apr 2020 - May 2020"
-    type: "contract"
-    scope: "Developed ML model for Agile tools story prioritization"
-    achievements:
-      - metric: "35% improvement"
-        context: "Boosted developer productivity in new feature and ticket delivery for Rally and Jira"
-      - metric: "Top-5 position"
-        context: "Secured top-5 finish out of 100+ participants in India Innovation Hackathon"
-    technologies:
-      - "Machine Learning"
-      - "Rally"
-      - "Jira"
-
-  - company: "FLIPKART"
-    title: "Data Science Intern"
-    duration: "Apr 2019 - May 2019"
-    type: "contract"
-    scope: "Research using scalable anomaly detection tools for fraud analysis"
-    achievements:
-      - metric: "20,000+ cohorts analyzed"
-        context: "Identified potential attack vectors for marketplace abuse detection"
-      - metric: "Early fraud detection"
-        context: "Enabled early detection of suspicious activities in user-requested return orders"
-    technologies:
-      - "M-Zoom"
-      - "M-Biz"
-      - "Anomaly detection"
+- company: Keysight
+  title: Senior Machine Learning Engineer (R&D)
+  duration: Dec 2024 - Present
+  type: fulltime
+  summary: Architected and led end-to-end development of a Machine Learning SaaS platform
+    from the ground up as one of the founding engineers, spanning microservices, UI,
+    DevOps, and full-stack integration.
+  key_accomplishments:
+  - text: Architected advanced Dataset Storage layer with versioning and transformations
+    quantified: false
+    impact: Enabled dynamic AWS resource provisioning and rapid model deployment
+  - text: Scaled team from inception to nearly 20 members and secured 5x budget increase
+    quantified: true
+    impact: Platform budget grew 5x based on proven production value
+  - text: Extended platform use to hundreds of daily users including Apple, Samsung
+      Semiconductor, and Volkswagen
+    quantified: true
+    impact: Global adoption by external industry leaders
+  - text: Reduced model-to-production cycle time from hours to minutes using Kubernetes
+      and MLFlow
+    quantified: true
+    impact: Dramatically accelerated researcher workflows and time-to-value
+  - text: Developed containerized microservices (FastAPI) for high availability and
+      low latency inference
+    quantified: false
+    impact: Improved system scalability and stability
+  - text: Built robust data ingestion and feature engineering pipelines at terabyte
+      scale
+    quantified: true
+    impact: Enabled large-scale ML experiments and training
+  - text: Implemented AI agents using LangChain and RAG techniques for specialized
+      use cases and multi-step problems
+    quantified: false
+    impact: Extended platform capabilities with LLM-powered workflows
+  - text: Implemented automated MLOps/model storage stack enabling dynamic AWS resource
+      provisioning
+    quantified: false
+    impact: Automated hyperparameter tuning, metrics tracking, and model deployment
+  technologies:
+  - AWS
+  - Kubernetes
+  - MLFlow
+  - FastAPI
+  - Python
+  - LangChain
+  - RAG
+  - Airflow
+  - CI/CD
+  - Docker
+  team_context: led team of ~20 (scaled from founding team of ~4)
+- company: American Express
+  title: Software Engineer (Full Stack)
+  duration: Jul 2021 - Nov 2024
+  type: fulltime
+  summary: Solo product leader and full-stack engineer who designed and implemented
+    an automated portal optimizing database usage and eliminating cloud waste across
+    thousands of engineers and 150+ global services.
+  key_accomplishments:
+  - text: Built self-service Database Catalog Portal used by 1k+ colleagues and facilitating
+      125+ journeys
+    quantified: true
+    impact: Reduced provisioning time and deployment errors
+  - text: Drove $50,000/month cost savings via automated decommissioning of underutilized
+      databases
+    quantified: true
+    impact: Significant recurring cost reduction at enterprise scale
+  - text: Eliminated 100% of dev environment artifact engagement requests
+    quantified: true
+    impact: Removed manual overhead entirely
+  - text: Built Database Automation Framework reducing manual intervention by 95%
+      supporting 70k+ daily jobs
+    quantified: true
+    impact: Enhanced reliability and scalability for critical infrastructure
+  - text: Ensured zero downtime and regulatory compliance across 150+ global services
+    quantified: true
+    impact: Maintained service reliability while meeting data residency and compliance
+      requirements
+  - text: Managed sprint planning, Scrum processes, and strategic DevOps/SRE initiatives
+    quantified: false
+    impact: Represented India Database Workstream
+  - text: Mentored 4 SDE Interns, guiding them in projects and career starts
+    quantified: true
+    impact: Developed junior talent pipeline
+  technologies:
+  - Java
+  - Spring Boot
+  - ReactJS
+  - Python
+  - Couchbase
+  - CI/CD
+  - DevOps
+  - SRE
+  - Jira
+  team_context: solo product leader (with intern mentorship)
+- company: American Express
+  title: Software Engineer Intern
+  duration: Apr 2020 - May 2020
+  type: contract
+  summary: Developed a machine learning model to prioritize and recommend user stories
+    for Agile tools, boosting developer productivity and earning recognition in the
+    India Innovation Hackathon.
+  key_accomplishments:
+  - text: Built ML model for user story prioritization achieving 35% improvement in
+      new feature and ticket delivery
+    quantified: true
+    impact: Significantly reduced time spent gathering resources and boosted developer
+      productivity
+  - text: Secured top-5 finish out of 100+ participants in India Innovation Hackathon
+    quantified: true
+    impact: Recognition for innovation quality
+  technologies:
+  - Rally
+  - Jira
+  - Machine Learning
+  team_context: small team
+- company: Flipkart
+  title: Data Science Intern
+  duration: Apr 2019 - May 2019
+  type: contract
+  summary: Conducted research using scalable anomaly detection tools to analyze 20,000+
+    cohorts, identifying potential attack vectors for fraud and marketplace abuse
+    detection.
+  key_accomplishments:
+  - text: Analyzed over 20,000 cohorts using scalable anomaly detection tools (M-Zoom,
+      M-Biz)
+    quantified: true
+    impact: Enabled early detection of suspicious activities related to fraud and
+      marketplace abuse for return orders
+  technologies:
+  - M-Zoom
+  - M-Biz
+  - Data Science
+  - Anomaly Detection
+  team_context: small team

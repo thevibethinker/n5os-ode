@@ -1,0 +1,112 @@
+{
+  "schema_version": "3",
+  "slug": "fohe-newsletter-q1-2026",
+  "title": "FOHE NYC Q1 2026 Newsletter",
+  "objective": "Create a warm-but-polished HTML email newsletter for the Future of Higher Education NYC community",
+  "created": "2026-02-12",
+  "status": "active",
+  "completed_at": null,
+  "type": "content",
+  "orchestrator_convo_id": "con_ovCUjlzBxm8TzCGZ",
+  "model": "anthropic:claude-sonnet-4-20250514",
+  "launch_mode": "orchestrated",
+  "delegate_only": false,
+  "first_wins": false,
+  "hypothesis_group": [],
+  "broadcasts": [],
+  "task_pool": {
+    "enabled": false
+  },
+  "waves": {
+    "W1": [
+      "D1",
+      "D2",
+      "D3",
+      "D4"
+    ],
+    "W2": [
+      "D5"
+    ]
+  },
+  "active_wave": "W2",
+  "drops": {
+    "D1": {
+      "name": "Survey Synthesis",
+      "stream": 1,
+      "order": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "persona": "Writer",
+      "status": "complete",
+      "brief_path": "D1-survey-synthesis.md",
+      "started_at": "2026-02-12T15:29:36.263549+00:00",
+      "conversation_id": "pulse_fohe-newsletter-q1-2026_D1_1770910015",
+      "completed_at": "2026-02-12T15:39:26.457133+00:00"
+    },
+    "D2": {
+      "name": "Slack Highlights",
+      "stream": 2,
+      "order": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "persona": "Writer",
+      "status": "failed",
+      "brief_path": "D2-slack-highlights.md",
+      "failure_reason": "Spawn error: ",
+      "failed_at": "2026-02-12T15:34:36.290756+00:00"
+    },
+    "D3": {
+      "name": "Email Template",
+      "stream": 3,
+      "order": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "persona": "Builder",
+      "status": "complete",
+      "brief_path": "D3-email-template.md",
+      "started_at": "2026-02-12T15:36:17.092247+00:00",
+      "conversation_id": "pulse_fohe-newsletter-q1-2026_D3_1770910476",
+      "completed_at": "2026-02-12T15:39:26.462472+00:00"
+    },
+    "D4": {
+      "name": "Content Assembly",
+      "stream": 4,
+      "order": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "persona": "Writer",
+      "status": "complete",
+      "brief_path": "D4-content-assembly.md",
+      "started_at": "2026-02-12T15:38:09.070666+00:00",
+      "conversation_id": "pulse_fohe-newsletter-q1-2026_D4_1770910577",
+      "completed_at": "2026-02-12T15:39:26.464042+00:00"
+    },
+    "D5": {
+      "name": "Final Integration",
+      "stream": 1,
+      "order": 1,
+      "depends_on": [
+        "D3",
+        "D4"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "persona": "Builder",
+      "status": "running",
+      "brief_path": "D5-final-integration.md",
+      "started_at": "2026-02-12T15:42:19.037054+00:00",
+      "conversation_id": "pulse_fohe-newsletter-q1-2026_D5_1770910766"
+    }
+  },
+  "recovery": {
+    "max_auto_retries": 2,
+    "dead_threshold_seconds": 900,
+    "stale_threshold_hours": 4,
+    "enable_ai_judgment": true
+  },
+  "last_progress_at": "2026-02-12T15:42:19.039345+00:00"
+}

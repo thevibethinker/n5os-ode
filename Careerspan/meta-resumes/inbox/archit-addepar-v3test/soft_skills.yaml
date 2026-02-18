@@ -1,0 +1,78 @@
+# Soft Skills
+# Extracted: 2026-02-15T02:16:54.261822
+# Method: Structured extraction
+# DO NOT EDIT
+
+demonstrated_strengths:
+- trait: Ownership Mindset
+  evidence: Founded Assignment platform from PoC to full product at Embibe; owned
+    end-to-end Order and Payments platforms at Quince including design, build, scaling,
+    and SOPs for Black Friday peaks ($15M/day revenue)
+  confidence: high
+- trait: Problem Solving
+  evidence: Diagnosed ScyllaDB scaling bottleneck caused by 'allow filtering' queries,
+    implemented dual-table schema redesign with zero-downtime migration for 10M+ learner
+    timeline system
+  confidence: high
+- trait: Cross-functional Collaboration
+  evidence: Negotiated soft inventory reservation process with inventory team during
+    Shopify migration; coordinated across engineering, product, QA, and ops to deliver
+    greenfield checkout supporting 100k+ daily orders
+  confidence: high
+- trait: Analytical Thinking
+  evidence: Separated pre-order (strongly consistent) from post-order (eventually
+    consistent) workflows to optimize latency without sacrificing reliability; designed
+    priority-based concurrent task processing framework
+  confidence: high
+- trait: Teamwork
+  evidence: Worked within cross-functional team of engineers, product managers, QA,
+    and inventory/logistics stakeholders to deliver greenfield checkout under Black
+    Friday deadline pressure
+  confidence: high
+- trait: Innovation
+  evidence: Built LLM/RAG-powered fraud review pipeline that aggregates multi-source
+    signals and routes concise investigation reports to Slack for human action — novel
+    application of emerging tech to operational workflow
+  confidence: high
+- trait: Technical Communication
+  evidence: Created SOPs for peak events; designed fraud review summaries delivered
+    to Slack for non-technical reviewers; led cross-team schema migration requiring
+    clear coordination artifacts
+  confidence: medium
+- trait: Client Focus
+  evidence: Built Template Service enabling educators to create custom tests at scale;
+    designed checkout system explicitly for customer-centric design and SLA parity
+    with Shopify
+  confidence: medium
+working_style:
+  autonomy: high
+  collaboration: sync-preferred
+  communication: unknown
+  ambiguity_tolerance: high
+leadership_signals:
+- Grew and mentored an 8-engineer team end-to-end at Embibe
+- Founded Assignment platform from initial PoC — took initiative without being directed
+- Led greenfield checkout initiative that was mission-critical for company's Shopify
+  exit
+- Created SOPs and operational playbooks for peak events — institutionalizing knowledge
+- Earned increased recognition and autonomy as technical leader after timeline redesign
+  success
+- Shifted from 'make it work' mindset to design-correctness and scalability focus
+  — self-directed growth
+potential_concerns:
+- Stories focus heavily on technical ownership; limited evidence of navigating organizational
+  politics or stakeholder disagreement
+- Communication style evidence is mostly indirect (SOPs, Slack summaries) — unclear
+  how he performs in formal presentations or design reviews with senior leadership
+- No fintech domain experience — may need ramp time to internalize investment/alternatives
+  data vocabulary and regulatory context
+- Collaboration with ML engineers is implied through fraud pipeline but no evidence
+  of sustained, iterative ML team partnership (model monitoring, data contracts)
+unknown_factors:
+- Written vs verbal communication preference — no evidence either way
+- How he handles conflict or pushback from peers/leadership
+- Remote/hybrid work effectiveness — no evidence of distributed team collaboration
+- Comfort level with ambiguous product requirements vs well-defined technical problems
+- Response to failure or production incidents — no incident response narratives provided
+- Pace preference — whether he optimizes for speed-to-ship or thoroughness
+- How he handles context-switching between multiple concurrent projects

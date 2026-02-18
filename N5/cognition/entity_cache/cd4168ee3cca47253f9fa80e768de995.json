@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "the maintainer of the archive"}, {"name": "n5os-core", "type": "ORG", "context": "GitHub repository to be updated"}], "relationships": [{"from": "V", "to": "n5os-core", "type": "USES", "context": "V plans to update the GitHub repo on next push"}]}

@@ -1,0 +1,16 @@
+{
+  "drop_id": "D1.1",
+  "status": "complete",
+  "summary": "Rewrote zo-101-briefing.md in V-voice (third-person, investor-focused, conversational). Structured: Who V Is → What Zo Is → Why It Matters → What V Built → FAQ (10 questions) → Next Steps. Injected 4 voice primitives (isn't X/it's Y, gap between great and good enough, 10x richer, hotel vs house analogy). Created voice-primitives-reference.md documenting injection points and usage guidance. Word count ~1,500 (well under 3K limit). No marketing speak, no hedge words, sensitive questions redirect to booking a call.",
+  "artifacts": [
+    "Skills/vapi/assets/zo-101-briefing.md",
+    "Skills/vapi/assets/voice-primitives-reference.md"
+  ],
+  "learnings": [
+    "The 'isn't X... it's Y' syntactic pattern is the strongest spoken-cadence primitive for Frank — it creates natural contrast without sounding scripted",
+    "FAQ answers for sensitive data (user count, funding, roadmap) should always redirect to booking a call — builds trust and creates conversion funnel",
+    "Voice primitives should be capped at 3-4 per briefing version; more than that sounds over-styled",
+    "Briefing reads best when each section has one core idea and no section exceeds 4 short paragraphs"
+  ],
+  "errors": []
+}

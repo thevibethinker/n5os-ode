@@ -1,12 +1,30 @@
-name: "Hardik Khichi"
-current_title: "Senior Machine Learning Engineer (R&D)"
-current_company: "KEYSIGHT"
-years_experience: 4.5
-location: "India"
+# Profile
+# Extracted: 2026-02-14T17:45:53.368590
+# Method: Structured extraction
+# DO NOT EDIT
+
+name: Hardik Khichi
+current_title: Senior Machine Learning Engineer (R&D)
+current_company: Keysight
+years_experience: 5
 education:
-  - institution: "IIT Delhi"
-    degree: "B.Tech. & M.Tech. (Dual Degree)"
-    field: "Computer Science"
-    year: "2021"
-    notable: "99.97 Percentile in IIT-JEE 2016 (Rank 47 in 14 million candidates)"
-linkedin: "https://www.linkedin.com/in/hardik-khichi"
+- institution: IIT Delhi
+  degree: B.Tech. & M.Tech. (Dual Degree)
+  field: Computer Science
+  years: May 2016 - Apr 2021
+  honors: 99.97 Percentile in IIT-JEE 2016 (Rank 47 in 14 million candidates), 99.84
+    Percentile in KVPY Scholarship 2015, NTSE Scholar 2014
+- institution: Google
+  degree: Associate Cloud Engineer
+  field: Google Cloud Platform (GCP)
+  years: Jan 2023
+  honors: null
+location: India
+linkedin: https://www.linkedin.com/in/hardik-khichi
+notable_credentials:
+- Associate Cloud Engineer - Google Cloud Platform (GCP)
+- 99.97 Percentile in IIT-JEE 2016 (Rank 47 in 14 million candidates)
+- NTSE Scholar 2014
+- KVPY Scholar 2015
+- GrowthHack 2021 - 3rd position
+- Top-5 in India Innovation Hackathon (100+ participants)

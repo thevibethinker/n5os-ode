@@ -1,0 +1,1 @@
+{"entities": [{"name": "N5", "type": "ORG", "context": "The organization associated with the scripts and schemas"}, {"name": "crm_schema.sql", "type": "TOOL", "context": "Database schema used in the CRM system"}, {"name": "crm_migrate_profiles.py", "type": "TOOL", "context": "Migration tool for profiles in the CRM system"}], "relationships": []}

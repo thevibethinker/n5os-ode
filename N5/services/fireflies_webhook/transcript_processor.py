@@ -10,6 +10,7 @@ from datetime import datetime, timedelta
 import re
 import shutil
 import os
+import subprocess
 
 import sys
 sys.path.insert(0, str(Path(__file__).parent.parent))
@@ -98,11 +99,30 @@ class TranscriptProcessor:
         self.fireflies_client = fireflies_client or FirefliesClient()
         self.webhook_processor = webhook_processor or WebhookProcessor()
         self.intake_engine = IntakeEngine()
+        self.last_error: Optional[str] = None
         self.inbox_path = inbox_path
         self.meetings_root = meetings_root
         
         if not self.inbox_path.exists():
             logger.warning(f"Inbox path does not exist: {self.inbox_path}")
+
+    def _trigger_auto_process(self, meeting_folder_name: str) -> None:
+        """Trigger shared meeting pipeline for a specific deposited meeting."""
+        if not meeting_folder_name:
+            return
+        cli_path = "/home/workspace/Skills/meeting-ingestion/scripts/meeting_cli.py"
+        log_path = f"/dev/shm/meeting-process-{meeting_folder_name}.log"
+        try:
+            with open(log_path, "a", encoding="utf-8") as log_file:
+                subprocess.Popen(
+                    [sys.executable, cli_path, "tick", "--auto-process", "--target", meeting_folder_name],
+                    stdout=log_file,
+                    stderr=subprocess.STDOUT,
+                    start_new_session=True,
+                )
+            logger.info(f"Auto-processing triggered for {meeting_folder_name} (log: {log_path})")
+        except Exception as e:
+            logger.error(f"Failed to trigger auto-processing for {meeting_folder_name}: {e}")
     
     def _transcript_already_exists(self, transcript_id: str) -> Optional[Path]:
         """
@@ -189,10 +209,11 @@ class TranscriptProcessor:
                     )
                     stats["success"] += 1
                 else:
+                    err = self.last_error or "Failed to save transcript to Inbox"
                     self.webhook_processor.update_webhook_status(
                         webhook_id,
                         "failed",
-                        "Failed to save transcript to Inbox"
+                        err
                     )
                     stats["failed"] += 1
                     
@@ -218,6 +239,7 @@ class TranscriptProcessor:
             Folder name if successful, None if failed
         """
         try:
+            self.last_error = None
             # Step 1: Ingest using the Unified Intake Engine
             # This handles dedup, folder naming, metadata creation, and file writing
             result = self.intake_engine.ingest_from_source(
@@ -227,16 +249,19 @@ class TranscriptProcessor:
             
             if result.success:
                 logger.info(f"Unified Ingest Successful: {result.folder_path}")
+                self._trigger_auto_process(result.folder_name)
                 return result.folder_name
             else:
                 if result.duplicate_of:
                     logger.info(f"Transcript is a duplicate of {result.duplicate_of}. Skipping.")
                     return Path(result.duplicate_of).name
                 
-                logger.error(f"Unified Ingest Failed: {result.error_message}")
+                self.last_error = result.error_message or "Unified ingest failed"
+                logger.error(f"Unified Ingest Failed: {self.last_error}")
                 return None
                 
         except Exception as e:
+            self.last_error = str(e)
             logger.exception(f"Exception during Unified Ingest for Fireflies: {e}")
             return None
     
@@ -348,8 +373,6 @@ class TranscriptProcessor:
         # Fireflies may not provide word-level timing
         # Return empty list for now
         return []
-
-
 
 
 

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Gmail", "type": "ORG", "context": "email service verified for search functionality"}, {"name": "event", "type": "EVENT", "context": "real tagged event tested successfully"}], "relationships": []}

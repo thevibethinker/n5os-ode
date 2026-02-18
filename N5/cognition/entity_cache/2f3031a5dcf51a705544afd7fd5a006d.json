@@ -1,0 +1,1 @@
+{"entities": [{"name": "n8n", "type": "TOOL", "context": "workflow automation tool"}, {"name": "completion detection", "type": "CONCEPT", "context": "a feature related to detecting task completion"}], "relationships": []}

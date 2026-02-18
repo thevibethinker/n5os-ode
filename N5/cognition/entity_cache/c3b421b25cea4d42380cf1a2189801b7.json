@@ -1,0 +1,1 @@
+{"entities": [{"name": "N5_mirror", "type": "TOOL", "context": "Mirror or backup system of N5 knowledge infrastructure"}, {"name": "lists-docgen", "type": "TOOL", "context": "Documentation generation command for lists"}], "relationships": [{"from": "lists-docgen", "to": "N5_mirror", "type": "RELATED_TO", "context": "Command output stored within N5_mirror commands directory"}]}

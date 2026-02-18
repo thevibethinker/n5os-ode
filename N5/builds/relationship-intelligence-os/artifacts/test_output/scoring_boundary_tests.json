@@ -1,0 +1,160 @@
+{
+  "maximum_score_candidate": {
+    "input": {
+      "candidate_type": "deliverable_record",
+      "candidate_data": {
+        "deliverable_id": "del_2239cd91",
+        "timestamp": "2026-02-16T21:39:30.730473+00:00",
+        "source_meeting_id": "meeting_max_score",
+        "client_id": "client_max",
+        "deliverable_type": "strategic_proposal",
+        "title": "Comprehensive Strategic Partnership and Investment Roadmap Analysis",
+        "status": "committed",
+        "commitment_details": {
+          "commitment_type": "firm_commitment",
+          "owner": "V",
+          "due_date": "2026-03-15",
+          "scope": "Complete strategic analysis with implementation roadmap",
+          "requestor": "CEO"
+        },
+        "evidence": {
+          "quotes": [
+            {
+              "text": "This strategic partnership analysis is critical for our board presentation and investment roadmap decisions",
+              "speaker": "CEO Alice Johnson"
+            },
+            {
+              "text": "We need the comprehensive proposal delivered by March 15th for our strategic planning cycle",
+              "speaker": "CEO Alice Johnson"
+            },
+            {
+              "text": "This analysis will drive our competitive positioning and market expansion strategy",
+              "speaker": "CEO Alice Johnson"
+            },
+            {
+              "text": "I commit to providing all necessary resources and stakeholder access for this deliverable",
+              "speaker": "CEO Alice Johnson"
+            }
+          ],
+          "block_references": [
+            "B60_strategic_commitment",
+            "B61_executive_priority",
+            "B62_deadline_confirmed"
+          ]
+        },
+        "confidence": 0.95
+      },
+      "source_meeting_id": "meeting_max_score",
+      "meeting_context": {
+        "participants": [
+          {
+            "name": "Alice Johnson",
+            "title": "CEO",
+            "organization": "TechCorp"
+          },
+          {
+            "name": "Bob Smith",
+            "title": "CTO",
+            "organization": "TechCorp"
+          },
+          {
+            "name": "V",
+            "title": "Strategic Consultant",
+            "organization": "Careerspan"
+          }
+        ]
+      },
+      "existing_memory": [],
+      "relationships": null,
+      "conversation_id": "con_max_score_test",
+      "processing_mode": "production",
+      "source_blocks": []
+    },
+    "expected_tier": "A",
+    "expected_score_range": [
+      90,
+      100
+    ],
+    "description": "Near-perfect candidate with all scoring elements maximized"
+  },
+  "minimum_score_candidate": {
+    "input": {
+      "candidate_type": "general_intelligence",
+      "candidate_data": {
+        "notes": "Brief pleasantries",
+        "confidence": 0.1
+      },
+      "source_meeting_id": "meeting_min_score",
+      "meeting_context": null,
+      "existing_memory": null,
+      "relationships": null,
+      "conversation_id": "con_min_score_test",
+      "processing_mode": "production",
+      "source_blocks": []
+    },
+    "expected_tier": "C",
+    "expected_score_range": [
+      5,
+      20
+    ],
+    "description": "Minimal content with lowest possible scores"
+  },
+  "exact_tier_a_boundary": {
+    "input": {
+      "candidate_type": "deliverable_record",
+      "candidate_data": {
+        "deliverable_id": "del_311ecdec",
+        "timestamp": "2026-02-16T21:39:30.730491+00:00",
+        "source_meeting_id": "meeting_tier_boundary",
+        "client_id": "client_boundary",
+        "deliverable_type": "report",
+        "title": "Project Status Report",
+        "status": "identified",
+        "commitment_details": {
+          "commitment_type": "deliverable_request",
+          "owner": "V",
+          "requestor": "Project Manager"
+        },
+        "evidence": {
+          "quotes": [
+            {
+              "text": "We need a comprehensive status report for the project",
+              "speaker": "Project Manager"
+            },
+            {
+              "text": "This should include strategic recommendations for next phase",
+              "speaker": "Project Manager"
+            }
+          ],
+          "block_references": [
+            "B65_status_request"
+          ]
+        },
+        "confidence": 0.75
+      },
+      "source_meeting_id": "meeting_tier_boundary",
+      "meeting_context": {
+        "participants": [
+          {
+            "name": "Jane Doe",
+            "title": "Project Manager",
+            "organization": "ClientCorp"
+          },
+          {
+            "name": "V",
+            "title": "Consultant",
+            "organization": "Careerspan"
+          }
+        ]
+      },
+      "existing_memory": null,
+      "relationships": null,
+      "conversation_id": "con_tier_boundary_test",
+      "processing_mode": "production",
+      "source_blocks": []
+    },
+    "expected_tier": "A",
+    "target_score": 75,
+    "description": "Candidate designed to score exactly at Tier A boundary (75)"
+  }
+}

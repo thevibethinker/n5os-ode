@@ -1,43 +1,58 @@
-# Careerspan Overall Assessment
-# Source: Careerspan Intelligence Brief
-# Extracted: 2026-01-29T21:03:43.790803
+# Overview
+# Extracted: 2026-02-14T17:45:53.366078
 # Method: Structured extraction
 # DO NOT EDIT
-
-candidate:
-  name: "Hardik"
-  position_applied: "Full Stack Developer (AI-focused)"
-  company: "FlowFuse"
-  status: "Referred"
-  application_date: "2026-01-26"
-  referred_by: "Careerspan Admin Auto-Submission (Silent Database Scan)"
 
 careerspan_score:
   overall: 89
   max: 100
-  qualification: "Well-aligned"
-  career_trajectory: "Lateral Move"
-
-evidence_summary:
-  stories_told: 2
-  story_ids:
-    - id: "COKUmaqSITrBKdtxSgJp"
-      type: "Direct"
-      description: "ML SaaS platform founding engineer"
-    - id: "pROFGle1jTPdoivBHQUf"
-      type: "Transferable"
-      description: "American Express portal development"
-  
-  resume_match:
-    type: "Direct"
-    score: 9
-    max: 10
-    rating: "Excellent"
-
-recommendation:
-  verdict: "Advance to finals"
-  summary: "Strong fit for a senior, AI-focused full-stack role"
-  probe_areas:
-    - "AI guardrails/observability"
-    - "SOC 2/privacy specifics"
-    - "Concrete LLM/vectordb integration details"
+category_scores:
+  background:
+    score: 78
+    max: 100
+  uniqueness:
+    score: 72
+    max: 100
+  responsibilities:
+    score: 85
+    max: 100
+  hard_skills:
+    score: 58
+    max: 100
+  soft_skills:
+    score: 65
+    max: 100
+bottom_line: Strong fit for a senior, Al-focused full-stack role; advance to finals
+  while probing Al guardrails/observability, SOC 2/privacy specifics, and concrete
+  LLM/vectordb integration details.
+overall_strengths: Exceptionally strong end-to-end ownership of AI and full-stack
+  systems, evidenced by architecting a greenfield Machine Learning SaaS platform serving
+  hundreds of daily users with automated dataset/versioning, MLOps (Kubernetes/MLflow),
+  containerized inference (FastAPI), Airflow pipelines, and dynamic cloud orchestration
+  that reduced model-to-production from hours to minutes. Hands-on LLM/agent experience
+  (LangChain + RAG) alongside proven backend/frontend delivery (React + Spring Boot)
+  and SRE/DevOps rigor. Demonstrated ability to translate ambiguous problems into
+  business impact—e.g., solo product leadership that delivered $50k/month cost savings
+  at enterprise scale—combined with strong product judgment, stakeholder management,
+  and measurable adoption. Elite academic credentials (IIT Delhi) and recognized innovation
+  signal a high-ceiling senior IC who can help set early AI standards.
+overall_weaknesses: 'Key AI reliability and safety details are not explicitly documented:
+  no concrete examples of LLM fallback strategies, cost/latency controls, prompt/version
+  governance, or model/LLM-specific observability (drift, hallucination safeguards,
+  metrics/dashboards). Privacy/security experience is present in regulated contexts,
+  but there''s no direct evidence of SOC 2 controls, audit participation, or named
+  privacy frameworks applied to AI features. Frontend expertise is proven but advanced
+  front-end architecture/performance/accessibility depth and LLM-UX patterns are not
+  showcased. Knowledge-sharing/async-first practices are implied but lack explicit
+  artifacts (RFCs, playbooks, internal workshops). LLM integration is stated (LangChain/RAG)
+  without naming specific providers or vector stores/embedding stacks.'
+potential_dealbreakers:
+- What specific LLM fallback strategies, cost/latency controls, and prompt/version
+  governance have you implemented?
+- What direct experience do you have with SOC 2 controls, audit participation, or
+  named privacy frameworks (e.g., GDPR) applied to AI features?
+- Which specific LLM providers, vector stores, and embedding stacks have you integrated
+  in production?
+summary: Strong fit for a senior, Al-focused full-stack role; advance to finals while
+  probing Al guardrails/observability, SOC 2/privacy specifics, and concrete LLM/vectordb
+  integration details.

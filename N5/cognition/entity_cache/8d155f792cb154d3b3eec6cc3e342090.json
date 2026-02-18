@@ -1,0 +1,1 @@
+{"entities": [{"name": "zoputer", "type": "ORG", "context": "platform for managing secrets"}, {"name": "VA_API_KEY", "type": "CONCEPT", "context": "an API key for authentication"}], "relationships": []}

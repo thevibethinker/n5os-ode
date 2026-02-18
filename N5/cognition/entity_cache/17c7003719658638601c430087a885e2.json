@@ -1,0 +1,1 @@
+{"entities": [{"name": "Zo", "type": "TOOL", "context": "intelligent processing layer"}, {"name": "n8n", "type": "TOOL", "context": "orchestration/delivery layer"}], "relationships": [{"from": "Zo", "to": "n8n", "type": "USES", "context": "Zo is utilized alongside n8n for processing and orchestration"}]}

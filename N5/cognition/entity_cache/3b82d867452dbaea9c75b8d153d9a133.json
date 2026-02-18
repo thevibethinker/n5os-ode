@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "refers to Vrijen, who is making complex strategic decisions"}, {"name": "zoputer", "type": "CONCEPT", "context": "core patterns or architecture related to V's knowledge system"}], "relationships": [{"from": "V", "to": "zoputer", "type": "KNOWS", "context": "V makes strategic decisions based on zoputer patterns"}]}

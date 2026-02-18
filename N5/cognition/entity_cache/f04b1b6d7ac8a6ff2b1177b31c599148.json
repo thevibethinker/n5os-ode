@@ -1,0 +1,1 @@
+{"entities": [{"name": "Elliot", "type": "PERSON", "context": "Participant in meeting B01, greeted at start of conversation"}, {"name": "B01 Meeting", "type": "EVENT", "context": "Meeting/conversation covering casual discussion topics"}], "relationships": [{"from": "V", "to": "Elliot", "type": "KNOWS", "context": "Casual conversation participants in B01 meeting"}]}

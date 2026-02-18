@@ -1,0 +1,82 @@
+{
+  "id": "24015222-2950-4397-8248-14be06d4040a",
+  "meeting_url": {
+    "meeting_id": "xfy-mvrc-rti",
+    "platform": "google_meet"
+  },
+  "bot_name": "Jared Dunn\u2014AI Chief of Staff",
+  "join_at": "2026-02-16T16:45:00Z",
+  "recording_config": {
+    "realtime_endpoints": [],
+    "retention": {
+      "type": "forever"
+    },
+    "video_mixed_layout": "speaker_view",
+    "video_mixed_mp4": {},
+    "participant_events": {},
+    "meeting_metadata": {},
+    "video_mixed_participant_video_when_screenshare": "overlap",
+    "start_recording_on": "participant_join"
+  },
+  "status_changes": [
+    {
+      "code": "joining_call",
+      "message": null,
+      "created_at": "2026-02-16T16:45:02.709276Z",
+      "sub_code": null
+    },
+    {
+      "code": "in_waiting_room",
+      "message": null,
+      "created_at": "2026-02-16T16:45:09.308233Z",
+      "sub_code": null
+    },
+    {
+      "code": "call_ended",
+      "message": null,
+      "created_at": "2026-02-16T17:00:10.363409Z",
+      "sub_code": "timeout_exceeded_waiting_room"
+    },
+    {
+      "code": "done",
+      "message": null,
+      "created_at": "2026-02-16T17:00:20.431415Z",
+      "sub_code": null
+    }
+  ],
+  "recordings": [],
+  "automatic_leave": {
+    "waiting_room_timeout": 900,
+    "noone_joined_timeout": 900,
+    "everyone_left_timeout": {
+      "timeout": 120,
+      "activate_after": null
+    },
+    "in_call_not_recording_timeout": 3600,
+    "recording_permission_denied_timeout": 30,
+    "silence_detection": {
+      "timeout": 3600,
+      "activate_after": 1200
+    },
+    "bot_detection": {
+      "using_participant_events": {
+        "timeout": 600,
+        "activate_after": 1200
+      },
+      "using_participant_names": {
+        "timeout": 600,
+        "activate_after": 120,
+        "matches": [
+          "notetaker",
+          "recorder",
+          "assistant"
+        ]
+      }
+    }
+  },
+  "calendar_meetings": [],
+  "zoom": {
+    "request_recording_permission_on_host_join": true
+  },
+  "metadata": {}
+}

@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "received_at": "2026-02-17T01:39:29.968281+00:00",
+    "inbox_role": "careerspan",
+    "inbox_key": "careerspan.n5os@agentmail.to",
+    "route_queue": "review",
+    "event_id": "evt_e2e_1771292369",
+    "message_id": "evt_e2e_1771292369",
+    "sender_email": "trusted@careerspan.com",
+    "sender_domain": "careerspan.com"
+  },
+  "security": {
+    "risk_level": "low",
+    "decision": "review_required",
+    "sender_tier": "C",
+    "confidence": 0.72,
+    "flags": [],
+    "rationale": "Unknown sender routed to review by policy"
+  },
+  "payload": {
+    "event_type": "message.received",
+    "event_id": "evt_e2e_1771292369",
+    "message": {
+      "message_id": "evt_e2e_1771292369",
+      "inbox_id": "careerspan.n5os@agentmail.to",
+      "from": [
+        {
+          "email": "trusted@careerspan.com",
+          "name": "Trusted Sender"
+        }
+      ],
+      "subject": "E2E cast test",
+      "text": "Here is a clean JD intake payload for automated processing."
+    }
+  }
+}

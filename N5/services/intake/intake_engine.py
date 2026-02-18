@@ -283,6 +283,10 @@ class IntakeEngine:
             # Write metadata.json
             metadata_file = folder_path / "metadata.json"
             self._write_metadata(transcript, meeting_date, metadata_file)
+
+            # Write manifest.json so downstream tick/process can run immediately
+            manifest_file = folder_path / "manifest.json"
+            self._write_manifest(transcript, meeting_date, folder_path.name, manifest_file)
             
             logger.info(f"Created meeting folder: {folder_path}")
             
@@ -546,6 +550,94 @@ class IntakeEngine:
         
         with open(path, "w") as f:
             json.dump(metadata, f, indent=2)
+
+    def _write_manifest(
+        self,
+        transcript: UnifiedTranscript,
+        meeting_date: date,
+        folder_name: str,
+        path: Path,
+    ):
+        """Write v3 manifest seed so meeting_cli tick can process this folder."""
+        now_iso = datetime.utcnow().isoformat() + "Z"
+        duration_minutes = int(transcript.duration_seconds / 60) if transcript.duration_seconds else None
+        meeting_title = transcript.title or folder_name
+
+        identified = []
+        for participant in transcript.participants or []:
+            if not participant:
+                continue
+            identified.append(
+                {
+                    "name": participant,
+                    "email": None,
+                    "crm_id": None,
+                    "role": "attendee",
+                    "confidence": 0.5,
+                }
+            )
+
+        manifest = {
+            "$schema": "manifest-v3",
+            "schema_version": "v3",
+            "meeting_id": folder_name,
+            "status": "ingested",
+            "status_history": [
+                {"status": "ingested", "at": now_iso},
+            ],
+            "source": {
+                "type": transcript.source.value,
+                "source_id": transcript.source_id,
+                "ingested_at": now_iso,
+            },
+            "meeting": {
+                "date": meeting_date.isoformat(),
+                "time_utc": transcript.detected_date.strftime("%H:%M:%S") if transcript.detected_date else None,
+                "duration_minutes": duration_minutes,
+                "title": meeting_title,
+                "type": "external",
+                "summary": transcript.summary,
+            },
+            "participants": {
+                "identified": identified,
+                "unidentified": [],
+                "confidence": 0.5 if identified else 0.0,
+            },
+            "calendar_match": {
+                "event_id": None,
+                "confidence": 0.0,
+                "method": "none",
+            },
+            "quality_gate": {
+                "passed": False,
+                "checks": {},
+                "score": 0.0,
+            },
+            "blocks": {
+                "policy": "external_standard",
+                "requested": [],
+                "generated": [],
+                "failed": [],
+                "skipped": [],
+            },
+            "hitl": {
+                "queue_id": None,
+                "reason": None,
+                "resolved_at": None,
+            },
+            "timestamps": {
+                "created_at": now_iso,
+                "ingested_at": now_iso,
+                "identified_at": None,
+                "gated_at": None,
+                "processed_at": None,
+                "archived_at": None,
+            },
+            "transcript_file": "transcript.md",
+        }
+
+        with open(path, "w") as f:
+            json.dump(manifest, f, indent=2)
     
     def _record_ingestion(
         self,
@@ -578,7 +670,6 @@ class IntakeEngine:
             conn.commit()
         finally:
             conn.close()
-
 
 
 

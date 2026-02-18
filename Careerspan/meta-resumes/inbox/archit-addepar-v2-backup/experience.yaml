@@ -1,0 +1,115 @@
+# Experience
+# Extracted: 2026-02-05T16:36:47.075087
+# Method: Structured extraction
+# DO NOT EDIT
+
+positions:
+- company: Quince
+  title: SDE-3 (E-Commerce Platform/Checkout Systems)
+  duration: Jan 2024 - May 2025
+  type: fulltime
+  summary: Part of core team leading development of Greenfield off-Shopify checkout
+    and order workflow system. Led design and build of Orders and Payments Platforms
+    with focus on system consistency, reliability, and scalability.
+  key_accomplishments:
+  - text: Led Greenfield checkout system supporting 100,000+ daily orders and up to
+      20 orders per second
+    quantified: true
+    impact: Enabled business to exit Shopify, saving millions in fees
+  - text: Supported 5× Black Friday/Cyber Monday traffic spikes with $15M daily revenue
+      peaks
+    quantified: true
+    impact: Peak event resilience and business continuity
+  - text: Designed and operated LLM-powered fraud review pipeline using RAG-based
+      system combining order data, payment signals, and historical fraud patterns
+    quantified: false
+    impact: Automated fraud review with concise investigation reports delivered to
+      Slack for human action
+  - text: Built extensible Post-Order Workflow framework with priority mechanism for
+      concurrent task processing
+    quantified: false
+    impact: Allows new tasks to be added without modifying core system
+  - text: Integrated major payment instruments including Stripe, PayPal, gift cards,
+      BNPL, and store credit
+    quantified: false
+    impact: Payment flexibility and customer experience
+  - text: Architected separation of highly consistent pre-order processes from eventually
+      consistent post-order tasks
+    quantified: false
+    impact: Improved latency and system reliability
+  - text: Drove infrastructure upgrades including EKS replicas, RDS sizing, cache
+      optimizations, and Stripe session pooling
+    quantified: false
+    impact: Scaling readiness for Black Friday
+  - text: Created SOPs for major peak events
+    quantified: false
+    impact: Operational readiness and institutional knowledge
+  - text: Delivered Gift Card Service with Clutch integration
+    quantified: false
+    impact: New payment/gifting capability
+  - text: Achieved SLAs on par with Shopify (99.9% uptime)
+    quantified: true
+    impact: System reliability matching enterprise standards
+  technologies:
+  - Java
+  - Kotlin
+  - Spring Boot
+  - AWS
+  - EKS
+  - RDS
+  - Kubernetes
+  - Kafka
+  - Terraform
+  - Stripe
+  - PayPal
+  - Clutch
+  - Slack
+  team_context: small team (core team of 6 engineers plus product and QA)
+- company: Embibe
+  title: Product Engineer
+  duration: May 2020 - Jan 2024
+  type: fulltime
+  summary: Founded Assignment platform from PoC to full product while leading and
+    mentoring a team of 8 engineers. Built Template Service, user timeline system
+    for 10M+ learners, and led critical backend architecture redesign with zero-downtime
+    migration.
+  key_accomplishments:
+  - text: Founded and scaled Assignment platform from initial PoC to robust, full-scale
+      product
+    quantified: false
+    impact: New product line for the platform
+  - text: Developed user timeline system tracking engagement for over 10 million learners
+    quantified: true
+    impact: Engagement visibility at scale
+  - text: Engineered data aggregation processes scheduling hourly to yearly rollups
+      of millions of activity rows
+    quantified: true
+    impact: Transformed large volumes of activity data into actionable insights
+  - text: Built Template Service enabling educators to create custom templates for
+      generating personalized tests at scale
+    quantified: false
+    impact: Educator enablement and content customization
+  - text: Led critical backend architecture redesign to overcome scaling bottlenecks,
+      overhauling database schemas
+    quantified: false
+    impact: Eliminated performance issues, monitors no longer triggered post-fix
+  - text: Executed smooth zero-downtime migration with dual writes and careful backfills
+    quantified: false
+    impact: No user impact during critical infrastructure change
+  - text: Grew and mentored a team of 8 engineers end-to-end
+    quantified: true
+    impact: Team development and technical leadership recognition
+  - text: Separated user-centric and aggregation-centric access patterns into distinct
+      tables to eliminate inefficient queries
+    quantified: false
+    impact: Dramatically stabilized system performance at scale
+  technologies:
+  - ScyllaDB
+  - Cassandra
+  - Spark
+  - Airflow
+  - Java
+  - Python
+  - Go
+  - C++
+  team_context: led team of 8 engineers

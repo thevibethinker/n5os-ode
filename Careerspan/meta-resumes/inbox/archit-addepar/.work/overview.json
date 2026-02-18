@@ -1,0 +1,37 @@
+{
+  "overall_score": 75,
+  "bottom_line": "Strong senior backend hire with standout distributed systems and ML\u2011adjacent integration experience who can add immediate value to Addepar\u2019s alternatives data workflows, with a manageable ramp on serverless/DynamoDB and investment\u2011domain specifics.",
+  "qualification": "Well-aligned",
+  "qualification_detail": "Atypical Background",
+  "career_trajectory": "Industry Shift",
+  "elevator_pitch": null,
+  "recommendation": "CONDITIONAL",
+  "overall_strengths": "Proven senior-level backend engineer with strong architecture and delivery track record on mission\u2011critical, high\u2011throughput systems. Led greenfield checkout, orders, and payments platforms (100k+ daily orders, 5\u00d7 BFCM spikes, ~$15M/day peaks) with robust consistency, idempotency, and resilience patterns; executed zero\u2011downtime migrations and created SOPs for peak events. Demonstrated ML integration by designing and operating an LLM/RAG\u2011based fraud review pipeline that aggregates multi\u2011source signals and routes concise reports for human action \u2014directly relevant to ML\u2011extracted data ingestion and document\u2011style workflows. Hands-on experience across microservices, AWS/EKS/RDS, Terraform, Kafka\u2011like patterns, and Java/Spring Boot with additional Python/Go exposure, plus substantial NoSQL design and optimization (Scylla/Cassandra family). Consistent ownership, cross\u2011functional alignment (payments, inventory, ops), and team leadership/mentoring (grew and coached an 8\u2011engineer team) indicate immediate impact in a senior IC role.",
+  "overall_weaknesses": "No explicit production experience with serverless primitives (Lambda, Step Functions, API Gateway) or DynamoDB/OpenSearch, which are central to this role\u2019s stack; NoSQL experience is strong but not AWS\u2011native. Limited evidence of writing, debugging, and optimizing SQL beyond inferred use (RDS operations, schema redesigns) and minimal explicit CI/CD and documentation ownership narratives (beyond SOPs and migrations). Security/compliance exposure is adjacent via payments and fraud prevention but lacks direct ownership of frameworks such as PCI\u2011DSS, SOC2, or GDPR. Collaboration with ML engineers is implied through the LLM fraud pipeline, but formal, ongoing ML team integration practices (model monitoring, data contracts, validation) are not detailed; fintech domain depth is primarily in payments/e\u2011commerce rather than investment/alternatives data.",
+  "potential_dealbreakers": [
+    "Can the candidate ramp quickly on AWS-native serverless architecture and DynamoDB/OpenSearch in production?",
+    "Does the candidate have enough direct fintech investment-domain depth (alternatives/portfolio data) for Addepar\u2019s core workflows?"
+  ],
+  "category_scores": {
+    "background": {
+      "score": 78,
+      "max": 100
+    },
+    "uniqueness": {
+      "score": 85,
+      "max": 100
+    },
+    "responsibilities": {
+      "score": 74,
+      "max": 100
+    },
+    "hard_skills": {
+      "score": 58,
+      "max": 100
+    },
+    "soft_skills": {
+      "score": 97,
+      "max": 100
+    }
+  }
+}

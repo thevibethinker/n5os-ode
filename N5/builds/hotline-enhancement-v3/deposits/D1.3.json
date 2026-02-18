@@ -1,0 +1,10 @@
+{
+  "drop_id": "D1.3",
+  "build_slug": "hotline-enhancement-v3",
+  "status": "complete",
+  "summary": "Created calendly-setup.md reference doc with exact settings: 15min, max 2/day, weekdays 12-4pm ET, 4hr minimum notice, 2-week rolling window, 5min buffer. Includes custom questions (name, help needed, source). No code changes needed - webhook already reads ZO_HOTLINE_CALENDLY_LINK env var. V needs to create event type in Calendly UI and set the env var.",
+  "broadcast": "",
+  "artifacts": [],
+  "timestamp": "2026-02-14T04:46:58.032853+00:00",
+  "execution_mode": "claude_code"
+}

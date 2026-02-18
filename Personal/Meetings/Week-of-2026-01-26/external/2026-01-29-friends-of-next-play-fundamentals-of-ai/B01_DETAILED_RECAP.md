@@ -1,64 +1,74 @@
+Here's the B01 block:
+
+---
+
+# B01_DETAILED_RECAP
+
 ---
 created: 2026-01-29
 last_edited: 2026-01-29
 version: 1.0
-provenance: con_U898zz5ECrOB6bOe
+provenance: con_sFyCfIrStKwAblDK
 ---
-
-# B01: Detailed Recap
 
 ## Meeting Overview
 
-An educational session titled "Fundamentals of AI Productivity" hosted by Vrijen Attawar featuring presentations from three AI-native founders. The session addressed survey findings that most attendees felt "stuck" with AI despite using tools like ChatGPT and Claude Code. Rather than delivering tactical prompts, the session focused on mental model shifts—moving from "collecting techniques" to building coherent AI systems through conversation engineering, environment engineering, and pipeline engineering. Logan Currie demonstrated Claude Code workflows for personal data analysis using LinkedIn exports, while Ben Guo showcased Zo Computer's managed AI environment capabilities.
+Vrijen Attawar, Logan Currie, and Ben Guo co-hosted a public webinar titled "Fundamentals of AI Productivity" for an external audience of professionals looking to level up their AI usage. The session combined a conceptual framework (presented by V), a hands-on LinkedIn data analysis demo (Logan), and a Zo Computer product walkthrough (Ben). The throughline was shifting attendees from collecting individual AI tactics toward building a coherent personal operating system.
 
 ## Chronological Discussion
 
-### Pre-Meeting Technical Setup (0:00-3:00)
-The meeting began with logistical coordination as attendees joined. Ben Guo and Logan Currie confirmed their presence while Vrijen Attawar addressed audio/headphone issues. There was casual banter about Zoom's manual admission settings ("digital bouncer") and anticipation around the Claude Code and "Zoe" (Zo Computer) demos. Vrijen allowed attendees to settle before beginning formal introductions.
+### Opening & Introductions (0:00–5:00)
+V opened the session while Ben managed Zoom's waiting room. Light banter about "claudebot vs. Zo" set a playful tone. V introduced Careerspan as a conversational AI coaching product that helps people advocate for themselves professionally, but framed the session as being about the AI productivity methodology rather than the product. Logan introduced herself as V's co-founder and "fellow nerd" focused on Claude Code use cases for personal data visualization. Ben introduced Zo Computer, describing it as a managed, secure version of the "claudebot" concept that gives AI its own computing environment, and noted he met V through his power-user engagement with the platform.
 
-### Opening Introductions (3:00-5:30)
-Vrijen introduced himself as co-founder and CEO of Careerspan, describing it as a product for "conversational coaching with AI" that helps users reflect on experiences and create content for job applications. Logan Currie introduced himself as Vrijen's co-founder at Careerspan, expressing excitement for "show and tell" style AI demos and noting he would focus on Claude Code use cases for personal data visualization. Ben Guo introduced himself as co-founder of Zo Computer, explaining he met Vrijen through Zo usage and would demonstrate a "managed, secure" alternative to Claude Code for AI personal assistance.
+### V's Framework: Three Levels of Context Engineering (5:00–13:30)
+V presented survey results showing ~80% of respondents feel stuck despite using ChatGPT (universal) and Claude Code (~50%). His core thesis: **the problem isn't tools or tactics — it's mental models.** People collect techniques without understanding how they compose into outcomes.
 
-### The "Head Fake" of AI Productivity (5:30-13:30)
-Vrijen presented his core thesis that attendees don't have a "technology problem" or "tactics problem"—they have a "mental model problem." He referenced survey data showing 80% of respondents felt they "fail to break through the next level" despite universal ChatGPT usage and ~50% Claude Code adoption.
+He introduced the concept of "AI is magic" not as hype but as an analogy for collapsing the gap between intent and outcome — the way DoorDash would seem magical to someone from a thousand years ago, but is simply a mental model we've internalized. He then laid out three levels of context engineering:
 
-**Key Points:**
-- **AI as "Magic":** The goal is collapsing the gap between intent and outcome, similar to how Doordash feels like magic compared to growing your own food—it's about mental model evolution, not supernatural capability
-- **Context Engineering Framework:** Three levels of context cultivation:
-  1. **Conversation Level:** Don't ask for output too early; cultivate context first. Use "offensive" (expansive) vs "defensive" (critical) prompting vibes. Apply threshold rubrics where AI creates evaluation criteria and iterates against them
-  2. **Environment Level:** Persistent context through personalization and memory curation—including explicitly telling AI to "add this to your explicit memory verbatim"
-  3. **Pipeline Level:** Connecting external world data into coherent AI systems
+- **Level 1 — Conversation Engineering:** Don't ask for output too early; build context first, request deliverables later. Offensive prompting (expand options) vs. defensive prompting (shore up, critique). Threshold rubrics — ask AI to create evaluation criteria, score against them, iterate until quality ceiling is hit. V used the term "vibe thinking" for this expansive/defensive dynamic.
 
-- **The Personal Operating System:** When all three levels integrate, users develop an "emergent personal operating system" rather than using disparate tools
+- **Level 2 — Environment Engineering:** Persistent context that shapes every interaction. Curating AI memory (most people never do this), explicitly telling the AI to add information verbatim to memory, building personas with built-in teaching behaviors (a "vibe teacher" that explains things in accessible terms). Cognitive guardrails like "don't flatter me, be critical." Warning: more context isn't always better — signal-to-noise matters.
 
-### LinkedIn Data Export Deep-Dive (13:30-25:00)
-Logan Currie presented a comprehensive walkthrough of analyzing personal LinkedIn data exports using Claude Code, positioning it as "the perfect intro experiment" for Claude Code beginners.
+- **Level 3 — Pipeline Engineering:** Connecting the AI system to external data and workflows. When all three levels combine, an "emergent personal operating system" forms. V emphasized this isn't fundamental in the trivial sense — it's genuinely hard, and people should give themselves grace.
 
-**Key Points:**
-- **Data Volume:** LinkedIn maintains 48 CSV files covering 18 years of activity—including 5,000 messages, connections, search history, comments, invitations, and ad targeting data that users never see
-- **Network Visualization:** Created bubble charts showing employer distribution across contacts, revealing unexpected clusters in AI/ML and big tech
-- **Lost Opportunity Analysis:** Claude Code identified 23 high-value DMs from the last six months that Logan had accidentally ghosted, categorized by opportunity type (collaboration, podcast invitations) and prioritized by urgency
-- **Posting Correlation:** Identified an 1800% increase in connection requests correlated with increased posting activity—validating the "career security through visibility" thesis
-- **Connection Timeline Analysis:** Visualized who added whom and DM frequency, surfacing forgotten connections and inactive leads to re-engage
-- **Skills-Network Gap Analysis:** Cross-referenced Careerspan behavioral interview data with LinkedIn connections to identify career pivot opportunities (e.g., UX research as a bridge path given 12 relevant connections)
-- **Methodology Insights:** Logan emphasized narrative-before-data approaches, using yourself as a guinea pig, and "unhobbling the model" by asking Claude to "delight me" with unexpected analyses
+### Logan's LinkedIn Data Export Demo (13:30–25:00)
+Logan demonstrated what she built using Claude Code and her full LinkedIn data export (48 CSV files spanning 18 years, including 5,000+ messages, 3,300 connections, and 45,000 imported contacts). Key findings she showcased:
 
-### Zo Computer Demo and AI Workflows (25:00-end)
-Ben Guo demonstrated Zo Computer as a "managed, secure" alternative to self-hosted Claude Code setups, emphasizing how giving AI "its own home" unhobbles its capabilities.
+- **Network Topology Visualization:** Bubble chart breaking down connections by employer/industry. She discovered a surprisingly large AI/ML cluster in her network. She embedded this on her personal website as a "who is Logan?" signal.
 
-**Key Points:**
-- **Spotify Data Visualization:** Showed personal listening trend data exported via GDPR rights, revealing coding-heavy music periods versus post-launch busy periods
-- **Claude Code Integration:** Zo Computer allows signing into Claude Code within the managed environment while maintaining Zo UI capabilities
-- **Text-Based AI Interaction:** Demonstrated texting with Claude Code to execute coding tasks ("go to my coding repo, check out this branch, fix this thing") while traveling—doing work in "passive moments" like airport lines and cab rides
-- **Knowledge Base Automation:** Showed workflows for saving articles to personal knowledge bases with automatic summarization
-- **Plan File Methodology:** Presented plan files as "the future of coding"—structured documents mixing prose and code that document AI conversations and system architecture in stepwise fashion
+- **Lost Opportunity Detection:** Claude Code analyzed all 5,000 DMs and identified 23 high-value messages from the last 6 months that went unanswered — including a podcast invitation from a host with 25K followers. Categorized by type (collaboration, interview, networking) and prioritized by urgency.
+
+- **Posting ↔ Connection Growth Correlation:** A 1,800% increase in inbound connection requests correlated with her posting activity. She positioned this as evidence for career security through visibility — "job security is dead, build career security."
+
+- **Inbound vs. Outbound Ratio:** More inbound than outbound requests in recent months, framed as a proxy for social capital that LinkedIn doesn't surface natively.
+
+- **Relationship Timeline Visualization:** Mapped when connections were made, who added whom, and DM frequency — revealing forgotten relationships worth reviving.
+
+- **Cross-Reference with Careerspan:** Combined LinkedIn network data with Careerspan's behavioral interview insights to produce a gap analysis — e.g., "You have 12 connections in UX research and overlapping skills, so that's a viable exploration path."
+
+Logan shared her metacognitive approach: narrative before data, use yourself as a guinea pig, iterate beyond first answers, ask Claude to "delight" with unexpected analyses, and reference Anthropic's concept of "unhobbling the model."
+
+### Ben's Zo Computer Demo (25:00–29:35+)
+Ben demonstrated Zo Computer's capabilities, connecting to Logan's "unhobbling" theme — AI becomes much more capable when given access to files, data, and its own computing environment. Key points:
+
+- **Personal Data Analysis:** Showed a Spotify listening data visualization he built in Zo just before the meeting — coding-heavy listening periods visible in the data, declining after their product launch when he shifted to non-coding work.
+
+- **SMS-Based Coding Workflow:** Demonstrated texting Claude Code through Zo while traveling — sending commands like "check out this branch, fix this thing" from the airport line. Positioned this as a productivity multiplier during passive moments (cabs, boarding planes, waiting).
+
+- **Article Saving & Knowledge Base:** Showed how he saves and summarizes articles into his Zo knowledge base via text, staying on top of information while mobile.
+
+- **Plan File-Based Development:** Showed his codebase's plan files — a mix of prose and code in stepwise format. Called this "the future of coding" and noted Zo is building first-class UI around tasks, plans, and long-range AI-assisted work.
 
 ## Key Takeaways
 
-- **Mental models beat tactics:** The core barrier to AI productivity isn't tool knowledge but coherent system thinking across conversation, environment, and pipeline levels
-- **Personal data exports unlock strategic insights:** Both Logan's LinkedIn analysis and Ben's Spotify visualization demonstrate that GDPR data exports contain far more value than platform-native analytics
-- **"Unhobbling" through expanded context:** Giving AI access to personal files, history, and persistent memory dramatically expands capability beyond single-session prompts
-- **Text/SMS interfaces enable parallel work streams:** Ben's demonstration of texting Claude Code for coding tasks while traveling shows how ambient AI access multiplies founder productivity
-- **Plan files as the future of development:** Structured prose-plus-code planning documents represent an emerging pattern for AI-assisted software engineering
-- **Career security through data visibility:** Logan's correlation between posting activity and network growth (1800% increase) reinforces the thesis that professional visibility drives opportunity
-- **Lost opportunity cost is measurable:** Systematic analysis of message history surfaced 23 high-value missed connections—quantifying the cost of poor information management
+- **Mental model > tools:** 80% of survey respondents feel stuck despite having access to frontier AI — the gap is conceptual, not technological
+- **Three-level framework:** Conversation engineering → Environment engineering → Pipeline engineering, each building on the last toward a personal operating system
+- **LinkedIn data export is an accessible on-ramp:** 48 CSVs of personal data that LinkedIn hoards, perfect for a first Claude Code project
+- **1,800% posting-to-connections correlation** provides concrete evidence for the "visibility = career security" thesis
+- **Zo Computer's SMS-based workflow** enables productive coding and knowledge management during otherwise dead time
+- **Plan files as the future of coding:** Prose + code specifications that AI executes, moving development toward intent-driven rather than syntax-driven work
+- **"Unhobbling"** is the shared theme: giving AI access to your data, files, and a persistent environment dramatically expands what it can do for you
+
+---
+
+*12:40 PM ET, February 15, 2026*

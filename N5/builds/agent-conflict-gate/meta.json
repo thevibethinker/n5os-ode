@@ -1,0 +1,21 @@
+{
+  "schema_version": "1.0",
+  "slug": "agent-conflict-gate",
+  "title": "Agent Conflict Gate System",
+  "objective": null,
+  "created": "2026-02-12",
+  "status": "active",
+  "completed_at": null,
+  "type": "general",
+  "orchestrator_convo_id": null,
+  "workers": {
+    "total": 0,
+    "complete": 0,
+    "in_progress": 0,
+    "blocked": 0,
+    "pending": 0
+  },
+  "waves": [],
+  "worker_details": [],
+  "started_at": "2026-02-12T05:14:31.674508+00:00"
+}

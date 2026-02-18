@@ -1,0 +1,261 @@
+{
+  "$schema": "manifest-v3",
+  "schema_version": "v3",
+  "meeting_id": "2026-02-17_Tyler-Sztuka-Vrijen-Attawar_Agentic-AI-for-ADHD-Management",
+  "status": "complete",
+  "status_history": [
+    {
+      "status": "ingested",
+      "at": "2026-02-17T17:26:48.680684Z"
+    },
+    {
+      "status": "title_normalized",
+      "at": "2026-02-17T17:27:30.445535+00:00",
+      "note": "'Tyler Sztuka and Vrijen Attawar' \u2192 'Agentic AI for ADHD Management', 2 speakers extracted"
+    },
+    {
+      "status": "identified",
+      "at": "2026-02-17T17:27:30.447627+00:00"
+    }
+  ],
+  "source": {
+    "type": "fireflies",
+    "source_id": "01KHH2Q40RH2D4TVVQBZAXN842",
+    "ingested_at": "2026-02-17T17:26:48.680684Z"
+  },
+  "meeting": {
+    "date": "2026-02-17",
+    "time_utc": "16:30:00",
+    "duration_minutes": 0,
+    "title": "Agentic AI for ADHD Management",
+    "type": "internal",
+    "summary": {
+      "keywords": [
+        "ADHD",
+        "agentic AI workflows",
+        "personalized AI",
+        "knowledge graph",
+        "cognitive elevation",
+        "AI community"
+      ],
+      "action_items": "\n**Tyler Sztuka**\nReview the Zoe platform and assess relevance to his AI workflows and community projects (46:10)\nConnect with Crystal Briggs and Eric Espinal to explore technical collaboration and shared interests in ADHD AI solutions (47:20)\nConsider taking Vrijen up on seminars, community events, or AI coaching collaborations (48:40)\nFollow up on introductions to Emory alumni and local AI community contacts from Vrijen (49:50)\nShare David\u2019s knowledge graph video link with Vrijen (36:15)\n\n**Vrijen Attawar**\nSend contact details for Crystal Briggs and Eric Espinal to Tyler (12:00)\nProvide details and links for Momo as a memory integration tool for AI systems (17:35)\nShare his belief mapping repository and approach for processing call transcripts with Tyler (34:10)\nDraft and send introduction email connecting Tyler with Nicole from Emory alumni association and local AI community contacts (49:50)\nFollow up with Tyler for potential seminars/coaching offerings and community-building efforts (48:50)\n",
+      "outline": null,
+      "shorthand_bullet": "\ud83d\udcbb **Introduction of Zoe Protocol** (00:00 - 02:00)\nZoe is a protocol for managing UNIX cloud machines.\nDesigned for agentic workflows controlled by prompts.\nOpen-source VPS alternative.\n\ud83e\udde0 **Tyler's AI Frameworks for ADHD** (02:50 - 14:35)\nBuilding personalized AI frameworks for ADHD management.\nUsing OpenClaw as foundational infrastructure.\nIntegrating biometric data like Oura ring metrics.\n\ud83d\udcda **Contextualizing Life Knowledge** (03:14 - 09:50)\nStructuring information via AI conversations.\nRecent ADHD diagnosis reframed his work.\nFocus on augmenting executive functioning.\n\ud83e\udd1d **Collaboration Discussion** (10:00 - 12:30)\nUsing AI to reduce execution risk for ADHD entrepreneurs.\nMention of collaborators Crystal Briggs and Eric Espinal.\nExploring potential synergies.\n\ud83d\udd0d **Cognitive Elevation via AI** (18:45 - 20:25)\nEmphasis on progressing from self-knowledge to augmenting intelligence.\nImagining digital focal points for data centralization.\n\u2696\ufe0f **AI's Role in Learning** (21:00 - 28:25)\nDebate on trust and ethical applications of AI.\nDivision between AI's objective assessment and human judgment.\n\ud83d\udd04 **AI in Organizational Change Management** (28:35 - 30:10)\nApplying AI to capture complex human interpretations.\nFocus on subjective versus AI-generated outputs.\n\ud83c\udf10 **Community Building Initiatives** (30:20 - 32:15)\nTyler leads Atlanta AI Collective chapter.\nHighlighting Claude Code events with Anthropic sponsorship.\nImportance of diverse stakeholder engagement.\n\ud83d\uddfa\ufe0f **AI Mental Models** (17:40 - 35:40)\nVrijen's background in career coaching.\nDeveloping AI mental models to make AI accessible.\nMapping beliefs from call transcripts using graph databases.\n\ud83d\udcca **Scaling Knowledge Graphs** (36:00 - 44:40)\nExtracting life context from diverse data sources.\nEthical considerations around personal data and AI-generated content.\n\ud83c\udfa8 **Challenges of AI-Generated Work** (44:30 - 45:30)\nChallenges around AI-generated creative work.\nCautious use of AI by public figures to maintain trust.\n\ud83e\udd1d **Future Collaboration** (45:40 - 50:20)\nFacilitate contacts with Zoe\u2019s team and local AI communities.\nIntent to stay connected and share resources.\n",
+      "overview": "- **Personalized AI Agents for ADHD**: Developing AI agents tailored for managing ADHD, enhancing productivity, and focusing on executive tasks.  \n\n- **Dual Approach on Task Execution**: Combining daily task management with life context data optimization to improve AI's effectiveness and user engagement.  \n\n- **Productization of AI Components**: Plans to productize components for personal use, focusing on diverse user needs instead of a single \"AI life coach.\"  \n\n- **Emerging AI Platforms**: Exploring Open Claw and Zoe, with a focus on effective agentic workflows and user-friendly interfaces for diverse applications.  \n\n- **AI in Learning and Assessment**: AI enhances learning by enabling quick knowledge application, fostering user integration in educational contexts beyond traditional models.  \n\n- **Ethical Considerations in AI Content**: Acknowledging ethical challenges in AI-generated content, highlighting the importance of trust and transparency for community integrity."
+    },
+    "original_title": "Tyler Sztuka and Vrijen Attawar"
+  },
+  "participants": {
+    "identified": [
+      {
+        "name": "Vrijen Attawar",
+        "email": "vrijen@mycareerspan.com",
+        "crm_id": null,
+        "role": "attendee",
+        "confidence": 0.9
+      },
+      {
+        "name": "Tyler Sztuka",
+        "email": null,
+        "crm_id": null,
+        "role": "attendee",
+        "confidence": 0.9
+      }
+    ],
+    "unidentified": [
+      "tyler@szdlabs.io"
+    ],
+    "confidence": 0.9
+  },
+  "calendar_match": {
+    "event_id": null,
+    "confidence": 0.0,
+    "method": "none"
+  },
+  "quality_gate": {
+    "passed": false,
+    "checks": {
+      "has_transcript": true,
+      "participants_identified": true,
+      "meeting_type_determined": true,
+      "no_hitl_pending": false
+    },
+    "score": 0.5958333333333333,
+    "executed_at": "2026-02-17T17:27:30.458553+00:00",
+    "check_results": [
+      {
+        "name": "transcript_length",
+        "score": 1.0,
+        "passed": true,
+        "threshold": 300,
+        "warnings": [],
+        "errors": [],
+        "escalate_hitl": false
+      },
+      {
+        "name": "transcript_format",
+        "score": 0.6666666666666666,
+        "passed": false,
+        "threshold": 0.8,
+        "warnings": [],
+        "errors": [],
+        "escalate_hitl": false
+      },
+      {
+        "name": "meeting_duration_consistency",
+        "score": 0.5,
+        "passed": true,
+        "threshold": 0.5,
+        "warnings": [
+          "Meeting duration not specified"
+        ],
+        "errors": [],
+        "escalate_hitl": false
+      },
+      {
+        "name": "participant_confidence",
+        "score": 0.9,
+        "passed": true,
+        "threshold": 0.7,
+        "warnings": [],
+        "errors": [],
+        "escalate_hitl": false
+      },
+      {
+        "name": "host_identified",
+        "score": 0.0,
+        "passed": false,
+        "threshold": 1.0,
+        "warnings": [],
+        "errors": [
+          "No host identified"
+        ],
+        "escalate_hitl": false
+      },
+      {
+        "name": "external_participant_verification",
+        "score": 0.7,
+        "passed": false,
+        "threshold": 1.0,
+        "warnings": [
+          "Internal meeting with unidentified participants"
+        ],
+        "errors": [],
+        "escalate_hitl": false
+      },
+      {
+        "name": "calendar_match_score",
+        "score": 0.0,
+        "passed": false,
+        "threshold": 0.6,
+        "warnings": [],
+        "errors": [
+          "Very low calendar match confidence: 0.00"
+        ],
+        "escalate_hitl": true
+      },
+      {
+        "name": "meeting_type_consistency",
+        "score": 1.0,
+        "passed": true,
+        "threshold": 1.0,
+        "warnings": [],
+        "errors": [],
+        "escalate_hitl": false
+      }
+    ]
+  },
+  "blocks": {
+    "policy": "internal_standard",
+    "requested": [],
+    "generated": [],
+    "failed": [],
+    "skipped": []
+  },
+  "hitl": {
+    "queue_id": null,
+    "reason": null,
+    "resolved_at": null
+  },
+  "timestamps": {
+    "created_at": "2026-02-17T17:26:48.680684Z",
+    "ingested_at": "2026-02-17T17:26:48.680684Z",
+    "identified_at": "2026-02-17T17:27:30.447617+00:00",
+    "gated_at": null,
+    "processed_at": null,
+    "archived_at": null
+  },
+  "transcript_file": "transcript.md",
+  "crm_enrichment": {
+    "enriched_at": "2026-02-17T17:27:14.735333+00:00",
+    "classification": "internal",
+    "classification_reason": "1 internal participants identified, 1 unidentified",
+    "participant_matches": [
+      {
+        "input_name": "tyler@szdlabs.io,vrijen@mycareerspan.com",
+        "matched_name": "Vrijen Attawar",
+        "email": "vrijen@mycareerspan.com",
+        "is_internal": true,
+        "source": "profiles",
+        "confidence": 0.9,
+        "company": "Mycareerspan"
+      },
+      {
+        "input_name": "tyler@szdlabs.io",
+        "matched_name": null,
+        "email": "tyler@szdlabs.io",
+        "is_internal": null,
+        "source": null,
+        "confidence": 0.0,
+        "company": "SZD Labs (inferred from domain)"
+      }
+    ],
+    "identified_count": 1,
+    "unidentified_count": 1
+  },
+  "meeting_type": "internal",
+  "block_selection": {
+    "selected_at": "2026-02-17T17:28:07.672020Z",
+    "method": "smart_selector_v2",
+    "recipe": "internal_strategy",
+    "always_blocks": [
+      "B00",
+      "B40",
+      "B41",
+      "B42",
+      "B45",
+      "B47",
+      "B48"
+    ],
+    "conditional_selected": [
+      "B46",
+      "B07"
+    ],
+    "conditional_skipped": [
+      "B43",
+      "B44"
+    ],
+    "triggered": [
+      "B07"
+    ],
+    "reasoning": {
+      "B46": "Significant bidirectional knowledge transfer throughout the call. Tyler shared his 7-month journey of contextualizing personal knowledge with Claude and his structured ADHD AI framework approach. V explained Zo's agentic workflow capabilities and zero-code paradigm. Both exchanged approaches to personal knowledge management (belief mapping, knowledge graphs). Action items include Tyler sharing David's knowledge graph video and V sharing his belief mapping repository\u2014explicit knowledge transfer commitments.",
+      "B43": "Skipped: No substantive resource allocation discussion. Tyler mentions being 'completely swamped in client work' but this is personal context, not a capacity/budget/bandwidth conversation about shared work or Careerspan priorities. No hiring, budget, or resource planning discussed.",
+      "B44": "Skipped: While both discussed AI workflow approaches (Tyler's iterative knowledge structuring with Claude, V's Zo protocol for machine setup), these are exploratory personal methodologies rather than actionable process improvements tied to a shared operational workflow or Careerspan recruiting revenue. No friction points identified for remediation.",
+      "B07": "Triggered: 'intro me to / connect me with (implied)' - Action items show V committed to two warm introductions: (1) Send contact details for Crystal Briggs and Eric Espinal to Tyler (12:00), and (2) Draft and send introduction email connecting Tyler with Nicole from Emory alumni association and local AI community contacts (49:50). The outline section 'Future Collaboration' (45:40-50:20) confirms intent to 'Facilitate contacts with Zoe's team and local AI communities.' These are actionable introduction commitments V made during the call."
+    },
+    "total_blocks": 9
+  },
+  "blocks_generated": [
+    "B45_TEAM_DYNAMICS",
+    "B47_OPEN_DEBATES",
+    "B46_KNOWLEDGE_TRANSFER",
+    "B41_TEAM_COORDINATION",
+    "B40_INTERNAL_DECISIONS",
+    "B42_INTERNAL_ACTIONS",
+    "B48_INTERNAL_SYNTHESIS",
+    "B00_ZO_TAKE_HEED",
+    "B07_WARM_INTRODUCTIONS"
+  ],
+  "processed_at": "2026-02-17T17:41:22.581418Z"
+}

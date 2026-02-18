@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "the individual associated with the knowledge system"}, {"name": "Zo body", "type": "CONCEPT", "context": "a concept related to body generation"}], "relationships": [{"from": "V", "to": "Zo body", "type": "BELIEVES", "context": "V believes in the readiness for Zo body generation"}]}

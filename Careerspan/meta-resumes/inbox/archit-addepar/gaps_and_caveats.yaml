@@ -1,0 +1,101 @@
+# Gaps And Caveats
+# Extracted: 2026-02-15T01:59:23.356380
+# Method: Structured extraction
+# DO NOT EDIT
+
+cross_cutting_gaps:
+- area: AWS-native serverless and search stack depth (Lambda, Step Functions, API
+    Gateway, DynamoDB, OpenSearch)
+  severity: significant
+  detail: No explicit production experience with serverless primitives (Lambda, Step
+    Functions, API Gateway) or DynamoDB/OpenSearch, which are central to this role’s
+    stack; NoSQL experience is strong but not AWS-native.
+  interview_probes:
+  - Can you walk through a production service you built with Lambda + API Gateway,
+    including scaling, observability, and failure handling?
+  - How would you design DynamoDB table/index strategy and operational tuning for
+    ML-extracted alternatives-investment records?
+  - Describe a real OpenSearch implementation you owned, including index mapping,
+    query patterns, and performance tradeoffs.
+  affected_skills:
+  - Serverless Architecture
+  - DynamoDB
+  - OpenSearch / Elasticsearch
+  - Amazon Web Services (AWS)
+- area: Investment-domain and compliance ownership fit
+  severity: significant
+  detail: Security/compliance exposure is adjacent via payments and fraud prevention
+    but lacks direct ownership of frameworks such as PCI-DSS, SOC2, or GDPR; fintech
+    domain depth is primarily in payments/e-commerce rather than investment/alternatives
+    data.
+  interview_probes:
+  - What compliance controls did you personally design or own (PCI-DSS, SOC2, GDPR),
+    and what audit outcomes resulted?
+  - How would you adapt from payments data to alternatives investment data quality,
+    lineage, and reconciliation requirements?
+  - Describe a case where compliance constraints changed architecture decisions you
+    made.
+  affected_skills:
+  - Ensure Security Compliance
+  - Technical Documentation
+  - Software Architecture
+- area: Operational rigor evidence gaps in SQL, CI/CD, and documentation ownership
+  severity: moderate
+  detail: Limited evidence of writing, debugging, and optimizing SQL beyond inferred
+    use and minimal explicit CI/CD and documentation ownership narratives (beyond
+    SOPs and migrations).
+  interview_probes:
+  - Show a concrete SQL optimization you led end-to-end, including baseline, change,
+    and measured impact.
+  - What CI/CD pipelines did you design or own, and which release strategies and rollback
+    safeguards were used?
+  - Which architecture/runbook/API documents did you author, and how did they improve
+    delivery or incident outcomes?
+  affected_skills:
+  - SQL Querying and Optimization
+  - Continuous Integration/Continuous Deployment (CI/CD)
+  - Technical Documentation
+- area: Depth of formal ML-engineering collaboration practices
+  severity: moderate
+  detail: Collaboration with ML engineers is implied through the LLM fraud pipeline,
+    but formal, ongoing ML team integration practices (model monitoring, data contracts,
+    validation) are not detailed.
+  interview_probes:
+  - How did you define data contracts and validation checks between backend systems
+    and ML outputs?
+  - What model monitoring and drift/quality guardrails did you implement or consume
+    in production?
+  - Describe ongoing operating rhythms with ML engineers (incident response, retraining
+    triggers, ownership boundaries).
+  affected_skills:
+  - Collaborate with ML engineers
+  - Machine Learning Integration
+  - Backend Development
+untested_areas:
+- area: Formal ML production governance
+  reason: The brief cites an LLM/RAG fraud workflow but does not provide explicit
+    evidence of model monitoring, validation policy, drift handling, or shared ownership
+    processes with ML teams.
+  recommendation: Use a deep-dive interview on one ML-integrated service and require
+    concrete details on data contracts, monitoring metrics, failure modes, and escalation
+    ownership.
+- area: Hands-on AWS serverless implementation depth
+  reason: AWS and Terraform are present, but no explicit first-person production examples
+    of Lambda/Step Functions/API Gateway architecture and operations are documented.
+  recommendation: Run a system-design interview focused on a serverless ingestion
+    pipeline with throughput, idempotency, retries, cost controls, and observability
+    requirements.
+- area: Regulatory compliance implementation ownership
+  reason: Security work is adjacent, but explicit ownership of compliance frameworks
+    (PCI-DSS, SOC2, GDPR) and audit/control implementation is not evidenced.
+  recommendation: Probe for specific controls owned, audit artifacts produced, incident/compliance
+    exceptions handled, and measurable outcomes.
+- area: Practical OpenSearch/Elasticsearch delivery experience
+  reason: The brief repeatedly notes weak or lacking direct support for OpenSearch/Elasticsearch
+    despite transferable distributed-systems experience.
+  recommendation: Assess via scenario questions on index design, shard strategy, query
+    optimization, and relevance/latency tradeoffs under production load.
+stories_told: 2
+story_ids:
+- jL010IdigY4oaj3Hs8aU
+- KVukkhvzRKCPV7DqfgQA

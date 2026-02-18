@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume:Decoded - Hardik Khichi</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    
+    :root {
+      --purple-primary: #7C3AED;
+      --purple-light: #EDE9FE;
+      --purple-dark: #5B21B6;
+      --text-primary: #1F2937;
+      --text-muted: #6B7280;
+      --text-light: #9CA3AF;
+      --bg-card: #F9FAFB;
+      --bg-white: #FFFFFF;
+      --border-light: #E5E7EB;
+      --amber: #F59E0B;
+      --amber-light: #FEF3C7;
+      --amber-dark: #D97706;
+      --green: #10B981;
+      --green-light: #D1FAE5;
+    }
+    
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-size: 10pt;
+      line-height: 1.45;
+      color: var(--text-primary);
+      background: white;
+    }
+    
+    .page {
+      width: 8.5in;
+      height: 11in;
+      padding: 0.4in 0.5in 0.45in 0.5in;
+      position: relative;
+      page-break-after: always;
+      overflow: hidden;
+    }
+    
+    .page:last-child { page-break-after: avoid; }
+    
+    /* === HEADER === */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 8px;
+      border-bottom: 3px solid var(--purple-primary);
+      margin-bottom: 14px;
+    }
+    
+    .header-left {
+      font-size: 9pt;
+      font-weight: 700;
+      color: var(--purple-primary);
+      letter-spacing: 1.5px;
+    }
+    
+    .header-right {
+      font-size: 8pt;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+    
+    /* === HERO === */
+    .hero {
+      text-align: center;
+      margin-bottom: 14px;
+    }
+    
+    .candidate-name {
+      font-size: 26pt;
+      font-weight: 700;
+      margin-bottom: 3px;
+      color: var(--text-primary);
+    }
+    
+    .candidate-role {
+      font-size: 12pt;
+      color: var(--purple-primary);
+      font-weight: 600;
+      margin-bottom: 3px;
+    }
+    
+    .candidate-meta {
+      font-size: 10pt;
+      color: var(--text-muted);
+    }
+    
+    /* === CANDIDATE BOTTOM LINE === */
+    .bottom-line-section {
+      margin-bottom: 14px;
+    }
+    
+    .bottom-line-header {
+      font-size: 9pt;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+    
+    .bottom-line-box {
+      background: var(--purple-light);
+      border-left: 4px solid var(--purple-primary);
+      border-radius: 6px;
+      padding: 12px 16px;
+    }
+    
+    .bottom-line-text {
+      font-size: 10.5pt;
+      color: var(--text-primary);
+      line-height: 1.5;
+      font-style: italic;
+    }
+    
+    /* === VERDICT === */
+    .verdict-section {
+      margin-bottom: 14px;
+    }
+    
+    .verdict-box {
+      background: var(--purple-primary);
+      color: white;
+      padding: 12px 18px;
+      border-radius: 6px;
+      text-align: center;
+    }
+    
+    .verdict-title {
+      font-size: 14pt;
+      font-weight: 600;
+    }
+    
+    /* === SIGNAL SECTION === */
+    .signal-section {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      background: var(--bg-card);
+      border-radius: 6px;
+      padding: 10px 16px;
+      margin-bottom: 14px;
+    }
+    
+    .signal-label-main {
+      font-size: 9pt;
+      font-weight: 700;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      white-space: nowrap;
+    }
+    
+    .signal-bars {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex: 1;
+    }
+    
+    .signal-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .signal-item-label {
+      font-size: 9pt;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+    
+    .signal-bar-mini {
+      width: 90px;
+      height: 7px;
+      background: var(--border-light);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    
+    .signal-bar-fill {
+      height: 100%;
+      background: var(--purple-primary);
+      border-radius: 4px;
+    }
+    
+    .signal-bar-fill.resume { opacity: 0.5; }
+    
+    .signal-value {
+      font-size: 10pt;
+      font-weight: 700;
+      color: var(--text-primary);
+      min-width: 40px;
+    }
+    
+    .signal-meta {
+      font-size: 9pt;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+    
+    /* === SCREEN DOTS INDICATOR === */
+    .screen-dots {
+      color: var(--purple-primary);
+      font-size: 8pt;
+      margin-left: 4px;
+    }
+    
+    /* === BEHAVIORAL EVIDENCE === */
+    .behavioral-section {
+      margin-bottom: 14px;
+    }
+    
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      gap: 10px;
+      margin-bottom: 10px;
+      padding-bottom: 5px;
+      border-bottom: 2px solid var(--purple-primary);
+    }
+    
+    .section-title {
+      font-size: 10.5pt;
+      font-weight: 700;
+      color: var(--text-primary);
+    }
+    
+    .section-subtitle {
+      font-size: 8pt;
+      color: var(--text-muted);
+    }
+    
+    .behavioral-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    
+    .behavioral-item {
+      padding-left: 12px;
+      border-left: 3px solid var(--purple-light);
+    }
+    
+    .behavioral-item-title {
+      font-weight: 700;
+      font-size: 10pt;
+      color: var(--purple-primary);
+      margin-bottom: 3px;
+    }
+    
+    .behavioral-quote {
+      font-size: 9pt;
+      font-style: italic;
+      color: var(--text-primary);
+      margin-bottom: 3px;
+      line-height: 1.35;
+    }
+    
+    .behavioral-description {
+      font-size: 9pt;
+      color: var(--text-primary);
+      margin-bottom: 3px;
+      line-height: 1.35;
+    }
+    
+    .behavioral-citation {
+      font-size: 7.5pt;
+      color: var(--text-muted);
+      font-style: normal;
+    }
+    
+    /* === QUESTIONS === */
+    .questions-section {
+      margin-bottom: 0;
+    }
+    
+    .questions-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    
+    .question {
+      padding-left: 12px;
+      border-left: 2px solid var(--purple-light);
+    }
+    
+    .question-topic {
+      color: var(--purple-primary);
+      font-weight: 700;
+      font-size: 9.5pt;
+      margin-bottom: 3px;
+    }
+    
+    .question-text {
+      font-style: italic;
+      font-size: 9pt;
+      line-height: 1.4;
+      color: var(--text-primary);
+    }
+    
+    /* === PAGE 2: TRADE-OFFS === */
+    .tradeoffs-section {
+      margin-bottom: 24px;
+    }
+    
+    .tradeoffs-header {
+      font-size: 12pt;
+      font-weight: 700;
+      margin-bottom: 14px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--purple-primary);
+    }
+    
+    .tradeoffs-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+    
+    .tradeoff-card {
+      background: var(--bg-card);
+      padding: 12px 14px;
+      padding-left: 12px;
+      border-left: 3px solid var(--purple-light);
+      min-height: 70px;
+    }
+    
+    .tradeoff-need {
+      font-weight: 700;
+      font-size: 10pt;
+      color: var(--text-primary);
+      margin-bottom: 5px;
+    }
+    
+    .tradeoff-verdict {
+      font-size: 10pt;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+    
+    .tradeoff-verdict.strong { color: var(--green); }
+    .tradeoff-verdict.verify { color: var(--amber-dark); }
+    .tradeoff-verdict.gap { color: var(--text-muted); }
+    
+    .tradeoff-reason {
+      font-size: 9pt;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
+    
+    /* === CULTURE ALIGNMENT === */
+    .stack-section {
+      margin-top: 24px;
+    }
+    
+    .stack-header {
+      font-size: 12pt;
+      font-weight: 700;
+      margin-bottom: 14px;
+      padding-bottom: 6px;
+      border-bottom: 2px solid var(--purple-primary);
+    }
+    
+    .stack-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+    }
+    
+    .stack-column {
+      background: var(--bg-card);
+      border-radius: 6px;
+      padding: 12px 14px;
+    }
+    
+    .stack-column-header {
+      font-size: 9pt;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+      padding-bottom: 5px;
+      border-bottom: 1px solid var(--border-light);
+    }
+    
+    .stack-column.match .stack-column-header { color: var(--green); }
+    .stack-column.mismatch .stack-column-header { color: #DC2626; }
+    .stack-column.unknown .stack-column-header { color: var(--text-muted); }
+    
+    .stack-item {
+      font-size: 9.5pt;
+      padding: 5px 0;
+      border-bottom: 1px solid var(--border-light);
+    }
+    
+    .stack-item:last-child { border-bottom: none; }
+    
+    .stack-item-name {
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    
+    .stack-item-note {
+      font-size: 8pt;
+      color: var(--text-muted);
+      margin-top: 2px;
+    }
+    
+    .stack-empty {
+      font-size: 9pt;
+      color: var(--text-light);
+      font-style: italic;
+    }
+    
+    /* === FOOTER === */
+    .footer {
+      position: absolute;
+      bottom: 0.35in;
+      left: 0.5in;
+      right: 0.5in;
+      display: flex;
+      justify-content: space-between;
+      font-size: 8pt;
+      color: var(--text-muted);
+      padding-top: 8px;
+      border-top: 1px solid var(--border-light);
+    }
+    
+    .footer-brand { color: var(--purple-primary); font-weight: 600; }
+  </style>
+</head>
+<body>
+  <!-- ==================== PAGE 1 ==================== -->
+  <div class="page">
+    <div class="header">
+      <div class="header-left">RESUME:DECODED</div>
+      <div class="header-right">Careerspan × CorridorX · Company · Feb 2026</div>
+    </div>
+    
+    <!-- HERO -->
+    <div class="hero">
+      <div class="candidate-name">Hardik Khichi</div>
+      <div class="candidate-role">Role</div>
+      <div class="candidate-meta">4.7y exp · 3.5y IC · 1.2y Lead · 4 Careerspan screens</div>
+    </div>
+    
+    <!-- CANDIDATE BOTTOM LINE -->
+    <div class="bottom-line-section">
+      <div class="bottom-line-header">📋 Candidate Bottom Line</div>
+      <div class="bottom-line-box">
+        <div class="bottom-line-text">This zero-to-one platform architect is a strong fit based on my screens because who has built and shipped a production ML SaaS platform end-to-end, owning frontend, backend...</div>
+      </div>
+    </div>
+    
+    <!-- VERDICT -->
+    <div class="verdict-section">
+      <div class="verdict-box">
+        <div class="verdict-title">👍 Take This Meeting — 89/100</div>
+      </div>
+    </div>
+    
+    <!-- SIGNAL -->
+    <div class="signal-section">
+      <div class="signal-label-main">📊 SKILLS SIGNAL</div>
+      <div class="signal-bars">
+        <div class="signal-item">
+          <span class="signal-item-label">Screen-verified</span>
+          <div class="signal-bar-mini">
+            <div class="signal-bar-fill" style="width: 76%"></div>
+          </div>
+          <span class="signal-value">76%</span>
+        </div>
+        <div class="signal-item">
+          <span class="signal-item-label">Resume-only</span>
+          <div class="signal-bar-mini">
+            <div class="signal-bar-fill resume" style="width: 20%"></div>
+          </div>
+          <span class="signal-value">20%</span>
+        </div>
+      </div>
+    </div>
+    
+    <!-- BEHAVIORAL EVIDENCE -->
+    <div class="behavioral-section">
+      <div class="section-header">
+        <span class="section-title">🔍 What the Resume Can't Tell You</span>
+        <span class="section-subtitle">— Behavioral signals from Careerspan screens</span>
+      </div>
+      
+      <div class="behavioral-grid">
+        <div class="behavioral-item">
+          <div class="behavioral-item-title">Zero-To-One Platform Architect</div>
+          <div class="behavioral-quote">"Built an ML SaaS platform from whiteboard to production"</div>
+          <div class="behavioral-citation">— As founding engineer at Keysight, architecting a platform that grew to serve hundreds of daily users including Apple, Samsung, and Volkswagen</div>
+        </div>
+        <div class="behavioral-item">
+          <div class="behavioral-item-title">Full-Stack Boundary Crosser</div>
+          <div class="behavioral-quote">"Owned frontend, backend, infra, and AI components simultaneously"</div>
+          <div class="behavioral-citation">— Across Keysight and American Express, consistently stepping beyond ML specialization to deliver complete product experiences end-to-end</div>
+        </div>
+        <div class="behavioral-item">
+          <div class="behavioral-item-title">Feedback-Driven Iterative Builder</div>
+          <div class="behavioral-quote">"Triaged user feedback and shipped improvements across adoption waves"</div>
+          <div class="behavioral-citation">— Scaling Keysight&#x27;s ML platform from internal beta through global external adoption, translating diverse user needs into roadmap priorities</div>
+        </div>
+        <div class="behavioral-item">
+          <div class="behavioral-item-title">Reliability-First Production Engineer</div>
+          <div class="behavioral-quote">"Engineered instant rollback, automated provisioning, and real-time observability"</div>
+          <div class="behavioral-citation">— Operating mission-critical ML infrastructure at Keysight supporting 6G and autonomous vehicle workloads where downtime meant blocked research pipeline</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- QUESTIONS -->
+    <div class="questions-section">
+      <div class="section-header">
+        <span class="section-title">❓ Questions That Matter</span>
+        <span class="section-subtitle">— Key areas to probe in the interview</span>
+      </div>
+      
+      <div class="questions-grid">
+        <div class="question">
+          <div class="question-topic">End-to-End Solution Delivery</div>
+          <div class="question-text">"Walk me through a project where you owned a feature from initial design through production deployment. What were the key technical decisions you made, what tradeoffs did you navigate, and how did you handle the handoff between prototyping and production-readiness?"</div>
+        </div>
+        <div class="question">
+          <div class="question-topic">AI Prototyping to Production</div>
+          <div class="question-text">"Describe an AI/ML feature you took from prototype to production. What changed between the proof-of-concept and the production version — in terms of infrastructure, data pipelines, monitoring, or model serving — and what surprised you most during that transition?"</div>
+        </div>
+        <div class="question">
+          <div class="question-topic">Vector Search Techniques</div>
+          <div class="question-text">"Have you worked with vector databases or embedding-based search in any of your projects? If so, how did you choose your embedding model and indexing strategy, and what retrieval quality or performance challenges did you run into?"</div>
+        </div>
+        <div class="question">
+          <div class="question-topic">SOC 2 Compliance</div>
+          <div class="question-text">"What&#x27;s been your exposure to SOC 2 or similar compliance frameworks? Have you ever had to modify how you build, log, or deploy software specifically to meet compliance requirements?"</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <span>Resume:Decoded by <span class="footer-brand">Careerspan</span> × CorridorX</span>
+      <span>1</span>
+    </div>
+  </div>
+  
+  <!-- ==================== PAGE 2 ==================== -->
+  <div class="page">
+    <div class="header">
+      <div class="header-left">RESUME:DECODED</div>
+      <div class="header-right">Careerspan × CorridorX · Company · Feb 2026</div>
+    </div>
+    
+    <!-- TRADE-OFFS -->
+    <div class="tradeoffs-section">
+      <div class="section-header">
+        <span class="section-title">↔ Your Priorities → Fit</span>
+        <span class="section-subtitle">— How candidate maps to role requirements</span>
+      </div>
+      
+      <div class="tradeoffs-grid">
+        <div class="tradeoff-card">
+          <div class="tradeoff-need">End-to-end backend delivery</div>
+          <div class="tradeoff-verdict strong">Strong fit</div>
+          <div class="tradeoff-reason">Demonstrated ability to deliver full solutions from prototype to production, which is core to a backend engineer role</div>
+        </div>
+        <div class="tradeoff-card">
+          <div class="tradeoff-need">AI/ML feature development</div>
+          <div class="tradeoff-verdict strong">Strong fit</div>
+          <div class="tradeoff-reason">Strong signals in both prototyping and productionizing AI features — rare combination that reduces handoff friction</div>
+        </div>
+        <div class="tradeoff-card">
+          <div class="tradeoff-need">Production reliability and testing</div>
+          <div class="tradeoff-verdict verify">Verify in meeting</div>
+          <div class="tradeoff-reason">Feature reliability is flagged as a strength but no specific backend tech stack listed — need to confirm depth with their actual infrastructure (databases, queues, observability)</div>
+        </div>
+        <div class="tradeoff-card">
+          <div class="tradeoff-need">Vector search and retrieval systems</div>
+          <div class="tradeoff-verdict gap">Gap</div>
+          <div class="tradeoff-reason">Explicitly flagged as a weak area — if the role involves RAG pipelines, embedding search, or similar, this requires ramp-up time or training investment</div>
+        </div>
+        <div class="tradeoff-card">
+          <div class="tradeoff-need">Security and compliance posture</div>
+          <div class="tradeoff-verdict gap">Gap</div>
+          <div class="tradeoff-reason">SOC 2 compliance gap means they may lack experience with audit logging, access controls, and data handling standards expected in regulated backend environments</div>
+        </div>
+        <div class="tradeoff-card">
+          <div class="tradeoff-need">Backend technology depth</div>
+          <div class="tradeoff-verdict gap">More signal needed</div>
+          <div class="tradeoff-reason">No specific tech stack listed — high overall score but unclear whether their backend experience maps to your stack (languages, databases, cloud infrastructure)</div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- CULTURE ALIGNMENT SIGNALS -->
+    <div class="stack-section">
+      <div class="section-header">
+        <span class="section-title">🎯 Culture Alignment Signals</span>
+        <span class="section-subtitle">— Fit with company values and working style</span>
+      </div>
+      
+      <div class="stack-grid">
+        <div class="stack-column match">
+          <div class="stack-column-header">✓ Strong Fit</div>
+          <div class="stack-empty">None identified</div>
+        </div>
+        
+        <div class="stack-column mismatch">
+          <div class="stack-column-header">✗ Concerns</div>
+          <div class="stack-empty">None identified</div>
+        </div>
+        
+        <div class="stack-column unknown">
+          <div class="stack-column-header">? Verify</div>
+          <div class="stack-empty">None identified</div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="footer">
+      <span>Resume:Decoded by <span class="footer-brand">Careerspan</span> × CorridorX</span>
+      <span>2</span>
+    </div>
+  </div>
+</body>
+</html>

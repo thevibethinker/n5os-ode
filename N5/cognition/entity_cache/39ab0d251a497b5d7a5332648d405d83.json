@@ -1,0 +1,1 @@
+{"entities": [{"name": "LLM", "type": "TOOL", "context": "refers to the Large Language Model used for calls"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "the subject of the knowledge system"}], "relationships": []}

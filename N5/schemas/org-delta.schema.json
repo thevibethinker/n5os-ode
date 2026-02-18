@@ -1,0 +1,358 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://n5.local/schemas/org-delta.schema.json",
+  "title": "Organization Delta Schema",
+  "description": "Structured metadata for organizational changes and intelligence (Relationship Intelligence OS v1.0)",
+  "type": "object",
+  "required": [
+    "delta_id",
+    "organization_id",
+    "delta_type",
+    "evidence",
+    "impact_level",
+    "provenance",
+    "confidence"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "delta_id": {
+      "type": "string",
+      "description": "Unique organization delta identifier",
+      "pattern": "^odelta_[a-z0-9]{12}$"
+    },
+    "organization_id": {
+      "type": "string",
+      "description": "Canonical organization identifier from CRM",
+      "pattern": "^org_[a-z0-9]{12}$"
+    },
+    "organization_name": {
+      "type": "string",
+      "description": "Organization name for reference"
+    },
+    "delta_type": {
+      "type": "string",
+      "enum": [
+        "priority_shift",
+        "constraint_change",
+        "process_update",
+        "buying_signal",
+        "budget_change",
+        "leadership_change",
+        "strategy_pivot",
+        "competitive_pressure",
+        "market_position_shift",
+        "technology_adoption",
+        "partnership_change",
+        "regulatory_impact",
+        "operational_challenge",
+        "growth_initiative"
+      ],
+      "description": "Type of organizational change detected"
+    },
+    "impact_level": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5,
+      "description": "Impact level of the organizational change (1=minor, 5=critical)"
+    },
+    "temporal_scope": {
+      "type": "string",
+      "enum": ["immediate", "quarterly", "annual", "multi_year", "permanent"],
+      "description": "Expected temporal scope of this organizational change"
+    },
+    "change_details": {
+      "type": "object",
+      "properties": {
+        "previous_state": {
+          "type": "string",
+          "description": "Description of organization state before this delta"
+        },
+        "current_state": {
+          "type": "string",
+          "description": "Description of organization state after this delta"
+        },
+        "trigger_factors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Factors that triggered this organizational change"
+        },
+        "affected_departments": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Departments or areas affected by this change"
+        },
+        "key_stakeholders": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["person_id", "role_in_change"],
+            "properties": {
+              "person_id": {
+                "type": "string",
+                "pattern": "^person_[a-z0-9]{12}$"
+              },
+              "role_in_change": {
+                "type": "string",
+                "enum": [
+                  "decision_maker",
+                  "influencer",
+                  "implementer",
+                  "affected_party",
+                  "blocker",
+                  "champion"
+                ]
+              },
+              "influence_level": {
+                "type": "integer",
+                "minimum": 1,
+                "maximum": 5
+              }
+            },
+            "additionalProperties": false
+          },
+          "description": "Key people involved in this organizational change"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Detailed change information"
+    },
+    "business_implications": {
+      "type": "object",
+      "properties": {
+        "revenue_impact": {
+          "type": "string",
+          "enum": ["positive", "negative", "neutral", "unclear"],
+          "description": "Expected revenue impact"
+        },
+        "operational_impact": {
+          "type": "string",
+          "enum": ["positive", "negative", "neutral", "unclear"],
+          "description": "Expected operational impact"
+        },
+        "strategic_alignment": {
+          "type": "string",
+          "enum": ["aligned", "misaligned", "neutral", "unclear"],
+          "description": "Alignment with our strategic interests"
+        },
+        "opportunity_score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10,
+          "description": "Business opportunity score for us (0-10)"
+        },
+        "risk_score": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10,
+          "description": "Risk score for our engagement (0-10)"
+        },
+        "recommended_actions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["action", "priority", "timeline"],
+            "properties": {
+              "action": {
+                "type": "string",
+                "description": "Recommended action to take"
+              },
+              "priority": {
+                "type": "string",
+                "enum": ["low", "medium", "high", "critical"]
+              },
+              "timeline": {
+                "type": "string",
+                "enum": ["immediate", "days", "weeks", "months", "quarters"]
+              },
+              "owner": {
+                "type": "string",
+                "description": "Who should own this action"
+              }
+            },
+            "additionalProperties": false
+          },
+          "description": "Recommended actions based on this org delta"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Business implications and recommendations"
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type", "content", "reliability"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "direct_statement",
+              "behavior_observation",
+              "process_change",
+              "budget_allocation",
+              "hiring_pattern",
+              "technology_adoption",
+              "communication_shift",
+              "meeting_structure",
+              "decision_pattern",
+              "external_announcement"
+            ]
+          },
+          "content": {
+            "type": "string",
+            "description": "Specific evidence content"
+          },
+          "reliability": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1,
+            "description": "Evidence reliability score (0-1)"
+          },
+          "source": {
+            "type": "string",
+            "enum": [
+              "primary_stakeholder",
+              "secondary_stakeholder",
+              "public_announcement",
+              "behavior_observation",
+              "third_party_report"
+            ],
+            "description": "Source type of this evidence"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When this evidence was observed"
+          },
+          "source_block_id": {
+            "type": "string",
+            "description": "Meeting block where evidence was found"
+          }
+        },
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "description": "Evidence supporting this organizational delta"
+    },
+    "competitive_intelligence": {
+      "type": "object",
+      "properties": {
+        "market_position_change": {
+          "type": "string",
+          "enum": ["strengthening", "weakening", "stable", "unclear"],
+          "description": "Change in market position"
+        },
+        "competitive_threats": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Competitive threats mentioned"
+        },
+        "differentiation_factors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Key differentiation factors mentioned"
+        },
+        "market_dynamics": {
+          "type": "string",
+          "description": "Market dynamics affecting this organization"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Competitive and market intelligence"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When delta was recorded"
+    },
+    "effective_date": {
+      "type": "string",
+      "format": "date",
+      "description": "When this organizational change became effective"
+    },
+    "review_date": {
+      "type": "string",
+      "format": "date",
+      "description": "When to review/reassess this organizational state"
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["meeting_id", "block_ids"],
+      "properties": {
+        "meeting_id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]{6}$",
+          "description": "Source meeting identifier"
+        },
+        "block_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "description": "Source block identifiers"
+        },
+        "conversation_id": {
+          "type": "string",
+          "description": "Conversation where delta was extracted"
+        },
+        "extraction_version": {
+          "type": "string",
+          "description": "Version of extraction engine used"
+        },
+        "pipeline_run_id": {
+          "type": "string",
+          "description": "Pipeline run identifier"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Delta extraction provenance"
+    },
+    "confidence": {
+      "type": "object",
+      "required": ["overall"],
+      "properties": {
+        "overall": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Overall confidence in this organizational delta (0-1)"
+        },
+        "evidence_quality": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Confidence in evidence quality (0-1)"
+        },
+        "interpretation_accuracy": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Confidence in interpretation of organizational change (0-1)"
+        },
+        "org_identification": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Confidence in organization ID mapping (0-1)"
+        },
+        "temporal_accuracy": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Confidence in timing/scope assessment (0-1)"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Confidence metrics for organizational delta"
+    }
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "schema_version": "1.0",
+  "slug": "career-hotline-v4",
+  "title": "Career Coaching Hotline V4 — Prime Time",
+  "objective": "Take Careerspan Career Coaching Hotline from initial build to prime time",
+  "created": "2026-02-17",
+  "status": "active",
+  "completed_at": null,
+  "type": "interactive",
+  "orchestrator_convo_id": "con_3BuG4GkgO8ROXcds",
+  "spawn_mode": "manual",
+  "workers": {
+    "total": 7,
+    "complete": 0,
+    "in_progress": 0,
+    "blocked": 0,
+    "pending": 7
+  },
+  "waves": [
+    {
+      "id": 1,
+      "name": "Research & Optimization",
+      "drops": ["D1-latency", "D2-model-cost", "D3-research", "D5-knowledge-base", "D6-backend-data"],
+      "status": "pending"
+    },
+    {
+      "id": 2,
+      "name": "Synthesis & Design",
+      "drops": ["D4-conversation-design"],
+      "status": "pending"
+    }
+  ],
+  "worker_details": [
+    {"id": "D1", "slug": "latency", "title": "Latency Optimization", "status": "pending", "wave": 1, "spawn_mode": "manual"},
+    {"id": "D2", "slug": "model-cost", "title": "Model Cost Optimization", "status": "pending", "wave": 1, "spawn_mode": "manual"},
+    {"id": "D3", "slug": "research", "title": "Career Coaching Research", "status": "pending", "wave": 1, "spawn_mode": "manual"},
+    {"id": "D4", "slug": "conversation-design", "title": "Conversation Design v3", "status": "pending", "wave": 2, "spawn_mode": "manual", "dependencies": ["D1", "D2", "D3", "D5", "D6"]},
+    {"id": "D5", "slug": "knowledge-base", "title": "Knowledge Base Optimization & Enrichment", "status": "pending", "wave": 1, "spawn_mode": "manual"},
+    {"id": "D6", "slug": "backend-data", "title": "Backend & Data Layer Hardening", "status": "pending", "wave": 1, "spawn_mode": "manual"},
+    {"id": "D7", "slug": "zo-docs", "title": "Zo Documentation Ingestion (shared)", "status": "pending", "wave": 1, "spawn_mode": "manual"}
+  ],
+  "shared_infra_note": "Changes to VAPI voice config, endpointing, DuckDB logging, or notification patterns must be tested against both career-hotline-v4 AND zo-hotline-v4 builds."
+}

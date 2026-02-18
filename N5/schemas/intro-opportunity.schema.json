@@ -1,0 +1,422 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://n5.local/schemas/intro-opportunity.schema.json",
+  "title": "Intro Opportunity Schema",
+  "description": "Structured metadata for introduction opportunities and mutual connections (Relationship Intelligence OS v1.0)",
+  "type": "object",
+  "required": [
+    "opportunity_id",
+    "requester_id",
+    "target_id",
+    "mutual_path",
+    "intent",
+    "status",
+    "provenance",
+    "confidence"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "opportunity_id": {
+      "type": "string",
+      "description": "Unique intro opportunity identifier",
+      "pattern": "^intro_[a-z0-9]{12}$"
+    },
+    "requester_id": {
+      "type": "string",
+      "description": "Person requesting the introduction",
+      "pattern": "^person_[a-z0-9]{12}$"
+    },
+    "requester_name": {
+      "type": "string",
+      "description": "Requester name for reference"
+    },
+    "target_id": {
+      "type": "string",
+      "description": "Person to be introduced to",
+      "pattern": "^person_[a-z0-9]{12}$"
+    },
+    "target_name": {
+      "type": "string",
+      "description": "Target name for reference"
+    },
+    "mutual_path": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["person_id", "relationship_strength"],
+        "properties": {
+          "person_id": {
+            "type": "string",
+            "pattern": "^person_[a-z0-9]{12}$",
+            "description": "Person ID in the connection path"
+          },
+          "person_name": {
+            "type": "string",
+            "description": "Person name for reference"
+          },
+          "relationship_strength": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 5,
+            "description": "Relationship strength (1=weak, 5=strong)"
+          },
+          "relationship_type": {
+            "type": "string",
+            "enum": [
+              "colleague",
+              "friend",
+              "mentor",
+              "investor",
+              "vendor",
+              "client",
+              "advisor",
+              "family",
+              "acquaintance",
+              "other"
+            ],
+            "description": "Type of relationship"
+          },
+          "last_interaction": {
+            "type": "string",
+            "format": "date",
+            "description": "Date of last known interaction"
+          },
+          "interaction_frequency": {
+            "type": "string",
+            "enum": ["daily", "weekly", "monthly", "quarterly", "rarely", "unknown"],
+            "description": "Frequency of interaction"
+          }
+        },
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "description": "Path of mutual connections between requester and target"
+    },
+    "intent": {
+      "type": "object",
+      "required": ["purpose"],
+      "properties": {
+        "purpose": {
+          "type": "string",
+          "enum": [
+            "business_development",
+            "partnership",
+            "hiring",
+            "fundraising",
+            "knowledge_sharing",
+            "mentorship",
+            "collaboration",
+            "vendor_evaluation",
+            "investment_opportunity",
+            "personal_networking",
+            "other"
+          ],
+          "description": "Primary purpose of the introduction"
+        },
+        "description": {
+          "type": "string",
+          "description": "Detailed description of why the introduction is needed"
+        },
+        "expected_outcome": {
+          "type": "string",
+          "description": "What the requester hopes to achieve"
+        },
+        "urgency": {
+          "type": "string",
+          "enum": ["low", "medium", "high", "urgent"],
+          "description": "Urgency of the introduction request"
+        },
+        "context": {
+          "type": "string",
+          "description": "Additional context that would be helpful for the introduction"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Intent and purpose of the introduction"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "identified",
+        "evaluating",
+        "approved",
+        "intro_sent",
+        "connection_made",
+        "follow_up_needed",
+        "completed",
+        "declined",
+        "postponed",
+        "expired"
+      ],
+      "description": "Current status of the intro opportunity"
+    },
+    "feasibility_assessment": {
+      "type": "object",
+      "properties": {
+        "strength_score": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10,
+          "description": "Overall strength of the connection path (1-10)"
+        },
+        "likelihood_success": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Estimated likelihood of successful introduction (0-1)"
+        },
+        "potential_value": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10,
+          "description": "Potential value of successful connection (1-10)"
+        },
+        "risk_factors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Potential risks or concerns with this introduction"
+        },
+        "success_factors": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Factors that increase likelihood of success"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Assessment of introduction feasibility"
+    },
+    "timing": {
+      "type": "object",
+      "properties": {
+        "optimal_timing": {
+          "type": "string",
+          "enum": ["immediate", "days", "weeks", "months", "specific_event"],
+          "description": "Optimal timing for the introduction"
+        },
+        "timing_rationale": {
+          "type": "string",
+          "description": "Reasoning behind timing recommendation"
+        },
+        "deadline": {
+          "type": "string",
+          "format": "date",
+          "description": "Hard deadline if applicable"
+        },
+        "seasonal_considerations": {
+          "type": "string",
+          "description": "Any seasonal or cyclical considerations"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Timing considerations for the introduction"
+    },
+    "preparation": {
+      "type": "object",
+      "properties": {
+        "requester_prep": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "What the requester should prepare"
+        },
+        "target_prep": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "What should be prepared for the target"
+        },
+        "context_to_share": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Context that should be shared with both parties"
+        },
+        "suggested_format": {
+          "type": "string",
+          "enum": ["email", "phone_call", "video_call", "in_person", "event_intro", "group_setting"],
+          "description": "Suggested format for the introduction"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Preparation requirements for the introduction"
+    },
+    "execution": {
+      "type": "object",
+      "properties": {
+        "intro_method": {
+          "type": "string",
+          "enum": ["direct_email", "warm_email", "phone_intro", "event_intro", "group_introduction", "social_media"],
+          "description": "Method used for introduction"
+        },
+        "intro_sent_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When introduction was sent"
+        },
+        "response_received": {
+          "type": "boolean",
+          "description": "Whether response was received from target"
+        },
+        "response_received_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When response was received"
+        },
+        "connection_established": {
+          "type": "boolean",
+          "description": "Whether the two parties connected"
+        },
+        "connection_established_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When connection was established"
+        },
+        "follow_up_needed": {
+          "type": "boolean",
+          "description": "Whether follow-up is needed"
+        },
+        "follow_up_date": {
+          "type": "string",
+          "format": "date",
+          "description": "When to follow up"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Introduction execution details"
+    },
+    "outcome": {
+      "type": "object",
+      "properties": {
+        "result": {
+          "type": "string",
+          "enum": [
+            "successful_connection",
+            "initial_meeting_scheduled",
+            "ongoing_relationship",
+            "business_outcome_achieved",
+            "no_response",
+            "polite_decline",
+            "timing_not_right",
+            "not_relevant",
+            "other"
+          ],
+          "description": "Final outcome of the introduction attempt"
+        },
+        "value_created": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10,
+          "description": "Value created from this introduction (0-10)"
+        },
+        "lessons_learned": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Lessons learned from this introduction"
+        },
+        "follow_on_opportunities": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Follow-on opportunities identified"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Introduction outcome and results"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When opportunity was identified"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When opportunity was last updated"
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When this opportunity expires if not acted upon"
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["meeting_id"],
+      "properties": {
+        "meeting_id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]{6}$",
+          "description": "Meeting where opportunity was identified"
+        },
+        "block_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Meeting blocks mentioning this opportunity"
+        },
+        "conversation_id": {
+          "type": "string",
+          "description": "Conversation where opportunity was extracted"
+        },
+        "extraction_version": {
+          "type": "string",
+          "description": "Version of extraction engine used"
+        },
+        "pipeline_run_id": {
+          "type": "string",
+          "description": "Pipeline run identifier"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Opportunity identification provenance"
+    },
+    "confidence": {
+      "type": "object",
+      "required": ["overall"],
+      "properties": {
+        "overall": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Overall confidence in intro opportunity (0-1)"
+        },
+        "mutual_path_accuracy": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Confidence in mutual connection path (0-1)"
+        },
+        "intent_clarity": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Confidence in understanding the intent (0-1)"
+        },
+        "person_identification": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Confidence in person ID mappings (0-1)"
+        },
+        "feasibility_assessment": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Confidence in feasibility assessment (0-1)"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Confidence metrics for intro opportunity"
+    }
+  }
+}

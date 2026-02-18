@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "Recipes/recipes.jsonl", "type": "TOOL", "context": "file containing existing workflows/recipes"}], "relationships": [{"from": "V", "to": "Recipes/recipes.jsonl", "type": "USES", "context": "V uses this file to check for existing workflows/recipes"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Zo LLM", "type": "TOOL", "context": "LLM subprocess interface referenced for future implementation"}], "relationships": [{"from": "V", "to": "Zo LLM", "type": "USES", "context": "V's implementation uses Zo LLM as a subprocess interface"}]}

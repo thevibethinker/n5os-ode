@@ -2,60 +2,75 @@
 # Source: Provided JD
 
 raw_jd: |
-  ---
-  created: 2026-02-05
-  last_edited: 2026-02-05
-  version: 1.0
-  provenance: con_Lm2vqXjxi9QnVl8m
-  ---
+  # Job Description
+  # Source: Provided JD
   
-  company: Addepar
-  title: Sr. Backend Software Engineer
-  location: Pune, India
-  visa_sponsorship: false
-  
-  about_company: |
-    Addepar is a global technology and data company that helps investment professionals provide the most informed, precise guidance for their clients. Hundreds of thousands of users have entrusted Addepar to empower smarter investment decisions and better advice over the last decade. With client presence in more than 50 countries, Addepar's platform aggregates portfolio, market and client data for over $8 trillion in assets. Addepar's open platform integrates with more than 100 software, data and services partners to deliver a complete solution for a wide range of firms and use cases.
-  
-  responsibilities:
-    - Architect, implement, and maintain engineering solutions to solve complex problems
-    - Work in a collaborative team environment across engineering, product, and data science teams
-    - Design and build scalable backend services
-    - Ensure high-quality software delivery
-  
-  requirements:
-    - Deep expertise in Java or Python backend development
-    - Experience with NoSQL databases
-    - Infrastructure as code experience (preferably Terraform)
-    - AWS experience
-    - Solutions-oriented mindset
-    - Experience or interest in financial data systems
-  
-  values:
-    - Act Like an Owner: Think and act like an owner. Own outcomes over actions.
-    - Build Together: Collaborate to unlock the best solutions. Deliver lasting value.
-    - Champion Clients: Exceed client expectations. Our clients' success is our success.
-    - Drive Innovation: Be bold and unconstrained in problem solving. Transform the industry.
-    - Embrace Learning: Engage our community to broaden our perspective. Bring a growth mindset.
-  
-  raw_text: |
-    Sr. Backend Software Engineer
-    Pune, India
+  raw_jd: |
+    # Job Description
+    # Source: Provided JD
     
-    Who We Are
-    Addepar is a global technology and data company that helps investment professionals provide the most informed, precise guidance for their clients. Hundreds of thousands of users have entrusted Addepar to empower smarter investment decisions and better advice over the last decade. With client presence in more than 50 countries, Addepar's platform aggregates portfolio, market and client data for over $8 trillion in assets. Addepar's open platform integrates with more than 100 software, data and services partners to deliver a complete solution for a wide range of firms and use cases.
+    raw_jd: |
+      # Job Description
+      # Source: Provided JD
+      
+      raw_jd: |
+        ---
+        created: 2026-02-05
+        last_edited: 2026-02-05
+        version: 1.0
+        provenance: con_Lm2vqXjxi9QnVl8m
+        ---
+        
+        company: Addepar
+        title: Sr. Backend Software Engineer
+        location: Pune, India
+        visa_sponsorship: false
+        
+        about_company: |
+          Addepar is a global technology and data company that helps investment professionals provide the most informed, precise guidance for their clients. Hundreds of thousands of users have entrusted Addepar to empower smarter investment decisions and better advice over the last decade. With client presence in more than 50 countries, Addepar's platform aggregates portfolio, market and client data for over $8 trillion in assets. Addepar's open platform integrates with more than 100 software, data and services partners to deliver a complete solution for a wide range of firms and use cases.
+        
+        responsibilities:
+          - Architect, implement, and maintain engineering solutions to solve complex problems
+          - Work in a collaborative team environment across engineering, product, and data science teams
+          - Design and build scalable backend services
+          - Ensure high-quality software delivery
+        
+        requirements:
+          - Deep expertise in Java or Python backend development
+          - Experience with NoSQL databases
+          - Infrastructure as code experience (preferably Terraform)
+          - AWS experience
+          - Solutions-oriented mindset
+          - Experience or interest in financial data systems
+        
+        values:
+          - Act Like an Owner: Think and act like an owner. Own outcomes over actions.
+          - Build Together: Collaborate to unlock the best solutions. Deliver lasting value.
+          - Champion Clients: Exceed client expectations. Our clients' success is our success.
+          - Drive Innovation: Be bold and unconstrained in problem solving. Transform the industry.
+          - Embrace Learning: Engage our community to broaden our perspective. Bring a growth mindset.
+        
+        raw_text: |
+          Sr. Backend Software Engineer
+          Pune, India
+          
+          Who We Are
+          Addepar is a global technology and data company that helps investment professionals provide the most informed, precise guidance for their clients. Hundreds of thousands of users have entrusted Addepar to empower smarter investment decisions and better advice over the last decade. With client presence in more than 50 countries, Addepar's platform aggregates portfolio, market and client data for over $8 trillion in assets. Addepar's open platform integrates with more than 100 software, data and services partners to deliver a complete solution for a wide range of firms and use cases.
+          
+          Applicants must have legal authorization to work in the country where this role is based on the first day of employment. Visa sponsorship is not available for this position.
+          
+          What You'll Do
+          Architect, implement, and maintain engineering solutions to solve complex problems.
+          
+          Our Values
+          - Act Like an Owner: Think and act like an owner. Own outcomes over actions.
+          - Build Together: Collaborate to unlock the best solutions. Deliver lasting value.
+          - Champion Clients: Exceed client expectations. Our clients' success is our success.
+          - Drive Innovation: Be bold and unconstrained in problem solving. Transform the industry.
+          - Embrace Learning: Engage our community to broaden our perspective. Bring a growth mindset.
+          
+          In addition to our core values, Addepar is proud to be an equal opportunity employer. We seek to bring together diverse ideas, experiences, skill sets, perspectives, backgrounds and identities to drive innovative solutions. We commit to promoting a welcoming environment where inclusion and belonging are held.
+        
+      
     
-    Applicants must have legal authorization to work in the country where this role is based on the first day of employment. Visa sponsorship is not available for this position.
-    
-    What You'll Do
-    Architect, implement, and maintain engineering solutions to solve complex problems.
-    
-    Our Values
-    - Act Like an Owner: Think and act like an owner. Own outcomes over actions.
-    - Build Together: Collaborate to unlock the best solutions. Deliver lasting value.
-    - Champion Clients: Exceed client expectations. Our clients' success is our success.
-    - Drive Innovation: Be bold and unconstrained in problem solving. Transform the industry.
-    - Embrace Learning: Engage our community to broaden our perspective. Bring a growth mindset.
-    
-    In addition to our core values, Addepar is proud to be an equal opportunity employer. We seek to bring together diverse ideas, experiences, skill sets, perspectives, backgrounds and identities to drive innovative solutions. We commit to promoting a welcoming environment where inclusion and belonging are held.
   

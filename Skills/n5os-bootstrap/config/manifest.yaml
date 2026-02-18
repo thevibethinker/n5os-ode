@@ -1,0 +1,50 @@
+---
+version: 1
+name: n5os-bootstrap
+description: N5OS philosophy and infrastructure bootstrap
+
+destinations:
+  principles:
+    source: payload/principles/
+    target: Personal/Knowledge/Architecture/principles/
+    mode: merge
+    
+  safety:
+    source: payload/safety/
+    target: N5/prefs/system/
+    mode: merge
+    
+  operations:
+    source: payload/operations/
+    target: N5/prefs/operations/
+    mode: merge
+    
+  personas:
+    source: payload/personas/
+    target: Documents/System/personas/
+    mode: merge
+    
+  workflows:
+    source: payload/workflows/
+    target: N5/prefs/workflows/
+    mode: merge
+    
+  voice:
+    source: payload/voice/
+    target: N5/prefs/voice/
+    mode: merge
+    
+  state:
+    source: payload/state/
+    target: .claude/templates/
+    mode: merge
+
+required_dirs:
+  - N5/prefs/system
+  - N5/prefs/operations
+  - N5/prefs/workflows
+  - N5/prefs/voice
+  - Personal/Knowledge/Architecture/principles
+  - Documents/System/personas
+  - .claude/templates
+  - N5/logs

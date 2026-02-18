@@ -448,22 +448,30 @@ def generate_interview_questions_llm(
         for s in weak_skills[:4]
     ])
     
-    prompt = f"""Generate interview questions for a {jd_title} candidate.
+    prompt = f"""Identify the most important areas to explore in an interview for a {jd_title} candidate.
 
 RESPONSIBILITIES: {', '.join(responsibilities[:3]) if responsibilities else 'Not specified'}
 
 STRENGTHS (screen-verified):
 {strong_summary}
 
-WEAK SIGNALS:
+WEAK/UNVERIFIED SIGNALS:
 {weak_summary}
 
-Generate 2 evidence-based questions (probe strengths deeper) and 2-3 verification questions (investigate weak areas).
+For each area, write ONE sentence (max 20 words) explaining why it matters for this role. Be direct and specific. No filler.
+
+RULES:
+- Max 20 words per rationale — this is a hard limit
+- Use "we" voice (e.g., "Strong signal but depth unverified" not "We flagged this because the Excellent signal...")
+- Do NOT start with "We flagged this because" — just state the insight
+- No literal interview questions
+
+Generate 2-3 evidence areas (strengths worth exploring deeper) and 3-4 verification areas (weak or unverified signal).
 
 Respond with ONLY valid JSON:
 {{
-  "evidence_questions": [{{"topic": "X", "question": "Tell me about...", "verifies": "Y"}}],
-  "verify_questions": [{{"topic": "X", "question": "What's your experience...", "verifies": "Y"}}]
+  "evidence_areas": [{{"topic": "X", "rationale": "Strong signal but depth unverified.", "verifies": "Y"}}],
+  "verify_areas": [{{"topic": "X", "rationale": "Resume-only signal; no screen evidence.", "verifies": "Y"}}]
 }}"""
 
     try:
@@ -471,13 +479,13 @@ Respond with ONLY valid JSON:
         result = parse_json_from_response(response)
         
         questions_evidence = [
-            {"topic": q.get("topic", ""), "question": q.get("question", ""), "verifies": q.get("verifies", "")}
-            for q in result.get("evidence_questions", [])[:2]
+            {"topic": q.get("topic", ""), "rationale": q.get("rationale", ""), "verifies": q.get("verifies", "")}
+            for q in result.get("evidence_areas", result.get("evidence_questions", []))[:3]
         ]
-        
+
         questions_verify = [
-            {"topic": q.get("topic", ""), "question": q.get("question", ""), "verifies": q.get("verifies", "")}
-            for q in result.get("verify_questions", [])[:3]
+            {"topic": q.get("topic", ""), "rationale": q.get("rationale", ""), "verifies": q.get("verifies", "")}
+            for q in result.get("verify_areas", result.get("verify_questions", []))[:4]
         ]
         
         return questions_evidence, questions_verify
@@ -485,8 +493,8 @@ Respond with ONLY valid JSON:
     except Exception as e:
         print(f"Warning: LLM question generation failed: {e}")
         return (
-            [{"topic": s.get("skill_name", ""), "question": f"Tell me more about {s.get('skill_name', '')}.", "verifies": s.get("skill_name", "")} for s in strong_skills[:2]],
-            [{"topic": s.get("skill_name", ""), "question": f"What's your experience with {s.get('skill_name', '')}?", "verifies": s.get("skill_name", "")} for s in weak_skills[:2]]
+            [{"topic": s.get("skill_name", ""), "rationale": f"We identified strong signal here but want to understand depth and recency.", "verifies": s.get("skill_name", "")} for s in strong_skills[:3]],
+            [{"topic": s.get("skill_name", ""), "rationale": f"Signal for this area is unverified — relevant to role requirements but not confirmed in screens.", "verifies": s.get("skill_name", "")} for s in weak_skills[:3]]
         )
 
 
@@ -514,7 +522,7 @@ Use verdicts: "Strong fit", "Verify in meeting", "More signal needed", "Gap"
 
 Respond with ONLY valid JSON:
 [
-  {{"need": "requirement", "verdict": "Strong fit|Verify in meeting|More signal needed|Gap", "reason": "brief reason", "verdict_class": "strong|verify|gap"}}
+  {{"need": "requirement", "verdict": "Strong fit|Verify in meeting|More signal needed|Gap", "reason": "brief reason", "verdict_class": "strong|verify|signal-needed|gap"}}
 ]"""
 
     try:
@@ -527,6 +535,8 @@ Respond with ONLY valid JSON:
                 t["verdict_class"] = "strong"
             elif "verify" in verdict_lower:
                 t["verdict_class"] = "verify"
+            elif "signal" in verdict_lower:
+                t["verdict_class"] = "signal-needed"
             else:
                 t["verdict_class"] = "gap"
         
@@ -581,12 +591,42 @@ Respond with ONLY valid JSON:
         ]
 
 
+def _cap_text(text: str, max_chars: int = 75) -> str:
+    """Cut at clean boundary, never trail off or end on a conjunction."""
+    text = text.strip()
+    bad_endings = ("and", "or", "but", "the", "a", "an", "of", "to", "in", "for", "with")
+    if len(text) <= max_chars:
+        words = text.split()
+        while len(words) > 3 and words[-1].lower().rstrip(",.;:-") in bad_endings:
+            words.pop()
+        result = " ".join(words).rstrip(" ,;:-")
+        return result + "." if not result.endswith(".") else result
+    # Prefer cutting at sentence boundary
+    cut = text[:max_chars]
+    last_period = cut.rfind(".")
+    # Also try dash/semicolon as natural break points
+    last_dash = max(cut.rfind(" — "), cut.rfind(" - "))
+    last_semi = cut.rfind(";")
+    best_break = max(last_period, last_dash, last_semi)
+    if best_break > 25:
+        result = cut[:best_break].rstrip()
+        if not result.endswith("."):
+            result += "."
+        return result
+    # Word boundary fallback — strip dangling conjunctions
+    trimmed = cut.rsplit(" ", 1)[0]
+    bad_endings = ("and", "or", "but", "the", "a", "an", "of", "to", "in", "for", "with")
+    while trimmed.split()[-1].lower().rstrip(",.;:-") in bad_endings and len(trimmed.split()) > 3:
+        trimmed = trimmed.rsplit(" ", 1)[0]
+    return trimmed.rstrip(" ,;:-—") + "."
+
+
 def generate_culture_alignment(data: Dict[str, Any]) -> Tuple[List[Dict], List[Dict], List[Dict]]:
     """
     Generate culture alignment signals from alignment.yaml and culture_signals.yaml.
-    
+
     v4.0: Now uses actual culture alignment data, not skills
-    
+
     Returns: (culture_match, culture_mismatch, culture_unknown)
     - Match: Culture values where candidate shows strong fit
     - Mismatch: Culture values where there are concerns
@@ -594,6 +634,31 @@ def generate_culture_alignment(data: Dict[str, Any]) -> Tuple[List[Dict], List[D
     """
     alignment = data.get("alignment", {})
     culture_signals = data.get("culture_signals", {})
+
+    # Helper to parse _raw escaped string fields (common in chunked decomposer output)
+    def _parse_raw_yaml(obj: dict, label: str) -> dict:
+        if "_raw" in obj:
+            try:
+                import re as _re_raw
+                raw_str = obj["_raw"]
+                # Strip code fences (```yaml, ```) that break YAML parsing
+                raw_str = _re_raw.sub(r'```\w*\n?', '', raw_str).strip()
+                # Strip trailing timestamp lines like *2026-02-14 12:40 PM ET*
+                raw_str = _re_raw.sub(r'\n\s*\*[\d\-:/ ,\w]+\*\s*$', '', raw_str).strip()
+                # Strip YAML document separators (---) that cause multi-doc errors
+                raw_str = _re_raw.sub(r'\n---\s*$', '', raw_str, flags=_re_raw.MULTILINE).strip()
+                parsed = yaml.safe_load(raw_str)
+                if isinstance(parsed, dict):
+                    return parsed
+            except Exception as e:
+                print(f"  Warning: Could not parse {label}._raw: {e}")
+        return obj
+
+    # Parse _raw for both alignment and culture_signals
+    if "_raw" in alignment and not alignment.get("culture_alignment"):
+        alignment = _parse_raw_yaml(alignment, "alignment")
+    if "_raw" in culture_signals and not culture_signals.get("explicit_values"):
+        culture_signals = _parse_raw_yaml(culture_signals, "culture_signals")
     
     culture_match = []
     culture_mismatch = []
@@ -601,7 +666,8 @@ def generate_culture_alignment(data: Dict[str, Any]) -> Tuple[List[Dict], List[D
     
     # Transform culture value names to noun phrases
     def transform_culture_title(title: str) -> str:
-        """Convert action-phrase culture values to noun-phrase format."""
+        """Convert long culture signal descriptions to short display names."""
+        # Static transforms for common patterns
         transforms = {
             "act like an owner": "Ownership Mentality",
             "build together": "Collaborative Mindset",
@@ -617,7 +683,37 @@ def generate_culture_alignment(data: Dict[str, Any]) -> Tuple[List[Dict], List[D
             "deliver results": "Results Orientation",
         }
         lower = title.lower().strip()
-        return transforms.get(lower, title)
+        if lower in transforms:
+            return transforms[lower]
+
+        # Keyword-based shortening for longer signals
+        keyword_map = [
+            (["remote", "async"], "Remote/Async Culture"),
+            (["ownership", "shipping", "bias"], "Ownership & Shipping"),
+            (["ownership"], "Ownership Mentality"),
+            (["shipping", "perfection"], "Ship Over Perfect"),
+            (["shipping", "incremental"], "Incremental Shipping"),
+            (["written", "communication"], "Written Communication"),
+            (["communication"], "Communication Style"),
+            (["informal", "personality"], "Informal Culture Fit"),
+            (["ambiguity", "comfort"], "Comfort with Ambiguity"),
+            (["collaboration", "team"], "Team Collaboration"),
+            (["autonomy", "independent"], "Autonomy & Independence"),
+            (["feedback", "open"], "Open Feedback Culture"),
+            (["innovation", "experiment"], "Innovation Mindset"),
+        ]
+        for keywords, short_name in keyword_map:
+            if all(kw in lower for kw in keywords):
+                return short_name
+
+        # Fallback: truncate at word boundary, strip dangling function words
+        if len(title) > 25:
+            trimmed = title[:25].rsplit(" ", 1)[0]
+            dangling = {"that", "the", "a", "an", "and", "or", "but", "of", "to", "in", "for", "with", "is", "are"}
+            while trimmed.split()[-1].lower() in dangling and len(trimmed.split()) > 2:
+                trimmed = trimmed.rsplit(" ", 1)[0]
+            return trimmed
+        return title
     
     # Primary source: culture_alignment from alignment.yaml
     culture_alignment = alignment.get("culture_alignment", [])
@@ -628,12 +724,21 @@ def generate_culture_alignment(data: Dict[str, Any]) -> Tuple[List[Dict], List[D
         evidence = item.get("evidence", "")
         
         # Extract short name from signal (often "Value Name: description")
-        raw_name = signal.split(":")[0].strip() if ":" in signal else signal[:40]
+        if ":" in signal:
+            raw_name = signal.split(":")[0].strip()
+        elif " — " in signal:
+            raw_name = signal.split(" — ")[0].strip()
+        else:
+            # Truncate at word boundary, max 30 chars
+            raw_name = signal[:30].rsplit(" ", 1)[0] if len(signal) > 30 else signal
         short_name = transform_culture_title(raw_name)
         
+        # Truncate evidence cleanly — tighter limit for small culture font
+        note = _cap_text(evidence, 60)
+
         entry = {
             "name": short_name,
-            "note": evidence[:60] + "..." if len(evidence) > 60 else evidence
+            "note": note
         }
         
         if fit == "strong":
@@ -685,23 +790,25 @@ def enhance_bottom_line_with_screening_attribution(
 
     evidence_block = "\n".join(evidence_lines) if evidence_lines else "(no evidence provided)"
 
-    prompt = f"""Write ONE sentence summarizing this candidate.
+    prompt = f"""Write 2-3 sentences summarizing this candidate for a hiring manager.
 
 EXACT FORMAT:
-"This {{3-4 word descriptor}} is a {quality} fit based on my screens because {{differentiator}}."
+"This {{3-4 word descriptor}} is a {quality} fit based on our screens because {{differentiator}}. {{1-2 supporting sentences with specific evidence}}."
 
 RULES:
+- Use "we" and "our" (collective voice from the screening team), never "my" or "I"
 - Descriptor: 3-4 words capturing their professional identity (e.g., "zero-to-one backend architect", "platform migration specialist")
 - Differentiator: what makes them worth meeting, drawn ONLY from EVIDENCE below
-- Use "who has" phrasing, never "they" or "he/she" (e.g., "...they've shipped X" → "...who has shipped X")
-- Total length: ≤180 characters
+- Use "who has" phrasing, never "they" or "he/she"
+- Total length: 2-3 complete sentences, 150-250 characters
 - Must NOT mention Careerspan, screen count, or numbers
 - Must NOT restate job requirements
+- Every sentence must end with a period — no trailing off
 
 EVIDENCE:
 {evidence_block}
 
-Return ONLY the sentence (no quotes, no bullets, no commentary)."""
+Return ONLY the 2-3 sentences (no quotes, no bullets, no commentary)."""
 
     try:
         response = call_llm(prompt)
@@ -721,10 +828,27 @@ Return ONLY the sentence (no quotes, no bullets, no commentary)."""
         if re.search(r"\d|\$", text):
             raise ValueError("Bottom line contained numbers")
 
-        if len(text) > 200:
-            cut = text[:180]
-            cut = cut.rsplit(" ", 1)[0] if " " in cut else cut
-            text = cut.rstrip(" ,;:-") + "..."
+        # Ensure text ends with a period (no trailing off)
+        if not text.rstrip().endswith("."):
+            # Find last complete sentence
+            last_period = text.rfind(".")
+            if last_period > 50:
+                text = text[:last_period + 1]
+            else:
+                text = text.rstrip(" ,;:-") + "."
+
+        if len(text) > 300:
+            # Cut at last complete sentence within limit
+            cut = text[:280]
+            last_period = cut.rfind(".")
+            if last_period > 80:
+                text = cut[:last_period + 1]
+            else:
+                text = cut.rsplit(" ", 1)[0].rstrip(" ,;:-") + "."
+
+        # Enforce "we/our" voice — LLM sometimes reverts to "my"
+        text = text.replace("my screens", "our screens").replace("My screens", "Our screens")
+        text = text.replace("based on my ", "based on our ").replace("Based on my ", "Based on our ")
 
         return text
 
@@ -758,7 +882,7 @@ Return ONLY the sentence (no quotes, no bullets, no commentary)."""
         else:
             evidence = "screens show relevant execution patterns"
 
-        return f"This {fallback_descriptor} is a {quality} fit based on my screens because {evidence}."
+        return f"This {fallback_descriptor} is a {quality} fit based on our screens because {evidence}."
 
 
 # === MAIN MAPPING FUNCTION ===
@@ -850,19 +974,42 @@ def map_to_template_data(data: Dict[str, Any], use_llm: bool = True) -> Dict:
     # Limit behavioral signals to 4 for 2x2 grid
     behavioral_signals = behavioral_signals[:4]
     
-    # Build combined questions list with proper labels (limit to 4 for page fit)
+    # Dedup: remove questions whose topic overlaps with strong-fit tradeoff needs
+    _STOPWORDS = {'', 'and', 'the', 'a', 'of', 'for', 'in', 'to', 'with', 'on', 'at'}
+    def _tokenize(text: str) -> set:
+        return set(text.lower().split()) - _STOPWORDS
+
+    strong_fit_tokens = []
+    for t in tradeoffs:
+        if t.get("verdict_class") == "strong":
+            strong_fit_tokens.append(_tokenize(t.get("need", "")))
+
+    def topic_overlaps_strong_fit(topic: str) -> bool:
+        topic_words = _tokenize(topic)
+        if not topic_words:
+            return False
+        for need_words in strong_fit_tokens:
+            overlap = topic_words & need_words
+            compound_matches = sum(1 for w in overlap if '-' in w)
+            effective_overlap = len(overlap) + compound_matches
+            if effective_overlap >= 2 or (len(overlap) >= 1 and min(len(topic_words), len(need_words)) <= 2):
+                return True
+        return False
+
+    questions_evidence = [q for q in questions_evidence if not topic_overlaps_strong_fit(q.get("topic", ""))]
+    questions_verify = [q for q in questions_verify if not topic_overlaps_strong_fit(q.get("topic", ""))]
+
+    # Build combined areas list (limit to 6 for 3-column grid)
     questions_all = []
-    for q in questions_evidence[:2]:  # Max 2 evidence-based
+    for q in questions_evidence[:3]:
         questions_all.append({
             "topic": q.get("topic", ""),
-            "question": q.get("question", ""),
-            "verifies_label": f"Confirms: {q.get('verifies', '')}"
+            "rationale": _cap_text(q.get("rationale", ""), 90),
         })
-    for q in questions_verify[:2]:  # Max 2 verify (total 4 questions)
+    for q in questions_verify[:3]:
         questions_all.append({
             "topic": q.get("topic", ""),
-            "question": q.get("question", ""),
-            "verifies_label": f"Verifies: {q.get('verifies', '')}"
+            "rationale": _cap_text(q.get("rationale", ""), 90),
         })
     
     # Handle tenure warning - add to probes if low tenure
@@ -885,6 +1032,11 @@ def map_to_template_data(data: Dict[str, Any], use_llm: bool = True) -> Dict:
     signal = scores.get("signal_strength", {})
     signal_story = int(signal.get("story_verified_pct", 0))
     signal_resume = int(signal.get("resume_only_pct", 0))
+    signal_inferred = int(signal.get("inferred_pct", 0))
+    # Ensure bars sum to 100%
+    signal_total = signal_story + signal_resume + signal_inferred
+    if signal_total > 0 and signal_total != 100:
+        signal_resume = 100 - signal_story - signal_inferred
     
     # Calculate skills count from the full skills list
     all_skills = scores.get("skills", [])
@@ -910,11 +1062,7 @@ def map_to_template_data(data: Dict[str, Any], use_llm: bool = True) -> Dict:
     # Try to parse YAML from raw_jd if it exists
     if jd_raw:
         try:
-            # raw_jd contains a YAML document as a string
-            # It may have leading dashes (frontmatter) that need to be skipped
             jd_text = jd_raw.strip()
-            
-            # Remove frontmatter if present
             if jd_text.startswith("---"):
                 parts = jd_text.split("---", 2)
                 if len(parts) >= 3:
@@ -925,7 +1073,27 @@ def map_to_template_data(data: Dict[str, Any], use_llm: bool = True) -> Dict:
                 jd_title = jd_parsed.get("title", jd_title)
                 jd_company = jd_parsed.get("company", jd_company)
         except Exception as e:
-            print(f"  Warning: Could not parse JD: {e}")
+            print(f"  Warning: Could not parse JD as YAML: {e}")
+        
+        # Fallback: extract from markdown headings if still defaults
+        import re as _re
+        if jd_title == "Role":
+            # Pattern: "# Title — Company" or "# Title - Company"
+            m = _re.search(r'^#\s+(.+?)\s*[—\-–]\s*(.+)$', jd_raw, _re.MULTILINE)
+            if m:
+                jd_title = m.group(1).strip()
+                jd_company = m.group(2).strip()
+            else:
+                # Pattern: just "# Title" on first heading
+                m = _re.search(r'^#\s+(.+)$', jd_raw, _re.MULTILINE)
+                if m:
+                    jd_title = m.group(1).strip()
+        
+        if jd_company == "Company":
+            # Pattern: "## Company\n\nCompanyName"
+            m = _re.search(r'##\s+Company\s*\n+\s*(\S.+?)$', jd_raw, _re.MULTILINE)
+            if m:
+                jd_company = m.group(1).strip()
     
     # Also check direct jd fields (fallback)
     if jd.get("title"):
@@ -947,6 +1115,7 @@ def map_to_template_data(data: Dict[str, Any], use_llm: bool = True) -> Dict:
         "verdict_summary": enhanced_bottom_line,
         "signal_story": signal_story,
         "signal_resume": signal_resume,
+        "signal_inferred": signal_inferred,
         "skills_assessed": skills_count,
         "screens_count": screens_count,  # v4.0: renamed from interviews_count
         "spikes_up": spikes_up,

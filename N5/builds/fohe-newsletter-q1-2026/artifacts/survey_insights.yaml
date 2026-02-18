@@ -1,0 +1,67 @@
+---
+created: 2026-01-31
+last_edited: 2026-01-31
+version: 1.0
+provenance: fohe-newsletter-q1-2026
+---
+
+total_responses: 59
+
+key_stats:
+  top_events:
+    - "Panels: 66.1%"
+    - "Happy hours: 57.6%" 
+    - "Coworking: 49.2%"
+    - "Casual outings: 44.1%"
+    - "Conference happy hours: 39.0%"
+  hot_topics:
+    - "AI Adoption in Education: 41 mentions"
+    - "Evolving Skills & Workforce Needs: 38 mentions"
+    - "New Models of Higher Education: 27 mentions"
+    - "Adult Education: 24 mentions"
+    - "Founding & Scaling Education Companies: 24 mentions"
+    - "Policy and Regulation Impacts: 22 mentions"
+    - "Upskilling Programs: 21 mentions"
+    - "Data and Impact Measuring in Education: 21 mentions"
+  volunteer_interest:
+    - "Neighborhood Ambassador: 17 people"
+    - "Connector: 13 people"
+    - "Event Greeter: 7 people"
+    - "Facilitator/Presenter: 1 person"
+  geographic_distribution:
+    - "Manhattan: 39% (23 people)"
+    - "New Jersey: 17% (10 people)"
+    - "Brooklyn: 17% (10 people)"
+    - "Westchester: 5% (3 people)"
+    - "Queens: 5% (3 people)"
+  work_focus:
+    - "Edtech: 64% (38 people)"
+    - "Alternative Education/Training: 39% (23 people)"
+    - "Consulting: 32% (19 people)"
+
+community_quotes:
+  - quote: "I'm a new member, but am grateful for the network access more than anything, particularly being a first time founder in the Edtech space."
+    theme: networking_value
+  - quote: "I enjoy meeting people at the events! I've also met some folks through the 1:1 connect and enjoyed the first meeting I had with the solopreneurs - excited to see progress for this program in 2026."
+    theme: community_connection
+  - quote: "Haven't been able to attend events -- mainly due to my own schedule, occasionally because I miss notifications when they get buried in other Slack posts"
+    theme: engagement_challenges
+  - quote: "Would love to see a hackathon... happy hours can be overwhelming - would be interested in maybe mini hackathons or workshops where we brainstorm or build together"
+    theme: event_preferences
+  - quote: "Great people looking for connections and trying to help each other (Anna Bao is a hero! So good at finding connections and value!)"
+    theme: community_spirit
+
+insights_for_newsletter:
+  - "Members are most excited about **panels** (66% want more) and **AI adoption in education** (41 mentions) - clearly the hottest topic of 2026"
+  - "The #1 request is better **work-life integration** - many want daytime events and virtual options to balance busy schedules"
+  - "**44% of our active volunteers** want to be Neighborhood Ambassadors, showing strong desire for local, intimate connections beyond big events"
+  - "Interestingly, **64% work in Edtech** but there's growing appetite for **workforce development** and **adult education** discussions"
+  - "**Geographic spread is real** - we're not just Manhattan-centric anymore with 34% from Brooklyn, NJ, and outer boroughs"
+  - "The **solopreneur program** is generating genuine excitement and requests for more collaborative, hands-on formats like hackathons"
+  - "**Slack fatigue is real** - people want email newsletters (42 responses) as much as Slack notifications (40 responses)"
+
+surprising_findings:
+  - "More people want casual outings (44%) than conference happy hours (39%) - community over industry networking"
+  - "Adult Education (24 mentions) tied with Founding & Scaling (24) as hot topics - lifelong learning is having a moment"
+  - "New Jersey contingent is as large as Brooklyn's (10 each) - we're truly a tri-state community"
+  - "Neighborhood Ambassador role got 65% more interest than Event Greeter - people want ongoing relationship-building, not just event help"

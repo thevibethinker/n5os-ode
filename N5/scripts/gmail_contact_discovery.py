@@ -21,7 +21,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Configuration
-DB_PATH = '/home/workspace/N5/data/crm_v3.db'
+DB_PATH = '/home/workspace/N5/data/n5_core.db'
 HELPERS_PATH = '/home/workspace/N5/scripts/crm_calendar_helpers.py'
 
 

@@ -1,0 +1,267 @@
+{
+  "candidate_name": "Hardik Khichi",
+  "role": "AI Engineer",
+  "partner": "CorridorX",
+  "company": "FlowFuse",
+  "date": "Feb 2026",
+  "tenure_summary": "4.7y exp \u00b7 3.5y IC \u00b7 1.2y Lead",
+  "trajectory": "Keysight \u2192 American Express \u2192 Flipkart",
+  "verdict_emoji": "\ud83d\udc4d",
+  "verdict": "Take This Meeting",
+  "confidence_score": 89,
+  "verdict_summary": "This software engineer is a strong fit based on our screens because screens show strength in deliver end-to-end solutions and ensure feature reliability.",
+  "signal_story": 76,
+  "signal_resume": 22,
+  "signal_inferred": 2,
+  "skills_assessed": 43,
+  "screens_count": 4,
+  "spikes_up": [
+    {
+      "label": "Deliver end-to-end solutions",
+      "story_verified": true,
+      "screen_count": 3,
+      "years": "",
+      "bar_width": 100
+    },
+    {
+      "label": "Ensure feature reliability",
+      "story_verified": true,
+      "screen_count": 3,
+      "years": "",
+      "bar_width": 100
+    },
+    {
+      "label": "Prototype and productionize ",
+      "story_verified": true,
+      "screen_count": 3,
+      "years": "",
+      "bar_width": 100
+    },
+    {
+      "label": "Develop Al features",
+      "story_verified": true,
+      "screen_count": 3,
+      "years": "",
+      "bar_width": 100
+    },
+    {
+      "label": "Build backend/frontend workf",
+      "story_verified": true,
+      "screen_count": 3,
+      "years": "",
+      "bar_width": 100
+    }
+  ],
+  "spikes_down": [
+    {
+      "label": "Vector Search Techniques",
+      "story_verified": false,
+      "screen_count": 0,
+      "action": "verify depth",
+      "bar_width": 60
+    },
+    {
+      "label": "SOC 2 Compliance",
+      "story_verified": false,
+      "screen_count": 0,
+      "action": "verify depth",
+      "bar_width": 50
+    }
+  ],
+  "dealbreakers": [
+    "What specific LLM fallback strategies, cost/latency controls, and prompt/version governance have you implemented?",
+    "What direct experience do you have with SOC 2 controls, audit participation, or named privacy frameworks (e.g., GDPR) applied to AI features?",
+    "Which specific LLM providers, vector stores, and embedding stacks have you integrated in production?"
+  ],
+  "probes": [
+    {
+      "area": "Retention signal",
+      "context": "1.2y average tenure across roles. For a founding role, understanding what drives long-term engagement is critical.",
+      "prompt": "What conditions have kept you at a company longest? What would make you stay 3+ years here?",
+      "signal_type": "inferred"
+    },
+    {
+      "area": "Vector Search Techniques",
+      "context": "Story signal suggests hands-on experience but depth of implementation detail is worth exploring",
+      "prompt": "Walk me through a specific instance where you had to choose between different vector indexing strategies \u2014 what were the tradeoffs you evaluated and what drove your final decision?",
+      "signal_type": "story"
+    },
+    {
+      "area": "Vector Search Techniques",
+      "context": "Fair rating with story signal \u2014 worth verifying whether experience extends beyond basic similarity search",
+      "prompt": "When you've worked with vector search in production, what surprised you most about the gap between prototype performance and real-world behavior at scale?",
+      "signal_type": "story"
+    },
+    {
+      "area": "SOC 2 Compliance",
+      "context": "Resume-only signal \u2014 the credential appears but no supporting narrative around hands-on involvement",
+      "prompt": "Can you describe your specific role in a SOC 2 audit or compliance initiative \u2014 what controls were you personally responsible for implementing or maintaining?",
+      "signal_type": "resume"
+    }
+  ],
+  "why_signal": [
+    {
+      "title": "Deliver end-to-end solutions",
+      "story": "Based on story: COKUmaqSITrBKatxSgJp Direct\n\nThe candidate demonstrates strong, direct experience in owning and delivering fullstack, production-ready Al solutions",
+      "story_verified": true,
+      "screen_count": 3
+    },
+    {
+      "title": "Ensure feature reliability",
+      "story": "Based on story: COKUmaqSITrBKdtxSgJp Direct\n\nThe transcript provides detailed, direct evidence of the candidate architecting and deploying a complex Machine Learning SaaS platform ...",
+      "story_verified": true,
+      "screen_count": 3
+    },
+    {
+      "title": "Prototype and productionize Al",
+      "story": "Based on story: COKUmaqSITrBKdtxSgJp Direct\n\nThe story provides strong direct evidence that the candidate has delivered Al-powered features end-to-end, from initial concept (archit...",
+      "story_verified": true,
+      "screen_count": 3
+    }
+  ],
+  "behavioral_signals": [
+    {
+      "title": "Zero-To-One Platform Architect",
+      "description": "",
+      "quote": "Architected and shipped an ML SaaS platform from whiteboard to production",
+      "citation": "As founding engineer at Keysight, building a platform that grew to serve hundreds of daily users including Apple, Samsung, and Volkswagen"
+    },
+    {
+      "title": "Feedback-Driven Product Iterationist",
+      "description": "",
+      "quote": "Personally triaged user feedback and translated it into core features",
+      "citation": "During global rollout of Keysight's ML platform, managing iterative beta launches across internal teams and external enterprise partners"
+    },
+    {
+      "title": "Solo Full-Stack Owner",
+      "description": "",
+      "quote": "Owned frontend, backend, CI/CD, and infrastructure as sole product leader",
+      "citation": "At American Express, single-handedly building and operating a Database Catalog Portal used by 1,000+ colleagues while automating 150+ services"
+    },
+    {
+      "title": "Production Reliability Engineer",
+      "description": "",
+      "quote": "Built instant rollback, automated provisioning, and real-time observability",
+      "citation": "While operating Keysight's ML platform at scale with long-running deep learning workloads for mission-critical 6G and autonomous vehicle research"
+    }
+  ],
+  "questions_evidence": [
+    {
+      "topic": "AI Prototyping to Production Pipeline",
+      "rationale": "Excellent signal; probe MLOps maturity, model monitoring, and production failure recovery patterns.",
+      "verifies": "Prototype and productionize Al"
+    },
+    {
+      "topic": "Feature Reliability Engineering",
+      "rationale": "Excellent signal; dig into testing strategies, incident response, and observability practices at scale.",
+      "verifies": "Ensure feature reliability"
+    }
+  ],
+  "questions_verify": [
+    {
+      "topic": "Vector Search Implementation Depth",
+      "rationale": "Story-level signal only; need concrete examples of embedding strategies and retrieval optimization.",
+      "verifies": "Vector Search Techniques"
+    },
+    {
+      "topic": "SOC 2 Compliance Experience",
+      "rationale": "Resume-only signal; verify hands-on role in audits versus organizational awareness.",
+      "verifies": "SOC 2 Compliance"
+    },
+    {
+      "topic": "Cross-Functional Collaboration",
+      "rationale": "No signal yet; critical for end-to-end delivery roles spanning multiple teams.",
+      "verifies": "Deliver end-to-end solutions"
+    },
+    {
+      "topic": "System Design Under Constraints",
+      "rationale": "Unverified; need to assess tradeoff reasoning when scaling or operating under resource limits.",
+      "verifies": "Ensure feature reliability"
+    }
+  ],
+  "questions_all": [
+    {
+      "topic": "AI Prototyping to Production Pipeline",
+      "rationale": "Excellent signal; probe MLOps maturity, model monitoring, and production failure recovery."
+    },
+    {
+      "topic": "Feature Reliability Engineering",
+      "rationale": "Excellent signal; dig into testing strategies, incident response, and observability."
+    },
+    {
+      "topic": "Vector Search Implementation Depth",
+      "rationale": "Story-level signal only; need concrete examples of embedding strategies and retrieval."
+    },
+    {
+      "topic": "SOC 2 Compliance Experience",
+      "rationale": "Resume-only signal; verify hands-on role in audits versus organizational awareness."
+    },
+    {
+      "topic": "Cross-Functional Collaboration",
+      "rationale": "No signal yet; critical for end-to-end delivery roles spanning multiple teams."
+    }
+  ],
+  "tradeoffs": [
+    {
+      "need": "End-to-end backend delivery",
+      "verdict": "Strong fit",
+      "reason": "Demonstrated ability to deliver full-stack solutions from prototype to production, directly aligned with backend engineer ownership expectations",
+      "verdict_class": "strong"
+    },
+    {
+      "need": "AI/ML feature development and productionization",
+      "verdict": "Strong fit",
+      "reason": "Strong signals in both prototyping and productionizing AI features \u2014 rare combination that reduces handoff friction between research and engineering",
+      "verdict_class": "strong"
+    },
+    {
+      "need": "Infrastructure reliability and observability",
+      "verdict": "Verify in meeting",
+      "reason": "Feature reliability strength suggests quality mindset, but no explicit signal on distributed systems debugging, incident response, or SRE-adjacent practices",
+      "verdict_class": "verify"
+    },
+    {
+      "need": "Vector search and retrieval systems",
+      "verdict": "Gap",
+      "reason": "Flagged weakness in vector search techniques \u2014 if the role involves RAG pipelines, embeddings infrastructure, or similarity search at scale, this requires upskilling or pairing",
+      "verdict_class": "gap"
+    },
+    {
+      "need": "Security and compliance posture",
+      "verdict": "Gap",
+      "reason": "SOC 2 compliance gap means audit logging, access controls, and security-by-design patterns may need structured onboarding \u2014 critical if the org handles sensitive data",
+      "verdict_class": "gap"
+    },
+    {
+      "need": "Backend tech stack depth",
+      "verdict": "More signal needed",
+      "reason": "No specific backend technologies listed \u2014 need to verify proficiency in the actual stack (languages, databases, cloud providers, CI/CD) rather than assuming from general delivery strength",
+      "verdict_class": "signal-needed"
+    }
+  ],
+  "culture_match": [
+    {
+      "name": "Ownership Mentality",
+      "note": "Solo product leader at AmEx owning end-to-end delivery."
+    },
+    {
+      "name": "Ship Over Perfect",
+      "note": "Built platform from loosely defined requirements, made."
+    }
+  ],
+  "culture_mismatch": [],
+  "culture_unknown": [
+    {
+      "name": "Small, remote team",
+      "note": "Scrum Master and workstream representative roles imply."
+    },
+    {
+      "name": "Written Communication",
+      "note": "Represented India Database Workstream, managed Jira boards."
+    },
+    {
+      "name": "Informal Culture Fit",
+      "note": "Insufficient data to assess."
+    }
+  ]
+}

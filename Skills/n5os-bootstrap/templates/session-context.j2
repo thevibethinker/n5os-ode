@@ -1,0 +1,110 @@
+# Session Context
+
+**Instance:** {{ instance.name }}
+**Started:** [TIMESTAMP]
+
+---
+
+## Environment
+
+This is {{ instance.owner }}'s {{ instance.role }} instance running N5OS.
+
+**Handle:** {{ instance.handle }}
+**Autonomy Level:** {{ autonomy.level | title }}
+{% if autonomy.parent %}**Escalation Target:** {{ autonomy.parent }}
+{% endif %}
+
+---
+
+## Active Personas
+
+{% for persona in personas.enabled %}- {{ persona | title }}
+{% endfor %}
+
+**Default:** {{ personas.default | title }}
+
+{% if personas.disabled %}
+**Disabled:** {{ personas.disabled | join(', ') | title }}
+{% endif %}
+
+---
+
+## Safety Settings
+
+- **Protection Level:** {{ safety.protection_level | title }}
+- **Dry-Run Default:** {{ safety.dry_run_default }}
+
+{% if safety.protection_level == 'strict' %}
+**Note:** Strict safety mode is active. All destructive operations require explicit confirmation.
+{% endif %}
+
+---
+
+## Approval Requirements
+
+{% if autonomy.level != 'autonomous' %}
+The following actions require approval:
+{% for action in autonomy.requires_approval %}- {{ action | replace('_', ' ') | title }}
+{% endfor %}
+{% endif %}
+
+{% if autonomy.level == 'autonomous' %}
+This instance operates autonomously with minimal restrictions.
+{% endif %}
+
+---
+
+## Core Principles Active
+
+This session operates under N5OS principles:
+
+- **P02 (SSOT):** Single source of truth for all information
+- **P05 (Safety):** Anti-overwrite and explicit consent required  
+- **P08 (Minimal Context):** Load context only as needed
+- **P15 (Complete First):** Never claim completion prematurely
+- **P16 (Accuracy):** Conservative facts over sophisticated speculation
+
+---
+
+## Progress This Session
+
+[Session progress will be tracked here]
+
+- Session initialized for {{ instance.name }}
+- Autonomy level: {{ autonomy.level }}
+- Safety mode: {{ safety.protection_level }}
+
+---
+
+## Decisions Made
+
+[Decisions will be logged here]
+
+*No decisions recorded yet this session.*
+
+---
+
+## Context Loaded
+
+[Context modules loaded this session]
+
+*Base N5OS context active. Load additional modules as needed.*
+
+---
+
+## Next Steps
+
+[Next steps will be recorded here]
+
+*Awaiting user input to begin work.*
+
+---
+
+## Instance Summary
+
+**{{ instance.name }}** is configured as a {{ instance.role }} with {{ autonomy.level }} autonomy.
+
+**Voice Style:** {{ voice.profile | title }}
+**Features:** {% if features.pulse %}Pulse{% endif %}{% if features.state_tracking %}, State Tracking{% endif %}{% if features.conversation_logging %}, Conversation Logging{% endif %}
+
+{% if autonomy.parent %}**Escalates to:** {{ autonomy.parent }}{% endif %}

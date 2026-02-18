@@ -1,0 +1,1 @@
+{"entities": [{"name": "meeting_monitor.py", "type": "TOOL", "context": "a script for polling infrastructure"}, {"name": "Gmail", "type": "ORG", "context": "email service used for search verification"}, {"name": "daily digest", "type": "CONCEPT", "context": "a summary that includes new profiles and urgent meetings"}], "relationships": []}

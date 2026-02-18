@@ -1,0 +1,1 @@
+{"entities": [{"name": "Logan", "type": "PERSON", "context": "Collaborator or contact having a candid, high-trust conversation with V about transition and closure"}], "relationships": [{"from": "V", "to": "Logan", "type": "KNOWS", "context": "High-trust, unfiltered relationship marked by candid strategic discussions and shared exhaustion"}]}

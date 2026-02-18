@@ -1,0 +1,1 @@
+{"entities": [{"name": "Conversation workspace", "type": "CONCEPT", "context": "workspace used for organizing conversations"}, {"name": "Classification rules", "type": "CONCEPT", "context": "rules that categorize files by type"}, {"name": "File Saving Policy", "type": "CONCEPT", "context": "policy governing how files are saved"}], "relationships": []}

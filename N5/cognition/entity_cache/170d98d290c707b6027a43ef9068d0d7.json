@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "The individual associated with the knowledge system"}, {"name": "pull.py", "type": "TOOL", "context": "A script used for syncing content from the substrate"}], "relationships": [{"from": "V", "to": "pull.py", "type": "USES", "context": "V uses pull.py to pull existing content from the substrate"}]}

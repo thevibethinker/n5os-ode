@@ -1,0 +1,1 @@
+{"entities": [{"name": "n5_incantum.py", "type": "TOOL", "context": "a tool for testing commands related to the knowledge system"}, {"name": "incantum_triggers.json", "type": "TOOL", "context": "a file for mapping command triggers"}], "relationships": []}

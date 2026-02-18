@@ -9,6 +9,7 @@ from typing import Any, Dict, Optional
 from fastapi import FastAPI, Header, HTTPException, Request
 
 import os
+import subprocess
 import threading
 import requests as http_requests  # Renamed to avoid conflict with FastAPI Request
 
@@ -27,6 +28,15 @@ EVENTS_BASE_DIR.mkdir(parents=True, exist_ok=True)
 
 # Known forms tracking
 KNOWN_FORMS_PATH = Path("/home/workspace/N5/Integrations/fillout/known_forms.json").resolve()
+
+# Career Hotline resume ingestion config
+# Map Fillout form IDs to career hotline intake forms
+# When a submission comes from one of these forms, trigger resume ingestion
+CAREER_HOTLINE_FORM_IDS: set[str] = set(
+    filter(None, os.environ.get("CAREER_HOTLINE_FILLOUT_FORMS", "").split(","))
+)
+RESUME_INGEST_SCRIPT = Path("/home/workspace/Skills/career-coaching-hotline/scripts/resume_ingest.py")
+CAREER_HOTLINE_PHONE_FIELD = os.environ.get("CAREER_HOTLINE_PHONE_FIELD", "")
 
 
 def _load_known_forms() -> set[str]:
@@ -111,6 +121,112 @@ This is an automated trigger - proceed without asking for confirmation."""
         logger.error(f"Error triggering survey analysis: {e}")
 
 
+def _trigger_resume_ingestion(payload: Dict[str, Any]) -> None:
+    """Trigger career hotline resume ingestion in a background thread.
+
+    Detects phone number and file upload from the Fillout submission,
+    then runs the resume_ingest.py script via subprocess.
+    """
+    if not RESUME_INGEST_SCRIPT.exists():
+        logger.warning(f"Resume ingest script not found: {RESUME_INGEST_SCRIPT}")
+        return
+
+    questions = payload.get("questions", [])
+    phone = None
+    file_url = None
+
+    for q in questions:
+        q_type = (q.get("type") or "").lower()
+        q_id = q.get("id", "")
+        q_name = (q.get("name") or "").lower()
+        value = q.get("value")
+
+        # Detect phone number
+        if CAREER_HOTLINE_PHONE_FIELD and q_id == CAREER_HOTLINE_PHONE_FIELD:
+            phone = str(value) if value else None
+        elif not phone and q_type in ("phonenumber", "phone"):
+            phone = str(value) if value else None
+        elif not phone and any(kw in q_name for kw in ("phone", "mobile", "cell")):
+            if value and isinstance(value, str) and any(c.isdigit() for c in str(value)):
+                phone = str(value)
+
+        # Detect file upload
+        if q_type in ("fileupload", "file_upload", "file"):
+            if isinstance(value, list) and value:
+                first_file = value[0]
+                if isinstance(first_file, dict):
+                    file_url = first_file.get("url") or first_file.get("fileUrl")
+                elif isinstance(first_file, str):
+                    file_url = first_file
+            elif isinstance(value, str) and str(value).startswith("http"):
+                file_url = value
+
+    if not phone:
+        logger.warning("Resume ingestion skipped: no phone number found in submission")
+        return
+
+    if not file_url:
+        logger.info(f"No file upload in submission for {phone[-4:] if phone else '???'} — skipping resume ingestion")
+        return
+
+    logger.info(f"Triggering resume ingestion for {phone[-4:]} from {file_url[:60]}...")
+
+    try:
+        result = subprocess.run(
+            [
+                "python3", str(RESUME_INGEST_SCRIPT),
+                "--url", file_url,
+                "--phone", phone,
+                "--verbose", "--json"
+            ],
+            capture_output=True, text=True, timeout=180,
+            env={**os.environ}
+        )
+        if result.returncode == 0:
+            logger.info(f"Resume ingestion completed for {phone[-4:]}: {result.stdout[:200]}")
+        else:
+            logger.error(f"Resume ingestion failed for {phone[-4:]}: {result.stderr[:300]}")
+    except subprocess.TimeoutExpired:
+        logger.error(f"Resume ingestion timed out for {phone[-4:]}")
+    except Exception as e:
+        logger.error(f"Resume ingestion error for {phone[-4:]}: {e}")
+
+
+def _is_career_hotline_form(form_id: str, payload: Dict[str, Any]) -> bool:
+    """Check if this submission is from a career hotline intake form.
+
+    Detection strategy (in order):
+    1. Explicit form ID match from CAREER_HOTLINE_FORM_IDS env var
+    2. Heuristic: form name contains career/coaching/hotline keywords
+    3. Heuristic: questions contain phone + file upload fields
+    """
+    # Explicit match
+    if form_id and form_id in CAREER_HOTLINE_FORM_IDS:
+        return True
+
+    # Name heuristic
+    form_name = (payload.get("formName") or payload.get("form_name") or "").lower()
+    career_keywords = ["career", "coaching", "hotline", "careerspan", "intake"]
+    if form_name and any(kw in form_name for kw in career_keywords):
+        return True
+
+    # Structure heuristic: has both a phone field and a file upload field
+    questions = payload.get("questions", [])
+    has_phone = False
+    has_file = False
+    for q in questions:
+        q_type = (q.get("type") or "").lower()
+        q_name = (q.get("name") or "").lower()
+        if q_type in ("phonenumber", "phone") or any(kw in q_name for kw in ("phone", "mobile")):
+            has_phone = True
+        if q_type in ("fileupload", "file_upload", "file"):
+            has_file = True
+    if has_phone and has_file:
+        return True
+
+    return False
+
+
 def _get_events_file() -> Path:
     """Return the JSONL file path for today's events.
 
@@ -185,6 +301,16 @@ async def fillout_webhook(
         _append_event(event)
     except Exception as exc:  # noqa: BLE001
         raise HTTPException(status_code=500, detail=f"Failed to write event: {exc}") from exc
+
+    # Check if this is a career hotline intake form with a resume upload
+    if _is_career_hotline_form(form_id or "", payload):
+        logger.info(f"Career hotline intake form detected (form: {form_id})")
+        thread = threading.Thread(
+            target=_trigger_resume_ingestion,
+            args=(payload,),
+            daemon=True
+        )
+        thread.start()
 
     return {"status": "ok"}
 

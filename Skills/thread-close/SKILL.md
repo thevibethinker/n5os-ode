@@ -152,6 +152,9 @@ MMM DD | {state} {type} {content} [parent_context] Semantic Title
    )
    ```
 
+7. **Echo the final title in your chat response** (required):
+   `Close Title: <full title>`
+
 ### Parent Context Resolution
 
 **When to include [brackets]:**
@@ -256,6 +259,11 @@ Running thread-close (Tier 2) for con_XXXXX
 
 Thread close complete (Tier 2)
 ```
+
+Artifacts written by `core.write_thread_close_output`:
+- `CLOSE_OUTPUT.json` (machine-readable)
+- `CLOSE_TITLE.txt` (single-line title for quick access)
+- `CLOSE_OUTPUT.md` (human-readable summary)
 
 ## Fail-Safes
 

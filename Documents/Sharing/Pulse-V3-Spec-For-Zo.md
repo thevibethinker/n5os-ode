@@ -65,12 +65,11 @@ Think of it as a **foreman** that breaks down a large project into independent t
 - High-confidence issues (≥0.9) auto-fix
 - Lower-confidence issues escalate for review
 
-### 7. **VibeTeacher Integration (Technical Vocabulary Learning)**
-- Detects imprecise language in V's inputs and surfaces precise technical terms
-- Activates at 4 HITL checkpoints: interview_complete, plan_review, feedback, build_complete
-- Maintains a **Glossary** of terms V has encountered with absorption tracking
-- SMS commands: `teach` (get pending moments), `absorbed: <term>` (mark as learned)
-- Non-blocking: teaching moments stored to JSONL, reviewed asynchronously
+### 7. **LLM-Native Learning Mode (Technical Vocabulary)**
+- Orchestrator LLM natively identifies learning opportunities during HITL checkpoints
+- Maintains an **Understanding Bank** tracking concepts V has encountered with mastery levels
+- SMS commands: `teach` (get pending concepts), `absorbed: <term>` (mark as learned)
+- Non-blocking: learning tracked asynchronously via `N5/config/understanding_bank.json`
 
 ---
 
@@ -109,19 +108,19 @@ For multiple concurrent interviews:
 
 ---
 
-## VibeTeacher: Technical Vocabulary Learning
+## LLM-Native Learning Mode (Technical Vocabulary)
 
-VibeTeacher is an integrated teaching system that helps V learn precise technical terminology through the natural flow of build work.
+The learning system helps V build precise technical vocabulary through the natural flow of build work. The orchestrator LLM handles teaching natively — no separate regex-based scripts.
 
 ### How It Works
 
-1. **Detection**: When V provides input at HITL checkpoints (plan reviews, feedback, interviews), VibeTeacher scans for imprecise language patterns
-2. **Teaching Moment**: If detected, generates a teaching moment with:
+1. **Detection**: At HITL checkpoints (plan reviews, feedback, interviews), the orchestrator LLM identifies opportunities to surface precise technical terminology
+2. **Teaching Moment**: When detected, generates a teaching moment with:
    - What V said (the imprecise phrase)
    - The precise term
    - Why it matters
    - A concrete example
-3. **Storage**: Moments saved to `teaching_moments.jsonl` in the build folder (non-blocking)
+3. **Storage**: Concepts tracked in `N5/config/understanding_bank.json` with mastery levels
 4. **Review**: V can review via SMS (`teach`) or in finalization summary
 5. **Absorption**: When V demonstrates understanding, mark as absorbed (`absorbed: MECE`)
 
@@ -145,9 +144,9 @@ VibeTeacher is an integrated teaching system that helps V learn precise technica
 | "split into parts" | **decomposition** | Breaking complex problems into smaller pieces |
 | "independent tasks" | **parallelizable** | Tasks that can run simultaneously |
 
-### Glossary Tracking
+### Understanding Bank Tracking
 
-`N5/pulse/teaching/glossary.json` tracks:
+`N5/config/understanding_bank.json` tracks:
 ```json
 {
   "term": "MECE",
@@ -155,15 +154,15 @@ VibeTeacher is an integrated teaching system that helps V learn precise technica
   "v_description": "like those sort of non-overlapping worker assignments",
   "precise_term": "MECE decomposition",
   "first_encountered": "2026-01-24",
-  "absorbed": true,
-  "absorbed_at": "2026-01-24T23:02:59",
+  "level": "solid",
+  "last_engaged": "2026-01-24T23:02:59",
   "usage_count": 12
 }
 ```
 
 ### SMS Commands
 
-- **`teach`** — Get summary of pending teaching moments
+- **`teach`** — Get summary of pending concepts from understanding bank
 - **`absorbed: <term>`** — Mark term as learned (e.g., `absorbed: MECE`)
 
 ### Build Finalization Integration
@@ -177,7 +176,7 @@ Reply 'teach' for details.
 
 ### Why This Matters
 
-VibeTeacher transforms builds from pure execution into learning opportunities. V gradually builds technical vocabulary through real work context, not abstract study. The glossary becomes a personalized reference of terms V has encountered and absorbed.
+The learning system transforms builds from pure execution into learning opportunities. V gradually builds technical vocabulary through real work context, not abstract study. The understanding bank becomes a personalized reference of terms V has encountered and absorbed.
 
 ---
 

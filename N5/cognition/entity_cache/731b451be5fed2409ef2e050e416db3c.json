@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vibe Debugger", "type": "TOOL", "context": "debugging tool used for site optimization"}, {"name": "N5 Waitlist Site", "type": "ORG", "context": "website being debugged and optimized"}], "relationships": [{"from": "Vibe Debugger", "to": "N5 Waitlist Site", "type": "USES", "context": "Vibe Debugger is used to debug and optimize the N5 Waitlist Site"}]}

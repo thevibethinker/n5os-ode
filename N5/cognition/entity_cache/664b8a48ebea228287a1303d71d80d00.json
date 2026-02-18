@@ -1,0 +1,1 @@
+{"entities": [{"name": "Alex", "type": "PERSON", "context": "A profile being searched for"}, {"name": "YCB", "type": "ORG", "context": "A company being searched for"}, {"name": "INVESTOR", "type": "CONCEPT", "context": "A category used in search"}, {"name": "series-a", "type": "CONCEPT", "context": "A tag used in search"}], "relationships": []}

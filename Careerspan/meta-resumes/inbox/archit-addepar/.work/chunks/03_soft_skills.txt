@@ -1,0 +1,474 @@
+Soft Skills
+
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+40/76
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+Problem Solving Excellent Required: Advanced Importance: 9/10 Direct experience: 9/10 Source: Story + profile
+Our take Based on resume
+
+Direct
+
+1) Alignment to skill: Problem solving here means diagnosing and resolving complex technical/organizational
+challenges for scalable backend/data-driven systems, using structured analysis, evaluating trade-offs,
+collaborating, and delivering measurable outcomes.
+2) Direct evidence from resume: The candidate repeatedly describes high-complexity problem statements and
+concrete solutions: founding the Assignment platform (PoC -> full product) and mentoring an 8-engineer team;
+designing a Template Service for scalable personalized test generation; building a user timeline for 10M+ learners
+and scheduling aggregation jobs from hourly to yearly to roll up millions of activity rows; leading a backend redesign
+of the user timeline to remove scaling bottlenecks, overhauling DB schemas and performing a zero-downtime
+migration; architecting and building a Greenfield off-Shopify checkout and order workflow platform that saved the
+business millions; designing Orders and Payments Platforms (integrations with Stripe/PayPal, idempotent secure
+processing) supporting 100k+ daily orders and 5× peak spikes; introducing architectural changes (decoupling
+pre/post-order, workflow visibility, soft reservation); creating LLM-powered fraud review pipeline and a concurrent,
+extensible post-order workflow framework; and driving infra and SOP upgrades for Black Friday scale. Each of these
+items shows identification of root causes (scaling bottlenecks, transactional consistency), evaluation of
+architectural alternatives (decoupling, schema changes, idempotency), cross-team coordination (migrations,
+business alignment), and measurable impact (supporting large scale, zero downtime migration, cost savings).
+3) Transferable/adjacent evidence: Experience with distributed, stateful systems, data aggregation, and building
+ML/LLM-assisted pipelines aligns well with Addepar’s needs around data-driven and ML-enhanced investment
+systems. The resume also lists relevant tech (Java, Python, Go, AWS, Kubernetes, Kafka) which supports technical
+problem-solving capability.
+4) Proficiency & impact: Problems described are high-stakes and non-trivial (large scale user base, mission-critical
+checkout replacing Shopify, peak-event resilience, database migrations without downtime). Solutions included
+architectural redesign, operationalization (SOPs, infra scaling), and innovation (LLM fraud pipeline), indicating
+strategic/system-level problem solving rather than routine fixes.
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+41/76
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+5) Gaps/limits: While the resume strongly demonstrates technical problem solving, explicit examples of working with
+data scientists on ML model productionization for financial products or use of serverless platforms are
+limited/absent. Also, no external industry recognition as an authority is presented, so the profile stops short of the
+'expert' tier.
+Conclusion: The resume convincingly demonstrates advanced problem solving—strategic, cross-cutting solutions
+to complex backend and data-scale challenges with measurable business impact. Strength is high; confidence is
+high because many of the problem/solution/impact elements are explicitly described.
+Support
+Stories
+KVukkhvzRKCPV7DqfgQA
+jL010IdigY4oaj3Hs8aU
+Resume
+Resume match
+
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+Direct 8/10 Excellent
+Direct 8/10 Excellent Best
+Direct 9/10 Excellent
+
+42/76
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+Teamwork Excellent Required: Advanced Importance: 8/10 Direct experience: 9/10 Source: Story + profile
+Our take Based on story: KVukkhvzRKCPV7DqfgQA
+
+Direct
+
+The story provides numerous, concrete examples of active and strategic teamwork in a backend engineering
+context highly relevant to Addepar's needs. The candidate describes working within a cross-functional team of
+engineers, product managers, QA, and even interfacing with stakeholders from inventory and logistics,
+collaboratively defining and delivering a complex Greenfield checkout/order workflow system. They coordinated
+requirements across groups, directly negotiated and aligned technical concepts such as soft inventory reservation
+with other teams, and describe collective delivery under high pressure (scaling for Black Friday, production go-live,
+significant business stakes). Their narrative goes beyond basic participation: it details handling ambiguity
+(migrating from Shopify), driving technical discussions and decisions (consistency models, workflow abstraction,
+post-order task prioritization), and contributing to a solution with major company impact. The user reflects
+proactively on their learning around 'system thinking' and highlights how team collaboration and mutual support
+enabled success. While there are fewer details about formal leadership, the breadth of cross-team engagement,
+negotiation, and ownership places this at a strong 'advanced' level for teamwork. This would comfortably satisfy or
+impress a senior interviewer for a fintech backend role.
+Support
+Stories
+KVukkhvzRKCPV7DqfgQA
+
+Direct 9/10 Excellent Best
+
+jL010IdigY4oaj3Hs8aU
+
+Direct 8/10 Excellent
+
+Resume
+Resume match
+
+Direct 8/10 Excellent
+
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+43/76
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+Analytical Thinking Excellent Required: Advanced Importance: 8/10 Direct experience: 9/10 Source: Story + profile
+Our take Based on resume
+
+Direct
+
+Core components of analytical thinking: breaking down complex problems, synthesizing data from multiple sources,
+weighing tradeoffs, designing and justifying solutions, and anticipating downstream impacts. The resume contains
+multiple direct examples that match these components. At Embibe, the candidate founded the Assignment platform
+(PoC → full product) and redesigned the user timeline backend to overcome scaling bottlenecks—collaborating
+across teams, overhauling DB schemas, and performing a zero‑downtime migration. Those descriptions imply
+root‑cause analysis of scaling problems, evaluation of architectural alternatives, and planning/coordination of a risky
+migration. The user timeline work (hourly→yearly aggregation of millions of events for 10M+ learners) demonstrates
+structuring large data pipelines and deciding aggregation cadence and rollups—analytical decisions driven by data
+volume and query patterns. At Quince, the candidate led the design of Orders and Payments platforms, decoupled
+pre‑ and post‑order flows, introduced workflow visibility and soft inventory reservation (tradeoff decisions between
+consistency/availability), and implemented idempotent, secure payment processing—these are architecture choices
+that require analyzing failure modes and business constraints. The design and operation of an LLM‑powered fraud
+review pipeline (RAG combining order data, payment signals, historical patterns, producing concise investigation
+reports for human review) is explicit evidence of synthesizing heterogeneous data, selecting an appropriate ML/LLM
+architecture, and operationalizing analytical outputs into decision workflows. Additionally, scaling for 5× Black
+Friday traffic by upgrading infra, cache optimizations, and session pooling shows measurement, hypothesis-driven
+mitigation, and evaluation of outcomes. Mentorship and leadership roles plus IIIT Hyderabad and competitive
+programming achievements add further support for systematic problem solving. Collectively, these items align with
+the “advanced” criteria: applied architectural theory, multi‑variable tradeoffs, anticipation of downstream impacts,
+and influencing platform direction. There is strong direct evidence but not the kind of institution‑level thought
+leadership, published frameworks, or explicit experimental design details that would justify an “expert” rating.
+Support
+Stories
+KVukkhvzRKCPV7DqfgQA
+
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+Direct 9/10 Excellent Best
+44/76
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+jL010IdigY4oaj3Hs8aU
+
+Direct 8/10 Excellent
+
+Resume
+Resume match
+
+Direct 9/10 Excellent
+
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+45/76
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+Cross-functional Collaboration Excellent Required: Advanced Importance: 8/10 Direct experience: 8/10
+Source: Story + profile
+Our take Based on resume
+
+Direct
+
+Core components of cross-functional collaboration are: proactive engagement across disciplines, shaping shared
+solutions, negotiating trade-offs, and delivering business/technical outcomes that depended on multi-team work.
+The resume contains multiple direct statements and strong examples showing this behavior. At Quince the
+candidate "collaborated cross-functionally to drive business alignment and customer-centric design," led the
+architecture of a Greenfield off-Shopify checkout that enabled the business to exit Shopify and save millions (clear
+evidence of aligning engineering design with business goals), and created SOPs and infra changes to support Black
+Friday traffic (implies coordination with SRE/ops, product, and business teams). The design and operation of an
+LLM-powered fraud review pipeline that combines order/payment signals and posts concise reports to Slack for
+human review indicates working with fraud analysts/ops and likely data scientists to integrate ML outputs into
+operational workflows. Ownership of end-to-end workflows (orders, payments, gift cards) and integrating external
+partners (Clutch) are further signs of working across product, partner, and engineering boundaries.
+From Embibe, founding the Assignment platform and mentoring an 8-engineer team while building features like the
+Template Service (educator-facing) and redesigning the timeline backend "collaborating across teams to overhaul
+database schemas and implement a smooth migration with zero downtime" directly describes coordinating crossteam efforts to execute a complex migration.
+Taken together, these demonstrate more than reactive handoffs: the candidate led design choices with business
+impact, instituted operational processes (SOPs), and coordinated migrations and integrations that required multiteam buy-in. This maps to the "Advanced" criteria: proactively structured/led cross-functional collaboration,
+bridged domain knowledge, and delivered significant company-level impact. Missing for an "Expert" rating are
+signals of organization-wide recognized leadership in cross-functional practice (e.g., formal org-level facilitation,
+mentoring others in collaboration practices beyond immediate teams, or company-wide process ownership).
+Support
+Stories
+
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+46/76
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+KVukkhvzRKCPV7DqfgQA
+Resume
+Resume match
+
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+Direct 8/10 Excellent Best
+Direct 8/10 Excellent
+
+47/76
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+Ownership Mindset Excellent Required: Advanced Importance: 8/10 Direct experience: 9/10 Source: Story + profile
+Our take Based on resume
+
+Direct
+
+Core components of an ownership mindset: initiative to start projects, accountability for technical and business
+outcomes, proactive problem solving across teams, and taking responsibility for long-lived systems. The resume
+contains multiple direct, high-impact examples: founding the Assignment platform (PoC → full product) and
+growing/mentoring an 8-person team demonstrates initiative and end-to-end product accountability; leading a
+backend redesign and schema migration for the user timeline with zero downtime shows ownership of reliability, risk
+mitigation, and operational execution; designing and operating the Orders and Payments Platforms as part of a
+Greenfield migration off Shopify (saving the business millions) shows ownership that spans technical architecture
+and business outcomes; owning integrations with Stripe/PayPal and building idempotent, secure payment
+processing highlights responsibility for correctness and operational safety in high-stakes domains; creating SOPs
+and driving scaling for Black Friday (5× traffic, $15M/day) demonstrates proactive preparation for critical events and
+operational ownership; building an LLM-powered fraud review pipeline and an extensible post-order workflow
+framework shows anticipating future needs and creating maintainable systems. These examples meet Advanced
+criteria: system/organizational-level ownership, high stakes (revenue, reliability), cross-functional collaboration, and
+tangible business impact. Missing for Expert: no explicit evidence of institution-wide adoption of ownership
+frameworks or being recognized company-wide as the authority who sets ownership standards (beyond increased
+recognition and autonomy).
+Support
+Stories
+KVukkhvzRKCPV7DqfgQA
+jL010IdigY4oaj3Hs8aU
+
+Direct 9/10 Excellent Best
+Direct 8/10 Excellent
+
+Resume
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+48/76
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+Resume match
+
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+Direct 9/10 Excellent
+
+49/76
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+Technical Communication Good Required: Advanced Importance: 8/10 Direct experience: 7/10 Source: Story + profile
+Our take Based on resume
+
+Direct
+
+Core components of technical communication include explaining complex technical designs to diverse audiences,
+aligning cross-functional stakeholders, producing/documenting specifications or runbooks, and enabling decisions
+through clear messaging. The resume provides several direct signals: led architecture and end-to-end ownership of
+Order and Payments platforms (Quince), collaborated cross-functionally to drive business alignment and customercentric design, and ran a zero-downtime backend schema migration across teams at Embibe. Additional evidence:
+mentoring and growing an 8-engineer team (implies regular technical guidance and reviews), creating SOPs for
+peak events (documentation/process communication), and building an LLM-powered fraud review pipeline that
+generated concise investigation reports and automatically delivered summaries to Slack for human review
+(translating technical signals into actionable, non-technical summaries). These examples show purposeful
+communication to coordinate multi-team migrations, align product and business goals, and convey technical
+findings to operational reviewers.
+What’s missing for a higher rating: explicit mention of leading architecture reviews/presentations, authoring API
+contracts or design docs adopted org-wide, stakeholder-facing presentations to product/leadership, or measurable
+adoption metrics for documentation. Given the concrete cross-functional collaboration, migration leadership, SOP
+creation, and automated summaries to non-engineering audiences, the resume demonstrates intentional and
+effective technical communication at a level that has enabled projects and alignment across teams. This aligns best
+with an Intermediate level (practical application) with reasonably strong endorsement but not the explicit strategic
+communication scale-up evidence required for Advanced or Expert.
+Support
+Stories
+jL010IdigY4oaj3Hs8aU
+
+KVukkhvzRKCPV7DqfgQA
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+Direct 5/10 Fair
+Direct 7/10 Good Best
+50/76
+
+2/5/26, 10:51 AM
+
+Resume
+Resume match
+
+Careerspan Employers
+
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+Direct 7/10 Good
+
+51/76
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+Innovation Excellent Required: Advanced Importance: 7/10 Direct experience: 9/10 Source: Story + profile
+Our take Based on resume
+
+Direct
+
+The resume contains multiple clear, specific examples where the candidate identified problems, proposed and
+shipped original technical solutions, and delivered measurable business/operational impact—meeting the
+“Advanced” innovation criteria. Examples: (1) At Embibe, they founded the Assignment platform (PoC → full
+product), built a Template Service for scalable personalized tests, created a user-timeline and hourly→yearly
+aggregation pipelines for 10M+ learners, and led a backend architecture redesign with a zero-downtime migration to
+remove scaling bottlenecks—demonstrating initiative, architectural vision, cross-team coordination, and reliable
+delivery. (2) At Quince, they were core to a Greenfield off-Shopify checkout and order workflow that saved the
+business millions and enabled rapid scale; they architected Orders and Payments platforms, introduced
+architectural patterns (decoupling pre/post-order, workflow visibility, soft inventory reservation), and built an LLMpowered fraud review pipeline and extensible post-order workflow framework—innovations that had enterprise-level
+impact (100k+ daily orders, 5× peak traffic, $15M/day revenue handling). These items show end-to-end ownership,
+cross-functional collaboration (product, business, data/ML), experimentation with new tech (LLMs, RAG), and
+measurable outcomes (cost savings, scale and resilience). The profile lacks industry-level recognition (patents,
+published frameworks, awards) that would support an “Expert” rating, but the candidate clearly demonstrates
+strategic, original solutions and organization-wide impact consistent with “Advanced.”
+Support
+Stories
+jL010IdigY4oaj3Hs8aU
+
+KVukkhvzRKCPV7DqfgQA
+Resume
+Resume match
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+Direct 7/10 Good
+Direct 8/10 Excellent Best
+Direct 9/10 Excellent
+52/76
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+Continuous Learning Good Required: Advanced Importance: 7/10 Direct experience: 7/10 Source: Story + profile
+Our take Based on resume
+
+Direct
+
+Alignment to skill: Continuous learning requires proactively acquiring and applying new knowledge to solve real
+problems and upskill others. Core components include adopting new technologies/methods, applying them to
+deliver improved outcomes, and sharing or institutionalizing the learning.
+Evidence from resume: The candidate repeatedly describes taking on greenfield initiatives and platform-level
+problems (founding an Assignment platform from PoC to production; building an off‑Shopify checkout and full
+Orders/Payments platforms). These efforts imply learning and applying new design patterns, deployment practices,
+and domain knowledge. Specific, modern technologies and approaches are referenced: LLM-powered fraud review
+using a RAG architecture (adoption of cutting-edge ML/LLM techniques), integrations with multiple payment
+providers (Stripe/PayPal) and many payment instruments, microservices at scale (12+ services), infra scaling for
+Black Friday (EKS, RDS tuning, cache optimizations, Stripe session pooling), and a backend redesign with zerodowntime database migration across teams. The executive summary lists multiple languages and infra tooling (Java,
+Kotlin, C++, Go, Python, Spring Boot, Gin, AWS, Kubernetes, Kafka, Terraform), indicating breadth and ongoing
+learning across stacks.
+Transferable learning actions: He led architectural redesigns, introduced new architectural patterns (decoupling
+pre/post-order, workflow visibility, soft reservations), created an extensible post-order framework, and mentored an
+8-engineer team—activities that indicate not just personal learning but dissemination of learnings to the team and
+cross-team collaboration. The LLM fraud pipeline shows deliberate adoption and integration of a new technology to
+produce measurable operational results (automation of fraud review and Slack summaries). The zero-downtime
+migration and scaling SOPs show institutionalization of new practices.
+Proficiency and scope: The learning demonstrated is applied at project and platform level (multi-service, multiteam, high-stakes events like Black Friday). Outcomes include cost savings (enabling exit from Shopify), resilience
+under peak traffic, and automation of operational workflows—these are substantive, high-impact results rather than
+narrow, incidental learning.
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+53/76
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+Confidence assessment: Evidence is mostly inferred from delivered outcomes and mentioned technologies rather
+than explicit statements like "I took course X" or "I learned Y." Given the concrete examples of adopting modern
+tech (LLMs, cloud infra, microservices), mentoring, and platform redesigns, it is a reasonable inference that the
+candidate practices active continuous learning.
+Judgment: The resume demonstrates strong, practical continuous learning—the candidate repeatedly acquires and
+applies new technical knowledge at platform scale and shares it through mentorship and cross-team initiatives.
+However, there is limited explicit evidence of formal teaching at org-wide scale or public thought leadership.
+What’s missing if weaker: Explicit statements about deliberate learning practices (e.g., courses, internal training
+sessions led, tech talks, publications) would raise this toward expert-level evidence.
+Support
+Stories
+KVukkhvzRKCPV7DqfgQA
+
+Direct 7/10 Good Best
+
+jL010IdigY4oaj3Hs8aU
+
+Direct 6/10 Good
+
+Resume
+Resume match
+
+Direct 7/10 Good
+
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+54/76
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+Client Focus Excellent Required: Intermediate Importance: 6/10 Direct experience: 8/10 Source: Story + profile
+Our take Based on resume
+
+Direct
+
+Alignment to skill: The resume repeatedly ties backend work to end-user and business needs. Core client-focus
+components are present: understanding client/workflow needs, collaborating with non-engineering teams, shaping
+prioritization and architecture for user outcomes, and delivering measurable business/customer impact.
+Evidence (direct and transferable):
+- Quince: explicitly “collaborated cross-functionally to drive business alignment and customer-centric design,” led
+the Greenfield off-Shopify checkout that allowed the company to exit Shopify and “save millions” — a high-level
+business/client-driven objective. Work on Orders/Payments, gift cards, and post-order workflows (emails, loyalty
+credits, refunds) are clearly customer-facing and required prioritization around customer experience, SLAs, and
+reliability during peak events (Black Friday). Designing an LLM-powered fraud review pipeline and delivering Slack
+summaries shows focus on operational stakeholders and faster customer resolution. Creating SOPs and scaling
+infra for peak sales demonstrates anticipating client-facing needs.
+- Embibe: built the Template Service enabling educators to create templates for personalized tests at scale and a
+user timeline system tracking engagement for 10M+ learners. These features are productized to serve educators
+and learners, and the data-aggregation work turned activity data into “actionable insights,” implying attention to the
+customers’ decision-making needs. Leading a backend redesign to remove scaling bottlenecks and executing a
+zero-downtime migration reflects prioritizing reliability for end users.
+Proficiency & success criteria: The candidate shows repeated, deliberate engagement with product and business
+stakeholders, shapes architecture (e.g., decoupling pre/post-order, visibility/workflow changes) to meet
+client/business needs, and delivered measurable operational outcomes (support for 100k+ daily orders, $15M/day
+during peaks, tracking 10M+ learners). This goes beyond one-off feature requests and demonstrates ongoing
+alignment of engineering decisions with client and business priorities.
+Context & gaps: The resume provides strong evidence of client-focus through product choices, cross-functional
+collaboration, and business-impact metrics. Missing explicit examples of direct user research, structured feedback
+loops (e.g., user interviews, NPS), or quantified improvements in client satisfaction/retention metrics. However, the
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+55/76
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+scale and nature of the systems (checkout, payments, educator tools, engagement analytics) and the stated
+collaboration reduce the need for further inference.
+Judgment: The resume demonstrates Client Focus at an Advanced level: the candidate not only responds to
+stakeholder needs but has shaped architecture and systems to meet and anticipate client/business requirements
+across multiple products and at large scale.
+Support
+Stories
+KVukkhvzRKCPV7DqfgQA
+Resume
+Resume match
+
+Direct 8/10 Excellent Best
+Direct 8/10 Excellent

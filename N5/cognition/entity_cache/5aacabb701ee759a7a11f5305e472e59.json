@@ -1,0 +1,1 @@
+{"entities": [{"name": "Completion Report", "type": "CONCEPT", "context": "detailed technical report for orchestrator"}, {"name": "Session State", "type": "CONCEPT", "context": "tracked progress during execution"}, {"name": "This AAR", "type": "CONCEPT", "context": "Comprehensive documentation for future reference"}], "relationships": []}

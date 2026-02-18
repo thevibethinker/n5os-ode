@@ -1,0 +1,541 @@
+Responsibilities
+
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+23/76
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+Architect and maintain solutions Excellent Required: Advanced Importance: 10/10 Direct experience: 9/10
+Source: Story + profile
+Our take Based on resume
+
+Direct
+
+The resume contains multiple clear STAR-style examples where the candidate personally led architecture and
+implementation of complex backend systems and delivered measurable production impact. Situation/Task: At
+Quince they were core to a Greenfield off-Shopify checkout and order workflow (mission-critical, businessimpacting) and at Embibe they founded the Assignment platform and redesigned the user-timeline backend to
+remove scaling bottlenecks. Action: They led end-to-end architecture and development of Orders and Payments
+platforms (decoupling workflows, workflow visibility, soft inventory reservation), integrated payment instruments
+(Stripe, PayPal), implemented an LLM-powered fraud review pipeline, and built aggregation jobs and migration
+strategies. They also grew and mentored teams and drove infra upgrades (EKS, RDS, cache improvements). Result:
+Quantifiable outcomes include enabling the business to exit Shopify and save millions, supporting 100k+ daily
+orders and 5× traffic spikes (Black Friday/Cyber Monday), handling $15M daily revenue, zero-downtime backend
+migration, and tracking engagement for 10M+ learners. These demonstrate ownership of hard, ambiguous
+problems, design/architecture contributions, production-ready delivery, scalability and reliability improvements, and
+business impact. Minor gaps: explicit mentions of test frameworks, unit/integration test practices, or serverless tech
+are not present (though cloud/Kubernetes/AWS and languages like Java/Python are listed), so some implementation
+details around testability and serverless are inferred. Overall this is direct evidence of advanced-level ability to
+architect, implement, and maintain complex backend solutions.
+Contributing skills
+
+Infrastructure as Code (Terraform) Backend Development Java Programming SQL Querying and Optimization Python Programming
+Serverless Architecture Software Architecture Ownership Mindset Analytical Thinking Problem Solving
+
+Support
+Stories
+jL010IdigY4oaj3Hs8aU
+
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+Direct 8/10 Excellent
+24/76
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+KVukkhvzRKCPV7DqfgQA
+Resume
+Resume match
+
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+Direct 9/10 Excellent Best
+Direct 9/10 Excellent
+
+25/76
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+Collaborate with ML engineers Excellent Required: Advanced Importance: 9/10 Direct experience: 8/10 Source: Profile
+Our take Based on resume
+
+Direct
+
+The resume contains direct, relevant experience operationalizing ML/LLM outputs within backend systems. At
+Quince the candidate "designed and operated an LLM-powered fraud review pipeline, using a RAG-based system to
+generate concise investigation reports by combining order data, payment signals, and historical fraud patterns, and
+automatically delivering summaries to Slack for human review and action." This describes ingesting programmatic
+ML outputs, transforming and aggregating multiple data sources, and integrating the results into
+production/backend workflows for operational use. The executive summary and skills list also cite Python (and other
+backend languages) and experience building data aggregation jobs (hourly-to-yearly rollups at Embibe) which
+further support the ability to transform and validate large-scale data for backend consumption. While the resume
+does not explicitly state collaborative interactions with ML engineers, the scope and implementation details (RAG,
+automation, production delivery) reasonably imply cross-functional work and hands-on operationalization. One
+minor gap is limited explicit mention of validation/testing/monitoring steps for ML outputs or a named collaboration
+with data scientists, but overall the evidence aligns well with the advanced proficiency described in the success
+criteria.
+Contributing skills
+
+Machine Learning Integration Backend Development Python Programming SQL Querying and Optimization
+Cross-functional Collaboration Technical Communication
+
+Support
+Resume
+Resume match
+
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+Direct 8/10 Excellent
+
+26/76
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+Lead project initiatives Excellent Required: Advanced Importance: 9/10 Direct experience: 8/10 Source: Story + profile
+Our take Based on resume
+
+Direct
+
+The resume contains multiple clear, end-to-end leadership examples that map closely to the responsibility. At
+Embibe Archit “founded the Assignment platform” — taking a PoC to a full product while growing and mentoring a
+team of 8 — which implies ownership of planning, execution, and delivery. He also led a major backend redesign for
+the user timeline, coordinated cross-team database/schema changes, and executed a zero-downtime migration
+(strong evidence of release planning, risk management, and post-change operational ownership). At Quince he “led
+design and development of the Payments Platform” and “owned the Order Platform workflows end-to-end,”
+designed an extensible post-order workflow framework, built an LLM-powered fraud-review pipeline (delivered
+summaries to Slack for human review), and drove scaling and SOPs for Black Friday peaks — all indicating
+prioritization, architecture tradeoffs, cross-functional coordination, and operational follow-through for high-impact
+releases. Missing: explicit wording about backlog/prioritization ceremonies, sprint planning, formal release
+management steps, or explicit collaboration with product managers/data scientists by title (though “crossfunctional” and business-alignment statements reasonably imply this). Overall the resume demonstrates direct,
+end-to-end project leadership and successful delivery, with a few success-criteria details left implicit rather than
+spelled out.
+Contributing skills
+
+Software Architecture Continuous Integration/Continuous Deployment (CI/CD) Backend Development Ownership Mindset
+Cross-functional Collaboration
+
+Support
+Stories
+jL010IdigY4oaj3Hs8aU
+
+KVukkhvzRKCPV7DqfgQA
+
+Direct 6/10 Good
+Direct 8/10 Excellent Best
+
+Resume
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+27/76
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+Resume match
+
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+Direct 8/10 Excellent
+
+28/76
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+Define technical stack Excellent Required: Advanced Importance: 8/10 Transferrable experience: 8/10
+Source: Story + profile
+Our take Based on resume
+
+Transferable
+
+The resume shows multiple, concrete examples of leading architecture and cross-team engineering work that map
+well to selecting technical stacks, even if it doesn’t literally quote “we chose X vs Y and convinced teams.” At Quince
+Archit was part of the core team that designed and built a Greenfield off-Shopify checkout and explicitly “led design
+and development” of Payments and Order Platforms across 12+ microservices, integrated major external systems
+(Stripe, PayPal, Clutch), and drove infrastructure upgrades (EKS replicas, RDS sizing, cache optimizations, Stripe
+session pooling) to meet 5× traffic spikes. Those activities imply evaluating trade-offs (scalability, idempotency,
+reliability) and selecting technologies/configurations that produced measurable business outcomes (supporting
+$15M/day, 100k+ orders, peak resilience). At Embibe he “founded the Assignment platform,” mentored an
+8‑engineer team, and “led a critical redesign of the user timeline’s backend architecture…overhaul[ing] database
+schemas and implement[ing] a smooth migration with zero downtime,” which is direct cross-team architectural
+leadership. Taken together these are strong transferable signals that he can partner with peer engineering teams to
+define/choose stacks for new products. Missing: explicit STAR-style detail about running cross-team trade-off
+sessions, documenting technology evaluations, or naming competing stack choices and how he persuaded
+stakeholders—so the evidence is inferential rather than verbatim.
+Contributing skills
+
+SQL Querying and Optimization NoSQL Databases Backend Development Infrastructure as Code (Terraform) Java Programming
+Software Architecture Serverless Architecture DynamoDB OpenSearch / Elasticsearch Python Programming Analytical Thinking
+Cross-functional Collaboration Technical Communication Teamwork
+
+Support
+Stories
+KVukkhvzRKCPV7DqfgQA
+
+Direct 8/10 Excellent Best
+
+Resume
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+29/76
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+Resume match
+
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+Transferable 8/10 Excellent
+
+30/76
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+Ensure Security Compliance Fair Required: Advanced Importance: 8/10 Transferrable experience: 5/10 Source: Profile
+No direct support
+Our take Based on resume
+
+Transferable
+
+The resume shows several adjacent, relevant experiences that imply responsibility for protecting sensitive data but
+does not provide direct, explicit evidence of owning security/compliance programs. Supporting evidence: at Quince
+the candidate “led design and development of the Payments Platform, integrating Stripe and PayPal” and explicitly
+mentions “secure, idempotent processing” while handling “millions of dollars in daily transaction volume” and
+operating high-volume order workflows. Building an LLM-powered fraud review pipeline and creating SOPs for peak
+events also demonstrates working with sensitive payment/order signals and operational controls. At Embibe they
+built systems tracking engagement for 10M+ learners and redesigned backend architectures with zero-downtime
+migrations—both imply experience with large-scale data handling and reliability considerations. Missing / weak
+evidence: no explicit mentions of implementing encryption, access controls, IAM, vulnerability remediation, incident
+response, or specific regulatory/compliance frameworks (PCI-DSS, SOC2, GDPR, etc.), nor results such as audit
+passes or reduced vulnerabilities. Given the payment domain, it’s reasonable to infer familiarity with payment
+security practices, but the resume lacks STAR-style examples showing ownership of security policy, risk
+assessments, compliance adaptations, or security incident handling. Therefore the background provides moderate,
+transferable evidence that the candidate can meet the responsibility but falls short of strong/direct proof of
+advanced-level compliance ownership.
+Contributing skills
+
+Amazon Web Services (AWS) Software Architecture Backend Development Ownership Mindset Technical Communication
+Problem Solving Analytical Thinking
+
+Support
+Resume
+Resume match
+
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+Transferable 5/10 Fair
+
+31/76
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+Monitor System Performance Good Required: Advanced Importance: 8/10 Transferrable experience: 7/10
+Source: Story + profile
+Our take Based on resume
+
+Transferable
+
+The resume demonstrates significant, relevant production reliability experience in mission-critical, high-traffic
+systems—strong transferable evidence that the candidate can perform ongoing assessment and monitoring of
+system health. Explicit examples: led design/operation of Orders and Payments platforms handling 100k+ daily
+orders and 5× peak spikes, upgraded infra (EKS replicas, RDS, cache optimizations, Stripe session pooling) and
+created SOPs for Black Friday scaling, performed a backend redesign and zero-downtime migration that improved
+reliability, and owned workflows end-to-end. These items imply familiarity with incident mitigation, capacity
+planning, SLA-focused operations, and iterative reliability improvements. However, the resume lacks direct, named
+evidence of implementing specific monitoring tools (Prometheus/CloudWatch), setting up dashboards/alerting,
+running postmortems, participating in on-call rotations, or metrics showing reduced MTTR. Given the clear
+ownership of high-availability systems and scaling work, this maps as a strong transferable endorsement but not a
+direct one-to-one proof of advanced monitoring tooling and incident process ownership.
+Contributing skills
+
+Amazon Web Services (AWS) Backend Development Serverless Architecture Problem Solving Ownership Mindset Analytical Thinking
+
+Support
+Stories
+KVukkhvzRKCPV7DqfgQA
+
+Transferable 5/10 Fair
+
+jL010IdigY4oaj3Hs8aU
+
+Direct 7/10 Good Best
+
+Resume
+Resume match
+
+Transferable 7/10 Good
+
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+32/76
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+Collaborate with product teams Good Required: Advanced Importance: 8/10 Transferrable experience: 7/10
+Source: Story + profile No direct support
+Our take Based on resume Transferable
+
+Evidence in the resume supports cross-functional product collaboration but stops short of explicit examples of
+iterative requirement cycles or direct user feedback loops. At Quince the candidate repeatedly notes crossfunctional work: “collaborated cross-functionally to drive business alignment and customer-centric design,”
+ownership of mission-critical checkout and order workflows (orders, payments, offers, loyalty, gift cards) and
+building an LLM-powered fraud review pipeline that "automatically deliver[s] summaries to Slack for human review
+and action." Those points indicate he worked with non-engineering stakeholders (business, ops, reviewers) to
+shape features, integrate feedback into operational workflows, and prioritize reliability for business events (Black
+Friday) — all transferable behaviors for working with PMs and client teams. At Embibe he founded and scaled the
+Assignment platform and built a Template Service “that allowed educators to create custom templates,” which
+implies product-facing work with educators/end users to capture requirements and enable customization at scale.
+He also collaborated across teams to redesign the timeline backend and executed a zero-downtime migration,
+showing he negotiated tradeoffs and coordinated stakeholder impact. What’s missing for a direct endorsement are
+explicit lines such as “worked with PMs to iterate requirements,” concrete examples of incorporating user feedback
+and reprioritizing features, or quotes about running user research/feedback sessions. Overall, the resume provides
+reasonable, practical evidence that he has advanced-level capability collaborating with product managers and client
+teams, but largely by inference from cross-functional product ownership and user-facing platform delivery rather
+than explicit iterative product-management narratives.
+Contributing skills
+
+Software Architecture Technical Documentation Technical Communication Analytical Thinking Cross-functional Collaboration
+Client Focus
+
+Support
+Stories
+KVukkhvzRKCPV7DqfgQA
+
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+Transferable 6/10 Good Best
+33/76
+
+2/5/26, 10:51 AM
+
+Resume
+Resume match
+
+Careerspan Employers
+
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+Transferable 7/10 Good
+
+34/76
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+Iterate new product offerings Excellent Required: Advanced Importance: 8/10 Direct experience: 9/10
+Source: Story + profile
+Our take Based on resume
+
+Direct
+
+The resume shows multiple clear examples of owning new product features from PoC to production and iterating
+with stakeholders to reach measurable business outcomes. At Embibe the candidate "founded the Assignment
+platform, building the initial PoC and scaling it into a full‑fledged product" and led a team of eight — this implies
+repeated development/testing cycles, product hardening, and stakeholder/user-driven evolution. The user timeline
+(tracking engagement for 10M+ learners) and Template Service (educator-facing templates for personalized tests)
+are product features that require user-focused iteration and data-driven improvements; the candidate also designed
+aggregation jobs that turned raw activity into actionable insights, which indicates using user data to refine product
+behavior. At Quince they were part of a Greenfield initiative to replace Shopify — leading design and delivery of
+Orders and Payments Platforms, adding workflow visibility, building an LLM-powered fraud review loop that
+generates concise summaries for human review, and creating an extensible post-order framework. Those details
+demonstrate iterative design (human-in-the-loop feedback, cross-functional collaboration with business/product
+teams), measurable impact (enabled exit from Shopify saving millions, supported 100k+ daily orders and 5× traffic
+spikes, $15M daily revenue peak readiness, zero‑downtime migration), and ownership of end‑to‑end product
+delivery. Together this matches the Advanced proficiency: ambiguous requirements, repeated cycles of
+prototyping/production, stakeholder feedback, and measurable improvements.
+Contributing skills
+
+Continuous Integration/Continuous Deployment (CI/CD) Python Programming Backend Development Java Programming Innovation
+Continuous Learning Analytical Thinking Problem Solving
+
+Support
+Stories
+KVukkhvzRKCPV7DqfgQA
+
+Transferable 5/10 Fair Best
+
+Resume
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+35/76
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+Resume match
+
+Direct 9/10 Excellent
+
+Document software functionality Good Required: Advanced Importance: 7/10 Transferrable experience: 6/10
+Source: Profile No direct support
+Our take Based on resume Transferable
+
+Resume shows several strong signals of disciplined technical communication and process documentation, but does
+not explicitly state authorship of system design docs or API docs. Direct evidence: authored SOPs for peak events,
+led a zero-downtime backend migration (which implies migration plans and runbooks), and collaborated across
+teams to overhaul DB schemas—these typically require clear technical plans and coordination artifacts. Transferable
+evidence: founding/scaling products, owning end-to-end platforms, mentoring an 8-engineer team, and building
+extensible frameworks and fraud-review summaries delivered to Slack indicate regular creation of structured
+technical explanations, onboarding help, and knowledge sharing. Missing/weak: no explicit bullets stating “wrote
+system design docs,” “authored API docs,” “established coding standards,” or quantified impact of documentation
+(e.g., reduced onboarding time, fewer incidents). Overall, the profile supports the responsibility by reasonable
+inference (transferable), but lacks explicit STAR-style documentation ownership examples needed for a direct
+endorsement.
+Contributing skills
+
+Technical Documentation Software Architecture Technical Communication Analytical Thinking
+
+Support
+Resume
+Resume match
+
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+Transferable 6/10 Good
+
+36/76
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+Automate workflow with operations Excellent Required: Intermediate Importance: 6/10 Direct experience: 8/10
+Source: Story + profile
+Our take Based on resume
+
+Direct
+
+The resume includes multiple concrete examples of designing and shipping workflow automation that map closely
+to the target responsibility. At Quince Archit built an LLM-powered fraud review pipeline that aggregates
+order/payment signals, generates concise investigation reports (document-like summaries) and automatically
+delivers them to Slack for human review — this is a cross-functional automation that creates document artifacts for
+operations and routes them into an operational workflow. He also designed an extensible Post-Order Workflow
+framework (emails, loyalty credits, fraud alerts) with prioritized concurrent task processing that enables operational
+tasks to be added without touching core systems — a clear example of automating operational workflows. He
+created SOPs and infra/automation for peak events (Black Friday scaling), which indicates working with
+operations/infra teams to improve processes. At Embibe the Template Service allowed educators to create
+templates for generating personalized tests at scale (document/template generation pipeline), and he built
+scheduled aggregation jobs rolling up millions of activity rows into meaningful insights — both are examples of
+document/data processing pipelines and process automation. Missing from the resume are explicit STAR-style
+metrics for operational efficiency (e.g., % time saved, reduced review latency) and an explicit call-out of partnering
+with an “operations engineering” team. Overall, the resume directly demonstrates relevant technical ownership of
+document/data pipeline automation and cross-functional collaboration with operational stakeholders, but would be
+stronger with explicit metrics and a named ops partner.
+Contributing skills
+
+Workflow Automation Amazon Web Services (AWS) Backend Development Problem Solving Cross-functional Collaboration
+
+Support
+Stories
+jL010IdigY4oaj3Hs8aU
+
+Transferable 5/10 Fair Best
+
+Resume
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+37/76
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+Resume match
+
+Direct 8/10 Excellent
+
+Mentor Junior Engineers Good Required: Advanced Importance: 6/10 Direct experience: 7/10 Source: Profile
+Our take Based on resume
+
+Direct
+
+The resume explicitly states that Archit founded the Assignment platform and "grew and mentored a team of 8
+engineers end-to-end," and repeatedly describes him as a technical leader who "led" redesigns and owned
+platforms. Those lines provide direct evidence he provided mentorship and leadership (likely onboarding,
+architectural guidance, code-level direction, and day-to-day coaching) as part of owning products and scaling
+teams. However, the resume lacks concrete STAR-style detail about the mentorship activities (e.g., running 1:1s,
+workshops, code review examples, measurable mentee outcomes such as promotions, independent feature
+delivery, or improvements in team metrics). That makes the endorsement solid but not strongly evidenced with
+specific mentoring outcomes or structured programs. Overall this supports an advanced-level mentorship
+expectation but would be stronger with explicit examples of coaching actions and measurable impact.
+Contributing skills
+
+Technical Documentation Technical Communication Continuous Learning Problem Solving Teamwork
+
+Support
+Resume
+Resume match
+
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+Direct 7/10 Good
+
+38/76
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+Promote engineering best practices Excellent Required: Advanced Importance: 6/10 Direct experience: 8/10
+Source: Story + profile
+Our take Based on resume
+
+Direct
+
+The resume contains multiple concrete examples of leading engineering process changes and mentoring that align
+with the Success Criteria. Direct evidence: (1) “founded the Assignment platform … growing and mentoring a team
+of 8 engineers end-to-end” demonstrates active mentorship and team-level knowledge transfer; (2) “led a critical
+redesign of the user timeline’s backend architecture … collaborated across teams … implement a smooth migration
+with zero downtime” shows initiating and driving an architectural/process change across teams with operational
+discipline; (3) at Quince, they “led design and development” of core platforms, introduced architectural patterns
+(decoupling pre/post-order processes, workflow visibility, soft inventory reservation) and “drove scaling efforts …
+creating SOPs for future peak events,” which are explicit process improvements and institutionalization of practices;
+(4) they designed an “LLM-powered fraud review pipeline” and an “extensible Post-Order Workflow … allowing new
+tasks to be added without modifying the core system,” which indicate introducing new tools/methodologies and
+designing for maintainability. These map to initiating changes, driving adoption of new approaches, and
+mentoring/leading teams—meeting the Advanced proficiency indicators. Missing/less explicit: no direct line saying
+they organized formal knowledge-sharing programs (e.g., regular code-review rituals, documentation sessions,
+tech talks) or measured engineering-metric improvements (reduced incidents, faster deploys). Those are
+reasonable to infer from their leadership role, but not explicitly documented.
+Contributing skills
+
+Technical Documentation Continuous Integration/Continuous Deployment (CI/CD) Software Architecture Cross-functional Collaboration
+Technical Communication Continuous Learning Teamwork
+
+Support
+Stories
+KVukkhvzRKCPV7DqfgQA
+
+Direct 7/10 Good Best
+
+Resume
+https://employer.mycareerspan.com/roles/sxi4vgDIsmuVMDnk6T4p/candidates/D2txxvT6QEhtvMPeVPmOc0dYvgm1/intelligence-brief
+
+39/76
+
+2/5/26, 10:51 AM
+
+Careerspan Employers
+
+Resume match
+
+Direct 8/10 Excellent

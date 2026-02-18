@@ -1,0 +1,1 @@
+{"entities": [{"name": "Howie", "type": "ORG", "context": "integration API"}, {"name": "Knowledge/crm/crm.db", "type": "TOOL", "context": "database for storing stakeholder profiles"}], "relationships": []}

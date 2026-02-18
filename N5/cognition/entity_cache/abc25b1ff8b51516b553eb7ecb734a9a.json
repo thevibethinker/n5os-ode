@@ -1,0 +1,1 @@
+{"entities": [{"name": "Worker 4", "type": "PERSON", "context": "The specific worker related to the calendar webhook integration"}, {"name": "load_config()", "type": "CONCEPT", "context": "A function mentioned in relation to a signature mismatch"}], "relationships": []}

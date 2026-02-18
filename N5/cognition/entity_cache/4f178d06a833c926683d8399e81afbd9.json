@@ -1,0 +1,1 @@
+{"entities": [{"name": "SQLite", "type": "TOOL", "context": "a database management system used for updates"}, {"name": "markdown_path", "type": "CONCEPT", "context": "a path format within the database"}], "relationships": []}

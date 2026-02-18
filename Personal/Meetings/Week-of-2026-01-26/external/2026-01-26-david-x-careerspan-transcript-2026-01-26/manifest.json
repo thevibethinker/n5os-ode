@@ -1,22 +1,237 @@
 {
-  "meeting_id": "2026-01-26_david-x-careerspan-transcript-2026-01-26_[B]",
-  "date": "2026-01-26",
-  "participants": [
-    "David",
-    "Careerspan"
-  ],
-  "meeting_type": "external",
+  "$schema": "manifest-v3",
+  "schema_version": "v3",
+  "meeting_id": "2026-01-26_david-x-careerspan-transcript-2026-01-26",
   "status": "archived",
-  "transcript_file": "transcript.md",
-  "blocks_requested": [],
+  "status_history": [
+    {
+      "status": "ingested",
+      "at": "2026-02-15T05:07:10.007725+00:00"
+    },
+    {
+      "status": "title_normalized",
+      "at": "2026-02-15T15:37:34.992898+00:00",
+      "note": "'David X Careerspan Transcript 2026 01 26' \u2192 'Careerspan Offsite Planning and Intros', 0 speakers extracted"
+    },
+    {
+      "status": "identified",
+      "at": "2026-02-15T15:37:34.993446+00:00"
+    },
+    {
+      "status": "archived",
+      "at": "2026-02-16T05:02:55.359330Z"
+    }
+  ],
+  "source": {
+    "type": "direct_drop",
+    "ingested_at": "2026-02-15T05:07:10.007725+00:00"
+  },
+  "meeting": {
+    "date": "2026-01-26",
+    "time_utc": null,
+    "duration_minutes": null,
+    "title": "Careerspan Offsite Planning and Intros",
+    "type": "external",
+    "summary": null,
+    "original_title": "David X Careerspan Transcript 2026 01 26"
+  },
+  "participants": {
+    "identified": [
+      {
+        "name": "David",
+        "email": null,
+        "crm_id": null,
+        "role": "attendee",
+        "confidence": 0.5
+      },
+      {
+        "name": "Careerspan",
+        "email": null,
+        "crm_id": null,
+        "role": "attendee",
+        "confidence": 0.5
+      }
+    ],
+    "unidentified": [],
+    "confidence": 0.5
+  },
+  "calendar_match": {
+    "event_id": null,
+    "confidence": 0.0,
+    "method": "none"
+  },
+  "blocks": {
+    "policy": "external_standard",
+    "requested": [],
+    "generated": [],
+    "failed": [],
+    "skipped": []
+  },
+  "hitl": {
+    "queue_id": null,
+    "reason": null,
+    "resolved_at": null
+  },
+  "timestamps": {
+    "created_at": "2026-02-09T10:55:49.187895Z",
+    "ingested_at": "2026-02-15T05:07:10.007725+00:00",
+    "processed_at": null,
+    "archived_at": "2026-02-16T05:02:55.359319Z",
+    "identified_at": "2026-02-15T15:37:34.993438+00:00"
+  },
+  "artifacts": {
+    "transcript.md": "transcript.md"
+  },
+  "crm_enrichment": {
+    "enriched_at": "2026-02-15T15:37:20.595512+00:00",
+    "classification": "external",
+    "classification_reason": "1 external, 0 internal participants identified",
+    "participant_matches": [
+      {
+        "input_name": "David",
+        "matched_name": "David Speigel",
+        "email": "dspeigel@gmail.com",
+        "is_internal": false,
+        "source": "crm",
+        "confidence": 0.7,
+        "company": null
+      },
+      {
+        "input_name": "Careerspan",
+        "matched_name": null,
+        "email": null,
+        "is_internal": null,
+        "source": null,
+        "confidence": 0.0,
+        "company": "Careerspan"
+      }
+    ],
+    "identified_count": 1,
+    "unidentified_count": 1
+  },
+  "meeting_type": "external",
+  "quality_gate": {
+    "passed": false,
+    "checks": {
+      "has_transcript": true,
+      "participants_identified": true,
+      "meeting_type_determined": true,
+      "no_hitl_pending": false
+    },
+    "score": 0.5,
+    "executed_at": "2026-02-15T17:35:51.072676+00:00",
+    "check_results": [
+      {
+        "name": "transcript_length",
+        "score": 1.0,
+        "passed": true,
+        "threshold": 300,
+        "warnings": [],
+        "errors": [],
+        "escalate_hitl": false
+      },
+      {
+        "name": "transcript_format",
+        "score": 0.5,
+        "passed": false,
+        "threshold": 0.8,
+        "warnings": [
+          "No speaker patterns detected"
+        ],
+        "errors": [],
+        "escalate_hitl": false
+      },
+      {
+        "name": "meeting_duration_consistency",
+        "score": 0.0,
+        "passed": false,
+        "threshold": 0.5,
+        "warnings": [],
+        "errors": [
+          "Error checking duration consistency: '<=' not supported between instances of 'NoneType' and 'int'"
+        ],
+        "escalate_hitl": false
+      },
+      {
+        "name": "participant_confidence",
+        "score": 0.5,
+        "passed": false,
+        "threshold": 0.7,
+        "warnings": [
+          "Low participant confidence: 0.50"
+        ],
+        "errors": [],
+        "escalate_hitl": false
+      },
+      {
+        "name": "host_identified",
+        "score": 0.0,
+        "passed": false,
+        "threshold": 1.0,
+        "warnings": [],
+        "errors": [
+          "No host identified"
+        ],
+        "escalate_hitl": true
+      },
+      {
+        "name": "external_participant_verification",
+        "score": 1.0,
+        "passed": true,
+        "threshold": 1.0,
+        "warnings": [],
+        "errors": [],
+        "escalate_hitl": false
+      },
+      {
+        "name": "calendar_match_score",
+        "score": 0.0,
+        "passed": false,
+        "threshold": 0.6,
+        "warnings": [],
+        "errors": [
+          "Very low calendar match confidence: 0.00"
+        ],
+        "escalate_hitl": true
+      },
+      {
+        "name": "meeting_type_consistency",
+        "score": 1.0,
+        "passed": true,
+        "threshold": 1.0,
+        "warnings": [],
+        "errors": [],
+        "escalate_hitl": false
+      }
+    ]
+  },
+  "block_selection": {
+    "selected_at": "2026-02-15T17:37:07.916200Z",
+    "method": "smart_selector_v2",
+    "recipe": "external_standard",
+    "always_blocks": [
+      "B00",
+      "B01",
+      "B02_B05",
+      "B03",
+      "B08",
+      "B21",
+      "B26"
+    ],
+    "conditional_selected": [],
+    "conditional_skipped": [],
+    "triggered": [],
+    "reasoning": {},
+    "total_blocks": 7
+  },
   "blocks_generated": [
+    "B21_KEY_MOMENTS",
+    "B26_MEETING_METADATA",
+    "B08_STAKEHOLDER_INTELLIGENCE",
+    "B02_B05_COMMITMENTS_AND_ACTIONS",
     "B01_DETAILED_RECAP",
-    "B05_ACTION_ITEMS",
+    "B00_ZO_TAKE_HEED",
     "B03_DECISIONS"
   ],
-  "blocks_failed": [],
-  "staged_at": "2026-02-09T10:55:49.188709Z",
-  "processed_at": "2026-02-09T10:55:49.188720Z",
-  "archived_at": "2026-02-09T11:02:23.596476Z",
-  "error": null
+  "processed_at": "2026-02-15T17:45:29.560638Z"
 }

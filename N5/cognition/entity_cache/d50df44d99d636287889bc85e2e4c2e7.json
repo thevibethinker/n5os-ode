@@ -1,0 +1,1 @@
+{"entities": [{"name": "N5/config/meeting_monitor_config.json", "type": "TOOL", "context": "configuration file for meeting monitoring"}, {"name": "Scheduled task RRULE", "type": "CONCEPT", "context": "recurrence rule for scheduling tasks"}], "relationships": []}

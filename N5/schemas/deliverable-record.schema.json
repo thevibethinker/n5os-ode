@@ -1,0 +1,441 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://n5.local/schemas/deliverable-record.schema.json",
+  "title": "Deliverable Record Schema",
+  "description": "Structured metadata for deliverable tracking and reuse (Relationship Intelligence OS v1.0)",
+  "type": "object",
+  "required": [
+    "deliverable_id",
+    "client_id",
+    "deliverable_type",
+    "status",
+    "scope",
+    "provenance",
+    "confidence"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "deliverable_id": {
+      "type": "string",
+      "description": "Unique deliverable identifier",
+      "pattern": "^deliv_[a-z0-9]{12}$"
+    },
+    "client_id": {
+      "type": "string",
+      "description": "Client/organization identifier",
+      "pattern": "^(org|person)_[a-z0-9]{12}$"
+    },
+    "client_name": {
+      "type": "string",
+      "description": "Client name for reference"
+    },
+    "deliverable_type": {
+      "type": "string",
+      "enum": [
+        "analysis",
+        "report",
+        "presentation",
+        "recommendation",
+        "strategy_doc",
+        "proposal",
+        "assessment",
+        "framework",
+        "process_design",
+        "training_material",
+        "technical_spec",
+        "business_plan",
+        "market_research",
+        "due_diligence",
+        "other"
+      ],
+      "description": "Type of deliverable"
+    },
+    "title": {
+      "type": "string",
+      "description": "Deliverable title/name"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description of the deliverable"
+    },
+    "scope": {
+      "type": "object",
+      "required": ["overview"],
+      "properties": {
+        "overview": {
+          "type": "string",
+          "description": "High-level scope overview"
+        },
+        "key_components": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Key components or sections"
+        },
+        "complexity_level": {
+          "type": "string",
+          "enum": ["low", "medium", "high", "complex"],
+          "description": "Complexity assessment"
+        },
+        "estimated_effort_hours": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Estimated effort in hours"
+        },
+        "required_expertise": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Required expertise areas"
+        },
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Dependencies on other work or information"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Deliverable scope details"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "identified",
+        "scoped",
+        "in_progress",
+        "blocked",
+        "under_review",
+        "completed",
+        "delivered",
+        "cancelled",
+        "deferred"
+      ],
+      "description": "Current deliverable status"
+    },
+    "timeline": {
+      "type": "object",
+      "properties": {
+        "promised_date": {
+          "type": "string",
+          "format": "date",
+          "description": "Date promised to client"
+        },
+        "target_date": {
+          "type": "string",
+          "format": "date",
+          "description": "Internal target completion date"
+        },
+        "started_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When work started"
+        },
+        "completed_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When work was completed"
+        },
+        "delivered_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When deliverable was delivered to client"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Timeline information"
+    },
+    "ownership": {
+      "type": "object",
+      "properties": {
+        "primary_owner": {
+          "type": "string",
+          "description": "Primary owner/responsible person"
+        },
+        "collaborators": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Other people involved"
+        },
+        "reviewer": {
+          "type": "string",
+          "description": "Assigned reviewer"
+        },
+        "approver": {
+          "type": "string",
+          "description": "Final approver"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Ownership and responsibility"
+    },
+    "similarity_analysis": {
+      "type": "object",
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["not_checked", "unique", "similar_found", "duplicate_found"],
+          "description": "Similarity check status"
+        },
+        "similar_deliverables": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["deliverable_id", "similarity_score", "reuse_recommendation"],
+            "properties": {
+              "deliverable_id": {
+                "type": "string",
+                "pattern": "^deliv_[a-z0-9]{12}$"
+              },
+              "similarity_score": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1,
+                "description": "Similarity score (0-1)"
+              },
+              "reuse_recommendation": {
+                "type": "string",
+                "enum": ["reuse", "adapt", "reference", "avoid"],
+                "description": "Recommendation for reuse"
+              },
+              "similarity_factors": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                },
+                "description": "Factors contributing to similarity"
+              },
+              "adaptation_notes": {
+                "type": "string",
+                "description": "Notes on how to adapt if reusing"
+              }
+            },
+            "additionalProperties": false
+          },
+          "description": "Similar deliverables found"
+        },
+        "checked_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When similarity check was performed"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Similarity analysis for reuse opportunities"
+    },
+    "context": {
+      "type": "object",
+      "properties": {
+        "business_context": {
+          "type": "string",
+          "description": "Business context for this deliverable"
+        },
+        "client_objectives": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Client's stated objectives"
+        },
+        "success_criteria": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Success criteria for the deliverable"
+        },
+        "constraints": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Known constraints or limitations"
+        },
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Key assumptions made"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Context and background information"
+    },
+    "artifacts": {
+      "type": "object",
+      "properties": {
+        "output_files": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["path", "type"],
+            "properties": {
+              "path": {
+                "type": "string",
+                "description": "File path"
+              },
+              "type": {
+                "type": "string",
+                "enum": ["document", "presentation", "spreadsheet", "diagram", "code", "data", "other"]
+              },
+              "description": {
+                "type": "string",
+                "description": "File description"
+              },
+              "size_bytes": {
+                "type": "integer",
+                "minimum": 0
+              },
+              "sha256": {
+                "type": "string",
+                "pattern": "^[a-f0-9]{64}$",
+                "description": "SHA256 checksum"
+              }
+            },
+            "additionalProperties": false
+          },
+          "description": "Output files produced"
+        },
+        "reference_materials": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Reference materials used"
+        },
+        "templates_used": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Templates or frameworks used"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Associated artifacts and files"
+    },
+    "quality_metrics": {
+      "type": "object",
+      "properties": {
+        "client_satisfaction": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10,
+          "description": "Client satisfaction score (1-10)"
+        },
+        "delivery_timeliness": {
+          "type": "string",
+          "enum": ["early", "on_time", "late", "very_late"],
+          "description": "Delivery timeliness assessment"
+        },
+        "quality_score": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10,
+          "description": "Internal quality assessment (1-10)"
+        },
+        "reuse_potential": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10,
+          "description": "Potential for reuse in future deliverables (1-10)"
+        },
+        "lessons_learned": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Key lessons learned from this deliverable"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Quality and performance metrics"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When deliverable record was created"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When deliverable record was last updated"
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["meeting_id"],
+      "properties": {
+        "meeting_id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]{6}$",
+          "description": "Meeting where deliverable was identified"
+        },
+        "block_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Meeting blocks mentioning this deliverable"
+        },
+        "conversation_id": {
+          "type": "string",
+          "description": "Conversation where deliverable was extracted"
+        },
+        "extraction_version": {
+          "type": "string",
+          "description": "Version of extraction engine used"
+        },
+        "pipeline_run_id": {
+          "type": "string",
+          "description": "Pipeline run identifier"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Deliverable identification provenance"
+    },
+    "confidence": {
+      "type": "object",
+      "required": ["overall"],
+      "properties": {
+        "overall": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Overall confidence in deliverable record (0-1)"
+        },
+        "scope_clarity": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Confidence in scope definition (0-1)"
+        },
+        "timeline_accuracy": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Confidence in timeline estimates (0-1)"
+        },
+        "client_identification": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Confidence in client mapping (0-1)"
+        },
+        "similarity_analysis": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Confidence in similarity analysis (0-1)"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Confidence metrics for deliverable record"
+    }
+  }
+}

@@ -1,0 +1,140 @@
+# Culture Signals
+# Extracted: 2026-02-15T02:16:54.283309
+# Method: Structured extraction
+# DO NOT EDIT
+
+explicit_values:
+- name: Act Like an Owner
+  description: Think and act like an owner. Own outcomes over actions.
+  observable_behaviors:
+  - Takes responsibility for end-to-end outcomes, not just task completion
+  - Makes decisions considering broader business impact without waiting for permission
+  - Follows through on commitments without needing oversight
+  - Treats company resources and client trust as if personally invested
+  interview_signals:
+  - Stories where they went beyond their defined role to ensure a project succeeded
+  - Examples of taking accountability when something went wrong rather than deflecting
+  - Evidence of proactive problem identification and resolution
+- name: Build Together
+  description: Collaborate to unlock the best solutions. Deliver lasting value.
+  observable_behaviors:
+  - Actively seeks input from cross-functional teammates before finalizing designs
+  - Shares knowledge and context freely rather than hoarding expertise
+  - Prioritizes team outcomes over individual recognition
+  - Builds solutions with maintainability and handoff in mind
+  interview_signals:
+  - Describes technical decisions as collaborative rather than solo
+  - Credits teammates and describes how others' input improved their work
+  - Examples of resolving disagreements constructively
+- name: Champion Clients
+  description: Exceed client expectations. Our clients' success is our success.
+  observable_behaviors:
+  - Considers end-user impact when making technical tradeoffs
+  - Advocates for reliability and data correctness over shipping speed
+  - Seeks to understand the business problem behind technical requirements
+  - Monitors production systems proactively for client-affecting issues
+  interview_signals:
+  - Stories connecting technical work to customer outcomes
+  - Awareness of how backend decisions affect user experience
+  - Evidence of empathy for non-technical stakeholders
+- name: Drive Innovation
+  description: Be bold and unconstrained in problem solving. Transform the industry.
+  observable_behaviors:
+  - Proposes novel approaches rather than defaulting to familiar patterns
+  - Challenges existing architecture when it no longer serves the problem
+  - Stays current with evolving backend technologies and patterns
+  - Takes calculated technical risks with appropriate mitigation
+  interview_signals:
+  - Examples of introducing new technologies or patterns that improved outcomes
+  - Stories of challenging the status quo with data-backed reasoning
+  - Comfort discussing tradeoffs of unfamiliar approaches
+- name: Embrace Learning
+  description: Engage our community to broaden our perspective. Bring a growth mindset.
+  observable_behaviors:
+  - Actively seeks feedback on their code and designs
+  - Learns from production incidents without defensiveness
+  - Invests in understanding adjacent domains (financial data, product context)
+  - Mentors others and learns from junior and senior colleagues alike
+  interview_signals:
+  - Describes specific skills they developed recently and how
+  - Shows curiosity about Addepar's domain (wealth management, financial data)
+  - Comfortable saying 'I don't know' and describing how they'd find out
+implied_requirements:
+- trait: Financial domain curiosity
+  why_needed: Platform handles $8T+ in assets for investment professionals; backend
+    engineers must understand data sensitivity and financial data structures
+  evidence_markers:
+  - Interest in or experience with financial systems, even if not deep expertise
+  - Awareness of data accuracy requirements in high-stakes domains
+  - Questions about the domain during the interview
+- trait: Scale-aware engineering
+  why_needed: Platform aggregates data across 50+ countries, 100+ integrations, and
+    trillions in assets — backend services must handle massive data volumes reliably
+  evidence_markers:
+  - Experience designing systems that handle large datasets or high throughput
+  - Familiarity with distributed systems tradeoffs
+  - Stories about debugging or optimizing at scale
+- trait: Cross-functional communication
+  why_needed: Role explicitly involves working across engineering, product, and data
+    science teams
+  evidence_markers:
+  - Can explain technical concepts to non-technical audiences
+  - Experience translating product requirements into technical designs
+  - Comfort working with data scientists on shared systems
+- trait: Infrastructure ownership mindset
+  why_needed: Terraform and AWS requirements suggest engineers own their infrastructure,
+    not just application code
+  evidence_markers:
+  - Experience with CI/CD pipelines and deployment automation
+  - Comfort debugging infrastructure issues alongside application bugs
+  - Treats operational excellence as part of the engineering role
+- trait: Inclusion and psychological safety contributor
+  why_needed: Company explicitly commits to belonging and diverse perspectives; engineers
+    must create welcoming team environments
+  evidence_markers:
+  - Describes creating space for quieter teammates in discussions
+  - Experience working effectively with diverse, distributed teams
+  - No signals of dismissiveness toward different working styles
+working_style_signals:
+  autonomy_level: high - 'Act Like an Owner' and 'own outcomes over actions' strongly
+    signals engineers are expected to operate independently with minimal hand-holding
+  collaboration_mode: balanced - 'Build Together' emphasizes collaboration, but the
+    ownership value and senior level suggest async-capable work with sync touchpoints
+    for design and alignment
+  ambiguity_tolerance: high - 'Be bold and unconstrained in problem solving' plus
+    senior-level role at a platform company implies navigating ambiguous requirements
+    and defining solutions
+  pace: steady - fintech platform managing $8T in assets prioritizes reliability and
+    correctness over speed; 'deliver lasting value' reinforces sustainable pace over
+    velocity
+red_flags:
+- Purely task-oriented mindset — waits for tickets rather than identifying problems
+- Solo hero complex — designs in isolation, resists code review or collaborative input
+- No curiosity about the business domain — treats financial data as generic data
+- Rigid technical opinions — unwilling to consider unfamiliar approaches or learn
+  new patterns
+- Blame-shifting when things go wrong — incompatible with ownership culture
+- Dismissive of operational concerns — sees infrastructure as 'someone else's job'
+- Discomfort with ambiguity — needs fully specified requirements before starting
+culture_fit_questions:
+- question: Tell me about a time you owned an outcome that went beyond your immediate
+    responsibilities. What drove you to take that on?
+  assesses: Act Like an Owner — outcome orientation vs. task completion
+- question: Describe a technical decision where a teammate's input fundamentally changed
+    your approach. What happened?
+  assesses: Build Together — genuine collaboration vs. performative agreement
+- question: How do you think about the end user when you're deep in backend architecture
+    decisions?
+  assesses: Champion Clients — client empathy in technical roles
+- question: Tell me about a time you introduced a new technology or approach to your
+    team. How did you evaluate the risk?
+  assesses: Drive Innovation — calculated boldness vs. recklessness or conservatism
+- question: What's something technical you learned in the last year that changed how
+    you work? How did you learn it?
+  assesses: Embrace Learning — active growth mindset vs. stagnation
+- question: Have you worked with financial data or other high-stakes data systems?
+    What was different about that work?
+  assesses: Financial domain curiosity and data sensitivity awareness
+- question: Describe a situation where requirements were unclear. How did you move
+    forward?
+  assesses: Ambiguity tolerance and autonomous problem-solving

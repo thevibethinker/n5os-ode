@@ -1,35 +1,65 @@
+# Tools
+# Extracted: 2026-02-14T17:45:53.383830
+# Method: Structured extraction
+# DO NOT EDIT
+
 languages:
-  - "Python"
-  - "Java"
-  - "JavaScript"
+- Python
+- Java
+- JavaScript
+- TypeScript
 frameworks:
-  - "Spring Boot"
-  - "React"
-  - "LangChain"
-  - "FastAPI"
+- Spring Boot
+- ReactJS
+- FastAPI
+- LangChain
+- Airflow
+- Apache Beam
+- Hadoop
+- Spark
+- Nest.js
 databases:
-  - "Couchbase"
-  - "BigQuery"
+- Couchbase
+- BigQuery
+- DuckDB
 infrastructure:
-  - "AWS"
-  - "Kubernetes"
-  - "MLflow"
-  - "Airflow"
-  - "CI/CD"
-  - "Google Cloud Platform"
-  - "Hadoop"
-  - "Spark"
-  - "Apache Beam"
-  - "Dataflow"
-  - "Superset"
-ai_ml:
-  - "MLflow"
-  - "LangChain"
-  - "RAG techniques"
-  - "MLOps"
+- AWS
+- Google Cloud Platform (GCP)
+- Kubernetes
+- MLFlow
+- Docker
+- CI/CD Pipelines
+- Dataflow
+ai_ml_tools:
+- LangChain
+- RAG techniques
+- MLFlow
+- Airflow
+- M-Zoom
+- M-Biz
+other:
+- Jira
+- Rally
+- Superset
+- DevOps
+- SRE
+- Figma
+- Git
 not_mentioned:
-  - "SOC 2"
-  - "GDPR"
-  - "Vector stores"
-  - "Embedding stacks"
-  - "LLM providers"
+- Pinecone
+- FAISS
+- Milvus
+- OpenAI API
+- Anthropic API
+- PostgreSQL
+- Redis
+- Terraform
+- Prometheus
+- Grafana
+- OpenTelemetry
+- MongoDB
+- Elasticsearch
+- Next.js
+- Vue.js
+- GraphQL
+- gRPC

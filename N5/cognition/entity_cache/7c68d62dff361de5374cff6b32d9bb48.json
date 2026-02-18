@@ -1,0 +1,1 @@
+{"entities": [{"name": "Tony Padilla", "type": "PERSON", "context": "individual with 2 versions having the same base name"}], "relationships": [{"from": "V", "to": "Tony Padilla", "type": "KNOWS", "context": "V is aware of Tony Padilla's existence"}]}

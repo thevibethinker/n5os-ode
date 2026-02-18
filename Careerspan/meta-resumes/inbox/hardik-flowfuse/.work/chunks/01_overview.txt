@@ -1,0 +1,233 @@
+Profile Overview
+Hardik
+Strong fit for a senior, Al-focused full-stack role; advance to finals while probing Al
+
+guardrails/observability, SOC 2/privacy specifics, and concrete LLM/vectordb integration details.
+
+€Back Full Stack Developer (Al-focused) - FlowFuse @ FlowFuse
+
+H v Proceed = X Pass — Maybe
+Hardik =
+
+Strong fit for a senior, Al-focused full-stack role; advance to finals while
+probing Al guardrails/observability, SOC 2/privacy specifics, and concrete
+LLM/vectordb integration details. Qualification: Well-aligned
+
+Stories told: 2
+
+Referred 89 © Applied Jan 26, 2026 _ intelligence Brief career alec tony Eatora Mov
+
+Referred by: Careerspan Admin
+Auto-Submission (Silent Database
+Pverall Experience Resume Deep Dive Scan)
+
+Elevator pitch
+
+You get a founding-minded builder who has already taken a blank-sheet ML platform
+from first commit to hundreds of daily users, cutting model-to-production from hours to
+minutes and earning a 5x budget increase by proving value in production. You also get
+a pragmatic full-stack owner who earned trust in regulated environments by shipping
+zero-downtime automation, pairs system architecture with hands-on UX instincts, and
+
+will help you establish the first reusable Al patterns your team can safely scale.
+
+Overall strengths
+
+Exceptionally strong end-to-end ownership of Al and full-stack systems, evidenced by
+architecting a greenfield Machine Learning SaaS platform serving hundreds of daily
+users with automated dataset/versioning, MLOps (Kubernetes/MLflow), containerized
+inference (FastAPI), Airflow pipelines, and dynamic cloud orchestration that reduced
+model-to-production from hours to minutes. Hands-on LLM/agent experience
+(LangChain + RAG) alongside proven backend/frontend delivery (React + Spring Boot)
+and SRE/DevOps rigor (CI/CD automation, high availability, zero-downtime rollouts)
+make him immediately effective in building reliable, user-facing Al features.
+Demonstrated ability to translate ambiguous problems into business impact—e.g., solo
+product leadership that delivered $50k/month cost savings at enterprise
+scale—combined with strong product judgment, stakeholder management, and
+measurable adoption. Track record in establishing reusable platforms/patterns and
+enabling large engineering audiences (self-service portals, automation frameworks),
+plus elite academic credentials (IIT Delhi) and recognized innovation (hackathon
+
+results), signal a high-ceiling senior IC who can help set early Al standards.
+
+Overall weaknesses
+
+Key Al reliability and safety details are not explicitly documented: no concrete examples
+of LLM fallback strategies, cost/latency controls, prompt/version governance, or
+model/LLM-specific observability (drift, hallucination safeguards, metrics/dashboards).
+Privacy/security experience is present in regulated contexts, but there’s no direct
+evidence of SOC 2 controls, audit participation, or named privacy frameworks (e.g.,
+GDPR) applied to Al features; security guardrails are implied rather than detailed.
+Frontend expertise is proven in production portals, yet advanced front-end
+architecture/performance/accessibility depth and LLM-UX patterns are not showcased.
+Knowledge-sharing/async-first practices are implied (Scrum Master, mentoring,
+inner-source ownership) but lack explicit artifacts (RFCs, playbooks, internal workshops)
+tied to Al patterns. Finally, LLM integration is stated (LangChain/RAG) without naming
+specific providers or vector stores/embedding stacks, leaving some implementation
+
+depth to probe.
+Experience Summary
+Contact
+
+Mail: hardikkhichi.iitd@gmail.com
+Phone: +91-7015365402
+Social: www.linkedin.com/in/hardik-khichi
+
+Tools
+
+AWSKubernetesMLFlowLangChainRAG techniquesFastAPIAirflowCouchbase
+DBADevOpsSREJiraRallyM-ZoomM-BizApache
+BeamBigQuerySupersetDataflowHadoopSparkGoogle Cloud Platform
+(GCP)JavaSpring BootReactJUSPython
+
+Work experience
+Senior Machine Learning Engineer (R&D)
+
+KEYSIGHT
+
+Dec 2024 - Present
+In my most recent role, | architected and led the end-to-end development of a Machine
+
+Learning SaaS platform from the ground up, initially as one of the founding engineers. |
+drove the design of core components including an advanced Dataset Storage layer
+(with versioning and transformations) and automated MLOps/Model Storage stacks,
+enabling dynamic AWS resource provisioning and rapid model deployment. | was
+pivotal in scaling the team from inception to nearly 20 members, securing a 5x budget
+increase, and extending platform use to hundreds of daily users—including external
+industry leaders like Apple, Samsung Semiconductor, and Volkswagen. My
+contributions spanned cross-functional areas: microservices, Ul, DevOps, and full-stack
+integration, which directly accelerated model-to-production times, improved system
+scalability and stability, and positioned the platform at the heart of innovation in domains
+like 6G and autonomous vehicles. This marked a key evolution for me in holistic system
+architecture, strategic planning, and collaborative leadership.
+
+Software Engineer (Full Stack)
+
+AMERICAN EXPRESS
+
+Jul 2021 - Nov 2024
+During my time in this role, | operated as a solo product leader and full-stack engineer,
+
+leading the end-to-end design and implementation of an automated portal that
+
+optimized database usage and eliminated cloud waste across thousands of engineers
+and over 150 global services. | made key architectural decisions, built data aggregation
+with Python and Couchbase, and developed both the backend (Java/Spring Boot) and
+frontend (ReactJS) to deliver a self-service solution that drove $50,000/month cost
+savings while ensuring zero downtime and regulatory compliance. | also developed an
+automated pipeline to identify and decommission underutilized databases, managed
+sprint planning and Scrum processes, and led infrastructure automation, Cl/CD
+optimization, and strategic initiatives to apply DevOps and SRE best practices for
+enhanced reliability and scalability.
+
+Software Engineer Intern
+
+AMERICAN EXPRESS
+
+Apr 2020 - May 2020
+During my internship, | developed a machine learning model to prioritize and
+
+recommend user stories for Agile tools like Rally and Jira. This project boosted
+developer productivity, significantly reduced the time spent gathering resources, and led
+to a 35% improvement in new feature and ticket delivery. My work was further
+recognized when | secured a top-5 finish out of more than 100 participants in the India
+Innovation Hackathon.
+
+Data Science Intern
+
+FLIPKART
+
+Apr 2019 - May 2019
+During my time in this role, | conducted research using scalable anomaly detection
+
+tools, including M-Zoom and M-Biz, to analyze over 20,000 cohorts. | focused on
+identifying potential attack vectors, which enabled the early detection of suspicious
+activities related to fraud and marketplace abuse for user-requested return orders.
+
+Education
+
+Associate Cloud Engineer, Google
+
+Jan 2023
+
+Google Cloud Platform (GCP)
+
+B.Tech. & M.Tech. (Dual Degree), IIT Delhi
+May 2016 - Apr 2021
+
+Computer Science
+Awards & honors
+
+99.97 Percentile in IIT-JEE 2016 (Rank 47 in 14 million candidates)
+99.84 Percentile in KVPY Scholarship 2015
+
+NTSE Scholar in 2014
+
+GrowthHack 2021 - 3rd position, led to further project development
+Top-5 position in India Innovation Hackathon (100+ participants)
+
+Associate Cloud Engineer - Google Cloud Platform (GCP) certification
+Achievements
+
+Led end-to-end development of Machine Learning SaaS platform
+
+Architected advanced Dataset Storage layer with versioning and transformations
+Implemented automated MLOps/model storage stack enabling dynamic AWS resource
+provisioning
+
+Scaled team from inception to nearly 20 members and secured 5x budget increase
+Extended platform use to hundreds of daily users including Apple, Samsung
+Semiconductor, Volkswagen
+
+Reduced model-to-production cycle time from hours to minutes using Kubernetes and
+MLFlow
+
+Developed containerized microservices for high availability and low latency inference
+Built robust data ingestion and feature engineering pipelines at terabyte scale
+
+Solo product leader for automated cloud/database portal, optimizing usage for
+thousands of engineers
+
+Drove $50,000/month cost savings via automated decommissioning of underutilized
+databases
+
+Reduced provisioning time, cut deployment errors, eliminated 100% dev environment
+artifact engagement requests
+
+Enhanced reliability, scalability, and regulatory compliance for 150+ global services
+Managed sprint planning, Scrum processes, and strategic DevOps/SRE initiatives
+Developed ML model for story prioritization, achieving 35% improvement in new feature
+and ticket delivery
+
+Mentored 4 SDE Interns, guiding them in projects and career starts
+Triggered early fraud detection for user-requested return orders at Flipkart
+Hard skills
+
+Machine LearningModel TrainingModel DeploymentData IngestionFeature
+EngineeringMicroservices DevelopmentCI-CD PipelinesInfrastructure AutomationData
+EngineeringProcess AutomationProject ManagementProduct LeadershipSystem
+ArchitectureDevOps Best PracticesSite Reliability EngineeringDatabase
+OptimizationFull Stack IntegrationAgile DevelopmentScrum MasterStrategic
+PlanningData AnalysisCloud Cost OptimizationMLOps
+
+Soft skills
+
+Team LeadershipMentoringSprint PlanningScrum ManagementCross-functional
+CollaborationStakeholder RepresentationStrategic Team ScalingProject
+DeliveryCommunicationlInitiativeOrganizationAttention to DetailPatienceCreative
+PerspectiveSystematic Approach
+
+Hobbies
+
+Avid plant collector (150+ plants)
+
+Football fan (following club for 12+ years)
+
+Digital art creation
+
+UX design using Figma
+
+Gaming
+
+Visual art
+Responsibilities

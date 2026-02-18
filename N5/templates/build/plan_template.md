@@ -149,6 +149,45 @@ Run validator: python3 N5/scripts/mece_validator.py {{SLUG}}
 
 ---
 
+## Learning Landscape
+
+<!-- Architect: Generate by reading N5/config/understanding_bank.json and analyzing plan concepts -->
+<!-- This section is REQUIRED for all builds when learning_mode is enabled -->
+
+### Build Friction Recommendation
+<!-- minimal: manual spawn + summary only | standard: + decision points + wave reviews | full: + learning drops + pedagogical AAR -->
+**Recommended:** {{FRICTION_LEVEL}}
+**Rationale:** {{WHY_THIS_LEVEL}}
+
+### Technical Concepts in This Build
+
+| Concept | V's Current Level | Domain | Pedagogical Value |
+|---------|-------------------|--------|-------------------|
+| {{CONCEPT_1}} | {{LEVEL}} | {{DOMAIN}} | ★ High / Medium / Low |
+| {{CONCEPT_2}} | {{LEVEL}} | {{DOMAIN}} | ★ High / Medium / Low |
+
+### Decision Points
+
+| ID | Question | Options | Value | Related Drop |
+|----|----------|---------|-------|--------------|
+| DP-1 | {{DECISION_QUESTION}} | 2-3 | ★ / Med / Low | W{{X}}.{{Y}} |
+
+### Drop Engagement Tags
+
+| Drop | Tag | Rationale |
+|------|-----|-----------|
+| W1.1 | pedagogical | Involves {{CONCEPT}} at {{LEVEL}} level |
+| W1.2 | mechanical | Pure file operations, concepts V knows |
+
+### Suggested Learning Drops
+
+<!-- Only for concepts where deep dive would significantly advance V's understanding -->
+| Concept | When to Trigger | Brief Path |
+|---------|-----------------|------------|
+| {{CONCEPT}} | If V wants deep dive during DP-{{N}} | `drops/L{{X}}.{{Y}}-{{slug}}.md` |
+
+---
+
 ## Level Upper Review
 
 <!-- Architect invokes Level Upper before finalizing. Document the divergent input here. -->

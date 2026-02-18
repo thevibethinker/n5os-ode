@@ -1,0 +1,193 @@
+# Alignment
+# Extracted: 2026-02-15T02:16:54.276268
+# Method: Structured extraction
+# DO NOT EDIT
+
+requirements_alignment:
+- requirement_id: R1
+  jd_text: Deep expertise in Java or Python backend development
+  category: core
+  verdict: PARTIAL
+  evidence: 'Java/Spring Boot: Excellent (8/10 direct). Led design of Orders and Payments
+    Platforms across 12+ microservices, 100k+ daily orders, idempotent secure payment
+    processing. Python: Fair (5/10 transferable). Listed in skills but no concrete
+    STAR-style examples of Python backend services. LLM/RAG fraud pipeline likely
+    used Python but not explicitly stated.'
+  confidence: high
+  note: Strong Java, weak Python. Role requires deep expertise in Java OR Python —
+    Java side is clearly met at advanced level. Python gap is manageable but worth
+    probing.
+- requirement_id: R2
+  jd_text: Experience with NoSQL databases
+  category: core
+  verdict: PARTIAL
+  evidence: 'Direct experience with ScyllaDB/Cassandra family (6/10 direct from story):
+    redesigned schemas, dual writes, zero-downtime migration for 10M+ learner timeline.
+    However, no experience with AWS-native NoSQL (DynamoDB, which is central to Addepar''s
+    stack). DynamoDB rated 4/10 lacking.'
+  confidence: high
+  note: NoSQL fundamentals are solid (data modeling, partitioning, access patterns,
+    migration). Gap is specifically DynamoDB/AWS-native NoSQL, not NoSQL concepts.
+- requirement_id: R3
+  jd_text: Infrastructure as code experience (preferably Terraform)
+  category: secondary
+  verdict: CLEAR
+  evidence: 'Terraform explicitly listed in skills. Production infra work: upgraded
+    EKS replicas, RDS instances, cache optimizations, scaling for Black Friday. Rated
+    6/10 direct. No detailed STAR examples of Terraform module authorship but reasonable
+    inference of hands-on use given AWS/K8s stack.'
+  confidence: medium
+  note: Meets intermediate bar. Lacks explicit evidence of advanced Terraform practices
+    (modules, remote state, CI/CD integration).
+- requirement_id: R4
+  jd_text: AWS experience
+  category: secondary
+  verdict: CLEAR
+  evidence: 'AWS explicitly listed. Production use of EKS (Kubernetes on AWS), RDS,
+    cache services. Terraform for IaC. Rated 7/10 direct. Missing: no explicit serverless
+    (Lambda, Step Functions, API Gateway), no DynamoDB, no CloudWatch/observability
+    tooling mentioned.'
+  confidence: high
+  note: Solid AWS infrastructure experience but container/EKS-centric rather than
+    serverless-centric. Addepar's serverless-heavy stack may require ramp-up.
+- requirement_id: R5
+  jd_text: Solutions-oriented mindset
+  category: core
+  verdict: CLEAR
+  evidence: Overwhelming evidence. Founded Assignment platform from PoC to product.
+    Led Greenfield off-Shopify checkout saving millions. Designed LLM-powered fraud
+    pipeline. Created extensible Post-Order Workflow framework. Drove Black Friday
+    scaling with SOPs. Problem Solving rated 9/10, Ownership Mindset 9/10, Innovation
+    9/10.
+  confidence: high
+  note: One of the candidate's strongest attributes. Repeatedly took ambiguous problems
+    and delivered measurable business outcomes.
+- requirement_id: R6
+  jd_text: Experience or interest in financial data systems
+  category: secondary
+  verdict: GAP
+  evidence: No direct fintech or financial services experience. Background is e-commerce
+    (Quince) and ed-tech (Embibe). Payment processing experience (Stripe, PayPal)
+    is adjacent but not investment/portfolio/alternatives data. No mention of financial
+    instruments, portfolio management, or investment data aggregation.
+  confidence: high
+  note: This is the most significant domain gap. Candidate's payment systems and data
+    aggregation experience are transferable but not equivalent to investment data
+    domain knowledge.
+- requirement_id: R7
+  jd_text: Architect, implement, and maintain engineering solutions to solve complex
+    problems
+  category: core
+  verdict: CLEAR
+  evidence: 'Rated 9/10 direct. Multiple STAR examples: Greenfield checkout (100k+
+    orders/day, $15M/day peaks), Orders/Payments platforms with idempotency and resilience,
+    backend redesign with zero-downtime migration, LLM fraud pipeline, user timeline
+    for 10M+ learners. Led team of 8 engineers.'
+  confidence: high
+  note: Strongest alignment area. Evidence is deep, specific, and quantified.
+- requirement_id: R8
+  jd_text: Work in a collaborative team environment across engineering, product, and
+    data science teams
+  category: core
+  verdict: PARTIAL
+  evidence: Cross-functional Collaboration rated 8/10 direct. Strong evidence of engineering
+    and business team collaboration. LLM fraud pipeline implies ML/data science collaboration
+    but no explicit narrative of ongoing ML team integration practices, data contracts,
+    or model monitoring partnerships.
+  confidence: medium
+  note: Engineering and product collaboration is well-evidenced. Data science collaboration
+    is implied but not detailed — worth probing in interview.
+- requirement_id: R9
+  jd_text: Design and build scalable backend services
+  category: core
+  verdict: CLEAR
+  evidence: Backend Development rated 9/10 direct. 12+ microservices, 100k+ daily
+    orders, 5x traffic spikes, $15M/day peaks. Scalable aggregation for 10M+ learners.
+    Zero-downtime migrations. Concurrent workflow frameworks. Java/Spring Boot, AWS/EKS.
+  confidence: high
+  note: Scale evidence is concrete and quantified. Missing serverless-specific scaling
+    patterns.
+- requirement_id: R10
+  jd_text: Ensure high-quality software delivery
+  category: secondary
+  verdict: PARTIAL
+  evidence: Created SOPs for peak events. Zero-downtime migrations. 99.9% uptime matching
+    Shopify SLA. Extensible frameworks and idempotent processing. However, no explicit
+    mention of CI/CD pipeline ownership, testing automation, code review practices,
+    or quality metrics.
+  confidence: medium
+  note: Outcomes suggest quality discipline but explicit testing/CI-CD practices are
+    not documented.
+culture_alignment:
+- signal: Act Like an Owner — Think and act like an owner. Own outcomes over actions.
+  candidate_fit: strong
+  evidence: Ownership Mindset rated 9/10. Founded Assignment platform end-to-end.
+    Owned Orders and Payments platforms completely. Drove Black Friday scaling proactively.
+    Created SOPs without being asked. Took initiative on LLM fraud pipeline. Repeatedly
+    chose outcomes (saving millions, zero downtime) over just completing assigned
+    tasks.
+- signal: Build Together — Collaborate to unlock the best solutions. Deliver lasting
+    value.
+  candidate_fit: strong
+  evidence: Cross-functional Collaboration rated 8/10, Teamwork 9/10. Collaborated
+    across engineering, product, QA, inventory, and ops teams. Negotiated soft inventory
+    reservation with other teams. Coordinated zero-downtime migration across multiple
+    teams. Mentored team of 8 engineers.
+- signal: Champion Clients — Exceed client expectations. Our clients' success is our
+    success.
+  candidate_fit: moderate
+  evidence: Client Focus rated 8/10. Designed customer-centric checkout experience
+    matching Shopify SLAs. Built educator-facing tools (Template Service). However,
+    'clients' at Addepar are institutional wealth managers — no direct evidence of
+    serving sophisticated financial clients or understanding their workflows.
+- signal: Drive Innovation — Be bold and unconstrained in problem solving. Transform
+    the industry.
+  candidate_fit: strong
+  evidence: Innovation rated 9/10. Built LLM-powered fraud review pipeline (early
+    adopter of LLM/RAG in production). Designed Greenfield checkout replacing Shopify.
+    Created extensible Post-Order Workflow framework. Competitive programming background
+    (Google Kickstart 194th, JEE top 0.3%). Pattern of bold technical bets with measurable
+    outcomes.
+- signal: Embrace Learning — Engage our community to broaden our perspective. Bring
+    a growth mindset.
+  candidate_fit: moderate
+  evidence: Continuous Learning rated 7/10. Adopted LLM/RAG technology, expanded from
+    ed-tech to e-commerce, progressed from junior to architecture-level ownership.
+    However, no evidence of formal learning programs, tech talks, community engagement,
+    or published writing. Growth mindset is demonstrated through career trajectory
+    rather than explicit learning practices.
+- signal: High-growth, fast-paced environment with ambiguity tolerance
+  candidate_fit: strong
+  evidence: Both Quince (projecting 3x revenue growth, $300M to $1B) and Embibe (10M+
+    users, rapid state-board onboarding) were high-growth environments. Delivered
+    Greenfield checkout under Black Friday deadline pressure. Comfortable with ambiguous
+    requirements — built Assignment platform from PoC with no precedent.
+- signal: Hybrid work, global team coordination (US-based company, India office)
+  candidate_fit: unknown
+  evidence: Insufficient data to assess. Candidate is India-based. Quince serves US
+    customers but no explicit mention of cross-timezone collaboration, async communication
+    practices, or working with distributed global teams.
+overall_alignment:
+  core_requirements_met: 4 of 6
+  critical_gaps:
+  - No financial services or investment data domain experience — Addepar's core business
+    (portfolio management, alternative investments, $8T AUM) is unfamiliar territory
+  - No serverless architecture experience (Lambda, Step Functions, API Gateway) —
+    central to Addepar's stack
+  - No DynamoDB experience — role's primary NoSQL store
+  - Python proficiency is claimed but unsubstantiated with concrete production examples
+  interview_priorities:
+  - 'Probe Python depth: ask for specific production Python services, libraries used,
+    and scale of Python-based systems'
+  - 'Assess serverless readiness: given strong container/EKS background, explore candidate''s
+    understanding of serverless tradeoffs, cold starts, event-driven patterns'
+  - 'Explore financial domain interest: gauge genuine curiosity about investment data,
+    alternative assets, and portfolio management — domain ramp-up is the biggest risk'
+  - 'Validate ML collaboration model: the LLM fraud pipeline is promising but probe
+    for structured collaboration with data scientists (data contracts, model monitoring,
+    validation loops)'
+  - 'Test DynamoDB/AWS-native NoSQL understanding: candidate has strong Cassandra/ScyllaDB
+    fundamentals — assess transferability to DynamoDB''s access patterns, GSIs, capacity
+    models'
+  - 'Cross-timezone collaboration: verify experience working with US-based teams,
+    async communication practices, and timezone management'

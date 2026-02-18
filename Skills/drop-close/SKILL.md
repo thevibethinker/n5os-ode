@@ -37,6 +37,7 @@ python3 Skills/drop-close/scripts/close.py --convo-id con_XXXXX
    - Key learnings
    - Concerns for orchestrator
    - Decisions made (with rationale)
+   - Concepts exercised (from Learning Landscape)
 5. **Writes deposit JSON** to `N5/builds/<slug>/deposits/<drop_id>.json`
 6. **Does NOT commit** — Orchestrator handles that
 
@@ -105,7 +106,8 @@ Jan 24 | ❌ 👷🏽‍♂️ 🏗️ [API Integration] D1.2 Auth Handler (bloc
       "decision": "Used async/await over threads",
       "rationale": "Better performance for I/O-bound operations"
     }
-  ]
+  ],
+  "concepts_exercised": ["async-patterns", "error-handling"]
 }
 ```
 
@@ -153,6 +155,7 @@ The deposit is then:
 - [ ] Artifacts list is complete and uses relative paths
 - [ ] Learnings captured (if any discoveries made)
 - [ ] Concerns noted (if any issues for orchestrator)
+- [ ] Concepts exercised listed (if build has Learning Landscape)
 
 ## Related
 

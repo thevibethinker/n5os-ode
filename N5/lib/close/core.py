@@ -178,6 +178,48 @@ def json_serial(obj):
     raise TypeError(f"Type {type(obj)} not serializable")
 
 
+def _is_placeholder_title(title: Optional[str]) -> bool:
+    """Return True when title is empty or clearly a placeholder."""
+    if not title:
+        return True
+    normalized = title.strip().lower()
+    if not normalized:
+        return True
+    placeholder_tokens = {
+        "untitled",
+        "title",
+        "semantic title",
+        "your semantic title",
+        "tbd",
+        "todo",
+    }
+    return normalized in placeholder_tokens
+
+
+def _ensure_title_format(convo_id: str, title: Optional[str]) -> str:
+    """Guarantee a valid thread-close title with the 3-slot emoji prefix."""
+    state = guards.load_session_state(convo_id)
+    candidate = (title or "").strip()
+
+    # If missing/placeholder, generate fully from state.
+    if _is_placeholder_title(candidate):
+        return emoji.generate_title(
+            state=state,
+            convo_id=convo_id,
+            semantic_title=(state.get("focus") or "Conversation Close"),
+        )
+
+    # If semantic title exists but missing emoji/date prefix, normalize it.
+    if " | " not in candidate:
+        return emoji.generate_title(
+            state=state,
+            convo_id=convo_id,
+            semantic_title=candidate,
+        )
+
+    return candidate
+
+
 def detect_tier(convo_id: str) -> int:
     """Auto-detect appropriate tier for thread close.
     
@@ -293,10 +335,11 @@ def write_thread_close_output(
     outputs = {}
     
     # Always write close summary
+    normalized_title = _ensure_title_format(convo_id, title)
     close_data = {
         'convo_id': convo_id,
         'tier': tier,
-        'title': title,
+        'title': normalized_title,
         'summary': summary,
         'completed_at': datetime.utcnow().isoformat()
     }
@@ -311,8 +354,30 @@ def write_thread_close_output(
         close_data['content_candidates'] = content_candidates
     
     close_path = workspace / "CLOSE_OUTPUT.json"
-    close_path.write_text(json.dumps(close_data, indent=2, default=json_serial))
+    close_path.write_text(json.dumps(close_data, indent=2, default=json_serial, ensure_ascii=False))
     outputs['close_data'] = str(close_path)
+
+    # Human-readable title + summary artifacts for UI/file preview reliability
+    title_path = workspace / "CLOSE_TITLE.txt"
+    title_path.write_text(f"{normalized_title}\n", encoding="utf-8")
+    outputs['title'] = str(title_path)
+
+    now = datetime.utcnow().strftime("%Y-%m-%d")
+    close_md_path = workspace / "CLOSE_OUTPUT.md"
+    close_md = (
+        "---\n"
+        f"created: {now}\n"
+        f"last_edited: {now}\n"
+        "version: 1.0\n"
+        f"provenance: {convo_id}\n"
+        "---\n\n"
+        "# Close Output\n\n"
+        f"## Title\n\n{normalized_title}\n\n"
+        "## Summary\n\n"
+        f"{summary}\n"
+    )
+    close_md_path.write_text(close_md, encoding="utf-8")
+    outputs['close_md'] = str(close_md_path)
     
     # Write AAR for tier 3
     if tier >= 3 and aar_content:

@@ -9,6 +9,7 @@ Commands:
   resume <slug>    - Resume a stopped build
   tick <slug>      - Run single orchestration cycle (for scheduled tasks)
   finalize <slug>  - Run post-build finalization (safety, tests, learnings)
+  rush <slug>      - Override learning mode to auto-spawn (per-Drop, per-Wave, or entire build)
 """
 
 import argparse
@@ -20,11 +21,20 @@ import sys
 import sqlite3
 import subprocess
 import fcntl
+from contextlib import contextmanager
 from datetime import datetime, timezone, timedelta
 from pathlib import Path
 from typing import Optional
 
-from pulse_common import PATHS, WORKSPACE, parse_drop_id, sort_wave_keys, get_drop_stream_order, RECOVERY_DEFAULTS
+from pulse_common import (
+    PATHS,
+    WORKSPACE,
+    parse_drop_id,
+    sort_wave_keys,
+    get_drop_stream_order,
+    RECOVERY_DEFAULTS,
+    load_config,
+)
 
 # Paths
 # WORKSPACE = Path("/home/workspace")  # Now imported from pulse_common
@@ -35,8 +45,129 @@ SKILLS_DIR = PATHS.SCRIPTS
 # Config
 DEFAULT_POLL_INTERVAL = 180  # 3 minutes
 DEFAULT_DEAD_THRESHOLD = 900  # 15 minutes
-DEFAULT_SPAWN_TIMEOUT = 300  # 5 minutes for API call to return
+DEFAULT_SPAWN_TIMEOUT = 1200  # 20 minutes max for /zo/ask drop execution
+DEFAULT_SPAWN_WORKER_TIMEOUT = 180  # pre-running handshake timeout for legacy spawning states
+DEFAULT_TICK_LEASE_SECONDS = 180
+DEFAULT_CIRCUIT_FAILURE_THRESHOLD = 3
+DEFAULT_CIRCUIT_COOLDOWN_SECONDS = 300
 ZO_API_URL = "https://api.zo.computer/zo/ask"
+
+
+def get_build_mode(meta: dict) -> str:
+    """Get build mode from meta.json, defaulting to 'standard' for backward compatibility.
+    Builds created with learning-engaged init will have 'learning' set explicitly."""
+    return meta.get("build_mode", "standard")
+
+
+def _parse_iso(ts: Optional[str]) -> Optional[datetime]:
+    if not ts:
+        return None
+    try:
+        return datetime.fromisoformat(ts.replace("Z", "+00:00"))
+    except ValueError:
+        return None
+
+
+@contextmanager
+def locked_meta(slug: str):
+    """Lock meta.json for safe concurrent updates across tick/spawn workers."""
+    meta_path = BUILDS_DIR / slug / "meta.json"
+    if not meta_path.exists():
+        raise FileNotFoundError(f"Build not found: {slug}")
+
+    with open(meta_path, "r+") as f:
+        fcntl.flock(f.fileno(), fcntl.LOCK_EX)
+        try:
+            meta = json.load(f)
+            yield meta
+            f.seek(0)
+            f.truncate()
+            json.dump(meta, f, indent=2)
+            f.flush()
+        finally:
+            fcntl.flock(f.fileno(), fcntl.LOCK_UN)
+
+
+def _acquire_tick_lease(slug: str, lease_seconds: int = DEFAULT_TICK_LEASE_SECONDS) -> tuple[bool, str]:
+    """Acquire a short lease so only one tick mutates a build at a time."""
+    holder = f"{os.getpid()}:{int(datetime.now(timezone.utc).timestamp())}"
+    now = datetime.now(timezone.utc)
+
+    with locked_meta(slug) as meta:
+        lease = meta.get("tick_lease", {})
+        lease_holder = lease.get("holder")
+        lease_expires = _parse_iso(lease.get("expires_at"))
+
+        if lease_holder and lease_expires and lease_expires > now:
+            return False, holder
+
+        meta["tick_lease"] = {
+            "holder": holder,
+            "acquired_at": now.isoformat(),
+            "expires_at": (now + timedelta(seconds=lease_seconds)).isoformat(),
+        }
+    return True, holder
+
+
+def _heartbeat_tick_lease(slug: str, holder: str, lease_seconds: int = DEFAULT_TICK_LEASE_SECONDS) -> None:
+    """Refresh lease TTL during longer tick operations."""
+    now = datetime.now(timezone.utc)
+    with locked_meta(slug) as meta:
+        lease = meta.get("tick_lease", {})
+        if lease.get("holder") != holder:
+            return
+        lease["expires_at"] = (now + timedelta(seconds=lease_seconds)).isoformat()
+        lease["heartbeat_at"] = now.isoformat()
+        meta["tick_lease"] = lease
+
+
+def _release_tick_lease(slug: str, holder: str) -> None:
+    with locked_meta(slug) as meta:
+        lease = meta.get("tick_lease", {})
+        if lease.get("holder") == holder:
+            meta.pop("tick_lease", None)
+
+
+def _spawn_circuit_open(meta: dict) -> bool:
+    circuit = meta.get("spawn_circuit", {})
+    if not circuit.get("open"):
+        return False
+    until = _parse_iso(circuit.get("open_until"))
+    if not until:
+        return False
+    return until > datetime.now(timezone.utc)
+
+
+def _set_spawn_circuit(meta: dict, reason: str) -> None:
+    now = datetime.now(timezone.utc)
+    meta["spawn_circuit"] = {
+        "open": True,
+        "open_reason": reason,
+        "opened_at": now.isoformat(),
+        "open_until": (now + timedelta(seconds=DEFAULT_CIRCUIT_COOLDOWN_SECONDS)).isoformat(),
+    }
+
+
+def _close_spawn_circuit(meta: dict) -> None:
+    if "spawn_circuit" in meta:
+        meta["spawn_circuit"] = {"open": False, "closed_at": datetime.now(timezone.utc).isoformat()}
+
+
+def _increment_spawn_failures(meta: dict, now_iso: str) -> int:
+    failures = int(meta.get("spawn_failures_consecutive", 0)) + 1
+    meta["spawn_failures_consecutive"] = failures
+    meta["last_spawn_failure_at"] = now_iso
+    if failures >= DEFAULT_CIRCUIT_FAILURE_THRESHOLD:
+        _set_spawn_circuit(meta, f"{failures} consecutive spawn failures")
+    return failures
+
+
+def _pid_is_running(pid: int) -> bool:
+    try:
+        os.kill(int(pid), 0)
+        return True
+    except Exception:
+        return False
 
 
 def claim_task(slug: str, drop_id: str) -> dict | None:
@@ -307,6 +438,101 @@ def get_filter_result(slug: str, drop_id: str) -> Optional[dict]:
     return None
 
 
+def _extract_json_from_text(text: str) -> Optional[dict]:
+    start = text.find("{")
+    end = text.rfind("}") + 1
+    if start >= 0 and end > start:
+        try:
+            return json.loads(text[start:end])
+        except json.JSONDecodeError:
+            return None
+    return None
+
+
+def _save_validation_result(slug: str, drop_id: str, result: dict) -> None:
+    path = BUILDS_DIR / slug / "deposits" / f"{drop_id}_validation.json"
+    path.write_text(json.dumps(result, indent=2))
+
+
+async def run_validators(slug: str, drop_id: str) -> tuple[bool, dict]:
+    """Run deposit validators. Mechanical is mandatory; LLM stage is optional by config."""
+    config = load_config()
+    validation = config.get("validation", {})
+    enabled = validation.get("enabled", True)
+    if not enabled:
+        return True, {
+            "drop_id": drop_id,
+            "build_slug": slug,
+            "validated_at": datetime.now(timezone.utc).isoformat(),
+            "verdict": "PASS",
+            "reason": "Validation disabled",
+            "mechanical": None,
+            "llm": None,
+        }
+
+    result = {
+        "drop_id": drop_id,
+        "build_slug": slug,
+        "validated_at": datetime.now(timezone.utc).isoformat(),
+        "verdict": "PASS",
+        "reason": "Passed validators",
+        "mechanical": None,
+        "llm": None,
+    }
+
+    if validation.get("code_validator_enabled", True):
+        from pulse_code_validator import check_drop_artifacts
+
+        mech_passed, mech_report = check_drop_artifacts(slug, drop_id)
+        result["mechanical"] = mech_report
+        if not mech_passed:
+            result["verdict"] = "FAIL"
+            result["reason"] = f"Code validation: {mech_report.get('critical_count', 0)} critical issues"
+            return False, result
+
+    if validation.get("llm_filter_enabled", True) and validation.get("llm_filter_in_tick", False):
+        llm_timeout = int(validation.get("llm_filter_timeout_seconds", 120))
+        auto_pass = bool(validation.get("auto_pass_on_validator_error", True))
+        llm_script = SKILLS_DIR / "pulse_llm_filter.py"
+        try:
+            llm_proc = subprocess.run(
+                ["python3", str(llm_script), "validate", slug, drop_id],
+                capture_output=True,
+                text=True,
+                timeout=llm_timeout,
+                cwd=str(WORKSPACE),
+            )
+        except subprocess.TimeoutExpired:
+            if auto_pass:
+                result["llm"] = {"error": "timeout", "auto_pass": True}
+                result["reason"] = "LLM validator timeout (auto-pass)"
+                return True, result
+            result["verdict"] = "FAIL"
+            result["reason"] = "LLM validator timeout"
+            result["llm"] = {"error": "timeout"}
+            return False, result
+
+        llm_data = _extract_json_from_text(llm_proc.stdout or "") or _extract_json_from_text(llm_proc.stderr or "")
+        if not llm_data:
+            if auto_pass:
+                result["llm"] = {"error": "parse_error", "auto_pass": True}
+                result["reason"] = "LLM validator parse error (auto-pass)"
+                return True, result
+            result["verdict"] = "FAIL"
+            result["reason"] = "LLM validator parse error"
+            result["llm"] = {"error": "parse_error"}
+            return False, result
+
+        result["llm"] = llm_data
+        llm_pass = bool(llm_data.get("pass", False))
+        if not llm_pass:
+            result["verdict"] = "FAIL"
+            result["reason"] = f"LLM validation: {llm_data.get('summary', 'failed')}"
+            return False, result
+
+    return True, result
+
+
 def register_drop_conversation(drop_id: str, slug: str, convo_id: str):
     """Register a Drop's conversation in conversations.db"""
     conn = sqlite3.connect(CONVERSATIONS_DB)
@@ -357,6 +583,7 @@ def update_status_md(slug: str, meta: dict):
     complete = [d for d, info in drops.items() if info.get("status") == "complete"]
     running = [d for d, info in drops.items() if info.get("status") == "running"]
     awaiting_manual = [d for d, info in drops.items() if info.get("status") == "awaiting_manual"]
+    ready = [d for d, info in drops.items() if info.get("status") == "ready"]
     pending = [d for d, info in drops.items() if info.get("status") == "pending"]
     superseded = [d for d, info in drops.items() if info.get("status") == "superseded"]
     dead = [d for d, info in drops.items() if info.get("status") == "dead"]
@@ -374,6 +601,11 @@ def update_status_md(slug: str, meta: dict):
     gate_text = ""
     if isinstance(gate, dict) and gate.get("reason"):
         gate_text = f"\n**Gate:** {gate.get('type', 'gate')} — {gate.get('reason')}"
+
+    ready_lines = "\n".join(
+        f"- [ ] {d} → run: `python3 Skills/pulse/scripts/pulse.py launch {slug} {d}`"
+        for d in sorted(ready)
+    )
 
     awaiting_lines = "\n".join(
         f"- [ ] {d} → run: `python3 Skills/pulse/scripts/pulse.py launch {slug} {d}`"
@@ -451,6 +683,9 @@ Active claims:
 ## Awaiting Manual ({len(awaiting_manual)})
 {awaiting_lines or '(none)'}
 
+## Ready for Manual Launch ({len(ready)})
+{ready_lines or '(none)'}
+
 ## Running ({len(running)})
 {chr(10).join(f'- [ ] {d} (since {drops[d].get("started_at", "?")[:16]})' for d in sorted(running)) or '(none)'}
 
@@ -481,19 +716,28 @@ async def send_sms(message: str):
         return
     
     prompt = f"Send this SMS to V immediately, no commentary: {message}"
-    
-    async with aiohttp.ClientSession() as session:
-        async with session.post(
-            ZO_API_URL,
-            headers={
-                "authorization": token,
-                "content-type": "application/json"
-            },
-            json={"input": prompt}
-        ) as resp:
-            result = await resp.json()
-            print(f"[SMS SENT] {message}")
-            return result
+
+    try:
+        timeout = aiohttp.ClientTimeout(total=20)
+        async with aiohttp.ClientSession(timeout=timeout) as session:
+            async with session.post(
+                ZO_API_URL,
+                headers={
+                    "authorization": token,
+                    "content-type": "application/json"
+                },
+                json={"input": prompt}
+            ) as resp:
+                if resp.status != 200:
+                    body = await resp.text()
+                    print(f"[SMS ERROR] HTTP {resp.status}: {body[:200]}")
+                    return None
+                result = await resp.json()
+                print(f"[SMS SENT] {message}")
+                return result
+    except Exception as e:
+        print(f"[SMS ERROR] {e}")
+        return None
 
 
 def collect_broadcasts(slug: str) -> list[dict]:
@@ -625,6 +869,83 @@ BRIEF:
             
             print(f"[SPAWN] Drop {drop_id} spawned (tracking: {tracking_id}, {elapsed.total_seconds():.1f}s)")
             return tracking_id
+
+
+def launch_spawn_worker(slug: str, drop_id: str, model: str = None) -> int:
+    """Launch detached worker process that performs /zo/ask spawn call."""
+    artifacts_dir = BUILDS_DIR / slug / "artifacts"
+    artifacts_dir.mkdir(parents=True, exist_ok=True)
+    log_path = artifacts_dir / f"spawn-{drop_id}.log"
+    err_path = artifacts_dir / f"spawn-{drop_id}-err.log"
+
+    cmd = [sys.executable, "-u", str(Path(__file__)), "spawn-one", slug, drop_id]
+    if model:
+        cmd.extend(["--model", model])
+
+    with open(log_path, "a") as out, open(err_path, "a") as err:
+        proc = subprocess.Popen(
+            cmd,
+            cwd=str(WORKSPACE),
+            stdout=out,
+            stderr=err,
+            start_new_session=True,
+        )
+    return proc.pid
+
+
+def _record_spawn_success(slug: str, drop_id: str, conversation_id: str) -> None:
+    now = datetime.now(timezone.utc).isoformat()
+    with locked_meta(slug) as meta:
+        info = meta.get("drops", {}).get(drop_id)
+        if not info:
+            raise RuntimeError(f"Unknown drop: {drop_id}")
+        if info.get("status") not in ("complete", "failed", "dead", "superseded"):
+            info["status"] = "running"
+            info["started_at"] = now
+        info["conversation_id"] = conversation_id
+        info.pop("failure_reason", None)
+        info.pop("failed_at", None)
+        info.pop("dead_at", None)
+        info.pop("dead_reason", None)
+        info.pop("spawn_worker_pid", None)
+        info.pop("spawn_requested_at", None)
+        info["last_progress_at"] = now
+
+        failures = int(meta.get("spawn_failures_consecutive", 0))
+        if failures > 0:
+            meta["spawn_failures_consecutive"] = 0
+            _close_spawn_circuit(meta)
+    register_drop_conversation(drop_id, slug, conversation_id)
+
+
+def _record_spawn_failure(slug: str, drop_id: str, error_message: str) -> None:
+    now = datetime.now(timezone.utc).isoformat()
+    with locked_meta(slug) as meta:
+        info = meta.get("drops", {}).get(drop_id)
+        if not info:
+            raise RuntimeError(f"Unknown drop: {drop_id}")
+        info["status"] = "failed"
+        info["failure_reason"] = f"Spawn error: {error_message}"
+        info["failed_at"] = now
+        info.pop("spawn_worker_pid", None)
+        info.pop("spawn_requested_at", None)
+
+        _increment_spawn_failures(meta, now)
+
+
+def spawn_one(slug: str, drop_id: str, model: str = None) -> int:
+    """Detached spawn worker. Does the blocking /zo/ask call and writes result to meta."""
+    try:
+        brief = load_drop_brief(slug, drop_id)
+        conversation_id = asyncio.run(spawn_drop(slug, drop_id, brief, model))
+        _record_spawn_success(slug, drop_id, conversation_id)
+        print(f"[SPAWN_WORKER] {drop_id} -> running")
+        return 0
+    except Exception as e:
+        err = str(e).strip() or repr(e)
+        _record_spawn_failure(slug, drop_id, err)
+        print(f"[SPAWN_WORKER] {drop_id} failed: {err}")
+        return 1
 
 
 def start_build(slug: str):
@@ -809,13 +1130,15 @@ def check_build_complete(meta: dict) -> bool:
     """Check if all blocking Drops are complete"""
     drops = meta.get("drops", {})
     
+    # Also check for "ready" drops (learning mode drops awaiting manual launch)
+    # These block completion just like pending drops
     for drop_id, info in drops.items():
-        # Skip non-blocking Drops
-        if not info.get("blocking", True):
+        blocking = info.get("blocking", True)
+        if not blocking:
             continue
         
         status = info.get("status", "pending")
-        if status not in ("complete", "failed", "dead", "superseded"):
+        if status not in ("complete", "superseded"):
             return False
     
     return True
@@ -1024,7 +1347,19 @@ async def summarize_build(slug: str, meta: dict) -> str:
 async def tick(slug: str):
     """Run one orchestration cycle"""
     print(f"\n[PULSE TICK] {slug} @ {datetime.now(timezone.utc).isoformat()}")
-    
+    acquired, lease_holder = _acquire_tick_lease(slug)
+    if not acquired:
+        print(f"[LEASE] Tick lease held by another process. Skipping tick for {slug}.")
+        return
+
+    try:
+        await _tick_inner(slug, lease_holder)
+    finally:
+        _release_tick_lease(slug, lease_holder)
+
+
+async def _tick_inner(slug: str, lease_holder: str):
+    """Internal tick body with lease already acquired."""
     meta = load_meta(slug)
     
     if meta.get("status") == "complete":
@@ -1034,6 +1369,8 @@ async def tick(slug: str):
     if meta.get("status") == "stopped":
         print(f"[PULSE] Build {slug} is stopped")
         return
+
+    _heartbeat_tick_lease(slug, lease_holder)
     
     # 1. Check for new deposits from running Drops
     running = get_running_drops(meta)
@@ -1047,6 +1384,49 @@ async def tick(slug: str):
             # Update Drop status based on deposit
             old_status = info.get("status", "unknown")
             new_status = deposit.get("status", "complete")
+
+            if new_status == "complete":
+                validation_cfg = load_config().get("validation", {})
+                auto_pass = bool(validation_cfg.get("auto_pass_on_validator_error", True))
+                try:
+                    passed, validator_result = await run_validators(slug, drop_id)
+                    _save_validation_result(slug, drop_id, validator_result)
+                    info["validation"] = validator_result
+                    if not passed:
+                        info["status"] = "failed"
+                        info["failure_reason"] = validator_result.get("reason", "Validation failed")
+                        info["failed_at"] = datetime.now(timezone.utc).isoformat()
+                        update_drop_conversation_status(info.get("conversation_id"), "failed")
+                        print(f"[VALIDATOR FAIL] {drop_id}: {info['failure_reason']}")
+                        broadcasts_updated = True
+                        continue
+                    print(f"[VALIDATOR PASS] {drop_id}")
+                except Exception as e:
+                    error_msg = f"Validator error: {e}"
+                    if auto_pass:
+                        info["validation_error"] = str(e)
+                        _save_validation_result(
+                            slug,
+                            drop_id,
+                            {
+                                "drop_id": drop_id,
+                                "build_slug": slug,
+                                "validated_at": datetime.now(timezone.utc).isoformat(),
+                                "verdict": "PASS",
+                                "reason": f"{error_msg} (auto-pass)",
+                                "mechanical": None,
+                                "llm": None,
+                            },
+                        )
+                        print(f"[VALIDATOR WARN] {drop_id}: {error_msg} (auto-pass)")
+                    else:
+                        info["status"] = "failed"
+                        info["failure_reason"] = error_msg
+                        info["failed_at"] = datetime.now(timezone.utc).isoformat()
+                        update_drop_conversation_status(info.get("conversation_id"), "failed")
+                        print(f"[VALIDATOR ERROR] {drop_id}: {error_msg}")
+                        broadcasts_updated = True
+                        continue
             
             # For pool workers, check if they completed tasks
             pool = meta.get("task_pool", {})
@@ -1080,6 +1460,44 @@ async def tick(slug: str):
     # 2. Check for dead Drops (running too long)
     now = datetime.now(timezone.utc)
     for drop_id, info in running:
+        worker_pid = info.get("spawn_worker_pid")
+        requested = _parse_iso(info.get("spawn_requested_at"))
+        if worker_pid and requested:
+            elapsed_spawn = (now - requested).total_seconds()
+            if elapsed_spawn > DEFAULT_SPAWN_TIMEOUT:
+                print(f"[SPAWN_TIMEOUT] {drop_id} spawn worker exceeded {int(elapsed_spawn)}s while running")
+                if _pid_is_running(worker_pid):
+                    try:
+                        os.kill(int(worker_pid), 15)
+                    except Exception:
+                        pass
+                info["status"] = "failed"
+                info["failure_reason"] = (
+                    f"Spawn error: /zo/ask handshake timeout after {int(elapsed_spawn)}s"
+                )
+                info["failed_at"] = now.isoformat()
+                info.pop("spawn_worker_pid", None)
+                info.pop("spawn_requested_at", None)
+                update_drop_conversation_status(info.get("conversation_id"), "failed")
+                _increment_spawn_failures(meta, now.isoformat())
+                broadcasts_updated = True
+                continue
+        if worker_pid and requested and (now - requested).total_seconds() > 5 and not _pid_is_running(worker_pid):
+            # Spawn worker died before handing off a healthy worker thread/deposit.
+            print(f"[SPAWN_EXIT] {drop_id} spawn worker exited while drop is running")
+            info["status"] = "failed"
+            info["failure_reason"] = "Spawn error: spawn worker exited unexpectedly"
+            info["failed_at"] = now.isoformat()
+            info.pop("spawn_worker_pid", None)
+            info.pop("spawn_requested_at", None)
+            update_drop_conversation_status(info.get("conversation_id"), "failed")
+            _increment_spawn_failures(meta, now.isoformat())
+            broadcasts_updated = True
+            continue
+        if worker_pid and requested:
+            # While detached spawn is still in-flight, do not apply generic dead-drop timeout.
+            continue
+
         if info.get("status") != "running":
             continue  # Skip if already processed above
         
@@ -1099,6 +1517,33 @@ async def tick(slug: str):
                 broadcasts_updated = True
         except ValueError:
             continue
+
+    # 2b. Check for stuck spawn handshakes
+    for drop_id, info in meta.get("drops", {}).items():
+        if info.get("status") != "spawning":
+            continue
+        requested = _parse_iso(info.get("spawn_requested_at"))
+        if not requested:
+            continue
+        elapsed = (now - requested).total_seconds()
+        worker_pid = info.get("spawn_worker_pid")
+        if worker_pid and elapsed > 5 and not _pid_is_running(worker_pid):
+            print(f"[SPAWN_EXIT] {drop_id} spawn worker exited before state transition")
+            info["status"] = "failed"
+            info["failure_reason"] = "Spawn error: spawn worker exited unexpectedly"
+            info["failed_at"] = now.isoformat()
+            info.pop("spawn_worker_pid", None)
+            info.pop("spawn_requested_at", None)
+            broadcasts_updated = True
+            continue
+        if elapsed > DEFAULT_SPAWN_WORKER_TIMEOUT:
+            print(f"[SPAWN_TIMEOUT] {drop_id} stuck in spawning for {int(elapsed)}s")
+            info["status"] = "failed"
+            info["failure_reason"] = f"Spawn error: spawn handshake timeout after {int(elapsed)}s"
+            info["failed_at"] = now.isoformat()
+            info.pop("spawn_worker_pid", None)
+            info.pop("spawn_requested_at", None)
+            broadcasts_updated = True
     
     # 3. Check for first-wins supersession
     if check_first_wins(slug, meta):
@@ -1122,29 +1567,56 @@ async def tick(slug: str):
     ready = get_ready_drops(meta)
     spawned = []
     
+    circuit_open = _spawn_circuit_open(meta)
+    if circuit_open:
+        circuit = meta.get("spawn_circuit", {})
+        print(
+            f"[CIRCUIT] Spawn circuit open until {circuit.get('open_until')} "
+            f"({circuit.get('open_reason', 'no reason')}). Skipping auto-spawn this tick."
+        )
+
     for drop_id in ready:
         try:
             info = meta["drops"][drop_id]
-            spawn_mode = info.get("spawn_mode", "auto")
-            
-            if spawn_mode == "manual":
-                # Create launcher and mark as awaiting manual
-                launcher_path = ensure_launcher(slug, drop_id)
-                info["status"] = "awaiting_manual"
-                info["launcher_created_at"] = datetime.now(timezone.utc).isoformat()
-                print(f"[MANUAL] {drop_id} → launcher at {launcher_path}")
+
+            # Determine effective spawn mode based on build_mode
+            build_mode = get_build_mode(meta)
+
+            if build_mode == "rush":
+                effective_spawn = "auto"
+            elif info.get("spawn_mode"):
+                effective_spawn = info["spawn_mode"]
+            elif build_mode == "learning" and info.get("engagement_tag") == "mechanical":
+                effective_spawn = "auto"
+            elif build_mode == "learning":
+                effective_spawn = "manual"
             else:
-                # Auto spawn
-                brief = load_drop_brief(slug, drop_id)
+                effective_spawn = info.get("spawn_mode", "auto")
+
+            if effective_spawn == "manual":
+                launcher_path = ensure_launcher(slug, drop_id)
+                if build_mode == "learning":
+                    info["status"] = "ready"
+                    info["ready_at"] = datetime.now(timezone.utc).isoformat()
+                    print(f"[LEARNING] {drop_id} ready for manual launch. Launcher generated.")
+                else:
+                    info["status"] = "awaiting_manual"
+                    info["launcher_created_at"] = datetime.now(timezone.utc).isoformat()
+                    print(f"[MANUAL] {drop_id} → launcher at {launcher_path}")
+                spawned.append(drop_id)
+            else:
+                if circuit_open:
+                    continue
                 model = meta.get("model")
-                
-                conversation_id = await spawn_drop(slug, drop_id, brief, model)
-                
+                tracking_id = f"spawn_worker_{slug}_{drop_id}_{int(datetime.now(timezone.utc).timestamp())}"
+                pid = launch_spawn_worker(slug, drop_id, model)
                 info["status"] = "running"
                 info["started_at"] = datetime.now(timezone.utc).isoformat()
-                info["conversation_id"] = conversation_id
-                
-                register_drop_conversation(drop_id, slug, conversation_id)
+                info["conversation_id"] = tracking_id
+                info["spawn_requested_at"] = info["started_at"]
+                info["spawn_worker_pid"] = pid
+                info["last_progress_at"] = info["started_at"]
+                register_drop_conversation(drop_id, slug, tracking_id)
                 spawned.append(drop_id)
                 
         except Exception as e:
@@ -1190,7 +1662,9 @@ def show_status(slug: str):
 
     complete = sum(1 for d in drops.values() if d.get("status") == "complete")
     running = sum(1 for d in drops.values() if d.get("status") == "running")
+    spawning = sum(1 for d in drops.values() if d.get("status") == "spawning")
     awaiting_manual = sum(1 for d in drops.values() if d.get("status") == "awaiting_manual")
+    ready_count = sum(1 for d in drops.values() if d.get("status") == "ready")
     pending = sum(1 for d in drops.values() if d.get("status") == "pending")
     superseded = sum(1 for d in drops.values() if d.get("status") == "superseded")
     dead = sum(1 for d in drops.values() if d.get("status") == "dead")
@@ -1226,7 +1700,9 @@ Status: {meta.get('status', 'unknown')}
 Drops:
   Complete:        {complete}
   Running:         {running}
+  Spawning:        {spawning}
   Awaiting Manual: {awaiting_manual}
+  Ready:           {ready_count}
   Pending:         {pending}
   Superseded:      {superseded}
   Dead:            {dead}
@@ -1557,6 +2033,10 @@ def assess_and_recover(slug: str, meta: dict = None, dry_run: bool = False) -> l
                 "failure_type": failure_type,
                 "reason": f"Retries exhausted ({retry_count}/{max_retries})",
             }
+            if not dry_run:
+                meta["status"] = "blocked"
+                meta["blocked_at"] = now.isoformat()
+                meta["blocked_reason"] = action["reason"]
             _log_recovery_action(slug, action)
             actions.append(action)
             print(f"[RECOVERY] {drop_id} retries exhausted — escalating")
@@ -1734,6 +2214,46 @@ async def finalize_build(slug: str):
     return results
 
 
+def rush_mode(slug: str, drop_id: str = None, wave: str = None):
+    """Override learning mode for specified scope."""
+    meta = load_meta(slug)
+
+    if not drop_id and not wave:
+        meta["build_mode"] = "rush"
+        save_meta(slug, meta)
+        update_status_md(slug, meta)
+        print(f"[RUSH] Build {slug} switched to rush mode. All Drops will auto-spawn.")
+        return
+
+    if drop_id:
+        if drop_id in meta.get("drops", {}):
+            meta["drops"][drop_id]["spawn_mode"] = "auto"
+            if meta["drops"][drop_id].get("status") == "ready":
+                meta["drops"][drop_id]["status"] = "pending"
+            save_meta(slug, meta)
+            update_status_md(slug, meta)
+            print(f"[RUSH] {drop_id} set to auto-spawn.")
+        else:
+            print(f"Error: Drop {drop_id} not found in {slug}")
+            return
+
+    if wave:
+        wave_drops = (meta.get("waves") or {}).get(wave, [])
+        if not wave_drops:
+            print(f"Error: Wave {wave} not found or empty in {slug}")
+            return
+        count = 0
+        for did in wave_drops:
+            if did in meta.get("drops", {}):
+                meta["drops"][did]["spawn_mode"] = "auto"
+                if meta["drops"][did].get("status") == "ready":
+                    meta["drops"][did]["status"] = "pending"
+                count += 1
+        save_meta(slug, meta)
+        update_status_md(slug, meta)
+        print(f"[RUSH] Wave {wave}: {count} Drops set to auto-spawn.")
+
+
 def main():
     parser = argparse.ArgumentParser(description="Pulse Build Orchestration")
     subparsers = parser.add_subparsers(dest="command")
@@ -1755,6 +2275,11 @@ def main():
     
     finalize_parser = subparsers.add_parser("finalize", help="Run post-build finalization (safety, tests, learnings)")
     finalize_parser.add_argument("slug", help="Build slug")
+
+    spawn_one_parser = subparsers.add_parser("spawn-one", help="Internal: spawn one drop via detached worker")
+    spawn_one_parser.add_argument("slug", help="Build slug")
+    spawn_one_parser.add_argument("drop_id", help="Drop ID")
+    spawn_one_parser.add_argument("--model", help="Optional model override")
     
     launch_parser = subparsers.add_parser("launch", help="Print launcher path and paste-prompt contents")
     launch_parser.add_argument("slug", help="Build slug")
@@ -1768,6 +2293,11 @@ def main():
     validate_parser = subparsers.add_parser("validate", help="Validate plan completeness before start")
     validate_parser.add_argument("slug", help="Build slug")
     
+    rush_parser = subparsers.add_parser("rush", help="Override learning mode to auto-spawn")
+    rush_parser.add_argument("slug", help="Build slug")
+    rush_parser.add_argument("--drop", help="Auto-spawn specific Drop")
+    rush_parser.add_argument("--wave", help="Auto-spawn all Drops in a wave")
+
     args = parser.parse_args()
     
     if args.command == "start":
@@ -1782,6 +2312,8 @@ def main():
         asyncio.run(tick(args.slug))
     elif args.command == "finalize":
         asyncio.run(finalize_build(args.slug))
+    elif args.command == "spawn-one":
+        raise SystemExit(spawn_one(args.slug, args.drop_id, args.model))
     elif args.command == "launch":
         launcher_path = ensure_launcher(args.slug, args.drop_id)
         print(f"Launcher: {launcher_path}")
@@ -1790,6 +2322,8 @@ def main():
         retry_drop(args.slug, args.drop_id, args.reason)
     elif args.command == "validate":
         validate_plan(args.slug)
+    elif args.command == "rush":
+        rush_mode(args.slug, args.drop, args.wave)
 
 
 if __name__ == "__main__":
