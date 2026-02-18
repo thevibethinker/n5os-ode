@@ -1133,14 +1133,6 @@ const server = Bun.serve({
                 "Cursor:5", "Windsurf:5", "Zapier:5", "Notion:5",
                 "OpenClaw:5", "Clawdbot:5",
                 "webhook:3", "Airtable:3", "Stripe:3"
-              ],
-              keyterm: [
-                "Zo Computer",
-                "Vibe Thinker",
-                "Vibe Thinker Hotline",
-                "zo dot space",
-                "scheduled agent",
-                "Zo Space"
               ]
             },
 
