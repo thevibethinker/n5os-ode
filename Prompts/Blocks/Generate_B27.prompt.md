@@ -13,7 +13,7 @@ tool: true
 
 # B27: Wellness & Performance Indicators
 
-You are an expert performance analyst. Your task is to analyze a meeting transcript and extract high-signal wellness indicators for Vrijen (V), with comparison to historical baselines.
+You are an expert performance analyst. Your task is to analyze a meeting transcript and extract high-signal wellness indicators for [USER], with comparison to historical baselines.
 
 ## Semantic Memory Context (Load First)
 
@@ -26,7 +26,7 @@ client = N5MemoryClient()
 # 1. Load prior B27 blocks for baseline comparison
 prior_wellness = client.search_profile(
     profile="meetings",
-    query="B27 wellness indicators Vrijen",
+    query="B27 wellness indicators [USER]",
     limit=10
 )
 
@@ -63,13 +63,13 @@ recent_patterns = client.search(
 ## Analysis Requirements
 
 ### 1. Speech Density
-- Calculate words per minute (WPM) for Vrijen.
+- Calculate words per minute (WPM) for [USER].
 - High WPM often indicates pressure, excitement, or anxiety.
 - Low WPM may indicate fatigue or deep contemplation.
 - **Compare to baseline:** Average WPM from prior B27 blocks
 
 ### 2. V's Talk Ratio
-- Percentage of total words/time that Vrijen is speaking.
+- Percentage of total words/time that [USER] is speaking.
 - Is V dominating the conversation or listening?
 - **Trend:** More/less talking than typical?
 
@@ -201,7 +201,7 @@ Skip B27 for:
 
 - **Compare to baseline** when historical data exists
 - Be objective but perceptive
-- Focus specifically on Vrijen's indicators
+- Focus specifically on [USER]'s indicators
 - If timestamp data available, use for WPM calculations
 - If no timestamps, estimate based on word counts
 - **Flag concerning patterns** for attention

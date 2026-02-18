@@ -205,7 +205,7 @@ Based on recent posts and interests, consider opening with:
   - [ ] [Enrichment task 1]
   - [ ] [Enrichment task 2]
 
-## Section 7: Howie Integration (V-OS Tags)
+## Section 7: Integration Tags
 
 **Recommended Tags:** `[LD-XXX] [GPT-X] [A-X]`
 

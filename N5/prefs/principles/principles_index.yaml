@@ -1,13 +1,22 @@
 ---
 # Principles Library Index
-# A curated collection of architectural wisdom for N5OS Ode
+# Complete index of all architectural and operational principles
 
 principles:
+  P0.1:
+    id: P0.1
+    name: LLM-First for Analysis and Synthesis
+    category: behavior
+    priority: high
+    file: P00.1_llm_first.yaml
+    description: Use LLM reasoning for analysis and synthesis; reserve scripts for deterministic execution
+
   P01:
     id: P1
     name: Human-Readable First
     category: code_patterns
     priority: high
+    file: P01_human_readable_first.yaml
     description: Generate human-readable content first (markdown/text), then derive machine formats from it
 
   P02:
@@ -15,20 +24,47 @@ principles:
     name: Single Source of Truth (SSOT)
     category: quality
     priority: high
+    file: P02_single_source_truth.yaml
     description: Maintain exactly one canonical location for each piece of information
+
+  P03:
+    id: P3
+    name: Voice Integration Policy
+    category: communication
+    priority: medium
+    file: P03_voice_integration.yaml
+    description: Apply appropriate voice levels — neutral for analysis, full voice for user-facing outputs
+
+  P04:
+    id: P4
+    name: Ontology-Weighted Analysis
+    category: behavior
+    priority: medium
+    file: P04_ontology_weighted.yaml
+    description: Use priority hierarchies to weight extraction and analysis — not everything is equally important
 
   P05:
     id: P5
     name: Safety, Determinism, and Anti-Overwrite
     category: quality
     priority: high
+    file: P05_safety_determinism.yaml
     description: Prevent data loss through auto-versioning and explicit confirmation
+
+  P06:
+    id: P6
+    name: Mirror Sync Hygiene
+    category: safety
+    priority: medium
+    file: P06_mirror_sync_hygiene.yaml
+    description: Detect and handle sync issues before destructive operations on mirrored files
 
   P07:
     id: P7
     name: Idempotence and Dry-Run by Default
     category: code_patterns
     priority: high
+    file: P07_idempotence_dryrun.yaml
     description: Support dry-run mode and ensure safe re-running of workflows
 
   P08:
@@ -36,27 +72,63 @@ principles:
     name: Minimal Context, Maximal Clarity
     category: communication
     priority: high
+    file: P08_minimal_context.yaml
     description: Load only what's needed; keep prompts self-contained
+
+  P09:
+    id: P9
+    name: Copyable Blocks
+    category: communication
+    priority: low
+    file: P09_copyable_blocks.yaml
+    description: Provide crisp, ready-to-paste blocks for follow-ups and action items
+
+  P10:
+    id: P10
+    name: Calendar Time
+    category: behavior
+    priority: low
+    file: P10_calendar_time.yaml
+    description: Handle time and calendar ops with clarity; respect timezone; confirm before scheduling
 
   P11:
     id: P11
     name: Failure Modes and Recovery
     category: quality
     priority: high
+    file: P11_failure_modes.yaml
     description: Handle failures gracefully with pauses on uncertainty and incident logging
+
+  P12:
+    id: P12
+    name: Testing in Fresh Threads
+    category: quality
+    priority: high
+    file: P12_testing_fresh_threads.yaml
+    description: Validate changes in clean environments; depend only on declared files, not accumulated context
 
   P13:
     id: P13
     name: Naming and Placement
     category: code_patterns
     priority: medium
+    file: P13_naming_placement.yaml
     description: Use consistent naming conventions and established file placement patterns
+
+  P14:
+    id: P14
+    name: Change Tracking
+    category: quality
+    priority: medium
+    file: P14_change_tracking.yaml
+    description: Maintain concise change logs tracking evolution and rationale for changes
 
   P15:
     id: P15
     name: Complete Before Claiming Complete
     category: quality
     priority: critical
+    file: P15_complete_before_claiming.yaml
     description: Report accurate progress with quantitative metrics; never claim done prematurely
 
   P16:
@@ -64,6 +136,7 @@ principles:
     name: Accuracy Over Sophistication
     category: quality
     priority: high
+    file: P16_accuracy_over_sophistication.yaml
     description: Provide accurate, conservative facts rather than sophisticated speculation
 
   P18:
@@ -71,6 +144,7 @@ principles:
     name: State Verification is Mandatory
     category: quality
     priority: high
+    file: P18_state_verification.yaml
     description: Verify operations succeeded explicitly; never assume success
 
   P19:
@@ -78,6 +152,7 @@ principles:
     name: Error Handling is Not Optional
     category: safety
     priority: critical
+    file: P19_error_handling.yaml
     description: Every system must have explicit error handling and recovery paths
 
   P20:
@@ -85,6 +160,7 @@ principles:
     name: Modular Design for Context Efficiency
     category: design
     priority: high
+    file: P20_modular_design.yaml
     description: Break monolithic content into focused, independently useful modules
 
   P21:
@@ -92,20 +168,55 @@ principles:
     name: Document All Assumptions, Placeholders, and Stubs
     category: quality
     priority: high
+    file: P21_document_assumptions.yaml
     description: Make incomplete implementations explicit and trackable
+
+  P22:
+    id: P22
+    name: Language Selection
+    category: design
+    priority: medium
+    file: P22_language_selection.yaml
+    description: Shell for Unix tool calls, Python for data logic, TypeScript for API-heavy work
 
   P23:
     id: P23
     name: Identify Trap Doors
     category: strategy
     priority: critical
+    file: P23_identify_trap_doors.yaml
     description: Explicitly identify and document irreversible decisions before committing
+
+  P24:
+    id: P24
+    name: Simulation Over Doing
+    category: execution
+    priority: high
+    file: P24_simulation_over_doing.yaml
+    description: Simulate before committing — dry runs, previews, subset tests when consequences are unclear
+
+  P25:
+    id: P25
+    name: Code Is Free
+    category: execution
+    priority: medium
+    file: P25_code_is_free.yaml
+    description: AI-generated code is cheap to produce — iterate freely, invest in understanding not typing
+
+  P26:
+    id: P26
+    name: Fast Feedback Loops
+    category: execution
+    priority: high
+    file: P26_fast_feedback_loops.yaml
+    description: Small changes with immediate verification; never batch large changes then test
 
   P27:
     id: P27
     name: Nemawashi Mode
     category: strategy
     priority: high
+    file: P27_nemawashi_mode.yaml
     description: Explore 2-3 alternatives before committing to any approach
 
   P28:
@@ -113,32 +224,102 @@ principles:
     name: Plans As Code DNA
     category: strategy
     priority: critical
+    file: P28_plans_as_code_dna.yaml
     description: Code quality comes from planning, not implementation; write clear specifications
+
+  P29:
+    id: P29
+    name: Focus Plus Parallel
+    category: advanced
+    priority: medium
+    file: P29_focus_plus_parallel.yaml
+    description: Balance focused deep work with parallel orchestration for decomposable tasks
+
+  P30:
+    id: P30
+    name: Maintain Feel For Code
+    category: advanced
+    priority: high
+    file: P30_maintain_feel_for_code.yaml
+    description: Stay connected to code quality and craft; volume without comprehension is hidden debt
+
+  P31:
+    id: P31
+    name: Own The Planning Process
+    category: advanced
+    priority: medium
+    file: P31_own_the_planning_process.yaml
+    description: The human owns the plan; AI assists and proposes but does not auto-execute
 
   P32:
     id: P32
     name: Simple Over Easy
     category: design
     priority: critical
+    file: P32_simple_over_easy.yaml
     description: Choose simple (few concepts) over easy (familiar but complex)
+
+  P33:
+    id: P33
+    name: Old Tricks Still Work
+    category: advanced
+    priority: medium
+    file: P33_old_tricks_still_work.yaml
+    description: Tests, types, linting, refactoring, simplicity — all still critical with AI
+
+  P34:
+    id: P34
+    name: Secrets Management
+    category: advanced
+    priority: high
+    file: P34_secrets_management.yaml
+    description: Never hardcode secrets; use environment variables; never expose secret values
+
+  P35:
+    id: P35
+    name: Data Format Selection
+    category: behavior
+    priority: medium
+    file: P35_data_format_selection.yaml
+    description: YAML for config, JSON for interchange, JSONL for logs, Markdown for documentation
 
   P36:
     id: P36
     name: Orchestration Pattern
     category: workflow
     priority: high
+    file: P36_orchestration_pattern.yaml
     description: Multi-persona workflow for complex projects spanning multiple domains
 
+  P37:
+    id: P37
+    name: Refactor Pattern
+    category: workflow
+    priority: high
+    file: P37_refactor_pattern.yaml
+    description: Incremental improvement — preserve working parts while improving structure
+
 meta:
-  total_principles: 18
-  critical_priority: 4
-  high_priority: 13
-  medium_priority: 1
+  total_principles: 37
+  priority_counts:
+    critical: 5
+    high: 18
+    medium: 11
+    low: 2
   categories:
+    behavior: 4
+    quality: 10
+    communication: 3
+    safety: 3
     code_patterns: 3
-    quality: 7
-    communication: 1
-    safety: 1
     design: 3
     strategy: 3
-    workflow: 1
+    execution: 3
+    advanced: 6
+    workflow: 2
+  building_fundamentals: Knowledge/architectural/building_fundamentals.md
+  building_fundamentals_note: >
+    P35-P39 building fundamentals are a higher-level conceptual bundle
+    referenced by Builder and Architect personas. See building_fundamentals.md
+    for the integrated philosophy. Individual YAML files (P35, P36, P37) capture
+    distinct operational principles that share some numbering.

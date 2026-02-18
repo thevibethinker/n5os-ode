@@ -3,7 +3,7 @@ name: meeting-ingestion
 description: Unified skill for ingesting meeting transcripts from Google Drive and orchestrating the processing pipeline (recap, blocks). Replaces legacy MG-1 through MG-6 agent sequence.
 compatibility: Created for Zo Computer
 metadata:
-  author: va.zo.computer
+  author: n5os-ode
   version: "1.0.0"
   created: 2026-01-26
 ---

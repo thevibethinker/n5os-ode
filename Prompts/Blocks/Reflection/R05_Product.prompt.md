@@ -1,6 +1,6 @@
 ---
 description: Generate R05 Product Idea block from reflection input
-tags: [reflection, block, r05, product, careerspan]
+tags: [reflection, block, r05, product, [project]]
 tool: true
 version: 2.0
 ---
@@ -111,7 +111,7 @@ def enrich_product_idea(transcript_key_concepts: list[str]) -> dict:
 
     product_knowledge = client.search_profile(
         profile="knowledge",
-        query=f"product feature user careerspan {' '.join(transcript_key_concepts)}",
+        query=f"product feature user [project] {' '.join(transcript_key_concepts)}",
         limit=5
     )
 

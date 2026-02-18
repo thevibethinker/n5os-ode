@@ -1,0 +1,35 @@
+---
+id: P22
+name: Language Selection
+category: design
+priority: medium
+version: "1.0.0"
+created: "2026-02-18"
+related: [P20, P32]
+
+purpose: |
+  Match programming language to task characteristics — shell for Unix tool chains, Python for data logic, TypeScript for API-heavy work.
+
+description: |
+  Different languages have different strengths. Choosing the wrong language for a
+  task creates unnecessary friction. The selection should be deliberate, based on
+  what the task actually requires.
+
+  Shell (Bash) is ideal when the task is 80%+ Unix tool calls: file operations,
+  piping between commands, text processing with grep/sed/awk, and simple
+  orchestration. Python is the right choice for complex logic, data manipulation,
+  and tasks requiring libraries. TypeScript/Bun excels at API-heavy work,
+  especially when SDKs are available, and for web-facing services.
+
+  The anti-pattern is defaulting to one language for everything. A 200-line Python
+  script that mostly calls subprocess is a shell script in disguise. A shell script
+  with complex JSON manipulation should be Python. Match the tool to the job.
+
+anti_patterns:
+  - "Defaulting to Python for simple file operations that shell handles natively"
+  - "Writing shell scripts with complex data structure manipulation"
+  - "Ignoring available SDKs and hand-rolling HTTP requests"
+
+application:
+  when: "Starting any new script, automation, or service"
+  how: "Assess task composition — is it mostly tool calls (shell), data logic (Python), or API/web work (TypeScript)?"

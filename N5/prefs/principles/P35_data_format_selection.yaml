@@ -1,0 +1,37 @@
+---
+id: P35
+name: Data Format Selection
+category: behavior
+priority: medium
+version: "1.0.0"
+created: "2026-02-18"
+related: [P1, P22, P20]
+
+purpose: |
+  Choose data formats deliberately based on use case — YAML for config, JSON for interchange, JSONL for logs, Markdown for documentation.
+
+description: |
+  Data format choice should be intentional, not habitual. Each format has a
+  natural use case and choosing the wrong one creates friction.
+
+  YAML is ideal for human-editable configuration and structured documents where
+  readability matters. JSON is the standard for machine-to-machine data
+  interchange, API payloads, and programmatic consumption. JSONL (newline-
+  delimited JSON) is perfect for append-only logs, streaming data, and records
+  that grow over time. Markdown is the right choice for documentation, prose,
+  and content that humans will read and edit.
+
+  The key insight is matching format to lifecycle. If humans will edit it, use
+  YAML or Markdown. If machines will primarily consume it, use JSON. If it will
+  grow by appending, use JSONL. If it needs to be both readable and structured,
+  use Markdown with YAML frontmatter.
+
+anti_patterns:
+  - "Using JSON for files humans need to frequently edit"
+  - "Using YAML for machine-generated data interchange"
+  - "Using flat text files for structured data that needs parsing"
+  - "Using a database when a simple JSONL file would suffice"
+
+application:
+  when: "Creating any new data file, log, or configuration"
+  how: "Ask: who consumes this (human or machine)? How does it grow (edited or appended)? Choose format accordingly."

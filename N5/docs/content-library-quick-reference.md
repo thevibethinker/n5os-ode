@@ -25,7 +25,7 @@ python3 N5/scripts/content_library_db.py search --query "trial" --type link
 
 # Search by tag
 python3 N5/scripts/content_library_db.py search --tag purpose=scheduling
-python3 N5/scripts/content_library_db.py search --tag entity=careerspan
+python3 N5/scripts/content_library_db.py search --tag entity=my-project
 
 # Combined search
 python3 N5/scripts/content_library_db.py search --query "demo" --tag audience=prospects
@@ -45,14 +45,14 @@ python3 N5/scripts/content_library_db.py add \
   --title "New Link Title" \
   --url "https://example.com" \
   --tag purpose=demo \
-  --tag entity=careerspan
+  --tag entity=my-project
 
 # Add snippet
 python3 N5/scripts/content_library_db.py add \
   --id bio_short \
   --type snippet \
   --title "Short Bio" \
-  --content "Vrijen is the founder of Careerspan..." \
+  --content "[User] is the founder of [Project]..." \
   --tag audience=investors
 ```
 
@@ -112,7 +112,7 @@ ORDER BY i.title;
 - **Examples:** Product walkthroughs, demo videos
 
 ### Company Info
-- **Tag:** `entity=careerspan`
+- **Tag:** `entity=my-project`
 - **Examples:** Homepage, LinkedIn, pitch decks
 
 ---
@@ -163,7 +163,7 @@ The Follow-Up Email Generator automatically queries the database when generating
 **Common tags:**
 - `purpose`: scheduling, trial, demo, reference, etc.
 - `audience`: general, investors, prospects, friends, etc.
-- `entity`: vrijen, careerspan, etc.
+- `entity`: personal, project, etc.
 - `duration`: 15min, 30min, 45min (for meeting links)
 
 ---
@@ -175,9 +175,9 @@ The Follow-Up Email Generator automatically queries the database when generating
 python3 N5/scripts/content_library_db.py search --tag duration=30min
 ```
 
-### Find all Careerspan-related links
+### Find all project-related links
 ```bash
-python3 N5/scripts/content_library_db.py search --tag entity=careerspan
+python3 N5/scripts/content_library_db.py search --tag entity=my-project
 ```
 
 ### Get trial link for career centers

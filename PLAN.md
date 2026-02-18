@@ -9,7 +9,7 @@ provenance: con_KsG8Cyc7SlXm5lHr
 **Objective:** Bring n5os-ode to release quality by fixing broken references, missing files, and placeholder values.
 
 **Estimated effort:** 2-3 hours  
-**Repo:** https://github.com/vrijenattawar/n5os-ode  
+**Repo:** https://github.com/YOUR_USERNAME/n5os-ode  
 **Local path:** `N5/export/n5os-ode/`
 
 ---
@@ -28,7 +28,7 @@ provenance: con_KsG8Cyc7SlXm5lHr
 - [ ] `N5/scripts/n5_protect.py` (line 13)
 - [ ] `N5/scripts/session_state_manager.py` (line 19)
 
-**Action:** Replace `PROJECT_REPO` with `vrijenattawar`
+**Action:** Replace `PROJECT_REPO` with `YOUR_USERNAME`
 
 **Verification:** `rg "PROJECT_REPO" .` returns no results
 
@@ -126,7 +126,7 @@ N5/builds/<slug>/
 ```
 MIT License
 
-Copyright (c) 2026 Vrijen Attawar
+Copyright (c) 2026 Contributors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy...
 ```

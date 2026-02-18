@@ -1,0 +1,35 @@
+---
+id: P12
+name: Testing in Fresh Threads
+category: quality
+priority: high
+version: "1.0.0"
+created: "2026-02-18"
+related: [P7, P18, P21]
+
+purpose: |
+  Validate changes in clean environments to ensure workflows depend only on declared files, not accumulated context.
+
+description: |
+  Long-running conversations and development sessions accumulate implicit state:
+  variables in memory, files created as side effects, environment modifications,
+  cached results. A workflow that works in the current session may fail in a fresh
+  context because it depends on this accumulated state.
+
+  Critical changes — especially to scripts, configurations, and automated
+  workflows — should be validated in a clean environment. This means testing in
+  a new session, verifying all dependencies are explicitly declared, and
+  confirming that the workflow reproduces the expected results from scratch.
+
+  This principle is especially important for scheduled tasks, deployment scripts,
+  and anything that will run unattended. If it only works with human intervention
+  or accumulated session state, it is not ready for production.
+
+anti_patterns:
+  - "Testing only in the session where code was developed"
+  - "Relying on variables or files created earlier in the conversation"
+  - "Deploying scripts without verifying they work from a clean state"
+
+application:
+  when: "Validating scripts, workflows, or configurations before deployment"
+  how: "Test in a fresh environment with no accumulated state; verify all dependencies are explicit"

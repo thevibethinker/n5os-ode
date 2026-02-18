@@ -1,0 +1,35 @@
+---
+id: P25
+name: Code Is Free
+category: execution
+priority: medium
+version: "1.0.0"
+created: "2026-02-18"
+related: [P28, P32]
+
+purpose: |
+  AI-generated code costs nearly nothing to produce — iterate freely rather than over-optimizing prematurely.
+
+description: |
+  In an AI-assisted workflow, the cost of generating code has dropped dramatically.
+  Writing a function, a script, or a configuration is fast and cheap. This changes
+  the calculus of iteration — instead of agonizing over getting code right the first
+  time, generate a working version, test it, and iterate.
+
+  This does not mean code quality does not matter. It means the expensive part is
+  understanding the problem and designing the right approach (P28), not the act of
+  typing. Generate freely, test frequently, refine based on feedback.
+
+  The principle guards against two failure modes: spending excessive time polishing
+  code that might be thrown away, and being afraid to experiment because "it took so
+  long to write." Neither applies when generation is cheap. The investment is in
+  understanding, not in keystrokes.
+
+anti_patterns:
+  - "Over-optimizing code before verifying the approach is correct"
+  - "Hesitating to try alternative implementations because of sunk cost"
+  - "Treating generated code as precious rather than disposable"
+
+application:
+  when: "Building, prototyping, or iterating on implementations"
+  how: "Generate working versions quickly, test, iterate. Invest time in understanding the problem, not polishing code prematurely."

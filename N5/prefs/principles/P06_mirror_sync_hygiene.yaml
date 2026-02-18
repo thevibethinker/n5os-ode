@@ -1,0 +1,34 @@
+---
+id: P6
+name: Mirror Sync Hygiene
+category: safety
+priority: medium
+version: "1.0.0"
+created: "2026-02-18"
+related: [P5, P18]
+
+purpose: |
+  Detect and handle sync issues before destructive operations to prevent data loss from stale or conflicting file states.
+
+description: |
+  When files exist across multiple locations (local workspace, cloud storage,
+  repositories, backup mirrors), they can fall out of sync. Modifying a stale
+  copy can silently destroy newer changes.
+
+  Before any destructive operation (overwrite, delete, move) on files that may
+  have mirrors or upstream sources, verify the file's freshness. Check timestamps,
+  hashes, or version markers. If there is any indication of a sync conflict,
+  pause and surface the discrepancy before proceeding.
+
+  This is especially critical for files managed by git, synced to cloud drives,
+  or mirrored between staging and production environments. The cost of a quick
+  verification check is negligible compared to the cost of data loss.
+
+anti_patterns:
+  - "Overwriting files without checking if they have been modified elsewhere"
+  - "Assuming local copy is current without verification"
+  - "Bulk operations on mirrored directories without sync check"
+
+application:
+  when: "Before modifying files that may exist in multiple locations or have upstream sources"
+  how: "Check timestamps, hashes, or git status before destructive operations; pause on any discrepancy"
