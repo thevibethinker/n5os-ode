@@ -1,0 +1,1 @@
+{"entities": [{"name": "Howie", "type": "PERSON", "context": "Awaiting for completion of Phase 2A"}], "relationships": [{"from": "V", "to": "Howie", "type": "WORKS_WITH", "context": "Waiting on Howie's completion for unblocking"}]}

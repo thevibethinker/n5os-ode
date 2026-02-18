@@ -1,0 +1,1 @@
+{"drop_id": "D2", "rule": "R2", "action": "auto_retry", "failure_type": "spawn_error", "reason": "Spawn error (transient), auto-retry 1/2", "retry_number": 1, "timestamp": "2026-02-16T21:10:16.678477+00:00"}

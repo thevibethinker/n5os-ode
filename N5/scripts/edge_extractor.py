@@ -32,7 +32,7 @@ import hashlib
 # Paths
 WORKSPACE = Path("/home/workspace")
 EDGES_DB = Path("/home/workspace/N5/cognition/brain.db")
-CRM_DB = WORKSPACE / "N5/data/crm_v3.db"
+CRM_DB = WORKSPACE / "N5/data/n5_core.db"
 REVIEW_QUEUE = WORKSPACE / "N5/review/edges"
 B33_PROMPT = WORKSPACE / "Prompts/Blocks/Generate_B33.prompt.md"
 MEETINGS_ROOT = WORKSPACE / "Personal/Meetings"

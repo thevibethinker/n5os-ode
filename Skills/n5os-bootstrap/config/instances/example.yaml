@@ -1,0 +1,38 @@
+# Example instance configuration
+# Copy this file and modify for new instances
+
+instance:
+  name: "{{INSTANCE_NAME}}"           # e.g., "my-assistant"
+  handle: "{{HANDLE}}.zo.computer"    # e.g., "my-assistant.zo.computer"
+  owner: "{{OWNER_NAME}}"             # e.g., "Alice"
+  role: general                       # general | consulting-partner | personal-assistant
+
+autonomy:
+  level: supervised                   # autonomous | supervised | restricted
+  requires_approval:
+    - external_comms
+    - file_deletion
+    - scheduled_tasks
+    - service_creation
+  parent: null                        # e.g., "va.zo.computer" for escalation
+
+personas:
+  enabled:                            # List of personas to enable
+    - operator
+    - builder
+    - debugger
+  disabled: []                        # List of personas to disable
+  default: operator                   # Default persona on conversation start
+
+voice:
+  profile: professional               # professional | personal | formal
+  primitives: local                   # local | shared | none
+
+safety:
+  protection_level: strict            # strict | standard | relaxed
+  dry_run_default: true
+
+features:
+  pulse: true
+  state_tracking: true
+  conversation_logging: true

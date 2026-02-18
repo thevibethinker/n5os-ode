@@ -1,3 +1,0 @@
-Created `file 'Personal/Meetings/2025-11-13_careerspan-strategy-hiring-discussion_[P]/B25_DELIVERABLES.md'` (5.6KB). The document captures all specific deliverables mentioned during the meeting, organized by responsible party and including status tracking for each item. Key deliverables include Alex's domain registration code offer, the exploratory job feed integration between Hello.CV and Careerspan, and Careerspan's internal marketing campaign launch.
-
-*January 26, 2026 at 4:10 PM EST*

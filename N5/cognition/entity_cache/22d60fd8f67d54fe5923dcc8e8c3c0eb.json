@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Individual implementing the knowledge system"}, {"name": "meeting_monitor.py", "type": "TOOL", "context": "The script being created for monitoring meetings"}], "relationships": []}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "N5", "type": "TOOL", "context": "Folder structure used for organizing files"}, {"name": "Documents/Archive", "type": "TOOL", "context": "Location for archiving valuable content"}, {"name": "projects", "type": "TOOL", "context": "Folder for active projects"}], "relationships": []}

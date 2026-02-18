@@ -1,0 +1,1 @@
+{"entities": [{"name": "Google Calendar", "type": "TOOL", "context": "Calendar integration tool"}, {"name": "action", "type": "CONCEPT", "context": "Structure for meeting action details"}], "relationships": [{"from": "action", "to": "Google Calendar", "type": "USES", "context": "Calendar scheduler integrates with Google Calendar"}]}

@@ -1,0 +1,1 @@
+{"drop_id": "*", "rule": "R5", "action": "escalate", "failure_type": "stale", "reason": "Build active >4h with no progress in >60min", "timestamp": "2026-02-16T21:10:16.678963+00:00"}

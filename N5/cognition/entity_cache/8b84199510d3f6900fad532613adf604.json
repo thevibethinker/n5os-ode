@@ -1,0 +1,1 @@
+{"entities": [{"name": "nohup", "type": "TOOL", "context": "used to run processes that need to continue despite logout"}, {"name": "scheduled task", "type": "TOOL", "context": "used for automating tasks at set times"}], "relationships": []}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "stakeholder profiles", "type": "CONCEPT", "context": "profiles for meeting attendees"}, {"name": "relationship tracking", "type": "CONCEPT", "context": "tracking relationships of stakeholders"}, {"name": "research caching", "type": "CONCEPT", "context": "caching research related to stakeholders"}], "relationships": []}

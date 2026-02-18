@@ -1,0 +1,149 @@
+# Achievements
+# Extracted: 2026-02-15T02:16:54.269681
+# Method: Structured extraction
+# DO NOT EDIT
+
+achievements:
+- description: Founded and scaled the Assignment platform at Embibe from PoC to full
+    product
+  type: milestone
+  context: Embibe
+  quantified: false
+  impact: Took a proof of concept to a robust, full-scale product
+- description: Built Template Service for custom test creation at scale
+  type: milestone
+  context: Embibe
+  quantified: false
+  impact: Enabled educators to create custom templates for generating personalized
+    tests at scale
+- description: Developed user timeline system tracking engagement for 10M+ learners
+  type: quantified_impact
+  context: Embibe
+  quantified: true
+  impact: Aggregated activities for over 10 million learners on the platform
+- description: Engineered data aggregation processes transforming large volumes of
+    activity data into actionable insights
+  type: milestone
+  context: Embibe
+  quantified: false
+  impact: Converted raw activity data into meaningful business insights
+- description: Redesigned backend architecture for scalability and reliability with
+    zero-downtime migration
+  type: milestone
+  context: Embibe
+  quantified: false
+  impact: Eliminated scaling bottlenecks; internal monitors never triggered again
+    post-fix
+- description: Mentored and led a team of 8 engineers end-to-end
+  type: milestone
+  context: Embibe
+  quantified: true
+  impact: Grew and coached an 8-engineer team through all stages of product development
+- description: Earned recognition and autonomy as a technical leader
+  type: recognition
+  context: Embibe
+  quantified: false
+  impact: Gained expanded autonomy and responsibility to lead other important initiatives
+- description: Core team member for Greenfield off-Shopify checkout system at Quince
+  type: milestone
+  context: Quince
+  quantified: false
+  impact: Enabled the business to move off Shopify, saving millions in costs
+- description: Led design and development of Orders and Payments Platforms
+  type: milestone
+  context: Quince
+  quantified: false
+  impact: Architected end-to-end workflows with high system consistency, reliability,
+    and scalability
+- description: Integrated major payment instruments (Stripe, PayPal, gift cards, BNPL,
+    store credit)
+  type: milestone
+  context: Quince
+  quantified: false
+  impact: Enabled flexible payment options across the platform
+- description: Handled millions of dollars in daily transaction volume
+  type: quantified_impact
+  context: Quince
+  quantified: true
+  impact: Processed millions of dollars daily with secure, idempotent transaction
+    handling
+- description: Supported 100k+ daily orders and 5x traffic spikes
+  type: quantified_impact
+  context: Quince
+  quantified: true
+  impact: System handled 100,000+ daily orders peaking at 20 orders per second with
+    99.9% uptime
+- description: Designed LLM-powered fraud review pipeline using RAG-based system
+  type: milestone
+  context: Quince
+  quantified: false
+  impact: Automated fraud review by aggregating multi-source signals and routing concise
+    reports for human action
+- description: Created extensible Post-Order Workflow framework
+  type: milestone
+  context: Quince
+  quantified: false
+  impact: Allowed new post-order tasks to be added without modifying the core system
+- description: Delivered Gift Card Service with Clutch integration
+  type: milestone
+  context: Quince
+  quantified: false
+  impact: Enabled gift card functionality across the platform
+- description: Drove scaling for Black Friday reaching $15M daily revenue with 5x
+    spike
+  type: quantified_impact
+  context: Quince
+  quantified: true
+  impact: $15M daily revenue peak, 5x normal traffic spike handled successfully
+- description: Created SOPs for major peak events
+  type: milestone
+  context: Quince
+  quantified: false
+  impact: Institutionalized operational readiness processes for future peak sales
+    events
+- description: 'Google Kickstart Round F 2019: 194th place'
+  type: award
+  context: Google Kickstart
+  quantified: true
+  impact: Competitive programming achievement demonstrating algorithmic problem-solving
+    ability
+- description: 'Google Kickstart Round E 2019: 462nd place'
+  type: award
+  context: Google Kickstart
+  quantified: true
+  impact: Competitive programming achievement
+- description: 'ACM-ICPC 2019: 856th team rank among 4,400 teams in online round'
+  type: award
+  context: ACM-ICPC
+  quantified: true
+  impact: Top ~19% in prestigious international programming competition
+- description: 'JEE Main 2016: Top 0.3% among 1.3 million candidates'
+  type: award
+  context: JEE Main
+  quantified: true
+  impact: Elite performance in India's most competitive engineering entrance exam
+- description: 'JEE Advanced 2016: Top 3% among 200,000 candidates'
+  type: award
+  context: JEE Advanced
+  quantified: true
+  impact: Secured admission to a top-tier Indian engineering institution (IIIT Hyderabad)
+- description: NTSE Scholar 2012
+  type: award
+  context: National Talent Search Examination
+  quantified: false
+  impact: National-level academic scholarship recognition in India
+patterns:
+- Consistently delivers quantified business impact at scale (100k+ orders, $15M revenue,
+  10M+ users)
+- Pattern of founding/greenfield platform work followed by scaling and operational
+  maturation
+- Strong competitive programming and academic achievement history indicating deep
+  analytical ability
+- Achievements span both technical delivery (architecture, migration, automation)
+  and team leadership (mentoring, cross-functional alignment)
+- Repeated pattern of earning expanded autonomy and recognition through demonstrated
+  ownership
+data_availability: rich
+note: Achievement data is extensive and well-quantified, sourced from both resume
+  and detailed STAR-format stories. Competitive programming and academic achievements
+  add depth beyond professional accomplishments.

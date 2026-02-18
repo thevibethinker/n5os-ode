@@ -1,46 +1,119 @@
 # Tools
-# Extracted: 2026-02-05T16:36:47.086084
+# Extracted: 2026-02-15T01:59:23.339606
 # Method: Structured extraction
 # DO NOT EDIT
 
-languages:
-- Java
-- Python
-- Kotlin
-- C++
-- Go
-frameworks:
-- Spring Boot
-- Gin
-databases:
-- ScyllaDB
-- RDS
-- Cassandra
-infrastructure:
-- AWS
-- Kubernetes
-- EKS
-- Terraform
-- Kafka
-- Airflow
-- Spark
-- Grafana
-ai_ml_tools:
-- LLM
-- RAG
-other:
-- Stripe
-- PayPal
-- Clutch
-- Slack
-- Shopify
-not_mentioned:
-- Lambda
-- Step Functions
-- API Gateway
-- DynamoDB
-- OpenSearch
-- Elasticsearch
-- CloudWatch
-- CloudFormation
-- Serverless Framework
+tool_categories:
+  languages:
+  - name: Java
+    proficiency: expert
+    evidence: Primary backend language at Quince and Embibe; led design of Orders
+      and Payments Platforms using Java/Spring Boot; 12+ microservices; 100k+ daily
+      orders
+  - name: Kotlin
+    proficiency: proficient
+    evidence: Listed in executive summary alongside Java; likely used in JVM-based
+      microservices at Quince/Embibe
+  - name: Python
+    proficiency: familiar
+    evidence: Listed in executive summary; likely used for LLM/RAG fraud review pipeline
+      and data aggregation jobs; no concrete STAR-style Python examples
+  - name: Go
+    proficiency: familiar
+    evidence: Listed in executive summary alongside Gin framework; no specific production
+      examples detailed
+  - name: C++
+    proficiency: familiar
+    evidence: Listed in executive summary; likely from competitive programming background
+      (Google Kickstart, ACM-ICPC)
+  - name: SQL
+    proficiency: proficient
+    evidence: Operated RDS instances; designed and scheduled aggregation jobs rolling
+      up millions of rows; led database schema redesigns and zero-downtime migrations
+  frameworks:
+  - name: Spring Boot
+    proficiency: expert
+    evidence: Primary framework for Java backend work; used across Quince checkout/order/payments
+      platforms and Embibe backend services
+  - name: Gin
+    proficiency: familiar
+    evidence: Listed in executive summary as a Go framework; no specific production
+      examples detailed
+  databases:
+  - name: ScyllaDB/Cassandra
+    proficiency: proficient
+    evidence: Hands-on at Embibe for user timeline system; diagnosed allow-filtering
+      performance issues; redesigned schemas, implemented dual writes, led zero-downtime
+      migration for 10M+ learners
+  - name: RDS (AWS Relational Database Service)
+    proficiency: proficient
+    evidence: Operated and scaled RDS instances at Quince; performed RDS sizing upgrades
+      for Black Friday peak events
+  - name: DynamoDB
+    proficiency: claimed
+    evidence: No direct experience mentioned; rated as 'lacking experience' in intelligence
+      brief; transferable skills from NoSQL/distributed systems work
+  - name: OpenSearch/Elasticsearch
+    proficiency: claimed
+    evidence: No explicit mention in resume; rated 'weak' in brief; only transferable
+      inference from data pipeline and retrieval work
+  cloud_infrastructure:
+  - name: AWS
+    proficiency: proficient
+    evidence: Explicit in resume; used EKS, RDS, and other AWS services in production;
+      scaled infrastructure for Black Friday 5× traffic spikes
+  - name: Kubernetes (EKS)
+    proficiency: proficient
+    evidence: Upgraded EKS replicas for peak scaling at Quince; operated containerized
+      microservices in production
+  - name: Terraform
+    proficiency: proficient
+    evidence: Listed in executive summary; used for infrastructure provisioning alongside
+      AWS/Kubernetes stack; production infra management
+  devops:
+  - name: Kafka
+    proficiency: proficient
+    evidence: Listed in executive summary; Kafka-like event/message patterns used
+      for workflow orchestration, post-order task processing, and distributed system
+      communication
+  - name: Apache Spark
+    proficiency: proficient
+    evidence: Used at Embibe for user timeline aggregation jobs; diagnosed and resolved
+      Spark job failures related to ScyllaDB query patterns
+  - name: Apache Airflow
+    proficiency: proficient
+    evidence: Used at Embibe to orchestrate Spark-based aggregation jobs for user
+      timeline data processing
+  - name: Grafana
+    proficiency: proficient
+    evidence: Used at Embibe for monitoring ScyllaDB cluster health; detected CPU
+      spikes and performance bottlenecks during scaling issues
+  - name: CI/CD (general)
+    proficiency: familiar
+    evidence: Inferred from operating 12+ microservices, zero-downtime migrations,
+      and infrastructure upgrades; no specific CI/CD tool named
+  other:
+  - name: Stripe
+    proficiency: expert
+    evidence: Integrated Stripe payment processing at Quince; handled secure idempotent
+      transactions; implemented Stripe session pooling for peak scaling
+  - name: PayPal
+    proficiency: proficient
+    evidence: Integrated PayPal as payment instrument at Quince alongside Stripe for
+      checkout platform
+  - name: Clutch
+    proficiency: proficient
+    evidence: Integrated Clutch for gift card service at Quince
+  - name: LLM/RAG Systems
+    proficiency: proficient
+    evidence: Designed and operated LLM-powered fraud review pipeline using RAG to
+      combine order data, payment signals, and historical fraud patterns into investigation
+      reports
+  - name: Slack (Integration)
+    proficiency: proficient
+    evidence: Built automated delivery of fraud review summaries to Slack for human
+      review and action
+  - name: Shopify (Migration)
+    proficiency: proficient
+    evidence: Led migration off Shopify to custom checkout platform; deep understanding
+      of Shopify's limitations and architecture for replacement

@@ -1,0 +1,83 @@
+# Experience
+# Extracted: 2026-02-15T02:16:54.253449
+# Method: Structured extraction
+# DO NOT EDIT
+
+positions:
+- company: Quince
+  title: SDE-3 (E-Commerce Platform/Checkout Systems)
+  duration: Jan 2024 - May 2025
+  type: fulltime
+  summary: Led design and development of greenfield off-Shopify order and payments
+    platforms for a high-scale e-commerce business. Built resilient distributed workflows
+    for checkout, payments, fraud review, and post-order automation under peak-event
+    conditions.
+  key_accomplishments:
+  - text: Helped migrate checkout off Shopify with a new in-house platform.
+    quantified: true
+    impact: Saved the business millions in platform fees and increased product flexibility.
+  - text: Architected systems that supported 100k+ daily orders and handled 5x Black
+      Friday/Cyber Monday traffic spikes.
+    quantified: true
+    impact: Maintained reliability and business continuity during peak revenue events.
+  - text: Built an LLM/RAG-powered fraud review pipeline that aggregated multi-source
+      signals and routed summaries to Slack.
+    quantified: false
+    impact: Improved fraud operations throughput and decision speed.
+  - text: Integrated major payment instruments including Stripe and PayPal and implemented
+      idempotent payment workflows.
+    quantified: false
+    impact: Improved transaction reliability and reduced risk in payment processing.
+  - text: Created SOPs and operational playbooks for major peak events.
+    quantified: false
+    impact: Improved incident readiness and repeatable execution under load.
+  technologies:
+  - Java
+  - Spring Boot
+  - AWS
+  - EKS
+  - RDS
+  - Terraform
+  - Stripe
+  - PayPal
+  - LLM/RAG
+  - Microservices
+  team_context: small team
+- company: Embibe
+  title: Product Engineer
+  duration: May 2020 - Jan 2024
+  type: fulltime
+  summary: Built and scaled core backend products including Assignment platform, Template
+    Service, and user timeline systems. Led architecture and migration work to resolve
+    scaling bottlenecks and improve reliability across large learner data workloads.
+  key_accomplishments:
+  - text: Founded and scaled the Assignment platform from proof of concept to full
+      product.
+    quantified: false
+    impact: Created a new product capability and expanded platform utility.
+  - text: Led and mentored a team of 8 engineers through platform development.
+    quantified: true
+    impact: Increased delivery capacity and technical leadership across initiatives.
+  - text: Built a user timeline system and aggregation pipelines supporting 10M+ learners.
+    quantified: true
+    impact: Enabled scalable learner engagement tracking and analytics.
+  - text: Diagnosed schema bottlenecks and led a zero-downtime migration with dual
+      writes and backfills.
+    quantified: false
+    impact: Eliminated recurring performance issues and improved system stability.
+  - text: Removed inefficient allow-filtering query patterns by redesigning data models
+      for access-pattern-specific tables.
+    quantified: false
+    impact: Reduced database load and improved aggregation reliability at scale.
+  technologies:
+  - ScyllaDB
+  - Spark
+  - Airflow
+  - Java
+  - Python
+  - Go
+  - Kafka
+  - AWS
+  - Kubernetes
+  - Terraform
+  team_context: led team of 8

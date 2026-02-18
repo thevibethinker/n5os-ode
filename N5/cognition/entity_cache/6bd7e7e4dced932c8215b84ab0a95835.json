@@ -1,0 +1,1 @@
+{"entities": [{"name": "meeting_state_manager", "type": "TOOL", "context": "State tracking"}, {"name": "stakeholder_profile_manager", "type": "TOOL", "context": "Profile management"}], "relationships": []}

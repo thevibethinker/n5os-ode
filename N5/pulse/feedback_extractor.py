@@ -4,10 +4,6 @@ Feedback Extractor for Pulse v2.
 Converts V's feedback into structured learnings for system improvement.
 
 This bridges raw feedback (SMS, email, chat) into the learnings system.
-
-VibeTeacher Integration:
-- Teaching moments activated on feedback extraction
-- Stored alongside learnings for review at build close
 """
 
 import json
@@ -225,17 +221,13 @@ def extract_and_store(slug: str, feedback: str, source: str = "manual") -> Dict:
     """
     Full pipeline: extract learnings from feedback and store to system.
 
-    VibeTeacher Integration:
-    - Activates teaching moment on feedback
-    - Stores moment alongside learnings for review
-
     Args:
         slug: Build slug
         feedback: Raw feedback text
         source: Feedback source (sms, email, chat)
 
     Returns:
-        dict with extraction results including teaching moment
+        dict with extraction results
     """
     # Extract learnings
     learnings = extract_learnings(slug, feedback, source)
@@ -243,29 +235,14 @@ def extract_and_store(slug: str, feedback: str, source: str = "manual") -> Dict:
     # Add to system
     added = add_to_system_learnings(learnings, deduplicate=True)
 
-    # Activate VibeTeacher for teaching moment (non-blocking)
-    teaching_moment = None
-    try:
-        teaching_result = subprocess.run(
-            ["python3", str(PULSE_DIR / "teaching" / "teaching_manager.py"),
-             "activate", "--checkpoint", "feedback", "--slug", slug, "--input", feedback],
-            capture_output=True, text=True, cwd="/home/workspace"
-        )
-        if teaching_result.returncode == 0:
-            teaching_data = json.loads(teaching_result.stdout)
-            if teaching_data.get("has_moment"):
-                teaching_moment = teaching_data.get("teaching")
-    except Exception as e:
-        # Teaching activation failure should not block feedback extraction
-        pass
+    # Learning mode: teaching moments handled natively by orchestrator LLM
 
     return {
         "build_slug": slug,
         "source": source,
         "learnings_extracted": len(learnings),
         "learnings_added": added,
-        "learnings": learnings,
-        "teaching_moment": teaching_moment
+        "learnings": learnings
     }
 
 

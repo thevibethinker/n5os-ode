@@ -1,0 +1,44 @@
+# Interests
+# Extracted: 2026-02-15T02:16:54.274767
+# Method: Structured extraction
+# DO NOT EDIT
+
+hobbies: []
+interests:
+- Competitive programming (Google Kickstart, ACM-ICPC participation)
+- Large-scale distributed systems design
+- LLM/RAG technology exploration and application
+side_projects: []
+publications_talks: []
+personality_signals:
+- Strong ownership mindset — repeatedly took initiative to found platforms and lead
+  greenfield projects without being asked
+- Growth-oriented learner — shifted from 'make it work' mindset to deep design-first
+  thinking, self-reflective about evolution
+- Systems thinker — naturally considers ripple effects across interconnected ecosystems
+  rather than isolated features
+- Collaborative and diplomatic — negotiated new processes with cross-functional teams,
+  built alignment across engineering, product, QA, and ops
+- Competitive and intellectually driven — strong performance in JEE (top 0.3%), NTSE
+  scholar, Google Kickstart rankings
+- Mentor by nature — grew and coached an 8-engineer team, takes pride in developing
+  others
+- Customer-empathetic engineer — consistently ties technical decisions back to business
+  and user impact
+culture_fit_indicators:
+- Thrives in high-stakes, fast-paced environments (Black Friday scaling, startup growth)
+- Comfortable with ambiguity and greenfield work — built multiple platforms from scratch
+- Values engineering excellence and best practices — created SOPs, extensible frameworks,
+  and promoted standards
+- Cross-functional collaborator — works well across engineering, product, business,
+  and ops boundaries
+- Independent and self-directed — took ownership of problems beyond his immediate
+  scope
+- Continuous improvement orientation — proactively identifies and fixes systemic issues
+  rather than applying band-aids
+data_availability: sparse
+note: The intelligence brief is heavily focused on professional/technical capabilities
+  with almost no personal or lifestyle information. No hobbies, side projects, publications,
+  talks, open-source contributions, or personal interests beyond competitive programming
+  are mentioned. Personality signals are inferred entirely from professional behavior
+  patterns described in work stories and resume analysis.

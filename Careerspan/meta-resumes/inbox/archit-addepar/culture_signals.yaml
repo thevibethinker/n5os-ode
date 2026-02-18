@@ -1,0 +1,109 @@
+# Culture Signals
+# Extracted: 2026-02-15T01:59:23.352188
+# Method: Structured extraction
+# DO NOT EDIT
+
+explicit_values:
+- name: Act Like an Owner
+  description: Think and act like an owner, and own outcomes over actions.
+  observable_behaviors:
+  - Takes end-to-end accountability for backend services from design through production
+    reliability.
+  - Prioritizes business and client impact over merely completing assigned tasks.
+  interview_signals:
+  - Candidate shares stories where they assumed responsibility for outcomes, including
+    failures and corrective actions.
+- name: Build Together
+  description: Collaborate to unlock the best solutions and deliver lasting value.
+  observable_behaviors:
+  - Works effectively across engineering, product, and data science to define and
+    deliver solutions.
+  - Seeks input early and incorporates feedback to improve architecture decisions.
+  interview_signals:
+  - Candidate gives examples of cross-functional problem-solving and resolving tradeoffs
+    constructively.
+- name: Champion Clients
+  description: Exceed client expectations; clients' success is the company's success.
+  observable_behaviors:
+  - Designs systems with reliability, accuracy, and usability for investment professionals.
+  - Uses client outcomes to guide technical prioritization and quality standards.
+  interview_signals:
+  - Candidate describes decisions made to improve user/client outcomes, not just technical
+    elegance.
+- name: Drive Innovation
+  description: Be bold and unconstrained in problem solving to transform the industry.
+  observable_behaviors:
+  - Proposes and tests new approaches for complex backend and financial data challenges.
+  - Challenges legacy assumptions when scalability or correctness is at risk.
+  interview_signals:
+  - Candidate can explain a meaningful improvement they initiated that changed team
+    or system performance.
+- name: Embrace Learning
+  description: Engage the community to broaden perspective and bring a growth mindset.
+  observable_behaviors:
+  - Actively learns new tools/domains (e.g., Terraform, AWS, financial data concepts)
+    as needed.
+  - Shares learnings with peers and adapts based on new evidence.
+  interview_signals:
+  - Candidate provides examples of quickly ramping in unfamiliar domains and applying
+    lessons.
+implied_requirements:
+- trait: Systems thinking under complexity
+  why_needed: Role requires architecting and maintaining solutions for complex problems
+    and scalable backend services.
+  evidence_markers:
+  - Can break down large distributed-system problems into clear design decisions.
+  - Explains tradeoffs among scalability, reliability, and maintainability.
+- trait: Strong ownership and execution discipline
+  why_needed: Expectation to own outcomes and ensure high-quality software delivery.
+  evidence_markers:
+  - Demonstrates accountability for production incidents and long-term service health.
+  - Uses testing, monitoring, and operational practices to protect quality.
+- trait: Cross-functional communication
+  why_needed: Work spans engineering, product, and data science in a collaborative
+    environment.
+  evidence_markers:
+  - Translates technical constraints into product-impact language.
+  - Shows experience aligning stakeholders on priorities and timelines.
+- trait: Client-impact orientation
+  why_needed: Company mission and values are tied to client success in investment
+    decision workflows.
+  evidence_markers:
+  - References customer/client context in architecture or prioritization choices.
+  - Balances technical debt decisions against user and business risk.
+- trait: Learning agility in fintech context
+  why_needed: Financial data systems knowledge is desired, and the domain is specialized
+    and evolving.
+  evidence_markers:
+  - Has ramped into regulated or data-intensive domains quickly.
+  - Asks precise domain questions and adapts implementation accordingly.
+working_style_signals:
+  autonomy_level: high - role includes architecting solutions and owning outcomes,
+    indicating independent decision-making responsibility.
+  collaboration_mode: balanced - individual ownership is expected, but delivery is
+    explicitly cross-functional with engineering, product, and data science.
+  ambiguity_tolerance: high - solving complex problems and driving innovation implies
+    operating with incomplete information.
+  pace: fast-paced - global scale, large asset coverage, and innovation expectations
+    suggest rapid iteration with high quality.
+red_flags:
+- Focuses on task completion but avoids accountability for production outcomes.
+- Prefers siloed work and shows friction in cross-functional collaboration.
+- Prioritizes technical novelty over client impact and reliability.
+- Resists feedback or demonstrates a fixed mindset.
+- Struggles with ambiguity and needs highly prescriptive direction.
+culture_fit_questions:
+- question: Tell me about a time you owned a backend outcome end-to-end, including
+    what went wrong and how you handled it.
+  assesses: Act Like an Owner
+- question: Describe a project where you had to align engineering, product, and data
+    science to deliver a durable solution.
+  assesses: Build Together
+- question: Share an example where a client or user need changed your technical approach.
+  assesses: Champion Clients
+- question: What is a bold technical change you proposed, and how did you validate
+    it before broader adoption?
+  assesses: Drive Innovation
+- question: Tell me about a domain or technology you had to learn quickly and how
+    you applied that learning in production.
+  assesses: Embrace Learning / learning agility

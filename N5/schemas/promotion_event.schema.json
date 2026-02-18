@@ -1,0 +1,323 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Promotion Event",
+  "description": "Tracks meeting intelligence candidates through the promotion gate with scoring, tiering, and deduplication.",
+  "type": "object",
+  "properties": {
+    "event_id": {
+      "type": "string",
+      "pattern": "^pe_[a-z0-9]{8}$",
+      "description": "Unique identifier for the promotion event"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when the event was created"
+    },
+    "source_meeting_id": {
+      "type": "string",
+      "description": "ID of the meeting that generated this candidate"
+    },
+    "candidate_type": {
+      "type": "string",
+      "enum": ["relationship_delta", "org_delta", "deliverable_record", "intro_opportunity", "general_intelligence"],
+      "description": "Type of intelligence candidate"
+    },
+    "candidate_id": {
+      "type": "string",
+      "description": "ID of the specific candidate being promoted (optional for general intelligence)"
+    },
+    "score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Overall promotion score (0-100)"
+    },
+    "score_breakdown": {
+      "type": "object",
+      "properties": {
+        "strategic_importance": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 20,
+          "description": "Strategic importance score (0-20)"
+        },
+        "relationship_delta_strength": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 20,
+          "description": "Relationship delta strength score (0-20)"
+        },
+        "commitment_clarity": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 20,
+          "description": "Commitment clarity score (0-20)"
+        },
+        "evidence_quality": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 15,
+          "description": "Evidence quality score (0-15)"
+        },
+        "novelty": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 15,
+          "description": "Novelty vs existing memory score (0-15)"
+        },
+        "execution_value": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 10,
+          "description": "Execution value score (0-10)"
+        }
+      },
+      "required": ["strategic_importance", "relationship_delta_strength", "commitment_clarity", "evidence_quality", "novelty", "execution_value"],
+      "additionalProperties": false,
+      "description": "Detailed breakdown of scoring rubric"
+    },
+    "tier": {
+      "type": "string",
+      "enum": ["A", "B", "C"],
+      "description": "Promotion tier: A (75-100, auto-promote), B (50-74, review digest), C (<50, archive)"
+    },
+    "hard_override": {
+      "type": "object",
+      "properties": {
+        "applied": {
+          "type": "boolean",
+          "description": "Whether a hard override was applied"
+        },
+        "reason": {
+          "type": "string",
+          "enum": ["explicit_promise", "named_deliverable", "introduction_request", "critical_deadline", "stakeholder_request"],
+          "description": "Reason for hard override"
+        },
+        "original_tier": {
+          "type": "string",
+          "enum": ["A", "B", "C"],
+          "description": "Original tier before override"
+        },
+        "trigger_keyword": {
+          "type": "string",
+          "description": "Specific keyword that triggered the override (optional)"
+        }
+      },
+      "required": ["applied"],
+      "additionalProperties": false,
+      "description": "Hard override information"
+    },
+    "deduplication": {
+      "type": "object",
+      "properties": {
+        "checked": {
+          "type": "boolean",
+          "description": "Whether deduplication check was performed"
+        },
+        "is_duplicate": {
+          "type": "boolean",
+          "description": "Whether this candidate is a duplicate"
+        },
+        "duplicate_of": {
+          "type": "string",
+          "description": "ID of the original if this is a duplicate"
+        },
+        "similarity_score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Similarity score to closest existing record"
+        }
+      },
+      "required": ["checked"],
+      "additionalProperties": false,
+      "description": "Deduplication analysis results"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["promoted", "queued_for_review", "archived", "blocked", "duplicate"],
+      "description": "Current status of the promotion event"
+    },
+    "routing": {
+      "type": "object",
+      "properties": {
+        "semantic_memory": {
+          "type": "boolean",
+          "description": "Route to semantic memory (brain.db)"
+        },
+        "graph_edges": {
+          "type": "boolean", 
+          "description": "Route to relationship graph"
+        },
+        "crm_projection": {
+          "type": "boolean",
+          "description": "Route to CRM profile projection"
+        },
+        "deliverables_db": {
+          "type": "boolean",
+          "description": "Route to deliverables intelligence DB"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Routing decisions for downstream systems"
+    },
+    "write_results": {
+      "type": "object",
+      "properties": {
+        "semantic_memory": {
+          "type": "object",
+          "properties": {
+            "attempted": {
+              "type": "boolean"
+            },
+            "success": {
+              "type": "boolean"
+            },
+            "error": {
+              "type": "string"
+            },
+            "record_id": {
+              "type": "string"
+            }
+          },
+          "required": ["attempted", "success"],
+          "additionalProperties": false
+        },
+        "graph_edges": {
+          "type": "object",
+          "properties": {
+            "attempted": {
+              "type": "boolean"
+            },
+            "success": {
+              "type": "boolean"
+            },
+            "error": {
+              "type": "string"
+            },
+            "edge_ids": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": ["attempted", "success"],
+          "additionalProperties": false
+        },
+        "crm_projection": {
+          "type": "object",
+          "properties": {
+            "attempted": {
+              "type": "boolean"
+            },
+            "success": {
+              "type": "boolean"
+            },
+            "error": {
+              "type": "string"
+            },
+            "updated_profiles": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": ["attempted", "success"],
+          "additionalProperties": false
+        },
+        "deliverables_db": {
+          "type": "object",
+          "properties": {
+            "attempted": {
+              "type": "boolean"
+            },
+            "success": {
+              "type": "boolean"
+            },
+            "error": {
+              "type": "string"
+            },
+            "deliverable_id": {
+              "type": "string"
+            }
+          },
+          "required": ["attempted", "success"],
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false,
+      "description": "Results of writes to downstream systems"
+    },
+    "idempotency_key": {
+      "type": "string",
+      "description": "Key to ensure idempotent processing"
+    },
+    "processing_mode": {
+      "type": "string",
+      "enum": ["production", "dry_run", "test"],
+      "description": "Processing mode for this event"
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "processor_version": {
+          "type": "string",
+          "description": "Version of the promotion processor"
+        },
+        "conversation_id": {
+          "type": "string",
+          "pattern": "^con_[A-Za-z0-9]+$",
+          "description": "ID of the conversation that generated this event"
+        },
+        "processing_mode": {
+          "type": "string",
+          "enum": ["production", "dry_run", "test"],
+          "description": "Processing mode for this event"
+        },
+        "source_blocks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Block IDs that contributed to this candidate"
+        }
+      },
+      "required": ["processor_version", "conversation_id"],
+      "additionalProperties": false,
+      "description": "Provenance information for audit trails"
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Overall confidence in the promotion assessment (0-1)"
+    },
+    "score_explanations": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "string"
+      },
+      "description": "Explanations for each score dimension"
+    },
+    "routing_reasoning": {
+      "type": "string",
+      "description": "Explanation for the routing decision"
+    }
+  },
+  "required": [
+    "event_id",
+    "timestamp", 
+    "source_meeting_id",
+    "candidate_type",
+    "score",
+    "score_breakdown",
+    "tier",
+    "status",
+    "provenance",
+    "confidence"
+  ],
+  "additionalProperties": false
+}

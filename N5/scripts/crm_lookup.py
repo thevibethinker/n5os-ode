@@ -29,7 +29,8 @@ class CRMLookupResult:
     display_name: str
     company: Optional[str]
     email: Optional[str]
-    match_type: str  # 'email_exact', 'name_exact', 'name_fuzzy'
+    markdown_path: Optional[str]
+    match_type: str  # 'email_exact', 'name_exact_unique'
     confidence: float  # 0.0-1.0
 
 
@@ -72,7 +73,7 @@ class CRMLookupService:
         email = email.lower().strip()
 
         row = self.conn.execute(
-            f"""SELECT id, full_name, company, email
+            f"""SELECT id, full_name, company, email, markdown_path
                FROM {PEOPLE_TABLE}
                WHERE email = ? COLLATE NOCASE""",
             (email,)
@@ -84,6 +85,7 @@ class CRMLookupService:
                 display_name=row['full_name'],
                 company=row['company'],
                 email=row['email'],
+                markdown_path=row['markdown_path'],
                 match_type='email_exact',
                 confidence=1.0
             )
@@ -92,7 +94,7 @@ class CRMLookupService:
     def lookup_by_name(self, name: str) -> Optional[CRMLookupResult]:
         """Look up a person by name.
 
-        Tries exact match first, then normalized fuzzy match.
+        Exact-only matching; ambiguous names return None.
 
         Args:
             name: Name to look up.
@@ -107,57 +109,23 @@ class CRMLookupService:
         if not normalized:
             return None
 
-        # Try exact name match first
-        row = self.conn.execute(
-            f"""SELECT id, full_name, company, email
+        rows = self.conn.execute(
+            f"""SELECT id, full_name, company, email, markdown_path
                FROM {PEOPLE_TABLE}
-               WHERE full_name = ? COLLATE NOCASE
-               LIMIT 1""",
+               WHERE full_name = ? COLLATE NOCASE""",
             (name,)
-        ).fetchone()
+        ).fetchall()
 
-        if row:
+        if len(rows) == 1:
+            row = rows[0]
             return CRMLookupResult(
                 person_id=row['id'],
                 display_name=row['full_name'],
                 company=row['company'],
                 email=row['email'],
-                match_type='name_exact',
-                confidence=0.95
-            )
-
-        # Try normalized/fuzzy match
-        row = self.conn.execute(
-            f"""SELECT id, full_name, company, email
-               FROM {PEOPLE_TABLE}
-               WHERE LOWER(full_name) LIKE ?
-               ORDER BY 
-                   CASE 
-                       WHEN LOWER(full_name) = ? THEN 1
-                       WHEN LOWER(full_name) LIKE ? THEN 2
-                       ELSE 3
-                   END
-               LIMIT 1""",
-            (f"%{normalized}%", normalized, f"{normalized}%")
-        ).fetchone()
-
-        if row:
-            # Calculate confidence based on match quality
-            row_normalized = self._normalize_name(row['full_name'])
-            if row_normalized == normalized:
-                confidence = 0.90
-            elif row_normalized.startswith(normalized):
-                confidence = 0.80
-            else:
-                confidence = 0.70
-
-            return CRMLookupResult(
-                person_id=row['id'],
-                display_name=row['full_name'],
-                company=row['company'],
-                email=row['email'],
-                match_type='name_fuzzy',
-                confidence=confidence
+                markdown_path=row['markdown_path'],
+                match_type='name_exact_unique',
+                confidence=0.97
             )
         return None
 

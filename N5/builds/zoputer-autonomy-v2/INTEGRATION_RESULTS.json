@@ -1,0 +1,10 @@
+{
+  "slug": "zoputer-autonomy-v2",
+  "timestamp": "2026-02-11T03:31:42.530810+00:00",
+  "total": 0,
+  "passed": 0,
+  "failed": 0,
+  "results": [],
+  "all_passed": true,
+  "message": "No integration tests defined"
+}

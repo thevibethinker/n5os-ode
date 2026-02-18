@@ -99,6 +99,23 @@ class QualityCheck:
         }
 
 
+def resolve_meeting_type(manifest: Dict) -> Optional[str]:
+    """Resolve canonical meeting type across v3/legacy/enrichment fields."""
+    crm_type = (manifest.get("crm_enrichment", {}) or {}).get("classification")
+    if isinstance(crm_type, str) and crm_type.lower() in {"internal", "external"}:
+        return crm_type.lower()
+
+    nested_type = (manifest.get("meeting", {}) or {}).get("type")
+    if isinstance(nested_type, str) and nested_type.lower() in {"internal", "external"}:
+        return nested_type.lower()
+
+    legacy_type = manifest.get("meeting_type")
+    if isinstance(legacy_type, str) and legacy_type.lower() in {"internal", "external"}:
+        return legacy_type.lower()
+
+    return None
+
+
 class TranscriptLengthCheck(QualityCheck):
     """Check transcript has sufficient content for analysis."""
     
@@ -291,7 +308,7 @@ class HostIdentifiedCheck(QualityCheck):
         if not has_host:
             self.errors.append("No host identified")
             # Determine escalation based on meeting type
-            meeting_type = manifest.get('meeting', {}).get('type')
+            meeting_type = resolve_meeting_type(manifest)
             if meeting_type == 'external':
                 self.escalate_hitl = True
         
@@ -305,7 +322,7 @@ class ExternalParticipantVerificationCheck(QualityCheck):
         super().__init__("external_participant_verification", threshold=1.0)
     
     def execute(self, manifest: Dict, transcript_path: Optional[Path] = None) -> bool:
-        meeting_type = manifest.get('meeting', {}).get('type')
+        meeting_type = resolve_meeting_type(manifest)
         participants = manifest.get('participants', {})
         identified = participants.get('identified', [])
         
@@ -390,7 +407,7 @@ class MeetingTypeConsistencyCheck(QualityCheck):
         super().__init__("meeting_type_consistency", threshold=1.0)
     
     def execute(self, manifest: Dict, transcript_path: Optional[Path] = None) -> bool:
-        meeting_type = manifest.get('meeting', {}).get('type')
+        meeting_type = resolve_meeting_type(manifest)
         participants = manifest.get('participants', {})
         identified = participants.get('identified', [])
         
@@ -400,20 +417,32 @@ class MeetingTypeConsistencyCheck(QualityCheck):
             self.passed = True  # Not a hard failure
             return True
         
-        # Check consistency
-        external_participants = [p for p in identified if not p.get('email') or '@' not in p.get('email', '')]
-        has_external = len(external_participants) > 0
-        
-        if meeting_type == 'external' and has_external:
+        # Prefer CRM participant-match semantics when available
+        crm_matches = (manifest.get("crm_enrichment", {}) or {}).get("participant_matches", [])
+        explicit_external = [
+            p for p in crm_matches
+            if isinstance(p, dict) and p.get("is_internal") is False and (p.get("matched_name") or p.get("input_name"))
+        ]
+        explicit_internal = [
+            p for p in crm_matches
+            if isinstance(p, dict) and p.get("is_internal") is True and (p.get("matched_name") or p.get("input_name"))
+        ]
+
+        if meeting_type == 'external' and explicit_external:
             self.score = 1.0
             self.passed = True
-        elif meeting_type == 'internal' and not has_external:
+        elif meeting_type == 'internal' and explicit_internal and not explicit_external:
             self.score = 1.0
+            self.passed = True
+        elif not crm_matches:
+            # Fallback: if CRM isn't available, avoid hard-failing on missing emails.
+            self.score = 0.5
+            self.warnings.append("No CRM match data available for meeting type consistency check")
             self.passed = True
         else:
             self.score = 0.0
             self.errors.append(f"Meeting type '{meeting_type}' inconsistent with participant roster")
-            if has_external:
+            if explicit_external:
                 self.escalate_hitl = True  # Ambiguous participant roster
             self.passed = False
         
@@ -551,7 +580,7 @@ class QualityGate:
             "checks": {
                 "has_transcript": transcript_path is not None and transcript_path.exists(),
                 "participants_identified": manifest.get('participants', {}).get('confidence', 0) >= 0.5,
-                "meeting_type_determined": bool(manifest.get('meeting', {}).get('type')),
+                "meeting_type_determined": bool(resolve_meeting_type(manifest)),
                 "no_hitl_pending": len(hitl_escalations) == 0
             },
             "score": self.overall_score,

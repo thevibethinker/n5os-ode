@@ -1,0 +1,1 @@
+{"entities": [{"name": "crm-find", "type": "TOOL", "context": "command registered for queries"}, {"name": "Dual-write", "type": "CONCEPT", "context": "implementation phase in the meeting processor"}, {"name": "Daily sync", "type": "EVENT", "context": "scheduled event at 1PM"}], "relationships": []}

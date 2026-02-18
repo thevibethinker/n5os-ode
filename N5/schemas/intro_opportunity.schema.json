@@ -1,0 +1,520 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Introduction Opportunity",
+  "description": "Tracks introduction opportunities and mutual connection paths for networking facilitation.",
+  "type": "object",
+  "properties": {
+    "opportunity_id": {
+      "type": "string",
+      "pattern": "^io_[a-z0-9]{8}$",
+      "description": "Unique identifier for the introduction opportunity"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when the opportunity was identified"
+    },
+    "source_meeting_id": {
+      "type": "string",
+      "description": "ID of the meeting where this opportunity was identified"
+    },
+    "introducer_id": {
+      "type": "string",
+      "description": "ID of the person who could make the introduction"
+    },
+    "introducee_a": {
+      "type": "object",
+      "properties": {
+        "person_id": {
+          "type": "string",
+          "description": "ID of the first person to be introduced"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the first person"
+        },
+        "title": {
+          "type": "string",
+          "description": "Professional title"
+        },
+        "organization": {
+          "type": "string",
+          "description": "Organization they belong to"
+        },
+        "context": {
+          "type": "string",
+          "description": "Context of how they relate to this opportunity"
+        }
+      },
+      "required": ["person_id"],
+      "additionalProperties": false,
+      "description": "First person in the potential introduction"
+    },
+    "introducee_b": {
+      "type": "object",
+      "properties": {
+        "person_id": {
+          "type": "string",
+          "description": "ID of the second person to be introduced"
+        },
+        "name": {
+          "type": "string",
+          "description": "Name of the second person"
+        },
+        "title": {
+          "type": "string",
+          "description": "Professional title"
+        },
+        "organization": {
+          "type": "string",
+          "description": "Organization they belong to"
+        },
+        "context": {
+          "type": "string",
+          "description": "Context of how they relate to this opportunity"
+        }
+      },
+      "required": ["person_id"],
+      "additionalProperties": false,
+      "description": "Second person in the potential introduction"
+    },
+    "opportunity_type": {
+      "type": "string",
+      "enum": [
+        "business_development",
+        "partnership_potential",
+        "hiring_match",
+        "vendor_referral",
+        "knowledge_sharing",
+        "mutual_customer",
+        "industry_networking",
+        "geographic_connection",
+        "skill_complementarity",
+        "investment_opportunity",
+        "advisory_connection",
+        "speaking_opportunity",
+        "board_opportunity",
+        "mentorship_connection",
+        "customer_referral",
+        "strategic_alliance"
+      ],
+      "description": "Type of introduction opportunity"
+    },
+    "mutual_value": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Overall description of the mutual value"
+        },
+        "value_to_a": {
+          "type": "object",
+          "properties": {
+            "primary_benefit": {
+              "type": "string",
+              "description": "Primary benefit to introducee A"
+            },
+            "specific_benefits": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Specific benefits to introducee A"
+            },
+            "value_level": {
+              "type": "string",
+              "enum": ["low", "medium", "high", "strategic"],
+              "description": "Level of value to introducee A"
+            }
+          },
+          "required": ["primary_benefit"],
+          "additionalProperties": false,
+          "description": "Value proposition for introducee A"
+        },
+        "value_to_b": {
+          "type": "object",
+          "properties": {
+            "primary_benefit": {
+              "type": "string",
+              "description": "Primary benefit to introducee B"
+            },
+            "specific_benefits": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "Specific benefits to introducee B"
+            },
+            "value_level": {
+              "type": "string",
+              "enum": ["low", "medium", "high", "strategic"],
+              "description": "Level of value to introducee B"
+            }
+          },
+          "required": ["primary_benefit"],
+          "additionalProperties": false,
+          "description": "Value proposition for introducee B"
+        },
+        "mutual_outcomes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "outcome": {
+                "type": "string"
+              },
+              "probability": {
+                "type": "string",
+                "enum": ["low", "medium", "high"]
+              },
+              "timeframe": {
+                "type": "string",
+                "description": "Expected timeframe for this outcome"
+              }
+            },
+            "required": ["outcome", "probability"],
+            "additionalProperties": false
+          },
+          "description": "Potential mutual outcomes"
+        }
+      },
+      "required": ["description"],
+      "additionalProperties": false,
+      "description": "Mutual value proposition for the introduction"
+    },
+    "connection_analysis": {
+      "type": "object",
+      "properties": {
+        "connection_path": {
+          "type": "string",
+          "enum": ["direct", "one_hop", "two_hop", "multi_hop"],
+          "description": "Connection path between introducer and introducees"
+        },
+        "relationship_strength": {
+          "type": "object",
+          "properties": {
+            "introducer_to_a": {
+              "type": "string",
+              "enum": ["weak", "moderate", "strong", "very_strong"],
+              "description": "Strength of relationship between introducer and introducee A"
+            },
+            "introducer_to_b": {
+              "type": "string",
+              "enum": ["weak", "moderate", "strong", "very_strong"],
+              "description": "Strength of relationship between introducer and introducee B"
+            }
+          },
+          "required": ["introducer_to_a", "introducer_to_b"],
+          "additionalProperties": false,
+          "description": "Strength of relationships"
+        },
+        "common_ground": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "category": {
+                "type": "string",
+                "enum": ["industry", "geography", "alma_mater", "former_company", "mutual_connection", "shared_interest", "similar_role", "complementary_skills", "common_customer", "same_market"]
+              },
+              "description": {
+                "type": "string"
+              },
+              "relevance": {
+                "type": "string",
+                "enum": ["low", "medium", "high"],
+                "description": "Relevance of this common ground"
+              }
+            },
+            "required": ["category", "description"],
+            "additionalProperties": false
+          },
+          "description": "Common ground between introducees"
+        }
+      },
+      "required": ["connection_path", "relationship_strength"],
+      "additionalProperties": false,
+      "description": "Analysis of the connection structure"
+    },
+    "risk_assessment": {
+      "type": "object",
+      "properties": {
+        "overall_risk_level": {
+          "type": "string",
+          "enum": ["low", "medium", "high"],
+          "description": "Overall risk level of making this introduction"
+        },
+        "competitive_concerns": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "concern": {
+                "type": "string"
+              },
+              "severity": {
+                "type": "string",
+                "enum": ["low", "medium", "high", "critical"]
+              },
+              "mitigation": {
+                "type": "string"
+              }
+            },
+            "required": ["concern", "severity"],
+            "additionalProperties": false
+          },
+          "description": "Competitive concerns or conflicts"
+        },
+        "privacy_considerations": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Privacy or confidentiality considerations"
+        },
+        "reputation_risks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "risk": {
+                "type": "string"
+              },
+              "impact": {
+                "type": "string",
+                "enum": ["low", "medium", "high"]
+              }
+            },
+            "required": ["risk", "impact"],
+            "additionalProperties": false
+          },
+          "description": "Potential reputation risks"
+        }
+      },
+      "required": ["overall_risk_level"],
+      "additionalProperties": false,
+      "description": "Risk assessment for the introduction"
+    },
+    "recommended_approach": {
+      "type": "object",
+      "properties": {
+        "introduction_method": {
+          "type": "string",
+          "enum": ["email_introduction", "warm_phone_call", "in_person_meeting", "group_event", "virtual_meeting", "social_media_connection", "conference_introduction"],
+          "description": "Recommended method for making the introduction"
+        },
+        "timing_recommendation": {
+          "type": "string",
+          "enum": ["immediate", "within_week", "within_month", "when_opportunity_arises", "after_milestone"],
+          "description": "Recommended timing for the introduction"
+        },
+        "pre_introduction_steps": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Steps to take before making the introduction"
+        },
+        "introduction_template": {
+          "type": "string",
+          "description": "Template or outline for the introduction"
+        },
+        "follow_up_approach": {
+          "type": "string",
+          "description": "Recommended approach for following up"
+        }
+      },
+      "required": ["introduction_method", "timing_recommendation"],
+      "additionalProperties": false,
+      "description": "Recommended approach for making the introduction"
+    },
+    "evidence": {
+      "type": "object",
+      "properties": {
+        "quotes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "text": {
+                "type": "string",
+                "description": "Exact quote from the meeting"
+              },
+              "speaker": {
+                "type": "string",
+                "description": "Person who said the quote"
+              },
+              "context": {
+                "type": "string",
+                "description": "Additional context around the quote"
+              },
+              "timestamp_in_meeting": {
+                "type": "string",
+                "description": "Timestamp within the meeting (optional)"
+              },
+              "intent_type": {
+                "type": "string",
+                "enum": ["explicit_request", "mutual_mention", "problem_statement", "opportunity_mention", "connection_hint"],
+                "description": "Type of intent this quote represents"
+              }
+            },
+            "required": ["text", "speaker"],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "description": "Direct quotes supporting this opportunity"
+        },
+        "block_references": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "description": "Meeting block IDs containing supporting evidence"
+        }
+      },
+      "required": ["quotes", "block_references"],
+      "additionalProperties": false,
+      "description": "Evidence supporting this introduction opportunity"
+    },
+    "outcome_tracking": {
+      "type": "object",
+      "properties": {
+        "introduction_made": {
+          "type": "boolean",
+          "description": "Whether the introduction has been made"
+        },
+        "introduction_date": {
+          "type": "string",
+          "format": "date",
+          "description": "Date when introduction was made"
+        },
+        "introduction_method_used": {
+          "type": "string",
+          "enum": ["email_introduction", "warm_phone_call", "in_person_meeting", "group_event", "virtual_meeting", "social_media_connection", "conference_introduction"],
+          "description": "Method used for the introduction"
+        },
+        "initial_response": {
+          "type": "object",
+          "properties": {
+            "response_from_a": {
+              "type": "string",
+              "enum": ["positive", "neutral", "negative", "no_response"],
+              "description": "Response from introducee A"
+            },
+            "response_from_b": {
+              "type": "string",
+              "enum": ["positive", "neutral", "negative", "no_response"],
+              "description": "Response from introducee B"
+            },
+            "connection_established": {
+              "type": "boolean",
+              "description": "Whether the connection was successfully established"
+            }
+          },
+          "additionalProperties": false,
+          "description": "Initial response to the introduction"
+        },
+        "follow_up_outcomes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "date": {
+                "type": "string",
+                "format": "date"
+              },
+              "outcome_type": {
+                "type": "string",
+                "enum": ["meeting_scheduled", "business_discussion", "partnership_explored", "deal_initiated", "collaboration_started", "no_further_action", "relationship_developed"]
+              },
+              "description": {
+                "type": "string"
+              },
+              "value_realized": {
+                "type": "string",
+                "enum": ["none", "low", "medium", "high", "strategic"]
+              }
+            },
+            "required": ["date", "outcome_type"],
+            "additionalProperties": false
+          },
+          "description": "Follow-up outcomes from the introduction"
+        },
+        "lessons_learned": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Lessons learned from this introduction"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Tracking of introduction outcomes"
+    },
+    "priority": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "urgent"],
+      "description": "Priority level for making this introduction"
+    },
+    "status": {
+      "type": "string",
+      "enum": ["identified", "evaluated", "approved", "introduction_made", "outcome_pending", "successful", "unsuccessful", "declined"],
+      "description": "Current status of the introduction opportunity"
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "detector_version": {
+          "type": "string",
+          "description": "Version of the introduction opportunity detector"
+        },
+        "conversation_id": {
+          "type": "string",
+          "pattern": "^con_[A-Za-z0-9]+$",
+          "description": "ID of the conversation that generated this opportunity"
+        },
+        "processing_mode": {
+          "type": "string",
+          "enum": ["production", "dry_run", "test"],
+          "description": "Processing mode for this detection"
+        },
+        "source_blocks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Block IDs that contributed to this opportunity"
+        }
+      },
+      "required": ["detector_version", "conversation_id"],
+      "additionalProperties": false,
+      "description": "Provenance information for audit trails"
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Overall confidence in this introduction opportunity (0-1)"
+    }
+  },
+  "required": [
+    "opportunity_id",
+    "timestamp",
+    "source_meeting_id",
+    "introducer_id",
+    "introducee_a",
+    "introducee_b",
+    "opportunity_type",
+    "mutual_value",
+    "connection_analysis",
+    "recommended_approach",
+    "evidence",
+    "priority",
+    "status",
+    "provenance",
+    "confidence"
+  ],
+  "additionalProperties": false
+}

@@ -1,0 +1,27 @@
+{
+  "drop_id": "D3.2",
+  "status": "complete",
+  "artifacts": [
+    "N5/builds/lora-voice-evolution/artifacts/gmail_sent_raw.jsonl"
+  ],
+  "summary": "Sampled 100 emails from 243 total sent (5 search batches across Jan 2024 - Feb 2026). After filtering: 100 substantive emails with avg 467 chars.",
+  "stats": {
+    "total_searched": 243,
+    "sampled": 151,
+    "filtered_too_short": 85,
+    "filtered_auto_reply": 0,
+    "filtered_logistics": 3,
+    "filtered_no_content": 4,
+    "final_count": 100,
+    "avg_char_count": 467
+  },
+  "broadcast": "Gmail sent emails: 100 substantive entries from 243 searched. Email voice tends to be more conversational and direct than LinkedIn \u2014 useful for diversity. Anonymization applied (87 unique names + PII stripped). Date range: Nov 2024 - Feb 2026.",
+  "learnings": [
+    "Gmail payload field contains full text when withTextPayload=true - no need for separate get-email call",
+    "OOO auto-replies dominated Jul-Sep 2025 period (had to filter with explicit query exclusion)",
+    "Signature stripping with regex patterns works well for Superhuman-formatted emails",
+    "73% of substantive emails are replies - V writes more in reply context than cold outreach",
+    "Two-pass anonymization needed: first from recipient fields, then manual additions for names mentioned in body only"
+  ],
+  "errors": []
+}

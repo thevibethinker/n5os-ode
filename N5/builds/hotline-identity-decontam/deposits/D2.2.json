@@ -1,0 +1,10 @@
+{
+  "drop_id": "D2.2",
+  "build_slug": "hotline-identity-decontam",
+  "status": "complete",
+  "summary": "Service restarted, health check passes. Verification: zero V identity refs in coaching content, persona prepended, balance context injected, maxDuration=900s (15min), name=Zozie. One additional V ref found and fixed (public contact info header). Ready for live call test.",
+  "broadcast": "",
+  "artifacts": [],
+  "timestamp": "2026-02-14T17:46:19.356835+00:00",
+  "execution_mode": "claude_code"
+}

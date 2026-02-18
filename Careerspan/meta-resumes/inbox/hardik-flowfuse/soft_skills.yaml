@@ -1,34 +1,93 @@
-leadership:
-  - trait: "Founding mindset"
-    evidence: "Took blank-sheet ML platform from first commit to hundreds of daily users"
-  - trait: "Strategic scaling"
-    evidence: "Scaled team from inception to nearly 20 members and secured 5x budget increase"
-  - trait: "Solo product leadership"
-    evidence: "Delivered $50k/month cost savings as solo leader for automated cloud/database portal"
-  - trait: "Mentoring"
-    evidence: "Mentored 4 SDE Interns, guiding them in projects and career starts"
-communication:
-  - trait: "Stakeholder management"
-    evidence: "Earned trust in regulated environments by shipping zero-downtime automation"
-  - trait: "Cross-functional collaboration"
-    evidence: "Contributions spanned microservices, UI, DevOps, and full-stack integration"
-  - trait: "Scrum facilitation"
-    evidence: "Managed sprint planning, Scrum processes, and strategic DevOps/SRE initiatives"
-collaboration:
-  - trait: "Cross-functional partnership"
-    evidence: "Built platform used by external industry leaders like Apple, Samsung, Volkswagen"
-  - trait: "Team enablement"
-    evidence: "Establishing reusable platforms/patterns and enabling large engineering audiences"
-  - trait: "Collaborative architecture"
-    evidence: "Pairs system architecture with hands-on UX instincts"
-work_style:
-  - "End-to-end ownership: takes AI and full-stack systems from architecture to production"
-  - "Systematic approach: translates ambiguous problems into measurable business impact"
-  - "Hands-on pragmatism: combines SRE/DevOps rigor with product delivery"
-  - "Platform-thinking: establishes reusable patterns for team scalability"
-  - "Creative perspective: brings UX instincts and digital art sensibility to technical work"
-inferred_gaps:
-  - "Knowledge-sharing artifacts: implied async-first practices but no explicit RFCs, playbooks, or internal workshops tied to AI patterns"
-  - "AI safety documentation: no concrete examples of LLM fallback strategies, cost/latency controls, or hallucination safeguards"
-  - "Privacy governance: regulated environment experience but no direct evidence of SOC 2 controls or GDPR frameworks applied to AI features"
-  - "LLM-UX depth: frontend expertise proven in production portals but advanced LLM-UX patterns not showcased"
+# Soft Skills
+# Extracted: 2026-02-14T17:45:53.380328
+# Method: Structured extraction
+# DO NOT EDIT
+
+demonstrated_strengths:
+- trait: Cross-functional Collaboration
+  evidence: Grew ML SaaS platform team from 4 to 20 members, collaborating closely
+    with Product, Design (UX), Engineering, DevOps, and Data Science; managed large
+    volumes of feature requests and feedback from internal users, leadership, and
+    external beta testers (Apple, Samsung, Volkswagen)
+  confidence: high
+- trait: Attention to Detail
+  evidence: Implemented dataset versioning and transformation for reproducibility,
+    automated hyperparameter tuning, resource provisioning logic matching compute
+    to workload needs, CI/CD pipelines with instant rollback, and stress testing for
+    terabyte-scale datasets and long-running models
+  confidence: high
+- trait: Problem-solving
+  evidence: 'Independently scoped and solved complex cross-stack problems: identified
+    infrastructure waste at American Express and built automated decommissioning pipeline
+    delivering $50k/month savings; architected ML SaaS platform from blank sheet reducing
+    model-to-production from hours to minutes'
+  confidence: high
+- trait: Pragmatism
+  evidence: 'Made intentional tradeoff decisions: shifted backend from NestJS to Python
+    for architectural consistency, built intelligent resource orchestrator to balance
+    GPU/CPU cost and performance, prioritized versioning and ease of use over technical
+    novelty to drive organic user adoption'
+  confidence: high
+- trait: Judgment
+  evidence: At American Express, independently weighed manual vs automated solutions
+    for database decommissioning, balanced strict compliance with zero downtime and
+    usability across geographies, and designed actionable tools (not just dashboards)
+    to influence user behavior in regulated financial environment
+  confidence: high
+- trait: User-centric Product Thinking
+  evidence: Solo product leader who designed self-service Database Catalog Portal
+    used by 1k+ colleagues; built ML SaaS platform adopted by hundreds of daily users
+    including external customers; used usage data to prioritize decommissioning actions
+    delivering measurable cost savings
+  confidence: high
+- trait: Adaptability
+  evidence: Moved across domains (fraud detection at Flipkart, ML prioritization at
+    AmEx internship, full-stack/DevOps/SRE at American Express, founding ML SaaS at
+    Keysight) and learned new stacks each time (M-Zoom/M-Biz, Couchbase, Java/Spring
+    Boot, React, AWS/Kubernetes/MLFlow, LangChain, FastAPI, Airflow)
+  confidence: high
+- trait: Mentoring
+  evidence: Mentored 4 SDE interns, guiding them in projects and career starts
+  confidence: high
+- trait: Risk Assessment and Mitigation
+  evidence: Built scalable anomaly detection across 20k+ cohorts at Flipkart for fraud
+    detection; ensured zero downtime and regulatory compliance for 150+ services at
+    American Express; implemented CI/CD with automated rollback and stress testing
+    for ML platform at Keysight
+  confidence: high
+working_style:
+  autonomy: high
+  collaboration: sync-preferred
+  communication: unknown
+  ambiguity_tolerance: high
+leadership_signals:
+- Scaled ML SaaS team from 4 founding engineers to nearly 20 members while maintaining
+  architectural coherence
+- Operated as solo product leader and full-stack engineer at American Express, making
+  independent architectural decisions
+- Secured 5x budget increase by proving production value of ML platform
+- Acted as Scrum Master, managed Jira board, organized PI/Sprint planning, and represented
+  India Database Workstream
+- Drove organic platform adoption from internal teams to external enterprise customers
+  (Apple, Samsung, Volkswagen)
+potential_concerns:
+- Knowledge-sharing practices are implied (mentoring, Scrum Master, platform ownership)
+  but lack explicit artifacts — no evidence of RFCs, playbooks, internal workshops,
+  or published onboarding documentation
+- Async communication style not explicitly demonstrated — roles and evidence lean
+  toward sync-heavy collaboration (Scrum rituals, in-person team scaling); may need
+  to adapt to async-first remote cultures
+- Frontend depth is production-proven but not deeply showcased — UI work mentioned
+  but no evidence of advanced frontend architecture decisions, accessibility focus,
+  or complex state management patterns
+unknown_factors:
+- Preferred communication medium (written vs verbal) — resume shows both product ownership
+  and stakeholder management but doesn't clarify preference
+- Remote/distributed team experience — all roles appear to be co-located or hybrid;
+  no explicit evidence of async-first or fully remote collaboration
+- How he handles conflict or pushback from stakeholders — leadership signals are strong
+  but all examples describe positive outcomes without detailing disagreement navigation
+- Writing quality for technical documentation — mentoring and Scrum Master roles imply
+  written communication but no specific artifacts cited
+- Feedback reception style — strong evidence of incorporating user feedback into products
+  but unclear how he receives personal/professional feedback

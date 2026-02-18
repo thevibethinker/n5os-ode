@@ -1,0 +1,278 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://n5.local/schemas/relationship-delta.schema.json",
+  "title": "Relationship Delta Schema",
+  "description": "Structured metadata for relationship changes and evolution (Relationship Intelligence OS v1.0)",
+  "type": "object",
+  "required": [
+    "delta_id",
+    "person_id",
+    "delta_type",
+    "evidence",
+    "strength",
+    "provenance",
+    "confidence"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "delta_id": {
+      "type": "string",
+      "description": "Unique relationship delta identifier",
+      "pattern": "^rdelta_[a-z0-9]{12}$"
+    },
+    "person_id": {
+      "type": "string",
+      "description": "Canonical person identifier from CRM",
+      "pattern": "^person_[a-z0-9]{12}$"
+    },
+    "organization_id": {
+      "type": "string",
+      "description": "Organization identifier if applicable",
+      "pattern": "^org_[a-z0-9]{12}$"
+    },
+    "delta_type": {
+      "type": "string",
+      "enum": [
+        "trust_increase",
+        "trust_decrease",
+        "engagement_increase",
+        "engagement_decrease",
+        "authority_increase",
+        "authority_decrease",
+        "role_change",
+        "context_expansion",
+        "mutual_connection",
+        "referral_opportunity",
+        "conflict_detected",
+        "alignment_shift"
+      ],
+      "description": "Type of relationship change detected"
+    },
+    "strength": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 5,
+      "description": "Strength of the relationship delta (1=weak, 5=strong)"
+    },
+    "trend": {
+      "type": "string",
+      "enum": ["positive", "negative", "neutral"],
+      "description": "Overall trend direction of the relationship change"
+    },
+    "context": {
+      "type": "object",
+      "properties": {
+        "previous_state": {
+          "type": "string",
+          "description": "Description of relationship before this delta"
+        },
+        "current_state": {
+          "type": "string",
+          "description": "Description of relationship after this delta"
+        },
+        "trigger_event": {
+          "type": "string",
+          "description": "What triggered this relationship change"
+        },
+        "duration_estimate": {
+          "type": "string",
+          "enum": ["immediate", "short_term", "medium_term", "long_term", "permanent"],
+          "description": "Estimated duration of this relationship state"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Context around the relationship change"
+    },
+    "evidence": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type", "content", "weight"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "verbal_statement",
+              "behavior_change",
+              "communication_pattern",
+              "third_party_reference",
+              "meeting_dynamics",
+              "follow_up_actions",
+              "response_timing",
+              "language_shift"
+            ]
+          },
+          "content": {
+            "type": "string",
+            "description": "Specific evidence content"
+          },
+          "weight": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1,
+            "description": "Evidence weight in supporting this delta (0-1)"
+          },
+          "timestamp": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When this evidence was observed"
+          },
+          "source_block_id": {
+            "type": "string",
+            "description": "Meeting block where evidence was found"
+          }
+        },
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "description": "Evidence supporting this relationship delta"
+    },
+    "mutual_connections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["person_id", "relationship_type"],
+        "properties": {
+          "person_id": {
+            "type": "string",
+            "pattern": "^person_[a-z0-9]{12}$",
+            "description": "Mutual connection person ID"
+          },
+          "relationship_type": {
+            "type": "string",
+            "enum": [
+              "colleague",
+              "friend",
+              "mentor",
+              "investor",
+              "vendor",
+              "client",
+              "advisor",
+              "family",
+              "other"
+            ]
+          },
+          "strength": {
+            "type": "integer",
+            "minimum": 1,
+            "maximum": 5,
+            "description": "Strength of mutual connection (1=weak, 5=strong)"
+          },
+          "discovered_at": {
+            "type": "string",
+            "format": "date-time",
+            "description": "When this mutual connection was discovered"
+          }
+        },
+        "additionalProperties": false
+      },
+      "description": "Mutual connections discovered or mentioned"
+    },
+    "impact_assessment": {
+      "type": "object",
+      "properties": {
+        "business_value": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10,
+          "description": "Potential business value impact (0-10)"
+        },
+        "strategic_importance": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 10,
+          "description": "Strategic importance of this relationship change (0-10)"
+        },
+        "urgency": {
+          "type": "string",
+          "enum": ["low", "medium", "high", "critical"],
+          "description": "Urgency of response needed"
+        },
+        "recommended_actions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Recommended actions based on this delta"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Assessment of relationship delta impact"
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When delta was recorded"
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When to reassess this relationship state"
+    },
+    "provenance": {
+      "type": "object",
+      "required": ["meeting_id", "block_ids"],
+      "properties": {
+        "meeting_id": {
+          "type": "string",
+          "pattern": "^[a-z0-9]{6}$",
+          "description": "Source meeting identifier"
+        },
+        "block_ids": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "description": "Source block identifiers"
+        },
+        "conversation_id": {
+          "type": "string",
+          "description": "Conversation where delta was extracted"
+        },
+        "extraction_version": {
+          "type": "string",
+          "description": "Version of extraction engine used"
+        },
+        "pipeline_run_id": {
+          "type": "string",
+          "description": "Pipeline run identifier"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Delta extraction provenance"
+    },
+    "confidence": {
+      "type": "object",
+      "required": ["overall"],
+      "properties": {
+        "overall": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Overall confidence in this relationship delta (0-1)"
+        },
+        "evidence_quality": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Confidence in evidence quality (0-1)"
+        },
+        "interpretation_accuracy": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Confidence in interpretation of relationship change (0-1)"
+        },
+        "person_identification": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Confidence in person ID mapping (0-1)"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Confidence metrics for relationship delta"
+    }
+  }
+}

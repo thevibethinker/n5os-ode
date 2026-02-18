@@ -1,0 +1,1 @@
+{"entities": [{"name": "Alex", "type": "PERSON", "context": "user providing profile information"}, {"name": "Acme Startup", "type": "ORG", "context": "company founded by Alex"}], "relationships": [{"from": "Alex", "to": "Acme Startup", "type": "FOUNDED", "context": "Alex is the founder of Acme Startup"}]}

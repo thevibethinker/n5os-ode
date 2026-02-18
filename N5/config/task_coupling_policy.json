@@ -1,0 +1,58 @@
+{
+  "version": "1.0",
+  "default_domain": "Careerspan",
+  "default_project": "Relationship Intelligence OS",
+  "rollback_switch_path": "/home/workspace/N5/config/task_coupling_switch.json",
+  "input_defaults": {
+    "promotion_events_path": "/home/workspace/N5/data/relationship_intelligence/promotion_events.jsonl",
+    "deliverable_records_path": "/home/workspace/N5/data/relationship_intelligence/deliverable_records.jsonl"
+  },
+  "status_sync_path": "/home/workspace/N5/data/relationship_intelligence/task_coupling_status.jsonl",
+  "gates": {
+    "auto_launch_min_score": 75,
+    "review_min_score": 50,
+    "min_confidence": 0.72,
+    "min_commitment_clarity_for_auto": 12,
+    "hard_override_auto_reasons": [
+      "explicit_promise",
+      "named_deliverable"
+    ],
+    "allow_candidate_types": [
+      "deliverable_record",
+      "relationship_delta",
+      "org_delta",
+      "intro_opportunity"
+    ],
+    "deny_statuses": [
+      "duplicate",
+      "blocked",
+      "archived"
+    ]
+  },
+  "routing": {
+    "tier_a": "auto_launch",
+    "tier_b": "review_required",
+    "tier_c": "no_task"
+  },
+  "policy_matrix": {
+    "auto_launch": [
+      "switch_enabled",
+      "candidate_type_allowed",
+      "status_not_denied",
+      "tier_a_or_hard_override",
+      "score>=auto_launch_min_score",
+      "confidence>=min_confidence",
+      "commitment_clarity>=min_commitment_clarity_for_auto"
+    ],
+    "review_required": [
+      "switch_enabled",
+      "candidate_type_allowed",
+      "status_not_denied",
+      "tier_b_or_downgraded_from_auto",
+      "score>=review_min_score"
+    ],
+    "no_task": [
+      "switch_disabled_or_gate_failed_or_tier_c_or_blocked_status"
+    ]
+  }
+}

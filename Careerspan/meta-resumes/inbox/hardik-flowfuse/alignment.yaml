@@ -1,118 +1,147 @@
-# Alignment Analysis
-# Source: Careerspan + JD
-# Extracted: 2026-01-29T20:51:04.474418
-# Method: LLM semantic extraction
+# Alignment
+# Extracted: 2026-02-14T17:45:53.391109
+# Method: Structured extraction
 # DO NOT EDIT
 
-requirements_alignment:
-- requirement: Design and implement AI-powered features end-to-end
-  verdict: CLEAR
-  evidence: Architected end-to-end Machine Learning SaaS platform from first commit
-    to hundreds of daily users; built robust data ingestion and feature engineering
-    pipelines at terabyte scale; developed containerized microservices for high availability
-    and low latency inference
-  confidence: high
-- requirement: Build and maintain LLM integrations (prompt engineering, fine-tuning,
-    evaluation)
-  verdict: PARTIAL
-  evidence: Explicitly lists 'LLM/agent experience (LangChain + RAG)' but no concrete
-    examples of prompt engineering workflows, fine-tuning projects, or evaluation
-    frameworks/metrics
-  confidence: medium
-- requirement: Develop retrieval-augmented generation (RAG) systems for contextual
-    intelligence
-  verdict: CLEAR
-  evidence: Explicitly states 'LLM/agent experience (LangChain + RAG)' with RAG techniques
-    listed in tools; terabyte-scale data engineering suggests capacity to build retrieval
-    pipelines
-  confidence: high
-- requirement: Prototype, evaluate, and productionize AI features with clear scope
-    and guardrails
-  verdict: PARTIAL
-  evidence: Proven productionization track record (reduced model-to-production from
-    hours to minutes; secured 5x budget increase by proving value) but no explicit
-    mention of scope definition, guardrails, or evaluation frameworks
-  confidence: medium
-- requirement: Design for AI failure modes, latency, cost, and operational constraints
-  verdict: GAP
-  evidence: No concrete examples of LLM fallback strategies, cost/latency controls,
-    prompt/version governance, or model/LLM-specific observability (drift, hallucination
-    safeguards, metrics/dashboards)
-  confidence: medium
-- requirement: Ensure AI features align with privacy, security, and SOC 2 requirements
-  verdict: PARTIAL
-  evidence: Experience in regulated environments (American Express - 'regulatory compliance')
-    and 'zero-downtime automation' but no direct evidence of SOC 2 controls, audit
-    participation, or named privacy frameworks (e.g., GDPR) applied to AI features
-  confidence: low
-- requirement: Share best practices and patterns for applied AI across the engineering
-    team
-  verdict: PARTIAL
-  evidence: Mentored 4 SDE interns; Scrum Master experience; 'establish reusable platforms/patterns
-    and enabling large engineering audiences' but lacks explicit artifacts (RFCs,
-    playbooks, internal workshops) tied to AI patterns
-  confidence: medium
-- requirement: Contribute to broader full-stack engineering work as needed
-  verdict: CLEAR
-  evidence: Full-stack integration listed as hard skill; built backend (Java/Spring
-    Boot) and frontend (ReactJS) delivering self-service solutions; microservices,
-    DevOps, and CI/CD experience across stack
-  confidence: high
-- requirement: Strong generalist engineering skills (we use Node.js heavily)
-  verdict: PARTIAL
-  evidence: Strong generalist credentials (Java, Spring Boot, React, Python, Kubernetes,
-    CI/CD, SRE) but no Node.js experience listed; core full-stack principles transferable
-    but lacks Node.js-specific velocity
-  confidence: medium
-- requirement: Hands-on experience building with LLMs in production
-  verdict: CLEAR
-  evidence: States 'LLM/agent experience (LangChain + RAG)' combined with production
-    SaaS platform delivering to Apple, Samsung Semiconductor, and Volkswagen; proven
-    productionization at scale
-  confidence: high
-- requirement: Familiarity with vector databases, embeddings, and retrieval systems
-  verdict: PARTIAL
-  evidence: RAG experience stated but no specific vector databases, embedding providers,
-    or retrieval stack named; terabyte-scale data engineering and Couchbase experience
-    suggests retrieval capacity
-  confidence: medium
-- requirement: Comfort with ambiguity and a bias toward shipping incrementally
-  verdict: CLEAR
-  evidence: Founding engineer on greenfield ML platform starting from 'first commit';
-    solo product leader who drove $50k/month savings; proven ability to translate
-    ambiguous problems into business impact
-  confidence: high
-- requirement: Excellent written communication—you'll be documenting patterns and
-    decisions
-  verdict: CLEAR
-  evidence: Achievements and resume demonstrate clear, structured communication; product
-    leadership and stakeholder management roles imply documentation aptitude; IIT
-    Delhi academic credentials signal strong written skills
-  confidence: high
-critical_gaps:
-- 'No documented AI reliability practices: failure mode handling, fallback strategies,
-  hallucination detection, drift monitoring, or latency/cost controls'
-- No explicit SOC 2 compliance experience or named privacy framework application to
-  AI systems
-- No Node.js experience (JD specifies 'we use Node.js heavily')
-- LLM/vectordb implementation depth not specified (no providers, no vector store names,
-  no embedding stacks)
-interview_priorities:
-- 'Probe AI failure mode handling: ''Tell me about a time an LLM-based feature failed
-  in production. How did you detect it? What was your fallback strategy? What metrics
-  do you track for reliability?'''
-- 'Probe observability practices: ''How do you monitor LLM outputs for drift or quality
-  degradation? What dashboards or alerts do you have in place?'''
-- 'Prompt engineering depth: ''Walk me through your prompt engineering workflow. How
-  do you version prompts? How do you evaluate prompt changes before production?'''
-- 'SOC 2/privacy specifics: ''Describe your experience with SOC 2 compliance. What
-  controls have you implemented for AI features? How do you handle data privacy in
-  RAG systems?'''
-- 'LLM stack specifics: ''Which LLM providers have you integrated? Which vector databases
-  have you used? Why did you choose those stacks?'''
-- 'Node.js adaptability: ''This role uses Node.js heavily. Given your background in
-  Java/Spring Boot, how quickly could you ramp up? Have you used JavaScript/TypeScript
-  outside of React?'''
-- 'Knowledge-sharing artifacts: ''Can you share examples of internal docs, RFCs, or
-  playbooks you''ve written for AI patterns? How do you document decisions for team
-  adoption?'''
+_raw: "requirements_alignment:\n  - requirement_id: \"R1\"\n    jd_text: \"Strong\
+  \ generalist engineering skills (we use Node.js heavily)\"\n    category: \"core\"\
+  \n    verdict: \"PARTIAL\"\n    evidence: \"Candidate has strong full-stack generalist\
+  \ skills (Java/Spring Boot, Python, React, FastAPI, Kubernetes) but primary backend\
+  \ experience is in Python and Java, not Node.js. No direct Node.js experience mentioned\
+  \ in resume or stories.\"\n    confidence: \"high\"\n    note: \"Strong generalist\
+  \ fundamentals transfer well, but Node.js gap is notable given FlowFuse's heavy\
+  \ reliance on it.\"\n\n  - requirement_id: \"R2\"\n    jd_text: \"Hands-on experience\
+  \ building with LLMs in production\"\n    category: \"core\"\n    verdict: \"CLEAR\"\
+  \n    evidence: \"Implemented AI agents using LangChain & RAG techniques at Keysight\
+  \ as part of a production ML SaaS platform serving hundreds of daily users including\
+  \ Apple, Samsung, and Volkswagen.\"\n    confidence: \"medium\"\n    note: \"LangChain/RAG\
+  \ usage is explicitly stated and production-deployed, but specific LLM providers,\
+  \ prompt engineering practices, and LLM-specific operational details (cost control,\
+  \ hallucination safeguards, prompt versioning) are not enumerated.\"\n\n  - requirement_id:\
+  \ \"R3\"\n    jd_text: \"Familiarity with vector databases, embeddings, and retrieval\
+  \ systems\"\n    category: \"core\"\n    verdict: \"PARTIAL\"\n    evidence: \"\
+  RAG techniques and LangChain explicitly mentioned, which implies embedding generation\
+  \ and vector retrieval. However, no specific vector databases (FAISS, Pinecone,\
+  \ Milvus), embedding models, or retrieval evaluation practices are named.\"\n  \
+  \  confidence: \"medium\"\n    note: \"RAG usage strongly implies hands-on vector/embedding\
+  \ work, but the absence of named tools or detailed retrieval architecture leaves\
+  \ depth uncertain.\"\n\n  - requirement_id: \"R4\"\n    jd_text: \"Comfort with\
+  \ ambiguity and a bias toward shipping incrementally\"\n    category: \"core\"\n\
+  \    verdict: \"CLEAR\"\n    evidence: \"Built ML SaaS platform from founding stage\
+  \ with loosely defined requirements, iterated through phases (dataset storage first,\
+  \ then MLOps, then UI), rolled out to successive user groups, incorporated feedback\
+  \ loops, and reduced model-to-production from hours to minutes. Solo product leader\
+  \ at AmEx delivering incrementally across complex stakeholder landscape.\"\n   \
+  \ confidence: \"high\"\n    note: \"Multiple strong STAR examples of navigating\
+  \ ambiguity and shipping iteratively across both roles.\"\n\n  - requirement_id:\
+  \ \"R5\"\n    jd_text: \"Excellent written communication—you'll be documenting patterns\
+  \ and decisions\"\n    category: \"core\"\n    verdict: \"PARTIAL\"\n    evidence:\
+  \ \"Scrum Master role, represented India Database Workstream, managed Jira board,\
+  \ mentored 4 interns, built self-service portals used by 1k+ colleagues. These imply\
+  \ written communication but no explicit artifacts (RFCs, design docs, playbooks,\
+  \ published guides) are cited.\"\n    confidence: \"medium\"\n    note: \"Strong\
+  \ indirect signals from leadership and platform-building roles, but no direct evidence\
+  \ of async-first documentation habits or published technical writing.\"\n\n  - requirement_id:\
+  \ \"R6\"\n    jd_text: \"Design and implement AI-powered features end-to-end\"\n\
+  \    category: \"core\"\n    verdict: \"CLEAR\"\n    evidence: \"Architected and\
+  \ led end-to-end development of ML SaaS platform at Keysight including dataset storage,\
+  \ MLOps, model deployment, containerized inference (FastAPI), LangChain/RAG agents,\
+  \ and UI. Scored Excellent across multiple responsibility assessments for end-to-end\
+  \ delivery.\"\n    confidence: \"high\"\n    note: \"This is the candidate's strongest\
+  \ area — demonstrated across multiple roles with measurable impact.\"\n\n  - requirement_id:\
+  \ \"R7\"\n    jd_text: \"Build and maintain LLM integrations (prompt engineering,\
+  \ fine-tuning, evaluation)\"\n    category: \"core\"\n    verdict: \"PARTIAL\"\n\
+  \    evidence: \"LangChain & RAG implementations in production. MLOps pipeline with\
+  \ MLFlow for model versioning, training, and deployment. However, no explicit mention\
+  \ of prompt engineering, fine-tuning LLMs specifically, or LLM evaluation/testing\
+  \ frameworks.\"\n    confidence: \"medium\"\n    note: \"Production LLM usage is\
+  \ clear but the specific sub-skills of prompt engineering, fine-tuning, and evaluation\
+  \ are not evidenced.\"\n\n  - requirement_id: \"R8\"\n    jd_text: \"Develop retrieval-augmented\
+  \ generation (RAG) systems for contextual intelligence\"\n    category: \"core\"\
+  \n    verdict: \"CLEAR\"\n    evidence: \"Explicitly implemented 'AI agents utilizing\
+  \ LangChain & RAG techniques for specialized use cases & multi-step problems' within\
+  \ a production ML SaaS platform.\"\n    confidence: \"medium\"\n    note: \"Direct\
+  \ RAG experience confirmed. Depth of retrieval pipeline design (chunking strategies,\
+  \ re-ranking, evaluation metrics) not detailed.\"\n\n  - requirement_id: \"R9\"\n\
+  \    jd_text: \"Design for AI failure modes, latency, cost, and operational constraints\"\
+  \n    category: \"core\"\n    verdict: \"PARTIAL\"\n    evidence: \"Dynamic AWS\
+  \ VM provisioning optimizing for GPU/CPU demand and cost. CI/CD with instant rollback.\
+  \ MLOps pipeline with automated validation. High-availability microservices. However,\
+  \ no explicit mention of LLM-specific failure modes (hallucination safeguards, fallback\
+  \ strategies), LLM cost controls, or prompt-level governance.\"\n    confidence:\
+  \ \"medium\"\n    note: \"Strong on general ML/infrastructure operational constraints.\
+  \ Gap on LLM-specific failure mode design.\"\n\n  - requirement_id: \"R10\"\n  \
+  \  jd_text: \"Ensure AI features align with privacy, security, and SOC 2 requirements\"\
+  \n    category: \"core\"\n    verdict: \"PARTIAL\"\n    evidence: \"Built compliance-aware\
+  \ decommissioning pipeline at American Express respecting data residency laws. Zero-downtime\
+  \ deployments with regulatory compliance. However, no direct SOC 2 experience, no\
+  \ named privacy frameworks (GDPR), and no AI-specific security controls documented.\"\
+  \n    confidence: \"medium\"\n    note: \"Regulated enterprise experience (AmEx)\
+  \ provides strong transferable foundation, but SOC 2 specifically and AI privacy/security\
+  \ controls are gaps to probe.\"\n\n  - requirement_id: \"R11\"\n    jd_text: \"\
+  Share best practices and patterns for applied AI across the engineering team\"\n\
+  \    category: \"secondary\"\n    verdict: \"PARTIAL\"\n    evidence: \"Mentored\
+  \ 4 SDE interns, Scrum Master, scaled team from 4 to 20, built reusable platform\
+  \ patterns adopted by hundreds. But no explicit evidence of authored documentation,\
+  \ RFCs, internal workshops, or codified AI-specific best practices.\"\n    confidence:\
+  \ \"medium\"\n    note: \"Platform-building and mentorship imply pattern-sharing\
+  \ capability, but explicit knowledge-sharing artifacts for AI practices are absent.\"\
+  \n\n  - requirement_id: \"R12\"\n    jd_text: \"Contribute to broader full-stack\
+  \ engineering work as needed\"\n    category: \"secondary\"\n    verdict: \"CLEAR\"\
+  \n    evidence: \"Solo product leader and full-stack engineer at AmEx: Java/Spring\
+  \ Boot backend, ReactJS frontend, Python data aggregation, CI/CD, infrastructure\
+  \ automation for 150+ services. At Keysight: microservices, UI, DevOps, and full-stack\
+  \ integration.\"\n    confidence: \"high\"\n    note: \"Exceptionally strong full-stack\
+  \ breadth. Stack is Java/Python/React rather than Node.js, which is the only friction\
+  \ point.\"\n\n  - requirement_id: \"R13\"\n    jd_text: \"Bonus: experience with\
+  \ Node-RED or low-code platforms\"\n    category: \"secondary\"\n    verdict: \"\
+  GAP\"\n    evidence: \"No mention of Node-RED, low-code platforms, or visual programming\
+  \ tools in resume or stories.\"\n    confidence: \"high\"\n    note: \"This is a\
+  \ bonus requirement, not a blocker.\"\n\nculture_alignment:\n  - signal: \"Small,\
+  \ remote team that works async in Slack\"\n    candidate_fit: \"moderate\"\n   \
+  \ evidence: \"Scrum Master and workstream representative roles imply async coordination.\
+  \ Built self-service portals enabling async workflows for 1k+ colleagues. However,\
+  \ no explicit remote-first or async-heavy working experience documented. Previous\
+  \ roles appear to be in-office enterprise settings (American Express, Keysight).\"\
+  \n\n  - signal: \"Ownership and bias toward shipping incrementally\"\n    candidate_fit:\
+  \ \"strong\"\n    evidence: \"Solo product leader at AmEx owning end-to-end delivery.\
+  \ Founding engineer at Keysight building platform from scratch through iterative\
+  \ phases. Multiple examples of shipping incrementally with user feedback loops and\
+  \ measurable adoption growth.\"\n\n  - signal: \"Clear, written communication as\
+  \ a core value\"\n    candidate_fit: \"moderate\"\n    evidence: \"Represented India\
+  \ Database Workstream, managed Jira boards, mentored interns — all imply communication\
+  \ skills. But no explicit evidence of strong written communication habits (design\
+  \ docs, RFCs, detailed PR descriptions, published writing). Assessed as 'Good' for\
+  \ async communication in the intelligence brief.\"\n\n  - signal: \"Informal, personality-forward\
+  \ team culture (custom emoji interview question)\"\n    candidate_fit: \"unknown\"\
+  \n    evidence: \"Insufficient data to assess. Hobbies (150+ plants, digital art,\
+  \ UX design in Figma, football, gaming) suggest a well-rounded personality, but\
+  \ nothing in the profile directly signals comfort in informal, personality-driven\
+  \ team cultures. Enterprise background (AmEx, Keysight) may skew more formal.\"\n\
+  \n  - signal: \"Values shipping over perfection — comfort with ambiguity\"\n   \
+  \ candidate_fit: \"strong\"\n    evidence: \"Built platform from loosely defined\
+  \ requirements, made pragmatic tradeoffs (migrating from Nest.js to Python for architectural\
+  \ consistency), prioritized user adoption over technical novelty, and delivered\
+  \ measurable outcomes in ambiguous environments. Assessed as 'Excellent' for pragmatism.\"\
+  \n\noverall_alignment:\n  core_requirements_met: \"7 of 10 fully met or clear, 3\
+  \ partial\"\n  critical_gaps:\n    - \"No Node.js experience — FlowFuse uses Node.js\
+  \ heavily and candidate's backend stack is Python/Java\"\n    - \"LLM-specific operational\
+  \ practices (prompt engineering, fine-tuning, evaluation, hallucination safeguards,\
+  \ cost controls) not evidenced beyond LangChain/RAG usage\"\n    - \"SOC 2 compliance\
+  \ is a gap — no direct experience with SOC 2 controls, audits, or AI-specific privacy/security\
+  \ frameworks\"\n    - \"Async-first remote work experience not demonstrated — enterprise\
+  \ background may not translate directly to small remote team dynamics\"\n  interview_priorities:\n\
+  \    - \"Probe Node.js proficiency or willingness/speed to ramp — this is the single\
+  \ biggest technical friction point\"\n    - \"Ask for concrete examples of LLM-specific\
+  \ operational practices: prompt versioning, evaluation pipelines, cost/latency monitoring,\
+  \ fallback strategies\"\n    - \"Explore SOC 2 awareness: has candidate participated\
+  \ in audits, implemented security controls, or worked within SOC 2-governed environments?\"\
+  \n    - \"Test async communication and remote work readiness: ask for examples of\
+  \ written technical communication, design docs, or async decision-making\"\n   \
+  \ - \"Assess vector database and embedding depth: which vector stores has candidate\
+  \ used, how were retrieval pipelines evaluated, what chunking/re-ranking strategies\
+  \ were employed?\"\n    - \"Culture fit: gauge comfort with small-team informality,\
+  \ direct ownership without layers of management, and personality-forward collaboration\
+  \ style\"\n```\n\n---\n\n*2026-02-14 12:40 PM ET*"
+_error: "while scanning for the next token\nfound character '`' that cannot start\
+  \ any token\n  in \"<unicode string>\", line 141, column 1:\n    ```\n    ^"

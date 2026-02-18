@@ -1,0 +1,146 @@
+{
+  "tier_a_full_routing": {
+    "input": {
+      "candidate_type": "relationship_delta",
+      "candidate_data": {
+        "delta_id": "rd_64867c18",
+        "timestamp": "2026-02-16T21:39:30.730566+00:00",
+        "source_meeting_id": "meeting_routing_a",
+        "person_id": "person_routing",
+        "delta_type": "sentiment_shift",
+        "trend": "increasing",
+        "current_state": {
+          "value": "very_positive",
+          "confidence": 0.9
+        },
+        "evidence": {
+          "quotes": [
+            {
+              "text": "This partnership is exactly what we need for our strategic growth",
+              "speaker": "CEO Partner"
+            },
+            {
+              "text": "I am personally committed to making this successful",
+              "speaker": "CEO Partner"
+            }
+          ],
+          "block_references": [
+            "B70_strategic_alignment"
+          ]
+        },
+        "confidence": 0.9
+      },
+      "source_meeting_id": "meeting_routing_a",
+      "meeting_context": null,
+      "existing_memory": null,
+      "relationships": null,
+      "conversation_id": "con_routing_test_a",
+      "processing_mode": "production",
+      "source_blocks": []
+    },
+    "expected_tier": "A",
+    "expected_routing": {
+      "semantic_memory": true,
+      "graph_edges": true,
+      "crm_projection": true,
+      "deliverables_db": true
+    },
+    "expected_status": "promoted",
+    "description": "Tier A candidate should route to all systems"
+  },
+  "tier_b_selective_routing": {
+    "input": {
+      "candidate_type": "intro_opportunity",
+      "candidate_data": {
+        "opportunity_id": "io_d4ab4545",
+        "timestamp": "2026-02-16T21:39:30.730580+00:00",
+        "source_meeting_id": "meeting_routing_b",
+        "introducer_id": "person_v",
+        "introducee_a": {
+          "person_id": "person_a",
+          "name": "Alice Brown",
+          "title": "VP Sales",
+          "organization": "SalesCorp"
+        },
+        "introducee_b": {
+          "person_id": "person_b",
+          "name": "Bob Green",
+          "title": "Head of Partnerships",
+          "organization": "PartnerCorp"
+        },
+        "opportunity_type": "business_collaboration",
+        "mutual_value": {
+          "value_to_a": "Access to new customer segments",
+          "value_to_b": "Partnership opportunity",
+          "shared_benefits": "Market expansion"
+        },
+        "evidence": {
+          "quotes": [
+            {
+              "text": "We are looking for partnership opportunities in this space",
+              "speaker": "Bob Green"
+            }
+          ],
+          "block_references": [
+            "B75_intro_context"
+          ]
+        },
+        "priority": "medium",
+        "status": "identified",
+        "confidence": 0.65
+      },
+      "source_meeting_id": "meeting_routing_b",
+      "meeting_context": null,
+      "existing_memory": null,
+      "relationships": null,
+      "conversation_id": "con_routing_test_b",
+      "processing_mode": "production",
+      "source_blocks": []
+    },
+    "expected_tier": "B",
+    "expected_routing": {
+      "semantic_memory": false,
+      "graph_edges": true,
+      "crm_projection": true,
+      "deliverables_db": false
+    },
+    "expected_status": "queued_for_review",
+    "description": "Tier B intro opportunity should have selective routing"
+  },
+  "tier_c_minimal_routing": {
+    "input": {
+      "candidate_type": "general_intelligence",
+      "candidate_data": {
+        "notes": "General discussion about market trends",
+        "evidence": {
+          "quotes": [
+            {
+              "text": "The market is doing well overall",
+              "speaker": "Industry Contact"
+            }
+          ],
+          "block_references": [
+            "B80_general_chat"
+          ]
+        },
+        "confidence": 0.4
+      },
+      "source_meeting_id": "meeting_routing_c",
+      "meeting_context": null,
+      "existing_memory": null,
+      "relationships": null,
+      "conversation_id": "con_routing_test_c",
+      "processing_mode": "production",
+      "source_blocks": []
+    },
+    "expected_tier": "C",
+    "expected_routing": {
+      "semantic_memory": false,
+      "graph_edges": false,
+      "crm_projection": false,
+      "deliverables_db": false
+    },
+    "expected_status": "archived",
+    "description": "Tier C candidate should not route to any systems"
+  }
+}

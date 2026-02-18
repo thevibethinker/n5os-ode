@@ -14,6 +14,7 @@ import logging
 from pathlib import Path
 from datetime import datetime, timedelta
 from collections import defaultdict
+import re
 
 logging.basicConfig(
     level=logging.INFO,
@@ -33,6 +34,57 @@ def get_week_folder(date_str: str) -> str:
         return f"Week-of-{monday.strftime('%Y-%m-%d')}"
     except:
         return "Week-of-Unknown"
+
+
+def _extract_date_from_folder_name(folder_name: str) -> str:
+    """Extract YYYY-MM-DD from a meeting folder name prefix when present."""
+    match = re.match(r"^(\d{4}-\d{2}-\d{2})[_-]", folder_name)
+    if match:
+        return match.group(1)
+    if re.match(r"^\d{4}-\d{2}-\d{2}$", folder_name):
+        return folder_name
+    return "unknown"
+
+
+def _normalize_meeting_date(raw_date: str, folder_name: str) -> str:
+    """Return canonical YYYY-MM-DD when possible, else 'unknown'."""
+    if isinstance(raw_date, str) and raw_date:
+        candidate = raw_date.strip()
+        if "T" in candidate:
+            candidate = candidate.split("T", 1)[0]
+        try:
+            datetime.strptime(candidate, "%Y-%m-%d")
+            return candidate
+        except Exception:
+            pass
+
+    fallback = _extract_date_from_folder_name(folder_name)
+    if fallback != "unknown":
+        return fallback
+    return "unknown"
+
+
+def _resolve_meeting_type(manifest: dict) -> str:
+    """
+    Resolve canonical meeting type from all known manifest locations.
+    Priority:
+    1) crm_enrichment.classification (post-identification)
+    2) meeting.type (v3 canonical)
+    3) meeting_type (legacy compatibility)
+    """
+    crm_type = (manifest.get("crm_enrichment", {}) or {}).get("classification")
+    if isinstance(crm_type, str) and crm_type.lower() in {"internal", "external"}:
+        return crm_type.lower()
+
+    nested_type = (manifest.get("meeting", {}) or {}).get("type")
+    if isinstance(nested_type, str) and nested_type.lower() in {"internal", "external"}:
+        return nested_type.lower()
+
+    legacy_type = manifest.get("meeting_type")
+    if isinstance(legacy_type, str) and legacy_type.lower() in {"internal", "external"}:
+        return legacy_type.lower()
+
+    return "external"
 
 
 def clean_folder_name(name: str) -> str:
@@ -67,16 +119,16 @@ def find_complete_meetings() -> list[dict]:
             
             # Support both v3 manifests and legacy manifests
             if manifest.get("status") == "processed":
-                # v3 manifest structure
-                meeting_type = manifest.get("meeting", {}).get("type", "external")
+                meeting_type = _resolve_meeting_type(manifest)
                 date = manifest.get("meeting", {}).get("date", "unknown")
             elif manifest.get("status") == "complete":
-                # Legacy manifest structure
-                meeting_type = manifest.get("meeting_type", "external")
+                meeting_type = _resolve_meeting_type(manifest)
                 date = manifest.get("date", manifest.get("meeting_date", "unknown"))
             else:
                 # Not ready for archival
                 continue
+
+            date = _normalize_meeting_date(date, folder.name)
             
             complete.append({
                 "path": folder,

@@ -1,0 +1,1 @@
+{"entities": [{"name": "RPI calculator script", "type": "TOOL", "context": "A functional script for RPI calculations"}, {"name": "Database schema", "type": "CONCEPT", "context": "Initialized database structure"}, {"name": "Log directory", "type": "TOOL", "context": "Created directory for logs"}], "relationships": []}

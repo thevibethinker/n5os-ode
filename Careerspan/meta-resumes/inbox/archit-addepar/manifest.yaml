@@ -1,11 +1,11 @@
 schema_version: '1.0'
-created: '2026-02-05T16:36:47.111475'
+created: '2026-02-15T01:59:23.368942'
 framework: careerspan-decomposer
-extraction_method: llm-semantic
+extraction_method: chunked-parallel
 candidate: archit
 company: addepar
 slug: archit-addepar
-source_doc: /home/.z/workspaces/con_Lm2vqXjxi9QnVl8m/archit_addepar_brief.txt
+source_doc: /home/workspace/Careerspan/meta-resumes/inbox/archit-addepar/careerspan_full_ocr.txt
 careerspan_score: 75
 files:
 - overview.yaml
@@ -17,19 +17,25 @@ files:
 - achievements.yaml
 - interests.yaml
 - alignment.yaml
+- culture_signals.yaml
+- gaps_and_caveats.yaml
 - jd.yaml
 - scores_complete.json
 - scores_complete.csv
+- careerspan_full_ocr.txt
 counts:
-  total_skills: 36
+  total_skills: 15
   by_rating:
-    Excellent: 18
-    Fair: 4
-    Good: 13
-    Weak: 1
+    Excellent: 4
+    Fair: 3
+    Good: 7
+    Gap: 1
 validation:
-  schema_valid: false
-  errors:
-  - '''Weak'' is not one of [''Excellent'', ''Good'', ''Fair'', ''Gap'', None]'
+  schema_valid: true
+  errors: []
 status: complete
 notes: Extracted via LLM semantic analysis. DO NOT manually edit extraction files.
+processing:
+  mode: chunked_parallel
+  line_count: 2263
+  threshold: 1500

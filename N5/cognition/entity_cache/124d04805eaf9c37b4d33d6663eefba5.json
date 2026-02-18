@@ -1,0 +1,1 @@
+{"entities": [{"name": "text-embedding-3-small", "type": "TOOL", "context": "A semantic search tool that uses 1536-dim vectors."}, {"name": "Prompts/Close Conversation Type B.prompt.md", "type": "CONCEPT", "context": "A knowledge consolidation workflow document."}], "relationships": []}

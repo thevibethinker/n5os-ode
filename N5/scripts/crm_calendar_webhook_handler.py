@@ -46,13 +46,6 @@ except ImportError:
     sys.exit(1)
 
 try:
-    from google.oauth2 import service_account
-    from googleapiclient.discovery import build
-except ImportError:
-    print("Error: google-api-python-client not installed. Run: pip install google-api-python-client")
-    sys.exit(1)
-
-try:
     from crm_calendar_helpers import (
         load_google_credentials,
         load_config,
@@ -90,6 +83,15 @@ app_state = {
 def build_calendar_service():
     """Build Google Calendar API service using configured credentials."""
     try:
+        try:
+            from google.oauth2 import service_account
+            from googleapiclient.discovery import build
+        except ImportError as import_err:
+            raise RuntimeError(
+                "google-api-python-client not installed. "
+                "Run: pip install google-api-python-client"
+            ) from import_err
+
         service_account_info = load_google_credentials()
         credentials = service_account.Credentials.from_service_account_info(
             service_account_info, scopes=SCOPES
@@ -270,92 +272,77 @@ def parse_event_times(event):
 
 def store_calendar_event(event, attendees, webhook_received_at):
     """
-    Store or update calendar event in database.
-    
-    Args:
-        event (dict): Google Calendar event object
-        attendees (list): Extracted attendees
-        webhook_received_at (str): ISO timestamp of webhook receipt
-        
-    Returns:
-        dict: Event sync metadata
+    Store or update calendar event in canonical n5_core schema.
+
+    Writes:
+    - calendar_events (id, google_event_id, title, start_time, end_time, ...)
+    - event_attendees (event_id, person_id, email, response_status, is_organizer)
     """
     try:
-        # Parse event times
-        start_dt, end_dt, is_all_day = parse_event_times(event)
-        
-        # Build attendee emails JSON
-        attendee_emails = json.dumps([a['email'] for a in attendees])
-        
-        # Calculate attendee count
-        attendee_count = len(attendees)
-        
-        # Prepare event data
-        event_data = {
-            'event_id': event['id'],
-            'summary': event.get('summary', 'Untitled Event'),
-            'start_time': start_dt.isoformat(),
-            'end_time': end_dt.isoformat(),
-            'location': event.get('location'),
-            'description': event.get('description'),
-            'attendee_emails': attendee_emails,
-            'status': EVENT_STATUS_MAP.get(event.get('status'), 'active'),
-            'webhook_received_at': webhook_received_at,
-            'last_updated_at': datetime.utcnow().isoformat(),
-            'attendee_count': attendee_count
-        }
-        
-        with sqlite3.connect('/home/workspace/N5/data/crm_v3.db') as conn:
+        start_dt, end_dt, _ = parse_event_times(event)
+        event_id = event['id']
+        event_title = event.get('summary', 'Untitled Event')
+
+        with sqlite3.connect('/home/workspace/N5/data/n5_core.db') as conn:
             cursor = conn.cursor()
-            
-            # Check if event exists
+
+            # Upsert event in canonical schema
             cursor.execute(
-                "SELECT id FROM calendar_events WHERE event_id = ?",
-                (event_data['event_id'],)
+                """
+                INSERT INTO calendar_events
+                    (id, google_event_id, title, start_time, end_time, location, description)
+                VALUES (?, ?, ?, ?, ?, ?, ?)
+                ON CONFLICT(id) DO UPDATE SET
+                    google_event_id=excluded.google_event_id,
+                    title=excluded.title,
+                    start_time=excluded.start_time,
+                    end_time=excluded.end_time,
+                    location=excluded.location,
+                    description=excluded.description
+                """,
+                (
+                    event_id,
+                    event_id,
+                    event_title,
+                    start_dt.isoformat(),
+                    end_dt.isoformat(),
+                    event.get('location'),
+                    event.get('description'),
+                ),
             )
-            existing = cursor.fetchone()
-            
-            if existing:
-                # Update existing event
-                update_fields = [
-                    'summary', 'start_time', 'end_time', 'location',
-                    'description', 'attendee_emails', 'status',
-                    'webhook_received_at', 'last_updated_at', 'attendee_count'
-                ]
-                
-                set_clause = ", ".join([f"{field} = ?" for field in update_fields])
-                values = [event_data[field] for field in update_fields]
-                values.append(event_data['event_id'])
-                
+
+            # Replace attendee links for this event
+            cursor.execute("DELETE FROM event_attendees WHERE event_id = ?", (event_id,))
+            for attendee in attendees:
+                email = attendee.get('email')
+                if not email:
+                    continue
+                display_name = attendee.get('displayName', email.split('@')[0])
+                person_id = get_or_create_profile(email=email, name=display_name, source='calendar_webhook')
                 cursor.execute(
-                    f"UPDATE calendar_events SET {set_clause} WHERE event_id = ?",
-                    values
+                    """
+                    INSERT INTO event_attendees (event_id, person_id, email, response_status, is_organizer)
+                    VALUES (?, ?, ?, ?, ?)
+                    """,
+                    (
+                        event_id,
+                        person_id,
+                        email.strip().lower(),
+                        attendee.get('responseStatus', 'needsAction'),
+                        1 if attendee.get('is_organizer') else 0,
+                    ),
                 )
-                
-                event_sync_result = {'action': 'updated', 'event_id': event_data['event_id']}
-                app_state['logger'].info(f"✓ Updated existing event: {event_data['summary']}")
-            else:
-                # Insert new event
-                fields = list(event_data.keys())
-                placeholders = ", ".join(["?"] * len(fields))
-                values = [event_data[field] for field in fields]
-                
-                cursor.execute(
-                    f"INSERT INTO calendar_events ({', '.join(fields)}) VALUES ({placeholders})",
-                    values
-                )
-                
-                event_sync_result = {'action': 'created', 'event_id': event_data['event_id']}
-                app_state['logger'].info(f"✓ Created new event: {event_data['summary']}")
-            
+
             conn.commit()
-            
-        return event_sync_result
-        
+
+        app_state['logger'].info(
+            f"✓ Synced event {event_id} with {len(attendees)} attendee(s) at {webhook_received_at}"
+        )
+        return {'action': 'upserted', 'event_id': event_id}
+
     except Exception as e:
         app_state['logger'].error(f"Failed to store calendar event: {e}")
         raise
-
 
 def queue_enrichment_jobs(event, attendees):
     """
@@ -597,7 +584,7 @@ async def handle_webhook_notification(request):
         app_state['logger'].error(f"Error processing webhook: {e}", exc_info=True)
         
         # Send SMS alert for critical errors after some threshold
-        app_state['error_count'] = getattr(app_state, 'error_count', 0) + 1
+        app_state['error_count'] = app_state.get('error_count', 0) + 1
         if app_state['error_count'] > 5:
             send_sms_alert(f"🚨 Webhook handler critical errors: {app_state['error_count']}")
         
@@ -707,5 +694,4 @@ if __name__ == '__main__':
     except Exception as e:
         print(f"Fatal error: {e}", file=sys.stderr)
         sys.exit(1)
-
 

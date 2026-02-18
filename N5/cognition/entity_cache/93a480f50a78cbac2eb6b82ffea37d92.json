@@ -1,0 +1,1 @@
+{"entities": [{"name": "va", "type": "ORG", "context": "refers to the organization or entity responsible for running the export pipeline"}, {"name": "DROP 3.1", "type": "TOOL", "context": "refers to the export pipeline mentioned"}], "relationships": [{"from": "va", "to": "DROP 3.1", "type": "USES", "context": "va uses the export pipeline for initial content seeding"}]}

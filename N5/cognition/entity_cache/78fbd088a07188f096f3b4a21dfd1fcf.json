@@ -1,0 +1,1 @@
+{"entities": [{"name": "Zo", "type": "ORG", "context": "secrets management system"}], "relationships": [{"from": "V (Vrijen)", "to": "Zo", "type": "USES", "context": "moved all credentials to Zo secrets"}]}

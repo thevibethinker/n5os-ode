@@ -7,6 +7,7 @@ import subprocess
 import sys
 import re
 from pathlib import Path
+from datetime import datetime
 
 PULSE_DIR = Path(__file__).parent
 TAG_PATTERN = re.compile(r'^#task-(\S+)\s*(.*)', re.IGNORECASE | re.DOTALL)
@@ -204,38 +205,40 @@ def handle_message(message: str) -> dict:
             return {"action": "error", "response": f"Task not found: {slug}"}
     
     elif msg_type == "teach":
-        # VibeTeacher commands
-        result = subprocess.run([
-            "python3", str(PULSE_DIR / "teaching" / "teaching_manager.py"),
-            "sms-summary"
-        ], capture_output=True, text=True)
-
-        if result.returncode == 0:
-            return {
-                "action": "teaching",
-                "response": result.stdout.strip()
-            }
-        else:
-            # Fallback: try direct import
-            sys.path.insert(0, str(PULSE_DIR / "teaching"))
-            try:
-                from teaching_manager import get_pending_for_sms
-                summary = get_pending_for_sms()
-                return {
-                    "action": "teaching",
-                    "response": summary
-                }
-            except:
-                return {"action": "error", "response": "Teaching review temporarily unavailable."}
+        try:
+            bank_path = Path("/home/workspace/N5/config/understanding_bank.json")
+            if not bank_path.exists():
+                return {"action": "teaching", "response": "Understanding bank not initialized yet."}
+            bank = json.loads(bank_path.read_text())
+            unmastered = [c for c in bank.get("concepts", []) if c.get("level") not in ("solid", "deep")]
+            if not unmastered:
+                return {"action": "teaching", "response": "🎓 All concepts mastered! No pending items."}
+            lines = ["📚 Concepts to review:"]
+            for c in unmastered[:5]:
+                lines.append(f"• {c['term']} ({c.get('level', 'new')}): {c.get('definition', '')[:80]}")
+            if len(unmastered) > 5:
+                lines.append(f"...and {len(unmastered) - 5} more")
+            lines.append("\nReply 'absorbed: <term>' when mastered.")
+            return {"action": "teaching", "response": "\n".join(lines)}
+        except Exception as e:
+            return {"action": "error", "response": f"Teaching review temporarily unavailable: {str(e)}"}
     
     elif msg_type == "absorbed":
         term = parsed["term"]
-        sys.path.insert(0, str(PULSE_DIR / "teaching"))
         try:
-            from moment_generator import mark_absorbed
-            success = mark_absorbed(term)
-
-            if success:
+            bank_path = Path("/home/workspace/N5/config/understanding_bank.json")
+            if not bank_path.exists():
+                return {"action": "error", "response": "Understanding bank not initialized yet."}
+            bank = json.loads(bank_path.read_text())
+            found = False
+            for concept in bank.get("concepts", []):
+                if concept["term"].lower() == term.lower():
+                    concept["level"] = "solid"
+                    concept["last_engaged"] = datetime.now().isoformat()
+                    found = True
+                    break
+            if found:
+                bank_path.write_text(json.dumps(bank, indent=2))
                 return {
                     "action": "absorbed",
                     "response": f"✓ Marked '{term}' as absorbed",
@@ -244,7 +247,7 @@ def handle_message(message: str) -> dict:
             else:
                 return {
                     "action": "error",
-                    "response": f"Term not found in glossary: '{term}'"
+                    "response": f"Term not found in understanding bank: '{term}'"
                 }
         except Exception as e:
             return {"action": "error", "response": f"Failed to mark absorbed: {str(e)}"}

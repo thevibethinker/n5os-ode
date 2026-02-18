@@ -1,75 +1,112 @@
 # Achievements
-# Source: Careerspan Intelligence Brief
-# Extracted: 2026-01-29T20:49:03.992047
-# Method: LLM semantic extraction
+# Extracted: 2026-02-14T17:45:53.384817
+# Method: Structured extraction
 # DO NOT EDIT
 
 quantified_achievements:
+- achievement: Scaled ML SaaS platform to hundreds of daily users including external
+    enterprise customers
+  metric: hundreds of daily users (200-300 DAU referenced elsewhere)
+  context: Keysight, Senior ML Engineer, Dec 2024-Present
+  verification: self-reported
+- achievement: Secured budget increase for ML platform
+  metric: 5x budget increase
+  context: Keysight, ML SaaS platform development
+  verification: self-reported
+- achievement: Scaled engineering team from inception
+  metric: from founding team to nearly 20 members
+  context: Keysight, ML SaaS platform
+  verification: self-reported
 - achievement: Reduced model-to-production cycle time
   metric: from hours to minutes
-  context: Keysight ML SaaS platform
-  verification: verifiable
-- achievement: Budget increase secured
-  metric: 5x
-  context: Keysight ML SaaS platform
-  verification: verifiable
-- achievement: Daily platform users
-  metric: hundreds
-  context: Keysight ML SaaS platform
-  verification: verifiable
-- achievement: Monthly cost savings
-  metric: $50,000
-  context: American Express cloud/database portal
-  verification: verifiable
-- achievement: Improvement in new feature and ticket delivery
-  metric: 35%
-  context: American Express ML story prioritization model
-  verification: verifiable
-- achievement: Engineering users served
-  metric: thousands
-  context: American Express automated portal
-  verification: verifiable
-- achievement: Global services supported
-  metric: 150+
-  context: American Express cloud/database portal
-  verification: verifiable
-- achievement: Team scaled to
-  metric: nearly 20 members
-  context: Keysight ML SaaS platform
-  verification: verifiable
-- achievement: Dev environment artifact engagement requests eliminated
-  metric: 100%
-  context: American Express automated portal
-  verification: verifiable
-- achievement: Mentored
-  metric: 4 SDE Interns
+  context: Keysight, using Kubernetes and MLFlow
+  verification: self-reported
+- achievement: Built data ingestion and feature engineering pipelines
+  metric: terabyte scale
+  context: Keysight, ML SaaS platform
+  verification: self-reported
+- achievement: Platform adopted by major enterprise customers
+  metric: Apple, Samsung Semiconductor, Volkswagen
+  context: Keysight, external industry leaders using the platform
+  verification: self-reported
+- achievement: Drove cost savings via automated decommissioning of underutilized databases
+  metric: $50,000/month
+  context: American Express, Software Engineer (Full Stack), Jul 2021-Nov 2024
+  verification: self-reported
+- achievement: Built self-service Database Catalog Portal
+  metric: used by 1,000+ colleagues, 125+ journeys
+  context: American Express, solo product leader
+  verification: self-reported
+- achievement: Managed automated decommissioning pipeline
+  metric: 20+ databases monthly
+  context: American Express, unused databases pipeline
+  verification: self-reported
+- achievement: Optimized database automation framework for CI/CD
+  metric: 95% reduction in manual intervention, 70,000+ daily jobs supported
+  context: American Express, infrastructure automation
+  verification: self-reported
+- achievement: Eliminated dev environment artifact engagement requests
+  metric: 100% elimination
+  context: American Express, provisioning automation
+  verification: self-reported
+- achievement: Enhanced reliability and compliance for global services
+  metric: 150+ global services
+  context: American Express, DevOps/SRE initiatives
+  verification: self-reported
+- achievement: Improved new feature and ticket delivery via ML model
+  metric: 35% improvement
+  context: American Express Internship, Apr-May 2020
+  verification: self-reported
+- achievement: Analyzed cohorts for fraud and marketplace abuse detection
+  metric: 20,000+ cohorts analyzed
+  context: Flipkart, Data Science Intern, Apr-May 2019
+  verification: self-reported
+- achievement: Mentored SDE interns
+  metric: 4 interns
   context: American Express
   verification: self-reported
-- achievement: Hackathon position
-  metric: Top-5 out of 100+ participants
-  context: India Innovation Hackathon
-  verification: verifiable
-- achievement: GrowthHack position
-  metric: 3rd
-  context: GrowthHack 2021
-  verification: verifiable
-- achievement: IIT-JEE rank
-  metric: 47 out of 14 million candidates (99.97 percentile)
-  context: Academic
-  verification: verifiable
+- achievement: Platform budget grew substantially
+  metric: $1M budget (referenced in assessment)
+  context: Keysight, ML SaaS platform
+  verification: self-reported
 awards_recognition:
-- award: 99.97 Percentile in IIT-JEE 2016 (Rank 47 in 14 million candidates)
-  significance: Top-tier academic achievement among 14 million candidates
-- award: 99.84 Percentile in KVPY Scholarship 2015
-  significance: National-level science talent recognition
-- award: NTSE Scholar in 2014
-  significance: National talent search examination recognition
-- award: GrowthHack 2021 - 3rd position
-  significance: Competitive innovation recognition leading to further project development
-- award: Top-5 position in India Innovation Hackathon
-  significance: Outperformed 100+ participants in innovation challenge
-- award: Associate Cloud Engineer - Google Cloud Platform (GCP) certification
-  significance: Professional cloud infrastructure credential
+- award: IIT-JEE 2016 — Rank 47
+  year: '2016'
+  significance: 99.97 percentile out of 14 million candidates; elite engineering entrance
+    exam in India
+- award: KVPY Scholarship
+  year: '2015'
+  significance: 99.84 percentile; prestigious national science scholarship in India
+- award: NTSE Scholar
+  year: '2014'
+  significance: National Talent Search Examination; recognizes top academic talent
+    at secondary level
+- award: GrowthHack 2021 — 3rd position
+  year: '2021'
+  significance: Led to further project development; demonstrates innovation and hackathon
+    ability
+- award: Top-5 in India Innovation Hackathon
+  year: '2020'
+  significance: Out of 100+ participants; AmEx internship recognition, led to ML story
+    prioritization project
+- award: Associate Cloud Engineer — Google Cloud Platform (GCP)
+  year: '2023'
+  significance: Industry certification validating cloud infrastructure competence
 academic_achievements:
-- achievement: B.Tech. & M.Tech. (Dual Degree), Computer Science
-- achievement: Associate Cloud Engineer, Google Cloud Platform (GCP)
+- achievement: B.Tech. & M.Tech. (Dual Degree) in Computer Science
+  context: IIT Delhi, May 2016 - Apr 2021; one of India's top engineering institutions
+patterns:
+- Consistently quantifies impact in financial terms ($50k/month savings, 5x budget
+  increase, $1M budget) — strong business-outcome orientation
+- Pattern of taking greenfield/founding-stage projects from zero to scaled production
+  with measurable adoption (hundreds of users, enterprise customers)
+- Repeated cycle of solo/small-team ownership expanding to team-scale leadership (founding
+  engineer → 20-person team; solo product leader at AmEx)
+- All major achievements are self-reported without third-party verification artifacts
+  (no links to products, published metrics, or external references)
+- Academic credentials are elite and independently verifiable (IIT-JEE rank, KVPY,
+  NTSE are public examination results)
+- Achieves impact through automation and platform-building rather than individual
+  feature work — systems thinker pattern
+- Time-compression claims (hours to minutes, 95% reduction) are common but lack baseline
+  methodology documentation

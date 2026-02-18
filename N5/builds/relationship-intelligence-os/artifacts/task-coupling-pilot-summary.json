@@ -1,0 +1,18 @@
+{
+  "run_id": "run_d6511c47f3",
+  "dry_run": true,
+  "inputs": {
+    "promotion_events": "/home/.z/workspaces/con_gFzc4mY4JQST5uVB/task_coupling_pilot_promotion_events.jsonl",
+    "deliverable_records": "/home/.z/workspaces/con_gFzc4mY4JQST5uVB/task_coupling_pilot_deliverables.jsonl"
+  },
+  "stats": {
+    "events_total": 3,
+    "auto_launched": 1,
+    "review_required": 1,
+    "no_task": 1,
+    "blocked": 0,
+    "skipped_idempotent": 0,
+    "errors": 0
+  },
+  "generated_at": "2026-02-16T21:22:05.697947+00:00"
+}

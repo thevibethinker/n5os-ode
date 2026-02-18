@@ -1,0 +1,35 @@
+---
+candidate: archit
+company: addepar
+careerspan_score:
+  overall: 75
+  background: 78
+  uniqueness: 85
+  responsibilities: 74
+  hard_skills: 58
+  soft_skills: 97
+bottom_line: Strong senior backend hire with standout distributed systems and ML‑adjacent
+  integration experience who can add immediate value to Addepar's alternatives data
+  workflows, with a manageable ramp on serverless/DynamoDB and investment‑domain specifics.
+overall_strengths: Proven senior-level backend engineer with strong architecture and
+  delivery track record on mission-critical, high-throughput systems. Led greenfield
+  checkout, orders, and payments platforms (100k+ daily orders, 5× BFCM spikes, ~$15M/day
+  peaks) with robust consistency, idempotency, and resilience patterns. Demonstrated
+  ML integration via LLM/RAG-based fraud review pipeline. Hands-on experience across
+  microservices, AWS/EKS/RDS, Terraform, Kafka-like patterns, and Java/Spring Boot
+  with Python/Go exposure. Strong NoSQL design (Scylla/Cassandra). Team leadership/mentoring
+  (grew and coached 8-engineer team).
+overall_weaknesses: No explicit production experience with serverless primitives (Lambda,
+  Step Functions, API Gateway) or DynamoDB/OpenSearch, which are central to this role's
+  stack. Limited evidence of SQL optimization beyond inferred use. Security/compliance
+  exposure is adjacent via payments but lacks direct ownership of PCI-DSS, SOC2, or
+  GDPR frameworks. ML team integration practices not detailed beyond LLM fraud pipeline.
+  Fintech domain depth is primarily payments/e-commerce rather than investment/alternatives
+  data.
+potential_dealbreakers:
+- Can you describe your experience with AWS serverless primitives (Lambda, Step Functions,
+  API Gateway) in production?
+- What is your familiarity with investment data, portfolio management, or alternative
+  investments domains?
+- Have you directly owned security compliance frameworks (PCI-DSS, SOC2, GDPR) or
+  security incident response?

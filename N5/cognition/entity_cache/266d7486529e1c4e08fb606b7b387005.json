@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "Zo chat", "type": "TOOL", "context": "communication tool for reporting failures to parents"}], "relationships": [{"from": "V (Vrijen)", "to": "Zo chat", "type": "USES", "context": "utilizes Zo chat to report status to parents"}]}

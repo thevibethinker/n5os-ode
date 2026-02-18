@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "the individual associated with the knowledge system"}, {"name": "akiflow", "type": "TOOL", "context": "the tool being referenced for task and project management"}], "relationships": [{"from": "V", "to": "akiflow", "type": "KNOWS", "context": "V is knowledgeable about the akiflow tool"}]}

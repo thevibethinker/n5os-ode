@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Described as having a knowledge system"}, {"name": "Session State Manager", "type": "TOOL", "context": "A tool for managing conversation state"}], "relationships": [{"from": "V", "to": "Session State Manager", "type": "USES", "context": "V uses this tool to manage conversation states"}]}

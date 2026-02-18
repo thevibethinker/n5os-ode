@@ -1,0 +1,62 @@
+{
+  "promotion_id": "prom_abc123def456",
+  "meeting_id": "mtg001",
+  "block_ids": [
+    "B08",
+    "B03"
+  ],
+  "memory_type": "relationship_delta",
+  "score": 85,
+  "score_breakdown": {
+    "strategic_importance": 18,
+    "relationship_delta_strength": 16,
+    "commitment_clarity": 15,
+    "evidence_quality": 14,
+    "novelty": 12,
+    "execution_value": 10
+  },
+  "tier": "A",
+  "status": "auto_promoted",
+  "hard_overrides": [
+    "explicit_promise"
+  ],
+  "deduplication": {
+    "status": "new",
+    "checked_at": "2026-02-16T20:40:48.794466+00:00"
+  },
+  "memory_writes": {
+    "semantic_memory": {
+      "status": "success",
+      "entity_ids": [
+        "ent_123"
+      ]
+    },
+    "graph_edges": {
+      "status": "success",
+      "edge_ids": [
+        "edge_456"
+      ]
+    },
+    "crm_projection": {
+      "status": "success",
+      "profile_ids": [
+        "prof_789"
+      ]
+    }
+  },
+  "created_at": "2026-02-16T20:40:48.794485+00:00",
+  "promoted_at": "2026-02-16T20:40:48.794488+00:00",
+  "provenance": {
+    "conversation_id": "con_abc123",
+    "pipeline_run_id": "run_def456",
+    "script_path": "N5/scripts/promotion_engine.py",
+    "version": "1.0.0",
+    "idempotency_key": "8808f499-6484-4171-9223-59e6254eef6b"
+  },
+  "confidence": {
+    "overall": 0.85,
+    "scoring_confidence": 0.9,
+    "extraction_confidence": 0.8,
+    "deduplication_confidence": 0.95
+  }
+}

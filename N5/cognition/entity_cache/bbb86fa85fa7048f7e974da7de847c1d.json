@@ -1,0 +1,1 @@
+{"entities": [{"name": "Obsidian", "type": "TOOL", "context": "Working alternative system currently in use for knowledge management"}], "relationships": [{"from": "V", "to": "Obsidian", "type": "USES", "context": "Has working alternative system"}]}

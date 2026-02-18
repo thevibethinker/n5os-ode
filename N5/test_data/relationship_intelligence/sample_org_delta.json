@@ -1,0 +1,86 @@
+{
+  "delta_id": "odelta_abc123def456",
+  "organization_id": "org_xyz789abc123",
+  "organization_name": "TechCorp Inc",
+  "delta_type": "priority_shift",
+  "impact_level": 3,
+  "temporal_scope": "quarterly",
+  "change_details": {
+    "previous_state": "Focus on cost reduction and efficiency",
+    "current_state": "Pivoting to growth and market expansion",
+    "trigger_factors": [
+      "Strong Q3 results",
+      "New funding secured",
+      "Market opportunity identified"
+    ],
+    "affected_departments": [
+      "Product",
+      "Sales",
+      "Marketing"
+    ],
+    "key_stakeholders": [
+      {
+        "person_id": "person_ceo123abc456",
+        "role_in_change": "decision_maker",
+        "influence_level": 5
+      }
+    ]
+  },
+  "business_implications": {
+    "revenue_impact": "positive",
+    "operational_impact": "positive",
+    "strategic_alignment": "aligned",
+    "opportunity_score": 8,
+    "risk_score": 3,
+    "recommended_actions": [
+      {
+        "action": "Present growth partnership proposal",
+        "priority": "high",
+        "timeline": "weeks",
+        "owner": "Business Development"
+      }
+    ]
+  },
+  "evidence": [
+    {
+      "type": "direct_statement",
+      "content": "We're shifting from cost-cutting mode to aggressive growth - looking for partners who can help us scale",
+      "reliability": 0.9,
+      "source": "primary_stakeholder",
+      "timestamp": "2026-02-16T20:40:48.794550+00:00",
+      "source_block_id": "B08"
+    }
+  ],
+  "competitive_intelligence": {
+    "market_position_change": "strengthening",
+    "competitive_threats": [
+      "BigTech Corp",
+      "StartupX"
+    ],
+    "differentiation_factors": [
+      "Speed to market",
+      "Customer service excellence"
+    ],
+    "market_dynamics": "Growing demand for enterprise solutions"
+  },
+  "created_at": "2026-02-16T20:40:48.794553+00:00",
+  "effective_date": "2026-01-01",
+  "review_date": "2026-04-01",
+  "provenance": {
+    "meeting_id": "mtg001",
+    "block_ids": [
+      "B08",
+      "B32"
+    ],
+    "conversation_id": "con_abc123",
+    "extraction_version": "1.0.0",
+    "pipeline_run_id": "run_def456"
+  },
+  "confidence": {
+    "overall": 0.88,
+    "evidence_quality": 0.9,
+    "interpretation_accuracy": 0.85,
+    "org_identification": 0.95,
+    "temporal_accuracy": 0.8
+  }
+}

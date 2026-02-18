@@ -1,0 +1,1 @@
+{"entities": [{"name": "Zo AI", "type": "TOOL", "context": "AI system used to test conditional rules"}], "relationships": [{"from": "V", "to": "Zo AI", "type": "USES", "context": "V uses Zo AI to apply and test conditional rules"}]}

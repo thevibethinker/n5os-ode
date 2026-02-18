@@ -1,91 +1,179 @@
-languages:
-  - name: "Python"
-    evidence: "Data Science Intern at Flipkart; automated portal at American Express; ML SaaS platform at Keysight"
-    proficiency: "expert"
-  - name: "Java"
-    evidence: "Full Stack role at American Express building backend with Java/Spring Boot"
-    proficiency: "proficient"
-  - name: "JavaScript"
-    evidence: "ReactJS frontend development at American Express for automated portal"
-    proficiency: "proficient"
-frameworks:
-  - name: "Spring Boot"
-    evidence: "Backend development for automated portal at American Express serving thousands of engineers"
-    proficiency: "expert"
-  - name: "React"
-    evidence: "Frontend development for automated portal at American Express; self-service solution"
-    proficiency: "proficient"
-  - name: "LangChain"
-    evidence: "Tools section lists LangChain; hands-on LLM/agent experience stated"
-    proficiency: "proficient"
-  - name: "MLflow"
-    evidence: "MLOps/Model Storage stacks at Keysight; reduced model-to-production from hours to minutes"
-    proficiency: "proficient"
-ai_ml:
-  - name: "RAG techniques"
-    evidence: "Tools section lists RAG techniques; hands-on LLM/agent experience stated"
-    proficiency: "proficient"
-  - name: "MLOps"
-    evidence: "Architected MLOps platform at Keysight with Kubernetes/MLflow; automated dataset/versioning"
-    proficiency: "expert"
-  - name: "Kubernetes"
-    evidence: "Containerized inference (FastAPI) at Keysight; high availability and low latency inference"
-    proficiency: "proficient"
-  - name: "FastAPI"
-    evidence: "Containerized inference at Keysight; microservices for ML SaaS platform"
-    proficiency: "proficient"
-  - name: "Airflow"
-    evidence: "Airflow pipelines listed in Tools; ML SaaS platform orchestration"
-    proficiency: "proficient"
-  - name: "Apache Beam"
-    evidence: "Tools section lists Apache Beam; data engineering at scale"
-    proficiency: "familiar"
-  - name: "Spark"
-    evidence: "Tools section lists Spark; data processing capabilities"
-    proficiency: "familiar"
-  - name: "BigQuery"
-    evidence: "Tools section lists BigQuery; data analytics and querying"
-    proficiency: "familiar"
-infrastructure:
-  - name: "AWS"
-    evidence: "Dynamic AWS resource provisioning at Keysight; ML SaaS platform serving external industry leaders"
-    proficiency: "expert"
-  - name: "Google Cloud Platform (GCP)"
-    evidence: "Associate Cloud Engineer certification; platform deployment experience"
-    proficiency: "proficient"
-  - name: "CI/CD"
-    evidence: "CI/CD automation at Keysight and American Express; zero-downtime rollouts"
-    proficiency: "expert"
-  - name: "Couchbase"
-    evidence: "Couchbase DBA listed in Tools; data aggregation at American Express"
-    proficiency: "proficient"
-  - name: "DevOps/SRE"
-    evidence: "SRE/DevOps rigor at Keysight and American Express; high availability, zero-downtime automation"
-    proficiency: "expert"
-  - name: "Hadoop"
-    evidence: "Tools section lists Hadoop; big data processing experience"
-    proficiency: "familiar"
-  - name: "Dataflow"
-    evidence: "Tools section lists Dataflow; stream and batch data processing"
-    proficiency: "familiar"
-gaps:
-  - skill: "LLM fallback strategies"
-    note: "No concrete examples documented despite LangChain/RAG experience"
-  - skill: "Cost/latency controls for LLMs"
-    note: "Not explicitly documented in AI reliability section"
-  - skill: "Prompt/version governance"
-    note: "Missing from documented AI practices"
-  - skill: "Model/LLM observability"
-    note: "No evidence of drift monitoring, hallucination safeguards, or metrics/dashboards"
-  - skill: "SOC 2 controls"
-    note: "No direct evidence of SOC 2 controls or audit participation for AI features"
-  - skill: "Privacy frameworks (GDPR)"
-    note: "Security present but no named privacy frameworks applied to AI features"
-  - skill: "Advanced frontend architecture"
-    note: "Frontend expertise proven but advanced architecture/performance/accessibility depth not showcased"
-  - skill: "LLM-UX patterns"
-    note: "Not showcased despite LLM integration experience"
-  - skill: "AI knowledge-sharing artifacts"
-    note: "No explicit RFCs, playbooks, or internal workshops tied to AI patterns"
-  - skill: "Specific vector stores/embedding stacks"
-    note: "LLM integration stated without naming specific providers or vector stores"
+# Hard Skills
+# Extracted: 2026-02-14T17:45:53.374151
+# Method: Structured extraction
+# DO NOT EDIT
+
+skill_categories:
+  ai_ml:
+    skills:
+    - name: Machine Learning
+      level: expert
+      evidence: Architected greenfield ML SaaS platform at Keysight serving hundreds
+        of daily users including Apple, Samsung, Volkswagen; built automated MLOps
+        pipelines, model storage, hyperparameter tuning
+    - name: MLOps
+      level: expert
+      evidence: Built scalable MLOps pipeline on AWS with Kubernetes and MLFlow for
+        automated model/dataset storage, training, versioning, deployment and validation;
+        reduced model-to-production from hours to minutes
+    - name: LangChain
+      level: proficient
+      evidence: Implemented AI agents utilizing LangChain for specialized use cases
+        and multi-step problems at Keysight
+    - name: RAG (Retrieval-Augmented Generation)
+      level: proficient
+      evidence: Built RAG techniques into production ML SaaS platform; explicit mention
+        but no details on specific vector stores or embedding models used
+    - name: Model Training & Deployment
+      level: expert
+      evidence: End-to-end ownership of model training, versioning, deployment, and
+        validation pipelines; containerized inference microservices with FastAPI for
+        low-latency serving
+    - name: Feature Engineering
+      level: expert
+      evidence: Built robust data ingestion and feature engineering pipelines at terabyte
+        scale using Airflow
+    - name: Anomaly Detection
+      level: proficient
+      evidence: Conducted research using M-Zoom and M-Biz at Flipkart analyzing 20,000+
+        cohorts for fraud detection
+    - name: Embeddings
+      level: claimed
+      evidence: Implied by LangChain/RAG usage but no explicit mention of embedding
+        models, vector stores, or tuning strategies
+    - name: AI Observability & Monitoring
+      level: claimed
+      evidence: MLOps and SRE experience implies monitoring capability but no explicit
+        mention of model drift detection, hallucination safeguards, or AI-specific
+        dashboards
+  backend:
+    skills:
+    - name: Python
+      level: expert
+      evidence: Primary language for ML SaaS platform backend, data aggregation at
+        AmEx, MLOps pipelines, Airflow workflows
+    - name: Java / Spring Boot
+      level: expert
+      evidence: Built backend for Database Catalog Portal at American Express serving
+        1k+ colleagues and 125+ journeys
+    - name: FastAPI
+      level: expert
+      evidence: Deployed containerized microservices for high-availability, low-latency
+        inference at Keysight
+    - name: Microservices Architecture
+      level: expert
+      evidence: Designed and deployed microservices-based ML SaaS platform; owned
+        containerized services across multiple roles
+    - name: REST API Design
+      level: expert
+      evidence: Built APIs for ML platform, database catalog portal, and automation
+        frameworks across Keysight and AmEx
+    - name: Couchbase
+      level: proficient
+      evidence: Used for data aggregation at American Express in the database catalog
+        portal
+  frontend:
+    skills:
+    - name: React / ReactJS
+      level: proficient
+      evidence: Built frontend for Database Catalog Portal at AmEx used by 1k+ colleagues;
+        UI work at Keysight ML platform
+    - name: Figma / UX Design
+      level: familiar
+      evidence: Listed as hobby; occasional UX design work but no production UX portfolio
+        described
+    - name: Frontend Architecture
+      level: claimed
+      evidence: Owns production React frontends but no explicit detail on advanced
+        state management, performance optimization, accessibility, or component library
+        design
+  infrastructure:
+    skills:
+    - name: Kubernetes
+      level: expert
+      evidence: Core infrastructure for ML SaaS platform; automated model deployment,
+        scaling, and orchestration on AWS
+    - name: AWS
+      level: expert
+      evidence: Dynamic VM provisioning, GPU/CPU resource orchestration, infrastructure
+        automation for ML platform at Keysight
+    - name: CI/CD Pipelines
+      level: expert
+      evidence: Implemented CI/CD reducing manual intervention by 95% at AmEx; rapid
+        deploy/rollback pipelines at Keysight
+    - name: Docker / Containerization
+      level: expert
+      evidence: Containerized microservices for high-availability inference; production
+        containerized deployments across roles
+    - name: Google Cloud Platform (GCP)
+      level: proficient
+      evidence: Associate Cloud Engineer certification from Google
+    - name: DevOps / SRE
+      level: expert
+      evidence: Led DevOps/SRE initiatives at AmEx for 150+ services; zero-downtime
+        rollouts, infrastructure automation, reliability engineering
+    - name: Airflow
+      level: proficient
+      evidence: Built data ingestion and feature engineering pipelines at terabyte
+        scale
+    - name: MLFlow
+      level: expert
+      evidence: Core component of MLOps stack at Keysight for model tracking, versioning,
+        deployment, and validation
+  data:
+    skills:
+    - name: Data Engineering
+      level: expert
+      evidence: Built terabyte-scale data ingestion pipelines, dataset storage with
+        versioning and transformations at Keysight
+    - name: BigQuery
+      level: familiar
+      evidence: Listed in tools but no specific project evidence described
+    - name: Apache Beam / Dataflow
+      level: familiar
+      evidence: Listed in tools but no specific project evidence described
+    - name: Hadoop / Spark
+      level: familiar
+      evidence: Listed in tools but no specific project evidence described
+    - name: Superset
+      level: familiar
+      evidence: Listed in tools but no specific project evidence described
+    - name: Database Optimization
+      level: expert
+      evidence: Built automated pipeline to identify and decommission underutilized
+        databases at AmEx, driving $50k/month savings across 150+ services
+gaps_identified:
+- skill: Vector Databases / Vector Search
+  severity: critical
+  note: RAG work implies vector search usage but no specific vector store named (FAISS,
+    Pinecone, Milvus, etc.); critical for the AI-focused role requiring advanced retrieval
+    systems
+- skill: LLM Provider API Integration
+  severity: critical
+  note: No specific LLM providers named (OpenAI, Anthropic, Cohere); no details on
+    auth, rate limiting, error handling, prompt engineering, or cost/latency optimization
+    for LLM APIs
+- skill: LLM Safety / Guardrails
+  severity: critical
+  note: No evidence of hallucination safeguards, prompt/version governance, content
+    filtering, or fallback strategies for LLM failures
+- skill: SOC 2 Compliance
+  severity: moderate
+  note: Worked in regulated environments (AmEx) but no direct SOC 2 audit participation,
+    control implementation, or named security frameworks
+- skill: AI-Specific Observability
+  severity: moderate
+  note: Strong general SRE/DevOps monitoring experience but no explicit model drift
+    detection, LLM-specific logging/dashboards, or AI metrics tooling mentioned
+- skill: Advanced Frontend Architecture
+  severity: moderate
+  note: Production React experience but no evidence of complex state management patterns,
+    performance optimization, accessibility, or LLM-powered UI components
+- skill: Privacy Frameworks (GDPR, etc.)
+  severity: moderate
+  note: Regulatory compliance referenced at AmEx but no named privacy frameworks applied
+    to AI features
+- skill: Knowledge Sharing Artifacts
+  severity: minor
+  note: Mentoring and platform ownership imply knowledge sharing but no explicit RFCs,
+    playbooks, internal workshops, or published best-practice documentation cited

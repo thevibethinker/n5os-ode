@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "Incantum", "type": "TOOL", "context": "command discovery system used by V"}], "relationships": [{"from": "V", "to": "Incantum", "type": "USES", "context": "V utilizes Incantum for command discovery"}]}

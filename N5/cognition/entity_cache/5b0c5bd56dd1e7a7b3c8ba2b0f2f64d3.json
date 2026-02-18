@@ -1,0 +1,1 @@
+{"entities": [{"name": "Howie", "type": "PERSON", "context": "individual responsible for Project Howie Phase 2A"}], "relationships": [{"from": "V", "to": "Howie", "type": "WORKS_WITH", "context": "V is waiting for Howie's confirmation on calendar format for real-world testing"}]}

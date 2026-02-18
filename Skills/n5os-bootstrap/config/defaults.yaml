@@ -1,0 +1,49 @@
+# Default personalization for N5OS Bootstrap
+# Override any values in instance-specific configs
+
+instance:
+  name: "my-zo"
+  handle: "my-zo.zo.computer"
+  owner: "Owner"
+  role: general  # general | consulting-partner | personal-assistant
+
+autonomy:
+  level: supervised  # autonomous | supervised | restricted
+  requires_approval:
+    - external_comms
+    - file_deletion
+    - scheduled_tasks
+    - service_creation
+  parent: null  # escalation target handle (e.g., va.zo.computer)
+  
+personas:
+  enabled:
+    - operator
+    - builder
+    - debugger
+    - researcher
+    - strategist
+    - teacher
+    - writer
+    - architect
+  disabled: []
+  default: operator
+
+voice:
+  profile: professional  # professional | personal | formal
+  primitives: local  # local | shared | none
+  
+safety:
+  protection_level: strict  # strict | standard | relaxed
+  dry_run_default: true
+  
+features:
+  pulse: true
+  state_tracking: true
+  conversation_logging: true
+  
+paths:
+  prefs: N5/prefs
+  knowledge: Personal/Knowledge
+  personas: Documents/System/personas
+  logs: N5/logs

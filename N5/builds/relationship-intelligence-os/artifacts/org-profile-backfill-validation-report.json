@@ -1,0 +1,34 @@
+{
+  "batch": {
+    "batch_index": 0,
+    "batch_size": 300
+  },
+  "completed_at": "2026-02-17T01:44:36.173666+00:00",
+  "deltas_by_type": {
+    "budget_change": 100,
+    "competitive_landscape": 143,
+    "leadership_change": 87,
+    "operational_challenge": 118,
+    "priority_shift": 165,
+    "process_change": 110,
+    "strategic_initiative": 122,
+    "technology_adoption": 230,
+    "timeline_update": 72
+  },
+  "deltas_extracted": 1147,
+  "error_rate": 0.0,
+  "errors": [],
+  "meetings_discovered": 276,
+  "meetings_in_batch": 276,
+  "meetings_with_orgs": 79,
+  "merge_outcomes": {
+    "applied_high_confidence": 511,
+    "applied_medium_confidence": 629,
+    "conflict_flagged": 7
+  },
+  "mode": "apply",
+  "orgs_unique": 62,
+  "semantic_entities_upserted": 55,
+  "started_at": "2026-02-17T01:44:35.746239+00:00",
+  "unresolved_conflicts": 7
+}

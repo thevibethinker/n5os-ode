@@ -1,0 +1,103 @@
+# Gaps And Caveats
+# Extracted: 2026-02-15T02:16:54.288727
+# Method: Structured extraction
+# DO NOT EDIT
+
+cross_cutting_gaps:
+- area: Serverless architecture (Lambda, Step Functions, API Gateway, DynamoDB)
+  severity: significant
+  detail: No explicit production experience with serverless primitives (Lambda, Step
+    Functions, API Gateway) or DynamoDB/OpenSearch, which are central to this role's
+    stack; NoSQL experience is strong but not AWS‑native.
+  interview_probes:
+  - Have you designed or operated any serverless-first architectures (Lambda, Step
+    Functions, API Gateway)? Walk us through the design decisions and tradeoffs.
+  - How would you approach migrating a containerized microservice to a serverless
+    architecture? What concerns would you prioritize?
+  affected_skills:
+  - Serverless Architecture
+  - DynamoDB
+  - Amazon Web Services (AWS)
+- area: SQL querying, debugging, and optimization depth
+  severity: moderate
+  detail: Limited evidence of writing, debugging, and optimizing SQL beyond inferred
+    use (RDS operations, schema redesigns) and minimal explicit CI/CD and documentation
+    ownership narratives (beyond SOPs and migrations).
+  interview_probes:
+  - Can you walk through a specific SQL performance issue you diagnosed and resolved?
+    What tools and techniques did you use (EXPLAIN plans, indexing strategies, query
+    rewrites)?
+  affected_skills:
+  - SQL Querying and Optimization
+  - Technical Documentation
+  - Continuous Integration/Continuous Deployment (CI/CD)
+- area: Security and compliance framework ownership
+  severity: significant
+  detail: Security/compliance exposure is adjacent via payments and fraud prevention
+    but lacks direct ownership of frameworks such as PCI‑DSS, SOC2, or GDPR.
+  interview_probes:
+  - Have you directly owned or led implementation of any security/compliance frameworks
+    (PCI-DSS, SOC2, GDPR)? What was your specific role vs. a dedicated security team?
+  - How did you handle security requirements in the payments platform — encryption,
+    access controls, audit logging?
+  affected_skills:
+  - Ensure Security Compliance
+  - Backend Development
+- area: Formal ML team integration practices
+  severity: moderate
+  detail: Collaboration with ML engineers is implied through the LLM fraud pipeline,
+    but formal, ongoing ML team integration practices (model monitoring, data contracts,
+    validation) are not detailed.
+  interview_probes:
+  - Describe your working relationship with ML/data science teams. How did you handle
+    model versioning, data contracts, and validation of ML outputs in production?
+  - How would you set up monitoring and alerting for ML model performance degradation
+    in a production pipeline?
+  affected_skills:
+  - Collaborate with ML engineers
+  - Machine Learning Integration
+- area: Fintech and investment domain depth
+  severity: moderate
+  detail: Fintech domain depth is primarily in payments/e‑commerce rather than investment/alternatives
+    data. No direct fintech or financial services sector experience, and no direct
+    involvement with portfolio management, investment data, or alternative investments,
+    which are core to Addepar's market.
+  interview_probes:
+  - What do you know about alternative investment data structures (private equity,
+    hedge funds, real assets)? How would you approach learning this domain?
+  - How do you see your payments and e-commerce platform experience translating to
+    investment data aggregation and portfolio management systems?
+  affected_skills:
+  - Backend Development
+  - Software Architecture
+untested_areas:
+- area: OpenSearch / Elasticsearch production experience
+  reason: No explicit mention of OpenSearch, Elasticsearch, Solr, Lucene, or any search/indexing
+    engine appears in the resume. Evidence is limited to transferable inference from
+    distributed systems work.
+  recommendation: Ask for specific experience with search cluster management, index
+    design, query optimization, and any migration or scaling work involving search
+    technologies.
+- area: CI/CD pipeline design and ownership
+  reason: No explicit mention of CI/CD pipeline tools (Jenkins, GitHub Actions, CodePipeline),
+    pipeline design, testing automation, or release strategies (canary/blue-green).
+    Experience is inferred from operating microservices at scale.
+  recommendation: Probe for specific CI/CD pipeline authorship, testing automation
+    practices, deployment strategies, and metrics/monitoring tied to deployments.
+- area: Python as primary production language
+  reason: Python is listed as a known language and likely used for ML/data work, but
+    no concrete STAR-style examples of architecting, implementing, or optimizing Python-based
+    backend systems are provided. Primary evidence points to Java/Spring Boot.
+  recommendation: Ask the candidate to describe a production system they built primarily
+    in Python, including libraries used, testing approach, and deployment specifics.
+- area: Formal documentation ownership
+  reason: No explicit statements about authoring system design docs, API docs, coding
+    standards, or quantified impact of documentation. SOPs and migration plans are
+    mentioned but documentation ownership is not detailed.
+  recommendation: Ask for examples of design documents, API specifications, or architectural
+    decision records they authored and how those artifacts were maintained and adopted.
+stories_told: 2
+story_ids:
+- jL010IdigY4oaj3Hs8aU
+- KVukkhvzRKCPV7DqfgQA
+- COKUmaqSITrBKdtxSgJp

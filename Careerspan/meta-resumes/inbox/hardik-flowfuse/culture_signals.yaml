@@ -1,0 +1,101 @@
+# Culture Signals
+# Extracted: 2026-02-14T17:45:53.398927
+# Method: Structured extraction
+# DO NOT EDIT
+
+_raw: "explicit_values:\n  - name: \"Ownership\"\n    description: \"High ownership\
+  \ role with direct impact on product direction; end-to-end responsibility for AI\
+  \ features\"\n    observable_behaviors:\n      - \"Takes features from prototype\
+  \ through production without waiting for direction\"\n      - \"Proactively identifies\
+  \ failure modes, cost, and operational constraints\"\n      - \"Documents decisions\
+  \ and patterns without being asked\"\n    interview_signals:\n      - \"Stories\
+  \ where they drove a feature solo from idea to production\"\n      - \"Examples\
+  \ of catching problems before they became incidents\"\n      - \"Evidence of self-directed\
+  \ prioritization, not just ticket execution\"\n\n  - name: \"Shipping incrementally\"\
+  \n    description: \"Bias toward shipping incrementally rather than perfecting in\
+  \ isolation\"\n    observable_behaviors:\n      - \"Breaks large AI features into\
+  \ small, deployable chunks\"\n      - \"Prototypes quickly and iterates based on\
+  \ real usage data\"\n      - \"Comfortable releasing v1 with guardrails rather than\
+  \ waiting for v3\"\n    interview_signals:\n      - \"Can describe a time they shipped\
+  \ something imperfect and improved it\"\n      - \"Talks about tradeoffs between\
+  \ scope and speed naturally\"\n      - \"Doesn't over-architect hypothetical future\
+  \ requirements\"\n\n  - name: \"Clear communication\"\n    description: \"Excellent\
+  \ written communication emphasized; documenting patterns and decisions is core to\
+  \ the role\"\n    observable_behaviors:\n      - \"Writes clear async updates that\
+  \ don't require follow-up questions\"\n      - \"Documents AI patterns so non-AI\
+  \ engineers can understand and use them\"\n      - \"Shares best practices proactively\
+  \ across the team\"\n    interview_signals:\n      - \"Quality of their written\
+  \ application materials\"\n      - \"Can explain complex AI concepts in plain language\"\
+  \n      - \"References writing docs, RFCs, or internal guides in past roles\"\n\n\
+  \  - name: \"Informal, personality-forward culture\"\n    description: \"Custom\
+  \ emoji interview question signals a team that values personality, humor, and human\
+  \ connection in remote work\"\n    observable_behaviors:\n      - \"Brings personality\
+  \ to Slack without being performative\"\n      - \"Comfortable being themselves\
+  \ in professional contexts\"\n      - \"Contributes to team culture beyond just\
+  \ shipping code\"\n    interview_signals:\n      - \"Warmth and humor in conversation\
+  \ without forcing it\"\n      - \"Has opinions and interests beyond engineering\"\
+  \n      - \"Doesn't code-switch into corporate-speak when discussing work\"\n\n\
+  implied_requirements:\n  - trait: \"Self-direction in ambiguous domains\"\n    why_needed:\
+  \ \"AI engineering is inherently ambiguous — models behave unpredictably, best practices\
+  \ shift monthly, and this role requires comfort navigating that without heavy guidance\"\
+  \n    evidence_markers:\n      - \"Has built AI features where the requirements\
+  \ were vague and they shaped the scope\"\n      - \"Can describe how they evaluated\
+  \ competing approaches when no clear answer existed\"\n      - \"Doesn't need a\
+  \ manager to tell them what to try next\"\n\n  - trait: \"Pragmatic engineering\
+  \ judgment\"\n    why_needed: \"Role requires designing for failure modes, latency,\
+  \ cost, and operational constraints — this is a production-minded role, not a research\
+  \ role\"\n    evidence_markers:\n      - \"Talks about cost per query, latency budgets,\
+  \ and fallback behavior naturally\"\n      - \"Has killed or simplified AI features\
+  \ that weren't worth the complexity\"\n      - \"Balances technical ambition with\
+  \ product reality\"\n\n  - trait: \"Cross-functional fluency\"\n    why_needed:\
+  \ \"Small team means the AI engineer must also contribute to full-stack work and\
+  \ share patterns with non-AI engineers\"\n    evidence_markers:\n      - \"Comfortable\
+  \ context-switching between AI-specific and general engineering work\"\n      -\
+  \ \"Can pair with backend or frontend engineers on non-AI tasks\"\n      - \"Doesn't\
+  \ silo themselves as 'the AI person'\"\n\n  - trait: \"Remote-work maturity\"\n\
+  \    why_needed: \"Small remote team working async in Slack requires someone who\
+  \ thrives without in-person energy and can maintain output independently\"\n   \
+  \ evidence_markers:\n      - \"Has sustained high output in fully remote roles for\
+  \ 1+ years\"\n      - \"Proactively communicates blockers and progress without being\
+  \ asked\"\n      - \"Doesn't need synchronous meetings to stay aligned\"\n\n  -\
+  \ trait: \"Security and compliance awareness\"\n    why_needed: \"SOC 2 requirements\
+  \ mentioned explicitly — AI features must be built with privacy and security as\
+  \ first-class concerns, not afterthoughts\"\n    evidence_markers:\n      - \"Has\
+  \ worked in environments with compliance requirements\"\n      - \"Considers data\
+  \ handling and privacy when designing AI features\"\n      - \"Understands what\
+  \ data can and cannot be sent to external LLM providers\"\n\nworking_style_signals:\n\
+  \  autonomy_level: \"high - 'high ownership and direct impact on product direction'\
+  \ plus end-to-end feature responsibility signals minimal hand-holding\"\n  collaboration_mode:\
+  \ \"async-heavy - 'small, remote team that works async in Slack' is explicit; written\
+  \ communication emphasized over meetings\"\n  ambiguity_tolerance: \"high - 'comfort\
+  \ with ambiguity' listed as explicit requirement; AI domain is inherently uncertain;\
+  \ generalist role means scope is fluid\"\n  pace: \"fast-paced - 'bias toward shipping\
+  \ incrementally' plus prototype-evaluate-productionize cycle suggests rapid iteration\
+  \ over long planning phases\"\n\nred_flags:\n  - \"Needs detailed specifications\
+  \ before starting work\"\n  - \"Prefers research-oriented AI work over production\
+  \ shipping\"\n  - \"Uncomfortable with imperfect releases or iterative improvement\"\
+  \n  - \"Poor written communicator who relies on verbal/synchronous communication\"\
+  \n  - \"Siloes into AI-only work and resists general engineering contributions\"\
+  \n  - \"Overly formal or corporate in communication style\"\n  - \"Requires heavy\
+  \ process, standups, or check-ins to stay productive\"\n  - \"Treats compliance\
+  \ and security as someone else's problem\"\n  - \"Over-engineers solutions when\
+  \ simpler approaches would ship faster\"\n\nculture_fit_questions:\n  - question:\
+  \ \"Tell me about a time you shipped an AI feature that wasn't perfect. What did\
+  \ you release first, and how did you iterate?\"\n    assesses: \"Shipping incrementally,\
+  \ comfort with imperfection, pragmatic judgment\"\n  - question: \"How do you decide\
+  \ when an AI approach is too complex for the value it delivers?\"\n    assesses:\
+  \ \"Pragmatic engineering judgment, ownership of scope decisions\"\n  - question:\
+  \ \"Describe how you'd communicate a technical AI decision to a team of engineers\
+  \ who don't work in AI day-to-day.\"\n    assesses: \"Clear communication, cross-functional\
+  \ fluency, knowledge sharing\"\n  - question: \"What's your approach to staying\
+  \ productive and aligned when working async with a small remote team?\"\n    assesses:\
+  \ \"Remote-work maturity, async communication skills, self-direction\"\n  - question:\
+  \ \"Tell me about a time you had to figure out the right approach to a problem where\
+  \ there was no established playbook.\"\n    assesses: \"Ambiguity tolerance, self-direction,\
+  \ ownership\"\n  - question: \"How do you think about data privacy and security\
+  \ when integrating LLMs into a product?\"\n    assesses: \"Security and compliance\
+  \ awareness, production-mindedness\"\n  - question: \"What's the first custom emoji\
+  \ you're adding to our Slack?\"\n    assesses: \"Personality, cultural warmth, informal\
+  \ communication comfort\"\n```\n\n*12:45 PM ET, Feb 14, 2026*"
+_error: "while scanning for the next token\nfound character '`' that cannot start\
+  \ any token\n  in \"<unicode string>\", line 114, column 1:\n    ```\n    ^"

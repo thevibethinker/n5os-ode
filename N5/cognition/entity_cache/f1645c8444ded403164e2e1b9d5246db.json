@@ -1,0 +1,1 @@
+{"entities": [{"name": "X", "type": "CONCEPT", "context": "represents a negative emotion or action"}, {"name": "Y", "type": "CONCEPT", "context": "represents a negative consequence that the target audience wants to avoid"}, {"name": "linkedin", "type": "ORG", "context": "source of the information"}], "relationships": []}

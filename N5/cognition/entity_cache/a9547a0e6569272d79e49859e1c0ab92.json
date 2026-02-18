@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "knowledge system developer"}, {"name": "Ashby link", "type": "CONCEPT", "context": "a reference captured for generating POV"}], "relationships": [{"from": "V (Vrijen)", "to": "Ashby link", "type": "MENTIONS", "context": "captured link for POV generation"}]}

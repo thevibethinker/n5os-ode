@@ -1,0 +1,1 @@
+{"entities": [{"name": "Shivani Mathur", "type": "PERSON", "context": "Partnership stakeholder at FOHE with limited verbal participation in meetings"}, {"name": "FOHE", "type": "ORG", "context": "Organization where Shivani Mathur works"}], "relationships": [{"from": "Shivani Mathur", "to": "FOHE", "type": "WORKS_WITH", "context": "Partnership stakeholder role at FOHE"}]}

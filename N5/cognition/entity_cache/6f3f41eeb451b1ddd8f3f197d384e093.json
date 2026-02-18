@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vibe Builder", "type": "ORG", "context": "Auditor organization performing the audit"}, {"name": "Gmail", "type": "TOOL", "context": "Email integration to be verified"}], "relationships": []}

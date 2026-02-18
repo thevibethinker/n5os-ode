@@ -84,57 +84,87 @@ def split_document(content: str) -> Dict[str, str]:
     """
     Split document into logical chunks based on section headers.
     
+    Strategy: Find the LAST occurrence of each detail section header.
+    In Careerspan briefs, the document typically has:
+    1. Summary section (headers appear early with brief tables)
+    2. Detail sections (headers appear later with full skill breakdowns)
+    
+    The last occurrence of each header is the detail breakdown section,
+    which contains the "Our Take" narratives we need to extract.
+    
     Returns dict of chunk_name -> chunk_content
     """
     lines = content.split('\n')
     total_lines = len(lines)
     
-    # For very large docs, look for specific section markers
-    chunks = {}
-    
-    # Find key line numbers
-    resp_detail_start = None
-    soft_detail_start = None
-    hard_detail_start = None
-    
-    # Pattern: detailed sections appear after summary sections
-    # Summary: "Responsibilities" followed by skill list
-    # Detail: "Responsibilities" with individual skill breakdowns (longer)
-    
-    resp_count = 0
-    soft_count = 0
-    hard_count = 0
+    # Collect ALL occurrences of each section header
+    resp_lines = []
+    soft_lines = []
+    hard_lines = []
     
     for i, line in enumerate(lines):
         line_lower = line.strip().lower()
         
         if line_lower == 'responsibilities':
-            resp_count += 1
-            if resp_count == 2:  # Second occurrence is detail section
-                resp_detail_start = i
+            resp_lines.append(i)
         elif line_lower == 'soft skills':
-            soft_count += 1
-            if soft_count == 2:
-                soft_detail_start = i
+            soft_lines.append(i)
         elif line_lower == 'hard skills':
-            hard_count += 1
-            if hard_count == 2:
-                hard_detail_start = i
+            hard_lines.append(i)
     
-    # Build chunks based on detected boundaries
+    # Take the LAST occurrence of each — these are the detail sections
+    resp_detail_start = resp_lines[-1] if resp_lines else None
+    soft_detail_start = soft_lines[-1] if soft_lines else None
+    hard_detail_start = hard_lines[-1] if hard_lines else None
+    
+    chunks = {}
+    
     if resp_detail_start and soft_detail_start and hard_detail_start:
-        # Overview + summary (first section up to detailed responsibilities)
-        chunks['01_overview'] = '\n'.join(lines[0:resp_detail_start])
+        # Sort detail starts to get correct document order
+        sections = [
+            ('responsibilities', resp_detail_start),
+            ('soft_skills', soft_detail_start),
+            ('hard_skills', hard_detail_start),
+        ]
+        sections.sort(key=lambda x: x[1])
         
-        # Responsibilities details
-        chunks['02_responsibilities'] = '\n'.join(lines[resp_detail_start:soft_detail_start])
+        # Validate: each chunk should be substantial (>50 lines)
+        boundaries = [s[1] for s in sections] + [total_lines]
+        min_chunk = min(boundaries[j+1] - boundaries[j] for j in range(len(boundaries)-1))
         
-        # Soft skills details
-        chunks['03_soft_skills'] = '\n'.join(lines[soft_detail_start:hard_detail_start])
-        
-        # Hard skills details
-        chunks['04_hard_skills'] = '\n'.join(lines[hard_detail_start:])
-    else:
+        if min_chunk > 50:
+            # Overview = everything before the first detail section
+            first_detail = sections[0][1]
+            chunks['01_overview'] = '\n'.join(lines[0:first_detail])
+            
+            # Build detail chunks in document order
+            for idx, (name, start) in enumerate(sections):
+                end = sections[idx + 1][1] if idx + 1 < len(sections) else total_lines
+                chunk_num = f'{idx + 2:02d}'
+                chunks[f'{chunk_num}_{name}'] = '\n'.join(lines[start:end])
+        else:
+            # Detail sections too small — try second-to-last occurrences
+            resp_detail_start = resp_lines[-2] if len(resp_lines) >= 2 else resp_lines[-1] if resp_lines else None
+            soft_detail_start = soft_lines[-2] if len(soft_lines) >= 2 else soft_lines[-1] if soft_lines else None
+            hard_detail_start = hard_lines[-2] if len(hard_lines) >= 2 else hard_lines[-1] if hard_lines else None
+            
+            if resp_detail_start and soft_detail_start and hard_detail_start:
+                sections = [
+                    ('responsibilities', resp_detail_start),
+                    ('soft_skills', soft_detail_start),
+                    ('hard_skills', hard_detail_start),
+                ]
+                sections.sort(key=lambda x: x[1])
+                
+                first_detail = sections[0][1]
+                chunks['01_overview'] = '\n'.join(lines[0:first_detail])
+                
+                for idx, (name, start) in enumerate(sections):
+                    end = sections[idx + 1][1] if idx + 1 < len(sections) else total_lines
+                    chunk_num = f'{idx + 2:02d}'
+                    chunks[f'{chunk_num}_{name}'] = '\n'.join(lines[start:end])
+    
+    if not chunks:
         # Fallback: split by line count
         chunk_size = total_lines // 4
         chunks['01_overview'] = '\n'.join(lines[0:chunk_size])
@@ -158,8 +188,13 @@ Extract the following and return ONLY valid JSON (no markdown fences):
 {{
   "overall_score": <integer 0-100, extract from "X\\nOverall score" pattern>,
   "bottom_line": "<exact bottom line text>",
-  "overall_strengths": "<summary of key strengths>",
-  "overall_weaknesses": "<summary of key weaknesses>",
+  "qualification": "<Well-aligned|Partially aligned|Not aligned — look for 'Qualification:' text>",
+  "qualification_detail": "<e.g. 'Atypical Background' if present, or null>",
+  "career_trajectory": "<Industry Shift|Lateral Move|Career Pivot|Step Up|Step Down — or null>",
+  "elevator_pitch": "<the full elevator pitch paragraph if present, or null>",
+  "recommendation": "<STRONG_YES|YES|CONDITIONAL|NO|STRONG_NO — from Proceed/Pass/Maybe indicators>",
+  "overall_strengths": "<full text of Overall strengths section>",
+  "overall_weaknesses": "<full text of Overall weaknesses section>",
   "potential_dealbreakers": ["<question 1>", "<question 2>"],
   "category_scores": {{
     "background": {{"score": <int>, "max": 100}},
@@ -170,10 +205,13 @@ Extract the following and return ONLY valid JSON (no markdown fences):
   }}
 }}
 
-IMPORTANT: 
+IMPORTANT:
 - Look for scores like "Background: 78/100" or "Hard skills: 58/100"
 - The overall score appears as a number followed by "Overall score" on the next line
 - Extract exact text for bottom_line, not a summary
+- The elevator pitch is a paragraph starting after "Elevator pitch" heading
+- Qualification appears near the top, e.g., "Qualification: Well-aligned"
+- Recommendation comes from "Proceed = X Pass — Maybe" pattern
 
 SOURCE DOCUMENT:
 {doc}
@@ -190,21 +228,27 @@ For each skill assessment in this section, extract:
     "skill_name": "<exact skill name>",
     "category": "<Responsibility|Hard Skill|Soft Skill>",
     "rating": "<Excellent|Good|Fair|Gap>",
-    "importance": <1-10 integer>,
+    "required_level": "<Novice|Intermediate|Advanced|Expert>",
+    "importance": <1-10 integer from "Importance: X/10">,
+    "max_importance": 10,
     "direct_experience_score": <1-10 integer from "Direct experience: X/10">,
+    "max_experience_score": 10,
     "experience_type": "<Direct|Transferable>",
-    "evidence_type": "<Story + profile|Story|Profile|Resume|Gap>",
+    "evidence_type": "<Story + profile|Story|Profile|Resume|Gap|Inferred>",
+    "signal_type": "<story_verified|resume_only|inferred>",
     "our_take": "<FULL verbatim 'Our take' text - do NOT summarize>",
     "contributing_skills": ["<skill1>", "<skill2>"],
     "support": [
       {{
-        "source": "<story ID or 'Resume'>",
+        "source": "<story ID or null>",
         "type": "<Direct|Transferable>",
         "score": "<X/10>",
         "rating": "<Excellent|Good|Fair|Gap>",
         "is_best": <true if marked as Best, else false>
       }}
-    ]
+    ],
+    "support_note": "<'No strong support found' or similar note, or null>",
+    "source_page": "<page reference or null>"
   }}
 ]
 
@@ -213,6 +257,8 @@ IMPORTANT:
 - Each skill has an "Our take:" section - extract it completely
 - If rating is "Weak", normalize to "Gap"
 - contributing_skills should be an empty array [] if not present, NOT null
+- required_level comes from "Required level:" in the skill header (e.g., "Required level: Advanced")
+- importance and direct_experience_score are integers from the X/10 format
 
 SOURCE SECTION:
 {doc}
@@ -382,25 +428,50 @@ async def process_document_chunked(
     return overview, all_skills
 
 
+def _largest_remainder_pcts(counts: Dict[str, int], total: int) -> Dict[str, float]:
+    """Convert counts to percentages that always sum to exactly 100.0 using the largest remainder method."""
+    keys = ["story_verified", "resume_only", "inferred"]
+    raw = {k: 100.0 * counts[k] / total for k in keys}
+    floored = {k: int(raw[k] * 10) / 10 for k in keys}
+    remainders = {k: round(raw[k] - floored[k], 10) for k in keys}
+    deficit = round(100.0 - sum(floored.values()), 1)
+    steps = int(round(deficit * 10))
+    for k in sorted(keys, key=lambda k: -remainders[k]):
+        if steps <= 0:
+            break
+        floored[k] = round(floored[k] + 0.1, 1)
+        steps -= 1
+    return {
+        "story_verified_pct": floored["story_verified"],
+        "resume_only_pct": floored["resume_only"],
+        "inferred_pct": floored["inferred"],
+    }
+
+
 def calculate_signal_strength(skills: List[dict]) -> dict:
-    """Calculate signal strength percentages from skills."""
-    evidence_counts = {"story": 0, "resume": 0, "inferred": 0}
-    
+    """Calculate signal strength percentages from skills with per-skill signal_type tagging."""
+    signal_counts = {"story_verified": 0, "resume_only": 0, "inferred": 0}
+
     for skill in skills:
         ev_type = (skill.get("evidence_type") or "").lower()
         if "story" in ev_type:
-            evidence_counts["story"] += 1
+            skill["signal_type"] = "story_verified"
+            signal_counts["story_verified"] += 1
+        elif "inferred" in ev_type:
+            skill["signal_type"] = "inferred"
+            signal_counts["inferred"] += 1
         elif "resume" in ev_type or "profile" in ev_type:
-            evidence_counts["resume"] += 1
+            skill["signal_type"] = "resume_only"
+            signal_counts["resume_only"] += 1
+        elif "gap" in ev_type:
+            skill["signal_type"] = "resume_only"  # Gap = assessed but no evidence, not inferred
+            signal_counts["resume_only"] += 1
         else:
-            evidence_counts["inferred"] += 1
-    
+            skill["signal_type"] = "resume_only"
+            signal_counts["resume_only"] += 1
+
     total = len(skills) if skills else 1
-    return {
-        "story_verified_pct": round(evidence_counts["story"] / total * 100, 1),
-        "resume_only_pct": round(evidence_counts["resume"] / total * 100, 1),
-        "inferred_pct": round(evidence_counts["inferred"] / total * 100, 1)
-    }
+    return _largest_remainder_pcts(signal_counts, total)
 
 
 def build_scores_complete(overview: dict, skills: List[dict]) -> dict:

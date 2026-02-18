@@ -23,6 +23,7 @@ Recovery Rules:
 import json
 import sys
 import argparse
+import asyncio
 from pathlib import Path
 from datetime import datetime, timezone
 import os
@@ -30,6 +31,7 @@ from pulse_common import PATHS, WORKSPACE
 
 BUILDS_DIR = PATHS.BUILDS
 CONTROL_FILE = PATHS.WORKSPACE / "N5" / "config" / "pulse_control.json"
+DEFAULT_TICK_TIMEOUT_SECONDS = 120
 
 
 def get_control_state() -> dict:
@@ -121,19 +123,30 @@ def main():
     if args.dry_run:
         print("[SENTINEL] Dry-run mode: reporting without mutations.")
 
-    from pulse import tick, assess_and_recover
-    import asyncio
+    from pulse import tick, assess_and_recover, load_meta
 
     all_actions = {}
 
     for slug in active_builds:
         print(f"\n[SENTINEL] === {slug} ===")
+        try:
+            meta = load_meta(slug)
+            lease = meta.get("tick_lease", {})
+            circuit = meta.get("spawn_circuit", {})
+            if lease:
+                print(f"[SENTINEL] Lease: holder={lease.get('holder')} expires={lease.get('expires_at')}")
+            if circuit.get("open"):
+                print(f"[SENTINEL] Circuit: open until {circuit.get('open_until')} ({circuit.get('open_reason', '?')})")
+        except Exception as e:
+            print(f"[SENTINEL] Warning: could not read meta for {slug}: {e}")
 
         # Phase 1: Tick (existing orchestration cycle)
         if not args.dry_run:
             print(f"[SENTINEL] Ticking {slug}...")
             try:
-                asyncio.run(tick(slug))
+                asyncio.run(asyncio.wait_for(tick(slug), timeout=DEFAULT_TICK_TIMEOUT_SECONDS))
+            except asyncio.TimeoutError:
+                print(f"[SENTINEL] Tick timeout for {slug} after {DEFAULT_TICK_TIMEOUT_SECONDS}s")
             except Exception as e:
                 print(f"[SENTINEL] Error ticking {slug}: {e}")
         else:

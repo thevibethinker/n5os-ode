@@ -19,6 +19,9 @@ Pulse escalates via SMS when human attention is required.
 | Drop dead (15min) | HIGH | `[PULSE] {slug} D{x.y} DEAD. No response in 15min. Forensics spawned.` |
 | All Drops in Stream dead | CRITICAL | `[PULSE] {slug} Stream {n} DEAD. Build halted. Intervention required.` |
 | Build blocked | CRITICAL | `[PULSE] {slug} BLOCKED. No Drops can advance. Human needed.` |
+| Learning Drop ready | INFO | `[LEARN] {slug} L{x.y} ready: {concept}. Open when ready.` |
+| Wave Review | INFO | `[REVIEW] {slug} Wave {n} complete. Quick review ready.` |
+| Decision Point | INFO | `[DECIDE] {slug} DP-{n}: {question}. Options ready.` |
 
 ## Recovery Events (Smart Sentinel)
 
@@ -59,6 +62,8 @@ Review needed.
 - Drop completed successfully (logged, not SMS'd)
 - Drop spawned (logged, not SMS'd)
 - Routine tick with no state change
+- Learning Drop completion (deposit captures this)
+- Understanding bank updates (logged, not escalated)
 
 ## Implementation
 

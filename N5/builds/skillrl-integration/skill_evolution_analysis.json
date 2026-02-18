@@ -1,0 +1,16 @@
+{
+  "analysis_date": "2026-02-11T02:37:19.836499",
+  "total_skills": 46,
+  "stale_skills": [],
+  "unused_skills": [],
+  "skill_gaps": [],
+  "failing_skills": [],
+  "refinement_candidates": [],
+  "top_performers": [
+    {
+      "name": "pulse",
+      "usage_count": 23,
+      "last_used": "2026-02-10"
+    }
+  ]
+}

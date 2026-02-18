@@ -131,7 +131,7 @@ def check_last_notification() -> tuple[bool, str]:
         tuple: (is_concerning, message)
     """
     try:
-        with sqlite3.connect('/home/workspace/N5/data/crm_v3.db') as conn:
+        with sqlite3.connect('/home/workspace/N5/data/n5_core.db') as conn:
             cursor = conn.cursor()
             
             # Query webhook health table
@@ -174,20 +174,24 @@ def check_processing_errors() -> tuple[bool, int, str]:
         tuple: (has_critcal_errors, error_count, message)
     """
     try:
-        with sqlite3.connect('/home/workspace/N5/data/crm_v3.db') as conn:
+        with sqlite3.connect('/home/workspace/N5/data/n5_core.db') as conn:
             cursor = conn.cursor()
-            
-            # Query recent errors (last 24 hours)
+
+            # Query recent errors (last 24 hours). If table is absent, treat as zero.
             hours_to_check = 24
-            cursor.execute(
-                """SELECT COUNT(*) as error_count
-                   FROM webhook_errors
-                   WHERE created_at >= datetime('now', '-%s hours')
-                   AND resolved = 0""" % hours_to_check
-            )
-            result = cursor.fetchone()
-            
-            error_count = result[0] if result else 0
+            cursor.execute("SELECT name FROM sqlite_master WHERE type='table' AND name='webhook_errors'")
+            has_table = cursor.fetchone() is not None
+            if has_table:
+                cursor.execute(
+                    """SELECT COUNT(*) as error_count
+                       FROM webhook_errors
+                       WHERE created_at >= datetime('now', '-%s hours')
+                       AND resolved = 0""" % hours_to_check
+                )
+                result = cursor.fetchone()
+                error_count = result[0] if result else 0
+            else:
+                error_count = 0
             
             # Get threshold from config (default: 5 errors)
             error_threshold = app_state['config'].get('health', {}).get('alert_on_errors_count', 5)
@@ -207,7 +211,7 @@ def check_processing_errors() -> tuple[bool, int, str]:
 def check_database_connectivity() -> tuple[bool, str]:
     """Check if database is accessible"""
     try:
-        with sqlite3.connect('/home/workspace/N5/data/crm_v3.db') as conn:
+        with sqlite3.connect('/home/workspace/N5/data/n5_core.db') as conn:
             cursor = conn.cursor()
             cursor.execute("SELECT 1")
             cursor.fetchone()
@@ -228,17 +232,17 @@ def check_services_availability() -> tuple[bool, List[str]]:
     services = []
     issues = []
     
-    # Check webhook handler (port 8765)
+    # Check webhook handler (port 8778)
     try:
         sock = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         sock.settimeout(2)
-        result = sock.connect_ex(('localhost', 8765))
+        result = sock.connect_ex(('localhost', 8778))
         sock.close()
         
         if result == 0:
-            services.append("✓ Webhook handler (port 8765)")
+            services.append("✓ Webhook handler (port 8778)")
         else:
-            issues.append("❌ Webhook handler unavailable (port 8765)")
+            issues.append("❌ Webhook handler unavailable (port 8778)")
     except Exception as e:
         issues.append(f"❌ Could not check webhook handler: {str(e)[:30]}...")
     
@@ -260,6 +264,8 @@ def check_services_availability() -> tuple[bool, List[str]]:
                     if 'crm_calendar_webhook_renewal.py' in cmdline:
                         services.append("ℹ️ Renewal worker running (process found)")
                         break
+                except Exception:
+                    continue
             else:
                 issues.append("⚠️ Renewal worker status unknown (port 8766 not listening)")
     except Exception as e:

@@ -1,0 +1,517 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Deliverable Record",
+  "description": "Tracks deliverable requests, commitments, and lifecycle status with reuse detection.",
+  "type": "object",
+  "properties": {
+    "deliverable_id": {
+      "type": "string",
+      "pattern": "^del_[a-z0-9]{8}$",
+      "description": "Unique identifier for the deliverable record"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when the deliverable was identified"
+    },
+    "source_meeting_id": {
+      "type": "string",
+      "description": "ID of the meeting where this deliverable was identified"
+    },
+    "client_id": {
+      "type": "string",
+      "description": "ID of the client this deliverable is for"
+    },
+    "project_context": {
+      "type": "string",
+      "description": "Project or engagement context (optional)"
+    },
+    "deliverable_type": {
+      "type": "string",
+      "enum": [
+        "proposal",
+        "contract",
+        "technical_specification",
+        "design_document", 
+        "implementation_plan",
+        "training_materials",
+        "documentation",
+        "presentation",
+        "report",
+        "analysis",
+        "strategy_document",
+        "roadmap",
+        "assessment",
+        "recommendation",
+        "prototype",
+        "demo",
+        "integration",
+        "configuration",
+        "deployment",
+        "testing",
+        "other"
+      ],
+      "description": "Type of deliverable"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Title or name of the deliverable"
+    },
+    "description": {
+      "type": "string",
+      "description": "Detailed description of the deliverable"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "identified",
+        "scoped", 
+        "assigned",
+        "in_progress",
+        "review",
+        "delivered",
+        "accepted",
+        "rejected",
+        "cancelled",
+        "on_hold"
+      ],
+      "description": "Current lifecycle status"
+    },
+    "commitment_details": {
+      "type": "object",
+      "properties": {
+        "commitment_type": {
+          "type": "string",
+          "enum": ["explicit_promise", "implicit_commitment", "request_received", "discussion_item", "follow_up"],
+          "description": "Type of commitment or request"
+        },
+        "commitment_strength": {
+          "type": "string",
+          "enum": ["weak", "moderate", "strong", "definitive"],
+          "description": "Strength of the commitment"
+        },
+        "requestor": {
+          "type": "string",
+          "description": "Person who requested this deliverable"
+        },
+        "owner": {
+          "type": "string",
+          "description": "Person responsible for delivering"
+        },
+        "approver": {
+          "type": "string",
+          "description": "Person who must approve this deliverable"
+        },
+        "stakeholders": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "person_id": {
+                "type": "string"
+              },
+              "role": {
+                "type": "string",
+                "enum": ["reviewer", "recipient", "stakeholder", "subject_matter_expert", "decision_maker"]
+              }
+            },
+            "required": ["person_id", "role"],
+            "additionalProperties": false
+          },
+          "description": "Additional stakeholders involved"
+        }
+      },
+      "required": ["commitment_type"],
+      "additionalProperties": false,
+      "description": "Details about the commitment or request"
+    },
+    "scope": {
+      "type": "object",
+      "properties": {
+        "scope_description": {
+          "type": "string",
+          "description": "Detailed scope description"
+        },
+        "inclusions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Specific items included in scope"
+        },
+        "exclusions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Specific items excluded from scope"
+        },
+        "assumptions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Assumptions underlying the scope"
+        },
+        "dependencies": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "dependency_description": {
+                "type": "string"
+              },
+              "dependency_type": {
+                "type": "string",
+                "enum": ["internal_resource", "external_dependency", "client_input", "approval", "system_access", "data_availability", "other_deliverable"]
+              },
+              "owner": {
+                "type": "string"
+              },
+              "status": {
+                "type": "string",
+                "enum": ["identified", "requested", "confirmed", "at_risk", "blocked"]
+              }
+            },
+            "required": ["dependency_description", "dependency_type"],
+            "additionalProperties": false
+          },
+          "description": "Dependencies required for completion"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Scope definition for the deliverable"
+    },
+    "timeline": {
+      "type": "object",
+      "properties": {
+        "created_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the deliverable was first identified"
+        },
+        "requested_date": {
+          "type": "string",
+          "format": "date",
+          "description": "Date when delivery was requested"
+        },
+        "committed_date": {
+          "type": "string",
+          "format": "date",
+          "description": "Date committed for delivery"
+        },
+        "started_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When work began"
+        },
+        "due_date": {
+          "type": "string",
+          "format": "date",
+          "description": "Final due date"
+        },
+        "completed_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When work was completed"
+        },
+        "delivered_at": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When deliverable was delivered to client"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Timeline information for the deliverable"
+    },
+    "quality_metrics": {
+      "type": "object",
+      "properties": {
+        "scope_clarity": {
+          "type": "string",
+          "enum": ["very_clear", "clear", "somewhat_clear", "unclear", "very_unclear"],
+          "description": "Clarity of the scope definition"
+        },
+        "timeline_clarity": {
+          "type": "string",
+          "enum": ["very_clear", "clear", "somewhat_clear", "unclear", "very_unclear"],
+          "description": "Clarity of timeline expectations"
+        },
+        "stakeholder_clarity": {
+          "type": "string",
+          "enum": ["very_clear", "clear", "somewhat_clear", "unclear", "very_unclear"],
+          "description": "Clarity of stakeholder roles and expectations"
+        },
+        "acceptance_criteria": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "criterion": {
+                "type": "string"
+              },
+              "importance": {
+                "type": "string",
+                "enum": ["nice_to_have", "important", "critical", "must_have"]
+              },
+              "measurable": {
+                "type": "boolean",
+                "description": "Whether this criterion is measurable"
+              }
+            },
+            "required": ["criterion", "importance"],
+            "additionalProperties": false
+          },
+          "description": "Acceptance criteria for the deliverable"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Quality and clarity metrics"
+    },
+    "reuse_analysis": {
+      "type": "object",
+      "properties": {
+        "similarity_check_performed": {
+          "type": "boolean",
+          "description": "Whether similarity analysis was performed"
+        },
+        "similar_deliverables": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "deliverable_id": {
+                "type": "string"
+              },
+              "similarity_score": {
+                "type": "number",
+                "minimum": 0,
+                "maximum": 1
+              },
+              "similarity_aspects": {
+                "type": "array",
+                "items": {
+                  "type": "string",
+                  "enum": ["scope", "deliverable_type", "client", "technical_approach", "format", "timeline", "stakeholders"]
+                }
+              }
+            },
+            "required": ["deliverable_id", "similarity_score"],
+            "additionalProperties": false
+          },
+          "description": "Similar deliverables found in the database"
+        },
+        "reuse_decision": {
+          "type": "string",
+          "enum": ["create_new", "reuse_existing", "adapt_existing"],
+          "description": "Decision on how to handle this deliverable"
+        },
+        "reuse_rationale": {
+          "type": "string",
+          "description": "Rationale for the reuse decision"
+        },
+        "base_deliverable_id": {
+          "type": "string",
+          "description": "ID of deliverable being reused/adapted (if applicable)"
+        }
+      },
+      "required": ["similarity_check_performed"],
+      "additionalProperties": false,
+      "description": "Analysis of reuse opportunities"
+    },
+    "launcher_prompts": {
+      "type": "object",
+      "properties": {
+        "creation_prompt": {
+          "type": "string",
+          "description": "Prompt for creating this deliverable from scratch"
+        },
+        "adaptation_prompt": {
+          "type": "string",
+          "description": "Prompt for adapting an existing deliverable"
+        },
+        "review_prompt": {
+          "type": "string",
+          "description": "Prompt for reviewing this deliverable"
+        },
+        "context_bundle": {
+          "type": "object",
+          "properties": {
+            "client_context": {
+              "type": "string"
+            },
+            "project_context": {
+              "type": "string"
+            },
+            "technical_context": {
+              "type": "string"
+            },
+            "stakeholder_context": {
+              "type": "string"
+            },
+            "reference_materials": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "title": {
+                    "type": "string"
+                  },
+                  "location": {
+                    "type": "string"
+                  },
+                  "relevance": {
+                    "type": "string",
+                    "enum": ["high", "medium", "low"]
+                  }
+                },
+                "required": ["title", "location"],
+                "additionalProperties": false
+              }
+            }
+          },
+          "additionalProperties": false,
+          "description": "Context bundle for launcher prompts"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Generated launcher prompts for creation/adaptation/review"
+    },
+    "evidence": {
+      "type": "object",
+      "properties": {
+        "quotes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "text": {
+                "type": "string",
+                "description": "Exact quote from the meeting"
+              },
+              "speaker": {
+                "type": "string",
+                "description": "Person who said the quote"
+              },
+              "context": {
+                "type": "string",
+                "description": "Additional context around the quote"
+              },
+              "timestamp_in_meeting": {
+                "type": "string",
+                "description": "Timestamp within the meeting (optional)"
+              },
+              "commitment_type": {
+                "type": "string",
+                "enum": ["explicit_promise", "request_made", "suggestion", "discussion_point", "follow_up_mentioned"],
+                "description": "Type of commitment this quote represents"
+              }
+            },
+            "required": ["text", "speaker"],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "description": "Direct quotes supporting this deliverable"
+        },
+        "block_references": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "description": "Meeting block IDs containing supporting evidence"
+        }
+      },
+      "required": ["quotes", "block_references"],
+      "additionalProperties": false,
+      "description": "Evidence supporting this deliverable record"
+    },
+    "financial_context": {
+      "type": "object",
+      "properties": {
+        "estimated_effort": {
+          "type": "object",
+          "properties": {
+            "hours": {
+              "type": "number",
+              "minimum": 0
+            },
+            "complexity": {
+              "type": "string",
+              "enum": ["low", "medium", "high", "very_high"]
+            },
+            "confidence": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          },
+          "additionalProperties": false,
+          "description": "Estimated effort required"
+        },
+        "billable_status": {
+          "type": "string",
+          "enum": ["billable", "non_billable", "included_in_scope", "change_request", "goodwill"],
+          "description": "Billing status of this deliverable"
+        },
+        "budget_impact": {
+          "type": "string",
+          "enum": ["within_budget", "budget_neutral", "budget_increase", "scope_expansion"],
+          "description": "Impact on project budget"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Financial context and implications"
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "extractor_version": {
+          "type": "string",
+          "description": "Version of the deliverable extractor"
+        },
+        "conversation_id": {
+          "type": "string",
+          "pattern": "^con_[A-Za-z0-9]+$",
+          "description": "ID of the conversation that generated this record"
+        },
+        "processing_mode": {
+          "type": "string",
+          "enum": ["production", "dry_run", "test"],
+          "description": "Processing mode for this extraction"
+        },
+        "source_blocks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Block IDs that contributed to this record"
+        }
+      },
+      "required": ["extractor_version", "conversation_id"],
+      "additionalProperties": false,
+      "description": "Provenance information for audit trails"
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Overall confidence in this deliverable record (0-1)"
+    }
+  },
+  "required": [
+    "deliverable_id",
+    "timestamp",
+    "source_meeting_id",
+    "client_id",
+    "deliverable_type",
+    "title",
+    "status",
+    "commitment_details",
+    "evidence",
+    "provenance",
+    "confidence"
+  ],
+  "additionalProperties": false
+}

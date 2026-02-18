@@ -1,0 +1,47 @@
+{
+  "slug": "lora-voice-evolution",
+  "learnings": [
+    {
+      "text": "DuckDB shares table contains escaped quotes and newlines that need normalization. Pattern: \\\"\\n\\\" should become actual newlines. Content library has highest quality with originality scores. Voice-library-v2 is mostly comments, filtered for 300+ char content to find post-like entries.",
+      "source": "manual",
+      "added_at": "2026-02-12T06:25:42.693306+00:00",
+      "tags": []
+    },
+    {
+      "text": "LinkedIn posts from content_library overlap with D1.1 LinkedIn extraction - D5.1 merger should deduplicate on original_file paths and source markers",
+      "source": "manual",
+      "added_at": "2026-02-12T06:29:04.819603+00:00",
+      "tags": []
+    },
+    {
+      "text": "Voice-primitives.md is currently template-only with no extractable primitives. Future voice library builds should check for atomic primitives in Knowledge/voice-library/primitives/ directory.",
+      "source": "manual",
+      "added_at": "2026-02-12T06:38:27.767097+00:00",
+      "tags": [
+        "voice-library",
+        "data-extraction"
+      ]
+    },
+    {
+      "text": "voice-library-v2/linkedin_corpus.jsonl comments (261) are a complete subset of the DuckDB comments table (688). All 261 deduplicated. DuckDB is the superset source for LinkedIn comments. [Source: D1.2]",
+      "source": "manual",
+      "added_at": "2026-02-12T06:39:14.988381+00:00",
+      "tags": []
+    },
+    {
+      "text": "Gmail withTextPayload=true returns full text in 'payload' field. OOO auto-replies contaminated Jul-Sep 2025. Two-pass anonymization essential: pass 1 from metadata, pass 2 for body-only names. 73% of substantive emails are replies. Source: D3.2",
+      "source": "manual",
+      "added_at": "2026-02-12T06:48:04.655330+00:00",
+      "tags": []
+    },
+    {
+      "text": "/zo/ask output_format rejects 'integer' type \u2014 use 'number' instead. API accepts: string, number, boolean. D1.3 brief specifies 'integer' but that will 422 at the API layer. Source: D2.2",
+      "source": "manual",
+      "added_at": "2026-02-12T07:00:26.295089+00:00",
+      "tags": [
+        "api",
+        "scoring"
+      ]
+    }
+  ]
+}

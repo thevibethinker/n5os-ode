@@ -1,0 +1,1 @@
+{"entities": [{"name": "Howie", "type": "PERSON", "context": "individual responsible for adding tags"}, {"name": "Phase 2A", "type": "CONCEPT", "context": "a stage related to the tagging process"}, {"name": "calendar", "type": "TOOL", "context": "tool used for managing events and tagging"}], "relationships": []}

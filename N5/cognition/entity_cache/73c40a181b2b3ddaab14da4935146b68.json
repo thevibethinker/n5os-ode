@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ilse", "type": "PERSON", "context": "Provides holiday and emergency coverage support; off Christmas Day and New Year's through January 2"}], "relationships": [{"from": "Ilse", "to": "V", "type": "WORKS_WITH", "context": "Provides emergency coverage for critical failures or demos to purchasers during holidays"}]}

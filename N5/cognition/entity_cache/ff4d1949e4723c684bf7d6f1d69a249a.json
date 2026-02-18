@@ -1,0 +1,1 @@
+{"entities": [{"name": "CLI tool", "type": "TOOL", "context": "a tool for programmatic checks with conditional rules"}, {"name": "AI awareness", "type": "CONCEPT", "context": "the concept of integrating AI into processes"}, {"name": "Extensible JSON", "type": "CONCEPT", "context": "a concept for planning future fields in JSON format"}], "relationships": []}

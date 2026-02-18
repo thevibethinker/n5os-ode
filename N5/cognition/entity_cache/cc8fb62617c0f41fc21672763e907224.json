@@ -1,0 +1,1 @@
+{"entities": [{"name": "Devarsh Kumar", "type": "PERSON", "context": "Email query result"}, {"name": "Reliance Industries", "type": "ORG", "context": "Company associated with Devarsh"}], "relationships": [{"from": "Devarsh Kumar", "to": "Reliance Industries", "type": "WORKS_WITH", "context": "Employee at the organization"}]}

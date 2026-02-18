@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "The individual who manages the contact profiles"}, {"name": "CRM markdown", "type": "TOOL", "context": "Tool for updating profiles"}], "relationships": [{"from": "V", "to": "CRM markdown", "type": "USES", "context": "V uses CRM markdown to update profiles"}]}

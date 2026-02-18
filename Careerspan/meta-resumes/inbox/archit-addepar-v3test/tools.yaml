@@ -1,0 +1,137 @@
+# Tools
+# Extracted: 2026-02-15T02:16:54.264674
+# Method: Structured extraction
+# DO NOT EDIT
+
+tool_categories:
+  languages:
+  - name: Java
+    proficiency: proficient
+    evidence: Primary backend language in multiple roles; explicitly listed in tools
+      and resume.
+  - name: Python
+    proficiency: familiar
+    evidence: Explicitly listed; referenced for ML/RAG and backend relevance but limited
+      direct production detail.
+  - name: Go
+    proficiency: familiar
+    evidence: Listed in tools/executive summary as additional backend language exposure.
+  - name: Kotlin
+    proficiency: familiar
+    evidence: Listed in tools/executive summary.
+  - name: C++
+    proficiency: familiar
+    evidence: Listed in tools/executive summary.
+  - name: SQL
+    proficiency: familiar
+    evidence: SQL querying/optimization discussed as transferable experience; inferred
+      from RDS and large-scale aggregation work.
+  frameworks:
+  - name: Spring Boot
+    proficiency: proficient
+    evidence: Explicitly listed; tied to Java backend and microservices delivery.
+  - name: Gin
+    proficiency: familiar
+    evidence: Explicitly listed among frameworks.
+  databases:
+  - name: ScyllaDB
+    proficiency: proficient
+    evidence: Direct hands-on schema redesign, query-performance fixes, and zero-downtime
+      migration.
+  - name: Cassandra
+    proficiency: familiar
+    evidence: Referenced as Scylla/Cassandra-family NoSQL experience.
+  - name: Amazon RDS
+    proficiency: familiar
+    evidence: Referenced in infra scaling and operations (EKS/RDS upgrades).
+  - name: DynamoDB
+    proficiency: claimed
+    evidence: Mentioned in role fit; explicitly identified as a gap/lacking direct
+      production experience.
+  - name: OpenSearch
+    proficiency: claimed
+    evidence: Mentioned in role requirements and fit assessment; little to no direct
+      usage evidence.
+  - name: Elasticsearch
+    proficiency: claimed
+    evidence: Mentioned with OpenSearch as weak/lacking direct experience.
+  - name: NoSQL databases
+    proficiency: proficient
+    evidence: Strong NoSQL design/optimization narrative, especially via Scylla/Cassandra-family
+      systems.
+  cloud_infrastructure:
+  - name: AWS
+    proficiency: proficient
+    evidence: Explicitly listed; production scaling and distributed backend workloads
+      on AWS.
+  - name: Amazon EKS
+    proficiency: familiar
+    evidence: Explicitly referenced in infra upgrades and peak scaling.
+  - name: Kubernetes
+    proficiency: familiar
+    evidence: Listed in tools and used with AWS/EKS in production context.
+  - name: AWS Lambda
+    proficiency: claimed
+    evidence: Mentioned as serverless primitive in role stack; no explicit production
+      experience stated.
+  - name: AWS Step Functions
+    proficiency: claimed
+    evidence: Mentioned in role stack/context; no direct implementation evidence.
+  - name: Amazon API Gateway
+    proficiency: claimed
+    evidence: Mentioned in role stack/context; no direct implementation evidence.
+  devops:
+  - name: Terraform
+    proficiency: familiar
+    evidence: Explicitly listed; associated with IaC and cloud infrastructure work.
+  - name: Kafka
+    proficiency: familiar
+    evidence: Explicitly listed and referenced as Kafka-like/event-driven patterns.
+  - name: Apache Airflow
+    proficiency: familiar
+    evidence: Used to orchestrate Spark aggregation jobs at Embibe.
+  - name: CI/CD
+    proficiency: claimed
+    evidence: Discussed as transferable/good but without explicit named pipeline tooling.
+  - name: Message queues
+    proficiency: familiar
+    evidence: Order/post-order orchestration described via asynchronous queue-driven
+      workflows.
+  other:
+  - name: Apache Spark
+    proficiency: familiar
+    evidence: Used for large-scale hourly/daily aggregation jobs.
+  - name: Grafana
+    proficiency: familiar
+    evidence: Used for monitoring and identifying CPU/performance issues.
+  - name: LLM-based fraud review pipeline
+    proficiency: familiar
+    evidence: Designed and operated LLM-powered fraud workflow in production.
+  - name: RAG
+    proficiency: familiar
+    evidence: Explicitly described in fraud-review solution architecture.
+  - name: Stripe
+    proficiency: proficient
+    evidence: Integrated into payments platform; high-volume production processing.
+  - name: PayPal
+    proficiency: proficient
+    evidence: Integrated into payments platform with secure/idempotent workflows.
+  - name: Slack
+    proficiency: familiar
+    evidence: Fraud summaries delivered automatically for human review.
+  - name: Shopify
+    proficiency: familiar
+    evidence: Led migration off Shopify via greenfield checkout/order system.
+  - name: Clutch
+    proficiency: familiar
+    evidence: Referenced as integration in gift card/payment ecosystem.
+  - name: Applara
+    proficiency: claimed
+    evidence: Referenced as external tax-calculation dependency/fallback during outages.
+  - name: Microservices architecture
+    proficiency: proficient
+    evidence: Built and operated multi-service backend systems at scale.
+  - name: Serverless architecture
+    proficiency: claimed
+    evidence: Role-relevant and discussed as transferable; no explicit direct implementation
+      details.

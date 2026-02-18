@@ -10,7 +10,7 @@ Commands:
   audit   - Check for TBD placeholders and missing content
 
 Usage:
-  python3 session_state_manager.py init --convo-id con_XXX [--type build|research|discussion|planning]
+  python3 session_state_manager.py init --convo-id con_XXX [--type build|research|discussion|planning|action]
   python3 session_state_manager.py init --convo-id con_XXX --build my-project --worker-num 1 --parent-topic "My Project"
   python3 session_state_manager.py update --convo-id con_XXX --field status --value active
   python3 session_state_manager.py sync --convo-id con_XXX --json '{"Progress": {...}, "Covered": [...]}'
@@ -30,6 +30,18 @@ class SessionStateManager:
     """Manage SESSION_STATE.md files for conversations."""
     
     WORKSPACE_BASE = Path("/home/.z/workspaces")
+    VALID_TYPES = {"build", "research", "discussion", "planning", "debug", "onboarding"}
+    TYPE_ALIASES = {
+        "action": "planning",
+        "strategy": "planning",
+        "strategic": "planning",
+        "implement": "build",
+        "implementation": "build",
+        "coding": "build",
+        "code": "build",
+        "chat": "discussion",
+        "talk": "discussion",
+    }
     
     # Auto-classification keywords
     CLASSIFICATION_KEYWORDS = {
@@ -81,6 +93,8 @@ class SessionStateManager:
                 worker_num = parsed.get("worker") or parsed.get("worker_num")
                 parent_topic = parsed.get("parent_topic") or parsed.get("topic")
         
+        conv_type = self._normalize_type(conv_type, user_message)
+
         # Auto-classify if no type provided
         if not conv_type and user_message:
             conv_type = self._classify_conversation(user_message)
@@ -199,6 +213,23 @@ class SessionStateManager:
         self._sync_to_db()
         
         return True
+
+    def _normalize_type(self, conv_type: str | None, user_message: str | None = None) -> str | None:
+        """Normalize type aliases and gracefully downgrade unknown type tokens."""
+        if not conv_type:
+            return None
+
+        raw = conv_type.strip().lower()
+        normalized = self.TYPE_ALIASES.get(raw, raw)
+        if normalized in self.VALID_TYPES:
+            return normalized
+
+        inferred = self._classify_conversation(user_message or "")
+        print(
+            f"⚠ Unknown --type '{conv_type}'. Falling back to inferred type '{inferred}'.",
+            file=sys.stderr,
+        )
+        return inferred
     
     def _parse_build_context(self, message: str) -> dict:
         """
@@ -795,8 +826,13 @@ def main():
     # Init command
     init_parser = subparsers.add_parser("init", help="Initialize SESSION_STATE.md")
     init_parser.add_argument("--convo-id", required=True, help="Conversation ID (con_XXX)")
-    init_parser.add_argument("--type", choices=["build", "research", "discussion", "planning"], 
-                            help="Conversation type (auto-detected if omitted)")
+    init_parser.add_argument(
+        "--type",
+        help=(
+            "Conversation type (auto-detected if omitted). "
+            "Supports aliases like 'action'->'planning'."
+        ),
+    )
     init_parser.add_argument("--mode", help="Specific mode within type")
     init_parser.add_argument("--message", help="User message for auto-classification")
     init_parser.add_argument("--focus", help="Explicit focus override")
@@ -867,6 +903,5 @@ def main():
 
 if __name__ == "__main__":
     main()
-
 
 

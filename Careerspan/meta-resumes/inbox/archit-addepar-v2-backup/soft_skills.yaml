@@ -1,0 +1,58 @@
+# Soft Skills
+# Extracted: 2026-02-05T16:36:47.084023
+# Method: Structured extraction
+# DO NOT EDIT
+
+demonstrated_strengths:
+- trait: Ownership Mindset
+  evidence: Founded Assignment platform from PoC to full product, owned Order Platform
+    workflows end-to-end, led design and development of Payments Platform handling
+    $15M daily revenue
+  confidence: high
+- trait: Problem Solving
+  evidence: Diagnosed ScyllaDB scaling bottleneck caused by 'allow filtering' queries,
+    implemented dual-table architecture with zero-downtime migration; designed resilient
+    checkout system with idempotency and consistency patterns
+  confidence: high
+- trait: Analytical Thinking
+  evidence: Separated pre-order (consistency-critical) from post-order (eventually
+    consistent) workflows; designed priority-based task processing with abstract classes
+    and concurrent execution
+  confidence: high
+- trait: Cross-functional Collaboration
+  evidence: Negotiated soft inventory reservation process with inventory team; collaborated
+    with engineering, product, QA, and ops to deliver greenfield checkout; coordinated
+    cross-team database schema overhaul
+  confidence: high
+- trait: Innovation
+  evidence: Built LLM/RAG-powered fraud review pipeline that aggregates multi-source
+    signals and delivers concise reports to Slack for human action; created extensible
+    Post-Order Workflow framework
+  confidence: high
+- trait: Mentorship
+  evidence: Grew and mentored a team of 8 engineers end-to-end at Embibe
+  confidence: medium
+working_style:
+  autonomy: high
+  collaboration: async-native
+  communication: written-strong
+  ambiguity_tolerance: high
+leadership_signals:
+- Led team of 8 engineers through all stages of product development
+- Earned increased recognition and autonomy as a technical leader after backend redesign
+  success
+- Created SOPs for major peak events (Black Friday scaling)
+- Drove architectural decisions that enabled business exit from Shopify
+potential_concerns:
+- Technical communication rated only 7/10 - lacks explicit evidence of architecture
+  presentations or design doc authorship
+- Mentorship details sparse - no STAR examples of specific coaching actions or measurable
+  mentee outcomes
+- Story support for mentoring junior engineers is 0/10 in one assessment despite resume
+  claim
+unknown_factors:
+- Sync meeting effectiveness and verbal communication in real-time discussions
+- Conflict resolution approach when technical decisions are contested
+- Response to direct critical feedback
+- Remote/hybrid work patterns and timezone flexibility
+- Documentation discipline beyond SOPs (design docs, API specs, runbooks)

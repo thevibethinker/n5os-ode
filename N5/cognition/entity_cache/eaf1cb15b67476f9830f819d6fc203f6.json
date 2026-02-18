@@ -1,0 +1,1 @@
+{"entities": [{"name": "SMS notification integration", "type": "TOOL", "context": "a tool for sending notifications"}, {"name": "weekly review generator", "type": "TOOL", "context": "a tool for generating weekly reviews"}, {"name": "contacts", "type": "CONCEPT", "context": "people or entities V maintains in records"}], "relationships": []}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual with a knowledge system"}, {"name": "zoputer", "type": "TOOL", "context": "system that calls V"}], "relationships": [{"from": "zoputer", "to": "V", "type": "USES", "context": "zoputer calls V for decisions"}]}

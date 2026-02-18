@@ -1,0 +1,1 @@
+{"entities": [{"name": "SQLite", "type": "TOOL", "context": "database system used for tracking conversations"}, {"name": "N5", "type": "ORG", "context": "system that the conversation metadata is part of"}], "relationships": [{"from": "SQLite", "to": "N5", "type": "USES", "context": "SQLite is used to track conversation metadata in the N5 system"}]}

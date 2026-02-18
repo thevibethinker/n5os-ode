@@ -1,0 +1,1 @@
+{"entities": [{"name": "Inbox/REVIEW.md", "type": "TOOL", "context": "file used for manual review"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "individual managing the knowledge system"}], "relationships": [{"from": "V (Vrijen)", "to": "Inbox/REVIEW.md", "type": "USES", "context": "uses the file for reviewing"}]}

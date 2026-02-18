@@ -1,0 +1,1 @@
+{"entities": [{"name": "user_zo_account", "type": "CONCEPT", "context": "reference to user account format"}, {"name": "n5_version", "type": "TOOL", "context": "version of a software or tool used"}, {"name": "onboarding_version", "type": "TOOL", "context": "version of the onboarding process"}], "relationships": []}

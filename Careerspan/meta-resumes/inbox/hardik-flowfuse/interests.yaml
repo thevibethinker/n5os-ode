@@ -1,0 +1,57 @@
+# Interests
+# Extracted: 2026-02-14T17:45:53.389308
+# Method: Structured extraction
+# DO NOT EDIT
+
+hobbies:
+- Avid plant collector (150+ plants)
+- Football fan (following club for 12+ years)
+- Digital art creation
+- UX design using Figma
+- Gaming
+- Visual art
+interests:
+- Machine learning and AI systems
+- MLOps and platform engineering
+- Full-stack product development
+- DevOps and site reliability engineering
+- Cloud infrastructure and cost optimization
+- UX/UI design
+side_projects:
+- name: India Innovation Hackathon entry
+  description: ML model to prioritize and recommend user stories for Agile tools (Rally/Jira);
+    secured top-5 finish out of 100+ participants
+- name: GrowthHack 2021
+  description: Hackathon project that earned 3rd position and led to further project
+    development
+publications_talks:
+- Presented ML SaaS platform work at conferences (mentioned in brief but not named
+  specifically)
+personality_signals:
+- Founding-engineer mentality — comfortable building from zero with ambiguity
+- Solo product ownership instinct — took full end-to-end responsibility without being
+  asked
+- Plant collector with 150+ plants suggests patience, nurturing disposition, and long-term
+  commitment
+- 12+ year football club loyalty signals deep loyalty and consistency
+- Creative side (digital art, visual art, Figma UX) indicates design sensibility beyond
+  pure engineering
+- Mentored 4 interns — natural inclination toward teaching and developing others
+- Competitive academic achiever (IIT-JEE rank 47 out of 14 million, KVPY, NTSE) —
+  high-ceiling intellect with proven drive
+culture_fit_indicators:
+- Thrives in ambiguous, greenfield environments (built ML platform from scratch)
+- Cross-functional collaborator — worked across Product, Design, Engineering, DevOps,
+  Data Science
+- Self-directed and autonomous — solo product leader at American Express
+- Pragmatic over theoretical — consistently chose reliable, value-driven solutions
+  over experimental ones
+- Feedback-driven iteration — actively gathered and acted on user feedback throughout
+  product lifecycle
+- Creative hobbies (art, Figma, gaming) suggest comfort with design thinking and user
+  empathy
+data_availability: moderate
+note: Personal interests section is relatively rich (hobbies explicitly listed in
+  the brief), but deeper personal context (values, motivations, life philosophy, community
+  involvement) is sparse. Most personality signals are inferred from professional
+  behavior patterns rather than stated personal information.

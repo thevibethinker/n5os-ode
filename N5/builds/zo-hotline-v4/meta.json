@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0",
+  "slug": "zo-hotline-v4",
+  "title": "Zo Hotline V4 — Prime Time",
+  "objective": "Take Zo Hotline from working prototype to prime time: faster, cheaper, smarter, better-informed, self-improving",
+  "created": "2026-02-17",
+  "status": "active",
+  "completed_at": null,
+  "type": "interactive",
+  "orchestrator_convo_id": "con_D22Ewo8OGuQrMBrx",
+  "spawn_mode": "manual",
+  "workers": {
+    "total": 6,
+    "complete": 2,
+    "in_progress": 0,
+    "blocked": 0,
+    "pending": 4
+  },
+  "drops": [
+    {
+      "id": "D0",
+      "slug": "zozie-architecture-migration",
+      "title": "Zozie Dashboard → Code-Controlled Migration",
+      "status": "complete",
+      "wave": 0,
+      "spawn_mode": "manual",
+      "notes": "Migrated Zozie from VAPI assistantId to serverUrl. Both hotlines now use identical architecture."
+    },
+    {
+      "id": "D1",
+      "slug": "ws1-infrastructure",
+      "title": "Webhook Infrastructure Upgrades",
+      "status": "pending",
+      "wave": 1,
+      "spawn_mode": "manual",
+      "notes": "Expanded from pure latency to include: caller profiles, knowledge index, standout call flagging, messaging hooks, prompt trim. The 'smart plumbing' drop."
+    },
+    {
+      "id": "D2",
+      "slug": "ws2-model",
+      "title": "Model Cost Optimization",
+      "status": "pending",
+      "wave": 2,
+      "spawn_mode": "manual",
+      "notes": "Runs AFTER D1's prompt trim. Evaluates cheaper models against trimmed prompt."
+    },
+    {
+      "id": "D3",
+      "slug": "ws3-research",
+      "title": "Use Case Research + Competitive Landscape",
+      "status": "pending",
+      "wave": 1,
+      "spawn_mode": "manual",
+      "notes": "Expanded to include competitor positioning, messaging effectiveness baseline, idealism/open-source angle."
+    },
+    {
+      "id": "D4",
+      "slug": "ws5-conversation",
+      "title": "Conversation Design v3 — Capstone",
+      "status": "pending",
+      "wave": 3,
+      "spawn_mode": "manual",
+      "dependencies": ["D1", "D2", "D3", "D5"],
+      "notes": "Synthesizes ALL prior drops. Pathway-specific Socratic sequences, anti-pattern blockers, emotional detection, technical calibration, Master Pattern integration, competitive responses, messaging effectiveness tracking."
+    },
+    {
+      "id": "D5",
+      "slug": "ws4-zo-docs",
+      "title": "Zo Documentation Ingestion",
+      "status": "complete",
+      "wave": 1,
+      "spawn_mode": "manual",
+      "notes": "Delivered: 41 platform docs, 5 skills registry docs, 6 conversational playbook files, ~280 concept mappings, freshness agent."
+    }
+  ]
+}

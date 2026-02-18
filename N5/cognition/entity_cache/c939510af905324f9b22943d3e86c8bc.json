@@ -1,0 +1,1 @@
+{"entities": [{"name": "Jinja2", "type": "TOOL", "context": "Template engine used for the welcome guide"}, {"name": "Integration tests", "type": "CONCEPT", "context": "Testing methodology involving multiple phases"}], "relationships": []}

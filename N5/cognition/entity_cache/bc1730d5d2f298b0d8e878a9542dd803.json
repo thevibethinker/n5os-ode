@@ -1,0 +1,1 @@
+{"entities": [{"name": "Records Layer", "type": "CONCEPT", "context": "Staging area for raw, unprocessed data"}, {"name": "Conversation-End File Saving", "type": "CONCEPT", "context": "Workflow that doesn't interrupt conversation flow"}, {"name": "Documents Cleanup", "type": "CONCEPT", "context": "Organized with System/ and Archive/ subdirectories"}], "relationships": []}

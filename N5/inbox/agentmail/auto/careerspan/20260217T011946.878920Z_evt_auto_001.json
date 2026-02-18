@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "received_at": "2026-02-17T01:19:46.878920+00:00",
+    "inbox_role": "careerspan",
+    "inbox_key": "careerspan.n5os@agentmail.to",
+    "route_queue": "auto",
+    "event_id": "evt_auto_001",
+    "message_id": "msg_auto_001",
+    "sender_email": "trusted@careerspan.com",
+    "sender_domain": "careerspan.com"
+  },
+  "security": {
+    "risk_level": "safe",
+    "decision": "auto_process",
+    "sender_tier": "A",
+    "confidence": 0.93,
+    "flags": [],
+    "rationale": "No major adversarial patterns detected"
+  },
+  "payload": {
+    "event_type": "message.received",
+    "event_id": "evt_auto_001",
+    "message": {
+      "inbox_id": "careerspan.n5os@agentmail.to",
+      "message_id": "msg_auto_001",
+      "subject": "JD",
+      "text": "new role",
+      "from": [
+        {
+          "email": "trusted@careerspan.com"
+        }
+      ],
+      "to": [
+        {
+          "email": "careerspan.n5os@agentmail.to"
+        }
+      ]
+    }
+  }
+}

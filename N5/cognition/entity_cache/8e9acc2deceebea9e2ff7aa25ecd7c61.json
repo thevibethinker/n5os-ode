@@ -1,0 +1,1 @@
+{"entities": [{"name": "Howie Integration", "type": "TOOL", "context": "Integration tool that is paused until needed"}], "relationships": [{"from": "V", "to": "Howie Integration", "type": "USES", "context": "V uses Howie Integration but it is currently paused"}]}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "InterviewConductor", "type": "TOOL", "context": "Manages onboarding conversation flow"}, {"name": "InterviewQuestion", "type": "CONCEPT", "context": "Defines the structure of questions asked during the interview"}], "relationships": []}

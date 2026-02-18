@@ -1,0 +1,125 @@
+---
+created: 2026-02-11
+last_edited: 2026-02-11
+version: 1.0
+provenance: con_bUi8SwieebEmtCTV
+---
+
+# Zoputer Autonomy Configuration
+# ================================
+# This file defines decision-making thresholds and permissions for zoputer.
+# Adjusting values here changes zoputer's behavior without code changes.
+
+version: "1.0"
+
+# Autonomy level: low | medium | high
+# - low: zoputer asks before most actions
+# - medium: zoputer acts autonomously within defined bounds
+# - high: zoputer acts freely, only escalating critical decisions
+autonomy_level: medium
+
+# ============================================================
+# CONFIDENCE THRESHOLDS
+# ============================================================
+# zoputer self-assesses confidence (0.0 to 1.0) for each decision.
+# These thresholds determine routing:
+#
+#   confidence >= auto_adapt      → Execute autonomously
+#   confidence >= escalate_to_va  → Execute but notify va
+#   confidence >= escalate_to_human → Ask va for guidance
+#   confidence < escalate_to_human  → Escalate to V (human)
+
+thresholds:
+  # Below this → escalate to va (the parent AI instance)
+  # Use when: zoputer is uncertain but the decision is operational
+  escalate_to_va: 0.7
+
+  # Below this → escalate to V (the human)
+  # Use when: zoputer and va together can't resolve it
+  # Critical decisions, policy questions, or ambiguous instructions
+  escalate_to_human: 0.5
+
+  # Above this → act autonomously without notification
+  # Use when: zoputer is highly confident and the action is reversible
+  auto_adapt: 0.9
+
+# ============================================================
+# SELF-EDIT PERMISSIONS
+# ============================================================
+# Defines which paths zoputer may modify autonomously.
+# ALL paths are relative to the workspace root.
+
+allowed_self_edits:
+  # zoputer's learning artifacts - can freely update
+  - "Learnings/*"
+  - "Learnings/**/*"
+  
+  # Runtime state and caches - operational needs
+  - "Runtime/*"
+  - "Runtime/**/*"
+  
+  # zoputer's own knowledge accumulation
+  - "zoputer/learnings/*"
+  - "zoputer/learnings/**/*"
+  
+  # Temporary working files
+  - "tmp/*"
+
+forbidden_self_edits:
+  # Skills are curated by va/V - never auto-edit
+  - "Skills/*"
+  - "Skills/**/*"
+  
+  # System configuration is va's domain
+  - "Documents/System/*"
+  - "Documents/System/**/*"
+  
+  # N5 infrastructure - critical system
+  - "N5/*"
+  - "N5/**/*"
+  
+  # Personal files belong to V
+  - "Personal/*"
+  - "Personal/**/*"
+  
+  # Protected directories (checked dynamically via .n5protected)
+  # Any path containing .n5protected in itself or ancestors is forbidden
+
+# ============================================================
+# GIT & LEARNING CONFIGURATION
+# ============================================================
+
+# Branch where zoputer pushes autonomous learnings
+# This branch is zoputer's "working memory" that va can review
+learning_branch: "zoputer/learnings"
+
+# If true, zoputer cannot push directly to main/master
+# All changes must go through PR reviewed by va
+require_pr_for_main: true
+
+# Auto-sync interval for learnings (in minutes)
+# 0 = manual only, >0 = periodic push
+learning_sync_interval: 30
+
+# ============================================================
+# OPERATIONAL CONSTRAINTS
+# ============================================================
+
+# Maximum cost (in USD) zoputer can incur per session without escalating
+max_session_cost: 5.00
+
+# Actions that ALWAYS require human approval regardless of confidence
+always_escalate:
+  - "delete_scheduled_task"
+  - "send_email"  # Outbound communications
+  - "send_sms"
+  - "create_stripe_product"
+  - "register_user_service"
+
+# Actions that NEVER require escalation (always autonomous)
+never_escalate:
+  - "read_file"
+  - "list_files"
+  - "grep_search"
+  - "web_search"
+  - "web_research"

@@ -10,7 +10,7 @@ import os
 import re
 from pathlib import Path
 
-DB_PATH = '/home/workspace/N5/data/crm_v3.db'
+DB_PATH = '/home/workspace/N5/data/n5_core.db'
 ORGS_DIR = '/home/workspace/Knowledge/crm/organizations'
 
 def get_frontmatter_value(content, key):

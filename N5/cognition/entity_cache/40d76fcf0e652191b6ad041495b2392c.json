@@ -1,0 +1,1 @@
+{"entities": [{"name": "Postgres", "type": "TOOL", "context": "database system used for managing migrations"}, {"name": "idempotency_records", "type": "CONCEPT", "context": "database table related to migrations and cleanup"}, {"name": "DATABASE_URL", "type": "CONCEPT", "context": "connection string for the Postgres database"}], "relationships": []}

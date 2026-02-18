@@ -1,127 +1,124 @@
 # Hard Skills
-# Extracted: 2026-02-05T16:36:47.079317
+# Extracted: 2026-02-15T01:59:23.333519
 # Method: Structured extraction
 # DO NOT EDIT
 
 skill_categories:
   ai_ml:
     skills:
-    - name: LLM/RAG Systems
+    - name: LLM/RAG-based fraud review pipeline
       level: proficient
-      evidence: Designed and operated LLM-powered fraud review pipeline using RAG-based
-        system combining order data, payment signals, and historical fraud patterns
-        at Quince
-    - name: Machine Learning Integration
+      evidence: Designed and operated an LLM-powered fraud review pipeline combining
+        order, payment, and historical fraud signals with Slack delivery for human
+        review.
+    - name: Machine learning integration
       level: proficient
-      evidence: Built production ML pipeline that aggregates multi-source signals
-        and routes concise reports for human review; rated 7/10 direct experience
+      evidence: Directly integrated ML/LLM outputs into production backend workflows
+        for fraud operations.
+    - name: Python for ML-adjacent workflows
+      level: claimed
+      evidence: Python is listed, but no explicit production Python ML implementation
+        details are provided.
   backend:
     skills:
+    - name: Backend development
+      level: expert
+      evidence: Led greenfield checkout/orders/payments platforms; supported 100k+
+        daily orders, 5x peak spikes, and ~$15M/day peaks.
     - name: Java
-      level: expert
-      evidence: Explicitly listed; led design of Payments/Orders platforms using Spring
-        Boot across 12+ microservices handling 100k+ daily orders
-    - name: Spring Boot
-      level: expert
-      evidence: Primary framework for Quince microservices architecture; idempotent
-        payment processing, workflow orchestration
+      level: proficient
+      evidence: Java/Spring Boot explicitly listed and tied to large-scale backend
+        platform ownership.
     - name: Python
       level: claimed
-      evidence: Listed in skills but no concrete STAR examples; likely used for ML/data
-        work but not tied to specific production services
-    - name: Go/Gin
+      evidence: Python is listed in profile, but direct backend production examples
+        are not clearly detailed.
+    - name: Go
       level: familiar
-      evidence: Listed in executive summary skills; no specific project details provided
-    - name: Kotlin
-      level: familiar
-      evidence: Listed in skills; no specific implementation details
-    - name: Microservices Architecture
-      level: expert
-      evidence: Architected 12+ microservices at Quince; decoupled pre/post-order
-        processes, workflow visibility, soft inventory reservation
-    - name: API Integrations
-      level: expert
-      evidence: Integrated Stripe, PayPal, Clutch for payment processing; secure idempotent
-        transaction handling at scale
-    - name: Distributed Systems
-      level: expert
-      evidence: Led greenfield checkout handling 100k+ daily orders, 5× BFCM spikes,
-        $15M/day peaks with consistency and resilience patterns
-    - name: Message Queues/Kafka
+      evidence: Go is listed as exposure, without strong direct ownership examples.
+    - name: Microservices architecture
       level: proficient
-      evidence: Listed in skills; implemented Kafka-like patterns for workflow orchestration
-        and post-order task processing
+      evidence: Hands-on across microservices for orders/payments and distributed
+        workflow orchestration.
+    - name: Distributed systems design
+      level: expert
+      evidence: Demonstrated idempotency, consistency partitioning, resilience patterns,
+        and zero-downtime migration strategies.
+    - name: Workflow automation/orchestration
+      level: expert
+      evidence: Built extensible post-order workflow framework with priority/concurrency
+        and automated fraud review flows.
+    - name: API/payment integrations
+      level: proficient
+      evidence: Integrated Stripe, PayPal, gift cards, BNPL/store credit in production
+        payments platform.
   frontend:
-    skills: []
+    skills:
+    - name: Frontend development
+      level: claimed
+      evidence: No meaningful frontend implementation evidence in the brief.
   infrastructure:
     skills:
     - name: AWS
       level: proficient
-      evidence: Direct experience with EKS, RDS; drove infra upgrades for Black Friday
-        scaling; rated 7/10
-    - name: Kubernetes/EKS
+      evidence: Worked with AWS stack including EKS and RDS for high-scale production
+        systems.
+    - name: Kubernetes (EKS)
       level: proficient
-      evidence: Upgraded EKS replicas for peak traffic; operated production workloads
-        at scale
-    - name: Terraform
-      level: proficient
-      evidence: Explicitly listed; production infra work implies hands-on IaC but
-        no detailed module authorship examples
+      evidence: Operational scaling and reliability work references EKS replicas and
+        production performance tuning.
+    - name: Terraform (Infrastructure as Code)
+      level: familiar
+      evidence: Terraform explicitly listed with direct but limited detail on module/state/pipeline
+        ownership.
+    - name: Serverless architecture
+      level: claimed
+      evidence: No explicit production use of Lambda/Step Functions/API Gateway; experience
+        described as transferable.
     - name: CI/CD
       level: claimed
-      evidence: Transferable only; no explicit pipeline tools named (Jenkins, GitHub
-        Actions); inferred from microservices operations
-    - name: Serverless (Lambda/Step Functions/API Gateway)
-      level: claimed
-      evidence: No explicit production experience; rated as transferable 6/10 based
-        on cloud and event-driven workflow experience
+      evidence: CI/CD capability is inferred from production ownership but tooling
+        and pipeline specifics are not directly evidenced.
+    - name: Kafka/event-driven patterns
+      level: familiar
+      evidence: Kafka-like patterns are referenced; explicit deep ownership details
+        are limited.
   data:
     skills:
-    - name: ScyllaDB/Cassandra
+    - name: NoSQL database design (Scylla/Cassandra family)
       level: proficient
-      evidence: 'Detailed story: diagnosed allow filtering issues, redesigned schemas,
-        implemented dual writes, zero-downtime migration for 10M+ user timeline'
-    - name: SQL/RDS
+      evidence: Led schema redesign, removed allow-filtering bottlenecks, implemented
+        dual writes/backfills, and delivered zero-downtime migration.
+    - name: Data aggregation pipelines
       level: proficient
-      evidence: Operated RDS instances, schema redesigns, aggregation jobs rolling
-        up millions of rows; transferable 6/10
-    - name: Data Aggregation Pipelines
-      level: expert
-      evidence: Built hourly-to-yearly aggregation jobs for 10M+ learners; designed
-        data rollups transforming activity into actionable insights
+      evidence: Built hourly-to-yearly aggregation processing for 10M+ learners and
+        large-scale activity data.
+    - name: SQL querying and optimization
+      level: claimed
+      evidence: Some RDS/schema optimization context exists, but limited direct SQL
+        tuning/debugging evidence.
     - name: DynamoDB
       level: claimed
-      evidence: No direct mention; rated 4/10 lacking experience; NoSQL experience
-        is strong but not AWS-native
+      evidence: Role requires it, but brief flags lacking direct DynamoDB experience.
     - name: OpenSearch/Elasticsearch
       level: claimed
-      evidence: No explicit mention; rated 3/10 weak; RAG pipeline and aggregation
-        work tangentially related but unconfirmed
+      evidence: Brief flags weak/lacking direct OpenSearch/Elasticsearch production
+        experience.
 gaps_identified:
-- skill: Serverless Architecture (Lambda, Step Functions, API Gateway)
+- skill: AWS serverless primitives (Lambda, Step Functions, API Gateway)
   severity: critical
-  note: Central to Addepar's stack; candidate has no explicit production serverless
-    experience despite strong cloud background
+  note: Central to target role stack, but no explicit production evidence.
 - skill: DynamoDB
   severity: critical
-  note: Role requires intermediate DynamoDB; candidate NoSQL experience is ScyllaDB/Cassandra,
-    not AWS-native
+  note: Called out as lacking experience despite role requirement.
 - skill: OpenSearch/Elasticsearch
   severity: moderate
-  note: Role requires intermediate; no evidence of search/indexing engine experience
-- skill: Python (Production Backend)
+  note: Explicitly rated weak/lacking, with no direct implementation evidence.
+- skill: Production-depth Python backend ownership
   severity: moderate
-  note: Role requires advanced Python; candidate lists it but no concrete backend
-    service examples; likely ML scripting only
-- skill: Security/Compliance Frameworks
-  severity: moderate
-  note: No direct ownership of PCI-DSS, SOC2, GDPR; adjacent exposure via payments/fraud
-    only
-- skill: Investment/FinTech Domain
+  note: Python is listed, but strongest demonstrated backend delivery is in Java/Spring
+    and distributed platform work.
+- skill: Explicit SQL optimization depth
   severity: minor
-  note: No experience with portfolio management, alternative investments, or investment
-    data systems; background is e-commerce/ed-tech
-- skill: Technical Documentation
-  severity: minor
-  note: SOPs created but no explicit API docs, design docs, or documentation standards
-    ownership
+  note: Some transferable evidence exists, but limited direct examples of advanced
+    SQL tuning/debugging.

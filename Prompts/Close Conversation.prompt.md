@@ -2,8 +2,8 @@
 title: Close Conversation
 description: Smart close — auto-detects context (thread/drop/build) and runs appropriate close workflow
 created: 2025-10-15
-last_edited: 2026-01-27
-version: 7.2
+last_edited: 2026-02-16
+version: 7.3
 provenance: con_iWYnvvOstEK9TrTG
 ---
 # Close Conversation
@@ -57,6 +57,12 @@ Auto-detect context and close this conversation appropriately.
    
    d. **Call the write function** with your generated title and summary
 
+   e. **Echo the title in chat response (required):**
+      - Include an explicit line exactly once:
+        `Close Title: <full title>`
+      - Do not rely on JSON viewers for title visibility.
+      - This is required even when files are written successfully.
+
    ### For Drop Close:
    - Confirm deposit was written to `N5/builds/<slug>/deposits/`
    - Note any concerns in the deposit
@@ -65,7 +71,26 @@ Auto-detect context and close this conversation appropriately.
    - Synthesize across all deposits
    - Write BUILD_AAR.md
 
-6. **Surface Conversational Cache (if exists):**
+6. **Enforce Close Contract Gate (required before claiming complete):**
+
+   a. Create checklist JSON at:
+   ```bash
+   /home/.z/workspaces/<CONVO_ID>/CLOSE_CHECKLIST.json
+   ```
+   with these required boolean fields:
+   - `title_generated`
+   - `artifacts_itemized`
+   - `build_folder_closed`
+   - `close_artifact_written`
+
+   b. Run:
+   ```bash
+   python3 N5/scripts/close_contract_check.py --checklist /home/.z/workspaces/<CONVO_ID>/CLOSE_CHECKLIST.json
+   ```
+
+   c. If this check fails, do not mark the close as complete.
+
+7. **Surface Conversational Cache (if exists):**
    
    If CONVERSATIONAL_CACHE.md was found in step 2 with unchecked items:
    
@@ -109,6 +134,12 @@ You can also invoke this verbally:
 | `drop_id` | drop-close | Deposit JSON |
 | `build_slug` (no drop) | build-close | BUILD_AAR.md |
 | Neither | thread-close | CLOSE_OUTPUT.json, maybe AAR |
+
+### Thread Close Artifacts (expected)
+
+- `CLOSE_OUTPUT.json` (machine-readable, includes `title`)
+- `CLOSE_TITLE.txt` (single-line human-readable title)
+- `CLOSE_OUTPUT.md` (human-readable close summary with title + summary)
 
 ## Title Generation Checklist
 

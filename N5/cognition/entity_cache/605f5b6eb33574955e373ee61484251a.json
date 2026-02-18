@@ -1,0 +1,1 @@
+{"entities": [{"name": "Howie integration API", "type": "TOOL", "context": "An application programming interface for integration with the Howie system."}, {"name": "Advanced query interface", "type": "TOOL", "context": "A tool for performing advanced queries within the knowledge system."}], "relationships": []}

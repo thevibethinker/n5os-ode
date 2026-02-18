@@ -1,0 +1,1 @@
+{"entities": [{"name": "standard library", "type": "TOOL", "context": "core logic functionality"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "owner/developer of the knowledge system"}], "relationships": [{"from": "V (Vrijen)", "to": "standard library", "type": "USES", "context": "V uses standard library for core logic"}]}

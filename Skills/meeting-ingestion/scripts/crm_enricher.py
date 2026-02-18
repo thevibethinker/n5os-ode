@@ -38,6 +38,21 @@ logger = logging.getLogger(__name__)
 CRM_DB = Path("/home/workspace/N5/data/crm.db")
 PROFILES_DB = Path("/home/workspace/N5/data/profiles.db")
 
+# Internal identity signals (authoritative + conservative)
+INTERNAL_EMAIL_ALLOWLIST = {
+    "attawar.v@gmail.com",
+    "vrijen@mycareerspan.com",
+    "logan@theapply.ai",
+}
+INTERNAL_DOMAIN_ALLOWLIST = {
+    "mycareerspan.com",
+    "theapply.ai",
+}
+INTERNAL_ORG_KEYWORDS = (
+    "careerspan",
+    "theapply",
+)
+
 # HITL integration
 try:
     from scripts.hitl import add_hitl_item
@@ -134,13 +149,31 @@ class CRMEnricher:
         
         contacts = []
         for row in cursor.fetchall():
+            email = row['email'] or ''
+            organization = row['organization'] or ''
             contacts.append({
                 'name': row['name'],
-                'email': row['email'],
-                'organization': row['organization'],
-                'is_internal': True  # All profiles are internal team members
+                'email': email,
+                'organization': organization,
+                # profiles.db is a broad contact corpus, not an internal-team list.
+                # Mark as internal only on explicit allowlist/known org signals.
+                'is_internal': self._is_internal_profile_contact(email, organization)
             })
         return contacts
+
+    def _is_internal_profile_contact(self, email: str, organization: str) -> bool:
+        """Conservative internal check for profile contacts."""
+        e = (email or "").strip().lower()
+        org = (organization or "").strip().lower()
+        if not e:
+            return False
+        if e in INTERNAL_EMAIL_ALLOWLIST:
+            return True
+        if "@" in e:
+            domain = e.split("@", 1)[1]
+            if domain in INTERNAL_DOMAIN_ALLOWLIST:
+                return True
+        return any(keyword in org for keyword in INTERNAL_ORG_KEYWORDS)
     
     def llm_fuzzy_match(self, input_names: List[str], crm_contacts: List[Dict], 
                        profile_contacts: List[Dict]) -> List[ParticipantMatch]:
@@ -343,15 +376,13 @@ If no reasonable match is found, set matched_name to null and confidence to 0.0.
             reason = f"{external_count} external, {internal_count} internal participants identified"
             return 'external', reason
         elif internal_count > 0:
-            # ALL identified participants are internal
+            # If no explicit external participants are identified, classify internal.
+            # Unknowns still route to HITL via add_to_hitl_queue.
             if unidentified_matches:
-                # But we have unidentified participants - could be external
-                reason = f"{internal_count} internal participants, {len(unidentified_matches)} unidentified"
-                return 'external', reason  # Conservative: assume external if uncertain
+                reason = f"{internal_count} internal participants identified, {len(unidentified_matches)} unidentified"
             else:
-                # All participants identified and internal
                 reason = f"All {internal_count} participants are internal"
-                return 'internal', reason
+            return 'internal', reason
         else:
             # No internal participants (shouldn't happen if we have identified matches)
             return 'unknown', "No internal status information available"
@@ -476,10 +507,34 @@ If no reasonable match is found, set matched_name to null and confidence to 0.0.
         }
         
         manifest['crm_enrichment'] = crm_enrichment
-        
+
+        # Sync canonical participants with CRM-enriched identity/email data
+        identified = []
+        unidentified = []
+        for m in matches:
+            if m.is_identified():
+                identified.append({
+                    "name": m.matched_name or m.input_name,
+                    "email": m.email,
+                    "crm_id": None,
+                    "role": "attendee",
+                    "confidence": m.confidence,
+                })
+            else:
+                unidentified.append(m.input_name)
+        manifest["participants"] = {
+            "identified": identified,
+            "unidentified": unidentified,
+            "confidence": round(sum(p["confidence"] for p in identified) / len(identified), 2) if identified else 0.0,
+        }
+
         # Update meeting type if we have a confident classification
         if classification in ['internal', 'external']:
             manifest['meeting_type'] = classification
+            if isinstance(manifest.get("meeting"), dict):
+                manifest["meeting"]["type"] = classification
+            if isinstance(manifest.get("blocks"), dict):
+                manifest["blocks"]["policy"] = "internal_standard" if classification == "internal" else "external_standard"
         
         try:
             with open(manifest_path, 'w') as f:
