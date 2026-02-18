@@ -1,0 +1,1 @@
+{"entities": [{"name": "zoputer", "type": "TOOL", "context": "tool for managing system functions"}, {"name": "va", "type": "TOOL", "context": "virtual assistant involved in the process"}], "relationships": [{"from": "zoputer", "to": "va", "type": "USES", "context": "zoputer can disable bridge if va is unavailable"}]}

@@ -1,0 +1,10 @@
+{
+  "drop_id": "D3.1",
+  "build_slug": "career-hotline-monetization",
+  "status": "complete",
+  "summary": "Updated integration tests for Zozie rename + credit system. 68/68 pass (was 51). Changes: (1) System prompt test checks for 'Zozie' not 'V'. (2) Webhook structural test uses 'Zozie (Career Coach)' name + Deepgram keyword. (3) Table count updated 5\u21927 (added caller_balances, purchases). (4) Added 3c: caller_balances CRUD + balance check logic (8 tests \u2014 defaults, free tier deduction, purchased deduction, allowed/blocked states, new caller fallback). (5) Added 3d: purchases CRUD + accumulation + product-to-minutes mapping (4 tests). (6) Added 3e: deduction logic unit tests (5 tests \u2014 free-first priority, split deduction, seconds\u2192minutes conversion, E.164 normalization).",
+  "broadcast": "68/68 tests pass. Credit system fully covered: balance gating, free tier, purchased minutes, deduction logic, product mapping.",
+  "artifacts": [],
+  "timestamp": "2026-02-14T11:07:03.634823+00:00",
+  "execution_mode": "claude_code"
+}

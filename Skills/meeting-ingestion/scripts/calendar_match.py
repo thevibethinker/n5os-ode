@@ -24,6 +24,8 @@ def similarity(a: str, b: str) -> float:
 
 def parse_meeting_datetime(date_str: str, time_str: str) -> datetime:
     """Parse meeting date and time into datetime object."""
+    if not time_str or str(time_str) == "None":
+        time_str = "12:00:00"
     return datetime.strptime(f"{date_str} {time_str}", "%Y-%m-%d %H:%M:%S")
 
 

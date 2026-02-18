@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual who is testing hypotheses"}, {"name": "recipes", "type": "CONCEPT", "context": "subject of the testing hypotheses"}], "relationships": [{"from": "V", "to": "recipes", "type": "KNOWS", "context": "V is aware of the patterns followed by all recipes"}]}

@@ -1,0 +1,464 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Organization Delta",
+  "description": "Tracks organizational changes and strategic shifts with competitive intelligence.",
+  "type": "object",
+  "properties": {
+    "delta_id": {
+      "type": "string",
+      "pattern": "^od_[a-z0-9]{8}$",
+      "description": "Unique identifier for the organization delta"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when the delta was detected"
+    },
+    "source_meeting_id": {
+      "type": "string",
+      "description": "ID of the meeting that revealed this delta"
+    },
+    "organization_id": {
+      "type": "string",
+      "description": "ID of the organization this delta relates to"
+    },
+    "department_context": {
+      "type": "string",
+      "description": "Specific department or division context (optional)"
+    },
+    "delta_type": {
+      "type": "string",
+      "enum": [
+        "priority_shift",
+        "budget_change",
+        "timeline_update", 
+        "process_change",
+        "decision_authority_shift",
+        "competitive_landscape",
+        "strategic_initiative",
+        "vendor_evaluation_process",
+        "approval_workflow",
+        "technology_adoption",
+        "compliance_requirement",
+        "organizational_restructure",
+        "leadership_change",
+        "market_pressure",
+        "merger_acquisition",
+        "expansion_plan",
+        "cost_reduction_initiative"
+      ],
+      "description": "Type of organizational change detected"
+    },
+    "change_description": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Detailed description of the organizational change"
+    },
+    "impact_scope": {
+      "type": "string",
+      "enum": ["departmental", "division", "company_wide", "ecosystem"],
+      "description": "Scope of the organizational change impact"
+    },
+    "previous_state": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string",
+          "description": "Description of the previous organizational state"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Confidence in the previous state assessment"
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the previous state was established"
+        },
+        "source": {
+          "type": "string",
+          "description": "Source of the previous state information"
+        }
+      },
+      "required": ["description", "confidence"],
+      "additionalProperties": false,
+      "description": "Previous organizational state"
+    },
+    "current_state": {
+      "type": "object",
+      "properties": {
+        "description": {
+          "type": "string",
+          "minLength": 1,
+          "description": "Description of the current organizational state"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Confidence in the current state assessment"
+        },
+        "urgency": {
+          "type": "string",
+          "enum": ["low", "medium", "high", "critical"],
+          "description": "Urgency level of the current state"
+        }
+      },
+      "required": ["description", "confidence"],
+      "additionalProperties": false,
+      "description": "Current organizational state"
+    },
+    "strategic_signals": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "enum": [
+          "expansion_signal",
+          "cost_reduction", 
+          "digital_transformation",
+          "compliance_driven",
+          "competitive_response",
+          "efficiency_initiative", 
+          "growth_phase",
+          "restructuring",
+          "market_consolidation",
+          "innovation_focus",
+          "partnership_strategy",
+          "customer_centricity",
+          "operational_excellence",
+          "talent_acquisition",
+          "sustainability_initiative"
+        ]
+      },
+      "description": "Strategic signals indicated by this change"
+    },
+    "competitive_intelligence": {
+      "type": "object",
+      "properties": {
+        "competitors_mentioned": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "competitor_name": {
+                "type": "string"
+              },
+              "context": {
+                "type": "string",
+                "description": "Context in which competitor was mentioned"
+              },
+              "sentiment": {
+                "type": "string",
+                "enum": ["positive", "negative", "neutral", "concerned", "dismissive"],
+                "description": "Sentiment toward the competitor"
+              }
+            },
+            "required": ["competitor_name", "context"],
+            "additionalProperties": false
+          },
+          "description": "Competitors mentioned in relation to this change"
+        },
+        "market_positioning_shift": {
+          "type": "object",
+          "properties": {
+            "previous_position": {
+              "type": "string"
+            },
+            "current_position": {
+              "type": "string"
+            },
+            "positioning_confidence": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1
+            }
+          },
+          "additionalProperties": false,
+          "description": "Changes in market positioning strategy"
+        },
+        "vendor_landscape": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "vendor_name": {
+                "type": "string"
+              },
+              "relationship_type": {
+                "type": "string",
+                "enum": ["incumbent", "challenger", "evaluating", "rejected", "preferred", "strategic_partner"]
+              },
+              "evaluation_status": {
+                "type": "string",
+                "enum": ["not_evaluated", "under_evaluation", "approved", "rejected", "on_hold"]
+              }
+            },
+            "required": ["vendor_name", "relationship_type"],
+            "additionalProperties": false
+          },
+          "description": "Vendor relationships and evaluation status"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Competitive intelligence gathered from this change"
+    },
+    "buying_process_changes": {
+      "type": "object",
+      "properties": {
+        "decision_makers": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "person_id": {
+                "type": "string"
+              },
+              "role": {
+                "type": "string",
+                "enum": ["decision_maker", "influencer", "evaluator", "budget_owner", "technical_evaluator", "end_user", "champion", "blocker"]
+              },
+              "change_type": {
+                "type": "string",
+                "enum": ["added", "removed", "role_changed", "authority_increased", "authority_decreased"]
+              }
+            },
+            "required": ["person_id", "role", "change_type"],
+            "additionalProperties": false
+          },
+          "description": "Changes in decision-making authority"
+        },
+        "approval_process": {
+          "type": "object",
+          "properties": {
+            "process_description": {
+              "type": "string"
+            },
+            "complexity_level": {
+              "type": "string",
+              "enum": ["simple", "moderate", "complex", "highly_complex"]
+            },
+            "typical_duration": {
+              "type": "string",
+              "description": "Typical duration of approval process"
+            },
+            "budget_thresholds": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "amount": {
+                    "type": "number"
+                  },
+                  "currency": {
+                    "type": "string"
+                  },
+                  "approval_level": {
+                    "type": "string"
+                  }
+                },
+                "required": ["amount", "approval_level"],
+                "additionalProperties": false
+              }
+            }
+          },
+          "additionalProperties": false,
+          "description": "Changes in approval process"
+        },
+        "evaluation_criteria": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "criterion": {
+                "type": "string"
+              },
+              "priority": {
+                "type": "string",
+                "enum": ["low", "medium", "high", "critical"]
+              },
+              "change_type": {
+                "type": "string",
+                "enum": ["added", "removed", "priority_increased", "priority_decreased"]
+              }
+            },
+            "required": ["criterion", "priority", "change_type"],
+            "additionalProperties": false
+          },
+          "description": "Changes in evaluation criteria"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Changes in buying/procurement process"
+    },
+    "evidence": {
+      "type": "object",
+      "properties": {
+        "quotes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "text": {
+                "type": "string",
+                "description": "Exact quote from the meeting"
+              },
+              "speaker": {
+                "type": "string",
+                "description": "Person who said the quote"
+              },
+              "context": {
+                "type": "string",
+                "description": "Additional context around the quote"
+              },
+              "timestamp_in_meeting": {
+                "type": "string",
+                "description": "Timestamp within the meeting (optional)"
+              },
+              "evidence_type": {
+                "type": "string",
+                "enum": ["explicit_statement", "implied_change", "decision_announcement", "process_description", "strategic_guidance"],
+                "description": "Type of evidence this quote represents"
+              }
+            },
+            "required": ["text", "speaker"],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "description": "Direct quotes supporting this delta"
+        },
+        "block_references": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "description": "Meeting block IDs containing supporting evidence"
+        }
+      },
+      "required": ["quotes", "block_references"],
+      "additionalProperties": false,
+      "description": "Evidence supporting this organizational delta"
+    },
+    "timeline_implications": {
+      "type": "object",
+      "properties": {
+        "implementation_timeline": {
+          "type": "string",
+          "description": "Expected timeline for implementing this change"
+        },
+        "business_impact_timeline": {
+          "type": "string",
+          "description": "Expected timeline for business impact"
+        },
+        "decision_timeline": {
+          "type": "string",
+          "description": "Timeline for related decisions"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Timeline implications of this organizational change"
+    },
+    "risk_assessment": {
+      "type": "object",
+      "properties": {
+        "business_risks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "risk_description": {
+                "type": "string"
+              },
+              "probability": {
+                "type": "string",
+                "enum": ["low", "medium", "high"]
+              },
+              "impact": {
+                "type": "string",
+                "enum": ["low", "medium", "high", "critical"]
+              }
+            },
+            "required": ["risk_description", "probability", "impact"],
+            "additionalProperties": false
+          },
+          "description": "Business risks associated with this change"
+        },
+        "opportunity_risks": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "opportunity_description": {
+                "type": "string"
+              },
+              "probability": {
+                "type": "string",
+                "enum": ["low", "medium", "high"]
+              },
+              "value": {
+                "type": "string",
+                "enum": ["low", "medium", "high", "strategic"]
+              }
+            },
+            "required": ["opportunity_description", "probability", "value"],
+            "additionalProperties": false
+          },
+          "description": "Opportunities created by this change"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Risk and opportunity assessment"
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "extractor_version": {
+          "type": "string",
+          "description": "Version of the org delta extractor"
+        },
+        "conversation_id": {
+          "type": "string",
+          "pattern": "^con_[A-Za-z0-9]+$",
+          "description": "ID of the conversation that generated this delta"
+        },
+        "processing_mode": {
+          "type": "string",
+          "enum": ["production", "dry_run", "test"],
+          "description": "Processing mode for this extraction"
+        },
+        "source_blocks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Block IDs that contributed to this delta"
+        }
+      },
+      "required": ["extractor_version", "conversation_id"],
+      "additionalProperties": false,
+      "description": "Provenance information for audit trails"
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Overall confidence in this organizational delta (0-1)"
+    }
+  },
+  "required": [
+    "delta_id",
+    "timestamp",
+    "source_meeting_id",
+    "organization_id",
+    "delta_type", 
+    "change_description",
+    "impact_scope",
+    "current_state",
+    "evidence",
+    "provenance",
+    "confidence"
+  ],
+  "additionalProperties": false
+}

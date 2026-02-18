@@ -1,0 +1,41 @@
+{
+  "drop_id": "D3.1",
+  "build_slug": "learning-engaged-builds",
+  "validated_at": "2026-02-18T03:56:17.830555+00:00",
+  "verdict": "FAIL",
+  "reason": "Code validation: 1 critical issues",
+  "mechanical": {
+    "drop_id": "D3.1",
+    "build_slug": "learning-engaged-builds",
+    "timestamp": "2026-02-18T03:56:17.831014",
+    "files_checked": 8,
+    "critical_count": 1,
+    "warning_count": 1,
+    "issues": {
+      "/home/workspace/Skills/pulse/SKILL.md": {
+        "critical": [
+          {
+            "type": "ellipsis_stub",
+            "message": "Function body is just `...`",
+            "line": 561,
+            "content": "..."
+          }
+        ],
+        "warnings": [
+          {
+            "type": "todo_generic",
+            "message": "Generic TODO comment",
+            "line": 327,
+            "content": "pulse jettison \"debug the API\" --from adhd-todo-research"
+          }
+        ],
+        "stats": {
+          "lines": 792,
+          "functions": 0,
+          "empty_functions": 0
+        }
+      }
+    }
+  },
+  "llm": null
+}

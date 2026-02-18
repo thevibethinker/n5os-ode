@@ -1,0 +1,76 @@
+{
+  "opportunity_id": "intro_abc123def456",
+  "requester_id": "person_request12345",
+  "requester_name": "John Smith",
+  "target_id": "person_target123456",
+  "target_name": "Jane Doe",
+  "mutual_path": [
+    {
+      "person_id": "person_mutual123456",
+      "person_name": "Bob Wilson",
+      "relationship_strength": 4,
+      "relationship_type": "colleague",
+      "last_interaction": "2026-01-15",
+      "interaction_frequency": "monthly"
+    }
+  ],
+  "intent": {
+    "purpose": "partnership",
+    "description": "Looking to explore potential partnership between our companies for market expansion",
+    "expected_outcome": "Initial partnership discussion and mutual interest assessment",
+    "urgency": "medium",
+    "context": "Both companies expanding into similar markets, potential for synergies"
+  },
+  "status": "evaluating",
+  "feasibility_assessment": {
+    "strength_score": 7,
+    "likelihood_success": 0.75,
+    "potential_value": 8,
+    "risk_factors": [
+      "Competitive overlap in some areas"
+    ],
+    "success_factors": [
+      "Strong mutual connection",
+      "Complementary strengths",
+      "Market timing"
+    ]
+  },
+  "timing": {
+    "optimal_timing": "weeks",
+    "timing_rationale": "Both parties are currently in strategic planning phase",
+    "deadline": "2026-03-01"
+  },
+  "preparation": {
+    "requester_prep": [
+      "Prepare company overview",
+      "Identify specific partnership areas"
+    ],
+    "target_prep": [
+      "Research requester's company",
+      "Consider strategic fit"
+    ],
+    "context_to_share": [
+      "Mutual connection background",
+      "Partnership exploration purpose"
+    ],
+    "suggested_format": "video_call"
+  },
+  "created_at": "2026-02-16T20:40:48.794566+00:00",
+  "expires_at": "2026-06-01T20:40:48.794567+00:00",
+  "provenance": {
+    "meeting_id": "mtg003",
+    "block_ids": [
+      "B05"
+    ],
+    "conversation_id": "con_ghi789",
+    "extraction_version": "1.0.0",
+    "pipeline_run_id": "run_jkl456"
+  },
+  "confidence": {
+    "overall": 0.78,
+    "mutual_path_accuracy": 0.85,
+    "intent_clarity": 0.8,
+    "person_identification": 0.9,
+    "feasibility_assessment": 0.7
+  }
+}

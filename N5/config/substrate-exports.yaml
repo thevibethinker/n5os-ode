@@ -1,0 +1,26 @@
+# Substrate Export Allowlist
+# Only paths listed here will be pushed to the zoputer-substrate repo.
+# Safe by default: unlisted = unexported.
+#
+# Paths are relative to /home/workspace/Skills/
+# The classifier still validates safety (warns Tier 1, blocks Tier 2).
+# Use `sync.py push --force` to override safety blocks.
+
+version: 2
+updated: "2026-02-12"
+
+exports:
+  skills:
+    # Safety layer (pushed v1)
+    - security-gate
+    - audit-system
+    - content-classifier
+    # Infrastructure spine (v2)
+    - consulting-api
+    - mentor-escalation
+    - learning-logger
+    - human-escalation
+    # Operational (v2)
+    - zoffice-workers
+    # N5OS Distribution (v3)
+    - n5os-bootstrap

@@ -1,16 +1,29 @@
 {
   "version": "3.0",
   "default_build_model": "anthropic:claude-opus-4-5-20251101",
-  "task_types": ["code_build", "research", "content", "analysis", "hybrid"],
+  "task_types": [
+    "code_build",
+    "research",
+    "content",
+    "analysis",
+    "hybrid"
+  ],
   "interview": {
     "seeded_threshold": 0.8,
     "max_fragments": 50,
-    "channels": ["sms", "email", "chat"]
+    "channels": [
+      "sms",
+      "email",
+      "chat"
+    ]
   },
   "availability": {
     "deep_work_marker": "[DW]",
     "check_calendar": true,
-    "quiet_hours": {"start": "22:00", "end": "07:00"},
+    "quiet_hours": {
+      "start": "22:00",
+      "end": "07:00"
+    },
     "timezone": "America/New_York"
   },
   "validation": {
@@ -34,16 +47,17 @@
   "tidying_swarm": {
     "enabled": true,
     "auto_fix_threshold": 0.9,
-    "drops": ["integration_test", "reference_check", "stub_scan", "dedup", "cleanup"]
+    "drops": [
+      "integration_test",
+      "reference_check",
+      "stub_scan",
+      "dedup",
+      "cleanup"
+    ]
   },
   "google_drive": {
     "outpost_folder": "Zo/Pulse Builds",
     "email": "attawar.v@gmail.com"
-  },
-  "vibe_teacher": {
-    "enabled": true,
-    "activation_points": ["interview_complete", "plan_review", "feedback", "build_complete"],
-    "glossary_path": "N5/pulse/teaching/glossary.json"
   },
   "lifecycle": {
     "enabled": true,
@@ -59,5 +73,16 @@
   "fragment_routing": {
     "require_tag_for_multiple": true,
     "auto_route_single_interview": true
+  },
+  "learning_mode": {
+    "enabled": true,
+    "default_build_mode": "learning",
+    "understanding_bank_path": "N5/config/understanding_bank.json",
+    "friction_levels": {
+      "minimal": "manual spawn, summary only",
+      "standard": "manual spawn, decision points, wave reviews",
+      "full": "manual spawn, decision points, wave reviews, learning drops, pedagogical AAR"
+    },
+    "default_friction": "standard"
   }
 }

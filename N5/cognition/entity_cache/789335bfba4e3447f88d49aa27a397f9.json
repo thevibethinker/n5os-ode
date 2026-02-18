@@ -1,0 +1,1 @@
+{"entities": [{"name": "Clean Architecture", "type": "CONCEPT", "context": "A software design principle emphasizing separation of concerns."}, {"name": "gmail_fetch_staging.py", "type": "TOOL", "context": "A Python script used for fetching emails from Gmail."}, {"name": "/home/workspace", "type": "ORG", "context": "Directory path used in the workspace."}], "relationships": []}

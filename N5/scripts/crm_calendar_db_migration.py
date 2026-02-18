@@ -14,7 +14,7 @@ Run this before setting up the webhook:
 import sqlite3
 import sys
 
-DB_PATH = '/home/workspace/N5/data/crm_v3.db'
+DB_PATH = '/home/workspace/N5/data/n5_core.db'
 
 
 def add_calendar_events_columns():

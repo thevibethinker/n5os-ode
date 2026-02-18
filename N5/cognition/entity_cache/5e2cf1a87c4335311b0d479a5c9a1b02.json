@@ -1,0 +1,1 @@
+{"entities": [{"name": "Checkbox Feedback", "type": "CONCEPT", "context": "A method for collecting user feedback more efficiently"}, {"name": "Feedback", "type": "TOOL", "context": "The element used for gathering user opinions"}, {"name": "Useful/Not Useful", "type": "BELIEF", "context": "Types of feedback options previously available"}], "relationships": []}

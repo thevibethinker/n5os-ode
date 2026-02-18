@@ -1,0 +1,52 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Task Coupling Decision",
+  "description": "Machine-readable record of promotion-event to task-system coupling decisions.",
+  "type": "object",
+  "required": [
+    "timestamp",
+    "event_id",
+    "decision",
+    "reason",
+    "source_id",
+    "dry_run"
+  ],
+  "properties": {
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "event_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "decision": {
+      "type": "string",
+      "enum": ["auto_launch", "review_required", "no_task", "blocked"]
+    },
+    "reason": {
+      "type": "string",
+      "minLength": 1
+    },
+    "notes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "source_id": {
+      "type": "string",
+      "pattern": "^promotion:.+"
+    },
+    "dry_run": {
+      "type": "boolean"
+    },
+    "task_id": {
+      "type": ["integer", "null"]
+    },
+    "staged_id": {
+      "type": ["integer", "null"]
+    }
+  },
+  "additionalProperties": true
+}

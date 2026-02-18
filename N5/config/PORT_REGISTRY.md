@@ -1,7 +1,7 @@
 ---
 created: 2026-01-14
-last_edited: 2026-01-30
-version: 1.4
+last_edited: 2026-02-16
+version: 1.5
 provenance: con_xMvzWKgpZHS5XdCn
 ---
 
@@ -63,9 +63,11 @@ provenance: con_xMvzWKgpZHS5XdCn
 | 8778 | crm-calendar-webhook | http | service | CRM calendar webhook handler |
 | 8780 | did-i-get-it | http | service | Did I Get It production |
 | 8790 | position-viz | http | service | Position visualization |
+| 8791 | agentmail-webhook | http | service | AgentMail Svix receiver with inbox firewall |
 | 8845 | fillout-webhook | http | service | Fillout form webhook |
 | 8846 | recall-webhook | http | service | Recall.ai meeting webhook (replaces Fireflies) |
 | 8847 | careerspan-webhook | http | service | Careerspan data webhook |
+| 8848 | career-coaching-hotline | http | service | Career Coaching Hotline (Zozie) VAPI webhook |
 | 8900 | zapier-webhook | http | service | Zapier webhook receiver |
 | 9090 | prometheus | http | service | Prometheus monitoring |
 | 19999 | semantic-reindex | tcp | service | Semantic reindex service |
@@ -101,8 +103,8 @@ provenance: con_xMvzWKgpZHS5XdCn
 
 ## Next Available Ports by Range
 
-- **n5-services (8763-8844)** — next: 8791
-- **webhooks (8845-8899)** — next: 8848
+- **n5-services (8763-8844)** — next: 8773
+- **webhooks (8845-8899)** — next: 8849
 - **mid-ephemeral (50000-51999)** — next: 50841
 - **high-ephemeral (52000-58999)** — next: 53829
 

@@ -3,7 +3,7 @@
 N5 Core Database Schema Manager
 
 Creates and manages the unified n5_core.db database schema.
-Consolidates: deals.db, crm_v3.db, Personal/Knowledge/CRM/crm.db
+Consolidates historical CRM/deals sources into n5_core.db
 
 Usage:
     python3 N5/scripts/n5_core_schema.py --create

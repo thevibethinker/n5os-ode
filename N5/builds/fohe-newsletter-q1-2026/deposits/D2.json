@@ -1,0 +1,8 @@
+{
+  "drop_id": "D2",
+  "status": "complete",
+  "summary": "Curated three warm, newsletter-ready Slack highlights that capture the new leadership announcement, holiday energy plus community job sharing, and the early-2026 events momentum.",
+  "artifacts": ["N5/builds/fohe-newsletter-q1-2026/artifacts/highlights.md"],
+  "learnings": ["Slack remains the pulse for chapter celebration, job leads, and event RSVPs, so Drop 4 can safely cite these threads without re-checking the raw images."],
+  "errors": []
+}

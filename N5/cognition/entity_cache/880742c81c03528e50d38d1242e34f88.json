@@ -1,0 +1,1 @@
+{"entities": [{"name": "use_app_google_calendar", "type": "TOOL", "context": "Calendar API access"}, {"name": "use_app_gmail", "type": "TOOL", "context": "Gmail API access"}], "relationships": []}

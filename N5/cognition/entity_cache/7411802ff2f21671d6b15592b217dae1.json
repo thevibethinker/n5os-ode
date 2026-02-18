@@ -1,0 +1,1 @@
+{"entities": [{"name": "proprietary data", "type": "CONCEPT", "context": "value in AI world"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "knowledge system creator"}], "relationships": [{"from": "V (Vrijen)", "to": "proprietary data", "type": "BELIEVES", "context": "value in AI world"}]}

@@ -1,0 +1,18 @@
+{
+  "run_id": "run_task_coupling_dryrun_20260216",
+  "dry_run": true,
+  "inputs": {
+    "promotion_events": "/home/workspace/N5/test_data/relationship_intelligence/task_coupling_promotion_events.jsonl",
+    "deliverable_records": "/home/workspace/N5/test_data/relationship_intelligence/task_coupling_deliverable_records.jsonl"
+  },
+  "stats": {
+    "events_total": 3,
+    "auto_launched": 1,
+    "review_required": 1,
+    "no_task": 1,
+    "blocked": 0,
+    "skipped_idempotent": 0,
+    "errors": 0
+  },
+  "generated_at": "2026-02-16T21:18:41.441574+00:00"
+}

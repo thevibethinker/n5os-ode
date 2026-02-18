@@ -1,0 +1,1 @@
+{"entities": [{"name": "N5", "type": "ORG", "context": "The knowledge system framework V uses"}, {"name": "n5_protect.py", "type": "TOOL", "context": "Script used for protecting directories"}], "relationships": []}

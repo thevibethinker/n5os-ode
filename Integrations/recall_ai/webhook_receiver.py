@@ -33,12 +33,21 @@ try:
     )
     from .meeting_depositor import deposit_meeting
     from .recall_client import RecallClient
+    from .calendar_poller import start_poller_thread
 except ImportError:
     # Direct execution
     sys.path.insert(0, str(Path(__file__).parent))
     from config import RECALL_WEBHOOK_SECRET, WEBHOOK_DB_PATH, WEBHOOK_LOG_PATH, WEBHOOK_PORT
     from meeting_depositor import deposit_meeting
     from recall_client import RecallClient
+    from calendar_poller import start_poller_thread
+
+# Inbox poller (separate path since it lives in Skills/)
+sys.path.insert(0, "/home/workspace/Skills/meeting-ingestion/scripts")
+try:
+    from inbox_poller import start_inbox_poller_thread
+except ImportError:
+    start_inbox_poller_thread = None
 
 _ = RecallClient  # Suppress unused import warning (available for future use)
 
@@ -255,7 +264,7 @@ async def process_bot_done(event_id: str, bot_id: str, legacy_event_id: int):
         logger.info(f"Processing bot.done for {bot_id}")
         
         result = deposit_meeting(bot_id)
-        
+
         # Update both new and legacy tables
         update_bot_event(event_id, processed=True)
         update_legacy_event(
@@ -263,8 +272,24 @@ async def process_bot_done(event_id: str, bot_id: str, legacy_event_id: int):
             status="processed",
             result=json.dumps(result),
         )
-        
-        logger.info(f"Successfully deposited meeting: {result.get('meeting_id')}")
+
+        meeting_id = result.get('meeting_id')
+        logger.info(f"Successfully deposited meeting: {meeting_id}")
+
+        # Auto-trigger pipeline processing on the deposited meeting
+        if result.get('status') == 'deposited' and meeting_id:
+            try:
+                import subprocess
+                cli_path = "/home/workspace/Skills/meeting-ingestion/scripts/meeting_cli.py"
+                log_path = f"/dev/shm/meeting-process-{meeting_id}.log"
+                subprocess.Popen(
+                    [sys.executable, cli_path, "tick", "--auto-process", "--target", meeting_id],
+                    stdout=open(log_path, "w"),
+                    stderr=subprocess.STDOUT,
+                )
+                logger.info(f"Auto-processing triggered for {meeting_id} (log: {log_path})")
+            except Exception as proc_e:
+                logger.error(f"Failed to trigger auto-processing for {meeting_id}: {proc_e}")
         
     except Exception as e:
         logger.error(f"Failed to process bot {bot_id}: {e}")
@@ -355,6 +380,19 @@ async def handle_bot_event(event_id: str, event_type: str, bot_id: str, payload:
 @app.on_event("startup")
 async def startup():
     init_db()
+    # Start calendar poller as background daemon thread
+    try:
+        start_poller_thread()
+        logger.info("Calendar poller thread started")
+    except Exception as e:
+        logger.error(f"Failed to start calendar poller: {e} (webhook receiver continues without it)")
+    # Start inbox poller for direct drop detection
+    if start_inbox_poller_thread:
+        try:
+            start_inbox_poller_thread()
+            logger.info("Inbox poller thread started")
+        except Exception as e:
+            logger.error(f"Failed to start inbox poller: {e} (webhook receiver continues without it)")
     logger.info("Recall.ai webhook receiver started with enhanced event handling")
 
 

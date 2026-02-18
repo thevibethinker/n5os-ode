@@ -1,0 +1,1 @@
+{"entities": [{"name": "Gmail API", "type": "TOOL", "context": "API for integrating Gmail services"}, {"name": "Email delivery", "type": "CONCEPT", "context": "The process of sending emails"}], "relationships": []}

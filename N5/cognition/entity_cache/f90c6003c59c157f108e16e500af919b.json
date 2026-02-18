@@ -1,0 +1,1 @@
+{"entities": [{"name": "N5", "type": "CONCEPT", "context": "the knowledge system being realigned"}, {"name": "N5 User Guide", "type": "TOOL", "context": "defines the architecture of N5"}], "relationships": [{"from": "N5", "to": "N5 User Guide", "type": "USES", "context": "the realignment is guided by the User Guide"}]}

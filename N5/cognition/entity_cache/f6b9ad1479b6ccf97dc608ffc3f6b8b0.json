@@ -1,0 +1,1 @@
+{"entities": [{"name": "Worker 6", "type": "TOOL", "context": "A system for completing reports"}, {"name": "CRM v3", "type": "TOOL", "context": "The orchestration system used for report loading and execution"}], "relationships": []}

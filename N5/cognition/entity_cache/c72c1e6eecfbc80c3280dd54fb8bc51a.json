@@ -1,0 +1,1 @@
+{"entities": [{"name": "logging", "type": "TOOL", "context": "monitoring and debugging"}, {"name": "schedule", "type": "TOOL", "context": "optional - for cron-like scheduling"}], "relationships": []}

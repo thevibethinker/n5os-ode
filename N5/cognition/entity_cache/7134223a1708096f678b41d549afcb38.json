@@ -1,0 +1,1 @@
+{"entities": [{"name": "state", "type": "CONCEPT", "context": "represents the current state with 'last_poll' and 'processed_events'"}, {"name": ".processed.json", "type": "TOOL", "context": "file format used to save the state"}], "relationships": []}

@@ -1,0 +1,30 @@
+{
+  "meeting_id": "2026-02-21_advisor-catch-up",
+  "title": "Advisor Catch Up",
+  "start": "2026-02-21T14:00:00-05:00",
+  "end": "2026-02-21T14:20:00-05:00",
+  "timezone": "America/New_York",
+  "attendees": [],
+  "metadata": {
+    "meeting_intent": "advisory",
+    "strategic_importance": "low",
+    "expected_outputs": [
+      "clarity on next step"
+    ],
+    "relationship_goal": "explore-opportunity",
+    "promotion_bias": "archive-only",
+    "parser_version": "1.0.0",
+    "raw_booking_message": "Quick catch up with advisor, light touch and for record only, no follow-up expected.",
+    "parsed_at_utc": "2026-02-16T20:25:27.099534+00:00"
+  },
+  "calendar": {
+    "calendar_event_id": "gcal_evt_advisor_1",
+    "title": "Advisor Catch Up",
+    "start": "2026-02-21T14:00:00-05:00",
+    "end": "2026-02-21T14:20:00-05:00",
+    "timezone": "America/New_York",
+    "attendees": [],
+    "description": "BOOKING_METADATA\nmeeting_id: 2026-02-21_advisor-catch-up\nintent: advisory\nstrategic_importance: low\npromotion_bias: archive-only\nmetadata_ref: /home/workspace/N5/data/booking_metadata/by_meeting/2026-02-21_advisor-catch-up.json\n"
+  },
+  "stored_at_utc": "2026-02-16T20:25:27.099788+00:00"
+}

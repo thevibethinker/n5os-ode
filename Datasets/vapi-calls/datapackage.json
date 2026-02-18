@@ -1,0 +1,13 @@
+{
+  "name": "vapi-calls",
+  "title": "Vapi Call History",
+  "description": "Call logs, transcripts, and metadata from Vapi voice AI integration",
+  "created": "2026-02-12",
+  "resources": [
+    {
+      "name": "calls",
+      "path": "data.duckdb",
+      "format": "duckdb"
+    }
+  ]
+}

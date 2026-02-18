@@ -1,0 +1,25 @@
+{
+  "drop_id": "D5.1",
+  "status": "complete",
+  "artifacts": [
+    "N5/builds/lora-voice-evolution/artifacts/unified_dataset.jsonl",
+    "N5/builds/lora-voice-evolution/artifacts/dataset_summary.md"
+  ],
+  "summary": "Unified dataset: 1258 examples from 4 sources after dedup. LinkedIn: 888, X: 267, Email: 99, Voice Library: 0",
+  "stats": {
+    "pre_dedup_total": 1439,
+    "duplicates_removed": 181,
+    "post_dedup_total": 1258,
+    "platform_distribution": {
+      "linkedin": 888,
+      "x": 267,
+      "next_play": 1,
+      "X/Twitter": 1,
+      "general": 2,
+      "email": 99
+    },
+    "avg_voice_score": 2.77,
+    "avg_composite_score": 2.44
+  },
+  "broadcast": "Unified dataset has 1258 examples. LinkedIn dominates at 71%. Quality floor (min composite): 2.16."
+}

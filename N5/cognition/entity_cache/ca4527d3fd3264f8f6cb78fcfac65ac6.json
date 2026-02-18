@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Refers to Vrijen, the individual creating the knowledge system."}, {"name": "tool run_bash_command", "type": "TOOL", "context": "A tool referenced for executing commands."}], "relationships": [{"from": "V", "to": "tool run_bash_command", "type": "USES", "context": "V is using the tool to execute commands."}]}

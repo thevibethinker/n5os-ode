@@ -1,0 +1,1 @@
+{"entities": [{"name": "meeting_state_manager", "type": "TOOL", "context": "Python module for managing event states"}], "relationships": []}

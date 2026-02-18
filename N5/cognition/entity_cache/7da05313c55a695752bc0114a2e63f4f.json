@@ -1,0 +1,1 @@
+{"entities": [{"name": "find_stakeholder_profile()", "type": "TOOL", "context": "a function to find stakeholder profiles"}, {"name": "meeting_monitor.py", "type": "TOOL", "context": "a script scheduled to run every 15 minutes"}, {"name": "cron job", "type": "TOOL", "context": "a tool for scheduling tasks"}], "relationships": []}

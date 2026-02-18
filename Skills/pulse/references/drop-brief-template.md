@@ -39,6 +39,20 @@ thread_title: "[<slug>] D<stream>.<seq>: <Task Name>"
 
 <IMPORTANT: Drops have NO context from the orchestrator. Everything needed must be here.>
 
+## Technical Concepts
+
+<!-- From the Learning Landscape. Helps V understand what they'll encounter. -->
+| Concept | V's Level | Why It Matters Here |
+|---------|-----------|---------------------|
+| {{CONCEPT}} | {{LEVEL}} | {{RELEVANCE_TO_DROP}} |
+
+## Decision Points in This Drop
+
+<!-- Decisions the orchestrator should surface to V before/during execution -->
+| ID | Question | Options | Value |
+|----|----------|---------|-------|
+| DP-{{N}} | {{QUESTION}} | {{COUNT}} | ★ / Medium / Low |
+
 ## Files to Read
 
 <List files the Drop should read, with WHY each matters>
@@ -138,6 +152,7 @@ Write deposit to `N5/builds/<slug>/deposits/<drop_id>.json`:
   "concerns": [
     "<Any concerns for the orchestrator>"
   ],
+  "concepts_exercised": ["<concept1>", "<concept2>"],
   "notes_for_orchestrator": "<Anything the next Drop or orchestrator should know>"
 }
 ```

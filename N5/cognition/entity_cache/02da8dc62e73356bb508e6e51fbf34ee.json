@@ -1,0 +1,1 @@
+{"entities": [{"name": "Zo", "type": "PERSON", "context": "Involved in generating email content"}, {"name": "v11.0 spec", "type": "TOOL", "context": "Template specification used for email content generation"}], "relationships": [{"from": "Zo", "to": "v11.0 spec", "type": "USES", "context": "Zo generates email content using the v11.0 specification"}]}

@@ -114,9 +114,9 @@
     }
     
     .bottom-line-text {
-      font-size: 10.5pt;
+      font-size: 9.5pt;
       color: var(--text-primary);
-      line-height: 1.5;
+      line-height: 1.45;
       font-style: italic;
     }
     
@@ -161,43 +161,31 @@
     .signal-bars {
       display: flex;
       align-items: center;
-      gap: 24px;
+      gap: 20px;
       flex: 1;
     }
-    
+
     .signal-item {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 5px;
     }
-    
+
     .signal-item-label {
       font-size: 9pt;
       color: var(--text-muted);
       white-space: nowrap;
     }
-    
-    .signal-bar-mini {
-      width: 90px;
-      height: 7px;
-      background: var(--border-light);
-      border-radius: 4px;
-      overflow: hidden;
-    }
-    
-    .signal-bar-fill {
-      height: 100%;
-      background: var(--purple-primary);
-      border-radius: 4px;
-    }
-    
-    .signal-bar-fill.resume { opacity: 0.5; }
-    
+
     .signal-value {
       font-size: 10pt;
       font-weight: 700;
       color: var(--text-primary);
-      min-width: 40px;
+    }
+
+    .signal-sep {
+      color: var(--border-light);
+      font-size: 9pt;
     }
     
     .signal-meta {
@@ -284,8 +272,8 @@
     
     .questions-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 8px;
     }
     
     .question {
@@ -300,11 +288,14 @@
       margin-bottom: 3px;
     }
     
-    .question-text {
-      font-style: italic;
-      font-size: 9pt;
-      line-height: 1.4;
-      color: var(--text-primary);
+    .question-rationale {
+      font-size: 8pt;
+      line-height: 1.3;
+      color: var(--text-muted);
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
     }
     
     /* === PAGE 2: TRADE-OFFS === */
@@ -349,7 +340,7 @@
     
     .tradeoff-verdict.strong { color: var(--green); }
     .tradeoff-verdict.verify { color: var(--amber-dark); }
-    .tradeoff-verdict.gap { color: var(--text-muted); }
+    .tradeoff-verdict.gap { color: #EA580C; }
     
     .tradeoff-reason {
       font-size: 9pt;
@@ -361,7 +352,7 @@
     .stack-section {
       margin-top: 24px;
     }
-    
+
     .stack-header {
       font-size: 12pt;
       font-weight: 700;
@@ -369,54 +360,56 @@
       padding-bottom: 6px;
       border-bottom: 2px solid var(--purple-primary);
     }
-    
+
     .stack-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 12px;
+      gap: 14px;
     }
-    
+
     .stack-column {
       background: var(--bg-card);
       border-radius: 6px;
-      padding: 12px 14px;
+      padding: 16px 16px;
     }
-    
+
     .stack-column-header {
-      font-size: 9pt;
+      font-size: 10pt;
       font-weight: 700;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      margin-bottom: 10px;
-      padding-bottom: 5px;
+      margin-bottom: 12px;
+      padding-bottom: 6px;
       border-bottom: 1px solid var(--border-light);
     }
-    
+
     .stack-column.match .stack-column-header { color: var(--green); }
     .stack-column.mismatch .stack-column-header { color: #DC2626; }
     .stack-column.unknown .stack-column-header { color: var(--text-muted); }
-    
+
     .stack-item {
-      font-size: 9.5pt;
-      padding: 5px 0;
+      font-size: 10pt;
+      padding: 8px 0;
       border-bottom: 1px solid var(--border-light);
     }
-    
+
     .stack-item:last-child { border-bottom: none; }
-    
+
     .stack-item-name {
       font-weight: 600;
+      font-size: 10pt;
       color: var(--text-primary);
     }
-    
+
     .stack-item-note {
-      font-size: 8pt;
-      color: var(--text-muted);
-      margin-top: 2px;
-    }
-    
-    .stack-empty {
       font-size: 9pt;
+      color: var(--text-muted);
+      margin-top: 3px;
+      line-height: 1.35;
+    }
+
+    .stack-empty {
+      font-size: 9.5pt;
       color: var(--text-light);
       font-style: italic;
     }
@@ -468,32 +461,34 @@
       </div>
     </div>
     
-    <!-- SIGNAL -->
+    <!-- ALIGNMENT SIGNAL -->
     <div class="signal-section">
-      <div class="signal-label-main">📊 SKILLS SIGNAL</div>
+      <div class="signal-label-main">📊 ALIGNMENT SIGNAL</div>
       <div class="signal-bars">
         <div class="signal-item">
           <span class="signal-item-label">Screen-verified</span>
-          <div class="signal-bar-mini">
-            <div class="signal-bar-fill" style="width: {{signal_story}}%"></div>
-          </div>
           <span class="signal-value">{{signal_story}}%</span>
         </div>
+        <span class="signal-sep">·</span>
         <div class="signal-item">
           <span class="signal-item-label">Resume-only</span>
-          <div class="signal-bar-mini">
-            <div class="signal-bar-fill resume" style="width: {{signal_resume}}%"></div>
-          </div>
           <span class="signal-value">{{signal_resume}}%</span>
         </div>
+        {{#if signal_inferred}}
+        <span class="signal-sep">·</span>
+        <div class="signal-item">
+          <span class="signal-item-label">Newly inferred</span>
+          <span class="signal-value">{{signal_inferred}}%</span>
+        </div>
+        {{/if}}
       </div>
     </div>
     
     <!-- BEHAVIORAL EVIDENCE -->
     <div class="behavioral-section">
       <div class="section-header">
-        <span class="section-title">🔍 What the Resume Can't Tell You</span>
-        <span class="section-subtitle">— Behavioral signals from Careerspan screens</span>
+        <span class="section-title">🔍 What We Learned</span>
+        <span class="section-subtitle">— Behavioral signals we uncovered through Careerspan screens</span>
       </div>
       
       <div class="behavioral-grid">
@@ -521,15 +516,15 @@
     <!-- QUESTIONS -->
     <div class="questions-section">
       <div class="section-header">
-        <span class="section-title">❓ Questions That Matter</span>
-        <span class="section-subtitle">— Key areas to probe in the interview</span>
+        <span class="section-title">❓ Areas to Explore</span>
+        <span class="section-subtitle">— Why we flagged these and why they matter for this role</span>
       </div>
-      
+
       <div class="questions-grid">
-        {{#each questions_all limit=4}}
+        {{#each questions_all limit=6}}
         <div class="question">
           <div class="question-topic">{{topic}}</div>
-          <div class="question-text">"{{question}}"</div>
+          <div class="question-rationale">{{rationale}}</div>
         </div>
         {{/each}}
       </div>

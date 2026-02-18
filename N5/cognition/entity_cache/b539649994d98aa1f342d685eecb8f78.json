@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual involved in the knowledge system"}, {"name": "CC Rules", "type": "CONCEPT", "context": "set of guidelines for communication with V"}], "relationships": [{"from": "CC Rules", "to": "V", "type": "RELATED_TO", "context": "guidelines are about communication with V"}]}

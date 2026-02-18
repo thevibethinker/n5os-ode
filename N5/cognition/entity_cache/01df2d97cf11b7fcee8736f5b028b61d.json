@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "The creator of the N5 OS"}, {"name": "N5 OS", "type": "CONCEPT", "context": "A cognitive operating system that embodies V's philosophy"}], "relationships": [{"from": "V", "to": "N5 OS", "type": "BELIEVES", "context": "V believes in the principles that guide the development of N5 OS"}]}

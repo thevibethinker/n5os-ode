@@ -1,0 +1,49 @@
+{
+  "schema_version": 3,
+  "slug": "skillrl-integration",
+  "title": "SkillRL Integration: Automated Skill Extraction & Evolution",
+  "build_type": "code_build",
+  "status": "complete",
+  "model": "anthropic:claude-sonnet-4-20250514",
+  "launch_mode": "orchestrated",
+  "delegate_only": true,
+  "created_at": "2026-02-11T02:21:00Z",
+  "waves": {
+    "W1": [
+      "D1.1",
+      "D1.2"
+    ]
+  },
+  "active_wave": "W1",
+  "drops": {
+    "D1.1": {
+      "name": "Skill Extractor Script + Close Integration",
+      "stream": 1,
+      "order": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete"
+    },
+    "D1.2": {
+      "name": "Evolution Agent + SKILL.md Frontmatter",
+      "stream": 2,
+      "order": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete"
+    }
+  },
+  "lineage": {
+    "parent_type": "conversation",
+    "parent_ref": "con_i1iw8n1WM8ldPi9L",
+    "parent_conversation": "con_i1iw8n1WM8ldPi9L",
+    "moment": "SkillRL paper analysis led to compressed integration architecture",
+    "branched_at": "2026-02-11T02:21:00Z"
+  },
+  "started_at": "2026-02-11T02:25:31.544565+00:00",
+  "completed_at": "2026-02-11T02:45:00Z",
+  "summary": "",
+  "last_progress_at": "2026-02-11T02:36:00.104342+00:00"
+}

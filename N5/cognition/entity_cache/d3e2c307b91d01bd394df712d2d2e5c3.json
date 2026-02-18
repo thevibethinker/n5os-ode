@@ -1,0 +1,1 @@
+{"entities": [{"name": "Careerspan", "type": "ORG", "context": "V's company, acting as client in vendor relationship"}, {"name": "Zeni", "type": "ORG", "context": "Outsourced finance and bookkeeping partner for Careerspan"}], "relationships": [{"from": "Careerspan", "to": "Zeni", "type": "WORKS_WITH", "context": "Client-vendor relationship for finance and bookkeeping services"}]}

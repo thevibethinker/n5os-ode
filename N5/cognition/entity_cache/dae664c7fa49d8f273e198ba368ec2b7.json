@@ -1,0 +1,1 @@
+{"entities": [{"name": "YAML", "type": "TOOL", "context": "data format used as the source of truth"}, {"name": "database", "type": "TOOL", "context": "storage system for data indexed from YAML"}], "relationships": [{"from": "YAML", "to": "database", "type": "USES", "context": "YAML is used as a source of truth for data stored in the database"}]}

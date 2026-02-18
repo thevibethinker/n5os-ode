@@ -1,0 +1,458 @@
+{
+  "schema_version": "1.0",
+  "slug": "learning-engaged-builds",
+  "title": "Learning-Engaged Build Mode",
+  "objective": "Transform Pulse from throughput-optimized to learning-optimized by adding Decision Points, Learning Drops, manual-default execution, Wave Reviews, and pedagogical AAR",
+  "created": "2026-02-17",
+  "status": "active",
+  "completed_at": null,
+  "type": "code_build",
+  "build_mode": "learning",
+  "delegate_only": true,
+  "orchestrator_convo_id": "con_YTpq4zJDC7K9nvAx",
+  "drops": {
+    "D1.1": {
+      "title": "Foundation: Config, Schema, Migration",
+      "status": "complete",
+      "stream": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "engagement_tag": "mechanical",
+      "started_at": "2026-02-18T03:36:43.296299+00:00",
+      "conversation_id": "pulse_learning-engaged-builds_D1.1_1771385709",
+      "last_progress_at": "2026-02-18T03:36:43.296299+00:00",
+      "validation": {
+        "drop_id": "D1.1",
+        "build_slug": "learning-engaged-builds",
+        "validated_at": "2026-02-18T03:36:57.553613+00:00",
+        "verdict": "PASS",
+        "reason": "Overridden: stub_scan is a valid Drop name, not a stub marker",
+        "mechanical": {
+          "drop_id": "D1.1",
+          "build_slug": "learning-engaged-builds",
+          "timestamp": "2026-02-18T03:36:57.554535",
+          "files_checked": 3,
+          "critical_count": 1,
+          "warning_count": 0,
+          "issues": {
+            "/home/workspace/Skills/pulse/config/pulse_v2_config.json": {
+              "critical": [
+                {
+                  "type": "stub_marker",
+                  "message": "STUB marker in code",
+                  "line": 53,
+                  "content": "\"stub_scan\","
+                }
+              ],
+              "warnings": [],
+              "stats": {
+                "lines": 88,
+                "functions": 0,
+                "empty_functions": 0
+              }
+            }
+          }
+        },
+        "llm": null
+      },
+      "completed_at": "2026-02-18T03:38:19.928225+00:00"
+    },
+    "D2.1": {
+      "title": "Deprecation: Remove Old Teaching System",
+      "status": "complete",
+      "stream": 2,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "engagement_tag": "mechanical",
+      "started_at": "2026-02-18T03:41:02.637742+00:00",
+      "conversation_id": "pulse_learning-engaged-builds_D2.1_1771385817",
+      "last_progress_at": "2026-02-18T03:41:02.637742+00:00",
+      "validation": {
+        "drop_id": "D2.1",
+        "build_slug": "learning-engaged-builds",
+        "validated_at": "2026-02-18T03:46:21.768172+00:00",
+        "verdict": "FAIL",
+        "reason": "Code validation: 2 critical issues",
+        "mechanical": {
+          "drop_id": "D2.1",
+          "build_slug": "learning-engaged-builds",
+          "timestamp": "2026-02-18T03:46:21.768652",
+          "files_checked": 6,
+          "critical_count": 2,
+          "warning_count": 1,
+          "issues": {
+            "/home/workspace/N5/prefs/operations/pulse_v2_guidelines.md": {
+              "critical": [
+                {
+                  "type": "stub_marker",
+                  "message": "STUB marker in code",
+                  "line": 49,
+                  "content": "- `stub_scan`"
+                }
+              ],
+              "warnings": [],
+              "stats": {
+                "lines": 101,
+                "functions": 0,
+                "empty_functions": 0
+              }
+            },
+            "/home/workspace/Documents/Sharing/Pulse-V3-Spec-For-Zo.md": {
+              "critical": [
+                {
+                  "type": "stub_marker",
+                  "message": "STUB marker in code",
+                  "line": 62,
+                  "content": "3. Stub/placeholder scan"
+                }
+              ],
+              "warnings": [],
+              "stats": {
+                "lines": 382,
+                "functions": 0,
+                "empty_functions": 0
+              }
+            },
+            "/home/workspace/Documents/System/personas/vibe_teacher_persona.md": {
+              "critical": [],
+              "warnings": [
+                {
+                  "type": "todo_generic",
+                  "message": "Generic TODO comment",
+                  "line": 117,
+                  "content": "**\u274c Abstract examples:** Use V's actual work (N5, Careerspan, career systems)\u2014not generic \"todo app\""
+                }
+              ],
+              "stats": {
+                "lines": 233,
+                "functions": 0,
+                "empty_functions": 0
+              }
+            }
+          }
+        },
+        "llm": null
+      },
+      "completed_at": "2026-02-18T03:51:59.988311+00:00",
+      "override_reason": "Validator false positive: grep hits are provenance metadata, unrelated function names, and archived deposits \u2014 not live code references"
+    },
+    "D3.1": {
+      "title": "Templates: Pulse References & Plan Template",
+      "status": "failed",
+      "stream": 3,
+      "depends_on": [
+        "D1.1",
+        "D2.1"
+      ],
+      "spawn_mode": "auto",
+      "engagement_tag": "mechanical",
+      "started_at": "2026-02-18T03:55:57.103861+00:00",
+      "conversation_id": "pulse_learning-engaged-builds_D3.1_1771386726",
+      "last_progress_at": "2026-02-18T03:55:57.103861+00:00",
+      "validation": {
+        "drop_id": "D3.1",
+        "build_slug": "learning-engaged-builds",
+        "validated_at": "2026-02-18T03:56:17.830555+00:00",
+        "verdict": "FAIL",
+        "reason": "Code validation: 1 critical issues",
+        "mechanical": {
+          "drop_id": "D3.1",
+          "build_slug": "learning-engaged-builds",
+          "timestamp": "2026-02-18T03:56:17.831014",
+          "files_checked": 8,
+          "critical_count": 1,
+          "warning_count": 1,
+          "issues": {
+            "/home/workspace/Skills/pulse/SKILL.md": {
+              "critical": [
+                {
+                  "type": "ellipsis_stub",
+                  "message": "Function body is just `...`",
+                  "line": 561,
+                  "content": "..."
+                }
+              ],
+              "warnings": [
+                {
+                  "type": "todo_generic",
+                  "message": "Generic TODO comment",
+                  "line": 327,
+                  "content": "pulse jettison \"debug the API\" --from adhd-todo-research"
+                }
+              ],
+              "stats": {
+                "lines": 792,
+                "functions": 0,
+                "empty_functions": 0
+              }
+            }
+          }
+        },
+        "llm": null
+      },
+      "failure_reason": "Code validation: 1 critical issues",
+      "failed_at": "2026-02-18T03:56:17.849229+00:00"
+    },
+    "D4.1": {
+      "title": "Templates: Close Skills + Architect Persona",
+      "status": "failed",
+      "stream": 4,
+      "depends_on": [
+        "D1.1",
+        "D2.1"
+      ],
+      "spawn_mode": "auto",
+      "engagement_tag": "mechanical",
+      "started_at": "2026-02-18T03:54:40.195443+00:00",
+      "conversation_id": "pulse_learning-engaged-builds_D4.1_1771386761",
+      "last_progress_at": "2026-02-18T03:54:40.195443+00:00",
+      "validation": {
+        "drop_id": "D4.1",
+        "build_slug": "learning-engaged-builds",
+        "validated_at": "2026-02-18T03:56:17.851462+00:00",
+        "verdict": "FAIL",
+        "reason": "Code validation: 5 critical issues",
+        "mechanical": {
+          "drop_id": "D4.1",
+          "build_slug": "learning-engaged-builds",
+          "timestamp": "2026-02-18T03:56:17.851584",
+          "files_checked": 3,
+          "critical_count": 5,
+          "warning_count": 2,
+          "issues": {
+            "/home/workspace/Skills/drop-close/SKILL.md": {
+              "critical": [],
+              "warnings": [
+                {
+                  "type": "xxx_marker",
+                  "message": "XXX marker",
+                  "line": 26,
+                  "content": "python3 Skills/drop-close/scripts/close.py --convo-id con_XXXXX"
+                },
+                {
+                  "type": "xxx_marker",
+                  "message": "XXX marker",
+                  "line": 94,
+                  "content": "\"convo_id\": \"con_XXXXX\","
+                }
+              ],
+              "stats": {
+                "lines": 166,
+                "functions": 0,
+                "empty_functions": 0
+              }
+            },
+            "/home/workspace/Skills/build-close/SKILL.md": {
+              "critical": [
+                {
+                  "type": "ellipsis_stub",
+                  "message": "Function body is just `...`",
+                  "line": 129,
+                  "content": "..."
+                },
+                {
+                  "type": "ellipsis_stub",
+                  "message": "Function body is just `...`",
+                  "line": 135,
+                  "content": "..."
+                },
+                {
+                  "type": "ellipsis_stub",
+                  "message": "Function body is just `...`",
+                  "line": 141,
+                  "content": "..."
+                },
+                {
+                  "type": "ellipsis_stub",
+                  "message": "Function body is just `...`",
+                  "line": 146,
+                  "content": "..."
+                },
+                {
+                  "type": "ellipsis_stub",
+                  "message": "Function body is just `...`",
+                  "line": 151,
+                  "content": "..."
+                }
+              ],
+              "warnings": [],
+              "stats": {
+                "lines": 251,
+                "functions": 0,
+                "empty_functions": 0
+              }
+            }
+          }
+        },
+        "llm": null
+      },
+      "failure_reason": "Code validation: 5 critical issues",
+      "failed_at": "2026-02-18T03:56:17.857546+00:00"
+    },
+    "D5.1": {
+      "title": "Pulse Engine: spawn_mode + build_mode",
+      "status": "failed",
+      "stream": 5,
+      "depends_on": [
+        "D1.1"
+      ],
+      "spawn_mode": "auto",
+      "engagement_tag": "pedagogical",
+      "started_at": "2026-02-18T04:00:13.703583+00:00",
+      "conversation_id": "pulse_learning-engaged-builds_D5.1_1771386761",
+      "last_progress_at": "2026-02-18T04:00:13.703583+00:00",
+      "validation": {
+        "drop_id": "D5.1",
+        "build_slug": "learning-engaged-builds",
+        "validated_at": "2026-02-18T04:02:33.358411+00:00",
+        "verdict": "FAIL",
+        "reason": "Code validation: 15 critical issues",
+        "mechanical": {
+          "drop_id": "D5.1",
+          "build_slug": "learning-engaged-builds",
+          "timestamp": "2026-02-18T04:02:33.358891",
+          "files_checked": 2,
+          "critical_count": 15,
+          "warning_count": 1,
+          "issues": {
+            "/home/workspace/Skills/pulse/scripts/pulse.py": {
+              "critical": [
+                {
+                  "type": "empty_pass",
+                  "message": "Function body is just `pass`",
+                  "line": 278,
+                  "content": "pass"
+                },
+                {
+                  "type": "empty_pass",
+                  "message": "Function body is just `pass`",
+                  "line": 672,
+                  "content": "pass"
+                },
+                {
+                  "type": "empty_pass",
+                  "message": "Function body is just `pass`",
+                  "line": 1084,
+                  "content": "pass"
+                },
+                {
+                  "type": "empty_pass",
+                  "message": "Function body is just `pass`",
+                  "line": 1473,
+                  "content": "pass"
+                },
+                {
+                  "type": "empty_pass",
+                  "message": "Function body is just `pass`",
+                  "line": 2163,
+                  "content": "pass"
+                }
+              ],
+              "warnings": [],
+              "stats": {
+                "lines": 2331,
+                "functions": 17,
+                "empty_functions": 2
+              }
+            },
+            "/home/workspace/N5/scripts/init_build.py": {
+              "critical": [
+                {
+                  "type": "stub_marker",
+                  "message": "STUB marker in code",
+                  "line": 216,
+                  "content": "def generate_worker_stubs(build_dir: Path, slug: str, num_workers: int) -> list[Path]:"
+                },
+                {
+                  "type": "stub_marker",
+                  "message": "STUB marker in code",
+                  "line": 218,
+                  "content": "Generate worker brief stub files."
+                },
+                {
+                  "type": "stub_marker",
+                  "message": "STUB marker in code",
+                  "line": 223,
+                  "content": "num_workers: Number of worker stubs to generate"
+                },
+                {
+                  "type": "stub_marker",
+                  "message": "STUB marker in code",
+                  "line": 272,
+                  "content": "# Generate stubs in wave 1 by default"
+                },
+                {
+                  "type": "stub_marker",
+                  "message": "STUB marker in code",
+                  "line": 319,
+                  "content": "num_workers: Number of worker stub files to generate (0 = none)"
+                },
+                {
+                  "type": "stub_marker",
+                  "message": "STUB marker in code",
+                  "line": 372,
+                  "content": "# Pre-populate worker stats if generating stubs"
+                },
+                {
+                  "type": "stub_marker",
+                  "message": "STUB marker in code",
+                  "line": 525,
+                  "content": "# Generate worker stubs if requested"
+                },
+                {
+                  "type": "stub_marker",
+                  "message": "STUB marker in code",
+                  "line": 527,
+                  "content": "generate_worker_stubs(build_dir, slug, num_workers)"
+                },
+                {
+                  "type": "stub_marker",
+                  "message": "STUB marker in code",
+                  "line": 562,
+                  "content": "help=\"Number of worker brief stubs to generate (default: 0)\""
+                },
+                {
+                  "type": "stub_marker",
+                  "message": "STUB marker in code",
+                  "line": 599,
+                  "content": "print(f\"  \u2502   \u2514\u2500\u2500 {args.workers} stub(s) generated\")"
+                }
+              ],
+              "warnings": [
+                {
+                  "type": "placeholder_comment",
+                  "message": "Placeholder comment",
+                  "line": 410,
+                  "content": "# Clear placeholder worker rows for now"
+                }
+              ],
+              "stats": {
+                "lines": 611,
+                "functions": 1,
+                "empty_functions": 0
+              }
+            }
+          }
+        },
+        "llm": null
+      },
+      "failure_reason": "Code validation: 15 critical issues",
+      "failed_at": "2026-02-18T04:02:33.391626+00:00"
+    }
+  },
+  "waves": {
+    "W1": [
+      "D1.1",
+      "D2.1"
+    ],
+    "W2": [
+      "D3.1",
+      "D4.1",
+      "D5.1"
+    ]
+  },
+  "total_streams": 3,
+  "started_at": "2026-02-18T03:34:57.138480+00:00",
+  "last_progress_at": "2026-02-18T04:02:33.392931+00:00",
+  "active_wave": "W2"
+}

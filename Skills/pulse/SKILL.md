@@ -56,6 +56,9 @@ Wave 2 (barrier)
 ## Quick Start
 
 ```bash
+# Contract gate (required before start)
+python3 N5/scripts/build_contract_check.py <slug>
+
 # Validate plan before starting (recommended)
 python3 Skills/pulse/scripts/pulse.py validate <slug>
 
@@ -89,6 +92,17 @@ pulse jettison "<task>" [--from <parent>] [--type <type>]
 # View build lineage DAG
 pulse lineage [<slug>] [--format tree|json]
 ```
+
+## Required Contract Gate
+
+Before starting any Pulse build, both checks must pass:
+
+```bash
+python3 N5/scripts/build_contract_check.py <slug>
+python3 Skills/pulse/scripts/pulse.py validate <slug>
+```
+
+If either command fails, do not run `start` yet. Fix missing artifacts first (`PLAN.md`, `meta.json`, and drop briefs in `drops/`).
 
 ## Plan Validation
 
@@ -731,3 +745,47 @@ python3 Skills/pulse/scripts/pulse_safety.py restore <slug>
 - `file 'N5/config/pulse_control.json'` — Sentinel control state
 - `file 'Documents/System/Build-Orchestrator-System.md'` — Legacy manual system
 - `file 'N5/pulse/'` — v2 scripts directory
+
+## Learning-Engaged Build Mode
+
+When `build_mode: "learning"` in meta.json (the default):
+
+### Orchestrator Responsibilities
+
+1. **Generate Learning Landscape** — During planning, read `N5/config/understanding_bank.json` and analyze plan concepts against V's levels. Flag Decision Points and tag Drops.
+
+2. **Present Decision Points** — Before launching Drops that involve flagged decisions:
+   - Present the question in plain language
+   - Offer 2-3 options with tradeoffs explained at V's level
+   - Include a recommendation with reasoning
+   - Support multi-round Socratic dialogue if V wants to explore
+   - Log resolved decisions to `DECISIONS.md` in the build folder
+
+3. **Spawn Learning Drops** — When V says "I want to deep dive into X":
+   - Create an L-prefix Drop brief using `references/learning-drop-template.md`
+   - The Learning Drop is always manual spawn
+   - It never blocks the build — other Drops continue
+   - When V completes the Learning Drop, integrate conclusions into subsequent briefs
+
+4. **Generate Wave Reviews** — At wave boundaries:
+   - Summarize what was accomplished
+   - List concepts V was exposed to
+   - Ask ONE Socratic question testing the most important concept
+   - V can opt to deep dive (spawns Learning Drop) or continue
+
+5. **Default Manual Spawn** — Pedagogical Drops use `spawn_mode: manual`. V opens them in new threads. Mechanical Drops (tagged in Learning Landscape) can be auto-spawned with V's approval.
+
+### Rush Mode Override
+
+V can override learning mode at any scope:
+- **Per-Drop:** "Run D1.2 headless"
+- **Per-Wave:** "Auto-spawn wave 2"
+- **Per-Build:** `build_mode: "rush"` in meta.json, or V says "rush mode"
+
+Rush mode reverts to Pulse v2 behavior: auto-spawn, no Decision Points, no Wave Reviews.
+
+### Understanding Bank Integration
+
+- **Read at plan time:** Architect reads `N5/config/understanding_bank.json` to calibrate Learning Landscape
+- **Update at build close:** Pedagogical AAR updates concept levels based on V's demonstrated understanding
+- **Updated by Learning Drops:** L-prefix deposits include `understanding_update` assessments

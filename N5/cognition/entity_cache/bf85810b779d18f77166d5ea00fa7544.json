@@ -1,0 +1,1 @@
+{"entities": [{"name": "V-OS", "type": "CONCEPT", "context": "tag used for external meetings that trigger research"}, {"name": "Calendar", "type": "TOOL", "context": "source of truth for scheduling"}, {"name": "Phase 2C", "type": "EVENT", "context": "future phase for adding push notifications if needed"}], "relationships": []}

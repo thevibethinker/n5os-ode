@@ -1,0 +1,1 @@
+{"entities": [{"name": "Knowledge/", "type": "TOOL", "context": "A reference material system seed with user-specific content"}, {"name": "Phase 5", "type": "EVENT", "context": "A phase involving sessions and reflection"}], "relationships": [{"from": "Phase 5", "to": "Knowledge/", "type": "RELATED_TO", "context": "Phase 5 may involve using knowledge system for sessions"}]}

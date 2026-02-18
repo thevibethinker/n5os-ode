@@ -27,6 +27,8 @@ import sys
 sys.path.insert(0, str(Path(__file__).parent))
 from crm_paths import CRM_INDIVIDUALS, CRM_INDEX as CANONICAL_INDEX, MEETINGS_ROOT as CANONICAL_MEETINGS
 from db_paths import get_db_connection, PEOPLE_TABLE, INTERACTIONS_TABLE
+from crm_identity_resolver import CRMIdentityResolver
+from crm_semantic_memory import record_person_interaction, sync_person_to_semantic_memory
 
 # Import optimized lookup service (WS1 optimization)
 try:
@@ -41,6 +43,7 @@ CRM_INDEX = CANONICAL_INDEX
 
 # Global lookup service instance (lazy initialized)
 _crm_lookup_service = None
+_identity_resolver = CRMIdentityResolver(auto_link_threshold=0.99)
 
 
 def get_crm_lookup_service():
@@ -57,6 +60,85 @@ class Participant:
     name: str
     organization: Optional[str]
     is_internal: bool
+
+
+_NON_PERSON_KEYWORDS = {
+    "participants", "group", "dynamics", "stakeholder", "intelligence", "meeting",
+    "context", "relationship", "identity", "professional", "interaction", "history",
+    "quick", "reference", "generated", "metadata", "enrichment", "gmail", "linkedin",
+    "profiles", "profile", "threat", "assessment", "information", "asymmetries",
+    "knowledge", "gaps", "market", "influencer", "potential", "acquirer", "foundational",
+    "resonated", "integration", "domain", "credibility", "internal", "external",
+    "communication", "notes", "team", "interpersonal", "cultural", "conflict",
+    "follow-up", "followup", "strategic", "alignment", "actions", "next", "steps",
+    "implications", "challenges", "opportunity", "opportunities", "takeaway",
+    "trust", "building", "moments", "long-term", "longterm", "philosophy", "key",
+    "quotes", "role", "conversation", "proposition", "current", "state", "talent",
+    "mention", "mentioned", "situation", "founders", "engineers", "target", "candidates",
+    "organizational", "insights", "sentiment", "analysis", "parties",
+    "careerspan", "linear",
+}
+
+
+def _normalize_candidate_name(raw: str) -> str:
+    candidate = raw.strip().strip("*#-").strip()
+    candidate = re.sub(r"^\d+\.\s*", "", candidate)
+    candidate = re.sub(r"\s+", " ", candidate)
+    return candidate
+
+
+def _looks_like_person_name(raw: str) -> bool:
+    candidate = _normalize_candidate_name(raw)
+    if not candidate:
+        return False
+    if any(ch in candidate for ch in [":", "/", "[", "]", "`"]):
+        return False
+    if candidate.upper().startswith("B0"):
+        return False
+
+    # Allow optional trailing organization in parentheses; validate core name only.
+    core = re.sub(r"\s*\([^)]+\)\s*$", "", candidate).strip()
+    words = core.split()
+    if not (2 <= len(words) <= 5):
+        return False
+
+    for word in words:
+        cleaned = word.strip(".,;!?")
+        if not cleaned:
+            return False
+        if cleaned.lower() in _NON_PERSON_KEYWORDS:
+            return False
+        if not re.fullmatch(r"[A-Za-z][A-Za-z'\-]*", cleaned):
+            return False
+
+    # Require at least two title-like tokens (helps reject sentence fragments).
+    title_like = sum(1 for w in words if w[:1].isupper())
+    return title_like >= 2
+
+
+def _dedupe_preserve_order(values: List[str]) -> List[str]:
+    seen = set()
+    out: List[str] = []
+    for v in values:
+        key = _normalize_candidate_name(v).lower()
+        if key and key not in seen:
+            seen.add(key)
+            out.append(_normalize_candidate_name(v))
+    return out
+
+
+def _filter_candidate_participants(candidates: List[str]) -> List[str]:
+    filtered: List[str] = []
+    for raw in candidates:
+        candidate = _normalize_candidate_name(raw)
+        if not candidate:
+            continue
+        if "@" in candidate:
+            filtered.append(candidate)
+            continue
+        if _looks_like_person_name(candidate):
+            filtered.append(candidate)
+    return _dedupe_preserve_order(filtered)
 
 
 def load_manifest(path: Path) -> Optional[Dict]:
@@ -89,93 +171,26 @@ def extract_participants_from_b03(meeting_folder: Path) -> List[str]:
 
         # Method 1: Extract from **Name:** field (B08 format)
         for match in re.finditer(r'\*\*Name:\*\*\s*([^\n]+)', content):
-            name = match.group(1).strip()
-            if name and len(name.split()) >= 2:
+            name = _normalize_candidate_name(match.group(1))
+            if _looks_like_person_name(name):
                 participants.append(name)
 
         # Method 2: Extract person names from ## or ### headers (B03 format)
         if not participants:
             # Try ### headers first (nested under ## Participants)
             for match in re.finditer(r'^###\s+\*{0,2}([^#\n*]+)', content, re.MULTILINE):
-                name = match.group(1).strip()
-                name_lower = name.lower()
-
-                # Skip common section headers that aren't people
-                skip_keywords = {
-                    'participants', 'group dynamics', 'stakeholder intelligence', 'stakeholder_intelligence',
-                    'meeting context', 'relationship with v', 'relationship dynamics', 'identity',
-                    'professional intelligence', 'interaction history', 'quick reference',
-                    'auto-generated metadata', 'intelligence log', 'enrichment data',
-                    'gmail intelligence', 'linkedin intelligence', 'founder profiles',
-                    'dynamic between', 'threat assessment', 'information asymmetries',
-                    'knowledge gaps', 'market influencer', 'potential acquirer', 'foundational profile',
-                    'what resonated', 'crm integration', 'howie integration', 'domain authority',
-                    'source credibility', 'internal stakeholders', 'external stakeholders',
-                    'communication patterns', 'relationship notes', 'integration points',
-                    'team dynamics', 'interpersonal patterns', 'cultural observations',
-                    'conflict zones', 'intelligence gaps', 'follow-up trigger', 'relationship intelligence',
-                }
-
-                # Skip if matches any skip keyword
-                if any(kw in name_lower for kw in skip_keywords):
-                    continue
-
-                # Skip numbered lists like "1. Name"
-                if re.match(r'^\d+\.\s', name):
-                    name = re.sub(r'^\d+\.\s*', '', name)
-
-                # Skip if starts with B0 (block names)
-                if name.upper().startswith('B0'):
-                    continue
-
-                # Skip if contains parenthetical role descriptions (except names like "John (Company)")
-                bad_parens = ['role', 'inferred', 'unclear', 'referenced', 'investors', 'advisors', 'team']
-                if any(bp in name_lower for bp in bad_parens if '(' in name):
-                    continue
-
-                # Skip if it looks like a section title (has colon)
-                if ':' in name:
-                    continue
-
-                # Basic name validation: should have 2-5 words, start with capital
-                # Remove parenthetical suffix for counting
-                name_for_count = re.sub(r'\s*\([^)]+\)\s*$', '', name)
-                words = name_for_count.split()
-                if len(words) >= 2 and len(words) <= 5 and name[0].isupper():
+                name = _normalize_candidate_name(match.group(1))
+                if _looks_like_person_name(name):
                     participants.append(name)
 
         # If no ### headers found, try ## headers (alternate B03 format)
         if not participants:
             for match in re.finditer(r'^##\s+([^#\n]+)', content, re.MULTILINE):
-                name = match.group(1).strip()
-                name_lower = name.lower()
-
-                # Skip common section headers
-                skip_keywords = {
-                    'participants', 'group dynamics', 'stakeholder intelligence', 'stakeholder_intelligence',
-                    'meeting context', 'relationship with v', 'relationship dynamics', 'identity',
-                    'professional intelligence', 'interaction history', 'quick reference',
-                    'auto-generated metadata', 'intelligence log', 'enrichment data',
-                    'gmail intelligence', 'linkedin intelligence', 'founder profiles',
-                    'dynamic between', 'threat assessment', 'information asymmetries',
-                    'knowledge gaps', 'market influencer', 'potential acquirer', 'foundational profile',
-                    'what resonated', 'crm integration', 'howie integration', 'domain authority',
-                    'source credibility', 'internal stakeholders', 'external stakeholders',
-                    'communication patterns', 'relationship notes', 'integration points',
-                    'team dynamics', 'interpersonal patterns', 'cultural observations',
-                    'conflict zones', 'intelligence gaps', 'follow-up trigger', 'relationship intelligence',
-                }
-
-                if any(kw in name_lower for kw in skip_keywords):
-                    continue
-                if ':' in name or name.upper().startswith('B0'):
-                    continue
-
-                name_for_count = re.sub(r'\s*\([^)]+\)\s*$', '', name)
-                words = name_for_count.split()
-                if len(words) >= 2 and len(words) <= 5 and name[0].isupper():
+                name = _normalize_candidate_name(match.group(1))
+                if _looks_like_person_name(name):
                     participants.append(name)
 
+        participants = _dedupe_preserve_order(participants)
         if participants:
             return participants
 
@@ -218,21 +233,43 @@ def extract_participants_from_folder_name(folder_name: str) -> List[str]:
     for part in parts:
         # Convert dashes/underscores to spaces
         name = re.sub(r'[-_]', ' ', part).strip()
-        words = name.split()
+        words = [w for w in name.split() if w]
 
         # Skip if doesn't look like a name (needs 2+ words, no numbers, etc.)
         if len(words) < 2:
             continue
 
-        # Take first 2-3 words as name
-        candidate = ' '.join(words[:3]).title()
-
-        # Basic validation: both parts should be capitalized words
-        name_words = candidate.split()
-        if all(w[0].isupper() and w.isalpha() for w in name_words[:2] if len(w) > 0):
+        # Use first two tokens as likely person name; extra tokens are usually org/topic descriptors.
+        candidate = ' '.join(words[:2]).title()
+        if _looks_like_person_name(candidate):
             participants.append(candidate)
 
-    return participants
+    return _dedupe_preserve_order(participants)
+
+
+def extract_participants(meeting_folder: Path, manifest: Dict) -> List[str]:
+    """Extract participant names from manifest, intelligence docs, or folder name."""
+    for key in ("participants", "attendees", "external_participants"):
+        val = manifest.get(key)
+        if isinstance(val, list) and val:
+            names: List[str] = []
+            for item in val:
+                if isinstance(item, str):
+                    names.append(item)
+                elif isinstance(item, dict):
+                    name = item.get("name") or item.get("display_name") or item.get("email")
+                    if name:
+                        names.append(str(name))
+            names = _filter_candidate_participants(names)
+            if names:
+                return names
+
+    b03_names = extract_participants_from_b03(meeting_folder)
+    b03_names = _filter_candidate_participants(b03_names)
+    if b03_names:
+        return b03_names
+
+    return _filter_candidate_participants(extract_participants_from_folder_name(meeting_folder.name))
 
 
 def parse_participant(raw: str) -> Participant:
@@ -296,7 +333,9 @@ def find_crm_slug_by_name(name: str, crm_index: Dict[str, Dict[str, str]], email
     if lookup_service:
         result = lookup_service.lookup_participant(name, email)
         if result:
-            return result.slug
+            if result.markdown_path:
+                return Path(result.markdown_path).stem
+            return _find_crm_slug_by_name_legacy(result.display_name, crm_index)
 
     # Legacy O(n) fallback
     return _find_crm_slug_by_name_legacy(name, crm_index)
@@ -320,45 +359,23 @@ def _find_crm_slug_by_name_legacy(name: str, crm_index: Dict[str, Dict[str, str]
     return None
 
 
-def find_person_in_db(name: str = None, email: str = None) -> Optional[Dict]:
-    """Find person in unified database by name or email.
-    
-    Returns dict with id, full_name, email, markdown_path or None if not found.
-    """
+def find_person_in_db(name: str = None, email: str = None, company: str = None) -> Optional[Dict]:
+    """High-precision person lookup in n5_core via shared resolver."""
     if not name and not email:
         return None
-    
-    conn = get_db_connection(readonly=True)
-    try:
-        if email:
-            row = conn.execute(
-                f"SELECT id, full_name, email, markdown_path FROM {PEOPLE_TABLE} WHERE email = ?",
-                (email,)
-            ).fetchone()
-            if row:
-                return dict(row)
-        
-        if name:
-            # Try exact match first
-            row = conn.execute(
-                f"SELECT id, full_name, email, markdown_path FROM {PEOPLE_TABLE} WHERE full_name = ?",
-                (name,)
-            ).fetchone()
-            if row:
-                return dict(row)
-            
-            # Try case-insensitive match
-            row = conn.execute(
-                f"SELECT id, full_name, email, markdown_path FROM {PEOPLE_TABLE} WHERE LOWER(full_name) = LOWER(?)",
-                (name,)
-            ).fetchone()
-            if row:
-                return dict(row)
-        
-        return None
-    finally:
-        conn.close()
 
+    result = _identity_resolver.auto_link(name=name, email=email, company=company)
+    if result.person_id is None:
+        return None
+
+    return {
+        "id": result.person_id,
+        "full_name": result.full_name,
+        "email": result.email,
+        "markdown_path": result.markdown_path,
+        "match_method": result.method,
+        "match_confidence": result.confidence,
+    }
 
 def create_person_in_db(name: str, organization: str = None, markdown_path: str = None) -> int:
     """Create a new person record in the unified database.
@@ -378,66 +395,102 @@ def create_person_in_db(name: str, organization: str = None, markdown_path: str 
         conn.close()
 
 
-def record_meeting_interaction(person_id: int, meeting_id: str, meeting_folder: str, meeting_date: str = None):
-    """Record a meeting interaction for a person."""
-    from datetime import datetime
-    
+def queue_identity_review(name: str, organization: Optional[str], candidate_person_id: int, confidence: float) -> None:
+    """Queue ambiguous identity matches for review in pending_approvals."""
+    context = json.dumps(
+        {
+            "name": name,
+            "organization": organization,
+            "candidate_person_id": candidate_person_id,
+            "confidence": round(confidence, 4),
+        }
+    )
     conn = get_db_connection()
     try:
-        # Check if interaction already exists
-        existing = conn.execute(
-            f"SELECT id FROM {INTERACTIONS_TABLE} WHERE person_id = ? AND source_ref = ?",
-            (person_id, meeting_folder)
-        ).fetchone()
-        
-        if not existing:
-            occurred_at = meeting_date or datetime.now().isoformat()
-            conn.execute(
-                f"""INSERT INTO {INTERACTIONS_TABLE} 
-                   (person_id, type, summary, source_ref, occurred_at)
-                   VALUES (?, 'meeting', ?, ?, ?)""",
-                (person_id, f"Meeting: {meeting_id}", meeting_folder, occurred_at)
-            )
-            conn.commit()
+        conn.execute(
+            """
+            INSERT INTO pending_approvals (entity_type, name, person_id, context, source_text, pipeline, status, created_at)
+            VALUES ('person_identity', ?, ?, ?, ?, 'meeting_crm_linker', 'pending', datetime('now'))
+            """,
+            (
+                name,
+                candidate_person_id,
+                context,
+                f"Ambiguous identity match for {name}",
+            ),
+        )
+        conn.commit()
     finally:
         conn.close()
 
 
+def record_meeting_interaction(person_id: int, meeting_id: str, meeting_folder: str, meeting_date: str = None):
+    """Record a meeting interaction for a person."""
+    occurred_at = meeting_date or __import__("datetime").datetime.now().isoformat()
+    record_person_interaction(
+        person_id=person_id,
+        interaction_type="meeting",
+        summary=f"Meeting: {meeting_id}",
+        source_ref=meeting_folder,
+        occurred_at=occurred_at,
+    )
+    sync_person_to_semantic_memory(
+        person_id,
+        trigger="meeting_linked",
+        metadata={"meeting_id": meeting_id, "meeting_folder": meeting_folder},
+    )
+
+
 def ensure_crm_profile(p: Participant, crm_index: Dict) -> Tuple[Optional[str], Optional[int]]:
     """Ensure participant has a CRM profile in both markdown and database.
-    
+
     Returns tuple of (crm_slug, person_id) where person_id is from n5_core.db.
     """
-    # First check if person exists in the database
-    person = find_person_in_db(name=p.name)
-    
+    resolver_candidate = _identity_resolver.resolve(name=p.name, company=p.organization)
+    if resolver_candidate.person_id and 0.75 <= resolver_candidate.confidence < _identity_resolver.auto_link_threshold:
+        queue_identity_review(
+            name=p.name,
+            organization=p.organization,
+            candidate_person_id=resolver_candidate.person_id,
+            confidence=resolver_candidate.confidence,
+        )
+        existing_slug = Path(resolver_candidate.markdown_path).stem if resolver_candidate.markdown_path else None
+        return (existing_slug, resolver_candidate.person_id)
+
+    person = find_person_in_db(name=p.name, company=p.organization)
+
     if person:
-        # Person exists in DB, get their slug from markdown_path
         if person.get('markdown_path'):
             slug = Path(person['markdown_path']).stem
         else:
             slug = None
+        sync_person_to_semantic_memory(
+            int(person['id']),
+            trigger="meeting_identity_resolved",
+            metadata={"name": p.name, "organization": p.organization},
+        )
         return (slug, person['id'])
-    
-    # Check markdown index fallback
+
     slug = find_crm_slug_by_name(p.name, crm_index)
-    
+
     if slug:
-        # Found in markdown, need to create DB entry
         profile_path = CRM_ROOT / f"{slug}.md"
         markdown_path = str(profile_path.relative_to(WORKSPACE)) if profile_path.exists() else None
         person_id = create_person_in_db(p.name, p.organization, markdown_path)
+        sync_person_to_semantic_memory(
+            person_id,
+            trigger="meeting_identity_created_from_slug",
+            metadata={"name": p.name, "organization": p.organization, "slug": slug},
+        )
         return (slug, person_id)
-    
-    # Need to create both markdown and DB entry
+
     slug = generate_slug(p.name)
     profile_path = CRM_ROOT / f"{slug}.md"
-    
+
     if not profile_path.exists():
         from crm_paths import ensure_crm_dirs
         ensure_crm_dirs()
-        
-        # Create markdown profile
+
         profile_content = f"""---
 created: {__import__('datetime').date.today().isoformat()}
 last_edited: {__import__('datetime').date.today().isoformat()}
@@ -456,13 +509,29 @@ provenance: meeting_crm_linker
 *No interactions recorded yet.*
 """
         profile_path.write_text(profile_content, encoding="utf-8")
-    
-    # Create DB entry
+
     markdown_path = str(profile_path.relative_to(WORKSPACE))
     person_id = create_person_in_db(p.name, p.organization, markdown_path)
-    
+    sync_person_to_semantic_memory(
+        person_id,
+        trigger="meeting_identity_created",
+        metadata={"name": p.name, "organization": p.organization, "slug": slug},
+    )
+
     return (slug, person_id)
 
+
+def preview_identity_resolution(p: Participant, crm_index: Dict[str, Dict[str, str]]) -> Tuple[Optional[str], Optional[int]]:
+    """Preview identity resolution without side effects (dry-run parity with live logic)."""
+    candidate = _identity_resolver.resolve(name=p.name, company=p.organization)
+    if candidate.person_id and candidate.confidence >= 0.75:
+        slug = Path(candidate.markdown_path).stem if candidate.markdown_path else find_crm_slug_by_name(p.name, crm_index)
+        return slug, candidate.person_id
+
+    slug = find_crm_slug_by_name(p.name, crm_index)
+    if slug:
+        return slug, None
+    return None, None
 
 def process_meeting(meeting_folder: Path, dry_run: bool = False) -> Optional[Dict]:
     """Process a single meeting folder, linking participants to CRM."""
@@ -507,9 +576,7 @@ def process_meeting(meeting_folder: Path, dry_run: bool = False) -> Optional[Dic
             continue
 
         if dry_run:
-            slug = find_crm_slug_by_name(p.name, crm_index)
-            person = find_person_in_db(name=p.name)
-            person_id = person['id'] if person else None
+            slug, person_id = preview_identity_resolution(p, crm_index)
         else:
             slug, person_id = ensure_crm_profile(p, crm_index)
             
@@ -580,10 +647,9 @@ def main() -> None:
         print(f"{folder} → {links['meeting_id']} ({links['meeting_type']})")
         for p in links["participants"]:
             print(
-                f"  - {p['raw']} | internal={p['is_internal']} | crm_person_id={p['crm_person_id']}"
+                f"  - {p['raw']} | internal={p['is_internal']} | person_id={p['person_id']}"
             )
 
 
 if __name__ == "__main__":
     main()
-

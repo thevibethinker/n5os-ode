@@ -5,7 +5,7 @@ Scans sent emails to discover new contacts and queue for enrichment.
 
 Prerequisites:
 - Gmail API configured (use_app_gmail already called in Zo workflow)
-- Database: N5/data/crm_v3.db
+- Database: N5/data/n5_core.db
 - Helper functions in N5/scripts/crm_calendar_helpers.py
 """
 

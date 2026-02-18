@@ -1,0 +1,1 @@
+{"entities": [{"name": "AIR system", "type": "TOOL", "context": "existing system leveraged for sequential processing"}], "relationships": [{"from": "V", "to": "AIR system", "type": "USES", "context": "leveraged existing AIR system for tasks"}]}

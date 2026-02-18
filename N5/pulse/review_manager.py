@@ -121,19 +121,7 @@ Reply:
 • "revise: <feedback>" to adjust
 • "cancel" to abort"""
     
-    # 2.5. Activate VibeTeacher at plan_review checkpoint
-    try:
-        teaching_result = run_cmd([
-            "python3", str(PULSE_DIR / "teaching" / "teaching_manager.py"),
-            "activate", "plan_review", slug, "--input", plan_content[:1000]
-        ])
-        
-        if teaching_result.get("has_moment"):
-            teaching = teaching_result.get("teaching", {})
-            sms_message += f"""\n\n📚 {teaching['precise_term']}: {teaching['why_it_matters'][:100]}"""
-    except Exception as e:
-        # Teaching failures shouldn't block review flow
-        pass
+    # Learning mode: teaching moments handled natively by orchestrator LLM
     
     # 3. Update meta
     meta["status"] = "plan_review"

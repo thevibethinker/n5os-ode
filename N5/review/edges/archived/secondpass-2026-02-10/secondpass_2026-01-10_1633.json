@@ -1,0 +1,25 @@
+{
+  "created": "2026-01-10T16:33:59.913246+00:00",
+  "batch_id": "2026-01-10_1633",
+  "batch_size": 3,
+  "status": "complete",
+  "meetings": [
+    {
+      "meeting_id": "mtg_2025-12-11_Afraaz-Irani-X-Vrijen-Attawar",
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-08/2025-12-11_Afraaz-Irani-X-Vrijen-Attawar",
+      "b01_preview": "---\ncreated: 2025-12-26\nlast_edited: 2025-12-26\nversion: 1.0\nprovenance: con_kv75YEcSNVK4DSd3\n---\n\n# B01: Detailed Recap\n\n## Overview\nVrijen Attawar (Careerspan) and Afraaz Irani (Boomer) met to discuss Afraaz's immediate hiring bottlenecks for his healthcare startup and how Careerspan's platform could streamline the process. Afraaz is currently focused on a \"short-term bottleneck\" of consenting patients for a Medicare-billed program to unlock significant revenue.\n\n## Key Discussion Points\n\n### 1. Boomer\u2019s Current State & Revenue Strategy\n- Afraaz is bootstrapping \"Boomer,\" currently billing Medicare for a free-to-patient program.\n- He is potentially looking at a \"rev share\" model with a clinic that could lock in $1M in revenue, which might eliminate the need for a venture raise.\n- **The Bottleneck:** Afraaz is personally calling patients to get consent. He needs high-energy, low-cost talent to handle these calls so he can scale and eventually leverage AI for the process.\n\n### 2. Strategic Hiring Advice (Non-Careerspan)\nVrijen provided \"ultra short-term\" advice outside of his own platform:\n- **OPT/STEM OPT Program:** Vrijen recommended hiring international students on OPT (Optional Practical Training). \n    - **Rationale:** High quality, ambitious, hard-working, and often willing to work for lower comp ($25/hr or even for experience/letters of rec) because they need to maintain visa status.\n    - **Execution:** Reach out to alma mater career services or alumni offices in December to find students \"floating around\" looking for a sponsor. \n    - **Administrative Load:** Vrijen noted it takes about 30 minutes to fill out the portal forms; the \"sponsorship\" fear is largely a misconception for OPT hires.\n- **Pre-Med Gap Year Students:** Afraaz expressed interest in targeting pre-med students who need clinical/healthcare exposure and letters of recommendation, noting they are often high-output and willing to work for little-to-no pay.\n\n### 3. Careerspan Platform Deep Dive\nVrijen pitched Careerspan as the solution to \"resume noise\":\n- **The Problem:** Resumes have \"no signal.\" Standard boards like Indeed or LinkedIn result in \"crap impressions\" or thousands of irrelevant applicants.\n- **The Careerspan Solution:**\n    - Uses **\"Stories\"** (voice-input self-reflections) to push candidates to articulate their experiences (40 minutes of reflection).\n    - Surfaces \"hidden gems\" by analyzing alignment with specific job needs (e.g., Founding Engineer vs. PM).\n    - Provides employers with a \"Why I should say Yes / Why I should say No\" summary instead of a raw resume.\n    - **Outcome:** Fewer candidates, but significantly higher quality and \"worth the screen.\"\n\n### 4. Next Steps & Tools\n- Vrijen offered to set up a dummy account for Afraaz to explore the UI.\n- Afraaz is considering whether to post on LinkedIn/Indeed or go the \"alma mater\" route first.\n"
+    },
+    {
+      "meeting_id": "mtg_2025-12-05_Ericconsonantvc",
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-01/2025-12-05_Ericconsonantvc",
+      "b01_preview": "---\ncreated: 2025-12-26\nlast_edited: 2025-12-26\nversion: 1.0\nprovenance: con_kv75YEcSNVK4DSd3\n---\n\n# B01: Detailed Recap\n\nThe meeting was a brief connection with Eric (Consonant VC). Due to the extremely short nature of the transcript (\"It's.\"), no substantial discussion points were recorded in this specific session.\n\n"
+    },
+    {
+      "meeting_id": "mtg_2025-12-05_Logan",
+      "path": "/home/workspace/Personal/Meetings/Week-of-2025-12-01/2025-12-05_Logan",
+      "b01_preview": "---\ncreated: 2025-12-26\nlast_edited: 2025-12-26\nversion: 1.0\nprovenance: con_kv75YEcSNVK4DSd3\n---\n\n# B01: Detailed Recap\n\n## Overview\nThis brief interaction captures the initial moments of a call between Vrijen Attawar and Logan on December 5, 2025. The transcript is primarily functional, focused on the successful establishment of the connection.\n\n## Key Discussion Points\n- **Connection Establishment**: Vrijen confirmed joining the call and expressed relief upon successfully hopping on.\n- **Presence Confirmation**: Explicit confirmation that Vrijen was on the call.\n\n## Outcomes\n- Successful connection between participants.\n"
+    }
+  ],
+  "completed_at": "2026-01-10T16:37:22.274629+00:00",
+  "edges_added": 2
+}

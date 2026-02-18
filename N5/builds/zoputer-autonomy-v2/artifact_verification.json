@@ -1,0 +1,175 @@
+{
+  "slug": "zoputer-autonomy-v2",
+  "timestamp": "2026-02-11T03:31:42.396769+00:00",
+  "drops": {
+    "D2.2": {
+      "claimed": [
+        "Skills/mentor-escalation/SKILL.md",
+        "Skills/mentor-escalation/scripts/va_client.py",
+        "Skills/mentor-escalation/scripts/escalate.py"
+      ],
+      "verified": [
+        "Skills/mentor-escalation/SKILL.md",
+        "Skills/mentor-escalation/scripts/va_client.py",
+        "Skills/mentor-escalation/scripts/escalate.py"
+      ],
+      "missing": []
+    },
+    "D2.3": {
+      "claimed": [
+        "Skills/mentor-handler/SKILL.md",
+        "Skills/mentor-handler/scripts/handle_escalation.py",
+        "N5/data/mentor_precedents.json",
+        "N5/data/mentor_audit.jsonl"
+      ],
+      "verified": [
+        "Skills/mentor-handler/SKILL.md",
+        "Skills/mentor-handler/scripts/handle_escalation.py",
+        "N5/data/mentor_precedents.json",
+        "N5/data/mentor_audit.jsonl"
+      ],
+      "missing": []
+    },
+    "D1.3": {
+      "claimed": [
+        "Daily 9:00 AM ET (14:00 UTC)",
+        "SMS on failures only",
+        "Documents/consulting/auto-sync-agents.md",
+        "15 minutes between va push and zoputer pull"
+      ],
+      "verified": [
+        "Documents/consulting/auto-sync-agents.md"
+      ],
+      "missing": [
+        "Daily 9:00 AM ET (14:00 UTC)",
+        "SMS on failures only",
+        "15 minutes between va push and zoputer pull"
+      ]
+    },
+    "D1.1": {
+      "claimed": [
+        "https://github.com/vrijenattawar/zoputer-substrate"
+      ],
+      "verified": [],
+      "missing": [
+        "https://github.com/vrijenattawar/zoputer-substrate"
+      ]
+    },
+    "D3.1": {
+      "claimed": [
+        "N5/data/pending_decisions.db",
+        "N5/scripts/pending_decisions.py",
+        "N5/config/pending_decisions_schema.sql"
+      ],
+      "verified": [
+        "N5/data/pending_decisions.db",
+        "N5/scripts/pending_decisions.py",
+        "N5/config/pending_decisions_schema.sql"
+      ],
+      "missing": []
+    },
+    "D2.1": {
+      "claimed": [
+        "Documents/consulting/va-api-setup-guide.md"
+      ],
+      "verified": [
+        "Documents/consulting/va-api-setup-guide.md"
+      ],
+      "missing": []
+    },
+    "D1.2": {
+      "claimed": [
+        "Skills/git-substrate-sync/SKILL.md",
+        "Skills/git-substrate-sync/scripts/sync.py",
+        "Skills/git-substrate-sync/scripts/pull.py"
+      ],
+      "verified": [
+        "Skills/git-substrate-sync/SKILL.md",
+        "Skills/git-substrate-sync/scripts/sync.py",
+        "Skills/git-substrate-sync/scripts/pull.py"
+      ],
+      "missing": []
+    },
+    "D4.2": {
+      "claimed": [
+        "Skills/learning-logger/",
+        "Skills/learning-logger/scripts/log_learning.py",
+        "Skills/learning-logger/SKILL.md"
+      ],
+      "verified": [
+        "Skills/learning-logger/",
+        "Skills/learning-logger/scripts/log_learning.py",
+        "Skills/learning-logger/SKILL.md"
+      ],
+      "missing": []
+    },
+    "D4.1": {
+      "claimed": [
+        "Documents/consulting/autonomy-config.yaml",
+        "N5/scripts/check_autonomy_permission.py"
+      ],
+      "verified": [
+        "Documents/consulting/autonomy-config.yaml",
+        "N5/scripts/check_autonomy_permission.py"
+      ],
+      "missing": []
+    },
+    "D4.3": {
+      "claimed": [
+        ".github/workflows/learning-pr.yaml",
+        "b9eb171660a29aaadad2ba8ea8e6056fcb82206a",
+        "N5/scripts/review_learning_pr.py"
+      ],
+      "verified": [
+        "N5/scripts/review_learning_pr.py"
+      ],
+      "missing": [
+        ".github/workflows/learning-pr.yaml",
+        "b9eb171660a29aaadad2ba8ea8e6056fcb82206a"
+      ]
+    },
+    "D3.2": {
+      "claimed": [
+        "Skills/human-escalation/",
+        "Skills/human-escalation/SKILL.md",
+        "Skills/human-escalation/scripts/notify.py",
+        "N5/scripts/escalation_notifier.py",
+        "N5/data/notification_log.json",
+        "N5/data/sms_outbox/",
+        "\ud83d\udd14 Decision needed ({priority})\\n{summary}\\n\\nReply: n5 decision {short_id}"
+      ],
+      "verified": [
+        "Skills/human-escalation/",
+        "Skills/human-escalation/SKILL.md",
+        "Skills/human-escalation/scripts/notify.py",
+        "N5/scripts/escalation_notifier.py",
+        "N5/data/notification_log.json",
+        "N5/data/sms_outbox/"
+      ],
+      "missing": [
+        "\ud83d\udd14 Decision needed ({priority})\\n{summary}\\n\\nReply: n5 decision {short_id}"
+      ]
+    },
+    "D3.3": {
+      "claimed": [
+        "N5/scripts/resolve_decision.py",
+        "1e421d2a-8692-486c-91c0-f996cd61d7ac",
+        "N5/logs/decision_resolutions.jsonl"
+      ],
+      "verified": [
+        "N5/scripts/resolve_decision.py",
+        "N5/logs/decision_resolutions.jsonl"
+      ],
+      "missing": [
+        "1e421d2a-8692-486c-91c0-f996cd61d7ac"
+      ]
+    }
+  },
+  "summary": {
+    "total_artifacts": 37,
+    "verified": 29,
+    "missing": 8,
+    "errors": 0
+  },
+  "passed": false
+}

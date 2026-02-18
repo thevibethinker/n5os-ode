@@ -1,0 +1,1 @@
+{"entities": [{"name": "Python", "type": "TOOL", "context": "used for data processing"}, {"name": "SQLite", "type": "TOOL", "context": "used for interaction and transactions"}], "relationships": [{"from": "V", "to": "Python", "type": "USES", "context": "for data processing"}, {"from": "V", "to": "SQLite", "type": "USES", "context": "for data transactions and interaction"}]}

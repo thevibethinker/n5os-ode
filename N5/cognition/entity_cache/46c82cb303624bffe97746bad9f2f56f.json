@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual associated with a knowledge system"}, {"name": "automated operation", "type": "CONCEPT", "context": "process being monitored"}, {"name": "Inbox/REVIEW.md", "type": "TOOL", "context": "tool used for review"}], "relationships": []}

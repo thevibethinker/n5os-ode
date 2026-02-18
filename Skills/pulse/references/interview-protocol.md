@@ -13,7 +13,7 @@ Pre-build interview to decompose work into Streams, Drops, and Checkpoints.
 
 Before any build that will use Pulse orchestration.
 
-## The Five Questions
+## The Six Questions
 
 ### 1. What are we building?
 - Concrete deliverables (files, features, systems)
@@ -98,3 +98,10 @@ Current 1: Ingest → Checkpoint → Transform → Checkpoint → Validate → S
 - **Missing dependencies**: Drop assumes artifact that doesn't exist yet
 - **No checkpoints**: Complex builds without quality gates = cascade failures
 - **Over-checkpointing**: >3 checkpoints = decompose the build differently
+
+### 6. What should V learn from this build?
+These inform the **Learning Landscape** in the plan.
+- Which technical concepts in this build are new to V? (Check `N5/config/understanding_bank.json`)
+- Which decisions have the highest pedagogical value?
+- What level of engagement does V want? (minimal / standard / full)
+- Are there concepts V specifically wants to deep dive into?

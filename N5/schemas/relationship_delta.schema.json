@@ -1,0 +1,313 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Relationship Delta",
+  "description": "Captures person/org relationship changes with trend analysis and confidence scoring.",
+  "type": "object",
+  "properties": {
+    "delta_id": {
+      "type": "string",
+      "pattern": "^rd_[a-z0-9]{8}$",
+      "description": "Unique identifier for the relationship delta"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when the delta was detected"
+    },
+    "source_meeting_id": {
+      "type": "string",
+      "description": "ID of the meeting that revealed this delta"
+    },
+    "person_id": {
+      "type": "string",
+      "description": "ID of the person this delta relates to"
+    },
+    "organization_id": {
+      "type": "string",
+      "description": "ID of the organization context (optional)"
+    },
+    "delta_type": {
+      "type": "string",
+      "enum": [
+        "sentiment_shift",
+        "engagement_level", 
+        "decision_authority",
+        "priority_change",
+        "urgency_shift",
+        "trust_level",
+        "champion_status",
+        "buying_role",
+        "influencer_mapping",
+        "relationship_depth",
+        "communication_frequency",
+        "responsiveness_change",
+        "meeting_participation",
+        "project_involvement"
+      ],
+      "description": "Type of relationship change detected"
+    },
+    "trend": {
+      "type": "string",
+      "enum": ["increasing", "decreasing", "stable", "fluctuating"],
+      "description": "Direction of the relationship change"
+    },
+    "previous_state": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string",
+          "description": "Previous state description or value"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Confidence in the previous state assessment"
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the previous state was established"
+        },
+        "source": {
+          "type": "string",
+          "description": "Source of the previous state information"
+        }
+      },
+      "required": ["value", "confidence"],
+      "additionalProperties": false,
+      "description": "Previous relationship state"
+    },
+    "current_state": {
+      "type": "object",
+      "properties": {
+        "value": {
+          "type": "string",
+          "description": "Current state description or value"
+        },
+        "confidence": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Confidence in the current state assessment"
+        },
+        "intensity": {
+          "type": "string",
+          "enum": ["low", "medium", "high"],
+          "description": "Intensity of the current state"
+        }
+      },
+      "required": ["value", "confidence"],
+      "additionalProperties": false,
+      "description": "Current relationship state"
+    },
+    "change_magnitude": {
+      "type": "string",
+      "enum": ["subtle", "moderate", "significant", "dramatic"],
+      "description": "Magnitude of the relationship change"
+    },
+    "evidence": {
+      "type": "object",
+      "properties": {
+        "quotes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "text": {
+                "type": "string",
+                "description": "Exact quote from the meeting"
+              },
+              "speaker": {
+                "type": "string", 
+                "description": "Person who said the quote"
+              },
+              "context": {
+                "type": "string",
+                "description": "Additional context around the quote"
+              },
+              "timestamp_in_meeting": {
+                "type": "string",
+                "description": "Timestamp within the meeting (optional)"
+              },
+              "sentiment_indicator": {
+                "type": "string",
+                "enum": ["positive", "negative", "neutral", "mixed"],
+                "description": "Sentiment expressed in the quote"
+              }
+            },
+            "required": ["text", "speaker"],
+            "additionalProperties": false
+          },
+          "minItems": 1,
+          "description": "Direct quotes supporting this delta"
+        },
+        "behavioral_indicators": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Observed behavioral changes"
+        },
+        "block_references": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "minItems": 1,
+          "description": "Meeting block IDs containing supporting evidence"
+        }
+      },
+      "required": ["quotes", "block_references"],
+      "additionalProperties": false,
+      "description": "Evidence supporting this relationship delta"
+    },
+    "impact_assessment": {
+      "type": "object",
+      "properties": {
+        "deal_stage_impact": {
+          "type": "string",
+          "enum": ["positive", "negative", "neutral", "unclear"],
+          "description": "Impact on current deal stage"
+        },
+        "timeline_impact": {
+          "type": "string", 
+          "enum": ["accelerated", "delayed", "unchanged", "unclear"],
+          "description": "Impact on project timeline"
+        },
+        "risk_level": {
+          "type": "string",
+          "enum": ["low", "medium", "high", "critical"],
+          "description": "Risk level of this change"
+        },
+        "strategic_significance": {
+          "type": "string",
+          "enum": ["low", "medium", "high"],
+          "description": "Strategic significance of this relationship change"
+        }
+      },
+      "additionalProperties": false,
+      "description": "Assessment of the impact of this relationship change"
+    },
+    "mutual_connections": {
+      "type": "object",
+      "properties": {
+        "revealed_connections": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "person_id": {
+                "type": "string"
+              },
+              "connection_type": {
+                "type": "string",
+                "enum": ["colleague", "former_colleague", "client", "vendor", "mutual_friend", "family", "advisor", "board_member", "investor", "other"]
+              },
+              "strength": {
+                "type": "string",
+                "enum": ["weak", "moderate", "strong"]
+              }
+            },
+            "required": ["person_id", "connection_type"],
+            "additionalProperties": false
+          },
+          "description": "Newly revealed mutual connections"
+        },
+        "intro_implications": {
+          "type": "object",
+          "properties": {
+            "intro_potential": {
+              "type": "boolean",
+              "description": "Whether this creates introduction opportunities"
+            },
+            "intro_value": {
+              "type": "string",
+              "enum": ["low", "medium", "high"],
+              "description": "Value of potential introductions"
+            }
+          },
+          "additionalProperties": false
+        }
+      },
+      "additionalProperties": false,
+      "description": "Mutual connections revealed or impacted"
+    },
+    "next_actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "action": {
+            "type": "string",
+            "description": "Recommended next action"
+          },
+          "priority": {
+            "type": "string",
+            "enum": ["low", "medium", "high", "urgent"],
+            "description": "Priority of the action"
+          },
+          "owner": {
+            "type": "string",
+            "description": "Who should take this action"
+          },
+          "timeframe": {
+            "type": "string",
+            "description": "Suggested timeframe for action"
+          }
+        },
+        "required": ["action", "priority"],
+        "additionalProperties": false
+      },
+      "description": "Recommended actions based on this relationship delta"
+    },
+    "provenance": {
+      "type": "object",
+      "properties": {
+        "extractor_version": {
+          "type": "string",
+          "description": "Version of the relationship delta extractor"
+        },
+        "conversation_id": {
+          "type": "string",
+          "pattern": "^con_[A-Za-z0-9]+$",
+          "description": "ID of the conversation that generated this delta"
+        },
+        "processing_mode": {
+          "type": "string",
+          "enum": ["production", "dry_run", "test"],
+          "description": "Processing mode for this extraction"
+        },
+        "source_blocks": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Block IDs that contributed to this delta"
+        }
+      },
+      "required": ["extractor_version", "conversation_id"],
+      "additionalProperties": false,
+      "description": "Provenance information for audit trails"
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Overall confidence in this relationship delta (0-1)"
+    }
+  },
+  "required": [
+    "delta_id",
+    "timestamp",
+    "source_meeting_id",
+    "person_id", 
+    "delta_type",
+    "trend",
+    "current_state",
+    "evidence",
+    "provenance",
+    "confidence"
+  ],
+  "additionalProperties": false
+}

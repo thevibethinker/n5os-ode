@@ -1,0 +1,16 @@
+{
+  "drop_id": "D3.1",
+  "status": "complete",
+  "summary": "Integration test passed: all schema objects verified (calls.analysis, calls.caller_mode, call_questions, prefab_answers tables). Synthetic investor call inserted and queried successfully with 4 questions across 4 categories. Pipeline verified: extractQuestions (fire-and-forget), getPrefabAnswers (FAQ injection), recordCallerMode (Vapi tool), sendRecapEmail (sentiment + grade + questions). Produced full operations runbook, post-mortem, and inventory doc.",
+  "artifacts": [
+    "N5/builds/frank-investor-line/artifacts/runbook.md",
+    "N5/builds/frank-investor-line/artifacts/post-mortem.md",
+    "Skills/vapi/assets/runbook-inventory.md"
+  ],
+  "learnings": [
+    "Pulse tick blocking on /zo/ask spawns can timeout the parent thread — spawn in background with nohup for long-running drops",
+    "Manual drops need explicit meta.json status update after deposit — tick doesn't auto-detect deposits for awaiting_manual drops",
+    "Synthetic test data should be flagged for cleanup before production reporting"
+  ],
+  "errors": []
+}

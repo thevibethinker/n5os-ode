@@ -1,0 +1,89 @@
+{
+  "version": "1.0",
+  "created": "2026-02-18",
+  "last_updated": "2026-02-18",
+  "meta": {
+    "description": "V's technical understanding tracker. Single source of truth for concept mastery.",
+    "migrated_from": "N5/pulse/teaching/glossary.json"
+  },
+  "domains": {
+    "system_architecture": {
+      "level": "solid",
+      "notes": "workflows, SSOT, modular design"
+    },
+    "data_structures": {
+      "level": "solid",
+      "notes": "JSONL, schemas, file organization"
+    },
+    "abstractions": {
+      "level": "solid",
+      "notes": "APIs as contracts, state management"
+    },
+    "implementation": {
+      "level": "learning",
+      "notes": "async/await, error handling, HTTP mechanics"
+    },
+    "developer_tooling": {
+      "level": "learning",
+      "notes": "git workflows, debugging, testing"
+    },
+    "low_level": {
+      "level": "new",
+      "notes": "memory, concurrency, networking internals"
+    }
+  },
+  "concepts": [
+    {
+      "term": "MECE",
+      "precise_name": "MECE decomposition",
+      "level": "solid",
+      "v_description": "like those sort of non-overlapping worker assignments",
+      "first_encountered": "2026-01-24",
+      "last_engaged": "2026-01-24",
+      "evidence": [
+        "usage_count: 12 (from glossary)",
+        "absorbed_at: 2026-01-24T23:02:59.971395+00:00",
+        "context: build planning"
+      ],
+      "domain": "system_architecture"
+    },
+    {
+      "term": "idempotent",
+      "precise_name": "idempotent operation",
+      "level": "encountered",
+      "v_description": "like running a script twice safely without duplicates",
+      "first_encountered": "2026-01-24",
+      "last_engaged": "2026-01-24",
+      "evidence": [
+        "usage_count: 5 (from glossary)",
+        "context: scripts, APIs, databases"
+      ],
+      "domain": "implementation"
+    },
+    {
+      "term": "atomic",
+      "precise_name": "atomic operation",
+      "level": "encountered",
+      "v_description": "like an all-or-nothing transaction",
+      "first_encountered": "2026-01-24",
+      "last_engaged": "2026-01-24",
+      "evidence": [
+        "usage_count: 5 (from glossary)",
+        "context: file operations, transactions"
+      ],
+      "domain": "implementation"
+    },
+    {
+      "term": "checkpoint",
+      "precise_name": "checkpoint",
+      "level": "encountered",
+      "v_description": "like a pause for sign-off before continuing",
+      "first_encountered": "2026-01-24",
+      "last_engaged": "2026-02-18",
+      "evidence": [
+        "context: build workflows, HITL"
+      ],
+      "domain": "developer_tooling"
+    }
+  ]
+}

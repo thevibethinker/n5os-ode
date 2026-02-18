@@ -25,6 +25,8 @@ from urllib.parse import urlparse
 sys.path.insert(0, '/home/workspace')
 from N5.lib.db import get_crm_db, crm_transaction
 from N5.lib.paths import CRM_DB
+from crm_identity_resolver import CRMIdentityResolver
+from crm_semantic_memory import sync_person_to_semantic_memory
 
 # Google imports
 try:
@@ -45,6 +47,7 @@ WEBHOOK_METADATA_PATH = '/home/workspace/N5/data/webhook_metadata.json'
 
 # Initialize logger
 logger = logging.getLogger(__name__)
+_identity_resolver = CRMIdentityResolver(auto_link_threshold=0.99)
 
 
 def load_config(config_path: str = CONFIG_PATH) -> dict:
@@ -171,6 +174,57 @@ def load_webhook_metadata():
         return json.load(f)
 
 
+def ensure_runtime_tables():
+    """
+    Ensure runtime tables exist in the CRM database.
+    """
+    with crm_transaction() as conn:
+        c = conn.cursor()
+
+        # Create webhook_health table if not exists
+        c.execute("""
+            CREATE TABLE IF NOT EXISTS webhook_health (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                service TEXT NOT NULL UNIQUE,
+                channel_id TEXT,
+                resource_id TEXT,
+                expiration_time INTEGER,
+                last_received_at TEXT,
+                last_renewal_at TEXT,
+                status TEXT DEFAULT 'ACTIVE'
+            )
+        """)
+
+        # Create crm_enrichment_queue table if not exists
+        c.execute("""
+            CREATE TABLE IF NOT EXISTS crm_enrichment_queue (
+                id INTEGER PRIMARY KEY AUTOINCREMENT,
+                person_id INTEGER NOT NULL,
+                scheduled_for TEXT NOT NULL,
+                checkpoint TEXT NOT NULL,
+                priority INTEGER NOT NULL DEFAULT 50,
+                trigger_source TEXT,
+                trigger_metadata TEXT,
+                status TEXT NOT NULL DEFAULT 'queued',
+                attempt_count INTEGER NOT NULL DEFAULT 0,
+                last_attempt_at TEXT,
+                completed_at TEXT,
+                error_message TEXT,
+                created_at TEXT DEFAULT CURRENT_TIMESTAMP
+            )
+        """)
+
+        # Create indexes
+        c.execute("""
+            CREATE INDEX IF NOT EXISTS idx_crm_enrich_queue_status_sched
+            ON crm_enrichment_queue (status, scheduled_for)
+        """)
+        c.execute("""
+            CREATE INDEX IF NOT EXISTS idx_crm_enrich_queue_person_checkpoint
+            ON crm_enrichment_queue (person_id, checkpoint)
+        """)
+
+
 def update_webhook_health(channel_id=None, resource_id=None,
                          expiration_ms=None, last_received_at=None):
     """
@@ -182,6 +236,7 @@ def update_webhook_health(channel_id=None, resource_id=None,
         expiration_ms (int): Expiration timestamp in milliseconds
         last_received_at (datetime): Last notification received time
     """
+    ensure_runtime_tables()
     with crm_transaction() as conn:
         c = conn.cursor()
 
@@ -309,111 +364,66 @@ def display_instructions():
 
 
 def get_or_create_profile(email: str, name: str, source: str = 'calendar') -> int:
-    """
-    Get existing profile or create new one.
+    """Get existing person or create one in canonical n5_core people table."""
+    email_norm = (email or '').strip().lower()
+    if not email_norm:
+        raise ValueError('email is required')
 
-    Args:
-        email: Contact email address
-        name: Contact name
-        source: Source system (default: 'calendar')
+    resolved = _identity_resolver.auto_link(name=name, email=email_norm)
+    if resolved.person_id is not None:
+        person_id = int(resolved.person_id)
+        sync_person_to_semantic_memory(
+            person_id,
+            trigger="calendar_identity_resolved",
+            metadata={"source": source, "email": email_norm},
+        )
+        return person_id
 
-    Returns:
-        int: profile_id
-
-    Behavior:
-        1. Query profiles table for existing email
-        2. If found, return existing profile_id
-        3. If not found:
-           a. Generate yaml_path (N5/crm_v3/profiles/{Name}_{email_prefix}.yaml)
-           b. Create stub YAML file with frontmatter
-           c. INSERT INTO profiles
-           d. Return new profile_id
-    """
-    # First check if profile exists (read-only, no transaction needed)
     conn = get_crm_db()
     c = conn.cursor()
-    c.execute("SELECT id FROM profiles WHERE email = ?", (email,))
+    c.execute("SELECT id FROM people WHERE lower(email) = ?", (email_norm,))
     result = c.fetchone()
-
     if result:
-        profile_id = result[0]
-        logger.debug(f"Found existing profile {profile_id} for {email}")
-        return profile_id
+        person_id = int(result[0])
+        logger.debug(f"Found existing person {person_id} for {email_norm}")
+        sync_person_to_semantic_memory(
+            person_id,
+            trigger="calendar_identity_existing",
+            metadata={"source": source, "email": email_norm},
+        )
+        return person_id
 
-    # Create new profile - use transaction for write operations
+    base_name = (name or '').strip()
+    if not base_name:
+        base_name = email_norm.split('@')[0].replace('.', ' ').replace('_', ' ').title()
+
+    slug_seed = base_name or email_norm.split('@')[0]
+    slug = ''.join(ch.lower() if ch.isalnum() else '-' for ch in slug_seed)
+    slug = '-'.join(part for part in slug.split('-') if part) or 'unknown-person'
+    markdown_path = f"Personal/Knowledge/CRM/individuals/{slug}.md"
+
     with crm_transaction() as conn:
         c = conn.cursor()
-
-        # Double-check in case of race condition
-        c.execute("SELECT id FROM profiles WHERE email = ?", (email,))
+        c.execute("SELECT id FROM people WHERE lower(email) = ?", (email_norm,))
         result = c.fetchone()
         if result:
-            return result[0]
+            return int(result[0])
 
-        # Generate YAML path: FirstName_LastName_emailprefix.yaml
-        name_parts = name.strip().split()
-        first_name = name_parts[0] if name_parts else "Unknown"
-        last_name = name_parts[-1] if len(name_parts) > 1 else ""
-        email_prefix = email.split('@')[0] if '@' in email else email[:20]
-
-        # Sanitize filename parts
-        first_clean = "".join(ch for ch in first_name if ch.isalnum() or ch in " -_")
-        last_clean = "".join(ch for ch in last_name if ch.isalnum() or ch in " -_")
-        prefix_clean = "".join(ch for ch in email_prefix if ch.isalnum() or ch in "-_")
-
-        if last_clean:
-            yaml_filename = f"{first_clean}_{last_clean}_{prefix_clean}.yaml"
-        else:
-            yaml_filename = f"{prefix_clean}.yaml"
-
-        yaml_path = f"N5/crm_v3/profiles/{yaml_filename}"
-        full_yaml_path = f"/home/workspace/{yaml_path}"
-
-        # Create stub YAML file
-        os.makedirs(os.path.dirname(full_yaml_path), exist_ok=True)
-
-        today = datetime.now().strftime("%Y-%m-%d")
-        stub_content = f"""---
-created: {today}
-last_edited: {today}
-version: 1.0
-source: {source}
-email: {email}
-category: NETWORKING
-relationship_strength: weak
----
-
-# {name}
-
-## Contact Information
-- **Email:** {email}
-- **Organization:** To be determined
-
-## Metadata
-- **Sources:** {source}
-- **Source Count:** 1
-- **Total Meetings:** 0
-
-## Notes
-
-*Awaiting enrichment.*
-"""
-
-        with open(full_yaml_path, 'w') as f:
-            f.write(stub_content)
-
-        logger.debug(f"Created stub profile YAML at {yaml_path}")
-
-        # Insert into database
-        c.execute("""
-            INSERT INTO profiles
-            (email, name, yaml_path, source, enrichment_status, profile_quality)
-            VALUES (?, ?, ?, ?, 'pending', 'stub')
-        """, (email, name, yaml_path, source))
-
-        profile_id = c.lastrowid
-        logger.info(f"Created new profile {profile_id} for {email}")
-        return profile_id
+        c.execute(
+            """
+            INSERT INTO people (full_name, email, status, source_db, source_id, markdown_path)
+            VALUES (?, ?, 'active', 'calendar_webhook', ?, ?)
+            """,
+            (base_name, email_norm, source, markdown_path),
+        )
+        person_id = int(c.lastrowid)
+        logger.info(f"Created person {person_id} for {email_norm}")
+        sync_person_to_semantic_memory(
+            person_id,
+            trigger="calendar_identity_created",
+            metadata={"source": source, "email": email_norm, "name": base_name},
+        )
+        return person_id
 
 
 def schedule_enrichment_job(
@@ -424,65 +434,51 @@ def schedule_enrichment_job(
     trigger_source: str,
     trigger_metadata: str = None
 ) -> int:
-    """
-    Queue enrichment job for profile.
+    """Queue enrichment job in canonical crm_enrichment_queue table."""
+    ensure_runtime_tables()
 
-    Args:
-        profile_id: Profile database ID
-        scheduled_for: ISO datetime string (when to process)
-        checkpoint: 'checkpoint_1' or 'checkpoint_2'
-        priority: 1-100 (higher = sooner, 75 for checkpoint_1, 100 for checkpoint_2)
-        trigger_source: 'calendar' | 'gmail' | 'manual'
-        trigger_metadata: JSON string with additional context (optional)
-
-    Returns:
-        int: job_id (enrichment_queue.id)
-
-    Behavior:
-        1. Check if duplicate job exists (same profile_id, checkpoint, status='queued')
-        2. If duplicate exists, return existing job_id (don't create duplicate)
-        3. If no duplicate, INSERT new job and return job_id
-    """
-    # Check for duplicate first (read-only)
     conn = get_crm_db()
     c = conn.cursor()
-    c.execute("""
-        SELECT id FROM enrichment_queue
-        WHERE profile_id = ?
-          AND checkpoint = ?
-          AND status = 'queued'
-    """, (profile_id, checkpoint))
-
+    c.execute(
+        """
+        SELECT id FROM crm_enrichment_queue
+        WHERE person_id = ? AND checkpoint = ? AND status = 'queued'
+        """,
+        (profile_id, checkpoint),
+    )
     result = c.fetchone()
     if result:
-        job_id = result[0]
-        logger.debug(f"Duplicate job found: {job_id} for profile {profile_id}, checkpoint {checkpoint}")
+        job_id = int(result[0])
+        logger.debug(
+            f"Duplicate job found: {job_id} for person {profile_id}, checkpoint {checkpoint}"
+        )
         return job_id
 
-    # Create new job with transaction
     with crm_transaction() as conn:
         c = conn.cursor()
-
-        # Double-check for race condition
-        c.execute("""
-            SELECT id FROM enrichment_queue
-            WHERE profile_id = ?
-              AND checkpoint = ?
-              AND status = 'queued'
-        """, (profile_id, checkpoint))
-
+        c.execute(
+            """
+            SELECT id FROM crm_enrichment_queue
+            WHERE person_id = ? AND checkpoint = ? AND status = 'queued'
+            """,
+            (profile_id, checkpoint),
+        )
         result = c.fetchone()
         if result:
-            return result[0]
+            return int(result[0])
 
-        c.execute("""
-            INSERT INTO enrichment_queue
-            (profile_id, scheduled_for, checkpoint, priority, trigger_source, trigger_metadata, status)
+        c.execute(
+            """
+            INSERT INTO crm_enrichment_queue
+            (person_id, scheduled_for, checkpoint, priority, trigger_source, trigger_metadata, status)
             VALUES (?, ?, ?, ?, ?, ?, 'queued')
-        """, (profile_id, scheduled_for, checkpoint, priority, trigger_source, trigger_metadata))
-
-        job_id = c.lastrowid
-        logger.info(f"Scheduled enrichment job {job_id} for profile {profile_id}, checkpoint {checkpoint}")
+            """,
+            (profile_id, scheduled_for, checkpoint, priority, trigger_source, trigger_metadata),
+        )
+        job_id = int(c.lastrowid)
+        logger.info(
+            f"Scheduled enrichment job {job_id} for person {profile_id}, checkpoint {checkpoint}"
+        )
         return job_id
 
 
@@ -511,6 +507,4 @@ def extract_event_id_from_uri(resource_uri: str) -> str:
     
     # Fallback: return last segment
     return parts[-1] if parts else resource_uri
-
-
 

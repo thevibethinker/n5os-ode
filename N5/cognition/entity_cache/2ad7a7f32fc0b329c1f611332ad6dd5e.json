@@ -1,0 +1,1 @@
+{"entities": [{"name": "Archetype Zo", "type": "CONCEPT", "context": "A clean mirror that serves as the client-facing Zo personality"}, {"name": "va.zo.computer", "type": "ORG", "context": "Source of Level 1 exports"}], "relationships": [{"from": "Archetype Zo", "to": "va.zo.computer", "type": "USES", "context": "Receives Level 1 exports from va.zo.computer"}]}

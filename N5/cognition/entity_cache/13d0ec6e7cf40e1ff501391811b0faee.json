@@ -1,0 +1,1 @@
+{"entities": [{"name": "bootstrap_conversation_client.py", "type": "TOOL", "context": "A Python script used for interacting with a conversation system."}, {"name": "PARENT_IP", "type": "CONCEPT", "context": "Placeholder for the parent server IP address used in queries."}], "relationships": []}

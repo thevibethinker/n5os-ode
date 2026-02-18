@@ -1,0 +1,1 @@
+{"entities": [{"name": "W4_HANDOFF.md", "type": "TOOL", "context": "Orchestrator handoff document"}, {"name": "Validation Checks", "type": "CONCEPT", "context": "Set of implemented checks for document quality"}], "relationships": [{"from": "Validation Checks", "to": "W4_HANDOFF.md", "type": "RELATED_TO", "context": "W4_HANDOFF.md utilizes validation checks"}]}

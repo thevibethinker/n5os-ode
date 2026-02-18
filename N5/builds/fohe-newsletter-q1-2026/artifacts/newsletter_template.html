@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>FOHE NYC {{QUARTER}} Newsletter</title>
+    <style>
+        /* Reset styles for better email client compatibility */
+        body, table, td, p, a, li, blockquote {
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+        table, td {
+            mso-table-lspace: 0pt;
+            mso-table-rspace: 0pt;
+        }
+        img {
+            -ms-interpolation-mode: bicubic;
+            border: 0;
+            height: auto;
+            line-height: 100%;
+            outline: none;
+            text-decoration: none;
+        }
+        
+        /* Mobile responsiveness */
+        @media only screen and (max-width: 600px) {
+            .container {
+                width: 100% !important;
+                max-width: 100% !important;
+            }
+            .mobile-padding {
+                padding: 20px !important;
+            }
+            .mobile-text-center {
+                text-align: center !important;
+            }
+            .event-card {
+                display: block !important;
+                width: 100% !important;
+            }
+            .highlight-card {
+                display: block !important;
+                width: 100% !important;
+                margin-bottom: 20px !important;
+            }
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #FFFFFF; font-family: Arial, Helvetica, sans-serif;">
+    <!-- Main Container -->
+    <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF;">
+        <tr>
+            <td align="center" style="padding: 20px 0;">
+                <!-- Email Content Container -->
+                <table class="container" border="0" cellpadding="0" cellspacing="0" width="600" style="max-width: 600px; background-color: #FFFFFF; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1);">
+                    
+                    <!-- Header Section -->
+                    <tr>
+                        <td style="background: linear-gradient(135deg, #8B5CF6 0%, #A855F7 100%); padding: 30px 40px; border-radius: 8px 8px 0 0;">
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td align="center">
+                                        <!-- FOHE Logo Placeholder -->
+                                        <div style="background-color: rgba(255,255,255,0.2); padding: 15px 30px; border-radius: 8px; display: inline-block; margin-bottom: 20px;">
+                                            <h1 style="margin: 0; color: #FFFFFF; font-size: 28px; font-weight: bold; letter-spacing: 2px;">FOHE</h1>
+                                        </div>
+                                        <h2 style="margin: 0 0 8px 0; color: #FFFFFF; font-size: 24px; font-weight: bold;">FOHE NYC {{QUARTER}} Newsletter</h2>
+                                        <p style="margin: 0; color: rgba(255,255,255,0.9); font-size: 16px; font-style: italic;">The Future of Higher Education</p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Intro Section -->
+                    <tr>
+                        <td class="mobile-padding" style="padding: 40px;">
+                            <h3 style="margin: 0 0 20px 0; color: #1F2937; font-size: 20px; font-weight: bold;">A note from your co-leads</h3>
+                            <p style="margin: 0; color: #1F2937; font-size: 16px; line-height: 1.6;">{{INTRO_TEXT}}</p>
+                            <p style="margin: 20px 0 0 0; color: #6B7280; font-size: 14px; font-style: italic;">— {{CO_LEAD_NAMES}}</p>
+                        </td>
+                    </tr>
+
+                    <!-- Community Highlights Section -->
+                    <tr>
+                        <td class="mobile-padding" style="padding: 0 40px 40px 40px; background-color: #F9FAFB;">
+                            <h3 style="margin: 0 0 30px 0; color: #1F2937; font-size: 22px; font-weight: bold; text-align: center;">What's Been Happening</h3>
+                            
+                            <!-- Highlight Cards Container -->
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <!-- Highlight 1 -->
+                                    <td class="highlight-card" style="width: 33.33%; padding-right: 15px; vertical-align: top;">
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                                            <tr>
+                                                <td style="padding: 20px;">
+                                                    <h4 style="margin: 0 0 10px 0; color: #8B5CF6; font-size: 16px; font-weight: bold;">{{HIGHLIGHT_1_TITLE}}</h4>
+                                                    <p style="margin: 0; color: #6B7280; font-size: 14px; line-height: 1.5;">{{HIGHLIGHT_1_TEXT}}</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <!-- Highlight 2 -->
+                                    <td class="highlight-card" style="width: 33.33%; padding: 0 7.5px; vertical-align: top;">
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                                            <tr>
+                                                <td style="padding: 20px;">
+                                                    <h4 style="margin: 0 0 10px 0; color: #8B5CF6; font-size: 16px; font-weight: bold;">{{HIGHLIGHT_2_TITLE}}</h4>
+                                                    <p style="margin: 0; color: #6B7280; font-size: 14px; line-height: 1.5;">{{HIGHLIGHT_2_TEXT}}</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                    <!-- Highlight 3 -->
+                                    <td class="highlight-card" style="width: 33.33%; padding-left: 15px; vertical-align: top;">
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #FFFFFF; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05);">
+                                            <tr>
+                                                <td style="padding: 20px;">
+                                                    <h4 style="margin: 0 0 10px 0; color: #8B5CF6; font-size: 16px; font-weight: bold;">{{HIGHLIGHT_3_TITLE}}</h4>
+                                                    <p style="margin: 0; color: #6B7280; font-size: 14px; line-height: 1.5;">{{HIGHLIGHT_3_TEXT}}</p>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Survey Insights Section -->
+                    <tr>
+                        <td class="mobile-padding" style="padding: 40px; background-color: #F3E8FF;">
+                            <h3 style="margin: 0 0 25px 0; color: #1F2937; font-size: 22px; font-weight: bold; text-align: center;">What You Told Us</h3>
+                            <h4 style="margin: 0 0 20px 0; color: #8B5CF6; font-size: 18px; font-weight: bold; text-align: center;">{{SURVEY_HEADLINE}}</h4>
+                            
+                            <!-- Survey Stats -->
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="margin-bottom: 25px;">
+                                <tr>
+                                    <td style="width: 50%; text-align: center; padding: 15px; background-color: #FFFFFF; border-radius: 8px; margin-right: 10px;">
+                                        <p style="margin: 0; color: #1F2937; font-size: 14px; font-weight: bold;">{{SURVEY_INSIGHT_1}}</p>
+                                    </td>
+                                    <td style="width: 10px;"></td>
+                                    <td style="width: 50%; text-align: center; padding: 15px; background-color: #FFFFFF; border-radius: 8px;">
+                                        <p style="margin: 0; color: #1F2937; font-size: 14px; font-weight: bold;">{{SURVEY_INSIGHT_2}}</p>
+                                    </td>
+                                </tr>
+                            </table>
+                            
+                            <!-- Survey Quote -->
+                            <div style="background-color: #FFFFFF; padding: 25px; border-radius: 8px; border-left: 4px solid #8B5CF6;">
+                                <p style="margin: 0; color: #1F2937; font-size: 16px; line-height: 1.6; font-style: italic;">"{{SURVEY_QUOTE}}"</p>
+                            </div>
+                        </td>
+                    </tr>
+
+                    <!-- Upcoming Events Section -->
+                    <tr>
+                        <td class="mobile-padding" style="padding: 40px;">
+                            <h3 style="margin: 0 0 30px 0; color: #1F2937; font-size: 22px; font-weight: bold; text-align: center;">Coming Up</h3>
+                            
+                            <!-- Event Cards -->
+                            <!-- Event 1 -->
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #F9FAFB; border-radius: 8px; margin-bottom: 20px;">
+                                <tr>
+                                    <td style="padding: 25px;">
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                            <tr>
+                                                <td style="width: 80px; vertical-align: top;">
+                                                    <div style="background-color: #8B5CF6; color: #FFFFFF; text-align: center; padding: 10px; border-radius: 8px; font-weight: bold; font-size: 12px;">
+                                                        {{EVENT_1_DATE}}
+                                                    </div>
+                                                </td>
+                                                <td style="padding-left: 20px; vertical-align: top;">
+                                                    <h4 style="margin: 0 0 8px 0; color: #1F2937; font-size: 18px; font-weight: bold;">{{EVENT_1_TITLE}}</h4>
+                                                    <p style="margin: 0 0 10px 0; color: #6B7280; font-size: 14px;">{{EVENT_1_LOCATION}}</p>
+                                                </td>
+                                                <td style="text-align: right; vertical-align: top; width: 120px;">
+                                                    <a href="{{EVENT_1_URL}}" style="background-color: #8B5CF6; color: #FFFFFF; text-decoration: none; padding: 12px 20px; border-radius: 6px; font-size: 14px; font-weight: bold; display: inline-block;">{{EVENT_1_CTA}}</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Event 2 -->
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #F9FAFB; border-radius: 8px; margin-bottom: 20px;">
+                                <tr>
+                                    <td style="padding: 25px;">
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                            <tr>
+                                                <td style="width: 80px; vertical-align: top;">
+                                                    <div style="background-color: #8B5CF6; color: #FFFFFF; text-align: center; padding: 10px; border-radius: 8px; font-weight: bold; font-size: 12px;">
+                                                        {{EVENT_2_DATE}}
+                                                    </div>
+                                                </td>
+                                                <td style="padding-left: 20px; vertical-align: top;">
+                                                    <h4 style="margin: 0 0 8px 0; color: #1F2937; font-size: 18px; font-weight: bold;">{{EVENT_2_TITLE}}</h4>
+                                                    <p style="margin: 0 0 10px 0; color: #6B7280; font-size: 14px;">{{EVENT_2_LOCATION}}</p>
+                                                </td>
+                                                <td style="text-align: right; vertical-align: top; width: 120px;">
+                                                    <a href="#" style="background-color: #8B5CF6; color: #FFFFFF; text-decoration: none; padding: 12px 20px; border-radius: 6px; font-size: 14px; font-weight: bold; display: inline-block;">{{EVENT_2_CTA}}</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+
+                            <!-- Event 3 -->
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%" style="background-color: #F9FAFB; border-radius: 8px;">
+                                <tr>
+                                    <td style="padding: 25px;">
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                            <tr>
+                                                <td style="width: 80px; vertical-align: top;">
+                                                    <div style="background-color: #8B5CF6; color: #FFFFFF; text-align: center; padding: 10px; border-radius: 8px; font-weight: bold; font-size: 12px;">
+                                                        {{EVENT_3_DATE}}
+                                                    </div>
+                                                </td>
+                                                <td style="padding-left: 20px; vertical-align: top;">
+                                                    <h4 style="margin: 0 0 8px 0; color: #1F2937; font-size: 18px; font-weight: bold;">{{EVENT_3_TITLE}}</h4>
+                                                    <p style="margin: 0 0 10px 0; color: #6B7280; font-size: 14px;">{{EVENT_3_LOCATION}}</p>
+                                                </td>
+                                                <td style="text-align: right; vertical-align: top; width: 120px;">
+                                                    <a href="#" style="background-color: #8B5CF6; color: #FFFFFF; text-decoration: none; padding: 12px 20px; border-radius: 6px; font-size: 14px; font-weight: bold; display: inline-block;">{{EVENT_3_CTA}}</a>
+                                                </td>
+                                            </tr>
+                                        </table>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+
+                    <!-- Footer Section -->
+                    <tr>
+                        <td style="background-color: #1F2937; padding: 40px; border-radius: 0 0 8px 8px;">
+                            <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                <tr>
+                                    <td align="center">
+                                        <!-- Join Slack CTA -->
+                                        <div style="margin-bottom: 30px;">
+                                            <h4 style="margin: 0 0 15px 0; color: #FFFFFF; font-size: 18px; font-weight: bold;">Stay Connected</h4>
+                                            <a href="#" style="background-color: #8B5CF6; color: #FFFFFF; text-decoration: none; padding: 15px 30px; border-radius: 8px; font-size: 16px; font-weight: bold; display: inline-block;">Join Our Slack</a>
+                                        </div>
+                                        
+                                        <!-- Social Links Placeholder -->
+                                        <div style="margin-bottom: 30px;">
+                                            <a href="#" style="color: #8B5CF6; text-decoration: none; margin: 0 15px; font-size: 14px;">LinkedIn</a>
+                                            <a href="#" style="color: #8B5CF6; text-decoration: none; margin: 0 15px; font-size: 14px;">Twitter</a>
+                                            <a href="#" style="color: #8B5CF6; text-decoration: none; margin: 0 15px; font-size: 14px;">Website</a>
+                                        </div>
+                                        
+                                        <!-- FOHE Branding -->
+                                        <div style="margin-bottom: 20px;">
+                                            <h3 style="margin: 0; color: #8B5CF6; font-size: 20px; font-weight: bold; letter-spacing: 1px;">FOHE NYC</h3>
+                                            <p style="margin: 5px 0 0 0; color: #9CA3AF; font-size: 12px;">The Future of Higher Education</p>
+                                        </div>
+                                        
+                                        <!-- Unsubscribe -->
+                                        <p style="margin: 0; color: #6B7280; font-size: 12px;">
+                                            <a href="#" style="color: #8B5CF6; text-decoration: underline;">Unsubscribe</a> | 
+                                            <a href="#" style="color: #8B5CF6; text-decoration: underline;">Update Preferences</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

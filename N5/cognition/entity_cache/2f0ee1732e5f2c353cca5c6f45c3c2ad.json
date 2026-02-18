@@ -1,0 +1,1 @@
+{"entities": [{"name": "Records", "type": "ORG", "context": "Entity related to the storage and organization of company emails"}, {"name": "N5", "type": "TOOL", "context": "System or tool used for file storage related to meetings"}], "relationships": []}

@@ -8,10 +8,9 @@ description: |
 compatibility: Created for Zo Computer
 metadata:
   author: va.zo.computer
-  version: "2.3"
-  updated: "2026-02-05"
+  updated: 2026-02-15
+  version: 3.0
 ---
-
 # Careerspan Decomposer
 
 Transforms Careerspan Intelligence Briefs into structured, employer-ready data.
@@ -86,12 +85,13 @@ Careerspan/meta-resumes/inbox/<candidate>-<company>/
 ├── tools.yaml              # Technologies
 ├── interests.yaml          # Hobbies, culture fit
 ├── alignment.yaml          # JD ↔ Candidate mapping
+├── gaps_and_caveats.yaml   # Cross-cutting gaps, story metadata
 ├── scores_complete.json    # ⭐ All skill assessments with "Our Take"
 ├── scores_complete.csv     # Flat export for spreadsheets
 └── careerspan_full_ocr.txt # Raw OCR (if Mode A/C)
 ```
 
-## Canonical Schema (scores_complete.json) — v2.0
+## Canonical Schema (scores_complete.json) — v3.0
 
 ```json
 {
@@ -100,6 +100,8 @@ Careerspan/meta-resumes/inbox/<candidate>-<company>/
   "qualification": "Well-aligned",
   "qualification_detail": "Atypical Background",
   "career_trajectory": "Industry Shift",
+  "elevator_pitch": "You get a founding-minded builder who...",
+  "recommendation": "YES",
   "overall_strengths": "Proven PM with metric-backed delivery and executive judgment",
   "overall_weaknesses": "Limited consumer tooling experience (Figma/React)",
   "potential_dealbreakers": [
@@ -118,6 +120,17 @@ Careerspan/meta-resumes/inbox/<candidate>-<company>/
     "resume_only_pct": 21.5,
     "inferred_pct": 0
   },
+  "stories_told": 2,
+  "story_ids": ["o94wesBFvqnIgr9l5YVz", "fD33sFRzb4mHgSYFM7Ps"],
+  "cross_cutting_gaps": [
+    {
+      "area": "AI safety and guardrails",
+      "severity": "significant",
+      "detail": "No concrete examples of LLM fallback strategies...",
+      "interview_probes": ["What specific LLM fallback strategies have you implemented?"],
+      "affected_skills": ["AI Reliability Engineering", "Production AI System Design"]
+    }
+  ],
   "skills": [
     {
       "skill_name": "Manage Product Launches",
@@ -166,9 +179,14 @@ Careerspan/meta-resumes/inbox/<candidate>-<company>/
 - `qualification`: "Well-aligned", "Partially aligned", "Not aligned"
 - `qualification_detail`: Additional context like "Atypical Background"
 - `career_trajectory`: "Industry Shift", "Lateral Move", "Step Up", etc.
+- `elevator_pitch`: Full elevator pitch paragraph from the brief
+- `recommendation`: "STRONG_YES", "YES", "CONDITIONAL", "NO", "STRONG_NO"
 - `category_scores`: Breakdown by Background, Uniqueness, Responsibilities, Hard Skills, Soft Skills (each 0-100)
-- `signal_strength`: Percentage breakdown of evidence types
+- `signal_strength`: Percentage breakdown of evidence types (always sums to 100.0%)
 - `potential_dealbreakers`: Array of dealbreaker questions from the brief
+- `stories_told`: Integer count of stories referenced in the brief
+- `story_ids`: Array of story ID strings referenced throughout the brief
+- `cross_cutting_gaps`: Array of cross-cutting gap analyses (not tied to individual skills)
 - `skills`: Array of individual skill assessments
 
 **Skill-Level Fields:**

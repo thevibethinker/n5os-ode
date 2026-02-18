@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vibe Debugger", "type": "TOOL", "context": "tool used for verification in the bug discovery process"}, {"name": "NETWORKING", "type": "CONCEPT", "context": "category assigned to profiles in the system"}], "relationships": [{"from": "Vibe Debugger", "to": "NETWORKING", "type": "USES", "context": "used to verify category assignment for profiles"}]}

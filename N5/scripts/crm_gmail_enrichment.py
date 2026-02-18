@@ -21,9 +21,11 @@ from pathlib import Path
 import sys
 sys.path.insert(0, str(Path(__file__).parent))
 from crm_paths import CRM_DB, CRM_INDIVIDUALS
+from crm_identity_resolver import CRMIdentityResolver
 
 DB_PATH = str(CRM_DB)
 PROFILES_DIR = CRM_INDIVIDUALS  # Now uses canonical markdown profiles
+_identity_resolver = CRMIdentityResolver(auto_link_threshold=0.99)
 
 
 def find_profile_by_identifier(identifier: str) -> dict | None:
@@ -32,17 +34,32 @@ def find_profile_by_identifier(identifier: str) -> dict | None:
     conn.row_factory = sqlite3.Row
     c = conn.cursor()
 
-    # Try exact email match first (canonical schema uses 'individuals' table)
-    c.execute("SELECT * FROM individuals WHERE email = ?", (identifier,))
+    # Precision-first shared resolver
+    resolver_result = _identity_resolver.auto_link(
+        email=identifier if '@' in identifier else None,
+        name=identifier if '@' not in identifier else None,
+    )
+    if resolver_result.person_id:
+        row = c.execute(
+            "SELECT * FROM people WHERE id = ?",
+            (resolver_result.person_id,),
+        ).fetchone()
+        conn.close()
+        if row:
+            return dict(row)
+
+    c.execute("SELECT * FROM people WHERE lower(email)=lower(?)", (identifier,))
     row = c.fetchone()
 
     if not row:
-        # Try slug/name match via markdown_path
-        c.execute("""
-            SELECT * FROM individuals
-            WHERE LOWER(markdown_path) LIKE ?
+        c.execute(
+            """
+            SELECT * FROM people
+            WHERE LOWER(markdown_path) LIKE ? OR LOWER(full_name) LIKE ?
             LIMIT 1
-        """, (f"%{identifier.lower()}%",))
+            """,
+            (f"%{identifier.lower()}%", f"%{identifier.lower()}%"),
+        )
         row = c.fetchone()
 
     conn.close()
@@ -50,10 +67,8 @@ def find_profile_by_identifier(identifier: str) -> dict | None:
     if row:
         return dict(row)
 
-    # Fallback: search markdown files directly
     for md_file in PROFILES_DIR.glob("*.md"):
         if identifier.lower() in md_file.stem.lower():
-            # Read email from file
             content = md_file.read_text()
             email = None
             email_match = re.search(r'\*\*Email:\*\*\s*(\S+@\S+)', content)
@@ -67,10 +82,9 @@ def find_profile_by_identifier(identifier: str) -> dict | None:
 
     return None
 
-
 def get_email_from_profile(profile: dict) -> str | None:
     """Extract email from profile dict."""
-    return profile.get('primary_email') or profile.get('email')
+    return profile.get('email') or profile.get('primary_email')
 
 
 def update_profile_gmail_intel(profile_slug: str, gmail_intel: str) -> bool:
@@ -297,7 +311,7 @@ def main():
             return
         
         print(f"📧 Gmail Enrichment for: {email}")
-        print(f"   Profile: {profile.get('yaml_path')}")
+        print(f"   Profile: {profile.get('markdown_path')}")
         print()
         print("To enrich this profile, run the Gmail enrichment workflow:")
         print(f"   @crm-gmail-enrichment {email}")
@@ -312,5 +326,4 @@ def main():
 
 if __name__ == '__main__':
     main()
-
 

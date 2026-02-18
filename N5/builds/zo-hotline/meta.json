@@ -1,0 +1,76 @@
+{
+  "schema_version": "1.0",
+  "slug": "zo-hotline",
+  "title": "Zo Hotline - Meta-OS Leveling Framework",
+  "objective": "Create a voice-accessible advisory hotline that helps callers understand and advance through the Meta-OS leveling framework (Conversation → Environment → Pipeline engineering)",
+  "created": "2026-02-12",
+  "status": "complete",
+  "completed_at": null,
+  "type": "general",
+  "orchestrator_convo_id": "con_uz2lg9pNIBDyyagY",
+  "workers": {
+    "total": 4,
+    "complete": 0,
+    "in_progress": 2,
+    "blocked": 0,
+    "pending": 2
+  },
+  "waves": {
+    "W1": {
+      "workers": ["W1.1", "W1.2"],
+      "status": "active"
+    },
+    "W2": {
+      "workers": ["W2.1", "W2.2"],
+      "status": "pending"
+    }
+  },
+  "worker_details": [
+    {
+      "worker_id": "W1.1",
+      "title": "Meta-OS Knowledge Foundation",
+      "wave": 1,
+      "dependencies": [],
+      "spawn_mode": "auto",
+      "status": "in_progress"
+    },
+    {
+      "worker_id": "W1.2",
+      "title": "Voice Agent Configuration",
+      "wave": 1,
+      "dependencies": [],
+      "spawn_mode": "auto",
+      "status": "in_progress"
+    },
+    {
+      "worker_id": "W2.1",
+      "title": "Integration & Read-Only Webhook",
+      "wave": 2,
+      "dependencies": ["W1.1", "W1.2"],
+      "spawn_mode": "auto",
+      "status": "pending"
+    },
+    {
+      "worker_id": "W2.2",
+      "title": "Polish, Documentation & Export",
+      "wave": 2,
+      "dependencies": ["W2.1"],
+      "spawn_mode": "manual",
+      "status": "pending"
+    }
+  ],
+  "key_principles": {
+    "read_only": true,
+    "no_zo_api_access": true,
+    "advisory_only": true,
+    "meta_os_framework": true,
+    "three_level_assessment": true
+  },
+  "security_model": {
+    "webhook_access": "local_files_only",
+    "zo_api_tools": false,
+    "caller_data_access": false,
+    "execution_capability": false,
+    "pii_storage": "hashed_only"
+  }
+}

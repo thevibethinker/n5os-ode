@@ -4,7 +4,7 @@ CRM Enrichment Worker - Unified Database Version
 
 Manages enrichment for people in the CRM using the unified n5_core.db database.
 
-Updated 2026-01-19: Migrated from crm_v3.db/profiles to n5_core.db/people table.
+Updated 2026-01-19: Migrated from n5_core.db/people to n5_core.db/people table.
 
 Features:
 - Reads from n5_core.db/people table

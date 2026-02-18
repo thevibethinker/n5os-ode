@@ -1,0 +1,10 @@
+{
+  "drop": "D1.2",
+  "status": "complete",
+  "changes": [
+    "Skills/resume-decoded/scripts/adapter.py",
+    "Skills/resume-decoded/templates/template.html"
+  ],
+  "summary": "Fixed two PDF output bugs: (1) Signal bar now shows all 3 categories (Screen-verified, Inferred, Resume-only) summing to 100%. Added inferred_pct reading, normalization logic, and 3rd bar with mid-opacity CSS. (2) Added compound-aware cross-section dedup: after LLM calls, strong-fit tradeoff needs are tokenized and questions with overlapping topics are filtered. Hyphenated compounds like 'end-to-end' count double for overlap scoring. Evidence question prefix changed from 'Confirms:' to 'Deepens:'. Section subtitle changed from 'probe' to 'explore'.",
+  "testing": "Re-rendered from Hardik-FlowFuse decomposer output 3 times during iterative development. Final verification: signal bars = 76% + 2% + 22% = 100%. Zero topic overlap between strong-fit tradeoffs and remaining questions. Dedup correctly removes end-to-end/AI/reliability questions when those are strong-fit tradeoffs. Adapter validation passed."
+}

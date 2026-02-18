@@ -193,17 +193,18 @@ def generate_meeting_id(
 
 
 def check_duplicate(meeting_id: str, recall_bot_id: str) -> bool:
-    """Check if this meeting already exists"""
-    meeting_path = Path(MEETINGS_DIR) / meeting_id
-    if meeting_path.exists():
-        manifest_path = meeting_path / "manifest.json"
-        if manifest_path.exists():
-            with open(manifest_path) as f:
-                manifest = json.load(f)
-                existing_bot_id = manifest.get("recall_bot_id")
-                if existing_bot_id == recall_bot_id:
-                    logger.info(f"Meeting {meeting_id} already processed (same bot)")
-                    return True
+    """Check if this meeting already exists (checks both Inbox and root)"""
+    for base in [Path(MEETINGS_DIR) / "Inbox", Path(MEETINGS_DIR)]:
+        meeting_path = base / meeting_id
+        if meeting_path.exists():
+            manifest_path = meeting_path / "manifest.json"
+            if manifest_path.exists():
+                with open(manifest_path) as f:
+                    manifest = json.load(f)
+                    existing_bot_id = manifest.get("recall_bot_id")
+                    if existing_bot_id == recall_bot_id:
+                        logger.info(f"Meeting {meeting_id} already processed (same bot)")
+                        return True
     return False
 
 
@@ -277,16 +278,17 @@ def deposit_meeting(
         time_suffix,
     )
     
-    # Check for duplicates
+    # Check for duplicates (check both Inbox and root)
+    inbox_dir = Path(MEETINGS_DIR) / "Inbox"
     if not force and check_duplicate(meeting_id, bot_id):
         return {
             "status": "skipped",
             "reason": "duplicate",
             "meeting_id": meeting_id,
         }
-    
-    # Create meeting folder
-    meeting_path = Path(MEETINGS_DIR) / meeting_id
+
+    # Create meeting folder in Inbox (v3 pipeline expects meetings here)
+    meeting_path = inbox_dir / meeting_id
     meeting_path.mkdir(parents=True, exist_ok=True)
     logger.info(f"Created meeting folder: {meeting_path}")
     
@@ -306,24 +308,101 @@ def deposit_meeting(
     recording_duration = calculate_recording_duration(bot)
     video_expires_at = calculate_video_expiry(bot)
     
-    # Build enhanced manifest
+    # Build v3-compatible manifest
+    now_iso = datetime.now(timezone.utc).isoformat()
+
+    # Extract time from meeting date if available
+    time_utc = None
+    if status_changes:
+        first_ts = status_changes[0].get("created_at", "")
+        if first_ts:
+            try:
+                first_dt = datetime.fromisoformat(first_ts.replace("Z", "+00:00"))
+                time_utc = first_dt.strftime("%H:%M:%S")
+            except ValueError:
+                pass
+
+    # Build participant list in v3 format
+    v3_participants = []
+    for p in (participants or []):
+        v3_participants.append({
+            "name": p.get("name", "Unknown"),
+            "email": p.get("email"),
+            "crm_id": None,
+            "role": "attendee",
+            "confidence": 0.7,
+        })
+
+    duration_minutes = round(recording_duration / 60) if recording_duration else None
+
     manifest = {
-        "manifest_version": "2.0",
-        "generated_at": datetime.now(timezone.utc).isoformat(),
-        "meeting_folder": meeting_id,
-        "meeting_date": meeting_date,
-        "meeting_type": classification,
-        "meeting_title": title,
-        "recall_bot_id": bot_id,
-        "recall_region": client.region,
-        "recall_meeting_url": bot.get("meeting_url"),
-        "recall_meeting_id": bot.get("meeting_url", {}).get("meeting_id") if isinstance(bot.get("meeting_url"), dict) else None,
-        "participants": participants,
-        "participant_count": participant_count,
-        "recording_duration_seconds": recording_duration,
-        "video_retention_days": VIDEO_RETENTION_DAYS if artifacts.get("video") else None,
-        "video_expires_at": video_expires_at,
-        "status": "pending_processing",
+        "$schema": "manifest-v3",
+        "schema_version": "v3",
+        "meeting_id": meeting_id,
+        "status": "ingested",
+        "status_history": [
+            {"status": "raw", "at": now_iso},
+            {"status": "ingested", "at": now_iso},
+        ],
+        "source": {
+            "type": "recall_ai",
+            "recall_bot_id": bot_id,
+            "recall_region": client.region,
+            "recall_meeting_url": bot.get("meeting_url"),
+            "recall_meeting_id": bot.get("meeting_url", {}).get("meeting_id") if isinstance(bot.get("meeting_url"), dict) else None,
+            "ingested_at": now_iso,
+        },
+        "meeting": {
+            "date": meeting_date,
+            "time_utc": time_utc,
+            "duration_minutes": duration_minutes,
+            "title": title,
+            "type": classification,
+            "summary": None,
+        },
+        "participants": {
+            "identified": v3_participants,
+            "unidentified": [],
+            "confidence": 0.7 if v3_participants else 0.0,
+        },
+        "calendar_match": {
+            "event_id": None,
+            "confidence": 0.0,
+            "method": "none",
+        },
+        "quality_gate": {
+            "passed": False,
+            "checks": {},
+            "score": 0.0,
+        },
+        "blocks": {
+            "policy": "internal_standard" if classification == "internal" else "external_standard",
+            "requested": [],
+            "generated": [],
+            "failed": [],
+            "skipped": [],
+        },
+        "hitl": {
+            "queue_id": None,
+            "reason": None,
+            "resolved_at": None,
+        },
+        "timestamps": {
+            "created_at": now_iso,
+            "ingested_at": now_iso,
+            "identified_at": None,
+            "gated_at": None,
+            "processed_at": None,
+            "archived_at": None,
+        },
+        # Recall-specific metadata (preserved for pipeline use)
+        "recall_metadata": {
+            "bot_id": bot_id,
+            "recording_duration_seconds": recording_duration,
+            "video_retention_days": VIDEO_RETENTION_DAYS if artifacts.get("video") else None,
+            "video_expires_at": video_expires_at,
+            "participant_count": participant_count,
+        },
         "artifacts": {
             "audio": "audio.mp3" if artifacts.get("audio") else None,
             "video": "video.mp4" if artifacts.get("video") else None,
@@ -332,16 +411,6 @@ def deposit_meeting(
             "participants_json": "participants.json" if artifacts.get("participants") else None,
             "recall_metadata": "recall_metadata.json",
         },
-        "blocks_generated": {
-            "transcript_processed": False,
-            "brief": False,
-            "stakeholder_intelligence": False,
-            "decisions": False,
-            "tone_and_context": False,
-        },
-        "zo_take_heed_count": 0,
-        "last_updated_by": "recall-ai-depositor",
-        "last_updated": datetime.now(timezone.utc).isoformat(),
     }
     
     manifest_path = meeting_path / "manifest.json"

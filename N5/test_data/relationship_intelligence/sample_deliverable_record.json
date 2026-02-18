@@ -1,0 +1,102 @@
+{
+  "deliverable_id": "deliv_abc123def456",
+  "client_id": "org_client123456",
+  "client_name": "FinanceCorp Ltd",
+  "deliverable_type": "strategy_doc",
+  "title": "Digital Transformation Strategy 2026",
+  "description": "Comprehensive digital transformation roadmap including technology assessment, process redesign, and implementation timeline",
+  "scope": {
+    "overview": "End-to-end digital transformation strategy for financial services organization",
+    "key_components": [
+      "Current state assessment",
+      "Technology gap analysis",
+      "Process redesign recommendations",
+      "Implementation roadmap",
+      "Change management plan"
+    ],
+    "complexity_level": "high",
+    "estimated_effort_hours": 120,
+    "required_expertise": [
+      "Strategy consulting",
+      "Financial services",
+      "Digital transformation"
+    ],
+    "dependencies": [
+      "IT systems audit",
+      "Stakeholder interviews",
+      "Market analysis"
+    ]
+  },
+  "status": "scoped",
+  "timeline": {
+    "promised_date": "2026-03-15",
+    "target_date": "2026-03-10"
+  },
+  "ownership": {
+    "primary_owner": "Senior Consultant A",
+    "collaborators": [
+      "Strategy Analyst B",
+      "Research Associate C"
+    ],
+    "reviewer": "Partner D",
+    "approver": "Partner D"
+  },
+  "similarity_analysis": {
+    "status": "similar_found",
+    "similar_deliverables": [
+      {
+        "deliverable_id": "deliv_similar12345",
+        "similarity_score": 0.75,
+        "reuse_recommendation": "adapt",
+        "similarity_factors": [
+          "Industry sector",
+          "Transformation scope",
+          "Client size"
+        ],
+        "adaptation_notes": "Adapt framework for specific regulatory requirements"
+      }
+    ],
+    "checked_at": "2026-02-16T20:40:48.794558+00:00"
+  },
+  "context": {
+    "business_context": "Client struggling with legacy systems and manual processes, needs to modernize to compete",
+    "client_objectives": [
+      "Reduce operational costs by 20%",
+      "Improve customer experience scores",
+      "Enable new digital products"
+    ],
+    "success_criteria": [
+      "Clear roadmap with defined milestones",
+      "Buy-in from all key stakeholders",
+      "Implementation plan within budget constraints"
+    ],
+    "constraints": [
+      "Limited budget",
+      "Regulatory compliance requirements",
+      "Legacy system constraints"
+    ],
+    "assumptions": [
+      "Management commitment to change",
+      "Access to required stakeholders",
+      "Stable regulatory environment"
+    ]
+  },
+  "created_at": "2026-02-16T20:40:48.794561+00:00",
+  "provenance": {
+    "meeting_id": "mtg002",
+    "block_ids": [
+      "B33",
+      "B02"
+    ],
+    "conversation_id": "con_def789",
+    "extraction_version": "1.0.0",
+    "pipeline_run_id": "run_ghi123"
+  },
+  "confidence": {
+    "overall": 0.87,
+    "scope_clarity": 0.9,
+    "timeline_accuracy": 0.8,
+    "client_identification": 0.95,
+    "similarity_analysis": 0.85
+  }
+}

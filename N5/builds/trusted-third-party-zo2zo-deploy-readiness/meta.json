@@ -1,0 +1,37 @@
+{
+  "schema_version": 3,
+  "slug": "trusted-third-party-zo2zo-deploy-readiness",
+  "title": "Trusted Third-Party Zo2Zo Deploy Readiness",
+  "objective": "Validate trusted-third-party Zo2Zo baseline changes and prepare commit/push, then hold before execution.",
+  "created": "2026-02-16",
+  "status": "active",
+  "completed_at": null,
+  "build_type": "code_build",
+  "orchestrator_convo_id": "con_EX0BIFVzVO3wsRj2",
+  "workers": {
+    "total": 1,
+    "complete": 0,
+    "in_progress": 1,
+    "blocked": 0,
+    "pending": 0
+  },
+  "waves": {
+    "W1": [
+      "D1.1"
+    ]
+  },
+  "active_wave": "W1",
+  "drops": {
+    "D1.1": {
+      "name": "Deploy Readiness + Hold Gate",
+      "stream": 1,
+      "order": 1,
+      "depends_on": [],
+      "spawn_mode": "manual",
+      "blocking": true,
+      "status": "active"
+    }
+  },
+  "currents": {},
+  "worker_details": []
+}

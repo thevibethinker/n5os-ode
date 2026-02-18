@@ -1,0 +1,148 @@
+{
+  "missing_evidence": {
+    "input": {
+      "candidate_type": "relationship_delta",
+      "candidate_data": {
+        "delta_id": "rd_7cddf557",
+        "timestamp": "2026-02-16T21:39:30.730328+00:00",
+        "source_meeting_id": "meeting_edge_1",
+        "person_id": "person_edge",
+        "delta_type": "sentiment_shift",
+        "trend": "increasing",
+        "current_state": {
+          "value": "positive",
+          "confidence": 0.8
+        },
+        "confidence": 0.8
+      },
+      "source_meeting_id": "meeting_edge_1",
+      "meeting_context": null,
+      "existing_memory": null,
+      "relationships": null,
+      "conversation_id": "con_edge_test1",
+      "processing_mode": "production",
+      "source_blocks": []
+    },
+    "expected_issues": [
+      "low_evidence_score"
+    ],
+    "description": "Candidate with no evidence structure"
+  },
+  "empty_evidence_quotes": {
+    "input": {
+      "candidate_type": "deliverable_record",
+      "candidate_data": {
+        "deliverable_id": "del_122837b6",
+        "timestamp": "2026-02-16T21:39:30.730344+00:00",
+        "source_meeting_id": "meeting_edge_2",
+        "client_id": "client_edge",
+        "deliverable_type": "analysis",
+        "title": "Market Research",
+        "status": "identified",
+        "evidence": {
+          "quotes": [],
+          "block_references": [
+            "B40_reference"
+          ]
+        },
+        "confidence": 0.7
+      },
+      "source_meeting_id": "meeting_edge_2",
+      "meeting_context": null,
+      "existing_memory": null,
+      "relationships": null,
+      "conversation_id": "con_edge_test2",
+      "processing_mode": "production",
+      "source_blocks": []
+    },
+    "expected_issues": [
+      "minimal_evidence_score"
+    ],
+    "description": "Evidence structure with empty quotes array"
+  },
+  "tier_boundary_74_point_9": {
+    "input": {
+      "candidate_type": "org_delta",
+      "candidate_data": {
+        "delta_id": "od_3af32985",
+        "timestamp": "2026-02-16T21:39:30.730359+00:00",
+        "source_meeting_id": "meeting_boundary",
+        "organization_id": "org_boundary",
+        "delta_type": "priority_shift",
+        "change_description": "Moderate priority adjustment in strategic focus areas with some evidence",
+        "impact_scope": "department_level",
+        "current_state": {
+          "description": "Adjusted priorities",
+          "confidence": 0.74
+        },
+        "evidence": {
+          "quotes": [
+            {
+              "text": "We are adjusting our strategic priorities",
+              "speaker": "Department Head"
+            },
+            {
+              "text": "This affects our execution roadmap",
+              "speaker": "Department Head"
+            }
+          ],
+          "block_references": [
+            "B45_priority_change"
+          ]
+        },
+        "confidence": 0.74
+      },
+      "source_meeting_id": "meeting_boundary",
+      "meeting_context": null,
+      "existing_memory": null,
+      "relationships": null,
+      "conversation_id": "con_boundary_test",
+      "processing_mode": "production",
+      "source_blocks": []
+    },
+    "expected_tier": "B",
+    "expected_score_range": [
+      70,
+      76
+    ],
+    "description": "Score right at tier B/A boundary"
+  },
+  "high_confidence_mediocre_content": {
+    "input": {
+      "candidate_type": "general_intelligence",
+      "candidate_data": {
+        "notes": "Basic information exchange",
+        "evidence": {
+          "quotes": [
+            {
+              "text": "We discussed the weather and general business conditions",
+              "speaker": "Contact"
+            },
+            {
+              "text": "Business is going well",
+              "speaker": "Contact"
+            },
+            {
+              "text": "We should stay in touch",
+              "speaker": "Contact"
+            }
+          ],
+          "block_references": [
+            "B50_general_chat",
+            "B51_small_talk"
+          ]
+        },
+        "confidence": 0.95
+      },
+      "source_meeting_id": "meeting_confidence_test",
+      "meeting_context": null,
+      "existing_memory": null,
+      "relationships": null,
+      "conversation_id": "con_confidence_test",
+      "processing_mode": "production",
+      "source_blocks": []
+    },
+    "expected_tier": "C",
+    "description": "High confidence but low-value content should remain Tier C"
+  }
+}

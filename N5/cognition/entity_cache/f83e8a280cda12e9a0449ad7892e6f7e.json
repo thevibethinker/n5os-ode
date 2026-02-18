@@ -1,0 +1,1 @@
+{"entities": [{"name": "knowledge system", "type": "CONCEPT", "context": "system for managing information"}, {"name": "README.md", "type": "TOOL", "context": "documentation for knowledge organization"}, {"name": "Document Inbox", "type": "TOOL", "context": "automated system for document management"}], "relationships": []}

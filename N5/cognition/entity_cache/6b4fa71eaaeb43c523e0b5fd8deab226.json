@@ -1,0 +1,1 @@
+{"entities": [{"name": "V-OS", "type": "TOOL", "context": "tags required for testing with real calendar events"}, {"name": "Gmail", "type": "TOOL", "context": "platform for searching with real attendees"}, {"name": "calendar events", "type": "CONCEPT", "context": "events required for testing"}], "relationships": []}

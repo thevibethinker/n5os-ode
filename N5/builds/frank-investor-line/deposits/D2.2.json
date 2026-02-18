@@ -1,0 +1,15 @@
+{
+  "drop_id": "D2.2",
+  "status": "complete",
+  "summary": "Enhanced Frank's persona tuning with investor vs. user mode detection. Rewrote modeDetectionPrompt with explicit recordCallerMode tool-call instruction (includes dynamic callId injection from the Vapi call context), detailed third-person voice rules for investor mode, and second-person friendly rules for user mode. Restructured system prompt assembly: briefing wrapped in '--- ZO 101 KNOWLEDGE BASE ---' delimiters, prefab FAQ appended with fallback-to-booking instruction. Updated recordCallerMode tool description to emphasize immediate execution after mode confirmation. Created runbook at Skills/vapi/assets/runbook-mode-switch.md documenting the full flow, schema, how to add investor phrases, and troubleshooting. All prior D1.1/D1.2/D2.1 infrastructure (caller_mode column, getPrefabAnswers(), recordCallerMode handler, recap email mode display) was already in place — this drop wired the persona layer on top.",
+  "artifacts": [
+    "Skills/vapi/scripts/webhook.ts",
+    "Skills/vapi/assets/runbook-mode-switch.md"
+  ],
+  "learnings": [
+    "D1.2 and prior work had already implemented most of D2.2's requirements (schema, tools, handler, recap integration) — the real gap was the system prompt persona instructions and the runbook",
+    "Injecting the actual callId into the modeDetectionPrompt string at assistant-request time gives the LLM a concrete value to pass to the tool, which is more reliable than hoping it extracts it from context",
+    "Wrapping the briefing in clear delimiters (--- ZO 101 KNOWLEDGE BASE ---) helps the LLM distinguish source material from behavioral instructions in long system prompts"
+  ],
+  "errors": []
+}
