@@ -146,6 +146,9 @@ interface CallerProfile {
   avg_satisfaction: number | null;
   preferred_style: string;
   notes: string | null;
+  last_recommendations: string | null;
+  last_next_steps: string | null;
+  caller_email: string | null;
 }
 
 async function lookupCallerProfile(phoneHash: string): Promise<CallerProfile | null> {
@@ -270,6 +273,12 @@ function buildCallerContext(profile: CallerProfile): string {
   }
   if (profile.preferred_style && profile.preferred_style !== "normal" && profile.preferred_style !== "null") {
     parts.push(`Prefers ${profile.preferred_style} responses.`);
+  }
+  if (profile.last_recommendations && profile.last_recommendations !== "null") {
+    parts.push(`Last time I recommended: ${profile.last_recommendations}.`);
+  }
+  if (profile.last_next_steps && profile.last_next_steps !== "null") {
+    parts.push(`Your planned next steps: ${profile.last_next_steps}. Ask if they made progress.`);
   }
   return parts.join(" ");
 }
@@ -713,13 +722,32 @@ async function collectEmail(params: { email: string; confirmed: boolean }, callI
     };
   }
 
-  collectedEmails.set(callId, email.trim().toLowerCase());
-  console.log(`Email collected for call ${callId}: ${email.trim().toLowerCase()}`);
+  const cleanEmail = email.trim().toLowerCase();
+  collectedEmails.set(callId, cleanEmail);
+  persistCollectedEmail(callId, cleanEmail);
+  const [, domain] = cleanEmail.split("@");
+  console.log(`Email collected for call ${callId}: ***@${domain}`);
 
   return {
     success: true,
     message: `Got it — I'll send you a follow-up email after our call with a summary and your next steps. That email comes through AgentMail, which is actually one of the tools that powers this hotline.`
   };
+}
+
+function persistCollectedEmail(callId: string, email: string): void {
+  const script = `
+import duckdb, json, sys
+data = json.loads(sys.stdin.read())
+con = duckdb.connect(data['db'])
+try:
+    con.execute('UPDATE calls SET caller_email = ? WHERE id = ?', [data['email'], data['call_id']])
+except:
+    pass
+con.close()
+`;
+  const proc = Bun.spawn(["python3", "-c", script], { stdin: "pipe", stdout: "pipe", stderr: "pipe" });
+  proc.stdin.write(JSON.stringify({ db: DB_PATH, email, call_id: callId }));
+  proc.stdin.end();
 }
 
 // ─── Post-Call Email (Sandboxed Anthropic → AgentMail) ───────────────────────
@@ -733,9 +761,17 @@ function sanitizeForEmail(text: string): string {
 function validateEmailOutput(html: string): boolean {
   const urlRegex = /https?:\/\/[^\s"'<>]+/g;
   const urls = html.match(urlRegex) || [];
-  for (const url of urls) {
-    const allowed = EMAIL_WHITELIST.some(domain => url.includes(domain));
-    if (!allowed) return false;
+  for (const rawUrl of urls) {
+    try {
+      const parsed = new URL(rawUrl);
+      const hostname = parsed.hostname.toLowerCase();
+      const allowed = EMAIL_WHITELIST.some(domain =>
+        hostname === domain || hostname.endsWith(`.${domain}`)
+      );
+      if (!allowed) return false;
+    } catch {
+      return false;
+    }
   }
   if (html.length > 3000) return false;
   return true;
@@ -1448,13 +1484,17 @@ con.close()
           const existingProfile = await lookupCallerProfile(phoneHash);
           callerCallCount = existingProfile ? parseInt(String(existingProfile.call_count)) + 1 : 1;
 
+          if (!callerName && existingProfile?.first_name && existingProfile.first_name !== "null") {
+            callerName = existingProfile.first_name;
+          }
+
           const topics = summary ? summary.substring(0, 100) : "general_advisory";
-          upsertCallerProfile({
+          await upsertCallerProfile({
             phoneHash,
             firstName: callerName,
             topics,
             satisfaction,
-          }).catch(err => console.error("Profile upsert error:", err));
+          });
         }
 
         // Persist tool usage
@@ -1468,7 +1508,7 @@ con.close()
           createCallSpotlight(callId, fired, transcript).catch(err => console.error("Spotlight error:", err));
         }
 
-        // SMS notification
+        // Build SMS body (send AFTER email section so email info is included)
         const durationMin = Math.floor(durationSeconds / 60);
         const durationSec = durationSeconds % 60;
         const snippetText = summary || (transcript ? transcript.substring(0, 200) + (transcript.length > 200 ? "..." : "") : "No transcript available");
@@ -1477,17 +1517,35 @@ con.close()
           smsBody += `\n⚡ Flags: ${fired.join(", ")}`;
         }
 
-        notifyV(smsBody);
-
         // ── Post-call follow-up email ──────────────────────────────────
-        const collectedEmail = collectedEmails.get(callId);
+        let collectedEmail = collectedEmails.get(callId);
+        if (!collectedEmail && callId) {
+          try {
+            const emailScript = `
+import duckdb, json, sys
+cid = sys.stdin.read().strip()
+con = duckdb.connect('${DB_PATH}')
+rows = con.execute("SELECT caller_email FROM calls WHERE id = ? AND caller_email IS NOT NULL", [cid]).fetchall()
+if rows and rows[0][0]: print(rows[0][0])
+else: print('')
+con.close()
+`;
+            const emailProc = Bun.spawn(["python3", "-c", emailScript], { stdin: "pipe", stdout: "pipe", stderr: "pipe" });
+            emailProc.stdin.write(callId);
+            emailProc.stdin.end();
+            const emailOut = await new Response(emailProc.stdout).text();
+            await emailProc.exited;
+            const dbEmail = emailOut.trim();
+            if (dbEmail) collectedEmail = dbEmail;
+          } catch { /* continue without email */ }
+        }
         if (collectedEmail && durationSeconds >= 120) {
           const structuredData = data.message?.analysis?.structuredData || {};
           const pathway = structuredData.caller_pathway || "explorer";
           const level = structuredData.caller_technical_level || null;
           const primaryInterest = structuredData.primary_interest || summary.substring(0, 200) || "general exploration";
 
-          generateAndSendFollowUpEmail({
+          await generateAndSendFollowUpEmail({
             callId,
             email: collectedEmail,
             summary: summary || "No summary available",
@@ -1501,6 +1559,8 @@ con.close()
           collectedEmails.delete(callId);
           smsBody += `\n📧 Follow-up email queued → ${collectedEmail}`;
         }
+
+        notifyV(smsBody);
 
         // Topic classification (async)
         classifyTopicsAsync(callId, transcript);
