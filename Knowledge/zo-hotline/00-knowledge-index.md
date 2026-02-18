@@ -113,3 +113,10 @@ Lists every knowledge file with concept key and 1-line summary.
 
 **Total entries:** 98
 **Generated:** 2026-02-18
+| partner-tools | 50-use-case-inspiration/partner-tools-v-uses.md | AgentMail | Tools V uses with Zo - AgentMail gives AI agents email inboxes, powers hotline follow-up emails |
+| aviato | 50-use-case-inspiration/partner-tools-v-uses.md | Aviato | Contact enrichment tool V connects to meeting pipeline for automatic relationship profiles |
+| recall-ai | 50-use-case-inspiration/partner-tools-v-uses.md | Recall.ai | Meeting bot platform capturing 500+ meetings/year, Zo processes transcripts into action items |
+| gamma | 50-use-case-inspiration/partner-tools-v-uses.md | Gamma | AI presentation builder, generates decks from meeting notes automatically |
+| short-io | 50-use-case-inspiration/partner-tools-v-uses.md | Short.io | Branded link management for tracking and analytics |
+| exa-search | 50-use-case-inspiration/partner-tools-v-uses.md | Exa | AI-powered semantic web search built for agent research workflows |
+| agentmail | 50-use-case-inspiration/partner-tools-v-uses.md | AgentMail | Full overview of AgentMail - email inboxes for AI agents, live demo via post-call follow-up |

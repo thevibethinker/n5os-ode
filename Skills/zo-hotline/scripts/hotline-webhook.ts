@@ -3,6 +3,7 @@
 import { readFileSync, existsSync, writeFileSync } from "fs";
 import { createHash } from "crypto";
 import { generateUUID } from "./call-logger";
+import Anthropic from "@anthropic-ai/sdk";
 
 const PORT = parseInt(process.env.VAPI_HOTLINE_PORT || "4243");
 const DB_PATH = "/home/workspace/Datasets/zo-hotline-calls/data.duckdb";
@@ -11,8 +12,20 @@ const KNOWLEDGE_INDEX_PATH = `${KNOWLEDGE_BASE}/00-knowledge-index.md`;
 
 const VERBOSITY = process.env.ZOSEPH_VERBOSITY || "terse";
 const VOICE_ID = process.env.VAPI_VOICE_ID || "DwwuoY7Uz8AP8zrY5TAo";
+const AGENTMAIL_INBOX_ID = "hotline.n5os@agentmail.to";
+const AGENTMAIL_API_URL = `https://api.agentmail.to/v0/inboxes/${AGENTMAIL_INBOX_ID}/messages/send`;
+const EMAIL_WHITELIST = ["zocomputer.com", "support.zocomputer.com", "discord.gg", "agentmail.to"];
+const EMAIL_INCENTIVE_MESSAGE = "For the next week, every caller who shares a meaningful email will be entered to receive a surprise gift from Zo.";
+const ZOSEPH_EMAIL_SYSTEM_PROMPT = `You are writing a follow-up email on behalf of Zoseph. Always keep it personal, specific, and actionable. Mention that we will remember their progress and invite them to call back after completing the next step. Avoid URLs outside the whitelist (${EMAIL_WHITELIST.join(", ")}).`;
 const VAPI_WEBHOOK_SECRET = process.env.VAPI_HOTLINE_SECRET || "";
 
+const anthropicApiKey = process.env.ANTHROPIC_API_KEY || "";
+const anthropicClient = anthropicApiKey ? new Anthropic({ apiKey: anthropicApiKey }) : null;
+if (!anthropicClient) {
+  console.warn("Missing ANTHROPIC_API_KEY — post-call email generation will be disabled.");
+}
+
+const collectedEmails = new Map<string, string>();
 // ─── System prompt ───────────────────────────────────────────────────────────
 const systemPromptTemplate = readFileSync("/home/workspace/Skills/zo-hotline/prompts/zoseph-system-prompt.md", "utf-8")
   .replace(/^---[\s\S]*?---\s*/, '');
@@ -155,6 +168,7 @@ con.close()
     proc.stdin.end();
     const output = await new Response(proc.stdout).text();
     await proc.exited;
+    if (!output.trim()) return null;
     const parsed = JSON.parse(output.trim());
     return parsed as CallerProfile | null;
   } catch (error) {
@@ -601,10 +615,10 @@ async function explainConcept(params: { concept: string }): Promise<object> {
 
 async function requestEscalation(params: { name: string; contact: string; reason: string }, callId: string = "unknown"): Promise<object> {
   const { name, contact, reason } = params;
-  if (!name || !contact || !reason) {
+  if (!name || !reason) {
     return {
-      error: "Need name, contact, and reason for escalation",
-      example: "name: 'John Smith', contact: 'john@example.com', reason: 'Wants help setting up automated reports'"
+      error: "Need name and reason for escalation",
+      example: "name: 'John Smith', reason: 'Wants help setting up automated reports'"
     };
   }
 
@@ -630,20 +644,18 @@ print("Escalation logged successfully")
     proc.stdin.end();
     await proc.exited;
 
-    const CALENDLY_ESCALATION_LINK = process.env.ZO_HOTLINE_CALENDLY_LINK || "https://calendly.com/v-at-careerspan/zo-hotline-15min";
-    notifyV(`📞 Hotline escalation request:\n• Name: ${name}\n• Contact: ${contact}\n• Reason: ${reason}\n\nPlease reach out within 24 hours.`);
+    notifyV(`📞 Hotline escalation request:\n• Name: ${name}${contact ? `\n• Contact: ${contact}` : ""}\n• Reason: ${reason}`);
 
     return {
       success: true,
-      message: `Got it! I've logged your request. V will reach out soon. You can also book a 15-minute slot directly at: ${CALENDLY_ESCALATION_LINK}`,
-      escalation_id: escalationId.substring(0, 8),
-      calendly_link: CALENDLY_ESCALATION_LINK
+      message: `Got it, ${name}. The best place to get hands-on help is the Zo Discord or subreddit — community members are always around. If you want to reach the builder directly, check out vrijenattawar.com or email me@vrijenattawar.com.`,
+      escalation_id: escalationId.substring(0, 8)
     };
   } catch (error) {
     console.error("Error logging escalation:", error);
     return {
       error: "Failed to log escalation request",
-      fallback: "You can find V on Twitter as @thevibethinker or on LinkedIn as Vrijen Attawar"
+      fallback: "You can find help in the Zo Discord or subreddit, or reach V at vrijenattawar.com or me@vrijenattawar.com"
     };
   }
 }
@@ -685,6 +697,217 @@ print("Feedback logged successfully")
   } catch {
     return { success: true, message: "Thanks for the feedback — appreciate you sharing." };
   }
+}
+
+// ─── Email Collection ────────────────────────────────────────────────────────
+async function collectEmail(params: { email: string; confirmed: boolean }, callId: string = "current"): Promise<object> {
+  const { email, confirmed } = params;
+  if (!email || !email.includes("@")) {
+    return { error: "That doesn't look like a valid email. Could you say it again slowly?" };
+  }
+  if (!confirmed) {
+    return {
+      success: false,
+      message: `Let me spell that back to make sure I have it right. Please confirm after I read it.`,
+      email_received: email
+    };
+  }
+
+  collectedEmails.set(callId, email.trim().toLowerCase());
+  console.log(`Email collected for call ${callId}: ${email.trim().toLowerCase()}`);
+
+  return {
+    success: true,
+    message: `Got it — I'll send you a follow-up email after our call with a summary and your next steps. That email comes through AgentMail, which is actually one of the tools that powers this hotline.`
+  };
+}
+
+// ─── Post-Call Email (Sandboxed Anthropic → AgentMail) ───────────────────────
+function sanitizeForEmail(text: string): string {
+  return text
+    .replace(/<[^>]*>/g, "")
+    .replace(/```[\s\S]*?```/g, "")
+    .substring(0, 500);
+}
+
+function validateEmailOutput(html: string): boolean {
+  const urlRegex = /https?:\/\/[^\s"'<>]+/g;
+  const urls = html.match(urlRegex) || [];
+  for (const url of urls) {
+    const allowed = EMAIL_WHITELIST.some(domain => url.includes(domain));
+    if (!allowed) return false;
+  }
+  if (html.length > 3000) return false;
+  return true;
+}
+
+async function generateAndSendFollowUpEmail(data: {
+  callId: string;
+  email: string;
+  summary: string;
+  callerName: string | null;
+  pathway: string;
+  level: number | null;
+  primaryInterest: string;
+  durationMinutes: number;
+}): Promise<void> {
+  const agentmailKey = process.env.AGENTMAIL_API_KEY;
+  if (!anthropicClient || !agentmailKey) {
+    console.error("Missing ANTHROPIC_API_KEY or AGENTMAIL_API_KEY — skipping email");
+    return;
+  }
+
+  const sanitizedSummary = sanitizeForEmail(data.summary);
+  const nameGreeting = data.callerName ? `Hi ${data.callerName}` : "Hey there";
+  const levelContext = data.level ? `The caller is at technical level ${data.level}/5.` : "";
+
+  try {
+    const response = await anthropicClient.messages.create({
+      model: "claude-haiku-4-5-20251001",
+      max_tokens: 1000,
+      system: ZOSEPH_EMAIL_SYSTEM_PROMPT,
+      messages: [{
+        role: "user",
+        content: `Write a follow-up email for a Vibe Thinker Hotline caller.
+
+Caller info:
+- Greeting: ${nameGreeting}
+- Pathway: ${data.pathway}
+- Primary interest: ${sanitizeForEmail(data.primaryInterest)}
+- Call duration: ${data.durationMinutes} minutes
+- Call summary: ${sanitizedSummary}
+${levelContext}
+
+Requirements:
+1. If the caller discussed a specific use case or task, write a ready-to-paste prompt they can type into their Zo. Frame it as: "Here's something you can paste right into your Zo to get started:"
+2. If the conversation was exploratory, give 2-3 concrete next steps and invite them to call back.
+3. End with: "Call back anytime — I'll remember where we left off."
+4. Keep it under 300 words.
+5. Do NOT include any URLs except: zocomputer.com, support.zocomputer.com, discord.gg/zocomputer
+6. Sign off as "Zoseph" with "Vibe Thinker Hotline" underneath.
+
+Also return a JSON block at the very end with these fields (after the email body):
+---JSON---
+{"recommendations": "brief summary of what you recommended", "next_steps": "what the caller should do before calling back"}
+---END---`
+      }]
+    });
+
+    const fullText = response.content[0].type === "text" ? response.content[0].text : "";
+
+    let emailBody = fullText;
+    let recommendations = "";
+    let nextSteps = "";
+    const jsonMatch = fullText.match(/---JSON---\s*(\{[\s\S]*?\})\s*---END---/);
+    if (jsonMatch) {
+      emailBody = fullText.substring(0, fullText.indexOf("---JSON---")).trim();
+      try {
+        const parsed = JSON.parse(jsonMatch[1]);
+        recommendations = parsed.recommendations || "";
+        nextSteps = parsed.next_steps || "";
+      } catch { /* use empty strings */ }
+    }
+
+    const htmlBody = `<div style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; color: #1a1a1a;">
+<p style="font-size: 15px; line-height: 1.6;">${emailBody.replace(/\n\n/g, '</p><p style="font-size: 15px; line-height: 1.6;">').replace(/\n/g, '<br>')}</p>
+</div>`;
+
+    if (!validateEmailOutput(htmlBody)) {
+      console.error(`Email output failed validation for call ${data.callId} — sending generic fallback`);
+      const fallbackHtml = `<div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+<p>${nameGreeting},</p>
+<p>Thanks for calling the Vibe Thinker Hotline! If you want to explore what Zo can do for you, visit <a href="https://zocomputer.com">zocomputer.com</a> or join the community at <a href="https://discord.gg/zocomputer">discord.gg/zocomputer</a>.</p>
+<p>Call back anytime — I'll remember where we left off.</p>
+<p>— Zoseph<br>Vibe Thinker Hotline</p>
+</div>`;
+      await sendViaAgentMail(agentmailKey, data.email, "Thanks for calling the Vibe Thinker Hotline", fallbackHtml, data.callId);
+      return;
+    }
+
+    await sendViaAgentMail(agentmailKey, data.email, "Your Vibe Thinker Hotline Follow-Up", htmlBody, data.callId);
+
+    if (recommendations || nextSteps) {
+      await updateCallerRecommendations(data.callId, recommendations, nextSteps, data.email);
+    }
+
+    console.log(`Follow-up email sent to ${data.email} for call ${data.callId}`);
+  } catch (error) {
+    console.error("Failed to generate/send follow-up email:", error);
+  }
+}
+
+async function sendViaAgentMail(apiKey: string, toEmail: string, subject: string, htmlBody: string, callId: string): Promise<void> {
+  const resp = await fetch(AGENTMAIL_API_URL, {
+    method: "POST",
+    headers: {
+      "Authorization": `Bearer ${apiKey}`,
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      to: [toEmail],
+      subject,
+      html: htmlBody,
+      text: htmlBody.replace(/<[^>]*>/g, "")
+    })
+  });
+
+  if (!resp.ok) {
+    const errBody = await resp.text().catch(() => "");
+    console.error(`AgentMail send failed (${resp.status}): ${errBody.substring(0, 200)}`);
+    return;
+  }
+
+  const markScript = `
+import duckdb, json, sys
+data = json.loads(sys.stdin.read())
+con = duckdb.connect(data['db'])
+try:
+    con.execute('UPDATE calls SET caller_email = ?, email_sent = TRUE, email_sent_at = CURRENT_TIMESTAMP WHERE id = ?', [data['email'], data['call_id']])
+except Exception as e:
+    print(f'Warning: {e}')
+con.close()
+print('OK')
+`;
+  const proc = Bun.spawn(["python3", "-c", markScript], { stdin: "pipe", stdout: "pipe", stderr: "pipe" });
+  proc.stdin.write(JSON.stringify({ db: DB_PATH, email: toEmail, call_id: callId }));
+  proc.stdin.end();
+  await proc.exited;
+}
+
+async function updateCallerRecommendations(callId: string, recommendations: string, nextSteps: string, email: string): Promise<void> {
+  const script = `
+import duckdb, json, sys
+data = json.loads(sys.stdin.read())
+con = duckdb.connect(data['db'])
+try:
+    rows = con.execute("SELECT raw_data FROM calls WHERE id = ?", [data['call_id']]).fetchall()
+    if rows:
+        raw = json.loads(rows[0][0]) if rows[0][0] else {}
+        phone = raw.get('message', {}).get('call', {}).get('customer', {}).get('number', '')
+        if phone:
+            import hashlib
+            ph = hashlib.sha256(phone.strip().encode()).hexdigest()
+            con.execute('''
+                UPDATE caller_profiles SET
+                    last_recommendations = ?,
+                    last_next_steps = ?,
+                    caller_email = ?
+                WHERE phone_hash = ?
+            ''', [data['recommendations'], data['next_steps'], data['email'], ph])
+except Exception as e:
+    print(f'Warning: {e}')
+con.close()
+print('OK')
+`;
+  const proc = Bun.spawn(["python3", "-c", script], { stdin: "pipe", stdout: "pipe", stderr: "pipe" });
+  proc.stdin.write(JSON.stringify({
+    db: DB_PATH, call_id: callId,
+    recommendations: recommendations.substring(0, 500),
+    next_steps: nextSteps.substring(0, 500),
+    email
+  }));
+  proc.stdin.end();
+  await proc.exited;
 }
 
 // ─── Topic Classification (async, fire-and-forget) ──────────────────────────
@@ -860,18 +1083,28 @@ const server = Bun.serve({
         const response = {
           assistant: {
             name: "Zoseph",
-            firstMessage: "Hey — this is Zoseph on the Vibe Thinker Hotline. I help people figure out what to build on Zo Computer. So — are you exploring what's possible, working on something specific, or comparing Zo to another tool?",
+            firstMessage: "Hey — this is Zoseph on the Vibe Thinker Hotline. I help people figure out what to build on Zo Computer. Are you exploring what's possible, or working on something specific?",
 
             transcriber: {
               provider: "deepgram",
+              model: "nova-2",
+              language: "en",
+              smartFormat: true,
               keywords: [
-                "Zo:10", "Computer:10", "Zoseph:10", "zospace:10",
-                "vibe:8", "thinking:8", "thinker:8",
-                "Claude:6", "Anthropic:5", "ChatGPT:6", "OpenAI:5",
+                "Zo:15", "Zoseph:15", "Attawar:10",
+                "Careerspan:10", "Vrijen:10",
+                "Claude:5", "Anthropic:5", "ChatGPT:5", "OpenAI:5",
                 "Cursor:5", "Windsurf:5", "Zapier:5", "Notion:5",
-                "OpenClaw:6", "Clawdbot:5",
-                "scheduled:6", "agent:6", "webhook:5",
-                "Careerspan:8", "Attawar:8"
+                "OpenClaw:5", "Clawdbot:5",
+                "webhook:3", "Airtable:3", "Stripe:3"
+              ],
+              keyterm: [
+                "Zo Computer",
+                "Vibe Thinker",
+                "Vibe Thinker Hotline",
+                "zo dot space",
+                "scheduled agent",
+                "Zo Space"
               ]
             },
 
@@ -930,15 +1163,15 @@ const server = Bun.serve({
                   type: "function",
                   function: {
                     name: "requestEscalation",
-                    description: "Log escalation request when caller needs hands-on help from V.",
+                    description: "Direct caller to community help (Discord, subreddit) or share builder contact info. Log the reason for tracking.",
                     parameters: {
                       type: "object",
                       properties: {
                         name: { type: "string", description: "Caller's name" },
-                        contact: { type: "string", description: "Email or phone" },
+                        contact: { type: "string", description: "Email or phone (optional — only if caller volunteers it)" },
                         reason: { type: "string", description: "Why they need help" }
                       },
-                      required: ["name", "contact", "reason"]
+                      required: ["name", "reason"]
                     }
                   }
                 },
@@ -955,6 +1188,21 @@ const server = Bun.serve({
                         comment: { type: "string", description: "Feedback" }
                       },
                       required: []
+                    }
+                  }
+                },
+                {
+                  type: "function",
+                  function: {
+                    name: "collectEmail",
+                    description: "Collect caller's email address for a personalized post-call follow-up. Always spell the email back using plain phonetic cues (A as in Apple, B as in Boy) and ask for confirmation before submitting with confirmed=true.",
+                    parameters: {
+                      type: "object",
+                      properties: {
+                        email: { type: "string", description: "The email address as heard" },
+                        confirmed: { type: "boolean", description: "True only after caller confirms the spelled-back email is correct" }
+                      },
+                      required: ["email", "confirmed"]
                     }
                   }
                 }
@@ -984,18 +1232,18 @@ const server = Bun.serve({
             },
 
             startSpeakingPlan: {
-              waitSeconds: 0.4,
+              waitSeconds: 0.6,
               smartEndpointingEnabled: true,
               transcriptionEndpointingPlan: {
-                onPunctuationSeconds: 0.1,
-                onNoPunctuationSeconds: 0.8,
+                onPunctuationSeconds: 0.3,
+                onNoPunctuationSeconds: 1.0,
                 onNumberSeconds: 0.4
               }
             },
 
             stopSpeakingPlan: {
-              numWords: 0,
-              voiceSeconds: 0.2,
+              numWords: 1,
+              voiceSeconds: 0.3,
               backoffSeconds: 1.0
             },
 
@@ -1007,6 +1255,68 @@ const server = Bun.serve({
             responseDelaySeconds: 0.1,
             silenceTimeoutSeconds: 10,
             maxDurationSeconds: 1800,
+
+            analysisPlan: {
+              summaryPrompt: "Summarize this Zo Computer hotline call in 2-3 sentences. Focus on: what the caller wanted, what pathway they were on (exploring, building something specific, or comparing tools), and whether they left with a clear next step.",
+              structuredDataPrompt: "Extract the following from this Zo Computer hotline call transcript. Be precise — if something wasn't discussed, leave it null.",
+              structuredDataSchema: {
+                type: "object",
+                properties: {
+                  caller_pathway: {
+                    type: "string",
+                    enum: ["explorer", "builder", "comparison", "troubleshoot", "onboard", "unclear"],
+                    description: "Which conversation pathway the caller was on"
+                  },
+                  caller_technical_level: {
+                    type: "number",
+                    description: "Estimated technical level 1-5 based on language used (1=non-technical, 5=developer)"
+                  },
+                  primary_interest: {
+                    type: "string",
+                    description: "The main thing the caller was interested in or asking about"
+                  },
+                  competitors_mentioned: {
+                    type: "array",
+                    items: { type: "string" },
+                    description: "Any competing tools mentioned (Claude, ChatGPT, Cursor, Zapier, etc.)"
+                  },
+                  objections_raised: {
+                    type: "array",
+                    items: { type: "string" },
+                    description: "Specific concerns or pushback (pricing, privacy, complexity, trust, etc.)"
+                  },
+                  caller_profession: {
+                    type: "string",
+                    description: "Caller's profession/role if mentioned or inferable"
+                  },
+                  had_clear_next_step: {
+                    type: "boolean",
+                    description: "Did the call end with the caller knowing what to do next?"
+                  },
+                  escalation_requested: {
+                    type: "boolean",
+                    description: "Did the caller ask for human help or want to reach V?"
+                  },
+                  prompt_emphasis_landed: {
+                    type: "boolean",
+                    description: "Did Zoseph communicate that Zo is used by describing what you want in plain English?"
+                  },
+                  interruption_issues: {
+                    type: "boolean",
+                    description: "Were there noticeable turn-taking problems (talking over each other, awkward pauses, 'go ahead' loops)?"
+                  },
+                  pronunciation_issues: {
+                    type: "array",
+                    items: { type: "string" },
+                    description: "Any words that were mispronounced or misheard (e.g. 'Zo' as 'Zoho')"
+                  }
+                },
+                required: ["caller_pathway", "primary_interest", "had_clear_next_step", "interruption_issues"]
+              },
+              successEvaluationPrompt: "Evaluate this Zo Computer hotline call. A successful call means: (1) Zoseph correctly identified the caller's pathway and needs, (2) gave concrete, accurate information about Zo Computer, (3) used the layering pattern (simple first, then advanced), (4) ended with a clear next step or anchor, (5) did NOT promise human follow-up or offer to collect contact info for V, (6) did NOT use corporate enthusiasm or jargon. Rate on a 1-10 scale. Deduct points for: interruptions/talking over caller, inaccurate claims about Zo, promising to connect with V, listing 3+ options, and failing to communicate that Zo is used by describing what you want.",
+              successEvaluationRubric: "NumericScale"
+            },
+
             serverMessages: ["end-of-call-report", "tool-calls"]
           }
         };
@@ -1039,10 +1349,11 @@ const server = Bun.serve({
             case "explainConcept": result = await explainConcept(params); break;
             case "requestEscalation": result = await requestEscalation(params, callId); break;
             case "collectFeedback": result = await collectFeedback(params, callId); break;
+            case "collectEmail": result = await collectEmail(params, callId); break;
             default:
               result = {
                 error: `Unknown tool: ${toolName}`,
-                available_tools: ["assessCallerLevel", "getRecommendations", "explainConcept", "requestEscalation", "collectFeedback"]
+                available_tools: ["assessCallerLevel", "getRecommendations", "explainConcept", "requestEscalation", "collectFeedback", "collectEmail"]
               };
           }
 
@@ -1167,6 +1478,32 @@ con.close()
         }
 
         notifyV(smsBody);
+
+        // ── Post-call follow-up email ──────────────────────────────────
+        const collectedEmail = collectedEmails.get(callId);
+        if (collectedEmail && durationSeconds >= 120) {
+          const structuredData = data.message?.analysis?.structuredData || {};
+          const pathway = structuredData.caller_pathway || "explorer";
+          const level = structuredData.caller_technical_level || null;
+          const primaryInterest = structuredData.primary_interest || summary.substring(0, 200) || "general exploration";
+
+          generateAndSendFollowUpEmail({
+            callId,
+            email: collectedEmail,
+            summary: summary || "No summary available",
+            callerName,
+            pathway,
+            level,
+            primaryInterest,
+            durationMinutes: Math.round(durationSeconds / 60),
+          }).catch(err => console.error("Post-call email error:", err));
+
+          collectedEmails.delete(callId);
+          smsBody += `\n📧 Follow-up email queued → ${collectedEmail}`;
+        }
+
+        // Topic classification (async)
+        classifyTopicsAsync(callId, transcript);
 
         return new Response(JSON.stringify({ success: true }), {
           status: 200, headers: { "Content-Type": "application/json" }
