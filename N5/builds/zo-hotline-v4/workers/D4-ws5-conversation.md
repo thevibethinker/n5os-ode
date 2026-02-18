@@ -4,7 +4,7 @@ last_edited: 2026-02-18
 version: 2.0
 provenance: con_D22Ewo8OGuQrMBrx
 spawn_mode: manual
-status: pending
+status: complete
 dependencies: [D1, D2, D3, D5]
 ---
 # D4: Conversation Design v3 — The Capstone
@@ -15,11 +15,44 @@ Rewrite Zoseph's system prompt and conversation architecture using everything le
 ## This Drop Synthesizes:
 - D1's trimmed prompt baseline + caller profile injection pattern
 - D1's knowledge index (how explainConcept now works)
-- D2's model recommendation (affects prompt complexity budget)
+- D2's model recommendation (stay with Claude Haiku 4.5 — no need to constrain prompt for cheaper models)
 - D3's use cases, competitive landscape, messaging cheat sheet, idealism angle
 - D5's playbook (explorer/challenger/builder pathways, proven phrases, danger zones)
 - V's diagnostic observations from real calls
 - The Master Pattern: Elicit → Mirror → Layer → Anchor
+
+## Prior Drop Deposits (Read These First)
+
+**D1 — Infrastructure:**
+- Deposit: `N5/builds/zo-hotline-v4/deposits/D1-deposit.json`
+- Trimmed system prompt: `Skills/zo-hotline/prompts/zoseph-system-prompt.md` (901 words — this is your baseline to rewrite)
+- Knowledge index: `Knowledge/zo-hotline/00-knowledge-index.md` (93 entries)
+- Webhook (current): `Skills/zo-hotline/scripts/hotline-webhook.ts` (1,278 lines)
+
+**D2 — Model:**
+- Deposit: `N5/builds/zo-hotline-v4/deposits/D2-deposit.json`
+- Full report: `N5/builds/zo-hotline-v4/deposits/D2-model-cost-optimization.md`
+- **Decision: Stay with Claude Haiku 4.5.** Design freely around Anthropic strengths — nuanced instruction following, concession-pivot patterns, reliable tool calling. Token budget is comfortable; you can expand slightly from 901 words if the pathways need it.
+
+**D3 — Research + Competitive:**
+- Deposit: `N5/builds/zo-hotline-v4/deposits/D3-deposit.json`
+- Community use cases: `Knowledge/zo-hotline/50-use-case-inspiration/community-use-cases.md`
+- Competitive landscape: `Knowledge/zo-hotline/50-use-case-inspiration/competitive-landscape.md`
+- Messaging cheat sheet: `Knowledge/zo-hotline/97-conversational-playbook/messaging-cheat-sheet.md`
+- Idealism talking points: `Knowledge/zo-hotline/97-conversational-playbook/idealism-talking-points.md`
+- Gap analysis: `Knowledge/zo-hotline/50-use-case-inspiration/gap-analysis-d3.md`
+- **⚠️ These 5 files need concept mapping entries added to the webhook's `conceptFiles` object.**
+
+**D5 — Zo Docs + Playbook:**
+- Deposit: `N5/builds/zo-hotline-v4/deposits/D5-gap-analysis.md`
+- Platform docs: `Knowledge/zo-hotline/96-zo-platform/` (41 files)
+- Playbook: `Knowledge/zo-hotline/97-conversational-playbook/` (overview, explorer, challenger, builder, proven-phrases, danger-zones)
+- Existing concept mappings: ~280 entries already in webhook
+
+**Thematic analysis (the evidence base):**
+- `Research/zo-hotline/hotline-thematic-analysis.md` (8 real calls analyzed)
+
+**Environment note:** `DEEPGRAM_API_KEY` and `ANTHROPIC_API_KEY` are now available as env vars if needed for any testing.
 
 ## Scope
 
