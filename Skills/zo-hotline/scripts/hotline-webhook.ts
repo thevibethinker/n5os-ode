@@ -879,14 +879,14 @@ const server = Bun.serve({
                   type: "function",
                   function: {
                     name: "assessCallerLevel",
-                    description: "Run the 4-question diagnostic to determine caller's Meta-OS level. Call after asking all 4 questions.",
+                    description: "Assess caller's level after 4 diagnostic questions or if lost after 2+.",
                     parameters: {
                       type: "object",
                       properties: {
                         answers: {
                           type: "array",
                           items: { type: "string", enum: ["A", "B", "C", "D"] },
-                          description: "Array of 4 answers (A/B/C/D) to the assessment questions in order"
+                          description: "4 answers (A/B/C/D) in order"
                         }
                       },
                       required: ["answers"]
@@ -897,11 +897,11 @@ const server = Bun.serve({
                   type: "function",
                   function: {
                     name: "getRecommendations",
-                    description: "Get level-appropriate next steps and quick wins based on assessed level.",
+                    description: "Get next steps for assessed level.",
                     parameters: {
                       type: "object",
                       properties: {
-                        level: { type: "number", description: "Assessed level from assessCallerLevel (1-3 scale)" }
+                        level: { type: "number", description: "Level 1-3" }
                       },
                       required: ["level"]
                     }
@@ -911,11 +911,11 @@ const server = Bun.serve({
                   type: "function",
                   function: {
                     name: "explainConcept",
-                    description: "Explain specific Meta-OS concepts, Zo platform features, and V's open-source projects. Available topics include: meta-os, level-1, level-2, level-3, delay-the-draft, clarification-gates, adversarial-probing, semantic-hunger, architectural-patterns, use-cases, anti-patterns, technical-advice, webhook-pattern, daily-briefing, over-engineering, rules-vs-personas, debug-agents, and Zo platform docs: what-is-zo, pricing, scheduled-tasks, zo-integrations, sites, zo-space, files, desktop-app, ai-models, browser-use, prompting-tips, zo-rules, zo-personas, zo-skills, selling, backups, security, sms, comparisons, getting-started, and more.",
+                    description: "Look up and explain any concept from the knowledge base.",
                     parameters: {
                       type: "object",
                       properties: {
-                        concept: { type: "string", description: "Concept to explain — any topic from the knowledge base" }
+                        concept: { type: "string", description: "Topic to explain" }
                       },
                       required: ["concept"]
                     }
@@ -930,8 +930,8 @@ const server = Bun.serve({
                       type: "object",
                       properties: {
                         name: { type: "string", description: "Caller's name" },
-                        contact: { type: "string", description: "Email or phone for V to follow up" },
-                        reason: { type: "string", description: "Why they need hands-on help" }
+                        contact: { type: "string", description: "Email or phone" },
+                        reason: { type: "string", description: "Why they need help" }
                       },
                       required: ["name", "contact", "reason"]
                     }
@@ -941,13 +941,13 @@ const server = Bun.serve({
                   type: "function",
                   function: {
                     name: "collectFeedback",
-                    description: "Collect optional end-of-call feedback. All fields are optional.",
+                    description: "Collect optional end-of-call feedback.",
                     parameters: {
                       type: "object",
                       properties: {
-                        caller_name: { type: "string", description: "Caller's first name (optional)" },
-                        satisfaction: { type: "number", description: "Satisfaction rating 1-5" },
-                        comment: { type: "string", description: "Any additional feedback" }
+                        caller_name: { type: "string", description: "First name" },
+                        satisfaction: { type: "number", description: "Rating 1-5" },
+                        comment: { type: "string", description: "Feedback" }
                       },
                       required: []
                     }
@@ -994,7 +994,7 @@ const server = Bun.serve({
             endCallMessage: "Good luck. Keep thinking.",
             endCallPhrases: ["goodbye", "bye", "thanks", "talk to you later", "that's all", "I'm good"],
             responseDelaySeconds: 0.1,
-            silenceTimeoutSeconds: 15,
+            silenceTimeoutSeconds: 10,
             maxDurationSeconds: 1800,
             serverMessages: ["end-of-call-report", "tool-calls"]
           }
