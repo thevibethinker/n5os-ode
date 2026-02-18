@@ -1293,64 +1293,82 @@ const server = Bun.serve({
             maxDurationSeconds: 1800,
 
             analysisPlan: {
-              summaryPrompt: "Summarize this Zo Computer hotline call in 2-3 sentences. Focus on: what the caller wanted, what pathway they were on (exploring, building something specific, or comparing tools), and whether they left with a clear next step.",
-              structuredDataPrompt: "Extract the following from this Zo Computer hotline call transcript. Be precise — if something wasn't discussed, leave it null.",
-              structuredDataSchema: {
-                type: "object",
-                properties: {
-                  caller_pathway: {
-                    type: "string",
-                    enum: ["explorer", "builder", "comparison", "troubleshoot", "onboard", "unclear"],
-                    description: "Which conversation pathway the caller was on"
-                  },
-                  caller_technical_level: {
-                    type: "number",
-                    description: "Estimated technical level 1-5 based on language used (1=non-technical, 5=developer)"
-                  },
-                  primary_interest: {
-                    type: "string",
-                    description: "The main thing the caller was interested in or asking about"
-                  },
-                  competitors_mentioned: {
-                    type: "array",
-                    items: { type: "string" },
-                    description: "Any competing tools mentioned (Claude, ChatGPT, Cursor, Zapier, etc.)"
-                  },
-                  objections_raised: {
-                    type: "array",
-                    items: { type: "string" },
-                    description: "Specific concerns or pushback (pricing, privacy, complexity, trust, etc.)"
-                  },
-                  caller_profession: {
-                    type: "string",
-                    description: "Caller's profession/role if mentioned or inferable"
-                  },
-                  had_clear_next_step: {
-                    type: "boolean",
-                    description: "Did the call end with the caller knowing what to do next?"
-                  },
-                  escalation_requested: {
-                    type: "boolean",
-                    description: "Did the caller ask for human help or want to reach V?"
-                  },
-                  prompt_emphasis_landed: {
-                    type: "boolean",
-                    description: "Did Zoseph communicate that Zo is used by describing what you want in plain English?"
-                  },
-                  interruption_issues: {
-                    type: "boolean",
-                    description: "Were there noticeable turn-taking problems (talking over each other, awkward pauses, 'go ahead' loops)?"
-                  },
-                  pronunciation_issues: {
-                    type: "array",
-                    items: { type: "string" },
-                    description: "Any words that were mispronounced or misheard (e.g. 'Zo' as 'Zoho')"
-                  }
-                },
-                required: ["caller_pathway", "primary_interest", "had_clear_next_step", "interruption_issues"]
+              summaryPlan: {
+                enabled: true,
+                messages: [{
+                  role: "system",
+                  content: "Summarize this Zo Computer hotline call in 2-3 sentences. Focus on: what the caller wanted, what pathway they were on (exploring, building something specific, or comparing tools), and whether they left with a clear next step."
+                }]
               },
-              successEvaluationPrompt: "Evaluate this Zo Computer hotline call. A successful call means: (1) Zoseph correctly identified the caller's pathway and needs, (2) gave concrete, accurate information about Zo Computer, (3) used the layering pattern (simple first, then advanced), (4) ended with a clear next step or anchor, (5) did NOT promise human follow-up or offer to collect contact info for V, (6) did NOT use corporate enthusiasm or jargon. Rate on a 1-10 scale. Deduct points for: interruptions/talking over caller, inaccurate claims about Zo, promising to connect with V, listing 3+ options, and failing to communicate that Zo is used by describing what you want.",
-              successEvaluationRubric: "NumericScale"
+              structuredDataPlan: {
+                enabled: true,
+                messages: [{
+                  role: "system",
+                  content: "Extract the following from this Zo Computer hotline call transcript. Be precise — if something wasn't discussed, leave it null."
+                }],
+                schema: {
+                  type: "object",
+                  properties: {
+                    caller_pathway: {
+                      type: "string",
+                      enum: ["explorer", "builder", "comparison", "troubleshoot", "onboard", "unclear"],
+                      description: "Which conversation pathway the caller was on"
+                    },
+                    caller_technical_level: {
+                      type: "number",
+                      description: "Estimated technical level 1-5 based on language used (1=non-technical, 5=developer)"
+                    },
+                    primary_interest: {
+                      type: "string",
+                      description: "The main thing the caller was interested in or asking about"
+                    },
+                    competitors_mentioned: {
+                      type: "array",
+                      items: { type: "string" },
+                      description: "Any competing tools mentioned (Claude, ChatGPT, Cursor, Zapier, etc.)"
+                    },
+                    objections_raised: {
+                      type: "array",
+                      items: { type: "string" },
+                      description: "Specific concerns or pushback (pricing, privacy, complexity, trust, etc.)"
+                    },
+                    caller_profession: {
+                      type: "string",
+                      description: "Caller's profession/role if mentioned or inferable"
+                    },
+                    had_clear_next_step: {
+                      type: "boolean",
+                      description: "Did the call end with the caller knowing what to do next?"
+                    },
+                    escalation_requested: {
+                      type: "boolean",
+                      description: "Did the caller ask for human help or want to reach V?"
+                    },
+                    prompt_emphasis_landed: {
+                      type: "boolean",
+                      description: "Did Zoseph communicate that Zo is used by describing what you want in plain English?"
+                    },
+                    interruption_issues: {
+                      type: "boolean",
+                      description: "Were there noticeable turn-taking problems (talking over each other, awkward pauses, 'go ahead' loops)?"
+                    },
+                    pronunciation_issues: {
+                      type: "array",
+                      items: { type: "string" },
+                      description: "Any words that were mispronounced or misheard (e.g. 'Zo' as 'Zoho')"
+                    }
+                  },
+                  required: ["caller_pathway", "primary_interest", "had_clear_next_step", "interruption_issues"]
+                }
+              },
+              successEvaluationPlan: {
+                enabled: true,
+                rubric: "NumericScale",
+                messages: [{
+                  role: "system",
+                  content: "Evaluate this Zo Computer hotline call. A successful call means: (1) Zoseph correctly identified the caller's pathway and needs, (2) gave concrete, accurate information about Zo Computer, (3) used the layering pattern (simple first, then advanced), (4) ended with a clear next step or anchor, (5) did NOT promise human follow-up or offer to collect contact info for V, (6) did NOT use corporate enthusiasm or jargon. Rate on a 1-10 scale. Deduct points for: interruptions/talking over caller, inaccurate claims about Zo, promising to connect with V, listing 3+ options, and failing to communicate that Zo is used by describing what you want."
+                }]
+              }
             },
 
             serverMessages: ["end-of-call-report", "tool-calls"]
