@@ -1,8 +1,8 @@
 # Zo Hotline Improvement Plan
 
 **Created:** 2026-02-12
-**Updated:** 2026-02-14
-**Status:** V3 Self-Improving Analysis Loop — Implemented
+**Updated:** 2026-02-18
+**Status:** V4 Prime Time Build — Complete
 
 ---
 
@@ -166,12 +166,111 @@ All items from the original plan have been implemented:
 
 ---
 
+## V4 Improvements (2026-02-18) — Prime Time Build
+
+### Build: `zo-hotline-v4` (Pulse-orchestrated, 6 drops, manual execution)
+
+**Orchestrator thread:** con_D22Ewo8OGuQrMBrx
+**Duration:** ~4 hours (Feb 17-18, 2026)
+
+### Evidence Base
+
+- **Thematic analysis** of 8 substantive calls (Feb 12-17): Meeting intelligence as killer app, scheduled agents as "aha" moment, persistent Zo/Zoho confusion, progressive complexity sells, challenger callers need honest differentiation
+- **D5 Zo docs crawl**: 41 platform docs from support.zocomputer.com, revealing feature gaps in Zoseph's knowledge
+- **D3 competitive research**: 6-competitor landscape (Claude, GPT, Cursor, Zapier, Notion, Windsurf) with honest concession-pivot framework
+- **D2 model evaluation**: 4 alternatives tested — Claude Haiku 4.5 confirmed as optimal (tone + tool reliability worth the premium)
+
+### Drops Completed
+
+| Drop | Title | Key Deliverables |
+|------|-------|-----------------|
+| D0 | Zozie Architecture Migration | Migrated career coaching hotline from VAPI dashboard to code-controlled (same pattern as Zoseph) |
+| D1 | Infrastructure Upgrades | Caller profiles (SHA-256 hashed), knowledge index (98 entries), call spotlights, tool usage logging, 53% prompt trim |
+| D2 | Model Cost Optimization | Evaluated GPT-4o-mini, Gemini Flash, Groq Llama, DeepSeek. Recommendation: stay with Haiku 4.5 |
+| D3 | Use Case Research + Competitive | 12 community use cases, competitive landscape, messaging cheat sheet, idealism talking points |
+| D4 | Conversation Design v3 (Capstone) | System prompt v4.0, 3 pathways, emotional detection, Master Pattern, messaging effectiveness tracking |
+| D5 | Zo Documentation Ingestion | 41 platform docs, conversational playbook (6 files), knowledge index, freshness agent |
+
+### Key Design Decisions
+
+**Three-pathway architecture** (Explorer / Builder / Comparison):
+- Replaces two-mode (Discover/Guide) with intent-driven routing
+- FirstMessage now offers 3 explicit paths: "exploring, building, or comparing"
+- Each pathway has custom Socratic discovery sequence
+
+**Master Pattern** (Elicit → Mirror → Layer → Anchor):
+- All pathways follow same meta-structure
+- Elicit = pathway-specific discovery questions
+- Mirror = reflect back before advising (builds trust)
+- Layer = simple version first, advanced upgrade second
+- Anchor = paint specific future ("Imagine tomorrow morning...")
+
+**Emotional detection** (new in v4):
+- System prompt explicitly instructs detection of: surprise, confusion, skepticism, overwhelm, rapid-fire energy
+- Each emotional signal maps to a specific response adjustment
+- Not a separate tool — baked into conversational behavior
+
+**Caller profiles** (new in v4):
+- SHA-256 hashed phone numbers (no PII stored)
+- Track: call count, first/last seen, topics discussed, assessed level
+- Injected into system prompt on assistant-request
+- Returning callers get personalized greeting + continuity
+
+**Competitive concession-pivot framework** (new in v4):
+- Honest acknowledgment of competitor strengths first
+- Then pivot to Zo's actual advantages (autonomy, persistence, integration)
+- Idealism angle available when caller shows open-source affinity
+- Messaging cheat sheet with proven phrases from call analysis
+
+**Self-improving messaging tracking** (new in v4):
+- tool_usage.jsonl logs every tool call with timestamps
+- Daily analysis correlates tool usage with call outcomes
+- Tracks which approaches lead to longer calls / higher satisfaction
+- Call spotlights flag notable interactions for review
+
+**Model decision: Stay with Claude Haiku 4.5**:
+- GPT-4o-mini saves ~28% cost but loses tone quality and tool reliability
+- Gemini Flash saves ~45% but poor instruction following for voice
+- Real cost lever is voice provider (ElevenLabs → Cartesia), not LLM
+- Total cost ~$0.18/min, LLM portion only ~$0.035/min
+
+### Files Modified
+
+| File | Change |
+|------|--------|
+| `prompts/zoseph-system-prompt.md` | Full rewrite → v4.0 (2,231 words). 3 pathways, Master Pattern, emotional detection, competitive framework |
+| `scripts/hotline-webhook.ts` | Caller profiles, knowledge index loading, call spotlights, tool usage logging, expanded concept mapping (~280 entries), new topic taxonomy |
+| `scripts/call_analysis_loop.py` | Added messaging effectiveness tracking, call spotlight integration |
+| `SKILL.md` | Updated to v4.0 with full architecture documentation |
+| `Knowledge/zo-hotline/96-zo-platform/` | 41 new voice-optimized platform docs |
+| `Knowledge/zo-hotline/97-conversational-playbook/` | 6 new files: overview, explorer/challenger/builder pathways, proven phrases, danger zones, messaging cheat sheet, idealism talking points |
+| `Knowledge/zo-hotline/50-use-case-inspiration/` | 3 new files: community use cases, competitive landscape, gap analysis |
+| `Knowledge/zo-hotline/00-knowledge-index.md` | Regenerated with 98 entries |
+
+### Metrics (Before → After)
+
+| Metric | V3 | V4 |
+|--------|----|----|
+| System prompt | 1,925 words | 2,231 words (trimmed 53% in D1, expanded in D4) |
+| Webhook | 1,055 lines | 1,195 lines |
+| Knowledge files | 46 | 57 |
+| Concept mappings | ~100 | ~280 |
+| Caller pathways | 2 (Discover/Guide) | 3 (Explorer/Builder/Comparison) + 3 modes |
+| Caller recognition | None | SHA-256 profile with history |
+| Competitive responses | Ad-hoc | Structured concession-pivot framework |
+| Daily analysis | Patterns + drop-offs | + messaging effectiveness + spotlights |
+
+---
+
 ## Future Considerations
 
-- **V's voice clone:** Train ElevenLabs on V's voice for authenticity
-- **Zo-to-Zo calling:** Have Zoseph sign up for services (Boardy etc.) autonomously
-- **Additional modes:** Billing, competitive comparison, API troubleshooting — add as patterns emerge
-- **Post-call follow-up:** SMS with a one-liner recap + link to relevant docs
-- **Call handoff to V:** Live transfer when escalation is requested (vs async callback)
-- **Satisfaction trend alerts:** Notify V when satisfaction drops below threshold
-- **Caller journey mapping:** Track progression through Meta-OS levels across calls
+- ~~V's voice clone~~ — Still desired. Train ElevenLabs on V's voice for authenticity
+- ~~Additional modes~~ — ✅ Added: Troubleshoot, Compare, Onboard
+- **Voice provider swap**: Cartesia Sonic as potential ElevenLabs replacement (~40% cost savings on voice)
+- **A/B testing framework**: Track variant messaging approaches systematically (started with tool_usage correlation, needs explicit variant tagging)
+- **Post-call follow-up**: SMS with one-liner recap + link to relevant docs
+- **Call handoff to V**: Live transfer when escalation is requested (vs async callback)
+- **Satisfaction trend alerts**: Notify V when satisfaction drops below threshold
+- **Caller journey mapping**: Track progression through Meta-OS levels across calls
+- **Zo-to-Zo calling**: Have Zoseph sign up for services (Boardy etc.) autonomously
+- **Profession-specific entry points**: Pre-built pathways for common professions (real estate, content creator, engineer)
