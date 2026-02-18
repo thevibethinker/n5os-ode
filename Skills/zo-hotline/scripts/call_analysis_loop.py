@@ -330,6 +330,93 @@ Extract themes and actionable insights. Respond with ONLY valid JSON:
     return result
 
 
+def analyze_messaging_effectiveness(all_calls: List[Dict], token: str) -> Dict:
+    """Analyze which messaging approaches correlated with better outcomes.
+    
+    Reads tool_usage.jsonl to correlate:
+    - Which explainConcept topics were used in high-engagement calls
+    - Which tools were used in calls that got positive feedback
+    - Whether messaging patterns (competitor comparisons, use case examples) drove longer calls
+    """
+    tool_log_path = Path("/home/workspace/Datasets/zo-hotline-calls/tool_usage.jsonl")
+    if not tool_log_path.exists():
+        return {"status": "no_data", "insights": []}
+    
+    # Read tool usage entries
+    entries = []
+    try:
+        for line in tool_log_path.read_text().strip().split("\n"):
+            if line.strip():
+                entries.append(json.loads(line))
+    except Exception as e:
+        print(f"  WARNING: Failed to read tool_usage.jsonl: {e}", file=sys.stderr)
+        return {"status": "read_error", "insights": []}
+    
+    if not entries:
+        return {"status": "no_entries", "insights": []}
+    
+    # Build call ID lookup from all_calls for duration/satisfaction context
+    call_lookup = {}
+    for c in all_calls:
+        call_lookup[c["id"]] = {
+            "duration": c["duration_seconds"],
+            "topics": c.get("topics_discussed", ""),
+        }
+    
+    # Correlate tool usage with call outcomes
+    call_summaries = []
+    for entry in entries[-50:]:  # Last 50 entries max
+        call_id = entry.get("call_id", "")
+        tools_used = entry.get("tools_used", [])
+        duration = entry.get("duration", 0)
+        satisfaction = entry.get("satisfaction")
+        
+        concepts_explained = [t.get("concept", "") for t in tools_used if t.get("name") == "explainConcept"]
+        tool_names = [t.get("name", "") for t in tools_used]
+        
+        call_summaries.append({
+            "duration_seconds": duration,
+            "satisfaction": satisfaction,
+            "concepts_explained": concepts_explained,
+            "tools_used": list(set(tool_names)),
+            "tool_count": len(tools_used),
+        })
+    
+    if not call_summaries:
+        return {"status": "no_matching_calls", "insights": []}
+    
+    prompt = f"""Analyze this tool usage data from the Vibe Thinker Hotline to identify messaging effectiveness patterns.
+
+Each entry represents one call with the tools/concepts used and the outcome (duration = engagement, satisfaction = explicit rating).
+
+DATA ({len(call_summaries)} calls):
+{json.dumps(call_summaries, indent=2)[:4000]}
+
+Identify:
+1. Which concepts/topics correlate with LONGER calls (higher engagement)?
+2. Which concepts/topics correlate with HIGHER satisfaction?
+3. Are there tool usage patterns that predict good outcomes?
+4. What messaging approaches should be used MORE vs LESS?
+
+Respond with ONLY valid JSON:
+{{
+  "high_engagement_topics": ["topics that correlate with longer calls"],
+  "high_satisfaction_topics": ["topics that correlate with better ratings"],
+  "effective_patterns": ["messaging patterns that work well"],
+  "ineffective_patterns": ["patterns that correlate with short calls or low satisfaction"],
+  "messaging_recommendations": ["specific actionable recommendations for Zoseph"],
+  "data_quality_note": "any caveats about the data"
+}}"""
+    
+    result = zo_ask_json(prompt, token)
+    if not result:
+        return {"status": "analysis_failed", "insights": []}
+    
+    result["status"] = "complete"
+    result["calls_analyzed"] = len(call_summaries)
+    return result
+
+
 def generate_improvements(
     patterns: Dict, dropoffs: Dict, satisfaction: Dict,
     system_prompt: str, token: str
@@ -548,7 +635,7 @@ def update_caller_insights(conn: duckdb.DuckDBPyConnection, feedback_entries: Li
             conn.execute("""
                 INSERT INTO caller_insights (id, first_name, call_count, first_seen, last_seen,
                                              avg_satisfaction, last_satisfaction, topics_history, level_assessed, notes)
-                VALUES (?, ?, 1, ?, ?, ?, ?, ?, ?, NULL)
+                VALUES (?, ?, 1, ?, ?, NULL, NULL, ?, NULL, NULL)
             """, [caller_id, name.strip(), now, now,
                   float(satisfaction) if satisfaction else None,
                   satisfaction, initial_topics, call_level])
@@ -562,7 +649,8 @@ def generate_report(
     analysis_date: str, period_start: str, period_end: str,
     all_calls: List[Dict], patterns: Dict, dropoffs: Dict,
     satisfaction: Dict, improvements: List[Dict],
-    executive_summary: Optional[Dict] = None
+    executive_summary: Optional[Dict] = None,
+    messaging_effectiveness: Optional[Dict] = None
 ) -> str:
     """Generate a human-readable markdown report."""
     total = len(all_calls)
@@ -712,6 +800,31 @@ def generate_report(
                 lines.append(f"**Evidence:** {evidence_str}")
             lines.append("")
 
+    # Messaging Effectiveness
+    if messaging_effectiveness and messaging_effectiveness.get("status") == "complete":
+        lines.append("## Messaging Effectiveness")
+        lines.append("")
+        lines.append(f"*Based on {messaging_effectiveness.get('calls_analyzed', '?')} calls with tool usage data.*")
+        lines.append("")
+
+        for field, label in [
+            ("high_engagement_topics", "High-Engagement Topics"),
+            ("high_satisfaction_topics", "High-Satisfaction Topics"),
+            ("effective_patterns", "What's Working"),
+            ("ineffective_patterns", "What's Not Working"),
+            ("messaging_recommendations", "Recommendations"),
+        ]:
+            items = messaging_effectiveness.get(field, [])
+            if items:
+                lines.append(f"### {label}")
+                for item in items:
+                    lines.append(f"- {item}")
+                lines.append("")
+
+        if messaging_effectiveness.get("data_quality_note"):
+            lines.append(f"*Note: {messaging_effectiveness['data_quality_note']}*")
+            lines.append("")
+
     return "\n".join(lines)
 
 
@@ -751,6 +864,9 @@ def run_analysis(analysis_date: str, period_start: str, period_end: str, dry_run
     print("  Analyzing satisfaction...", file=sys.stderr)
     satisfaction = analyze_satisfaction(feedback, token)
 
+    print("  Analyzing messaging effectiveness...", file=sys.stderr)
+    messaging_effectiveness = analyze_messaging_effectiveness(all_calls, token)
+
     print("  Generating improvements...", file=sys.stderr)
     improvements = generate_improvements(patterns, dropoff_insights, satisfaction, system_prompt, token)
 
@@ -766,7 +882,8 @@ def run_analysis(analysis_date: str, period_start: str, period_end: str, dry_run
     report = generate_report(
         analysis_date, period_start, period_end,
         all_calls, patterns, dropoff_insights, satisfaction, improvements,
-        executive_summary=executive_summary
+        executive_summary=executive_summary,
+        messaging_effectiveness=messaging_effectiveness
     )
 
     # Phase 4: Store results (write connection — only when NOT dry-run)
@@ -820,7 +937,7 @@ def run_analysis(analysis_date: str, period_start: str, period_end: str, dry_run
                     conn.execute("""
                         INSERT INTO caller_insights (id, first_name, call_count, first_seen, last_seen,
                                                      avg_satisfaction, last_satisfaction, topics_history, level_assessed, notes)
-                        VALUES (?, ?, 1, ?, ?, NULL, NULL, ?, NULL, ?)
+                        VALUES (?, ?, 1, ?, ?, NULL, NULL, ?, NULL, NULL)
                     """, [str(uuid.uuid4()), name.strip(),
                           datetime.now(timezone.utc).isoformat(), datetime.now(timezone.utc).isoformat(),
                           interests or None, new_note])
