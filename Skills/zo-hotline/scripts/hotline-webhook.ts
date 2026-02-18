@@ -860,7 +860,7 @@ const server = Bun.serve({
         const response = {
           assistant: {
             name: "Zoseph",
-            firstMessage: "Hey — this is Zoseph on the Vibe Thinker Hotline. I help people figure out what to build on Zo Computer. If you need a real person at any point, just say so. So — are you exploring what's possible, working on something specific, or comparing Zo to another tool?",
+            firstMessage: "Hey — this is Zoseph on the Vibe Thinker Hotline. I help people figure out what to build on Zo Computer. So — are you exploring what's possible, working on something specific, or comparing Zo to another tool?",
 
             transcriber: {
               provider: "deepgram",
@@ -970,6 +970,12 @@ const server = Bun.serve({
               style: 0.65,
               useSpeakerBoost: true,
               optimizeStreamingLatency: 4,
+              pronunciationDictionaryLocators: [
+                {
+                  pronunciationDictionaryId: "e3r3SwQsiNs8Ol2NISS6",
+                  versionId: "weszGi0zHkAtdshBpHnD"
+                }
+              ],
               chunkPlan: {
                 enabled: true,
                 minCharacters: 20,
@@ -993,7 +999,7 @@ const server = Bun.serve({
               backoffSeconds: 1.0
             },
 
-            backchannelingEnabled: true,
+            backchannelingEnabled: false,
             backgroundSound: "off",
             voicemailMessage: "It's Zoseph from the Vibe Thinker Hotline. Leave a message or call back anytime.",
             endCallMessage: "Good luck. Keep thinking.",
