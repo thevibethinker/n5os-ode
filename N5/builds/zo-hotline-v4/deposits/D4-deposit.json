@@ -1,0 +1,76 @@
+{
+  "drop": "D4",
+  "build": "zo-hotline-v4",
+  "title": "Conversation Design v3 — The Capstone",
+  "status": "complete",
+  "completed_at": "2026-02-18T09:15:00Z",
+  "provenance": "con_q3y6xGBKcWp8ljcq",
+  "synthesized_from": ["D1", "D2", "D3", "D5"],
+  "deliverables": [
+    {
+      "name": "System Prompt v4.0",
+      "path": "Skills/zo-hotline/prompts/zoseph-system-prompt.md",
+      "description": "Complete rewrite with 3 pathways (Explorer/Builder/Challenger), 3 new modes (Troubleshoot/Compare/Onboard), Master Pattern integration, anti-pattern blockers, emotional detection, technical calibration, competitive framework, and edge case handling. 2,231 words (~3,600 tokens).",
+      "acceptance_met": true
+    },
+    {
+      "name": "Webhook Updates",
+      "path": "Skills/zo-hotline/scripts/hotline-webhook.ts",
+      "description": "Updated firstMessage with 3-way pathway routing, expanded Deepgram keywords to 22 entries (added competitor names, key concepts), added 'competitor_comparison' to topic taxonomy. Builds clean at 1,189 lines.",
+      "acceptance_met": true
+    },
+    {
+      "name": "Knowledge Index Regeneration",
+      "path": "Knowledge/zo-hotline/00-knowledge-index.md",
+      "description": "Regenerated to 98 entries (was 93). Includes all 5 D3 files: community-use-cases, competitive-landscape, messaging-cheat-sheet, idealism-talking-points, gap-analysis-d3. Dynamic index auto-discovered by explainConcept.",
+      "acceptance_met": true
+    },
+    {
+      "name": "Daily Analysis Enhancement",
+      "path": "Skills/zo-hotline/scripts/call_analysis_loop.py",
+      "description": "Added analyze_messaging_effectiveness() function that reads tool_usage.jsonl, correlates explainConcept topics and tool patterns with call duration and satisfaction. Integrated into daily report with new 'Messaging Effectiveness' section. Syntax-verified.",
+      "acceptance_met": true
+    },
+    {
+      "name": "System Prompt v3.0 Backup",
+      "path": "Skills/zo-hotline/prompts/zoseph-system-prompt.v3.0.md",
+      "description": "Backup of the D1-trimmed prompt before v4.0 rewrite.",
+      "acceptance_met": true
+    }
+  ],
+  "acceptance_criteria": {
+    "three_pathways_with_socratic_sequences": true,
+    "anti_pattern_blockers_as_never_rules": true,
+    "emotional_detection_explicit": true,
+    "technical_calibration_in_builder": true,
+    "master_pattern_integrated": true,
+    "competitive_framework_wired_in": true,
+    "knowledge_index_integrated": true,
+    "daily_analysis_enhanced": true,
+    "new_modes_added": true,
+    "system_prompt_production_ready": true
+  },
+  "metrics": {
+    "prompt_words": {"v3": 901, "v4": 2231, "delta": "+1330"},
+    "prompt_tokens_est": "~3600",
+    "prompt_cost_per_call": "~$0.004",
+    "knowledge_entries": {"before": 93, "after": 98, "delta": "+5"},
+    "webhook_lines": {"before": 1184, "after": 1189, "delta": "+5"},
+    "deepgram_keywords": {"before": 7, "after": 22, "delta": "+15"},
+    "topic_taxonomy_entries": {"before": 13, "after": 14, "delta": "+1"}
+  },
+  "design_decisions": {
+    "prompt_expansion_rationale": "D2 confirmed Haiku 4.5 token budget is comfortable. Expanding from 901 to 2231 words adds ~2700 tokens at ~$0.003/call — negligible cost for substantially richer conversational intelligence.",
+    "no_new_tools": "All new behavior (pathways, modes, emotional detection, competitive responses) wired into the system prompt rather than new tools. Haiku 4.5 excels at nuanced instruction following — leveraging this is cheaper and more natural than adding tool calls.",
+    "concept_mapping_automatic": "D1's dynamic index architecture means D3's 5 new files are automatically discoverable via explainConcept after index regeneration. No hardcoded mapping needed.",
+    "three_way_routing_in_greeting": "Updated firstMessage to include 'comparing Zo to another tool' as a third routing option, directly exposing the Challenger pathway entrance."
+  },
+  "verification": {
+    "service_restart": "confirmed — zo-hotline-webhook on port 4243",
+    "knowledge_index_load": "98 entries loaded at startup",
+    "assistant_request_test": "passed — returns updated firstMessage, 22 keywords, 18,228 char prompt",
+    "webhook_build": "clean — bun build passed",
+    "analysis_script_syntax": "passed — ast.parse() clean",
+    "git_commit": "dbbb1269c on feature/career-hotline-v4"
+  }
+}
