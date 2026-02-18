@@ -1,0 +1,22 @@
+{
+  "slug": "relationship-intelligence-os-smoke-20260216",
+  "timestamp": "2026-02-17T01:15:21.071299+00:00",
+  "drops": {
+    "D1.1": {
+      "claimed": [
+        "N5/builds/relationship-intelligence-os-smoke-20260216/artifacts/smoke.txt"
+      ],
+      "verified": [
+        "N5/builds/relationship-intelligence-os-smoke-20260216/artifacts/smoke.txt"
+      ],
+      "missing": []
+    }
+  },
+  "summary": {
+    "total_artifacts": 1,
+    "verified": 1,
+    "missing": 0,
+    "errors": 0
+  },
+  "passed": true
+}

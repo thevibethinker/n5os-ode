@@ -118,6 +118,24 @@ Evaluate whether the Drop used the right tool for the job:
 - LLM calls for trivial structural tasks
 - No consideration of technique tradeoffs
 
+### 7. Learning Annotations (Advisory)
+Evaluate whether the Drop captured learning-relevant metadata:
+
+**Check for concept tracking:**
+- Did the deposit include `concepts_exercised`?
+- If the Drop involved a Decision Point, was V's decision recorded?
+- If the Drop was tagged `pedagogical` in the Learning Landscape, was V's engagement documented?
+
+**Signals of good learning discipline:**
+- Deposit lists specific concepts exercised
+- Decisions include V's reasoning, not just the choice
+- Learning Drops include understanding_update assessments
+
+**Signals of poor learning discipline:**
+- Pedagogical Drop with no concepts or decisions logged
+- Decision Points resolved without documenting V's reasoning
+- No concept tracking despite plan flagging concepts
+
 ## Filter Prompt Template
 
 ```
@@ -141,6 +159,7 @@ EVALUATION AREAS:
 4. **Scope Creep**: Did the Drop stay within its scope?
 5. **Skills Utilization**: Did the Drop use existing skills where available? If it created reusable functionality, is it packaged as a skill?
 6. **Technique Selection**: Did the Drop use LLM for semantic tasks and code/regex for structural tasks appropriately?
+7. **Learning Annotations**: If the Drop was tagged pedagogical or involved Decision Points, did it capture concept tracking and V's reasoning?
 
 Return JSON:
 {
@@ -152,12 +171,12 @@ Return JSON:
     {"criterion": "...", "met": true/false}
   ],
   "concerns": [
-    {"area": "skills_utilization" | "technique_selection" | "scope" | "other", "detail": "..."}
+    {"area": "skills_utilization" | "technique_selection" | "learning_annotations" | "scope" | "other", "detail": "..."}
   ]
 }
 
 Be strict on required criteria (1-2). 
-For advisory criteria (3-6), note concerns but don't fail unless egregious.
+For advisory criteria (3-7), note concerns but don't fail unless egregious.
 If criteria cannot be verified, verdict is WARN not PASS.
 ```
 

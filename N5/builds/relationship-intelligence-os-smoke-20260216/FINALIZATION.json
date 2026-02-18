@@ -1,0 +1,14 @@
+{
+  "slug": "relationship-intelligence-os-smoke-20260216",
+  "timestamp": "2026-02-17T01:15:21.021461+00:00",
+  "verification": {
+    "passed": true,
+    "output": "\u2705 verify passed for relationship-intelligence-os-smoke-20260216\n   Artifacts: 1/1 verified, 0 missing\n"
+  },
+  "integration_tests": {
+    "passed": true,
+    "output": "\n==================================================\nIntegration Tests: relationship-intelligence-os-smoke-20260216\n==================================================\n\nNo tests defined. Run 'generate' to auto-create from artifacts.\n\nResults saved to /home/workspace/N5/builds/relationship-intelligence-os-smoke-20260216/INTEGRATION_RESULTS.json\n"
+  },
+  "learnings_harvested": 0,
+  "success": true
+}

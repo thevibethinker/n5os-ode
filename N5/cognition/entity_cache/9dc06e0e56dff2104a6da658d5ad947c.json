@@ -1,0 +1,1 @@
+{"entities": [{"name": "AI-based semantic comparison", "type": "TOOL", "context": "A system for detecting duplicates in transcripts"}, {"name": "request files", "type": "CONCEPT", "context": "Files generated when no duplicates are found"}, {"name": "duplicate", "type": "CONCEPT", "context": "Records with the same base name and date"}], "relationships": []}

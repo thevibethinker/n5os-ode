@@ -1,0 +1,1 @@
+{"entities": [{"name": "curl", "type": "TOOL", "context": "command-line tool for transferring data"}, {"name": "https://n5-bootstrap-support-va.zocomputer.io", "type": "ORG", "context": "URL for bootstrap support"}], "relationships": []}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Alan", "type": "PERSON", "context": "Referenced a previous blurb V had sent; participant in a conversation with V"}, {"name": "V", "type": "PERSON", "context": "Sent a blurb to Alan in a prior interaction"}], "relationships": [{"from": "V", "to": "Alan", "type": "KNOWS", "context": "V previously sent Alan a blurb, indicating professional communication"}]}

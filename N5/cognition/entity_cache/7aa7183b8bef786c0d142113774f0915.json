@@ -1,0 +1,1 @@
+{"entities": [{"name": "JSON schema", "type": "CONCEPT", "context": "A concept for validating the structure of JSON data."}, {"name": "index files", "type": "TOOL", "context": "Files that store lists and facilitate registry operations."}], "relationships": []}

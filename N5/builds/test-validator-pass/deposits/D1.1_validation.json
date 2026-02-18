@@ -1,0 +1,17 @@
+{
+  "drop_id": "D1.1",
+  "build_slug": "test-validator-pass",
+  "validated_at": "2026-02-17T01:20:41.269404+00:00",
+  "verdict": "PASS",
+  "reason": "Passed validators",
+  "mechanical": {
+    "drop_id": "D1.1",
+    "build_slug": "test-validator-pass",
+    "timestamp": "2026-02-17T01:20:41.269799",
+    "files_checked": 1,
+    "critical_count": 0,
+    "warning_count": 0,
+    "issues": {}
+  },
+  "llm": null
+}

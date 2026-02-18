@@ -40,7 +40,7 @@ sys.path.insert(0, '/home/workspace')
 # Paths
 LINKEDIN_DB = Path('/home/workspace/Knowledge/linkedin/linkedin.db')
 CRM_PROFILES_DIR = Path('/home/workspace/N5/crm_v3/profiles')
-CRM_DB = Path('/home/workspace/N5/data/crm_v3.db')
+CRM_DB = Path('/home/workspace/N5/data/n5_core.db')
 
 def slugify(name: str, email: str = None) -> str:
     """Create a CRM-compatible slug from name and optional email."""

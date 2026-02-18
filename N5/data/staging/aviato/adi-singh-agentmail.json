@@ -1,0 +1,155 @@
+{
+  "id": "59gnk_HWsuwknOi3guinoLh8sknWGgL",
+  "fullName": "Adi Singh",
+  "firstName": "Adi",
+  "lastName": "Singh",
+  "entityType": "person",
+  "location": "San Francisco, California, United States",
+  "URLs": {
+    "linkedin": "linkedin.com/in/adivirsingh13"
+  },
+  "about": "We're not AI for your email, we're email for your AI :)\n\nreach me: adi[at]agentmail[.]cc",
+  "headline": "Co-Founder, AgentMail (YC S25)",
+  "skills": [],
+  "certifications": [],
+  "linkedinID": "adivirsingh13",
+  "linkedinNumID": 872722964,
+  "linkedinEntityID": "ACoAADQEshQBG1avGHOcJhoS7zGI-WO9v0w5FDk",
+  "investedRoundList": [],
+  "investedIndustries": [],
+  "investorCategoryList": [],
+  "computed_highlightList": [
+    "oneYearAtCurrentCompany",
+    "topUniversity"
+  ],
+  "lastUpdated": "2026-02-14T14:04:31.513Z",
+  "locationIDList": [
+    102191575,
+    85633793,
+    102087579,
+    85922583,
+    85688637
+  ],
+  "linkedinConnections": 5078,
+  "linkedinFollowers": 9665,
+  "linkedinJoinDate": "2021-01-16T08:21:07.044Z",
+  "experienceList": [
+    {
+      "startDate": "2025-01-01T00:00:00.000Z",
+      "linkedinNumID": 106989461,
+      "entityType": "company",
+      "positionList": [
+        {
+          "startDate": "2025-01-01T00:00:00.000Z",
+          "title": "Co-Founder",
+          "location": "San Francisco Bay Area",
+          "department": "EXECUTIVE",
+          "seniorityScore": 6,
+          "description": "every AI Agent needs an email inbox"
+        }
+      ],
+      "personID": "59gnk_HWsuwknOi3guinoLh8sknWGgL",
+      "companyID": "LFRd9l9o-FzsfqA13eOUs4f78e_Lf-c",
+      "companyName": "AgentMail (YC S25)",
+      "company": {
+        "id": "LFRd9l9o-FzsfqA13eOUs4f78e_Lf-c",
+        "name": "AgentMail ",
+        "URLs": {
+          "website": "agentmail.to",
+          "linkedin": "linkedin.com/company/agentmailto"
+        },
+        "industryList": [
+          "Technology, Information and Internet"
+        ]
+      }
+    }
+  ],
+  "educationList": [
+    {
+      "id": "2449300072",
+      "name": "University of Michigan",
+      "school": {
+        "id": "Oo5P7vhaE7An",
+        "linkedinID": "university-of-michigan",
+        "fullName": "University of Michigan",
+        "location": "Ann Arbor, Michigan, United States",
+        "entityType": "school"
+      },
+      "personID": "59gnk_HWsuwknOi3guinoLh8sknWGgL"
+    },
+    {
+      "id": "2972766558",
+      "name": "Y Combinator",
+      "school": {
+        "id": "h3LNvN6MCUCu",
+        "linkedinID": "y-combinator",
+        "fullName": "Y Combinator",
+        "location": "United States",
+        "entityType": "school"
+      },
+      "personID": "59gnk_HWsuwknOi3guinoLh8sknWGgL"
+    }
+  ],
+  "degreeList": [],
+  "locationDetails": {
+    "continent": {
+      "id": 102191575,
+      "name": "North America",
+      "placeType": "continent",
+      "geometry": {
+        "area_square_degrees": 3704.177719,
+        "bbox": "-179.143503,5.515082,179.780935,83.634101",
+        "lat": 38.309137,
+        "lon": -101.328273
+      }
+    },
+    "country": {
+      "id": 85633793,
+      "name": "United States",
+      "placeType": "country",
+      "geometry": {
+        "area_square_degrees": 1166.190125,
+        "bbox": "-124.848973,24.396308,-66.885444,49.384358",
+        "lat": 39.71614,
+        "lon": -96.999246
+      }
+    },
+    "county": {
+      "id": 102087579,
+      "name": "San Francisco County",
+      "placeType": "county",
+      "geometry": {
+        "area_square_degrees": 0.061408,
+        "bbox": "-123.173825,37.63983,-122.28178,37.929824",
+        "lat": 37.778008,
+        "lon": -122.431272
+      }
+    },
+    "locality": {
+      "id": 85922583,
+      "name": "San Francisco",
+      "placeType": "locality",
+      "geometry": {
+        "area_square_degrees": 0.061408,
+        "bbox": "-122.51489,37.70808,-122.35698,37.83239",
+        "lat": 37.778008,
+        "lon": -122.431272
+      }
+    },
+    "region": {
+      "id": 85688637,
+      "name": "California",
+      "placeType": "region",
+      "geometry": {
+        "area_square_degrees": 43.08336,
+        "bbox": "-124.482003,32.528832,-114.131211,42.009517",
+        "lat": 36.531544,
+        "lon": -119.586168
+      }
+    }
+  },
+  "languageList": [],
+  "emailAvailable": false,
+  "personalEmailAvailable": false,
+  "workEmailAvailable": false
+}

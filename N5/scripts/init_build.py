@@ -198,6 +198,8 @@ def create_meta_json(slug: str, title: str, build_type: str, today: str) -> dict
         "status": "draft",
         "completed_at": None,
         "type": build_type,
+        "build_mode": "learning",
+        "learning_landscape_generated": False,
         "orchestrator_convo_id": None,
         "workers": {
             "total": 0,

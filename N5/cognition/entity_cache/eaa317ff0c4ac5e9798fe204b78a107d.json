@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "a person associated with the knowledge system"}, {"name": "Deviation Logging", "type": "CONCEPT", "context": "a required process for managing localization changes"}], "relationships": [{"from": "V", "to": "Deviation Logging", "type": "KNOWS", "context": "V understands the process of Deviation Logging"}]}

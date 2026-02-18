@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Founder of Careerspan"}, {"name": "Reliance", "type": "ORG", "context": "Organization believed to be a suitable partner"}], "relationships": [{"from": "Vrijen Attawar", "to": "Reliance", "type": "BELIEVES", "context": "Believes Reliance could be the right home for their knowledge system"}]}

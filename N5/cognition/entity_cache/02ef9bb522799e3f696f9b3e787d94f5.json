@@ -1,0 +1,1 @@
+{"entities": [{"name": "N5", "type": "ORG", "context": "Name of the project or organization related to the knowledge system"}, {"name": "secrets.py", "type": "TOOL", "context": "Python file containing standard secret access functions"}], "relationships": []}

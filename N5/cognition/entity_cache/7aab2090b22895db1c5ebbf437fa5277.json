@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "the individual associated with the knowledge system"}, {"name": "QUICK_TEST_COMMANDS.sh", "type": "TOOL", "context": "a script used to run tests in the knowledge system"}], "relationships": [{"from": "V", "to": "QUICK_TEST_COMMANDS.sh", "type": "USES", "context": "V uses the tool to run tests in the knowledge system"}]}

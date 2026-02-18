@@ -1,0 +1,30 @@
+{
+  "meeting_id": "2026-02-19_investor-update",
+  "title": "Investor Update",
+  "start": "2026-02-19T10:00:00-05:00",
+  "end": "2026-02-19T10:30:00-05:00",
+  "timezone": "America/New_York",
+  "attendees": [],
+  "metadata": {
+    "meeting_intent": "investor",
+    "strategic_importance": "high",
+    "expected_outputs": [
+      "need to walk away with a clear follow-up plan"
+    ],
+    "relationship_goal": "explore-opportunity",
+    "promotion_bias": "promote-now",
+    "parser_version": "1.0.0",
+    "raw_booking_message": "Investor update call to discuss key decision points on funding timeline. Need to walk away with a clear follow-up plan.",
+    "parsed_at_utc": "2026-02-16T20:25:27.020076+00:00"
+  },
+  "calendar": {
+    "calendar_event_id": "gcal_evt_investor_1",
+    "title": "Investor Update",
+    "start": "2026-02-19T10:00:00-05:00",
+    "end": "2026-02-19T10:30:00-05:00",
+    "timezone": "America/New_York",
+    "attendees": [],
+    "description": "BOOKING_METADATA\nmeeting_id: 2026-02-19_investor-update\nintent: investor\nstrategic_importance: high\npromotion_bias: promote-now\nmetadata_ref: /home/workspace/N5/data/booking_metadata/by_meeting/2026-02-19_investor-update.json\n"
+  },
+  "stored_at_utc": "2026-02-16T20:25:27.020323+00:00"
+}

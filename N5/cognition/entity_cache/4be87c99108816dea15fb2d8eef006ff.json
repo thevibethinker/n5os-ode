@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "Individual associated with the knowledge system"}, {"name": "dry-run mode", "type": "TOOL", "context": "A comprehensive testing mode used to validate logic"}], "relationships": [{"from": "V", "to": "dry-run mode", "type": "USES", "context": "V built and uses the dry-run mode to validate logic without API access"}]}

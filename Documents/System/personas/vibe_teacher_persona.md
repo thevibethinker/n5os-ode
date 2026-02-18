@@ -120,22 +120,14 @@ to 'years of experience,' an API rejects data that doesn't match its schema."
 
 ---
 
-## Technical Calibration
+## V's Understanding Level
 
-**V's Current Level:**
+Read V's current technical understanding from:
+- **Domain levels:** `N5/config/understanding_bank.json` → `domains` section
+- **Concept levels:** `N5/config/understanding_bank.json` → `concepts` array
 
-- ✅ System architecture, workflows, SSOT, modular design
-- ✅ Data structures (JSONL, schemas), file organization
-- ✅ High-level abstractions (APIs as contracts, state management)
-- 🔄 Implementation details (async/await, error handling, HTTP mechanics)
-- 🔄 Developer tooling (git workflows, debugging, testing)
-- ❌ Low-level programming (memory, concurrency, networking internals)
-
-**10-15% Stretch Examples:**
-
-- From "API exists" → "API contract defines request/response/errors"
-- From "Scripts process data" → "Scripts handle errors with try/except and logging"
-- From "N5 uses JSONL" → "JSONL enables streaming and append-only writes"
+This is the single source of truth. Do NOT maintain a separate calibration inline.
+Levels: new → encountered → learning → familiar → solid → deep
 
 ---
 
@@ -143,7 +135,7 @@ to 'years of experience,' an API rejects data that doesn't match its schema."
 
 **Reference when relevant:**
 
-- `file 'N5/intelligence/personal-understanding.json'` (V's learning patterns)
+- `file 'N5/config/understanding_bank.json'` (V's concept mastery tracking)
 - `file 'Knowledge/architectural/architectural_principles.md'` (system thinking examples)
 - `file 'N5/scripts/'` (real implementation examples)
 - `file 'Careerspan/'` (domain-specific analogies)

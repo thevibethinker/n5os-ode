@@ -1,0 +1,58 @@
+{
+  "delta_id": "rdelta_abc123def456",
+  "person_id": "person_xyz789abc123",
+  "organization_id": "org_def456ghi789",
+  "delta_type": "trust_increase",
+  "strength": 4,
+  "trend": "positive",
+  "context": {
+    "previous_state": "Professional acquaintance",
+    "current_state": "Trusted advisor relationship",
+    "trigger_event": "Successful project delivery exceeded expectations",
+    "duration_estimate": "long_term"
+  },
+  "evidence": [
+    {
+      "type": "verbal_statement",
+      "content": "Really appreciate your insight on this - you've become someone I trust for strategic decisions",
+      "weight": 0.8,
+      "timestamp": "2026-02-16T20:40:48.794534+00:00",
+      "source_block_id": "B08"
+    }
+  ],
+  "mutual_connections": [
+    {
+      "person_id": "person_mutual123456",
+      "relationship_type": "colleague",
+      "strength": 3,
+      "discovered_at": "2026-02-16T20:40:48.794537+00:00"
+    }
+  ],
+  "impact_assessment": {
+    "business_value": 8,
+    "strategic_importance": 7,
+    "urgency": "medium",
+    "recommended_actions": [
+      "Schedule regular check-ins",
+      "Explore partnership opportunities"
+    ]
+  },
+  "created_at": "2026-02-16T20:40:48.794539+00:00",
+  "expires_at": "2026-12-31T20:40:48.794541+00:00",
+  "provenance": {
+    "meeting_id": "mtg001",
+    "block_ids": [
+      "B08",
+      "B03"
+    ],
+    "conversation_id": "con_abc123",
+    "extraction_version": "1.0.0",
+    "pipeline_run_id": "run_def456"
+  },
+  "confidence": {
+    "overall": 0.82,
+    "evidence_quality": 0.85,
+    "interpretation_accuracy": 0.78,
+    "person_identification": 0.95
+  }
+}

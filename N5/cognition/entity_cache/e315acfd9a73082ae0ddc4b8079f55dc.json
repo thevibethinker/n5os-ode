@@ -1,0 +1,1 @@
+{"entities": [{"name": "V", "type": "PERSON", "context": "individual referred to in the text"}, {"name": "Priority Preferences", "type": "CONCEPT", "context": "system of prioritizing meetings"}], "relationships": [{"from": "V", "to": "Priority Preferences", "type": "BELIEVES", "context": "V believes in the concept of prioritizing meetings"}]}

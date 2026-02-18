@@ -22,6 +22,7 @@ Usage:
 import sys
 import json
 import argparse
+from datetime import datetime, timezone
 from pathlib import Path
 
 SKILL_DIR = Path(__file__).parent.parent
@@ -172,95 +173,360 @@ def cmd_gate(args):
 
 
 def cmd_tick(args):
-    """Process the next meeting in the queue through the full pipeline."""
-    try:
-        # Find next meeting that needs processing
-        meetings_to_process = []
-        
-        if INBOX.exists():
-            for item in INBOX.iterdir():
-                if item.is_dir() and not item.name.startswith('.'):
-                    manifest_path = item / "manifest.json"
-                    if manifest_path.exists():
-                        try:
-                            manifest = json.loads(manifest_path.read_text())
-                            status = manifest.get("status", "")
-                            # Look for meetings ready for next stage
-                            if status in ["ingested", "identified", "gated"]:
-                                meetings_to_process.append((item, status))
-                        except:
-                            continue
-        
-        if not meetings_to_process:
-            print("No meetings in queue ready for processing")
-            return 0
-        
-        # Sort by creation time and take the first one
-        meetings_to_process.sort(key=lambda x: x[0].stat().st_mtime)
-        meeting_path, current_status = meetings_to_process[0]
-        
-        print(f"{'[DRY RUN] ' if args.dry_run else ''}Processing next meeting: {meeting_path.name}")
-        print(f"  Current status: {current_status}")
-        
-        if args.dry_run:
-            if current_status == "ingested":
-                print("  Would run: identify → gate → process")
-            elif current_status == "identified": 
-                print("  Would run: gate → process")
-            elif current_status == "gated":
-                print("  Would run: process")
-            return 0
-        
-        # Run appropriate pipeline steps
-        success = True
-        
-        if current_status == "ingested":
-            print("  Running identification...")
-            try:
-                from calendar_match import match_meeting_to_calendar
-                from crm_enricher import CRMEnricher
-                manifest_data = json.loads((meeting_path / "manifest.json").read_text())
-                match_meeting_to_calendar(manifest_data)
-                crm = CRMEnricher()
-                crm.enrich_meeting(str(meeting_path))
-            except Exception as e:
-                print(f"    ❌ Identification failed: {e}")
-                success = False
-        
-        if success and current_status in ["ingested", "identified"]:
-            print("  Running quality gate...")
-            try:
-                from quality_gate import QualityGate
-                # Find transcript file
-                transcript_path = None
-                for fname in ["transcript.md", "transcript.txt"]:
-                    candidate = meeting_path / fname
-                    if candidate.exists():
-                        transcript_path = candidate
-                        break
+    """Process meetings in the queue through the full pipeline.
 
-                manifest_path = meeting_path / "manifest.json"
-                gate = QualityGate()
-                gate_result = gate.execute(manifest_path, transcript_path)
-                if not gate_result.get('passed', False):
-                    print(f"    ❌ Quality gate failed (escalated to HITL)")
+    With --auto-process: runs identify → gate → block generation automatically.
+    Without --auto-process: stops before block generation (manual mode).
+    """
+    auto_process = getattr(args, 'auto_process', False)
+    batch_size = getattr(args, 'batch_size', 1)
+    target = getattr(args, 'target', None)
+
+    try:
+        # If targeting a specific meeting, skip pre-step and queue scan
+        if target:
+            target_path = INBOX / target
+            if not target_path.exists():
+                print(f"Target meeting not found: {target}")
+                return 1
+            manifest_path = target_path / "manifest.json"
+            if not manifest_path.exists():
+                print(f"No manifest.json in {target}")
+                return 1
+            manifest = json.loads(manifest_path.read_text())
+            status = manifest.get("status", "")
+            if status not in ["ingested", "identified", "gated"]:
+                print(f"Meeting {target} is at status '{status}', not processable")
+                return 0
+            meetings_to_process = [(target_path, status)]
+            batch = meetings_to_process
+            print(f"{'[DRY RUN] ' if args.dry_run else ''}Processing target: {target} (status: {status})")
+            if auto_process:
+                print("  Mode: --auto-process (full pipeline including block generation)")
+            # Skip to processing loop
+            results = {"processed": 0, "succeeded": 0, "failed": 0, "meetings": []}
+            # (falls through to the main processing loop below)
+        else:
+            meetings_to_process = None  # Signal to do the normal scan
+
+        # Pre-step: Ingest any raw transcript files sitting in Inbox root
+        if meetings_to_process is None:
+            if INBOX.exists():
+                raw_files = [
+                    f for f in INBOX.iterdir()
+                    if f.is_file() and f.suffix in [".md", ".txt", ".jsonl"] and not f.name.startswith(".")
+                ]
+                if raw_files:
+                    print(f"Found {len(raw_files)} raw transcript file(s) in Inbox root")
+                    from ingest import TranscriptIngestor
+                    ingestor = TranscriptIngestor()
+                    for raw_file in raw_files:
+                        try:
+                            if args.dry_run:
+                                print(f"  [DRY RUN] Would ingest: {raw_file.name}")
+                            else:
+                                result = ingestor.ingest_file(str(raw_file), dry_run=False)
+                                ing_status = result.get('status', 'unknown')
+                                print(f"  Ingested {raw_file.name} → {result.get('meeting_folder', 'unknown')} ({ing_status})")
+                        except Exception as e:
+                            print(f"  ❌ Failed to ingest {raw_file.name}: {e}")
+
+            # Find meetings that need processing
+            meetings_to_process = []
+
+            if INBOX.exists():
+                for item in INBOX.iterdir():
+                    if item.is_dir() and not item.name.startswith(('.', '_')):
+                        manifest_path = item / "manifest.json"
+                        if manifest_path.exists():
+                            try:
+                                manifest = json.loads(manifest_path.read_text())
+                                status = manifest.get("status", "")
+                                if status in ["ingested", "identified", "gated"]:
+                                    meetings_to_process.append((item, status))
+                            except:
+                                continue
+
+            if not meetings_to_process:
+                print("No meetings in queue ready for processing")
+                return 0
+
+            # Sort by creation time (oldest first)
+            meetings_to_process.sort(key=lambda x: x[0].stat().st_mtime)
+
+            # Limit to batch size
+            batch = meetings_to_process[:batch_size]
+            print(f"{'[DRY RUN] ' if args.dry_run else ''}Processing {len(batch)}/{len(meetings_to_process)} meetings (batch_size={batch_size})")
+            if auto_process:
+                print("  Mode: --auto-process (full pipeline including block generation)")
+
+            results = {"processed": 0, "succeeded": 0, "failed": 0, "meetings": []}
+
+        for meeting_path, current_status in batch:
+            print(f"\n--- {meeting_path.name} ---")
+            print(f"  Current status: {current_status}")
+
+            if args.dry_run:
+                steps = []
+                if current_status == "ingested":
+                    steps = ["identify", "gate"]
+                elif current_status == "identified":
+                    steps = ["gate"]
+                if auto_process:
+                    steps.append("process (block generation)")
+                print(f"  Would run: {' → '.join(steps)}")
+                results["meetings"].append({"meeting": meeting_path.name, "status": "dry_run", "steps": steps})
+                continue
+
+            success = True
+            meeting_result = {"meeting": meeting_path.name}
+
+            # Step 1: Identify (if needed)
+            if current_status == "ingested":
+                print("  Running identification...")
+                try:
+                    from calendar_match import match_meeting_to_calendar
+                    from crm_enricher import CRMEnricher
+                    manifest_data = json.loads((meeting_path / "manifest.json").read_text())
+                    match_meeting_to_calendar(manifest_data)
+                    crm = CRMEnricher()
+                    crm.enrich_meeting(str(meeting_path))
+                    print("    ✅ Identification complete")
+                except Exception as e:
+                    print(f"    ❌ Identification failed: {e}")
                     success = False
-            except Exception as e:
-                print(f"    ❌ Quality gate failed: {e}")
-                success = False
-        
-        if success and current_status in ["ingested", "identified", "gated"]:
-            print("  ⚠️  Block processing requires manual intervention")
-            print("    Use: meeting_cli.py process <meeting> to generate blocks")
-        
-        status = "✅ Success" if success else "❌ Failed"
-        print(f"\nTick result: {status}")
-        
+
+                # Step 1b: Title normalization (reads transcript to improve title + extract speakers)
+                if success:
+                    print("  Running title normalization...")
+                    try:
+                        from title_normalizer import normalize_title
+                        title_result = normalize_title(meeting_path, dry_run=False, rename=True)
+                        if "error" not in title_result:
+                            old_t = title_result.get("original_title", "?")
+                            new_t = title_result.get("new_title", "?")
+                            speakers = title_result.get("speakers", [])
+                            new_p = title_result.get("new_participants", 0)
+                            print(f"    ✅ Title: '{old_t}' → '{new_t}'")
+                            if speakers:
+                                print(f"    ✅ Speakers: {', '.join(speakers)}")
+                            if new_p > 0:
+                                print(f"    ✅ {new_p} new participant(s) added")
+                            # Update meeting_path if folder was renamed
+                            if title_result.get("folder_renamed") and title_result.get("new_folder_name"):
+                                meeting_path = meeting_path.parent / title_result["new_folder_name"]
+                                print(f"    ✅ Folder renamed → {title_result['new_folder_name']}")
+                        else:
+                            print(f"    ⚠️  Title normalization skipped: {title_result['error']}")
+                    except Exception as e:
+                        print(f"    ⚠️  Title normalization failed (non-fatal): {e}")
+
+                # Update manifest status to identified
+                if success:
+                    try:
+                        mf = json.loads((meeting_path / "manifest.json").read_text())
+                        mf["status"] = "identified"
+                        mf.setdefault("timestamps", {})["identified_at"] = datetime.now(timezone.utc).isoformat()
+                        mf.setdefault("status_history", []).append({
+                            "status": "identified",
+                            "at": datetime.now(timezone.utc).isoformat(),
+                        })
+                        (meeting_path / "manifest.json").write_text(json.dumps(mf, indent=2))
+                        current_status = "identified"
+                    except Exception as e:
+                        print(f"    ⚠️  Status update failed: {e}")
+
+            # Step 2: Quality gate (advisory — records score but doesn't block pipeline)
+            if success and current_status in ["ingested", "identified"]:
+                print("  Running quality gate...")
+                try:
+                    from quality_gate import QualityGate
+                    transcript_path = None
+                    for fname in ["transcript.md", "transcript.txt", "transcript.json"]:
+                        candidate = meeting_path / fname
+                        if candidate.exists():
+                            transcript_path = candidate
+                            break
+
+                    mf_path = meeting_path / "manifest.json"
+                    gate = QualityGate()
+                    gate_result = gate.execute(mf_path, transcript_path)
+                    score = gate_result.get('score', 0)
+                    if gate_result.get('passed', False):
+                        print(f"    ✅ Quality gate passed (score: {score:.2f})")
+                    else:
+                        hitl_count = len(gate_result.get('hitl_escalations', []))
+                        print(f"    ⚠️  Quality gate flagged issues (score: {score:.2f}, {hitl_count} HITL items)")
+                        print(f"    ℹ️  Continuing pipeline — HITL items queued for review")
+                except Exception as e:
+                    print(f"    ⚠️  Quality gate error (non-fatal): {e}")
+
+            # Step 3: Block generation (only with --auto-process)
+            if success and auto_process:
+                print("  Running block generation...")
+                try:
+                    from process import process_meeting
+                    proc_result = process_meeting(meeting_path, dry_run=False)
+                    proc_status = proc_result.get('status', 'unknown')
+                    blocks_gen = proc_result.get('blocks_generated', [])
+                    print(f"    ✅ Blocks generated: {len(blocks_gen)}")
+                    for b in blocks_gen:
+                        print(f"      - {b}")
+                    meeting_result["blocks_generated"] = blocks_gen
+                except Exception as e:
+                    print(f"    ❌ Block generation failed: {e}")
+                    success = False
+            elif success and not auto_process:
+                print("  ⚠️  Block processing requires --auto-process or manual run")
+                print(f"    Use: meeting_cli.py process {meeting_path}")
+
+            results["processed"] += 1
+            if success:
+                results["succeeded"] += 1
+                meeting_result["status"] = "success"
+            else:
+                results["failed"] += 1
+                meeting_result["status"] = "failed"
+            results["meetings"].append(meeting_result)
+
+        if not args.dry_run:
+            print(f"\n{'=' * 40}")
+            print(f"Tick complete: {results['succeeded']}/{results['processed']} succeeded, {results['failed']} failed")
+
+        if getattr(args, 'json', False):
+            print(json.dumps(results, indent=2))
+
     except Exception as e:
         print(f"Error: {e}")
         return 1
-    
+
     return 0
+
+
+def cmd_process_all(args):
+    """Process all queued meetings in parallel.
+
+    Scans Inbox for meetings at ingested/identified/gated status,
+    spawns parallel subprocesses to process each through the full pipeline.
+    """
+    import subprocess
+    import time
+
+    parallel = getattr(args, 'parallel', 3)
+    do_archive = not getattr(args, 'no_archive', False)
+
+    # Find all processable meetings
+    meetings = []
+    if INBOX.exists():
+        for item in sorted(INBOX.iterdir()):
+            if item.is_dir() and not item.name.startswith(('.', '_')):
+                manifest_path = item / "manifest.json"
+                if manifest_path.exists():
+                    try:
+                        manifest = json.loads(manifest_path.read_text())
+                        status = manifest.get("status", "")
+                        if status in ["ingested", "identified", "gated"]:
+                            meetings.append((item.name, status))
+                    except:
+                        continue
+
+    if not meetings:
+        print("No meetings in queue ready for processing")
+        return 0
+
+    print(f"{'[DRY RUN] ' if args.dry_run else ''}Found {len(meetings)} meetings to process")
+    print(f"  Parallel workers: {parallel}")
+    print(f"  Archive after: {'yes' if do_archive else 'no'}")
+    print()
+
+    for name, status in meetings:
+        print(f"  {name:60s} [{status}]")
+
+    if args.dry_run:
+        print(f"\n[DRY RUN] Would process {len(meetings)} meetings with {parallel} parallel workers")
+        return 0
+
+    print(f"\nStarting processing...")
+    cli_path = str(Path(__file__).resolve())
+
+    active = {}  # pid -> (process, meeting_name, log_path)
+    completed = []
+    failed = []
+    queue = list(meetings)
+
+    while queue or active:
+        # Launch new processes up to parallel limit
+        while queue and len(active) < parallel:
+            meeting_name, status = queue.pop(0)
+            log_path = f"/dev/shm/meeting-process-{meeting_name}.log"
+
+            cmd = [
+                sys.executable, cli_path,
+                "tick", "--auto-process", "--target", meeting_name,
+            ]
+
+            log_file = open(log_path, "w")
+            proc = subprocess.Popen(cmd, stdout=log_file, stderr=subprocess.STDOUT)
+            active[proc.pid] = (proc, meeting_name, log_path, log_file)
+            print(f"  ▶ Started: {meeting_name} (pid {proc.pid})")
+
+        # Poll for completed processes
+        done_pids = []
+        for pid, (proc, name, log_path, log_file) in active.items():
+            ret = proc.poll()
+            if ret is not None:
+                log_file.close()
+                done_pids.append(pid)
+                if ret == 0:
+                    completed.append(name)
+                    print(f"  ✅ Done: {name}")
+                else:
+                    failed.append(name)
+                    # Read last few lines of log for error context
+                    try:
+                        with open(log_path) as f:
+                            lines = f.readlines()
+                            tail = ''.join(lines[-3:]).strip()
+                    except:
+                        tail = "(no log)"
+                    print(f"  ❌ Failed: {name} (exit {ret})")
+                    print(f"     {tail}")
+
+        for pid in done_pids:
+            del active[pid]
+
+        if active:
+            time.sleep(2)  # Poll every 2 seconds
+
+    # Summary
+    print(f"\n{'=' * 50}")
+    print(f"Process-all complete:")
+    print(f"  Completed: {len(completed)}")
+    print(f"  Failed:    {len(failed)}")
+    if failed:
+        print(f"  Failed meetings:")
+        for name in failed:
+            print(f"    - {name}")
+
+    # Archive completed meetings
+    if do_archive and completed:
+        print(f"\nArchiving {len(completed)} completed meetings...")
+        try:
+            from archive import archive_all
+            archive_result = archive_all(dry_run=False)
+            archived = len(archive_result.get('archived', []))
+            print(f"  Archived: {archived}")
+        except Exception as e:
+            print(f"  ❌ Archive failed: {e}")
+
+    if getattr(args, 'json', False):
+        print(json.dumps({
+            "completed": completed,
+            "failed": failed,
+            "total": len(meetings),
+        }, indent=2))
+
+    return 0 if not failed else 1
 
 
 # === Legacy Commands (v2 compatibility) ===
@@ -547,7 +813,18 @@ Examples:
     # Tick
     tick_parser = subparsers.add_parser("tick", help="[v3] Process next meeting in queue")
     tick_parser.add_argument("--dry-run", action="store_true")
+    tick_parser.add_argument("--auto-process", action="store_true", help="Continue through block generation (for automation)")
+    tick_parser.add_argument("--batch-size", type=int, default=1, help="Number of meetings to process per tick")
+    tick_parser.add_argument("--target", type=str, help="Process a specific meeting folder name (skip queue scan)")
     tick_parser.add_argument("--json", action="store_true")
+
+    # Process-all
+    process_all_parser = subparsers.add_parser("process-all", help="[v3] Process all queued meetings (parallel)")
+    process_all_parser.add_argument("--dry-run", action="store_true")
+    process_all_parser.add_argument("--parallel", type=int, default=3, help="Max concurrent meetings to process (default: 3)")
+    process_all_parser.add_argument("--archive", action="store_true", default=True, help="Archive completed meetings after processing")
+    process_all_parser.add_argument("--no-archive", action="store_true", help="Skip archiving after processing")
+    process_all_parser.add_argument("--json", action="store_true")
     
     # === Legacy Commands ===
     
@@ -597,8 +874,9 @@ Examples:
         "identify": cmd_identify,
         "gate": cmd_gate,
         "tick": cmd_tick,
-        
-        # Legacy Commands  
+        "process-all": cmd_process_all,
+
+        # Legacy Commands
         "pull": cmd_pull,
         "stage": cmd_stage,
         "process": cmd_process,

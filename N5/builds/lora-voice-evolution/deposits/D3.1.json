@@ -1,0 +1,27 @@
+{
+  "drop_id": "D3.1",
+  "status": "complete",
+  "summary": "Extracted X/Twitter posts from V's history (516 total tweets + 29 note tweets). Applied filtering criteria for original content ≥50 chars. Reconstructed 23 threads through reply chain analysis. Output: 275 usable entries (180 original tweets, 43 quote tweets, 23 threads, 29 note tweets).",
+  "artifacts": ["N5/builds/lora-voice-evolution/artifacts/x_posts_raw.jsonl"],
+  "stats": {
+    "total_in_db": 516,
+    "original_tweets": 180,
+    "threads_reconstructed": 23,
+    "quote_tweets": 43,
+    "filtered_retweets": 135,
+    "filtered_too_short": 53,
+    "filtered_mentions_only": 38,
+    "final_count": 275,
+    "note_tweets": 29,
+    "avg_char_length": 224
+  },
+  "broadcast": "X/Twitter source has 275 usable entries. Avg length: 224 chars. Thread reconstruction found 23 threads with substantial content.",
+  "learnings": [
+    "X data includes both regular tweets (516) and note tweets (29 longer-form posts)",
+    "Thread detection via reply chains works well - found 23 substantial threads from reply metadata",
+    "Quote tweets (43) provide good commentary + URL context for training",
+    "Filtering criteria effectively removed retweets (135) and low-content posts (91 total filtered)",
+    "DuckDB timestamps come as datetime objects, not strings - handle parsing accordingly"
+  ],
+  "errors": []
+}

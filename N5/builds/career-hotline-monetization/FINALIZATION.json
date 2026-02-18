@@ -1,0 +1,82 @@
+{
+  "slug": "career-hotline-monetization",
+  "title": "Career Coaching Hotline \u2014 Zozie Rename + Prepaid Credits Monetization",
+  "status": "complete",
+  "finalized_at": "2026-02-14T11:29:36.759346+00:00",
+  "execution_mode": "claude_code",
+  "drops_total": 7,
+  "drops_complete": 7,
+  "deposits": [
+    {
+      "drop_id": "D1.1",
+      "build_slug": "career-hotline-monetization",
+      "status": "complete",
+      "summary": "Renamed AI identity from V to Zozie (Z-O-Z-I-E) in system prompt and webhook. System prompt identity section, privacy disclosure, escalation refs, contrarian views title all updated. Webhook name, firstMessage, voicemailMessage updated. V only appears in third-person for escalation/Careerspan. Coaching content and voice discipline unchanged.",
+      "broadcast": "Zozie identity is live. System prompt at artifacts/career-coach-system-prompt.md. Webhook firstMessage introduces as Zozie. V referenced in third person only.",
+      "artifacts": [],
+      "timestamp": "2026-02-14T10:57:21.192228+00:00",
+      "execution_mode": "claude_code"
+    },
+    {
+      "drop_id": "D1.2",
+      "build_slug": "career-hotline-monetization",
+      "status": "complete",
+      "summary": "Created 3 Stripe products LIVE: Starter 30min/$15 (prod_Tydna1JD56E7UP), Standard 60min/$30 (prod_TydnR6AzMThQA0), Deep Dive 120min/$50 (prod_TydnzjPvIuRHRg). Payment links: Starter=https://buy.stripe.com/aFaaEX9sS8QZ5HP2rcbsc05, Standard=https://buy.stripe.com/7sY6oH9sSebjeel2rcbsc06, DeepDive=https://buy.stripe.com/7sY5kD8oOebj1rzgi2bsc07",
+      "broadcast": "Stripe products LIVE. Product IDs: prod_Tydna1JD56E7UP (30m), prod_TydnR6AzMThQA0 (60m), prod_TydnzjPvIuRHRg (120m). Payment link URLs available for D2.1 webhook.",
+      "artifacts": [],
+      "timestamp": "2026-02-14T10:57:26.762412+00:00",
+      "execution_mode": "claude_code"
+    },
+    {
+      "drop_id": "D1.3",
+      "build_slug": "career-hotline-monetization",
+      "status": "complete",
+      "summary": "Added caller_balances (phone_number PK, total_minutes_purchased, minutes_used, free_tier_used, free_tier_limit=15) and purchases (id PK, stripe_session_id, stripe_payment_intent, product_name, minutes_purchased, amount_cents) tables to DuckDB. Also added CREATE TABLE IF NOT EXISTS to initDb() in hotline-webhook.ts. All 5 existing tables verified unchanged.",
+      "broadcast": "DuckDB schema ready. caller_balances has free_tier_limit=15 default. purchases table logs Stripe transactions. initDb() auto-creates on startup.",
+      "artifacts": [],
+      "timestamp": "2026-02-14T10:57:29.875490+00:00",
+      "execution_mode": "claude_code"
+    },
+    {
+      "drop_id": "D2.1",
+      "build_slug": "career-hotline-monetization",
+      "status": "complete",
+      "summary": "Deployed 2 zo.space API routes: /api/career-hotline-stripe (Stripe webhook \u2014 handles checkout.session.completed, credits minutes by phone if available, logs unclaimed purchases if no phone, notifies V via SMS) and /api/career-hotline-claim (manual claim endpoint \u2014 POST with phone + stripe_session_id to claim unclaimed purchases). Product-to-minutes mapping hardcoded for 3 tiers. Idempotent event processing. E.164 phone normalization.",
+      "broadcast": "Stripe webhook live at va.zo.space/api/career-hotline-stripe. Claim endpoint at va.zo.space/api/career-hotline-claim. Product IDs mapped: prod_Tydna1JD56E7UP=30m, prod_TydnR6AzMThQA0=60m, prod_TydnzjPvIuRHRg=120m. Phone normalization uses E.164. V needs to configure Stripe webhook in dashboard pointing to https://va.zo.space/api/career-hotline-stripe for checkout.session.completed events.",
+      "artifacts": [],
+      "timestamp": "2026-02-14T11:01:05.995753+00:00",
+      "execution_mode": "claude_code"
+    },
+    {
+      "drop_id": "D2.2",
+      "build_slug": "career-hotline-monetization",
+      "status": "complete",
+      "summary": "Added balance gating to VAPI webhook. On assistant-request: extracts caller phone, checks caller_balances (free 15 min + purchased), gates if 0 remaining. Returning purchasers get personalized firstMessage. On end-of-call-report: deducts actual minutes (free tier first). Added normalizePhone, runDbQuery, checkCallerBalance, deductCallMinutes. Compiles clean.",
+      "broadcast": "Balance gating wired. assistant-request gates on balance. end-of-call-report deducts. Free tier 15 min. E.164 normalization.",
+      "artifacts": [],
+      "timestamp": "2026-02-14T11:03:13.216471+00:00",
+      "execution_mode": "claude_code"
+    },
+    {
+      "drop_id": "D3.1",
+      "build_slug": "career-hotline-monetization",
+      "status": "complete",
+      "summary": "Updated integration tests for Zozie rename + credit system. 68/68 pass (was 51). Changes: (1) System prompt test checks for 'Zozie' not 'V'. (2) Webhook structural test uses 'Zozie (Career Coach)' name + Deepgram keyword. (3) Table count updated 5\u21927 (added caller_balances, purchases). (4) Added 3c: caller_balances CRUD + balance check logic (8 tests \u2014 defaults, free tier deduction, purchased deduction, allowed/blocked states, new caller fallback). (5) Added 3d: purchases CRUD + accumulation + product-to-minutes mapping (4 tests). (6) Added 3e: deduction logic unit tests (5 tests \u2014 free-first priority, split deduction, seconds\u2192minutes conversion, E.164 normalization).",
+      "broadcast": "68/68 tests pass. Credit system fully covered: balance gating, free tier, purchased minutes, deduction logic, product mapping.",
+      "artifacts": [],
+      "timestamp": "2026-02-14T11:07:03.634823+00:00",
+      "execution_mode": "claude_code"
+    },
+    {
+      "drop_id": "D3.2",
+      "build_slug": "career-hotline-monetization",
+      "status": "complete",
+      "summary": "Service verified running on port 4242 (vapi-webhook service svc_iFdW0qpSJ1M). Health endpoint responds OK on both localhost and external URL (https://vapi-webhook-va.zocomputer.io/health). All 68 integration tests passing (up from 51 pre-build \u2014 17 new credit system tests). Stripe webhook live on zo.space at /api/career-hotline-stripe. Recent call logs confirm service processing real calls.",
+      "broadcast": "",
+      "artifacts": [],
+      "timestamp": "2026-02-14T11:29:33.084235+00:00",
+      "execution_mode": "claude_code"
+    }
+  ],
+  "learnings": []
+}

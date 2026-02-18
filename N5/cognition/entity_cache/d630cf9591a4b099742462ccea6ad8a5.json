@@ -1,0 +1,1 @@
+{"entities": [{"name": "Alan", "type": "PERSON", "context": "Can offer up to $100k base or ~2% equity for the right engineer"}, {"name": "V", "type": "PERSON", "context": "May propose hiring solutions to Alan"}], "relationships": [{"from": "V", "to": "Alan", "type": "RELATED_TO", "context": "V proposes solutions for Alan's engineering hire"}]}

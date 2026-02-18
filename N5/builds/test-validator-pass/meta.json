@@ -1,0 +1,43 @@
+{
+  "slug": "test-validator-pass",
+  "title": "Validator pass smoke",
+  "status": "complete",
+  "waves": {
+    "W1": [
+      "D1.1"
+    ]
+  },
+  "active_wave": "W1",
+  "drops": {
+    "D1.1": {
+      "status": "complete",
+      "name": "ok",
+      "stream": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "started_at": "2026-02-17T01:20:41.030146+00:00",
+      "conversation_id": "test",
+      "validation": {
+        "drop_id": "D1.1",
+        "build_slug": "test-validator-pass",
+        "validated_at": "2026-02-17T01:20:41.269404+00:00",
+        "verdict": "PASS",
+        "reason": "Passed validators",
+        "mechanical": {
+          "drop_id": "D1.1",
+          "build_slug": "test-validator-pass",
+          "timestamp": "2026-02-17T01:20:41.269799",
+          "files_checked": 1,
+          "critical_count": 0,
+          "warning_count": 0,
+          "issues": {}
+        },
+        "llm": null
+      },
+      "completed_at": "2026-02-17T01:20:41.270604+00:00"
+    }
+  },
+  "completed_at": "2026-02-17T01:20:41.271213+00:00",
+  "summary": "**D1.1:** ok",
+  "last_progress_at": "2026-02-17T01:22:47.427563+00:00"
+}

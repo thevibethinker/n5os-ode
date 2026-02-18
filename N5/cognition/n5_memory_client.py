@@ -589,7 +589,7 @@ class N5MemoryClient:
         cursor.execute("""
             INSERT INTO blocks (id, resource_id, block_type, content, start_line, end_line, token_count, content_date, indexed_at, valid_from, supersedes_block_id)
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, datetime('now'), datetime('now'), ?)
-        """, (block_id, resource_id, block_type, content, start_line, end_line, len(content)//4, content_date, supersedes))
+        """, (block_id, resource_id, block_type, content, start_line, end_line, len(content)//4, content_date, None))
         
         cursor.execute("""
             INSERT INTO vectors (block_id, embedding)

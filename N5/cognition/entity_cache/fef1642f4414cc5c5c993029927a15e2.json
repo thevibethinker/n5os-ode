@@ -1,0 +1,1 @@
+{"entities": [{"name": "Fitbit", "type": "ORG", "context": "fitness tracking device and app"}], "relationships": [{"from": "V", "to": "Fitbit", "type": "USES", "context": "V uses Fitbit for tracking resting heart rate, sleep data, and workout records."}]}

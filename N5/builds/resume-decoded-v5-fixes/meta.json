@@ -1,0 +1,42 @@
+{
+  "slug": "resume-decoded-v5-fixes",
+  "title": "Resume:Decoded v5 Bug Fixes",
+  "description": "Fix signal percentage calculation and cross-section consistency bugs in both the decomposer and the decoded resume generation adapter",
+  "branch": "feature/resume-decoded-v5",
+  "status": "complete",
+  "created": "2026-02-15T01:10:00Z",
+  "waves": [
+    {
+      "wave": 1,
+      "description": "Parallel fixes — decomposer + adapter are independent pipeline stages",
+      "streams": [
+        {
+          "stream": 1,
+          "drops": ["D1.1"]
+        },
+        {
+          "stream": 2,
+          "drops": ["D1.2"]
+        }
+      ]
+    }
+  ],
+  "drops": {
+    "D1.1": {
+      "title": "Decomposer: Signal categorization + percentage completeness",
+      "stream": 1,
+      "wave": 1,
+      "status": "complete",
+      "blocking": true,
+      "spawn_mode": "manual"
+    },
+    "D1.2": {
+      "title": "Adapter/Template: Signal bar rendering + cross-section deduplication",
+      "stream": 2,
+      "wave": 1,
+      "status": "complete",
+      "blocking": true,
+      "spawn_mode": "manual"
+    }
+  }
+}

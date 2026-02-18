@@ -1,0 +1,1 @@
+{"entities": [{"name": "Vir", "type": "PERSON", "context": "Individual associated with Instalily.Ai"}, {"name": "Instalily.Ai", "type": "ORG", "context": "Organization associated with Vir"}], "relationships": [{"from": "Vir", "to": "Instalily.Ai", "type": "WORKS_WITH", "context": "Vir is associated with Instalily.Ai"}]}

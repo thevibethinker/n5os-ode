@@ -1,0 +1,1 @@
+{"entities": [{"name": "Git Repository", "type": "TOOL", "context": "a tool used for version control"}, {"name": "main", "type": "CONCEPT", "context": "the current branch in the Git repository"}], "relationships": []}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "X", "type": "CONCEPT", "context": "a belief or idea that V supports"}, {"name": "Y", "type": "PROBLEM", "context": "an issue that remains unresolved"}], "relationships": [{"from": "V", "to": "X", "type": "BELIEVES", "context": "V believes in X"}, {"from": "V", "to": "Y", "type": "MENTIONS", "context": "V mentions that Y remains unsolved"}]}

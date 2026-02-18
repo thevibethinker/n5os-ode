@@ -21,6 +21,7 @@ import sqlite3
 import json
 import logging
 import argparse
+import requests
 from datetime import datetime, timedelta
 from typing import List, Dict, Optional
 from pathlib import Path
@@ -28,8 +29,9 @@ from pathlib import Path
 # Add N5 scripts to path for imports
 sys.path.insert(0, '/home/workspace/N5/scripts')
 from crm_calendar_helpers import get_or_create_profile, schedule_enrichment_job
+from crm_semantic_memory import record_person_interaction, sync_person_to_semantic_memory
 
-DB_PATH = '/home/workspace/N5/data/crm_v3.db'
+DB_PATH = '/home/workspace/N5/data/n5_core.db'
 STATE_FILE = '/home/workspace/N5/data/gmail_tracker_state.json'
 LOG_FILE = '/home/workspace/N5/logs/gmail_tracker.log'
 
@@ -135,7 +137,7 @@ def process_sent_email(email: Dict) -> Optional[int]:
     # 2. Check if profile exists
     conn = sqlite3.connect(DB_PATH)
     cursor = conn.cursor()
-    cursor.execute("SELECT id FROM profiles WHERE email = ?", (to_email,))
+    cursor.execute("SELECT id FROM people WHERE lower(email) = ?", (to_email.lower(),))
     row = cursor.fetchone()
     
     if row:
@@ -167,6 +169,26 @@ def process_sent_email(email: Dict) -> Optional[int]:
             priority=25,  # Low priority
             trigger_source='gmail_reply',
             trigger_metadata=metadata
+        )
+
+        source_ref = email.get('thread_id') or email.get('message_id') or f"gmail:{to_email}"
+        record_person_interaction(
+            person_id=profile_id,
+            interaction_type='email',
+            direction='outbound',
+            summary=f"Sent email: {subject}",
+            source_ref=source_ref,
+            occurred_at=email.get('sent_at') or datetime.now().isoformat(),
+        )
+        sync_person_to_semantic_memory(
+            profile_id,
+            trigger='gmail_sent_contact',
+            metadata={
+                'to_email': to_email,
+                'thread_id': email.get('thread_id'),
+                'message_id': email.get('message_id'),
+                'subject': subject,
+            },
         )
         
         logger.info(f"Created profile {profile_id} for {to_email} from sent email")
@@ -244,6 +266,119 @@ def parse_gmail_messages(messages: List[Dict]) -> List[Dict]:
     return emails
 
 
+def _parse_iso_timestamp(value: str) -> datetime:
+    """Parse ISO timestamp including trailing Z."""
+    normalized = value.strip()
+    if normalized.endswith("Z"):
+        normalized = normalized[:-1] + "+00:00"
+    return datetime.fromisoformat(normalized)
+
+
+def _fetch_sent_emails_via_zo_ask(since_timestamp: str, gmail_account: str) -> List[Dict]:
+    """
+    Fallback path: call Zo Ask API and have child session invoke use_app_gmail.
+    Returns already-simplified email dicts.
+    """
+    token = os.environ.get("ZO_CLIENT_IDENTITY_TOKEN")
+    if not token:
+        raise RuntimeError("ZO_CLIENT_IDENTITY_TOKEN not set; cannot call Zo Ask fallback")
+
+    dt = _parse_iso_timestamp(since_timestamp)
+    search_date = dt.strftime('%Y/%m/%d')
+    search_query = f"in:sent after:{search_date}"
+    logger.info(f"Fallback Gmail fetch via Zo Ask ({gmail_account}): {search_query}")
+
+    prompt = f"""
+Use tool use_app_gmail to fetch sent messages.
+
+Requirements:
+1) Call tool_name='gmail-find-email'
+2) configured_props:
+{{
+  "q": "{search_query}",
+  "maxResults": 100,
+  "includeSpamTrash": false,
+  "metadataOnly": false
+}}
+3) email="{gmail_account}"
+4) Parse returned Gmail messages and emit an array of objects with exact keys:
+   - message_id
+   - thread_id
+   - to_email
+   - subject
+   - sent_at
+   - snippet
+5) Return only JSON that matches the schema. No markdown.
+"""
+
+    schema = {
+        "type": "object",
+        "properties": {
+            "emails": {
+                "type": "array",
+                "items": {
+                    "type": "object",
+                    "properties": {
+                        "message_id": {"type": "string"},
+                        "thread_id": {"type": "string"},
+                        "to_email": {"type": "string"},
+                        "subject": {"type": "string"},
+                        "sent_at": {"type": "string"},
+                        "snippet": {"type": "string"},
+                    },
+                    "required": [
+                        "message_id",
+                        "thread_id",
+                        "to_email",
+                        "subject",
+                        "sent_at",
+                        "snippet",
+                    ],
+                    "additionalProperties": False,
+                },
+            },
+        },
+        "required": ["emails"],
+        "additionalProperties": False,
+    }
+
+    response = requests.post(
+        "https://api.zo.computer/zo/ask",
+        headers={
+            "authorization": token,
+            "content-type": "application/json",
+        },
+        json={
+            "input": prompt,
+            "output_format": schema,
+        },
+        timeout=180,
+    )
+    response.raise_for_status()
+    payload = response.json()
+    output = payload.get("output", {})
+    if isinstance(output, dict):
+        emails = output.get("emails", [])
+        if isinstance(emails, list):
+            return emails
+    if isinstance(output, list):
+        return output
+    if isinstance(output, str):
+        decoder = json.JSONDecoder()
+        for idx, ch in enumerate(output):
+            if ch not in "[{":
+                continue
+            try:
+                candidate, _ = decoder.raw_decode(output[idx:])
+            except json.JSONDecodeError:
+                continue
+            if isinstance(candidate, list):
+                return candidate
+            if isinstance(candidate, dict) and isinstance(candidate.get("emails"), list):
+                return candidate["emails"]
+    raise RuntimeError(f"Zo Ask fallback returned invalid emails payload type={type(output).__name__}")
+
+
 def fetch_sent_emails_from_gmail(since_timestamp: str, gmail_account: str = 'attawar.v@gmail.com') -> List[Dict]:
     """
     Fetch sent emails from Gmail using Zo's Gmail tool.
@@ -255,18 +390,17 @@ def fetch_sent_emails_from_gmail(since_timestamp: str, gmail_account: str = 'att
     Returns:
         List of simplified email dicts
     """
+    # Convert timestamp to Gmail search format (YYYY/MM/DD)
+    dt = _parse_iso_timestamp(since_timestamp)
+    search_date = dt.strftime('%Y/%m/%d')
+    search_query = f"in:sent after:{search_date}"
+
+    # Primary path: direct tool import in compatible runtime.
     try:
-        # Import Zo's Gmail tool
         sys.path.insert(0, '/home/.z/lib')
         from tools.app_gmail import use_app_gmail
-        
-        # Convert timestamp to Gmail search format (YYYY/MM/DD)
-        dt = datetime.fromisoformat(since_timestamp)
-        search_date = dt.strftime('%Y/%m/%d')
-        
-        search_query = f"in:sent after:{search_date}"
+
         logger.info(f"Searching Gmail ({gmail_account}): {search_query}")
-        
         result = use_app_gmail(
             tool_name='gmail-find-email',
             configured_props={
@@ -277,15 +411,16 @@ def fetch_sent_emails_from_gmail(since_timestamp: str, gmail_account: str = 'att
             },
             email=gmail_account
         )
-        
         messages = result.get('ret', [])
         logger.info(f"Found {len(messages)} sent emails from Gmail API")
-        
         return parse_gmail_messages(messages)
-        
     except Exception as e:
-        logger.error(f"Gmail API error: {e}")
-        return []
+        logger.warning(f"Direct Gmail tool import failed ({e}); trying Zo Ask fallback")
+
+    # Fallback path: Zo Ask call executes Gmail tool in child runtime.
+    emails = _fetch_sent_emails_via_zo_ask(since_timestamp, gmail_account)
+    logger.info(f"Found {len(emails)} sent emails via Zo Ask fallback")
+    return emails
 
 
 def main():
@@ -319,7 +454,11 @@ def main():
     else:
         # LIVE MODE: Fetch from Gmail API
         logger.info("LIVE MODE: Fetching from Gmail API")
-        emails = fetch_sent_emails_from_gmail(last_run, args.gmail_account)
+        try:
+            emails = fetch_sent_emails_from_gmail(last_run, args.gmail_account)
+        except Exception as e:
+            logger.error(f"Failed to fetch sent emails in LIVE MODE: {e}")
+            return 1
     
     processed_count = 0
     skipped_count = 0
@@ -360,5 +499,3 @@ if __name__ == '__main__':
         logger.error(f"Fatal error: {e}", exc_info=True)
         print(f"✗ Error: {e}")
         sys.exit(1)
-
-

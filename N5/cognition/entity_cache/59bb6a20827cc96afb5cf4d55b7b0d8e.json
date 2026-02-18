@@ -1,0 +1,1 @@
+{"entities": [{"name": "Rachel Kayun Wong", "type": "PERSON", "context": "primary contact with V"}, {"name": "gmail.com", "type": "ORG", "context": "email domain of Rachel Kayun Wong"}], "relationships": [{"from": "V", "to": "Rachel Kayun Wong", "type": "KNOWS", "context": "V has had one interaction with Rachel Kayun Wong"}]}

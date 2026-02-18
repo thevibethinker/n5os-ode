@@ -1,0 +1,1 @@
+{"entities": [{"name": "V-OS", "type": "TOOL", "context": "system used for tagging events"}, {"name": "Calendar API", "type": "TOOL", "context": "API for fetching calendar events"}, {"name": "Gmail API", "type": "TOOL", "context": "API for searching attendee emails"}], "relationships": []}

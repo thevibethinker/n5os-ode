@@ -1,0 +1,1 @@
+{"entities": [{"name": "Zo", "type": "PERSON", "context": "person who completed the setup"}, {"name": "Vision Document", "type": "CONCEPT", "context": "reference document for the system's phases"}], "relationships": [{"from": "Zo", "to": "Vision Document", "type": "KNOWS", "context": "Zo completed the setup based on the Vision Document"}]}

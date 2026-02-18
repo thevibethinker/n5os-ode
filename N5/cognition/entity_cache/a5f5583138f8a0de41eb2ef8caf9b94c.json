@@ -1,0 +1,1 @@
+{"entities": [{"name": "Gmail", "type": "TOOL", "context": "email service used for history enrichment"}, {"name": "V-OS", "type": "CONCEPT", "context": "system that utilizes tags for adaptations"}], "relationships": []}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Zo", "type": "PERSON", "context": "a helper or assistant"}, {"name": "conversation_end.py", "type": "TOOL", "context": "a script used to end the conversation"}], "relationships": [{"from": "Zo", "to": "conversation_end.py", "type": "USES", "context": "Zo runs the script to end the conversation"}]}

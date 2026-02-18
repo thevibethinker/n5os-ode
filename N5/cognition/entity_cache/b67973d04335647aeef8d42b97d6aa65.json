@@ -1,0 +1,1 @@
+{"entities": [{"name": "Stakeholder Auto-Tagging System", "type": "TOOL", "context": "A system for automating stakeholder tagging"}, {"name": "Phase 0 v2.0", "type": "EVENT", "context": "Version of the system that includes critical fixes"}, {"name": "Phase 1", "type": "EVENT", "context": "Upcoming phase of the system"}], "relationships": []}

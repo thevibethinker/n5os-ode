@@ -54,8 +54,8 @@ provenance: con_LhnxuEVVapCNdXle
 
 ## Teaching
 
-- Non-blocking at all checkpoints
-- Glossary accumulates across builds (`N5/pulse/teaching/glossary.json`)
+- LLM-native learning mode (orchestrator handles teaching natively)
+- Understanding bank tracks concept mastery (`N5/config/understanding_bank.json`)
 - "teach" command for review
 - "absorbed: <term>" to mark learned
 

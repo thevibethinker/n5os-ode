@@ -1,0 +1,50 @@
+{
+  "name": "zo-hotline-calls",
+  "title": "Zo Hotline Call Logs",
+  "description": "Anonymous call patterns and escalation requests from the Zo Hotline advisory system. NO PII stored - patterns only.",
+  "version": "1.0.0",
+  "created": "2026-02-12",
+  "sources": [
+    {
+      "name": "vapi_webhook",
+      "description": "VAPI webhook integration for Zo Hotline calls",
+      "url": "Skills/zo-hotline/scripts/hotline-webhook.ts"
+    }
+  ],
+  "contributors": [
+    {
+      "name": "Zo Hotline System",
+      "role": "data_collector"
+    }
+  ],
+  "resources": [
+    {
+      "name": "calls",
+      "path": "data.duckdb",
+      "table": "calls",
+      "description": "Anonymous call patterns and metadata"
+    },
+    {
+      "name": "escalations", 
+      "path": "data.duckdb",
+      "table": "escalations",
+      "description": "Escalation requests requiring V's attention"
+    }
+  ],
+  "privacy": {
+    "level": "anonymous",
+    "description": "NO personal information stored. Only topic patterns, duration, and assessment levels.",
+    "pii_policy": "All personally identifiable information is excluded from logging. Names and phone numbers are never stored in the calls table.",
+    "escalation_policy": "Escalations table contains contact info solely for V's follow-up, with explicit caller consent."
+  },
+  "keywords": [
+    "advisory",
+    "ai-productivity", 
+    "meta-os",
+    "call-patterns",
+    "vapi",
+    "anonymous-analytics"
+  ],
+  "license": "Private",
+  "profile": "data-package"
+}

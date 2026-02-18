@@ -1,0 +1,1 @@
+{"entities": [{"name": "Howie", "type": "PERSON", "context": "schedules meeting"}, {"name": "Zo", "type": "TOOL", "context": "detects new meeting and extracts tags"}], "relationships": [{"from": "Howie", "to": "Zo", "type": "USES", "context": "schedules meeting which Zo detects"}]}

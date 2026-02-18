@@ -1,0 +1,36 @@
+{
+  "slug": "relationship-intelligence-os-smoke-20260216",
+  "title": "Relationship Intelligence OS Smoke",
+  "build_type": "code_build",
+  "status": "finalized",
+  "launch_mode": "auto",
+  "model": "anthropic:claude-sonnet-4-20250514",
+  "waves": {
+    "W1": [
+      "D1.1"
+    ]
+  },
+  "active_wave": "W1",
+  "drops": {
+    "D1.1": {
+      "name": "smoke-drop",
+      "stream": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "started_at": "2026-02-17T01:14:16.507400+00:00",
+      "conversation_id": "spawn_worker_relationship-intelligence-os-smoke-20260216_D1.1_1771290856",
+      "spawn_requested_at": "2026-02-17T01:14:16.507400+00:00",
+      "spawn_worker_pid": 23781,
+      "last_progress_at": "2026-02-17T01:14:16.507400+00:00",
+      "completed_at": "2026-02-17T01:14:47.375959+00:00"
+    }
+  },
+  "started_at": "2026-02-17T01:14:16.176925+00:00",
+  "last_progress_at": "2026-02-17T01:15:15.105590+00:00",
+  "completed_at": "2026-02-17T01:14:47.377679+00:00",
+  "summary": "**D1.1:** Created smoke test artifact with confirmation message",
+  "finalized_at": "2026-02-17T01:15:21.286242+00:00",
+  "finalization_passed": true
+}

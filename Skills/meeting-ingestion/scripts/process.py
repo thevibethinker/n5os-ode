@@ -30,6 +30,23 @@ EXTERNAL_BLOCKS = ["B01", "B02", "B03", "B05", "B08", "B25", "B26"]
 EXTERNAL_CONDITIONAL = ["B04", "B06", "B07", "B10", "B13", "B21", "B28"]
 INTERNAL_BLOCKS = ["B40", "B41", "B47"]
 
+
+def resolve_meeting_type(manifest: dict) -> str:
+    """Resolve canonical meeting type across v3/legacy/enrichment fields."""
+    crm_type = (manifest.get("crm_enrichment", {}) or {}).get("classification")
+    if isinstance(crm_type, str) and crm_type.lower() in {"internal", "external"}:
+        return crm_type.lower()
+
+    nested_type = (manifest.get("meeting", {}) or {}).get("type")
+    if isinstance(nested_type, str) and nested_type.lower() in {"internal", "external"}:
+        return nested_type.lower()
+
+    legacy_type = manifest.get("meeting_type")
+    if isinstance(legacy_type, str) and legacy_type.lower() in {"internal", "external"}:
+        return legacy_type.lower()
+
+    return "external"
+
 BLOCK_NAMES = {
     "B00": "B00_ZO_TAKE_HEED",
     "B01": "B01_DETAILED_RECAP",
@@ -198,7 +215,7 @@ def use_smart_selector(transcript: str, meeting_type: str, participants: list[st
 
 def determine_blocks_legacy(manifest: dict, transcript: str) -> list[str]:
     """Legacy static block selection (kept for --legacy mode)."""
-    meeting_type = manifest.get("meeting_type", "external")
+    meeting_type = resolve_meeting_type(manifest)
     
     if meeting_type == "internal":
         return INTERNAL_BLOCKS.copy()
@@ -227,12 +244,20 @@ def determine_blocks(manifest: dict, transcript: str, use_legacy: bool = False) 
         blocks = determine_blocks_legacy(manifest, transcript)
         return blocks, {"method": "legacy_static", "reasoning": {}}
     
-    meeting_type = manifest.get("meeting_type", "external")
-    participants = manifest.get("participants", [])
-    
+    # Support both v3 (nested) and v2 (flat) manifest formats
+    meeting_type = resolve_meeting_type(manifest)
+    participants_raw = manifest.get("participants", [])
+
     # Normalize participants to list of strings
-    if participants and isinstance(participants[0], dict):
-        participants = [p.get("name", str(p)) for p in participants]
+    if isinstance(participants_raw, dict):
+        # v3 format: {"identified": [...], "unidentified": [...]}
+        participants = [p.get("name", str(p)) for p in participants_raw.get("identified", []) if isinstance(p, dict)]
+    elif isinstance(participants_raw, list) and participants_raw and isinstance(participants_raw[0], dict):
+        participants = [p.get("name", str(p)) for p in participants_raw]
+    elif isinstance(participants_raw, list):
+        participants = participants_raw
+    else:
+        participants = []
     
     result = use_smart_selector(transcript, meeting_type, participants)
     
@@ -333,10 +358,19 @@ def process_meeting(meeting_path: Path, blocks: Optional[list[str]] = None,
     manifest["status"] = "processing"
     manifest_path.write_text(json.dumps(manifest, indent=2))
     
+    # Build context supporting both v3 and v2 manifest formats
+    participants_raw = manifest.get("participants", [])
+    if isinstance(participants_raw, dict):
+        participant_names = [p.get("name", "") for p in participants_raw.get("identified", []) if isinstance(p, dict)]
+    elif isinstance(participants_raw, list):
+        participant_names = [p.get("name", str(p)) if isinstance(p, dict) else str(p) for p in participants_raw]
+    else:
+        participant_names = []
+
     context = {
-        "date": manifest.get("date"),
-        "participants": manifest.get("participants", []),
-        "meeting_type": manifest.get("meeting_type", "external")
+        "date": manifest.get("meeting", {}).get("date") or manifest.get("date"),
+        "participants": participant_names,
+        "meeting_type": manifest.get("meeting", {}).get("type") or manifest.get("meeting_type", "external"),
     }
     
     result = {

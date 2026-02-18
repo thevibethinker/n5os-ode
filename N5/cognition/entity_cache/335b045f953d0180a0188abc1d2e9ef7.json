@@ -1,0 +1,1 @@
+{"entities": [{"name": "meeting processor", "type": "TOOL", "context": "tool used in the process"}, {"name": "monitor service", "type": "TOOL", "context": "service that is registered for monitoring"}], "relationships": []}

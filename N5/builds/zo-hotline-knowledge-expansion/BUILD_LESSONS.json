@@ -1,0 +1,14 @@
+{
+  "slug": "zo-hotline-knowledge-expansion",
+  "learnings": [
+    {
+      "text": "Concept mapping in webhooks should follow both hyphenated and underscored alias pattern for user flexibility (e.g., 'use-cases' and 'use_cases'). This ensures natural language variations work smoothly.",
+      "source": "manual",
+      "added_at": "2026-02-13T00:48:23.793014+00:00",
+      "tags": [
+        "mapping",
+        "webhook-patterns"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "librarian.manifest", "type": "TOOL", "context": "Librarian persona for knowledge system"}, {"name": "consultant.manifest", "type": "TOOL", "context": "Consultant persona for knowledge system"}, {"name": "debugger.manifest", "type": "TOOL", "context": "Debugger persona for knowledge system"}], "relationships": []}

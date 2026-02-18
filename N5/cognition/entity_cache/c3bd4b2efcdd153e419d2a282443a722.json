@@ -1,0 +1,1 @@
+{"entities": [{"name": "N5", "type": "ORG", "context": "refers to the logging directory"}, {"name": "meeting_monitor.log", "type": "TOOL", "context": "log file for monitoring meetings"}], "relationships": []}

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Localstack", "type": "ORG", "context": "a tool for local AWS services"}, {"name": "SQS", "type": "CONCEPT", "context": "Simple Queue Service, a messaging service used by Localstack"}], "relationships": []}

@@ -8,7 +8,7 @@ from pathlib import Path
 # Paths
 DB_CONV = "/home/workspace/N5/data/conversations.db"
 DB_MEET = "/home/workspace/N5/data/meeting_pipeline.db"
-DB_CRM = "/home/workspace/N5/data/crm_v3.db"
+DB_CRM = "/home/workspace/N5/data/n5_core.db"
 DB_WELL = "/home/workspace/N5/data/wellness.db"
 DB_LUMA = "/home/workspace/N5/data/luma_events.db"
 SHORTIO_LINKS = "/home/workspace/N5/data/shortio_links.jsonl"

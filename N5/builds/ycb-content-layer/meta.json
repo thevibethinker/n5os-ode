@@ -1,0 +1,149 @@
+{
+  "schema_version": 3,
+  "slug": "ycb-content-layer",
+  "title": "YCB Content Layer Integration",
+  "description": "Integrate Your Commonbase architectural patterns into N5 OS: Entry/Comment threading, Content Carts, Preprocessor Pipeline, and Semantic Links",
+  "build_type": "code_build",
+  "status": "complete",
+  "model": "anthropic:claude-sonnet-4-20250514",
+  "launch_mode": "orchestrated",
+  "delegate_only": true,
+  "first_wins": false,
+  "waves": {
+    "W1": [
+      "D1.1",
+      "D1.2"
+    ],
+    "W2": [
+      "D2.1",
+      "D2.2"
+    ],
+    "W3": [
+      "D3.1"
+    ],
+    "W4": [
+      "D4.1"
+    ]
+  },
+  "active_wave": "W4",
+  "drops": {
+    "D1.1": {
+      "name": "Database Schema Migration",
+      "stream": 1,
+      "order": 1,
+      "wave": "W1",
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "description": "Create content_threads, thread_comments, and entry_links tables",
+      "started_at": "2026-02-11T20:03:25.041619+00:00",
+      "conversation_id": "pulse_ycb-content-layer_D1.1_1770839963",
+      "completed_at": "2026-02-11T20:42:51.674532+00:00"
+    },
+    "D1.2": {
+      "name": "Content Carts Schema",
+      "stream": 2,
+      "order": 1,
+      "wave": "W1",
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "description": "Create content_carts and cart_items tables",
+      "failed_at": "2026-02-11T20:08:25.848257+00:00",
+      "retry_count": 1,
+      "last_retry": "2026-02-11T20:42:45.997032+00:00",
+      "started_at": "2026-02-11T20:45:22.418257+00:00",
+      "conversation_id": "pulse_ycb-content-layer_D1.2_1770842571",
+      "completed_at": "2026-02-11T20:46:14.361329+00:00"
+    },
+    "D2.1": {
+      "name": "CLI Thread Commands",
+      "stream": 1,
+      "order": 2,
+      "wave": "W2",
+      "depends_on": [
+        "D1.1"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "description": "Implement n5 content comment, n5 content thread commands",
+      "started_at": "2026-02-11T20:49:54.521865+00:00",
+      "conversation_id": "pulse_ycb-content-layer_D2.1_1770842774",
+      "completed_at": "2026-02-11T20:55:29.518545+00:00"
+    },
+    "D2.2": {
+      "name": "CLI Cart Commands",
+      "stream": 2,
+      "order": 2,
+      "wave": "W2",
+      "depends_on": [
+        "D1.2"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "description": "Implement n5 content cart create, add, synthesize commands",
+      "failed_at": "2026-02-11T21:00:29.848636+00:00",
+      "retry_count": 1,
+      "last_retry": "2026-02-11T20:55:14.461769+00:00",
+      "started_at": "2026-02-11T20:58:41.000000+00:00",
+      "completed_at": "2026-02-11T21:06:00.000000+00:00"
+    },
+    "D3.1": {
+      "name": "Preprocessor Pipeline",
+      "stream": 1,
+      "order": 3,
+      "wave": "W3",
+      "depends_on": [
+        "D2.1"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "description": "Create preprocessor.py with trafilatura, extraction, cleaning stages",
+      "failed_at": "2026-02-12T02:37:25.848244+00:00",
+      "retry_count": 1,
+      "last_retry": "2026-02-12T02:37:44.193951+00:00",
+      "started_at": "2026-02-12T02:40:27.014375+00:00",
+      "conversation_id": "pulse_ycb-content-layer_D3.1_1770863868",
+      "completed_at": "2026-02-12T02:40:37.054968+00:00"
+    },
+    "D4.1": {
+      "name": "Semantic Links Engine",
+      "stream": 1,
+      "order": 4,
+      "wave": "W4",
+      "depends_on": [
+        "D3.1"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "description": "Implement auto-discovery of entry relationships via embeddings",
+      "retry_count": 1,
+      "last_retry": "2026-02-12T02:46:13.061606+00:00",
+      "completed_at": "2026-02-12T03:36:41.659679+00:00"
+    }
+  },
+  "lineage": {
+    "parent_type": "conversation",
+    "parent_ref": "con_b35rjnbig858pzQQ",
+    "parent_conversation": "con_b35rjnbig858pzQQ",
+    "moment": "V asked to implement YCB architectural patterns using Pulse",
+    "branched_at": "2026-02-11T19:50:00Z"
+  },
+  "recovery": {
+    "max_auto_retries": 2,
+    "dead_threshold_seconds": 900,
+    "stale_threshold_hours": 4,
+    "stale_no_progress_minutes": 60,
+    "enable_ai_judgment": true
+  },
+  "started_at": "2026-02-11T19:59:06.665405+00:00",
+  "last_progress_at": "2026-02-12T03:36:41.659694+00:00",
+  "completed_at": "2026-02-12T02:54:42.848454+00:00",
+  "summary": "**D1.1:** Successfully implemented YCB-style Entry/Comment threading schema for the N5 Content Library. Created migration script with 3 core tables (content_threads, thread_comments, entry_links) and comprehensive Python helper functions. All functionality tested with real data from the content library, including nested comment hierarchies and entry linking.\n**D1.2:** Successfully created Content Carts schema with content_carts and cart_items tables, including migration script and comprehensive Python helper functions. All functionality tested and verified.\n**D2.1:** Successfully implemented all 6 CLI thread commands for the YCB Content Layer. Created comprehensive CLI at N5/scripts/n5_content_cli.py with proper argument parsing, error handling, and tree visualization. All commands tested end-to-end with real data including nested comment hierarchies.\n**D2.2:** Successfully implemented all 9 CLI cart commands with full functionality including synthesis via /zo/ask API. Extended existing n5_content_cli.py with comprehensive cart management capabilities.\n**D3.1:** Successfully implemented the complete ContentPreprocessor pipeline for YCB-style content ingestion. Created a 4-stage pipeline (Extract \u2192 Clean \u2192 Enrich \u2192 Store) with comprehensive entity extraction, content classification, and metadata enrichment. All CLI integrations are working, and the existing content_ingest.py has been refactored to use the new pipeline. Pipeline handles HTML (trafilatura), PDF (pdfplumber), and Markdown files with robust error handling and dry-run support.\n**D4.1:** Successfully implemented the Semantic Links Engine for YCB Content Layer. Created SemanticLinkEngine class that auto-discovers relationships between content entries using embeddings and similarity scoring. Engine leverages existing N5 vector store infrastructure (vectors_v2.db) and computes cosine similarity between content items. Links are classified by strength (very_similar, related, loosely_related) and stored in the entry_links table. All CLI commands are functional and integrated."
+}

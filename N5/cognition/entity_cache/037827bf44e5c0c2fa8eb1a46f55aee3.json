@@ -1,0 +1,1 @@
+{"entities": [{"name": "AI", "type": "CONCEPT", "context": "Artificial Intelligence as a tool for knowledge organization"}, {"name": "pipelines", "type": "TOOL", "context": "Processes for making information findable"}], "relationships": [{"from": "AI", "to": "pipelines", "type": "USES", "context": "AI is used alongside pipelines to solve knowledge addressability"}]}

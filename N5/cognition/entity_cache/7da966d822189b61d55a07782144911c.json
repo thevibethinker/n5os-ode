@@ -1,0 +1,1 @@
+{"entities": [{"name": "Ben", "type": "PERSON", "context": "Approaches checklist organization in plans"}, {"name": "N5", "type": "ORG", "context": "Current organization with inconsistent checklist formats"}], "relationships": [{"from": "Ben", "to": "N5", "type": "WORKS_WITH", "context": "Ben's approach addresses checklist issues within N5 plans"}]}

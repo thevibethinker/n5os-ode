@@ -1,0 +1,30 @@
+{
+  "meeting_id": "2026-02-22_bad-time",
+  "title": "Bad Time",
+  "start": "2026-02-22T10:30:00-05:00",
+  "end": "2026-02-22T10:00:00-05:00",
+  "timezone": "America/New_York",
+  "attendees": [],
+  "metadata": {
+    "meeting_intent": "check-in",
+    "strategic_importance": "medium",
+    "expected_outputs": [
+      "clarity on next step"
+    ],
+    "relationship_goal": "other",
+    "promotion_bias": "promote-if-novel",
+    "parser_version": "1.0.0",
+    "raw_booking_message": "quick sync",
+    "parsed_at_utc": "2026-02-16T20:27:00.184762+00:00"
+  },
+  "calendar": {
+    "calendar_event_id": null,
+    "title": "Bad Time",
+    "start": "2026-02-22T10:30:00-05:00",
+    "end": "2026-02-22T10:00:00-05:00",
+    "timezone": "America/New_York",
+    "attendees": [],
+    "description": "BOOKING_METADATA\nmeeting_id: 2026-02-22_bad-time\nintent: check-in\nstrategic_importance: medium\npromotion_bias: promote-if-novel\nmetadata_ref: /home/workspace/N5/data/booking_metadata/by_meeting/2026-02-22_bad-time.json\n"
+  },
+  "stored_at_utc": "2026-02-16T20:27:00.184992+00:00"
+}

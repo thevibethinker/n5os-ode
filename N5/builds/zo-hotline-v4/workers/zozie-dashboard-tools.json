@@ -1,0 +1,215 @@
+[
+  {
+    "type": "function",
+    "function": {
+      "name": "assessCareerStage",
+      "parameters": {
+        "type": "object",
+        "required": [
+          "current_situation",
+          "efforts_so_far",
+          "desired_outcome",
+          "urgency_signals"
+        ],
+        "properties": {
+          "efforts_so_far": {
+            "type": "string",
+            "description": "Summary of caller's answer to Q2 (What have you tried?) \u2014 what approaches and activities they've undertaken"
+          },
+          "desired_outcome": {
+            "type": "string",
+            "description": "Summary of caller's answer to Q3 (What's the goal?) \u2014 what success looks like for them"
+          },
+          "urgency_signals": {
+            "enum": [
+              "low",
+              "medium",
+              "high",
+              "crisis"
+            ],
+            "type": "string",
+            "description": "Inferred urgency: low (exploring), medium (active search), high (need results soon), crisis (laid off / financial pressure)"
+          },
+          "current_situation": {
+            "type": "string",
+            "description": "Summary of caller's answer to Q1 (Where are you right now?) \u2014 their current career status and what prompted the call"
+          }
+        }
+      },
+      "description": "Process diagnostic question answers to determine caller's career stage, pain points, and urgency. Call after completing the 3 diagnostic questions. Also trigger if caller seems stuck or confused after 2+ exchanges without clear direction."
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "getCareerRecommendations",
+      "parameters": {
+        "type": "object",
+        "required": [
+          "primary_stage",
+          "pain_points",
+          "urgency"
+        ],
+        "properties": {
+          "urgency": {
+            "enum": [
+              "low",
+              "medium",
+              "high",
+              "crisis"
+            ],
+            "type": "string",
+            "description": "Caller's urgency level"
+          },
+          "pain_points": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Specific pain points identified during diagnostic (e.g. 'not_tailoring_resume', 'no_networking', 'interview_anxiety', 'career_direction_unclear')"
+          },
+          "primary_stage": {
+            "enum": [
+              "groundwork",
+              "materials",
+              "outreach",
+              "performance",
+              "transition"
+            ],
+            "type": "string",
+            "description": "Caller's primary career stage from assessment"
+          }
+        }
+      },
+      "description": "Get stage-appropriate career coaching recommendations, next steps, and relevant knowledge base topics. Call after assessCareerStage returns results."
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "explainCareerConcept",
+      "parameters": {
+        "type": "object",
+        "required": [
+          "concept"
+        ],
+        "properties": {
+          "concept": {
+            "type": "string",
+            "description": "Career concept to explain. Valid concepts include: master-resume, aiss-bullets, resume-customization, ats-systems, cover-letter-strategy, networking-cold-outreach, linkedin-strategy, interview-prep-start-format, art-of-the-brag, self-reflection, groundwork-checklist, four-levers, career-services-reality, job-market-stats, ai-in-hiring, creating-your-own-internship, thank-you-messages, materials-preparation"
+          },
+          "caller_stage": {
+            "enum": [
+              "groundwork",
+              "materials",
+              "outreach",
+              "performance",
+              "transition"
+            ],
+            "type": "string",
+            "description": "Caller's assessed stage, so explanation can be tailored to their level"
+          }
+        }
+      },
+      "description": "Pull a career coaching concept from V's knowledge base and deliver it conversationally. Use when caller asks about a specific topic, or to support a recommendation with V's philosophy."
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "requestCareerSession",
+      "parameters": {
+        "type": "object",
+        "required": [
+          "name",
+          "contact",
+          "career_stage",
+          "reason"
+        ],
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Caller's name"
+          },
+          "reason": {
+            "type": "string",
+            "description": "Why they want a session \u2014 what specific help they need beyond what the hotline can provide"
+          },
+          "contact": {
+            "type": "string",
+            "description": "Caller's email or phone number for follow-up"
+          },
+          "pain_points": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Key pain points to pass to the coach for session prep"
+          },
+          "career_stage": {
+            "enum": [
+              "groundwork",
+              "materials",
+              "outreach",
+              "performance",
+              "transition"
+            ],
+            "type": "string",
+            "description": "Caller's assessed career stage"
+          }
+        }
+      },
+      "description": "Escalate to a Careerspan career coaching session booking. Use when the caller expresses interest in deeper help, or when the value prop tree suggests it's the right moment. Provides booking link and captures contact info."
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "collectFeedback",
+      "parameters": {
+        "type": "object",
+        "required": [
+          "helpful"
+        ],
+        "properties": {
+          "rating": {
+            "type": "number",
+            "description": "1-5 rating if caller provides one (optional \u2014 don't push for a number)"
+          },
+          "helpful": {
+            "type": "boolean",
+            "description": "Whether the caller found the call helpful"
+          },
+          "feedback_text": {
+            "type": "string",
+            "description": "Any specific feedback or suggestions the caller shares"
+          },
+          "would_recommend": {
+            "type": "boolean",
+            "description": "Whether they'd recommend the hotline to others (only if they volunteer this)"
+          }
+        }
+      },
+      "description": "Collect caller feedback at the end of the call. Trigger naturally: 'Before you go \u2014 was this helpful? Anything I could do better?' Same pattern as Zoseph's feedback collection."
+    }
+  },
+  {
+    "type": "function",
+    "function": {
+      "name": "lookupCaller",
+      "parameters": {
+        "type": "object",
+        "required": [
+          "phone_number"
+        ],
+        "properties": {
+          "phone_number": {
+            "type": "string",
+            "description": "Caller's phone number in E.164 format (e.g. +15551234567)"
+          }
+        }
+      },
+      "description": "Check if the caller's phone number matches a Fillout intake form submission. Call at the start of every conversation to personalize the greeting. If matched, the AI should greet by name and reference their submitted info."
+    }
+  }
+]

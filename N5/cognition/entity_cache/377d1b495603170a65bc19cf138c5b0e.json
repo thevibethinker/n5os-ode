@@ -1,0 +1,1 @@
+{"entities": [{"name": "Gmail", "type": "TOOL", "context": "email service used for testing fuzzy matching"}, {"name": "followup_system_integration.py", "type": "TOOL", "context": "automation script for integration testing"}], "relationships": []}

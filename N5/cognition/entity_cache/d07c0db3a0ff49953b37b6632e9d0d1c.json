@@ -1,0 +1,1 @@
+{"entities": [{"name": "scan_meeting_emails.py", "type": "TOOL", "context": "Email scanner"}, {"name": "pattern_analyzer.py", "type": "TOOL", "context": "Tag inference"}, {"name": "enrich_stakeholder_contact.py", "type": "TOOL", "context": "Enrichment engine"}, {"name": "weekly_stakeholder_review.py", "type": "TOOL", "context": "Review generator"}], "relationships": []}

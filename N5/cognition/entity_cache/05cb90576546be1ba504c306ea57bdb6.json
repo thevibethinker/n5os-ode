@@ -1,0 +1,1 @@
+{"entities": [{"name": "v11.0 generator", "type": "TOOL", "context": "generator for email content"}, {"name": "meeting orchestrator", "type": "TOOL", "context": "tool for meeting management"}], "relationships": []}

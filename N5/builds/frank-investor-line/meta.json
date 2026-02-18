@@ -1,0 +1,85 @@
+{
+  "schema_version": 3,
+  "slug": "frank-investor-line",
+  "title": "Frank Investor Line v2: Voice-Backed Intelligence System",
+  "build_type": "code_build",
+  "status": "complete",
+  "model": "anthropic:claude-sonnet-4-20250514",
+  "launch_mode": "orchestrated",
+  "waves": {
+    "W1": [
+      "D1.1",
+      "D1.2"
+    ],
+    "W2": [
+      "D2.1",
+      "D2.2"
+    ],
+    "W3": [
+      "D3.1"
+    ]
+  },
+  "active_wave": "W3",
+  "drops": {
+    "D1.1": {
+      "name": "Briefing rewrite + FAQ foundation",
+      "stream": 1,
+      "order": 1,
+      "spawn_mode": "manual",
+      "blocking": true,
+      "status": "complete",
+      "launcher_created_at": "2026-02-12T08:20:44.082579+00:00",
+      "completed_at": "2026-02-12T08:31:12.110955+00:00"
+    },
+    "D1.2": {
+      "name": "Schema additions + question extraction",
+      "stream": 2,
+      "order": 1,
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "started_at": "2026-02-12T08:25:34.527303+00:00",
+      "conversation_id": "pulse_frank-investor-line_D1.2_1770884444",
+      "completed_at": "2026-02-12T08:27:44.017039+00:00"
+    },
+    "D2.1": {
+      "name": "Sentiment recap + enhanced email",
+      "stream": 1,
+      "order": 2,
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "completed_at": "2026-02-12T08:34:09.387545+00:00"
+    },
+    "D2.2": {
+      "name": "Investor/user mode switching + persona tuning",
+      "stream": 2,
+      "order": 2,
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "started_at": "2026-02-12T08:39:21.071028+00:00",
+      "conversation_id": "pulse_frank-investor-line_D2.2_1770885282",
+      "completed_at": "2026-02-12T08:40:06.678130+00:00"
+    },
+    "D3.1": {
+      "name": "Integration test + runbook",
+      "stream": 1,
+      "order": 3,
+      "spawn_mode": "manual",
+      "blocking": true,
+      "status": "complete",
+      "completed_at": "2026-02-12T08:43:48.200222+00:00"
+    }
+  },
+  "lineage": {
+    "parent_type": "conversation",
+    "parent_ref": "con_XXrk5wG3hFPP34Bg",
+    "parent_conversation": "con_XXrk5wG3hFPP34Bg",
+    "moment": "V requested Pulse build for Frank Investor Line v2 upgrade",
+    "branched_at": "2026-02-12T07:55:00Z"
+  },
+  "started_at": "2026-02-12T08:11:20.910961+00:00",
+  "last_progress_at": "2026-02-12T08:39:21.073358+00:00",
+  "completed_at": "2026-02-12T08:43:48.200233+00:00"
+}

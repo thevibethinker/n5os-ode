@@ -1,0 +1,116 @@
+{
+  "entities": [
+    {
+      "name": "Ulrik",
+      "type": "PERSON",
+      "context": "Describes the EIR program for the community"
+    },
+    {
+      "name": "Alex",
+      "type": "PERSON",
+      "context": "First EIR, exited founder, YC alum, ran application review process"
+    },
+    {
+      "name": "Entrepreneur-in-Residence (EIR) program",
+      "type": "CONCEPT",
+      "context": "Community program for vertical-specific coordination"
+    },
+    {
+      "name": "Healthcare",
+      "type": "CONCEPT",
+      "context": "Vertical focus area for EIR program"
+    },
+    {
+      "name": "Consumer",
+      "type": "CONCEPT",
+      "context": "Vertical focus area mentioned as example"
+    },
+    {
+      "name": "Industrials",
+      "type": "CONCEPT",
+      "context": "Vertical focus area mentioned as example"
+    },
+    {
+      "name": "McKinsey",
+      "type": "ORG",
+      "context": "Exploring reverse EIR concept for talent pipeline"
+    },
+    {
+      "name": "Y Combinator",
+      "type": "ORG",
+      "context": "Alex is an alum; startup accelerator"
+    },
+    {
+      "name": "Reverse EIR concept",
+      "type": "CONCEPT",
+      "context": "McKinsey associates spending time in portfolio companies"
+    },
+    {
+      "name": "Portfolio companies",
+      "type": "ORG",
+      "context": "Member startups where reverse EIRs would spend time"
+    }
+  ],
+  "relationships": [
+    {
+      "from": "Ulrik",
+      "to": "Alex",
+      "type": "KNOWS",
+      "context": "Ulrik introduces Alex as first EIR"
+    },
+    {
+      "from": "Alex",
+      "to": "Entrepreneur-in-Residence (EIR) program",
+      "type": "WORKS_WITH",
+      "context": "Alex is the first EIR in the program"
+    },
+    {
+      "from": "Alex",
+      "to": "Healthcare",
+      "type": "RELATED_TO",
+      "context": "Alex is the healthcare-focused EIR"
+    },
+    {
+      "from": "Alex",
+      "to": "Y Combinator",
+      "type": "RELATED_TO",
+      "context": "Alex is a YC alum"
+    },
+    {
+      "from": "Entrepreneur-in-Residence (EIR) program",
+      "to": "Healthcare",
+      "type": "RELATED_TO",
+      "context": "Program coordinates vertical-specific activity"
+    },
+    {
+      "from": "Entrepreneur-in-Residence (EIR) program",
+      "to": "Consumer",
+      "type": "RELATED_TO",
+      "context": "Example vertical in program scope"
+    },
+    {
+      "from": "Entrepreneur-in-Residence (EIR) program",
+      "to": "Industrials",
+      "type": "RELATED_TO",
+      "context": "Example vertical in program scope"
+    },
+    {
+      "from": "McKinsey",
+      "to": "Reverse EIR concept",
+      "type": "USES",
+      "context": "McKinsey is exploring this concept"
+    },
+    {
+      "from": "Reverse EIR concept",
+      "to": "Portfolio companies",
+      "type": "RELATED_TO",
+      "context": "Associates would spend time in portfolio companies"
+    },
+    {
+      "from": "Portfolio companies",
+      "to": "McKinsey",
+      "type": "RELATED_TO",
+      "context": "Creates structured talent pipeline from McKinsey to startups"
+    }
+  ]
+}

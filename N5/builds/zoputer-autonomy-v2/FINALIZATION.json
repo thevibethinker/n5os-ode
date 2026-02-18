@@ -1,0 +1,14 @@
+{
+  "slug": "zoputer-autonomy-v2",
+  "timestamp": "2026-02-11T03:31:42.348307+00:00",
+  "verification": {
+    "passed": true,
+    "output": "\u274c verify failed for zoputer-autonomy-v2\n   Artifacts: 29/37 verified, 8 missing\n"
+  },
+  "integration_tests": {
+    "passed": true,
+    "output": "\n==================================================\nIntegration Tests: zoputer-autonomy-v2\n==================================================\n\nNo tests defined. Run 'generate' to auto-create from artifacts.\n\nResults saved to /home/workspace/N5/builds/zoputer-autonomy-v2/INTEGRATION_RESULTS.json\n"
+  },
+  "learnings_harvested": 30,
+  "success": true
+}

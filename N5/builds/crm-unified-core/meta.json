@@ -1,0 +1,31 @@
+{
+  "schema_version": "1.0",
+  "slug": "crm-unified-core",
+  "title": "Crm Unified Core",
+  "objective": "Unify CRM to single n5_core.db authority with precision-first triangulation and full product-surface integration.",
+  "created": "2026-02-16",
+  "status": "draft",
+  "completed_at": null,
+  "type": "general",
+  "orchestrator_convo_id": null,
+  "workers": {
+    "total": 0,
+    "complete": 0,
+    "in_progress": 0,
+    "blocked": 0,
+    "pending": 0
+  },
+  "waves": {
+    "wave_1": [
+      "D1"
+    ]
+  },
+  "worker_details": [],
+  "drops": {
+    "D1": {
+      "title": "CRM Single-DB Foundation",
+      "status": "pending",
+      "brief": "drops/D1-crm-single-db-foundation.md"
+    }
+  }
+}

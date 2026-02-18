@@ -20,7 +20,7 @@ import argparse
 from pathlib import Path
 from datetime import datetime
 
-DB_PATH = '/home/workspace/N5/data/crm_v3.db'
+DB_PATH = '/home/workspace/N5/data/n5_core.db'
 REQUESTS_DIR = '/home/workspace/N5/data/gmail_enrichment_requests'
 
 def ensure_requests_dir():

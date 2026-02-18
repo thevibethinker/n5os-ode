@@ -1,0 +1,93 @@
+{
+  "slug": "hotline-identity-decontam",
+  "title": "Career Hotline: Zozie Identity Decontamination + Free Tier",
+  "status": "complete",
+  "finalized_at": "2026-02-14T17:46:28.167395+00:00",
+  "execution_mode": "claude_code",
+  "drops_total": 7,
+  "drops_complete": 7,
+  "deposits": [
+    {
+      "drop_id": "D1.1",
+      "build_slug": "hotline-identity-decontam",
+      "status": "complete",
+      "summary": "Webhook: persona prepend, Zozie name/firstMessage/voicemail, BOOKING_LINK\u2192CAREERSPAN_URL, requestCareerSession msgs fixed, Zozie keyword added",
+      "broadcast": "",
+      "artifacts": [],
+      "timestamp": "2026-02-14T17:41:27.028331+00:00",
+      "execution_mode": "claude_code"
+    },
+    {
+      "drop_id": "D1.2",
+      "build_slug": "hotline-identity-decontam",
+      "status": "complete",
+      "summary": "System prompt: identity line\u2192Zozie, all V refs replaced (escalation, contact collection, contrarian views header, requestEscalation desc)",
+      "broadcast": "",
+      "artifacts": [],
+      "timestamp": "2026-02-14T17:41:27.105362+00:00",
+      "execution_mode": "claude_code"
+    },
+    {
+      "drop_id": "D1.3",
+      "build_slug": "hotline-identity-decontam",
+      "status": "complete",
+      "summary": "Value prop tree: all 5 CTAs fixed (V will\u2192Careerspan team), booking\u2192mycareerspan.com, first-person pitch voice removed, soft close fixed",
+      "broadcast": "",
+      "artifacts": [],
+      "timestamp": "2026-02-14T17:41:27.184570+00:00",
+      "execution_mode": "claude_code"
+    },
+    {
+      "drop_id": "D1.4",
+      "build_slug": "hotline-identity-decontam",
+      "status": "complete",
+      "summary": "Career stages: 5x V's coaching angle\u2192Coaching angle, V's philosophy\u2192Careerspan. Diagnostic: 4 V refs fixed. Tool specs: 2 descriptions rewritten",
+      "broadcast": "",
+      "artifacts": [],
+      "timestamp": "2026-02-14T17:41:27.269490+00:00",
+      "execution_mode": "claude_code"
+    },
+    {
+      "drop_id": "D1.5",
+      "build_slug": "hotline-identity-decontam",
+      "status": "complete",
+      "summary": "74 Vrijen attributions decontaminated across 11 extracted concept files via Python batch + manual cleanup. Zero non-biographical Vrijen refs remain",
+      "broadcast": "",
+      "artifacts": [],
+      "timestamp": "2026-02-14T17:41:27.367314+00:00",
+      "execution_mode": "claude_code"
+    },
+    {
+      "drop_id": "D2.1",
+      "build_slug": "hotline-identity-decontam",
+      "status": "complete",
+      "summary": "15-min free tier: caller_balances table, getCallerBalance/updateCallerBalance functions, balance check in assistant-request (rejects at 0), balance context injected into system prompt, low-balance warning at 3min, maxDurationSeconds capped to remaining, end-of-call balance tracking",
+      "broadcast": "",
+      "artifacts": [],
+      "timestamp": "2026-02-14T17:43:19.501207+00:00",
+      "execution_mode": "claude_code"
+    },
+    {
+      "drop_id": "D2.2",
+      "build_slug": "hotline-identity-decontam",
+      "status": "complete",
+      "summary": "Service restarted, health check passes. Verification: zero V identity refs in coaching content, persona prepended, balance context injected, maxDuration=900s (15min), name=Zozie. One additional V ref found and fixed (public contact info header). Ready for live call test.",
+      "broadcast": "",
+      "artifacts": [],
+      "timestamp": "2026-02-14T17:46:19.356835+00:00",
+      "execution_mode": "claude_code"
+    }
+  ],
+  "learnings": [
+    {
+      "lesson": "Task subagents with Edit tool don't persist file changes to disk. File edits from background agents are sandboxed. Must do edits from main context or use bash-based tools.",
+      "source": "D1.1",
+      "timestamp": "2026-02-14T17:36:14.969137+00:00"
+    },
+    {
+      "lesson": "Background Task subagents with Edit tool do NOT persist file changes to disk. Their edits are sandboxed. Always do file edits from the main context, or use bash-based tools (python scripts, sed) from subagents.",
+      "source": "D1.1",
+      "timestamp": "2026-02-14T17:46:24.680720+00:00"
+    }
+  ]
+}

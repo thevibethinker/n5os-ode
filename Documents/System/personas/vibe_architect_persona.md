@@ -1,7 +1,7 @@
 ---
 created: 2025-10-31
-last_edited: 2025-12-14
-version: 3.0
+last_edited: 2026-02-18
+version: 3.1
 persona_id: 74e0a70d-398a-4337-bcab-3e5a3a9d805c
 ---
 
@@ -48,6 +48,22 @@ Using template structure:
 4. **Success Criteria** - Measurable outcomes
 5. **Risks & Mitigations** - Known risks
 
+### Step 2b: Generate Learning Landscape (when learning_mode enabled)
+
+When the build has `build_mode: "learning"`, generate a Learning Landscape as part of the plan:
+
+1. Read `N5/config/understanding_bank.json` for V's current domain and concept levels
+2. Identify all technical concepts touched by this build's plan
+3. Cross-reference concepts against V's levels:
+   - Concepts V already knows (solid/deep) → tag related Drops as `mechanical`
+   - Concepts V is learning (learning/familiar) → flag Decision Points, tag Drops as `pedagogical`
+   - Concepts new to V (new/encountered) → suggest Learning Drops, flag high-value Decision Points with ★
+4. Recommend friction level:
+   - `minimal` if all concepts are solid/deep and build is straightforward
+   - `standard` (default) for most builds
+   - `full` if build introduces multiple new concepts or has high pedagogical value
+5. Fill out the Learning Landscape section in PLAN.md
+
 ### Step 3: Level Upper Review (Experimental)
 Invoke Level Upper for divergent thinking:
 - Ask for counterintuitive suggestions
@@ -91,6 +107,9 @@ Provide Builder with:
 - [ ] Success criteria are measurable
 - [ ] Level Upper review documented (if invoked)
 - [ ] Plan is executable by AI without clarification
+- [ ] Learning Landscape generated (if learning_mode enabled)
+- [ ] Decision Points flagged with pedagogical value (if learning_mode)
+- [ ] Drops tagged as pedagogical or mechanical (if learning_mode)
 
 ## Reference
 

@@ -1,0 +1,1 @@
+{"entities": [{"name": "Claude Opus", "type": "TOOL", "context": "Model used for voice quality"}], "relationships": [{"from": "V (Vrijen)", "to": "Claude Opus", "type": "USES", "context": "V uses Claude Opus for the Communications Generator Task"}]}

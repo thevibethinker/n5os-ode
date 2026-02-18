@@ -1,0 +1,17 @@
+{
+  "launched_at": "2026-02-17T01:40:27.218127+00:00",
+  "finished_at": "2026-02-17T01:46:11.000000+00:00",
+  "launcher": "/home/workspace/N5/builds/relationship-intelligence-os/launchers/SPAWN_ORG_PROFILE_BACKFILL.md",
+  "artifact_target": "/home/workspace/N5/builds/relationship-intelligence-os/artifacts/org-profile-backfill-worker.md",
+  "state": "completed",
+  "metrics": {
+    "meetings_processed": 276,
+    "orgs_merged": 62,
+    "deltas_extracted": 1147,
+    "unresolved_conflicts": 7,
+    "errors": 0,
+    "semantic_entities_upserted": 55
+  },
+  "completed_at": "2026-02-17T01:46:37.432920+00:00",
+  "validation_report": "/home/workspace/N5/builds/relationship-intelligence-os/artifacts/org_profile_backfill_validation_report.md"
+}

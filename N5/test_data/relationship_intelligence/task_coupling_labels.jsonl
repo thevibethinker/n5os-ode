@@ -1,0 +1,3 @@
+{"idempotency_key":"idem_auto001","expected_action":"auto_launch"}
+{"idempotency_key":"idem_review001","expected_action":"review_required"}
+{"idempotency_key":"idem_notask001","expected_action":"no_task"}

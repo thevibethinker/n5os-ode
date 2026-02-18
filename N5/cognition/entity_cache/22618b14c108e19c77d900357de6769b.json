@@ -1,0 +1,1 @@
+{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "Subject of the knowledge system evaluation"}, {"name": "commands.jsonl", "type": "TOOL", "context": "Single source of truth for commands"}], "relationships": [{"from": "V (Vrijen)", "to": "commands.jsonl", "type": "USES", "context": "V uses commands.jsonl as the single source of truth for commands"}]}

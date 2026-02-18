@@ -1,0 +1,39 @@
+# Zoputer instance configuration
+# Inherits from defaults.yaml, overrides specific values
+
+instance:
+  name: zoputer
+  handle: zoputer.zo.computer
+  owner: V
+  role: consulting-partner
+
+autonomy:
+  level: supervised
+  requires_approval:
+    - external_comms
+    - file_deletion
+    - scheduled_tasks
+  parent: va.zo.computer
+
+personas:
+  enabled:
+    - operator
+    - builder
+    - debugger
+    - researcher
+    - strategist
+    - writer
+    - architect
+    - librarian
+  disabled:
+    - nutritionist
+    - trainer
+  default: operator
+
+voice:
+  profile: professional
+  primitives: shared  # pull from va's library
+
+safety:
+  protection_level: strict
+  dry_run_default: true

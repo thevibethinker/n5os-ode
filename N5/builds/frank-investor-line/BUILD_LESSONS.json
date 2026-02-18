@@ -1,0 +1,44 @@
+{
+  "slug": "frank-investor-line",
+  "learnings": [
+    {
+      "text": "Question extraction uses /zo/ask with structured output_format for reliable JSON parsing. Fire-and-forget pattern prevents call saving from being blocked by AI processing. Database operations use Python subprocess pattern to avoid SQL injection.",
+      "source": "manual",
+      "added_at": "2026-02-12T08:25:04.980055+00:00",
+      "tags": []
+    },
+    {
+      "text": "Enhanced sendRecapEmail() now includes sentiment analysis, call grading, interests/concerns tracking, and question summaries pulled from call_questions table. Analysis is stored in calls.analysis JSON column for future reference",
+      "source": "manual",
+      "added_at": "2026-02-12T08:33:21.298618+00:00",
+      "tags": []
+    },
+    {
+      "text": "Frank's recordCallerMode tool accepts callId parameter, but Vapi provides toolCall ID during tool-calls, not the actual call ID. Mode recording works but may create orphaned records if call ID mapping fails. Consider retrieving call ID from Vapi call context or storing mode in raw_data during end-of-call-report.",
+      "source": "manual",
+      "added_at": "2026-02-12T08:38:00.389227+00:00",
+      "tags": [
+        "mode-detection",
+        "database-design"
+      ]
+    },
+    {
+      "text": "Mode detection requires recordCallerMode tool with callId parameter - Frank needs access to current call context to store mode properly in database",
+      "source": "manual",
+      "added_at": "2026-02-12T08:38:02.221675+00:00",
+      "tags": []
+    },
+    {
+      "text": "The recordCallerMode tool approach works better than storing mode in raw_data JSON - it allows real-time updates during conversation and clean database queries for recap emails",
+      "source": "manual",
+      "added_at": "2026-02-12T08:38:49.504855+00:00",
+      "tags": []
+    },
+    {
+      "text": "Injecting concrete callId into system prompt template literals is more reliable than expecting the LLM to discover the call ID from tool context \u2014 reduces tool-call failures for recordCallerMode (from D2.2)",
+      "source": "manual",
+      "added_at": "2026-02-12T08:40:49.106667+00:00",
+      "tags": []
+    }
+  ]
+}

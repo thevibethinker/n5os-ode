@@ -1,0 +1,1 @@
+{"entities": [{"name": "SESSION_STATE.md", "type": "CONCEPT", "context": "file associated with session state tracking"}, {"name": "conversations", "type": "CONCEPT", "context": "discussions being tracked and migrated"}], "relationships": []}
