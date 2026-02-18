@@ -1,0 +1,70 @@
+{
+  "schema_version": 3,
+  "slug": "zo-hotline-v6",
+  "title": "Zo Hotline V6 — Post-Call Experience + Voice Polish",
+  "build_type": "code_build",
+  "status": "pending",
+  "model": "anthropic:claude-opus-4-5-20251101",
+  "launch_mode": "orchestrated",
+  "delegate_only": true,
+  "build_mode": "rush",
+  "first_wins": false,
+  "hypothesis_group": [],
+  "broadcasts": [],
+  "task_pool": {
+    "enabled": false,
+    "tasks": [],
+    "max_concurrent_claims": 4,
+    "worker_drops": []
+  },
+  "waves": {
+    "W1": ["D1.1", "D1.2"],
+    "W2": ["D2.1", "D2.2"]
+  },
+  "active_wave": "W1",
+  "drops": {
+    "D1.1": {
+      "name": "Webhook Bug Fixes + Voice Tuning",
+      "stream": 1,
+      "order": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "pending"
+    },
+    "D1.2": {
+      "name": "Conversation Design Polish",
+      "stream": 2,
+      "order": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "pending"
+    },
+    "D2.1": {
+      "name": "Zo.space Follow-Up Page",
+      "stream": 1,
+      "order": 1,
+      "depends_on": ["D1.1", "D1.2"],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "pending"
+    },
+    "D2.2": {
+      "name": "SMS Follow-Up Integration (Capstone)",
+      "stream": 2,
+      "order": 1,
+      "depends_on": ["D1.1", "D1.2", "D2.1"],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "pending"
+    }
+  },
+  "lineage": {
+    "parent_type": "conversation",
+    "parent_ref": "con_WqixWLkGYg48Os4p",
+    "parent_conversation": "con_WqixWLkGYg48Os4p",
+    "moment": "V received feedback from Amanda's call, triggered triage of 9 improvements",
+    "branched_at": "2026-02-18T23:40:00Z"
+  }
+}
