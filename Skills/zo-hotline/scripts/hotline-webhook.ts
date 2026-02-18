@@ -599,7 +599,7 @@ async function explainConcept(params: { concept: string }): Promise<object> {
   };
 }
 
-async function requestEscalation(params: { name: string; contact: string; reason: string }): Promise<object> {
+async function requestEscalation(params: { name: string; contact: string; reason: string }, callId: string = "unknown"): Promise<object> {
   const { name, contact, reason } = params;
   if (!name || !contact || !reason) {
     return {
@@ -624,7 +624,7 @@ print("Escalation logged successfully")
 `;
     const proc = Bun.spawn(["python3", "-c", insertScript], { stdin: "pipe", stdout: "pipe" });
     proc.stdin.write(JSON.stringify({
-      db: DB_PATH, id: escalationId, call_id: "unknown",
+      db: DB_PATH, id: escalationId, call_id: callId,
       name, contact, reason, created_at: now
     }));
     proc.stdin.end();
@@ -648,7 +648,7 @@ print("Escalation logged successfully")
   }
 }
 
-async function collectFeedback(params: { caller_name?: string; satisfaction?: number; comment?: string }): Promise<object> {
+async function collectFeedback(params: { caller_name?: string; satisfaction?: number; comment?: string }, callId: string = "current"): Promise<object> {
   const { caller_name, satisfaction, comment } = params;
   if (!caller_name && !satisfaction && !comment) {
     return { success: true, message: "No worries at all. Thanks for calling!" };
@@ -670,7 +670,7 @@ print("Feedback logged successfully")
 `;
     const proc = Bun.spawn(["python3", "-c", insertScript], { stdin: "pipe", stdout: "pipe" });
     proc.stdin.write(JSON.stringify({
-      db: DB_PATH, id: feedbackId, call_id: "current",
+      db: DB_PATH, id: feedbackId, call_id: callId,
       caller_name: caller_name || null, satisfaction: satisfaction || null,
       comment: comment || null, created_at: now
     }));
@@ -1026,8 +1026,8 @@ const server = Bun.serve({
             case "assessCallerLevel": result = await assessCallerLevel(params); break;
             case "getRecommendations": result = await getRecommendations(params); break;
             case "explainConcept": result = await explainConcept(params); break;
-            case "requestEscalation": result = await requestEscalation(params); break;
-            case "collectFeedback": result = await collectFeedback(params); break;
+            case "requestEscalation": result = await requestEscalation(params, callId); break;
+            case "collectFeedback": result = await collectFeedback(params, callId); break;
             default:
               result = {
                 error: `Unknown tool: ${toolName}`,
