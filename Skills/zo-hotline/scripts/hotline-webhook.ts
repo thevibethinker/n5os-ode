@@ -273,6 +273,9 @@ function buildCallerContext(profile: CallerProfile): string {
   const ordinal = count === 2 ? "2nd" : count === 3 ? "3rd" : `${count}th`;
   parts.push(`Returning caller (${ordinal} call).`);
   if (profile.first_name && profile.first_name !== "null") parts.push(`Name: ${profile.first_name}.`);
+  if ((profile as any).phonetic_name && (profile as any).phonetic_name !== "null") {
+    parts.push(`Phonetic name: ${(profile as any).phonetic_name}. Use this pronunciation.`);
+  }
   if (profile.topics_discussed && profile.topics_discussed !== "null") {
     const topics = profile.topics_discussed.split(",").map(t => t.trim()).slice(-3);
     parts.push(`Previously interested in: ${topics.join(", ")}.`);
@@ -287,10 +290,10 @@ function buildCallerContext(profile: CallerProfile): string {
     parts.push(`Prefers ${profile.preferred_style} responses.`);
   }
   if (profile.last_recommendations && profile.last_recommendations !== "null") {
-    parts.push(`Last time I recommended: ${profile.last_recommendations}.`);
+    parts.push(`Last time you recommended: ${profile.last_recommendations}.`);
   }
   if (profile.last_next_steps && profile.last_next_steps !== "null") {
-    parts.push(`Your planned next steps: ${profile.last_next_steps}. Ask if they made progress.`);
+    parts.push(`Their planned next steps: ${profile.last_next_steps}. Casually ask if they got a chance to try it — "Last time I suggested [X]. Did you get a chance to try it?" If they did, ask how it went and log the outcome via collectFeedback with follow_up_outcome.`);
   }
   return parts.join(" ");
 }
@@ -536,6 +539,9 @@ async function initDb() {
         file_path VARCHAR,
         invoked_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
       );
+
+      ALTER TABLE caller_profiles ADD COLUMN IF NOT EXISTS phonetic_name VARCHAR;
+      ALTER TABLE feedback ADD COLUMN IF NOT EXISTS follow_up_outcome VARCHAR;
     `]);
     await proc.exited;
     console.log("Database initialized successfully");
@@ -725,7 +731,7 @@ print("Escalation logged successfully")
   }
 }
 
-async function collectFeedback(params: { caller_name?: string; satisfaction?: number; comment?: string }, callId: string = "current"): Promise<object> {
+async function collectFeedback(params: { caller_name?: string; satisfaction?: number; comment?: string; follow_up_outcome?: string }, callId: string = "current"): Promise<object> {
   const { caller_name, satisfaction, comment } = params;
   if (!caller_name && !satisfaction && !comment) {
     return { success: true, message: "No worries at all. Thanks for calling!" };
@@ -1632,7 +1638,11 @@ const server = Bun.serve({
         const response = {
           assistant: {
             name: "Zoseph",
-            firstMessage: "Hey, welcome to the Vibe Thinker Hotline — I'm Zoe-seph. What's your name?",
+            firstMessage: callerContext 
+              ? (callerContext.includes("Name:") 
+                ? `Hey — welcome back to the Vibe Thinker Hotline. Good to hear from you again. Pick up where we left off, or something new?`
+                : `Hey — welcome back to the Vibe Thinker Hotline. Good to hear from you again. What can I help you with today?`)
+              : `Hey — welcome to the Vibe Thinker Hotline. I'm Zoh-seph, your guide to all things Zo. Whether you're exploring what's possible, building something specific, or comparing Zo to other tools — I've got you. What brings you in today?`,
 
             transcriber: {
               provider: "deepgram",
