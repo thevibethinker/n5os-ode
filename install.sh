@@ -5,7 +5,7 @@
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-WORKSPACE="/home/workspace"
+WORKSPACE="${WORKSPACE:-/home/workspace}"
 
 if [[ ! -f "$SCRIPT_DIR/BOOTLOADER.prompt.md" ]]; then
     echo "❌ Error: Run this from inside the n5os-ode directory"
