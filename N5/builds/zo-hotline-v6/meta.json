@@ -1,10 +1,10 @@
 {
   "schema_version": 3,
   "slug": "zo-hotline-v6",
-  "title": "Zo Hotline V6 — Post-Call Experience + Voice Polish",
+  "title": "Zo Hotline V6 \u2014 Post-Call Experience + Voice Polish",
   "build_type": "code_build",
-  "status": "pending",
-  "model": "anthropic:claude-opus-4-5-20251101",
+  "status": "finalized",
+  "model": "anthropic:claude-opus-4-6",
   "launch_mode": "orchestrated",
   "delegate_only": true,
   "build_mode": "rush",
@@ -18,10 +18,16 @@
     "worker_drops": []
   },
   "waves": {
-    "W1": ["D1.1", "D1.2"],
-    "W2": ["D2.1", "D2.2"]
+    "W1": [
+      "D1.1",
+      "D1.2"
+    ],
+    "W2": [
+      "D2.1",
+      "D2.2"
+    ]
   },
-  "active_wave": "W1",
+  "active_wave": "W2",
   "drops": {
     "D1.1": {
       "name": "Webhook Bug Fixes + Voice Tuning",
@@ -30,7 +36,28 @@
       "depends_on": [],
       "spawn_mode": "auto",
       "blocking": true,
-      "status": "pending"
+      "status": "complete",
+      "started_at": "2026-02-18T23:57:08.949961+00:00",
+      "conversation_id": "pulse_zo-hotline-v6_D1.1_1771458629",
+      "last_progress_at": "2026-02-18T23:57:08.949961+00:00",
+      "validation": {
+        "drop_id": "D1.1",
+        "build_slug": "zo-hotline-v6",
+        "validated_at": "2026-02-19T00:02:42.384078+00:00",
+        "verdict": "PASS",
+        "reason": "Passed validators",
+        "mechanical": {
+          "drop_id": "D1.1",
+          "build_slug": "zo-hotline-v6",
+          "timestamp": "2026-02-19T00:02:42.384491",
+          "files_checked": 0,
+          "critical_count": 0,
+          "warning_count": 0,
+          "issues": {}
+        },
+        "llm": null
+      },
+      "completed_at": "2026-02-19T00:02:42.384728+00:00"
     },
     "D1.2": {
       "name": "Conversation Design Polish",
@@ -39,25 +66,97 @@
       "depends_on": [],
       "spawn_mode": "auto",
       "blocking": true,
-      "status": "pending"
+      "status": "complete",
+      "started_at": "2026-02-18T23:52:16.303347+00:00",
+      "conversation_id": "pulse_zo-hotline-v6_D1.2_1771458629",
+      "last_progress_at": "2026-02-18T23:52:16.303347+00:00",
+      "validation": {
+        "drop_id": "D1.2",
+        "build_slug": "zo-hotline-v6",
+        "validated_at": "2026-02-18T23:56:03.812922+00:00",
+        "verdict": "PASS",
+        "reason": "Passed validators",
+        "mechanical": {
+          "drop_id": "D1.2",
+          "build_slug": "zo-hotline-v6",
+          "timestamp": "2026-02-18T23:56:03.814198",
+          "files_checked": 2,
+          "critical_count": 0,
+          "warning_count": 0,
+          "issues": {}
+        },
+        "llm": null
+      },
+      "completed_at": "2026-02-18T23:56:03.819328+00:00"
     },
     "D2.1": {
       "name": "Zo.space Follow-Up Page",
       "stream": 1,
       "order": 1,
-      "depends_on": ["D1.1", "D1.2"],
+      "depends_on": [
+        "D1.1",
+        "D1.2"
+      ],
       "spawn_mode": "auto",
       "blocking": true,
-      "status": "pending"
+      "status": "complete",
+      "started_at": "2026-02-19T00:13:33.746277+00:00",
+      "conversation_id": "pulse_zo-hotline-v6_D2.1_1771459362",
+      "last_progress_at": "2026-02-19T00:13:33.746277+00:00",
+      "validation": {
+        "drop_id": "D2.1",
+        "build_slug": "zo-hotline-v6",
+        "validated_at": "2026-02-19T00:15:43.560014+00:00",
+        "verdict": "PASS",
+        "reason": "Passed validators",
+        "mechanical": {
+          "drop_id": "D2.1",
+          "build_slug": "zo-hotline-v6",
+          "timestamp": "2026-02-19T00:15:43.560509",
+          "files_checked": 0,
+          "critical_count": 0,
+          "warning_count": 0,
+          "issues": {}
+        },
+        "llm": null
+      },
+      "completed_at": "2026-02-19T00:15:43.560768+00:00"
     },
     "D2.2": {
       "name": "SMS Follow-Up Integration (Capstone)",
       "stream": 2,
       "order": 1,
-      "depends_on": ["D1.1", "D1.2", "D2.1"],
+      "depends_on": [
+        "D1.1",
+        "D1.2",
+        "D2.1"
+      ],
       "spawn_mode": "auto",
       "blocking": true,
-      "status": "pending"
+      "status": "complete",
+      "last_progress_at": "2026-02-19T00:57:22.107021+00:00",
+      "retry_count": 1,
+      "last_retry": "2026-02-19T00:55:40.509156+00:00",
+      "started_at": "2026-02-19T00:57:22.107021+00:00",
+      "conversation_id": "pulse_zo-hotline-v6_D2.2_1771462545",
+      "validation": {
+        "drop_id": "D2.2",
+        "build_slug": "zo-hotline-v6",
+        "validated_at": "2026-02-19T00:57:36.157849+00:00",
+        "verdict": "PASS",
+        "reason": "Passed validators",
+        "mechanical": {
+          "drop_id": "D2.2",
+          "build_slug": "zo-hotline-v6",
+          "timestamp": "2026-02-19T00:57:36.158276",
+          "files_checked": 0,
+          "critical_count": 0,
+          "warning_count": 0,
+          "issues": {}
+        },
+        "llm": null
+      },
+      "completed_at": "2026-02-19T00:57:36.158581+00:00"
     }
   },
   "lineage": {
@@ -66,5 +165,13 @@
     "parent_conversation": "con_WqixWLkGYg48Os4p",
     "moment": "V received feedback from Amanda's call, triggered triage of 9 improvements",
     "branched_at": "2026-02-18T23:40:00Z"
-  }
+  },
+  "started_at": "2026-02-18T23:44:26.736661+00:00",
+  "last_progress_at": "2026-02-19T00:57:46.057065+00:00",
+  "spawn_failures_consecutive": 0,
+  "last_spawn_failure_at": "2026-02-18T23:44:42.099874+00:00",
+  "completed_at": "2026-02-19T00:57:36.159889+00:00",
+  "summary": "**D1.1:** Fixed 5 issues: reverted analysisPlan to flat format (root cause of zero analysis data), enhanced tool_usage logging with DuckDB persistence, tuned interruption parameters, strengthened Deepgram keyword boosting for Zo/Zoho/Zoom, added followup columns + tool_usage table to initDb\n**D1.2:** Added capability explorer sub-branch to Explorer pathway in system prompt (line 90), strengthened listen-longer voice rules (rules 12-13, line 40), added graceful silence handler with sendFollowUp tool reference (Graceful Wrap section, line 218), updated playbook knowledge base with Capability Explorer Variant section (line 40 of explorer-pathway.md)\n**D2.1:** Created follow-up page template at /hotline/demo with copy-to-clipboard, mobile-first dark theme design, IntersectionObserver animations, and clipboard fallback for mobile. Page generation template source included for D2.2 integration.\n**D2.2:** All 4 changes specified in the brief are already implemented in hotline-webhook.ts. Verified: (1) sendFollowUp tool exists in VAPI assistant config at line 1742 with correct schema. (2) sendFollowUp case exists in tool-calls switch at line 1900, using collectedFollowups Map (equivalent to brief's pendingFollowUps). (3) Full follow-up flow wired in end-of-call-report at line 2045 via executeFollowUpFlow(), which chains generateFollowUpContent \u2192 createFollowUpPage (using D2.1's generateFollowUpPageSource) \u2192 sendFollowUpSMS \u2192 logFollowUpToDB. Includes test-call skipping, auto-followup for calls \u2265120s, slug generation, DuckDB persistence, and masked phone in V's notification SMS. (4) sendFollowUp included in available_tools array at line 1904. Implementation exceeds brief spec with dedicated functions, Anthropic-powered content generation, proper error handling, and caller profile updates. No code changes required \u2014 prior drops (likely D1.1/D1.2 or an earlier attempt) already completed this integration.",
+  "finalized_at": "2026-02-19T03:34:48.186415+00:00",
+  "finalization_passed": true
 }

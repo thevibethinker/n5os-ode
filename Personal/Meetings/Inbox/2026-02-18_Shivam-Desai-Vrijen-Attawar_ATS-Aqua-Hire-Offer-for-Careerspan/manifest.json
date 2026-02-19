@@ -1,0 +1,258 @@
+{
+  "$schema": "manifest-v3",
+  "schema_version": "v3",
+  "meeting_id": "2026-02-18_Shivam-Desai-Vrijen-Attawar_ATS-Aqua-Hire-Offer-for-Careerspan",
+  "status": "complete",
+  "status_history": [
+    {
+      "status": "ingested",
+      "at": "2026-02-18T17:33:04.828410Z"
+    },
+    {
+      "status": "title_normalized",
+      "at": "2026-02-18T17:33:32.848835+00:00",
+      "note": "'Vrijen / Shivam' \u2192 'ATS Aqua Hire Offer for Careerspan', 2 speakers extracted"
+    },
+    {
+      "status": "identified",
+      "at": "2026-02-18T17:33:32.850401+00:00"
+    }
+  ],
+  "source": {
+    "type": "fireflies",
+    "source_id": "01KHRSD9EC8QA5EGGJ53HQNZ5F",
+    "ingested_at": "2026-02-18T17:33:04.828410Z"
+  },
+  "meeting": {
+    "date": "2026-02-18",
+    "time_utc": "16:30:00",
+    "duration_minutes": 1,
+    "title": "ATS Aqua Hire Offer for Careerspan",
+    "type": "external",
+    "summary": null,
+    "original_title": "Vrijen / Shivam"
+  },
+  "participants": {
+    "identified": [
+      {
+        "name": "Shivam",
+        "email": "shivam@corridorx.io",
+        "crm_id": null,
+        "role": "attendee",
+        "confidence": 1.0
+      },
+      {
+        "name": "Shivam Desai",
+        "email": null,
+        "crm_id": null,
+        "role": "attendee",
+        "confidence": 0.9
+      },
+      {
+        "name": "Vrijen Attawar",
+        "email": null,
+        "crm_id": null,
+        "role": "attendee",
+        "confidence": 0.9
+      }
+    ],
+    "unidentified": [],
+    "confidence": 0.93
+  },
+  "calendar_match": {
+    "event_id": null,
+    "confidence": 0.0,
+    "method": "none"
+  },
+  "quality_gate": {
+    "passed": false,
+    "checks": {
+      "has_transcript": true,
+      "participants_identified": true,
+      "meeting_type_determined": true,
+      "no_hitl_pending": false
+    },
+    "score": 0.5870833333333334,
+    "executed_at": "2026-02-18T17:33:32.868039+00:00",
+    "check_results": [
+      {
+        "name": "transcript_length",
+        "score": 1.0,
+        "passed": true,
+        "threshold": 300,
+        "warnings": [],
+        "errors": [],
+        "escalate_hitl": false
+      },
+      {
+        "name": "transcript_format",
+        "score": 0.6666666666666666,
+        "passed": false,
+        "threshold": 0.8,
+        "warnings": [],
+        "errors": [],
+        "escalate_hitl": false
+      },
+      {
+        "name": "meeting_duration_consistency",
+        "score": 0.1,
+        "passed": false,
+        "threshold": 0.5,
+        "warnings": [],
+        "errors": [
+          "Suspicious length discrepancy: 7639 words for 1min meeting"
+        ],
+        "escalate_hitl": true
+      },
+      {
+        "name": "participant_confidence",
+        "score": 0.93,
+        "passed": true,
+        "threshold": 0.7,
+        "warnings": [],
+        "errors": [],
+        "escalate_hitl": false
+      },
+      {
+        "name": "host_identified",
+        "score": 0.0,
+        "passed": false,
+        "threshold": 1.0,
+        "warnings": [],
+        "errors": [
+          "No host identified"
+        ],
+        "escalate_hitl": true
+      },
+      {
+        "name": "external_participant_verification",
+        "score": 1.0,
+        "passed": true,
+        "threshold": 1.0,
+        "warnings": [],
+        "errors": [],
+        "escalate_hitl": false
+      },
+      {
+        "name": "calendar_match_score",
+        "score": 0.0,
+        "passed": false,
+        "threshold": 0.6,
+        "warnings": [],
+        "errors": [
+          "Very low calendar match confidence: 0.00"
+        ],
+        "escalate_hitl": true
+      },
+      {
+        "name": "meeting_type_consistency",
+        "score": 1.0,
+        "passed": true,
+        "threshold": 1.0,
+        "warnings": [],
+        "errors": [],
+        "escalate_hitl": false
+      }
+    ]
+  },
+  "blocks": {
+    "policy": "external_standard",
+    "requested": [],
+    "generated": [],
+    "failed": [],
+    "skipped": []
+  },
+  "hitl": {
+    "queue_id": null,
+    "reason": null,
+    "resolved_at": null
+  },
+  "timestamps": {
+    "created_at": "2026-02-18T17:33:04.828410Z",
+    "ingested_at": "2026-02-18T17:33:04.828410Z",
+    "identified_at": "2026-02-18T17:33:32.850390+00:00",
+    "gated_at": null,
+    "processed_at": null,
+    "archived_at": null
+  },
+  "transcript_file": "transcript.md",
+  "crm_enrichment": {
+    "enriched_at": "2026-02-18T17:33:22.240294+00:00",
+    "classification": "external",
+    "classification_reason": "1 external, 0 internal participants identified",
+    "participant_matches": [
+      {
+        "input_name": "shivam@corridorx.io",
+        "matched_name": "Shivam",
+        "email": "shivam@corridorx.io",
+        "is_internal": false,
+        "source": "profiles",
+        "confidence": 1.0,
+        "company": "Corridorx.Io"
+      }
+    ],
+    "identified_count": 1,
+    "unidentified_count": 0
+  },
+  "meeting_type": "external",
+  "block_selection": {
+    "selected_at": "2026-02-18T17:34:39.145400Z",
+    "method": "smart_selector_v2",
+    "recipe": "external_standard",
+    "always_blocks": [
+      "B00",
+      "B01",
+      "B02_B05",
+      "B03",
+      "B08",
+      "B21",
+      "B26"
+    ],
+    "conditional_selected": [
+      "B04",
+      "B06",
+      "B10",
+      "B13",
+      "B25",
+      "B28",
+      "B32",
+      "B33"
+    ],
+    "conditional_skipped": [
+      "B07",
+      "B14"
+    ],
+    "triggered": [],
+    "reasoning": {
+      "B04": "Open questions surfaced: Will the ATS acqui-hire proceed? Will alumni offices accept free Careerspan? What happens with the AGI company assessment partnership? Multiple unresolved threads about strategic direction that need follow-up tracking.",
+      "B06": "Substantial business strategy discussion: alumni office pivot for Careerspan, talent agency model positioning, pricing strategy ($500/candidate), market dynamics with universities loving free products. Directly aligns with V's priority on Careerspan recruiting revenue.",
+      "B10": "Clear relationship evolution: V committing to multi-month capacity for this strategy, discussing partnership structure (V handles alumni offices, Shivam handles jobs/placement logistics), and equity restructuring for Logan and Ilsa to reduce pressure.",
+      "B13": "Actionable next steps identified: (1) V to follow up with Ross founder for founding engineer role, (2) Pursue alumni office strategy leveraging Emory and UCLA contracts, (3) Continue AGI company discussions, (4) Finalize equity rework for Logan/Ilsa. Directly supports Careerspan revenue priority.",
+      "B25": "Deliverables mentioned: hotline for career advice (V has working prototype with follow-up email functionality), platform improvements pending revenue, function-based talent pools (Emory-engineers model), supplementary university hotline product. Though conceptual, these are concrete outputs discussed.",
+      "B28": "Rich strategic intelligence: alumni offices are archaic but care deeply about contact data and career spike data; they 'love free'; product-market fit identified for Careerspan with alumni offices; talent agency model as recruiting supplement; university channels are 'very hard to break into' but Careerspan has entry points.",
+      "B32": "Novel ideas worth capturing: (1) Talent agency model with function-specific pools (Emory-engineers), (2) 'Careerspan Select' positioning for elite schools, (3) University-paid hotline as supplementary revenue stream, (4) Alumni office as primary sales channel, (5) $500 per candidate pricing model for premium pools.",
+      "B33": "Complex strategic decision: ATS acqui-hire offer provides no founder money but gives Logan/Ilsa salary relief and university access. V weighing whether to recommend they take it while he pursues alumni office strategy independently. Multi-month commitment decision with nuanced trade-offs around sustainability vs. potential upside.",
+      "B07": "Skipped: No explicit trigger phrases detected. V mentioned meeting a Ross founder and discussed Michigan connections, but there was no verbal cue like 'Zo, intro me to...' or 'connect me with...'. The Michigan reference was Shivam's business school affiliation, not an introduction request.",
+      "B14": "Skipped: No explicit trigger phrases detected. No verbal cues like 'Zo, draft a blurb...' or 'write a blurb about...'. While the conversation could inform future marketing copy, no immediate blurb request was made."
+    },
+    "total_blocks": 15
+  },
+  "blocks_generated": [
+    "B02_B05_COMMITMENTS_AND_ACTIONS",
+    "B28_STRATEGIC_INTELLIGENCE",
+    "B26_MEETING_METADATA",
+    "B25_DELIVERABLE_MAP",
+    "B21_KEY_MOMENTS",
+    "B32_THOUGHT_PROVOKING_IDEAS",
+    "B01_DETAILED_RECAP",
+    "B00_ZO_TAKE_HEED",
+    "B03_DECISIONS",
+    "B33_DECISION_RATIONALE",
+    "B04_OPEN_QUESTIONS",
+    "B10_RELATIONSHIP_TRAJECTORY",
+    "B06_BUSINESS_CONTEXT",
+    "B13_PLAN_OF_ACTION",
+    "B08_STAKEHOLDER_INTELLIGENCE"
+  ],
+  "processed_at": "2026-02-18T17:52:13.301905Z"
+}

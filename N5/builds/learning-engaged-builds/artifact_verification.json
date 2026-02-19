@@ -1,0 +1,148 @@
+{
+  "slug": "learning-engaged-builds",
+  "timestamp": "2026-02-18T04:17:20.981201+00:00",
+  "drops": {
+    "D1.1": {
+      "claimed": [
+        "N5/config/understanding_bank.json",
+        "N5/scripts/migrate_glossary.py",
+        "Skills/pulse/config/pulse_v2_config.json"
+      ],
+      "verified": [
+        "N5/config/understanding_bank.json",
+        "Skills/pulse/config/pulse_v2_config.json"
+      ],
+      "missing": [
+        "N5/scripts/migrate_glossary.py"
+      ]
+    },
+    "D1.1_validation": {
+      "claimed": [],
+      "verified": [],
+      "missing": []
+    },
+    "D2.1": {
+      "claimed": [
+        "N5/pulse/review_manager.py",
+        "N5/pulse/feedback_extractor.py",
+        "N5/pulse/sms_intake.py",
+        "N5/prefs/operations/pulse_v2_guidelines.md",
+        "Documents/Sharing/Pulse-V3-Spec-For-Zo.md",
+        "Documents/System/personas/vibe_teacher_persona.md"
+      ],
+      "verified": [
+        "N5/pulse/review_manager.py",
+        "N5/pulse/feedback_extractor.py",
+        "N5/pulse/sms_intake.py",
+        "N5/prefs/operations/pulse_v2_guidelines.md",
+        "Documents/Sharing/Pulse-V3-Spec-For-Zo.md",
+        "Documents/System/personas/vibe_teacher_persona.md"
+      ],
+      "missing": []
+    },
+    "D1.2": {
+      "claimed": [
+        "N5/pulse/review_manager.py",
+        "N5/pulse/feedback_extractor.py",
+        "N5/pulse/sms_intake.py",
+        "N5/prefs/operations/pulse_v2_guidelines.md",
+        "Documents/Sharing/Pulse-V3-Spec-For-Zo.md",
+        "Documents/System/personas/vibe_teacher_persona.md"
+      ],
+      "verified": [
+        "N5/pulse/review_manager.py",
+        "N5/pulse/feedback_extractor.py",
+        "N5/pulse/sms_intake.py",
+        "N5/prefs/operations/pulse_v2_guidelines.md",
+        "Documents/Sharing/Pulse-V3-Spec-For-Zo.md",
+        "Documents/System/personas/vibe_teacher_persona.md"
+      ],
+      "missing": []
+    },
+    "D2.1_validation": {
+      "claimed": [],
+      "verified": [],
+      "missing": []
+    },
+    "D4.1": {
+      "claimed": [
+        "Skills/drop-close/SKILL.md",
+        "Skills/build-close/SKILL.md",
+        "Documents/System/personas/vibe_architect_persona.md"
+      ],
+      "verified": [
+        "Skills/drop-close/SKILL.md",
+        "Skills/build-close/SKILL.md",
+        "Documents/System/personas/vibe_architect_persona.md"
+      ],
+      "missing": []
+    },
+    "D3.1": {
+      "claimed": [
+        "N5/templates/build/plan_template.md",
+        "Skills/pulse/references/learning-drop-template.md",
+        "Skills/pulse/references/decisions-template.md",
+        "Skills/pulse/references/drop-brief-template.md",
+        "Skills/pulse/references/interview-protocol.md",
+        "Skills/pulse/references/filter-criteria.md",
+        "Skills/pulse/references/escalation-protocol.md",
+        "Skills/pulse/SKILL.md"
+      ],
+      "verified": [
+        "N5/templates/build/plan_template.md",
+        "Skills/pulse/references/learning-drop-template.md",
+        "Skills/pulse/references/decisions-template.md",
+        "Skills/pulse/references/drop-brief-template.md",
+        "Skills/pulse/references/interview-protocol.md",
+        "Skills/pulse/references/filter-criteria.md",
+        "Skills/pulse/references/escalation-protocol.md",
+        "Skills/pulse/SKILL.md"
+      ],
+      "missing": []
+    },
+    "D3.1_validation": {
+      "claimed": [],
+      "verified": [],
+      "missing": []
+    },
+    "D4.1_validation": {
+      "claimed": [],
+      "verified": [],
+      "missing": []
+    },
+    "D2.3": {
+      "claimed": [
+        "Skills/pulse/scripts/pulse.py",
+        "N5/scripts/init_build.py"
+      ],
+      "verified": [
+        "Skills/pulse/scripts/pulse.py",
+        "N5/scripts/init_build.py"
+      ],
+      "missing": []
+    },
+    "D5.1": {
+      "claimed": [
+        "Skills/pulse/scripts/pulse.py",
+        "N5/scripts/init_build.py"
+      ],
+      "verified": [
+        "Skills/pulse/scripts/pulse.py",
+        "N5/scripts/init_build.py"
+      ],
+      "missing": []
+    },
+    "D5.1_validation": {
+      "claimed": [],
+      "verified": [],
+      "missing": []
+    }
+  },
+  "summary": {
+    "total_artifacts": 30,
+    "verified": 29,
+    "missing": 1,
+    "errors": 0
+  },
+  "passed": false
+}

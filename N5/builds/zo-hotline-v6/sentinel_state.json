@@ -1,0 +1,12 @@
+{
+  "last_check_at": "2026-02-19T00:26:15.025787Z",
+  "last_completions": 3,
+  "last_wave": "W2",
+  "last_running_drops": [
+    "D2.2"
+  ],
+  "last_running_since": {
+    "D2.2": "2026-02-19T00:15:43.568414+00:00"
+  },
+  "check_count": 3
+}

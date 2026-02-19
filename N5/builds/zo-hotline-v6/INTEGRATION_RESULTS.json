@@ -1,0 +1,10 @@
+{
+  "slug": "zo-hotline-v6",
+  "timestamp": "2026-02-19T03:34:48.103446+00:00",
+  "total": 0,
+  "passed": 0,
+  "failed": 0,
+  "results": [],
+  "all_passed": true,
+  "message": "No integration tests defined"
+}

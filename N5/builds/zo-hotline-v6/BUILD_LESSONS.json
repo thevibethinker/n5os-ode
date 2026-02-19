@@ -1,0 +1,89 @@
+{
+  "slug": "zo-hotline-v6",
+  "learnings": [
+    {
+      "text": "edit_file_llm handles multi-site edits within a single file cleanly when instructions are precise and non-overlapping",
+      "source": "Drop:D1.2",
+      "added_at": "2026-02-19T03:34:48.171094+00:00",
+      "tags": []
+    },
+    {
+      "text": "Voice rules are numbered sequentially \u2014 new rules must continue the sequence (12, 13) not restart",
+      "source": "Drop:D1.2",
+      "added_at": "2026-02-19T03:34:48.171857+00:00",
+      "tags": []
+    },
+    {
+      "text": "VAPI assistant-request webhook response uses FLAT analysisPlan fields (summaryPrompt, structuredDataPrompt, structuredDataSchema, successEvaluationPrompt, successEvaluationRubric), NOT the nested Plan objects shown in the Create Assistant API docs. The nested format is silently ignored \u2014 no validation error is returned, making this extremely hard to debug without comparing pre/post call data.",
+      "source": "Drop:D1.1",
+      "added_at": "2026-02-19T03:34:48.172769+00:00",
+      "tags": []
+    },
+    {
+      "text": "Deepgram nova-2 keyword boosting uses 'word:weight' format where higher numbers mean stronger bias. Max practical value appears to be around 25.",
+      "source": "Drop:D1.1",
+      "added_at": "2026-02-19T03:34:48.173521+00:00",
+      "tags": []
+    },
+    {
+      "text": "DuckDB ALTER TABLE ADD COLUMN IF NOT EXISTS is safe to run on every initDb \u2014 idempotent.",
+      "source": "Drop:D1.1",
+      "added_at": "2026-02-19T03:34:48.174159+00:00",
+      "tags": []
+    },
+    {
+      "text": "The getRecentCallContext async function can fail with JSON parse error during startup if DuckDB file is locked by initDb. Non-critical but worth noting.",
+      "source": "Drop:D1.1",
+      "added_at": "2026-02-19T03:34:48.174704+00:00",
+      "tags": []
+    },
+    {
+      "text": "zo.space page routes support IntersectionObserver and navigator.clipboard APIs \u2014 no polyfills needed",
+      "source": "Drop:D2.1",
+      "added_at": "2026-02-19T03:34:48.175490+00:00",
+      "tags": []
+    },
+    {
+      "text": "JSON.stringify handles escaping for data embedded in JS source (backticks and template literals in string values are safe since they're inside regular quotes, not template literals)",
+      "source": "Drop:D2.1",
+      "added_at": "2026-02-19T03:34:48.176033+00:00",
+      "tags": []
+    },
+    {
+      "text": "Clipboard API requires HTTPS which zo.space provides; included execCommand fallback for edge cases",
+      "source": "Drop:D2.1",
+      "added_at": "2026-02-19T03:34:48.176576+00:00",
+      "tags": []
+    },
+    {
+      "text": "Tailwind 4 on zo.space supports all standard utility classes including animation, backdrop-blur, gradient stops",
+      "source": "Drop:D2.1",
+      "added_at": "2026-02-19T03:34:48.177156+00:00",
+      "tags": []
+    },
+    {
+      "text": "The brief's 4 changes were already implemented by prior drops \u2014 the retry context mentioned timeout on first attempt, but the work had actually landed. Always grep for existing implementations before writing new code.",
+      "source": "Drop:D2.2",
+      "added_at": "2026-02-19T03:34:48.177950+00:00",
+      "tags": []
+    },
+    {
+      "text": "The actual implementation uses a cleaner architecture than the brief specified: dedicated functions (executeFollowUpFlow, generateFollowUpContent, createFollowUpPage, sendFollowUpSMS, logFollowUpToDB) instead of inline code in the end-of-call-report handler.",
+      "source": "Drop:D2.2",
+      "added_at": "2026-02-19T03:34:48.178571+00:00",
+      "tags": []
+    },
+    {
+      "text": "collectedFollowups Map serves the same purpose as the brief's pendingFollowUps \u2014 stores call ID \u2192 boolean intent during the call, consumed in end-of-call-report.",
+      "source": "Drop:D2.2",
+      "added_at": "2026-02-19T03:34:48.179200+00:00",
+      "tags": []
+    },
+    {
+      "text": "VAPI keyword validation rejects spaces. Added sanitizeKeywords() runtime guard and VAPI_DEBUGGING_PROTOCOL.md. Every Drop touching hotline-webhook.ts must read this protocol.",
+      "source": "manual",
+      "added_at": "2026-02-19T03:42:30.993316+00:00",
+      "tags": []
+    }
+  ]
+}

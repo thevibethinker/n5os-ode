@@ -1,0 +1,17 @@
+{
+  "drop_id": "D2.2",
+  "build_slug": "zo-hotline-v6",
+  "validated_at": "2026-02-19T00:57:36.157849+00:00",
+  "verdict": "PASS",
+  "reason": "Passed validators",
+  "mechanical": {
+    "drop_id": "D2.2",
+    "build_slug": "zo-hotline-v6",
+    "timestamp": "2026-02-19T00:57:36.158276",
+    "files_checked": 0,
+    "critical_count": 0,
+    "warning_count": 0,
+    "issues": {}
+  },
+  "llm": null
+}

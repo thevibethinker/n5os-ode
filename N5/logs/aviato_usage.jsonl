@@ -252,3 +252,6 @@
 {"timestamp": "2026-01-13T03:36:12.303780Z", "email": "", "success": true, "person_found": true, "linkedin_url": "https://linkedin.com/in/bawotona"}
 {"timestamp": "2026-01-18T16:41:22.674125Z", "email": "", "success": true, "person_found": true, "linkedin_url": "https://www.linkedin.com/in/julienkhaleghy"}
 {"timestamp": "2026-01-28T22:14:41.730927Z", "email": "jxie08@gmail.com", "success": true, "person_found": true, "linkedin_url": "linkedin.com/in/jingxie"}
+{"timestamp": "2026-02-19T03:44:52.658206Z", "email": "konrad@aviato.co", "success": true, "person_found": true, "linkedin_url": "linkedin.com/in/konrad-kucharski-18140065"}
+{"timestamp": "2026-02-19T03:44:54.544907Z", "email": "epak171@gmail.com", "success": true, "person_found": false}
+{"timestamp": "2026-02-19T03:44:55.149154Z", "email": "attawar.v@gmail.com", "success": true, "person_found": true, "linkedin_url": "linkedin.com/in/vrijenattawar"}
