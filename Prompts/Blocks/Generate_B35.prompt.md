@@ -117,8 +117,10 @@ OUTPUT (JSONL):
 
 ## Integration
 
+> **Note:** `extract_voice_primitives.py` is an optional voice extraction extension not included in the base Ode distribution. The prompt template above works standalone — the LLM generates B35 output directly from transcript input.
+
 This block feeds into:
-- `N5/scripts/extract_voice_primitives.py` — batch extraction
+- `N5/scripts/extract_voice_primitives.py` — batch extraction (extended installation)
 - `N5/data/voice_library.db` — storage after review
 - `N5/review/voice/` — HITL review queue
 

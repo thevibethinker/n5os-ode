@@ -28,7 +28,7 @@ Guidelines for writing in n5OS-Ode context (emails, blurbs, documentation, promp
 
 - Markdown for everything
 - YAML frontmatter for documents
-- File references use backticks: `` `file 'path/to/file'` ``
+- File references use backticks: `` `file '<file-path>'` ``
 - Code blocks with language tags
 
 ## Examples

@@ -4,6 +4,8 @@ last_edited: 2025-11-17
 version: 1.0
 ---
 
+> **Note:** The content library database scripts (`content_library_db.py`, `content_ingest.py`) are part of the extended N5 system and not included in the base Ode distribution. The manual workflows described here still apply.
+
 # Content Library Quick Reference
 
 **Database:** `N5/data/content_library.db`  

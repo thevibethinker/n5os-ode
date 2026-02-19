@@ -5,6 +5,8 @@ version: 1.0
 provenance: n5os-ode-upgrade-worker1
 ---
 
+> **Note:** This document describes the full conversation-end system, including scripts from the extended N5 installation. The base Ode distribution includes `conversation_end_router.py` and `session_state_manager.py`. All other scripts listed below require the extended installation or must be created separately. The conceptual workflow and tier system apply regardless — the LLM performs the semantic steps directly.
+
 # Conversation End System
 
 ## Why Conversation Hygiene Matters
@@ -197,7 +199,7 @@ python3 N5/scripts/positions.py check-overlap "insight text"
 
 ## See Also
 
-- **Prompt:** `file 'Prompts/Close Conversation.prompt.md'` (v5.1)
+- **Prompt:** `file 'Prompts/close-conversation.prompt.md'` (v5.1)
 - **Router:** `file 'N5/scripts/conversation_end_router.py'` (v3.0)
 - **Spec:** `file 'N5/prefs/operations/conversation-end-v3.md'`
 - **Emoji Legend:** `file 'N5/config/emoji-legend.json'`
@@ -208,12 +210,12 @@ python3 N5/scripts/positions.py check-overlap "insight text"
 
 **✅ Implemented (Ready to use):**
 - `N5/scripts/conversation_end_router.py` — Tier detection and routing
-- `N5/scripts/positions.py` — Position extraction and overlap checking
 - `N5/scripts/session_state_manager.py` — SESSION_STATE management
 - Two-mode system (Worker Close vs Full Close) documentation
 - Worker handoff workflow
 
-**⏳ Pending (Will be added during upgrade):**
+**⏳ Extended installation:**
+- `N5/scripts/positions.py` — Position extraction and overlap checking
 - `N5/scripts/conversation_end_quick.py` — Tier 1 mechanical close
 - `N5/scripts/conversation_end_standard.py` — Tier 2 mechanical close
 - `N5/scripts/conversation_end_full.py` — Tier 3 mechanical close
@@ -221,4 +223,4 @@ python3 N5/scripts/positions.py check-overlap "insight text"
 - `N5/scripts/capability_graduation.py` — Capability graduation checks
 - `N5/scripts/build_worker_complete.py` — Worker-to-orchestrator notification
 
-Until these scripts are available, the mechanical steps must be executed manually following the workflow in `Close Conversation.prompt.md`.
+Until these scripts are available, the mechanical steps must be executed manually following the workflow in `close-conversation.prompt.md`.

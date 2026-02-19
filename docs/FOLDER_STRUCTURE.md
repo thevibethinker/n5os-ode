@@ -123,8 +123,8 @@ Records/
 ```
 Prompts/
 ├── Journal.prompt.md
-├── Close Conversation.prompt.md
-├── Build Capability.prompt.md
+├── close-conversation.prompt.md
+├── build-capability.prompt.md
 ├── Blocks/
 │   ├── Generate_B01.prompt.md
 │   ├── Generate_B02.prompt.md

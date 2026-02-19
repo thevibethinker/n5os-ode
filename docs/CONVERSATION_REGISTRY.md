@@ -1,3 +1,10 @@
+---
+created: 2026-01-15
+last_edited: 2026-02-18
+version: 1.1
+provenance: con_o9nkV9huRbIpeEGn
+---
+
 # Conversation Registry System
 
 The Conversation Registry is a SQLite database that tracks all your conversations, their state, artifacts, issues, and learnings. It's the "memory" layer that enables N5OS Ode to understand your work history.

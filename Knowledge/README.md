@@ -114,10 +114,7 @@ Knowledge/
     └── my-notes-on-databases.md
 ```
 
-For semantic indexing, run:
-```bash
-python3 N5/scripts/content_ingest.py "Knowledge/technical/my-notes.md" --type note
-```
+To keep content organized, place files in the appropriate subdirectory under `content-library/` (e.g., `articles/`, `notes/`) with proper YAML frontmatter. No additional scripts are required — manual file placement is the recommended workflow for the base distribution.
 
 ---
 

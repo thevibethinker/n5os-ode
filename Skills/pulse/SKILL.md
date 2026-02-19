@@ -658,8 +658,8 @@ python3 Skills/pulse/scripts/pulse_safety.py restore <slug>
 
 ## Related Files
 
-- `file 'Skills/pulse-interview/SKILL.md'` — Pre-build interview skill
+- `file 'Skills/pulse-interview/SKILL.md'` — Pre-build interview skill *(external — not included in base Ode distribution)*
 - `file 'N5/learnings/SYSTEM_LEARNINGS.json'` — System-wide learnings
 - `file 'N5/config/pulse_control.json'` — Sentinel control state
-- `file 'Documents/System/Build-Orchestrator-System.md'` — Legacy manual system
+- `file 'Documents/System/Build-Orchestrator-System.md'` — Legacy manual system *(external — not included in base Ode distribution)*
 - `file 'N5/pulse/'` — v2 scripts directory

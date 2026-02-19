@@ -23,8 +23,10 @@ Run after MG-2 completes (B01-B32 blocks exist). Can be run:
 
 ## Usage
 
+> **Note:** `generate_b33_edges.py` is an optional edge-generation extension not included in the base Ode distribution. The extraction framework below can be applied manually by the LLM without the script.
+
 ```bash
-# Dry run - see what would be extracted
+# Dry run - see what would be extracted (requires extended installation)
 python3 N5/scripts/generate_b33_edges.py --meeting /path/to/meeting_[P] --dry-run
 
 # Generate B33 file (edges go to review queue)

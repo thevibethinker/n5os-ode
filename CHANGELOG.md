@@ -37,7 +37,7 @@ All notable changes to n5OS-Ode are documented here.
 
 ### Added
 - **Scripts**: `scripts/init_build.py`, `scripts/journal.py` (wrapper), `scripts/validate_repo.py`
-- **Core Scripts**: `N5/scripts/positions.py`, `N5/scripts/conversation_end_router.py`, `N5/scripts/n5_safety.py`
+- **Core Scripts**: `N5/scripts/conversation_end_router.py`, `N5/scripts/n5_safety.py` (Note: `N5/scripts/positions.py` is available in the extended installation)
 - **Configuration**: `N5/config/emoji-legend.json`, `N5/config/commit_targets.json`
 - **Documentation**: All missing context files (planning_prompt.md, style-guide.md, conversation-end-v3.md, etc.)
 - **Quality**: `.gitignore` with Python/cache patterns, GitHub Actions CI workflow

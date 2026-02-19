@@ -22,7 +22,7 @@ provenance: con_KsG8Cyc7SlXm5lHr
 
 **Files to update:**
 - [ ] `N5/scripts/n5_load_context.py` (line 12)
-- [ ] `N5/scripts/content_ingest.py` (line 11)
+- [ ] `N5/scripts/content_ingest.py` (line 11) *(available in extended installation)*
 - [ ] `N5/scripts/debug_logger.py` (line 15)
 - [ ] `N5/scripts/journal.py` (line 28)
 - [ ] `N5/scripts/n5_protect.py` (line 13)
@@ -36,7 +36,7 @@ provenance: con_KsG8Cyc7SlXm5lHr
 
 ### Task 1.2: Create Missing `init_build.py` Script
 
-**Problem:** `Prompts/Build Capability.prompt.md` references `scripts/init_build.py` which doesn't exist.
+**Problem:** `Prompts/build-capability.prompt.md` references `scripts/init_build.py` which doesn't exist.
 
 **Action:** Create `N5/scripts/init_build.py` with minimal functionality:
 - Accept `<slug>` and `--title` arguments
@@ -80,7 +80,7 @@ N5/builds/<slug>/
 
 ### Task 1.4: Fix or Remove Close Conversation Prompt
 
-**Problem:** `Prompts/Close Conversation.prompt.md` references 10+ scripts/files that don't exist in the export.
+**Problem:** `Prompts/close-conversation.prompt.md` references 10+ scripts/files that don't exist in the export.
 
 **Options (choose one):**
 
@@ -95,7 +95,7 @@ N5/builds/<slug>/
 
 **Action:** Implement Option A — rewrite to be self-contained
 
-**Verification:** Read through prompt, confirm no `file '...'` references to non-existent files
+**Verification:** Read through prompt, confirm no dangling file references to non-existent files
 
 ---
 
@@ -189,8 +189,8 @@ These can be brief (100-200 words each).
 - [ ] YAML frontmatter is valid
 
 **Prompts to check:**
-- `Prompts/Build Capability.prompt.md`
-- `Prompts/Close Conversation.prompt.md`
+- `Prompts/build-capability.prompt.md`
+- `Prompts/close-conversation.prompt.md`
 - `Prompts/Journal.prompt.md`
 - `Prompts/Blocks/*.prompt.md` (6 files)
 - `Prompts/reflections/*.prompt.md` (4 files)
@@ -247,9 +247,9 @@ test -f LICENSE && echo "PASS" || echo "FAIL"
 5. `N5/scripts/n5_protect.py` — fix URL
 6. `N5/scripts/session_state_manager.py` — fix URL
 7. `N5/prefs/prefs.md` — fix broken links
-8. `Prompts/Close Conversation.prompt.md` — simplify/rewrite
+8. `Prompts/close-conversation.prompt.md` — simplify/rewrite
 9. `Prompts/Journal.prompt.md` — fix script paths
-10. `Prompts/Build Capability.prompt.md` — fix script paths
+10. `Prompts/build-capability.prompt.md` — fix script paths
 11. `docs/DEPENDENCIES.md` — add PyYAML
 
 ---

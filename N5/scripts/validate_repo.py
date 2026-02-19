@@ -34,6 +34,12 @@ def main():
     # Build set of relative paths from root
     existing = {str(p.relative_to(root)).replace('\\', '/') for p in root.rglob('*') if p.is_file()}
     
+    RUNTIME_PATH_PREFIXES = {
+        'Personal/', 'Documents/', 'Knowledge/', 'Records/',
+        'N5/builds/', 'N5/schemas/', 'N5/learnings/', 'N5/config/pulse_control',
+        'Skills/pulse-interview/',
+    }
+    
     md_files = list(root.rglob("*.md")) + list(root.rglob("*.prompt.md"))
     for md_file in md_files:
         try:
@@ -46,6 +52,14 @@ def main():
             if ref.startswith('/'):
                 continue
             ref_norm = ref.lstrip('./')
+            if '<' in ref_norm or ref_norm == '...':
+                continue
+            if ref_norm.startswith('path/to/'):
+                continue
+            if ref_norm.endswith('/'):
+                continue
+            if any(ref_norm.startswith(p) for p in RUNTIME_PATH_PREFIXES):
+                continue
             if ref_norm not in existing:
                 warnings.append(f"Missing file ref: {md_file.relative_to(root)}: {ref}")
     
@@ -87,6 +101,8 @@ def main():
             warnings.append(f"Placeholder {placeholder_pattern} found in: {pf.relative_to(root)}")
     
     # Report
+    warnings = list(dict.fromkeys(warnings))
+    
     print("=" * 70)
     print("n5OS-Ode Repository Validation")
     print("=" * 70)
