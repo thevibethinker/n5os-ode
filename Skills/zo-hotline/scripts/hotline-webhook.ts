@@ -1632,7 +1632,7 @@ const server = Bun.serve({
         const response = {
           assistant: {
             name: "Zoseph",
-            firstMessage: "Hey — this is Zoseph on the Vibe Thinker Hotline. I help people figure out what to build on Zo Computer. Are you exploring what's possible, or working on something specific?",
+            firstMessage: "Hey, welcome to the Vibe Thinker Hotline — I'm Zoe-seph. What's your name?",
 
             transcriber: {
               provider: "deepgram",
@@ -1771,9 +1771,9 @@ const server = Bun.serve({
               provider: "11labs",
               voiceId: VOICE_ID,
               model: "eleven_flash_v2_5",
-              stability: 0.45,
-              similarityBoost: 0.75,
-              style: 0.65,
+              stability: 0.52,
+              similarityBoost: 0.80,
+              style: 0.55,
               useSpeakerBoost: true,
               optimizeStreamingLatency: 4,
               pronunciationDictionaryLocators: [
