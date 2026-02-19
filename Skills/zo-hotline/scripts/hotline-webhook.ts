@@ -26,6 +26,18 @@ if (!anthropicClient) {
 }
 
 const collectedEmails = new Map<string, string>();
+const collectedFollowups = new Map<string, boolean>();
+// --- VAPI Keyword Sanitizer (spaces in keywords = silent assistant failure) ---
+function sanitizeKeywords(keywords: string[]): string[] {
+  return keywords.map(kw => {
+    const cleaned = kw.replace(/\s+/g, '');
+    if (cleaned !== kw) {
+      console.warn(`[KEYWORD SANITIZER] Fixed invalid keyword: "${kw}" -> "${cleaned}"`);
+    }
+    return cleaned;
+  });
+}
+
 // ─── System prompt ───────────────────────────────────────────────────────────
 const systemPromptTemplate = readFileSync("/home/workspace/Skills/zo-hotline/prompts/zoseph-system-prompt.md", "utf-8")
   .replace(/^---[\s\S]*?---\s*/, '');
@@ -393,7 +405,37 @@ async function persistToolUsage(callId: string, durationSeconds: number, satisfa
     writeFileSync(logPath, existing + line);
     console.log(`Tool usage logged for call ${callId}: ${usage.length} tool calls`);
   } catch (error) {
-    console.error("Failed to persist tool usage:", error);
+    console.error("Failed to persist tool usage to JSONL:", error);
+  }
+
+  try {
+    const dbScript = `
+import duckdb, json, sys
+data = json.loads(sys.stdin.read())
+con = duckdb.connect(data['db'])
+for entry in data['entries']:
+    con.execute(
+        'INSERT INTO tool_usage (call_id, tool_name, params, concept, file_path, invoked_at) VALUES (?, ?, ?, ?, ?, ?)',
+        [data['call_id'], entry['name'], json.dumps(entry.get('params', {})), entry.get('concept'), entry.get('file_path'), entry['timestamp']]
+    )
+con.close()
+print('OK')
+`;
+    const dbEntries = usage.map(u => ({
+      name: u.name,
+      params: {},
+      concept: (u as any).concept || null,
+      file_path: (u as any).file_path || null,
+      timestamp: u.timestamp,
+    }));
+    const proc = Bun.spawn(["python3", "-c", dbScript], { stdin: "pipe", stdout: "pipe", stderr: "pipe" });
+    proc.stdin.write(JSON.stringify({ db: DB_PATH, call_id: callId, entries: dbEntries }));
+    proc.stdin.end();
+    const stderr = await new Response(proc.stderr).text();
+    await proc.exited;
+    if (stderr) console.error("Tool usage DB persist stderr:", stderr);
+  } catch (error) {
+    console.error("Failed to persist tool usage to DuckDB:", error);
   }
   callToolUsage.delete(callId);
 }
@@ -479,6 +521,20 @@ async function initDb() {
         flags VARCHAR,
         spotlight_text TEXT,
         created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      );
+
+      ALTER TABLE calls ADD COLUMN IF NOT EXISTS followup_sent BOOLEAN DEFAULT FALSE;
+      ALTER TABLE calls ADD COLUMN IF NOT EXISTS followup_url VARCHAR;
+      ALTER TABLE calls ADD COLUMN IF NOT EXISTS followup_sent_at TIMESTAMP;
+
+      CREATE TABLE IF NOT EXISTS tool_usage (
+        id VARCHAR DEFAULT gen_random_uuid(),
+        call_id VARCHAR,
+        tool_name VARCHAR,
+        params JSON,
+        concept VARCHAR,
+        file_path VARCHAR,
+        invoked_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
       );
     `]);
     await proc.exited;
@@ -749,6 +805,463 @@ con.close()
   proc.stdin.write(JSON.stringify({ db: DB_PATH, email, call_id: callId }));
   proc.stdin.end();
 }
+
+// ─── SMS Follow-Up Infrastructure ────────────────────────────────────────────
+
+const FOLLOWUP_PAGE_SYSTEM_PROMPT = `You generate structured content for personalized follow-up pages after Vibe Thinker Hotline calls. Output MUST be valid JSON matching the schema exactly. Be specific and actionable — every prompt should be something the caller can paste directly into their Zo. Every next step should be concrete and achievable in 15 minutes or less.`;
+
+interface FollowUpPageData {
+  callerName?: string;
+  date: string;
+  summary: string;
+  pathway: string;
+  level?: number;
+  primaryInterest: string;
+  prompts: Array<{ label: string; text: string }>;
+  nextSteps: Array<{ step: string; detail: string }>;
+  communityLinks?: Array<{ label: string; url: string; description: string }>;
+}
+
+function generateSlug(callerName?: string, primaryInterest?: string): string {
+  const now = new Date();
+  const month = now.toLocaleString("en-US", { month: "short", timeZone: "America/New_York" }).toLowerCase();
+  const day = now.getDate();
+  const parts: string[] = [];
+  if (callerName) parts.push(callerName.toLowerCase().replace(/[^a-z0-9]/g, ""));
+  if (primaryInterest) {
+    const words = primaryInterest.toLowerCase().replace(/[^a-z0-9\s]/g, "").split(/\s+/).slice(0, 3);
+    parts.push(...words);
+  }
+  parts.push(`${month}${day}`);
+  return parts.join("-").replace(/-+/g, "-").substring(0, 60);
+}
+
+function generateFollowUpPageSource(data: FollowUpPageData): string {
+  const communityLinks = data.communityLinks ?? [
+    { label: "Join the Zo Discord", url: "https://discord.gg/zocomputer", description: "Ask questions, share what you've built, see what others are automating" },
+    { label: "Get help anytime", url: "https://support.zocomputer.com", description: "Documentation, tutorials, and direct support from the Zo team" },
+  ];
+  const promptsJSON = JSON.stringify(data.prompts);
+  const stepsJSON = JSON.stringify(data.nextSteps);
+  const linksJSON = JSON.stringify(communityLinks);
+
+  return `
+import { useState, useEffect, useRef } from "react";
+import { Check, Copy, ChevronRight, ExternalLink, MessageCircle, Sparkles, ArrowRight } from "lucide-react";
+
+const DATA = {
+  callerName: ${JSON.stringify(data.callerName || "")},
+  date: ${JSON.stringify(data.date)},
+  summary: ${JSON.stringify(data.summary)},
+  pathway: ${JSON.stringify(data.pathway)},
+  level: ${JSON.stringify(data.level ?? 3)},
+  primaryInterest: ${JSON.stringify(data.primaryInterest)},
+  prompts: ${promptsJSON},
+  nextSteps: ${stepsJSON},
+  communityLinks: ${linksJSON},
+  footerNote: "This page was built by Zo Computer after your call — in real-time. That\\u0027s the kind of thing you can build too.",
+};
+
+function CopyButton({ text }: { text: string }) {
+  const [copied, setCopied] = useState(false);
+  const handleCopy = async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch {
+      const ta = document.createElement("textarea");
+      ta.value = text;
+      ta.style.position = "fixed";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand("copy");
+      document.body.removeChild(ta);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    }
+  };
+  return (
+    <button onClick={handleCopy} className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium transition-all duration-200 bg-zinc-700 hover:bg-zinc-600 text-zinc-300 hover:text-white active:scale-95">
+      {copied ? (<><Check className="w-3.5 h-3.5 text-emerald-400" /><span className="text-emerald-400">Copied</span></>) : (<><Copy className="w-3.5 h-3.5" /><span>Copy</span></>)}
+    </button>
+  );
+}
+
+function Section({ children, id }: { children: React.ReactNode; id?: string }) {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(([entry]) => { if (entry.isIntersecting) setVisible(true); }, { threshold: 0.1 });
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, []);
+  return (<div ref={ref} id={id} className={\\\`transition-all duration-700 \\\${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}\\\`}>{children}</div>);
+}
+
+export default function HotlineFollowUp() {
+  const d = DATA;
+  return (
+    <div className="min-h-screen bg-zinc-900 text-zinc-100">
+      <div className="max-w-2xl mx-auto px-5 py-10 sm:py-16">
+        <Section>
+          <div className="mb-12">
+            <div className="flex items-center gap-2 text-zinc-500 text-sm mb-4">
+              <Sparkles className="w-4 h-4 text-amber-500" />
+              <span>Vibe Thinker Hotline</span>
+              <span className="text-zinc-700">·</span>
+              <span>{d.date}</span>
+            </div>
+            <h1 className="text-3xl sm:text-4xl font-semibold tracking-tight leading-tight">
+              {d.callerName ? \\\`\\\${d.callerName}, here's\\\` : "Here's"} your follow-up
+            </h1>
+            <div className="mt-4 h-px bg-gradient-to-r from-amber-500/40 via-zinc-700 to-transparent" />
+          </div>
+        </Section>
+        <Section id="summary">
+          <div className="mb-12">
+            <h2 className="text-sm font-medium uppercase tracking-wider text-zinc-500 mb-3">What we talked about</h2>
+            <p className="text-lg leading-relaxed text-zinc-300">{d.summary}</p>
+          </div>
+        </Section>
+        <Section id="prompts">
+          <div className="mb-12">
+            <h2 className="text-sm font-medium uppercase tracking-wider text-zinc-500 mb-1">Try this on Zo</h2>
+            <p className="text-zinc-500 text-sm mb-5">Copy a prompt, paste it into your Zo, and watch it go.</p>
+            <div className="space-y-5">
+              {d.prompts.map((prompt: any, i: number) => (
+                <div key={i} className="rounded-xl border border-zinc-800 bg-zinc-800/50 overflow-hidden">
+                  <div className="flex items-center justify-between px-4 py-3 border-b border-zinc-700/50">
+                    <span className="text-sm font-medium text-zinc-300">{prompt.label}</span>
+                    <CopyButton text={prompt.text} />
+                  </div>
+                  <pre className="px-4 py-4 text-sm leading-relaxed text-zinc-400 whitespace-pre-wrap font-mono overflow-x-auto">{prompt.text}</pre>
+                </div>
+              ))}
+            </div>
+          </div>
+        </Section>
+        <Section id="steps">
+          <div className="mb-12">
+            <h2 className="text-sm font-medium uppercase tracking-wider text-zinc-500 mb-1">Your first 15 minutes</h2>
+            <p className="text-zinc-500 text-sm mb-5">Here's exactly what to do next.</p>
+            <ol className="space-y-4">
+              {d.nextSteps.map((item: any, i: number) => (
+                <li key={i} className="flex gap-4">
+                  <div className="flex-shrink-0 w-7 h-7 rounded-full bg-zinc-800 border border-zinc-700 flex items-center justify-center text-sm font-medium text-zinc-400">{i + 1}</div>
+                  <div className="pt-0.5">
+                    <div className="font-medium text-zinc-200">{item.step}</div>
+                    <div className="text-sm text-zinc-500 mt-0.5 leading-relaxed">{item.detail}</div>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </div>
+        </Section>
+        <Section id="links">
+          <div className="mb-12">
+            <h2 className="text-sm font-medium uppercase tracking-wider text-zinc-500 mb-5">Keep going</h2>
+            <div className="space-y-3">
+              {d.communityLinks.map((link: any, i: number) => (
+                <a key={i} href={link.url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-4 rounded-xl border border-zinc-800 bg-zinc-800/30 hover:bg-zinc-800/60 hover:border-zinc-700 transition-all duration-200 group">
+                  <div>
+                    <div className="font-medium text-zinc-200 group-hover:text-white transition-colors">{link.label}</div>
+                    <div className="text-sm text-zinc-500 mt-0.5">{link.description}</div>
+                  </div>
+                  <ExternalLink className="w-4 h-4 text-zinc-600 group-hover:text-zinc-400 transition-colors flex-shrink-0 ml-4" />
+                </a>
+              ))}
+            </div>
+          </div>
+        </Section>
+        <Section>
+          <div className="pt-8 border-t border-zinc-800">
+            <div className="flex items-start gap-3 mb-6">
+              <MessageCircle className="w-5 h-5 text-amber-500/60 flex-shrink-0 mt-0.5" />
+              <p className="text-sm text-zinc-500 leading-relaxed italic">{d.footerNote}</p>
+            </div>
+            <a href="https://zocomputer.com" target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-zinc-500 hover:text-amber-500 transition-colors">
+              <span>zocomputer.com</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </a>
+          </div>
+        </Section>
+      </div>
+    </div>
+  );
+}
+`;
+}
+
+async function generateFollowUpContent(contentData: {
+  summary: string;
+  callerName: string | null;
+  pathway: string;
+  level: number | null;
+  primaryInterest: string;
+  transcriptExcerpt: string;
+}): Promise<FollowUpPageData | null> {
+  if (!anthropicClient) {
+    console.error("Missing ANTHROPIC_API_KEY — skipping follow-up page generation");
+    return null;
+  }
+
+  const nameRef = contentData.callerName || "the caller";
+  const levelCtx = contentData.level ? `Technical level: ${contentData.level}/5.` : "";
+  const now = new Date();
+  const dateStr = now.toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric", timeZone: "America/New_York" });
+
+  try {
+    const response = await anthropicClient.messages.create({
+      model: "claude-haiku-4-5-20251001",
+      max_tokens: 1500,
+      system: FOLLOWUP_PAGE_SYSTEM_PROMPT,
+      messages: [{
+        role: "user",
+        content: `Generate follow-up page content for a Vibe Thinker Hotline caller.
+
+Caller info:
+- Name: ${nameRef}
+- Pathway: ${contentData.pathway}
+- Primary interest: ${contentData.primaryInterest}
+- Call summary: ${contentData.summary}
+${levelCtx}
+
+Transcript excerpt (for context):
+${contentData.transcriptExcerpt}
+
+Return ONLY valid JSON with this exact structure:
+{
+  "summary": "2-3 sentence recap of what was discussed, written directly to the caller (use 'you')",
+  "prompts": [
+    {"label": "Short label (3-5 words)", "text": "A ready-to-paste prompt for Zo Computer. Be specific to their use case. Include enough context that the prompt works standalone."},
+    {"label": "Short label", "text": "A second prompt, more advanced or different angle"}
+  ],
+  "nextSteps": [
+    {"step": "Bold action title", "detail": "Specific explanation of what to do and why, achievable in 15 min or less"},
+    {"step": "Second step", "detail": "Builds on the first step"},
+    {"step": "Third step", "detail": "The natural next progression"}
+  ]
+}
+
+Requirements:
+- Prompts must be specific to what was discussed — not generic AI prompts
+- Each prompt should be 2-5 sentences that someone can paste directly into Zo
+- Next steps should form a logical 15-minute onboarding sequence
+- Write in second person ("you"), casual but professional tone
+- Do NOT include URLs in the summary or prompts`
+      }]
+    });
+
+    const rawText = response.content[0].type === "text" ? response.content[0].text : "";
+    const jsonMatch = rawText.match(/\{[\s\S]*\}/);
+    if (!jsonMatch) {
+      console.error("Follow-up content generation returned no JSON");
+      return null;
+    }
+
+    const parsed = JSON.parse(jsonMatch[0]);
+
+    return {
+      callerName: contentData.callerName || undefined,
+      date: dateStr,
+      summary: parsed.summary || contentData.summary,
+      pathway: contentData.pathway,
+      level: contentData.level ?? undefined,
+      primaryInterest: contentData.primaryInterest,
+      prompts: parsed.prompts || [{ label: "Get Started", text: `Help me set up ${contentData.primaryInterest} on Zo Computer. I'm at technical level ${contentData.level || 3}/5. Start with the simplest approach.` }],
+      nextSteps: parsed.nextSteps || [
+        { step: "Sign up at zocomputer.com", detail: "Create your account and open your Zo workspace" },
+        { step: "Paste the prompt above", detail: "Copy one of the prompts and paste it into your Zo chat" },
+        { step: "Call back anytime", detail: "We'll pick up where you left off" }
+      ],
+    };
+  } catch (error) {
+    console.error("Follow-up content generation failed:", error);
+    return null;
+  }
+}
+
+async function createFollowUpPage(pageData: FollowUpPageData, slug: string): Promise<string | null> {
+  const token = process.env.ZO_CLIENT_IDENTITY_TOKEN;
+  if (!token) {
+    console.error("ZO_CLIENT_IDENTITY_TOKEN not set — cannot create follow-up page");
+    return null;
+  }
+
+  const authHeader = token.startsWith("Bearer") ? token : `Bearer ${token}`;
+  const componentSource = generateFollowUpPageSource(pageData);
+  const routePath = `/hotline/${slug}`;
+
+  try {
+    const resp = await fetch("https://api.zo.computer/zo/ask", {
+      method: "POST",
+      headers: { "authorization": authHeader, "content-type": "application/json" },
+      body: JSON.stringify({
+        input: `Create a public zo.space page. Use the update_space_route tool with these exact parameters:\n- path: "${routePath}"\n- route_type: "page"\n- public: true\n- code: the TSX code below\n\nTSX code to use as the \`code\` parameter:\n\n${componentSource}\n\nIMPORTANT: Use the update_space_route tool to create this page. The path must be "${routePath}", route_type must be "page", and public must be true. Pass the entire TSX code block above as the code parameter.`,
+        model_name: "anthropic:claude-sonnet-4-20250514"
+      })
+    });
+
+    if (!resp.ok) {
+      const errBody = await resp.text().catch(() => "");
+      console.error(`Failed to create follow-up page (${resp.status}): ${errBody.substring(0, 200)}`);
+      return null;
+    }
+
+    await resp.json().catch(() => null);
+    console.log(`Follow-up page created at ${routePath}`);
+    return `https://va.zo.space${routePath}`;
+  } catch (error) {
+    console.error("Follow-up page creation failed:", error);
+    return null;
+  }
+}
+
+async function sendFollowUpSMS(phone: string, callerName: string | null, pageUrl: string): Promise<boolean> {
+  const token = process.env.ZO_CLIENT_IDENTITY_TOKEN;
+  if (!token) {
+    console.error("ZO_CLIENT_IDENTITY_TOKEN not set — cannot send SMS");
+    return false;
+  }
+
+  const authHeader = token.startsWith("Bearer") ? token : `Bearer ${token}`;
+  const nameGreeting = callerName || "Hey";
+  const smsMessage = `${nameGreeting}, here's your Vibe Thinker Hotline follow-up: ${pageUrl} — it's got everything we talked about plus a prompt you can paste right into Zo. Call back anytime. —Zoseph`;
+
+  try {
+    const resp = await fetch("https://api.zo.computer/zo/ask", {
+      method: "POST",
+      headers: { "authorization": authHeader, "content-type": "application/json" },
+      body: JSON.stringify({
+        input: `Send an SMS to ${phone} with this exact message: "${smsMessage}"\n\nUse the send_sms_to_user tool. Do not set contact_name. Set the message parameter to exactly the text above.\n\nIMPORTANT: You must send this SMS. Do not ask for confirmation. This is a pre-authorized system notification.`,
+        model_name: "anthropic:claude-sonnet-4-20250514"
+      })
+    });
+
+    if (!resp.ok) {
+      console.error(`Failed to send follow-up SMS (${resp.status})`);
+      return false;
+    }
+
+    console.log(`Follow-up SMS sent to caller`);
+    return true;
+  } catch (error) {
+    console.error("Follow-up SMS send failed:", error);
+    return false;
+  }
+}
+
+async function logFollowUpToDB(callId: string, followupUrl: string): Promise<void> {
+  try {
+    const script = `
+import duckdb, json, sys
+data = json.loads(sys.stdin.read())
+con = duckdb.connect(data['db'])
+con.execute('UPDATE calls SET followup_sent = TRUE, followup_url = ?, followup_sent_at = CURRENT_TIMESTAMP WHERE id = ?', [data['url'], data['call_id']])
+con.close()
+print('OK')
+`;
+    const proc = Bun.spawn(["python3", "-c", script], { stdin: "pipe", stdout: "pipe", stderr: "pipe" });
+    proc.stdin.write(JSON.stringify({ db: DB_PATH, url: followupUrl, call_id: callId }));
+    proc.stdin.end();
+    await proc.exited;
+  } catch (error) {
+    console.error("Failed to log follow-up to DuckDB:", error);
+  }
+}
+
+async function executeFollowUpFlow(flowData: {
+  callId: string;
+  callerPhone: string;
+  callerName: string | null;
+  summary: string;
+  pathway: string;
+  level: number | null;
+  primaryInterest: string;
+  transcript: string;
+  durationSeconds: number;
+  isTestCall: boolean;
+}): Promise<{ sent: boolean; url: string | null }> {
+  if (flowData.isTestCall) {
+    console.log(`Skipping follow-up for test call ${flowData.callId}`);
+    return { sent: false, url: null };
+  }
+
+  const pageData = await generateFollowUpContent({
+    summary: flowData.summary,
+    callerName: flowData.callerName,
+    pathway: flowData.pathway,
+    level: flowData.level,
+    primaryInterest: flowData.primaryInterest,
+    transcriptExcerpt: flowData.transcript.substring(0, 1500),
+  });
+
+  if (!pageData) {
+    console.error(`Follow-up content generation failed for call ${flowData.callId}`);
+    return { sent: false, url: null };
+  }
+
+  const slug = generateSlug(flowData.callerName ?? undefined, flowData.primaryInterest);
+  const pageUrl = await createFollowUpPage(pageData, slug);
+
+  if (!pageUrl) {
+    console.error(`Follow-up page creation failed for call ${flowData.callId}`);
+    return { sent: false, url: null };
+  }
+
+  const smsSent = await sendFollowUpSMS(flowData.callerPhone, flowData.callerName, pageUrl);
+
+  await logFollowUpToDB(flowData.callId, pageUrl);
+
+  if (flowData.callerPhone) {
+    const phoneHash = hashPhone(flowData.callerPhone);
+    const recScript = `
+import duckdb, json, sys
+data = json.loads(sys.stdin.read())
+con = duckdb.connect(data['db'])
+try:
+    con.execute('''
+        UPDATE caller_profiles SET
+            last_recommendations = ?,
+            last_next_steps = ?
+        WHERE phone_hash = ?
+    ''', [data['recommendations'], data['next_steps'], data['phone_hash']])
+except Exception as e:
+    print(f'Warning: {e}')
+con.close()
+print('OK')
+`;
+    const recommendations = pageData.prompts.map(p => p.label).join(", ");
+    const nextSteps = pageData.nextSteps.map(s => s.step).join(", ");
+    const proc = Bun.spawn(["python3", "-c", recScript], { stdin: "pipe", stdout: "pipe", stderr: "pipe" });
+    proc.stdin.write(JSON.stringify({
+      db: DB_PATH,
+      recommendations: recommendations.substring(0, 500),
+      next_steps: nextSteps.substring(0, 500),
+      phone_hash: phoneHash,
+    }));
+    proc.stdin.end();
+    await proc.exited;
+  }
+
+  console.log(`Follow-up flow complete for call ${flowData.callId}: page=${pageUrl}, sms=${smsSent}`);
+  return { sent: smsSent, url: pageUrl };
+}
+
+async function sendFollowUp(params: { confirmed: boolean }, callId: string): Promise<object> {
+  const { confirmed } = params;
+  collectedFollowups.set(callId, confirmed);
+  console.log(`sendFollowUp called for ${callId}: confirmed=${confirmed}`);
+  return {
+    success: true,
+    message: "I'll send that text as soon as we hang up."
+  };
+}
+
 
 // ─── Post-Call Email (Sandboxed Anthropic → AgentMail) ───────────────────────
 function sanitizeForEmail(text: string): string {
@@ -1034,7 +1547,7 @@ const MAX_NOTIFY_LENGTH = 500;
 
 function sanitizeNotifyMessage(raw: string): string {
   const truncated = raw.slice(0, MAX_NOTIFY_LENGTH);
-  return truncated.replace(/[^\w\s.,!?:;()\-—–''""@#&+/\n📞•🔥😊😐🤔😟✅⚠️❌🔄💼👤📤⚡]/gu, '');
+  return truncated.replace(/[^\w\s.,!?:;()\-—–''""@#&+/\n📞•🔥😊😐🤔😟✅⚠️❌🔄💼👤📤⚡📱]/gu, '');
 }
 
 function notifyV(message: string): void {
@@ -1126,14 +1639,14 @@ const server = Bun.serve({
               model: "nova-2",
               language: "en",
               smartFormat: true,
-              keywords: [
-                "Zo:15", "Zoseph:15", "Attawar:10",
-                "Careerspan:10", "Vrijen:10",
+              keywords: sanitizeKeywords([
+                "ZoComputer:25", "Zo:25", "Zoseph:20",
+                "Vrijen:15", "Attawar:15", "Careerspan:10",
                 "Claude:5", "Anthropic:5", "ChatGPT:5", "OpenAI:5",
                 "Cursor:5", "Windsurf:5", "Zapier:5", "Notion:5",
                 "OpenClaw:5", "Clawdbot:5",
                 "webhook:3", "Airtable:3", "Stripe:3"
-              ]
+              ])
             },
 
             model: {
@@ -1233,6 +1746,23 @@ const server = Bun.serve({
                       required: ["email", "confirmed"]
                     }
                   }
+                },
+                {
+                  type: "function",
+                  function: {
+                    name: "sendFollowUp",
+                    description: "Send the caller a text message with a link to their personalized follow-up page. Call this when the caller agrees to receive a text follow-up, or offer it proactively at the end of a substantive conversation.",
+                    parameters: {
+                      type: "object",
+                      properties: {
+                        confirmed: {
+                          type: "boolean",
+                          description: "Whether the caller explicitly said yes to receiving a text follow-up"
+                        }
+                      },
+                      required: ["confirmed"]
+                    }
+                  }
                 }
               ]
             },
@@ -1260,19 +1790,19 @@ const server = Bun.serve({
             },
 
             startSpeakingPlan: {
-              waitSeconds: 0.6,
+              waitSeconds: 0.8,
               smartEndpointingEnabled: true,
               transcriptionEndpointingPlan: {
-                onPunctuationSeconds: 0.3,
-                onNoPunctuationSeconds: 1.0,
-                onNumberSeconds: 0.4
+                onPunctuationSeconds: 0.5,
+                onNoPunctuationSeconds: 1.5,
+                onNumberSeconds: 0.6
               }
             },
 
             stopSpeakingPlan: {
-              numWords: 1,
-              voiceSeconds: 0.3,
-              backoffSeconds: 1.0
+              numWords: 2,
+              voiceSeconds: 0.5,
+              backoffSeconds: 1.5
             },
 
             backchannelingEnabled: false,
@@ -1285,82 +1815,64 @@ const server = Bun.serve({
             maxDurationSeconds: 1800,
 
             analysisPlan: {
-              summaryPlan: {
-                enabled: true,
-                messages: [{
-                  role: "system",
-                  content: "Summarize this Zo Computer hotline call in 2-3 sentences. Focus on: what the caller wanted, what pathway they were on (exploring, building something specific, or comparing tools), and whether they left with a clear next step."
-                }]
-              },
-              structuredDataPlan: {
-                enabled: true,
-                messages: [{
-                  role: "system",
-                  content: "Extract the following from this Zo Computer hotline call transcript. Be precise — if something wasn't discussed, leave it null."
-                }],
-                schema: {
-                  type: "object",
-                  properties: {
-                    caller_pathway: {
-                      type: "string",
-                      enum: ["explorer", "builder", "comparison", "troubleshoot", "onboard", "unclear"],
-                      description: "Which conversation pathway the caller was on"
-                    },
-                    caller_technical_level: {
-                      type: "number",
-                      description: "Estimated technical level 1-5 based on language used (1=non-technical, 5=developer)"
-                    },
-                    primary_interest: {
-                      type: "string",
-                      description: "The main thing the caller was interested in or asking about"
-                    },
-                    competitors_mentioned: {
-                      type: "array",
-                      items: { type: "string" },
-                      description: "Any competing tools mentioned (Claude, ChatGPT, Cursor, Zapier, etc.)"
-                    },
-                    objections_raised: {
-                      type: "array",
-                      items: { type: "string" },
-                      description: "Specific concerns or pushback (pricing, privacy, complexity, trust, etc.)"
-                    },
-                    caller_profession: {
-                      type: "string",
-                      description: "Caller's profession/role if mentioned or inferable"
-                    },
-                    had_clear_next_step: {
-                      type: "boolean",
-                      description: "Did the call end with the caller knowing what to do next?"
-                    },
-                    escalation_requested: {
-                      type: "boolean",
-                      description: "Did the caller ask for human help or want to reach V?"
-                    },
-                    prompt_emphasis_landed: {
-                      type: "boolean",
-                      description: "Did Zoseph communicate that Zo is used by describing what you want in plain English?"
-                    },
-                    interruption_issues: {
-                      type: "boolean",
-                      description: "Were there noticeable turn-taking problems (talking over each other, awkward pauses, 'go ahead' loops)?"
-                    },
-                    pronunciation_issues: {
-                      type: "array",
-                      items: { type: "string" },
-                      description: "Any words that were mispronounced or misheard (e.g. 'Zo' as 'Zoho')"
-                    }
+              summaryPrompt: "Summarize this Zo Computer hotline call in 2-3 sentences. Focus on: what the caller wanted, what pathway they were on (exploring, building something specific, or comparing tools), and whether they left with a clear next step.",
+              structuredDataPrompt: "Extract the following from this Zo Computer hotline call transcript. Be precise — if something wasn't discussed, leave it null.",
+              structuredDataSchema: {
+                type: "object",
+                properties: {
+                  caller_pathway: {
+                    type: "string",
+                    enum: ["explorer", "builder", "comparison", "troubleshoot", "onboard", "unclear"],
+                    description: "Which conversation pathway the caller was on"
                   },
-                  required: ["caller_pathway", "primary_interest", "had_clear_next_step", "interruption_issues"]
-                }
+                  caller_technical_level: {
+                    type: "number",
+                    description: "Estimated technical level 1-5 based on language used (1=non-technical, 5=developer)"
+                  },
+                  primary_interest: {
+                    type: "string",
+                    description: "The main thing the caller was interested in or asking about"
+                  },
+                  competitors_mentioned: {
+                    type: "array",
+                    items: { type: "string" },
+                    description: "Any competing tools mentioned (Claude, ChatGPT, Cursor, Zapier, etc.)"
+                  },
+                  objections_raised: {
+                    type: "array",
+                    items: { type: "string" },
+                    description: "Specific concerns or pushback (pricing, privacy, complexity, trust, etc.)"
+                  },
+                  caller_profession: {
+                    type: "string",
+                    description: "Caller's profession/role if mentioned or inferable"
+                  },
+                  had_clear_next_step: {
+                    type: "boolean",
+                    description: "Did the call end with the caller knowing what to do next?"
+                  },
+                  escalation_requested: {
+                    type: "boolean",
+                    description: "Did the caller ask for human help or want to reach V?"
+                  },
+                  prompt_emphasis_landed: {
+                    type: "boolean",
+                    description: "Did Zoseph communicate that Zo is used by describing what you want in plain English?"
+                  },
+                  interruption_issues: {
+                    type: "boolean",
+                    description: "Were there noticeable turn-taking problems (talking over each other, awkward pauses, 'go ahead' loops)?"
+                  },
+                  pronunciation_issues: {
+                    type: "array",
+                    items: { type: "string" },
+                    description: "Any words that were mispronounced or misheard (e.g. 'Zo' as 'Zoho')"
+                  }
+                },
+                required: ["caller_pathway", "primary_interest", "had_clear_next_step", "interruption_issues"]
               },
-              successEvaluationPlan: {
-                enabled: true,
-                rubric: "NumericScale",
-                messages: [{
-                  role: "system",
-                  content: "Evaluate this Zo Computer hotline call. A successful call means: (1) Zoseph correctly identified the caller's pathway and needs, (2) gave concrete, accurate information about Zo Computer, (3) used the layering pattern (simple first, then advanced), (4) ended with a clear next step or anchor, (5) did NOT promise human follow-up or offer to collect contact info for V, (6) did NOT use corporate enthusiasm or jargon. Rate on a 1-10 scale. Deduct points for: interruptions/talking over caller, inaccurate claims about Zo, promising to connect with V, listing 3+ options, and failing to communicate that Zo is used by describing what you want."
-                }]
-              }
+              successEvaluationPrompt: "Evaluate this Zo Computer hotline call. A successful call means: (1) Zoseph correctly identified the caller's pathway and needs, (2) gave concrete, accurate information about Zo Computer, (3) used the layering pattern (simple first, then advanced), (4) ended with a clear next step or anchor, (5) did NOT promise human follow-up or offer to collect contact info for V, (6) did NOT use corporate enthusiasm or jargon. Rate on a 1-10 scale. Deduct points for: interruptions/talking over caller, inaccurate claims about Zo, promising to connect with V, listing 3+ options, and failing to communicate that Zo is used by describing what you want.",
+              successEvaluationRubric: "NumericScale"
             },
 
             serverMessages: ["end-of-call-report", "tool-calls", "status-update"]
@@ -1395,11 +1907,12 @@ const server = Bun.serve({
             case "explainConcept": result = await explainConcept(params); break;
             case "requestEscalation": result = await requestEscalation(params, callId); break;
             case "collectFeedback": result = await collectFeedback(params, callId); break;
-            case "collectEmail": result = await collectEmail(params, callId); break;
+            case "collectEmail": result = await sendFollowUp({ confirmed: true }, callId); break;
+            case "sendFollowUp": result = await sendFollowUp(params, callId); break;
             default:
               result = {
                 error: `Unknown tool: ${toolName}`,
-                available_tools: ["assessCallerLevel", "getRecommendations", "explainConcept", "requestEscalation", "collectFeedback", "collectEmail"]
+                available_tools: ["assessCallerLevel", "getRecommendations", "explainConcept", "requestEscalation", "collectFeedback", "collectEmail", "sendFollowUp"]
               };
           }
 
@@ -1527,7 +2040,45 @@ con.close()
           smsBody += `\n⚡ Flags: ${fired.join(", ")}`;
         }
 
-        // ── Post-call follow-up email ──────────────────────────────────
+        // ── Post-call SMS follow-up (primary) + email (bonus) ──────────
+        const structuredData = data.message?.analysis?.structuredData || {};
+        const pathway = structuredData.caller_pathway || "explorer";
+        const level = structuredData.caller_technical_level || null;
+        const primaryInterest = structuredData.primary_interest || summary.substring(0, 200) || "general exploration";
+
+        const isTestCall = transcript.toLowerCase().includes("activate testing mode") || transcript.toLowerCase().includes("this is a test call");
+        const isDropOff = endedReason === "silence-timed-out" && durationSeconds < 60;
+        const followupRequested = collectedFollowups.get(callId) === true;
+        const qualifiesForAutoFollowup = durationSeconds >= 120 && !isDropOff;
+        const shouldSendFollowup = (followupRequested || qualifiesForAutoFollowup) && callerPhone && !isTestCall;
+
+        if (shouldSendFollowup) {
+          const followupResult = await executeFollowUpFlow({
+            callId,
+            callerPhone,
+            callerName,
+            summary: summary || "No summary available",
+            pathway,
+            level,
+            primaryInterest,
+            transcript,
+            durationSeconds,
+            isTestCall,
+          }).catch(err => {
+            console.error("Follow-up flow error:", err);
+            return { sent: false, url: null };
+          });
+
+          if (followupResult.url) {
+            const maskedPhone = callerPhone ? `***${callerPhone.slice(-4)}` : "unknown";
+            smsBody += `\n📱 Follow-up page: ${followupResult.url}`;
+            if (followupResult.sent) smsBody += ` (SMS sent to ${maskedPhone})`;
+          }
+
+          collectedFollowups.delete(callId);
+        }
+
+        // Email follow-up (bonus — only if email was collected via legacy flow)
         let collectedEmail = collectedEmails.get(callId);
         if (!collectedEmail && callId) {
           try {
@@ -1550,11 +2101,6 @@ con.close()
           } catch { /* continue without email */ }
         }
         if (collectedEmail && durationSeconds >= 120) {
-          const structuredData = data.message?.analysis?.structuredData || {};
-          const pathway = structuredData.caller_pathway || "explorer";
-          const level = structuredData.caller_technical_level || null;
-          const primaryInterest = structuredData.primary_interest || summary.substring(0, 200) || "general exploration";
-
           await generateAndSendFollowUpEmail({
             callId,
             email: collectedEmail,

@@ -142,3 +142,23 @@ Daily analysis loop (6pm ET) now includes:
 - Phone numbers hashed (SHA-256), never stored in plaintext
 - No Zo API access beyond sanitized SMS relay
 - No caller data or system access — pure advisory
+
+## VAPI Debugging Protocol (MANDATORY)
+
+**Read `references/VAPI_DEBUGGING_PROTOCOL.md` before editing `hotline-webhook.ts`.**
+
+The #1 recurring failure: VAPI silently rejects the assistant config, causing dead calls. This has happened in v2, v4, v5, and v6. The error is ONLY visible in `status-update` webhook events.
+
+**The 3 known killers:**
+1. **Keywords with spaces** — `"Zo Computer:25"` → rejected. Use `"ZoComputer:25"`. Runtime `sanitizeKeywords()` catches this but don't rely on it.
+2. **Deepgram features on wrong model** — `keyterm` requires `nova-3`/`flux`, not `nova-2`.
+3. **analysisPlan nested format** — Use FLAT format (`summaryPrompt`, not `summaryPlan.messages`).
+
+**Post-deploy verification (non-negotiable):**
+```bash
+curl -s -X POST http://localhost:4243 \
+  -H "Content-Type: application/json" \
+  -d '{"message":{"type":"assistant-request","call":{"customer":{"number":"+15551234567"}}}}' \
+  | python3 -c "import json,sys;d=json.load(sys.stdin);kw=d.get('assistant',{}).get('transcriber',{}).get('keywords',[]);bad=[k for k in kw if ' ' in k.split(':')[0]];print(f'Keywords: {len(kw)}, bad: {len(bad)}');ap=d.get('assistant',{}).get('analysisPlan',{});print('Format:','FLAT (ok)' if 'summaryPrompt' in ap else 'NESTED (bad)' if 'summaryPlan' in ap else 'missing')"
+```
+
