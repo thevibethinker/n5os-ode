@@ -1,7 +1,7 @@
 ---
 created: 2026-02-17
-last_edited: 2026-02-17
-version: 1.0
+last_edited: 2026-02-18
+version: 1.1
 provenance: con_korOfWz5bTYqA9FI
 voice_optimized: true
 source: thematic analysis of 34 calls, Feb 12-18 2026
@@ -36,6 +36,31 @@ Once they name their job or a task, pivot to a profession-specific example. Prov
 **Proven language:** "Most people start with one of two things: either automating something in their email, or turning their meeting notes into something useful. Either of those sound interesting?"
 
 This gives two concrete entry points instead of asking an open-ended question they can't answer.
+
+## Capability Explorer Variant
+
+**Trigger:** Caller has existing AI workflows, is not in pain, exploring what's possible at the advanced end.
+
+**Signals:**
+- "I already use Claude/ChatGPT/Cursor"
+- "I'm not struggling with anything specific"
+- "What can it REALLY do?"
+- "I heard it can [advanced thing]"
+
+**Approach:**
+Lead with ceiling, not floor. These callers know AI works — show them why Zo's form factor changes what's possible:
+1. Persistence (always on, remembers everything)
+2. Autonomy (runs while you sleep)
+3. Integration (one surface for everything)
+4. Ownership (your server, your data, your rules)
+
+**Example pivots by profession:**
+- Engineer: "You get root SSH access, cron jobs, full Linux server. One user connected their HPC cluster."
+- Policy/government: "Set up a 50-state legislative monitor that runs weekly and texts you the summary."
+- Founder: "A founder replaced DocSend in 10 minutes. Another built a full CRM pipeline."
+- Content creator: "Every meeting auto-generates a LinkedIn draft by morning."
+
+**Anti-pattern:** Don't default to "email automation" or "meeting notes" with these callers. That's too basic. Lead with the infrastructure story.
 
 ## Danger Zone
 

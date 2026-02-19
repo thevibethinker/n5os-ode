@@ -1,0 +1,25 @@
+{
+  "schema_version": "1.0",
+  "slug": "ode-v2-upgrade",
+  "title": "N5OS Ode v2 Upgrade",
+  "objective": null,
+  "created": "2026-02-18",
+  "status": "finalized",
+  "completed_at": null,
+  "type": "general",
+  "build_mode": "learning",
+  "learning_landscape_generated": false,
+  "orchestrator_convo_id": null,
+  "workers": {
+    "total": 0,
+    "complete": 0,
+    "in_progress": 0,
+    "blocked": 0,
+    "pending": 0
+  },
+  "waves": [],
+  "worker_details": [],
+  "started_at": "2026-02-18T23:26:30.448235+00:00",
+  "finalized_at": "2026-02-18T23:53:22.352510+00:00",
+  "finalization_passed": true
+}

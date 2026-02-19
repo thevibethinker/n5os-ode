@@ -1,0 +1,14 @@
+{
+  "slug": "zo-hotline-v6",
+  "timestamp": "2026-02-19T03:34:47.900968+00:00",
+  "verification": {
+    "passed": true,
+    "output": "\u2705 verify passed for zo-hotline-v6\n   Artifacts: 2/2 verified, 0 missing\n"
+  },
+  "integration_tests": {
+    "passed": true,
+    "output": "\n==================================================\nIntegration Tests: zo-hotline-v6\n==================================================\n\nNo tests defined. Run 'generate' to auto-create from artifacts.\n\nResults saved to /home/workspace/N5/builds/zo-hotline-v6/INTEGRATION_RESULTS.json\n"
+  },
+  "learnings_harvested": 13,
+  "success": true
+}

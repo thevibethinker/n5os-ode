@@ -1,0 +1,14 @@
+{
+  "slug": "learning-engaged-builds",
+  "timestamp": "2026-02-18T04:17:20.919528+00:00",
+  "verification": {
+    "passed": true,
+    "output": "\u274c verify failed for learning-engaged-builds\n   Artifacts: 29/30 verified, 1 missing\n"
+  },
+  "integration_tests": {
+    "passed": true,
+    "output": "\n==================================================\nIntegration Tests: learning-engaged-builds\n==================================================\n\nNo tests defined. Run 'generate' to auto-create from artifacts.\n\nResults saved to /home/workspace/N5/builds/learning-engaged-builds/INTEGRATION_RESULTS.json\n"
+  },
+  "learnings_harvested": 0,
+  "success": true
+}

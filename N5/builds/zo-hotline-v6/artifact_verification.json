@@ -1,0 +1,59 @@
+{
+  "slug": "zo-hotline-v6",
+  "timestamp": "2026-02-19T03:34:47.953096+00:00",
+  "drops": {
+    "D1.2": {
+      "claimed": [
+        "Skills/zo-hotline/prompts/zoseph-system-prompt.md",
+        "Knowledge/zo-hotline/97-conversational-playbook/explorer-pathway.md"
+      ],
+      "verified": [
+        "Skills/zo-hotline/prompts/zoseph-system-prompt.md",
+        "Knowledge/zo-hotline/97-conversational-playbook/explorer-pathway.md"
+      ],
+      "missing": []
+    },
+    "D1.2_validation": {
+      "claimed": [],
+      "verified": [],
+      "missing": []
+    },
+    "D1.1": {
+      "claimed": [],
+      "verified": [],
+      "missing": []
+    },
+    "D1.1_validation": {
+      "claimed": [],
+      "verified": [],
+      "missing": []
+    },
+    "D2.1": {
+      "claimed": [],
+      "verified": [],
+      "missing": []
+    },
+    "D2.1_validation": {
+      "claimed": [],
+      "verified": [],
+      "missing": []
+    },
+    "D2.2": {
+      "claimed": [],
+      "verified": [],
+      "missing": []
+    },
+    "D2.2_validation": {
+      "claimed": [],
+      "verified": [],
+      "missing": []
+    }
+  },
+  "summary": {
+    "total_artifacts": 2,
+    "verified": 2,
+    "missing": 0,
+    "errors": 0
+  },
+  "passed": true
+}

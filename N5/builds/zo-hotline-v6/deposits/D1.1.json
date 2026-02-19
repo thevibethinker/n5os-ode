@@ -1,0 +1,21 @@
+{
+  "drop_id": "D1.1",
+  "status": "complete",
+  "summary": "Fixed 5 issues: reverted analysisPlan to flat format (root cause of zero analysis data), enhanced tool_usage logging with DuckDB persistence, tuned interruption parameters, strengthened Deepgram keyword boosting for Zo/Zoho/Zoom, added followup columns + tool_usage table to initDb",
+  "files_modified": ["Skills/zo-hotline/scripts/hotline-webhook.ts"],
+  "broadcast": "CRITICAL for D2.2: The analysisPlan was broken because v5 incorrectly used nested Plan objects (summaryPlan/structuredDataPlan/successEvaluationPlan with enabled+messages) which is the Create Assistant API format, but the assistant-request webhook response expects FLAT format (summaryPrompt, structuredDataPrompt, structuredDataSchema, successEvaluationPrompt, successEvaluationRubric). Reverted to flat format. The calls table now has followup_sent/followup_url/followup_sent_at columns ready for D2.2. Also: tool_usage DuckDB table exists for querying tool usage data.",
+  "verification": {
+    "analysisPlan_fix": "Reverted to flat format (summaryPrompt/structuredDataPrompt/structuredDataSchema/successEvaluationPrompt/successEvaluationRubric) — the nested summaryPlan/structuredDataPlan/successEvaluationPlan format from v5 commit 572f26b1e was silently ignored by VAPI webhook response processing, resulting in empty {} analysis on all post-v5 calls. Pre-v5 calls (e.g. 019c711a) had working analysis with flat format. Next substantive call should have non-null analysis.summary.",
+    "tool_logging": "Fixed — now writes to both JSONL (Datasets/zo-hotline-calls/tool_usage.jsonl) AND DuckDB tool_usage table. JSONL was already working (6 entries from pre-v5 calls). Added DuckDB table DDL to initDb and DuckDB INSERT in persistToolUsage for queryable tool usage data.",
+    "interruption_params": "numWords=2 (was 1), voiceSeconds=0.5 (was 0.3), backoffSeconds=1.5 (was 1.0), waitSeconds=0.8 (was 0.6), onPunctuationSeconds=0.5 (was 0.3), onNoPunctuationSeconds=1.5 (was 1.0), onNumberSeconds=0.6 (was 0.4)",
+    "transcription": "Keyword boosting strengthened: 'Zo Computer:25' and 'Zo:25' (were :15), 'Zoseph:20' (was :15), 'Vrijen:15' and 'Attawar:15' (were :10). Staying on nova-2 (nova-3 not verified on VAPI).",
+    "ddl": "followup_sent BOOLEAN DEFAULT FALSE, followup_url VARCHAR, followup_sent_at TIMESTAMP added to calls table via ALTER TABLE IF NOT EXISTS. tool_usage table created with id, call_id, tool_name, params JSON, concept, file_path, invoked_at columns."
+  },
+  "learnings": [
+    "VAPI assistant-request webhook response uses FLAT analysisPlan fields (summaryPrompt, structuredDataPrompt, structuredDataSchema, successEvaluationPrompt, successEvaluationRubric), NOT the nested Plan objects shown in the Create Assistant API docs. The nested format is silently ignored — no validation error is returned, making this extremely hard to debug without comparing pre/post call data.",
+    "Deepgram nova-2 keyword boosting uses 'word:weight' format where higher numbers mean stronger bias. Max practical value appears to be around 25.",
+    "DuckDB ALTER TABLE ADD COLUMN IF NOT EXISTS is safe to run on every initDb — idempotent.",
+    "The getRecentCallContext async function can fail with JSON parse error during startup if DuckDB file is locked by initDb. Non-critical but worth noting."
+  ],
+  "errors": []
+}

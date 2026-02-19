@@ -1,0 +1,14 @@
+{
+  "slug": "ode-v2-upgrade",
+  "timestamp": "2026-02-18T23:53:22.098426+00:00",
+  "verification": {
+    "passed": true,
+    "output": "\u274c verify failed for ode-v2-upgrade\n   Artifacts: 0/0 verified, 0 missing\n"
+  },
+  "integration_tests": {
+    "passed": true,
+    "output": "\n==================================================\nIntegration Tests: ode-v2-upgrade\n==================================================\n\nNo tests defined. Run 'generate' to auto-create from artifacts.\n\nResults saved to /home/workspace/N5/builds/ode-v2-upgrade/INTEGRATION_RESULTS.json\n"
+  },
+  "learnings_harvested": 0,
+  "success": true
+}

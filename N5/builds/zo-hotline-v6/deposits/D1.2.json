@@ -1,0 +1,19 @@
+{
+  "drop_id": "D1.2",
+  "status": "complete",
+  "summary": "Added capability explorer sub-branch to Explorer pathway in system prompt (line 90), strengthened listen-longer voice rules (rules 12-13, line 40), added graceful silence handler with sendFollowUp tool reference (Graceful Wrap section, line 218), updated playbook knowledge base with Capability Explorer Variant section (line 40 of explorer-pathway.md)",
+  "artifacts": [
+    "Skills/zo-hotline/prompts/zoseph-system-prompt.md",
+    "Knowledge/zo-hotline/97-conversational-playbook/explorer-pathway.md"
+  ],
+  "files_modified": [
+    "Skills/zo-hotline/prompts/zoseph-system-prompt.md",
+    "Knowledge/zo-hotline/97-conversational-playbook/explorer-pathway.md"
+  ],
+  "broadcast": "System prompt now references sendFollowUp tool in graceful wrap section (line 223) — D2.2 must ensure this tool exists in VAPI assistant config",
+  "learnings": [
+    "edit_file_llm handles multi-site edits within a single file cleanly when instructions are precise and non-overlapping",
+    "Voice rules are numbered sequentially — new rules must continue the sequence (12, 13) not restart"
+  ],
+  "errors": []
+}

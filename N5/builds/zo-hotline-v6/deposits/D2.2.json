@@ -1,0 +1,14 @@
+{
+  "drop_id": "D2.2",
+  "status": "complete",
+  "summary": "All 4 changes specified in the brief are already implemented in hotline-webhook.ts. Verified: (1) sendFollowUp tool exists in VAPI assistant config at line 1742 with correct schema. (2) sendFollowUp case exists in tool-calls switch at line 1900, using collectedFollowups Map (equivalent to brief's pendingFollowUps). (3) Full follow-up flow wired in end-of-call-report at line 2045 via executeFollowUpFlow(), which chains generateFollowUpContent → createFollowUpPage (using D2.1's generateFollowUpPageSource) → sendFollowUpSMS → logFollowUpToDB. Includes test-call skipping, auto-followup for calls ≥120s, slug generation, DuckDB persistence, and masked phone in V's notification SMS. (4) sendFollowUp included in available_tools array at line 1904. Implementation exceeds brief spec with dedicated functions, Anthropic-powered content generation, proper error handling, and caller profile updates. No code changes required — prior drops (likely D1.1/D1.2 or an earlier attempt) already completed this integration.",
+  "files_modified": [],
+  "artifacts": [],
+  "broadcast": "D2.2 verified all SMS follow-up integration is live. The sendFollowUp tool is in VAPI config, handled in tool-calls, and wired to executeFollowUpFlow in end-of-call-report. Flow: collectFollowups Map stores intent during call → end-of-call-report triggers executeFollowUpFlow → generates content via Anthropic → creates zo.space page via generateFollowUpPageSource + /zo/ask → sends SMS via /zo/ask → logs to DuckDB. Auto-triggers for calls ≥120s even without explicit tool call. Test calls are skipped.",
+  "learnings": [
+    "The brief's 4 changes were already implemented by prior drops — the retry context mentioned timeout on first attempt, but the work had actually landed. Always grep for existing implementations before writing new code.",
+    "The actual implementation uses a cleaner architecture than the brief specified: dedicated functions (executeFollowUpFlow, generateFollowUpContent, createFollowUpPage, sendFollowUpSMS, logFollowUpToDB) instead of inline code in the end-of-call-report handler.",
+    "collectedFollowups Map serves the same purpose as the brief's pendingFollowUps — stores call ID → boolean intent during the call, consumed in end-of-call-report."
+  ],
+  "errors": []
+}
