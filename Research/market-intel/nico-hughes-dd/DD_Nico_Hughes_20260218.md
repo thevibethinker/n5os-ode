@@ -1,14 +1,13 @@
 ---
 created: 2026-02-18
 last_edited: 2026-02-18
-version: 1.0
+version: 1
 provenance: con_x6uHk4koKyAEjWK7
 type: dd_individual
 subject: Nico Gerard Hughes
 organization: Left Lane Capital
 interaction_type: networking
 ---
-
 # Due Diligence: Nico Hughes — Left Lane Capital
 
 ## Meta
