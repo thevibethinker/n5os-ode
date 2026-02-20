@@ -1,0 +1,14 @@
+{
+  "name": "zoren-hotline-scripts",
+  "private": true,
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.76.0",
+    "stripe": "^17.0.0"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  }
+}
