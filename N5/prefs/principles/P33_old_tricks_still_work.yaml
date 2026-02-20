@@ -1,0 +1,36 @@
+---
+id: P33
+name: Old Tricks Still Work
+category: advanced
+priority: medium
+version: "1.0.0"
+created: "2026-02-18"
+related: [P32, P30, P26]
+
+purpose: |
+  Time-tested software engineering practices remain essential with AI — tests, types, linting, refactoring, and simplicity are still critical.
+
+description: |
+  AI changes the speed of code generation but not the fundamentals of software
+  quality. Tests catch bugs. Types prevent classes of errors. Linting enforces
+  consistency. Refactoring keeps systems maintainable. Simplicity reduces the
+  surface area for failures.
+
+  The temptation with AI-assisted development is to skip these practices because
+  "the AI will get it right" or "we can regenerate it." This is false economy.
+  AI-generated code still needs tests to verify correctness, types to catch
+  integration errors, and refactoring to manage complexity over time.
+
+  If anything, these practices become more important with AI because the volume
+  of generated code increases. More code means more potential for bugs, more
+  surface area for inconsistency, and more need for structural discipline.
+  The old tricks are old because they work.
+
+anti_patterns:
+  - "Skipping tests because the AI 'probably got it right'"
+  - "Avoiding types because regeneration is easy"
+  - "Letting generated code accumulate without refactoring"
+
+application:
+  when: "Building, reviewing, or maintaining any codebase"
+  how: "Apply standard software engineering discipline: write tests, use types, lint, refactor, keep it simple"

@@ -99,8 +99,8 @@ provenance: con_PARENT_ID
 
 ## Reference Files
 
-- `file 'path/to/relevant/file'`
-- `file 'path/to/another/file'`
+- `file '<relevant-file-path>'`
+- `file '<another-file-path>'`
 
 ---
 
@@ -171,8 +171,8 @@ Research DEF CON CTF and ARG design patterns. Focus on puzzle taxonomy, player f
 3. 3-paragraph executive summary
 
 ## Reference Files
-- `file 'N5/builds/vibe-arg/CORE_ELEMENTS_LOCKDOWN.md'`
-- `file 'N5/builds/vibe-arg/PLAN.md'`
+- `file 'N5/builds/<build-slug>/CORE_ELEMENTS_LOCKDOWN.md'`
+- `file 'N5/builds/<build-slug>/PLAN.md'`
 
 ---
 **INSTRUCTION FOR SUB-AGENT:**

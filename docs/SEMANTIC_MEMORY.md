@@ -1,3 +1,10 @@
+---
+created: 2026-01-15
+last_edited: 2026-02-18
+version: 1.1
+provenance: con_o9nkV9huRbIpeEGn
+---
+
 # Semantic Memory System
 
 > **Attribution**: The semantic memory architecture in N5OS Ode is based on foundational work by **[The Fork Project](https://github.com/theforkproject-dev)**. Their [zo-local-memory](https://github.com/theforkproject-dev/zo-local-memory) project established the core patterns for local semantic memory on Zo Computer. We gratefully acknowledge their contribution.

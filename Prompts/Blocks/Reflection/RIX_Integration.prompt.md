@@ -182,8 +182,10 @@ def run_rix_integration(reflection_slug: str, key_concepts: list[str]) -> dict:
 
 ### Edge Writing Integration
 
+> **Note:** `reflection_edges.py` is an optional extension not included in the base Ode distribution. Edges can be documented manually using the schema and analysis framework described above.
+
 ```bash
-# Write edges using the reflection_edges.py infrastructure
+# Write edges using the reflection_edges.py infrastructure (requires extended installation)
 python3 N5/scripts/reflection_edges.py add \
   --from "<reflection_slug>" \
   --to "<target_slug>" \

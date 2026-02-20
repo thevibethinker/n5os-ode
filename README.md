@@ -1,8 +1,8 @@
 ---
 created: 2026-01-15
-last_edited: 2026-01-18
-version: 1.1
-provenance: worker_006_documentation
+last_edited: 2026-02-18
+version: 2.0
+provenance: con_o9nkV9huRbIpeEGn
 ---
 
 # N5OS Ode
@@ -17,11 +17,12 @@ N5OS Ode transforms Zo from a general-purpose AI assistant into a structured thi
 
 Think of N5OS Ode as firmware for your AI. Out of the box, Zo is a powerful but generic assistant. N5OS Ode adds:
 
-- **Specialist Personas** — 6 focused modes (Builder, Researcher, Writer, Strategist, Debugger, Operator) that excel at different work types
-- **Behavioral Rules** — Persistent instructions that shape AI behavior across all conversations
+- **Specialist Personas** — 9 focused modes (Operator, Builder, Researcher, Writer, Strategist, Debugger, Architect, Teacher, Librarian) that each excel at different work types
+- **Behavioral Rules** — 13 persistent instructions that shape AI behavior across all conversations
+- **Operational Principles** — 37 codified principles that define quality, safety, and workflow standards
 - **Conversation State** — Memory that persists across long sessions
 - **Structured Outputs** — Block generators that transform transcripts into actionable intelligence
-- **Journaling System** — Guided reflection workflows for personal insights
+- **Skills** — Packaged workflows for debugging, build orchestration, frontend design, and more
 - **Safety Rails** — Protection mechanisms that prevent data loss
 
 ---
@@ -36,12 +37,12 @@ Think of N5OS Ode as firmware for your AI. Out of the box, Zo is a powerful but 
 **One command does everything:**
 
 ```bash
-git clone https://github.com/vrijenattawar/n5os-ode.git && cd n5os-ode && bash install.sh
+git clone https://github.com/YOUR_USERNAME/n5os-ode.git && cd n5os-ode && bash install.sh
 ```
 
 This clones the repo, moves all contents to your workspace root, and cleans up the `n5os-ode/` folder.
 
-**Verify it worked:** You should see `Prompts/`, `N5/`, `BOOTLOADER.prompt.md` etc. directly in your workspace root — NOT inside an `n5os-ode/` folder.
+**Verify it worked:** You should see `Prompts/`, `N5/`, `BOOTLOADER.prompt.md` etc. directly in your workspace root.
 
 ### 2. Run the Bootloader
 
@@ -52,12 +53,13 @@ Open a new Zo conversation and type:
 ```
 
 The bootloader will:
-- Install 6 specialist personas
-- Create 6 core behavioral rules  
-- Set up the folder structure (N5/, Knowledge/, Records/, Prompts/)
-- Initialize configuration files
+- Install 9 specialist personas
+- Create 13 core behavioral rules
+- Set up the folder structure (N5/, Knowledge/, Records/, Prompts/, Skills/)
+- Initialize configuration files and principles
+- Set up conversation registry and semantic memory
 
-Takes about 2-3 minutes.
+Takes about 3-5 minutes.
 
 ### 3. Personalize
 
@@ -86,16 +88,21 @@ Start a guided reflection session.
 
 **Build Something**
 ```
-@Build Capability
 I want to create a script that backs up my files daily
 ```
-Activates structured planning and execution.
+Routes to Architect for planning, then Builder for implementation.
 
 **Use Personas**
 ```
 Switch to Researcher and find recent papers on AI safety
 ```
 Routes to the research specialist.
+
+**Debug an Issue**
+```
+This script is failing and I can't figure out why
+```
+Routes to Debugger with systematic debugging methodology.
 
 ---
 
@@ -105,43 +112,77 @@ Routes to the research specialist.
 
 | Persona | Best For |
 |---------|----------|
-| **Operator** | Navigation, routing, state tracking (default) |
+| **Operator** | Navigation, routing, state tracking (default home base) |
 | **Builder** | Scripts, automations, implementations |
 | **Researcher** | Web search, documentation, synthesis |
 | **Writer** | Emails, docs, polished content |
 | **Strategist** | Decisions, frameworks, planning |
 | **Debugger** | Troubleshooting, QA, root cause analysis |
+| **Architect** | System design, build planning, major refactors |
+| **Teacher** | Explaining concepts, guided learning |
+| **Librarian** | State sync, filing, coherence audits |
 
-→ See [docs/PERSONAS.md](docs/PERSONAS.md) for full details
-
-→ See [docs/ROUTING.md](docs/ROUTING.md) for persona choreography
+→ See [docs/PERSONAS.md](docs/PERSONAS.md) for full details and routing logic
 
 ### Behavioral Rules
 
-6 core rules that shape AI behavior:
+13 core rules that shape AI behavior:
 
-1. **Session State** — Tracks conversation context automatically
-2. **Frontmatter** — Adds provenance to all markdown files
-3. **P15 (Progress)** — Prevents false "done" claims
-4. **File Protection** — Guards critical directories
-5. **Debug Logging** — Breaks failure loops
+1. **Session State Init** — Tracks conversation context automatically
+2. **YAML Frontmatter** — Adds provenance to all markdown files
+3. **Progress Reporting (P15)** — Prevents false "done" claims
+4. **File Protection** — Guards critical directories with `.n5protected`
+5. **Debug Escalation** — Breaks failure loops after 3 attempts
 6. **Clarifying Questions** — Reduces mistakes from ambiguity
+7. **Persona Routing** — Master routing table for specialist switching
+8. **Session State Updates** — Periodic state sync
+9. **Honest Workflow Reporting** — Scripts = mechanics, AI = semantics
+10. **Agent Conflict Gate** — Prevents agent sprawl
+11. **Pulse Orchestration** — Recommends parallelization for >5 items
+12. **Anti-Hallucination** — "I don't know" is always preferred over guessing
+13. **Debug Logging** — Structured logging during active problem-solving
 
 → See [docs/RULES.md](docs/RULES.md) for full details
 
 ### Principles Library
 
-18 codified architectural principles that shape how N5OS thinks:
+37 codified operational principles organized by category:
 
+**Core Quality:**
 - **P15** — Complete Before Claiming (prevents false "done")
+- **P16** — Accuracy over speed
+- **P17** — Simplicity over sophistication
+
+**Architectural:**
+- **P23** — Identify Trap Doors (flag irreversible decisions)
 - **P28** — Plans as Code DNA (quality happens in planning)
 - **P32** — Simple Over Easy (Rich Hickey's wisdom)
-- **P23** — Identify Trap Doors (flag irreversible decisions)
-- **P36** — Orchestration Pattern (multi-persona workflows)
 
-Plus 13 more principles covering safety, modularity, error handling, and more.
+**Building Fundamentals (P35-P39):**
+- **P35** — Version, Don't Overwrite
+- **P36** — Make State Visible
+- **P37** — Design as Pipelines
+- **P38** — Isolate by Default, Parallelize Proactively
+- **P39** — Audit Everything
+
+Plus 26 more principles covering safety, modularity, error handling, and workflow patterns.
 
 → See [docs/PRINCIPLES.md](docs/PRINCIPLES.md) for full details
+
+### Skills
+
+N5OS includes packaged skills for advanced workflows:
+
+| Skill | Description |
+| --- | --- |
+| **meeting-ingestion** | Pull transcripts from Google Drive, generate intelligence blocks |
+| **pulse** | Automated build orchestration — spawn parallel workers, validate deposits |
+| **close** | Universal close — auto-routes to thread-close, drop-close, or build-close |
+| **thread-close** | Close normal conversation threads with artifact tracking |
+| **systematic-debugging** | Root cause analysis methodology: reproduce → isolate → hypothesize → fix |
+| **frontend-design** | Production-grade UI design with anti-slop guardrails |
+
+→ See individual `Skills/*/SKILL.md` files for documentation
 
 ### Block System
 
@@ -158,97 +199,26 @@ Plus reflection blocks (R01, R02, R06) for journaling.
 
 → See [docs/BLOCK_SYSTEM.md](docs/BLOCK_SYSTEM.md) for full details
 
-
-### Skills
-
-N5OS includes packaged skills for advanced workflows:
-
-| Skill | Description |
-| --- | --- |
-| **meeting-ingestion** | Pull transcripts from Google Drive, generate intelligence blocks (B01-B28), track in registry |
-| **pulse** | Automated build orchestration - spawn parallel workers, validate deposits, escalate blockers |
-
-**Meeting Ingestion Quick Start:**
-```bash
-# Check status
-python3 Skills/meeting-ingestion/scripts/meeting_cli.py status
-
-# Pull new transcripts
-python3 Skills/meeting-ingestion/scripts/meeting_cli.py pull --dry-run
-
-# Process meetings
-python3 Skills/meeting-ingestion/scripts/meeting_cli.py process
-```
-
-**Pulse Quick Start:**
-```bash
-# Initialize a build
-mkdir -p N5/builds/my-build/{drops,deposits,artifacts}
-
-# Start build
-python3 Skills/pulse/scripts/pulse.py start my-build
-
-# Check status
-python3 Skills/pulse/scripts/pulse.py status my-build
-```
-
-→ See [Skills/meeting-ingestion/SKILL.md](Skills/meeting-ingestion/SKILL.md) and [Skills/pulse/SKILL.md](Skills/pulse/SKILL.md) for full documentation
 ### Semantic Memory (Optional)
 
-If you have an OpenAI API key, N5OS Ode can build a semantic memory layer:
+With an OpenAI API key, N5OS Ode builds a semantic memory layer:
 
 - Auto-indexes Knowledge/ content
 - Enables similarity search across your notes
-- Provides context-aware retrieval
+- Provides context-aware retrieval for every conversation
 
 → See [docs/SEMANTIC_MEMORY.md](docs/SEMANTIC_MEMORY.md) for setup
 
-### Conversation End System
-
-Tiered conversation hygiene based on conversation complexity:
-
-- **Tier 1 (Quick)** — Simple Q&A, no commits needed
-- **Tier 2 (Standard)** — Research/discussion with artifacts
-- **Tier 3 (Full Build)** — Major changes, full documentation
-
-Supports Worker vs Full mode for orchestrated multi-conversation builds.
-
-→ See [docs/CONVERSATION_END.md](docs/CONVERSATION_END.md) for details
-
-### Context Loading
-
-Dynamic context injection by task category:
-
-- `build` — Coding, implementations
-- `strategy` — Planning, decisions
-- `research` — Deep analysis, synthesis
-- `safety` — Destructive operations
-- Plus `system`, `scheduler`, `writer`, `health`
-
-→ See [docs/CONTEXT_LOADING.md](docs/CONTEXT_LOADING.md) for details
-
 ### Safety System
 
-Comprehensive protection layer preventing catastrophic file operations:
+Comprehensive protection preventing catastrophic file operations:
 
 - **.n5protected markers** — Directory-level protection against moves/deletes
 - **Folder-specific POLICY.md** — Override global preferences at folder level
 - **Protected paths and file types** — Auto-review for databases, secrets, system files
-- **PII tracking** — Mark directories containing personally identifiable information
 - **Blast radius control** — Logged, reversible operations with audit trails
 
-→ See [docs/SAFETY.md](docs/SAFETY.md) for protection mechanisms and usage
-
-### Sites Protocol
-
-Structured deployment workflow for web applications:
-
-- Staging vs production separation
-- Service naming and port conventions
-- Promotion workflow (staging → prod)
-- Site protection rules
-
-→ See [docs/SITES.md](docs/SITES.md) for deployment patterns
+→ See [docs/SAFETY.md](docs/SAFETY.md) for details
 
 ---
 
@@ -266,22 +236,33 @@ After installation:
 
 ```
 workspace/
-├── N5/                      # System intelligence
-│   ├── prefs/               # Preferences and config
-│   ├── scripts/             # Utility scripts
-│   └── cognition/           # Semantic memory (optional)
-├── Knowledge/               # Long-term reference
-│   └── content-library/     # Ingested articles and notes
-├── Records/                 # Date-organized records
-│   └── journal/             # Journal entries
-├── Prompts/                 # Reusable workflows
-├── Skills/                   # Packaged workflows
-│   ├── meeting-ingestion/   # Meeting transcript processing
-│   └── pulse/               # Build orchestration
-│   ├── Blocks/              # Block generators
-│   └── reflections/         # Reflection templates
-├── BOOTLOADER.prompt.md     # Installation script
-└── PERSONALIZE.prompt.md    # Configuration wizard
+├── N5/                         # System intelligence
+│   ├── prefs/                  # Preferences and config
+│   │   ├── principles/         # 37 operational principles (YAML)
+│   │   ├── system/             # System policies
+│   │   └── workflows/          # Persona workflow docs
+│   ├── scripts/                # Utility scripts (14+)
+│   ├── cognition/              # Semantic memory
+│   ├── data/                   # Conversation registry
+│   └── builds/                 # Build workspaces (Pulse)
+├── Knowledge/                  # Long-term reference
+│   ├── architectural/          # Principles docs
+│   └── content-library/        # Ingested articles and notes
+├── Records/                    # Date-organized records
+│   └── journal/                # Journal entries
+├── Prompts/                    # Reusable workflows
+│   ├── Blocks/                 # Block generators
+│   └── reflections/            # Reflection templates
+├── Skills/                     # Packaged workflows
+│   ├── meeting-ingestion/      # Meeting transcript processing
+│   ├── pulse/                  # Build orchestration
+│   ├── close/                  # Universal close routing
+│   ├── thread-close/           # Thread close
+│   ├── systematic-debugging/   # Debugging methodology
+│   └── frontend-design/        # UI design skill
+├── Lists/                      # Structured lists
+├── BOOTLOADER.prompt.md        # Installation script
+└── PERSONALIZE.prompt.md       # Configuration wizard
 ```
 
 → See [docs/FOLDER_STRUCTURE.md](docs/FOLDER_STRUCTURE.md) for details
@@ -308,19 +289,19 @@ N5OS Ode is built on these beliefs:
 |-----|-------------|
 | [PHILOSOPHY.md](docs/PHILOSOPHY.md) | Why N5OS exists, core concepts |
 | [NUANCE_MANIFEST.md](docs/NUANCE_MANIFEST.md) | Prompt engineering patterns for AI quality |
-| [PERSONAS.md](docs/PERSONAS.md) | Specialist personas, routing |
+| [PERSONAS.md](docs/PERSONAS.md) | 9 specialist personas and routing |
 | [ROUTING.md](docs/ROUTING.md) | Persona choreography, handoffs |
-| [RULES.md](docs/RULES.md) | Behavioral rules, customization |
-| [PRINCIPLES.md](docs/PRINCIPLES.md) | 18 architectural principles |
+| [RULES.md](docs/RULES.md) | 13 behavioral rules, customization |
+| [PRINCIPLES.md](docs/PRINCIPLES.md) | 37 operational principles |
 | [FOLDER_STRUCTURE.md](docs/FOLDER_STRUCTURE.md) | Directory layout, conventions |
 | [BLOCK_SYSTEM.md](docs/BLOCK_SYSTEM.md) | Block generators for transcripts |
-| [BUILD_PLANNING.md](docs/BUILD_PLANNING.md) | Build planning system, templates, and execution flow |
+| [BUILD_PLANNING.md](docs/BUILD_PLANNING.md) | Build planning, templates, execution flow |
 | [SEMANTIC_MEMORY.md](docs/SEMANTIC_MEMORY.md) | Optional memory layer setup |
 | [CONVERSATION_END.md](docs/CONVERSATION_END.md) | Tiered conversation close |
 | [CONTEXT_LOADING.md](docs/CONTEXT_LOADING.md) | Dynamic context injection |
-| [DEBUG_SYSTEM.md](docs/DEBUG_SYSTEM.md) | Debug logging, pattern detection, troubleshooting reflexes |
+| [DEBUG_SYSTEM.md](docs/DEBUG_SYSTEM.md) | Debug logging, pattern detection |
 | [SAFETY.md](docs/SAFETY.md) | Protection mechanisms and usage |
-| [SITES.md](docs/SITES.md) | Sites protocol, staging/prod patterns, service conventions |
+| [SITES.md](docs/SITES.md) | Sites protocol, staging/prod patterns |
 
 ---
 
@@ -330,40 +311,26 @@ N5OS Ode is a starting point, not a cage:
 
 - **Add personas** — Create specialists for your domains
 - **Modify rules** — Adapt to your preferences
+- **Add principles** — Codify your own operational standards
 - **Create prompts** — Build workflows for recurring tasks
 - **Extend blocks** — Generate custom intelligence from transcripts
+- **Install skills** — Browse the [skills registry](https://agentskills.io) for more capabilities
 
 Everything can be edited in Zo Settings or the workspace.
 
 ---
 
-## Getting Help
-
-**Something not working?**
-Check if the persona/rule is installed: Settings > Your AI
-
-**Want to modify behavior?**
-Edit personas and rules in Settings, or modify the prompts directly
-
-**Need to start over?**
-Re-run @BOOTLOADER — it's idempotent (safe to run multiple times)
-
----
-
 ## Acknowledgments
 
-The semantic memory architecture in N5OS Ode is based on foundational work by **[The Fork Project](https://github.com/theforkproject-dev)**. Their [zo-local-memory](https://github.com/theforkproject-dev/zo-local-memory) project established the core patterns for local semantic memory on Zo Computer, including the embedding pipeline, vector storage structure, and retrieval approach.
-
-We gratefully acknowledge their contribution to the Zo ecosystem.
+The semantic memory architecture in N5OS Ode is based on foundational work by **[The Fork Project](https://github.com/theforkproject-dev)**. Their [zo-local-memory](https://github.com/theforkproject-dev/zo-local-memory) project established the core patterns for local semantic memory on Zo Computer.
 
 ---
 
 ## Version
 
-**N5OS Ode v1.1**  
-Released: January 2026
+**N5OS Ode v2.0**
+Released: February 2026
 
 ---
 
 *Structured thinking for structured doing.*
-

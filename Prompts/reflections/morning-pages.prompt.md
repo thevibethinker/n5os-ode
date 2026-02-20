@@ -40,7 +40,7 @@ These are the areas you MUST explore, but HOW you explore them should vary each 
 *What to bring to the day*
 - Possible angles: "How do you want to show up today?", "What quality or mindset do you want to carry with you?", "If you could only accomplish one thing today, what matters most?", "What would future-you thank present-you for doing today?"
 
-### 5. Yesterday's Bio-Log (Optional)
+### 5. Yesterday's Health/Wellness Log (Optional)
 *Retrospective check on the biological inputs from the previous day*
 - **Diet:** "Briefly, what did you eat yesterday? (Just a quick summary)"
 - **Mood Emoji:** "If you had to pick one emoji to represent your overall mood/state yesterday, what would it be?"

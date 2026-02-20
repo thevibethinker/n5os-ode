@@ -1,0 +1,37 @@
+---
+id: P30
+name: Maintain Feel For Code
+category: advanced
+priority: high
+version: "1.0.0"
+created: "2026-02-18"
+related: [P28, P15, P33]
+
+purpose: |
+  Stay connected to the shape, quality, and craft of generated code — generating thousands of lines without understanding means you have lost connection.
+
+description: |
+  AI-generated code is easy to produce in volume. This creates a new failure
+  mode: generating large amounts of code without understanding what it does,
+  how it fits together, or whether it is well-crafted. Volume without
+  comprehension is technical debt in disguise.
+
+  Maintaining "feel" means reviewing generated code, understanding its structure,
+  being able to explain any part of it, and noticing when quality degrades. It
+  means reading the code, not just running it. If a test passes but you cannot
+  explain why, you have lost feel.
+
+  This principle is especially important for non-technical users working with AI
+  coding assistants. The goal is not to understand every syntax detail, but to
+  maintain a conceptual grasp of what the code does and why. If the system
+  becomes a black box, you have lost the ability to make informed decisions
+  about it.
+
+anti_patterns:
+  - "Generating large codebases without reviewing the output"
+  - "Accepting code that passes tests without understanding why it works"
+  - "Treating generated code as a black box that should not be inspected"
+
+application:
+  when: "Any time code is being generated, especially at scale"
+  how: "Review generated code for structure and quality; be able to explain any component; notice when craft degrades"

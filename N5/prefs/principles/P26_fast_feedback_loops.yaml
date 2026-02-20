@@ -1,0 +1,36 @@
+---
+id: P26
+name: Fast Feedback Loops
+category: execution
+priority: high
+version: "1.0.0"
+created: "2026-02-18"
+related: [P12, P18, P24]
+
+purpose: |
+  Tighten the loop between action and feedback — small changes with immediate verification, not large batches tested afterward.
+
+description: |
+  The speed of learning and progress is directly proportional to the speed of
+  feedback. Make a small change, verify it works, then make the next change.
+  This is faster and more reliable than making many changes and then debugging
+  the combined result.
+
+  In practice, this means: run tests after each significant code change, verify
+  file operations immediately, check API responses inline, and validate
+  configurations before building on top of them. The overhead of frequent
+  verification is far less than the cost of debugging compound failures.
+
+  This principle applies at every scale: within a single script (test each
+  function), within a workflow (verify each step), and within a project (validate
+  each feature before building the next). The tighter the feedback loop, the
+  faster the progress.
+
+anti_patterns:
+  - "Writing 200 lines of code before running anything"
+  - "Making multiple configuration changes before testing any of them"
+  - "Batching large changes and debugging the combined result"
+
+application:
+  when: "Building, modifying, or configuring anything"
+  how: "Make small changes, verify immediately, proceed only after confirmation. Never batch large changes without intermediate checks."

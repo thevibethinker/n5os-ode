@@ -67,7 +67,7 @@ last_updated: 2025-12-26T16:45:00+00:00
 *Files created during this conversation*
 - SESSION_STATE.md (permanent, conversation workspace)
 - spawn_worker.py v3.0 (permanent, N5/scripts/)
-- Spawn Worker.prompt.md v3.0 (permanent, Prompts/)
+- spawn-worker.prompt.md v3.0 (permanent, Prompts/)
 
 ## Tags
 #build #spawn-worker #refactor #llm-first
@@ -81,7 +81,7 @@ last_updated: 2025-12-26T16:45:00+00:00
 
 ### Files Modified
 - N5/scripts/spawn_worker.py (rewritten)
-- Prompts/Spawn Worker.prompt.md (rewritten)
+- Prompts/spawn-worker.prompt.md (rewritten)
 - N5/prefs/system/persona_routing_contract.md (updated)
 
 ### Tests

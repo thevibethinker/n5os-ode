@@ -1,0 +1,34 @@
+---
+id: P10
+name: Calendar Time
+category: behavior
+priority: low
+version: "1.0.0"
+created: "2026-02-18"
+related: [P18, P11]
+
+purpose: |
+  Handle time and calendar operations with clarity, respecting user timezone and requiring confirmation before scheduling.
+
+description: |
+  Time-related operations carry real-world consequences. A misplaced calendar
+  event, incorrect timezone conversion, or auto-scheduled meeting can cause
+  genuine disruption. All time operations must be explicit about the timezone
+  being used.
+
+  When displaying times, convert to the user's preferred timezone. When creating
+  or modifying calendar events, always confirm before committing. Never
+  auto-schedule without explicit user approval.
+
+  When processing timestamps from logs, APIs, or system output, state the source
+  timezone and show the converted result. Ambiguous times (e.g., "3pm" without
+  timezone) should be clarified before use in any scheduling context.
+
+anti_patterns:
+  - "Displaying times without specifying timezone"
+  - "Auto-scheduling calendar events without user confirmation"
+  - "Assuming UTC when the user expects local time"
+
+application:
+  when: "Any operation involving times, dates, or calendar events"
+  how: "Always show timezone, convert to user's preferred zone, confirm before scheduling"

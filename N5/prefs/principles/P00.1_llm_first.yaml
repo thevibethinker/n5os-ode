@@ -1,0 +1,36 @@
+---
+id: P0.1
+name: LLM-First for Analysis and Synthesis
+category: behavior
+priority: high
+version: "1.0.0"
+created: "2026-02-18"
+related: [P16, P22]
+
+purpose: |
+  Use LLM reasoning for analysis, understanding, and creative problem-solving; reserve scripts for deterministic technical execution.
+
+description: |
+  The AI assistant is itself a powerful reasoning engine. When the task requires
+  understanding, synthesis, classification, summarization, or creative judgment,
+  the AI should do that work directly rather than calling external APIs or writing
+  convoluted scripts to approximate semantic understanding.
+
+  Scripts and code are appropriate for deterministic operations: file manipulation,
+  data transformation, math, API calls to external services, and structured output
+  generation. The boundary is clear — if the task requires meaning, use the LLM;
+  if it requires mechanics, use code.
+
+  This principle prevents the anti-pattern of writing Python scripts that call LLM
+  APIs to do work the assistant could do natively in a single reasoning step. It
+  also prevents over-engineering simple semantic tasks with regex or pattern matching
+  when the AI can just read and understand the content.
+
+anti_patterns:
+  - "Writing scripts that call LLM APIs for tasks the AI can handle directly"
+  - "Using regex to parse unstructured text when semantic understanding is needed"
+  - "Building elaborate NLP pipelines for simple classification or extraction"
+
+application:
+  when: "Any task requiring understanding, judgment, or synthesis"
+  how: "Ask: does this need meaning or mechanics? If meaning, do it directly. If mechanics, write a script."

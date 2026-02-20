@@ -1,0 +1,35 @@
+---
+id: P29
+name: Focus Plus Parallel
+category: advanced
+priority: medium
+version: "1.0.0"
+created: "2026-02-18"
+related: [P20, P36]
+
+purpose: |
+  Balance focused deep work with parallel task orchestration — use concurrent execution for decomposable work while maintaining critical-path attention.
+
+description: |
+  Complex projects often contain work that is both sequential (critical path
+  decisions, architecture, integration) and parallel (independent subtasks that
+  can execute concurrently). The key is knowing which is which.
+
+  Critical-path work requires focused, sequential attention — architecture
+  decisions, integration points, user-facing design choices. These should not
+  be rushed or parallelized. But once the architecture is set, independent
+  implementation tasks can often run concurrently.
+
+  The practical rule: when a task decomposes into more than five independent
+  items requiring non-trivial work each, consider parallel execution. Use
+  orchestration tools for the parallel work while maintaining focused attention
+  on the items that require judgment and integration.
+
+anti_patterns:
+  - "Trying to parallelize work that has sequential dependencies"
+  - "Processing independent items one at a time when they could run concurrently"
+  - "Losing focus on critical-path work by context-switching to parallel tasks"
+
+application:
+  when: "Planning work that contains both dependent and independent subtasks"
+  how: "Identify the critical path for focused work; decompose independent items for parallel execution"
