@@ -1,0 +1,103 @@
+{
+  "$schema": "manifest-v3",
+  "schema_version": "v3",
+  "meeting_id": "2026-02-18_Careerspan-Talent-Pipeline-Strategy-V-x-Shivam",
+  "status": "processed",
+  "status_history": [
+    {
+      "status": "manual_ingest",
+      "at": "2026-02-19T11:00:00.000000+00:00",
+      "note": "Manual transcript ingest via conversation con_2eVksVRXqQuRz7ft"
+    },
+    {
+      "status": "processed",
+      "at": "2026-02-19T11:00:00.000000+00:00"
+    }
+  ],
+  "source": {
+    "type": "manual_transcript",
+    "ingested_at": "2026-02-19T11:00:00.000000+00:00"
+  },
+  "meeting": {
+    "date": "2026-02-18",
+    "time_utc": null,
+    "duration_minutes": null,
+    "title": "Careerspan Talent Pipeline Strategy for US-India Cross-Border Recruitment",
+    "type": "external",
+    "summary": "V and Shivam strategize on multi-pronged Careerspan go-to-market: Left Lane VC validation, Cobalt ID placement, Brex/Manifest sponsor pipeline, campus distribution, Shortlist partnership with Morpheus Group, and O-1 visa pipeline via Manifest.",
+    "original_title": "Careerspan talent pipeline strategy for US-India cross-border recruitment"
+  },
+  "participants": {
+    "identified": [
+      {
+        "name": "Vrijen Attawar",
+        "email": "vrijen@mycareerspan.com",
+        "crm_id": null,
+        "role": "host",
+        "confidence": 1.0
+      },
+      {
+        "name": "Shivam Desai",
+        "email": "shivam@corridorx.io",
+        "crm_id": null,
+        "role": "attendee",
+        "confidence": 1.0
+      }
+    ],
+    "unidentified": [],
+    "confidence": 1.0
+  },
+  "calendar_match": {
+    "event_id": null,
+    "confidence": 0.0,
+    "method": "none"
+  },
+  "blocks": {
+    "policy": "external_standard",
+    "requested": [],
+    "generated": [
+      "B01_DETAILED_RECAP",
+      "B02_COMMITMENTS",
+      "B03_DECISIONS",
+      "B04_OPEN_QUESTIONS",
+      "B05_ACTION_ITEMS",
+      "B06_BUSINESS_CONTEXT",
+      "B08_STAKEHOLDER_INTELLIGENCE",
+      "B10_RELATIONSHIP_TRAJECTORY",
+      "B25_DELIVERABLE_MAP",
+      "B26_MEETING_METADATA"
+    ],
+    "failed": [],
+    "skipped": []
+  },
+  "hitl": {
+    "queue_id": null,
+    "reason": null,
+    "resolved_at": null
+  },
+  "timestamps": {
+    "created_at": "2026-02-19T11:00:00.000000+00:00",
+    "ingested_at": "2026-02-19T11:00:00.000000+00:00",
+    "processed_at": "2026-02-19T11:00:00.000000+00:00",
+    "archived_at": null,
+    "identified_at": "2026-02-19T11:00:00.000000+00:00"
+  },
+  "artifacts": {
+    "metadata.json": "metadata.json",
+    "transcript.md": "transcript.md"
+  },
+  "meeting_type": "external",
+  "blocks_generated": [
+    "B01_DETAILED_RECAP",
+    "B02_COMMITMENTS",
+    "B03_DECISIONS",
+    "B04_OPEN_QUESTIONS",
+    "B05_ACTION_ITEMS",
+    "B06_BUSINESS_CONTEXT",
+    "B08_STAKEHOLDER_INTELLIGENCE",
+    "B10_RELATIONSHIP_TRAJECTORY",
+    "B25_DELIVERABLE_MAP",
+    "B26_MEETING_METADATA"
+  ],
+  "processed_at": "2026-02-19T11:00:00.000000+00:00"
+}

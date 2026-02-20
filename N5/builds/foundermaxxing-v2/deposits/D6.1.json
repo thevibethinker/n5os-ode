@@ -1,0 +1,31 @@
+{
+  "drop_id": "D6.1",
+  "title": "SQLite Backend Migration + Foundation Schema",
+  "status": "complete",
+  "completed_at": "2026-02-20T07:45:00+00:00",
+  "audited_at": "2026-02-20T08:30:00+00:00",
+  "tested": true,
+  "database_path": "Personal/Business/foundermaxxing-applications/foundermaxxing.db",
+  "tables_created": ["applications", "email_drafts", "accounts", "sessions", "interactions"],
+  "records_migrated": 0,
+  "routes_updated": ["/api/foundermaxxing-apply", "/api/foundermaxxing-admin"],
+  "routes_unchanged": ["/foundermaxxing", "/foundermaxxing/admin"],
+  "json_backup_preserved": true,
+  "audit_findings_fixed": [
+    "CRITICAL: email_drafts missing updated_at column → draft regeneration crashed 500. Fixed: ALTER TABLE ADD COLUMN.",
+    "MEDIUM: meta.json D6.1 status was still 'pending'. Fixed: updated to 'complete'.",
+    "LOW: No status validation on PATCH → accepted garbage values. Fixed: whitelist [pending, approved, rejected, waitlisted].",
+    "MEDIUM: accounts missing phone column for D8 hotline routing. Fixed: ALTER TABLE ADD COLUMN."
+  ],
+  "auth_header": "X-Admin-Token (custom header — zo.space proxy strips standard Authorization header)",
+  "verification": {
+    "initial_audit": "116 checks: 104 passed, 11 failed (10 were test bugs using wrong field names, 1 real meta.json issue)",
+    "targeted_audit": "18 checks: 17 passed, 1 failed (draft regeneration crash confirmed)",
+    "post_fix_audit": "36 checks: 36 passed, 0 failed"
+  },
+  "downstream_d8_contract": {
+    "accounts_table": "Ready with full_name, email, tier, phone, linkedin — all fields D8 hotline needs",
+    "sessions_table": "Ready with session_type, summary, raw_data for hotline recordings",
+    "interactions_table": "Ready with interaction_type, content, metadata for granular tracking"
+  }
+}

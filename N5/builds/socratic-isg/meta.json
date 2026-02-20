@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "slug": "socratic-isg",
+  "title": "Socratic Information Sufficiency Gate",
+  "objective": null,
+  "created": "2026-02-19",
+  "status": "draft",
+  "completed_at": null,
+  "type": "general",
+  "build_mode": "learning",
+  "learning_landscape_generated": false,
+  "orchestrator_convo_id": null,
+  "workers": {
+    "total": 0,
+    "complete": 0,
+    "in_progress": 0,
+    "blocked": 0,
+    "pending": 0
+  },
+  "waves": [],
+  "worker_details": []
+}

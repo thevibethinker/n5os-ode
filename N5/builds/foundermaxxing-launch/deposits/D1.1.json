@@ -1,0 +1,10 @@
+{
+  "drop_id": "D1.1",
+  "status": "complete",
+  "product_id": "prod_U0eZ60eiQ8zeKx",
+  "price_id": "price_1T2dGeHQ08I7w6YsuMZZ60Ba",
+  "payment_link_id": "plink_1T2dGfHQ08I7w6Yskef2xUiO",
+  "payment_link_url": "https://buy.stripe.com/bJebJ148ygjrc6dgi2bsc0a",
+  "product_name": "FounderMaxxing Founding Class",
+  "amount_cents": 10000
+}

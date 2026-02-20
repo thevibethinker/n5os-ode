@@ -1,0 +1,61 @@
+{
+  "drop_id": "D3",
+  "status": "complete",
+  "completed_at": "2026-02-20T04:36:00Z",
+  "coupons_created": [
+    {
+      "id": "FOUNDING_200OFF",
+      "name": "FounderMaxxing Founding 15",
+      "type": "amount_off",
+      "amount": "$200 off",
+      "duration": "forever",
+      "product": "prod_U0mBG5x8TQwOcl"
+    },
+    {
+      "id": "LAUNCH2026_50OFF",
+      "name": "FounderMaxxing Launch 2026",
+      "type": "percent_off",
+      "amount": "50% off",
+      "duration": "repeating (3 months)",
+      "product": "prod_U0mBG5x8TQwOcl"
+    }
+  ],
+  "promo_codes": {
+    "FOUNDING": {
+      "promo_id": "promo_1T2lR2HQ08I7w6YsAapTD6Re",
+      "coupon": "FOUNDING_200OFF",
+      "max_redemptions": 15,
+      "first_time_only": true,
+      "effective_price": "$100/mo"
+    },
+    "LAUNCH2026": {
+      "promo_id": "promo_1T2mLnHQ08I7w6Yst1P37nRq",
+      "coupon": "LAUNCH2026_50OFF",
+      "max_redemptions": 100,
+      "first_time_only": true,
+      "expires": "2026-12-31T23:59:59Z",
+      "effective_price": "$150/mo for 3 months, then $300/mo"
+    }
+  },
+  "payment_links": {
+    "standard_with_promos": {
+      "link_id": "plink_1T2lR3HQ08I7w6Yse3RTjmfw",
+      "url": "https://buy.stripe.com/8x28wP9sS3wF4DLgi2bsc0e",
+      "allow_promotion_codes": true
+    },
+    "old_standard_deactivated": "plink_1T2kdAHQ08I7w6YsNGdLhl0y"
+  },
+  "documentation_path": "artifacts/stripe-coupon-guide.md",
+  "admin_route": "/api/foundermaxxing-coupons",
+  "cleanup": {
+    "v_discount_coupon": "deleted (100% off forever, 0 redemptions, from Jan 12 2026)",
+    "vlovesyou_promo": "deactivated (linked to deleted v-discount coupon)",
+    "founding_test_debug": "deactivated (debug artifact)",
+    "old_launch2026_promo": "deactivated (replaced with expiring version)",
+    "archived_v1_products": [
+      "prod_U0eZY4l7JiJEPb (Zo-to-Zo v1)",
+      "prod_U0eZ60eiQ8zeKx (Founding Class v1)",
+      "prod_U0eZz7GTHZDGtM (Class of 2026 v1)"
+    ]
+  }
+}

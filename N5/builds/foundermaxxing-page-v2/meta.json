@@ -1,0 +1,44 @@
+{
+    "slug": "foundermaxxing-page-v2",
+    "title": "FounderMaxxing Landing Page V2 \u2014 Narrative Rebuild",
+    "created": "2026-02-19T20:30:00Z",
+    "status": "superseded",
+    "build_mode": "standard",
+    "delegate_only": false,
+    "source_conversation": "con_u475mQtYnFGIl1Sd",
+    "waves": {
+        "W1": {
+            "description": "Parallel asset generation + narrative review",
+            "status": "pending"
+        },
+        "W2": {
+            "description": "Page build using approved narrative + generated assets",
+            "status": "pending"
+        }
+    },
+    "drops": {
+        "D1": {
+            "title": "Venn Diagram Graphic \u2014 V's N-of-1",
+            "wave": "W1",
+            "status": "pending",
+            "spawn_mode": "auto",
+            "depends_on": []
+        },
+        "D2": {
+            "title": "Landing Page Build (Full Narrative Rebuild)",
+            "wave": "W2",
+            "status": "pending",
+            "spawn_mode": "manual",
+            "depends_on": [
+                "D1"
+            ]
+        }
+    },
+    "recovery": {
+        "max_auto_retries": 2,
+        "dead_threshold_seconds": 300,
+        "enable_ai_judgment": false
+    },
+    "superseded_by": "foundermaxxing-v2",
+    "superseded_reason": "Superseded by foundermaxxing-v2 D5 (full page rebuild)"
+}

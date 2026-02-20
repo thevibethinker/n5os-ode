@@ -1,0 +1,185 @@
+{
+  "$schema": "manifest-v3",
+  "schema_version": "v3",
+  "meeting_id": "2026-02-19_external-srw-buxd-aik-221653",
+  "status": "identified",
+  "status_history": [
+    {
+      "status": "raw",
+      "at": "2026-02-19T22:32:12.375034+00:00"
+    },
+    {
+      "status": "ingested",
+      "at": "2026-02-19T22:32:12.375034+00:00"
+    },
+    {
+      "status": "identified",
+      "at": "2026-02-19T22:32:12.660451+00:00"
+    }
+  ],
+  "source": {
+    "type": "recall_ai",
+    "recall_bot_id": "eae183b3-b0b4-4606-bf52-4e3123c02c05",
+    "recall_region": "us-west-2",
+    "recall_meeting_url": {
+      "meeting_id": "srw-buxd-aik",
+      "platform": "google_meet"
+    },
+    "recall_meeting_id": "srw-buxd-aik",
+    "ingested_at": "2026-02-19T22:32:12.375034+00:00"
+  },
+  "meeting": {
+    "date": "2026-02-19",
+    "time_utc": "22:16:53",
+    "duration_minutes": 15,
+    "title": "srw-buxd-aik",
+    "type": "external",
+    "summary": null
+  },
+  "participants": {
+    "identified": [],
+    "unidentified": [],
+    "confidence": 0.0
+  },
+  "calendar_match": {
+    "event_id": null,
+    "confidence": 0.0,
+    "method": "none"
+  },
+  "quality_gate": {
+    "passed": false,
+    "checks": {
+      "has_transcript": true,
+      "participants_identified": false,
+      "meeting_type_determined": true,
+      "no_hitl_pending": false
+    },
+    "score": 0.138,
+    "executed_at": "2026-02-19T22:32:12.665973+00:00",
+    "check_results": [
+      {
+        "name": "transcript_length",
+        "score": 0.004,
+        "passed": false,
+        "threshold": 300,
+        "warnings": [],
+        "errors": [
+          "Transcript too short (4 chars) for meaningful processing"
+        ],
+        "escalate_hitl": true
+      },
+      {
+        "name": "transcript_format",
+        "score": 0.5,
+        "passed": false,
+        "threshold": 0.8,
+        "warnings": [
+          "No speaker patterns detected"
+        ],
+        "errors": [],
+        "escalate_hitl": false
+      },
+      {
+        "name": "meeting_duration_consistency",
+        "score": 0.1,
+        "passed": false,
+        "threshold": 0.5,
+        "warnings": [],
+        "errors": [
+          "Suspicious length discrepancy: 1 words for 15min meeting"
+        ],
+        "escalate_hitl": true
+      },
+      {
+        "name": "participant_confidence",
+        "score": 0.0,
+        "passed": false,
+        "threshold": 0.7,
+        "warnings": [],
+        "errors": [
+          "Very low participant confidence: 0.00"
+        ],
+        "escalate_hitl": true
+      },
+      {
+        "name": "host_identified",
+        "score": 0.0,
+        "passed": false,
+        "threshold": 1.0,
+        "warnings": [],
+        "errors": [
+          "No host identified"
+        ],
+        "escalate_hitl": true
+      },
+      {
+        "name": "external_participant_verification",
+        "score": 0.0,
+        "passed": false,
+        "threshold": 1.0,
+        "warnings": [],
+        "errors": [
+          "External meeting with only V identified"
+        ],
+        "escalate_hitl": true
+      },
+      {
+        "name": "calendar_match_score",
+        "score": 0.0,
+        "passed": false,
+        "threshold": 0.6,
+        "warnings": [],
+        "errors": [
+          "Very low calendar match confidence: 0.00"
+        ],
+        "escalate_hitl": true
+      },
+      {
+        "name": "meeting_type_consistency",
+        "score": 0.5,
+        "passed": true,
+        "threshold": 1.0,
+        "warnings": [
+          "No CRM match data available for meeting type consistency check"
+        ],
+        "errors": [],
+        "escalate_hitl": false
+      }
+    ]
+  },
+  "blocks": {
+    "policy": "external_standard",
+    "requested": [],
+    "generated": [],
+    "failed": [],
+    "skipped": []
+  },
+  "hitl": {
+    "queue_id": null,
+    "reason": null,
+    "resolved_at": null
+  },
+  "timestamps": {
+    "created_at": "2026-02-19T22:32:12.375034+00:00",
+    "ingested_at": "2026-02-19T22:32:12.375034+00:00",
+    "identified_at": "2026-02-19T22:32:12.660423+00:00",
+    "gated_at": null,
+    "processed_at": null,
+    "archived_at": null
+  },
+  "recall_metadata": {
+    "bot_id": "eae183b3-b0b4-4606-bf52-4e3123c02c05",
+    "recording_duration_seconds": 917,
+    "video_retention_days": null,
+    "video_expires_at": "2026-08-18T22:16:53.544760+00:00",
+    "participant_count": 0
+  },
+  "artifacts": {
+    "audio": null,
+    "video": null,
+    "transcript_json": "transcript.json",
+    "transcript_txt": null,
+    "participants_json": "participants.json",
+    "recall_metadata": "recall_metadata.json"
+  }
+}

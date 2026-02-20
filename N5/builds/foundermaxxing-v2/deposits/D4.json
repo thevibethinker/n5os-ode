@@ -1,0 +1,33 @@
+{
+  "drop_id": "D4",
+  "status": "complete",
+  "completed_at": "2026-02-20T05:30:00Z",
+  "note": "Thread crashed before deposit write, but all assets were created",
+  "visual_assets": [
+    {
+      "name": "foundermaxxing-venn.png",
+      "path": "/home/workspace/Images/foundermaxxing-venn.png",
+      "asset_path": "/images/foundermaxxing-venn.png",
+      "description": "Primary Venn diagram showing V's N-of-1 position: Career Coach × Founder × Non-technical Coder"
+    },
+    {
+      "name": "foundermaxxing-venn-v2.png",
+      "path": "/home/workspace/Images/foundermaxxing-venn-v2.png",
+      "asset_path": "/images/foundermaxxing-venn-v2.png",
+      "description": "Alternate Venn diagram version"
+    },
+    {
+      "name": "foundermaxxing-og.png",
+      "path": "/home/workspace/Images/foundermaxxing-og.png",
+      "asset_path": "/images/foundermaxxing-og.png",
+      "description": "Open Graph social preview image"
+    },
+    {
+      "name": "foundermaxxing-session.png",
+      "path": "/home/workspace/Images/foundermaxxing-session.png",
+      "asset_path": "/images/foundermaxxing-session.png",
+      "description": "Session format visual or secondary promotional image"
+    }
+  ],
+  "total_assets": 4
+}
