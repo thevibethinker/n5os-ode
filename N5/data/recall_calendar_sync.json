@@ -1,5 +1,14 @@
 {
-  "synced_events": {},
-  "last_sync": "2026-02-19T10:54:04.973886+00:00",
+  "synced_events": {
+    "iuguu82ukubnv57akpdo4nj8mc@google.com": {
+      "recall_bot_id": "fbf4775c-77e8-4164-a095-d8d110e40f92",
+      "scheduled_at": "2026-02-20T13:14:43.962034+00:00",
+      "meeting_url": "https://meet.google.com/zes-vigy-ygg",
+      "event_start": "2026-02-20T16:00:00-05:00",
+      "event_title": "Eliot Asenoth Gaspar-Finer x Vrijen Attawar",
+      "join_at": "2026-02-20T15:45:00-05:00"
+    }
+  },
+  "last_sync": "2026-02-20T13:22:17.351469+00:00",
   "version": "2.1"
 }
