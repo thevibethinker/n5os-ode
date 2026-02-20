@@ -1,3 +1,10 @@
+---
+created: 2026-01-15
+last_edited: 2026-02-18
+version: 1.1
+provenance: con_o9nkV9huRbIpeEGn
+---
+
 # N5 Preferences Index
 
 **Version:** 1.0.0 (n5OS-Ode)

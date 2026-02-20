@@ -1,0 +1,35 @@
+---
+id: P24
+name: Simulation Over Doing
+category: execution
+priority: high
+version: "1.0.0"
+created: "2026-02-18"
+related: [P7, P23, P5]
+
+purpose: |
+  When consequences of an action are unclear, simulate first — dry runs, previews, and subset tests before full execution.
+
+description: |
+  Irreversible or hard-to-reverse actions deserve a preview step. Before running
+  a bulk delete, deploying a configuration change, sending a batch of emails, or
+  restructuring a directory, simulate the operation and review the projected
+  outcome.
+
+  Simulation takes many forms: dry-run flags, preview outputs, testing with a
+  single item before processing all items, or generating a plan document before
+  execution. The appropriate level depends on the blast radius of the operation.
+
+  This principle complements P7 (idempotence/dry-run) and P23 (trap doors). P7
+  ensures workflows support dry-run mode. P23 identifies which decisions are
+  irreversible. P24 establishes the habit of using those capabilities — always
+  simulate before committing when the consequences are unclear or significant.
+
+anti_patterns:
+  - "Running bulk operations without previewing the scope"
+  - "Deploying changes without testing on a subset first"
+  - "Assuming an operation is safe because it worked once before"
+
+application:
+  when: "Before any operation with unclear, significant, or irreversible consequences"
+  how: "Use dry-run flags, preview modes, subset tests, or plan documents before full execution"

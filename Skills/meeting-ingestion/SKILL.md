@@ -3,7 +3,7 @@ name: meeting-ingestion
 description: Unified skill for ingesting meeting transcripts from Google Drive and orchestrating the processing pipeline (recap, blocks). Replaces legacy MG-1 through MG-6 agent sequence.
 compatibility: Created for Zo Computer
 metadata:
-  author: va.zo.computer
+  author: n5os-ode
   version: "1.0.0"
   created: 2026-01-26
 ---
@@ -30,6 +30,18 @@ python3 Skills/meeting-ingestion/scripts/meeting_cli.py process
 # Process specific meeting
 python3 Skills/meeting-ingestion/scripts/meeting_cli.py process /path/to/meeting --blocks B01,B05,B08
 ```
+
+## Prerequisites
+
+> **Note:** This skill depends on several N5 scripts that are **not included in the base Ode distribution** and must be created or obtained separately:
+>
+> - `N5/scripts/meeting_registry.py` — SQLite registry for tracking processed meetings
+> - `N5/scripts/meeting_orchestrator.py` — Duplicate prevention and orchestration
+> - `N5/scripts/meeting_normalizer.py` — Date/name normalization
+> - `N5/scripts/meeting_manifest_generator.py` — Block manifest generation
+> - `N5/scripts/meeting_crm_sync.py` — CRM synchronization
+>
+> Without these scripts, the CLI commands above will fail. The skill's workflow logic and block definitions can still serve as reference for building a custom meeting ingestion pipeline.
 
 ## Commands
 

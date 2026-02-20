@@ -56,6 +56,8 @@ Before starting any work on N5OS Ode:
 
 2. **Before pushing, run sync check:**
    ```bash
+   # Optional — ode_sync_check.py is not included in the base distribution
+   # and must be created separately if desired
    python3 N5/scripts/ode_sync_check.py
    ```
 

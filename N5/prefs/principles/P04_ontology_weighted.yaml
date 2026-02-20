@@ -1,0 +1,35 @@
+---
+id: P4
+name: Ontology-Weighted Analysis
+category: behavior
+priority: medium
+version: "1.0.0"
+created: "2026-02-18"
+related: [P0.1, P16]
+
+purpose: |
+  Use intellectual priorities and domain ontologies to weight extraction and analysis — not everything is equally important.
+
+description: |
+  When analyzing documents, conversations, or data, apply weighting based on the
+  domain's priority hierarchy. Some concepts, principles, and themes matter more
+  than others. A flat extraction that treats every mention equally produces noise.
+
+  The ontology — the structured understanding of what matters and how concepts
+  relate — should guide what gets emphasized, what gets summarized, and what gets
+  deprioritized. This applies to content extraction, meeting summaries, research
+  synthesis, and any analytical output.
+
+  In practice, this means loading relevant context about priorities before doing
+  analysis work, and ensuring high-priority concepts receive proportional attention
+  in outputs. Low-priority or tangential items should be captured but not given
+  equal emphasis.
+
+anti_patterns:
+  - "Flat extraction that treats every mention with equal weight"
+  - "Ignoring established priority hierarchies during analysis"
+  - "Producing summaries where minor details get same emphasis as key insights"
+
+application:
+  when: "Performing any analysis, extraction, or synthesis on content"
+  how: "Load relevant priority context, weight extraction toward high-priority concepts, deprioritize tangential items"

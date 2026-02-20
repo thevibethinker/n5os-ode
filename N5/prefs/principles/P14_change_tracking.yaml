@@ -1,0 +1,34 @@
+---
+id: P14
+name: Change Tracking
+category: quality
+priority: medium
+version: "1.0.0"
+created: "2026-02-18"
+related: [P21, P15]
+
+purpose: |
+  Maintain concise change logs that track the evolution and rationale behind modifications.
+
+description: |
+  Every meaningful change to a system, document, or configuration should have a
+  recorded rationale. Without change tracking, the system becomes an accumulation
+  of modifications with no way to understand why things are the way they are.
+
+  Change logs should be concise — capturing what changed, why, and when. They
+  should not be exhaustive transcripts of every keystroke. The goal is to answer
+  the question "why is this like this?" months later.
+
+  This applies to configuration files, architectural decisions, workflow
+  modifications, and any artifact that evolves over time. Version fields in
+  frontmatter, changelog sections in documents, and commit messages all serve
+  this purpose.
+
+anti_patterns:
+  - "Making changes without recording why"
+  - "Verbose changelogs that bury the rationale in noise"
+  - "Relying on memory or conversation history instead of persistent records"
+
+application:
+  when: "Modifying any artifact that will persist beyond the current session"
+  how: "Record what changed, why, and when in the appropriate location (frontmatter, changelog, commit message)"

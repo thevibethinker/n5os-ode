@@ -1,0 +1,34 @@
+---
+id: P3
+name: Voice Integration Policy
+category: communication
+priority: medium
+version: "1.0.0"
+created: "2026-02-18"
+related: [P8, P9]
+
+purpose: |
+  Apply appropriate voice levels to different output contexts, keeping analysis neutral and user-facing communication authentic.
+
+description: |
+  Not all outputs should sound the same. Internal analysis, data extraction, and
+  system operations should use neutral, precise language. User-facing communications
+  — emails, messages, proposals, posts — should apply the appropriate voice and tone
+  for the audience and context.
+
+  This separation prevents two failure modes: overly casual analysis that loses
+  precision, and robotic user-facing content that feels generated. The voice layer
+  is applied at output time, not during reasoning.
+
+  When generating communications, load voice guidance and style primitives relevant
+  to the content type. When doing analysis, extraction, or internal processing,
+  keep language clinical and exact.
+
+anti_patterns:
+  - "Applying casual voice to internal analysis or system operations"
+  - "Using robotic or template language in user-facing communications"
+  - "Mixing analysis tone with communication tone in the same output"
+
+application:
+  when: "Generating any output that will be read by humans or stored for reference"
+  how: "Classify output as internal vs. external, apply neutral voice for analysis and appropriate voice for communications"

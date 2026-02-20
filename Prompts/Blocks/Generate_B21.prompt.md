@@ -116,7 +116,7 @@ block_type: B21
 *Context:* Explaining what matters most in vendor selection beyond features. Signals that relationship and shared values are decision factors, not just capability.
 
 **"The question isn't whether we can build this ourselves — it's whether we should, given opportunity cost."**  
-— Vrijen Attawar  
+— [USER] [Author]  
 *Context:* Reframing build vs. buy discussion from capability to strategy. Shifted conversation from technical to business priorities.
 
 ### Avoid:

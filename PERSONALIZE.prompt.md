@@ -1,7 +1,7 @@
 ---
 title: N5OS Ode Personalize
 description: Configure N5OS Ode with your personal settings and preferences
-version: 1.0.0
+version: 2.0.0
 tool: true
 tags: [n5os, setup, personalization, configuration]
 created: 2026-01-15
@@ -96,6 +96,11 @@ Your N5OS Ode is configured! Here's what you can do:
 1. **Ask a strategic question** → Should route to Ode Strategist
 2. **Request research** → Should route to Ode Researcher  
 3. **Ask to build something** → Should route to Ode Builder
+4. **Ask to design a system** → Should route to Ode Architect
+5. **Ask to explain a concept** → Should route to Ode Teacher
+6. **Ask to organize your workspace** → Should route to Ode Librarian
+
+All 9 personas (Operator, Builder, Researcher, Writer, Strategist, Debugger, Architect, Teacher, Librarian) are installed and route automatically based on your request.
 
 ### Explore the System
 
@@ -118,5 +123,5 @@ Run this prompt again anytime to update your settings. Changes take effect immed
 
 ---
 
-*N5OS Ode v1.0 — Personalized for you*
+*N5OS Ode v2.0 — Personalized for you*
 

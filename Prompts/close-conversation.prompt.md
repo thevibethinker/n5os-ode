@@ -15,6 +15,23 @@ version: 5.3
 provenance: con_acsL39swzoCxrfWs
 ---
 
+> **⚠️ Script Availability Note**
+>
+> This prompt references scripts from both the base and extended N5 installations:
+>
+> **Included in base Ode distribution:**
+> - `conversation_end_router.py` — Tier detection and routing
+> - `session_state_manager.py` — SESSION_STATE management
+>
+> **Extended installation only (not included in base Ode):**
+> - `conversation_end_quick.py`, `conversation_end_standard.py`, `conversation_end_full.py` — Tier-specific mechanical close
+> - `conversation_pii_audit.py` — PII detection and marking
+> - `capability_graduation.py` — Capability graduation checks
+> - `build_worker_complete.py` / `update_build.py` — Worker completion notification
+> - `positions.py` — Position extraction and overlap checking *(extended system — not included in base Ode)*
+>
+> When extended scripts are unavailable, the LLM should perform the documented steps manually (semantic analysis, file scanning, handoff generation) following the workflow below.
+
 # Close Conversation
 
 Runs the formal **conversation-end workflow** with automatic mode and tier detection.
@@ -142,8 +159,8 @@ Create a clear handoff package for the orchestrator to review:
 - [Specific accomplishments with file paths]
 
 ### Artifacts Created
-- `file 'path/to/artifact1.py'` — [purpose]
-- `file 'path/to/artifact2.md'` — [purpose]
+- `file '<artifact-path-1>'` — [purpose]
+- `file '<artifact-path-2>'` — [purpose]
 
 ### Caveats / Notes for Orchestrator
 - [Anything the orchestrator should know]
@@ -439,7 +456,7 @@ Present formatted close output. End with:
 
 - **Spec:** `file 'N5/prefs/operations/conversation-end-v3.md'`
 - **Emoji Legend:** `file 'N5/config/emoji-legend.json'`
-- **Positions System:** `file 'N5/scripts/positions.py'`
+- **Positions System:** `N5/scripts/positions.py` *(extended system — create during personalization)*
 
 ## Version History
 

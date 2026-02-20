@@ -173,11 +173,13 @@ git_status: {staged, unstaged, untracked counts}
 
 ## Entry Points
 
+> **Note:** The tier-specific scripts (`conversation_end_quick.py`, `conversation_end_standard.py`, `conversation_end_full.py`) are optional extensions not included in the base Ode distribution. Only `conversation_end_router.py` is included in the base install. Without the tier scripts, execute the mechanical steps manually following the workflow above.
+
 ```bash
-# Auto-detect tier and mode
+# Auto-detect tier and mode (included in base)
 python3 N5/scripts/conversation_end_router.py --convo-id <id>
 
-# Direct tier execution (Full Close only)
+# Direct tier execution — requires extended installation
 python3 N5/scripts/conversation_end_quick.py --convo-id <id>
 python3 N5/scripts/conversation_end_standard.py --convo-id <id>
 python3 N5/scripts/conversation_end_full.py --convo-id <id>

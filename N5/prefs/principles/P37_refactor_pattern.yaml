@@ -1,0 +1,36 @@
+---
+id: P37
+name: Refactor Pattern
+category: workflow
+priority: high
+version: "1.0.0"
+created: "2026-02-18"
+related: [P33, P26, P5]
+
+purpose: |
+  Improve systems incrementally — preserve working parts while improving structure. Never do big-bang rewrites.
+
+description: |
+  Large-scale rewrites are one of the most common sources of project failure.
+  They take longer than expected, introduce new bugs, and often lose subtle
+  behaviors that the old system handled correctly. Incremental refactoring
+  avoids all of these risks.
+
+  The refactor pattern is: identify one thing to improve, change it while
+  keeping everything else working, verify the change, then move to the next
+  improvement. Each step should leave the system in a working state. If any
+  step breaks something, the blast radius is limited to that single change.
+
+  This applies to code, configurations, directory structures, workflows, and
+  any complex system. When the urge to "just rewrite the whole thing" arises,
+  resist it. Decompose the desired end state into incremental steps, each
+  independently valuable and independently testable.
+
+anti_patterns:
+  - "Rewriting entire systems from scratch instead of incremental improvement"
+  - "Making multiple structural changes simultaneously"
+  - "Refactoring without tests to verify behavior is preserved"
+
+application:
+  when: "Improving existing systems, code, or structures"
+  how: "One change at a time, verify after each step, keep the system working throughout. Never big-bang rewrite."

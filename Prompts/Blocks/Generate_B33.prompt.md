@@ -23,8 +23,10 @@ Run after MG-2 completes (B01-B32 blocks exist). Can be run:
 
 ## Usage
 
+> **Note:** `generate_b33_edges.py` is an optional edge-generation extension not included in the base Ode distribution. The extraction framework below can be applied manually by the LLM without the script.
+
 ```bash
-# Dry run - see what would be extracted
+# Dry run - see what would be extracted (requires extended installation)
 python3 N5/scripts/generate_b33_edges.py --meeting /path/to/meeting_[P] --dry-run
 
 # Generate B33 file (edges go to review queue)
@@ -107,7 +109,7 @@ Creates `B33_DECISION_EDGES.jsonl` in the meeting folder:
 
 ```jsonl
 {"_meta": true, "meeting_id": "mtg_2025-12-26_Demo", "generated_at": "2026-01-04T..."}
-{"source_type": "idea", "source_id": "semantic-matching", "relation": "originated_by", "target_type": "person", "target_id": "vrijen", ...}
+{"source_type": "idea", "source_id": "semantic-matching", "relation": "originated_by", "target_type": "person", "target_id": "[user]", ...}
 {"source_type": "decision", "source_id": "pilot-program", "relation": "depends_on", "target_type": "decision", "target_id": "budget-approval", ...}
 ```
 
@@ -116,7 +118,7 @@ Creates `B33_DECISION_EDGES.jsonl` in the meeting folder:
 - **Selectivity**: 3-8 high-quality edges per meeting is ideal
 - **Evidence**: Every edge must have a quote or paraphrase
 - **Attribution**: Carefully distinguish originator vs supporter
-- **V Identity**: Vrijen Attawar is always `vrijen` as person ID
+- **V Identity**: [USER] [Author] is always `[user]` as person ID
 - **Position edges**: Only create when alignment/contradiction is CLEAR (don't force it)
 - **Resonance awareness**: Prioritize novel ideas over repetition of known patterns
 
