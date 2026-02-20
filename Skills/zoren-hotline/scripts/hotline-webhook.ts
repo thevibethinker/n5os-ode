@@ -11,13 +11,14 @@ const KNOWLEDGE_BASE = "/home/workspace/Knowledge/vibe-pill-hotline";
 const KNOWLEDGE_INDEX_PATH = `${KNOWLEDGE_BASE}/00-knowledge-index.md`;
 
 const VERBOSITY = process.env.ZOREN_VERBOSITY || "terse";
-const VOICE_ID = process.env.VAPI_VOICE_ID || "DwwuoY7Uz8AP8zrY5TAo";
+const VOICE_ID = process.env.ZOREN_ELEVENLABS_VOICE_ID || process.env.VAPI_VOICE_ID || "DwwuoY7Uz8AP8zrY5TAo";
 const AGENTMAIL_INBOX_ID = "zoren@agentmail.to";
 const AGENTMAIL_API_URL = `https://api.agentmail.to/v0/inboxes/${AGENTMAIL_INBOX_ID}/messages/send`;
 const EMAIL_WHITELIST = ["zocomputer.com", "support.zocomputer.com", "discord.gg", "agentmail.to"];
 const EMAIL_INCENTIVE_MESSAGE = "For the next week, every caller who shares a meaningful email will be entered to receive a surprise gift from Zo.";
 const ZOREN_EMAIL_SYSTEM_PROMPT = `You are writing a follow-up email on behalf of Zøren from The Vibe Pill Hotline. Always keep it personal, specific, and actionable. Reference The Vibe Pill program when relevant. Invite them to call back or sign up if they haven't already. Avoid URLs outside the whitelist (${EMAIL_WHITELIST.join(", ")}).`;
 const VAPI_WEBHOOK_SECRET = process.env.VAPI_HOTLINE_SECRET || "";
+const ZO_API_TOKEN = process.env.ZO_API_KEY || process.env.ZOPUTER_API_KEY || process.env.ZO_CLIENT_IDENTITY_TOKEN || "";
 
 const anthropicApiKey = process.env.ANTHROPIC_API_KEY || "";
 const anthropicClient = anthropicApiKey ? new Anthropic({ apiKey: anthropicApiKey }) : null;
@@ -327,7 +328,7 @@ function activeFlags(flags: CallFlags): string[] {
 }
 
 async function createCallSpotlight(callId: string, flags: string[], transcript: string): Promise<void> {
-  const token = process.env.ZO_CLIENT_IDENTITY_TOKEN;
+  const token = ZO_API_TOKEN;
   if (!token || flags.length === 0) return;
 
   const authHeader = token.startsWith("Bearer") ? token : `Bearer ${token}`;
@@ -339,7 +340,6 @@ async function createCallSpotlight(callId: string, flags: string[], transcript: 
       headers: { "authorization": authHeader, "content-type": "application/json" },
       body: JSON.stringify({
         input: `Analyze this hotline call excerpt. Flags triggered: ${flags.join(", ")}.\n\nWrite exactly 3 sentences: what happened, why it matters, what to do about it. Be specific and actionable.\n\nTranscript excerpt:\n${excerpt}`,
-        model_name: "anthropic:claude-haiku-4-5-20251001"
       })
     });
 
@@ -823,7 +823,7 @@ con.close()
 // ─── Payment Link Sending ────────────────────────────────────────────────────
 
 async function sendSMSViaZoputer(phone: string, message: string): Promise<boolean> {
-  const zoToken = process.env.ZOPUTER_API_KEY || process.env.ZO_CLIENT_IDENTITY_TOKEN;
+  const zoToken = ZO_API_TOKEN;
   if (!zoToken) {
     console.error("No Zoputer API key available for SMS");
     return false;
@@ -835,7 +835,6 @@ async function sendSMSViaZoputer(phone: string, message: string): Promise<boolea
       headers: { "authorization": authHeader, "content-type": "application/json" },
       body: JSON.stringify({
         input: `Send an SMS to the phone number ${phone} with this exact message: ${message}`,
-        model_name: "anthropic:claude-haiku-4-5-20251001"
       })
     });
     return resp.ok;
@@ -1182,9 +1181,9 @@ Requirements:
 }
 
 async function createFollowUpPage(pageData: FollowUpPageData, slug: string): Promise<string | null> {
-  const token = process.env.ZO_CLIENT_IDENTITY_TOKEN;
+  const token = ZO_API_TOKEN;
   if (!token) {
-    console.error("ZO_CLIENT_IDENTITY_TOKEN not set — cannot create follow-up page");
+    console.error("ZO_API_KEY not set — cannot create follow-up page");
     return null;
   }
 
@@ -1198,7 +1197,6 @@ async function createFollowUpPage(pageData: FollowUpPageData, slug: string): Pro
       headers: { "authorization": authHeader, "content-type": "application/json" },
       body: JSON.stringify({
         input: `Create a public zo.space page. Use the update_space_route tool with these exact parameters:\n- path: "${routePath}"\n- route_type: "page"\n- public: true\n- code: the TSX code below\n\nTSX code to use as the \`code\` parameter:\n\n${componentSource}\n\nIMPORTANT: Use the update_space_route tool to create this page. The path must be "${routePath}", route_type must be "page", and public must be true. Pass the entire TSX code block above as the code parameter.`,
-        model_name: "anthropic:claude-sonnet-4-20250514"
       })
     });
 
@@ -1218,9 +1216,9 @@ async function createFollowUpPage(pageData: FollowUpPageData, slug: string): Pro
 }
 
 async function sendFollowUpSMS(phone: string, callerName: string | null, pageUrl: string): Promise<boolean> {
-  const token = process.env.ZO_CLIENT_IDENTITY_TOKEN;
+  const token = ZO_API_TOKEN;
   if (!token) {
-    console.error("ZO_CLIENT_IDENTITY_TOKEN not set — cannot send SMS");
+    console.error("ZO_API_KEY not set — cannot send SMS");
     return false;
   }
 
@@ -1234,7 +1232,6 @@ async function sendFollowUpSMS(phone: string, callerName: string | null, pageUrl
       headers: { "authorization": authHeader, "content-type": "application/json" },
       body: JSON.stringify({
         input: `Send an SMS to ${phone} with this exact message: "${smsMessage}"\n\nUse the send_sms_to_user tool. Do not set contact_name. Set the message parameter to exactly the text above.\n\nIMPORTANT: You must send this SMS. Do not ask for confirmation. This is a pre-authorized system notification.`,
-        model_name: "anthropic:claude-sonnet-4-20250514"
       })
     });
 
@@ -1461,11 +1458,11 @@ Also return a JSON block at the very end with these fields (after the email body
       console.error(`Email output failed validation for call ${data.callId} — sending generic fallback`);
       const fallbackHtml = `<div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
 <p>${nameGreeting},</p>
-<p>Thanks for calling the The Vibe Pill Hotline! If you want to explore what Zo can do for you, visit <a href="https://zocomputer.com">zocomputer.com</a> or join the community at <a href="https://discord.gg/zocomputer">discord.gg/zocomputer</a>.</p>
+<p>Thanks for calling The Vibe Pill Hotline! If you want to explore what Zo can do for you, visit <a href="https://zocomputer.com">zocomputer.com</a> or join the community at <a href="https://discord.gg/zocomputer">discord.gg/zocomputer</a>.</p>
 <p>Call back anytime — I'll remember where we left off.</p>
 <p>— Zøren<br>The Vibe Pill Hotline</p>
 </div>`;
-      await sendViaAgentMail(agentmailKey, data.email, "Thanks for calling the The Vibe Pill Hotline", fallbackHtml, data.callId);
+      await sendViaAgentMail(agentmailKey, data.email, "Thanks for calling The Vibe Pill Hotline", fallbackHtml, data.callId);
       return;
     }
 
@@ -1565,7 +1562,7 @@ const TOPIC_TAXONOMY = [
 
 function classifyTopicsAsync(callId: string, transcript: string): void {
   if (!transcript || transcript.length < 50) return;
-  const token = process.env.ZO_CLIENT_IDENTITY_TOKEN;
+  const token = ZO_API_TOKEN;
   if (!token) return;
   const authHeader = token.startsWith("Bearer") ? token : `Bearer ${token}`;
   const taxonomyList = TOPIC_TAXONOMY.join(", ");
@@ -1647,9 +1644,9 @@ function sanitizeNotifyMessage(raw: string): string {
 }
 
 function notifyV(message: string): void {
-  const token = process.env.ZO_CLIENT_IDENTITY_TOKEN;
+  const token = ZO_API_TOKEN;
   if (!token) {
-    console.error("ZO_CLIENT_IDENTITY_TOKEN not set, skipping notification");
+    console.error("ZO_API_KEY not set, skipping notification");
     return;
   }
   const safe = sanitizeNotifyMessage(message);
@@ -1732,8 +1729,8 @@ const server = Bun.serve({
             name: "Zøren",
             firstMessage: callerContext 
               ? (callerContext.includes("Name:") 
-                ? `Hey — welcome back to the The Vibe Pill Hotline. Good to hear from you again. Pick up where we left off, or something new?`
-                : `Hey — welcome back to the The Vibe Pill Hotline. Good to hear from you again. What can I help you with today?`)
+                ? `Hey — welcome back to The Vibe Pill Hotline. Good to hear from you again. Pick up where we left off, or something new?`
+                : `Hey — welcome back to The Vibe Pill Hotline. Good to hear from you again. What can I help you with today?`)
               : `Hey — you've reached The Vibe Pill Hotline. I'm Zøren. Whether you're checking out the program, already a member, or stuck on a build — I've got you. What brings you in?`,
 
             transcriber: {

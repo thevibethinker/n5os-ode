@@ -5,19 +5,20 @@ import { createHash } from "crypto";
 import { generateUUID } from "./call-logger";
 import Anthropic from "@anthropic-ai/sdk";
 
-const PORT = parseInt(process.env.VAPI_HOTLINE_PORT || "4243");
-const DB_PATH = "/home/workspace/Datasets/zo-hotline-calls/data.duckdb";
-const KNOWLEDGE_BASE = "/home/workspace/Knowledge/zo-hotline";
+const PORT = parseInt(process.env.PORT || process.env.VAPI_HOTLINE_PORT || "4250");
+const DB_PATH = "/home/workspace/Datasets/vibe-pill-calls/data.duckdb";
+const KNOWLEDGE_BASE = "/home/workspace/Knowledge/vibe-pill-hotline";
 const KNOWLEDGE_INDEX_PATH = `${KNOWLEDGE_BASE}/00-knowledge-index.md`;
 
-const VERBOSITY = process.env.ZOSEPH_VERBOSITY || "terse";
-const VOICE_ID = process.env.VAPI_VOICE_ID || "DwwuoY7Uz8AP8zrY5TAo";
-const AGENTMAIL_INBOX_ID = "hotline.n5os@agentmail.to";
+const VERBOSITY = process.env.ZOREN_VERBOSITY || "terse";
+const VOICE_ID = process.env.ZOREN_ELEVENLABS_VOICE_ID || process.env.VAPI_VOICE_ID || "DwwuoY7Uz8AP8zrY5TAo";
+const AGENTMAIL_INBOX_ID = "zoren@agentmail.to";
 const AGENTMAIL_API_URL = `https://api.agentmail.to/v0/inboxes/${AGENTMAIL_INBOX_ID}/messages/send`;
 const EMAIL_WHITELIST = ["zocomputer.com", "support.zocomputer.com", "discord.gg", "agentmail.to"];
 const EMAIL_INCENTIVE_MESSAGE = "For the next week, every caller who shares a meaningful email will be entered to receive a surprise gift from Zo.";
-const ZOSEPH_EMAIL_SYSTEM_PROMPT = `You are writing a follow-up email on behalf of Zoseph. Always keep it personal, specific, and actionable. Mention that we will remember their progress and invite them to call back after completing the next step. Avoid URLs outside the whitelist (${EMAIL_WHITELIST.join(", ")}).`;
+const ZOREN_EMAIL_SYSTEM_PROMPT = `You are writing a follow-up email on behalf of Zøren from The Vibe Pill Hotline. Always keep it personal, specific, and actionable. Reference The Vibe Pill program when relevant. Invite them to call back or sign up if they haven't already. Avoid URLs outside the whitelist (${EMAIL_WHITELIST.join(", ")}).`;
 const VAPI_WEBHOOK_SECRET = process.env.VAPI_HOTLINE_SECRET || "";
+const ZO_API_TOKEN = process.env.ZO_API_KEY || process.env.ZOPUTER_API_KEY || process.env.ZO_CLIENT_IDENTITY_TOKEN || "";
 
 const anthropicApiKey = process.env.ANTHROPIC_API_KEY || "";
 const anthropicClient = anthropicApiKey ? new Anthropic({ apiKey: anthropicApiKey }) : null;
@@ -39,7 +40,7 @@ function sanitizeKeywords(keywords: string[]): string[] {
 }
 
 // ─── System prompt ───────────────────────────────────────────────────────────
-const systemPromptTemplate = readFileSync("/home/workspace/Skills/zo-hotline/prompts/zoseph-system-prompt.md", "utf-8")
+const systemPromptTemplate = readFileSync("/home/workspace/Skills/zoren-hotline/prompts/zoren-system-prompt.md", "utf-8")
   .replace(/^---[\s\S]*?---\s*/, '');
 const systemPromptBase = systemPromptTemplate.replace(/\$\{VERBOSITY\}/g, VERBOSITY);
 
@@ -327,7 +328,7 @@ function activeFlags(flags: CallFlags): string[] {
 }
 
 async function createCallSpotlight(callId: string, flags: string[], transcript: string): Promise<void> {
-  const token = process.env.ZO_CLIENT_IDENTITY_TOKEN;
+  const token = ZO_API_TOKEN;
   if (!token || flags.length === 0) return;
 
   const authHeader = token.startsWith("Bearer") ? token : `Bearer ${token}`;
@@ -339,7 +340,6 @@ async function createCallSpotlight(callId: string, flags: string[], transcript: 
       headers: { "authorization": authHeader, "content-type": "application/json" },
       body: JSON.stringify({
         input: `Analyze this hotline call excerpt. Flags triggered: ${flags.join(", ")}.\n\nWrite exactly 3 sentences: what happened, why it matters, what to do about it. Be specific and actionable.\n\nTranscript excerpt:\n${excerpt}`,
-        model_name: "anthropic:claude-haiku-4-5-20251001"
       })
     });
 
@@ -378,6 +378,13 @@ print('Spotlight saved')
 // ─── Messaging Effectiveness: Tool usage tracking per call ───────────────────
 const callToolUsage: Map<string, Array<{ name: string; concept?: string; file_path?: string; timestamp: string }>> = new Map();
 
+const callPhoneMap = new Map<string, string>();
+
+function getCallerPhoneForCall(callId: string): string | null {
+  return callPhoneMap.get(callId) || null;
+}
+
+
 function trackToolUsage(callId: string, toolName: string, params: any): void {
   if (!callToolUsage.has(callId)) callToolUsage.set(callId, []);
   const entry: any = { name: toolName, timestamp: new Date().toISOString() };
@@ -401,7 +408,7 @@ async function persistToolUsage(callId: string, durationSeconds: number, satisfa
       satisfaction: satisfaction,
       logged_at: new Date().toISOString(),
     };
-    const logPath = "/home/workspace/Datasets/zo-hotline-calls/tool_usage.jsonl";
+    const logPath = "/home/workspace/Datasets/vibe-pill-calls/tool_usage.jsonl";
     const line = JSON.stringify(logEntry) + "\n";
     const file = Bun.file(logPath);
     const existing = await file.exists() ? await file.text() : "";
@@ -812,9 +819,91 @@ con.close()
   proc.stdin.end();
 }
 
+
+// ─── Payment Link Sending ────────────────────────────────────────────────────
+
+async function sendSMSViaZoputer(phone: string, message: string): Promise<boolean> {
+  const zoToken = ZO_API_TOKEN;
+  if (!zoToken) {
+    console.error("No Zoputer API key available for SMS");
+    return false;
+  }
+  try {
+    const authHeader = zoToken.startsWith("Bearer") ? zoToken : `Bearer ${zoToken}`;
+    const resp = await fetch("https://api.zo.computer/zo/ask", {
+      method: "POST",
+      headers: { "authorization": authHeader, "content-type": "application/json" },
+      body: JSON.stringify({
+        input: `Send an SMS to the phone number ${phone} with this exact message: ${message}`,
+      })
+    });
+    return resp.ok;
+  } catch (error) {
+    console.error("SMS send failed:", error);
+    return false;
+  }
+}
+
+const PAYMENT_LINKS: Record<string, { url: string; label: string; price: string }> = {
+  "founding-15": {
+    url: "https://buy.stripe.com/3cI00jeNcffnc6d6Hsbsc0d",
+    label: "Founding 15",
+    price: "$100/month, locked forever"
+  },
+  "standard": {
+    url: "https://buy.stripe.com/3cFZheNcd7f0nv1n8bsc0b",
+    label: "Standard",
+    price: "$300/month"
+  },
+  "zo-to-zo": {
+    url: "https://buy.stripe.com/00w6oHgVk9V31rz8PAbsc0c",
+    label: "Zo-to-Zo",
+    price: "$150/month"
+  }
+};
+
+async function sendPaymentLink(params: { tier: string; confirmed: boolean }, callId: string): Promise<object> {
+  const { tier, confirmed } = params;
+  const link = PAYMENT_LINKS[tier];
+
+  if (!link) {
+    return { error: "Unknown tier. Options: founding-15, standard, zo-to-zo" };
+  }
+
+  if (!confirmed) {
+    return {
+      success: false,
+      message: `That's the ${link.label} at ${link.price}. Want me to text you the link?`
+    };
+  }
+
+  const callerPhone = getCallerPhoneForCall(callId);
+  if (!callerPhone) {
+    return {
+      success: false,
+      message: "I don't have a phone number on file for this call. Share the sign-up link verbally: thevibepill.com"
+    };
+  }
+
+  try {
+    await sendSMSViaZoputer(callerPhone, `Here's your ${link.label} sign-up link (${link.price}): ${link.url}`);
+    notifyV(`💳 Payment link sent: ${link.label} (${link.price}) to ${callerPhone.slice(-4)}`);
+    return {
+      success: true,
+      message: `Done — just texted you the ${link.label} link. ${link.price}. Once you sign up, you're in.`
+    };
+  } catch (error) {
+    console.error("Failed to send payment link:", error);
+    return {
+      success: false,
+      message: "Couldn't send the text. You can sign up directly at thevibepill.com."
+    };
+  }
+}
+
 // ─── SMS Follow-Up Infrastructure ────────────────────────────────────────────
 
-const FOLLOWUP_PAGE_SYSTEM_PROMPT = `You generate structured content for personalized follow-up pages after Vibe Thinker Hotline calls. Output MUST be valid JSON matching the schema exactly. Be specific and actionable — every prompt should be something the caller can paste directly into their Zo. Every next step should be concrete and achievable in 15 minutes or less.`;
+const FOLLOWUP_PAGE_SYSTEM_PROMPT = `You generate structured content for personalized follow-up pages after The Vibe Pill Hotline calls. Output MUST be valid JSON matching the schema exactly. Be specific and actionable — every prompt should be something the caller can paste directly into their Zo. Every next step should be concrete and achievable in 15 minutes or less.`;
 
 interface FollowUpPageData {
   callerName?: string;
@@ -917,7 +1006,7 @@ export default function HotlineFollowUp() {
           <div className="mb-12">
             <div className="flex items-center gap-2 text-zinc-500 text-sm mb-4">
               <Sparkles className="w-4 h-4 text-amber-500" />
-              <span>Vibe Thinker Hotline</span>
+              <span>The Vibe Pill Hotline</span>
               <span className="text-zinc-700">·</span>
               <span>{d.date}</span>
             </div>
@@ -972,7 +1061,7 @@ export default function HotlineFollowUp() {
             <h2 className="text-sm font-medium uppercase tracking-wider text-zinc-500 mb-5">Keep going</h2>
             <div className="space-y-3">
               {d.communityLinks.map((link: any, i: number) => (
-                <a key={i} href={link.url} target="_blank" rel="noopener noreferrer" className="flex items-center justify-between p-4 rounded-xl border border-zinc-800 bg-zinc-800/30 hover:bg-zinc-800/60 hover:border-zinc-700 transition-all duration-200 group">
+                <a key={i} href={link.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 p-4 rounded-xl border border-zinc-800 bg-zinc-800/30 hover:bg-zinc-800/60 hover:border-zinc-700 transition-all duration-200 group">
                   <div>
                     <div className="font-medium text-zinc-200 group-hover:text-white transition-colors">{link.label}</div>
                     <div className="text-sm text-zinc-500 mt-0.5">{link.description}</div>
@@ -1027,7 +1116,7 @@ async function generateFollowUpContent(contentData: {
       system: FOLLOWUP_PAGE_SYSTEM_PROMPT,
       messages: [{
         role: "user",
-        content: `Generate follow-up page content for a Vibe Thinker Hotline caller.
+        content: `Generate follow-up page content for a The Vibe Pill Hotline caller.
 
 Caller info:
 - Name: ${nameRef}
@@ -1092,9 +1181,9 @@ Requirements:
 }
 
 async function createFollowUpPage(pageData: FollowUpPageData, slug: string): Promise<string | null> {
-  const token = process.env.ZO_CLIENT_IDENTITY_TOKEN;
+  const token = ZO_API_TOKEN;
   if (!token) {
-    console.error("ZO_CLIENT_IDENTITY_TOKEN not set — cannot create follow-up page");
+    console.error("ZO_API_KEY not set — cannot create follow-up page");
     return null;
   }
 
@@ -1108,7 +1197,6 @@ async function createFollowUpPage(pageData: FollowUpPageData, slug: string): Pro
       headers: { "authorization": authHeader, "content-type": "application/json" },
       body: JSON.stringify({
         input: `Create a public zo.space page. Use the update_space_route tool with these exact parameters:\n- path: "${routePath}"\n- route_type: "page"\n- public: true\n- code: the TSX code below\n\nTSX code to use as the \`code\` parameter:\n\n${componentSource}\n\nIMPORTANT: Use the update_space_route tool to create this page. The path must be "${routePath}", route_type must be "page", and public must be true. Pass the entire TSX code block above as the code parameter.`,
-        model_name: "anthropic:claude-sonnet-4-20250514"
       })
     });
 
@@ -1128,15 +1216,15 @@ async function createFollowUpPage(pageData: FollowUpPageData, slug: string): Pro
 }
 
 async function sendFollowUpSMS(phone: string, callerName: string | null, pageUrl: string): Promise<boolean> {
-  const token = process.env.ZO_CLIENT_IDENTITY_TOKEN;
+  const token = ZO_API_TOKEN;
   if (!token) {
-    console.error("ZO_CLIENT_IDENTITY_TOKEN not set — cannot send SMS");
+    console.error("ZO_API_KEY not set — cannot send SMS");
     return false;
   }
 
   const authHeader = token.startsWith("Bearer") ? token : `Bearer ${token}`;
   const nameGreeting = callerName || "Hey";
-  const smsMessage = `${nameGreeting}, here's your Vibe Thinker Hotline follow-up: ${pageUrl} — it's got everything we talked about plus a prompt you can paste right into Zo. Call back anytime. —Zoseph`;
+  const smsMessage = `${nameGreeting}, here's your The Vibe Pill Hotline follow-up: ${pageUrl} — it's got everything we talked about plus a prompt you can paste right into Zo. Call back anytime. —Zøren`;
 
   try {
     const resp = await fetch("https://api.zo.computer/zo/ask", {
@@ -1144,7 +1232,6 @@ async function sendFollowUpSMS(phone: string, callerName: string | null, pageUrl
       headers: { "authorization": authHeader, "content-type": "application/json" },
       body: JSON.stringify({
         input: `Send an SMS to ${phone} with this exact message: "${smsMessage}"\n\nUse the send_sms_to_user tool. Do not set contact_name. Set the message parameter to exactly the text above.\n\nIMPORTANT: You must send this SMS. Do not ask for confirmation. This is a pre-authorized system notification.`,
-        model_name: "anthropic:claude-sonnet-4-20250514"
       })
     });
 
@@ -1320,10 +1407,10 @@ async function generateAndSendFollowUpEmail(data: {
     const response = await anthropicClient.messages.create({
       model: "claude-haiku-4-5-20251001",
       max_tokens: 1000,
-      system: ZOSEPH_EMAIL_SYSTEM_PROMPT,
+      system: ZOREN_EMAIL_SYSTEM_PROMPT,
       messages: [{
         role: "user",
-        content: `Write a follow-up email for a Vibe Thinker Hotline caller.
+        content: `Write a follow-up email for a The Vibe Pill Hotline caller.
 
 Caller info:
 - Greeting: ${nameGreeting}
@@ -1339,7 +1426,7 @@ Requirements:
 3. End with: "Call back anytime — I'll remember where we left off."
 4. Keep it under 300 words.
 5. Do NOT include any URLs except: zocomputer.com, support.zocomputer.com, discord.gg/zocomputer
-6. Sign off as "Zoseph" with "Vibe Thinker Hotline" underneath.
+6. Sign off as "Zøren" with "The Vibe Pill Hotline" underneath.
 
 Also return a JSON block at the very end with these fields (after the email body):
 ---JSON---
@@ -1371,15 +1458,15 @@ Also return a JSON block at the very end with these fields (after the email body
       console.error(`Email output failed validation for call ${data.callId} — sending generic fallback`);
       const fallbackHtml = `<div style="font-family: sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
 <p>${nameGreeting},</p>
-<p>Thanks for calling the Vibe Thinker Hotline! If you want to explore what Zo can do for you, visit <a href="https://zocomputer.com">zocomputer.com</a> or join the community at <a href="https://discord.gg/zocomputer">discord.gg/zocomputer</a>.</p>
+<p>Thanks for calling The Vibe Pill Hotline! If you want to explore what Zo can do for you, visit <a href="https://zocomputer.com">zocomputer.com</a> or join the community at <a href="https://discord.gg/zocomputer">discord.gg/zocomputer</a>.</p>
 <p>Call back anytime — I'll remember where we left off.</p>
-<p>— Zoseph<br>Vibe Thinker Hotline</p>
+<p>— Zøren<br>The Vibe Pill Hotline</p>
 </div>`;
-      await sendViaAgentMail(agentmailKey, data.email, "Thanks for calling the Vibe Thinker Hotline", fallbackHtml, data.callId);
+      await sendViaAgentMail(agentmailKey, data.email, "Thanks for calling The Vibe Pill Hotline", fallbackHtml, data.callId);
       return;
     }
 
-    await sendViaAgentMail(agentmailKey, data.email, "Your Vibe Thinker Hotline Follow-Up", htmlBody, data.callId);
+    await sendViaAgentMail(agentmailKey, data.email, "Your The Vibe Pill Hotline Follow-Up", htmlBody, data.callId);
 
     if (recommendations || nextSteps) {
       await updateCallerRecommendations(data.callId, recommendations, nextSteps, data.email);
@@ -1424,7 +1511,7 @@ con.close()
 print('OK')
 `;
   const proc = Bun.spawn(["python3", "-c", markScript], { stdin: "pipe", stdout: "pipe", stderr: "pipe" });
-  proc.stdin.write(JSON.stringify({ db: DB_PATH, email: toEmail, call_id: callId }));
+  proc.stdin.write(JSON.stringify({ db: DB_PATH, email, call_id: callId }));
   proc.stdin.end();
   await proc.exited;
 }
@@ -1475,7 +1562,7 @@ const TOPIC_TAXONOMY = [
 
 function classifyTopicsAsync(callId: string, transcript: string): void {
   if (!transcript || transcript.length < 50) return;
-  const token = process.env.ZO_CLIENT_IDENTITY_TOKEN;
+  const token = ZO_API_TOKEN;
   if (!token) return;
   const authHeader = token.startsWith("Bearer") ? token : `Bearer ${token}`;
   const taxonomyList = TOPIC_TAXONOMY.join(", ");
@@ -1557,9 +1644,9 @@ function sanitizeNotifyMessage(raw: string): string {
 }
 
 function notifyV(message: string): void {
-  const token = process.env.ZO_CLIENT_IDENTITY_TOKEN;
+  const token = ZO_API_TOKEN;
   if (!token) {
-    console.error("ZO_CLIENT_IDENTITY_TOKEN not set, skipping notification");
+    console.error("ZO_API_KEY not set, skipping notification");
     return;
   }
   const safe = sanitizeNotifyMessage(message);
@@ -1624,6 +1711,8 @@ const server = Bun.serve({
 
         let callerContext = "";
         const callerPhone = data.message?.call?.customer?.number || data.call?.customer?.number || "";
+        const vapiCallId = data.message?.call?.id || data.call?.id || "";
+        if (callerPhone && vapiCallId) callPhoneMap.set(vapiCallId, callerPhone);
         if (callerPhone) {
           const phoneHash = hashPhone(callerPhone);
           const profile = await lookupCallerProfile(phoneHash);
@@ -1637,12 +1726,12 @@ const server = Bun.serve({
 
         const response = {
           assistant: {
-            name: "Zoseph",
+            name: "Zøren",
             firstMessage: callerContext 
               ? (callerContext.includes("Name:") 
-                ? `Hey — welcome back to the Vibe Thinker Hotline. Good to hear from you again. Pick up where we left off, or something new?`
-                : `Hey — welcome back to the Vibe Thinker Hotline. Good to hear from you again. What can I help you with today?`)
-              : `Hey — welcome to the Vibe Thinker Hotline. I'm Zoh-seph, your guide to all things Zo. Whether you're exploring what's possible, building something specific, or comparing Zo to other tools — I've got you. What brings you in today?`,
+                ? `Hey — welcome back to The Vibe Pill Hotline. Good to hear from you again. Pick up where we left off, or something new?`
+                : `Hey — welcome back to The Vibe Pill Hotline. Good to hear from you again. What can I help you with today?`)
+              : `Hey — you've reached The Vibe Pill Hotline. I'm Zøren. Whether you're checking out the program, already a member, or stuck on a build — I've got you. What brings you in?`,
 
             transcriber: {
               provider: "deepgram",
@@ -1650,12 +1739,13 @@ const server = Bun.serve({
               language: "en",
               smartFormat: true,
               keywords: sanitizeKeywords([
-                "ZoComputer:25", "Zo:25", "Zoseph:20",
-                "Vrijen:15", "Attawar:15", "Careerspan:10",
+                "VibePill:25", "Zo:25", "Zøren:25",
+                "ZoComputer:20", "Vrijen:15", "Attawar:15",
+                "Careerspan:10", "FounderMaxxing:10",
                 "Claude:5", "Anthropic:5", "ChatGPT:5", "OpenAI:5",
                 "Cursor:5", "Windsurf:5", "Zapier:5", "Notion:5",
-                "OpenClaw:5", "Clawdbot:5",
-                "webhook:3", "Airtable:3", "Stripe:3"
+                "webhook:3", "Airtable:3", "Stripe:3",
+                "Ødegaard:5", "MetaOS:5"
               ])
             },
 
@@ -1773,7 +1863,29 @@ const server = Bun.serve({
                       required: ["confirmed"]
                     }
                   }
-                }
+                },
+                {
+                  type: "function",
+                  function: {
+                    name: "sendPaymentLink",
+                    description: "Send the caller a text message with a Stripe payment link for the chosen tier. Confirm the tier verbally first, then send.",
+                    parameters: {
+                      type: "object",
+                      properties: {
+                        tier: {
+                          type: "string",
+                          enum: ["founding-15", "standard", "zo-to-zo"],
+                          description: "The membership tier: founding-15 ($100/mo), standard ($300/mo), or zo-to-zo ($150/mo)"
+                        },
+                        confirmed: {
+                          type: "boolean",
+                          description: "Whether the caller confirmed they want the payment link texted to them"
+                        }
+                      },
+                      required: ["tier", "confirmed"]
+                    }
+                  }
+                },
               ]
             },
 
@@ -1817,22 +1929,22 @@ const server = Bun.serve({
 
             backchannelingEnabled: false,
             backgroundSound: "off",
-            voicemailMessage: "It's Zoseph from the Vibe Thinker Hotline. Leave a message or call back anytime.",
-            endCallMessage: "Good luck. Keep thinking.",
+            voicemailMessage: "It's Zøren from The Vibe Pill. Call back anytime.",
+            endCallMessage: "Good talking to you. Go build something.",
             endCallPhrases: ["goodbye", "bye", "thanks", "talk to you later", "that's all", "I'm good"],
             responseDelaySeconds: 0.1,
             silenceTimeoutSeconds: 10,
             maxDurationSeconds: 1800,
 
             analysisPlan: {
-              summaryPrompt: "Summarize this Zo Computer hotline call in 2-3 sentences. Focus on: what the caller wanted, what pathway they were on (exploring, building something specific, or comparing tools), and whether they left with a clear next step.",
-              structuredDataPrompt: "Extract the following from this Zo Computer hotline call transcript. Be precise — if something wasn't discussed, leave it null.",
+              summaryPrompt: "Summarize this Vibe Pill Hotline call in 2-3 sentences. Focus on: what the caller wanted, what pathway they were on (exploring, building something specific, or comparing tools), and whether they left with a clear next step.",
+              structuredDataPrompt: "Extract the following from this Vibe Pill Hotline call transcript. Be precise — if something wasn't discussed, leave it null.",
               structuredDataSchema: {
                 type: "object",
                 properties: {
                   caller_pathway: {
                     type: "string",
-                    enum: ["explorer", "builder", "comparison", "troubleshoot", "onboard", "unclear"],
+                    enum: ["intake", "support", "cobuild", "faq", "unclear"],
                     description: "Which conversation pathway the caller was on"
                   },
                   caller_technical_level: {
@@ -1865,9 +1977,9 @@ const server = Bun.serve({
                     type: "boolean",
                     description: "Did the caller ask for human help or want to reach V?"
                   },
-                  prompt_emphasis_landed: {
+                  screening_signals_detected: {
                     type: "boolean",
-                    description: "Did Zoseph communicate that Zo is used by describing what you want in plain English?"
+                    description: "For intake calls: were loyalty, engagement, or passion signals detected?"
                   },
                   interruption_issues: {
                     type: "boolean",
@@ -1881,7 +1993,7 @@ const server = Bun.serve({
                 },
                 required: ["caller_pathway", "primary_interest", "had_clear_next_step", "interruption_issues"]
               },
-              successEvaluationPrompt: "Evaluate this Zo Computer hotline call. A successful call means: (1) Zoseph correctly identified the caller's pathway and needs, (2) gave concrete, accurate information about Zo Computer, (3) used the layering pattern (simple first, then advanced), (4) ended with a clear next step or anchor, (5) did NOT promise human follow-up or offer to collect contact info for V, (6) did NOT use corporate enthusiasm or jargon. Rate on a 1-10 scale. Deduct points for: interruptions/talking over caller, inaccurate claims about Zo, promising to connect with V, listing 3+ options, and failing to communicate that Zo is used by describing what you want.",
+              successEvaluationPrompt: "Evaluate this Vibe Pill Hotline call. A successful call means: (1) Zøren correctly identified the caller's pathway and needs, (2) gave concrete, accurate information about Zo Computer, (3) used the layering pattern (simple first, then advanced), (4) ended with a clear next step or anchor, (5) did NOT promise human follow-up or offer to collect contact info for V, (6) did NOT use corporate enthusiasm or jargon. Rate on a 1-10 scale. Deduct points for: interruptions/talking over caller, inaccurate claims about Zo, promising to connect with V, listing 3+ options, and failing to communicate that Zo is used by describing what you want.",
               successEvaluationRubric: "NumericScale"
             },
 
@@ -1919,10 +2031,11 @@ const server = Bun.serve({
             case "collectFeedback": result = await collectFeedback(params, callId); break;
             case "collectEmail": result = await sendFollowUp({ confirmed: true }, callId); break;
             case "sendFollowUp": result = await sendFollowUp(params, callId); break;
+            case "sendPaymentLink": result = await sendPaymentLink(params, callId); break;
             default:
               result = {
                 error: `Unknown tool: ${toolName}`,
-                available_tools: ["assessCallerLevel", "getRecommendations", "explainConcept", "requestEscalation", "collectFeedback", "collectEmail", "sendFollowUp"]
+                available_tools: ["assessCallerLevel", "getRecommendations", "explainConcept", "requestEscalation", "collectFeedback", "collectEmail", "sendFollowUp", "sendPaymentLink"]
               };
           }
 
@@ -2044,7 +2157,7 @@ con.close()
         // Build SMS body (send AFTER email section so email info is included)
         const durationMin = Math.floor(durationSeconds / 60);
         const durationSec = durationSeconds % 60;
-        const snippetText = summary || (transcript ? transcript.substring(0, 200) + (transcript.length > 200 ? "..." : "") : "No transcript available");
+        const snippetText = summary ? summary.substring(0, 200) + (summary.length > 200 ? "..." : "") : "No summary available";
         let smsBody = `📞 Hotline call ended (${durationMin}m ${durationSec}s)\n• Reason: ${endedReason}\n• Summary: ${snippetText}`;
         if (fired.length > 0) {
           smsBody += `\n⚡ Flags: ${fired.join(", ")}`;
