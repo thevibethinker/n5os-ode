@@ -1,0 +1,36 @@
+{
+  "drop_id": "D1",
+  "status": "complete",
+  "version": "4.0",
+  "summary_path": "artifacts/financial-model.md",
+  "google_sheet_url": "https://docs.google.com/spreadsheets/d/14nJTGMBnNP7hYpEJlH14OE8Gz574VcVZ/edit",
+  "google_sheet_id": "14nJTGMBnNP7hYpEJlH14OE8Gz574VcVZ",
+  "google_drive_folder_id": "134JhWGNb3d_t3N9IvWnlQw00eLLMF4nP",
+  "headlines": {
+    "24_month_gross": "$444,566",
+    "24_month_net_after_reserve": "$93,371",
+    "24_month_reserve_banked": "$88,913",
+    "2026_net": "-$2,553 (investment year by design)",
+    "2027_net": "$95,924",
+    "break_even_month": "September 2026 (Month 6)",
+    "peak_members": "96 (Month 24)",
+    "peak_mrr": "$28,877 (Month 24)",
+    "v_time_cap": "25 hrs/mo (5 groups)"
+  },
+  "tabs": ["24-Month Timeline", "Revenue Breakdown", "Assumptions", "Annual Summary", "Churn Waterfall"],
+  "model_parameters": {
+    "founding_price": 100,
+    "standard_2026_phases": [200, 300, 400],
+    "standard_2027": 600,
+    "ztz_price": 150,
+    "booking_rate": 50,
+    "cogs": "20%",
+    "reserve": "20%",
+    "std_churn_to_ztz": "60%",
+    "std_churn_leave": "15%",
+    "std_sticky": "25%",
+    "founding_churn_to_ztz": "30%",
+    "founding_sticky": "60%",
+    "contractor_2027": "$30/hr x 10 hrs/wk"
+  }
+}

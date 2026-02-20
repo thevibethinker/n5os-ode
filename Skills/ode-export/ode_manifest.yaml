@@ -1,0 +1,287 @@
+---
+# N5OS Ode Export Manifest
+# Only files matching these patterns get exported from live → repo.
+# Everything else stays local. Allowlist-only.
+version: "2.0"
+last_edited: "2026-02-18"
+
+settings:
+  repo_path: "/tmp/n5os-ode"
+  repo_remote: "vrijenattawar/n5os-ode"
+  default_branch: "main"
+  threshold: 50
+  pii_patterns:
+    - 'vrijen'
+    - 'attawar'
+    - '[Cc]areerspan'
+    - 'corridorx'
+    - 'shivam'
+    - 'howie\.ai'
+    - 'attawar\.v@gmail'
+    - 'me@vrijenattawar'
+    - '[Zz]o [Cc]onsultancy'
+    - '[Zz]office'
+    - 'vrijenattawar'
+  # Author field pattern — replaced during export, not blocked
+  sanitize_patterns:
+    'va\.zo\.computer': '<YOUR_HANDLE>.zo.computer'
+    'va@zo\.computer': '<YOUR_HANDLE>@zo.computer'
+
+exports:
+  scripts:
+    source: "N5/scripts/"
+    files:
+      - agent_conflict_gate.py
+      - build_orchestrator_v2.py
+      - build_status.py
+      - conversation_end_router.py
+      - conversation_registry.py
+      - conversation_sync.py
+      - debug_logger.py
+      - init_build.py
+      - journal.py
+      - n5_load_context.py
+      - n5_protect.py
+      - n5_safety.py
+      - session_state_manager.py
+      - spawn_worker.py
+      - update_build.py
+      - validate_repo.py
+
+  cognition:
+    source: "N5/cognition/"
+    files:
+      - config.yaml
+      - n5_memory_client.py
+      - schema.sql
+
+  prefs_root:
+    source: "N5/prefs/"
+    files:
+      - prefs.md
+      - context_manifest.yaml
+
+  prefs_communication:
+    source: "N5/prefs/communication/"
+    files:
+      - style-guide.md
+
+  prefs_operations:
+    source: "N5/prefs/operations/"
+    files:
+      - conversation-end-v3.md
+      - debug-logging-auto-behavior.md
+      - planning_prompt.md
+      - scheduled-task-protocol.md
+
+  prefs_principles:
+    source: "N5/prefs/principles/"
+    glob: "*.yaml"
+
+  prefs_system:
+    source: "N5/prefs/system/"
+    files:
+      - file-protection.md
+      - folder-policy.md
+      - nuance-manifest.md
+      - persona_routing_contract.md
+      - safety-rules.md
+
+  prefs_workflows:
+    source: "N5/prefs/workflows/"
+    glob: "*_workflow.md"
+
+  n5_config:
+    source: "N5/config/"
+    files:
+      - commit_targets.json
+      - confidence_thresholds.json
+      - emoji-legend.json
+      - safety_exceptions.json
+
+  n5_schemas:
+    source: "N5/schemas/"
+    files:
+      - index.schema.json
+
+  n5_docs:
+    source: "N5/docs/"
+    files:
+      - ARCHITECTURE.md
+      - CONTRIBUTING.md
+      - content-library-quick-reference.md
+
+  n5_data:
+    source: "N5/data/"
+    files:
+      - .gitkeep
+
+  n5_readme:
+    source: "N5/"
+    files:
+      - README.md
+
+  knowledge:
+    source: "Knowledge/"
+    files:
+      - README.md
+      - architectural/building_fundamentals.md
+      - architectural/principles.md
+
+  prompts_blocks:
+    source: "Prompts/Blocks/"
+    glob: "Generate_B*.prompt.md"
+
+  prompts_reflections_blocks:
+    source: "Prompts/Blocks/Reflection/"
+    glob: "R*.prompt.md"
+    extra:
+      - RIX_Integration.prompt.md
+
+  prompts_root:
+    source: "Prompts/"
+    files:
+      - Journal.prompt.md
+      - build-capability.prompt.md
+      - build-review.prompt.md
+      - close-conversation.prompt.md
+      - spawn-worker.prompt.md
+
+  prompts_reflections:
+    source: "Prompts/reflections/"
+    glob: "*.prompt.md"
+
+  skills_close:
+    source: "Skills/close/"
+    files:
+      - SKILL.md
+      - scripts/router.py
+
+  skills_frontend_design:
+    source: "Skills/frontend-design/"
+    files:
+      - SKILL.md
+
+  skills_meeting_ingestion:
+    source: "Skills/meeting-ingestion/"
+    files:
+      - SKILL.md
+      - references/legacy_prompts.md
+      - scripts/meeting_cli.py
+      - scripts/processor.py
+      - scripts/pull.py
+
+  skills_pulse:
+    source: "Skills/pulse/"
+    files:
+      - SKILL.md
+      - drops/checkpoint-template.md
+      - references/drop-brief-template.md
+      - references/escalation-protocol.md
+      - references/filter-criteria.md
+      - references/interview-protocol.md
+      - scripts/pulse.py
+      - scripts/pulse_code_validator.py
+      - scripts/pulse_common.py
+      - scripts/pulse_file_routing.py
+      - scripts/pulse_learnings.py
+      - scripts/pulse_llm_filter.py
+      - scripts/pulse_safety.py
+
+  skills_systematic_debugging:
+    source: "Skills/systematic-debugging/"
+    files:
+      - SKILL.md
+      - references/root-cause-tracing.md
+
+  skills_thread_close:
+    source: "Skills/thread-close/"
+    files:
+      - SKILL.md
+      - scripts/close.py
+
+  root_files:
+    source: ""
+    files:
+      - README.md
+
+  lists:
+    source: "Lists/"
+    files:
+      - POLICY.md
+      - README.md
+
+  records:
+    source: "Records/"
+    files:
+      - .gitkeep
+      - meetings/.gitkeep
+      - projects/.gitkeep
+
+  templates:
+    source: "templates/"
+    files:
+      - build/BUILD_template.md
+      - build/README.md
+      - build/meta_schema.json
+      - build/plan_template.md
+      - build/status_template.md
+      - build/worker_brief_template.md
+      - configs/drive_locations.yaml.template
+      - session_state/session_state_gold.md
+
+repo_managed:
+  - path: ".github/"
+    note: "CI workflows — edited directly in repo"
+  - path: ".gitignore"
+    note: "Git config — edited directly in repo"
+  - path: "LICENSE"
+    note: "License file — edited directly in repo"
+  - path: "docs/"
+    note: "Documentation — edited directly in repo (21 files)"
+  - path: "BOOTLOADER.prompt.md"
+    note: "System bootloader — regenerated via pipeline"
+  - path: "PERSONALIZE.prompt.md"
+    note: "User customization prompt — edited in repo"
+  - path: "PLAN.md"
+    note: "Repo-level plan — edited in repo"
+  - path: "CHANGELOG.md"
+    note: "Release changelog — edited in repo"
+  - path: "install.sh"
+    note: "Installer script — edited in repo"
+  - path: "N5/scripts/validate_repo.py"
+    note: "Repo validator — edited in repo"
+  - path: "N5/scripts/build_orchestrator_v2.py"
+    note: "Build orchestrator — repo version"
+  - path: "N5/scripts/build_status.py"
+    note: "Build status — repo version"
+  - path: "N5/scripts/conversation_end_router.py"
+    note: "Conversation end — repo version"
+  - path: "N5/scripts/spawn_worker.py"
+    note: "Spawn worker — repo version"
+  - path: "N5/prefs/communication/style-guide.md"
+    note: "Style guide — repo version"
+  - path: "N5/prefs/operations/conversation-end-v3.md"
+    note: "Conversation end protocol — repo version"
+  - path: "N5/config/safety_exceptions.json"
+    note: "Safety exceptions — repo version"
+  - path: "N5/docs/"
+    note: "N5 docs — edited in repo"
+  - path: "Knowledge/architectural/"
+    note: "Architectural knowledge — repo version"
+  - path: "Prompts/build-capability.prompt.md"
+    note: "Build prompts — repo version"
+  - path: "Prompts/build-review.prompt.md"
+    note: "Build prompts — repo version"
+  - path: "Prompts/close-conversation.prompt.md"
+    note: "Close prompt — repo version"
+  - path: "Prompts/spawn-worker.prompt.md"
+    note: "Spawn prompt — repo version"
+  - path: "Skills/close/scripts/router.py"
+    note: "Close router — repo version"
+  - path: "Skills/frontend-design/SKILL.md"
+    note: "Frontend design skill — repo version"
+  - path: "Records/"
+    note: "Record directories — repo scaffolding"
+  - path: "templates/"
+    note: "Templates — edited in repo"

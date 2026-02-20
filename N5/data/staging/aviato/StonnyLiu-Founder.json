@@ -1,0 +1,73 @@
+{
+  "full_name": "Stonny Liu",
+  "first_name": "Stonny",
+  "last_name": "Liu",
+  "headline": "Founder and CEO at VenueHopper",
+  "linkedin_url": "linkedin.com/in/stonnyliu",
+  "linkedin_id": "stonnyliu",
+  "linkedin_entity_id": "ACoAAD30aF8BlwOnH7nXRnrDHHiE6u69IoX8y2w",
+  "linkedin_num_id": 1039427679,
+  "location": "New York, New York, United States",
+  "city": "New York",
+  "region": "New York",
+  "country": "United States",
+  "current_title": "Founder, CEO",
+  "current_company_name": "VenueHopper",
+  "skills": [
+    "Artificial Neural Networks",
+    "Machine Learning",
+    "Process Automation",
+    "Material Characterization"
+  ],
+  "linkedin_connections": 450,
+  "linkedin_followers": 451,
+  "open_to_work": false,
+  "is_hiring": false,
+  "all_experiences": [
+    {
+      "title": "Research Assistant, TMD Lab",
+      "company": "NYU Polytechnic School of Engineering",
+      "start": "2022-06",
+      "end": "2022-08"
+    },
+    {
+      "title": "Vice President Operations",
+      "company": "AIM Hospitality Group",
+      "start": "2024-04",
+      "end": "2025-01"
+    },
+    {
+      "title": "Founder, CEO",
+      "company": "VenueHopper",
+      "start": "2025-01",
+      "description": "Introducing AI to private events. Giving owners the tools to build their own clientele."
+    }
+  ],
+  "all_education": [
+    {
+      "school": "Princeton High School",
+      "start": "2015-09",
+      "end": "2019-06"
+    },
+    {
+      "school": "NYU Tandon School of Engineering",
+      "subject": "Computer Science",
+      "start": "2019-09",
+      "end": "2023-05"
+    },
+    {
+      "school": "New York University",
+      "subject": "Chemical and Biomolecular Engineering",
+      "start": "2019-09",
+      "end": "2023-05"
+    }
+  ],
+  "highlights": [
+    "oneYearAtCurrentCompany",
+    "USImmigrant"
+  ],
+  "aviato_person_id": "bOlo19fEdzNQm73EkO1IsnUzXo9Ep_x",
+  "aviato_last_updated": "2025-11-20T07:41:53.614Z",
+  "enrichment_timestamp": "2026-02-19T15:13:38.725865Z",
+  "enrichment_source": "aviato"
+}

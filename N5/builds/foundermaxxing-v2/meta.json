@@ -1,0 +1,131 @@
+{
+    "slug": "foundermaxxing-v2",
+    "title": "FounderMaxxing v2 \u2014 Full Build",
+    "created": "2026-02-19T22:00:00Z",
+    "status": "active",
+    "build_mode": "manual",
+    "delegate_only": false,
+    "source_conversation": "con_u475mQtYnFGIl1Sd",
+    "waves": {
+        "W1": {
+            "title": "Foundation \u2014 Parallel Research + Infrastructure",
+            "status": "complete",
+            "drops": [
+                "D1",
+                "D2",
+                "D3",
+                "D4"
+            ]
+        },
+        "W2": {
+            "title": "Build \u2014 Landing Page + Intake System",
+            "status": "complete",
+            "drops": [
+                "D5",
+                "D6"
+            ]
+        },
+        "W3": {
+            "title": "Launch \u2014 Outreach + Hotline",
+            "status": "pending",
+            "drops": [
+                "D7",
+                "D8"
+            ]
+        }
+    },
+    "drops": {
+        "D1": {
+            "title": "Financial Model + Unit Economics",
+            "wave": "W1",
+            "spawn_mode": "manual",
+            "status": "complete",
+            "depends_on": []
+        },
+        "D2": {
+            "title": "Competitor Landscape + Messaging Refinement + Conversion Analysis",
+            "wave": "W1",
+            "spawn_mode": "manual",
+            "status": "complete",
+            "depends_on": []
+        },
+        "D3": {
+            "title": "Stripe Coupon + Promo Code System",
+            "wave": "W1",
+            "spawn_mode": "manual",
+            "status": "complete",
+            "depends_on": []
+        },
+        "D4": {
+            "title": "Venn Diagram + Visual Assets",
+            "wave": "W1",
+            "spawn_mode": "manual",
+            "status": "complete",
+            "depends_on": []
+        },
+        "D5": {
+            "title": "Landing Page v3 \u2014 Full Rebuild",
+            "wave": "W2",
+            "spawn_mode": "manual",
+            "status": "complete",
+            "depends_on": [
+                "D2",
+                "D4"
+            ]
+        },
+        "D6": {
+            "title": "Intake Form + Waitlist System",
+            "wave": "W2",
+            "spawn_mode": "manual",
+            "status": "complete",
+            "depends_on": [
+                "D2"
+            ]
+        },
+        "D7": {
+            "title": "Outreach Drafts + Launch Copy",
+            "wave": "W3",
+            "spawn_mode": "manual",
+            "status": "pending",
+            "depends_on": [
+                "D5"
+            ]
+        },
+        "D8": {
+            "title": "FounderMaxxing Hotline \u2014 Mini Zo Hotline",
+            "wave": "W3",
+            "spawn_mode": "manual",
+            "status": "pending",
+            "depends_on": [
+                "D5",
+                "D6"
+            ]
+        },
+        "D6.1": {
+            "title": "SQLite Backend Migration + Foundation Schema",
+            "wave": "W2",
+            "spawn_mode": "manual",
+            "status": "complete",
+            "depends_on": [
+                "D6"
+            ],
+            "patch_of": "D6"
+        },
+        "D9": {
+            "title": "Hotline-as-Intake \u2014 SMS/Call Conversion Funnel",
+            "wave": "W3",
+            "spawn_mode": "manual",
+            "depends_on": [
+                "D5",
+                "D8"
+            ],
+            "status": "pending"
+        }
+    },
+    "recovery": {
+        "max_auto_retries": 2,
+        "dead_threshold_seconds": 300,
+        "enable_ai_judgment": false
+    },
+    "started_at": "2026-02-20T07:30:21.686709+00:00"
+}

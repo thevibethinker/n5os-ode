@@ -1,0 +1,47 @@
+{
+  "drop_id": "D1",
+  "status": "complete",
+  "summary": "Built condensed Zo capabilities index (2718 bytes) and 10 example prompts for the meta-prompter. Context covers all core primitives (rules, personas, agents, skills), deployment surfaces (zo.space, sites, datasets), integrations, communication channels, architectural patterns, and prompt harness template. Examples span scheduled agents, rules, personas, skills, datasets, zo.space, webhooks, and multi-primitive compositions.",
+  "artifacts": [
+    "Skills/zo-hotline/assets/meta-prompter-context.md",
+    "Skills/zo-hotline/assets/meta-prompter-examples.md"
+  ],
+  "files_created": [
+    "Skills/zo-hotline/assets/meta-prompter-context.md",
+    "Skills/zo-hotline/assets/meta-prompter-examples.md"
+  ],
+  "context_size_bytes": 2718,
+  "capabilities_covered": [
+    "rules",
+    "personas",
+    "scheduled-agents",
+    "skills",
+    "zo-space-pages",
+    "zo-space-apis",
+    "sites-and-hosting",
+    "datasets",
+    "gmail-integration",
+    "google-calendar",
+    "google-drive",
+    "notion",
+    "airtable",
+    "stripe",
+    "sms-delivery",
+    "email-delivery",
+    "browser-sessions",
+    "email-intake-pipeline",
+    "dataset-agent-dashboard-pattern",
+    "webhook-notification-pattern",
+    "clarification-gates",
+    "prompt-harness-template",
+    "file-organization"
+  ],
+  "example_count": 10,
+  "learnings": [
+    "2718 bytes fits comfortably in the ~3KB budget while covering all major primitives, surfaces, integrations, patterns, and prompting guidance",
+    "Examples that compose multiple primitives (rule + agent + integration) demonstrate Zo's real power better than single-feature examples",
+    "Clarification gates should be baked into every non-trivial example to model good prompting behavior",
+    "The prompt harness template (CONTEXT/TASK/CONSTRAINTS/GATE/DONE) is compact enough to include in the context itself"
+  ],
+  "errors": []
+}

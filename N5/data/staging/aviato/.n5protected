@@ -5,8 +5,8 @@
   "created_by": "user",
   "contains_pii": true,
   "pii_categories": [
-    "name",
-    "email"
+    "phone"
   ],
-  "pii_note": "Cached enrichment responses with contact information"
+  "pii_note": "PII detected during conversation close (con_1sXDjUeINFVoYLwD)",
+  "pii_marked_at": "2026-02-20T12:01:46.677563+00:00"
 }

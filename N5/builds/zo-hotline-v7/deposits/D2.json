@@ -1,0 +1,34 @@
+{
+  "drop_id": "D2",
+  "status": "complete",
+  "summary": "Wired co-build diagnostic flow end-to-end. System prompt already contained full Co-Build Mode section (394 words) with trigger offer, 5-question diagnostic tree, conversational rules (3-5 questions max, one at a time, skip known answers), smooth exit script, and tool references. Handler functions startCoBuild() and submitDiagnostic() already existed with proper logic (in-memory Map keyed by callId, merges partial updates, sets collectedFollowups flag for end-of-call pickup). VAPI tool definitions already registered in assistant config with correct parameter schemas. The missing piece was the tool-calls switch — added startCoBuild and submitDiagnostic cases and updated the available_tools fallback list. Build compiles clean.",
+  "artifacts": [
+    "Skills/zo-hotline/prompts/zoseph-system-prompt.md",
+    "Skills/zo-hotline/scripts/hotline-webhook.ts"
+  ],
+  "system_prompt_additions": 394,
+  "tools_added": ["startCoBuild", "submitDiagnostic"],
+  "diagnostic_fields": ["useCase", "integrations", "frequency", "audience", "outputFormat", "additionalContext"],
+  "files_modified": [
+    "Skills/zo-hotline/scripts/hotline-webhook.ts"
+  ],
+  "what_was_already_done": [
+    "CoBuildDiagnostic interface and coBuildDiagnostics Map (line 33-41)",
+    "startCoBuild() handler function (line 1353)",
+    "submitDiagnostic() handler function (line 1371)",
+    "VAPI tool definitions in assistant config (lines 1918-1970)",
+    "Co-Build Mode section in system prompt",
+    "startCoBuild and submitDiagnostic listed in system prompt Tools section"
+  ],
+  "what_d2_wired": [
+    "Added case 'startCoBuild' to tool-calls switch (line 2109)",
+    "Added case 'submitDiagnostic' to tool-calls switch (line 2110)",
+    "Updated available_tools in default fallback to include both new tools"
+  ],
+  "learnings": [
+    "Most of D2's deliverables were already implemented — the only gap was the tool-calls switch wiring. Prior builds or manual work had created the functions, interfaces, VAPI definitions, and system prompt sections but missed connecting them in the dispatch switch.",
+    "The submitDiagnostic handler correctly sets collectedFollowups.set(callId, true) which triggers the follow-up flow in end-of-call-report — this is the critical handoff point for D3/D5 to build upon.",
+    "coBuildDiagnostics Map is in-memory only — if the service restarts between tool call and end-of-call-report, diagnostic data is lost. Acceptable for MVP but worth noting for D5 integration."
+  ],
+  "errors": []
+}

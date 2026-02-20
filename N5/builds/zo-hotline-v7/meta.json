@@ -1,0 +1,96 @@
+{
+  "slug": "zo-hotline-v7",
+  "title": "Zo Hotline v7 \u2014 Zo-Native Follow-Up + Co-Build Mode",
+  "status": "active",
+  "branch": "feature/zo-hotline-v7",
+  "created_at": "2026-02-19T13:00:00Z",
+  "streams": {
+    "S1": "Zo-Native Prompt Generation (Meta-Prompter)",
+    "S2": "Co-Build Mode",
+    "S3": "Follow-Up Page Enhancement"
+  },
+  "drops": {
+    "D1": {
+      "id": "D1",
+      "title": "Meta-Prompter Context",
+      "stream": "S1",
+      "status": "running",
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "started_at": "2026-02-19T13:11:49.469281+00:00",
+      "conversation_id": "pulse_zo-hotline-v7_D1_1771506428",
+      "last_progress_at": "2026-02-19T13:11:49.469281+00:00"
+    },
+    "D2": {
+      "id": "D2",
+      "title": "Co-Build Diagnostic Flow",
+      "stream": "S2",
+      "status": "failed",
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "started_at": "2026-02-19T13:24:43.753486+00:00",
+      "conversation_id": "pulse_zo-hotline-v7_D2_1771507332",
+      "last_progress_at": "2026-02-19T13:24:43.753486+00:00",
+      "failure_reason": "Spawn error: API returned 500: modal-http: internal error: function was terminated by signal",
+      "failed_at": "2026-02-19T13:27:16.699952+00:00"
+    },
+    "D3": {
+      "id": "D3",
+      "title": "Sonnet-Powered Prompt Generator",
+      "stream": "S2",
+      "status": "pending",
+      "depends_on": [
+        "D1"
+      ],
+      "spawn_mode": "auto"
+    },
+    "D4": {
+      "id": "D4",
+      "title": "Follow-Up Page Redesign",
+      "stream": "S3",
+      "status": "running",
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "started_at": "2026-02-19T13:37:54.054537+00:00",
+      "conversation_id": "pulse_zo-hotline-v7_D4_1771507490",
+      "last_progress_at": "2026-02-19T13:37:54.054537+00:00"
+    },
+    "D5": {
+      "id": "D5",
+      "title": "Integration & Wiring",
+      "stream": "S1+S2",
+      "status": "pending",
+      "depends_on": [
+        "D1",
+        "D2",
+        "D3"
+      ],
+      "spawn_mode": "auto"
+    }
+  },
+  "waves": {
+    "wave_1": {
+      "drops": [
+        "D1",
+        "D2",
+        "D4"
+      ],
+      "parallel": true
+    },
+    "wave_2": {
+      "drops": [
+        "D3"
+      ],
+      "parallel": false
+    },
+    "wave_3": {
+      "drops": [
+        "D5"
+      ],
+      "parallel": false
+    }
+  },
+  "started_at": "2026-02-19T13:06:19.397828+00:00",
+  "spawn_failures_consecutive": 0,
+  "last_spawn_failure_at": "2026-02-19T13:27:16.699952+00:00"
+}
