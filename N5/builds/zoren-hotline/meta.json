@@ -3,7 +3,7 @@
   "slug": "zoren-hotline",
   "title": "Z\u00f8ren Hotline \u2014 The Vibe Pill Communication System",
   "build_type": "code_build",
-  "status": "active",
+  "status": "complete",
   "model": "anthropic:claude-opus-4-5-20251101",
   "launch_mode": "orchestrated",
   "delegate_only": true,
@@ -12,7 +12,7 @@
   "hypothesis_group": [],
   "broadcasts": [],
   "created": "2026-02-20T09:05:00Z",
-  "updated": "2026-02-20T12:45:00Z",
+  "updated": "2026-02-20T13:21:00Z",
   "provenance": "con_gFL5uhApy1RZtlSJ",
   "orchestrator_conversation": "con_rrRFqCiwEPARc8ET",
   "brand": "The Vibe Pill",
@@ -35,7 +35,7 @@
       "D7"
     ]
   },
-  "active_wave": "W3",
+  "active_wave": "W4",
   "drops": {
     "D1": {
       "name": "Knowledge Base Fork",
@@ -109,7 +109,7 @@
       ],
       "spawn_mode": "manual",
       "blocking": true,
-      "status": "pending"
+      "status": "complete"
     },
     "D7": {
       "name": "Landing Page Rebrand",
@@ -145,5 +145,6 @@
     "moment": "V greenlit build execution after planning session",
     "branched_at": "2026-02-20T11:30:00Z"
   },
-  "started_at": "2026-02-20T11:37:06.784923+00:00"
+  "started_at": "2026-02-20T11:37:06.784923+00:00",
+  "completed_at": "2026-02-20T13:13:57.969486Z"
 }

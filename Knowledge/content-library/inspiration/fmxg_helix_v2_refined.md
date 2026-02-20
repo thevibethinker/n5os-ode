@@ -1,12 +1,17 @@
 ---
 created: 2026-02-20
 last_edited: 2026-02-20
-version: 1.0
+version: 1
 provenance: con_pZHmVjHlStyfeikE
 type: inspiration
-tags: [foundermaxxing, fmxg, logo, brutalist, helix, design-asset]
+tags:
+  - foundermaxxing
+  - fmxg
+  - logo
+  - brutalist
+  - helix
+  - design-asset
 ---
-
 # FMXG Logo — Helix V2 Refined
 
 **Asset:** fmxg_helix_v2_refined.png
