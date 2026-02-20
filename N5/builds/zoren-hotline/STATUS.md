@@ -6,51 +6,36 @@ build_slug: zoren-hotline
 
 # Build Status: Zøren Hotline
 
-## Quick Status
-
-| Metric | Value |
-|--------|-------|
-| **Overall Progress** | 0/7 drops (0%) — Wave 1 in flight |
-| **Current Phase** | Wave 1 (D1, D4, D6 spawned) |
-| **Blocked?** | No |
-| **Git Branch** | `feature/zoren-hotline` |
-| **Orchestrator** | con_rrRFqCiwEPARc8ET |
-| **Sentinel** | Active (email, every 5 min) |
-
-## Wave Progress
-
-- [~] **Wave 1** — D1 ⏳, D4 ⏳, D6 ⏳ (all spawned, awaiting deposits)
-- [ ] **Wave 2** — D2, D3 (blocked on W1)
-- [ ] **Wave 3** — D5 (blocked on W2)
-- [ ] **Wave 4** — D7 (non-blocking, manual)
+**Branch:** `feature/zoren-hotline`
+**Build start:** 2026-02-20 07:37 AM ET
+**Orchestrator:** con_rrRFqCiwEPARc8ET
 
 ## Drop Status
 
-| Drop | Title | Wave | Status | Deposit? |
-|------|-------|------|--------|----------|
-| D1 | Knowledge Base Fork | W1 | ⏳ Spawned | — |
-| D4 | Airtable Schema + Stripe | W1 | ⏳ Spawned | — |
-| D6 | Call Analytics Pipeline | W1 | ⏳ Spawned | — |
-| D2 | Zøren System Prompt | W2 | ⚪ Pending | — |
-| D3 | Webhook Server | W2 | ⚪ Pending | — |
-| D5 | VAPI Assistant Config | W3 | ⚪ Pending | — |
-| D7 | Landing Page Rebrand | W4 | ⚪ Pending | — |
+| Drop | Title | Wave | Status | Notes |
+|------|-------|------|--------|-------|
+| D1 | Knowledge Base Fork | W1 | ✅ Complete | 102 files forked + 10 new Vibe Pill entries |
+| D2 | Zøren System Prompt | W2 | ✅ Complete | 437 lines, distinct from Zoseph |
+| D3 | Webhook Server | W2 | ✅ Complete | 2172 lines, rebranded (orchestrator remediation) |
+| D4 | Airtable + Stripe | W1 | ✅ Complete | 5 new tables + field mappings |
+| D5 | VAPI Assistant | W3 | 🟡 BLOCKED | Needs V: Twilio number, voice selection, VAPI account |
+| D6 | Call Analytics | W1 | ✅ Complete | DuckDB dataset, 6 tables, ingest script |
+| D7 | Landing Page Rebrand | W3 | 🔄 In Progress | Spawned, deleting foundermaxxing routes |
 
-## Activity Log
+## Progress: 5/7 complete (71%)
 
-| Timestamp | Event |
-|-----------|-------|
-| 2026-02-20 06:30 ET | Build plan reviewed, all decisions confirmed |
-| 2026-02-20 06:35 ET | meta.json upgraded to Pulse v3 schema |
-| 2026-02-20 06:36 ET | Contract check + plan validation passed |
-| 2026-02-20 06:37 ET | Git snapshot taken, feature branch created |
-| 2026-02-20 06:38 ET | Wave 1 drops (D1, D4, D6) spawned via /zo/ask |
-| 2026-02-20 06:39 ET | Sentinel agent created (email, every 5 min) |
+## Timeline
+- 07:37 — Wave 1 launched (D1, D4, D6 parallel)
+- 07:42 — D6 complete
+- 07:43 — D1 complete  
+- 07:44 — D4 complete — Wave 1 done
+- 07:49 — Wave 2: D2 launched
+- 07:53 — D2 complete
+- 07:53 — Wave 2: D3 launched
+- 08:04 — D3 artifacts complete (partial rebrand)
+- 08:05 — D3 remediated by orchestrator (full rebrand)
+- 08:07 — Wave 3: D7 launched
+- D5 flagged as blocked on V
 
-## Artifacts Created
-
-- `N5/builds/zoren-hotline/PLAN.md` — v2.3 with Objective + Success Criteria
-- `N5/builds/zoren-hotline/meta.json` — v3 schema
-- `N5/builds/zoren-hotline/drops/` — All 7 drop briefs
-- `N5/builds/zoren-hotline/STATUS.md` — This file
-- Git branch: `feature/zoren-hotline`
+## Blockers
+- **D5**: Requires V to provision SF Twilio number, confirm VAPI account, select ElevenLabs voice

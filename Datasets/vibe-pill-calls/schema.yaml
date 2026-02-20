@@ -1,0 +1,250 @@
+---
+created: 2026-02-20
+last_edited: 2026-02-20
+version: 1.0
+provenance: con_U9bz2q9Ilujko18W
+---
+
+# Vibe Pill Hotline Call Logs Schema
+
+## Database: data.duckdb
+
+### Table: calls
+Call records from The Vibe Pill membership hotline. Unlike the Zo Hotline (anonymous), this dataset includes member identity for personalized service.
+
+| Column | Type | Description | Example |
+|--------|------|-------------|---------|
+| id | VARCHAR | VAPI call ID | `call_abc123` |
+| member_phone | VARCHAR | Caller phone in E.164 format | `+18575551234` |
+| member_name | VARCHAR | Resolved member name (if known) | `David Chen` |
+| member_status | VARCHAR | Member status at call time | `member` |
+| started_at | TIMESTAMP | Call start time (UTC) | `2026-02-20 15:30:00` |
+| ended_at | TIMESTAMP | Call end time (UTC) | `2026-02-20 15:45:00` |
+| duration_seconds | INTEGER | Call duration in seconds | `900` |
+| pathway | VARCHAR | Call pathway used | `cobuild` |
+| outcome | VARCHAR | Call outcome classification | `qualified` |
+| topics_discussed | TEXT | Comma-separated topics | `assessment,cobuild,strategy` |
+| summary | TEXT | AI-generated call summary | `Member discussed Q2 hiring plan...` |
+| escalation_requested | BOOLEAN | Whether V follow-up needed | `false` |
+| raw_data | JSON | Full call metadata | `{"assistant_id": "..."}` |
+
+**Member Status Values:**
+- `prospect` — Unknown caller, first contact
+- `applicant` — Has submitted an application
+- `approved` — Approved but not yet paying
+- `member` — Active paying member
+
+**Pathway Values:**
+- `intake` — First-time screening/qualification call
+- `support` — Existing member support
+- `cobuild` — Co-building session (member benefit)
+- `faq` — General questions about The Vibe Pill
+
+**Outcome Values:**
+- `qualified` — Caller qualified for membership
+- `needs-followup` — Requires V's personal follow-up
+- `not-fit` — Not a match for membership
+- `member-support` — Existing member received support
+
+### Table: member_profiles
+Persistent member records with identity resolution and engagement tracking.
+
+| Column | Type | Description | Example |
+|--------|------|-------------|---------|
+| phone | VARCHAR (PK) | E.164 phone number | `+18575551234` |
+| name | VARCHAR | Member name | `David Chen` |
+| email | VARCHAR | Email address | `david@example.com` |
+| status | VARCHAR | Current membership status | `member` |
+| tier | VARCHAR | Membership tier | `founding-15` |
+| stripe_customer_id | VARCHAR | Stripe customer ID | `cus_abc123` |
+| total_calls | INTEGER | Running call count | `7` |
+| first_call_at | TIMESTAMP | First interaction | `2026-02-15 14:00:00` |
+| last_call_at | TIMESTAMP | Most recent call | `2026-02-20 15:30:00` |
+| last_pathway | VARCHAR | Most recent pathway used | `cobuild` |
+| notes | TEXT | Persistent context notes | `Focused on hiring strategy` |
+
+**Tier Values:**
+- `founding-15` — One of the first 15 founding members
+- `standard` — Standard membership tier
+- `zo-to-zo` — Zo-to-Zo partnership tier
+
+### Table: applications
+Membership application tracking through the screening pipeline.
+
+| Column | Type | Description | Example |
+|--------|------|-------------|---------|
+| id | VARCHAR | Application identifier | `app_xyz789` |
+| phone | VARCHAR | Applicant phone | `+18575551234` |
+| name | VARCHAR | Applicant name | `Sarah Kim` |
+| screening_notes | TEXT | AI-generated screening notes | `Strong fit: 10yr PM...` |
+| status | VARCHAR | Application status | `approved` |
+| created_at | TIMESTAMP | Application date | `2026-02-18 10:00:00` |
+| resolved_at | TIMESTAMP | Decision date | `2026-02-19 16:00:00` |
+| resolved_by | VARCHAR | Who made the decision | `V` |
+
+**Status Values:**
+- `pending` — Awaiting review
+- `approved` — Accepted into membership
+- `rejected` — Not accepted
+- `waitlisted` — Deferred for future consideration
+
+### Table: escalations
+Escalation requests requiring V's personal follow-up.
+
+| Column | Type | Description | Example |
+|--------|------|-------------|---------|
+| id | VARCHAR | Unique escalation ID | `esc_xyz789` |
+| call_id | VARCHAR | Associated call ID | `call_abc123` |
+| name | VARCHAR | Caller's name | `David Chen` |
+| contact | VARCHAR | Email or phone for follow-up | `david@example.com` |
+| reason | TEXT | Why hands-on help is needed | `Wants cobuild on hiring pipeline` |
+| created_at | TIMESTAMP | When escalation was logged | `2026-02-20 15:40:00` |
+
+### Table: feedback
+Post-call satisfaction feedback from callers.
+
+| Column | Type | Description | Example |
+|--------|------|-------------|---------|
+| id | VARCHAR | Unique feedback ID | `fb_abc123` |
+| call_id | VARCHAR | Associated call ID | `call_abc123` |
+| caller_name | VARCHAR | Caller's name (optional) | `David` |
+| satisfaction | INTEGER | 1-5 satisfaction rating | `5` |
+| comment | TEXT | Optional free-text feedback | `Great cobuild session` |
+| created_at | TIMESTAMP | When feedback was recorded | `2026-02-20 16:00:00` |
+
+### Table: daily_analysis
+Daily LLM-generated analysis of call patterns, membership funnel, and engagement trends.
+
+| Column | Type | Description | Example |
+|--------|------|-------------|---------|
+| id | VARCHAR | Unique analysis ID | `da_20260220` |
+| analysis_date | DATE | Date covered by analysis | `2026-02-20` |
+| period_start | TIMESTAMP | Start of analysis window | `2026-02-19 00:00:00` |
+| period_end | TIMESTAMP | End of analysis window | `2026-02-20 00:00:00` |
+| total_calls | INTEGER | Total calls in period | `12` |
+| substantive_calls | INTEGER | Calls >2 min | `8` |
+| dropoff_calls | INTEGER | Calls <1 min | `3` |
+| avg_duration | DOUBLE | Average duration (seconds) | `420.5` |
+| avg_satisfaction | DOUBLE | Average satisfaction rating | `4.6` |
+| patterns_json | JSON | LLM-extracted patterns | `{"top_topics": [...]}` |
+| dropoff_insights_json | JSON | Drop-off classifications | `{"categories": [...]}` |
+| improvements_json | JSON | Recommended improvements | `[{"area": "intake", ...}]` |
+| created_at | TIMESTAMP | When generated (DEFAULT NOW) | `2026-02-20 23:00:00` |
+
+## Example Queries
+
+### Membership Funnel
+```sql
+-- Application conversion rate
+SELECT
+  status,
+  COUNT(*) as count,
+  ROUND(COUNT(*) * 100.0 / SUM(COUNT(*)) OVER(), 1) as pct
+FROM applications
+GROUP BY status;
+
+-- Average time to decision
+SELECT
+  AVG(EXTRACT(EPOCH FROM (resolved_at - created_at)) / 3600) as avg_hours_to_decision
+FROM applications
+WHERE resolved_at IS NOT NULL;
+```
+
+### Member Engagement
+```sql
+-- Most active members
+SELECT mp.name, mp.total_calls, mp.tier, mp.last_pathway, mp.last_call_at
+FROM member_profiles mp
+WHERE mp.status = 'member'
+ORDER BY mp.total_calls DESC
+LIMIT 10;
+
+-- Calls by pathway
+SELECT pathway, COUNT(*) as calls, AVG(duration_seconds) as avg_duration
+FROM calls
+GROUP BY pathway
+ORDER BY calls DESC;
+
+-- Member retention: calls per member over time
+SELECT
+  DATE_TRUNC('week', started_at) as week,
+  COUNT(DISTINCT member_phone) as unique_callers,
+  COUNT(*) as total_calls
+FROM calls
+WHERE member_status = 'member'
+GROUP BY DATE_TRUNC('week', started_at)
+ORDER BY week;
+```
+
+### Call Analytics
+```sql
+-- Daily call volume
+SELECT DATE(started_at) as call_date, COUNT(*) as calls
+FROM calls
+GROUP BY DATE(started_at)
+ORDER BY call_date;
+
+-- Escalation rate by pathway
+SELECT
+  pathway,
+  COUNT(*) as total,
+  COUNT(CASE WHEN escalation_requested THEN 1 END) as escalations,
+  ROUND(COUNT(CASE WHEN escalation_requested THEN 1 END) * 100.0 / COUNT(*), 1) as esc_rate_pct
+FROM calls
+GROUP BY pathway;
+
+-- Satisfaction by member tier
+SELECT
+  mp.tier,
+  AVG(f.satisfaction) as avg_satisfaction,
+  COUNT(*) as feedback_count
+FROM feedback f
+JOIN calls c ON f.call_id = c.id
+JOIN member_profiles mp ON c.member_phone = mp.phone
+GROUP BY mp.tier;
+```
+
+### Operational
+```sql
+-- Recent escalations for V's review
+SELECT e.name, e.contact, e.reason, e.created_at, c.pathway
+FROM escalations e
+LEFT JOIN calls c ON e.call_id = c.id
+ORDER BY e.created_at DESC
+LIMIT 10;
+
+-- Pending applications
+SELECT name, phone, screening_notes, created_at
+FROM applications
+WHERE status = 'pending'
+ORDER BY created_at ASC;
+```
+
+## Data Sources
+
+### Primary Input
+- **VAPI Webhook**: Real-time call data from Vibe Pill voice assistant
+- **Tool Calls**: Screening results, escalations, feedback, member lookups
+- **End-of-Call Reports**: Duration, summary, and outcome metadata
+
+### Data Flow
+1. VAPI sends webhook events to the Vibe Pill webhook handler
+2. Webhook resolves caller identity via member_profiles lookup
+3. Call record written to calls table with member context
+4. Escalation/feedback tool calls create records in respective tables
+5. New callers trigger application flow → applications table
+6. Member profile updated on each call (total_calls, last_call_at, etc.)
+7. Daily analysis agent runs pattern extraction over calls + feedback
+
+## Access Patterns
+
+### Write Access
+- **Webhook handler**: Writes calls, escalations, feedback; updates member_profiles
+- **Application handler**: Writes applications, updates member_profiles status
+- **Analysis agent**: Writes daily_analysis
+- **V (manual)**: May update member_profiles notes, application decisions
+
+### Read Access
+- **V**: Full access — escalation follow-up, member management, analytics
+- **Webhook handler**: Reads member_profiles for identity resolution
+- **Analysis agent**: Reads calls, feedback for pattern extraction

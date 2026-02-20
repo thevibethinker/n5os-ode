@@ -12,7 +12,7 @@
   "hypothesis_group": [],
   "broadcasts": [],
   "created": "2026-02-20T09:05:00Z",
-  "updated": "2026-02-20T12:09:00Z",
+  "updated": "2026-02-20T12:25:00Z",
   "provenance": "con_gFL5uhApy1RZtlSJ",
   "orchestrator_conversation": "con_rrRFqCiwEPARc8ET",
   "brand": "The Vibe Pill",
@@ -35,7 +35,7 @@
       "D7"
     ]
   },
-  "active_wave": "W2",
+  "active_wave": "W3",
   "drops": {
     "D1": {
       "name": "Knowledge Base Fork",
@@ -95,7 +95,7 @@
       ],
       "spawn_mode": "auto",
       "blocking": true,
-      "status": "spawned"
+      "status": "complete"
     },
     "D5": {
       "name": "VAPI Assistant Configuration",
