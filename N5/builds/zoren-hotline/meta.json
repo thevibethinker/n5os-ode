@@ -1,0 +1,149 @@
+{
+  "schema_version": 3,
+  "slug": "zoren-hotline",
+  "title": "Z\u00f8ren Hotline \u2014 The Vibe Pill Communication System",
+  "build_type": "code_build",
+  "status": "active",
+  "model": "anthropic:claude-opus-4-5-20251101",
+  "launch_mode": "orchestrated",
+  "delegate_only": true,
+  "build_mode": "rush",
+  "first_wins": false,
+  "hypothesis_group": [],
+  "broadcasts": [],
+  "created": "2026-02-20T09:05:00Z",
+  "updated": "2026-02-20T11:30:00Z",
+  "provenance": "con_gFL5uhApy1RZtlSJ",
+  "orchestrator_conversation": "con_rrRFqCiwEPARc8ET",
+  "brand": "The Vibe Pill",
+  "domain": "thevibepill.com",
+  "deploy_target": "zoputer.zo.computer",
+  "waves": {
+    "W1": [
+      "D1",
+      "D4",
+      "D6"
+    ],
+    "W2": [
+      "D2",
+      "D3"
+    ],
+    "W3": [
+      "D5"
+    ],
+    "W4": [
+      "D7"
+    ]
+  },
+  "active_wave": "W1",
+  "drops": {
+    "D1": {
+      "name": "Knowledge Base Fork",
+      "brief": "drops/D1-knowledge-base-fork.md",
+      "stream": 1,
+      "order": 1,
+      "wave": "W1",
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "pending"
+    },
+    "D4": {
+      "name": "Airtable Schema + Stripe",
+      "brief": "drops/D4-airtable-stripe.md",
+      "stream": 2,
+      "order": 1,
+      "wave": "W1",
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "pending"
+    },
+    "D6": {
+      "name": "Call Analytics Pipeline",
+      "brief": "drops/D6-call-analytics.md",
+      "stream": 3,
+      "order": 1,
+      "wave": "W1",
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "pending"
+    },
+    "D2": {
+      "name": "Z\u00f8ren System Prompt",
+      "brief": "drops/D2-zoren-system-prompt.md",
+      "stream": 1,
+      "order": 2,
+      "wave": "W2",
+      "depends_on": [
+        "D1"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "pending"
+    },
+    "D3": {
+      "name": "Webhook Server",
+      "brief": "drops/D3-webhook-server.md",
+      "stream": 2,
+      "order": 2,
+      "wave": "W2",
+      "depends_on": [
+        "D1",
+        "D2"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "pending"
+    },
+    "D5": {
+      "name": "VAPI Assistant Configuration",
+      "brief": "drops/D5-vapi-assistant.md",
+      "stream": 1,
+      "order": 3,
+      "wave": "W3",
+      "depends_on": [
+        "D2",
+        "D3"
+      ],
+      "spawn_mode": "manual",
+      "blocking": true,
+      "status": "pending"
+    },
+    "D7": {
+      "name": "Landing Page Rebrand",
+      "brief": "drops/D7-landing-page-rebrand.md",
+      "stream": 1,
+      "order": 4,
+      "wave": "W4",
+      "depends_on": [],
+      "spawn_mode": "manual",
+      "blocking": false,
+      "status": "pending"
+    }
+  },
+  "infrastructure": {
+    "twilio": "(415) 340-8017",
+    "agentmail": "zoren@agentmail.to",
+    "zoputer_api": "confirmed",
+    "elevenlabs_voice": "DwwuoY7Uz8AP8zrY5TAo",
+    "airtable_base": "app4RseEJNYVUnH28",
+    "stripe_phone_collection": "native_support_confirmed"
+  },
+  "recovery": {
+    "max_auto_retries": 2,
+    "dead_threshold_seconds": 900,
+    "stale_threshold_hours": 4,
+    "stale_no_progress_minutes": 60,
+    "enable_ai_judgment": true
+  },
+  "lineage": {
+    "parent_type": "conversation",
+    "parent_ref": "con_gFL5uhApy1RZtlSJ",
+    "parent_conversation": "con_gFL5uhApy1RZtlSJ",
+    "moment": "V greenlit build execution after planning session",
+    "branched_at": "2026-02-20T11:30:00Z"
+  },
+  "started_at": "2026-02-20T11:37:06.784923+00:00"
+}

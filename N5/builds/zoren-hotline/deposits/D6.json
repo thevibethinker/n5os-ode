@@ -1,0 +1,24 @@
+{
+  "drop_id": "D6",
+  "status": "complete",
+  "summary": "Created DuckDB call analytics dataset for The Vibe Pill hotline at Datasets/vibe-pill-calls/. 6 tables: calls (13 cols, member-identified with pathway/outcome tracking), member_profiles (11 cols, phone PK, tier/engagement tracking), applications (8 cols, membership funnel pipeline), escalations (6 cols), feedback (6 cols), daily_analysis (13 cols). Ingest script supports VAPI webhook payloads, member upserts, escalation/feedback/application logging, and --dry-run mode. Schema.yaml, datapackage.json, and README.md all created following zo-hotline-calls conventions adapted for membership context.",
+  "artifacts": [
+    "Datasets/vibe-pill-calls/data.duckdb",
+    "Datasets/vibe-pill-calls/schema.yaml",
+    "Datasets/vibe-pill-calls/datapackage.json",
+    "Datasets/vibe-pill-calls/ingest/ingest.py",
+    "Datasets/vibe-pill-calls/README.md"
+  ],
+  "broadcast": "DuckDB path: Datasets/vibe-pill-calls/data.duckdb. Tables: calls, member_profiles, applications, escalations, feedback, daily_analysis. Ingest script at Datasets/vibe-pill-calls/ingest/ingest.py.",
+  "acceptance_criteria": {
+    "database_created": true,
+    "all_tables_present": true,
+    "schema_yaml_created": true,
+    "datapackage_json_created": true,
+    "ingest_script_created": true,
+    "ingest_has_dry_run": true,
+    "readme_created": true,
+    "verification_passed": true
+  },
+  "completed_at": "2026-02-20T11:42:00Z"
+}
