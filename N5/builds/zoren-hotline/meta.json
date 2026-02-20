@@ -12,7 +12,7 @@
   "hypothesis_group": [],
   "broadcasts": [],
   "created": "2026-02-20T09:05:00Z",
-  "updated": "2026-02-20T11:30:00Z",
+  "updated": "2026-02-20T12:09:00Z",
   "provenance": "con_gFL5uhApy1RZtlSJ",
   "orchestrator_conversation": "con_rrRFqCiwEPARc8ET",
   "brand": "The Vibe Pill",
@@ -35,7 +35,7 @@
       "D7"
     ]
   },
-  "active_wave": "W1",
+  "active_wave": "W2",
   "drops": {
     "D1": {
       "name": "Knowledge Base Fork",
@@ -46,7 +46,7 @@
       "depends_on": [],
       "spawn_mode": "auto",
       "blocking": true,
-      "status": "pending"
+      "status": "complete"
     },
     "D4": {
       "name": "Airtable Schema + Stripe",
@@ -57,7 +57,7 @@
       "depends_on": [],
       "spawn_mode": "auto",
       "blocking": true,
-      "status": "pending"
+      "status": "complete"
     },
     "D6": {
       "name": "Call Analytics Pipeline",
@@ -68,7 +68,7 @@
       "depends_on": [],
       "spawn_mode": "auto",
       "blocking": true,
-      "status": "pending"
+      "status": "complete"
     },
     "D2": {
       "name": "Z\u00f8ren System Prompt",
@@ -81,7 +81,7 @@
       ],
       "spawn_mode": "auto",
       "blocking": true,
-      "status": "pending"
+      "status": "complete"
     },
     "D3": {
       "name": "Webhook Server",
@@ -95,7 +95,7 @@
       ],
       "spawn_mode": "auto",
       "blocking": true,
-      "status": "pending"
+      "status": "spawned"
     },
     "D5": {
       "name": "VAPI Assistant Configuration",
