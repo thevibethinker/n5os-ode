@@ -1,0 +1,10 @@
+{
+  "last_check": "2026-02-20T12:10:00Z",
+  "seen_deposits": [
+    "D1",
+    "D2",
+    "D4",
+    "D6"
+  ],
+  "notes": "D2 deposit observed; D3 spawned still running."
+}
