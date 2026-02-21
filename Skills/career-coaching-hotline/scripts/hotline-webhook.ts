@@ -304,9 +304,6 @@ try:
         primary_challenge TEXT,
         specific_questions TEXT,
         intake_count INTEGER DEFAULT 0,
-        resume_count INTEGER DEFAULT 0,
-        last_form_id VARCHAR,
-        last_submission_id VARCHAR,
         intake_last_submitted_at TIMESTAMP,
         last_resume_path VARCHAR,
         last_resume_processed_at TIMESTAMP,
@@ -1429,7 +1426,7 @@ async function referToCareerspan(params: {
     resume_review: {
       service: "Resume & Materials Deep Review",
       pitch: "There's a limit to what I can do with resume feedback over the phone. A proper review means someone looking at your actual document, line by line, with your target roles in mind.",
-      transition: "I've given you the AISS framework. Getting someone to apply it across your entire resume, that's a different level."
+      transition: "I've given you the AISS framework. Getting someone to apply it across your entire resume, that's different."
     },
     ongoing_accountability: {
       service: "Ongoing Coaching & Accountability",
@@ -1650,8 +1647,8 @@ try:
         msg = raw.get('message', {})
         summary = msg.get('analysis', {}).get('summary', '')
         if not summary:
-            t = msg.get('artifact', {}).get('transcript', '') or msg.get('transcript', '')
-            summary = t[:300] if t else ''
+            transcript = msg.get('artifact', {}).get('transcript', '') or msg.get('transcript', '')
+            summary = transcript[:300] if transcript else ''
         calls.append({
             "date": str(r[0])[:10] if r[0] else "unknown",
             "duration_min": round((r[1] or 0) / 60, 1),
@@ -1994,6 +1991,63 @@ Bun.serve({
             responseDelaySeconds: 0.1,
             silenceTimeoutSeconds: 15,
             maxDurationSeconds: 1800,
+
+            analysisPlan: {
+              summaryPrompt: "Summarize this career coaching call in 2-3 sentences. Focus on: the caller's career situation, what coaching Zozie provided, whether the caller is within their free tier balance, and whether they left with actionable guidance.",
+              structuredDataPrompt: "Extract the following from this career coaching call transcript. Be precise — if something wasn't discussed, leave it null.",
+              structuredDataSchema: {
+                type: "object",
+                properties: {
+                  call_category: {
+                    type: "string",
+                    enum: ["resume_review", "interview_prep", "career_transition", "job_search_strategy", "salary_negotiation", "networking", "general_coaching", "unclear"],
+                    description: "Primary category of the coaching session"
+                  },
+                  caller_profession: {
+                    type: "string",
+                    description: "Caller's current role or industry if mentioned"
+                  },
+                  caller_experience_level: {
+                    type: "string",
+                    enum: ["early_career", "mid_career", "senior", "executive", "career_changer", "unknown"],
+                    description: "Approximate career stage"
+                  },
+                  primary_challenge: {
+                    type: "string",
+                    description: "The main career challenge or question"
+                  },
+                  coaching_techniques_used: {
+                    type: "array",
+                    items: { type: "string" },
+                    description: "Coaching approaches used (active listening, reframing, goal-setting, etc.)"
+                  },
+                  had_clear_next_step: {
+                    type: "boolean",
+                    description: "Did the caller leave with a concrete action item?"
+                  },
+                  balance_warning_triggered: {
+                    type: "boolean",
+                    description: "Was the caller notified about running low on free tier minutes?"
+                  },
+                  returning_caller: {
+                    type: "boolean",
+                    description: "Did the caller indicate they've called before?"
+                  },
+                  escalation_requested: {
+                    type: "boolean",
+                    description: "Did the caller ask for human follow-up?"
+                  },
+                  interruption_issues: {
+                    type: "boolean",
+                    description: "Were there noticeable turn-taking problems?"
+                  }
+                },
+                required: ["call_category", "primary_challenge", "had_clear_next_step", "interruption_issues"]
+              },
+              successEvaluationPrompt: "Evaluate this career coaching call. A successful call means: (1) Zozie correctly identified the caller's coaching need, (2) provided actionable career guidance, (3) maintained a warm, professional coaching tone, (4) ended with a clear next step, (5) did NOT promise to connect with a human coach or offer services outside scope, (6) handled balance/timer notifications gracefully if applicable. Rate on a 1-10 scale. Deduct points for: generic advice, interruptions, overstepping scope, failing to establish rapport, or ending abruptly without a next step.",
+              successEvaluationRubric: "NumericScale"
+            },
+
             serverMessages: ["end-of-call-report", "tool-calls"]
           }
         };
