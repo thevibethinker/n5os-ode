@@ -64,6 +64,11 @@ See individual principle files in `principles/` directory for details:
 
 See `file 'Personal/Knowledge/Architecture/principles/P35-P39_building_fundamentals.md'` for full details.
 
+### Validation & Quality (NEW - Feb 2026)
+- **P40:** Specify Behaviorally - Define acceptance as observable scenarios (Given/When/Then/Verify), not implementation checklists. Specs must be complete enough that output quality can be assessed without reading the output's implementation.
+
+See `file 'Personal/Knowledge/Architecture/principles/P40_specify_behaviorally.md'` for full details.
+
 ---
 
 ## Principle Categories
@@ -83,6 +88,9 @@ P38
 ### Auditability & Trust
 P39
 
+### Validation & Quality
+P40
+
 ### Security
 P34
 
@@ -90,9 +98,9 @@ P34
 
 ## When to Apply
 
-**Planning Phase:** P27 (Nemawashi), P31 (Own Planning), P32 (Simple Over Easy)
+**Planning Phase:** P27 (Nemawashi), P31 (Own Planning), P32 (Simple Over Easy), P40 (Behavioral Specs)
 **Implementation:** P25 (Code Is Free), P26 (Fast Feedback), P28 (Plans as Code)
-**Testing:** P7 (Dry-Run), P17 (Production Config), P18 (Verify State)
+**Testing:** P7 (Dry-Run), P17 (Production Config), P18 (Verify State), P40 (Scenario Validation)
 **Deployment:** P5 (Anti-Overwrite), P15 (Complete First), P24 (Simulation)
 **Maintenance:** P2 (SSOT), P8 (Minimal Context), P30 (Feel for Code)
 **Security:** P34 (Secrets Management)

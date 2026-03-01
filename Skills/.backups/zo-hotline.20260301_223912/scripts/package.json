@@ -1,0 +1,13 @@
+{
+  "name": "scripts",
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "private": true,
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.76.0"
+  }
+}

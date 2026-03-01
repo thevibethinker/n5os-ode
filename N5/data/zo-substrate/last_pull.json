@@ -1,8 +1,10 @@
 {
-  "last_pull": "2026-02-12T06:51:56.432833+00:00",
+  "last_pull": "2026-03-01T22:48:35.369108+00:00",
   "pulled_skills": [
-    "security-gate"
+    "audit-system",
+    "consulting-api",
+    "zo-hotline"
   ],
-  "substrate_sha": "5d72882cca3cc2ac65f6bf6b6fa5a55a5d34f364",
-  "source": "va.zo.computer"
+  "substrate_sha": "1dd074f6c25c5d1125bab08120cf662f55118e59",
+  "source": "va"
 }

@@ -10,36 +10,35 @@ import argparse
 import json
 import shutil
 import sys
+import tempfile
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, List, Optional
 
 from config import (
-    WORKSPACE_ROOT, load_config, load_state, log_event,
-    now_iso, repo_url, run_git, save_state, tmp_repo_path,
+    WORKSPACE_ROOT, load_config, log_event,
+    now_iso, repo_url, run_git, save_state,
 )
 
 
-def clone_fresh(cfg: Dict) -> bool:
+def clone_fresh(cfg: Dict, tmp: Path) -> bool:
     """Clone a fresh copy of the substrate repo."""
-    tmp = tmp_repo_path(cfg)
-    if tmp.exists():
-        shutil.rmtree(tmp)
-
     url = repo_url(cfg)
     branch = cfg["substrate"]["branch"]
     print(f"  Cloning {cfg['substrate']['repo']} (branch: {branch})...")
 
-    try:
-        run_git(
-            ["git", "clone", "--branch", branch, "--single-branch", url, str(tmp)],
-            cwd=Path("/tmp"),
-        )
+    code, out, err = run_git(
+        ["git", "clone", "--branch", branch, "--single-branch", url, str(tmp)],
+        cwd=Path("/tmp"),
+        check=False,
+    )
+    if code == 0:
         print("  Clone OK")
         return True
-    except Exception as e:
-        print(f"  Clone failed: {e}")
-        return False
+    print("  Clone failed")
+    if err:
+        print(f"  stderr: {err}")
+    return False
 
 
 def read_manifest(tmp: Path) -> Optional[Dict]:
@@ -54,38 +53,6 @@ def read_manifest(tmp: Path) -> Optional[Dict]:
     except Exception as e:
         print(f"  ERROR reading MANIFEST.json: {e}")
         return None
-
-
-def detect_changes(
-    cfg: Dict,
-    manifest: Dict,
-    tmp: Path,
-) -> List[Dict]:
-    """
-    Compare substrate skills with local state to find what's new/changed.
-
-    Returns list of dicts: [{name, reason}, ...]
-    """
-    last_pull = load_state(cfg, "last_pull.json")
-    last_skills = {s: True for s in last_pull.get("pulled_skills", [])}
-    last_sha = last_pull.get("substrate_sha", "")
-
-    skills_dir = tmp / "Skills"
-    if not skills_dir.exists():
-        return []
-
-    changes = []
-    for skill_dir in sorted(skills_dir.iterdir()):
-        if not skill_dir.is_dir():
-            continue
-        name = skill_dir.name
-
-        if name not in last_skills:
-            changes.append({"name": name, "reason": "new"})
-        else:
-            changes.append({"name": name, "reason": "update_check"})
-
-    return changes
 
 
 def install_skill(
@@ -134,10 +101,15 @@ def pull(
     print(f"  To: {cfg['identity']['name']}")
     print(f"  Repo: {cfg['substrate']['repo']}")
 
-    tmp = tmp_repo_path(cfg)
+    tmp = Path(
+        tempfile.mkdtemp(
+            prefix=f"zo-substrate-pull-{cfg['identity']['name']}-",
+            dir="/tmp",
+        )
+    )
 
     try:
-        if not clone_fresh(cfg):
+        if not clone_fresh(cfg, tmp):
             return {"success": False, "error": "clone_failed"}
 
         manifest = read_manifest(tmp)

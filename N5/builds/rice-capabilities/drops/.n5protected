@@ -1,0 +1,13 @@
+{
+  "protected": true,
+  "reason": "Contains PII detected during conversation close",
+  "created": "2026-02-22T01:52:58.528254+00:00",
+  "created_by": "user",
+  "contains_pii": true,
+  "pii_categories": [
+    "ssn",
+    "email"
+  ],
+  "pii_note": "PII detected during conversation close (con_1TdLAm1kG1JY0cs0)",
+  "pii_marked_at": "2026-03-01T23:30:24.595605+00:00"
+}

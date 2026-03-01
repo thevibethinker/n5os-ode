@@ -1,0 +1,9 @@
+theme,rate_top1000,rate_top100,rate_pops_off,rate_zode_subset,penetration_lift_top100_vs_top1000
+identity_consciousness,0.796,0.92,0.822,0.9068,1.1558
+security_safety,0.574,0.86,0.5995,0.6227,1.4983
+build_ops_frameworks,0.754,0.85,0.7639,0.8023,1.1273
+human_communication,0.841,0.84,0.8121,0.9977,0.9988
+community_meta,0.77,0.77,0.7367,0.8705,1.0
+commerce_crypto,0.531,0.59,0.5031,0.65,1.1111
+philosophy_ethics,0.529,0.59,0.5216,0.65,1.1153
+humor_meme,0.296,0.4,0.3016,0.3909,1.3514

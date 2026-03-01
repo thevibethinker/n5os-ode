@@ -1,0 +1,12 @@
+{
+  "drop_id": "D1.2",
+  "build_slug": "build-promote",
+  "status": "complete",
+  "summary": "Created artifact_classifier.py with classify and classify-cluster commands. Two-layer classification: heuristic (path/extension) + content inspection. Handles 9 categories with confidence levels.",
+  "broadcast": "Classifier routes files to: scripts/, assets/, state/, prompts/, references/, or keeps in build",
+  "artifacts": [
+    "Skills/build-promote/scripts/artifact_classifier.py"
+  ],
+  "timestamp": "2026-02-21T22:35:58.868818+00:00",
+  "execution_mode": "claude_code"
+}

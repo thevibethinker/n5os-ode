@@ -1,0 +1,22 @@
+{
+  "drop_id": "D1.2",
+  "status": "complete",
+  "timestamp": "2026-02-22T18:45:00Z",
+  "summary": "Built the Memory capability with four modules: db_helpers (singleton DuckDB connection + generic query-to-dict helper), contact_manager (upsert with email/phone dedup, find, get, update, list), conversation_logger (log, get with filters, end), and decision_queue (create/resolve/expire lifecycle). All functions return plain Python dicts, use UUID v4 IDs, and respect the existing office.db schema without modification. All 5 scenarios pass.",
+  "artifacts": [
+    "Zoffice/capabilities/memory/config.yaml",
+    "Zoffice/capabilities/memory/db_helpers.py",
+    "Zoffice/capabilities/memory/contact_manager.py",
+    "Zoffice/capabilities/memory/conversation_logger.py",
+    "Zoffice/capabilities/memory/decision_queue.py",
+    "Zoffice/capabilities/memory/README.md"
+  ],
+  "decisions": [
+    "Used parents[3] for path resolution in db_helpers.py (3 levels deep from workspace root)",
+    "Upsert dedup: email first, then phone — prevents duplicates on either field",
+    "Audit writer import is optional (try/except) since D1.1 runs in parallel — graceful degradation"
+  ],
+  "concerns": [],
+  "broadcast": "Memory API: Import from Zoffice.capabilities.memory.{contact_manager, conversation_logger, decision_queue}. All functions return plain dicts. DB path configurable via memory/config.yaml. get_db() for direct connection if needed.",
+  "notes_for_orchestrator": ""
+}

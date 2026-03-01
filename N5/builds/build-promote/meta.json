@@ -1,0 +1,104 @@
+{
+  "schema_version": "1.0",
+  "slug": "build-promote",
+  "title": "Build Promote \u2014 Build-to-Skill Finalization Skill",
+  "objective": "Create a skill that transforms completed Pulse builds into first-class Skills, handling lineage analysis, artifact classification, semantic path adaptation, and state migration.",
+  "created": "2026-02-21",
+  "status": "complete",
+  "completed_at": "2026-02-21T22:44:09.004301+00:00",
+  "type": "general",
+  "build_mode": "learning",
+  "learning_landscape_generated": false,
+  "orchestrator_convo_id": "con_p5NDwdFdETChNHoz",
+  "workers": {
+    "total": 5,
+    "complete": 0,
+    "in_progress": 0,
+    "blocked": 0,
+    "pending": 5
+  },
+  "waves": {
+    "W1": [
+      "D1.1",
+      "D1.2"
+    ],
+    "W2": [
+      "D2.1",
+      "D2.2"
+    ],
+    "W3": [
+      "D3.1"
+    ]
+  },
+  "drops": {
+    "D1.1": {
+      "name": "Build Lineage Analyzer",
+      "brief": "drops/D1.1-lineage-analyzer.md",
+      "stream": 1,
+      "order": 1,
+      "wave": "W1",
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "tag": "mechanical",
+      "completed_at": "2026-02-21T22:35:51.085429+00:00"
+    },
+    "D1.2": {
+      "name": "Artifact Classifier",
+      "brief": "drops/D1.2-artifact-classifier.md",
+      "stream": 2,
+      "order": 1,
+      "wave": "W1",
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "tag": "mechanical",
+      "completed_at": "2026-02-21T22:35:58.868818+00:00"
+    },
+    "D2.1": {
+      "name": "Promotion Executor",
+      "brief": "drops/D2.1-promotion-executor.md",
+      "stream": 1,
+      "order": 2,
+      "wave": "W2",
+      "depends_on": [
+        "D1.1",
+        "D1.2"
+      ],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "tag": "mechanical",
+      "completed_at": "2026-02-21T22:38:47.928828+00:00"
+    },
+    "D2.2": {
+      "name": "Verification Suite",
+      "brief": "drops/D2.2-verification-suite.md",
+      "stream": 2,
+      "order": 2,
+      "wave": "W2",
+      "depends_on": [
+        "D1.1",
+        "D1.2"
+      ],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "tag": "mechanical",
+      "completed_at": "2026-02-21T22:38:55.577988+00:00"
+    },
+    "D3.1": {
+      "name": "SKILL.md + End-to-End Test",
+      "brief": "drops/D3.1-skill-md-and-e2e-test.md",
+      "stream": 1,
+      "order": 3,
+      "wave": "W3",
+      "depends_on": [
+        "D2.1",
+        "D2.2"
+      ],
+      "spawn_mode": "manual",
+      "status": "complete",
+      "tag": "pedagogical",
+      "completed_at": "2026-02-21T22:44:04.060981+00:00"
+    }
+  }
+}

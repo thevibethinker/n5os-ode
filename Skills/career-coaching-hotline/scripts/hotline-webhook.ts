@@ -1805,8 +1805,19 @@ async function logCall(data: any): Promise<void> {
   try {
     const callId = data.message?.call?.id || generateUUID();
     const now = new Date().toISOString();
-    const duration = Math.round(data.message?.durationSeconds || 0);
+    const duration = Math.max(0, Math.round(data.message?.durationSeconds || 0));
     const callerPhone = data.message?.call?.customer?.number || "";
+    const startedAt = data.message?.startedAt || now;
+    const startMs = Date.parse(startedAt);
+    const endedCandidate = data.message?.endedAt || "";
+    const endedMs = endedCandidate ? Date.parse(endedCandidate) : NaN;
+    const shouldRecomputeEnd =
+      !endedCandidate ||
+      Number.isNaN(endedMs) ||
+      (!Number.isNaN(startMs) && duration > 0 && endedMs <= startMs);
+    const endedAt = shouldRecomputeEnd
+      ? (Number.isNaN(startMs) ? startedAt : new Date(startMs + (duration * 1000)).toISOString())
+      : endedCandidate;
 
     const insertScript = `
 import duckdb, json, sys
@@ -1828,10 +1839,10 @@ print("SUCCESS")
       db: DB_PATH,
       id: callId,
       phone_number: callerPhone,
-      started_at: data.message?.startedAt || now,
-      ended_at: data.message?.endedAt || now,
+      started_at: startedAt,
+      ended_at: endedAt,
       duration,
-      topics: null,
+      topics: "general",
       stage: null,
       escalation: false,
       raw: JSON.stringify(data)

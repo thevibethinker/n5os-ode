@@ -1,0 +1,69 @@
+# Ingestion Capability Configuration
+
+channels:
+  email:
+    enabled: true
+    default_employee: chief-of-staff
+  voice:
+    enabled: true
+    default_employee: receptionist
+  webhook:
+    enabled: true
+    default_employee: chief-of-staff
+  zo2zo:
+    enabled: true
+    default_employee: receptionist
+
+tag_routing:
+  JD: chief-of-staff
+  KNOWLEDGE: librarian
+  URGENT: chief-of-staff
+  MEETING: chief-of-staff
+  ADMIN: chief-of-staff
+
+source_routing:
+  github: chief-of-staff
+  stripe: chief-of-staff
+  vapi: receptionist
+
+classification:
+  urgency_keywords:
+    critical:
+      - "emergency"
+      - "critical"
+      - "system down"
+      - "outage"
+    high:
+      - "urgent"
+      - "asap"
+      - "immediately"
+      - "need help"
+      - "broken"
+    low:
+      - "fyi"
+      - "whenever"
+      - "no rush"
+      - "low priority"
+  type_keywords:
+    complaint:
+      - "unhappy"
+      - "disappointed"
+      - "issue"
+      - "problem"
+      - "wrong"
+    escalation:
+      - "escalate"
+      - "manager"
+      - "supervisor"
+      - "speak to"
+    request:
+      - "please"
+      - "help"
+      - "need"
+      - "can you"
+      - "want"
+    information:
+      - "fyi"
+      - "update"
+      - "announcement"
+      - "notice"

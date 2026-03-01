@@ -1,0 +1,5 @@
+# Publishing Capability Configuration
+
+review_required: true
+auto_publish_threshold: 0.95
+default_visibility: private

@@ -21,7 +21,11 @@ export async function logCallPattern(data: {
 }): Promise<boolean> {
   try {
     const callId = data.callId || generateUUID();
-    const now = new Date().toISOString();
+    const start = new Date();
+    const durationSeconds = Math.max(0, Math.round(data.duration || 0));
+    const end = new Date(start.getTime() + (durationSeconds * 1000));
+    const startedAt = start.toISOString();
+    const endedAt = end.toISOString();
 
     const sanitizedTopics = data.topics
       ? data.topics.filter(topic =>
@@ -30,6 +34,7 @@ export async function logCallPattern(data: {
            "account", "scheduling", "escalation", "general"].includes(topic)
         ).join(",")
       : "general";
+    const safeTopics = sanitizedTopics && sanitizedTopics.trim() ? sanitizedTopics : "general";
 
     const insertScript = `
 import duckdb
@@ -62,15 +67,15 @@ except Exception as e:
       member_phone: data.memberPhone || null,
       member_name: data.memberName || null,
       member_status: data.memberStatus || "prospect",
-      started_at: now,
-      ended_at: now,
-      duration: data.duration || 0,
+      started_at: startedAt,
+      ended_at: endedAt,
+      duration: durationSeconds,
       pathway: data.pathway || "faq",
       outcome: data.outcome || null,
-      topics: sanitizedTopics,
+      topics: safeTopics,
       escalation: data.escalationRequested || false,
       raw: JSON.stringify({
-        timestamp: now,
+        timestamp: startedAt,
         topics_count: data.topics?.length || 0,
         pattern_type: "vibe_pill_call"
       })
@@ -182,6 +187,17 @@ try:
       GROUP BY member_status ORDER BY count DESC
     ''', [cutoff_date]).fetchall()
 
+    daily_rollup_et = con.execute('''
+      SELECT
+        CAST(started_at - INTERVAL 5 HOUR AS DATE) as date_et,
+        COUNT(*) as calls,
+        ROUND(AVG(duration_seconds), 1) as avg_duration_seconds
+      FROM calls
+      WHERE started_at > ?
+      GROUP BY date_et
+      ORDER BY date_et DESC
+    ''', [cutoff_date]).fetchall()
+
     con.close()
     result = {
         "period_days": data['days'],
@@ -192,7 +208,13 @@ try:
             "escalation_rate": round((call_stats[3] or 0) / max(call_stats[0] or 1, 1) * 100, 1)
         },
         "pathways": [{"pathway": row[0], "count": row[1]} for row in (pathway_stats or [])],
-        "member_statuses": [{"status": row[0], "count": row[1]} for row in (status_stats or [])]
+        "member_statuses": [{"status": row[0], "count": row[1]} for row in (status_stats or [])],
+        "daily_rollup_et": [
+          {"date_et": str(row[0]), "calls": row[1], "avg_duration_seconds": row[2] or 0}
+          for row in (daily_rollup_et or [])
+        ],
+        "timezone_reporting": "ET (UTC-5 for current period)",
+        "source_dataset": "Datasets/vibe-pill-calls/data.duckdb"
     }
     print(json.dumps(result))
 except Exception as e:

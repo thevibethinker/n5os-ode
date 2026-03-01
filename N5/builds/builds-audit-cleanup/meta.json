@@ -83,5 +83,6 @@
       "completed_at": "2026-02-01T00:38:00Z"
     }
   },
-  "completed_at": "2026-02-01T00:44:46.690918+00:00"
+  "completed_at": "2026-02-01T00:44:46.690918+00:00",
+  "transition_note": "Promoted to Skills/builds-audit-cleanup/. Build folder retained as historical record."
 }

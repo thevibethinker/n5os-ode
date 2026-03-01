@@ -1,8 +1,8 @@
 ---
 created: 2026-01-24
-last_edited: 2026-01-25
-version: 2.0
-provenance: con_xrhltA7BHuQGYNyw
+last_edited: 2026-02-21
+version: 3.0
+provenance: con_mG5yzbSSJUnMnZcK
 ---
 
 # Pulse Interview Protocol
@@ -60,6 +60,46 @@ Checkpoints are **strategic quality gates** at high-risk junctures.
 | Frontend | After components, before deploy |
 | Integration | After both sides built, before E2E |
 
+### 6. What should V learn from this build?
+These inform the **Learning Landscape** in the plan.
+- Which technical concepts in this build are new to V? (Check `N5/config/understanding_bank.json`)
+- Which decisions have the highest pedagogical value?
+- What level of engagement does V want? (minimal / standard / full)
+- Are there concepts V specifically wants to deep dive into?
+
+### 7. What does "working" look like? (Scenarios)
+These become **Scenarios** in each Drop brief — the primary acceptance criteria.
+
+For each major deliverable, extract:
+- **Happy path:** What happens when everything goes right?
+- **Edge cases:** What unusual inputs or states should be handled?
+- **Failure modes:** What happens when things go wrong? How should the system behave?
+
+**Format each scenario as:**
+```
+S1: <Descriptive name>
+  Given: <Initial state or precondition>
+  When: <Action or trigger>
+  Then: <Expected observable outcome>
+  Verify: <Executable command or "LLM: <what to check>">
+```
+
+**Verify clause guidance:**
+- Prefer executable checks: `curl -s localhost:8080/health | jq .status`, `duckdb data.duckdb -c "SELECT count(*) FROM table"`
+- When execution isn't possible, use LLM judgment: `LLM: Check that error messages are user-friendly and include remediation steps`
+- Each scenario's Verify clause should be independently evaluable
+
+**Good scenarios:**
+- "Given: API receives malformed JSON / When: POST /endpoint / Then: Returns 400 with descriptive error / Verify: `curl -s -X POST -d '{bad' localhost:8080/endpoint | jq .error`"
+- "Given: Database has 10K records / When: Search query runs / Then: Returns in <500ms / Verify: `time curl -s localhost:8080/search?q=test`"
+
+**Bad scenarios (too vague):**
+- "It should work correctly"
+- "Error handling is good"
+- "Performance is acceptable"
+
+**Target:** 3-5 scenarios per Drop. More for complex Drops, fewer for simple ones.
+
 ## Output
 
 Generate in `N5/builds/<slug>/`:
@@ -98,10 +138,3 @@ Current 1: Ingest → Checkpoint → Transform → Checkpoint → Validate → S
 - **Missing dependencies**: Drop assumes artifact that doesn't exist yet
 - **No checkpoints**: Complex builds without quality gates = cascade failures
 - **Over-checkpointing**: >3 checkpoints = decompose the build differently
-
-### 6. What should V learn from this build?
-These inform the **Learning Landscape** in the plan.
-- Which technical concepts in this build are new to V? (Check `N5/config/understanding_bank.json`)
-- Which decisions have the highest pedagogical value?
-- What level of engagement does V want? (minimal / standard / full)
-- Are there concepts V specifically wants to deep dive into?

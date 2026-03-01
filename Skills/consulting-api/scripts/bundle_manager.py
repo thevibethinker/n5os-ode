@@ -14,11 +14,12 @@ Usage:
 
 import argparse
 import hashlib
+import io
 import json
-import subprocess
+import os
+import re
 import sys
 import tarfile
-import tempfile
 from datetime import datetime, timezone
 from pathlib import Path
 from typing import Optional
@@ -26,6 +27,11 @@ from typing import Optional
 # Import audit logger
 sys.path.insert(0, "/home/workspace/Skills/audit-system/scripts")
 from audit_logger import log_entry, ZO_INSTANCE
+
+try:
+    import yaml
+except ImportError:
+    yaml = None
 
 # Bundle storage
 BUNDLE_DIR = Path("/home/workspace/N5/config/consulting/bundles")
@@ -37,7 +43,107 @@ EXPORTABLE_SKILLS = [
     "consulting-api",
     "content-classifier",
     "librarian-export",
+    "zo2zo-relay",
 ]
+
+
+def load_allowed_targets() -> set[str]:
+    """
+    Load allowed transmission targets.
+    Priority:
+      1) CONSULTING_API_ALLOWED_TARGETS env var (comma-separated)
+      2) zo-substrate config identity + partner handles/names
+    """
+    env_targets = {
+        t.strip()
+        for t in os.environ.get("CONSULTING_API_ALLOWED_TARGETS", "").split(",")
+        if t.strip()
+    }
+    if env_targets:
+        return env_targets
+
+    allowed = {"zoputer", "zoputer.zo.computer"}
+    substrate_cfg = Path("/home/workspace/Skills/zo-substrate/config/substrate.yaml")
+    if yaml and substrate_cfg.exists():
+        try:
+            cfg = yaml.safe_load(substrate_cfg.read_text()) or {}
+            for section in ("identity", "partner"):
+                block = cfg.get(section, {}) or {}
+                for key in ("name", "handle"):
+                    value = str(block.get(key, "")).strip()
+                    if value:
+                        allowed.add(value)
+        except Exception:
+            pass
+    return allowed
+
+
+def normalize_target(target: str) -> str:
+    return target.strip()
+
+
+def load_bundle_from_path(bundle_path: Path) -> tuple[dict, Optional[str]]:
+    """
+    Load bundle dict from JSON or .tar.gz.
+    Returns (bundle, error_message).
+    """
+    if str(bundle_path).endswith(".tar.gz"):
+        try:
+            with tarfile.open(bundle_path, "r:gz") as tar:
+                try:
+                    metadata_file = tar.extractfile("metadata.json")
+                    if not metadata_file:
+                        return {}, "No metadata.json found in tarball"
+                    metadata = json.loads(metadata_file.read().decode("utf-8"))
+                except KeyError:
+                    return {}, "No metadata.json found in tarball"
+
+                skill_md = ""
+                scripts: dict[str, str] = {}
+                assets: dict[str, str] = {}
+
+                for member in tar.getmembers():
+                    if not member.isfile():
+                        continue
+                    name = member.name
+                    if name == "metadata.json":
+                        continue
+                    fileobj = tar.extractfile(member)
+                    if not fileobj:
+                        continue
+                    data = fileobj.read()
+                    if name == "SKILL.md":
+                        skill_md = data.decode("utf-8", errors="replace")
+                    elif name.startswith("scripts/"):
+                        rel = name[len("scripts/") :]
+                        if rel:
+                            scripts[rel] = data.decode("utf-8", errors="replace")
+                    elif name.startswith("assets/"):
+                        rel = name[len("assets/") :]
+                        if rel:
+                            assets[rel] = data.hex()
+
+            bundle = {
+                "schema_version": "1.0",
+                "bundle_type": "skill",
+                "skill": {
+                    "name": metadata.get("name"),
+                    "version": metadata.get("version"),
+                },
+                "content": {"skill_md": skill_md, "scripts": scripts, "assets": assets},
+                "metadata": metadata,
+            }
+            return bundle, None
+        except Exception as e:
+            try:
+                return json.loads(bundle_path.read_text()), None
+            except Exception:
+                return {}, f"Failed to read tarball: {e}"
+
+    try:
+        return json.loads(bundle_path.read_text()), None
+    except Exception as e:
+        return {}, f"Failed to read JSON bundle: {e}"
 
 
 def compute_bundle_hash(bundle_path: Path) -> str:
@@ -65,8 +171,14 @@ def create_skill_bundle(skill_name: str, version: str = "1.0.0") -> dict:
     scripts = {}
     scripts_dir = skill_path / "scripts"
     if scripts_dir.exists():
-        for script_file in scripts_dir.glob("*.py"):
-            scripts[script_file.name] = script_file.read_text()
+        include_ext = {".py", ".ts", ".js", ".mjs", ".cjs", ".sh", ".bash", ".zsh"}
+        for script_file in scripts_dir.rglob("*"):
+            if not script_file.is_file():
+                continue
+            if script_file.suffix.lower() not in include_ext:
+                continue
+            rel_path = str(script_file.relative_to(scripts_dir))
+            scripts[rel_path] = script_file.read_text(errors="replace")
     
     # Read assets
     assets = {}
@@ -139,12 +251,22 @@ def validate_bundle(bundle: dict) -> dict:
         if not content.get("scripts") and not content.get("assets"):
             warnings.append("Bundle has no scripts or assets")
         
-        # Check for API keys in scripts
+        # Check for potentially hardcoded credentials in scripts
         for script_name, script_content in content.get("scripts", {}).items():
-            if "api_key" in script_content.lower() or "apikey" in script_content.lower():
-                errors.append(f"Script {script_name} may contain API keys - reject bundle")
-            if "secret" in script_content.lower() and "hashlib" not in script_content.lower():
-                warnings.append(f"Script {script_name} mentions 'secret' - verify not credential")
+            hardcoded_credential_patterns = [
+                r"(?i)\b(api[_-]?key|token|secret|password)\b\s*[:=]\s*['\"][^'\"]{8,}['\"]",
+                r"(?i)\b(sk_live|sk_test|ghp_|xoxb-|AIza)[A-Za-z0-9_\-]{8,}",
+            ]
+            for pattern in hardcoded_credential_patterns:
+                if re.search(pattern, script_content):
+                    errors.append(
+                        f"Script {script_name} appears to contain hardcoded credentials"
+                    )
+                    break
+            if re.search(r"(?i)\b(secret|token|password)\b", script_content) and "os.environ" not in script_content:
+                warnings.append(
+                    f"Script {script_name} mentions secrets/tokens - verify they are environment-based"
+                )
     
     return {
         "valid": len(errors) == 0,
@@ -154,8 +276,48 @@ def validate_bundle(bundle: dict) -> dict:
 
 
 def export_bundle(bundle: dict, output_path: Path) -> None:
-    """Export bundle to JSON file."""
+    """Export bundle to JSON or .tar.gz based on output extension."""
     output_path.parent.mkdir(parents=True, exist_ok=True)
+    if str(output_path).endswith(".tar.gz"):
+        metadata = {
+            "name": bundle.get("skill", {}).get("name"),
+            "version": bundle.get("skill", {}).get("version"),
+            "exported_from": bundle.get("skill", {}).get("exported_from"),
+            "exported_at": bundle.get("skill", {}).get("exported_at"),
+            "schema_version": bundle.get("schema_version"),
+            "bundle_type": bundle.get("bundle_type"),
+            **(bundle.get("metadata", {}) or {}),
+        }
+
+        with tarfile.open(output_path, "w:gz") as tar:
+            metadata_bytes = json.dumps(metadata, indent=2).encode("utf-8")
+            metadata_info = tarfile.TarInfo(name="metadata.json")
+            metadata_info.size = len(metadata_bytes)
+            tar.addfile(metadata_info, io.BytesIO(metadata_bytes))
+
+            skill_md = bundle.get("content", {}).get("skill_md", "")
+            if skill_md:
+                skill_bytes = skill_md.encode("utf-8")
+                skill_info = tarfile.TarInfo(name="SKILL.md")
+                skill_info.size = len(skill_bytes)
+                tar.addfile(skill_info, io.BytesIO(skill_bytes))
+
+            for rel_path, script_content in (bundle.get("content", {}).get("scripts", {}) or {}).items():
+                script_bytes = script_content.encode("utf-8")
+                script_info = tarfile.TarInfo(name=f"scripts/{rel_path}")
+                script_info.size = len(script_bytes)
+                tar.addfile(script_info, io.BytesIO(script_bytes))
+
+            for rel_path, hex_content in (bundle.get("content", {}).get("assets", {}) or {}).items():
+                try:
+                    asset_bytes = bytes.fromhex(hex_content)
+                except ValueError:
+                    continue
+                asset_info = tarfile.TarInfo(name=f"assets/{rel_path}")
+                asset_info.size = len(asset_bytes)
+                tar.addfile(asset_info, io.BytesIO(asset_bytes))
+        return
+
     output_path.write_text(json.dumps(bundle, indent=2))
 
 
@@ -169,7 +331,14 @@ def list_exportable_skills() -> list:
             has_skill_md = (skill_path / "SKILL.md").exists()
             # Count scripts
             scripts_dir = skill_path / "scripts"
-            script_count = len(list(scripts_dir.glob("*.py"))) if scripts_dir.exists() else 0
+            if scripts_dir.exists():
+                script_count = sum(
+                    1
+                    for p in scripts_dir.rglob("*")
+                    if p.is_file() and p.suffix.lower() in {".py", ".ts", ".js", ".mjs", ".cjs", ".sh", ".bash", ".zsh"}
+                )
+            else:
+                script_count = 0
             
             available.append({
                 "name": skill_name,
@@ -196,51 +365,19 @@ def transmit_bundle(bundle_path: Path, target: str, dry_run: bool = False) -> di
     import uuid
     
     correlation_id = str(uuid.uuid4())
-    
-    # Handle tarball bundles
-    if str(bundle_path).endswith('.tar.gz'):
-        import tarfile
-        
-        try:
-            with tarfile.open(bundle_path, 'r:gz') as tar:
-                # Extract metadata.json from the tarball
-                try:
-                    metadata_file = tar.extractfile('metadata.json')
-                    if metadata_file:
-                        metadata = json.loads(metadata_file.read().decode('utf-8'))
-                        # Convert to expected bundle format
-                        bundle = {
-                            "schema_version": "1.0",
-                            "bundle_type": "skill",
-                            "skill": {
-                                "name": metadata.get("name"),
-                                "version": metadata.get("version"),
-                            },
-                            "content": {
-                                "skill_md": "",  # Not needed for validation
-                                "scripts": {},
-                                "assets": {},
-                            },
-                            "metadata": metadata,
-                        }
-                    else:
-                        return {
-                            "success": False,
-                            "error": "No metadata.json found in tarball",
-                        }
-                except KeyError:
-                    return {
-                        "success": False,
-                        "error": "No metadata.json found in tarball",
-                    }
-        except Exception as e:
-            return {
-                "success": False,
-                "error": f"Failed to read tarball: {e}",
-            }
-    else:
-        # Handle JSON bundles
-        bundle = json.loads(bundle_path.read_text())
+    target = normalize_target(target)
+    allowed_targets = load_allowed_targets()
+    if target not in allowed_targets:
+        return {
+            "success": False,
+            "error": "target_not_allowed",
+            "target": target,
+            "allowed_targets": sorted(allowed_targets),
+        }
+
+    bundle, load_error = load_bundle_from_path(bundle_path)
+    if load_error:
+        return {"success": False, "error": load_error}
     
     # Validate before transmission
     validation = validate_bundle(bundle)
@@ -369,7 +506,10 @@ def main():
             sys.exit(1)
     
     elif args.command == "validate":
-        bundle = json.loads(Path(args.bundle).read_text())
+        bundle, load_error = load_bundle_from_path(Path(args.bundle))
+        if load_error:
+            print(f"Error: {load_error}")
+            sys.exit(1)
         result = validate_bundle(bundle)
         
         if args.json:

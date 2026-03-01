@@ -1,0 +1,10 @@
+{
+  "drop_id": "D1.1",
+  "build_slug": "hotline-data-integrity-upgrade",
+  "status": "complete",
+  "summary": "Patched forward call ingestion in Zo, Zoren, and Career webhooks plus logger paths to compute ended_at from started_at+duration and enforce non-empty topic fallbacks.",
+  "broadcast": "",
+  "artifacts": [],
+  "timestamp": "2026-02-24T06:24:17.880795+00:00",
+  "execution_mode": "claude_code"
+}

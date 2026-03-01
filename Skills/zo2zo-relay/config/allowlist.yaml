@@ -1,0 +1,10 @@
+allowed_roots:
+  - Skills
+  - N5/config
+  - N5/prefs
+  - N5/data
+  - Documents
+  - Personal
+  - Knowledge
+  - Research
+  - Datasets

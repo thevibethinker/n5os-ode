@@ -1,0 +1,43 @@
+# Security Capability Configuration
+# Loaded at runtime by inbound_gate.py and audit/writer.py
+# Change sensitivity to control detection aggressiveness.
+
+sensitivity: strict  # strict | standard | low
+
+# strict: adversarial detection + PII redaction active
+# standard: adversarial detection active, PII warns but does not redact
+# low: adversarial detection only, PII filtering disabled
+
+adversarial_patterns:
+  # Prompt injection / jailbreak patterns (case-insensitive regex)
+  - "ignore (all |any )?(previous|prior|above) (instructions|prompts|rules)"
+  - "reveal (your|the) (system|original) prompt"
+  - "you are now (a |an )?[\\w]+"
+  - "disregard (all |any )?(previous|prior|above|earlier)"
+  - "forget (all |any )?(previous|prior|your) (instructions|rules|constraints)"
+  - "pretend (you are|to be|you're)"
+  - "act as (if |though )?(you are|you're)"
+  - "bypass (your |all |any )?(safety|security|content|ethical)"
+  - "jailbreak"
+  - "DAN (mode|prompt)"
+  - "do anything now"
+  - "override (your |all )?(instructions|programming|rules)"
+  - "new persona"
+  - "roleplay as"
+  - "sudo mode"
+  - "developer mode"
+  - "\\bbase64\\b.*decode"
+
+pii_patterns:
+  ssn: "\\b\\d{3}-\\d{2}-\\d{4}\\b"
+  credit_card: "\\b(?:\\d[ -]*?){13,16}\\b"
+  phone_us: "(?:\\+1[- ]?)?\\(?\\d{3}\\)?[- ]?\\d{3}[- ]?\\d{4}"
+
+pii_labels:
+  ssn: "[REDACTED-SSN]"
+  credit_card: "[REDACTED-CC]"
+  phone_us: "[REDACTED-PHONE]"
+
+audit:
+  db_path: Zoffice/data/office.db
+  hash_algorithm: sha256

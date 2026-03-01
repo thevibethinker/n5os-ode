@@ -32,7 +32,7 @@ POSTING_EVENTS_FILE = ANALYTICS_DIR / "posting-events.jsonl"
 PERSONA_FILE = Path(__file__).resolve().parent.parent / "assets" / "zode-persona.md"
 
 ZO_ASK_URL = "https://api.zo.computer/zo/ask"
-MODEL_NAME = "byok:0771a084-ed26-496e-ac1b-bddc85ba2653"
+MODEL_NAME = os.environ.get("ZODE_MODEL_NAME", "byok:0771a084-ed26-496e-ac1b-bddc85ba2653")
 
 
 def _get_auth_token() -> str:

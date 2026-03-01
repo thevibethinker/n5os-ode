@@ -1,0 +1,26 @@
+# Librarian — Available tools
+tools:
+  - name: log_conversation
+    capability: memory
+    description: Log conversations
+  - name: find_contact
+    capability: memory
+    description: Look up contacts
+  - name: upsert_contact
+    capability: memory
+    description: Create or update contacts
+  - name: classify_content
+    capability: ingestion
+    description: Classify inbound content
+  - name: log_audit
+    capability: security
+    description: Write audit entries
+  - name: create_item
+    capability: publishing
+    description: Create content pipeline items
+  - name: advance
+    capability: publishing
+    description: Advance content through pipeline stages
+  - name: prepare_page
+    capability: publishing
+    description: Prepare zo.space pages

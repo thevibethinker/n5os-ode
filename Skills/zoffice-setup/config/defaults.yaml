@@ -1,0 +1,63 @@
+# Zoffice Setup Defaults
+# These are the default values used by install.py when creating a new Zoffice instance.
+# Override at install time or customize in Zoffice/config/ after installation.
+
+# Office identity defaults
+office:
+  name: "My Zoffice"
+  handle: "zoffice"
+  version: "1.0.0"
+  layer: 1
+  timezone: "UTC"
+
+# Autonomy thresholds (confidence score → action)
+autonomy:
+  auto_act: 0.9
+  act_and_notify: 0.7
+  escalate_to_parent: 0.5
+  escalate_to_human: 0.3
+
+# Default capabilities (all pending until rice-capabilities builds them)
+capabilities:
+  - security
+  - memory
+  - ingestion
+  - communication
+  - orchestration
+  - zo2zo
+  - publishing
+  - hr
+
+# Default starter staff (built by rice-staff)
+staff:
+  - receptionist
+  - chief-of-staff
+  - librarian
+
+# Database
+database:
+  engine: duckdb
+  path: data/office.db
+  tables:
+    - audit
+    - contacts
+    - decisions
+    - conversations
+    - evaluations
+
+# Security defaults
+security:
+  mode: strict
+  log_all_inbound: true
+  log_all_outbound: true
+  require_auth_external: true
+
+# Routing defaults
+routing:
+  fallback_employee: receptionist
+  channels:
+    - voice
+    - email
+    - sms
+    - zo2zo
+    - webhook

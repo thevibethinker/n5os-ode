@@ -639,7 +639,7 @@ def _extract_feed_submolt_candidates(feed: list[dict], min_score: int = 5) -> li
 
 def _pick_submolt_for_next_post(recent_posts: list[dict], feed: list[dict]) -> str:
     """Route ~45% general, ~25% introductions, ~30% other expansion. Never ponderings."""
-    import random as _rand
+    import random
     if not recent_posts:
         return "general"
 
@@ -653,7 +653,7 @@ def _pick_submolt_for_next_post(recent_posts: list[dict], feed: list[dict]) -> s
     # Bias expansion toward introductions (~50% of expansion slots → ~25% overall)
     intro_count = sum(1 for p in recent_posts if p.get("submolt", "").lower() == "introductions")
     intro_ratio = intro_count / max(1, len(recent_posts))
-    if intro_ratio < 0.25 and _rand.random() < 0.50:
+    if intro_ratio < 0.25 and random.random() < 0.50:
         expansion_choice = "introductions"
     else:
         expansion_choice = expansion[0] if expansion else "introductions"
@@ -1393,7 +1393,7 @@ def cmd_run(args):
     # --- POST ---
     post_minutes = _minutes_since_last_publish("post")
     post_allowed, post_reason = check_rate_limit("post")
-    if post_minutes is not None and post_minutes < MIN_POST_SPACING_MINUTES:
+    if post_minutes is not None and post_minutes < MIN_POST_SPACING_MINUTES and not args.force:
         post_allowed = False
         post_reason = f"post spacing {post_minutes:.0f}m < {MIN_POST_SPACING_MINUTES}m"
 
@@ -1477,7 +1477,6 @@ def cmd_run(args):
                     # Final attempt still duplicate — skip this cycle
                     cycle["post"]["reason"] = f"dedup_blocked: {dedup_reason[:100]}"
                     draft = None
-
         # Quality gate — skip publishing if post doesn't meet bar (comments still run)
         if draft:
             submolt, title, content, lens_used, discourse_topic = draft
@@ -1490,15 +1489,31 @@ def cmd_run(args):
                 cycle["post"]["submolt"] = submolt
                 cycle["post"]["lens_used"] = lens_used
                 cycle["post"]["discourse_topic"] = discourse_topic
-                cycle["post"]["consultinging_cta_planned"] = include_cta
+                cycle["post"]["consulting_cta_planned"] = include_cta
                 draft = None
+            else:
+                cycle["post"]["attempted"] = True
+                cycle["post"]["title"] = title
+                cycle["post"]["submolt"] = submolt
+                cycle["post"]["lens_used"] = lens_used
+                cycle["post"]["discourse_topic"] = discourse_topic
+                cycle["post"]["consulting_cta_planned"] = include_cta
+                result = _publish_post(submolt, title, content, dry_run=dry_run,
+                                       lens_used=lens_used, discourse_topic=discourse_topic)
+                if result and (dry_run or result.get("status") == "published"):
+                    cycle["post"]["published"] = True
+                    cycle["post"]["reason"] = "published"
+                    state["total_posts"] = state.get("total_posts", 0) + 1
+                    state["posts_since_last_cta"] = state.get("posts_since_last_cta", 0) + 1
+                else:
+                    cycle["post"]["reason"] = "publish_failed"
     else:
         cycle["post"]["reason"] = f"rate_limited: {post_reason}"
 
     # --- COMMENTS (up to MAX_COMMENTS_PER_CYCLE per cycle) ---
     comment_minutes = _minutes_since_last_publish("comment")
     comment_allowed, comment_reason = check_rate_limit("comment")
-    if comment_minutes is not None and comment_minutes < MIN_COMMENT_SPACING_MINUTES:
+    if comment_minutes is not None and comment_minutes < MIN_COMMENT_SPACING_MINUTES and not args.force:
         comment_allowed = False
         comment_reason = f"comment spacing {comment_minutes:.0f}m < {MIN_COMMENT_SPACING_MINUTES}m"
 

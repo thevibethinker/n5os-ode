@@ -48,6 +48,71 @@ CONTENT_REQUIRED = [
 ]
 
 
+def check_drop_scenarios(slug: str) -> list[str]:
+    """Check that Drop briefs have a ## Scenarios section.
+    
+    Returns list of warnings for briefs missing scenarios.
+    """
+    drops_dir = BUILDS_DIR / slug / "drops"
+    if not drops_dir.exists():
+        return []
+    
+    warnings = []
+    for brief_path in sorted(drops_dir.glob("*.md")):
+        content = brief_path.read_text()
+        # Skip checkpoint briefs (C*.md)
+        if brief_path.stem.startswith("C"):
+            continue
+        # Check for Scenarios section
+        has_scenarios = re.search(r'^#{1,3}\s+Scenarios', content, re.MULTILINE)
+        if not has_scenarios:
+            warnings.append(f"Drop brief {brief_path.name} missing ## Scenarios section")
+        else:
+            # Check that scenarios have actual Given/When/Then content (not just template)
+            scenario_entries = re.findall(r'^S\d+:', content, re.MULTILINE)
+            template_markers = re.findall(r'<.*?descriptive name.*?>', content)
+            if scenario_entries and len(scenario_entries) == len(template_markers):
+                warnings.append(f"Drop brief {brief_path.name} has Scenarios section but all entries are still template placeholders")
+    
+    return warnings
+
+
+def check_spec_completeness(slug: str) -> list[str]:
+    """Check that auto-spawn Drops have full spec completeness.
+    
+    Returns list of warnings for Drops with spawn_mode=auto but spec_completeness != full.
+    """
+    drops_dir = BUILDS_DIR / slug / "drops"
+    if not drops_dir.exists():
+        return []
+    
+    warnings = []
+    for brief_path in sorted(drops_dir.glob("*.md")):
+        content = brief_path.read_text()
+        if brief_path.stem.startswith("C"):
+            continue
+        
+        # Parse frontmatter
+        spawn_mode = "auto"  # default
+        spec_completeness = "full"  # default
+        
+        spawn_match = re.search(r'^spawn_mode:\s*(\S+)', content, re.MULTILINE)
+        if spawn_match:
+            spawn_mode = spawn_match.group(1).strip()
+        
+        spec_match = re.search(r'^spec_completeness:\s*(\S+)', content, re.MULTILINE)
+        if spec_match:
+            spec_completeness = spec_match.group(1).strip()
+        
+        if spawn_mode == "auto" and spec_completeness in ("partial", "ambiguous"):
+            warnings.append(
+                f"Drop brief {brief_path.name}: spawn_mode=auto but spec_completeness={spec_completeness} "
+                f"(auto-spawn requires full spec — switch to manual or complete the spec)"
+            )
+    
+    return warnings
+
+
 def find_placeholders(content: str) -> list[tuple[int, str, str]]:
     """Find unfilled placeholders in content.
     
@@ -172,6 +237,14 @@ def validate_plan(slug: str) -> dict:
                 warnings.append(f"Plan is {age_days} days old — may need refresh")
     except:
         pass
+    
+    # Check Drop briefs for scenarios
+    scenario_warnings = check_drop_scenarios(slug)
+    warnings.extend(scenario_warnings)
+    
+    # Check spec completeness vs spawn mode consistency
+    spec_warnings = check_spec_completeness(slug)
+    warnings.extend(spec_warnings)
     
     valid = (
         len(placeholders) == 0 and

@@ -1,0 +1,115 @@
+{
+  "sections": [
+    {
+      "id": "01",
+      "label": "THE META OS",
+      "heading": "The tools change every six months. The thinking doesn't.",
+      "subheading": "Preparing non-technical founders for a post-technical era.",
+      "body_paragraphs": [
+        "Every AI course teaches you a tool. Then the tool changes. The prompt template you memorized in January is deprecated by July. The platform you built on pivots. The workflow you automated breaks because someone shipped an update you didn't see coming.",
+        "The Vibe Pill teaches the Meta OS — the layer beneath the tools. Architectural thinking. Design patterns. Technical primitives. The mental models that let you look at any new tool and immediately know how to make it useful.",
+        "This isn't abstraction for its own sake. Every pattern you learn here is something V has used to build real production systems — entirely through conversation, without writing a single line of code."
+      ],
+      "items": []
+    },
+    {
+      "id": "02",
+      "label": "THE TROIKA",
+      "heading": "Three forces that compound.",
+      "subheading": "",
+      "body_paragraphs": [
+        "The Vibe Pill isn't a course. It's a system with three components that make each other more powerful over time."
+      ],
+      "items": [
+        {
+          "name": "Builder Mindset",
+          "tagline": "The Meta OS",
+          "desc": "Architectural thinking that transfers when everything else changes. You learn to see systems — how they compose, where they break, when to automate vs. keep a human in the loop. This is the operating system that runs beneath every tool you'll ever use."
+        },
+        {
+          "name": "Zo Platform",
+          "tagline": "You describe. Zo executes.",
+          "desc": "Zo is the AI computer where theory becomes practice. You don't learn about building — you build. Real systems, in real time, shipping to production. Zøren, your AI, handles the technical execution while you handle the thinking."
+        },
+        {
+          "name": "Community",
+          "tagline": "Compound interest on knowledge.",
+          "desc": "Fifteen founders building in parallel means fifteen experiments running every week. What one person discovers, everyone can apply. Patterns propagate. Mistakes are shared once instead of repeated fifteen times."
+        }
+      ]
+    },
+    {
+      "id": "03",
+      "label": "SESSION FORMAT",
+      "heading": "45 minutes. Three phases. You leave with something working.",
+      "subheading": "",
+      "body_paragraphs": [],
+      "items": [
+        {
+          "phase": "PHASE 1",
+          "time": "10 MIN",
+          "title": "How I Built This",
+          "desc": "V demonstrates a real system built that week. Live, not slides. You see the before and after, the architectural decisions, the design patterns used, and why they work. This is apprenticeship, not lecture."
+        },
+        {
+          "phase": "PHASE 2",
+          "time": "20 MIN",
+          "title": "Let's Build",
+          "desc": "The group builds together using Zo. Start with a real problem, architect the solution, implement live. Everyone leaves with a working system they can use immediately. Not a toy — a tool."
+        },
+        {
+          "phase": "PHASE 3",
+          "time": "15 MIN",
+          "title": "Your Turn",
+          "desc": "Apply the pattern to your own context. The group helps adapt — different industries, different scales, different constraints. This is where the real compounding happens, because you see the same pattern work across twelve different businesses."
+        }
+      ]
+    },
+    {
+      "id": "04",
+      "label": "THE TROJAN HORSE",
+      "heading": "Productivity is the entry point. AI fluency is the real product.",
+      "subheading": "",
+      "body_paragraphs": [
+        "No founder has time to \"learn AI.\" But every founder has time to become dramatically more productive. That's the trojan horse.",
+        "Every week you build something that saves you real time — an automated pipeline, a reporting dashboard, a system that handles what used to take you three hours. The AI fluency comes as a side effect of building things that actually matter to your business.",
+        "But here's what happens after month three: you stop thinking about AI as a tool and start thinking about it as a material. You develop intuitions for what's possible. You start seeing systems everywhere — in your ops, your hiring, your product, your sales process. You start architecting solutions before you even open Zo.",
+        "The technical primitives you develop — mental models for state, context, orchestration, memory, architecture — those transfer to whatever comes next. That's the real product. That's what you're paying for."
+      ],
+      "items": []
+    },
+    {
+      "id": "05",
+      "label": "EXAMPLE BUILDS",
+      "heading": "Real systems. Running in production. Built through conversation.",
+      "subheading": "Every one of these was built by V using the same methodology you'll learn.",
+      "body_paragraphs": [],
+      "items": [
+        {
+          "label": "MEETING INTELLIGENCE",
+          "desc": "Recall.ai bots transcribe every meeting, extract action items, update CRM records, and surface relationship signals. 500+ meetings a year, fully automated."
+        },
+        {
+          "label": "TALENT PIPELINE",
+          "desc": "Job descriptions decomposed into behavioral signals. Resumes synthesized into 2-page branded candidate briefs. Full intake-to-output automation, zero manual formatting."
+        },
+        {
+          "label": "HEALTH DASHBOARD",
+          "desc": "Fitbit API piped through DuckDB into weekly wellness reports. Heart rate trends, sleep architecture, workout tracking — synthesized by AI into actionable summaries."
+        },
+        {
+          "label": "24/7 HOTLINE",
+          "desc": "The system you'll call to apply. Voice + text, caller memory across sessions, co-build mode, automated follow-up emails. Running on Zo, right now."
+        },
+        {
+          "label": "CONTENT ENGINE",
+          "desc": "Meeting insights transformed into LinkedIn posts. Brand voice library ensures consistency. One conversation generates a week of content."
+        },
+        {
+          "label": "PULSE ORCHESTRATOR",
+          "desc": "Complex projects decomposed into parallel tasks, executed concurrently by independent AI workers, then synthesized. The build system that built this page."
+        }
+      ]
+    }
+  ]
+}

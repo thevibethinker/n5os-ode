@@ -162,6 +162,6 @@
 {"email": "peterweddle@tatech.org", "slug": "peterweddle", "name": "Peterweddle", "organization": "Tatech", "lead_type": "LD-GEN", "status": "active", "last_updated": "2026-01-16", "file": "Knowledge/crm/individuals/peterweddle.md"}
 {"email": "vrijen@substrate.run", "slug": "vrijen", "name": "Vrijen", "organization": "Substrate.Run", "lead_type": "LD-GEN", "status": "active", "last_updated": "2026-01-18", "file": "Knowledge/crm/individuals/vrijen.md"}
 {"email": "jason@trynextbyte.com", "slug": "jason", "name": "Jason", "organization": "Trynextbyte", "lead_type": "LD-GEN", "status": "active", "last_updated": "2026-01-18", "file": "Knowledge/crm/individuals/jason.md"}
-{"email": "john@recall.ai", "slug": "john", "name": "John", "organization": "Recall.Ai", "lead_type": "LD-GEN", "status": "active", "last_updated": "2026-01-18", "file": "Knowledge/crm/individuals/john.md"}
 {"email": "joe.kirsten@ramp.com", "slug": "joe-kirsten", "name": "Joe Kirsten", "organization": "Ramp", "lead_type": "LD-GEN", "status": "active", "last_updated": "2026-01-18", "file": "Knowledge/crm/individuals/joe-kirsten.md"}
 {"email": "strassmaz@gmail.com", "slug": "strassmaz", "name": "Strassmaz", "organization": "Personal (gmail.com)", "lead_type": "LD-GEN", "status": "active", "last_updated": "2026-01-18", "file": "Knowledge/crm/individuals/strassmaz.md"}
+{"person_id": "vitoria-okuyama", "name": "Vitoria Okuyama", "email": "", "organization": "Fibe", "lead_type": "NETWORKING", "path": "Personal/Knowledge/CRM/individuals/vitoria-okuyama.md"}

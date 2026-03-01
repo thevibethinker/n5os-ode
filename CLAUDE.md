@@ -21,14 +21,12 @@ N5/
 ├── commands/        # Executable recipes for AI execution
 └── logs/            # Thread exports, system logs
 
-Integrations/        # External service connections (Recall.ai, Calendly, Careerspan, etc.)
 Sites/               # Production websites (protected)
 Personal/            # Personal data and records (protected)
 Skills/              # Deployed skill definitions with SKILL.md docs
 ```
 
 **Key Integrations:**
-- Recall.ai (meeting intelligence), Calendly (calendar automation)
 - Careerspan (talent matching pipeline), n8n (workflow automation)
 - Google Drive (document ingestion), Akiflow (task management)
 

@@ -1,0 +1,14 @@
+# Memory Capability Configuration
+# Loaded at runtime by db_helpers.py and all memory modules.
+
+db_path: Zoffice/data/office.db
+
+retention:
+  conversations_days: 365
+  decisions_pending_expire_days: 30
+  contacts: permanent
+
+defaults:
+  contact_relationship: unknown
+  conversation_satisfaction: null
+  decision_status: pending

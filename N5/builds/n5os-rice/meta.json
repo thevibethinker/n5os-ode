@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "slug": "n5os-rice",
+  "title": "N5OS-Rice \u2014 Architecture & Strategy (Stream 1)",
+  "objective": null,
+  "created": "2026-02-21",
+  "status": "complete",
+  "completed_at": "2026-02-21",
+  "type": "general",
+  "build_mode": "learning",
+  "learning_landscape_generated": false,
+  "orchestrator_convo_id": null,
+  "workers": {
+    "total": 0,
+    "complete": 0,
+    "in_progress": 0,
+    "blocked": 0,
+    "pending": 0
+  },
+  "waves": [],
+  "worker_details": []
+}

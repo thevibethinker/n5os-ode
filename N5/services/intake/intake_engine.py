@@ -18,7 +18,7 @@ import json
 import logging
 import sqlite3
 import hashlib
-from datetime import datetime, date
+from datetime import datetime, date, timezone
 from pathlib import Path
 from typing import Dict, Any, Optional, List, Tuple
 import re
@@ -56,6 +56,38 @@ class IntakeEngine:
     INBOX_PATH = Path("/home/workspace/Personal/Meetings/Inbox")
     MEETINGS_ROOT = Path("/home/workspace/Personal/Meetings")
     DEDUP_DB_PATH = Path("/home/workspace/N5/data/intake_dedup.db")
+    DEDUP_WINDOW_SECONDS = 600
+    HOST_NAME_ALIASES = {
+        "vrijen",
+        "vrijenattawar",
+        "attawar",
+        "va",
+        "v",
+    }
+    TITLE_STOPWORDS = {
+        "meeting",
+        "call",
+        "sync",
+        "update",
+        "standup",
+        "demo",
+        "review",
+        "check",
+        "with",
+        "and",
+        "weekly",
+        "monthly",
+        "team",
+        "internal",
+        "external",
+        "status",
+        "planning",
+        "alignment",
+        "loop",
+        "catch",
+        "up",
+        "briefing",
+    }
     
     def __init__(
         self,
@@ -98,6 +130,7 @@ class IntakeEngine:
                 title TEXT,
                 meeting_date TEXT,
                 participant_hash TEXT,
+                fingerprint TEXT,
                 PRIMARY KEY (source, source_id)
             )
             """
@@ -105,8 +138,82 @@ class IntakeEngine:
         # Add index on content_hash and meeting_date for faster lookups
         cursor.execute("CREATE INDEX IF NOT EXISTS idx_content_hash ON ingested_transcripts (content_hash)")
         cursor.execute("CREATE INDEX IF NOT EXISTS idx_meeting_date ON ingested_transcripts (meeting_date)")
+        self._ensure_dedup_columns(cursor)
         conn.commit()
         conn.close()
+    
+    def _ensure_dedup_columns(self, cursor):
+        cursor.execute("PRAGMA table_info(ingested_transcripts)")
+        columns = {row[1] for row in cursor.fetchall()}
+        if "fingerprint" not in columns:
+            cursor.execute("ALTER TABLE ingested_transcripts ADD COLUMN fingerprint TEXT")
+        if "participant_hash" not in columns:
+            cursor.execute("ALTER TABLE ingested_transcripts ADD COLUMN participant_hash TEXT")
+        cursor.execute("CREATE INDEX IF NOT EXISTS idx_fingerprint ON ingested_transcripts (fingerprint)")
+    
+    def _normalize_participants_list(self, participants):
+        normalized = []
+        for participant in participants or []:
+            name = self._normalize_participant_name(participant)
+            if name and name not in self.HOST_NAME_ALIASES:
+                normalized.append(name)
+        if not normalized:
+            normalized = ["unknown"]
+        return sorted(set(normalized))
+    
+    @staticmethod
+    def _normalize_participant_name(name: str) -> str:
+        if not name:
+            return ""
+        cleaned = re.sub(r"[^a-z0-9]", "", name.lower())
+        return cleaned
+    
+    def _round_to_window(self, dt: datetime) -> datetime:
+        if dt is None:
+            dt = datetime.utcnow()
+        if dt.tzinfo is None:
+            dt = dt.replace(tzinfo=timezone.utc)
+        else:
+            dt = dt.astimezone(timezone.utc)
+        timestamp = int(dt.timestamp())
+        bucket = timestamp - (timestamp % self.DEDUP_WINDOW_SECONDS)
+        return datetime.fromtimestamp(bucket, tz=timezone.utc)
+    
+    def _normalize_title_tokens(self, title: Optional[str]) -> list[str]:
+        if not title:
+            return []
+        words = re.findall(r"\w+", title.lower())
+        tokens = [w for w in words if w not in self.TITLE_STOPWORDS]
+        return sorted(set(tokens))
+    
+    def _compute_participant_hash(self, normalized_participants: list[str]) -> str:
+        joined = "|".join(normalized_participants)
+        return hashlib.sha256(joined.encode()).hexdigest()[:16]
+    
+    def _compute_fingerprint(
+        self,
+        transcript: UnifiedTranscript,
+        meeting_date: date,
+        normalized_participants: list[str],
+    ) -> str:
+        rounded_time = self._round_to_window(transcript.detected_date)
+        participant_key = "|".join(normalized_participants)
+        fingerprint_input = "|".join(
+            filter(None, [
+                rounded_time.isoformat(),
+                meeting_date.isoformat(),
+                participant_key,
+            ])
+        )
+        if not fingerprint_input:
+            fingerprint_input = meeting_date.isoformat()
+        return hashlib.sha256(fingerprint_input.encode()).hexdigest()[:32]
+    
+    def _compute_content_hash(self, transcript: UnifiedTranscript) -> str:
+        """Compute SHA-256 hash of transcript content for deduplication"""
+        content = transcript.full_text.lower().strip()
+        content = " ".join(content.split())
+        return hashlib.sha256(content.encode()).hexdigest()[:32]
     
     def ingest_from_source(
         self,
@@ -218,7 +325,7 @@ class IntakeEngine:
     ) -> IntakeResult:
         """
         Core ingestion logic for a UnifiedTranscript.
-        
+
         Steps:
         1. Validate transcript
         2. Check deduplication
@@ -228,110 +335,136 @@ class IntakeEngine:
         6. Record in dedup database
         """
         validation_errors = []
-        
+
         # Step 1: Validate
         validation_results = TranscriptValidator.validate(transcript)
         errors = [v for v in validation_results if v.severity == ValidationSeverity.ERROR]
         warnings = [v for v in validation_results if v.severity == ValidationSeverity.WARNING]
-        
+
         if errors:
             return IntakeResult(
                 success=False,
                 error_message=f"Validation failed: {errors[0].message}",
                 validation_results=errors,
             )
-        
+
         if warnings:
             validation_errors = warnings
-        
-        # Step 2: Deduplication
+
+        # Step 2: Deduplication inputs
         content_hash = self._compute_content_hash(transcript)
-        meeting_date = self._resolve_date(transcript) # Moved up for dedup logic
-        
+        meeting_date = self._resolve_date(transcript)
+        normalized_participants = self._normalize_participants_list(transcript.participants)
+        participant_hash = self._compute_participant_hash(normalized_participants)
+        fingerprint = self._compute_fingerprint(transcript, meeting_date, normalized_participants)
+
         if not force:
-            existing = self._check_duplicate(transcript, content_hash, meeting_date)
+            existing = self._check_duplicate(transcript, content_hash, meeting_date, fingerprint)
             if existing:
+                logger.info("Duplicate fingerprint %s matched existing folder %s", fingerprint, existing)
                 return IntakeResult(
                     success=False,
                     error_message=f"Duplicate detected: {existing}",
                     duplicate_of=existing,
                 )
-        
+
         # Step 4: Generate folder name
         folder_name = self._generate_folder_name(transcript, meeting_date)
         folder_path = self.inbox_path / folder_name
-        
+
         # Handle name collision
         if folder_path.exists():
             counter = 1
             while folder_path.exists():
                 folder_path = self.inbox_path / f"{folder_name}_{counter}"
                 counter += 1
-        
+
         # Step 5: Create folder and files
         try:
             folder_path.mkdir(parents=True, exist_ok=True)
-            
+
             # Write transcript.md
             transcript_file = folder_path / "transcript.md"
             self._write_transcript_md(transcript, transcript_file)
-            
+
             # Write transcript.jsonl (structured format)
             jsonl_file = folder_path / "transcript.jsonl"
             self._write_transcript_jsonl(transcript, jsonl_file)
-            
+
             # Write metadata.json
             metadata_file = folder_path / "metadata.json"
-            self._write_metadata(transcript, meeting_date, metadata_file)
+            self._write_metadata(transcript, meeting_date, metadata_file, fingerprint, participant_hash)
 
             # Write manifest.json so downstream tick/process can run immediately
             manifest_file = folder_path / "manifest.json"
-            self._write_manifest(transcript, meeting_date, folder_path.name, manifest_file)
-            
+            self._write_manifest(
+                transcript,
+                meeting_date,
+                folder_path.name,
+                manifest_file,
+                fingerprint,
+                participant_hash,
+            )
+
             logger.info(f"Created meeting folder: {folder_path}")
-            
+
         except Exception as e:
             logger.exception(f"Failed to create meeting folder: {folder_path}")
             return IntakeResult(
                 success=False,
                 error_message=f"Failed to create folder: {e}",
             )
-        
+
         # Step 6: Record in dedup database
-        self._record_ingestion(transcript, content_hash, str(folder_path), meeting_date)
-        
+        self._record_ingestion(
+            transcript,
+            content_hash,
+            str(folder_path),
+            meeting_date,
+            fingerprint,
+            participant_hash,
+        )
+
         return IntakeResult(
             success=True,
             folder_path=str(folder_path),
             folder_name=folder_path.name,
             validation_results=validation_errors if validation_errors else [],
         )
-    
-    def _compute_content_hash(self, transcript: UnifiedTranscript) -> str:
-        """Compute SHA-256 hash of transcript content for deduplication"""
-        # Normalize: lowercase, strip whitespace, remove timestamps
-        content = transcript.full_text.lower().strip()
-        content = " ".join(content.split())  # Normalize whitespace
-        return hashlib.sha256(content.encode()).hexdigest()[:32]
-    
+
     def _check_duplicate(
         self,
         transcript: UnifiedTranscript,
         content_hash: str,
         meeting_date: date,
+        fingerprint: str,
     ) -> Optional[str]:
         """
         Check if transcript is a duplicate.
-        
+
         Layers:
-        1. Source ID match (exact)
-        2. Content hash match (cross-source semantic)
-        3. Time-window match (+/- 24 hours on same date with overlapping title/participants)
+        0. Canonical fingerprint (cross-source, time-bucket + date + participants)
+        1. Source ID match (exact, same-source re-delivery)
+        2. Content hash match (cross-source identical text)
+        3. Title overlap on same date (legacy heuristic)
+        4. Ingestion-time proximity + participant overlap (catches Fathom/Fireflies
+           with different titles and slightly different participant names)
         """
         conn = sqlite3.connect(self.dedup_db_path)
         cursor = conn.cursor()
-        
-        # 1. Check by source_id first (most reliable)
+
+        # 0. Check fingerprint first to catch near-simultaneous duplicates
+        if fingerprint:
+            cursor.execute(
+                "SELECT folder_path FROM ingested_transcripts WHERE fingerprint = ?",
+                (fingerprint,)
+            )
+            row = cursor.fetchone()
+            if row:
+                conn.close()
+                return row[0]
+
+        # 1. Check by source_id next (most reliable)
         if transcript.source_id:
             cursor.execute(
                 "SELECT folder_path FROM ingested_transcripts WHERE source = ? AND source_id = ?",
@@ -341,7 +474,7 @@ class IntakeEngine:
             if row:
                 conn.close()
                 return row[0]
-        
+
         # 2. Check by content hash
         cursor.execute(
             "SELECT folder_path FROM ingested_transcripts WHERE content_hash = ?",
@@ -352,51 +485,77 @@ class IntakeEngine:
             conn.close()
             return row[0]
 
-        # 3. Time-window / Semantic match
-        # Check if any meeting exists on the SAME DATE with a SIMILAR TITLE
-        # This catches "V/Mihir Sync" vs "Mihir/Vrijen Meeting" from different bots
+        # 3. Title overlap on same date (existing heuristic)
         date_str = meeting_date.isoformat()
         cursor.execute(
             "SELECT folder_path, title FROM ingested_transcripts WHERE meeting_date = ?",
             (date_str,)
         )
         rows = cursor.fetchall()
-        
+
         if transcript.title:
             current_title = transcript.title.lower()
             for folder_path, existing_title in rows:
                 if not existing_title: continue
-                
-                # Check for significant title overlap
-                # (e.g. "Careerspan" in both, or "Mihir" in both)
+
                 existing_lower = existing_title.lower()
-                
-                # Simple Jaccard-ish similarity or keyword overlap
-                current_words = set(re.findall(r'\w+', current_title))
-                existing_words = set(re.findall(r'\w+', existing_lower))
-                
-                # Ignore common words
-                common_ignore = {'sync', 'meeting', 'call', 'with', 'and', 'zoom', 'fathom', 'fireflies', 
+
+                current_words = set(re.findall(r"\w+", current_title))
+                existing_words = set(re.findall(r"\w+", existing_lower))
+
+                common_ignore = {'sync', 'meeting', 'call', 'with', 'and', 'zoom', 'fathom', 'fireflies',
                                  'project', 'review', 'kickoff', 'demo', 'standup', 'update', 'check', 'in'}
                 current_words -= common_ignore
                 existing_words -= common_ignore
-                
+
                 overlap = current_words.intersection(existing_words)
-                
-                # Require EITHER:
-                # - At least 2 shared unique words, OR
-                # - Overlap > 50% of the smaller set of unique words
+
                 min_unique = min(len(current_words), len(existing_words))
                 overlap_ratio = len(overlap) / min_unique if min_unique > 0 else 0
-                
+
                 if (len(overlap) >= 2) or (overlap_ratio > 0.5 and len(overlap) >= 1 and min_unique >= 2):
-                    # Strong title similarity on same day → likely a dupe
                     conn.close()
                     return folder_path
 
+        # 4. Cross-source ingestion-time proximity
+        #    If a transcript from a DIFFERENT source was ingested on the same date
+        #    within DEDUP_WINDOW_SECONDS, it's the same meeting. This is the primary
+        #    catch for Fathom vs Fireflies where titles differ completely
+        #    ("Impromptu Google Meet" vs "kgb-eonn-wbg") and participant lists
+        #    don't align (Fathom may only list the host).
+        #    Rationale: you never have two separate meetings, each captured by only
+        #    one transcription service, ending within 10 minutes of each other.
+        cursor.execute(
+            "SELECT folder_path, ingested_at, source FROM ingested_transcripts WHERE meeting_date = ?",
+            (date_str,)
+        )
+        proximity_rows = cursor.fetchall()
+
+        for folder_path, ingested_at_str, existing_source in proximity_rows:
+            if not ingested_at_str:
+                continue
+            if existing_source == transcript.source.value:
+                continue
+            try:
+                ingested_at = datetime.fromisoformat(ingested_at_str)
+                if ingested_at.tzinfo is None:
+                    ingested_at = ingested_at.replace(tzinfo=timezone.utc)
+                now_dt = datetime.now(timezone.utc)
+                delta = abs((now_dt - ingested_at).total_seconds())
+            except (ValueError, TypeError):
+                continue
+
+            if delta <= self.DEDUP_WINDOW_SECONDS:
+                logger.info(
+                    "Cross-source dedup: %s ingested %ds after %s entry for %s — treating as duplicate",
+                    transcript.source.value, int(delta), existing_source, date_str,
+                )
+                conn.close()
+                return folder_path
+
         conn.close()
         return None
-    
+
     def _resolve_date(self, transcript: UnifiedTranscript) -> date:
         """
         Resolve meeting date using V's priority order:
@@ -533,6 +692,8 @@ class IntakeEngine:
         transcript: UnifiedTranscript,
         meeting_date: date,
         path: Path,
+        fingerprint: str,
+        participant_hash: str,
     ):
         """Write metadata.json for meeting folder"""
         metadata = {
@@ -545,9 +706,11 @@ class IntakeEngine:
             "duration_seconds": transcript.duration_seconds,
             "recording_url": transcript.recording_url,
             "ingested_at": datetime.now().isoformat(),
-            "state": "raw",  # For N5 meeting pipeline: raw → [M] → [P] → [C]
+            "state": "raw",
+            "fingerprint": fingerprint,
+            "participant_hash": participant_hash,
         }
-        
+
         with open(path, "w") as f:
             json.dump(metadata, f, indent=2)
 
@@ -557,6 +720,8 @@ class IntakeEngine:
         meeting_date: date,
         folder_name: str,
         path: Path,
+        fingerprint: str,
+        participant_hash: str,
     ):
         """Write v3 manifest seed so meeting_cli tick can process this folder."""
         now_iso = datetime.utcnow().isoformat() + "Z"
@@ -634,28 +799,35 @@ class IntakeEngine:
                 "archived_at": None,
             },
             "transcript_file": "transcript.md",
+            "dedup": {
+                "fingerprint": fingerprint,
+                "participant_hash": participant_hash,
+                "window_seconds": self.DEDUP_WINDOW_SECONDS,
+            },
         }
 
         with open(path, "w") as f:
             json.dump(manifest, f, indent=2)
-    
+
     def _record_ingestion(
         self,
         transcript: UnifiedTranscript,
         content_hash: str,
         folder_path: str,
         meeting_date: date,
+        fingerprint: str,
+        participant_hash: str,
     ):
         """Record successful ingestion in dedup database"""
         conn = sqlite3.connect(self.dedup_db_path)
         cursor = conn.cursor()
-        
+
         try:
             cursor.execute(
                 """
                 INSERT OR REPLACE INTO ingested_transcripts 
-                (source, source_id, content_hash, folder_path, ingested_at, title, meeting_date)
-                VALUES (?, ?, ?, ?, ?, ?, ?)
+                (source, source_id, content_hash, folder_path, ingested_at, title, meeting_date, fingerprint, participant_hash)
+                VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
                 """,
                 (
                     transcript.source.value,
@@ -665,6 +837,8 @@ class IntakeEngine:
                     datetime.now().isoformat(),
                     transcript.title,
                     meeting_date.isoformat(),
+                    fingerprint,
+                    participant_hash,
                 )
             )
             conn.commit()

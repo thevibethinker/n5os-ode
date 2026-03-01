@@ -1,0 +1,37 @@
+{
+  "product": "Zoffice",
+  "version": "v2.0.0-rc1",
+  "layer": 2,
+  "requires_layer_0": "n5os-bootstrap >= 1.0",
+  "installed_at": "2026-02-22",
+  "installed_by": "va.zo.computer",
+  "instance": {
+    "name": "Zoffice",
+    "handle": "va",
+    "owner": "V",
+    "parent": null
+  },
+  "capabilities_installed": [
+    "security",
+    "memory",
+    "ingestion",
+    "communication",
+    "orchestration",
+    "zo2zo",
+    "publishing",
+    "hr"
+  ],
+  "staff_installed": [
+    "receptionist",
+    "chief-of-staff",
+    "librarian"
+  ],
+  "schema_version": "1.1",
+  "layer2": {
+    "release_version": "v2.0.0-rc1",
+    "deployment_mode": "manual_versioned_pull",
+    "acceptance_contract": "Zoffice/contracts/mutual-acceptance-v2.0.0-rc1.json",
+    "acceptance_required": true,
+    "acceptance_status": "pending_zoputer_integrity_rebuild"
+  }
+}

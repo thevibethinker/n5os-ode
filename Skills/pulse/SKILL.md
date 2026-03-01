@@ -118,9 +118,19 @@ The validator checks for:
 - **Unfilled placeholders** (`{{PLACEHOLDER}}`, `TODO:`, etc.)
 - **Missing required sections** (Objective, Open Questions, Phase 1, Success Criteria)
 - **Empty sections** (headers without content)
+- **Missing Scenarios** — Drop briefs without a `## Scenarios` section get warnings
+- **Spec completeness** — Drops with `spawn_mode: auto` but `spec_completeness: partial|ambiguous` get warnings
 - **Warnings** (unchecked open questions, stale plans >14 days)
 
 A build should NOT start until validation passes. The `start` command does NOT enforce this automatically — you must run `validate` first.
+
+**Pre-build workflow:**
+1. Run spec-writing skill to extract scenarios from intent (`Skills/spec-writing/SKILL.md`)
+2. Run pulse-interview to decompose into Streams/Drops
+3. Architect creates plan with scenarios distributed into Drop briefs
+4. Optionally write holdout scenarios in `holdout_scenarios/`
+5. Validate plan
+6. Start build
 
 ## Retry Failed Drops
 
@@ -303,6 +313,11 @@ N5/builds/<slug>/
 │   └── D1.1_forensics.json  (if dead)
 ├── launchers/          # Manual drop launchers (auto-generated)
 │   └── D1.2.md
+├── holdout_scenarios/  # Hidden acceptance scenarios (not visible to workers)
+│   └── D1.1_holdouts.yaml
+├── context/            # Pyramid summary context files (for large builds)
+│   ├── overview.md
+│   └── D1.1-context.md
 └── artifacts/          # Build outputs
 ```
 
@@ -741,6 +756,10 @@ python3 Skills/pulse/scripts/pulse_safety.py restore <slug>
 ## Related Files
 
 - `file 'Skills/pulse-interview/SKILL.md'` — Pre-build interview skill
+- `file 'Skills/spec-writing/SKILL.md'` — Pre-build scenario extraction skill
+- `file 'Skills/pulse/references/scenario-patterns.md'` — Common scenario patterns by build type (via spec-writing references)
+- `file 'Skills/pulse/references/holdout-scenarios-template.md'` — Holdout scenario convention
+- `file 'Skills/pulse/references/pyramid-summary-template.md'` — Multi-resolution context files
 - `file 'N5/learnings/SYSTEM_LEARNINGS.json'` — System-wide learnings
 - `file 'N5/config/pulse_control.json'` — Sentinel control state
 - `file 'Documents/System/Build-Orchestrator-System.md'` — Legacy manual system

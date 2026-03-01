@@ -1,0 +1,6 @@
+# Zo2Zo Capability Configuration
+
+parent_instance: "va.zo.computer"
+escalation_timeout_seconds: 300
+skill_install_dir: Skills/
+auto_install_skills: false

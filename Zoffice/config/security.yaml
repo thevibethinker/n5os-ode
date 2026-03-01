@@ -1,0 +1,32 @@
+# Zoffice Security Configuration
+# Controls security gates, trust, and audit behavior.
+
+security:
+  level: strict
+
+  gates:
+    inbound:
+      enabled: true
+      adversarial_detection: true
+      pii_filter: true
+    outbound:
+      enabled: true
+      content_review: true
+
+  trust:
+    trusted_instances:
+      - "va.zo.computer"
+      - "zoputer.zo.computer"
+    trusted_domains:
+      - "zo.computer"
+
+  audit:
+    enabled: true
+    retention_days: 365
+    hash_verification: true
+
+  api_keys:
+    parent_key_env: "ZO_CLIENT_IDENTITY_TOKEN"
+    zo2zo_key_env: "ZO_API_KEY"
+
+custom: {}

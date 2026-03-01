@@ -1,0 +1,23 @@
+# Zoffice Controller Configuration
+# Control-plane state for shadow -> cutover migration.
+
+controller:
+  persona_id: "f439988b-6121-459e-86b9-6581604b637e"
+  mode: shadow
+  intent: "Make zoputer into Zoffice control plane"
+  legacy_policy:
+    disable_at_cutover: true
+    disable_completed: false
+  gates:
+    require_mutual_acceptance_contract: true
+    require_integrity_rebuild_percent: 100
+  acceptance:
+    contract_path: "Zoffice/contracts/mutual-acceptance-v2.0.0-rc1.json"
+    producer_signed: true
+    consumer_signed: false
+    integrity_rebuild_percent: null
+  shadow:
+    started_at_utc: "2026-02-22T04:00:00Z"
+    parity_samples_required: 25
+    parity_samples_passed: 0
+    status: "running"

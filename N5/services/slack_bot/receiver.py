@@ -11,7 +11,7 @@ import logging
 import sys
 import time
 from pathlib import Path
-from typing import Optional
+from typing import Optional, Dict, Any, Tuple
 
 import aiohttp
 from fastapi import FastAPI, Request, Response, HTTPException
@@ -44,6 +44,7 @@ processed_events = set()  # Track recent event IDs to prevent duplicates
 MAX_TRACKED_EVENTS = 1000
 
 from zo_ai_caller import ask_zo
+from candidate_processor import process_candidate_submission, is_candidate_submission
 
 
 def load_config():
@@ -91,15 +92,34 @@ def verify_slack_signature(request_body: bytes, timestamp: str, signature: str) 
     return hmac.compare_digest(expected_signature, signature)
 
 
-def is_user_authorized(user_id: str) -> bool:
-    """Check if user is on the whitelist."""
-    authorized = user_id in config.get("authorized_users", [])
-    
-    if config.get("audit_log", True):
-        status = "AUTHORIZED" if authorized else "UNAUTHORIZED"
-        logger.info(f"Auth check: {user_id} -> {status}")
-    
-    return authorized
+def is_user_authorized(user_id: str, channel_id: Optional[str], event_type: str, channel_type: Optional[str]) -> Tuple[bool, str]:
+    """Check if user is globally authorized or authorized via scoped channel policy."""
+    if user_id in config.get("authorized_users", []):
+        return True, "global_whitelist"
+
+    scoped_users: Dict[str, Dict[str, Any]] = config.get("scoped_authorized_users", {})
+    user_scope: Dict[str, Any] = scoped_users.get(user_id, {})
+
+    if not user_scope:
+        return False, "not_whitelisted"
+
+    allow_dm = bool(user_scope.get("allow_dm", False))
+    allowed_channels = set(user_scope.get("channels", []))
+    channel_routes = config.get("channel_routes", {})
+    allowed_route_keys = set(user_scope.get("route_keys", []))
+
+    if channel_type == "im":
+        return (allow_dm, "scoped_dm_allowed" if allow_dm else "scoped_dm_denied")
+
+    if channel_id and channel_id in allowed_channels:
+        return True, "scoped_channel_match"
+
+    if channel_id and allowed_route_keys:
+        route_key = channel_routes.get(channel_id)
+        if route_key and route_key in allowed_route_keys:
+            return True, "scoped_route_match"
+
+    return False, "scoped_channel_denied"
 
 
 def check_rate_limit(user_id: str) -> bool:
@@ -129,8 +149,8 @@ def check_rate_limit(user_id: str) -> bool:
 async def forward_to_conversation_api(message: str, user_id: str, context: dict) -> str:
     """Forward message to Zo (simplified direct integration)."""
     try:
-        # Use real Zo AI integration
-        response = ask_zo(message, user_id, context)
+        # ask_zo is synchronous/subprocess-based; run it off the event loop.
+        response = await asyncio.to_thread(ask_zo, message, user_id, context)
         logger.info(f"Generated response: {response[:100]}...")
         return response
     except Exception as e:
@@ -148,6 +168,87 @@ async def send_slack_message(channel: str, text: str, thread_ts: Optional[str] =
         )
     except SlackApiError as e:
         logger.error(f"Error sending Slack message: {e}")
+
+
+def resolve_reply_target(event: Dict[str, Any]) -> Optional[str]:
+    """
+    Reply behavior:
+    - If mention happened inside a thread, stay in thread.
+    - Otherwise reply as top-level (None thread_ts).
+    - DMs continue using thread_ts for context continuity.
+    """
+    if event.get("channel_type") == "im":
+        return event.get("ts")
+    return event.get("thread_ts")
+
+
+async def process_event_async(event: Dict[str, Any], user_id: str):
+    """Process event in background after immediate Slack ACK."""
+    event_type = event.get("type")
+    channel = event.get("channel")
+    channel_type = event.get("channel_type")
+    route_key = config.get("channel_routes", {}).get(channel, "default")
+
+    if event_type == "app_mention":
+        message = event.get("text", "")
+        message = message.split(">", 1)[-1].strip()
+
+        if not message:
+            message = "Hello! How can I help you?"
+
+        reply_thread_ts = resolve_reply_target(event)
+
+        # Candidate submission detection for recruiting channels
+        if route_key == "emb_cx_recruiting" and is_candidate_submission(event):
+            logger.info(f"[bg] Candidate submission detected from {user_id} in {channel}")
+            try:
+                response = await process_candidate_submission(
+                    event, slack_client, channel, config.get("bot_token", "")
+                )
+            except Exception as e:
+                logger.error(f"[bg] Candidate processing error: {e}", exc_info=True)
+                response = f"Error processing candidate submission: {str(e)[:200]}. Please try again or contact V."
+            await send_slack_message(channel, response, reply_thread_ts)
+            logger.info(f"[bg] Candidate processing response posted to {channel}")
+            return
+
+        logger.info(f"[bg] Processing mention from {user_id} in {channel} route={route_key}: '{message}'")
+
+        context = {
+            "channel": channel,
+            "channel_type": channel_type,
+            "thread_ts": event.get("thread_ts") or event.get("ts"),
+            "reply_thread_ts": reply_thread_ts,
+            "event_type": "mention",
+            "route_key": route_key,
+            "top_level_reply": reply_thread_ts is None
+        }
+        response = await forward_to_conversation_api(message, user_id, context)
+
+        await send_slack_message(channel, response, reply_thread_ts)
+        logger.info(f"[bg] Response posted to channel={channel} thread_ts={reply_thread_ts}")
+        return
+
+    if event_type == "message" and channel_type == "im":
+        message = event.get("text", "")
+        reply_thread_ts = resolve_reply_target(event)
+
+        logger.info(f"[bg] Processing DM from {user_id}: '{message}'")
+
+        context = {
+            "channel": channel,
+            "channel_type": channel_type,
+            "event_type": "dm",
+            "route_key": route_key,
+            "reply_thread_ts": reply_thread_ts
+        }
+        response = await forward_to_conversation_api(message, user_id, context)
+
+        await send_slack_message(channel, response, reply_thread_ts)
+        logger.info("[bg] DM response sent")
+        return
+
+    logger.info(f"[bg] Ignoring unsupported event type={event_type}")
 
 
 @app.on_event("startup")
@@ -205,75 +306,37 @@ async def slack_events(request: Request):
         event = data.get("event", {})
         event_type = event.get("type")
         user_id = event.get("user")
+        channel_id = event.get("channel")
+        channel_type = event.get("channel_type")
         
         # Ignore bot messages
         if event.get("bot_id"):
             return Response(status_code=200)
         
-        logger.info(f"Event: {event_type} from user {user_id}")
+        logger.info(f"Event: {event_type} from user {user_id} channel={channel_id}")
         
         # Check authorization
-        if not is_user_authorized(user_id):
-            logger.warning(f"Unauthorized access attempt by {user_id}")
-            # Silently ignore (don't even acknowledge)
+        authorized, reason = is_user_authorized(user_id, channel_id, event_type, channel_type)
+        if config.get("audit_log", True):
+            status = "AUTHORIZED" if authorized else "UNAUTHORIZED"
+            logger.info(f"Auth check: user={user_id} channel={channel_id} type={event_type} -> {status} ({reason})")
+        if not authorized:
+            logger.warning(f"Unauthorized access attempt by {user_id} ({reason})")
             return Response(status_code=200)
         
         # Check rate limit
         if not check_rate_limit(user_id):
-            await send_slack_message(
-                event.get("channel"),
-                "⚠️ Rate limit exceeded. Please wait a moment before sending more messages.",
-                event.get("thread_ts") or event.get("ts")
+            asyncio.create_task(
+                send_slack_message(
+                    channel_id,
+                    "⚠️ Rate limit exceeded. Please wait a moment before sending more messages.",
+                    resolve_reply_target(event)
+                )
             )
             return Response(status_code=200)
         
-        # Handle app mentions
-        if event_type == "app_mention":
-            message = event.get("text", "")
-            # Remove bot mention from message
-            message = message.split(">", 1)[-1].strip()
-            
-            # If message is empty after removing mention, provide helpful prompt
-            if not message:
-                message = "Hello! How can I help you?"
-            
-            channel = event.get("channel")
-            thread_ts = event.get("thread_ts") or event.get("ts")
-            
-            logger.info(f"Processing mention: '{message}' in {channel}")
-            
-            # Forward to conversation API
-            context = {
-                "channel": channel,
-                "thread_ts": thread_ts,
-                "event_type": "mention"
-            }
-            response = await forward_to_conversation_api(message, user_id, context)
-            
-            # Send response
-            logger.info(f"Sending response to channel {channel}")
-            await send_slack_message(channel, response, thread_ts)
-            logger.info("Response sent successfully")
-        
-        # Handle direct messages
-        elif event_type == "message" and event.get("channel_type") == "im":
-            message = event.get("text", "")
-            channel = event.get("channel")
-            thread_ts = event.get("ts")  # Get message timestamp for threading
-            
-            logger.info(f"Processing DM: '{message}'")
-            
-            # Forward to conversation API
-            context = {
-                "channel": channel,
-                "event_type": "dm"
-            }
-            response = await forward_to_conversation_api(message, user_id, context)
-            
-            # Send response
-            logger.info(f"Sending response to channel {channel}")
-            await send_slack_message(channel, response, thread_ts)  # Pass thread_ts
-            logger.info("Response sent successfully")
+        # Slack requires quick ACK. Process in background.
+        asyncio.create_task(process_event_async(event, user_id))
     
     return Response(status_code=200)
 
@@ -288,8 +351,6 @@ async def reload_config():
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8775, log_level="info")
-
-
 
 
 

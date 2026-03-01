@@ -1,0 +1,14 @@
+# Orchestration Capability Configuration
+
+scheduler_dir: Zoffice/capabilities/orchestration/scheduler
+default_timezone: America/New_York
+
+workflow_defaults:
+  states:
+    - intake
+    - classify
+    - route
+    - process
+    - respond
+    - close
+  initial_state: intake

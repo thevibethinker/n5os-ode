@@ -1,0 +1,11 @@
+{
+  "protected": true,
+  "reason": "Contains PII detected during conversation close",
+  "created": "2026-02-12T21:03:47.436208+00:00",
+  "created_by": "user",
+  "contains_pii": true,
+  "pii_categories": [
+    "phone"
+  ],
+  "pii_note": "PII detected during conversation close (con_lkY7NwIwvFy6QQZu)"
+}
