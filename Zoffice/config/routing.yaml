@@ -1,0 +1,35 @@
+# Zoffice Routing Configuration
+# Maps inbound channels + intent patterns to employees.
+
+routes:
+  voice:
+    default: receptionist
+    patterns:
+      - match: "schedule|appointment|calendar"
+        route: chief-of-staff
+  email:
+    default: chief-of-staff
+    patterns:
+      - match: "\\[KNOWLEDGE\\]"
+        route: librarian
+      - match: "\\[JD\\]|\\[MEETING\\]|\\[ADMIN\\]"
+        route: chief-of-staff
+  sms:
+    default: receptionist
+    patterns: []
+  zo2zo:
+    default: receptionist
+    patterns:
+      - match: "skill_bundle|capability_transfer"
+        route: chief-of-staff
+  webhook:
+    default: chief-of-staff
+    patterns:
+      - match: "github|stripe"
+        route: chief-of-staff
+      - match: "vapi"
+        route: receptionist
+
+fallback: receptionist
+
+custom: {}

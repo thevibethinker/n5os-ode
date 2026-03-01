@@ -1,1 +1,0 @@
-{"entities": [{"name": "recall-webhook", "type": "TOOL", "context": "A webhook service used for HTTP requests"}, {"name": "Zocomputer", "type": "ORG", "context": "The organization associated with the public URL of the webhook service"}], "relationships": []}

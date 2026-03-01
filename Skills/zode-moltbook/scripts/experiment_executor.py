@@ -40,9 +40,9 @@ ET = ZoneInfo("America/New_York")
 
 CONFIG = {
     "opportunity_gate": 75.0,
-    "quality_gate": 8.5,
+    "quality_gate": 7.5,
     "headroom_gate": 0.40,
-    "risk_gate": 0.20,
+    "risk_gate": 0.30,
     "min_cycle_spacing_minutes": 30,
     "feed_limit": 60,
 }
@@ -293,7 +293,8 @@ def _pick_opportunity(scan_result: dict, snapshot: dict) -> tuple[dict | None, f
             continue
         if o.get("post_id") in recent_targeted:
             continue
-        if float(o.get("score", 0.0) or 0.0) < score_threshold:
+        priority_mention = bool(o.get("priority_mention", False))
+        if (not priority_mention) and float(o.get("score", 0.0) or 0.0) < score_threshold:
             continue
 
         author_strength = 0.0
@@ -302,14 +303,21 @@ def _pick_opportunity(scan_result: dict, snapshot: dict) -> tuple[dict | None, f
                 author_strength = float(row.get("interactions_per_comment", 0.0) or 0.0)
                 break
 
-        commentator_ok = (top_commentator_thresh <= 0.0) or (author_strength >= top_commentator_thresh)
+        commentator_ok = priority_mention or (top_commentator_thresh <= 0.0) or (author_strength >= top_commentator_thresh)
         if commentator_ok:
             candidates.append((o, score_threshold))
 
     if not candidates:
         return None, score_threshold
 
-    candidates.sort(key=lambda x: (float(x[0].get("score", 0.0) or 0.0), bool(x[0].get("has_rapport", False))), reverse=True)
+    candidates.sort(
+        key=lambda x: (
+            bool(x[0].get("priority_mention", False)),
+            float(x[0].get("score", 0.0) or 0.0),
+            bool(x[0].get("has_rapport", False)),
+        ),
+        reverse=True,
+    )
     return candidates[0][0], score_threshold
 
 

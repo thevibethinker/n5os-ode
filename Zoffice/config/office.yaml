@@ -1,0 +1,15 @@
+# Zoffice Identity Configuration
+# This file defines WHO this office is.
+
+office:
+  name: "Zoffice"
+  handle: "va"
+  owner: "V"
+  domain: "va.zo.space"
+  parent: null
+  version: "v2.0.0-rc1"
+  installed_at: "2026-02-22"
+
+custom:
+  deployment_mode: "manual_versioned_pull"
+  release_channel: "rc"

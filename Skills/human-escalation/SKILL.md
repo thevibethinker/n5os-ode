@@ -1,43 +1,74 @@
 ---
+created: 2026-02-10
+last_edited: 2026-02-10
+version: 1.0
+provenance: con_ShvJ5HyUhiehkyDu
 name: human-escalation
 description: Notify V via SMS when human decision input is needed during autonomous operations. Integrates with pending_decisions store to send formatted notifications with decision context and reminder logic based on priority levels.
 compatibility: Created for Zo Computer
 metadata:
   author: va.zo.computer
+  build: zoputer-autonomy-v2
+  drop: D3.2
 ---
 
 # Human Escalation Skill
 
-Notify V via SMS when human decision input is needed during autonomous operations.
+Notify V via SMS when autonomous operations require human decision input.
 
 ## Purpose
 
-When autonomous operations encounter decisions requiring human judgment, this skill sends SMS notifications to V with:
-- Brief decision summary (< 160 chars) 
-- Decision priority level
-- Reference ID for full context retrieval
-- Reminder scheduling based on priority
+When either va or zoputer (or both) have low confidence on a decision (< 0.5), this skill escalates to V for human judgment. This is the notification layer of the Human-in-the-Loop (HITL) system.
 
-## Integration Points
+## When to Use
 
-- **pending_decisions store**: Reads decision data via `pending_decisions.py`
-- **SMS delivery**: Uses Zo's `send_sms_to_user` capability
-- **Reminder logic**: Tracks notification state to avoid spam
+- A pending decision exists in the store with status `pending`
+- Autonomous workflows need human input before proceeding
+- Critical decisions require explicit human approval
+- Confidence thresholds are not met for autonomous action
+
+## Integration
+
+This skill integrates with:
+- **pending_decisions store** (`N5/scripts/pending_decisions.py`) - Source of decisions needing notification
+- **SMS capability** (`send_sms_to_user`) - Delivery mechanism
+- **Scheduled agents** - For periodic checking and reminders
 
 ## Usage
 
-### Direct notification
+### Send notification for a specific decision:
 ```bash
-python3 Skills/human-escalation/scripts/notify.py <decision_id> [--immediate]
+python3 Skills/human-escalation/scripts/notify.py send <decision_id>
 ```
 
-### Orchestrated checking
-```bash 
-python3 N5/scripts/escalation_notifier.py check  # Check all pending
-python3 N5/scripts/escalation_notifier.py status  # Show notification state
+### Check for decisions needing notification:
+```bash
+python3 Skills/human-escalation/scripts/notify.py check
+```
+
+### View notification status:
+```bash
+python3 Skills/human-escalation/scripts/notify.py status
+```
+
+### Force immediate reminder:
+```bash
+python3 Skills/human-escalation/scripts/notify.py remind <decision_id>
+```
+
+## Orchestrator Script
+
+The orchestrator at `N5/scripts/escalation_notifier.py` provides a higher-level interface:
+
+```bash
+python3 N5/scripts/escalation_notifier.py check   # Check and send pending
+python3 N5/scripts/escalation_notifier.py send <id>  # Force send specific
+python3 N5/scripts/escalation_notifier.py status  # Show notification status
 ```
 
 ## SMS Format
+
+Messages follow a compact format (< 160 chars):
 
 ```
 🔔 Decision needed ({priority})
@@ -56,16 +87,25 @@ Reply: n5 decision d7f3
 
 ## Reminder Schedule
 
-- **low**: No reminders (initial notification only)
-- **normal**: No reminders (initial notification only) 
-- **high**: Reminder at 6 hours
-- **critical**: Reminders at 2h and 1h before expiry
+| Priority | Reminders |
+|----------|-----------|
+| low      | None |
+| normal   | None (initial only) |
+| high     | 6h before expiry |
+| critical | 2h and 1h before expiry |
 
-## Notification State
+## Response Handling
 
-Tracks whether initial notifications and reminders have been sent to prevent duplicate alerts.
+V can respond via SMS with:
+- `n5 decision <short_id>` - View full context
+- `n5 decision <short_id> approve` - Approve the action
+- `n5 decision <short_id> reject` - Reject the action
+- `n5 decision <short_id> <custom response>` - Provide custom resolution
+
+Note: Response handling is implemented by D3.3 (SMS Decision Resolver).
 
 ## Files
 
-- `scripts/notify.py`: Core notification logic
-- Integrates with `N5/scripts/escalation_notifier.py` for orchestrated checking
+- `SKILL.md` - This documentation
+- `scripts/notify.py` - Core notification logic
+- `N5/scripts/escalation_notifier.py` - Orchestrator script

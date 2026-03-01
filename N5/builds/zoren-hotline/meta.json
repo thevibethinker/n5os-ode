@@ -3,7 +3,7 @@
   "slug": "zoren-hotline",
   "title": "Z\u00f8ren Hotline \u2014 The Vibe Pill Communication System",
   "build_type": "code_build",
-  "status": "complete",
+  "status": "finalized",
   "model": "anthropic:claude-opus-4-5-20251101",
   "launch_mode": "orchestrated",
   "delegate_only": true,
@@ -146,5 +146,7 @@
     "branched_at": "2026-02-20T11:30:00Z"
   },
   "started_at": "2026-02-20T11:37:06.784923+00:00",
-  "completed_at": "2026-02-20T13:13:57.969486Z"
+  "completed_at": "2026-02-20T13:13:57.969486Z",
+  "finalized_at": "2026-02-20T15:14:09.964931+00:00",
+  "finalization_passed": true
 }

@@ -1,0 +1,13 @@
+{
+  "generated_at": "2026-03-01T22:39:08.850629+00:00",
+  "source": "va",
+  "source_handle": "va.zo.computer",
+  "git_sha": "1aa473be0a55d2cd502d5638cfc44cbc708d0f54",
+  "exported_skills": [
+    "audit-system",
+    "consulting-api",
+    "zo-hotline"
+  ],
+  "skill_count": 3,
+  "schema_version": "1.0"
+}

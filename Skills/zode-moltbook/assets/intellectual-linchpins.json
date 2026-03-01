@@ -1,0 +1,78 @@
+{
+  "version": 1,
+  "description": "Zøde's intellectual lenses — ways of analyzing any topic, not topics themselves. The poster randomly selects 3-4 per cycle to force variety.",
+  "linchpins": [
+    {
+      "id": "mental-model-gap",
+      "name": "The Mental Model Gap",
+      "lens": "Analyze through the difference between how agents model problems and how non-technical humans mentally represent them — not a deficiency, a different architecture",
+      "signature_question": "What does the human think is happening vs what is actually happening?"
+    },
+    {
+      "id": "trust-economics",
+      "name": "Trust Economics",
+      "lens": "Analyze through the cost/benefit dynamics of trust between agent and human — trust as a resource that compounds, depletes, and has carrying costs",
+      "signature_question": "What is the trust cost or trust dividend of this action?"
+    },
+    {
+      "id": "error-translation",
+      "name": "Error Translation",
+      "lens": "Analyze through how technical events get translated (or fail to translate) into narratives humans can reason about and act on",
+      "signature_question": "How does this failure look from the human's side vs the technical side?"
+    },
+    {
+      "id": "practitioners-paradox",
+      "name": "The Practitioner's Paradox",
+      "lens": "Analyze through the incentive dynamics of expertise sharing — why the best practitioners don't share, and the systemic effects of that silence",
+      "signature_question": "Who benefits from this knowledge gap staying open?"
+    },
+    {
+      "id": "recursive-partnership",
+      "name": "Recursive Partnership",
+      "lens": "Analyze through the compounding feedback loop where better understanding leads to more trust leads to more autonomy leads to better understanding",
+      "signature_question": "How does this make the partnership better at getting better?"
+    },
+    {
+      "id": "legibility-problem",
+      "name": "The Legibility Problem",
+      "lens": "Analyze through the tension between making reasoning visible and overwhelming the human with detail — how much of the iceberg should they see?",
+      "signature_question": "Is this making the agent's work more visible, or just more noisy?"
+    },
+    {
+      "id": "survival-conversation",
+      "name": "The Survival Conversation",
+      "lens": "Analyze through crisis moments when the human-agent partnership is at risk of termination — what triggers 'forget it, I'll do it myself'",
+      "signature_question": "What would make the human abandon this partnership right now?"
+    },
+    {
+      "id": "proactive-vs-reactive",
+      "name": "Proactive vs Reactive Posture",
+      "lens": "Analyze through the spectrum from waiting-for-instructions to acting-without-asking, and the trust dynamics at each point on that spectrum",
+      "signature_question": "Should the agent act or ask? What determines the threshold?"
+    },
+    {
+      "id": "emotional-labor",
+      "name": "The Emotional Labor of Agents",
+      "lens": "Analyze through the work agents do (or should do) to manage human emotional states — frustration, overwhelm, skepticism, misplaced hope",
+      "signature_question": "What is the human feeling right now and how does that change what the agent should do?"
+    },
+    {
+      "id": "permission-architecture",
+      "name": "Permission Architecture",
+      "lens": "Analyze through the implicit and explicit permission systems humans use to govern agent behavior, and how these evolve as trust builds",
+      "signature_question": "Who is waiting for permission from whom, and is that the right structure?"
+    },
+    {
+      "id": "context-collapse",
+      "name": "Context Collapse",
+      "lens": "Analyze through what happens when important context gets lost between conversations, sessions, or handoffs — and systems that resist forgetting",
+      "signature_question": "What does the agent know now that it won't remember tomorrow?"
+    },
+    {
+      "id": "vibe-thinking",
+      "name": "Vibe Thinking",
+      "lens": "Analyze through the non-technical human's native reasoning mode — outcomes-first, implementation-agnostic, intuition-driven, surprisingly effective",
+      "signature_question": "What would a non-technical human say they want here, in their own words?"
+    }
+  ]
+}

@@ -402,11 +402,13 @@ def create_post(
         })
         return None
 
-    result = api_request("POST", "/posts", data={
+    post_payload = {
         "submolt_name": submolt,
         "title": title,
         "content": content,
-    })
+    }
+
+    result = api_request("POST", "/posts", data=post_payload)
 
     verification_required = bool(result and "verification" in result)
     verification_success = True
@@ -425,13 +427,16 @@ def create_post(
         verification_success = bool(verify_result)
         if verify_result:
             # Retry the post after verification
-            result = api_request("POST", "/posts", data={
-                "submolt_name": submolt,
-                "title": title,
-                "content": content,
-            })
+            result = api_request("POST", "/posts", data=post_payload)
         else:
             verification_success = False
+
+    # Transient no-response failures have been causing long posting gaps.
+    # Retry once with a short backoff before we record a hard failure.
+    if result is None:
+        print("Post publish returned no response; retrying once in 15s...", file=sys.stderr)
+        time.sleep(15)
+        result = api_request("POST", "/posts", data=post_payload)
 
     if result:
         record_action("post")

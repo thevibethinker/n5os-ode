@@ -1,0 +1,30 @@
+# Zoffice Capabilities Configuration
+# Tracks which capabilities are installed and active.
+
+capabilities:
+  security:
+    status: active
+    level: strict
+  memory:
+    status: active
+    db: Zoffice/data/office.db
+  ingestion:
+    status: active
+    channels: [email, voice, webhook, zo2zo]
+  communication:
+    status: active
+    channels: [email, sms, zo2zo]
+  orchestration:
+    status: active
+    dispatchers: [morning, evening, healthcheck]
+  zo2zo:
+    status: active
+    parent: null
+  publishing:
+    status: active
+    platforms: [zo_space]
+  hr:
+    status: active
+    evaluation_cadence: weekly
+
+custom: {}

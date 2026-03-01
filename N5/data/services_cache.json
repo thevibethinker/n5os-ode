@@ -248,12 +248,6 @@
       "protocol": "http"
     },
     {
-      "service_id": "svc_lcsuMyMfTPA",
-      "label": "recall-webhook",
-      "local_port": 8846,
-      "protocol": "http"
-    },
-    {
       "service_id": "svc_KQ7Vu5PQEuQ",
       "label": "store",
       "local_port": 58667,

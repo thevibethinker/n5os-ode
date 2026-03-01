@@ -1,0 +1,180 @@
+{
+  "schema_version": 3,
+  "slug": "rice-capabilities",
+  "title": "Rice Capabilities \u2014 The 8 Infrastructure Modules",
+  "objective": "Implement all 8 Zoffice capabilities (Security, Memory, Ingestion, Communication, Orchestration, Zo2Zo, Publishing, HR) as modular infrastructure inside Zoffice/capabilities/",
+  "created": "2026-02-21",
+  "status": "complete",
+  "completed_at": "2026-02-22T02:04:20.900879+00:00",
+  "type": "code_build",
+  "build_mode": "learning",
+  "model": "anthropic:claude-opus-4-5-20251101",
+  "launch_mode": "orchestrated",
+  "delegate_only": true,
+  "first_wins": false,
+  "learning_landscape_generated": false,
+  "orchestrator_convo_id": "con_6F6fVNruJQtAc6zW",
+  "lineage": {
+    "parent_type": "build",
+    "parent_ref": "rice-core",
+    "parent_conversation": null,
+    "moment": "Stream 2 complete, launching Stream 3 capabilities build",
+    "branched_at": "2026-02-22T01:05:00Z"
+  },
+  "waves": {
+    "W1": [
+      "D1.1",
+      "D1.2"
+    ],
+    "W2": [
+      "D2.1",
+      "D2.2"
+    ],
+    "W3": [
+      "D3.1",
+      "D3.2",
+      "D3.3",
+      "D3.4"
+    ]
+  },
+  "active_wave": "W3",
+  "drops": {
+    "D1.1": {
+      "name": "Security \u2014 Gates, Audit, PII Filter",
+      "stream": 1,
+      "order": 1,
+      "wave": "W1",
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "started_at": "2026-02-22T01:41:07.577145+00:00",
+      "conversation_id": "spawn_worker_rice-capabilities_D1.1_1771724467",
+      "last_progress_at": "2026-02-22T01:41:07.577145+00:00",
+      "completed_at": "2026-02-22T01:41:53.257484+00:00"
+    },
+    "D1.2": {
+      "name": "Memory \u2014 DB Helpers & Managers",
+      "stream": 2,
+      "order": 1,
+      "wave": "W1",
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "started_at": "2026-02-22T01:41:07.586935+00:00",
+      "conversation_id": "spawn_worker_rice-capabilities_D1.2_1771724467",
+      "last_progress_at": "2026-02-22T01:41:07.586935+00:00",
+      "completed_at": "2026-02-22T01:41:53.257484+00:00"
+    },
+    "D2.1": {
+      "name": "Ingestion \u2014 Handler Framework & Channels",
+      "stream": 1,
+      "order": 2,
+      "wave": "W2",
+      "depends_on": [
+        "D1.1",
+        "D1.2"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "completed_at": "2026-02-22T01:57:34.973163+00:00"
+    },
+    "D2.2": {
+      "name": "Communication \u2014 Dispatch & Approval",
+      "stream": 2,
+      "order": 2,
+      "wave": "W2",
+      "depends_on": [
+        "D1.1",
+        "D1.2"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "completed_at": "2026-02-22T01:57:34.973163+00:00"
+    },
+    "D3.1": {
+      "name": "Orchestration \u2014 Dispatchers & Workflows",
+      "stream": 1,
+      "order": 3,
+      "wave": "W3",
+      "depends_on": [
+        "D2.1",
+        "D2.2"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "completed_at": "2026-02-22T02:04:20.900879+00:00"
+    },
+    "D3.2": {
+      "name": "Zo2Zo \u2014 Trust & Parent Escalation",
+      "stream": 2,
+      "order": 3,
+      "wave": "W3",
+      "depends_on": [
+        "D2.1",
+        "D2.2"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "completed_at": "2026-02-22T02:04:20.900879+00:00"
+    },
+    "D3.3": {
+      "name": "Publishing \u2014 Content Pipeline",
+      "stream": 3,
+      "order": 3,
+      "wave": "W3",
+      "depends_on": [
+        "D2.1",
+        "D2.2"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "completed_at": "2026-02-22T02:04:20.900879+00:00"
+    },
+    "D3.4": {
+      "name": "HR \u2014 Evaluation, Sync, Onboarding",
+      "stream": 4,
+      "order": 3,
+      "wave": "W3",
+      "depends_on": [
+        "D2.1",
+        "D2.2"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "completed_at": "2026-02-22T02:04:20.900879+00:00"
+    }
+  },
+  "broadcasts": [],
+  "task_pool": {
+    "enabled": false,
+    "tasks": [],
+    "max_concurrent_claims": 4,
+    "worker_drops": []
+  },
+  "recovery": {
+    "max_auto_retries": 2,
+    "dead_threshold_seconds": 900,
+    "stale_threshold_hours": 4,
+    "stale_no_progress_minutes": 60,
+    "enable_ai_judgment": true
+  },
+  "workers": {
+    "total": 8,
+    "complete": 0,
+    "in_progress": 0,
+    "blocked": 0,
+    "pending": 8
+  },
+  "started_at": "2026-02-22T01:34:11.459429+00:00",
+  "last_progress_at": "2026-02-22T01:41:13.245103+00:00",
+  "spawn_failures_consecutive": 2,
+  "last_spawn_failure_at": "2026-02-22T01:41:08.696810+00:00"
+}

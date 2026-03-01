@@ -2,6 +2,24 @@
   "authorized_users": [
     "U057L5V3SUA"
   ],
+  "scoped_authorized_users": {
+    "U09J5FFU04A": {
+      "channels": [
+        "C0AGHTMTYHZ"
+      ],
+      "allow_dm": false
+    },
+    "U021N0JSB7V": {
+      "channels": [
+        "C0AH7L9DMDF"
+      ],
+      "allow_dm": false
+    }
+  },
+  "channel_routes": {
+    "C0AGHTMTYHZ": "careerspan_cx",
+    "C0AH7L9DMDF": "emb_cx_recruiting"
+  },
   "signing_secret": "c2eb92311239656f8f1fbb7962eeb13a",
   "bot_token": "xoxb-5255246858917-9782841117974-mZew0VoLxmVwheIMZK4cbZAd",
   "rate_limit_messages": 10,

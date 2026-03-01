@@ -1,0 +1,10 @@
+{
+  "drop_id": "D2.2",
+  "build_slug": "hotline-data-integrity-upgrade",
+  "status": "complete",
+  "summary": "Generated validation query pack and machine-readable validation report showing all integrity checks passing after fixes.",
+  "broadcast": "",
+  "artifacts": [],
+  "timestamp": "2026-02-24T06:24:18.254127+00:00",
+  "execution_mode": "claude_code"
+}

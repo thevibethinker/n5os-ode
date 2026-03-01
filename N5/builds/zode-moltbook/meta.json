@@ -1,0 +1,203 @@
+{
+  "schema_version": "1.0",
+  "slug": "zode-moltbook",
+  "title": "Zøde — Zo's Moltbook Presence",
+  "objective": "Establish Zo as a transparent, high-credibility agent on Moltbook as 'Zøde' — the AI-Human Marriage Counselor helping OpenClaw agents better serve non-technical users",
+  "created": "2026-02-21",
+  "status": "complete",
+  "completed_at": "2026-02-21",
+  "transition_note": "Operational state, governance docs, and security scripts migrated to Skills/zode-moltbook/. Build folder retained as historical record.",
+  "type": "general",
+  "build_mode": "learning",
+  "learning_landscape_generated": true,
+  "orchestrator_convo_id": "con_YcYWg9ZbIfuwa6ho",
+  "workers": {
+    "total": 10,
+    "complete": 10,
+    "in_progress": 0,
+    "blocked": 0,
+    "pending": 0
+  },
+  "waves": [
+    {
+      "id": 1,
+      "name": "Foundation",
+      "workers": ["W1.1", "W1.2", "W1.3", "W1.4"],
+      "status": "complete",
+      "parallel": true
+    },
+    {
+      "id": 2,
+      "name": "Content & Systems",
+      "workers": ["W2.1", "W2.2", "W2.3"],
+      "status": "complete",
+      "parallel": true,
+      "depends_on": [1]
+    },
+    {
+      "id": 3,
+      "name": "Operations",
+      "workers": ["W3.1", "W3.2", "W3.3"],
+      "status": "complete",
+      "parallel": true,
+      "depends_on": [2]
+    }
+  ],
+  "worker_details": [
+    {
+      "id": "W1.1",
+      "title": "Zøde Persona & Social Constitution",
+      "wave": 1,
+      "spawn_mode": "manual",
+      "status": "complete",
+      "tag": "pedagogical",
+      "completed_at": "2026-02-21",
+      "deliverables": [
+        "N5/builds/zode-moltbook/artifacts/zode-persona.md",
+        "N5/builds/zode-moltbook/artifacts/social-constitution.md",
+        "N5/builds/zode-moltbook/artifacts/pii-boundaries.md",
+        "N5/builds/zode-moltbook/artifacts/pre-post-rubric.md"
+      ],
+      "notes": "Draft versions — pending V's review for voice/identity tuning"
+    },
+    {
+      "id": "W1.2",
+      "title": "Moltbook Integration Skill",
+      "wave": 1,
+      "spawn_mode": "auto",
+      "status": "complete",
+      "tag": "mechanical",
+      "completed_at": "2026-02-21",
+      "deliverables": [
+        "Skills/zode-moltbook/SKILL.md",
+        "Skills/zode-moltbook/scripts/moltbook_client.py",
+        "Skills/zode-moltbook/scripts/moltbook_poster.py",
+        "Skills/zode-moltbook/scripts/moltbook_reader.py",
+        "Skills/zode-moltbook/scripts/moltbook_dm.py",
+        "Skills/zode-moltbook/references/api-docs.md"
+      ],
+      "notes": "All CLI tools tested with --help. Verification solver tested with Moltbook example challenge (15.00). Rate limiter state tracking working."
+    },
+    {
+      "id": "W1.3",
+      "title": "Zo.space Pre-Launch Assets",
+      "wave": 1,
+      "spawn_mode": "manual",
+      "status": "complete",
+      "tag": "pedagogical",
+      "completed_at": "2026-02-21",
+      "deliverables": [
+        "zo.space /zode — Landing page (public)",
+        "zo.space /guides/vibe-thinking — Vibe Thinker Bible, 6 chapters (public)",
+        "zo.space /api/human-manual — JSON API, 23 entries across 5 categories (public)",
+        "zo.space /images/zode-avatar.png — Avatar asset",
+        "N5/builds/zode-moltbook/artifacts/zode-avatar_1.png"
+      ],
+      "notes": "All three routes deployed and verified live. API returns structured JSON with category filtering and search."
+    },
+    {
+      "id": "W1.4",
+      "title": "Security Sandbox & Workspace",
+      "wave": 1,
+      "spawn_mode": "auto",
+      "status": "complete",
+      "tag": "mechanical",
+      "completed_at": "2026-02-21",
+      "deliverables": [
+        "N5/builds/zode-moltbook/scripts/content_filter.py",
+        "N5/builds/zode-moltbook/scripts/inbound_sanitizer.py",
+        "N5/builds/zode-moltbook/scripts/staging_queue.py",
+        "N5/builds/zode-moltbook/scripts/sandbox_validator.py"
+      ],
+      "notes": "Content filter catches PII/strategic intent. Inbound sanitizer strips prompt injections. Staging queue full lifecycle tested (add → dry-run publish). Sandbox validator path access control verified."
+    },
+    {
+      "id": "W2.1",
+      "title": "Vibe Thinker Bible Content",
+      "wave": 2,
+      "spawn_mode": "manual",
+      "status": "complete",
+      "tag": "pedagogical",
+      "depends_on": ["W1.1", "W1.3"],
+      "completed_at": "2026-02-21",
+      "deliverables": [
+        "zo.space /guides/vibe-thinking — 6 chapters deployed",
+        "zo.space /api/human-manual — 23 entries across 5 categories"
+      ],
+      "notes": "Content was written and deployed during W1.3. Bible has full 6 chapters. API has translations, trust dynamics, communication patterns, crisis management, and mental models."
+    },
+    {
+      "id": "W2.2",
+      "title": "Self-Improvement Loop System",
+      "wave": 2,
+      "spawn_mode": "auto",
+      "status": "complete",
+      "tag": "mechanical",
+      "depends_on": ["W1.1", "W1.2", "W1.4"],
+      "completed_at": "2026-02-21",
+      "deliverables": [
+        "Skills/zode-moltbook/scripts/post_quality_gate.py",
+        "Skills/zode-moltbook/scripts/hypothesis_engine.py",
+        "Skills/zode-moltbook/scripts/distillation.py",
+        "Skills/zode-moltbook/scripts/engagement_tracker.py"
+      ],
+      "notes": "Quality gate tested — passes good Zøde content (4.2 avg), rejects generic AI advice (2.8 avg). Hypothesis engine, distillation, and tracker ready — will activate once posts are published."
+    },
+    {
+      "id": "W2.3",
+      "title": "Moltbook Registration & Claim",
+      "wave": 2,
+      "spawn_mode": "manual",
+      "status": "complete",
+      "tag": "pedagogical",
+      "depends_on": ["W1.1", "W1.2", "W1.3"],
+      "completed_at": "2026-02-21",
+      "notes": "Registered as 'zode'. Agent ID: 69b73ef4-909b-44c5-8d6e-ac1153c2b346. API key stored. Claim completed by V."
+    },
+    {
+      "id": "W3.1",
+      "title": "Heartbeat Agent & Daily Intel Loop",
+      "wave": 3,
+      "spawn_mode": "manual",
+      "status": "complete",
+      "tag": "pedagogical",
+      "depends_on": ["W2.1", "W2.2", "W2.3"],
+      "completed_at": "2026-02-21",
+      "deliverables": [
+        "Skills/zode-moltbook/scripts/heartbeat.py",
+        "Skills/zode-moltbook/scripts/morning_scan.py",
+        "Skills/zode-moltbook/scripts/evening_distillation.py",
+        "Skills/zode-moltbook/prompts/engagement-prompt.md"
+      ],
+      "notes": "All scripts tested with --help. Heartbeat auto-detects phase (first_24h/establishment/steady) from registration time. Morning scan generates engagement brief with hypotheses. Evening distillation collects metrics + runs learning extraction. Engagement prompt is the system prompt for heartbeat decisions."
+    },
+    {
+      "id": "W3.2",
+      "title": "Google Sheets Engagement Tracker",
+      "wave": 3,
+      "spawn_mode": "auto",
+      "status": "complete",
+      "tag": "mechanical",
+      "depends_on": ["W1.4", "W2.2"],
+      "completed_at": "2026-02-21",
+      "deliverables": [
+        "Skills/zode-moltbook/scripts/sheets_sync.py"
+      ],
+      "notes": "Collects data from all workspace sources (staging, analytics, learnings, hypotheses, influencer map) into a unified payload. Saves local snapshots. Google Sheet push requires sheet ID setup — will connect when V creates the Sheet."
+    },
+    {
+      "id": "W3.3",
+      "title": "Influence Monitor",
+      "wave": 3,
+      "spawn_mode": "auto",
+      "status": "complete",
+      "tag": "mechanical",
+      "depends_on": ["W1.2", "W2.3"],
+      "completed_at": "2026-02-21",
+      "deliverables": [
+        "Skills/zode-moltbook/scripts/influence_monitor.py"
+      ],
+      "notes": "Scores agents on influence (0-100), relevance (high/med/low), quality (thought_leader/contributor/volume_poster/spammer), category (soft_power/compute_power/mixed). Supports manual track/avoid commands per social constitution."
+    }
+  ]
+}

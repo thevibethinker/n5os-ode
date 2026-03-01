@@ -1,0 +1,10 @@
+# HR Capability Configuration
+
+evaluation_cadence: weekly
+scenarios_path: Zoffice/capabilities/hr/evaluation/scenarios.yaml
+sync_dry_run: true
+required_persona_fields:
+  - name
+  - role
+  - capabilities
+  - status

@@ -1,0 +1,26 @@
+{
+  "date": "2099-01-01",
+  "generated_at": "x",
+  "mode": "live_api",
+  "totals": {
+    "overall_interactions": 42,
+    "post_upvotes": 8,
+    "comments_tracked": 9
+  },
+  "fetch_health": {
+    "degraded": false
+  },
+  "degraded_refresh_attempts": [
+    {
+      "attempted_at": "y",
+      "reasons": [
+        "agent_fetch_failed"
+      ],
+      "attempt_totals": {
+        "overall_interactions": 0,
+        "post_upvotes": 0,
+        "comments_tracked": 0
+      }
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "drop_id": "D2.1",
+  "status": "complete",
+  "timestamp": "2026-02-22T19:15:00Z",
+  "summary": "Built the Ingestion capability with a base handler class enforcing the standard pipeline (UUID → security gate → classify → route → audit log), 4 channel handlers (email with [TAG] subject parsing, voice skeleton, webhook with source routing, zo2zo with trust checking), and a keyword-based classifier returning type/urgency/topics. All handlers integrate with Security (inbound gate + audit writer) and Memory (conversation logger). All 5 scenarios pass.",
+  "artifacts": [
+    "Zoffice/capabilities/ingestion/config.yaml",
+    "Zoffice/capabilities/ingestion/handlers/base.py",
+    "Zoffice/capabilities/ingestion/handlers/email_handler.py",
+    "Zoffice/capabilities/ingestion/handlers/voice_handler.py",
+    "Zoffice/capabilities/ingestion/handlers/webhook_handler.py",
+    "Zoffice/capabilities/ingestion/handlers/zo2zo_handler.py",
+    "Zoffice/capabilities/ingestion/classify.py",
+    "Zoffice/capabilities/ingestion/README.md"
+  ],
+  "decisions": [
+    "Tag routing uses uppercase normalization — [knowledge] and [KNOWLEDGE] both match",
+    "Zo2Zo trust check reads security.yaml trusted_instances list, flags untrusted but still processes",
+    "Classifier uses 4 urgency levels and 5 content types, all keyword-driven from config"
+  ],
+  "concerns": [],
+  "broadcast": "Ingestion API: Use handler classes (EmailHandler, VoiceHandler, WebhookHandler, Zo2ZoHandler). Call handler.receive(raw_input) → returns InboundItem dict with id, channel, classification, routing_recommendation. classify_content(text) for standalone classification.",
+  "notes_for_orchestrator": ""
+}

@@ -1,0 +1,14 @@
+{
+  "slug": "zoren-hotline",
+  "timestamp": "2026-02-20T15:14:09.610188+00:00",
+  "verification": {
+    "passed": true,
+    "output": "\u274c verify failed for zoren-hotline\n   Artifacts: 19/88 verified, 69 missing\n"
+  },
+  "integration_tests": {
+    "passed": true,
+    "output": "\n==================================================\nIntegration Tests: zoren-hotline\n==================================================\n\nNo tests defined. Run 'generate' to auto-create from artifacts.\n\nResults saved to /home/workspace/N5/builds/zoren-hotline/INTEGRATION_RESULTS.json\n"
+  },
+  "learnings_harvested": 0,
+  "success": true
+}

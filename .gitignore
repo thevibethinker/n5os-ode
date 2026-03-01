@@ -124,3 +124,11 @@ Sites/keanu-to-market-staging/
 N5/cognition/vectors_v2.db.bak.*
 Datasets/career-hotline-calls/data.duckdb
 Datasets/zo-hotline-calls/data.duckdb
+
+# Python virtual environments
+.venv/
+
+# Embedded git repos (separate repos)
+Sites/thevibepill/
+Sites/thevibepill-staging/
+zoputer-substrate/

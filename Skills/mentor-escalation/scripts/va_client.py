@@ -23,6 +23,7 @@ import uuid
 from datetime import datetime
 from pathlib import Path
 from typing import Optional, Dict, Any
+import importlib.util
 
 # Add parent path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
@@ -41,6 +42,7 @@ RETRY_BACKOFF_BASE = 2  # seconds
 
 # Audit logger path
 AUDIT_LOGGER = Path("/home/workspace/Skills/audit-system/scripts/audit_logger.py")
+SANITIZER_PATH = Path("/home/workspace/Integrations/zoputer-sync/sanitizer.py")
 
 
 def get_api_key() -> str:
@@ -76,6 +78,36 @@ def log_audit(entry_type: str, direction: str, payload: dict, correlation_id: Op
         pass  # Don't fail operations if audit logging fails
 
 
+def _load_sanitizer() -> Optional[Any]:
+    """Load the sanitizer module if available."""
+    if not SANITIZER_PATH.exists():
+        return None
+    
+    spec = importlib.util.spec_from_file_location("sanitizer", SANITIZER_PATH)
+    if spec is None:
+        return None
+    
+    module = importlib.util.module_from_spec(spec)
+    sys.modules[spec.name] = module
+    spec.loader.exec_module(module)
+    return module
+
+
+VA_SANITIZER = _load_sanitizer()
+
+
+def _sanitize_prompt(prompt: str) -> tuple[str, str, str]:
+    """Sanitize the prompt using the VA_SANITIZER if available."""
+    if not VA_SANITIZER:
+        return prompt, "sanitizer-missing", ""
+    result = VA_SANITIZER.sanitize_for_tool_call(prompt, tool_name="va-api")
+    sanitized = result.sanitized_text
+    canary = VA_SANITIZER.embed_canary()
+    final_prompt = VA_SANITIZER.build_guarded_prompt(sanitized, canary)
+    summary = VA_SANITIZER.summarize_sanitization(result)
+    return final_prompt, summary, canary
+
+
 def call_va(prompt: str, correlation_id: Optional[str] = None) -> dict:
     """
     Call va via /zo/ask API with retry logic.
@@ -97,15 +129,17 @@ def call_va(prompt: str, correlation_id: Optional[str] = None) -> dict:
         "content-type": "application/json"
     }
     
+    sanitized_prompt, sanitization_summary, canary = _sanitize_prompt(prompt)
+    
     payload = {
-        "input": prompt
+        "input": sanitized_prompt
     }
     
     # Log outbound request
     log_audit(
         entry_type="mentor_escalation",
         direction="zoputer-to-va",
-        payload={"prompt_preview": prompt[:200], "correlation_id": correlation_id},
+        payload={"prompt_preview": sanitized_prompt[:200], "correlation_id": correlation_id, "sanitization_summary": sanitization_summary, "canary": canary},
         correlation_id=correlation_id
     )
     
@@ -121,12 +155,24 @@ def call_va(prompt: str, correlation_id: Optional[str] = None) -> dict:
             
             if response.status_code == 200:
                 result = response.json()
+                output = result.get("output", "")
+                if VA_SANITIZER and canary:
+                    try:
+                        VA_SANITIZER.guard_output(output, canary, strict=True)
+                    except Exception as exc:
+                        log_audit(
+                            entry_type="sanitizer_block",
+                            direction="va-to-zoputer",
+                            payload={"error": str(exc), "correlation_id": correlation_id, "canary": canary},
+                            correlation_id=correlation_id,
+                        )
+                        raise
                 
                 # Log successful response
                 log_audit(
                     entry_type="mentor_response",
                     direction="va-to-zoputer",
-                    payload={"status": "success", "correlation_id": correlation_id},
+                    payload={"status": "success", "correlation_id": correlation_id, "sanitization_summary": sanitization_summary, "canary": canary},
                     correlation_id=correlation_id
                 )
                 

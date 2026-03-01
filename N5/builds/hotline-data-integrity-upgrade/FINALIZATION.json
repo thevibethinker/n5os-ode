@@ -1,0 +1,80 @@
+{
+  "slug": "hotline-data-integrity-upgrade",
+  "title": "Hotline Data Integrity Upgrade",
+  "status": "complete",
+  "finalized_at": "2026-02-24T06:24:22.410981+00:00",
+  "execution_mode": "claude_code",
+  "drops_total": 4,
+  "drops_complete": 4,
+  "deposits": [
+    {
+      "drop_id": "D1.1",
+      "build_slug": "hotline-data-integrity-upgrade",
+      "status": "complete",
+      "summary": "Patched forward call ingestion in Zo, Zoren, and Career webhooks plus logger paths to compute ended_at from started_at+duration and enforce non-empty topic fallbacks.",
+      "broadcast": "",
+      "artifacts": [],
+      "timestamp": "2026-02-24T06:24:17.880795+00:00",
+      "execution_mode": "claude_code"
+    },
+    {
+      "drop_id": "D1.2",
+      "build_slug": "hotline-data-integrity-upgrade",
+      "status": "complete",
+      "summary": "Updated hotline analytics query helpers with ET daily rollups and added canonical multi-dataset dashboard rollup script excluding vapi-calls.",
+      "broadcast": "",
+      "artifacts": [],
+      "timestamp": "2026-02-24T06:24:18.011492+00:00",
+      "execution_mode": "claude_code"
+    },
+    {
+      "drop_id": "D2.1",
+      "build_slug": "hotline-data-integrity-upgrade",
+      "status": "complete",
+      "summary": "Implemented and executed staged backfill (dry-run + apply) to fix zero-span timestamps and null/blank topics across canonical hotline datasets.",
+      "broadcast": "",
+      "artifacts": [],
+      "timestamp": "2026-02-24T06:24:18.126534+00:00",
+      "execution_mode": "claude_code"
+    },
+    {
+      "drop_id": "D2.2",
+      "build_slug": "hotline-data-integrity-upgrade",
+      "status": "complete",
+      "summary": "Generated validation query pack and machine-readable validation report showing all integrity checks passing after fixes.",
+      "broadcast": "",
+      "artifacts": [],
+      "timestamp": "2026-02-24T06:24:18.254127+00:00",
+      "execution_mode": "claude_code"
+    }
+  ],
+  "learnings": [],
+  "title_generated": true,
+  "artifacts_itemized": true,
+  "build_folder_closed": true,
+  "close_artifact_written": true,
+  "close_title": "Feb 24 | \u2705 \ud83d\udc19 \ud83c\udfd7\ufe0f Hotline Data Integrity Upgrade",
+  "artifact_breakdown": [
+    "hotline-dashboard-queries.sql",
+    "hotline-query-notes.md",
+    "hotline_backfill_report_apply.json",
+    "hotline_backfill_report_dryrun.json",
+    "hotline_dashboard_rollup.json",
+    "validation_queries.sql",
+    "validation_report.json",
+    "validation_summary.md"
+  ],
+  "build_close_signal": {
+    "folder": "/home/workspace/N5/builds/hotline-data-integrity-upgrade",
+    "status": "complete",
+    "closed_at": "2026-02-24T06:24:22.410981+00:00",
+    "explicit_close_signal": true
+  },
+  "close_contract": {
+    "title_generated": true,
+    "artifacts_itemized": true,
+    "build_folder_closed": true,
+    "close_artifact_written": true,
+    "passed": true
+  }
+}

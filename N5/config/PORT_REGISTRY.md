@@ -65,7 +65,6 @@ provenance: con_xMvzWKgpZHS5XdCn
 | 8790 | position-viz | http | service | Position visualization |
 | 8791 | agentmail-webhook | http | service | AgentMail Svix receiver with inbox firewall |
 | 8845 | fillout-webhook | http | service | Fillout form webhook |
-| 8846 | recall-webhook | http | service | Recall.ai meeting webhook (replaces Fireflies) |
 | 8847 | careerspan-webhook | http | service | Careerspan data webhook |
 | 8848 | career-coaching-hotline | http | service | Career Coaching Hotline (Zozie) VAPI webhook |
 | 8900 | zapier-webhook | http | service | Zapier webhook receiver |
@@ -78,6 +77,7 @@ provenance: con_xMvzWKgpZHS5XdCn
 | 50004 | keanu-to-market | http | service | Keanu to Market (prod) |
 | 50005 | build-tracker | http | service | Build Tracker dashboard |
 | 50007 | vrijenattawar | http | service | Personal site (prod) |
+| 50008 | thevibepill | http | service | The Vibe Pill (prod) |
 | 50023 | product-walken-fit-staging | http | zosite | Walken Fit staging |
 | 50100 | vrijenattawar-staging | http | zosite | Personal site staging (alt) |
 | 50129 | travel-wrapped-2025 | http | service | Travel Wrapped 2025 |
@@ -126,3 +126,5 @@ python3 N5/scripts/port_registry.py next [range]   # Get next available port
 python3 N5/scripts/port_registry.py list           # List all allocated ports  
 python3 N5/scripts/port_registry.py sync           # Sync from services + zosites
 ```
+| 2026-02-20 | 8773 | zoseph-hotline-webhook | Zoseph (Vibe Thinker) hotline webhook — dedicated service, split from zo-hotline-webhook |
+| 2026-02-20 | 4243 | zoren-hotline-webhook (relabeled) | Formerly zo-hotline-webhook → renamed for clarity |

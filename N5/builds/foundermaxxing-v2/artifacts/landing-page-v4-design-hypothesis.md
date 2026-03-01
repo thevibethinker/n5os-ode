@@ -1,11 +1,10 @@
 ---
 created: 2026-02-20
 last_edited: 2026-02-20
-version: 1.0
+version: 1
 provenance: con_az51K9yJBZEurSOZ
 drop: D5 (reissue)
 ---
-
 # The Vibe Pill — Landing Page v4 Design Hypothesis
 
 ## Reference Artifacts

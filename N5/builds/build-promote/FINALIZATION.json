@@ -1,0 +1,73 @@
+{
+  "slug": "build-promote",
+  "title": "Build Promote \u2014 Build-to-Skill Finalization Skill",
+  "status": "complete",
+  "finalized_at": "2026-02-21T22:44:09.004301+00:00",
+  "execution_mode": "claude_code",
+  "drops_total": 5,
+  "drops_complete": 5,
+  "deposits": [
+    {
+      "drop_id": "D1.1",
+      "build_slug": "build-promote",
+      "status": "complete",
+      "summary": "Created lineage_analyzer.py with scan, cluster, promotable commands. Scans 196 builds, identifies 7 multi-build clusters, 18 promotable builds.",
+      "broadcast": "Lineage data at Skills/build-promote/state/lineage.json \u2014 use for cluster lookups",
+      "artifacts": [
+        "Skills/build-promote/scripts/lineage_analyzer.py",
+        "Skills/build-promote/state/lineage.json"
+      ],
+      "timestamp": "2026-02-21T22:35:51.085429+00:00",
+      "execution_mode": "claude_code"
+    },
+    {
+      "drop_id": "D1.2",
+      "build_slug": "build-promote",
+      "status": "complete",
+      "summary": "Created artifact_classifier.py with classify and classify-cluster commands. Two-layer classification: heuristic (path/extension) + content inspection. Handles 9 categories with confidence levels.",
+      "broadcast": "Classifier routes files to: scripts/, assets/, state/, prompts/, references/, or keeps in build",
+      "artifacts": [
+        "Skills/build-promote/scripts/artifact_classifier.py"
+      ],
+      "timestamp": "2026-02-21T22:35:58.868818+00:00",
+      "execution_mode": "claude_code"
+    },
+    {
+      "drop_id": "D2.1",
+      "build_slug": "build-promote",
+      "status": "complete",
+      "summary": "Created promote.py with run/preview commands. 9-step workflow: pre-flight, naming, classification, directory creation, file migration, path adaptation, SKILL.md generation, protection markers, build finalization. Supports --dry-run, --yes, --cluster modes.",
+      "broadcast": "promote.py ready \u2014 run with: promote.py preview <slug> to dry-run, or promote.py run <slug> --yes to execute",
+      "artifacts": [
+        "Skills/build-promote/scripts/promote.py"
+      ],
+      "timestamp": "2026-02-21T22:38:47.928828+00:00",
+      "execution_mode": "claude_code"
+    },
+    {
+      "drop_id": "D2.2",
+      "build_slug": "build-promote",
+      "status": "complete",
+      "summary": "Created verify.py with 8 checks: stale paths, script health, import health, SKILL.md completeness, state accessibility, protection markers, build residuals, bytecode cleanup. Supports --fix for auto-fixable issues. Validated against zode-moltbook (8/8 pass).",
+      "broadcast": "verify.py ready \u2014 run: verify.py check <skill-slug> [--fix] [--verbose] [--json]",
+      "artifacts": [
+        "Skills/build-promote/scripts/verify.py"
+      ],
+      "timestamp": "2026-02-21T22:38:55.577988+00:00",
+      "execution_mode": "claude_code"
+    },
+    {
+      "drop_id": "D3.1",
+      "build_slug": "build-promote",
+      "status": "complete",
+      "summary": "Created SKILL.md with full documentation. E2E test: promoted builds-audit-cleanup (2 files migrated, 0 path adaptations, 8/8 verification checks pass). Fixed verify.py false positive on SKILL.md provenance metadata. Regression verified on zode-moltbook (18 scripts, 8/8 pass).",
+      "broadcast": "",
+      "artifacts": [
+        "Skills/build-promote/SKILL.md"
+      ],
+      "timestamp": "2026-02-21T22:44:04.060981+00:00",
+      "execution_mode": "claude_code"
+    }
+  ],
+  "learnings": []
+}

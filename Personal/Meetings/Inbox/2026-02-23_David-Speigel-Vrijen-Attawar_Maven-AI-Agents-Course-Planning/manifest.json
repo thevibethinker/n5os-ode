@@ -1,0 +1,288 @@
+{
+  "$schema": "manifest-v3",
+  "schema_version": "v3",
+  "meeting_id": "2026-02-23_David-Speigel-Vrijen-Attawar_Maven-AI-Agents-Course-Planning",
+  "status": "complete",
+  "status_history": [
+    {
+      "status": "ingested",
+      "at": "2026-02-23T18:05:25.513655Z"
+    },
+    {
+      "status": "title_normalized",
+      "at": "2026-02-23T18:06:37.269778+00:00",
+      "note": "'David x Careerspan' \u2192 'Maven AI Agents Course Planning', 2 speakers extracted"
+    },
+    {
+      "status": "identified",
+      "at": "2026-02-23T18:06:37.275681+00:00"
+    }
+  ],
+  "source": {
+    "type": "fireflies",
+    "source_id": "01KJ5SK0RWE9T44W01R2603Y9P",
+    "ingested_at": "2026-02-23T18:05:25.513655Z"
+  },
+  "meeting": {
+    "date": "2026-02-23",
+    "time_utc": "17:45:00",
+    "duration_minutes": 0,
+    "title": "Maven AI Agents Course Planning",
+    "type": "external",
+    "summary": {
+      "keywords": [
+        "AI agents",
+        "Maven courses",
+        "ZO collaboration",
+        "product management",
+        "machine learning engineer",
+        "course monetization"
+      ],
+      "action_items": "\n**Vrijen Attawar**\nSend the ML Ops community engineer\u2019s LinkedIn profile to David for review (15:35)\nAdd ML Ops community participant to future meetings and provide updated call links for access (17:10)\n\n**David Speigel**\nFollow up with Ben, a Maven instructor, to gather insights and questions regarding course creation and monetization on Maven (17:55)\nReview the shared James Gray AI/Maven course integration example for potential adaptation (06:05)\n\n**Unassigned**\nCoordinate leveraging ZO\u2019s free credits and reputation for the upcoming courses and collaborations (03:45)\nDefine and refine the course syllabus focusing on AI agents for product managers or building agentic product studios aimed at corporate teams (09:15)\n",
+      "outline": null,
+      "shorthand_bullet": "\ud83e\udd1d **Collaboration with ML Engineer** (01:00 - 02:30)\nDiscussed collaborating with a motivated machine learning engineer from Reddit interested in career coaching for women in tech and ML.\nPotentially launching courses linked to a strong developer community.\n\ud83d\udee0\ufe0f **Course Creation Challenges** (02:30 - 03:45)\nAddressed challenges of course creation, emphasizing cognitive load and decision fatigue.\nHighlighted a 6-month personal launch timeline for courses on platforms like Maven.\n\ud83d\udcc8 **Leveraging ZO Affiliation** (03:45 - 05:00)\nExplored leveraging ZO affiliation for course branding, distribution, and discounts.\nForming a collaborative 'ZO based mafia' with shared business initiatives and free credits to boost engagement.\n\ud83d\udcda **Existing Maven Courses Review** (05:00 - 06:30)\nReviewed existing Maven courses related to AI and product management.\nReferenced James Gray\u2019s approach of integrating Notion databases with Maven course structures enhanced by AI agents for real-time updates.\n\ud83e\udd16 **AI Agents Model** (06:30 - 09:00)\nHighlighted Relay CEO Jacob Bank\u2019s model of AI agents configured as a small company\u2019s org chart.\nSuggested a potential course on AI agents for product managers.\n\ud83c\udfe2 **Fractal AI Offices Proposal** (09:00 - 12:40)\nProposed building fractal AI 'offices' with seven core capabilities.\nRepresenting memory, data ingestion, communication, and orchestration, scalable from individual agents to full teams.\n\ud83c\udfaf **Outcome-Focused Course Framework** (12:40 - 16:15)\nEmphasized the importance of a course framework that is outcome-focused.\nProducing measurable results and providing actionable skills to apply in learners\u2019 environments.\n\ud83d\udcbc **Onboarding Technical Assistant** (14:00 - 14:50)\nRevealed strategy of onboarding a technical assistant from the ML Ops community for productizing the ZO framework.\nPotential for her to launch affiliated offshoot courses under the collaboration, sharing revenue.\n\ud83d\udcb0 **Compensation Models Discussion** (14:50 - 17:05)\nDiscussed compensation models for course collaborators.\nShared a successful precedent of paying accountability partners hourly during the first cohort to facilitate course launch.\n\ud83d\udcca **Guest Management Challenges** (17:05 - 17:30)\nAddressed challenges in guest management on the call.\nAttempts to add a participant from the ML Ops community linked to the discussion about course collaboration.\n\ud83c\udfe2 **B2B Play for Maven** (17:30 - 19:00)\nRecognized potential for Maven to operate with a B2B play.\nTargeting employees within large companies instead of solely founders, aiming to standardize AI agents and workflows for corporate teams.\n",
+      "overview": "- **Core Team Formation:** Four committed individuals are starting businesses on ZO to leverage its reputation and distribution.  \n- **AI Course Management:** Using AI to automate course elements, enhancing efficiency and reducing manual upkeep for continuous improvement.  \n- **B2B Opportunities:** Targeting companies for employee training to increase course adoption and sustainable revenue in a new B2B model.  \n- **Collaboration Framework:** A flexible revenue-sharing model encourages collaboration and incentivizes partners to drive student enrollment.  \n- **Community Engagement:** Leveraging strong community networks, like Reddit, to enhance marketing and attract motivated learners to courses.  \n- **Outcome-Driven Design:** Courses must provide actionable takeaways and showcase real results to engage students and boost popularity."
+    },
+    "original_title": "David x Careerspan"
+  },
+  "participants": {
+    "identified": [
+      {
+        "name": "Logan",
+        "email": "logan@theapply.ai",
+        "crm_id": null,
+        "role": "attendee",
+        "confidence": 1.0
+      },
+      {
+        "name": "Dspeigel",
+        "email": "dspeigel@gmail.com",
+        "crm_id": null,
+        "role": "attendee",
+        "confidence": 1.0
+      },
+      {
+        "name": "Loganhc",
+        "email": "loganhc@gmail.com",
+        "crm_id": null,
+        "role": "attendee",
+        "confidence": 1.0
+      },
+      {
+        "name": "David Speigel",
+        "email": null,
+        "crm_id": null,
+        "role": "attendee",
+        "confidence": 0.9
+      },
+      {
+        "name": "Vrijen Attawar",
+        "email": null,
+        "crm_id": null,
+        "role": "attendee",
+        "confidence": 0.9
+      }
+    ],
+    "unidentified": [
+      "logan@theapply.ai,dspeigel@gmail.com,loganhc@gmail.com"
+    ],
+    "confidence": 0.96
+  },
+  "calendar_match": {
+    "event_id": null,
+    "confidence": 0.0,
+    "method": "none"
+  },
+  "quality_gate": {
+    "passed": false,
+    "checks": {
+      "has_transcript": true,
+      "participants_identified": true,
+      "meeting_type_determined": true,
+      "no_hitl_pending": false
+    },
+    "score": 0.6408333333333334,
+    "executed_at": "2026-02-23T18:06:37.287947+00:00",
+    "check_results": [
+      {
+        "name": "transcript_length",
+        "score": 1.0,
+        "passed": true,
+        "threshold": 300,
+        "warnings": [],
+        "errors": [],
+        "escalate_hitl": false
+      },
+      {
+        "name": "transcript_format",
+        "score": 0.6666666666666666,
+        "passed": false,
+        "threshold": 0.8,
+        "warnings": [],
+        "errors": [],
+        "escalate_hitl": false
+      },
+      {
+        "name": "meeting_duration_consistency",
+        "score": 0.5,
+        "passed": true,
+        "threshold": 0.5,
+        "warnings": [
+          "Meeting duration not specified"
+        ],
+        "errors": [],
+        "escalate_hitl": false
+      },
+      {
+        "name": "participant_confidence",
+        "score": 0.96,
+        "passed": true,
+        "threshold": 0.7,
+        "warnings": [],
+        "errors": [],
+        "escalate_hitl": false
+      },
+      {
+        "name": "host_identified",
+        "score": 0.0,
+        "passed": false,
+        "threshold": 1.0,
+        "warnings": [],
+        "errors": [
+          "No host identified"
+        ],
+        "escalate_hitl": true
+      },
+      {
+        "name": "external_participant_verification",
+        "score": 1.0,
+        "passed": true,
+        "threshold": 1.0,
+        "warnings": [],
+        "errors": [],
+        "escalate_hitl": false
+      },
+      {
+        "name": "calendar_match_score",
+        "score": 0.0,
+        "passed": false,
+        "threshold": 0.6,
+        "warnings": [],
+        "errors": [
+          "Very low calendar match confidence: 0.00"
+        ],
+        "escalate_hitl": true
+      },
+      {
+        "name": "meeting_type_consistency",
+        "score": 1.0,
+        "passed": true,
+        "threshold": 1.0,
+        "warnings": [],
+        "errors": [],
+        "escalate_hitl": false
+      }
+    ]
+  },
+  "blocks": {
+    "policy": "external_standard",
+    "requested": [],
+    "generated": [],
+    "failed": [],
+    "skipped": []
+  },
+  "hitl": {
+    "queue_id": null,
+    "reason": null,
+    "resolved_at": null
+  },
+  "timestamps": {
+    "created_at": "2026-02-23T18:05:25.513655Z",
+    "ingested_at": "2026-02-23T18:05:25.513655Z",
+    "identified_at": "2026-02-23T18:06:37.275651+00:00",
+    "gated_at": null,
+    "processed_at": null,
+    "archived_at": null
+  },
+  "transcript_file": "transcript.md",
+  "crm_enrichment": {
+    "enriched_at": "2026-02-23T18:05:50.856656+00:00",
+    "classification": "external",
+    "classification_reason": "2 external, 1 internal participants identified",
+    "participant_matches": [
+      {
+        "input_name": "logan@theapply.ai,dspeigel@gmail.com,loganhc@gmail.com",
+        "matched_name": null,
+        "email": null,
+        "is_internal": null,
+        "source": null,
+        "confidence": 0.0,
+        "company": null
+      },
+      {
+        "input_name": "logan@theapply.ai",
+        "matched_name": "Logan",
+        "email": "logan@theapply.ai",
+        "is_internal": true,
+        "source": "profiles",
+        "confidence": 1.0,
+        "company": "Theapply.Ai"
+      },
+      {
+        "input_name": "dspeigel@gmail.com",
+        "matched_name": "Dspeigel",
+        "email": "dspeigel@gmail.com",
+        "is_internal": false,
+        "source": "profiles",
+        "confidence": 1.0,
+        "company": "Personal (gmail.com)"
+      },
+      {
+        "input_name": "loganhc@gmail.com",
+        "matched_name": "Loganhc",
+        "email": "loganhc@gmail.com",
+        "is_internal": false,
+        "source": "profiles",
+        "confidence": 1.0,
+        "company": "Personal (gmail.com)"
+      }
+    ],
+    "identified_count": 3,
+    "unidentified_count": 1
+  },
+  "meeting_type": "external",
+  "block_selection": {
+    "selected_at": "2026-02-23T18:07:38.576078Z",
+    "method": "smart_selector_v2",
+    "recipe": "external_standard",
+    "always_blocks": [
+      "B00",
+      "B01",
+      "B02_B05",
+      "B03",
+      "B08",
+      "B21",
+      "B26"
+    ],
+    "conditional_selected": [],
+    "conditional_skipped": [],
+    "triggered": [],
+    "reasoning": {},
+    "total_blocks": 7
+  },
+  "blocks_generated": [
+    "B02_B05_COMMITMENTS_AND_ACTIONS",
+    "B26_MEETING_METADATA",
+    "B21_KEY_MOMENTS",
+    "B01_DETAILED_RECAP",
+    "B00_ZO_TAKE_HEED",
+    "B03_DECISIONS"
+  ],
+  "blocks_failed": [
+    {
+      "block": "B08_STAKEHOLDER_INTELLIGENCE",
+      "error": "Zo API error: 500 - modal-http: internal error: function was terminated by signal\n"
+    }
+  ],
+  "processed_at": "2026-02-23T18:15:56.803725Z"
+}

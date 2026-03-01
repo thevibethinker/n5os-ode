@@ -1,0 +1,43 @@
+staff:
+- name: receptionist
+  role: "Front desk \u2014 greeting, triage, and routing"
+  status: active
+  channels:
+  - voice
+  - sms
+  - zo2zo
+  capabilities:
+  - ingestion
+  - communication
+  - memory
+  - security
+  zo_persona_id: cf8e37b3-92a3-4506-8123-12bb40702625
+- name: chief-of-staff
+  role: Business operations, email management, decision support
+  status: active
+  channels:
+  - email
+  - webhook
+  - zo2zo
+  capabilities:
+  - ingestion
+  - communication
+  - memory
+  - security
+  - orchestration
+  - publishing
+  zo_persona_id: 480a5724-18df-4955-be45-546fbacb0a90
+- name: librarian
+  role: Knowledge curation, research, and information retrieval
+  status: active
+  channels:
+  - email
+  - zo2zo
+  capabilities:
+  - ingestion
+  - memory
+  - publishing
+  - security
+  zo_persona_id: 64cfa2d9-4fc1-4a9d-9485-d302dafe74e3
+total_staff: 3
+last_synced: '2026-02-22'

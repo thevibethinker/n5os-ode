@@ -1,0 +1,82 @@
+{
+  "schema_version": 3,
+  "slug": "vibe-pill-methodology",
+  "title": "Vibe Pill Methodology Page + Troika Infographic",
+  "build_type": "content",
+  "status": "active",
+  "model": "anthropic:claude-opus-4-5-20251101",
+  "launch_mode": "orchestrated",
+  "delegate_only": false,
+  "first_wins": false,
+  "hypothesis_group": [],
+  "broadcasts": [],
+  "task_pool": {
+    "enabled": false,
+    "tasks": [],
+    "max_concurrent_claims": 4,
+    "worker_drops": []
+  },
+  "waves": {
+    "W1": [
+      "D1.1",
+      "D1.2"
+    ],
+    "W2": [
+      "D2.1"
+    ]
+  },
+  "active_wave": "W1",
+  "drops": {
+    "D1.1": {
+      "name": "Write methodology page content",
+      "stream": 1,
+      "order": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "pending",
+      "started_at": "2026-02-20T15:45:23.764686+00:00",
+      "conversation_id": "spawn_worker_vibe-pill-methodology_D1.1_1771602323",
+      "last_progress_at": "2026-02-20T15:45:23.764686+00:00",
+      "failure_reason": "Spawn error: API returned 400: {\"detail\":\"Unknown model: anthropic:claude-opus-4-5-20251101\"}",
+      "failed_at": "2026-02-20T15:45:24.325837+00:00"
+    },
+    "D1.2": {
+      "name": "Generate Troika infographic",
+      "stream": 2,
+      "order": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "pending",
+      "started_at": "2026-02-20T15:45:23.774251+00:00",
+      "conversation_id": "spawn_worker_vibe-pill-methodology_D1.2_1771602323",
+      "last_progress_at": "2026-02-20T15:45:23.774251+00:00",
+      "failure_reason": "Spawn error: API returned 400: {\"detail\":\"Unknown model: anthropic:claude-opus-4-5-20251101\"}",
+      "failed_at": "2026-02-20T15:45:24.454437+00:00"
+    },
+    "D2.1": {
+      "name": "Deploy updated methodology page with infographic",
+      "stream": 1,
+      "order": 1,
+      "depends_on": [
+        "D1.1",
+        "D1.2"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "pending"
+    }
+  },
+  "lineage": {
+    "parent_type": "conversation",
+    "parent_ref": "con_T4j6BB2Z2F1e9WDu",
+    "parent_conversation": "con_T4j6BB2Z2F1e9WDu",
+    "moment": "V asked to launch methodology worker + Troika infographic",
+    "branched_at": "2026-02-20T15:42:00Z"
+  },
+  "started_at": "2026-02-20T15:44:56.772984+00:00",
+  "last_progress_at": "2026-02-20T15:45:23.776949+00:00",
+  "spawn_failures_consecutive": 2,
+  "last_spawn_failure_at": "2026-02-20T15:45:24.454437+00:00"
+}

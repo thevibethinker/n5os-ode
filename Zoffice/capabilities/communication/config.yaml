@@ -1,0 +1,14 @@
+# Communication Capability Configuration
+
+default_channel: email
+
+rate_limit_window_seconds: 300
+
+template_dir: Zoffice/capabilities/communication/templates
+
+channels:
+  - email
+  - sms
+  - voice
+  - zo2zo
+  - webhook

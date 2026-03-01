@@ -1,1 +1,0 @@
-{"entities": [{"name": "Recall.Ai", "type": "ORG", "context": "organization associated with V"}, {"name": "john@recall.ai", "type": "PERSON", "context": "email address for the organizational contact"}], "relationships": [{"from": "V", "to": "Recall.Ai", "type": "WORKS_WITH", "context": "V is associated with Recall.Ai"}]}

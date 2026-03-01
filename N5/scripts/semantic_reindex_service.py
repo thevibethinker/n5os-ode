@@ -10,6 +10,10 @@ Features:
 - Lock file to prevent concurrent runs
 - Sleeps on completion (service manager keeps it alive)
 """
+import sys
+sys.path.insert(0, '/home/workspace')
+sys.path.insert(0, '/home/workspace/N5')
+
 import hashlib
 import json
 import logging
@@ -53,6 +57,8 @@ CRITICAL_AREAS = [
     "/home/workspace/Personal/Knowledge",
     # Prompts
     "/home/workspace/Prompts",
+    # Skills (SKILL.md, AGENTS.md, references, assets — not scripts or state)
+    "/home/workspace/Skills",
     # NEW: Lists (all)
     "/home/workspace/Lists",
     # NEW: Articles (all)

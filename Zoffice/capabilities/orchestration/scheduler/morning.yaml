@@ -1,0 +1,11 @@
+name: morning-dispatcher
+schedule: "0 8 * * *"
+timezone: "America/New_York"
+employee: chief-of-staff
+tasks:
+  - name: check_pending_decisions
+    description: "Review and action pending items in the decision queue"
+  - name: review_overnight_inbound
+    description: "Check ingestion queue for items received overnight"
+  - name: generate_daily_briefing
+    description: "Summarize today's schedule, pending items, and priorities"

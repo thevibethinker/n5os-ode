@@ -1,0 +1,20 @@
+# Receptionist — Available tools
+tools:
+  - name: log_conversation
+    capability: memory
+    description: Log inbound conversations
+  - name: find_contact
+    capability: memory
+    description: Look up known contacts
+  - name: upsert_contact
+    capability: memory
+    description: Create or update contact records
+  - name: create_decision
+    capability: memory
+    description: Escalate decisions requiring human input
+  - name: prepare_send
+    capability: communication
+    description: Prepare outbound messages (SMS, zo2zo)
+  - name: classify_content
+    capability: ingestion
+    description: Classify inbound content

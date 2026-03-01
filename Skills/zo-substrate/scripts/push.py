@@ -10,36 +10,35 @@ import argparse
 import json
 import shutil
 import sys
+import tempfile
 from pathlib import Path
 from typing import Dict, List, Optional
 
 from config import (
     WORKSPACE_ROOT, discover_skills, get_workspace_git_sha,
-    load_config, load_state, log_event, now_iso, repo_url,
-    run_git, save_state, tmp_repo_path,
+    load_config, log_event, now_iso, repo_url,
+    run_git, save_state,
 )
 
 
-def clone_fresh(cfg: Dict) -> bool:
+def clone_fresh(cfg: Dict, tmp: Path) -> bool:
     """Clone a fresh copy of the substrate repo."""
-    tmp = tmp_repo_path(cfg)
-    if tmp.exists():
-        shutil.rmtree(tmp)
-
     url = repo_url(cfg)
     branch = cfg["substrate"]["branch"]
     print(f"  Cloning {cfg['substrate']['repo']} (branch: {branch})...")
 
-    try:
-        code, out, err = run_git(
-            ["git", "clone", "--branch", branch, "--single-branch", url, str(tmp)],
-            cwd=Path("/tmp"),
-        )
+    code, out, err = run_git(
+        ["git", "clone", "--branch", branch, "--single-branch", url, str(tmp)],
+        cwd=Path("/tmp"),
+        check=False,
+    )
+    if code == 0:
         print("  Clone OK")
         return True
-    except Exception as e:
-        print(f"  Clone failed: {e}")
-        return False
+    print("  Clone failed")
+    if err:
+        print(f"  stderr: {err}")
+    return False
 
 
 def copy_skills(cfg: Dict, skills: List[Dict], tmp: Path) -> List[str]:
@@ -130,7 +129,22 @@ def push(
 
     skills = discover_skills(cfg)
     if filter_skills:
-        skills = [s for s in skills if s["name"] in filter_skills]
+        by_name = {s["name"]: s for s in skills}
+        missing = [name for name in filter_skills if name not in by_name]
+
+        # Explicit --skills should allow operator-selected skills even if not in default export list.
+        for name in missing:
+            skill_path = WORKSPACE_ROOT / "Skills" / name
+            if skill_path.is_dir() and (skill_path / "SKILL.md").exists():
+                by_name[name] = {
+                    "name": name,
+                    "path": str(skill_path.relative_to(WORKSPACE_ROOT)),
+                    "abs_path": str(skill_path),
+                    "has_scripts": (skill_path / "scripts").exists(),
+                }
+                print(f"  Manual include: {name} (explicit --skills override)")
+
+        skills = [by_name[name] for name in filter_skills if name in by_name]
         if not skills:
             available = [s["name"] for s in discover_skills(cfg)]
             print(f"  ⚠ No matching skills found for filter: {', '.join(filter_skills)}")
@@ -149,10 +163,15 @@ def push(
             print(f"    - {s['name']}")
         return {"success": True, "copied": [s["name"] for s in skills], "dry_run": True}
 
-    tmp = tmp_repo_path(cfg)
+    tmp = Path(
+        tempfile.mkdtemp(
+            prefix=f"zo-substrate-push-{cfg['identity']['name']}-",
+            dir="/tmp",
+        )
+    )
 
     try:
-        if not clone_fresh(cfg):
+        if not clone_fresh(cfg, tmp):
             return {"success": False, "error": "clone_failed"}
 
         copied = copy_skills(cfg, skills, tmp)

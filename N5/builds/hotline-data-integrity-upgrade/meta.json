@@ -1,0 +1,76 @@
+{
+  "schema_version": 3,
+  "slug": "hotline-data-integrity-upgrade",
+  "title": "Hotline Data Integrity Upgrade",
+  "build_type": "code_build",
+  "status": "complete",
+  "execution_mode": "claude_code",
+  "created": "2026-02-24T06:18:40.621957+00:00",
+  "model": "claude-opus-4-6",
+  "waves": {
+    "W1": [
+      "D1.1",
+      "D1.2",
+      "D2.1",
+      "D2.2"
+    ]
+  },
+  "drops": {
+    "D1.1": {
+      "name": "Forward ingestion timestamp and topic normalization",
+      "stream": 1,
+      "order": 1,
+      "wave": "W1",
+      "depends_on": [],
+      "spawn_mode": "claude_code",
+      "blocking": true,
+      "status": "complete",
+      "completed_at": "2026-02-24T06:24:17.880795+00:00"
+    },
+    "D1.2": {
+      "name": "Dashboard queries canonical ET rollups",
+      "stream": 1,
+      "order": 2,
+      "wave": "W1",
+      "depends_on": [],
+      "spawn_mode": "claude_code",
+      "blocking": true,
+      "status": "complete",
+      "completed_at": "2026-02-24T06:24:18.011492+00:00"
+    },
+    "D2.1": {
+      "name": "Backfill ended_at and topic defaults",
+      "stream": 2,
+      "order": 1,
+      "wave": "W1",
+      "depends_on": [
+        "D1.1"
+      ],
+      "spawn_mode": "claude_code",
+      "blocking": true,
+      "status": "complete",
+      "completed_at": "2026-02-24T06:24:18.126534+00:00"
+    },
+    "D2.2": {
+      "name": "Validation and regression checks",
+      "stream": 2,
+      "order": 2,
+      "wave": "W1",
+      "depends_on": [
+        "D1.1",
+        "D1.2",
+        "D2.1"
+      ],
+      "spawn_mode": "claude_code",
+      "blocking": true,
+      "status": "complete",
+      "completed_at": "2026-02-24T06:24:18.254127+00:00"
+    }
+  },
+  "lineage": {
+    "parent_type": "conversation",
+    "parent_ref": null,
+    "moment": "Initialized from Claude Code session"
+  },
+  "completed_at": "2026-02-24T06:24:22.410981+00:00"
+}

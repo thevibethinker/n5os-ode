@@ -1,0 +1,544 @@
+{
+  "product": "Zoffice",
+  "release_version": "v2.0.0-rc2",
+  "created_at_utc": "2026-02-22T04:31:51.083821+00:00",
+  "file_count": 107,
+  "files": [
+    {
+      "path": "BOOTLOADER.md",
+      "size": 2313,
+      "sha256": "959b2d6a6cb697cf6e68db4cb23913b330bfad7177a9b4da899ae29d44735fcf"
+    },
+    {
+      "path": "MANIFEST.json",
+      "size": 841,
+      "sha256": "18f053234380d0919cf6d17ad5a25cdb5c7d0ca8ea2d5f864cc331fd3558fa0d"
+    },
+    {
+      "path": "PERSONALIZE.md",
+      "size": 1882,
+      "sha256": "cf4ae1130d9004d3c483aa815e03e210f35ba9b517a714404a788a5c2853e1b3"
+    },
+    {
+      "path": "__init__.py",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "capabilities/__init__.py",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "capabilities/communication/README.md",
+      "size": 2358,
+      "sha256": "b0142f12d861468b2d5aaebb1d0fd69dc85ef925660371509aeadae203fafbce"
+    },
+    {
+      "path": "capabilities/communication/__init__.py",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "capabilities/communication/channels/__init__.py",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "capabilities/communication/channels/approval.py",
+      "size": 2736,
+      "sha256": "2cad9aed83b15bc306dd75d13dee0eacbcfbd30f92d1c50e9c19083d0ab6b942"
+    },
+    {
+      "path": "capabilities/communication/channels/dispatch.py",
+      "size": 4190,
+      "sha256": "c69c45bd9183919bc74b45e0f3fa98809d793140fff76cbd36da9aa2441ad5a5"
+    },
+    {
+      "path": "capabilities/communication/channels/rate_limiter.py",
+      "size": 1556,
+      "sha256": "f94acb9fc957d0626544134a52083065620280c339c5517e03e111c200cef601"
+    },
+    {
+      "path": "capabilities/communication/config.yaml",
+      "size": 218,
+      "sha256": "734953c98cf0e9cfa165809b0144c2ca72206e50e5ba3cb5b6d19e9cf8c959bd"
+    },
+    {
+      "path": "capabilities/communication/templates/.gitkeep",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "capabilities/communication/templates/acknowledgment.md",
+      "size": 88,
+      "sha256": "857ed525321a08e3b7a4fbf967218dc875d8fb0e534bd9cf77e66d531dc06820"
+    },
+    {
+      "path": "capabilities/communication/templates/base.md",
+      "size": 507,
+      "sha256": "3d622c1a5e82e11a875255c8af59c0d0666580ae43c6eb7a667bc9ce151692de"
+    },
+    {
+      "path": "capabilities/communication/templates/escalation-notice.md",
+      "size": 84,
+      "sha256": "4cfa1d974846c5d4746487d0ee4dfded81677617359421c69ab8cf5a5d6f4b22"
+    },
+    {
+      "path": "capabilities/communication/templates/follow-up.md",
+      "size": 62,
+      "sha256": "d9816ef4771e48b9f0501139d519c33d852947d14203d69e75bfe7eda4dcc16e"
+    },
+    {
+      "path": "capabilities/hr/README.md",
+      "size": 1850,
+      "sha256": "eda0326f03a2f0cf07d587adae0466743eee2798b6a54afc5a8f1670d41bf018"
+    },
+    {
+      "path": "capabilities/hr/__init__.py",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "capabilities/hr/config.yaml",
+      "size": 214,
+      "sha256": "3472797995a8c4a9bb362d317aa266ed1e75da0c561b4cdf0c971fbf590ea67e"
+    },
+    {
+      "path": "capabilities/hr/development/__init__.py",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "capabilities/hr/development/handoff.py",
+      "size": 2030,
+      "sha256": "c545c59d8da438d9c52755482dc0c04f151726f144f455db25859a12700e73d9"
+    },
+    {
+      "path": "capabilities/hr/development/onboarding.py",
+      "size": 3187,
+      "sha256": "0f3c4ee6b1cc9f35d7bddb90f976488e7a121ed4926473fc36b4795c3cfbee3e"
+    },
+    {
+      "path": "capabilities/hr/evaluation/__init__.py",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "capabilities/hr/evaluation/rubric.py",
+      "size": 3573,
+      "sha256": "e78c44bd742f4d7e6304dac7d03f6c74ac63d87c183146f60790ddb160f23416"
+    },
+    {
+      "path": "capabilities/hr/evaluation/scenarios.yaml",
+      "size": 900,
+      "sha256": "5005d593799779b84b7241d285a9736137d2f7422c99fdeca277570b4ba4989f"
+    },
+    {
+      "path": "capabilities/hr/sync.py",
+      "size": 4738,
+      "sha256": "5f02d3f07e1e9726021f40c800a03c51de0e28def37574f451ae773c9ad0a20f"
+    },
+    {
+      "path": "capabilities/ingestion/README.md",
+      "size": 2309,
+      "sha256": "0fec665d72dd43c6418e8412f3305a61726fe0de1152525c5635179de9d3f0b4"
+    },
+    {
+      "path": "capabilities/ingestion/__init__.py",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "capabilities/ingestion/classify.py",
+      "size": 2601,
+      "sha256": "15b3f6e526e984372fcb2d73508c0689c8eac685a10228092fe6edc2f65ae0f9"
+    },
+    {
+      "path": "capabilities/ingestion/config.yaml",
+      "size": 1233,
+      "sha256": "2ba6f699dbdfbfa79e072b7050bfe618e9cb3ccad23454b42bc16365c876437d"
+    },
+    {
+      "path": "capabilities/ingestion/handlers/__init__.py",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "capabilities/ingestion/handlers/base.py",
+      "size": 5206,
+      "sha256": "7e33956da1cde394aafe752561fa00c0891d6ec1d6f9c422fa58476c8f21d4ab"
+    },
+    {
+      "path": "capabilities/ingestion/handlers/email_handler.py",
+      "size": 942,
+      "sha256": "a72ccbf9abb88796cca52950f12e51a61e55256ff4770e76ed10d1edbf5c9781"
+    },
+    {
+      "path": "capabilities/ingestion/handlers/voice_handler.py",
+      "size": 631,
+      "sha256": "fc57d8bb3074ea0bb485d2cb88edcbfb7f12c1340872ac230eac1cf2a23a57d9"
+    },
+    {
+      "path": "capabilities/ingestion/handlers/webhook_handler.py",
+      "size": 1468,
+      "sha256": "eee1c68f02fb045022ec2e4d518aafea02baf1fd349639cfc43077af05391408"
+    },
+    {
+      "path": "capabilities/ingestion/handlers/zo2zo_handler.py",
+      "size": 1961,
+      "sha256": "674ad78badb6f8168eb675637c80bc0ad5d1c31a03b7a78293bde7ef2e90bd16"
+    },
+    {
+      "path": "capabilities/memory/README.md",
+      "size": 2873,
+      "sha256": "5bfb2e9e93c43a198526d969559bb8f40434fc4b6f40601f58c0a95db7f3d5b8"
+    },
+    {
+      "path": "capabilities/memory/__init__.py",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "capabilities/memory/config.yaml",
+      "size": 328,
+      "sha256": "94c396365700035f2dc794d3645b79e6e460afe020da1601cca751be11ff820d"
+    },
+    {
+      "path": "capabilities/memory/contact_manager.py",
+      "size": 6116,
+      "sha256": "57241f5d5dff30fb2a47784be562476da83d6916012fed2144af0eceb3d42c97"
+    },
+    {
+      "path": "capabilities/memory/conversation_logger.py",
+      "size": 3741,
+      "sha256": "b76613259cafe56cc7a44b3b5846e70266087632aaaa3b223f93ecab34e1860a"
+    },
+    {
+      "path": "capabilities/memory/db_helpers.py",
+      "size": 2513,
+      "sha256": "ade264406ac748b9a18f6e2191a6604975ea5aa1c20d4d47ad3dd4fa5a5d0b48"
+    },
+    {
+      "path": "capabilities/memory/decision_queue.py",
+      "size": 4097,
+      "sha256": "47c0c47ea86d528237972a4d6524310ebab6eeada5e3df6bf62540ceb34f6e9e"
+    },
+    {
+      "path": "capabilities/orchestration/README.md",
+      "size": 1417,
+      "sha256": "bd69634e15ed6e1310d50d54c662bde47d5b23e13aa47de39e4d6c4906249618"
+    },
+    {
+      "path": "capabilities/orchestration/__init__.py",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "capabilities/orchestration/config.yaml",
+      "size": 271,
+      "sha256": "17dca101bf2d33346c4996461e6930c62683fd6a346e4a8319cd087e8fb073ce"
+    },
+    {
+      "path": "capabilities/orchestration/scheduler/__init__.py",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "capabilities/orchestration/scheduler/dispatcher.py",
+      "size": 2947,
+      "sha256": "927078742b78f6c9ab1f527f9a6c865ffd66c6b05b7201cc649c230156c41753"
+    },
+    {
+      "path": "capabilities/orchestration/scheduler/evening.yaml",
+      "size": 409,
+      "sha256": "dae34f94905c55f41a5ec7e9ef3ab60d3056e0f005c51d55acf3151cb33b1df9"
+    },
+    {
+      "path": "capabilities/orchestration/scheduler/healthcheck.yaml",
+      "size": 317,
+      "sha256": "e83234a78f8e175448e624b4ccf88e3d42812f8b63c1f4753b6e5b7dcf2eddd3"
+    },
+    {
+      "path": "capabilities/orchestration/scheduler/morning.yaml",
+      "size": 431,
+      "sha256": "3a8f8e552f784ecad4d5df4d7ab52755926192fc092771b34411ccb54a0fa780"
+    },
+    {
+      "path": "capabilities/orchestration/workflows/__init__.py",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "capabilities/orchestration/workflows/base.py",
+      "size": 2317,
+      "sha256": "ebab07e8254c00c9d10d3b06c5550384ccbd49c459cddfd5aaf706ecd3329e7c"
+    },
+    {
+      "path": "capabilities/publishing/README.md",
+      "size": 1137,
+      "sha256": "439762efb57db8af9bb2dec128202d82426943696120e874c04eb24e4037ff9e"
+    },
+    {
+      "path": "capabilities/publishing/__init__.py",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "capabilities/publishing/config.yaml",
+      "size": 118,
+      "sha256": "faf3725f62a4229a0eeb60dfac0013f30cf2f2f59758dd34711df3a6defa33f5"
+    },
+    {
+      "path": "capabilities/publishing/pipelines/__init__.py",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "capabilities/publishing/pipelines/content_pipeline.py",
+      "size": 3462,
+      "sha256": "eae314dfc03550970b8955f5b016c028fbd634cac1e934f25baf89a181747635"
+    },
+    {
+      "path": "capabilities/publishing/pipelines/zo_space.py",
+      "size": 1470,
+      "sha256": "00f470827f56d814b849f12b696db9ca06400d9fabd04f875c82883ff411b6a2"
+    },
+    {
+      "path": "capabilities/security/README.md",
+      "size": 2004,
+      "sha256": "d6ab3cec895322445ebc686338ca5b71a4c696d7157ec54fc07f58933f641756"
+    },
+    {
+      "path": "capabilities/security/__init__.py",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "capabilities/security/audit/__init__.py",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "capabilities/security/audit/schema.sql",
+      "size": 654,
+      "sha256": "e5213857f489dc2834c8b4daaf6733f3a33e2ad15c70503541e2c154c1ce8f86"
+    },
+    {
+      "path": "capabilities/security/audit/writer.py",
+      "size": 3161,
+      "sha256": "c37e14bbf611021894d9ef6475f25be18db143147387179411e315d886f38143"
+    },
+    {
+      "path": "capabilities/security/config.yaml",
+      "size": 1471,
+      "sha256": "b5a5a83a19a6566bafc500d7e8d5782977443cbd96def1ef8405835cf868b300"
+    },
+    {
+      "path": "capabilities/security/gates/__init__.py",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "capabilities/security/gates/inbound_gate.py",
+      "size": 4671,
+      "sha256": "9f18e2c9e93dbeb98abec5fb139d5b2673cb1cb26a333598c1170da045174c0e"
+    },
+    {
+      "path": "capabilities/zo2zo/README.md",
+      "size": 1273,
+      "sha256": "6f075586a27be34e2b8fd5c8262a443f859076c6d756ffd782ece33516ee64a2"
+    },
+    {
+      "path": "capabilities/zo2zo/__init__.py",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "capabilities/zo2zo/config.yaml",
+      "size": 154,
+      "sha256": "eb45a419ec308eca0b0a615d09fa8a2a3a3e042d88f45c9a9cb7e9b1e20f5553"
+    },
+    {
+      "path": "capabilities/zo2zo/protocols/__init__.py",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "capabilities/zo2zo/protocols/parent_link.py",
+      "size": 2657,
+      "sha256": "60a29fbef9b4293e7af335d0d0bcf7e4f0d7121b5dbd843a85a0776859688fdc"
+    },
+    {
+      "path": "capabilities/zo2zo/protocols/skill_receiver.py",
+      "size": 2800,
+      "sha256": "baa13450b7954e58de6b95561362b2b50c48439bb73ea1eb3712d101df556455"
+    },
+    {
+      "path": "capabilities/zo2zo/trust/__init__.py",
+      "size": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "capabilities/zo2zo/trust/registry.py",
+      "size": 2019,
+      "sha256": "b1226398fbe5d8ad359774c837100048fd2afb5095e19ee491a9d5474a9070ec"
+    },
+    {
+      "path": "config/autonomy.yaml",
+      "size": 430,
+      "sha256": "831c76d504d27a36c1044611fd142ca04ca6648f8ac808f707036854378b0250"
+    },
+    {
+      "path": "config/capabilities.yaml",
+      "size": 619,
+      "sha256": "5c1f4c1effbb8a94ed524cd25d97dc195d755f935dfa8d0a22d8145cbc2d957f"
+    },
+    {
+      "path": "config/controller.yaml",
+      "size": 707,
+      "sha256": "3f743a33c859ae7c4eba4c58423fc6b5fe59934c0b477ed50e1b53ed4a0659cd"
+    },
+    {
+      "path": "config/integration.yaml",
+      "size": 2169,
+      "sha256": "eec4454fc320e45f2a99a0890749071ac42d034dc2a14465807133181299e247"
+    },
+    {
+      "path": "config/office.yaml",
+      "size": 296,
+      "sha256": "c46003eeac42f777703b4e134172b83f4fd7d9f73280c1dedcc12c76da1d9e8e"
+    },
+    {
+      "path": "config/routing.yaml",
+      "size": 793,
+      "sha256": "fa39d8f56df62b4c6ab1c3cdc1b1ba40c20777373f6948199a25b53a51cfc473"
+    },
+    {
+      "path": "config/security.yaml",
+      "size": 590,
+      "sha256": "cc925009c9dbca47432060ff597d98f6f26951ea58c4d78931aff2da5fbe2347"
+    },
+    {
+      "path": "contracts/mutual-acceptance-v2.0.0-rc1.json",
+      "size": 1439,
+      "sha256": "61d65ef8109556de02b5379629cd60e9e3d56041684fff6c56ef6082385e2d22"
+    },
+    {
+      "path": "data/conversations/gmail-ingest-log.md",
+      "size": 1747,
+      "sha256": "d313be63d7a29a0569378a0525dc45deb61b43820f567530ba1bb161e00f5f7e"
+    },
+    {
+      "path": "data/conversations/healthcheck-incidents.md",
+      "size": 519,
+      "sha256": "aa882892b054102fea4d080a8413bfb27884ec1b79ab24a1831cd3352743f923"
+    },
+    {
+      "path": "data/office.db",
+      "size": 16789504,
+      "sha256": "ae13c3cf0976de119c30ce371e91eb9a8cf800f58f692378710d0d3b9564c339"
+    },
+    {
+      "path": "releases/v2.0.0-rc1/bundle-manifest.json",
+      "size": 16618,
+      "sha256": "7b844af099933525d9e5b169b4a7592473b61816942fb638a8d11b2036694f92"
+    },
+    {
+      "path": "releases/v2.0.0-rc1/bundle.sha256",
+      "size": 92,
+      "sha256": "236abcc9ca8186699e726e0544af6ed1525daec707953c20a8de8bf128126acc"
+    },
+    {
+      "path": "releases/v2.0.0-rc1/zoffice-v2.0.0-rc1.tar.gz",
+      "size": 126261,
+      "sha256": "3232ddfb942051abf304739b611998feccbfee7d4937f29de603819a0c059f0b"
+    },
+    {
+      "path": "scripts/control_plane.py",
+      "size": 5689,
+      "sha256": "6f20f219f9711f0d53d8e7250700f14e2c2c8edddb8123cc620b7f838d9c3065"
+    },
+    {
+      "path": "scripts/create_release_bundle.py",
+      "size": 2686,
+      "sha256": "6c7745f7ffa7d4ae0663fe0dcc5be36ccd43901b0fd2c5b67d8e3445199512c7"
+    },
+    {
+      "path": "scripts/export-audit.py",
+      "size": 2160,
+      "sha256": "ddaca90c6faf84b818c0540af5bc3100ce79f3715c5e40e1c5c0037c004ec81d"
+    },
+    {
+      "path": "scripts/healthcheck.py",
+      "size": 8721,
+      "sha256": "61290cc19e5daddb58fa9bc39e1a14ff70df425d622eeccbfd97dc8327623fe9"
+    },
+    {
+      "path": "scripts/layer2_smoke_test.py",
+      "size": 1518,
+      "sha256": "5d707952e36547cb15a9d5a9ea2cab4e1e02717dfa5ff13a7044c537957e472c"
+    },
+    {
+      "path": "scripts/rotate-keys.py",
+      "size": 2831,
+      "sha256": "061c4dd58ccb30d27f8d88ab23f427931d91f3f62232ef637ca2d9e9ae8d0f7a"
+    },
+    {
+      "path": "scripts/setup.py",
+      "size": 5974,
+      "sha256": "f5de150aca580ddcb31d5f0f3d9a69b4bc84bbec585fb18146742c0d1ac0ac8b"
+    },
+    {
+      "path": "staff/chief-of-staff/persona.yaml",
+      "size": 1052,
+      "sha256": "842982e26e50f39825f4f59ff8721ec6eb4f7b824d9b8d6c788567fafeb9c3bd"
+    },
+    {
+      "path": "staff/chief-of-staff/system-prompt.md",
+      "size": 1050,
+      "sha256": "0ab7d2b3665b9dcf197d529a0dae461e4028ba8e30602c63d06807d890cc2cdc"
+    },
+    {
+      "path": "staff/chief-of-staff/tools/manifest.yaml",
+      "size": 1061,
+      "sha256": "dcb94dd7879f8a2874cc115ec0d0eb3ddaea536b75e0f355e4550ddfca6c6ef6"
+    },
+    {
+      "path": "staff/librarian/persona.yaml",
+      "size": 823,
+      "sha256": "75f61bcd37caaffccb61a502cf982a574b360a0a54d95467afac28f061b92804"
+    },
+    {
+      "path": "staff/librarian/system-prompt.md",
+      "size": 859,
+      "sha256": "181348e9fea9d3523e2b20be5208ca6044cbb64b1aa1fd38a6c52b1506e6b731"
+    },
+    {
+      "path": "staff/librarian/tools/manifest.yaml",
+      "size": 760,
+      "sha256": "8b6be762d70d333811e4ec4d11b0359744de428fb2b77441203580a7041e7567"
+    },
+    {
+      "path": "staff/receptionist/persona.yaml",
+      "size": 825,
+      "sha256": "c20cd59572764967c5fda424bd09f59966faef88b38a26bb8bec96246f2e9f68"
+    },
+    {
+      "path": "staff/receptionist/system-prompt.md",
+      "size": 933,
+      "sha256": "731558b811acd7a7da319b024ac1e83bf48919548c66f762095cdabe758e1694"
+    },
+    {
+      "path": "staff/receptionist/tools/manifest.yaml",
+      "size": 630,
+      "sha256": "2bca0b281e3dd39069a6d935ff114754d10b1edaab2137c5ff43dd626ed18e46"
+    },
+    {
+      "path": "staff/registry.yaml",
+      "size": 871,
+      "sha256": "19dd2ce97570d10f6541950e476e6ce07424125ad37ebc808d756dee1f6a22f5"
+    }
+  ],
+  "acceptance_gate": "zoputer reports 100% integrity rebuild"
+}

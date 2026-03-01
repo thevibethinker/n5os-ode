@@ -1,0 +1,25 @@
+# Zoffice Autonomy Configuration
+# Controls decision-making thresholds for all employees.
+
+thresholds:
+  auto_act: 0.9
+  act_and_notify: 0.7
+  escalate_to_parent: 0.5
+  escalate_to_human: 0.3
+
+always_escalate:
+  - send_email
+  - delete_file
+  - create_scheduled_task
+  - register_service
+  - payment_action
+  - modify_config
+
+never_escalate:
+  - read_file
+  - search
+  - web_research
+  - list_files
+  - lookup_contact
+
+custom: {}

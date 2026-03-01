@@ -1,0 +1,11 @@
+name: evening-dispatcher
+schedule: "0 18 * * *"
+timezone: "America/New_York"
+employee: chief-of-staff
+tasks:
+  - name: end_of_day_summary
+    description: "Summarize what was accomplished today and what carries over"
+  - name: check_open_conversations
+    description: "Review any conversations that need follow-up"
+  - name: prepare_tomorrow
+    description: "Pre-stage items for tomorrow's morning routine"

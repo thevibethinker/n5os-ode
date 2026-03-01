@@ -1,12 +1,11 @@
 ---
 name: gamma
-description: Generate presentations, documents, social posts, and websites using Gamma's AI API. Supports full generation from prompts or creation from existing templates.
+description: "Generate presentations, documents, social posts, and websites using Gamma's AI API. Supports full generation from prompts or creation from existing templates."
 compatibility: Created for Zo Computer
 metadata:
-  author: va.zo.computer
   api_version: v1.0
+  author: va.zo.computer
 ---
-
 # Gamma API Integration
 
 Generate professional presentations, documents, webpages, and social posts using Gamma's AI.

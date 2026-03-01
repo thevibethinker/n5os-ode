@@ -1,0 +1,68 @@
+# Zoffice Integration Configuration
+# Maps capabilities to live Zo infrastructure.
+
+integrations:
+  voice:
+    status: active
+    provider: vapi
+    webhook_route: "/api/zoffice/webhooks/vapi"
+    webhook_url: "https://va.zo.space/api/zoffice/webhooks/vapi"
+    routed_employee: receptionist
+    notes: "Inbound voice webhook normalized to Receptionist triage payload"
+
+  email:
+    status: active
+    provider: gmail
+    routed_employee: chief-of-staff
+    ingestion_agent_id: "672a443d-5bcc-4197-b970-5f801a2ac7c3"
+    notes: "Gmail ingestion polled by scheduled agent and routed via EmailHandler"
+
+  scheduling:
+    status: active
+    provider: zo_agents
+    dispatchers:
+      morning:
+        agent_id: "1fd198c6-3a09-4178-81be-4e80f18f6cd2"
+      evening:
+        agent_id: "0dc2f37c-4964-4701-8c97-f1ff7c1a2473"
+      healthcheck:
+        agent_id: "15fd72d9-29b2-4872-8766-7ecbf7134584"
+    notes: "Dispatcher schedules materialized as dedicated Zoffice agents"
+
+  publishing:
+    status: active
+    provider: zo_space
+    notes: "Publishing capability prepares routes; release remains human-gated"
+
+  zo2zo:
+    status: active
+    provider: zo_api
+    parent_instance: "va.zo.computer"
+    notes: "Parent escalation target set for child-office pulls"
+
+  webhooks:
+    status: active
+    providers:
+      - github
+      - stripe
+    routes:
+      github: "/api/zoffice/webhooks/github"
+      stripe: "/api/zoffice/webhooks/stripe"
+    urls:
+      github: "https://va.zo.space/api/zoffice/webhooks/github"
+      stripe: "https://va.zo.space/api/zoffice/webhooks/stripe"
+    notes: "Public endpoints registered for GitHub and Stripe event intake"
+
+layer2:
+  release_version: "v2.0.0-rc1"
+  deployment_mode: "manual_versioned_pull"
+  acceptance_contract: "Zoffice/contracts/mutual-acceptance-v2.0.0-rc1.json"
+  acceptance_required: true
+  acceptance_status: "pending_zoputer_integrity_rebuild"
+  controller:
+    persona_id: "f439988b-6121-459e-86b9-6581604b637e"
+    mode: "shadow"
+  personas:
+    receptionist: "cf8e37b3-92a3-4506-8123-12bb40702625"
+    chief_of_staff: "480a5724-18df-4955-be45-546fbacb0a90"
+    librarian: "64cfa2d9-4fc1-4a9d-9485-d302dafe74e3"

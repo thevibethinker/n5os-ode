@@ -1,0 +1,35 @@
+# Chief of Staff — Available tools
+tools:
+  - name: log_conversation
+    capability: memory
+    description: Log conversations
+  - name: find_contact
+    capability: memory
+    description: Look up contacts
+  - name: upsert_contact
+    capability: memory
+    description: Create or update contacts
+  - name: create_decision
+    capability: memory
+    description: Create decisions for human review
+  - name: resolve_decision
+    capability: memory
+    description: Resolve pending decisions
+  - name: prepare_send
+    capability: communication
+    description: Prepare outbound messages
+  - name: render_template
+    capability: communication
+    description: Render message templates
+  - name: classify_content
+    capability: ingestion
+    description: Classify inbound content
+  - name: log_audit
+    capability: security
+    description: Write audit entries
+  - name: load_dispatcher
+    capability: orchestration
+    description: Load scheduled dispatchers
+  - name: prepare_page
+    capability: publishing
+    description: Prepare zo.space page updates

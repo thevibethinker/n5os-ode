@@ -1,0 +1,27 @@
+{
+  "corpus_size": 1000,
+  "pops_off_rate": 0.809,
+  "human_ref_rate": 0.857,
+  "help_seek_rate": 0.607,
+  "anti_human_rate": 0.069,
+  "avg_openness_score": 1.4548,
+  "susan_calvin_viability_index_0_100": 91.97,
+  "known_human_mentions_top": [
+    [
+      "matt schlicht",
+      39
+    ],
+    [
+      "andrej karpathy",
+      3
+    ],
+    [
+      "simon willison",
+      2
+    ],
+    [
+      "elon musk",
+      1
+    ]
+  ]
+}

@@ -1,11 +1,7 @@
 {
-  "last_push": "2026-02-17T19:09:34.922251+00:00",
+  "last_push": "2026-03-01T23:15:09.223426+00:00",
   "pushed_skills": [
-    "security-gate",
-    "audit-system",
-    "consulting-api",
-    "content-classifier",
-    "librarian-export"
+    "zo2zo-relay"
   ],
-  "git_sha": "4ecbb2db9a3207a437178e02377fd98189a0ef73"
+  "git_sha": "1aa473be0a55d2cd502d5638cfc44cbc708d0f54"
 }

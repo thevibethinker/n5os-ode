@@ -1,0 +1,42 @@
+{
+  "contract_id": "zoffice-layer2-mutual-acceptance-v2.0.0-rc1",
+  "release_version": "v2.0.0-rc1",
+  "created_at_utc": "2026-02-22T03:44:58.680376+00:00",
+  "parties": {
+    "producer": "va.zo.computer",
+    "consumer": "zoputer.zo.computer",
+    "human_reviewer": "V"
+  },
+  "deployment_mode": "manual_versioned_pull",
+  "acceptance_criteria": [
+    "Consumer performs manual pull of the exact versioned bundle",
+    "Consumer executes full integrity rebuild on its side",
+    "Consumer reports: 100% integrity rebuild",
+    "Mutual explicit acceptance by both Zo endpoints through this contract artifact"
+  ],
+  "required_evidence": {
+    "consumer_report_field": "integrity_rebuild_percent",
+    "required_value": 100,
+    "proof_artifact": "zoputer rebuild report + checksum match to bundle-manifest.json"
+  },
+  "status": {
+    "producer_signed": true,
+    "consumer_signed": false,
+    "mutually_accepted": false,
+    "effective": false
+  },
+  "producer_signature": {
+    "algorithm": "sha256",
+    "signer": "va.zo.computer",
+    "signed_at_utc": "2026-02-22T03:44:58.680498+00:00",
+    "payload_hash": "d4047c3c10cb076d939c61f4db430b2490174cb9463566e26d40f3d8dd2867a0",
+    "signature": "9ee752b28bbb9f3855f41f65178ef33c811b48f18218fc52b917385d18e31fda"
+  },
+  "consumer_signature": {
+    "algorithm": "sha256",
+    "signer": "zoputer.zo.computer",
+    "signed_at_utc": null,
+    "payload_hash": null,
+    "signature": null
+  }
+}

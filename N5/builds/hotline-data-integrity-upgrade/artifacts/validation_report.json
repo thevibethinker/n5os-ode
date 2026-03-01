@@ -1,0 +1,47 @@
+{
+  "build_slug": "hotline-data-integrity-upgrade",
+  "canonical_sources": [
+    "Datasets/zo-hotline-calls/data.duckdb",
+    "Datasets/career-hotline-calls/data.duckdb",
+    "Datasets/vibe-pill-calls/data.duckdb"
+  ],
+  "excluded_sources": [
+    "Datasets/vapi-calls/data.duckdb"
+  ],
+  "checks": {
+    "zo": {
+      "total": 74,
+      "bad_id": 0,
+      "null_start": 0,
+      "negative_duration": 0,
+      "reversed_time": 0,
+      "zero_span_with_duration": 0,
+      "null_or_blank_topics": 0
+    },
+    "career": {
+      "total": 18,
+      "bad_id": 0,
+      "null_start": 0,
+      "negative_duration": 0,
+      "reversed_time": 0,
+      "zero_span_with_duration": 0,
+      "null_or_blank_topics": 0
+    },
+    "pill": {
+      "total": 0,
+      "bad_id": 0,
+      "null_start": 0,
+      "negative_duration": 0,
+      "reversed_time": 0,
+      "zero_span_with_duration": 0,
+      "null_or_blank_topics": 0
+    }
+  },
+  "passes": {
+    "zo_integrity_pass": true,
+    "career_integrity_pass": true,
+    "pill_integrity_pass": true,
+    "et_rollup_available": true
+  },
+  "overall_pass": true
+}

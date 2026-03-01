@@ -1,0 +1,9 @@
+name: healthcheck-dispatcher
+schedule: "*/30 * * * *"
+timezone: "America/New_York"
+employee: chief-of-staff
+tasks:
+  - name: service_health
+    description: "Check that all registered services are running and responsive"
+  - name: database_integrity
+    description: "Verify office.db is accessible and tables exist"

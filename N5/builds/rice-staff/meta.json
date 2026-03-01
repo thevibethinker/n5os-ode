@@ -1,0 +1,35 @@
+{
+  "schema_version": "1.0",
+  "slug": "rice-staff",
+  "title": "Rice Staff — Starter Employees (Receptionist, CoS, Librarian)",
+  "objective": "Onboard 3 starter employees with persona definitions, system prompts, and tool manifests",
+  "created": "2026-02-21",
+  "status": "complete",
+  "completed_at": "2026-02-22",
+  "type": "general",
+  "build_mode": "direct",
+  "learning_landscape_generated": false,
+  "orchestrator_convo_id": null,
+  "summary": "Created persona.yaml, system-prompt.md, and tools/manifest.yaml for receptionist, chief-of-staff, and librarian. Populated registry.yaml with 3 active staff. All HR onboarding validations pass.",
+  "artifacts": [
+    "Zoffice/staff/receptionist/persona.yaml",
+    "Zoffice/staff/receptionist/system-prompt.md",
+    "Zoffice/staff/receptionist/tools/manifest.yaml",
+    "Zoffice/staff/chief-of-staff/persona.yaml",
+    "Zoffice/staff/chief-of-staff/system-prompt.md",
+    "Zoffice/staff/chief-of-staff/tools/manifest.yaml",
+    "Zoffice/staff/librarian/persona.yaml",
+    "Zoffice/staff/librarian/system-prompt.md",
+    "Zoffice/staff/librarian/tools/manifest.yaml",
+    "Zoffice/staff/registry.yaml"
+  ],
+  "workers": {
+    "total": 0,
+    "complete": 0,
+    "in_progress": 0,
+    "blocked": 0,
+    "pending": 0
+  },
+  "waves": [],
+  "worker_details": []
+}

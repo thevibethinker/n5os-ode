@@ -1,0 +1,233 @@
+{
+  "$schema": "manifest-v3",
+  "schema_version": "v3",
+  "meeting_id": "2026-02-25_Alex-Caveny-Vrijen-Attawar_Fintech-Hiring-Strategy-and-SPC-Membership",
+  "status": "complete",
+  "status_history": [
+    {
+      "status": "ingested",
+      "at": "2026-02-25T17:48:39.921183Z"
+    },
+    {
+      "status": "title_normalized",
+      "at": "2026-02-25T17:49:35.661083+00:00",
+      "note": "'Alex x Vrijen - Wisdom Partners Coaching' \u2192 'Fintech Hiring Strategy and SPC Membership', 2 speakers extracted"
+    },
+    {
+      "status": "identified",
+      "at": "2026-02-25T17:49:35.688478+00:00"
+    }
+  ],
+  "source": {
+    "type": "fireflies",
+    "source_id": "01KJAXXD0MP5ZKFESEZ9V6E3CG",
+    "ingested_at": "2026-02-25T17:48:39.921183Z"
+  },
+  "meeting": {
+    "date": "2026-02-25",
+    "time_utc": "17:35:00",
+    "duration_minutes": 0,
+    "title": "Fintech Hiring Strategy and SPC Membership",
+    "type": "external",
+    "summary": {
+      "keywords": [
+        "fintech engineers",
+        "job placement",
+        "startup community",
+        "SPC membership",
+        "second-time founder",
+        "career opportunities"
+      ],
+      "action_items": "\n**Vrijen Attawar**\nFollow up with 'calendar guy' by initiating a call to provide product feedback and discuss integration possibilities (04:25)\nSubmit SPC membership application (08:50)\nExplore SPC Founder Fellowship program, specifically its availability in New York (10:22)\n\n**Alex Caveny**\nReview SPC event calendar and provide updates on upcoming demo days and events to Vrijen (07:19)\n",
+      "outline": null,
+      "shorthand_bullet": "\ud83d\udcbc **Challenges in Fintech Hiring** (00:00 - 01:00)\nDiscussed challenges of finding skilled fintech engineers for placement.\nNoted that many known fintech founders are already exited and not seeking jobs.\n\ud83d\udcde **Job Opportunity Follow-ups** (01:14 - 03:27)\nVrijen shared current job opportunity follow-ups.\nEngagement with a founder ('calendar guy') who is unsure how to onboard him due to strategy changes.\nPotential non-technical role at an AGI company pending successful fundraising.\n\ud83e\udd1d **Maintaining Relationships** (03:27 - 04:46)\nExplored the delicate balance of maintaining relationships when pursuing job opportunities.\nDiscussed the need to push but also be polite with founders offering positions.\n\ud83d\udcde **Casual Call Suggestion** (04:25 - 04:50)\nSuggested approaching the 'calendar guy' for a casual call.\nAim to provide product feedback and organically discuss next steps.\n\ud83c\udf10 **SPC Membership Consideration** (05:57 - 07:19)\nConsidered applying for a membership at SPC as a strategic reset and networking opportunity.\nSPC is a founder community with a New York outpost.\n\ud83d\udca1 **Career Span Acquisition Concept** (05:57 - 06:40)\nDiscussed the concept of career span acquisition by ETS as a potential exit.\nThis would allow Vrijen to retain IP and join SPC for growth and iteration on startup ideas.\n\ud83d\udcda **Learning from Experience** (06:20 - 06:50)\nAlex shared personal views on learning from second-time founding experiences.\nEmphasized doing 'less bad' each time.\n\ud83c\udf89 **SPC Events Insights** (07:19 - 09:00)\nGave insights into SPC\u2019s vibe and events, including demo days and networking benefits.\nNoted some events end abruptly with limited mingling.\n\ud83d\udcdd **SPC Membership Application Plans** (08:50 - 10:22)\nVrijen plans to submit an SPC membership application shortly.\nMotivated by endorsements from peers and interest in the founder fellowship program.\n\u23f0 **Timing and Scheduling Challenges** (09:00 - 10:10)\nDiscussed timing and scheduling challenges for SPC events.\nConsidered the alignment of membership with current personal and professional growth goals.\n",
+      "overview": "- **Professional Networking Efforts:** Ongoing outreach to potential employers is critical for career advancement, emphasizing patience and good communication.\n\n- **Non-Technical Role Opportunities:** Exploring a non-technical position in an AGI company post-funding is essential for growth and role development.\n\n- **SPC Membership Consideration:** Joining SPC could provide valuable networking and learning opportunities, refining career direction after exiting current projects.\n\n- **Demo Fairs for Visibility:** Attending SPC demo fairs is vital for relationship-building and increasing visibility in the startup community.\n\n- **Fintech Talent Challenges:** Limited access to active fintech engineers and industry exit patterns complicate recruitment efforts for specialized roles."
+    },
+    "original_title": "Alex x Vrijen - Wisdom Partners Coaching"
+  },
+  "participants": {
+    "identified": [
+      {
+        "name": "Alex Caveny",
+        "email": "alex.caveny@gmail.com",
+        "crm_id": null,
+        "role": "attendee",
+        "confidence": 1.0
+      },
+      {
+        "name": "Vrijen Attawar",
+        "email": null,
+        "crm_id": null,
+        "role": "attendee",
+        "confidence": 0.9
+      }
+    ],
+    "unidentified": [],
+    "confidence": 0.95
+  },
+  "calendar_match": {
+    "event_id": null,
+    "confidence": 0.0,
+    "method": "none"
+  },
+  "quality_gate": {
+    "passed": false,
+    "checks": {
+      "has_transcript": true,
+      "participants_identified": true,
+      "meeting_type_determined": true,
+      "no_hitl_pending": false
+    },
+    "score": 0.6395833333333333,
+    "executed_at": "2026-02-25T17:49:35.702740+00:00",
+    "check_results": [
+      {
+        "name": "transcript_length",
+        "score": 1.0,
+        "passed": true,
+        "threshold": 300,
+        "warnings": [],
+        "errors": [],
+        "escalate_hitl": false
+      },
+      {
+        "name": "transcript_format",
+        "score": 0.6666666666666666,
+        "passed": false,
+        "threshold": 0.8,
+        "warnings": [],
+        "errors": [],
+        "escalate_hitl": false
+      },
+      {
+        "name": "meeting_duration_consistency",
+        "score": 0.5,
+        "passed": true,
+        "threshold": 0.5,
+        "warnings": [
+          "Meeting duration not specified"
+        ],
+        "errors": [],
+        "escalate_hitl": false
+      },
+      {
+        "name": "participant_confidence",
+        "score": 0.95,
+        "passed": true,
+        "threshold": 0.7,
+        "warnings": [],
+        "errors": [],
+        "escalate_hitl": false
+      },
+      {
+        "name": "host_identified",
+        "score": 0.0,
+        "passed": false,
+        "threshold": 1.0,
+        "warnings": [],
+        "errors": [
+          "No host identified"
+        ],
+        "escalate_hitl": true
+      },
+      {
+        "name": "external_participant_verification",
+        "score": 1.0,
+        "passed": true,
+        "threshold": 1.0,
+        "warnings": [],
+        "errors": [],
+        "escalate_hitl": false
+      },
+      {
+        "name": "calendar_match_score",
+        "score": 0.0,
+        "passed": false,
+        "threshold": 0.6,
+        "warnings": [],
+        "errors": [
+          "Very low calendar match confidence: 0.00"
+        ],
+        "escalate_hitl": true
+      },
+      {
+        "name": "meeting_type_consistency",
+        "score": 1.0,
+        "passed": true,
+        "threshold": 1.0,
+        "warnings": [],
+        "errors": [],
+        "escalate_hitl": false
+      }
+    ]
+  },
+  "blocks": {
+    "policy": "external_standard",
+    "requested": [],
+    "generated": [],
+    "failed": [],
+    "skipped": []
+  },
+  "hitl": {
+    "queue_id": null,
+    "reason": null,
+    "resolved_at": null
+  },
+  "timestamps": {
+    "created_at": "2026-02-25T17:48:39.921183Z",
+    "ingested_at": "2026-02-25T17:48:39.921183Z",
+    "identified_at": "2026-02-25T17:49:35.688462+00:00",
+    "gated_at": null,
+    "processed_at": null,
+    "archived_at": null
+  },
+  "transcript_file": "transcript.md",
+  "crm_enrichment": {
+    "enriched_at": "2026-02-25T17:49:11.812395+00:00",
+    "classification": "external",
+    "classification_reason": "1 external, 0 internal participants identified",
+    "participant_matches": [
+      {
+        "input_name": "alex.caveny@gmail.com",
+        "matched_name": "Alex Caveny",
+        "email": "alex.caveny@gmail.com",
+        "is_internal": false,
+        "source": "profiles",
+        "confidence": 1.0,
+        "company": "Personal (gmail.com)"
+      }
+    ],
+    "identified_count": 1,
+    "unidentified_count": 0
+  },
+  "meeting_type": "external",
+  "block_selection": {
+    "selected_at": "2026-02-25T17:50:57.336874Z",
+    "method": "smart_selector_v2",
+    "recipe": "external_standard",
+    "always_blocks": [
+      "B00",
+      "B01",
+      "B02_B05",
+      "B03",
+      "B08",
+      "B21",
+      "B26"
+    ],
+    "conditional_selected": [],
+    "conditional_skipped": [],
+    "triggered": [],
+    "reasoning": {},
+    "total_blocks": 7
+  },
+  "blocks_generated": [
+    "B02_B05_COMMITMENTS_AND_ACTIONS",
+    "B26_MEETING_METADATA",
+    "B21_KEY_MOMENTS",
+    "B01_DETAILED_RECAP",
+    "B00_ZO_TAKE_HEED",
+    "B03_DECISIONS",
+    "B08_STAKEHOLDER_INTELLIGENCE"
+  ],
+  "processed_at": "2026-02-25T18:04:08.919111Z"
+}

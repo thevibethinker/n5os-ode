@@ -19,7 +19,7 @@ except ImportError:
     print("ERROR: PyYAML required. Install with: pip install pyyaml")
     sys.exit(1)
 
-from config import CONFIG_EXAMPLE, CONFIG_FILE, WORKSPACE_ROOT
+from config import CONFIG_EXAMPLE, CONFIG_FILE, repo_url
 
 
 def check_prerequisites() -> list[str]:
@@ -44,6 +44,22 @@ def check_prerequisites() -> list[str]:
         except Exception:
             issues.append("Cannot verify GitHub authentication")
 
+    return issues
+
+
+def check_repo_access(repo: str, clone_method: str = "https") -> list[str]:
+    """Check whether the configured substrate repo is reachable."""
+    issues: list[str] = []
+    cfg = {"substrate": {"repo": repo, "clone_method": clone_method}}
+    url = repo_url(cfg)
+    result = subprocess.run(
+        ["git", "ls-remote", "--heads", url],
+        capture_output=True,
+        text=True,
+    )
+    if result.returncode != 0:
+        err = (result.stderr or "").strip() or "unknown git error"
+        issues.append(f"Cannot access repo {repo} via {clone_method}: {err}")
     return issues
 
 
@@ -165,6 +181,8 @@ def main():
     sub = parser.add_subparsers(dest="command")
 
     ch = sub.add_parser("check", help="Check prerequisites")
+    ch.add_argument("--repo", help="Optional repo to verify access (e.g., user/substrate)")
+    ch.add_argument("--clone-method", default="https", choices=["https", "ssh"])
 
     init = sub.add_parser("init", help="Create config and optionally create repo")
     init.add_argument("--identity", required=True, help="This Zo's name (e.g., 'va')")
@@ -183,6 +201,18 @@ def main():
 
     if args.command == "check":
         issues = check_prerequisites()
+        if args.repo:
+            issues.extend(check_repo_access(args.repo, args.clone_method))
+        elif CONFIG_FILE.exists():
+            try:
+                with open(CONFIG_FILE) as f:
+                    cfg = yaml.safe_load(f) or {}
+                repo = cfg.get("substrate", {}).get("repo", "")
+                method = cfg.get("substrate", {}).get("clone_method", "https")
+                if repo:
+                    issues.extend(check_repo_access(repo, method))
+            except Exception as e:
+                issues.append(f"Could not validate configured repo access: {e}")
         if issues:
             print("Prerequisites check FAILED:")
             for i in issues:

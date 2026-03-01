@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "slug": "rice-core",
+  "title": "Rice Core — Zoffice Skeleton & Config Schemas",
+  "objective": null,
+  "created": "2026-02-21",
+  "status": "complete",
+  "completed_at": "2026-02-21",
+  "type": "general",
+  "build_mode": "learning",
+  "learning_landscape_generated": false,
+  "orchestrator_convo_id": null,
+  "workers": {
+    "total": 0,
+    "complete": 0,
+    "in_progress": 0,
+    "blocked": 0,
+    "pending": 0
+  },
+  "waves": [],
+  "worker_details": []
+}

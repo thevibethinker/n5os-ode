@@ -1,0 +1,28 @@
+{
+  "schema_version": "1.0",
+  "slug": "rice-integration",
+  "title": "Rice Integration — Routing, Config, and Layer 2 Readiness",
+  "objective": "Wire routing patterns, update capabilities to active, create integration manifest for Layer 2 activation",
+  "created": "2026-02-21",
+  "status": "complete",
+  "completed_at": "2026-02-22",
+  "type": "general",
+  "build_mode": "direct",
+  "learning_landscape_generated": false,
+  "orchestrator_convo_id": null,
+  "summary": "Updated routing.yaml with channel-specific patterns, activated all 8 capabilities, created integration.yaml with Layer 2 activation checklist. Zoffice Layer 1 is fully installed and ready for live wiring.",
+  "artifacts": [
+    "Zoffice/config/routing.yaml",
+    "Zoffice/config/capabilities.yaml",
+    "Zoffice/config/integration.yaml"
+  ],
+  "workers": {
+    "total": 0,
+    "complete": 0,
+    "in_progress": 0,
+    "blocked": 0,
+    "pending": 0
+  },
+  "waves": [],
+  "worker_details": []
+}

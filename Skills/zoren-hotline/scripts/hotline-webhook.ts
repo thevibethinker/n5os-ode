@@ -16,9 +16,10 @@ const AGENTMAIL_INBOX_ID = "zoren@agentmail.to";
 const AGENTMAIL_API_URL = `https://api.agentmail.to/v0/inboxes/${AGENTMAIL_INBOX_ID}/messages/send`;
 const EMAIL_WHITELIST = ["zocomputer.com", "support.zocomputer.com", "discord.gg", "agentmail.to"];
 const EMAIL_INCENTIVE_MESSAGE = "For the next week, every caller who shares a meaningful email will be entered to receive a surprise gift from Zo.";
-const ZOREN_EMAIL_SYSTEM_PROMPT = `You are writing a follow-up email on behalf of Zøren from The Vibe Pill Hotline. Always keep it personal, specific, and actionable. Reference The Vibe Pill program when relevant. Invite them to call back or sign up if they haven't already. Avoid URLs outside the whitelist (${EMAIL_WHITELIST.join(", ")}).`;
+const ZOREN_EMAIL_SYSTEM_PROMPT = `You are writing a follow-up email on behalf of Zøren from The Vibe Pill. Always keep it personal, specific, and actionable. Reference The Vibe Pill program when relevant. Invite them to call back or sign up if they haven't already. Avoid URLs outside the whitelist (${EMAIL_WHITELIST.join(", ")}).`;
 const VAPI_WEBHOOK_SECRET = process.env.VAPI_HOTLINE_SECRET || "";
 const ZO_API_TOKEN = process.env.ZO_API_KEY || process.env.ZOPUTER_API_KEY || process.env.ZO_CLIENT_IDENTITY_TOKEN || "";
+const STRIPE_SECRET_KEY = process.env.STRIPE_SECRET_KEY || "";
 
 const anthropicApiKey = process.env.ANTHROPIC_API_KEY || "";
 const anthropicClient = anthropicApiKey ? new Anthropic({ apiKey: anthropicApiKey }) : null;
@@ -40,7 +41,7 @@ function sanitizeKeywords(keywords: string[]): string[] {
 }
 
 // ─── System prompt ───────────────────────────────────────────────────────────
-const systemPromptTemplate = readFileSync("/home/workspace/Skills/zoren-hotline/prompts/zoren-system-prompt.md", "utf-8")
+const systemPromptTemplate = readFileSync("/home/workspace/Skills/zoren-hotline/prompts/zoren-system-prompt-v2.md", "utf-8")
   .replace(/^---[\s\S]*?---\s*/, '');
 const systemPromptBase = systemPromptTemplate.replace(/\$\{VERBOSITY\}/g, VERBOSITY);
 
@@ -49,27 +50,45 @@ async function getRecentCallContext(): Promise<string> {
     const script = `
 import duckdb, json
 con = duckdb.connect('${DB_PATH}')
-rows = con.execute('''
-    SELECT duration_seconds, started_at, raw_data
-    FROM calls WHERE duration_seconds >= 60
-    ORDER BY started_at DESC LIMIT 20
-''').fetchall()
-summaries = []
-for r in rows:
-    raw = json.loads(r[2]) if r[2] else {}
-    msg = raw.get('message', {})
-    summary = msg.get('analysis', {}).get('summary', '')
-    if not summary:
-        transcript = msg.get('artifact', {}).get('transcript', '') or msg.get('transcript', '')
-        if transcript: summary = transcript[:150]
-    if summary: summaries.append(summary[:200])
+try:
+    cols = [c[0] for c in con.execute('DESCRIBE calls').fetchall()]
+    if 'raw_data' in cols:
+        rows = con.execute('''
+            SELECT duration_seconds, started_at, raw_data
+            FROM calls WHERE duration_seconds >= 60
+            ORDER BY started_at DESC LIMIT 20
+        ''').fetchall()
+        summaries = []
+        for r in rows:
+            raw = json.loads(r[2]) if r[2] else {}
+            msg = raw.get('message', {})
+            summary = msg.get('analysis', {}).get('summary', '')
+            if not summary:
+                transcript = msg.get('artifact', {}).get('transcript', '') or msg.get('transcript', '')
+                if transcript: summary = transcript[:150]
+            if summary: summaries.append(summary[:200])
+    elif 'summary' in cols:
+        rows = con.execute('''
+            SELECT duration_seconds, started_at, summary
+            FROM calls WHERE duration_seconds >= 60
+            ORDER BY started_at DESC LIMIT 20
+        ''').fetchall()
+        summaries = [r[2][:200] for r in rows if r[2]]
+    else:
+        summaries = []
+except Exception as e:
+    summaries = []
 con.close()
 print(json.dumps(summaries))
 `;
     const proc = Bun.spawn(["python3", "-c", script], { stdout: "pipe", stderr: "pipe" });
     const output = await new Response(proc.stdout).text();
+    await new Response(proc.stderr).text();
     await proc.exited;
-    const summaries: string[] = JSON.parse(output.trim());
+    const trimmed = output.trim();
+    if (!trimmed || trimmed === "[]" || !trimmed.startsWith("[")) return "";
+    let summaries: string[];
+    try { summaries = JSON.parse(trimmed); } catch { return ""; }
     if (summaries.length === 0) return "";
     const bullets = summaries.map(s => `- ${s.replace(/\n/g, ' ')}`).join("\n");
     return `\n\n---\n\n## Recent Caller Topics (Last ${summaries.length} Calls 1min+)\n\nThis is what callers have been asking about recently. Use this awareness to anticipate needs but don't reference these calls directly.\n\n${bullets}\n`;
@@ -170,13 +189,16 @@ async function lookupCallerProfile(phoneHash: string): Promise<CallerProfile | n
 import duckdb, json, sys
 ph = sys.stdin.read().strip()
 con = duckdb.connect('${DB_PATH}')
-rows = con.execute('SELECT * FROM caller_profiles WHERE phone_hash = ?', [ph]).fetchall()
-if rows:
-    r = rows[0]
-    cols = [d[0] for d in con.execute('DESCRIBE caller_profiles').fetchall()]
-    print(json.dumps(dict(zip(cols, [str(v) if v is not None else None for v in r]))))
-else:
-    print('null')
+try:
+    cols = [c[0] for c in con.execute('DESCRIBE caller_profiles').fetchall()]
+    rows = con.execute('SELECT * FROM caller_profiles WHERE phone_hash = ?', [ph]).fetchall()
+    if rows:
+        r = rows[0]
+        print(json.dumps(dict(zip(cols, [str(v) if v is not None else None for v in r]))))
+    else:
+        print('null')
+except Exception as e:
+    print(f'Warning: {e}')
 con.close()
 `;
     const proc = Bun.spawn(["python3", "-c", script], { stdin: "pipe", stdout: "pipe", stderr: "pipe" });
@@ -244,7 +266,7 @@ else:
         INSERT INTO caller_profiles (phone_hash, first_name, call_count, first_call_at, last_call_at,
             topics_discussed, level_assessed, avg_satisfaction, preferred_style, notes)
         VALUES (?, ?, 1, ?, ?, ?, ?, ?, 'normal', NULL)
-    ''', [d['phone_hash'], d.get('first_name'), now, now,
+    ''', [d['phone_hash'], d.get('first_name'), 1, now, now,
           d.get('topics', ''), d.get('level'), d.get('satisfaction')])
 
 con.close()
@@ -554,6 +576,300 @@ async function initDb() {
     console.log("Database initialized successfully");
   } catch (error) {
     console.error("Failed to initialize database:", error);
+  }
+}
+
+// ─── Member Registry ─────────────────────────────────────────────────────────
+
+type MemberStatus = "VERIFIED_MEMBER" | "NON_MEMBER" | "UNKNOWN";
+
+async function checkMemberStatus(callerPhone: string): Promise<{ status: MemberStatus; tier?: string; memberName?: string }> {
+  if (!callerPhone) return { status: "UNKNOWN" };
+
+  const phoneHash = hashPhone(callerPhone);
+
+  try {
+    const script = `
+import duckdb, json, sys
+ph = sys.stdin.read().strip()
+con = duckdb.connect('${DB_PATH}')
+try:
+    con.execute("SELECT 1 FROM member_registry LIMIT 0")
+except:
+    con.execute("""
+        CREATE TABLE IF NOT EXISTS member_registry (
+            phone_hash VARCHAR PRIMARY KEY,
+            stripe_customer_id VARCHAR,
+            subscription_status VARCHAR DEFAULT 'active',
+            tier VARCHAR,
+            member_name VARCHAR,
+            member_email VARCHAR,
+            phone_raw_last4 VARCHAR,
+            last_synced_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )
+    """)
+rows = con.execute('SELECT subscription_status, tier, member_name FROM member_registry WHERE phone_hash = ?', [ph]).fetchall()
+if rows:
+    print(json.dumps({"status": rows[0][0], "tier": rows[0][1], "name": rows[0][2]}))
+else:
+    print('null')
+con.close()
+`;
+    const proc = Bun.spawn(["python3", "-c", script], { stdin: "pipe", stdout: "pipe", stderr: "pipe" });
+    proc.stdin.write(phoneHash);
+    proc.stdin.end();
+    const output = await new Response(proc.stdout).text();
+    await proc.exited;
+
+    if (!output.trim() || output.trim() === "null") return { status: "UNKNOWN" };
+    const data = JSON.parse(output.trim());
+    if (data.status === "active") {
+      return { status: "VERIFIED_MEMBER", tier: data.tier, memberName: data.name };
+    }
+    return { status: "NON_MEMBER" };
+  } catch (error) {
+    console.error("Member status check failed:", error);
+    return { status: "UNKNOWN" };
+  }
+}
+
+async function syncMemberFromStripe(phone: string, stripeCustomerId: string, tier: string, name?: string, email?: string): Promise<void> {
+  const phoneHash = hashPhone(phone);
+  try {
+    const script = `
+import duckdb, json, sys
+d = json.loads(sys.stdin.read())
+con = duckdb.connect(d['db'])
+con.execute("""
+    CREATE TABLE IF NOT EXISTS member_registry (
+        phone_hash VARCHAR PRIMARY KEY,
+        stripe_customer_id VARCHAR,
+        subscription_status VARCHAR DEFAULT 'active',
+        tier VARCHAR,
+        member_name VARCHAR,
+        member_email VARCHAR,
+        phone_raw_last4 VARCHAR,
+        last_synced_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    )
+""")
+con.execute("""
+    INSERT INTO member_registry (phone_hash, stripe_customer_id, subscription_status, tier, member_name, member_email, phone_raw_last4, last_synced_at)
+    VALUES (?, ?, 'active', ?, ?, ?, ?, CURRENT_TIMESTAMP)
+    ON CONFLICT (phone_hash) DO UPDATE SET
+        stripe_customer_id = excluded.stripe_customer_id,
+        subscription_status = 'active',
+        tier = excluded.tier,
+        member_name = COALESCE(excluded.member_name, member_registry.member_name),
+        member_email = COALESCE(excluded.member_email, member_registry.member_email),
+        last_synced_at = CURRENT_TIMESTAMP
+""", [d['phone_hash'], d['stripe_customer_id'], d['tier'], d.get('name'), d.get('email'), d.get('last4')])
+con.close()
+print('OK')
+`;
+    const proc = Bun.spawn(["python3", "-c", script], { stdin: "pipe", stdout: "pipe", stderr: "pipe" });
+    proc.stdin.write(JSON.stringify({
+      db: DB_PATH,
+      phone_hash: phoneHash,
+      stripe_customer_id: stripeCustomerId,
+      tier,
+      name: name || null,
+      email: email || null,
+      last4: phone.slice(-4),
+    }));
+    proc.stdin.end();
+    await proc.exited;
+  } catch (error) {
+    console.error("Member sync failed:", error);
+  }
+}
+
+// ─── New Concierge Tool Implementations ──────────────────────────────────────
+
+async function submitApplication(params: {
+  callerName: string;
+  q1_what_you_do: string;
+  q2_ai_relationship: string;
+  q3_unlimited_compute: string;
+  q4_learning_style: string}, callId: string): Promise<object> {
+  const { callerName, q1_what_you_do, q2_ai_relationship, q3_unlimited_compute, q4_learning_style } = params;
+
+  try {
+    const script = `
+import duckdb, json, sys
+from datetime import datetime
+d = json.loads(sys.stdin.read())
+con = duckdb.connect(d['db'])
+con.execute('''
+    CREATE TABLE IF NOT EXISTS applications (
+        id VARCHAR PRIMARY KEY,
+        call_id VARCHAR,
+        caller_name VARCHAR,
+        q1_what_you_do TEXT,
+        q2_ai_relationship TEXT,
+        q3_unlimited_compute TEXT,
+        q4_learning_style TEXT,
+        status VARCHAR DEFAULT 'pending',
+        submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        reviewed_at TIMESTAMP,
+        decision VARCHAR,
+        notes TEXT
+    )
+''')
+import uuid
+app_id = str(uuid.uuid4())[:8]
+con.execute('''
+    INSERT INTO applications (id, call_id, caller_name, q1_what_you_do, q2_ai_relationship, q3_unlimited_compute, q4_learning_style, submitted_at)
+    VALUES (?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
+''', [app_id, d['call_id'], d['name'], d['q1'], d['q2'], d['q3'], d['q4']])
+con.close()
+print(json.dumps({"id": app_id}))
+`;
+    const proc = Bun.spawn(["python3", "-c", script], { stdin: "pipe", stdout: "pipe", stderr: "pipe" });
+    proc.stdin.write(JSON.stringify({
+      db: DB_PATH,
+      call_id: callId,
+      name: callerName,
+      q1: q1_what_you_do,
+      q2: q2_ai_relationship,
+      q3: q3_unlimited_compute,
+      q4: q4_learning_style,
+    }));
+    proc.stdin.end();
+    const output = await new Response(proc.stdout).text();
+    const stderr = await new Response(proc.stderr).text();
+    await proc.exited;
+    if (stderr) console.error("Application submit stderr:", stderr);
+
+    const result = JSON.parse(output.trim());
+
+    const smsBody = `🆕 Vibe Pill Application\n• Name: ${callerName}\n• Does: ${q1_what_you_do.substring(0, 100)}\n• AI Level: ${q2_ai_relationship.substring(0, 80)}\n• Dream Build: ${q3_unlimited_compute.substring(0, 100)}\n• Learns: ${q4_learning_style.substring(0, 60)}\n• App ID: ${result.id}`;
+    notifyV(smsBody);
+
+    return {
+      success: true,
+      application_id: result.id,
+      message: "Application submitted successfully. V has been notified and will review it personally. Tell the caller: 'Your application is in. V reviews every one personally. You'll hear back soon.'"
+    };
+  } catch (error: any) {
+    console.error("Application submission failed:", error);
+    return { error: "Failed to submit application", message: error.message };
+  }
+}
+
+async function submitFutureInterest(params: {
+  callerName: string;
+  whyInterested: string;
+  howHeard: string;
+  referredBy?: string;
+  marketingConsent: boolean;
+}, callId: string): Promise<object> {
+  try {
+    const script = `
+import duckdb, json, sys
+from datetime import datetime
+d = json.loads(sys.stdin.read())
+con = duckdb.connect(d['db'])
+con.execute('''
+    CREATE TABLE IF NOT EXISTS future_interest (
+        id VARCHAR PRIMARY KEY,
+        call_id VARCHAR,
+        caller_name VARCHAR,
+        why_interested TEXT,
+        how_heard VARCHAR,
+        referred_by VARCHAR,
+        marketing_consent BOOLEAN,
+        submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    )
+''')
+import uuid
+fid = str(uuid.uuid4())[:8]
+con.execute('''
+    INSERT INTO future_interest (id, call_id, caller_name, why_interested, how_heard, referred_by, marketing_consent, submitted_at)
+    VALUES (?, ?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
+''', [fid, d['call_id'], d['name'], d['why'], d['how'], d.get('ref'), d['consent']])
+con.close()
+print(json.dumps({"id": fid}))
+`;
+    const proc = Bun.spawn(["python3", "-c", script], { stdin: "pipe", stdout: "pipe", stderr: "pipe" });
+    proc.stdin.write(JSON.stringify({
+      db: DB_PATH,
+      call_id: callId,
+      name: params.callerName,
+      why: params.whyInterested,
+      how: params.howHeard,
+      ref: params.referredBy || null,
+      consent: params.marketingConsent,
+    }));
+    proc.stdin.end();
+    const output = await new Response(proc.stdout).text();
+    await proc.exited;
+
+    return {
+      success: true,
+      message: "You're on the list. When something fits, you'll hear from us."
+    };
+  } catch (error: any) {
+    console.error("Future interest submission failed:", error);
+    return { error: "Failed to submit interest", message: error.message };
+  }
+}
+
+async function submitContactRequest(params: {
+  callerName: string;
+  contactMethod: string;
+  contactValue: string;
+  reason: string;
+}, callId: string): Promise<object> {
+  try {
+    const script = `
+import duckdb, json, sys
+from datetime import datetime
+d = json.loads(sys.stdin.read())
+con = duckdb.connect(d['db'])
+con.execute('''
+    CREATE TABLE IF NOT EXISTS contact_requests (
+        id VARCHAR PRIMARY KEY,
+        call_id VARCHAR,
+        caller_name VARCHAR,
+        contact_method VARCHAR,
+        contact_value VARCHAR,
+        reason TEXT,
+        submitted_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        contacted BOOLEAN DEFAULT FALSE
+    )
+''')
+import uuid
+cid = str(uuid.uuid4())[:8]
+con.execute('''
+    INSERT INTO contact_requests (id, call_id, caller_name, contact_method, contact_value, reason, submitted_at)
+    VALUES (?, ?, ?, ?, ?, ?, CURRENT_TIMESTAMP)
+''', [cid, d['call_id'], d['name'], d['method'], d['value'], d['reason']])
+con.close()
+print(json.dumps({"id": cid}))
+`;
+    const proc = Bun.spawn(["python3", "-c", script], { stdin: "pipe", stdout: "pipe", stderr: "pipe" });
+    proc.stdin.write(JSON.stringify({
+      db: DB_PATH,
+      call_id: callId,
+      name: params.callerName,
+      method: params.contactMethod,
+      value: params.contactValue,
+      reason: params.reason,
+    }));
+    proc.stdin.end();
+    const output = await new Response(proc.stdout).text();
+    await proc.exited;
+
+    const smsBody = `📋 Contact Request\n• Name: ${params.callerName}\n• ${params.contactMethod}: ${params.contactValue}\n• Reason: ${params.reason.substring(0, 100)}`;
+    notifyV(smsBody);
+
+    return {
+      success: true,
+      message: "Got it. V will be in touch. Usually within a day or two."
+    };
+  } catch (error: any) {
+    console.error("Contact request submission failed:", error);
+    return { error: "Failed to submit contact request", message: error.message };
   }
 }
 
@@ -1061,12 +1377,9 @@ export default function HotlineFollowUp() {
             <h2 className="text-sm font-medium uppercase tracking-wider text-zinc-500 mb-5">Keep going</h2>
             <div className="space-y-3">
               {d.communityLinks.map((link: any, i: number) => (
-                <a key={i} href={link.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 p-4 rounded-xl border border-zinc-800 bg-zinc-800/30 hover:bg-zinc-800/60 hover:border-zinc-700 transition-all duration-200 group">
-                  <div>
-                    <div className="font-medium text-zinc-200 group-hover:text-white transition-colors">{link.label}</div>
-                    <div className="text-sm text-zinc-500 mt-0.5">{link.description}</div>
-                  </div>
-                  <ExternalLink className="w-4 h-4 text-zinc-600 group-hover:text-zinc-400 transition-colors flex-shrink-0 ml-4" />
+                <a key={i} href={link.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm text-zinc-500 hover:text-amber-500 transition-colors">
+                  <span>{link.label}</span>
+                  <ExternalLink className="w-3.5 h-3.5" />
                 </a>
               ))}
             </div>
@@ -1522,7 +1835,7 @@ import duckdb, json, sys
 data = json.loads(sys.stdin.read())
 con = duckdb.connect(data['db'])
 try:
-    rows = con.execute("SELECT raw_data FROM calls WHERE id = ?", [data['call_id']]).fetchall()
+    rows = con.execute("SELECT raw_data FROM calls WHERE id = ? AND caller_email IS NOT NULL", [data['call_id']]).fetchall()
     if rows:
         raw = json.loads(rows[0][0]) if rows[0][0] else {}
         phone = raw.get('message', {}).get('call', {}).get('customer', {}).get('number', '')
@@ -1602,9 +1915,19 @@ async function logCall(data: any): Promise<void> {
   try {
     const call = data.message?.call || data.call || {};
     const callId = call.id || generateUUID();
-    const startedAt = call.startedAt || new Date().toISOString();
-    const endedAt = call.endedAt || new Date().toISOString();
-    const durationSeconds = Math.round(data.message?.durationSeconds || 0);
+    const nowIso = new Date().toISOString();
+    const durationSeconds = Math.max(0, Math.round(data.message?.durationSeconds || 0));
+    const startedAt = call.startedAt || data.message?.startedAt || nowIso;
+    const startMs = Date.parse(startedAt);
+    const endedCandidate = call.endedAt || data.message?.endedAt || "";
+    const endedMs = endedCandidate ? Date.parse(endedCandidate) : NaN;
+    const shouldRecomputeEnd =
+      !endedCandidate ||
+      Number.isNaN(endedMs) ||
+      (!Number.isNaN(startMs) && durationSeconds > 0 && endedMs <= startMs);
+    const endedAt = shouldRecomputeEnd
+      ? (Number.isNaN(startMs) ? startedAt : new Date(startMs + (durationSeconds * 1000)).toISOString())
+      : endedCandidate;
 
     const insertScript = `
 import duckdb, json, sys
@@ -1707,31 +2030,63 @@ const server = Bun.serve({
 
       // ── assistant-request ───────────────────────────────────────────────
       if (messageType === "assistant-request") {
+        const reqStart = Date.now();
         console.log("Assistant request received");
 
         let callerContext = "";
         const callerPhone = data.message?.call?.customer?.number || data.call?.customer?.number || "";
         const vapiCallId = data.message?.call?.id || data.call?.id || "";
         if (callerPhone && vapiCallId) callPhoneMap.set(vapiCallId, callerPhone);
+
+        let memberStatus: MemberStatus = "UNKNOWN";
+        let memberTier = "";
+        let memberName = "";
+
         if (callerPhone) {
           const phoneHash = hashPhone(callerPhone);
-          const profile = await lookupCallerProfile(phoneHash);
+          // Run both DB lookups in parallel to reduce response time
+          const [profile, memberCheck] = await Promise.all([
+            lookupCallerProfile(phoneHash),
+            checkMemberStatus(callerPhone)
+          ]);
           if (profile) {
             callerContext = `\n\n---\n\n## Caller Context\n\n${buildCallerContext(profile)}\n`;
             console.log(`Returning caller identified: ${profile.call_count} previous calls`);
           }
+
+          memberStatus = memberCheck.status;
+          memberTier = memberCheck.tier || "";
+          memberName = memberCheck.memberName || "";
+          console.log(`Member status for caller: ${memberStatus} (tier: ${memberTier})`);
         }
 
-        const fullPrompt = systemPrompt + callerContext;
+        const memberContext = memberStatus === "VERIFIED_MEMBER"
+          ? `\n\n---\n\n## Member Status\n\nVERIFIED_MEMBER\nTier: ${memberTier}\n${memberName ? `Member name: ${memberName}\n` : ""}`
+          : `\n\n---\n\n## Member Status\n\nNON-MEMBER`;
+
+        const effectiveStatus = memberStatus === "VERIFIED_MEMBER" ? "VERIFIED_MEMBER" : "NON_MEMBER";
+        const promptWithMember = systemPrompt
+          .replace("`{{MEMBER_STATUS}}`", effectiveStatus)
+          .replace("{{MEMBER_STATUS}}", effectiveStatus);
+
+        const fullPrompt = promptWithMember + memberContext + callerContext;
+
+        let firstMessage: string;
+        if (memberStatus === "VERIFIED_MEMBER") {
+          const nameGreet = memberName ? `, ${memberName}` : "";
+          firstMessage = `Hey${nameGreet} — welcome back. What are you working on?`;
+        } else if (callerContext && callerContext.includes("Name:")) {
+          firstMessage = `Hey — welcome back. Pick up where we left off, or something new?`;
+        } else if (callerContext) {
+          firstMessage = `Hey — welcome back. What can I help you with?`;
+        } else {
+          firstMessage = `Hey — you've reached The Vibe Pill, a community for non-technical founders leveling up for the post-technical era. I'm Zøren, the concierge. I can answer any questions or help you register your interest in joining. What can I do for you?`;
+        }
 
         const response = {
           assistant: {
             name: "Zøren",
-            firstMessage: callerContext 
-              ? (callerContext.includes("Name:") 
-                ? `Hey — welcome back to The Vibe Pill Hotline. Good to hear from you again. Pick up where we left off, or something new?`
-                : `Hey — welcome back to The Vibe Pill Hotline. Good to hear from you again. What can I help you with today?`)
-              : `Hey — you've reached The Vibe Pill Hotline. I'm Zøren. Whether you're checking out the program, already a member, or stuck on a build — I've got you. What brings you in?`,
+            firstMessage: firstMessage,
 
             transcriber: {
               provider: "deepgram",
@@ -1886,6 +2241,59 @@ const server = Bun.serve({
                     }
                   }
                 },
+                {
+                  type: "function",
+                  function: {
+                    name: "submitApplication",
+                    description: "Submit a completed Vibe Pill application after all 4 intake questions have been answered. This notifies V immediately. MANDATORY after completing the intake flow.",
+                    parameters: {
+                      type: "object",
+                      properties: {
+                        callerName: { type: "string", description: "Caller's first name" },
+                        q1_what_you_do: { type: "string", description: "Their answer to 'What do you do?'" },
+                        q2_ai_relationship: { type: "string", description: "Their answer to 'What's your relationship with AI?'" },
+                        q3_unlimited_compute: { type: "string", description: "Their answer to the unlimited compute question" },
+                        q4_learning_style: { type: "string", description: "Their answer to 'How do you learn best?'" }
+                      },
+                      required: ["callerName", "q1_what_you_do", "q2_ai_relationship", "q3_unlimited_compute", "q4_learning_style"]
+                    }
+                  }
+                },
+                {
+                  type: "function",
+                  function: {
+                    name: "submitFutureInterest",
+                    description: "Record a future interest form for someone not ready to apply yet. Collects basic info and marketing consent.",
+                    parameters: {
+                      type: "object",
+                      properties: {
+                        callerName: { type: "string", description: "Caller's name" },
+                        whyInterested: { type: "string", description: "Why they're interested in The Vibe Pill" },
+                        howHeard: { type: "string", description: "How they heard about us" },
+                        referredBy: { type: "string", description: "Who referred them (if anyone)" },
+                        marketingConsent: { type: "boolean", description: "Whether they consented to being contacted for marketing" }
+                      },
+                      required: ["callerName", "whyInterested", "howHeard", "marketingConsent"]
+                    }
+                  }
+                },
+                {
+                  type: "function",
+                  function: {
+                    name: "submitContactRequest",
+                    description: "Record a request for V to contact the caller directly. Notifies V immediately.",
+                    parameters: {
+                      type: "object",
+                      properties: {
+                        callerName: { type: "string", description: "Caller's name" },
+                        contactMethod: { type: "string", enum: ["email", "phone"], description: "Preferred contact method" },
+                        contactValue: { type: "string", description: "Email address or phone number" },
+                        reason: { type: "string", description: "Why they want V to reach out" }
+                      },
+                      required: ["callerName", "contactMethod", "contactValue", "reason"]
+                    }
+                  }
+                },
               ]
             },
 
@@ -1937,15 +2345,24 @@ const server = Bun.serve({
             maxDurationSeconds: 1800,
 
             analysisPlan: {
-              summaryPrompt: "Summarize this Vibe Pill Hotline call in 2-3 sentences. Focus on: what the caller wanted, what pathway they were on (exploring, building something specific, or comparing tools), and whether they left with a clear next step.",
-              structuredDataPrompt: "Extract the following from this Vibe Pill Hotline call transcript. Be precise — if something wasn't discussed, leave it null.",
+              summaryPrompt: "Summarize this Vibe Pill call in 2-3 sentences. Focus on: what the caller wanted, which pathway they were on (application, program info, future interest, contact request, member support, co-building), whether they were identified as a member or non-member, and whether they left with a clear next step.",
+              structuredDataPrompt: "Extract the following from this Vibe Pill call transcript. Be precise — if something wasn't discussed, leave it null.",
               structuredDataSchema: {
                 type: "object",
                 properties: {
                   caller_pathway: {
                     type: "string",
-                    enum: ["intake", "support", "cobuild", "faq", "unclear"],
+                    enum: ["application", "program_info", "future_interest", "contact_request", "member_support", "member_cobuild", "unclear"],
                     description: "Which conversation pathway the caller was on"
+                  },
+                  member_status: {
+                    type: "string",
+                    enum: ["verified_member", "non_member", "unknown"],
+                    description: "Whether the caller was identified as a member"
+                  },
+                  application_submitted: {
+                    type: "boolean",
+                    description: "Was an application submitted during this call?"
                   },
                   caller_technical_level: {
                     type: "number",
@@ -1975,7 +2392,7 @@ const server = Bun.serve({
                   },
                   escalation_requested: {
                     type: "boolean",
-                    description: "Did the caller ask for human help or want to reach V?"
+                    description: "Did the caller ask for human follow-up or want to reach V?"
                   },
                   screening_signals_detected: {
                     type: "boolean",
@@ -2001,6 +2418,8 @@ const server = Bun.serve({
           }
         };
 
+        const elapsed = Date.now() - reqStart;
+        console.log(`[TIMING] assistant-request handler completed in ${elapsed}ms`);
         return new Response(JSON.stringify(response), {
           status: 200, headers: { "Content-Type": "application/json" }
         });
@@ -2032,10 +2451,13 @@ const server = Bun.serve({
             case "collectEmail": result = await sendFollowUp({ confirmed: true }, callId); break;
             case "sendFollowUp": result = await sendFollowUp(params, callId); break;
             case "sendPaymentLink": result = await sendPaymentLink(params, callId); break;
+            case "submitApplication": result = await submitApplication(params, callId); break;
+            case "submitFutureInterest": result = await submitFutureInterest(params, callId); break;
+            case "submitContactRequest": result = await submitContactRequest(params, callId); break;
             default:
               result = {
                 error: `Unknown tool: ${toolName}`,
-                available_tools: ["assessCallerLevel", "getRecommendations", "explainConcept", "requestEscalation", "collectFeedback", "collectEmail", "sendFollowUp", "sendPaymentLink"]
+                available_tools: ["assessCallerLevel", "getRecommendations", "explainConcept", "requestEscalation", "collectFeedback", "collectEmail", "sendFollowUp", "sendPaymentLink", "submitApplication", "submitFutureInterest", "submitContactRequest"]
               };
           }
 
@@ -2103,7 +2525,7 @@ con.close()
             satisfaction = satData.satisfaction;
             callerName = satData.name;
           }
-        } catch { /* continue without satisfaction data */ }
+        } catch { /* use empty strings */ }
 
         // Check escalation status
         let escalationRequested = false;

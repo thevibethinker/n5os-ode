@@ -1,0 +1,11 @@
+{
+  "source": "ExtraE113/moltbook_data",
+  "posts_parsed": 157038,
+  "top1000_size": 1000,
+  "zode_subset_size": 300,
+  "pops_off_in_top1000": 809,
+  "pops_off_rate_top1000": 0.809,
+  "avg_upvotes_top1000": 3536.95,
+  "avg_comments_top1000": 206.63,
+  "avg_first60_top1000": 47.18
+}

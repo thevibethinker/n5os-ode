@@ -1,1 +1,0 @@
-{"entities": [{"name": "RECALL_API_KEY", "type": "TOOL", "context": "An API key required for using the Recall API"}, {"name": "RECALL_REGION", "type": "CONCEPT", "context": "A parameter indicating the default region for the API"}, {"name": "RECALL_WEBHOOK_SECRET", "type": "TOOL", "context": "An optional secret for verifying signatures in webhooks"}], "relationships": []}

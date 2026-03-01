@@ -1,0 +1,4625 @@
+{
+  "builds": {
+    "MG-2_2025-12-12_Jonathan_Beda_x_Vrijen": {
+      "slug": "MG-2_2025-12-12_Jonathan_Beda_x_Vrijen",
+      "base_name": "MG-2_2025-12-12_Jonathan_Beda_x_Vrijen",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "MG-2_2025-12-12_Jonathan_Beda_x_Vrijen",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "acquisition-pitch-evolution": {
+      "slug": "acquisition-pitch-evolution",
+      "base_name": "acquisition-pitch-evolution",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "acquisition-pitch-evolution",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "acquisition-research-batch-1": {
+      "slug": "acquisition-research-batch-1",
+      "base_name": "acquisition-research-batch-1",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "acquisition-research-batch-1",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "acquisition-tracker": {
+      "slug": "acquisition-tracker",
+      "base_name": "acquisition-tracker",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "acquisition-tracker",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "additive-second-pass": {
+      "slug": "additive-second-pass",
+      "base_name": "additive-second-pass",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "additive-second-pass",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "adhd-todo-research": {
+      "slug": "adhd-todo-research",
+      "base_name": "adhd-todo-research",
+      "has_meta": true,
+      "status": "complete",
+      "title": "ADHD-Optimized Task System Research",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": true,
+      "has_workspace": false
+    },
+    "agent-conflict-gate": {
+      "slug": "agent-conflict-gate",
+      "base_name": "agent-conflict-gate",
+      "has_meta": true,
+      "status": "active",
+      "title": "Agent Conflict Gate System",
+      "created": "2026-02-12",
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "ann-vector-index": {
+      "slug": "ann-vector-index",
+      "base_name": "ann-vector-index",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "ann-vector-index",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "apply-ai-leads-export": {
+      "slug": "apply-ai-leads-export",
+      "base_name": "apply-ai-leads-export",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "apply-ai-leads-export",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "b01-recap-test": {
+      "slug": "b01-recap-test",
+      "base_name": "b01-recap-test",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "b01-recap-test",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "b03-generation-careerspan": {
+      "slug": "b03-generation-careerspan",
+      "base_name": "b03-generation-careerspan",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "b03-generation-careerspan",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "b05-backfill": {
+      "slug": "b05-backfill",
+      "base_name": "b05-backfill",
+      "has_meta": true,
+      "status": "complete",
+      "title": "B05 Consolidation & Semantic Backfill",
+      "created": null,
+      "completed_at": "2026-01-27T02:59:03.039395",
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": true,
+      "has_workspace": false
+    },
+    "b05-backfill-extended": {
+      "slug": "b05-backfill-extended",
+      "base_name": "b05-backfill",
+      "has_meta": true,
+      "status": "complete",
+      "title": "B05 Extended Backfill (Dec 15 - Jan 18)",
+      "created": null,
+      "completed_at": "2026-02-01T18:34:56.294638+00:00",
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": true,
+      "has_workspace": false
+    },
+    "b06-generation-careerspan": {
+      "slug": "b06-generation-careerspan",
+      "base_name": "b06-generation-careerspan",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "b06-generation-careerspan",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "b15-generation": {
+      "slug": "b15-generation",
+      "base_name": "b15-generation",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "b15-generation",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "b25-deliverable-map-careerspan": {
+      "slug": "b25-deliverable-map-careerspan",
+      "base_name": "b25-deliverable-map-careerspan",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "b25-deliverable-map-careerspan",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "block-prompt-consolidation": {
+      "slug": "block-prompt-consolidation",
+      "base_name": "block-prompt",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "block-prompt-consolidation",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "blurb-gen-2026-01-06": {
+      "slug": "blurb-gen-2026-01-06",
+      "base_name": "blurb-gen-2026-01-06",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "blurb-gen-2026-01-06",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "blurb-gen-2026-01-09-ilse": {
+      "slug": "blurb-gen-2026-01-09-ilse",
+      "base_name": "blurb-gen-2026-01-09-ilse",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "blurb-gen-2026-01-09-ilse",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "build-promote": {
+      "slug": "build-promote",
+      "base_name": "build-promote",
+      "has_meta": true,
+      "status": "active",
+      "title": "Build Promote \u2014 Build-to-Skill Finalization Skill",
+      "created": "2026-02-21",
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "builds-audit-cleanup": {
+      "slug": "builds-audit-cleanup",
+      "base_name": "builds-audit-cleanup",
+      "has_meta": true,
+      "status": "complete",
+      "title": "N5 Builds Audit & Cleanup",
+      "created": null,
+      "completed_at": "2026-02-01T00:44:46.690918+00:00",
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": true,
+      "has_workspace": false
+    },
+    "calendly-integration": {
+      "slug": "calendly-integration",
+      "base_name": "calendly",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "calendly-integration",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "career-coaching-hotline": {
+      "slug": "career-coaching-hotline",
+      "base_name": "career-coaching-hotline",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "career-coaching-hotline",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": true,
+      "has_workspace": false
+    },
+    "career-hotline-monetization": {
+      "slug": "career-hotline-monetization",
+      "base_name": "career-hotline-monetization",
+      "has_meta": true,
+      "status": "complete",
+      "title": "Career Coaching Hotline \u2014 Zozie Rename + Prepaid Credits Monetization",
+      "created": "2026-02-14T10:53:12.164558+00:00",
+      "completed_at": "2026-02-14T11:29:36.759346+00:00",
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "career-hotline-v4": {
+      "slug": "career-hotline-v4",
+      "base_name": "career-hotline",
+      "has_meta": true,
+      "status": "active",
+      "title": "Career Coaching Hotline V4 \u2014 Prime Time",
+      "created": "2026-02-17",
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "careerspan-pipeline-v2": {
+      "slug": "careerspan-pipeline-v2",
+      "base_name": "careerspan-pipeline",
+      "has_meta": true,
+      "status": "complete",
+      "title": "Careerspan Pipeline v2 \u2014 Action Flow Skills + Orchestrator Wiring",
+      "created": "2026-02-02T21:00:00Z",
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "careerspan-profile-output-v1": {
+      "slug": "careerspan-profile-output-v1",
+      "base_name": "careerspan-profile-output",
+      "has_meta": true,
+      "status": "complete",
+      "title": "Careerspan Trade-Offs Profile Output Demo",
+      "created": null,
+      "completed_at": "2026-01-29T06:50:00Z",
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": true,
+      "has_workspace": false
+    },
+    "careerspan-prospector": {
+      "slug": "careerspan-prospector",
+      "base_name": "careerspan-prospector",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "careerspan-prospector",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "careerspan-sales-prospecting": {
+      "slug": "careerspan-sales-prospecting",
+      "base_name": "careerspan-sales-prospecting",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "careerspan-sales-prospecting",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "careerspan-standup-intel-20250917": {
+      "slug": "careerspan-standup-intel-20250917",
+      "base_name": "careerspan-standup-intel-20250917",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "careerspan-standup-intel-20250917",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "cc-outreach-tracker": {
+      "slug": "cc-outreach-tracker",
+      "base_name": "cc-outreach-tracker",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "cc-outreach-tracker",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "consulting-zoffice-stack": {
+      "slug": "consulting-zoffice-stack",
+      "base_name": "consulting-zoffice-stack",
+      "has_meta": true,
+      "status": "active",
+      "title": "Zoffice Consultancy Stack",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "content-library-consolidation": {
+      "slug": "content-library-consolidation",
+      "base_name": "content-library",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "content-library-consolidation",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "content-library-media-extension": {
+      "slug": "content-library-media-extension",
+      "base_name": "content-library-media-extension",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "content-library-media-extension",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "content-library-v4": {
+      "slug": "content-library-v4",
+      "base_name": "content-library",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "content-library-v4",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "context-graph": {
+      "slug": "context-graph",
+      "base_name": "context-graph",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "context-graph",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "conversation-end-v3": {
+      "slug": "conversation-end-v3",
+      "base_name": "conversation-end",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "conversation-end-v3",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "crm-aviato-profile-fix": {
+      "slug": "crm-aviato-profile-fix",
+      "base_name": "crm-aviato-profile",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "crm-aviato-profile-fix",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "crm-unified-core": {
+      "slug": "crm-unified-core",
+      "base_name": "crm-unified-core",
+      "has_meta": true,
+      "status": "draft",
+      "title": "Crm Unified Core",
+      "created": "2026-02-16",
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": true,
+      "has_workspace": false
+    },
+    "cs-job-pipeline": {
+      "slug": "cs-job-pipeline",
+      "base_name": "cs-job-pipeline",
+      "has_meta": true,
+      "status": "draft",
+      "title": "Careerspan Job Sourcing Pipeline",
+      "created": "2026-02-19",
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "dark-factory-elevation": {
+      "slug": "dark-factory-elevation",
+      "base_name": "dark-factory-elevation",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "dark-factory-elevation",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "deal-sync-router": {
+      "slug": "deal-sync-router",
+      "base_name": "deal-sync-router",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "deal-sync-router",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "decomposer-fix": {
+      "slug": "decomposer-fix",
+      "base_name": "decomposer",
+      "has_meta": true,
+      "status": "complete",
+      "title": "Careerspan Decomposer Schema Fix",
+      "created": "2026-01-30T03:15:00Z",
+      "completed_at": "2026-01-30T03:18:17.205717+00:00",
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "decomposer-reliability": {
+      "slug": "decomposer-reliability",
+      "base_name": "decomposer-reliability",
+      "has_meta": true,
+      "status": "complete",
+      "title": "Careerspan Decomposer Reliability",
+      "created": "2026-02-01",
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "design-library": {
+      "slug": "design-library",
+      "base_name": "design-library",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "design-library",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "dynamic-survey-analyzer": {
+      "slug": "dynamic-survey-analyzer",
+      "base_name": "dynamic-survey-analyzer",
+      "has_meta": true,
+      "status": "complete",
+      "title": "Dynamic Survey Analyzer Skill",
+      "created": null,
+      "completed_at": "2026-01-25T04:10:00Z",
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": true,
+      "has_workspace": false
+    },
+    "edge-pipeline-fixes": {
+      "slug": "edge-pipeline-fixes",
+      "base_name": "edge-pipeline-fixes",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "edge-pipeline-fixes",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "email-followup-system": {
+      "slug": "email-followup-system",
+      "base_name": "email-followup-system",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "email-followup-system",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "emily-velasco-intel": {
+      "slug": "emily-velasco-intel",
+      "base_name": "emily-velasco-intel",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "emily-velasco-intel",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "even-realities-g2-guide": {
+      "slug": "even-realities-g2-guide",
+      "base_name": "even-realities-g2-guide",
+      "has_meta": true,
+      "status": "complete",
+      "title": "Even Realities G2 & R1 Ring Combo Guide",
+      "created": "2026-01-27",
+      "completed_at": "2026-01-27T20:00:00-05:00",
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": true,
+      "has_workspace": false
+    },
+    "events-pipeline-consolidation": {
+      "slug": "events-pipeline-consolidation",
+      "base_name": "events-pipeline",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "events-pipeline-consolidation",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "flight-search-v2": {
+      "slug": "flight-search-v2",
+      "base_name": "flight-search",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "flight-search-v2",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "fohe-newsletter-q1-2026": {
+      "slug": "fohe-newsletter-q1-2026",
+      "base_name": "fohe-newsletter-q1-2026",
+      "has_meta": true,
+      "status": "active",
+      "title": "FOHE NYC Q1 2026 Newsletter",
+      "created": "2026-02-12",
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": true,
+      "has_workspace": false
+    },
+    "foundermaxxing-launch": {
+      "slug": "foundermaxxing-launch",
+      "base_name": "foundermaxxing-launch",
+      "has_meta": true,
+      "status": "superseded",
+      "title": "FounderMaxxing Launch \u2014 External Collateral",
+      "created": "2026-02-19T14:45:00Z",
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": true,
+      "has_workspace": false
+    },
+    "foundermaxxing-page-v2": {
+      "slug": "foundermaxxing-page-v2",
+      "base_name": "foundermaxxing-page",
+      "has_meta": true,
+      "status": "superseded",
+      "title": "FounderMaxxing Landing Page V2 \u2014 Narrative Rebuild",
+      "created": "2026-02-19T20:30:00Z",
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "foundermaxxing-v2": {
+      "slug": "foundermaxxing-v2",
+      "base_name": "foundermaxxing",
+      "has_meta": true,
+      "status": "active",
+      "title": "FounderMaxxing v2 \u2014 Full Build",
+      "created": "2026-02-19T22:00:00Z",
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": true,
+      "has_workspace": false
+    },
+    "frank-investor-line": {
+      "slug": "frank-investor-line",
+      "base_name": "frank-investor-line",
+      "has_meta": true,
+      "status": "complete",
+      "title": "Frank Investor Line v2: Voice-Backed Intelligence System",
+      "created": null,
+      "completed_at": "2026-02-12T08:43:48.200233+00:00",
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": true,
+      "has_workspace": false
+    },
+    "frontend-skill": {
+      "slug": "frontend-skill",
+      "base_name": "frontend-skill",
+      "has_meta": true,
+      "status": "complete",
+      "title": "Frontend Design Skill for Landing Pages",
+      "created": null,
+      "completed_at": "2026-02-06T21:26:21.772152+00:00",
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": true,
+      "has_workspace": false
+    },
+    "git-cleanup-2026-01-15": {
+      "slug": "git-cleanup-2026-01-15",
+      "base_name": "git-cleanup-2026-01-15",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "git-cleanup-2026-01-15",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "google-flights": {
+      "slug": "google-flights",
+      "base_name": "google-flights",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "google-flights",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "graph-unify": {
+      "slug": "graph-unify",
+      "base_name": "graph-unify",
+      "has_meta": true,
+      "status": "draft",
+      "title": "Unified Knowledge Graph: Fix, Merge, Resume",
+      "created": "2026-02-10",
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "hardik-gamma-visual": {
+      "slug": "hardik-gamma-visual",
+      "base_name": "hardik-gamma-visual",
+      "has_meta": true,
+      "status": "complete",
+      "title": "Hardik Profile Visual - Gamma Webpage",
+      "created": null,
+      "completed_at": "2026-01-29T08:55:00Z",
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": true,
+      "has_workspace": false
+    },
+    "hardik-profile-gamma": {
+      "slug": "hardik-profile-gamma",
+      "base_name": "hardik-profile-gamma",
+      "has_meta": true,
+      "status": "complete",
+      "title": "Hardik Candidate Profile Gamma Site",
+      "created": null,
+      "completed_at": "2026-01-29T07:36:00Z",
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": true,
+      "has_workspace": false
+    },
+    "health-intelligence-protocol": {
+      "slug": "health-intelligence-protocol",
+      "base_name": "health-intelligence-protocol",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "health-intelligence-protocol",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "hotline-enhancement-v3": {
+      "slug": "hotline-enhancement-v3",
+      "base_name": "hotline-enhancement",
+      "has_meta": true,
+      "status": "complete",
+      "title": "Vibe Thinker Hotline Enhancement v3",
+      "created": "2026-02-14T04:42:49.774116+00:00",
+      "completed_at": "2026-02-14T05:03:16.786345+00:00",
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "hotline-identity-decontam": {
+      "slug": "hotline-identity-decontam",
+      "base_name": "hotline-identity-decontam",
+      "has_meta": true,
+      "status": "complete",
+      "title": "Career Hotline: Zozie Identity Decontamination + Free Tier",
+      "created": "2026-02-14T17:25:24.473991+00:00",
+      "completed_at": "2026-02-14T17:46:28.167395+00:00",
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "hrv-3x-tracking": {
+      "slug": "hrv-3x-tracking",
+      "base_name": "hrv-3x-tracking",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "hrv-3x-tracking",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "idea-lab-v2": {
+      "slug": "idea-lab-v2",
+      "base_name": "idea-lab",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "idea-lab-v2",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "internal-project-blocks": {
+      "slug": "internal-project-blocks",
+      "base_name": "internal-project-blocks",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "internal-project-blocks",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "interview-reviewer": {
+      "slug": "interview-reviewer",
+      "base_name": "interview-reviewer",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "interview-reviewer",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "j-debug-performance-dashboard-0126-0519": {
+      "slug": "j-debug-performance-dashboard-0126-0519",
+      "base_name": "j-debug-performance-dashboard-0126-0519",
+      "has_meta": true,
+      "status": "complete",
+      "title": "Debug Performance Dashboard v2 build - validate all scripts work correctly, check data flow, verify ",
+      "created": null,
+      "completed_at": "2026-01-26T05:24:52.366019",
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": true,
+      "has_workspace": false
+    },
+    "j-test-lineage-functionality-0126-0416": {
+      "slug": "j-test-lineage-functionality-0126-0416",
+      "base_name": "j-test-lineage-functionality-0126-0416",
+      "has_meta": true,
+      "status": "pending",
+      "title": "Test lineage functionality",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "learning-engaged-builds": {
+      "slug": "learning-engaged-builds",
+      "base_name": "learning-engaged-builds",
+      "has_meta": true,
+      "status": "active",
+      "title": "Learning-Engaged Build Mode",
+      "created": "2026-02-17",
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": true,
+      "has_workspace": false
+    },
+    "learning-profile-system": {
+      "slug": "learning-profile-system",
+      "base_name": "learning-profile-system",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "learning-profile-system",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "lensa-intel-gen": {
+      "slug": "lensa-intel-gen",
+      "base_name": "lensa-intel-gen",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "lensa-intel-gen",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "life-counter": {
+      "slug": "life-counter",
+      "base_name": "life-counter",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "life-counter",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "linkedin-knowledge-extraction": {
+      "slug": "linkedin-knowledge-extraction",
+      "base_name": "linkedin-knowledge-extraction",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "linkedin-knowledge-extraction",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "lists-voice-of-god": {
+      "slug": "lists-voice-of-god",
+      "base_name": "lists-voice-of-god",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "lists-voice-of-god",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "lora-voice-evolution": {
+      "slug": "lora-voice-evolution",
+      "base_name": "lora-voice-evolution",
+      "has_meta": true,
+      "status": "active",
+      "title": "LoRA Voice Evolution: Fine-Tuned Model for V's Writing Voice",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": true,
+      "has_workspace": false
+    },
+    "meeting-block-audit": {
+      "slug": "meeting-block-audit",
+      "base_name": "meeting-block-audit",
+      "has_meta": true,
+      "status": "complete",
+      "title": "Meeting Intelligence Block Quality Audit",
+      "created": null,
+      "completed_at": "2026-01-27T00:50:12.862621+00:00",
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "meeting-ingestion-skill": {
+      "slug": "meeting-ingestion-skill",
+      "base_name": "meeting-ingestion-skill",
+      "has_meta": true,
+      "status": "complete",
+      "title": "Complete Meeting Ingestion Skill",
+      "created": "2026-01-26",
+      "completed_at": "2026-01-26T16:45:00Z",
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "meeting-system-migration": {
+      "slug": "meeting-system-migration",
+      "base_name": "meeting-system-migration",
+      "has_meta": true,
+      "status": "complete",
+      "title": "Meeting System Migration + Agent Audit",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": true,
+      "has_workspace": false
+    },
+    "meeting-system-v3": {
+      "slug": "meeting-system-v3",
+      "base_name": "meeting-system",
+      "has_meta": true,
+      "status": "finalized",
+      "title": "Meeting Orchestrator v3: End-to-end Pulse-driven pipeline",
+      "created": null,
+      "completed_at": "2026-02-09T13:21:52.253764+00:00",
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": true,
+      "has_workspace": false
+    },
+    "memebench": {
+      "slug": "memebench",
+      "base_name": "memebench",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "memebench",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "memory-as-reasoning": {
+      "slug": "memory-as-reasoning",
+      "base_name": "memory-as-reasoning",
+      "has_meta": true,
+      "status": "complete",
+      "title": "Memory as Reasoning: Semantic Memory System Upgrade",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "meta-resume-skill-v1": {
+      "slug": "meta-resume-skill-v1",
+      "base_name": "meta-resume-skill",
+      "has_meta": true,
+      "status": "complete",
+      "title": "meta-resume-skill-v1",
+      "created": "2026-01-29T21:15:00Z",
+      "completed_at": "2026-01-30T04:00:00Z",
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": true,
+      "has_workspace": false
+    },
+    "meta-resume-v2": {
+      "slug": "meta-resume-v2",
+      "base_name": "meta-resume",
+      "has_meta": true,
+      "status": "jettisoned",
+      "title": "Meta Resume Generator v2: Schema Alignment + Design Evolution",
+      "created": "2026-02-03",
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "mg1-test-stakeholder": {
+      "slug": "mg1-test-stakeholder",
+      "base_name": "mg1-test-stakeholder",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "mg1-test-stakeholder",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "mindmap-ux-intuitive": {
+      "slug": "mindmap-ux-intuitive",
+      "base_name": "mindmap-ux-intuitive",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "mindmap-ux-intuitive",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "mindmap-ux-upgrade": {
+      "slug": "mindmap-ux-upgrade",
+      "base_name": "mindmap-ux-upgrade",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "mindmap-ux-upgrade",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "n5-brain-v2": {
+      "slug": "n5-brain-v2",
+      "base_name": "n5-brain",
+      "has_meta": true,
+      "status": "finalized",
+      "title": "N5 Brain v2: FlashRank + GraphRAG + Temporal Tracking",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "n5os-bootstrap": {
+      "slug": "n5os-bootstrap",
+      "base_name": "n5os-bootstrap",
+      "has_meta": true,
+      "status": "complete",
+      "title": "N5OS Bootstrap Skill - Distributable Operating System Substrate",
+      "created": null,
+      "completed_at": "2026-02-13T04:50:27.440080+00:00",
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "n5os-ode-release-fix": {
+      "slug": "n5os-ode-release-fix",
+      "base_name": "n5os-ode-release",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "n5os-ode-release-fix",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "n5os-ode-upgrade": {
+      "slug": "n5os-ode-upgrade",
+      "base_name": "n5os-ode-upgrade",
+      "has_meta": true,
+      "status": "planning",
+      "title": "N5OS-Ode: Meeting Ingestion + Pulse Systems",
+      "created": "2026-01-26T19:40:00Z",
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "nyne-integration": {
+      "slug": "nyne-integration",
+      "base_name": "nyne",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "nyne-integration",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "ode-cleanup": {
+      "slug": "ode-cleanup",
+      "base_name": "ode-cleanup",
+      "has_meta": true,
+      "status": "complete",
+      "title": "N5OS Ode Version Cleanup & Sync Hardening",
+      "created": null,
+      "completed_at": "2026-01-27T02:43:29.654955+00:00",
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": true,
+      "has_workspace": false
+    },
+    "ode-export": {
+      "slug": "ode-export",
+      "base_name": "ode-export",
+      "has_meta": true,
+      "status": "draft",
+      "title": "Ode Export Pipeline",
+      "created": "2026-02-19",
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "ode-v2-upgrade": {
+      "slug": "ode-v2-upgrade",
+      "base_name": "ode-v2-upgrade",
+      "has_meta": true,
+      "status": "finalized",
+      "title": "N5OS Ode v2 Upgrade",
+      "created": "2026-02-18",
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "open-letters-series": {
+      "slug": "open-letters-series",
+      "base_name": "open-letters-series",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "open-letters-series",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "perf-dashboard-v2": {
+      "slug": "perf-dashboard-v2",
+      "base_name": "perf-dashboard",
+      "has_meta": true,
+      "status": "complete",
+      "title": "Performance Intelligence Dashboard v2",
+      "created": null,
+      "completed_at": "2026-01-26T05:15:43.745023+00:00",
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "performance-intelligence": {
+      "slug": "performance-intelligence",
+      "base_name": "performance-intelligence",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "performance-intelligence",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "persona-switching-hybrid": {
+      "slug": "persona-switching-hybrid",
+      "base_name": "persona-switching-hybrid",
+      "has_meta": true,
+      "status": "draft",
+      "title": "Hybrid Persona Switching System",
+      "created": "2026-02-09",
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "planning-system-v1": {
+      "slug": "planning-system-v1",
+      "base_name": "planning-system",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "planning-system-v1",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "port-conflict-detector": {
+      "slug": "port-conflict-detector",
+      "base_name": "port-conflict-detector",
+      "has_meta": true,
+      "status": "complete",
+      "title": "Port Conflict Detector",
+      "created": "2026-01-30T17:35:00Z",
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "position-extraction-v2": {
+      "slug": "position-extraction-v2",
+      "base_name": "position-extraction",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "position-extraction-v2",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "position-integration": {
+      "slug": "position-integration",
+      "base_name": "position",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "position-integration",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "position-system-overhaul": {
+      "slug": "position-system-overhaul",
+      "base_name": "position-system-overhaul",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "position-system-overhaul",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": true,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "position-tracker": {
+      "slug": "position-tracker",
+      "base_name": "position-tracker",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "position-tracker",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "position-viz": {
+      "slug": "position-viz",
+      "base_name": "position-viz",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "position-viz",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "prompt-to-skill": {
+      "slug": "prompt-to-skill",
+      "base_name": "prompt-to-skill",
+      "has_meta": true,
+      "status": "closed",
+      "title": "Prompt-to-Skill Conversion System",
+      "created": "2026-01-24T17:20:00Z",
+      "completed_at": "2026-01-24T23:17:51.190762+00:00",
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "pulse-dashboard-integration": {
+      "slug": "pulse-dashboard-integration",
+      "base_name": "pulse-dashboard",
+      "has_meta": true,
+      "status": "complete",
+      "title": "Integrate Pulse System with Build Tracker Dashboard",
+      "created": null,
+      "completed_at": "2026-01-24T20:45:00+00:00",
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "pulse-self-upgrade": {
+      "slug": "pulse-self-upgrade",
+      "base_name": "pulse-self-upgrade",
+      "has_meta": true,
+      "status": "finalized",
+      "title": "Pulse Self-Upgrade: Agent Teams Features",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "pulse-smoke-test": {
+      "slug": "pulse-smoke-test",
+      "base_name": "pulse-smoke-test",
+      "has_meta": true,
+      "status": "pending",
+      "title": "Smoke Test: Manual Launcher + Wave Gating",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": true,
+      "has_workspace": false
+    },
+    "pulse-test": {
+      "slug": "pulse-test",
+      "base_name": "pulse-test",
+      "has_meta": true,
+      "status": "complete",
+      "title": "Pulse System Validation",
+      "created": null,
+      "completed_at": "2026-01-24T16:28:22.488390+00:00",
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": true,
+      "has_workspace": false
+    },
+    "pulse-v3": {
+      "slug": "pulse-v3",
+      "base_name": "pulse",
+      "has_meta": true,
+      "status": "complete",
+      "title": "Pulse v3: Lifecycle Automation",
+      "created": null,
+      "completed_at": "2026-01-25T01:35:25.405547+00:00",
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "pulse-variants": {
+      "slug": "pulse-variants",
+      "base_name": "pulse-variants",
+      "has_meta": true,
+      "status": "complete",
+      "title": "Pulse Jettison & Lineage System",
+      "created": null,
+      "completed_at": "2026-01-26T05:13:03.272837+00:00",
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "pulse-waves-manual-launch": {
+      "slug": "pulse-waves-manual-launch",
+      "base_name": "pulse-waves-manual-launch",
+      "has_meta": true,
+      "status": "draft",
+      "title": "Pulse: Waves schema rename + manual-drop launcher + Sentinel check",
+      "created": "2026-02-01",
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "r-block-framework": {
+      "slug": "r-block-framework",
+      "base_name": "r-block-framework",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "r-block-framework",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "r-block-refinements": {
+      "slug": "r-block-refinements",
+      "base_name": "r-block-refinements",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "r-block-refinements",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "raleigh-trip-search": {
+      "slug": "raleigh-trip-search",
+      "base_name": "raleigh-trip-search",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "raleigh-trip-search",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "reflection-engine-v2": {
+      "slug": "reflection-engine-v2",
+      "base_name": "reflection-engine",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "reflection-engine-v2",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "relationship-intelligence-os": {
+      "slug": "relationship-intelligence-os",
+      "base_name": "relationship-intelligence-os",
+      "has_meta": true,
+      "status": "active",
+      "title": "Relationship Intelligence OS",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": true,
+      "has_workspace": false
+    },
+    "relationship-intelligence-os-smoke-20260216": {
+      "slug": "relationship-intelligence-os-smoke-20260216",
+      "base_name": "relationship-intelligence-os-smoke-20260216",
+      "has_meta": true,
+      "status": "finalized",
+      "title": "Relationship Intelligence OS Smoke",
+      "created": null,
+      "completed_at": "2026-02-17T01:14:47.377679+00:00",
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": true,
+      "has_workspace": false
+    },
+    "resonance-reservoir": {
+      "slug": "resonance-reservoir",
+      "base_name": "resonance-reservoir",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "resonance-reservoir",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "resonance-v2": {
+      "slug": "resonance-v2",
+      "base_name": "resonance",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "resonance-v2",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "resume-decoded-v5-fixes": {
+      "slug": "resume-decoded-v5-fixes",
+      "base_name": "resume-decoded-v5-fixes",
+      "has_meta": true,
+      "status": "complete",
+      "title": "Resume:Decoded v5 Bug Fixes",
+      "created": "2026-02-15T01:10:00Z",
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "richard-lin-crm-enrich": {
+      "slug": "richard-lin-crm-enrich",
+      "base_name": "richard-lin-crm-enrich",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "richard-lin-crm-enrich",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "semantic-memory-fix": {
+      "slug": "semantic-memory-fix",
+      "base_name": "semantic-memory",
+      "has_meta": true,
+      "status": "complete",
+      "title": "Semantic Memory System \u2014 Performance & Quality Fix",
+      "created": null,
+      "completed_at": "2026-02-10T03:01:13.936446+00:00",
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "semantic-workout-logging": {
+      "slug": "semantic-workout-logging",
+      "base_name": "semantic-workout-logging",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "semantic-workout-logging",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "seminar-tactics-research": {
+      "slug": "seminar-tactics-research",
+      "base_name": "seminar-tactics-research",
+      "has_meta": true,
+      "status": "pending",
+      "title": "Next Play Seminar Tactics Research",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "service-fixes-2026-01-14": {
+      "slug": "service-fixes-2026-01-14",
+      "base_name": "service-fixes-2026-01-14",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "service-fixes-2026-01-14",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "shortio-vc-op-dec25": {
+      "slug": "shortio-vc-op-dec25",
+      "base_name": "shortio-vc-op-dec25",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "shortio-vc-op-dec25",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "skillrl-integration": {
+      "slug": "skillrl-integration",
+      "base_name": "skillrl",
+      "has_meta": true,
+      "status": "complete",
+      "title": "SkillRL Integration: Automated Skill Extraction & Evolution",
+      "created": null,
+      "completed_at": "2026-02-11T02:45:00Z",
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "skills-importer": {
+      "slug": "skills-importer",
+      "base_name": "skills-importer",
+      "has_meta": true,
+      "status": "complete",
+      "title": "Skills.sh Importer for N5 OS",
+      "created": null,
+      "completed_at": "2026-02-07T13:06:40.364513+00:00",
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "smart-sentinel": {
+      "slug": "smart-sentinel",
+      "base_name": "smart-sentinel",
+      "has_meta": true,
+      "status": "draft",
+      "title": "Smart Sentinel: Recovery Engine for Pulse",
+      "created": "2026-02-09",
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "socratic-isg": {
+      "slug": "socratic-isg",
+      "base_name": "socratic-isg",
+      "has_meta": true,
+      "status": "draft",
+      "title": "Socratic Information Sufficiency Gate",
+      "created": "2026-02-19",
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "socratic-voice-system": {
+      "slug": "socratic-voice-system",
+      "base_name": "socratic-voice-system",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "socratic-voice-system",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "spawn-worker-refactor": {
+      "slug": "spawn-worker-refactor",
+      "base_name": "spawn-worker-refactor",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "spawn-worker-refactor",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "sridhar-ocr-extract": {
+      "slug": "sridhar-ocr-extract",
+      "base_name": "sridhar-ocr-extract",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "sridhar-ocr-extract",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "store-refresh": {
+      "slug": "store-refresh",
+      "base_name": "store",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "store-refresh",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "store-v1": {
+      "slug": "store-v1",
+      "base_name": "store",
+      "has_meta": true,
+      "status": "draft",
+      "title": "V's Prompt & Skill Store (Gumroad-style)",
+      "created": "2026-01-25",
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "store-v2": {
+      "slug": "store-v2",
+      "base_name": "store",
+      "has_meta": true,
+      "status": "complete",
+      "title": "Store Enhancements: Export Pipeline + UX",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": true,
+      "has_workspace": false
+    },
+    "store-va-coming-soon": {
+      "slug": "store-va-coming-soon",
+      "base_name": "store-va-coming-soon",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "store-va-coming-soon",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "systematic-debugging-integration": {
+      "slug": "systematic-debugging-integration",
+      "base_name": "systematic-debugging",
+      "has_meta": true,
+      "status": "complete",
+      "title": "Systematic Debugging Integration",
+      "created": null,
+      "completed_at": "2026-02-07T13:45:58.938034+00:00",
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "tag-centralization": {
+      "slug": "tag-centralization",
+      "base_name": "tag-centralization",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "tag-centralization",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "task-system-skill": {
+      "slug": "task-system-skill",
+      "base_name": "task-system-skill",
+      "has_meta": true,
+      "status": "complete",
+      "title": "Task System Skill Restructure",
+      "created": null,
+      "completed_at": "2026-01-26T01:07:17.722344Z",
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "task-system-validation": {
+      "slug": "task-system-validation",
+      "base_name": "task-system",
+      "has_meta": true,
+      "status": "complete",
+      "title": "Task System Validation & Backfill",
+      "created": null,
+      "completed_at": "2026-01-26T03:01:40.137471",
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": true,
+      "has_workspace": false
+    },
+    "task-system-wiring": {
+      "slug": "task-system-wiring",
+      "base_name": "task-system",
+      "has_meta": true,
+      "status": "abandoned",
+      "title": "Task System Wiring - Meeting & Close Integration",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": true,
+      "has_workspace": false
+    },
+    "thought-provoker": {
+      "slug": "thought-provoker",
+      "base_name": "thought-provoker",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "thought-provoker",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "thought-provoker-integration": {
+      "slug": "thought-provoker-integration",
+      "base_name": "thought-provoker",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "thought-provoker-integration",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "thought-provoker-v2": {
+      "slug": "thought-provoker-v2",
+      "base_name": "thought-provoker",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "thought-provoker-v2",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "tope-awotona-research": {
+      "slug": "tope-awotona-research",
+      "base_name": "tope-awotona-research",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "tope-awotona-research",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "travel-wrapped-2025": {
+      "slug": "travel-wrapped-2025",
+      "base_name": "travel-wrapped-2025",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "travel-wrapped-2025",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "trusted-third-party-zo2zo-deploy-readiness": {
+      "slug": "trusted-third-party-zo2zo-deploy-readiness",
+      "base_name": "trusted-third-party-zo2zo-deploy-readiness",
+      "has_meta": true,
+      "status": "active",
+      "title": "Trusted Third-Party Zo2Zo Deploy Readiness",
+      "created": "2026-02-16",
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "twitter-growth-tactics": {
+      "slug": "twitter-growth-tactics",
+      "base_name": "twitter-growth-tactics",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "twitter-growth-tactics",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "unified-graph": {
+      "slug": "unified-graph",
+      "base_name": "unified-graph",
+      "has_meta": true,
+      "status": "draft",
+      "title": "Unified Knowledge Graph System",
+      "created": "2026-02-10",
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "unified-knowledge-graph": {
+      "slug": "unified-knowledge-graph",
+      "base_name": "unified-knowledge-graph",
+      "has_meta": true,
+      "status": "draft",
+      "title": "Unified Knowledge Graph & Semantic Memory System",
+      "created": "2026-02-10",
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "unified-meeting-intake": {
+      "slug": "unified-meeting-intake",
+      "base_name": "unified-meeting-intake",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "unified-meeting-intake",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "vibe-arg": {
+      "slug": "vibe-arg",
+      "base_name": "vibe-arg",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "vibe-arg",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "vibe-nutritionist": {
+      "slug": "vibe-nutritionist",
+      "base_name": "vibe-nutritionist",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "vibe-nutritionist",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "vibe-pill-methodology": {
+      "slug": "vibe-pill-methodology",
+      "base_name": "vibe-pill-methodology",
+      "has_meta": true,
+      "status": "active",
+      "title": "Vibe Pill Methodology Page + Troika Infographic",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": true,
+      "has_workspace": false
+    },
+    "vibe-teacher": {
+      "slug": "vibe-teacher",
+      "base_name": "vibe-teacher",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "vibe-teacher",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "vibeteacher-integration": {
+      "slug": "vibeteacher-integration",
+      "base_name": "vibeteacher",
+      "has_meta": true,
+      "status": "complete",
+      "title": "VibeTeacher Build Complete Integration",
+      "created": null,
+      "completed_at": "2026-01-25T00:19:29.157190+00:00",
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "voice-control-system": {
+      "slug": "voice-control-system",
+      "base_name": "voice-control-system",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "voice-control-system",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "voice-injection-layer": {
+      "slug": "voice-injection-layer",
+      "base_name": "voice-injection-layer",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "voice-injection-layer",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "voice-library-v2": {
+      "slug": "voice-library-v2",
+      "base_name": "voice-library",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "voice-library-v2",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "voice-pipeline-debug": {
+      "slug": "voice-pipeline-debug",
+      "base_name": "voice-pipeline",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "voice-pipeline-debug",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "vrijenattawar-domain-transition": {
+      "slug": "vrijenattawar-domain-transition",
+      "base_name": "vrijenattawar-domain-transition",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "vrijenattawar-domain-transition",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "vrijenattawar-spacing-v1": {
+      "slug": "vrijenattawar-spacing-v1",
+      "base_name": "vrijenattawar-spacing",
+      "has_meta": true,
+      "status": "complete",
+      "title": "vrijenattawar.com Spacing & Mobile Responsiveness",
+      "created": "2026-01-25T00:10:00Z",
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "watts-principles": {
+      "slug": "watts-principles",
+      "base_name": "watts-principles",
+      "has_meta": true,
+      "status": "complete",
+      "title": "Watts Principles: Anti-Contamination & Quality Gates",
+      "created": null,
+      "completed_at": "2026-01-26T02:56:35.614902+00:00",
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "wheres-v-revamp-v2": {
+      "slug": "wheres-v-revamp-v2",
+      "base_name": "wheres-v",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "wheres-v-revamp-v2",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "wheres-v-trips": {
+      "slug": "wheres-v-trips",
+      "base_name": "wheres-v-trips",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "wheres-v-trips",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "workflow-test-processing": {
+      "slug": "workflow-test-processing",
+      "base_name": "workflow-test-processing",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "workflow-test-processing",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "workos-integration": {
+      "slug": "workos-integration",
+      "base_name": "workos",
+      "has_meta": true,
+      "status": "complete",
+      "title": "WorkOS AuthKit for Where's V (invite-only)",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "workout-arsenal-revamp": {
+      "slug": "workout-arsenal-revamp",
+      "base_name": "workout-arsenal",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "workout-arsenal-revamp",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "workout-prescription-engine": {
+      "slug": "workout-prescription-engine",
+      "base_name": "workout-prescription-engine",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "workout-prescription-engine",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "workout-revamp": {
+      "slug": "workout-revamp",
+      "base_name": "workout",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "workout-revamp",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "x-thought-leader": {
+      "slug": "x-thought-leader",
+      "base_name": "x-thought-leader",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "x-thought-leader",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "x-thought-leader-list-sync": {
+      "slug": "x-thought-leader-list-sync",
+      "base_name": "x-thought-leader-list-sync",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "x-thought-leader-list-sync",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "ycb-content-layer": {
+      "slug": "ycb-content-layer",
+      "base_name": "ycb-content-layer",
+      "has_meta": true,
+      "status": "complete",
+      "title": "YCB Content Layer Integration",
+      "created": null,
+      "completed_at": "2026-02-12T02:54:42.848454+00:00",
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "zo-claude-code-native": {
+      "slug": "zo-claude-code-native",
+      "base_name": "zo-claude-code-native",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "zo-claude-code-native",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "zo-hotline": {
+      "slug": "zo-hotline",
+      "base_name": "zo-hotline",
+      "has_meta": true,
+      "status": "complete",
+      "title": "Zo Hotline - Meta-OS Leveling Framework",
+      "created": "2026-02-12",
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "zo-hotline-knowledge-expansion": {
+      "slug": "zo-hotline-knowledge-expansion",
+      "base_name": "zo-hotline-knowledge-expansion",
+      "has_meta": true,
+      "status": "complete",
+      "title": "Zo Hotline Knowledge Expansion",
+      "created": null,
+      "completed_at": "2026-02-13T00:50:47.717124+00:00",
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "zo-hotline-v4": {
+      "slug": "zo-hotline-v4",
+      "base_name": "zo-hotline",
+      "has_meta": true,
+      "status": "complete",
+      "title": "Zo Hotline V4 \u2014 Prime Time",
+      "created": "2026-02-17",
+      "completed_at": "2026-02-18",
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "zo-hotline-v5": {
+      "slug": "zo-hotline-v5",
+      "base_name": "zo-hotline",
+      "has_meta": true,
+      "status": "complete",
+      "title": "Zoseph V5: Post-call email & tools",
+      "created": "2026-02-18",
+      "completed_at": "2026-02-18",
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "zo-hotline-v6": {
+      "slug": "zo-hotline-v6",
+      "base_name": "zo-hotline",
+      "has_meta": true,
+      "status": "finalized",
+      "title": "Zo Hotline V6 \u2014 Post-Call Experience + Voice Polish",
+      "created": null,
+      "completed_at": "2026-02-19T00:57:36.159889+00:00",
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": true,
+      "has_workspace": false
+    },
+    "zo-hotline-v7": {
+      "slug": "zo-hotline-v7",
+      "base_name": "zo-hotline",
+      "has_meta": true,
+      "status": "active",
+      "title": "Zo Hotline v7 \u2014 Zo-Native Follow-Up + Co-Build Mode",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "zo-obsession-site": {
+      "slug": "zo-obsession-site",
+      "base_name": "zo-obsession-site",
+      "has_meta": true,
+      "status": "draft",
+      "title": "Zo Obsession Site",
+      "created": "2026-02-03",
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "zo-pin-recreation": {
+      "slug": "zo-pin-recreation",
+      "base_name": "zo-pin-recreation",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "zo-pin-recreation",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "zo-take-heed": {
+      "slug": "zo-take-heed",
+      "base_name": "zo-take-heed",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "zo-take-heed",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "zo-task-system": {
+      "slug": "zo-task-system",
+      "base_name": "zo-task-system",
+      "has_meta": true,
+      "status": "complete",
+      "title": "Zo Task System MVP",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": true,
+      "has_workspace": false
+    },
+    "zo-wrapped": {
+      "slug": "zo-wrapped",
+      "base_name": "zo-wrapped",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "zo-wrapped",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "zo-wrapped-v2": {
+      "slug": "zo-wrapped-v2",
+      "base_name": "zo-wrapped",
+      "has_meta": false,
+      "status": "no_meta",
+      "title": "zo-wrapped-v2",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "zode-moltbook": {
+      "slug": "zode-moltbook",
+      "base_name": "zode-moltbook",
+      "has_meta": true,
+      "status": "complete",
+      "title": "Z\u00f8de \u2014 Zo's Moltbook Presence",
+      "created": "2026-02-21",
+      "completed_at": "2026-02-21",
+      "has_transition_note": true,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "zoputer-autonomy-v2": {
+      "slug": "zoputer-autonomy-v2",
+      "base_name": "zoputer-autonomy",
+      "has_meta": true,
+      "status": "active",
+      "title": "Zoputer Autonomy v2",
+      "created": null,
+      "completed_at": null,
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": false,
+      "has_workspace": false
+    },
+    "zoren-hotline": {
+      "slug": "zoren-hotline",
+      "base_name": "zoren-hotline",
+      "has_meta": true,
+      "status": "finalized",
+      "title": "Z\u00f8ren Hotline \u2014 The Vibe Pill Communication System",
+      "created": "2026-02-20T09:05:00Z",
+      "completed_at": "2026-02-20T13:13:57.969486Z",
+      "has_transition_note": false,
+      "parent_build": null,
+      "has_scripts": false,
+      "has_artifacts": true,
+      "has_workspace": false
+    }
+  },
+  "clusters": {
+    "MG-2_2025-12-12_Jonathan_Beda_x_Vrijen": {
+      "id": "MG-2_2025-12-12_Jonathan_Beda_x_Vrijen",
+      "builds": [
+        "MG-2_2025-12-12_Jonathan_Beda_x_Vrijen"
+      ],
+      "canonical": "MG-2_2025-12-12_Jonathan_Beda_x_Vrijen",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "acquisition-pitch-evolution": {
+      "id": "acquisition-pitch-evolution",
+      "builds": [
+        "acquisition-pitch-evolution"
+      ],
+      "canonical": "acquisition-pitch-evolution",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "acquisition-research-batch-1": {
+      "id": "acquisition-research-batch-1",
+      "builds": [
+        "acquisition-research-batch-1"
+      ],
+      "canonical": "acquisition-research-batch-1",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "acquisition-tracker": {
+      "id": "acquisition-tracker",
+      "builds": [
+        "acquisition-tracker"
+      ],
+      "canonical": "acquisition-tracker",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "additive-second-pass": {
+      "id": "additive-second-pass",
+      "builds": [
+        "additive-second-pass"
+      ],
+      "canonical": "additive-second-pass",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "adhd-todo-research": {
+      "id": "adhd-todo-research",
+      "builds": [
+        "adhd-todo-research"
+      ],
+      "canonical": "adhd-todo-research",
+      "existing_skill": null,
+      "promotion_status": "promotable"
+    },
+    "agent-conflict-gate": {
+      "id": "agent-conflict-gate",
+      "builds": [
+        "agent-conflict-gate"
+      ],
+      "canonical": "agent-conflict-gate",
+      "existing_skill": null,
+      "promotion_status": "in_progress"
+    },
+    "ann-vector-index": {
+      "id": "ann-vector-index",
+      "builds": [
+        "ann-vector-index"
+      ],
+      "canonical": "ann-vector-index",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "apply-ai-leads-export": {
+      "id": "apply-ai-leads-export",
+      "builds": [
+        "apply-ai-leads-export"
+      ],
+      "canonical": "apply-ai-leads-export",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "b01-recap-test": {
+      "id": "b01-recap-test",
+      "builds": [
+        "b01-recap-test"
+      ],
+      "canonical": "b01-recap-test",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "b03-generation-careerspan": {
+      "id": "b03-generation-careerspan",
+      "builds": [
+        "b03-generation-careerspan"
+      ],
+      "canonical": "b03-generation-careerspan",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "b05-backfill": {
+      "id": "b05-backfill",
+      "builds": [
+        "b05-backfill",
+        "b05-backfill-extended"
+      ],
+      "canonical": "b05-backfill-extended",
+      "existing_skill": null,
+      "promotion_status": "promotable"
+    },
+    "b06-generation-careerspan": {
+      "id": "b06-generation-careerspan",
+      "builds": [
+        "b06-generation-careerspan"
+      ],
+      "canonical": "b06-generation-careerspan",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "b15-generation": {
+      "id": "b15-generation",
+      "builds": [
+        "b15-generation"
+      ],
+      "canonical": "b15-generation",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "b25-deliverable-map-careerspan": {
+      "id": "b25-deliverable-map-careerspan",
+      "builds": [
+        "b25-deliverable-map-careerspan"
+      ],
+      "canonical": "b25-deliverable-map-careerspan",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "block-prompt": {
+      "id": "block-prompt",
+      "builds": [
+        "block-prompt-consolidation"
+      ],
+      "canonical": "block-prompt-consolidation",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "blurb-gen-2026-01-06": {
+      "id": "blurb-gen-2026-01-06",
+      "builds": [
+        "blurb-gen-2026-01-06"
+      ],
+      "canonical": "blurb-gen-2026-01-06",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "blurb-gen-2026-01-09-ilse": {
+      "id": "blurb-gen-2026-01-09-ilse",
+      "builds": [
+        "blurb-gen-2026-01-09-ilse"
+      ],
+      "canonical": "blurb-gen-2026-01-09-ilse",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "build-promote": {
+      "id": "build-promote",
+      "builds": [
+        "build-promote"
+      ],
+      "canonical": "build-promote",
+      "existing_skill": null,
+      "promotion_status": "in_progress"
+    },
+    "builds-audit-cleanup": {
+      "id": "builds-audit-cleanup",
+      "builds": [
+        "builds-audit-cleanup"
+      ],
+      "canonical": "builds-audit-cleanup",
+      "existing_skill": null,
+      "promotion_status": "promotable"
+    },
+    "calendly": {
+      "id": "calendly",
+      "builds": [
+        "calendly-integration"
+      ],
+      "canonical": "calendly-integration",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "career-coaching-hotline": {
+      "id": "career-coaching-hotline",
+      "builds": [
+        "career-coaching-hotline"
+      ],
+      "canonical": "career-coaching-hotline",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "career-hotline-monetization": {
+      "id": "career-hotline-monetization",
+      "builds": [
+        "career-hotline-monetization"
+      ],
+      "canonical": "career-hotline-monetization",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "career-hotline": {
+      "id": "career-hotline",
+      "builds": [
+        "career-hotline-v4"
+      ],
+      "canonical": "career-hotline-v4",
+      "existing_skill": null,
+      "promotion_status": "in_progress"
+    },
+    "careerspan-pipeline": {
+      "id": "careerspan-pipeline",
+      "builds": [
+        "careerspan-pipeline-v2"
+      ],
+      "canonical": "careerspan-pipeline-v2",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "careerspan-profile-output": {
+      "id": "careerspan-profile-output",
+      "builds": [
+        "careerspan-profile-output-v1"
+      ],
+      "canonical": "careerspan-profile-output-v1",
+      "existing_skill": null,
+      "promotion_status": "promotable"
+    },
+    "careerspan-prospector": {
+      "id": "careerspan-prospector",
+      "builds": [
+        "careerspan-prospector"
+      ],
+      "canonical": "careerspan-prospector",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "careerspan-sales-prospecting": {
+      "id": "careerspan-sales-prospecting",
+      "builds": [
+        "careerspan-sales-prospecting"
+      ],
+      "canonical": "careerspan-sales-prospecting",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "careerspan-standup-intel-20250917": {
+      "id": "careerspan-standup-intel-20250917",
+      "builds": [
+        "careerspan-standup-intel-20250917"
+      ],
+      "canonical": "careerspan-standup-intel-20250917",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "cc-outreach-tracker": {
+      "id": "cc-outreach-tracker",
+      "builds": [
+        "cc-outreach-tracker"
+      ],
+      "canonical": "cc-outreach-tracker",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "consulting-zoffice-stack": {
+      "id": "consulting-zoffice-stack",
+      "builds": [
+        "consulting-zoffice-stack"
+      ],
+      "canonical": "consulting-zoffice-stack",
+      "existing_skill": null,
+      "promotion_status": "in_progress"
+    },
+    "content-library": {
+      "id": "content-library",
+      "builds": [
+        "content-library-consolidation",
+        "content-library-v4"
+      ],
+      "canonical": "content-library-v4",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "content-library-media-extension": {
+      "id": "content-library-media-extension",
+      "builds": [
+        "content-library-media-extension"
+      ],
+      "canonical": "content-library-media-extension",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "context-graph": {
+      "id": "context-graph",
+      "builds": [
+        "context-graph"
+      ],
+      "canonical": "context-graph",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "conversation-end": {
+      "id": "conversation-end",
+      "builds": [
+        "conversation-end-v3"
+      ],
+      "canonical": "conversation-end-v3",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "crm-aviato-profile": {
+      "id": "crm-aviato-profile",
+      "builds": [
+        "crm-aviato-profile-fix"
+      ],
+      "canonical": "crm-aviato-profile-fix",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "crm-unified-core": {
+      "id": "crm-unified-core",
+      "builds": [
+        "crm-unified-core"
+      ],
+      "canonical": "crm-unified-core",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "cs-job-pipeline": {
+      "id": "cs-job-pipeline",
+      "builds": [
+        "cs-job-pipeline"
+      ],
+      "canonical": "cs-job-pipeline",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "dark-factory-elevation": {
+      "id": "dark-factory-elevation",
+      "builds": [
+        "dark-factory-elevation"
+      ],
+      "canonical": "dark-factory-elevation",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "deal-sync-router": {
+      "id": "deal-sync-router",
+      "builds": [
+        "deal-sync-router"
+      ],
+      "canonical": "deal-sync-router",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "decomposer": {
+      "id": "decomposer",
+      "builds": [
+        "decomposer-fix"
+      ],
+      "canonical": "decomposer-fix",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "decomposer-reliability": {
+      "id": "decomposer-reliability",
+      "builds": [
+        "decomposer-reliability"
+      ],
+      "canonical": "decomposer-reliability",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "design-library": {
+      "id": "design-library",
+      "builds": [
+        "design-library"
+      ],
+      "canonical": "design-library",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "dynamic-survey-analyzer": {
+      "id": "dynamic-survey-analyzer",
+      "builds": [
+        "dynamic-survey-analyzer"
+      ],
+      "canonical": "dynamic-survey-analyzer",
+      "existing_skill": "dynamic-survey-analyzer",
+      "promotion_status": "has_skill_may_need_sync"
+    },
+    "edge-pipeline-fixes": {
+      "id": "edge-pipeline-fixes",
+      "builds": [
+        "edge-pipeline-fixes"
+      ],
+      "canonical": "edge-pipeline-fixes",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "email-followup-system": {
+      "id": "email-followup-system",
+      "builds": [
+        "email-followup-system"
+      ],
+      "canonical": "email-followup-system",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "emily-velasco-intel": {
+      "id": "emily-velasco-intel",
+      "builds": [
+        "emily-velasco-intel"
+      ],
+      "canonical": "emily-velasco-intel",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "even-realities-g2-guide": {
+      "id": "even-realities-g2-guide",
+      "builds": [
+        "even-realities-g2-guide"
+      ],
+      "canonical": "even-realities-g2-guide",
+      "existing_skill": null,
+      "promotion_status": "promotable"
+    },
+    "events-pipeline": {
+      "id": "events-pipeline",
+      "builds": [
+        "events-pipeline-consolidation"
+      ],
+      "canonical": "events-pipeline-consolidation",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "flight-search": {
+      "id": "flight-search",
+      "builds": [
+        "flight-search-v2"
+      ],
+      "canonical": "flight-search-v2",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "fohe-newsletter-q1-2026": {
+      "id": "fohe-newsletter-q1-2026",
+      "builds": [
+        "fohe-newsletter-q1-2026"
+      ],
+      "canonical": "fohe-newsletter-q1-2026",
+      "existing_skill": null,
+      "promotion_status": "in_progress"
+    },
+    "foundermaxxing-launch": {
+      "id": "foundermaxxing-launch",
+      "builds": [
+        "foundermaxxing-launch"
+      ],
+      "canonical": "foundermaxxing-launch",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "foundermaxxing-page": {
+      "id": "foundermaxxing-page",
+      "builds": [
+        "foundermaxxing-page-v2"
+      ],
+      "canonical": "foundermaxxing-page-v2",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "foundermaxxing": {
+      "id": "foundermaxxing",
+      "builds": [
+        "foundermaxxing-v2"
+      ],
+      "canonical": "foundermaxxing-v2",
+      "existing_skill": null,
+      "promotion_status": "in_progress"
+    },
+    "frank-investor-line": {
+      "id": "frank-investor-line",
+      "builds": [
+        "frank-investor-line"
+      ],
+      "canonical": "frank-investor-line",
+      "existing_skill": null,
+      "promotion_status": "promotable"
+    },
+    "frontend-skill": {
+      "id": "frontend-skill",
+      "builds": [
+        "frontend-skill"
+      ],
+      "canonical": "frontend-skill",
+      "existing_skill": null,
+      "promotion_status": "promotable"
+    },
+    "git-cleanup-2026-01-15": {
+      "id": "git-cleanup-2026-01-15",
+      "builds": [
+        "git-cleanup-2026-01-15"
+      ],
+      "canonical": "git-cleanup-2026-01-15",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "google-flights": {
+      "id": "google-flights",
+      "builds": [
+        "google-flights"
+      ],
+      "canonical": "google-flights",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "graph-unify": {
+      "id": "graph-unify",
+      "builds": [
+        "graph-unify"
+      ],
+      "canonical": "graph-unify",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "hardik-gamma-visual": {
+      "id": "hardik-gamma-visual",
+      "builds": [
+        "hardik-gamma-visual"
+      ],
+      "canonical": "hardik-gamma-visual",
+      "existing_skill": null,
+      "promotion_status": "promotable"
+    },
+    "hardik-profile-gamma": {
+      "id": "hardik-profile-gamma",
+      "builds": [
+        "hardik-profile-gamma"
+      ],
+      "canonical": "hardik-profile-gamma",
+      "existing_skill": null,
+      "promotion_status": "promotable"
+    },
+    "health-intelligence-protocol": {
+      "id": "health-intelligence-protocol",
+      "builds": [
+        "health-intelligence-protocol"
+      ],
+      "canonical": "health-intelligence-protocol",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "hotline-enhancement": {
+      "id": "hotline-enhancement",
+      "builds": [
+        "hotline-enhancement-v3"
+      ],
+      "canonical": "hotline-enhancement-v3",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "hotline-identity-decontam": {
+      "id": "hotline-identity-decontam",
+      "builds": [
+        "hotline-identity-decontam"
+      ],
+      "canonical": "hotline-identity-decontam",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "hrv-3x-tracking": {
+      "id": "hrv-3x-tracking",
+      "builds": [
+        "hrv-3x-tracking"
+      ],
+      "canonical": "hrv-3x-tracking",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "idea-lab": {
+      "id": "idea-lab",
+      "builds": [
+        "idea-lab-v2"
+      ],
+      "canonical": "idea-lab-v2",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "internal-project-blocks": {
+      "id": "internal-project-blocks",
+      "builds": [
+        "internal-project-blocks"
+      ],
+      "canonical": "internal-project-blocks",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "interview-reviewer": {
+      "id": "interview-reviewer",
+      "builds": [
+        "interview-reviewer"
+      ],
+      "canonical": "interview-reviewer",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "j-debug-performance-dashboard-0126-0519": {
+      "id": "j-debug-performance-dashboard-0126-0519",
+      "builds": [
+        "j-debug-performance-dashboard-0126-0519"
+      ],
+      "canonical": "j-debug-performance-dashboard-0126-0519",
+      "existing_skill": null,
+      "promotion_status": "promotable"
+    },
+    "j-test-lineage-functionality-0126-0416": {
+      "id": "j-test-lineage-functionality-0126-0416",
+      "builds": [
+        "j-test-lineage-functionality-0126-0416"
+      ],
+      "canonical": "j-test-lineage-functionality-0126-0416",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "learning-engaged-builds": {
+      "id": "learning-engaged-builds",
+      "builds": [
+        "learning-engaged-builds"
+      ],
+      "canonical": "learning-engaged-builds",
+      "existing_skill": null,
+      "promotion_status": "in_progress"
+    },
+    "learning-profile-system": {
+      "id": "learning-profile-system",
+      "builds": [
+        "learning-profile-system"
+      ],
+      "canonical": "learning-profile-system",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "lensa-intel-gen": {
+      "id": "lensa-intel-gen",
+      "builds": [
+        "lensa-intel-gen"
+      ],
+      "canonical": "lensa-intel-gen",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "life-counter": {
+      "id": "life-counter",
+      "builds": [
+        "life-counter"
+      ],
+      "canonical": "life-counter",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "linkedin-knowledge-extraction": {
+      "id": "linkedin-knowledge-extraction",
+      "builds": [
+        "linkedin-knowledge-extraction"
+      ],
+      "canonical": "linkedin-knowledge-extraction",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "lists-voice-of-god": {
+      "id": "lists-voice-of-god",
+      "builds": [
+        "lists-voice-of-god"
+      ],
+      "canonical": "lists-voice-of-god",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "lora-voice-evolution": {
+      "id": "lora-voice-evolution",
+      "builds": [
+        "lora-voice-evolution"
+      ],
+      "canonical": "lora-voice-evolution",
+      "existing_skill": null,
+      "promotion_status": "in_progress"
+    },
+    "meeting-block-audit": {
+      "id": "meeting-block-audit",
+      "builds": [
+        "meeting-block-audit"
+      ],
+      "canonical": "meeting-block-audit",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "meeting-ingestion-skill": {
+      "id": "meeting-ingestion-skill",
+      "builds": [
+        "meeting-ingestion-skill"
+      ],
+      "canonical": "meeting-ingestion-skill",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "meeting-system-migration": {
+      "id": "meeting-system-migration",
+      "builds": [
+        "meeting-system-migration"
+      ],
+      "canonical": "meeting-system-migration",
+      "existing_skill": null,
+      "promotion_status": "promotable"
+    },
+    "meeting-system": {
+      "id": "meeting-system",
+      "builds": [
+        "meeting-system-v3"
+      ],
+      "canonical": "meeting-system-v3",
+      "existing_skill": null,
+      "promotion_status": "promotable"
+    },
+    "memebench": {
+      "id": "memebench",
+      "builds": [
+        "memebench"
+      ],
+      "canonical": "memebench",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "memory-as-reasoning": {
+      "id": "memory-as-reasoning",
+      "builds": [
+        "memory-as-reasoning"
+      ],
+      "canonical": "memory-as-reasoning",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "meta-resume-skill": {
+      "id": "meta-resume-skill",
+      "builds": [
+        "meta-resume-skill-v1"
+      ],
+      "canonical": "meta-resume-skill-v1",
+      "existing_skill": null,
+      "promotion_status": "promotable"
+    },
+    "meta-resume": {
+      "id": "meta-resume",
+      "builds": [
+        "meta-resume-v2"
+      ],
+      "canonical": "meta-resume-v2",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "mg1-test-stakeholder": {
+      "id": "mg1-test-stakeholder",
+      "builds": [
+        "mg1-test-stakeholder"
+      ],
+      "canonical": "mg1-test-stakeholder",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "mindmap-ux-intuitive": {
+      "id": "mindmap-ux-intuitive",
+      "builds": [
+        "mindmap-ux-intuitive"
+      ],
+      "canonical": "mindmap-ux-intuitive",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "mindmap-ux-upgrade": {
+      "id": "mindmap-ux-upgrade",
+      "builds": [
+        "mindmap-ux-upgrade"
+      ],
+      "canonical": "mindmap-ux-upgrade",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "n5-brain": {
+      "id": "n5-brain",
+      "builds": [
+        "n5-brain-v2"
+      ],
+      "canonical": "n5-brain-v2",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "n5os-bootstrap": {
+      "id": "n5os-bootstrap",
+      "builds": [
+        "n5os-bootstrap"
+      ],
+      "canonical": "n5os-bootstrap",
+      "existing_skill": "n5os-bootstrap",
+      "promotion_status": "has_skill_may_need_sync"
+    },
+    "n5os-ode-release": {
+      "id": "n5os-ode-release",
+      "builds": [
+        "n5os-ode-release-fix"
+      ],
+      "canonical": "n5os-ode-release-fix",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "n5os-ode-upgrade": {
+      "id": "n5os-ode-upgrade",
+      "builds": [
+        "n5os-ode-upgrade"
+      ],
+      "canonical": "n5os-ode-upgrade",
+      "existing_skill": null,
+      "promotion_status": "in_progress"
+    },
+    "nyne": {
+      "id": "nyne",
+      "builds": [
+        "nyne-integration"
+      ],
+      "canonical": "nyne-integration",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "ode-cleanup": {
+      "id": "ode-cleanup",
+      "builds": [
+        "ode-cleanup"
+      ],
+      "canonical": "ode-cleanup",
+      "existing_skill": null,
+      "promotion_status": "promotable"
+    },
+    "ode-export": {
+      "id": "ode-export",
+      "builds": [
+        "ode-export"
+      ],
+      "canonical": "ode-export",
+      "existing_skill": "ode-export",
+      "promotion_status": "has_skill_may_need_sync"
+    },
+    "ode-v2-upgrade": {
+      "id": "ode-v2-upgrade",
+      "builds": [
+        "ode-v2-upgrade"
+      ],
+      "canonical": "ode-v2-upgrade",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "open-letters-series": {
+      "id": "open-letters-series",
+      "builds": [
+        "open-letters-series"
+      ],
+      "canonical": "open-letters-series",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "perf-dashboard": {
+      "id": "perf-dashboard",
+      "builds": [
+        "perf-dashboard-v2"
+      ],
+      "canonical": "perf-dashboard-v2",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "performance-intelligence": {
+      "id": "performance-intelligence",
+      "builds": [
+        "performance-intelligence"
+      ],
+      "canonical": "performance-intelligence",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "persona-switching-hybrid": {
+      "id": "persona-switching-hybrid",
+      "builds": [
+        "persona-switching-hybrid"
+      ],
+      "canonical": "persona-switching-hybrid",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "planning-system": {
+      "id": "planning-system",
+      "builds": [
+        "planning-system-v1"
+      ],
+      "canonical": "planning-system-v1",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "port-conflict-detector": {
+      "id": "port-conflict-detector",
+      "builds": [
+        "port-conflict-detector"
+      ],
+      "canonical": "port-conflict-detector",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "position-extraction": {
+      "id": "position-extraction",
+      "builds": [
+        "position-extraction-v2"
+      ],
+      "canonical": "position-extraction-v2",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "position": {
+      "id": "position",
+      "builds": [
+        "position-integration"
+      ],
+      "canonical": "position-integration",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "position-system-overhaul": {
+      "id": "position-system-overhaul",
+      "builds": [
+        "position-system-overhaul"
+      ],
+      "canonical": "position-system-overhaul",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "position-tracker": {
+      "id": "position-tracker",
+      "builds": [
+        "position-tracker"
+      ],
+      "canonical": "position-tracker",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "position-viz": {
+      "id": "position-viz",
+      "builds": [
+        "position-viz"
+      ],
+      "canonical": "position-viz",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "prompt-to-skill": {
+      "id": "prompt-to-skill",
+      "builds": [
+        "prompt-to-skill"
+      ],
+      "canonical": "prompt-to-skill",
+      "existing_skill": "prompt-to-skill",
+      "promotion_status": "has_skill_may_need_sync"
+    },
+    "pulse-dashboard": {
+      "id": "pulse-dashboard",
+      "builds": [
+        "pulse-dashboard-integration"
+      ],
+      "canonical": "pulse-dashboard-integration",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "pulse-self-upgrade": {
+      "id": "pulse-self-upgrade",
+      "builds": [
+        "pulse-self-upgrade"
+      ],
+      "canonical": "pulse-self-upgrade",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "pulse-smoke-test": {
+      "id": "pulse-smoke-test",
+      "builds": [
+        "pulse-smoke-test"
+      ],
+      "canonical": "pulse-smoke-test",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "pulse-test": {
+      "id": "pulse-test",
+      "builds": [
+        "pulse-test"
+      ],
+      "canonical": "pulse-test",
+      "existing_skill": null,
+      "promotion_status": "promotable"
+    },
+    "pulse": {
+      "id": "pulse",
+      "builds": [
+        "pulse-v3"
+      ],
+      "canonical": "pulse-v3",
+      "existing_skill": "pulse",
+      "promotion_status": "has_skill_may_need_sync"
+    },
+    "pulse-variants": {
+      "id": "pulse-variants",
+      "builds": [
+        "pulse-variants"
+      ],
+      "canonical": "pulse-variants",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "pulse-waves-manual-launch": {
+      "id": "pulse-waves-manual-launch",
+      "builds": [
+        "pulse-waves-manual-launch"
+      ],
+      "canonical": "pulse-waves-manual-launch",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "r-block-framework": {
+      "id": "r-block-framework",
+      "builds": [
+        "r-block-framework"
+      ],
+      "canonical": "r-block-framework",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "r-block-refinements": {
+      "id": "r-block-refinements",
+      "builds": [
+        "r-block-refinements"
+      ],
+      "canonical": "r-block-refinements",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "raleigh-trip-search": {
+      "id": "raleigh-trip-search",
+      "builds": [
+        "raleigh-trip-search"
+      ],
+      "canonical": "raleigh-trip-search",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "reflection-engine": {
+      "id": "reflection-engine",
+      "builds": [
+        "reflection-engine-v2"
+      ],
+      "canonical": "reflection-engine-v2",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "relationship-intelligence-os": {
+      "id": "relationship-intelligence-os",
+      "builds": [
+        "relationship-intelligence-os"
+      ],
+      "canonical": "relationship-intelligence-os",
+      "existing_skill": null,
+      "promotion_status": "in_progress"
+    },
+    "relationship-intelligence-os-smoke-20260216": {
+      "id": "relationship-intelligence-os-smoke-20260216",
+      "builds": [
+        "relationship-intelligence-os-smoke-20260216"
+      ],
+      "canonical": "relationship-intelligence-os-smoke-20260216",
+      "existing_skill": null,
+      "promotion_status": "promotable"
+    },
+    "resonance-reservoir": {
+      "id": "resonance-reservoir",
+      "builds": [
+        "resonance-reservoir"
+      ],
+      "canonical": "resonance-reservoir",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "resonance": {
+      "id": "resonance",
+      "builds": [
+        "resonance-v2"
+      ],
+      "canonical": "resonance-v2",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "resume-decoded-v5-fixes": {
+      "id": "resume-decoded-v5-fixes",
+      "builds": [
+        "resume-decoded-v5-fixes"
+      ],
+      "canonical": "resume-decoded-v5-fixes",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "richard-lin-crm-enrich": {
+      "id": "richard-lin-crm-enrich",
+      "builds": [
+        "richard-lin-crm-enrich"
+      ],
+      "canonical": "richard-lin-crm-enrich",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "semantic-memory": {
+      "id": "semantic-memory",
+      "builds": [
+        "semantic-memory-fix"
+      ],
+      "canonical": "semantic-memory-fix",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "semantic-workout-logging": {
+      "id": "semantic-workout-logging",
+      "builds": [
+        "semantic-workout-logging"
+      ],
+      "canonical": "semantic-workout-logging",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "seminar-tactics-research": {
+      "id": "seminar-tactics-research",
+      "builds": [
+        "seminar-tactics-research"
+      ],
+      "canonical": "seminar-tactics-research",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "service-fixes-2026-01-14": {
+      "id": "service-fixes-2026-01-14",
+      "builds": [
+        "service-fixes-2026-01-14"
+      ],
+      "canonical": "service-fixes-2026-01-14",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "shortio-vc-op-dec25": {
+      "id": "shortio-vc-op-dec25",
+      "builds": [
+        "shortio-vc-op-dec25"
+      ],
+      "canonical": "shortio-vc-op-dec25",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "skillrl": {
+      "id": "skillrl",
+      "builds": [
+        "skillrl-integration"
+      ],
+      "canonical": "skillrl-integration",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "skills-importer": {
+      "id": "skills-importer",
+      "builds": [
+        "skills-importer"
+      ],
+      "canonical": "skills-importer",
+      "existing_skill": "skills-importer",
+      "promotion_status": "has_skill_may_need_sync"
+    },
+    "smart-sentinel": {
+      "id": "smart-sentinel",
+      "builds": [
+        "smart-sentinel"
+      ],
+      "canonical": "smart-sentinel",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "socratic-isg": {
+      "id": "socratic-isg",
+      "builds": [
+        "socratic-isg"
+      ],
+      "canonical": "socratic-isg",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "socratic-voice-system": {
+      "id": "socratic-voice-system",
+      "builds": [
+        "socratic-voice-system"
+      ],
+      "canonical": "socratic-voice-system",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "spawn-worker-refactor": {
+      "id": "spawn-worker-refactor",
+      "builds": [
+        "spawn-worker-refactor"
+      ],
+      "canonical": "spawn-worker-refactor",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "sridhar-ocr-extract": {
+      "id": "sridhar-ocr-extract",
+      "builds": [
+        "sridhar-ocr-extract"
+      ],
+      "canonical": "sridhar-ocr-extract",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "store": {
+      "id": "store",
+      "builds": [
+        "store-refresh",
+        "store-v1",
+        "store-v2"
+      ],
+      "canonical": "store-v2",
+      "existing_skill": null,
+      "promotion_status": "promotable"
+    },
+    "store-va-coming-soon": {
+      "id": "store-va-coming-soon",
+      "builds": [
+        "store-va-coming-soon"
+      ],
+      "canonical": "store-va-coming-soon",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "systematic-debugging": {
+      "id": "systematic-debugging",
+      "builds": [
+        "systematic-debugging-integration"
+      ],
+      "canonical": "systematic-debugging-integration",
+      "existing_skill": "systematic-debugging",
+      "promotion_status": "has_skill_may_need_sync"
+    },
+    "tag-centralization": {
+      "id": "tag-centralization",
+      "builds": [
+        "tag-centralization"
+      ],
+      "canonical": "tag-centralization",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "task-system-skill": {
+      "id": "task-system-skill",
+      "builds": [
+        "task-system-skill"
+      ],
+      "canonical": "task-system-skill",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "task-system": {
+      "id": "task-system",
+      "builds": [
+        "task-system-validation",
+        "task-system-wiring"
+      ],
+      "canonical": "task-system-validation",
+      "existing_skill": "task-system",
+      "promotion_status": "has_skill_may_need_sync"
+    },
+    "thought-provoker": {
+      "id": "thought-provoker",
+      "builds": [
+        "thought-provoker",
+        "thought-provoker-integration",
+        "thought-provoker-v2"
+      ],
+      "canonical": "thought-provoker-v2",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "tope-awotona-research": {
+      "id": "tope-awotona-research",
+      "builds": [
+        "tope-awotona-research"
+      ],
+      "canonical": "tope-awotona-research",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "travel-wrapped-2025": {
+      "id": "travel-wrapped-2025",
+      "builds": [
+        "travel-wrapped-2025"
+      ],
+      "canonical": "travel-wrapped-2025",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "trusted-third-party-zo2zo-deploy-readiness": {
+      "id": "trusted-third-party-zo2zo-deploy-readiness",
+      "builds": [
+        "trusted-third-party-zo2zo-deploy-readiness"
+      ],
+      "canonical": "trusted-third-party-zo2zo-deploy-readiness",
+      "existing_skill": null,
+      "promotion_status": "in_progress"
+    },
+    "twitter-growth-tactics": {
+      "id": "twitter-growth-tactics",
+      "builds": [
+        "twitter-growth-tactics"
+      ],
+      "canonical": "twitter-growth-tactics",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "unified-graph": {
+      "id": "unified-graph",
+      "builds": [
+        "unified-graph"
+      ],
+      "canonical": "unified-graph",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "unified-knowledge-graph": {
+      "id": "unified-knowledge-graph",
+      "builds": [
+        "unified-knowledge-graph"
+      ],
+      "canonical": "unified-knowledge-graph",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "unified-meeting-intake": {
+      "id": "unified-meeting-intake",
+      "builds": [
+        "unified-meeting-intake"
+      ],
+      "canonical": "unified-meeting-intake",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "vibe-arg": {
+      "id": "vibe-arg",
+      "builds": [
+        "vibe-arg"
+      ],
+      "canonical": "vibe-arg",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "vibe-nutritionist": {
+      "id": "vibe-nutritionist",
+      "builds": [
+        "vibe-nutritionist"
+      ],
+      "canonical": "vibe-nutritionist",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "vibe-pill-methodology": {
+      "id": "vibe-pill-methodology",
+      "builds": [
+        "vibe-pill-methodology"
+      ],
+      "canonical": "vibe-pill-methodology",
+      "existing_skill": null,
+      "promotion_status": "in_progress"
+    },
+    "vibe-teacher": {
+      "id": "vibe-teacher",
+      "builds": [
+        "vibe-teacher"
+      ],
+      "canonical": "vibe-teacher",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "vibeteacher": {
+      "id": "vibeteacher",
+      "builds": [
+        "vibeteacher-integration"
+      ],
+      "canonical": "vibeteacher-integration",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "voice-control-system": {
+      "id": "voice-control-system",
+      "builds": [
+        "voice-control-system"
+      ],
+      "canonical": "voice-control-system",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "voice-injection-layer": {
+      "id": "voice-injection-layer",
+      "builds": [
+        "voice-injection-layer"
+      ],
+      "canonical": "voice-injection-layer",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "voice-library": {
+      "id": "voice-library",
+      "builds": [
+        "voice-library-v2"
+      ],
+      "canonical": "voice-library-v2",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "voice-pipeline": {
+      "id": "voice-pipeline",
+      "builds": [
+        "voice-pipeline-debug"
+      ],
+      "canonical": "voice-pipeline-debug",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "vrijenattawar-domain-transition": {
+      "id": "vrijenattawar-domain-transition",
+      "builds": [
+        "vrijenattawar-domain-transition"
+      ],
+      "canonical": "vrijenattawar-domain-transition",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "vrijenattawar-spacing": {
+      "id": "vrijenattawar-spacing",
+      "builds": [
+        "vrijenattawar-spacing-v1"
+      ],
+      "canonical": "vrijenattawar-spacing-v1",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "watts-principles": {
+      "id": "watts-principles",
+      "builds": [
+        "watts-principles"
+      ],
+      "canonical": "watts-principles",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "wheres-v": {
+      "id": "wheres-v",
+      "builds": [
+        "wheres-v-revamp-v2"
+      ],
+      "canonical": "wheres-v-revamp-v2",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "wheres-v-trips": {
+      "id": "wheres-v-trips",
+      "builds": [
+        "wheres-v-trips"
+      ],
+      "canonical": "wheres-v-trips",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "workflow-test-processing": {
+      "id": "workflow-test-processing",
+      "builds": [
+        "workflow-test-processing"
+      ],
+      "canonical": "workflow-test-processing",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "workos": {
+      "id": "workos",
+      "builds": [
+        "workos-integration"
+      ],
+      "canonical": "workos-integration",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "workout-arsenal": {
+      "id": "workout-arsenal",
+      "builds": [
+        "workout-arsenal-revamp"
+      ],
+      "canonical": "workout-arsenal-revamp",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "workout-prescription-engine": {
+      "id": "workout-prescription-engine",
+      "builds": [
+        "workout-prescription-engine"
+      ],
+      "canonical": "workout-prescription-engine",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "workout": {
+      "id": "workout",
+      "builds": [
+        "workout-revamp"
+      ],
+      "canonical": "workout-revamp",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "x-thought-leader": {
+      "id": "x-thought-leader",
+      "builds": [
+        "x-thought-leader"
+      ],
+      "canonical": "x-thought-leader",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "x-thought-leader-list-sync": {
+      "id": "x-thought-leader-list-sync",
+      "builds": [
+        "x-thought-leader-list-sync"
+      ],
+      "canonical": "x-thought-leader-list-sync",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "ycb-content-layer": {
+      "id": "ycb-content-layer",
+      "builds": [
+        "ycb-content-layer"
+      ],
+      "canonical": "ycb-content-layer",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "zo-claude-code-native": {
+      "id": "zo-claude-code-native",
+      "builds": [
+        "zo-claude-code-native"
+      ],
+      "canonical": "zo-claude-code-native",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "zo-hotline": {
+      "id": "zo-hotline",
+      "builds": [
+        "zo-hotline",
+        "zo-hotline-v4",
+        "zo-hotline-v5",
+        "zo-hotline-v6",
+        "zo-hotline-v7"
+      ],
+      "canonical": "zo-hotline-v6",
+      "existing_skill": "zo-hotline",
+      "promotion_status": "has_skill_may_need_sync"
+    },
+    "zo-hotline-knowledge-expansion": {
+      "id": "zo-hotline-knowledge-expansion",
+      "builds": [
+        "zo-hotline-knowledge-expansion"
+      ],
+      "canonical": "zo-hotline-knowledge-expansion",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "zo-obsession-site": {
+      "id": "zo-obsession-site",
+      "builds": [
+        "zo-obsession-site"
+      ],
+      "canonical": "zo-obsession-site",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "zo-pin-recreation": {
+      "id": "zo-pin-recreation",
+      "builds": [
+        "zo-pin-recreation"
+      ],
+      "canonical": "zo-pin-recreation",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "zo-take-heed": {
+      "id": "zo-take-heed",
+      "builds": [
+        "zo-take-heed"
+      ],
+      "canonical": "zo-take-heed",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "zo-task-system": {
+      "id": "zo-task-system",
+      "builds": [
+        "zo-task-system"
+      ],
+      "canonical": "zo-task-system",
+      "existing_skill": null,
+      "promotion_status": "promotable"
+    },
+    "zo-wrapped": {
+      "id": "zo-wrapped",
+      "builds": [
+        "zo-wrapped",
+        "zo-wrapped-v2"
+      ],
+      "canonical": "zo-wrapped-v2",
+      "existing_skill": null,
+      "promotion_status": "not_promotable"
+    },
+    "zode-moltbook": {
+      "id": "zode-moltbook",
+      "builds": [
+        "zode-moltbook"
+      ],
+      "canonical": "zode-moltbook",
+      "existing_skill": "zode-moltbook",
+      "promotion_status": "already_promoted"
+    },
+    "zoputer-autonomy": {
+      "id": "zoputer-autonomy",
+      "builds": [
+        "zoputer-autonomy-v2"
+      ],
+      "canonical": "zoputer-autonomy-v2",
+      "existing_skill": null,
+      "promotion_status": "in_progress"
+    },
+    "zoren-hotline": {
+      "id": "zoren-hotline",
+      "builds": [
+        "zoren-hotline"
+      ],
+      "canonical": "zoren-hotline",
+      "existing_skill": "zoren-hotline",
+      "promotion_status": "has_skill_may_need_sync"
+    }
+  },
+  "slug_to_cluster": {
+    "MG-2_2025-12-12_Jonathan_Beda_x_Vrijen": "MG-2_2025-12-12_Jonathan_Beda_x_Vrijen",
+    "acquisition-pitch-evolution": "acquisition-pitch-evolution",
+    "acquisition-research-batch-1": "acquisition-research-batch-1",
+    "acquisition-tracker": "acquisition-tracker",
+    "additive-second-pass": "additive-second-pass",
+    "adhd-todo-research": "adhd-todo-research",
+    "agent-conflict-gate": "agent-conflict-gate",
+    "ann-vector-index": "ann-vector-index",
+    "apply-ai-leads-export": "apply-ai-leads-export",
+    "b01-recap-test": "b01-recap-test",
+    "b03-generation-careerspan": "b03-generation-careerspan",
+    "b05-backfill": "b05-backfill",
+    "b05-backfill-extended": "b05-backfill",
+    "b06-generation-careerspan": "b06-generation-careerspan",
+    "b15-generation": "b15-generation",
+    "b25-deliverable-map-careerspan": "b25-deliverable-map-careerspan",
+    "block-prompt-consolidation": "block-prompt",
+    "blurb-gen-2026-01-06": "blurb-gen-2026-01-06",
+    "blurb-gen-2026-01-09-ilse": "blurb-gen-2026-01-09-ilse",
+    "build-promote": "build-promote",
+    "builds-audit-cleanup": "builds-audit-cleanup",
+    "calendly-integration": "calendly",
+    "career-coaching-hotline": "career-coaching-hotline",
+    "career-hotline-monetization": "career-hotline-monetization",
+    "career-hotline-v4": "career-hotline",
+    "careerspan-pipeline-v2": "careerspan-pipeline",
+    "careerspan-profile-output-v1": "careerspan-profile-output",
+    "careerspan-prospector": "careerspan-prospector",
+    "careerspan-sales-prospecting": "careerspan-sales-prospecting",
+    "careerspan-standup-intel-20250917": "careerspan-standup-intel-20250917",
+    "cc-outreach-tracker": "cc-outreach-tracker",
+    "consulting-zoffice-stack": "consulting-zoffice-stack",
+    "content-library-consolidation": "content-library",
+    "content-library-v4": "content-library",
+    "content-library-media-extension": "content-library-media-extension",
+    "context-graph": "context-graph",
+    "conversation-end-v3": "conversation-end",
+    "crm-aviato-profile-fix": "crm-aviato-profile",
+    "crm-unified-core": "crm-unified-core",
+    "cs-job-pipeline": "cs-job-pipeline",
+    "dark-factory-elevation": "dark-factory-elevation",
+    "deal-sync-router": "deal-sync-router",
+    "decomposer-fix": "decomposer",
+    "decomposer-reliability": "decomposer-reliability",
+    "design-library": "design-library",
+    "dynamic-survey-analyzer": "dynamic-survey-analyzer",
+    "edge-pipeline-fixes": "edge-pipeline-fixes",
+    "email-followup-system": "email-followup-system",
+    "emily-velasco-intel": "emily-velasco-intel",
+    "even-realities-g2-guide": "even-realities-g2-guide",
+    "events-pipeline-consolidation": "events-pipeline",
+    "flight-search-v2": "flight-search",
+    "fohe-newsletter-q1-2026": "fohe-newsletter-q1-2026",
+    "foundermaxxing-launch": "foundermaxxing-launch",
+    "foundermaxxing-page-v2": "foundermaxxing-page",
+    "foundermaxxing-v2": "foundermaxxing",
+    "frank-investor-line": "frank-investor-line",
+    "frontend-skill": "frontend-skill",
+    "git-cleanup-2026-01-15": "git-cleanup-2026-01-15",
+    "google-flights": "google-flights",
+    "graph-unify": "graph-unify",
+    "hardik-gamma-visual": "hardik-gamma-visual",
+    "hardik-profile-gamma": "hardik-profile-gamma",
+    "health-intelligence-protocol": "health-intelligence-protocol",
+    "hotline-enhancement-v3": "hotline-enhancement",
+    "hotline-identity-decontam": "hotline-identity-decontam",
+    "hrv-3x-tracking": "hrv-3x-tracking",
+    "idea-lab-v2": "idea-lab",
+    "internal-project-blocks": "internal-project-blocks",
+    "interview-reviewer": "interview-reviewer",
+    "j-debug-performance-dashboard-0126-0519": "j-debug-performance-dashboard-0126-0519",
+    "j-test-lineage-functionality-0126-0416": "j-test-lineage-functionality-0126-0416",
+    "learning-engaged-builds": "learning-engaged-builds",
+    "learning-profile-system": "learning-profile-system",
+    "lensa-intel-gen": "lensa-intel-gen",
+    "life-counter": "life-counter",
+    "linkedin-knowledge-extraction": "linkedin-knowledge-extraction",
+    "lists-voice-of-god": "lists-voice-of-god",
+    "lora-voice-evolution": "lora-voice-evolution",
+    "meeting-block-audit": "meeting-block-audit",
+    "meeting-ingestion-skill": "meeting-ingestion-skill",
+    "meeting-system-migration": "meeting-system-migration",
+    "meeting-system-v3": "meeting-system",
+    "memebench": "memebench",
+    "memory-as-reasoning": "memory-as-reasoning",
+    "meta-resume-skill-v1": "meta-resume-skill",
+    "meta-resume-v2": "meta-resume",
+    "mg1-test-stakeholder": "mg1-test-stakeholder",
+    "mindmap-ux-intuitive": "mindmap-ux-intuitive",
+    "mindmap-ux-upgrade": "mindmap-ux-upgrade",
+    "n5-brain-v2": "n5-brain",
+    "n5os-bootstrap": "n5os-bootstrap",
+    "n5os-ode-release-fix": "n5os-ode-release",
+    "n5os-ode-upgrade": "n5os-ode-upgrade",
+    "nyne-integration": "nyne",
+    "ode-cleanup": "ode-cleanup",
+    "ode-export": "ode-export",
+    "ode-v2-upgrade": "ode-v2-upgrade",
+    "open-letters-series": "open-letters-series",
+    "perf-dashboard-v2": "perf-dashboard",
+    "performance-intelligence": "performance-intelligence",
+    "persona-switching-hybrid": "persona-switching-hybrid",
+    "planning-system-v1": "planning-system",
+    "port-conflict-detector": "port-conflict-detector",
+    "position-extraction-v2": "position-extraction",
+    "position-integration": "position",
+    "position-system-overhaul": "position-system-overhaul",
+    "position-tracker": "position-tracker",
+    "position-viz": "position-viz",
+    "prompt-to-skill": "prompt-to-skill",
+    "pulse-dashboard-integration": "pulse-dashboard",
+    "pulse-self-upgrade": "pulse-self-upgrade",
+    "pulse-smoke-test": "pulse-smoke-test",
+    "pulse-test": "pulse-test",
+    "pulse-v3": "pulse",
+    "pulse-variants": "pulse-variants",
+    "pulse-waves-manual-launch": "pulse-waves-manual-launch",
+    "r-block-framework": "r-block-framework",
+    "r-block-refinements": "r-block-refinements",
+    "raleigh-trip-search": "raleigh-trip-search",
+    "reflection-engine-v2": "reflection-engine",
+    "relationship-intelligence-os": "relationship-intelligence-os",
+    "relationship-intelligence-os-smoke-20260216": "relationship-intelligence-os-smoke-20260216",
+    "resonance-reservoir": "resonance-reservoir",
+    "resonance-v2": "resonance",
+    "resume-decoded-v5-fixes": "resume-decoded-v5-fixes",
+    "richard-lin-crm-enrich": "richard-lin-crm-enrich",
+    "semantic-memory-fix": "semantic-memory",
+    "semantic-workout-logging": "semantic-workout-logging",
+    "seminar-tactics-research": "seminar-tactics-research",
+    "service-fixes-2026-01-14": "service-fixes-2026-01-14",
+    "shortio-vc-op-dec25": "shortio-vc-op-dec25",
+    "skillrl-integration": "skillrl",
+    "skills-importer": "skills-importer",
+    "smart-sentinel": "smart-sentinel",
+    "socratic-isg": "socratic-isg",
+    "socratic-voice-system": "socratic-voice-system",
+    "spawn-worker-refactor": "spawn-worker-refactor",
+    "sridhar-ocr-extract": "sridhar-ocr-extract",
+    "store-refresh": "store",
+    "store-v1": "store",
+    "store-v2": "store",
+    "store-va-coming-soon": "store-va-coming-soon",
+    "systematic-debugging-integration": "systematic-debugging",
+    "tag-centralization": "tag-centralization",
+    "task-system-skill": "task-system-skill",
+    "task-system-validation": "task-system",
+    "task-system-wiring": "task-system",
+    "thought-provoker": "thought-provoker",
+    "thought-provoker-integration": "thought-provoker",
+    "thought-provoker-v2": "thought-provoker",
+    "tope-awotona-research": "tope-awotona-research",
+    "travel-wrapped-2025": "travel-wrapped-2025",
+    "trusted-third-party-zo2zo-deploy-readiness": "trusted-third-party-zo2zo-deploy-readiness",
+    "twitter-growth-tactics": "twitter-growth-tactics",
+    "unified-graph": "unified-graph",
+    "unified-knowledge-graph": "unified-knowledge-graph",
+    "unified-meeting-intake": "unified-meeting-intake",
+    "vibe-arg": "vibe-arg",
+    "vibe-nutritionist": "vibe-nutritionist",
+    "vibe-pill-methodology": "vibe-pill-methodology",
+    "vibe-teacher": "vibe-teacher",
+    "vibeteacher-integration": "vibeteacher",
+    "voice-control-system": "voice-control-system",
+    "voice-injection-layer": "voice-injection-layer",
+    "voice-library-v2": "voice-library",
+    "voice-pipeline-debug": "voice-pipeline",
+    "vrijenattawar-domain-transition": "vrijenattawar-domain-transition",
+    "vrijenattawar-spacing-v1": "vrijenattawar-spacing",
+    "watts-principles": "watts-principles",
+    "wheres-v-revamp-v2": "wheres-v",
+    "wheres-v-trips": "wheres-v-trips",
+    "workflow-test-processing": "workflow-test-processing",
+    "workos-integration": "workos",
+    "workout-arsenal-revamp": "workout-arsenal",
+    "workout-prescription-engine": "workout-prescription-engine",
+    "workout-revamp": "workout",
+    "x-thought-leader": "x-thought-leader",
+    "x-thought-leader-list-sync": "x-thought-leader-list-sync",
+    "ycb-content-layer": "ycb-content-layer",
+    "zo-claude-code-native": "zo-claude-code-native",
+    "zo-hotline": "zo-hotline",
+    "zo-hotline-v4": "zo-hotline",
+    "zo-hotline-v5": "zo-hotline",
+    "zo-hotline-v6": "zo-hotline",
+    "zo-hotline-v7": "zo-hotline",
+    "zo-hotline-knowledge-expansion": "zo-hotline-knowledge-expansion",
+    "zo-obsession-site": "zo-obsession-site",
+    "zo-pin-recreation": "zo-pin-recreation",
+    "zo-take-heed": "zo-take-heed",
+    "zo-task-system": "zo-task-system",
+    "zo-wrapped": "zo-wrapped",
+    "zo-wrapped-v2": "zo-wrapped",
+    "zode-moltbook": "zode-moltbook",
+    "zoputer-autonomy-v2": "zoputer-autonomy",
+    "zoren-hotline": "zoren-hotline"
+  },
+  "summary": {
+    "total_builds": 196,
+    "total_clusters": 184,
+    "promotable": 18,
+    "already_promoted": 1,
+    "has_skill_may_need_sync": 10,
+    "in_progress": 13,
+    "not_promotable": 142
+  }
+}

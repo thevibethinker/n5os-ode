@@ -1,0 +1,75 @@
+{
+  "schema_version": "1.0",
+  "slug": "sms-event-concierge-v1",
+  "title": "SMS Event Concierge V1",
+  "objective": null,
+  "created": "2026-02-26",
+  "status": "draft",
+  "completed_at": null,
+  "type": "code_build",
+  "build_mode": "learning",
+  "learning_landscape_generated": false,
+  "orchestrator_convo_id": null,
+  "workers": {
+    "total": 5,
+    "complete": 0,
+    "in_progress": 0,
+    "blocked": 0,
+    "pending": 5
+  },
+  "waves": [
+    {
+      "wave": 1,
+      "workers": [
+        "W1.1",
+        "W1.2",
+        "W1.3",
+        "W1.4",
+        "W1.5"
+      ],
+      "status": "pending"
+    }
+  ],
+  "worker_details": [
+    {
+      "id": "W1.1",
+      "title": "Task 1",
+      "status": "pending",
+      "thread_id": null,
+      "completed_at": null,
+      "depends_on": []
+    },
+    {
+      "id": "W1.2",
+      "title": "Task 2",
+      "status": "pending",
+      "thread_id": null,
+      "completed_at": null,
+      "depends_on": []
+    },
+    {
+      "id": "W1.3",
+      "title": "Task 3",
+      "status": "pending",
+      "thread_id": null,
+      "completed_at": null,
+      "depends_on": []
+    },
+    {
+      "id": "W1.4",
+      "title": "Task 4",
+      "status": "pending",
+      "thread_id": null,
+      "completed_at": null,
+      "depends_on": []
+    },
+    {
+      "id": "W1.5",
+      "title": "Task 5",
+      "status": "pending",
+      "thread_id": null,
+      "completed_at": null,
+      "depends_on": []
+    }
+  ]
+}

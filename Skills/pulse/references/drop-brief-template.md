@@ -1,8 +1,8 @@
 ---
 created: 2026-01-24
-last_edited: 2026-02-06
-version: 1.2
-provenance: con_oc65hnkkPKCOpDaB
+last_edited: 2026-02-21
+version: 2.0
+provenance: con_mG5yzbSSJUnMnZcK
 ---
 
 # Drop Brief Template
@@ -18,6 +18,7 @@ build_slug: <slug>
 stream: <n>
 depends_on: []
 spawn_mode: auto  # Options: auto (default) = /zo/ask headless | manual = V pastes into new thread
+spec_completeness: full  # full | partial | ambiguous — auto-spawn requires "full"
 thread_title: "[<slug>] D<stream>.<seq>: <Task Name>"
 ---
 
@@ -78,6 +79,52 @@ thread_title: "[<slug>] D<stream>.<seq>: <Task Name>"
 - `path/to/auth.py` — Out of scope for this build
 - `tests/` — Tests are a separate Drop (D2.1)
 
+## Gene Transfusion Source (Optional)
+
+<!-- Use when this Drop should follow an existing pattern or adapt existing code.
+     Workers read the exemplar FIRST before implementing. -->
+
+| Field | Value |
+|-------|-------|
+| **Exemplar** | `path/to/existing/implementation.py` |
+| **Relationship** | fork / port / adapt |
+| **Preserve** | <List what must stay the same: API shape, naming conventions, patterns> |
+| **Modify** | <List what should change: data model, endpoint paths, business logic> |
+| **Remove** | <List what to drop: deprecated features, unused code paths> |
+
+<!-- Relationship types:
+     fork  = Copy and modify (most common)
+     port  = Rewrite in different language/framework but same behavior
+     adapt = Use as inspiration but different enough that copying would hurt -->
+
+## Scenarios
+
+<!-- Behavioral acceptance criteria. Each scenario describes an observable outcome.
+     Verify clauses should be executable commands when possible.
+     3-5 scenarios per Drop is typical. Cover: happy path, edge cases, failure modes. -->
+
+S1: <Happy path — descriptive name>
+  Given: <Initial state or precondition>
+  When: <Action or trigger>
+  Then: <Expected observable outcome>
+  Verify: <Shell command, curl, duckdb query, or "LLM: <what to check>">
+
+S2: <Edge case — descriptive name>
+  Given: ...
+  When: ...
+  Then: ...
+  Verify: ...
+
+S3: <Failure mode — descriptive name>
+  Given: ...
+  When: ...
+  Then: ...
+  Verify: ...
+
+<!-- Scenarios are the PRIMARY acceptance mechanism.
+     The Filter evaluates these individually with satisfaction scores.
+     Additional holdout scenarios may exist that are not visible here. -->
+
 ## Requirements
 
 <Detailed requirements, organized by section if complex>
@@ -91,12 +138,10 @@ thread_title: "[<slug>] D<stream>.<seq>: <Task Name>"
 
 ## Success Criteria
 
-The Filter will verify these criteria. Be specific and verifiable.
+Structural checks the Filter verifies (secondary to Scenarios above).
 
-- [ ] <Specific criterion that can be checked>
-- [ ] <Another criterion>
-- [ ] <File exists at path X>
-- [ ] <Function Y is exported>
+- [ ] <Structural check — file exists, function exported, schema matches>
+- [ ] <Another structural check>
 
 ## Anti-Patterns (Avoid)
 
