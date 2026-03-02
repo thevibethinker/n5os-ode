@@ -1,0 +1,900 @@
+[
+  {
+    "kind": "calendar#event",
+    "etag": "\"3460226181118000\"",
+    "id": "naj7k5l3i99d9p8auiha2sebq6_20260222T131500Z",
+    "status": "confirmed",
+    "htmlLink": "https://www.google.com/calendar/event?eid=bmFqN2s1bDNpOTlkOXA4YXVpaGEyc2VicTZfMjAyNjAyMjJUMTMxNTAwWiBhdHRhd2FyLnZAbQ",
+    "created": "2024-06-03T17:08:13.000Z",
+    "updated": "2024-10-28T10:58:10.559Z",
+    "summary": "Daily Centering Task",
+    "creator": {
+      "email": "attawar.v@gmail.com",
+      "self": true
+    },
+    "organizer": {
+      "email": "attawar.v@gmail.com",
+      "self": true
+    },
+    "start": {
+      "dateTime": "2026-02-22T08:15:00-05:00",
+      "timeZone": "America/New_York"
+    },
+    "end": {
+      "dateTime": "2026-02-22T08:30:00-05:00",
+      "timeZone": "America/New_York"
+    },
+    "recurringEventId": "naj7k5l3i99d9p8auiha2sebq6",
+    "originalStartTime": {
+      "dateTime": "2026-02-22T08:15:00-05:00",
+      "timeZone": "America/New_York"
+    },
+    "iCalUID": "naj7k5l3i99d9p8auiha2sebq6@google.com",
+    "sequence": 2,
+    "reminders": {
+      "useDefault": true
+    },
+    "eventType": "default"
+  },
+  {
+    "kind": "calendar#event",
+    "etag": "\"3460226181118000\"",
+    "id": "naj7k5l3i99d9p8auiha2sebq6_20260223T131500Z",
+    "status": "confirmed",
+    "htmlLink": "https://www.google.com/calendar/event?eid=bmFqN2s1bDNpOTlkOXA4YXVpaGEyc2VicTZfMjAyNjAyMjNUMTMxNTAwWiBhdHRhd2FyLnZAbQ",
+    "created": "2024-06-03T17:08:13.000Z",
+    "updated": "2024-10-28T10:58:10.559Z",
+    "summary": "Daily Centering Task",
+    "creator": {
+      "email": "attawar.v@gmail.com",
+      "self": true
+    },
+    "organizer": {
+      "email": "attawar.v@gmail.com",
+      "self": true
+    },
+    "start": {
+      "dateTime": "2026-02-23T08:15:00-05:00",
+      "timeZone": "America/New_York"
+    },
+    "end": {
+      "dateTime": "2026-02-23T08:30:00-05:00",
+      "timeZone": "America/New_York"
+    },
+    "recurringEventId": "naj7k5l3i99d9p8auiha2sebq6",
+    "originalStartTime": {
+      "dateTime": "2026-02-23T08:15:00-05:00",
+      "timeZone": "America/New_York"
+    },
+    "iCalUID": "naj7k5l3i99d9p8auiha2sebq6@google.com",
+    "sequence": 2,
+    "reminders": {
+      "useDefault": true
+    },
+    "eventType": "default"
+  },
+  {
+    "kind": "calendar#event",
+    "etag": "\"3460226181118000\"",
+    "id": "naj7k5l3i99d9p8auiha2sebq6_20260224T131500Z",
+    "status": "confirmed",
+    "htmlLink": "https://www.google.com/calendar/event?eid=bmFqN2s1bDNpOTlkOXA4YXVpaGEyc2VicTZfMjAyNjAyMjRUMTMxNTAwWiBhdHRhd2FyLnZAbQ",
+    "created": "2024-06-03T17:08:13.000Z",
+    "updated": "2024-10-28T10:58:10.559Z",
+    "summary": "Daily Centering Task",
+    "creator": {
+      "email": "attawar.v@gmail.com",
+      "self": true
+    },
+    "organizer": {
+      "email": "attawar.v@gmail.com",
+      "self": true
+    },
+    "start": {
+      "dateTime": "2026-02-24T08:15:00-05:00",
+      "timeZone": "America/New_York"
+    },
+    "end": {
+      "dateTime": "2026-02-24T08:30:00-05:00",
+      "timeZone": "America/New_York"
+    },
+    "recurringEventId": "naj7k5l3i99d9p8auiha2sebq6",
+    "originalStartTime": {
+      "dateTime": "2026-02-24T08:15:00-05:00",
+      "timeZone": "America/New_York"
+    },
+    "iCalUID": "naj7k5l3i99d9p8auiha2sebq6@google.com",
+    "sequence": 2,
+    "reminders": {
+      "useDefault": true
+    },
+    "eventType": "default"
+  },
+  {
+    "kind": "calendar#event",
+    "etag": "\"3460226181118000\"",
+    "id": "naj7k5l3i99d9p8auiha2sebq6_20260225T131500Z",
+    "status": "confirmed",
+    "htmlLink": "https://www.google.com/calendar/event?eid=bmFqN2s1bDNpOTlkOXA4YXVpaGEyc2VicTZfMjAyNjAyMjVUMTMxNTAwWiBhdHRhd2FyLnZAbQ",
+    "created": "2024-06-03T17:08:13.000Z",
+    "updated": "2024-10-28T10:58:10.559Z",
+    "summary": "Daily Centering Task",
+    "creator": {
+      "email": "attawar.v@gmail.com",
+      "self": true
+    },
+    "organizer": {
+      "email": "attawar.v@gmail.com",
+      "self": true
+    },
+    "start": {
+      "dateTime": "2026-02-25T08:15:00-05:00",
+      "timeZone": "America/New_York"
+    },
+    "end": {
+      "dateTime": "2026-02-25T08:30:00-05:00",
+      "timeZone": "America/New_York"
+    },
+    "recurringEventId": "naj7k5l3i99d9p8auiha2sebq6",
+    "originalStartTime": {
+      "dateTime": "2026-02-25T08:15:00-05:00",
+      "timeZone": "America/New_York"
+    },
+    "iCalUID": "naj7k5l3i99d9p8auiha2sebq6@google.com",
+    "sequence": 2,
+    "reminders": {
+      "useDefault": true
+    },
+    "eventType": "default"
+  },
+  {
+    "kind": "calendar#event",
+    "etag": "\"3460226181118000\"",
+    "id": "naj7k5l3i99d9p8auiha2sebq6_20260226T131500Z",
+    "status": "confirmed",
+    "htmlLink": "https://www.google.com/calendar/event?eid=bmFqN2s1bDNpOTlkOXA4YXVpaGEyc2VicTZfMjAyNjAyMjZUMTMxNTAwWiBhdHRhd2FyLnZAbQ",
+    "created": "2024-06-03T17:08:13.000Z",
+    "updated": "2024-10-28T10:58:10.559Z",
+    "summary": "Daily Centering Task",
+    "creator": {
+      "email": "attawar.v@gmail.com",
+      "self": true
+    },
+    "organizer": {
+      "email": "attawar.v@gmail.com",
+      "self": true
+    },
+    "start": {
+      "dateTime": "2026-02-26T08:15:00-05:00",
+      "timeZone": "America/New_York"
+    },
+    "end": {
+      "dateTime": "2026-02-26T08:30:00-05:00",
+      "timeZone": "America/New_York"
+    },
+    "recurringEventId": "naj7k5l3i99d9p8auiha2sebq6",
+    "originalStartTime": {
+      "dateTime": "2026-02-26T08:15:00-05:00",
+      "timeZone": "America/New_York"
+    },
+    "iCalUID": "naj7k5l3i99d9p8auiha2sebq6@google.com",
+    "sequence": 2,
+    "reminders": {
+      "useDefault": true
+    },
+    "eventType": "default"
+  },
+  {
+    "kind": "calendar#event",
+    "etag": "\"3460226181118000\"",
+    "id": "naj7k5l3i99d9p8auiha2sebq6_20260227T131500Z",
+    "status": "confirmed",
+    "htmlLink": "https://www.google.com/calendar/event?eid=bmFqN2s1bDNpOTlkOXA4YXVpaGEyc2VicTZfMjAyNjAyMjdUMTMxNTAwWiBhdHRhd2FyLnZAbQ",
+    "created": "2024-06-03T17:08:13.000Z",
+    "updated": "2024-10-28T10:58:10.559Z",
+    "summary": "Daily Centering Task",
+    "creator": {
+      "email": "attawar.v@gmail.com",
+      "self": true
+    },
+    "organizer": {
+      "email": "attawar.v@gmail.com",
+      "self": true
+    },
+    "start": {
+      "dateTime": "2026-02-27T08:15:00-05:00",
+      "timeZone": "America/New_York"
+    },
+    "end": {
+      "dateTime": "2026-02-27T08:30:00-05:00",
+      "timeZone": "America/New_York"
+    },
+    "recurringEventId": "naj7k5l3i99d9p8auiha2sebq6",
+    "originalStartTime": {
+      "dateTime": "2026-02-27T08:15:00-05:00",
+      "timeZone": "America/New_York"
+    },
+    "iCalUID": "naj7k5l3i99d9p8auiha2sebq6@google.com",
+    "sequence": 2,
+    "reminders": {
+      "useDefault": true
+    },
+    "eventType": "default"
+  },
+  {
+    "kind": "calendar#event",
+    "etag": "\"3460226181118000\"",
+    "id": "naj7k5l3i99d9p8auiha2sebq6_20260228T131500Z",
+    "status": "confirmed",
+    "htmlLink": "https://www.google.com/calendar/event?eid=bmFqN2s1bDNpOTlkOXA4YXVpaGEyc2VicTZfMjAyNjAyMjhUMTMxNTAwWiBhdHRhd2FyLnZAbQ",
+    "created": "2024-06-03T17:08:13.000Z",
+    "updated": "2024-10-28T10:58:10.559Z",
+    "summary": "Daily Centering Task",
+    "creator": {
+      "email": "attawar.v@gmail.com",
+      "self": true
+    },
+    "organizer": {
+      "email": "attawar.v@gmail.com",
+      "self": true
+    },
+    "start": {
+      "dateTime": "2026-02-28T08:15:00-05:00",
+      "timeZone": "America/New_York"
+    },
+    "end": {
+      "dateTime": "2026-02-28T08:30:00-05:00",
+      "timeZone": "America/New_York"
+    },
+    "recurringEventId": "naj7k5l3i99d9p8auiha2sebq6",
+    "originalStartTime": {
+      "dateTime": "2026-02-28T08:15:00-05:00",
+      "timeZone": "America/New_York"
+    },
+    "iCalUID": "naj7k5l3i99d9p8auiha2sebq6@google.com",
+    "sequence": 2,
+    "reminders": {
+      "useDefault": true
+    },
+    "eventType": "default"
+  },
+  {
+    "kind": "calendar#event",
+    "etag": "\"3460226181118000\"",
+    "id": "naj7k5l3i99d9p8auiha2sebq6_20260301T131500Z",
+    "status": "confirmed",
+    "htmlLink": "https://www.google.com/calendar/event?eid=bmFqN2s1bDNpOTlkOXA4YXVpaGEyc2VicTZfMjAyNjAzMDFUMTMxNTAwWiBhdHRhd2FyLnZAbQ",
+    "created": "2024-06-03T17:08:13.000Z",
+    "updated": "2024-10-28T10:58:10.559Z",
+    "summary": "Daily Centering Task",
+    "creator": {
+      "email": "attawar.v@gmail.com",
+      "self": true
+    },
+    "organizer": {
+      "email": "attawar.v@gmail.com",
+      "self": true
+    },
+    "start": {
+      "dateTime": "2026-03-01T08:15:00-05:00",
+      "timeZone": "America/New_York"
+    },
+    "end": {
+      "dateTime": "2026-03-01T08:30:00-05:00",
+      "timeZone": "America/New_York"
+    },
+    "recurringEventId": "naj7k5l3i99d9p8auiha2sebq6",
+    "originalStartTime": {
+      "dateTime": "2026-03-01T08:15:00-05:00",
+      "timeZone": "America/New_York"
+    },
+    "iCalUID": "naj7k5l3i99d9p8auiha2sebq6@google.com",
+    "sequence": 2,
+    "reminders": {
+      "useDefault": true
+    },
+    "eventType": "default"
+  },
+  {
+    "kind": "calendar#event",
+    "etag": "\"3462166549266000\"",
+    "id": "728d178jh3ulrf7jjqv4kiud02_20260228T150000Z",
+    "status": "confirmed",
+    "htmlLink": "https://www.google.com/calendar/event?eid=NzI4ZDE3OGpoM3VscmY3ampxdjRraXVkMDJfMjAyNjAyMjhUMTUwMDAwWiBhdHRhd2FyLnZAbQ",
+    "created": "2024-11-08T16:27:54.000Z",
+    "updated": "2024-11-08T16:27:54.633Z",
+    "summary": "Every week will be better if I make this weekend better",
+    "creator": {
+      "email": "attawar.v@gmail.com",
+      "self": true
+    },
+    "organizer": {
+      "email": "attawar.v@gmail.com",
+      "self": true
+    },
+    "start": {
+      "dateTime": "2026-02-28T10:00:00-05:00",
+      "timeZone": "America/New_York"
+    },
+    "end": {
+      "dateTime": "2026-02-28T10:30:00-05:00",
+      "timeZone": "America/New_York"
+    },
+    "recurringEventId": "728d178jh3ulrf7jjqv4kiud02",
+    "originalStartTime": {
+      "dateTime": "2026-02-28T10:00:00-05:00",
+      "timeZone": "America/New_York"
+    },
+    "iCalUID": "728d178jh3ulrf7jjqv4kiud02@google.com",
+    "sequence": 0,
+    "reminders": {
+      "useDefault": false,
+      "overrides": [
+        {
+          "method": "email",
+          "minutes": 0
+        },
+        {
+          "method": "email",
+          "minutes": 10
+        },
+        {
+          "method": "popup",
+          "minutes": 45
+        }
+      ]
+    },
+    "eventType": "default"
+  },
+  {
+    "kind": "calendar#event",
+    "etag": "\"3479223256508000\"",
+    "id": "fp2fsvnffh9f9g73mpsn54jb1k_20260224",
+    "status": "confirmed",
+    "htmlLink": "https://www.google.com/calendar/event?eid=ZnAyZnN2bmZmaDlmOWc3M21wc241NGpiMWtfMjAyNjAyMjQgYXR0YXdhci52QG0",
+    "created": "2024-12-08T00:59:56.000Z",
+    "updated": "2025-02-15T09:27:08.254Z",
+    "summary": "Sandeep Attawar's birthday",
+    "creator": {
+      "email": "attawar.v@gmail.com",
+      "self": true
+    },
+    "organizer": {
+      "email": "attawar.v@gmail.com",
+      "self": true
+    },
+    "start": {
+      "date": "2026-02-24"
+    },
+    "end": {
+      "date": "2026-02-25"
+    },
+    "recurringEventId": "fp2fsvnffh9f9g73mpsn54jb1k",
+    "originalStartTime": {
+      "date": "2026-02-24"
+    },
+    "transparency": "transparent",
+    "visibility": "private",
+    "iCalUID": "fp2fsvnffh9f9g73mpsn54jb1k@google.com",
+    "sequence": 0,
+    "reminders": {
+      "useDefault": false,
+      "overrides": [
+        {
+          "method": "popup",
+          "minutes": 9540
+        }
+      ]
+    },
+    "birthdayProperties": {
+      "contact": "people/c4885405431204862859",
+      "type": "birthday"
+    },
+    "eventType": "birthday"
+  },
+  {
+    "kind": "calendar#event",
+    "etag": "\"3529088048179550\"",
+    "id": "65uedu4ppb1t378ik6c4r07ti1",
+    "status": "confirmed",
+    "htmlLink": "https://www.google.com/calendar/event?eid=NjV1ZWR1NHBwYjF0Mzc4aWs2YzRyMDd0aTEgYXR0YXdhci52QG0",
+    "created": "2025-11-30T23:07:03.000Z",
+    "updated": "2025-11-30T23:07:04.089Z",
+    "summary": "5K/10K Llanero: Ruta del Encanto 2026",
+    "description": "For event details, please refer to: https://www.active.com/sabana-seca-pr/running/distance-running/5k-10k-llanero-ruta-del-encanto-2026",
+    "location": "PR-165, Sabana Seca, PR, 00949, , Balneario Punta Salinas",
+    "creator": {
+      "email": "attawar.v@gmail.com",
+      "self": true
+    },
+    "organizer": {
+      "email": "attawar.v@gmail.com",
+      "self": true
+    },
+    "start": {
+      "date": "2026-02-21"
+    },
+    "end": {
+      "date": "2026-02-23"
+    },
+    "transparency": "transparent",
+    "iCalUID": "65uedu4ppb1t378ik6c4r07ti1@google.com",
+    "sequence": 0,
+    "reminders": {
+      "useDefault": false,
+      "overrides": [
+        {
+          "method": "popup",
+          "minutes": 465
+        }
+      ]
+    },
+    "eventType": "default"
+  },
+  {
+    "kind": "calendar#event",
+    "etag": "\"3540456389971838\"",
+    "id": "_clr78ba89l44qi9kalpkmsb1852n4li0clr6arjkecn6ot9edlgg",
+    "status": "confirmed",
+    "htmlLink": "https://www.google.com/calendar/event?eid=X2Nscjc4YmE4OWw0NHFpOWthbHBrbXNiMTg1Mm40bGkwY2xyNmFyamtlY242b3Q5ZWRsZ2cgYXR0YXdhci52QG0",
+    "created": "2026-01-27T22:53:21.000Z",
+    "updated": "2026-02-04T18:03:14.985Z",
+    "summary": "FOHE NYC Feb HH",
+    "description": "You are hosting this event. View the public page at https://luma.com/event/evt-HMHMI4UsKqaAErV\n\nManage the event at https://luma.com/event/manage/evt-HMHMI4UsKqaAErV\n\nAddress:\nThe Half Pint / Ernie's Bar\nNew York, New York\nUnited States\n\nWe've been looking forward to this one!\nThursday, February 26\n17:30 \u2013 19:30 ET\nThe Half Pint, 76 West 3rd Street\nWe're bringing together the most passionate Higher Ed and Future of Work people in NYC\u2014be it educators, investors, founders, or just folks who just can't stop thinking about our space.\nCome hang out for an evening of swapping notes on what's working, what isn't, and what you should be paying attention to.\nRSVP fast to make sure you can join!\n\nHosted by Vrijen Attawar, Anna Bao & Vrijen Attawar",
+    "location": "The Half Pint / Ernie's Bar, 76 W 3rd St, New York, NY 10012, USA",
+    "creator": {
+      "email": "attawar.v@gmail.com",
+      "self": true
+    },
+    "organizer": {
+      "email": "calendar-invite@lu.ma",
+      "displayName": "Vrijen Attawar"
+    },
+    "start": {
+      "dateTime": "2026-02-26T17:30:00-05:00",
+      "timeZone": "UTC"
+    },
+    "end": {
+      "dateTime": "2026-02-26T19:30:00-05:00",
+      "timeZone": "UTC"
+    },
+    "iCalUID": "evt-HMHMI4UsKqaAErV@events.lu.ma",
+    "sequence": 192391390,
+    "attendees": [
+      {
+        "email": "attawar.v@gmail.com",
+        "self": true,
+        "responseStatus": "accepted"
+      },
+      {
+        "email": "annabao9595@gmail.com",
+        "responseStatus": "accepted"
+      }
+    ],
+    "guestsCanInviteOthers": false,
+    "privateCopy": true,
+    "reminders": {
+      "useDefault": true
+    },
+    "eventType": "default"
+  },
+  {
+    "kind": "calendar#event",
+    "etag": "\"3543588535118526\"",
+    "id": "pk9nlck6bmd00g6i6v8rfbo8kc",
+    "status": "confirmed",
+    "htmlLink": "https://www.google.com/calendar/event?eid=cGs5bmxjazZibWQwMGc2aTZ2OHJmYm84a2MgYXR0YXdhci52QG0",
+    "created": "2026-02-22T21:04:23.000Z",
+    "updated": "2026-02-22T21:04:27.559Z",
+    "summary": "Vrijen / David",
+    "description": "<p>\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500<br/>David Speigel is inviting you to a scheduled Zoom meeting.<br/>Join Zoom Meeting<br/>https://us02web.zoom.us/j/82877588664?pwd=XbarmUeMbAAVkm2LWckpFFREvJyUKa.1<br/><br/>Meeting ID: 828 7758 8664<br/>Passcode: 993105<br/><br/>---<br/><br/>One tap mobile<br/>+13092053325,,82877588664#,,,,*993105# US<br/>+13126266799,,82877588664#,,,,*993105# US (Chicago)<br/><br/>Join instructions<br/>https://us02web.zoom.us/meetings/82877588664/invitations?signature=mD3jGCQMXicGrufv2M7npqFN3y5u5mglPa0kdn1yNn8<br/><br/><br>\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500</p>",
+    "location": "https://us02web.zoom.us/j/82877588664?pwd=XbarmUeMbAAVkm2LWckpFFREvJyUKa.1",
+    "creator": {
+      "email": "dspeigel@gmail.com"
+    },
+    "organizer": {
+      "email": "dspeigel@gmail.com"
+    },
+    "start": {
+      "dateTime": "2026-02-22T16:00:00-05:00",
+      "timeZone": "America/Chicago"
+    },
+    "end": {
+      "dateTime": "2026-02-22T17:00:00-05:00",
+      "timeZone": "America/Chicago"
+    },
+    "iCalUID": "pk9nlck6bmd00g6i6v8rfbo8kc@google.com",
+    "sequence": 0,
+    "attendees": [
+      {
+        "email": "dspeigel@gmail.com",
+        "organizer": true,
+        "responseStatus": "accepted"
+      },
+      {
+        "email": "attawar.v@gmail.com",
+        "self": true,
+        "responseStatus": "needsAction"
+      }
+    ],
+    "extendedProperties": {
+      "shared": {
+        "zmCreateEventType": "1",
+        "zmMeetingNum": "82877588664",
+        "zmMeetingUnifyID": "0f3d48a5-5ea7-4b32-b0f3-1c88c0016fb6",
+        "zmMeetingMasterEventID": "yDEJvrRJSxSIL0fn7IAzLg",
+        "ZOOM_ConferencePassword": "993105",
+        "ZOOM_ConferenceNumber": "82877588664"
+      }
+    },
+    "reminders": {
+      "useDefault": true
+    },
+    "eventType": "default"
+  },
+  {
+    "kind": "calendar#event",
+    "etag": "\"3544114599508286\"",
+    "id": "0a81v0omsbp8gol9c0up1b2goc",
+    "status": "confirmed",
+    "htmlLink": "https://www.google.com/calendar/event?eid=MGE4MXYwb21zYnA4Z29sOWMwdXAxYjJnb2MgYXR0YXdhci52QG0",
+    "created": "2026-01-31T13:02:48.000Z",
+    "updated": "2026-02-25T22:08:19.754Z",
+    "summary": "Reservation at The Half Pint / Ernie's",
+    "description": "To see detailed information for automatically created events like this one, use the official Google Calendar app. https://g.co/calendar\n\nThis event was created from an email you received in Gmail. https://mail.google.com/mail?extsrc=cal&plid=ACUX6DNCs3RLOB7ZzkZm3D4qq4QJdZnP3y35X-M\n",
+    "location": "The Half Pint / Ernie's, 76 W 3rd St, Between Thompson St and W 3rd St, New York, NY 10012",
+    "creator": {
+      "email": "attawar.v@gmail.com",
+      "self": true
+    },
+    "organizer": {
+      "email": "attawar.v@gmail.com",
+      "self": true
+    },
+    "start": {
+      "dateTime": "2026-02-26T17:30:00-05:00",
+      "timeZone": "America/New_York"
+    },
+    "end": {
+      "dateTime": "2026-02-26T18:30:00-05:00",
+      "timeZone": "America/New_York"
+    },
+    "endTimeUnspecified": true,
+    "transparency": "transparent",
+    "visibility": "private",
+    "iCalUID": "0a81v0omsbp8gol9c0up1b2goc@google.com",
+    "sequence": 1,
+    "attendees": [
+      {
+        "email": "attawar.v@gmail.com",
+        "organizer": true,
+        "self": true,
+        "responseStatus": "accepted"
+      }
+    ],
+    "guestsCanInviteOthers": false,
+    "reminders": {
+      "useDefault": true
+    },
+    "source": {
+      "url": "https://mail.google.com/mail?extsrc=cal&plid=ACUX6DNCs3RLOB7ZzkZm3D4qq4QJdZnP3y35X-M",
+      "title": ""
+    },
+    "eventType": "fromGmail"
+  },
+  {
+    "kind": "calendar#event",
+    "etag": "\"3544437330582558\"",
+    "id": "03p3rpi20so8vjbg9vgkpa5e7g",
+    "status": "confirmed",
+    "htmlLink": "https://www.google.com/calendar/event?eid=MDNwM3JwaTIwc284dmpiZzl2Z2twYTVlN2cgYXR0YXdhci52QG0",
+    "created": "2026-02-26T12:47:22.000Z",
+    "updated": "2026-02-27T18:57:45.291Z",
+    "summary": "Sara x V ",
+    "creator": {
+      "email": "attawar.v@gmail.com",
+      "self": true
+    },
+    "organizer": {
+      "email": "attawar.v@gmail.com",
+      "self": true
+    },
+    "start": {
+      "dateTime": "2026-02-27T15:30:00-05:00",
+      "timeZone": "America/New_York"
+    },
+    "end": {
+      "dateTime": "2026-02-27T16:00:00-05:00",
+      "timeZone": "America/New_York"
+    },
+    "iCalUID": "03p3rpi20so8vjbg9vgkpa5e7g@google.com",
+    "sequence": 1,
+    "attendees": [
+      {
+        "email": "sara@glaresquare.com",
+        "responseStatus": "accepted"
+      },
+      {
+        "email": "attawar.v@gmail.com",
+        "organizer": true,
+        "self": true,
+        "responseStatus": "accepted"
+      }
+    ],
+    "hangoutLink": "https://meet.google.com/jqi-ueyo-atk",
+    "conferenceData": {
+      "entryPoints": [
+        {
+          "entryPointType": "video",
+          "uri": "https://meet.google.com/jqi-ueyo-atk",
+          "label": "meet.google.com/jqi-ueyo-atk"
+        }
+      ],
+      "conferenceSolution": {
+        "key": {
+          "type": "hangoutsMeet"
+        },
+        "name": "Google Meet",
+        "iconUri": "https://fonts.gstatic.com/s/i/productlogos/meet_2020q4/v6/web-512dp/logo_meet_2020q4_color_2x_web_512dp.png"
+      },
+      "conferenceId": "jqi-ueyo-atk"
+    },
+    "reminders": {
+      "useDefault": true
+    },
+    "eventType": "default"
+  },
+  {
+    "kind": "calendar#event",
+    "etag": "\"3544473167853950\"",
+    "id": "e1n27kf8q00ep1kr3vb01dqim4",
+    "status": "confirmed",
+    "htmlLink": "https://www.google.com/calendar/event?eid=ZTFuMjdrZjhxMDBlcDFrcjN2YjAxZHFpbTQgYXR0YXdhci52QG0",
+    "created": "2026-02-27T23:56:23.000Z",
+    "updated": "2026-02-27T23:56:23.926Z",
+    "summary": "Reservation at Il Melograno",
+    "description": "To see detailed information for automatically created events like this one, use the official Google Calendar app. https://g.co/calendar\n\nThis event was created from an email you received in Gmail. https://mail.google.com/mail?extsrc=cal&plid=ACUX6DPZ85ykeg9NrVYv7QVvtyEXrivonYw9haw\n",
+    "location": "Il Melograno, 501 West 51st Street, New York, NY, 10019, United States",
+    "creator": {
+      "email": "attawar.v@gmail.com",
+      "self": true
+    },
+    "organizer": {
+      "email": "attawar.v@gmail.com",
+      "self": true
+    },
+    "start": {
+      "dateTime": "2026-02-27T19:45:00-05:00",
+      "timeZone": "America/New_York"
+    },
+    "end": {
+      "dateTime": "2026-02-27T20:45:00-05:00",
+      "timeZone": "America/New_York"
+    },
+    "endTimeUnspecified": true,
+    "transparency": "transparent",
+    "visibility": "private",
+    "iCalUID": "e1n27kf8q00ep1kr3vb01dqim4@google.com",
+    "sequence": 0,
+    "attendees": [
+      {
+        "email": "attawar.v@gmail.com",
+        "organizer": true,
+        "self": true,
+        "responseStatus": "accepted"
+      }
+    ],
+    "guestsCanInviteOthers": false,
+    "reminders": {
+      "useDefault": true
+    },
+    "source": {
+      "url": "https://mail.google.com/mail?extsrc=cal&plid=ACUX6DPZ85ykeg9NrVYv7QVvtyEXrivonYw9haw",
+      "title": ""
+    },
+    "eventType": "fromGmail"
+  },
+  {
+    "kind": "calendar#event",
+    "etag": "\"3544608551418430\"",
+    "id": "5rs85kmm3cql8ndc85uiql10pi",
+    "status": "confirmed",
+    "htmlLink": "https://www.google.com/calendar/event?eid=NXJzODVrbW0zY3FsOG5kYzg1dWlxbDEwcGkgYXR0YXdhci52QG0",
+    "created": "2026-02-26T05:09:17.000Z",
+    "updated": "2026-02-28T18:44:35.709Z",
+    "summary": "Hearth mini photo/vid shoot",
+    "description": "<b>Meet at the south corner of McCarren Park at intersection of Bayard and 12th / union streets.</b><br><br>Rescheduled from last week (given blizzard) -- sorry all for the short notice; I meant to send this update sooner! LMK if you're still available and interested.<br><br>Each person should only take &lt;10-15min, but block the hour in case there's a line...",
+    "location": "McCarren Park, 776 Lorimer St, Brooklyn, NY 11222, USA",
+    "creator": {
+      "email": "ray@discoverhearth.com"
+    },
+    "organizer": {
+      "email": "ray@discoverhearth.com"
+    },
+    "start": {
+      "dateTime": "2026-02-28T15:00:00-05:00",
+      "timeZone": "America/New_York"
+    },
+    "end": {
+      "dateTime": "2026-02-28T16:00:00-05:00",
+      "timeZone": "America/New_York"
+    },
+    "iCalUID": "5rs85kmm3cql8ndc85uiql10pi@google.com",
+    "sequence": 0,
+    "attendees": [
+      {
+        "email": "elena.valdivieso@gmail.com",
+        "responseStatus": "needsAction"
+      },
+      {
+        "email": "ray@discoverhearth.com",
+        "organizer": true,
+        "responseStatus": "accepted"
+      },
+      {
+        "email": "carlvitullo@gmail.com",
+        "responseStatus": "accepted"
+      },
+      {
+        "email": "crystalbiteng@gmail.com",
+        "responseStatus": "needsAction"
+      },
+      {
+        "email": "kelleylaurensmith@gmail.com",
+        "responseStatus": "needsAction"
+      },
+      {
+        "email": "keragan.cavolo@gmail.com",
+        "responseStatus": "needsAction"
+      },
+      {
+        "email": "attawar.v@gmail.com",
+        "self": true,
+        "responseStatus": "needsAction"
+      },
+      {
+        "email": "crystal.duan95@gmail.com",
+        "responseStatus": "needsAction"
+      },
+      {
+        "email": "bentatum91@gmail.com",
+        "responseStatus": "needsAction"
+      },
+      {
+        "email": "vrijen@mycareerspan.com",
+        "responseStatus": "needsAction"
+      },
+      {
+        "email": "mrmarkras19@gmail.com",
+        "responseStatus": "needsAction"
+      }
+    ],
+    "reminders": {
+      "useDefault": true
+    },
+    "eventType": "default"
+  },
+  {
+    "kind": "calendar#event",
+    "etag": "\"3544621114873886\"",
+    "id": "1smhn7s73n0fdk6804hgqtakdd_20260223T203000Z",
+    "status": "confirmed",
+    "htmlLink": "https://www.google.com/calendar/event?eid=MXNtaG43czczbjBmZGs2ODA0aGdxdGFrZGRfMjAyNjAyMjNUMjAzMDAwWiBhdHRhd2FyLnZAbQ",
+    "created": "2025-10-27T16:23:50.000Z",
+    "updated": "2026-02-28T20:29:17.436Z",
+    "summary": "Vrijen / Tiffany",
+    "creator": {
+      "email": "tiff@substrate.run"
+    },
+    "organizer": {
+      "email": "tiff@substrate.run"
+    },
+    "start": {
+      "dateTime": "2026-02-23T15:30:00-05:00",
+      "timeZone": "America/New_York"
+    },
+    "end": {
+      "dateTime": "2026-02-23T16:00:00-05:00",
+      "timeZone": "America/New_York"
+    },
+    "recurringEventId": "1smhn7s73n0fdk6804hgqtakdd_R20251222T203000",
+    "originalStartTime": {
+      "dateTime": "2026-02-23T15:30:00-05:00",
+      "timeZone": "America/New_York"
+    },
+    "iCalUID": "1smhn7s73n0fdk6804hgqtakdd_R20251222T203000@google.com",
+    "sequence": 0,
+    "attendees": [
+      {
+        "email": "tiff@substrate.run",
+        "organizer": true,
+        "responseStatus": "declined",
+        "comment": "Declined because I am out of office"
+      },
+      {
+        "email": "attawar.v@gmail.com",
+        "self": true,
+        "responseStatus": "declined"
+      },
+      {
+        "email": "vrijen@mycareerspan.com",
+        "responseStatus": "accepted"
+      }
+    ],
+    "hangoutLink": "https://meet.google.com/bfv-kfqg-dua",
+    "conferenceData": {
+      "entryPoints": [
+        {
+          "entryPointType": "video",
+          "uri": "https://meet.google.com/bfv-kfqg-dua",
+          "label": "meet.google.com/bfv-kfqg-dua"
+        },
+        {
+          "entryPointType": "more",
+          "uri": "https://tel.meet/bfv-kfqg-dua?pin=9744581741386",
+          "pin": "9744581741386"
+        },
+        {
+          "regionCode": "US",
+          "entryPointType": "phone",
+          "uri": "tel:+1-443-507-8829",
+          "label": "+1 443-507-8829",
+          "pin": "367000500"
+        }
+      ],
+      "conferenceSolution": {
+        "key": {
+          "type": "hangoutsMeet"
+        },
+        "name": "Google Meet",
+        "iconUri": "https://fonts.gstatic.com/s/i/productlogos/meet_2020q4/v6/web-512dp/logo_meet_2020q4_color_2x_web_512dp.png"
+      },
+      "conferenceId": "bfv-kfqg-dua"
+    },
+    "reminders": {
+      "useDefault": true
+    },
+    "eventType": "default"
+  },
+  {
+    "kind": "calendar#event",
+    "etag": "\"3544661356989534\"",
+    "id": "3jbge3ercs914k255s7sofq8pu",
+    "status": "confirmed",
+    "htmlLink": "https://www.google.com/calendar/event?eid=M2piZ2UzZXJjczkxNGsyNTVzN3NvZnE4cHUgYXR0YXdhci52QG0",
+    "created": "2026-02-16T22:17:20.000Z",
+    "updated": "2026-03-01T02:04:38.494Z",
+    "summary": "[February FOHE Coffee Hour] - Reimagining Admissions",
+    "description": "<p>Join us for a conversation about <b>reimagining college admissions</b> \u2013 spotlighting the <a href=\"https://www.luminafoundation.org/admissions-redesign/\" target=\"_blank\">Lumina Foundation</a>\u2019s <a href=\"https://www.luminafoundation.org/admissions-redesign/\">Great Admissions Redesign work</a>,\u00a0with <a target=\"_blank\" href=\"https://www.linkedin.com/in/melaniewheath/\">Melanie Heath</a> (Strategy Director for Access, Lumina Foundation), <a target=\"_blank\" href=\"https://www.linkedin.com/in/juliaelizabethdixon/\">Julia Dixon</a> (Founder/CEO, <a href=\"https://www.esai.ai/\">ESAI</a>), and <a target=\"_blank\" href=\"https://www.gse.harvard.edu/directory/faculty/richard-weissbourd\">Richard Weissbourd</a> (Senior Lecturer, Harvard Graduate School of Education).</p><br>-------<br><br><a href=\"https://www.fohe.org/\" target=\"_blank\"><u><u><u><u><u><u><u><u><u><u><u>FOHE</u></u></u></u></u></u></u></u></u></u></u></a>\u00a0Coffee Hour is 12-1pm Eastern Time on the last Wednesday of every month.<br><br>We'll send out a calendar hold near the beginning of each month with the details for that month's session.<br><br>Don't forget to check out the ongoing conversations on FOHE's\u00a0<a href=\"https://futureofhighered.slack.com/\" target=\"_blank\"><u><u><u><u><u><u><u><u><u><u><u><u><u>Slack</u></u></u></u></u></u></u></u></u></u></u></u></u></a>.",
+    "location": "https://us06web.zoom.us/j/8717447003",
+    "creator": {
+      "email": "hello@fohe.org"
+    },
+    "organizer": {
+      "email": "hello@fohe.org"
+    },
+    "start": {
+      "dateTime": "2026-02-25T12:00:00-05:00",
+      "timeZone": "America/New_York"
+    },
+    "end": {
+      "dateTime": "2026-02-25T13:00:00-05:00",
+      "timeZone": "America/New_York"
+    },
+    "iCalUID": "3jbge3ercs914k255s7sofq8pu@google.com",
+    "sequence": 0,
+    "attendees": [
+      {
+        "email": "attawar.v@gmail.com",
+        "self": true,
+        "responseStatus": "needsAction"
+      }
+    ],
+    "guestsCanInviteOthers": false,
+    "guestsCanSeeOtherGuests": false,
+    "reminders": {
+      "useDefault": true
+    },
+    "eventType": "default"
+  }
+]

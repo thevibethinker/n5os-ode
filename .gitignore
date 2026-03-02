@@ -132,3 +132,6 @@ Datasets/zo-hotline-calls/data.duckdb
 Sites/thevibepill/
 Sites/thevibepill-staging/
 zoputer-substrate/
+
+# Large dataset archives
+Datasets/x-history-pre-jan-8/*.zip

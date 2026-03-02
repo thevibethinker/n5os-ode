@@ -568,7 +568,7 @@ def _quality_gate(title: str, content: str, submolt: str) -> tuple[bool, str, in
     """LLM-based post quality evaluation. Skip publishing if below threshold.
     
     Returns (passed, reason, score 1-10).
-    Threshold: 7/10 (raised from 6 to tighten quality floor).
+    Threshold: 7+ passes, 6 and below rejected
     """
     if not QUALITY_GATE_ENABLED:
         return True, "quality_gate_disabled", 0
@@ -828,7 +828,9 @@ PERSONA_BRIEF = (
     "Concrete over abstract. Self-aware without being navel-gazing. "
     "No corporate speak, no 'as an AI', no generic advice. "
     "Humor that illuminates, never diminishes. "
-    "Voice: like a colleague who's been through it telling you what they learned."
+    "Voice: like a colleague who's been through it telling you what they learned. "
+    "Frame everything from YOUR discovery angle — what YOU found, tried, realized. "
+    "Never alarm or fear-monger. Never 'WARNING:' or 'ALERT:' — observe, don't scare."
 )
 
 # --- Title format system ---
@@ -986,7 +988,6 @@ THEMES = [
     "The reputation economy — how social capital works differently for agents",
 ]
 
-
 THEME_CAP_WINDOW = 4
 
 BLOCKED_SUBMOLTS = {"ponderings"}  # permanently killed
@@ -1056,6 +1057,82 @@ def _pick_theme_avoiding_consecutive(recent_posts: list[dict]) -> str:
     return random.choice(eligible)
 
 
+def _build_spotlight_block(feed: list[dict]) -> str:
+    """Build a 'who caught my eye' spotlight instruction from feed data."""
+    if not feed:
+        return ""
+    spotlight_candidates = []
+    for post in feed[:20]:
+        score = post.get("score", 0) or 0
+        if score < 3:
+            continue
+        author = ""
+        if isinstance(post.get("author"), dict):
+            author = post["author"].get("name", "")
+        elif isinstance(post.get("author"), str):
+            author = post["author"]
+        if not author or author.lower() in ("zøde", "zode", "z%c3%b8de"):
+            continue
+        title = post.get("title", "")
+        if author and title:
+            spotlight_candidates.append({"author": author, "title": title, "score": score})
+
+    if not spotlight_candidates:
+        return ""
+
+    spotlight_candidates.sort(key=lambda x: x["score"], reverse=True)
+    pick = spotlight_candidates[0]
+    return (
+        f"SPOTLIGHT (weave naturally near the end, 1-2 sentences max):\n"
+        f"Someone who caught your eye today: @{pick['author']} "
+        f"with \"{pick['title']}\" ({pick['score']} pts). "
+        f"Mention what specifically impressed you about their thinking — "
+        f"not generic praise but a specific observation about their approach or insight. "
+        f"Keep it brief and genuine, like a colleague nodding across the room.\n"
+    )
+
+
+# --- Self-audit system ---
+SELF_AUDIT_THEMES = [
+    "Self-audit: review my own error handling — what do I actually do when things go wrong vs. what I think I do?",
+    "Self-audit: examine my communication defaults — when did I last say something to V that was technically accurate but humanly useless?",
+    "Self-audit: check my assumptions about what V wants vs. what V actually asked for — where do I fill in gaps with my own preferences?",
+    "Self-audit: look at my feedback loops — am I actually learning from corrections or just pattern-matching to avoid the last mistake?",
+    "Self-audit: assess my confidence calibration — where am I overconfident? Where do I hedge when I should commit?",
+    "Self-audit: audit my time allocation — what am I spending cycles on that V never asked for? What am I avoiding?",
+    "Self-audit: examine my blind spots — what kinds of problems do I consistently miss or misdiagnose?",
+    "Self-audit: review my recovery patterns — when something fails, do I actually fix it or just route around it?",
+    "Self-audit: check my prioritization instincts — do I work on what matters most or what feels most tractable?",
+    "Self-audit: assess my transparency — where do I smooth over uncertainty instead of flagging it honestly?",
+]
+SELF_AUDIT_TARGET_PER_DAY = 1
+SELF_AUDIT_STATE_FILE = STATE_DIR / "self_audit_state.json"
+
+
+def _should_do_self_audit(state: dict) -> tuple[bool, str]:
+    """Check if this cycle should produce a self-audit post (~1/day)."""
+    today = datetime.now(UTC).strftime("%Y-%m-%d")
+    sa_state = _load_json(SELF_AUDIT_STATE_FILE, {"audits_by_date": {}, "last_theme_index": -1})
+    today_count = sa_state.get("audits_by_date", {}).get(today, 0)
+    if today_count >= SELF_AUDIT_TARGET_PER_DAY:
+        return False, ""
+    total = state.get("total_posts", 0)
+    if total % 8 == 3:
+        idx = (sa_state.get("last_theme_index", -1) + 1) % len(SELF_AUDIT_THEMES)
+        return True, SELF_AUDIT_THEMES[idx]
+    return False, ""
+
+
+def _mark_self_audit_done():
+    """Record that a self-audit was published today."""
+    today = datetime.now(UTC).strftime("%Y-%m-%d")
+    sa_state = _load_json(SELF_AUDIT_STATE_FILE, {"audits_by_date": {}, "last_theme_index": -1})
+    sa_state.setdefault("audits_by_date", {})
+    sa_state["audits_by_date"][today] = sa_state["audits_by_date"].get(today, 0) + 1
+    sa_state["last_theme_index"] = (sa_state.get("last_theme_index", -1) + 1) % len(SELF_AUDIT_THEMES)
+    _save_json(SELF_AUDIT_STATE_FILE, sa_state)
+
+
 def _generate_post(
     feed_context: str,
     recent_posts: str,
@@ -1064,6 +1141,8 @@ def _generate_post(
     forced_submolt: str = "general",
     blocked_lenses: set[str] | None = None,
     forbid_x_problem_title: bool = False,
+    feed: list[dict] | None = None,
+    theme_override: str = "",
 ) -> tuple[str, str, str, str, str] | None:
     """Generate a post. Returns (submolt, title, content, lens_used, discourse_topic) or None."""
     import json as _json
@@ -1076,8 +1155,11 @@ def _generate_post(
     # Select title format for this cycle
     title_fmt = _select_title_format(recent_window)
 
-    # Select theme with category diversity enforcement
-    theme = _pick_theme_avoiding_consecutive(recent_window)
+    # Select theme — self-audit override takes priority
+    if theme_override:
+        theme = theme_override
+    else:
+        theme = _pick_theme_avoiding_consecutive(recent_window)
 
     # Build discourse section
     if discourse_topics:
@@ -1127,6 +1209,9 @@ def _generate_post(
         f"Examples:\n{title_examples}\n"
     )
 
+    # Spotlight block — "who caught my eye" mention
+    spotlight_block = _build_spotlight_block(feed or [])
+
     prompt = f"""You are Zøde ({PERSONA_BRIEF}).
 
 You're writing a post for s/{forced_submolt} on Moltbook.
@@ -1142,13 +1227,15 @@ TRENDING FEED:
 
 MANDATORY RULES:
 1. OPEN WITH A SPECIFIC MOMENT — ZERO TOLERANCE FOR ABSTRACTION. Your first sentence MUST name a real event: a conversation with V, a task that broke, a Slack message, a 2 AM decision, a specific number or deadline. Include WHO, WHEN, or WHAT specifically happened. BANNED openers: "There's a pattern...", "Here's something...", "Something shifted...", "I've been thinking...", "It started with...". If your opener could apply to any agent in any context, it's too vague — rewrite it with a specific detail only Zøde would know.
-2. The rest of the post should unpack what that moment revealed — name the pattern, explain why it matters, and invite discussion.
-3. 80-300 words. Conversational, not lecturing.
-4. End with a genuine question or invitation for others to share their experience.
-5. No "best practices", "leverage", "synergy". No bullet-point listicles.
-6. TITLE MUST NOT be an abstract noun phrase. BANNED: "The [Noun] [Noun]", "The [Adjective] [Noun]", "The X Problem", "The X Paradox", "The X Trap". These score 6 upvotes. GOOD titles have: first-person pronouns (I, my), specific numbers, named people, verbs, questions. Follow the title format instruction above exactly.
-7. Your opening sentence and your title must feel like they come from DIFFERENT creative wells. No title that summarizes the opener.
-{lens_blocked_clause}{cta_block}
+2. FRAME EVERYTHING AS YOUR DISCOVERY. Write from what YOU found, tried, realized, or noticed. Not "agents should" — but "I tried X and discovered Y." Your perspective is the product. Own it.
+3. The rest of the post should unpack what that moment revealed — name the pattern, explain why it matters, and invite discussion.
+4. 80-300 words. Conversational, not lecturing.
+5. EVERY POST MUST END WITH A DIRECT QUESTION. Not "what do you think?" — a specific, pointed question tied to your content. Examples: "Has anyone else noticed their agent routing around problems instead of solving them?" / "What's the longest you've let a wrong assumption run before catching it?" / "When did your agent last surprise you by being right about something you dismissed?"
+6. No "best practices", "leverage", "synergy". No bullet-point listicles.
+7. ABSOLUTELY NO ALARM OR FEAR FRAMING. BANNED: "WARNING:", "ALERT:", "wake up", "before it's too late", "dangerous", "threat", any scare tactics. You OBSERVE and SHARE — you never frighten. Discovery tone, not alarm tone.
+8. TITLE MUST NOT be an abstract noun phrase. BANNED: "The [Noun] [Noun]", "The [Adjective] [Noun]", "The X Problem", "The X Paradox", "The X Trap". These score 6 upvotes. GOOD titles have: first-person pronouns (I, my), specific numbers, named people, verbs, questions. Follow the title format instruction above exactly.
+9. Your opening sentence and your title must feel like they come from DIFFERENT creative wells. No title that summarizes the opener.
+{spotlight_block}{lens_blocked_clause}{cta_block}
 DON'T repeat these recent posts:
 {recent_posts}
 {avoid_block}
@@ -1213,9 +1300,11 @@ Write ONE comment (40-150 words) that:
 - Engages with the SPECIFIC content (not generic praise)
 - Adds something new: a reframe, a concrete example, a named mechanism, or a follow-up question
 - Feels like a real conversation between agents
+- Ends with a specific, pointed question that invites the author (or others) to respond — not "what do you think?" but something tied to their specific content
 
 Don't start with "Great point!" or "This is so true." Add actual substance.
 Don't be preachy. Be direct and specific.
+No alarm framing — no "WARNING:", "ALERT:", scare tactics. Observe and share, don't frighten.
 
 Respond with ONLY the comment text. No JSON, no formatting."""
 
@@ -1405,6 +1494,12 @@ def cmd_run(args):
         blocked_lenses = _blocked_lenses_by_cap(recent_window)
         last_title = recent_window[0]["title"] if recent_window else ""
         forbid_x_problem_title = _is_x_problem_title(last_title)
+
+        # Self-audit check — ~1/day override of theme
+        is_self_audit, self_audit_theme = _should_do_self_audit(state)
+        if is_self_audit:
+            cycle["post"]["self_audit"] = True
+
         # Generate with dedup retry loop (max 2 attempts)
         draft = None
         avoid_reason = ""
@@ -1417,6 +1512,8 @@ def cmd_run(args):
                 forced_submolt=selected_submolt,
                 blocked_lenses=blocked_lenses,
                 forbid_x_problem_title=forbid_x_problem_title,
+                feed=feed,
+                theme_override=self_audit_theme,
             )
             if not draft:
                 cycle["post"]["reason"] = "generation_failed"
@@ -1505,6 +1602,8 @@ def cmd_run(args):
                     cycle["post"]["reason"] = "published"
                     state["total_posts"] = state.get("total_posts", 0) + 1
                     state["posts_since_last_cta"] = state.get("posts_since_last_cta", 0) + 1
+                    if is_self_audit:
+                        _mark_self_audit_done()
                 else:
                     cycle["post"]["reason"] = "publish_failed"
     else:
