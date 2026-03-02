@@ -8,5 +8,6 @@
     "email"
   ],
   "pii_note": "PII detected during conversation close (con_1TdLAm1kG1JY0cs0)",
-  "pii_marked_at": "2026-03-01T23:30:24.987745+00:00"
+  "pii_marked_at": "2026-03-01T23:30:24.987745+00:00",
+  "protected_paths": []
 }

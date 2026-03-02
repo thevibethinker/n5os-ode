@@ -116,6 +116,7 @@ provenance: con_xMvzWKgpZHS5XdCn
 | 2026-01-14 | 8766 | n5-bootstrap-support vs crm-webhook-renewal | Removed duplicate entry (crm-webhook-renewal retired) |
 | 2026-01-30 | 8766 | n5-bootstrap-support vs crm-webhook-renewal | Deleted crm-webhook-renewal (svc_YLj0UE0nhUE) |
 | 2026-01-30 | 8847 | careerspan-webhook vs careerspan-wh | Deleted careerspan-wh (svc_TArEMhXNEcI) |
+| 2026-03-02 | 4243 | zoren-hotline-webhook | Deprecated — service transferred to Zoputer, port freed |
 
 ---
 
@@ -126,5 +127,3 @@ python3 N5/scripts/port_registry.py next [range]   # Get next available port
 python3 N5/scripts/port_registry.py list           # List all allocated ports  
 python3 N5/scripts/port_registry.py sync           # Sync from services + zosites
 ```
-| 2026-02-20 | 8773 | zoseph-hotline-webhook | Zoseph (Vibe Thinker) hotline webhook — dedicated service, split from zo-hotline-webhook |
-| 2026-02-20 | 4243 | zoren-hotline-webhook (relabeled) | Formerly zo-hotline-webhook → renamed for clarity |

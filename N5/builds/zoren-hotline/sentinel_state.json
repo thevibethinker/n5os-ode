@@ -1,7 +1,0 @@
-{
-  "last_check": "2026-02-20T12:50:00Z",
-  "seen_deposits": ["D1", "D2", "D3", "D4", "D6", "D7"],
-  "notes": "D7 deposited; Wave 4 complete. D5 pending manual spawn (needs Twilio number, ElevenLabs voice, VAPI access from V).",
-  "blocked_drops": ["D5"],
-  "build_progress": "6/7 (86%)"
-}
