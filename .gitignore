@@ -135,3 +135,5 @@ zoputer-substrate/
 
 # Large dataset archives
 Datasets/x-history-pre-jan-8/*.zip
+N5/config/credentials/
+N5/config/credentials_backup_20251028/
