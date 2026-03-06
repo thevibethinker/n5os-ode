@@ -172,7 +172,7 @@ def mask_secret(value: str, visible_chars: int = 4) -> str:
         Masked string (e.g., "xoxb-****-****-abc123")
     
     Examples:
-        >>> masked = mask_secret("xoxb-5255246858917-9782841117974-mZew0VoLxmVwheIMZK4cbZAd")
+        >>> masked = mask_secret("xoxb-REDACTED-EXAMPLE-TOKEN")
         >>> print(f"Token: {masked}")  # Token: ****cbZAd
     """
     if not value or len(value) <= visible_chars:
