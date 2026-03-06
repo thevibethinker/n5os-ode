@@ -172,7 +172,7 @@ def mask_secret(value: str, visible_chars: int = 4) -> str:
         Masked string (e.g., "xoxb-****-****-abc123")
     
     Examples:
-        >>> masked = mask_secret("xoxb-REDACTED-EXAMPLE-TOKEN")
+        >>> masked = mask_secret("slack-bot-token-example")
         >>> print(f"Token: {masked}")  # Token: ****cbZAd
     """
     if not value or len(value) <= visible_chars:
