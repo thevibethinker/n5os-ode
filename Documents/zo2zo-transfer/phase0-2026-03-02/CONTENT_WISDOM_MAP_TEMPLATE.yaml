@@ -1,0 +1,18 @@
+content_wisdom_topology:
+  content_library:
+    canonical_root: ""
+    collections: []
+    metadata_schema: []
+  pathways_into_content_library:
+    web_save: { enabled: false, entrypoint: "", transform: "" }
+    research_ingest: { enabled: false, entrypoint: "", transform: "" }
+    communication_ingest: { enabled: false, entrypoint: "", transform: "" }
+    manual_curation: { enabled: false, entrypoint: "", transform: "" }
+    scripted_import: { enabled: false, entrypoint: "", transform: "" }
+  wisdom_system_linkage:
+    promotion_pipeline: ""
+    promotion_criteria: []
+    output_artifacts: []
+    traceability_to_source: true
+    feedback_loop_to_content_library: ""
+  known_gaps: []

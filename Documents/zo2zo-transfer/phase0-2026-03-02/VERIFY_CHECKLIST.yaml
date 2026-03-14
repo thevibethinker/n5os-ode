@@ -1,0 +1,20 @@
+phase: 0
+checks:
+  - id: handshake_reachable
+    required: true
+    status: pending
+  - id: capability_matrix_received
+    required: true
+    status: pending
+  - id: localization_keys_complete
+    required: true
+    status: pending
+  - id: blockers_triaged
+    required: true
+    status: pending
+  - id: content_wisdom_topology_received
+    required: true
+    status: pending
+  - id: phase1_manifest_ready
+    required: true
+    status: pending

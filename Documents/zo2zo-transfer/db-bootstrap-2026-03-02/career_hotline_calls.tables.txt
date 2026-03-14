@@ -1,0 +1,17 @@
+┌───────────────────────┐
+│         name          │
+│        varchar        │
+├───────────────────────┤
+│ caller_balances       │
+│ caller_insights       │
+│ caller_lookup         │
+│ caller_profiles       │
+│ caller_resumes        │
+│ calls                 │
+│ escalations           │
+│ feedback              │
+│ intake_webhook_events │
+│ purchases             │
+├───────────────────────┤
+│        10 rows        │
+└───────────────────────┘

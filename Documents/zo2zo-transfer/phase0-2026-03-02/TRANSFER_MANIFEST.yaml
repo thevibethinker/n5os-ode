@@ -1,0 +1,24 @@
+phase: 0
+transfer_id: phase0_discovery_2026_03_02
+sender: va
+target: zoputer
+mode: discovery
+includes:
+  - path: Documents/zo2zo-transfer/phase0-2026-03-02/PHASE_BRIEF.md
+    type: brief
+  - path: Documents/zo2zo-transfer/phase0-2026-03-02/LOCALIZATION_MAP.yaml
+    type: localization-template
+  - path: Documents/zo2zo-transfer/phase0-2026-03-02/VERIFY_CHECKLIST.yaml
+    type: verification-template
+  - path: Documents/zo2zo-transfer/phase0-2026-03-02/CONTENT_WISDOM_MAP_TEMPLATE.yaml
+    type: mapping-template
+constraints:
+  destructive_apply: false
+  secrets_transfer: false
+  branch_protection: true
+required_reply:
+  - capability_matrix
+  - localization_profile
+  - blockers
+  - remap_proposals
+  - content_wisdom_topology

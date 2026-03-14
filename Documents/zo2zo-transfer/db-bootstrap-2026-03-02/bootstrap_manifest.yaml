@@ -1,0 +1,18 @@
+version: 1.0
+type: db-bootstrap-kit
+created: 2026-03-02
+provenance: con_pLLTlqfVu4hKeKhT
+files:
+  - path: Skills/zode-moltbook/state/social_intelligence.db
+    engine: duckdb
+    bootstrap_sql: social_intelligence.bootstrap.sql
+    reference_schema: social_intelligence.schema.sql
+    expected_tables: social_intelligence.tables.txt
+  - path: Datasets/career-hotline-calls/data.duckdb
+    engine: duckdb
+    bootstrap_sql: career_hotline_calls.bootstrap.sql
+    reference_schema: career_hotline_calls.schema.sql
+    expected_tables: career_hotline_calls.tables.txt
+apply:
+  script: bootstrap_empty_duckdbs.sh
+  creates_empty_databases: true

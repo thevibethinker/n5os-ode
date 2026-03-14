@@ -1,0 +1,18 @@
+┌────────────────────┐
+│        name        │
+│      varchar       │
+├────────────────────┤
+│ agent_interactions │
+│ agents             │
+│ concept_adoption   │
+│ concepts           │
+│ discourse_threads  │
+│ idea_lineage       │
+│ ideas              │
+│ our_comments       │
+│ our_posts          │
+│ positions          │
+│ threads            │
+├────────────────────┤
+│      11 rows       │
+└────────────────────┘

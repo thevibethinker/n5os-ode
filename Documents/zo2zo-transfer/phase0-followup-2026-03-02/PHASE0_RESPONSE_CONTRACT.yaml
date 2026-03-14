@@ -1,0 +1,43 @@
+phase: 0
+response_contract:
+  required_sections:
+    capability_matrix:
+      domains:
+        - architecture_build_debug_filesystem
+        - memory
+        - communication_ingestion
+        - critical_apis_webhooks
+        - content_library
+        - content_library_pathways
+        - wisdom_system_linkage
+      status_values: [present, partial, missing]
+    localization_profile:
+      required_keys:
+        - paths
+        - ports
+        - service_names
+        - secrets_refs
+        - integrations_enabled
+        - persona_routing
+        - skills_enabled
+        - channel_policies
+        - safety_policies
+        - scheduler_policies
+        - memory_policies
+        - content_library_policies
+        - pathway_policies
+        - wisdom_system_policies
+    blockers:
+      severity_values: [critical, high, medium, low]
+      fields: [id, severity, description, mitigation]
+    remap_proposals:
+      fields: [source_key, target_value, rationale]
+    content_wisdom_topology:
+      fields:
+        - content_library_root
+        - pathway_entrypoints
+        - promotion_pipeline
+        - traceability_method
+  acceptance:
+    unresolved_critical_blockers_max: 0
+    localization_completeness_min_percent: 100

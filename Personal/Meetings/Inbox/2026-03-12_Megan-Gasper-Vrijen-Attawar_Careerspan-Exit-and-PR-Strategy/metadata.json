@@ -1,0 +1,17 @@
+{
+  "source": "fireflies",
+  "source_id": "01KK76HGTNEB52V1FX1Y2K6ZFW",
+  "title": "Call with Megan Gasper PR",
+  "date": "2026-03-12",
+  "participants": [
+    "hello@megangasper.com,vrijen@mycareerspan.com",
+    "hello@megangasper.com"
+  ],
+  "host": "vrijen@mycareerspan.com",
+  "duration_seconds": 21.5,
+  "recording_url": "https://cdn.fireflies.ai/01KK76HGTNEB52V1FX1Y2K6ZFW/video.mp4?Expires=1773559400&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9jZG4uZmlyZWZsaWVzLmFpLzAxS0s3NkhHVE5FQjUyVjFGWDFZMks2WkZXL3ZpZGVvLm1wNCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc3MzU1OTQwMH19fV19&Signature=jMlg4oqfAJbc1v-oBjv0PKVUGHLKZJ4PRdo2eThyT7OgUrvlzBEuiZzVSdTHrm6L1oLuj8H6FC3GeH2~l4~eVRRS8lGHvob6Fya62IqIVirc7P1EOH-igu1s1MqRaZP4hRTs7gRTuetSLvOHbU-r2udqB5AIgf~hblJQ5sHUhJqle3AMZlfPTlCOCyj-ZwOPOhqjqFDJjSeVoRpEymK7UVk-Dy6khcPJEe0xKNn9~9RVyyI6FZM2CtV8olE2qQtcMxSkAXJE~bOHeXYOkvPZfZPQXzukPqiqr6IMP1VFc-DGxHcubhdRKDrKTVWTYrF2C1-Ev3beeincuj7xn51ahg__&Key-Pair-Id=K25ZJR0UZVF4CM",
+  "ingested_at": "2026-03-12T19:24:39.933527",
+  "state": "raw",
+  "fingerprint": "048e6240dcbc463ffabb6aa982071796",
+  "participant_hash": "d9d68229a5c8cc82"
+}

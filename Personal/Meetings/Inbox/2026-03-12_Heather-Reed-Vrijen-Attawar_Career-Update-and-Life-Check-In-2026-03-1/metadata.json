@@ -1,0 +1,16 @@
+{
+  "source": "fathom",
+  "source_id": "129475447",
+  "title": "Impromptu Zoom Meeting",
+  "date": "2026-03-12",
+  "participants": [
+    "Vrijen Attawar"
+  ],
+  "host": "vrijen@mycareerspan.com",
+  "duration_seconds": 2553,
+  "recording_url": "https://fathom.video/calls/599360408",
+  "ingested_at": "2026-03-12T18:02:29.206815",
+  "state": "raw",
+  "fingerprint": "c7ab76bac5406514f53decae33a0b065",
+  "participant_hash": "b23a6a8439c0dde5"
+}

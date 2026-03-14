@@ -1,0 +1,21 @@
+{
+  "created": "2026-03-02",
+  "provenance": "con_pLLTlqfVu4hKeKhT",
+  "packet_level_localization_pass": true,
+  "schema_bootstrap_localization_pass": true,
+  "hardcoded_source_paths_remaining": false,
+  "phase0_localization_template_complete": true,
+  "target_apply_proof_received": false,
+  "target_apply_proof_requested": true,
+  "target_apply_proof_request_transfer_id": "20260302_phase0_apply_proof_request",
+  "known_exceptions": [
+    "Documents/Archive excluded due to stale file-reference copy errors",
+    "Large DB binaries excluded from relay and replaced with bootstrap kit"
+  ],
+  "corrective_actions": [
+    "Patched bootstrap_empty_duckdbs.sh to remove hardcoded /home/workspace",
+    "Sent corrected drop 20260302_db_bootstrap_kit_v2_localized",
+    "Sent apply-proof request drop 20260302_phase0_apply_proof_request"
+  ],
+  "last_edited_utc": "2026-03-02T16:13:00Z"
+}

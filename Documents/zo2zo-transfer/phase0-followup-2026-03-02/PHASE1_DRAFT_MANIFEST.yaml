@@ -1,0 +1,26 @@
+phase: 1
+transfer_id: phase1_essential_core_draft_2026_03_02
+status: draft_pending_phase0_reply
+scope:
+  - core_routing_guardrails
+  - session_context_state_tracking
+  - baseline_comms_ingestion
+  - webhook_skeletons
+  - content_library_base_schema
+  - minimum_ingestion_pathways
+dependencies:
+  - phase0_response_accepted
+  - localization_map_complete
+  - blockers_critical_zero
+apply_policy:
+  dry_run_first: true
+  destructive_apply: false
+  explicit_approval_required: true
+validation:
+  - contract_checks_pass
+  - smoke_tests_pass
+  - provenance_recorded
+  - content_ingest_traceability_pass
+rollback:
+  required: true
+  strategy: restore_previous_state_and_freeze_phase

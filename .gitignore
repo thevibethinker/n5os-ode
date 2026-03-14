@@ -202,6 +202,34 @@ Trash/
 /PLAN.md
 /ZOFFICE_WORKERS
 
+# === ROOT-LEVEL STRAY FILES ===
+/.mg1_execution_report.md
+/.n5_productivity_protected
+/.n5protected
+/.productivity_db_protected
+/.schema
+/1672d1c37bfe801d8fc0cd76eb5f508f
+/install.sh
+/package.json
+/_TASKS.md
+/"_ 📌 TASKS.md"
+
+# === RUNTIME PID / CHECKPOINT FILES ===
+N5/cognition/migration.pid
+N5/cognition/migration_checkpoint.json
+
+# === PERSONAL RUNTIME LOGS ===
+Personal/agentcommune/
+Personal/agentcommune_logs/
+
+# === SKILL RUNTIME LOGS/ANALYSIS ===
+Skills/*/logs/
+Skills/*/analysis/
+Skills/zoren-hotline/
+
+# === TEMP WORKTREES ===
+Temp/
+
 # === SYSTEM / INTERNAL ===
 .config/syncthing/
 .zo/conversations/zo_conversations.duckdb
@@ -216,3 +244,4 @@ projects/n5-system/n5-launch/
 Datasets/x-history-pre-jan-8/*.zip
 Datasets/*/data.duckdb
 Datasets/*/data.duckdb.wal
+/*TASKS.md

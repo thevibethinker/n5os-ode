@@ -1,0 +1,66 @@
+localization:
+  paths:
+    workspace_root: ""
+    docs_root: ""
+    skills_root: ""
+    knowledge_root: ""
+    research_root: ""
+    content_library_root: ""
+    wisdom_root: ""
+  ports:
+    ranges:
+      n5_services: ""
+      webhooks: ""
+      mid_ephemeral: ""
+      high_ephemeral: ""
+    reserved: []
+  service_names:
+    webhook_receiver: ""
+    relay_service: ""
+    scheduler_service: ""
+  secrets_refs:
+    zo_api_key_ref: ""
+    airtable_token_ref: ""
+    stripe_key_ref: ""
+  integrations_enabled:
+    gmail: false
+    google_calendar: false
+    google_drive: false
+    notion: false
+    airtable: false
+  persona_routing:
+    operator: ""
+    strategist: ""
+    builder: ""
+    debugger: ""
+  skills_enabled:
+    allowlist: []
+    pinned_versions: {}
+  channel_policies:
+    chat_mode: ""
+    sms_mode: ""
+    email_mode: ""
+    telegram_mode: ""
+  safety_policies:
+    destructive_confirmation_required: true
+    protected_paths: []
+  scheduler_policies:
+    conflict_gate: ""
+    default_cadence: ""
+  memory_policies:
+    retention_days: 0
+    indexing_sources: []
+    confidence_threshold: 0.0
+  content_library_policies:
+    taxonomy: []
+    acceptance_rules: []
+    provenance_required: true
+  pathway_policies:
+    sources_enabled: []
+    parsing_modes: []
+    dedupe_strategy: ""
+    dead_letter_policy: ""
+  wisdom_system_policies:
+    promotion_threshold: ""
+    synthesis_templates: []
+    traceability_required: true

@@ -1,0 +1,296 @@
+{
+  "$schema": "manifest-v3",
+  "schema_version": "v3",
+  "meeting_id": "2026-03-12_Megan-Gasper-Vrijen-Attawar_Careerspan-Exit-and-PR-Strategy",
+  "status": "complete",
+  "status_history": [
+    {
+      "status": "ingested",
+      "at": "2026-03-12T19:24:39.933914Z"
+    },
+    {
+      "status": "title_normalized",
+      "at": "2026-03-12T19:25:56.855207+00:00",
+      "note": "'Call with Megan Gasper PR' \u2192 'Careerspan Exit and PR Strategy', 2 speakers extracted"
+    },
+    {
+      "status": "identified",
+      "at": "2026-03-12T19:25:56.859130+00:00"
+    }
+  ],
+  "source": {
+    "type": "fireflies",
+    "source_id": "01KK76HGTNEB52V1FX1Y2K6ZFW",
+    "ingested_at": "2026-03-12T19:24:39.933914Z"
+  },
+  "meeting": {
+    "date": "2026-03-12",
+    "time_utc": "19:00:00",
+    "duration_minutes": 0,
+    "title": "Careerspan Exit and PR Strategy",
+    "type": "external",
+    "summary": {
+      "keywords": [
+        "Career Span exit",
+        "personal branding",
+        "agentic engineering",
+        "startup PR strategy",
+        "Zoe partnership",
+        "fundraising timeline"
+      ],
+      "action_items": "\n**Vrijen Attawar**\nCoordinate with Logan to aggressively send out acquisition interest emails starting next day (16:50)\nProvide advance notice and key details of the Career Span exit to Megan for possible signal boosting (16:50)\nFocus on developing and growing personal owned and shared channels ahead of future fundraising efforts (18:03)\nContinue delivering masterclasses to non-technical startup teams and promote Zoe\u2019s product in educational innovation labs (12:18)\nCommunicate with Megan regarding progress and potential PR support after establishing measurable outcomes within 3-6 months at Zoe (20:16)\n\n**Megan Gasper**\nReview and digest the current situation and timing related to Career Span\u2019s exit and Vrijen\u2019s personal branding plans (20:16)\nConsider and develop recommendations for PR strategy focusing on owned channels and realistic media opportunities given the timeline and resources (20:16)\nRespond to Vrijen with suggested PR approaches and feasibility after reflection (20:46)\n",
+      "outline": null,
+      "shorthand_bullet": "\ud83d\udcc9 **Career Span Sale Update** (00:13 - 16:29)\nCareer Span is shutting down and is planned for sale in the next two months.\nChallenges with sale include a skittish best option and the need to make a concentrated push for acquisition interest.\n\ud83d\udd0d **Vrijen's Future Plans** (01:47 - 03:47)\nVrijen is exploring opportunities post-sale, focusing on personal visibility among founders and VCs.\nHis new role with Zoe as a 'chief evangelist' involves leveraging technical skills and partnerships.\n\ud83d\udca1 **Emerging Fields and Strategies** (07:58 - 12:18)\nAgentic engineering identified as an emerging field.\nStrategy includes signaling credibility through association with Zoe\u2019s funding round.\n\ud83d\udcc8 **Personal Branding Focus** (05:47 - 11:06)\nFocus on demonstrating unique technical skills and leadership through masterclasses.\nTimeline for personal brand growth is three to six months.\n\ud83d\udde3\ufe0f **PR Strategy Discussion** (14:50 - 18:11)\nMegan advises focusing on owned and shared channels for narrative control.\nMedia interest around Career Span exit likely niche-specific and limited.\n\ud83e\udd1d **Collaboration and Next Steps** (20:16 - 21:30)\nMegan requests time to consider strategy and feasibility of PR support.\nVrijen expresses intention to dedicate resources toward growing owned channels.\n",
+      "overview": "- **Urgent Sale of Career Span:** Team aims to close sale within two months due to funding constraints and shifting market conditions.  \n\n- **Focus on Reputation:** Sale will serve as a tangible success story to enhance credibility for future endeavors.  \n\n- **PR Strategy Development:** Visibility efforts will prioritize owned channels and strategic timing around the sale announcement.  \n\n- **Vrijen\u2019s Role at Zoe:** He joins as chief evangelist to showcase skills while leveraging an upcoming $20 million Series A raise.  \n\n- **Networking for Investments:** Vrijen taps into the New York Founders Club to attract angel investors and build his personal brand.  \n\n- **Niche Media Strategy:** Emphasis on engaging specific industry outlets to increase credibility during the Career Span exit."
+    },
+    "original_title": "Call with Megan Gasper PR"
+  },
+  "participants": {
+    "identified": [
+      {
+        "name": "Hello",
+        "email": "hello@megangasper.com",
+        "crm_id": null,
+        "role": "attendee",
+        "confidence": 1.0
+      },
+      {
+        "name": "Hello",
+        "email": "hello@megangasper.com",
+        "crm_id": null,
+        "role": "attendee",
+        "confidence": 1.0
+      },
+      {
+        "name": "Megan Gasper",
+        "email": null,
+        "crm_id": null,
+        "role": "attendee",
+        "confidence": 0.9
+      },
+      {
+        "name": "Vrijen Attawar",
+        "email": null,
+        "crm_id": null,
+        "role": "attendee",
+        "confidence": 0.9
+      }
+    ],
+    "unidentified": [],
+    "confidence": 0.95
+  },
+  "calendar_match": {
+    "event_id": null,
+    "confidence": 0.0,
+    "method": "none"
+  },
+  "quality_gate": {
+    "passed": false,
+    "checks": {
+      "has_transcript": true,
+      "participants_identified": true,
+      "meeting_type_determined": true,
+      "no_hitl_pending": false
+    },
+    "score": 0.6395833333333333,
+    "executed_at": "2026-03-12T19:25:56.866032+00:00",
+    "check_results": [
+      {
+        "name": "transcript_length",
+        "score": 1.0,
+        "passed": true,
+        "threshold": 300,
+        "warnings": [],
+        "errors": [],
+        "escalate_hitl": false
+      },
+      {
+        "name": "transcript_format",
+        "score": 0.6666666666666666,
+        "passed": false,
+        "threshold": 0.8,
+        "warnings": [],
+        "errors": [],
+        "escalate_hitl": false
+      },
+      {
+        "name": "meeting_duration_consistency",
+        "score": 0.5,
+        "passed": true,
+        "threshold": 0.5,
+        "warnings": [
+          "Meeting duration not specified"
+        ],
+        "errors": [],
+        "escalate_hitl": false
+      },
+      {
+        "name": "participant_confidence",
+        "score": 0.95,
+        "passed": true,
+        "threshold": 0.7,
+        "warnings": [],
+        "errors": [],
+        "escalate_hitl": false
+      },
+      {
+        "name": "host_identified",
+        "score": 0.0,
+        "passed": false,
+        "threshold": 1.0,
+        "warnings": [],
+        "errors": [
+          "No host identified"
+        ],
+        "escalate_hitl": true
+      },
+      {
+        "name": "external_participant_verification",
+        "score": 1.0,
+        "passed": true,
+        "threshold": 1.0,
+        "warnings": [],
+        "errors": [],
+        "escalate_hitl": false
+      },
+      {
+        "name": "calendar_match_score",
+        "score": 0.0,
+        "passed": false,
+        "threshold": 0.6,
+        "warnings": [],
+        "errors": [
+          "Very low calendar match confidence: 0.00"
+        ],
+        "escalate_hitl": true
+      },
+      {
+        "name": "meeting_type_consistency",
+        "score": 1.0,
+        "passed": true,
+        "threshold": 1.0,
+        "warnings": [],
+        "errors": [],
+        "escalate_hitl": false
+      }
+    ]
+  },
+  "blocks": {
+    "policy": "external_standard",
+    "requested": [],
+    "generated": [],
+    "failed": [],
+    "skipped": []
+  },
+  "hitl": {
+    "queue_id": null,
+    "reason": null,
+    "resolved_at": null
+  },
+  "timestamps": {
+    "created_at": "2026-03-12T19:24:39.933914Z",
+    "ingested_at": "2026-03-12T19:24:39.933914Z",
+    "identified_at": "2026-03-12T19:25:56.859110+00:00",
+    "gated_at": null,
+    "processed_at": null,
+    "archived_at": null
+  },
+  "transcript_file": "transcript.md",
+  "dedup": {
+    "fingerprint": "048e6240dcbc463ffabb6aa982071796",
+    "participant_hash": "d9d68229a5c8cc82",
+    "window_seconds": 600
+  },
+  "crm_enrichment": {
+    "enriched_at": "2026-03-12T19:25:28.805812+00:00",
+    "classification": "external",
+    "classification_reason": "2 external, 0 internal participants identified",
+    "participant_matches": [
+      {
+        "input_name": "hello@megangasper.com,vrijen@mycareerspan.com",
+        "matched_name": "Hello",
+        "email": "hello@megangasper.com",
+        "is_internal": false,
+        "source": "profiles",
+        "confidence": 1.0,
+        "company": "Megangasper"
+      },
+      {
+        "input_name": "hello@megangasper.com",
+        "matched_name": "Hello",
+        "email": "hello@megangasper.com",
+        "is_internal": false,
+        "source": "profiles",
+        "confidence": 1.0,
+        "company": "Megangasper"
+      }
+    ],
+    "identified_count": 2,
+    "unidentified_count": 0
+  },
+  "meeting_type": "external",
+  "block_selection": {
+    "selected_at": "2026-03-12T19:26:53.907517Z",
+    "method": "smart_selector_v2",
+    "recipe": "external_standard",
+    "always_blocks": [
+      "B00",
+      "B01",
+      "B02_B05",
+      "B03",
+      "B08",
+      "B21",
+      "B26"
+    ],
+    "conditional_selected": [
+      "B04",
+      "B06",
+      "B10",
+      "B13",
+      "B25",
+      "B28",
+      "B32",
+      "B33",
+      "B00"
+    ],
+    "conditional_skipped": [
+      "B07",
+      "B14"
+    ],
+    "triggered": [
+      "B00"
+    ],
+    "reasoning": {
+      "B04": "The meeting contains unresolved questions about whether PR support is worth doing, what PR strategy is feasible, how to frame the exit narrative, and what Megan will recommend after reflection.",
+      "B06": "Strong business context is discussed: Careerspan is shutting down, seeking a sale/acqui-hire, preserving reputation, positioning Vrijen post-exit, and aligning his narrative with Zo/Zoe and future fundraising.",
+      "B10": "The relationship is clearly moving toward possible future collaboration: Megan is considering PR support, asked for time to reflect, and Vrijen plans to update her once measurable outcomes emerge.",
+      "B13": "There are clear next steps for both parties, including outbound acquisition outreach, sharing advance notice/details with Megan, building owned channels, and Megan returning with PR recommendations.",
+      "B25": "Specific deliverables and timelines are implied: acquisition outreach starting next day, advance notice/details for signal boosting, owned-channel development over 3-6 months, and Megan\u2019s forthcoming PR recommendations.",
+      "B28": "The transcript includes broader strategic intelligence on fast-moving AI/agentic engineering trends, changing market conditions, personal-brand positioning, niche media dynamics, and fundraising signaling.",
+      "B32": "Several novel ideas are worth capturing: using a startup exit as credibility fuel, positioning non-technical creativity as an edge in AI systems, and framing post-Careerspan work around employability in a post-technical era.",
+      "B33": "There is nuanced reasoning behind major decisions: shutting down instead of raising, pursuing an exit for reputation/capital formation, joining Zo/Zoe for halo effect, and delaying a new raise until stronger narrative proof exists.",
+      "B07": "Skipped: No explicit warm-introduction request appears. The transcript does not contain phrases like 'intro me to', 'introduce me to', 'connect me with', or 'make an introduction'.",
+      "B14": "Skipped: No blurb request appears. The transcript does not contain phrases like 'draft a blurb', 'write a blurb', 'blurb about', or 'create a blurb'.",
+      "B00": "Triggered: 'similar phrase detected: 'wanted to get your thoughts, see if it's even worth it' / 'how I can do that or if you think that there's some utility in kind of a short term thing to signal boost'' - This signals advisory/follow-up relevance, but it is not an explicit Zo command like 'zo take heed' or 'zo, remember'."
+    },
+    "total_blocks": 15
+  },
+  "blocks_generated": [
+    "B02_B05_COMMITMENTS_AND_ACTIONS",
+    "B28_STRATEGIC_INTELLIGENCE",
+    "B26_MEETING_METADATA",
+    "B25_DELIVERABLE_MAP",
+    "B21_KEY_MOMENTS",
+    "B32_THOUGHT_PROVOKING_IDEAS",
+    "B01_DETAILED_RECAP",
+    "B00_ZO_TAKE_HEED",
+    "B03_DECISIONS",
+    "B33_DECISION_RATIONALE",
+    "B04_OPEN_QUESTIONS",
+    "B10_RELATIONSHIP_TRAJECTORY",
+    "B06_BUSINESS_CONTEXT",
+    "B13_PLAN_OF_ACTION",
+    "B08_STAKEHOLDER_INTELLIGENCE"
+  ],
+  "processed_at": "2026-03-12T19:41:14.705989Z"
+}
