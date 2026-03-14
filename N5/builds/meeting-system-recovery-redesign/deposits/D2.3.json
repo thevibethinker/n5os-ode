@@ -1,0 +1,15 @@
+{
+  "drop_id": "D2.3",
+  "status": "complete",
+  "summary": "Defined skill packaging boundary, allowlist export policy, marker conventions, and bootstrap contract for the meeting-system skill. Recommended slug 'meeting-system' (pending V confirmation). Established default-deny allowlist model with .n5exportable intent marker and .export-allowlist file. Bootstrap lives inside the skill (scripts/bootstrap.py) with check/setup/--dry-run modes. All three decision points (DP-1 bootstrap location, DP-2 marker set, DP-3 export-allowlisted directories) resolved with rationale. Migration path from meeting-ingestion to meeting-system documented including script-by-script carryover table.",
+  "artifacts": [
+    "N5/builds/meeting-system-recovery-redesign/artifacts/skill-packaging-and-export-policy.md"
+  ],
+  "learnings": [
+    "The workspace has 30+ .n5protected instances — all JSON or plain text format, no standard enforced. New markers should follow JSON format for machine readability.",
+    "The build-promote skill already established a state/ directory convention for skill runtime data. The meeting-system skill should follow this convention if runtime state is ever stored inside the skill dir.",
+    "The existing meeting-ingestion skill has 20 scripts in scripts/ but only ~10 are actively used by v3. The rest are v2 legacy or one-time migration utilities. The new skill should only carry forward the active scripts.",
+    "Prompts/Blocks/ is a shared workspace resource, not owned by any single skill. Skills should reference prompts by path, not bundle them. Bootstrap should check for prompt availability."
+  ],
+  "errors": []
+}

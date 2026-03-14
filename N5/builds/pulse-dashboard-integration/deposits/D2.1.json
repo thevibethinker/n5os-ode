@@ -1,0 +1,10 @@
+{
+  "drop_id": "D2.1",
+  "status": "complete",
+  "timestamp": "2026-01-24T20:40:00Z",
+  "summary": "Updated React components (BuildTracker.tsx) with Pulse terminology: Workers→Drops, Waves→Streams. Added Legacy badge for format===legacy. Added drop status breakdown display (e.g., '2 complete, 1 running, 3 pending'). Added Stream X/Y display when total streams > 1. Added Pulse/Legend counts in header. Added Pending and Failed build sections with proper toggle states. TypeScript compiles without errors.",
+  "artifacts": [
+    "Sites/build-tracker/src/pages/BuildTracker.tsx"
+  ],
+  "test_results": "TypeScript compilation successful - no BuildTracker-related errors. Component uses new Build interface with format, streams, drops fields while maintaining backward compatibility with legacy type/completed_at fields."
+}

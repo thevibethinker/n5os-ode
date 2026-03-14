@@ -1,0 +1,43 @@
+{
+  "drop_id": "D5",
+  "status": "complete",
+  "completed_at": "2026-02-20T06:30:00Z",
+  "route_path": "/foundermaxxing",
+  "public": true,
+  "assets_used": [
+    "/images/foundermaxxing-venn.png",
+    "/images/foundermaxxing-og.png"
+  ],
+  "messaging_source": "D2 deposit — messaging-refinements v2.0 + conversion-analysis v1",
+  "form_integration": "existing /api/foundermaxxing-apply (unchanged)",
+  "stripe_links_on_page": false,
+  "pricing_visible": "Founding 15 only ($100/mo) — single offer per D2 recommendation",
+  "design_decisions": {
+    "aesthetic": "dark editorial (#0a0a0a, warm amber accent)",
+    "headline_font": "Source Serif 4 (Google Fonts)",
+    "hero_line": "In your rush to keep your company ahead, you risk falling behind on AI.",
+    "anti_slop_compliant": true,
+    "founding_spots": 15,
+    "pricing_tiers_shown": 1,
+    "payment_flow": "apply-first (no direct Stripe links on page)"
+  },
+  "sections": [
+    "Nav (fixed, minimal)",
+    "Hero (D2 hero line, serif, left-aligned)",
+    "The Room (curation emphasis, F1 analogy)",
+    "Why V (zero lines of code, Venn diagram, credentials)",
+    "Session Format (3 phases, asymmetric vertical list)",
+    "Infrastructure (value stack, 2-col editorial)",
+    "Zo: Attention Is All You Need (4 honest reasons)",
+    "Philosophy teaser (Meta OS, links to future /pedagogy)",
+    "Pricing (single Founding 15 card with anchoring)",
+    "Application form (5 fields, existing API)",
+    "FAQ (6 items, collapsible)",
+    "Footer"
+  ],
+  "og_tags": {
+    "title": "FounderMaxxing — Weekly AI builds for founders",
+    "description": "A curated room of non-technical founders building real AI systems together. Application only.",
+    "image": "https://va.zo.space/images/foundermaxxing-og.png"
+  }
+}

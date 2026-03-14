@@ -1,0 +1,36 @@
+{
+  "drop_id": "D2.1",
+  "stream": 2,
+  "status": "complete",
+  "spawn_mode": "manual",
+  "timestamp": "2026-01-25T04:00:00Z",
+  "artifacts": [
+    "Datasets/survey-analyses/jPQRwpT4nGus/analysis.md",
+    "Datasets/survey-analyses/jPQRwpT4nGus/dashboard.html",
+    "Datasets/survey-analyses/jPQRwpT4nGus/data.json"
+  ],
+  "data": {
+    "synthesis_version": "2.0",
+    "analysis_word_count": 1247,
+    "level_upper_contribution": "28%",
+    "key_findings": [
+      "Scratching the surface is universal (75%) across all expertise levels",
+      "Overwhelm signals exploration, not confusion",
+      "Sentiment data unusable (100% at max)",
+      "Tool diversity does not correlate with perceived expertise"
+    ],
+    "recommendations": [
+      "Lead with advanced demonstrations",
+      "Teach frameworks, not tools",
+      "Show system-building patterns",
+      "Skip basics entirely"
+    ],
+    "data_quality_issues": [
+      "Small sample (N=3)",
+      "Sentiment ceiling effect",
+      "Open-ended null responses",
+      "Screening gate incomplete"
+    ]
+  },
+  "handoff_notes": "Manual synthesis complete. Analysis.md written with full Level Upper integration. Dashboard regenerated with correct data binding (4 total, 3 eligible). Ready for D2.2 integration worker to wire up SMS commands and auto-trigger."
+}

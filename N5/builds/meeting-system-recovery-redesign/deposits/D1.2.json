@@ -1,0 +1,16 @@
+{
+  "drop_id": "D1.2",
+  "status": "complete",
+  "summary": "Comprehensive audit of the meeting pipeline system. Inspected 4 SQLite databases, 20+ Python scripts across v2 and v3 pipelines, the current Inbox filesystem state, 249 HITL queue items, and today's live-processed meeting manifest. Identified 7 breakpoints (gate bypass, calendar match always 0.0, no archive infrastructure, zombie v2 DB with 125 stuck meetings, write-only HITL queue, unpopulated meeting registry, dual DB confusion). Separated 10 reusable components from 5 broken/redesign-needed and 6 dead/deprecated modules. Recommended SQLite as derivative index rebuilt from filesystem manifests (Option A). Documented actual vs documented state machine with 5 discrepancies.",
+  "artifacts": [
+    "N5/builds/meeting-system-recovery-redesign/artifacts/system-audit.md"
+  ],
+  "learnings": [
+    "The v3 manifest.json files are the richest data source — richer than any SQLite DB. Redesign should treat them as primary.",
+    "calendar_match.py returns 0.0 confidence on every meeting — this is the single most impactful broken component since it cascades into HITL escalations.",
+    "Quality gate runs but its results are advisory-only — tick command catches gate exceptions as non-fatal. This is the critical interlock gap.",
+    "125 v2 meetings at queued_for_ai represent real Sep-Nov 2025 transcripts that were never block-processed. A recovery decision is needed.",
+    "The v3 pipeline works end-to-end (proven by today's 12-block generation) — the core is solid, the gaps are in gate enforcement, archive, and calendar integration."
+  ],
+  "errors": []
+}

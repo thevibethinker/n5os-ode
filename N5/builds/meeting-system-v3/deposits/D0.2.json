@@ -1,0 +1,37 @@
+{
+  "drop_id": "D0.2",
+  "status": "complete",
+  "summary": "Merged B02 (Commitments) + B05 (Action Items) into unified 'Commitments & Actions' block. New B02 captures both explicit promises with accountability chain AND actionable tasks with decomposition.",
+  "artifacts": [
+    "Prompts/Blocks/Generate_B02.prompt.md"
+  ],
+  "files_modified": [
+    "Prompts/Blocks/Generate_B02.prompt.md"
+  ],
+  "files_deprecated": [
+    "Prompts/Blocks/Generate_B05.prompt.md.deprecated"
+  ],
+  "design_decisions": [
+    "Kept B02 block code for continuity (not creating new B## code)",
+    "Structure: Commitments table (accountability-focused) + Action Items section (decomposition-focused)",
+    "Added 'Commitment' field to action items to link back to explicit promises",
+    "Commitments table tracks: Who, To Whom, Why It Matters, Status",
+    "Action items preserve B05's rich decomposition: Priority, First Step, Estimated, Domain, Dependencies, Due",
+    "Removed Milestones from action items (too verbose; Dependencies covers blockers)",
+    "Added explicit language patterns for commitment detection vs action item detection",
+    "Preserved B05's 2-minute rule, priority buckets, domain inference"
+  ],
+  "merge_rationale": {
+    "b02_captured": "Accountability chain (who committed to whom), why it matters (stakes/context)",
+    "b05_captured": "Task decomposition, priority buckets, first step, time estimation, domain classification",
+    "overlap_resolved": "Owner and deliverable were in both; unified into action items section",
+    "new_value_added": "Commitment field links actions to promises; explicit commitment vs action distinction"
+  },
+  "downstream_impacts": [
+    "B05 references in meeting pipeline need updating (recaps, orchestration scripts)",
+    "Block counter needs adjustment (now 1 fewer block code)",
+    "Any templates expecting B05 output format need migration"
+  ],
+  "blockers": [],
+  "notes_for_orchestrator": "B05 references exist elsewhere in the system (likely in orchestration scripts, PLAN references, recap templates). These need to be updated to reference B02 for action items. Recommend a grep search for 'B05' across Prompts/, N5/, and any meeting processing scripts."
+}

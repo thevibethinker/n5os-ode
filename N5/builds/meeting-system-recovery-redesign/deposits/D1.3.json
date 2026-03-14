@@ -1,0 +1,16 @@
+{
+  "drop_id": "D1.3",
+  "status": "complete",
+  "summary": "Audited the downstream knowledge pipeline from processed meetings. Mapped 11 potential destinations (6 active/partial, 5 missing). Identified 7 breakpoints: no post-archive pipeline stage (critical), no block quality scoring, one-way CRM feedback loop, Content Library integration is schema-only, B33/idea system partially wired, reflection pipeline does not exist, title quality constrains downstream. Documented 5 redesign implications including absorbing the stalled relationship-intelligence-os build (22% done, has usable promotion gate artifacts). Provided recommendations on 2 decision points: Content Library as primary knowledge hub, and deterministic vs LLM-driven zone assignments for each downstream step.",
+  "artifacts": [
+    "N5/builds/meeting-system-recovery-redesign/artifacts/knowledge-audit.md"
+  ],
+  "learnings": [
+    "The relationship-intelligence-os build (stalled at 22%) designed exactly the post-processing pipeline that this build needs. D1.1 (contracts/schema) and D1.2 (promotion gate engine) are usable artifacts that should be absorbed rather than rebuilt.",
+    "brain.db has 7042 meeting_edges from a one-time backfill but relationship_edges, commitment_edges, and org_edges tables are all empty (0 rows) — confirming no live pipeline writes meeting intelligence to the graph.",
+    "Content Library v3 schema already has blocks/knowledge_refs/relationships tables designed for meeting block integration, but no code implements this flow. The content_ingest.py script has no meeting block content type.",
+    "The B32 position extractor is the ONLY working downstream consumer of meeting blocks — it runs daily at 5 AM and scans B32 files for worldview position candidates. B33 has no equivalent consumer despite being annotated 'feeds idea system'.",
+    "11 reflection prompt files (R00-R09 + RIX) exist in Prompts/Blocks/Reflection/ but have zero processing infrastructure — no scripts, no agents, no pipeline. This is a complete gap for the Pocket-to-reflection requirement."
+  ],
+  "errors": []
+}

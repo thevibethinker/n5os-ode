@@ -1,0 +1,19 @@
+{
+  "drop_id": "D2.1",
+  "status": "complete",
+  "summary": "Defined the unified intake contract that normalizes Fireflies, Fathom, Pocket, and recovered historical content into one canonical landing shape in Personal/Meetings/Inbox/. Resolved DP-1 (single schema with content_type discriminator for meeting vs reflection) and DP-2 (9 minimum ready-to-process checks including manifest, transcript, date, title, source, and content_type). Contract covers: content type routing rules with explicit Pocket default-to-reflection logic, canonical folder structure, manifest schema at intake, provenance fields for recovered items, 5 source adapters (fireflies_v1, fathom_v1, pocket_v1, recovery_v1, manual_v1), ready-to-process validation with reference implementation, landing state definitions, transcript normalization rules, and schema extension points.",
+  "artifacts": [
+    "N5/builds/meeting-system-recovery-redesign/artifacts/intake-contract.md"
+  ],
+  "decisions": {
+    "DP-1": "Single schema with content_type discriminator (meeting | reflection). One pipeline, one landing shape, one validation path. Reflection has relaxed requirements (no participants, no calendar match, no meeting.type). Avoids maintaining parallel schemas for content that shares 80%+ of structure.",
+    "DP-2": "9 minimum ready-to-process checks: folder exists, manifest exists, schema version is manifest-v3, content_type set, status is ingested or later, transcript.md exists with >=300 chars, meeting.date set, meeting.title set, source.type and source.adapter set. Participants, calendar match, quality gate, and blocks are NOT required at intake — they are populated by later pipeline stages."
+  },
+  "learnings": [
+    "The existing manifest-v3 schema has no content_type field — it will need to be extended to add the meeting/reflection discriminator. The schema currently uses meeting.type for internal/external, which is orthogonal to content_type.",
+    "source.adapter field is new — current manifests have source.type but not source.adapter. Adapters that wrote historical manifests should be treated as implicit 'legacy_v2' or 'recovery_v1' adapter versions.",
+    "Pocket content type routing needs a concrete speaker-detection implementation. The contract defines the rules but the actual multi-speaker detection threshold (2+ distinct labels, duration > 5min with turns) needs to be implemented in the pocket_v1 adapter.",
+    "Recovered items that already have generated blocks should enter the pipeline at 'processed' status, not 'ingested' — this avoids re-running expensive block generation on content that was already fully processed in the historical system."
+  ],
+  "errors": []
+}

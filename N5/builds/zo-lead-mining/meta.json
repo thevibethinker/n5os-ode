@@ -1,0 +1,92 @@
+{
+  "slug": "zo-lead-mining",
+  "title": "Zo Lead Mining \u2014 CRM + Semantic Memory",
+  "status": "complete",
+  "created": "2026-03-10",
+  "owner": "V",
+  "active_wave": "W1",
+  "waves": {
+    "W1": [
+      "D1.1",
+      "D1.2",
+      "D1.3",
+      "D1.4"
+    ],
+    "W2": [
+      "D2.1"
+    ]
+  },
+  "drops": {
+    "D1.1": {
+      "title": "CRM Scan A-J",
+      "brief": "drops/D1.1-crm-scan-a-j.md",
+      "status": "complete",
+      "spawn_mode": "auto",
+      "spec_completeness": "full",
+      "wave": "W1",
+      "stream": 1,
+      "order": 1,
+      "blocking": true,
+      "depends_on": []
+    },
+    "D1.2": {
+      "title": "CRM Scan K-Z",
+      "brief": "drops/D1.2-crm-scan-k-z.md",
+      "status": "complete",
+      "spawn_mode": "auto",
+      "spec_completeness": "full",
+      "wave": "W1",
+      "stream": 2,
+      "order": 1,
+      "blocking": true,
+      "depends_on": []
+    },
+    "D1.3": {
+      "title": "Semantic Memory \u2014 Tech/AI Signals",
+      "brief": "drops/D1.3-semantic-tech-signals.md",
+      "status": "complete",
+      "spawn_mode": "auto",
+      "spec_completeness": "full",
+      "wave": "W1",
+      "stream": 3,
+      "order": 1,
+      "blocking": true,
+      "depends_on": [],
+      "started_at": "2026-03-10T21:01:43.221237+00:00",
+      "conversation_id": "con_MUZsR5WwYVAOxAAA",
+      "last_progress_at": "2026-03-10T21:01:43.221237+00:00"
+    },
+    "D1.4": {
+      "title": "Semantic Memory \u2014 Influence/Relationship Signals",
+      "brief": "drops/D1.4-semantic-influence-signals.md",
+      "status": "complete",
+      "spawn_mode": "auto",
+      "spec_completeness": "full",
+      "wave": "W1",
+      "stream": 4,
+      "order": 1,
+      "blocking": true,
+      "depends_on": [],
+      "started_at": "2026-03-10T20:57:14.566184+00:00",
+      "conversation_id": "con_D1eWZPORGMEcAeAU",
+      "last_progress_at": "2026-03-10T20:57:14.566184+00:00"
+    },
+    "D2.1": {
+      "title": "Consolidate + Rank Leads",
+      "brief": "drops/D2.1-consolidate-rank.md",
+      "status": "complete",
+      "spawn_mode": "auto",
+      "spec_completeness": "full",
+      "wave": "W2",
+      "stream": 1,
+      "order": 1,
+      "blocking": true,
+      "depends_on": [
+        "D1.1",
+        "D1.2",
+        "D1.3",
+        "D1.4"
+      ]
+    }
+  }
+}

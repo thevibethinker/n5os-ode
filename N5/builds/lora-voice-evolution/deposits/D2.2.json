@@ -1,0 +1,21 @@
+{
+  "drop_id": "D2.2",
+  "status": "complete",
+  "artifacts": [
+    "N5/builds/lora-voice-evolution/artifacts/content_library_scored.jsonl"
+  ],
+  "summary": "Scored 39 content library examples. Including 26 (score \u2265 3)",
+  "stats": {
+    "total_scored": 39,
+    "score_distribution": {
+      "5": 6,
+      "4": 14,
+      "3": 6,
+      "2": 11,
+      "1": 2
+    },
+    "errors": 0,
+    "included": 26
+  },
+  "broadcast": "Content library source yielded 26 training examples from 39 total. Distribution: 5=6, 4=14, 3=6, 2=11, 1=2."
+}

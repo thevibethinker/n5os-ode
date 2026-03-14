@@ -1,0 +1,39 @@
+{
+  "drop_id": "D1.2",
+  "title": "Availability Integration",
+  "status": "completed",
+  "build_slug": "pulse-v3",
+  "stream": 1,
+  "completed_at": "2026-01-25T00:54:42Z",
+  "artifacts": {
+    "modified_files": [
+      "N5/pulse/review_manager.py"
+    ]
+  },
+  "summary": "Availability integration is already complete in review_manager.py. All requirements met:\n\n1. ✅ Import availability_checker at top (lines 15-16)\n2. ✅ Availability check in initiate_review() function (lines 46-56)\n3. ✅ Helper function check_availability() (lines 31-42)\n4. ✅ --force flag to bypass check (line 242, argument parsing)\n\nThe implementation:\n- Checks availability before initiating review (unless --force used)\n- Returns structured JSON with deferred status and next_window when unavailable\n- Fails open if availability checker errors\n- Preserves all existing review flow functionality",
+  "verification": {
+    "commands_tested": [
+      "python3 N5/pulse/availability_checker.py check",
+      "python3 N5/pulse/review_manager.py initiate test-build",
+      "python3 N5/pulse/review_manager.py initiate test-build --force"
+    ],
+    "results": "All commands executed successfully. Availability check working, force flag bypasses check as expected."
+  },
+  "technical_notes": {
+    "implementation_found": "The availability integration was already implemented in review_manager.py exactly matching the specifications in the brief.",
+    "key_features": [
+      "Availability check gates review initiation",
+      "Structured response with deferred status when unavailable",
+      "Force flag to bypass availability check",
+      "Fail-open behavior on checker errors",
+      "Integration with next_available_window() for better UX"
+    ]
+  },
+  "dependencies_respected": {
+    "did_not_modify": [
+      "N5/pulse/availability_checker.py",
+      "N5/pulse/lifecycle_agent.py", 
+      "Skills/pulse/scripts/pulse.py"
+    ]
+  }
+}

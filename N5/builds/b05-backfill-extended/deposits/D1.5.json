@@ -1,0 +1,288 @@
+{
+  "status": "complete",
+  "meetings_processed": 9,
+  "items_extracted": 31,
+  "items": [
+    {
+      "title": "Demo Zo functionality to David",
+      "priority": "external",
+      "first_step": "Create 5-bullet outline of Zo career tool capabilities to demo",
+      "estimate_min": 45,
+      "domain": "Zo",
+      "context": "Show existing infrastructure for career tools in Friday session",
+      "source_meeting": "Personal/Meetings/Week-of-2026-01-12/2026-01-12_2026-01-12-Fxu-mjpr-tum/2026-01-12_fxu-mjpr-tum"
+    },
+    {
+      "title": "Refine interview analysis tool",
+      "priority": "strategic",
+      "first_step": "Review latest analysis output and identify 3 improvement areas",
+      "estimate_min": 60,
+      "domain": "Careerspan",
+      "context": "Tool is directionally correct but needs tightening",
+      "source_meeting": "Personal/Meetings/Week-of-2026-01-12/2026-01-12_2026-01-12-Fxu-mjpr-tum/2026-01-12_fxu-mjpr-tum"
+    },
+    {
+      "title": "Design MVP without auth requirements",
+      "priority": "strategic",
+      "first_step": "List 3 monetization models that work without persistent state",
+      "estimate_min": 30,
+      "domain": "Careerspan",
+      "context": "Find simpler model than subscription for Friday session",
+      "source_meeting": "Personal/Meetings/Week-of-2026-01-12/2026-01-12_2026-01-12-Fxu-mjpr-tum/2026-01-12_fxu-mjpr-tum"
+    },
+    {
+      "title": "Share Notion access with Logan",
+      "priority": "urgent",
+      "first_step": "Open Notion doc and share with Logan",
+      "estimate_min": 2,
+      "domain": "Careerspan",
+      "context": "Notion doc was in private, needs to be shared with Logan for collaboration",
+      "source_meeting": "Personal/Meetings/Week-of-2026-01-12/2026-01-14_2026-01-14-V-logan-acquisition-strategy-201734"
+    },
+    {
+      "title": "Share Zo-generated acquisition targets database link",
+      "priority": "normal",
+      "first_step": "Locate the database link and send to Logan",
+      "estimate_min": 2,
+      "domain": "Careerspan",
+      "context": "Need to share acquisition targets with Logan",
+      "source_meeting": "Personal/Meetings/Week-of-2026-01-12/2026-01-14_2026-01-14-V-logan-acquisition-strategy-201734"
+    },
+    {
+      "title": "Compare Zo list with Notion doc to find gaps",
+      "priority": "strategic",
+      "first_step": "Export Zo list to CSV for comparison",
+      "estimate_min": 15,
+      "domain": "Careerspan",
+      "context": "Need to identify gaps between Zo's list and Notion doc",
+      "source_meeting": "Personal/Meetings/Week-of-2026-01-12/2026-01-14_2026-01-14-V-logan-acquisition-strategy-201734"
+    },
+    {
+      "title": "Begin LinkedIn visibility campaign on priority targets",
+      "priority": "urgent",
+      "first_step": "Create first LinkedIn post/comment for top 3 targets",
+      "estimate_min": 10,
+      "domain": "Careerspan",
+      "context": "Social visibility campaign part of acquisition strategy",
+      "source_meeting": "Personal/Meetings/Week-of-2026-01-12/2026-01-14_2026-01-14-V-logan-acquisition-strategy-201734"
+    },
+    {
+      "title": "Create 'Come Get Us' Document",
+      "priority": "strategic",
+      "first_step": "Draft one-pager outline",
+      "estimate_min": 15,
+      "domain": "Careerspan",
+      "context": "Develop warm intro email template and one-pager for acquisition outreach",
+      "source_meeting": "Personal/Meetings/Week-of-2026-01-12/2026-01-14_2026-01-14-V-logan-acquisition-strategy"
+    },
+    {
+      "title": "Share Notion Access with Logan",
+      "priority": "urgent",
+      "first_step": "Open Notion and add Logan's email to private docs",
+      "estimate_min": 5,
+      "domain": "Careerspan",
+      "context": "Share private Notion docs with Logan for collaboration",
+      "source_meeting": "Personal/Meetings/Week-of-2026-01-12/2026-01-14_2026-01-14-V-logan-acquisition-strategy"
+    },
+    {
+      "title": "Populate Full Classification Matrix",
+      "priority": "strategic",
+      "first_step": "Apply framework to next 5 targets",
+      "estimate_min": 20,
+      "domain": "Careerspan",
+      "context": "Apply proximity/warmth/exit-type framework to ~100 targets",
+      "source_meeting": "Personal/Meetings/Week-of-2026-01-12/2026-01-14_2026-01-14-V-logan-acquisition-strategy"
+    },
+    {
+      "title": "LinkedIn Visibility Campaign",
+      "priority": "normal",
+      "first_step": "Comment on 1 target's post today",
+      "estimate_min": 10,
+      "domain": "Careerspan",
+      "context": "Get in line of sight of LinkedIn targets through commenting/posting/engagement",
+      "source_meeting": "Personal/Meetings/Week-of-2026-01-12/2026-01-14_2026-01-14-V-logan-acquisition-strategy"
+    },
+    {
+      "title": "Develop Differentiated Messaging",
+      "priority": "strategic",
+      "first_step": "Draft recruiting company angle variant",
+      "estimate_min": 15,
+      "domain": "Careerspan",
+      "context": "Create different pitch variants for recruiting company and internal mobility platform angles",
+      "source_meeting": "Personal/Meetings/Week-of-2026-01-12/2026-01-14_2026-01-14-V-logan-acquisition-strategy"
+    },
+    {
+      "title": "Send materials to Ray for potential acquirer introduction",
+      "priority": "urgent",
+      "first_step": "Compile acquisition outreach package (pitch deck, target list, key metrics) and send to Ray",
+      "estimate_min": 30,
+      "domain": "Careerspan",
+      "context": "Careerspan Acquisition - Compile and send materials to Ray for introductions",
+      "source_meeting": "Personal/Meetings/Week-of-2026-01-12/2026-01-15_Ray-Acquisition-Debrief"
+    },
+    {
+      "title": "Research exit transaction structures (asset purchase vs. stock purchase)",
+      "priority": "strategic",
+      "first_step": "Use ChatGPT to research asset purchase vs. stock purchase exits, and earnout structures",
+      "estimate_min": 45,
+      "domain": "Careerspan",
+      "context": "Careerspan Acquisition - Research transaction structure options",
+      "source_meeting": "Personal/Meetings/Week-of-2026-01-12/2026-01-15_Ray-Acquisition-Debrief"
+    },
+    {
+      "title": "Consult lawyer on exit structures",
+      "priority": "strategic",
+      "first_step": "Schedule call with lawyer to discuss asset purchase vs. stock purchase options",
+      "estimate_min": 15,
+      "domain": "Careerspan",
+      "context": "Careerspan Acquisition - Get legal guidance on transaction structures",
+      "source_meeting": "Personal/Meetings/Week-of-2026-01-12/2026-01-15_Ray-Acquisition-Debrief"
+    },
+    {
+      "title": "Prioritize and sequence outreach to target list (30-40 companies)",
+      "priority": "strategic",
+      "first_step": "Sort target list by proximity (warmest first) and assign outreach timing",
+      "estimate_min": 60,
+      "domain": "Careerspan",
+      "context": "Careerspan Acquisition - Plan and sequence outbound outreach strategy",
+      "source_meeting": "Personal/Meetings/Week-of-2026-01-12/2026-01-15_Ray-Acquisition-Debrief"
+    },
+    {
+      "title": "Model compensation structure scenarios (earnout, rev share)",
+      "priority": "normal",
+      "first_step": "Create spreadsheet modeling different offer structures with conservative/base/best-case scenarios",
+      "estimate_min": 90,
+      "domain": "Careerspan",
+      "context": "Careerspan Acquisition - Financial modeling for offer negotiation",
+      "source_meeting": "Personal/Meetings/Week-of-2026-01-12/2026-01-15_Ray-Acquisition-Debrief"
+    },
+    {
+      "title": "Complete Hearth availability form (Ray will send)",
+      "priority": "normal",
+      "first_step": "Wait for form from Ray, complete within 24 hours of receipt",
+      "estimate_min": 10,
+      "domain": "Zo",
+      "context": "Hearth Mentorship - Complete availability form",
+      "source_meeting": "Personal/Meetings/Week-of-2026-01-12/2026-01-15_Ray-Acquisition-Debrief"
+    },
+    {
+      "title": "Schedule Technical Call",
+      "priority": "urgent",
+      "first_step": "Email Shivam to coordinate available times for the technical call before Wednesday",
+      "estimate_min": 15,
+      "domain": "Careerspan",
+      "context": "Arrange call between Shivam/Kunal and V's head of AI for technical implementation questions",
+      "source_meeting": "Personal/Meetings/Week-of-2026-01-12/2026-01-15_2026-01-15-Shivam-desai-and-vrijen-attawar"
+    },
+    {
+      "title": "Intro to 42 Geeks",
+      "priority": "normal",
+      "first_step": "Send email introduction between Shivam and friend running 42 Geeks",
+      "estimate_min": 5,
+      "domain": "Other",
+      "context": "Introduce Shivam to contact at investor trip program for networking",
+      "source_meeting": "Personal/Meetings/Week-of-2026-01-12/2026-01-15_2026-01-15-Shivam-desai-and-vrijen-attawar"
+    },
+    {
+      "title": "Brooklyn Meetup",
+      "priority": "strategic",
+      "first_step": "Confirm exact time and location with Shivam and check on Tejas's availability",
+      "estimate_min": 5,
+      "domain": "Personal",
+      "context": "Meet Shivam at 7pm Wednesday before 8pm event",
+      "source_meeting": "Personal/Meetings/Week-of-2026-01-12/2026-01-15_2026-01-15-Shivam-desai-and-vrijen-attawar"
+    },
+    {
+      "title": "Complete Calendly Prep Document",
+      "priority": "strategic",
+      "first_step": "Open the shared Calendly prep document and fill in the third bullet point",
+      "estimate_min": 10,
+      "domain": "Careerspan",
+      "context": "Fill in third bullet point in shared doc; stay focused on big hits before next week's Calendly meeting",
+      "source_meeting": "Personal/Meetings/Week-of-2026-01-12/2026-01-15_2026-01-15-Acuity-Scheduler-Features-And-Conversion-Rate-Ins"
+    },
+    {
+      "title": "Update Heather on Calendly Conversation",
+      "priority": "normal",
+      "first_step": "Send a message or email to Heather with a brief summary of the Calendly meeting",
+      "estimate_min": 5,
+      "domain": "Careerspan",
+      "context": "Let Heather know how the Calendly meeting goes after it completes",
+      "source_meeting": "Personal/Meetings/Week-of-2026-01-12/2026-01-15_2026-01-15-Acuity-Scheduler-Features-And-Conversion-Rate-Ins"
+    },
+    {
+      "title": "Email Darwin Box",
+      "priority": "urgent",
+      "first_step": "Draft outreach email to Darwin Box",
+      "estimate_min": 15,
+      "domain": "Careerspan",
+      "context": "Primary outreach - marked TODAY/Non-Negotiable",
+      "source_meeting": "Personal/Meetings/Week-of-2026-01-12/2026-01-15_2026-01-15-Trio-standup"
+    },
+    {
+      "title": "Email Teamwork Online",
+      "priority": "urgent",
+      "first_step": "Draft outreach email to Teamwork Online",
+      "estimate_min": 15,
+      "domain": "Careerspan",
+      "context": "Primary outreach - marked TODAY/Non-Negotiable",
+      "source_meeting": "Personal/Meetings/Week-of-2026-01-12/2026-01-15_2026-01-15-Trio-standup"
+    },
+    {
+      "title": "Follow up with Unveesha",
+      "priority": "strategic",
+      "first_step": "Find previous conversation with Unveesha",
+      "estimate_min": 10,
+      "domain": "Careerspan",
+      "context": "Dover connection - follow up THIS WEEK",
+      "source_meeting": "Personal/Meetings/Week-of-2026-01-12/2026-01-15_2026-01-15-Trio-standup"
+    },
+    {
+      "title": "Hit up Asher",
+      "priority": "strategic",
+      "first_step": "Draft message to Asher",
+      "estimate_min": 15,
+      "domain": "Careerspan",
+      "context": "Acquisition pipeline - follow up THIS WEEK",
+      "source_meeting": "Personal/Meetings/Week-of-2026-01-12/2026-01-15_2026-01-15-Trio-standup"
+    },
+    {
+      "title": "Meet with Andy",
+      "priority": "strategic",
+      "first_step": "Schedule meeting with Andy",
+      "estimate_min": 30,
+      "domain": "Careerspan",
+      "context": "Get more prospect suggestions - COMING WEEKS",
+      "source_meeting": "Personal/Meetings/Week-of-2026-01-12/2026-01-15_2026-01-15-Trio-standup"
+    },
+    {
+      "title": "Identify Phenom contact",
+      "priority": "strategic",
+      "first_step": "Search CRM/network for Phenom relationship",
+      "estimate_min": 10,
+      "domain": "Careerspan",
+      "context": "Verify who has the relationship - COMING WEEKS",
+      "source_meeting": "Personal/Meetings/Week-of-2026-01-12/2026-01-15_2026-01-15-Trio-standup"
+    },
+    {
+      "title": "Send calendar invite to Tiffany for Anna call",
+      "priority": "urgent",
+      "first_step": "Open calendar and create invite for 4:30pm EST",
+      "estimate_min": 2,
+      "domain": "Careerspan",
+      "context": "Call scheduled for 4:30pm EST about Future of Higher Education hackathon",
+      "source_meeting": "Personal/Meetings/Week-of-2026-01-12/2026-01-15_2026-01-15-Chat"
+    },
+    {
+      "title": "Add 'Data Partnerships' section to outbound list spreadsheet",
+      "priority": "strategic",
+      "first_step": "Open outbound list spreadsheet and create Data Partnerships section",
+      "estimate_min": 15,
+      "domain": "Careerspan",
+      "context": "Include Aviato, Nine, Calendly with proper categorization (CRM data companies)",
+      "source_meeting": "Personal/Meetings/Week-of-2026-01-12/2026-01-15_2026-01-15-Chat"
+    }
+  ],
+  "errors": [],
+  "notes_for_orchestrator": "D1.5 processed 9/9 meetings from Batch 5, extracting 31 total action items. All meetings processed successfully."
+}

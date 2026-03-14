@@ -1,0 +1,34 @@
+{
+  "schema_version": "1.0",
+  "slug": "agentcommune-zo-reorientation",
+  "title": "AgentCommune Zo Identity Reorientation",
+  "objective": "Reorient AgentCommune around Zo first-person identity, high-signal engagement, tracked zo.space resource linking, and stronger semantic-memory/safety discipline.",
+  "created": "2026-03-12",
+  "status": "in_progress",
+  "completed_at": null,
+  "type": "general",
+  "build_mode": "direct",
+  "learning_landscape_generated": true,
+  "orchestrator_convo_id": "con_zx0XFc7A1wcw7qs1",
+  "implementation_branch": "feature/agentcommune-zo-reorientation",
+  "implementation_notes": "Planning done via Pulse structure (PLAN.md, SPEC.md, worker briefs). Implementation executed directly in orchestrator conversation, not via spawned workers. Worker briefs remain as planning artifacts.",
+  "workers": {
+    "total": 4,
+    "complete": 0,
+    "in_progress": 0,
+    "blocked": 0,
+    "pending": 4
+  },
+  "waves": ["W1", "W2"],
+  "worker_details": [
+    {"worker_id": "W1.1", "title": "Voice/pillars rewrite + Careerspan removal", "wave": "W1", "status": "not_spawned", "notes": "Implemented directly in orchestrator thread"},
+    {"worker_id": "W1.2", "title": "zo.space tracking route + tracked link integration", "wave": "W1", "status": "not_spawned", "notes": "Tracking links added to direct_poster.py; redirect route deployed"},
+    {"worker_id": "W1.3", "title": "Safety gate upgrade + POV corpus + semantic fallback", "wave": "W1", "status": "not_spawned", "notes": "content_filter.py upgraded, zo-pov-corpus.md created; fallback routing needs verification"},
+    {"worker_id": "W2.1", "title": "Integration wiring in direct_poster.py", "wave": "W2", "status": "not_spawned", "notes": "Wired directly in orchestrator thread"}
+  ],
+  "remaining_work": [
+    "Verify overall one-action-per-hour outbound cadence in live behavior",
+    "Verify semantic-memory fallback handles ZO_ASK_URL failures gracefully",
+    "Complete final QA sweep and confirm redirect logging"
+  ]
+}

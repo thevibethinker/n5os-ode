@@ -1,0 +1,14 @@
+{
+  "drop_id": "D1.1",
+  "status": "complete",
+  "summary": "Inventoried the approved meeting recovery zip, mapped coverage boundaries and structural classes, and produced a planning-only restore map that distinguishes restore, normalize, quarantine, and ignore paths without mutating live meeting or sqlite state.",
+  "artifacts": [
+    "N5/builds/meeting-system-recovery-redesign/artifacts/restore-map.md"
+  ],
+  "learnings": [
+    "The recovery zip is a mixed historical corpus rather than a clean canonical snapshot; execution should treat week/archive layouts as evidence and migrate into the current canonical layout instead of replaying historical structure.",
+    "Quarantine contains substantial real meeting content and must be preserved for adjudication, not bulk-restored or discarded.",
+    "Inbox, week folders, and archive folders overlap in likely meeting identity, so later restore logic must deduplicate by normalized meeting identity and choose the richest source artifact."
+  ],
+  "errors": []
+}

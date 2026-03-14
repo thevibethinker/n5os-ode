@@ -1,0 +1,276 @@
+{
+  "schema_version": 3,
+  "slug": "meeting-system-recovery-redesign",
+  "title": "Meeting System Recovery + Redesign",
+  "build_type": "system-redesign",
+  "status": "complete",
+  "model": null,
+  "launch_mode": "orchestrated",
+  "delegate_only": false,
+  "first_wins": false,
+  "lineage": {
+    "parent_type": "conversation",
+    "parent_ref": "con_9zO5lFoCncknWVxk",
+    "moment": "Meeting corpus wiped; redesign-optimized recovery planned from zip backup",
+    "branched_at": "2026-03-10T19:55:00Z"
+  },
+  "waves": {
+    "W1": [
+      "D1.1",
+      "D1.2",
+      "D1.3"
+    ],
+    "W2": [
+      "D2.1",
+      "D2.2",
+      "D2.3"
+    ],
+    "W3": [
+      "D3.1"
+    ]
+  },
+  "active_wave": "W3",
+  "drops": {
+    "D1.1": {
+      "name": "Zip Corpus Inventory + Restore Mapping",
+      "stream": 1,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "started_at": "2026-03-10T20:39:52.227757+00:00",
+      "conversation_id": "con_2SbqZ8FwPcUBk4VX",
+      "last_progress_at": "2026-03-10T20:39:52.227757+00:00",
+      "validation": {
+        "drop_id": "D1.1",
+        "build_slug": "meeting-system-recovery-redesign",
+        "validated_at": "2026-03-10T21:54:24.610531+00:00",
+        "verdict": "PASS",
+        "reason": "Passed validators",
+        "mechanical": {
+          "drop_id": "D1.1",
+          "build_slug": "meeting-system-recovery-redesign",
+          "timestamp": "2026-03-10T21:54:24.611289",
+          "files_checked": 1,
+          "critical_count": 0,
+          "warning_count": 0,
+          "issues": {}
+        },
+        "llm": null
+      },
+      "completed_at": "2026-03-10T21:54:24.615029+00:00",
+      "order": 1
+    },
+    "D1.2": {
+      "name": "Meeting Pipeline State Audit",
+      "stream": 2,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "started_at": "2026-03-10T22:01:15.564762+00:00",
+      "conversation_id": "con_WHcEvR128H01NHJ8",
+      "last_progress_at": "2026-03-10T22:01:15.564762+00:00",
+      "order": 1,
+      "validation": {
+        "drop_id": "D1.2",
+        "build_slug": "meeting-system-recovery-redesign",
+        "validated_at": "2026-03-10T22:02:08.411642+00:00",
+        "verdict": "PASS",
+        "reason": "Passed validators",
+        "mechanical": {
+          "drop_id": "D1.2",
+          "build_slug": "meeting-system-recovery-redesign",
+          "timestamp": "2026-03-10T22:02:08.412684",
+          "files_checked": 1,
+          "critical_count": 0,
+          "warning_count": 0,
+          "issues": {}
+        },
+        "llm": null
+      },
+      "completed_at": "2026-03-10T22:02:08.417921+00:00"
+    },
+    "D1.3": {
+      "name": "Knowledge Pipeline Audit",
+      "stream": 3,
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "order": 1,
+      "started_at": "2026-03-10T22:00:00+00:00",
+      "conversation_id": "manual_D1.3_main_context",
+      "last_progress_at": "2026-03-10T22:00:00+00:00",
+      "validation": {
+        "drop_id": "D1.3",
+        "build_slug": "meeting-system-recovery-redesign",
+        "validated_at": "2026-03-10T22:08:37.112312+00:00",
+        "verdict": "PASS",
+        "reason": "Passed validators",
+        "mechanical": {
+          "drop_id": "D1.3",
+          "build_slug": "meeting-system-recovery-redesign",
+          "timestamp": "2026-03-10T22:08:37.113621",
+          "files_checked": 1,
+          "critical_count": 0,
+          "warning_count": 0,
+          "issues": {}
+        },
+        "llm": null
+      },
+      "completed_at": "2026-03-10T22:08:37.117692+00:00"
+    },
+    "D2.1": {
+      "name": "Unified Intake Contract Spec",
+      "stream": 4,
+      "depends_on": [
+        "D1.1",
+        "D1.2"
+      ],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "order": 1,
+      "started_at": "2026-03-10T22:12:22.904004+00:00",
+      "conversation_id": "con_eUDhldbJTGaU12dq",
+      "last_progress_at": "2026-03-10T22:12:22.904004+00:00",
+      "validation": {
+        "drop_id": "D2.1",
+        "build_slug": "meeting-system-recovery-redesign",
+        "validated_at": "2026-03-10T22:14:35.761018+00:00",
+        "verdict": "PASS",
+        "reason": "Passed validators",
+        "mechanical": {
+          "drop_id": "D2.1",
+          "build_slug": "meeting-system-recovery-redesign",
+          "timestamp": "2026-03-10T22:14:35.764420",
+          "files_checked": 1,
+          "critical_count": 0,
+          "warning_count": 0,
+          "issues": {}
+        },
+        "llm": null
+      },
+      "completed_at": "2026-03-10T22:14:35.770329+00:00"
+    },
+    "D2.2": {
+      "name": "Routing, Titles, and Move-Ready Rules",
+      "stream": 5,
+      "depends_on": [
+        "D1.1",
+        "D1.2",
+        "D1.3"
+      ],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "order": 1,
+      "started_at": "2026-03-10T22:13:10.857508+00:00",
+      "conversation_id": "con_ezbe9Nd8we6F7GuU",
+      "last_progress_at": "2026-03-10T22:13:10.857508+00:00",
+      "validation": {
+        "drop_id": "D2.2",
+        "build_slug": "meeting-system-recovery-redesign",
+        "validated_at": "2026-03-10T22:14:35.774329+00:00",
+        "verdict": "PASS",
+        "reason": "Passed validators",
+        "mechanical": {
+          "drop_id": "D2.2",
+          "build_slug": "meeting-system-recovery-redesign",
+          "timestamp": "2026-03-10T22:14:35.774677",
+          "files_checked": 1,
+          "critical_count": 0,
+          "warning_count": 0,
+          "issues": {}
+        },
+        "llm": null
+      },
+      "completed_at": "2026-03-10T22:14:35.780044+00:00"
+    },
+    "D2.3": {
+      "name": "Skill Packaging Boundary + Export Policy",
+      "stream": 6,
+      "depends_on": [
+        "D1.1",
+        "D1.2",
+        "D1.3"
+      ],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "order": 1,
+      "started_at": "2026-03-10T22:14:09.990278+00:00",
+      "conversation_id": "con_vbPqIHwMdjHRBRhM",
+      "last_progress_at": "2026-03-10T22:14:09.990278+00:00",
+      "validation": {
+        "drop_id": "D2.3",
+        "build_slug": "meeting-system-recovery-redesign",
+        "validated_at": "2026-03-10T22:14:35.782993+00:00",
+        "verdict": "PASS",
+        "reason": "Override: false positive on markdown ellipsis in code block example",
+        "mechanical": {
+          "drop_id": "D2.3",
+          "build_slug": "meeting-system-recovery-redesign",
+          "timestamp": "2026-03-10T22:14:35.783177",
+          "files_checked": 1,
+          "critical_count": 1,
+          "warning_count": 0,
+          "issues": {
+            "/home/workspace/N5/builds/meeting-system-recovery-redesign/artifacts/skill-packaging-and-export-policy.md": {
+              "critical": [
+                {
+                  "type": "ellipsis_stub",
+                  "message": "Function body is just `...`",
+                  "line": 453,
+                  "content": "..."
+                }
+              ],
+              "warnings": [],
+              "stats": {
+                "lines": 535,
+                "functions": 0,
+                "empty_functions": 0
+              }
+            }
+          }
+        },
+        "llm": null
+      },
+      "completed_at": "2026-03-10T22:15:13.785772+00:00"
+    },
+    "D3.1": {
+      "name": "Execution Plan + Skill Creation Sequencing",
+      "stream": 7,
+      "depends_on": [
+        "D2.1",
+        "D2.2",
+        "D2.3"
+      ],
+      "spawn_mode": "auto",
+      "status": "complete",
+      "order": 1,
+      "started_at": "2026-03-10T22:20:00.000904+00:00",
+      "conversation_id": "con_8EqUbqUvikQ2xHXo",
+      "last_progress_at": "2026-03-10T22:20:00.000904+00:00",
+      "validation": {
+        "drop_id": "D3.1",
+        "build_slug": "meeting-system-recovery-redesign",
+        "validated_at": "2026-03-10T22:20:11.217998+00:00",
+        "verdict": "PASS",
+        "reason": "Passed validators",
+        "mechanical": {
+          "drop_id": "D3.1",
+          "build_slug": "meeting-system-recovery-redesign",
+          "timestamp": "2026-03-10T22:20:11.218745",
+          "files_checked": 1,
+          "critical_count": 0,
+          "warning_count": 0,
+          "issues": {}
+        },
+        "llm": null
+      },
+      "completed_at": "2026-03-10T22:20:11.229856+00:00"
+    }
+  },
+  "currents": {},
+  "created_at": "2026-03-10T19:55:00Z",
+  "started_at": "2026-03-10T20:03:23.854733+00:00",
+  "last_progress_at": "2026-03-10T22:20:31.831186+00:00",
+  "completed_at": "2026-03-10T22:20:11.235609+00:00",
+  "summary": "**D1.1:** Inventoried the approved meeting recovery zip, mapped coverage boundaries and structural classes, and produced a planning-only restore map that distinguishes restore, normalize, quarantine, and ignore paths without mutating live meeting or sqlite state.\n**D1.2:** Comprehensive audit of the meeting pipeline system. Inspected 4 SQLite databases, 20+ Python scripts across v2 and v3 pipelines, the current Inbox filesystem state, 249 HITL queue items, and today's live-processed meeting manifest. Identified 7 breakpoints (gate bypass, calendar match always 0.0, no archive infrastructure, zombie v2 DB with 125 stuck meetings, write-only HITL queue, unpopulated meeting registry, dual DB confusion). Separated 10 reusable components from 5 broken/redesign-needed and 6 dead/deprecated modules. Recommended SQLite as derivative index rebuilt from filesystem manifests (Option A). Documented actual vs documented state machine with 5 discrepancies.\n**D1.3:** Audited the downstream knowledge pipeline from processed meetings. Mapped 11 potential destinations (6 active/partial, 5 missing). Identified 7 breakpoints: no post-archive pipeline stage (critical), no block quality scoring, one-way CRM feedback loop, Content Library integration is schema-only, B33/idea system partially wired, reflection pipeline does not exist, title quality constrains downstream. Documented 5 redesign implications including absorbing the stalled relationship-intelligence-os build (22% done, has usable promotion gate artifacts). Provided recommendations on 2 decision points: Content Library as primary knowledge hub, and deterministic vs LLM-driven zone assignments for each downstream step.\n**D2.1:** Defined the unified intake contract that normalizes Fireflies, Fathom, Pocket, and recovered historical content into one canonical landing shape in Personal/Meetings/Inbox/. Resolved DP-1 (single schema with content_type discriminator for meeting vs reflection) and DP-2 (9 minimum ready-to-process checks including manifest, transcript, date, title, source, and content_type). Contract covers: content type routing rules with explicit Pocket default-to-reflection logic, canonical folder structure, manifest schema at intake, provenance fields for recovered items, 5 source adapters (fireflies_v1, fathom_v1, pocket_v1, recovery_v1, manual_v1), ready-to-process validation with reference implementation, landing state definitions, transcript normalization rules, and schema extension points.\n**D2.2:** Created routing-and-titling-rules.md specifying: (1) meeting vs. reflection classification heuristic with two-pass deterministic+LLM evaluation and decision ladder, (2) Pocket default-to-reflection behavior with escalation paths, (3) title generation hierarchy resolving DP-1 (calendar for structural fields, transcript semantics for purpose), (4) banned title patterns list, (5) reflection block recipe (reflection_standard) using R00/R06 always + R01/R02/R03 conditional, (6) move-ready state model resolving DP-2 as manifest flag SET by derived verification with explicit check definitions for both meetings and reflections, (7) simplified reflection quality gate profile, (8) gate interlock fix recommendation, (9) downstream knowledge quality impact analysis, (10) implementation notes listing files to modify and create.\n**D2.3:** Defined skill packaging boundary, allowlist export policy, marker conventions, and bootstrap contract for the meeting-system skill. Recommended slug 'meeting-system' (pending V confirmation). Established default-deny allowlist model with .n5exportable intent marker and .export-allowlist file. Bootstrap lives inside the skill (scripts/bootstrap.py) with check/setup/--dry-run modes. All three decision points (DP-1 bootstrap location, DP-2 marker set, DP-3 export-allowlisted directories) resolved with rationale. Migration path from meeting-ingestion to meeting-system documented including script-by-script carryover table.\n**D3.1:** Created the execution plan synthesizing all 6 dependency artifacts (restore-map, system-audit, knowledge-audit, intake-contract, routing-and-titling-rules, skill-packaging-and-export-policy) into a 7-phase execution sequence with explicit approval gates, rollback points, verification commands, and trap-door questions for V. Resolved all 3 decision points: DP-1 (rebuild SQLite from filesystem truth, not patch), DP-2 (activate future-source adapters AFTER intake redesign is validated), DP-3 (create skill scaffolding BEFORE live code changes). Phases are: 0-Preflight, 1-Historical Restore, 2-SQLite Sync, 3-Skill Creation, 4-Gate+Archive Wiring, 5-Future-Source Adapters, 6-Knowledge Elevation, 7-Export Validation."
+}

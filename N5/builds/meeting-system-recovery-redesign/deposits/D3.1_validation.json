@@ -1,0 +1,17 @@
+{
+  "drop_id": "D3.1",
+  "build_slug": "meeting-system-recovery-redesign",
+  "validated_at": "2026-03-10T22:20:11.217998+00:00",
+  "verdict": "PASS",
+  "reason": "Passed validators",
+  "mechanical": {
+    "drop_id": "D3.1",
+    "build_slug": "meeting-system-recovery-redesign",
+    "timestamp": "2026-03-10T22:20:11.218745",
+    "files_checked": 1,
+    "critical_count": 0,
+    "warning_count": 0,
+    "issues": {}
+  },
+  "llm": null
+}

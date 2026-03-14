@@ -1,0 +1,22 @@
+{
+  "schema_version": "1.0",
+  "slug": "pocket-webhook-handler",
+  "title": "Pocket Webhook Handler for Meeting/Reflection Ingestion",
+  "objective": null,
+  "created": "2026-03-14",
+  "status": "draft",
+  "completed_at": null,
+  "type": "general",
+  "build_mode": "learning",
+  "learning_landscape_generated": false,
+  "orchestrator_convo_id": null,
+  "workers": {
+    "total": 0,
+    "complete": 0,
+    "in_progress": 0,
+    "blocked": 0,
+    "pending": 0
+  },
+  "waves": [],
+  "worker_details": []
+}

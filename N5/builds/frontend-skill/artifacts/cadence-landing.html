@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadence — Keep Remote Teams in Sync</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    * { font-family: 'Inter', system-ui, sans-serif; }
+  </style>
+</head>
+<body class="bg-white text-[#0A0A0A]">
+  
+  <!-- Navigation -->
+  <nav class="border-b border-gray-100">
+    <div class="max-w-5xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <svg class="w-7 h-7 text-[#2563EB]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
+        </svg>
+        <span class="font-semibold text-lg">Cadence</span>
+      </div>
+      <div class="hidden md:flex items-center gap-8 text-sm text-[#525252]">
+        <a href="#features" class="hover:text-[#0A0A0A] hover:underline">Features</a>
+        <a href="#pricing" class="hover:text-[#0A0A0A] hover:underline">Pricing</a>
+        <a href="#" class="hover:text-[#0A0A0A] hover:underline">Documentation</a>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="#" class="text-sm text-[#525252] hover:text-[#0A0A0A]">Sign in</a>
+        <a href="#" class="text-sm bg-[#0A0A0A] text-white px-4 py-2 rounded hover:bg-[#1a1a1a] transition-colors">Get Started</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section (centered variant) -->
+  <section class="py-24 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+      <h1 class="text-4xl md:text-5xl font-semibold tracking-tight leading-tight mb-6">
+        Keep your remote team<br>perfectly synchronized
+      </h1>
+      <p class="text-lg text-[#525252] mb-8 max-w-xl mx-auto">
+        Cadence brings clarity to distributed work. See what everyone's working on, catch blockers early, and ship together — even when you're apart.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="#" class="bg-[#0A0A0A] text-white px-6 py-3 rounded text-sm font-medium hover:bg-[#1a1a1a] transition-colors">
+          Start free trial
+        </a>
+        <a href="#" class="border border-gray-200 px-6 py-3 rounded text-sm font-medium hover:border-gray-300 transition-colors">
+          Watch demo
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Logos Section (simple variant) -->
+  <section class="py-12 border-y border-gray-100 bg-[#FAFAFA]">
+    <div class="max-w-5xl mx-auto px-6">
+      <p class="text-center text-sm text-[#737373] mb-8">Trusted by teams at</p>
+      <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-6 opacity-60">
+        <span class="text-xl font-semibold text-[#525252]">Notion</span>
+        <span class="text-xl font-semibold text-[#525252]">Figma</span>
+        <span class="text-xl font-semibold text-[#525252]">Vercel</span>
+        <span class="text-xl font-semibold text-[#525252]">Linear</span>
+        <span class="text-xl font-semibold text-[#525252]">Stripe</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features Section (grid-3col variant) -->
+  <section id="features" class="py-24 px-6">
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-semibold mb-4">Everything you need to stay in sync</h2>
+        <p class="text-[#525252] max-w-xl mx-auto">Simple tools that make remote collaboration feel effortless.</p>
+      </div>
+      
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Feature 1 -->
+        <div class="p-6">
+          <div class="w-10 h-10 bg-[#FAFAFA] rounded flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-[#2563EB]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" />
+              <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-2">Real-time visibility</h3>
+          <p class="text-sm text-[#525252] leading-relaxed">See what everyone's working on without asking. Live status updates keep the whole team informed.</p>
+        </div>
+        
+        <!-- Feature 2 -->
+        <div class="p-6">
+          <div class="w-10 h-10 bg-[#FAFAFA] rounded flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-[#2563EB]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" />
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-2">Blocker detection</h3>
+          <p class="text-sm text-[#525252] leading-relaxed">Cadence spots dependencies and potential blockers before they stall your sprint.</p>
+        </div>
+        
+        <!-- Feature 3 -->
+        <div class="p-6">
+          <div class="w-10 h-10 bg-[#FAFAFA] rounded flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-[#2563EB]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5" />
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-2">Async standups</h3>
+          <p class="text-sm text-[#525252] leading-relaxed">Replace daily meetings with quick async check-ins that respect everyone's timezone.</p>
+        </div>
+        
+        <!-- Feature 4 -->
+        <div class="p-6">
+          <div class="w-10 h-10 bg-[#FAFAFA] rounded flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-[#2563EB]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z" />
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-2">Progress tracking</h3>
+          <p class="text-sm text-[#525252] leading-relaxed">Automatic progress reports that show how work is flowing across projects and teams.</p>
+        </div>
+        
+        <!-- Feature 5 -->
+        <div class="p-6">
+          <div class="w-10 h-10 bg-[#FAFAFA] rounded flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-[#2563EB]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M13.19 8.688a4.5 4.5 0 011.242 7.244l-4.5 4.5a4.5 4.5 0 01-6.364-6.364l1.757-1.757m13.35-.622l1.757-1.757a4.5 4.5 0 00-6.364-6.364l-4.5 4.5a4.5 4.5 0 001.242 7.244" />
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-2">Deep integrations</h3>
+          <p class="text-sm text-[#525252] leading-relaxed">Connect with GitHub, Linear, Slack, and Notion. Work where you already work.</p>
+        </div>
+        
+        <!-- Feature 6 -->
+        <div class="p-6">
+          <div class="w-10 h-10 bg-[#FAFAFA] rounded flex items-center justify-center mb-4">
+            <svg class="w-5 h-5 text-[#2563EB]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+            </svg>
+          </div>
+          <h3 class="font-semibold mb-2">Enterprise ready</h3>
+          <p class="text-sm text-[#525252] leading-relaxed">SOC 2 compliant, SSO, and audit logs. Built for teams that take security seriously.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial Section (single variant) -->
+  <section class="py-24 px-6 bg-[#FAFAFA]">
+    <div class="max-w-3xl mx-auto text-center">
+      <blockquote class="text-2xl font-medium leading-relaxed mb-8">
+        "Cadence replaced our daily standups with something better. The team actually knows what's happening now, and we saved 5 hours a week."
+      </blockquote>
+      <div class="flex items-center justify-center gap-4">
+        <div class="w-12 h-12 bg-gray-200 rounded-full"></div>
+        <div class="text-left">
+          <p class="font-medium">Sarah Chen</p>
+          <p class="text-sm text-[#737373]">Engineering Lead, Raycast</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section (centered variant) -->
+  <section class="py-24 px-6">
+    <div class="max-w-2xl mx-auto text-center">
+      <h2 class="text-3xl font-semibold mb-4">Ready to find your rhythm?</h2>
+      <p class="text-[#525252] mb-8">Start your free 14-day trial. No credit card required.</p>
+      <a href="#" class="inline-block bg-[#0A0A0A] text-white px-8 py-3 rounded text-sm font-medium hover:bg-[#1a1a1a] transition-colors">
+        Get started for free
+      </a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="border-t border-gray-100 py-12 px-6">
+    <div class="max-w-5xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-2">
+        <svg class="w-6 h-6 text-[#525252]" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6a2.25 2.25 0 01-2.25-2.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6a2.25 2.25 0 012.25-2.25H18A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25a2.25 2.25 0 01-2.25-2.25V6zM13.5 15.75a2.25 2.25 0 012.25-2.25H18a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
+        </svg>
+        <span class="text-sm text-[#525252]">© 2026 Cadence</span>
+      </div>
+      <div class="flex gap-8 text-sm text-[#525252]">
+        <a href="#" class="hover:text-[#0A0A0A] hover:underline">Privacy</a>
+        <a href="#" class="hover:text-[#0A0A0A] hover:underline">Terms</a>
+        <a href="#" class="hover:text-[#0A0A0A] hover:underline">Twitter</a>
+        <a href="#" class="hover:text-[#0A0A0A] hover:underline">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

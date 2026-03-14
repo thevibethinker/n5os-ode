@@ -1,12 +1,11 @@
 ---
 created: 2026-02-21
 last_edited: 2026-02-21
-version: 1.0
+version: 1
 provenance: n5os-rice-architecture
 type: build_plan
 status: planned
 ---
-
 # Rice Staff — Starter Employees (Receptionist, Chief of Staff, Librarian)
 
 **Build slug:** `rice-staff`

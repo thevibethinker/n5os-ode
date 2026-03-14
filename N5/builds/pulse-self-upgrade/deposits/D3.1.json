@@ -1,0 +1,13 @@
+{
+  "drop_id": "D3.1",
+  "status": "complete",
+  "timestamp": "2026-02-07T19:50:00-05:00",
+  "summary": "Documented delegate-only mode as a prompt discipline for Pulse orchestrators. Created comprehensive reference documentation explaining when and how to use the discipline, what constraints apply, and how it maintains provenance clarity in multi-Drop builds.",
+  "broadcast": "Delegate-only mode documented — use 'delegate_only: true' in meta.json to signal orchestrator should coordinate only, not edit code",
+  "artifacts": [
+    "Skills/pulse/references/delegate-only-mode.md"
+  ],
+  "decisions": [],
+  "concerns": [],
+  "notes_for_orchestrator": "D2.2 should add a brief summary to SKILL.md pointing to this reference doc"
+}

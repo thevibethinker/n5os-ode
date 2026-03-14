@@ -1,0 +1,48 @@
+{
+  "status": "complete",
+  "summary": "Deleted 7 meeting prompts, updated legacy_prompts.md reference file",
+  "files_deleted": [
+    {
+      "path": "Prompts/Meeting Manifest Generation.prompt.md",
+      "reason": "Used by MG-1 agent to generate manifests"
+    },
+    {
+      "path": "Prompts/Meeting Block Generation.prompt.md",
+      "reason": "Used by MG-2 agent to generate intelligence blocks"
+    },
+    {
+      "path": "Prompts/Meeting Warm Intro Generation.prompt.md",
+      "reason": "Used by MG-4 agent to generate warm intro emails"
+    },
+    {
+      "path": "Prompts/Meeting State Transition.prompt.md",
+      "reason": "Used by MG-6 agent to transition meeting states"
+    },
+    {
+      "path": "Prompts/Meeting Follow-Up Generation.prompt.md",
+      "reason": "Used by MG-5 agent (already disabled)"
+    },
+    {
+      "path": "Prompts/Meeting Blurb Generation.prompt.md",
+      "reason": "Used by MG-3 agent (already disabled), replaced by Zo Take Heed system"
+    },
+    {
+      "path": "Prompts/Meeting_Block_Selector.prompt.md",
+      "reason": "Duplicate/obsolete, replaced by meeting-ingestion skill's manifest generation"
+    }
+  ],
+  "files_updated": [
+    "Skills/meeting-ingestion/references/legacy_prompts.md"
+  ],
+  "verification": {
+    "no_broken_references": true,
+    "notes": "Historical references exist in build artifacts (N5/builds/meeting-system-migration/) and legacy docs (N5/workflows/, logs/), but these are historical documentation. The only script reference is in m_to_p_transition.py documentation comments - no functional code dependencies remain. No active scripts or the meeting-ingestion skill reference the deleted prompts."
+  },
+  "build_summary": {
+    "agents_deleted": 7,
+    "agents_created": 1,
+    "prompts_deleted": 20,
+    "skill_commands_added": 1
+  },
+  "artifacts": []
+}

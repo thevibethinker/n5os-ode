@@ -1,0 +1,346 @@
+{
+  "drop_id": "D1.2",
+  "status": "complete",
+  "total_scanned": 157,
+  "leads": [
+    {
+      "name": "Konrad Kucharski",
+      "org": "Aviato",
+      "role": "CRO & Co-Founder",
+      "score": 3,
+      "archetypes": [
+        "Strategic Leader"
+      ],
+      "rationale": "Co-founder of a data enrichment/sales intelligence platform \u2014 tech-forward leader who would appreciate AI-powered workflow automation for revenue operations.",
+      "crm_file": "konrad-kucharski.md"
+    },
+    {
+      "name": "Kristen Habacht",
+      "org": "Elly.ai",
+      "role": "Unknown",
+      "score": 3,
+      "archetypes": [
+        "Strategic Leader"
+      ],
+      "rationale": "Associated with an AI company (Elly.ai), suggesting familiarity with AI tools and potential interest in a personal AI computer for productivity.",
+      "crm_file": "kristen-habacht.md"
+    },
+    {
+      "name": "Michael",
+      "org": "Anyreach.AI",
+      "role": "Unknown",
+      "score": 3,
+      "archetypes": [
+        "Power User"
+      ],
+      "rationale": "AI company contact suggests tech-forward orientation; limited context but AI org signals potential fit",
+      "crm_file": "michael.md"
+    },
+    {
+      "name": "Mishal",
+      "org": "Stitchsense.AI",
+      "role": "Unknown",
+      "score": 3,
+      "archetypes": [
+        "Power User",
+        "Creator"
+      ],
+      "rationale": "AI-focused company (Stitchsense.AI) suggests builder who could leverage Zo for AI workflow automation",
+      "crm_file": "mishal.md"
+    },
+    {
+      "name": "Nic",
+      "org": "Elly.AI",
+      "role": "Unknown",
+      "score": 3,
+      "archetypes": [
+        "Power User",
+        "Creator"
+      ],
+      "rationale": "AI company founder/operator likely to adopt personal AI computer for daily workflows and building",
+      "crm_file": "nic.md"
+    },
+    {
+      "name": "Nick Gu",
+      "org": "Pioneering Minds AI",
+      "role": "President",
+      "score": 4,
+      "archetypes": [
+        "Strategic Leader",
+        "Power User"
+      ],
+      "rationale": "President of an AI company \u2014 high likelihood of deep adoption and potential team rollout of a personal AI computer",
+      "crm_file": "nick-gu.md"
+    },
+    {
+      "name": "Nilesh Modi",
+      "org": "Reliance Industries Limited",
+      "role": "Chairman's Office \u2014 Strategic Initiatives & Special Projects",
+      "score": 3,
+      "archetypes": [
+        "Strategic Leader"
+      ],
+      "rationale": "Senior strategic leader at massive conglomerate with 28+ years tenure; could adopt Zo for executive productivity/automation, though enterprise context may limit personal tool adoption.",
+      "crm_file": "nilesh-modi.md"
+    },
+    {
+      "name": "Oscar",
+      "org": "Marvin VC",
+      "role": "Unknown (VC)",
+      "score": 3,
+      "archetypes": [
+        "Investor/Advisor"
+      ],
+      "rationale": "VC at Marvin VC likely evaluating AI/tech startups; relevant network for Zo distribution and potential portfolio company adoption.",
+      "crm_file": "oscar.md"
+    },
+    {
+      "name": "Paul Lee",
+      "org": "Greenlite",
+      "role": "Product Leader",
+      "score": 3,
+      "archetypes": [
+        "Power User"
+      ],
+      "rationale": "Product leader at an AI company (Greenlite) in Brooklyn \u2014 likely tech-forward enough to adopt a personal AI computer for workflow automation.",
+      "crm_file": "paul-lee.md"
+    },
+    {
+      "name": "Stonny Liu",
+      "org": "VenueHopper",
+      "role": "Founder & CEO",
+      "score": 3,
+      "archetypes": [
+        "Power User",
+        "Strategic Leader"
+      ],
+      "rationale": "NYC-based startup founder building a product \u2014 would benefit from Zo for dev workflows, automation, and personal productivity.",
+      "crm_file": "placeholder-stonnyliu.md"
+    },
+    {
+      "name": "Ray (Zo Computer)",
+      "org": "Zo Computer",
+      "role": "Co-founder, Marketing Lead",
+      "score": 5,
+      "archetypes": [
+        "Promoter",
+        "Strategic Leader",
+        "Creator"
+      ],
+      "rationale": "Co-founder of Zo Computer itself \u2014 maximum alignment as an internal champion who would both use and promote the product.",
+      "crm_file": "ray-zo.md"
+    },
+    {
+      "name": "Saad Bin Shafiq",
+      "org": "Nodes.inc / AI-Synapse",
+      "role": "Founder/Builder",
+      "score": 4,
+      "archetypes": [
+        "Power User",
+        "Creator"
+      ],
+      "rationale": "AI startup founder across multiple ventures \u2014 would deeply adopt a personal AI computer for workflow automation and building integrations.",
+      "crm_file": "saad-bin-shafiq.md"
+    },
+    {
+      "name": "Sarah Chen",
+      "org": "Quantum Labs",
+      "role": "VP of Engineering",
+      "score": 3,
+      "archetypes": [
+        "Power User",
+        "Strategic Leader"
+      ],
+      "rationale": "Engineering leader at a Series B SaaS startup \u2014 could adopt Zo for personal dev workflows and potentially influence team adoption.",
+      "crm_file": "sarah-chen.md"
+    },
+    {
+      "name": "serhii",
+      "org": "TheApply.ai",
+      "role": "Team Member",
+      "score": 3,
+      "archetypes": [
+        "Power User",
+        "Creator"
+      ],
+      "rationale": "Works at an AI-powered job application platform \u2014 technically oriented, would benefit from AI workflows and automation on Zo.",
+      "crm_file": "serhii.md"
+    },
+    {
+      "name": "Shane Murphy-Reuter",
+      "org": "Calendly",
+      "role": "Executive (likely CMO/CRO)",
+      "score": 4,
+      "archetypes": [
+        "Strategic Leader",
+        "Promoter"
+      ],
+      "rationale": "Senior leader at a major SaaS company (Calendly); would understand personal AI computer value prop and has influence to adopt/promote.",
+      "crm_file": "shane-murphy-reuter.md"
+    },
+    {
+      "name": "Sharon Laker Kimberly",
+      "org": "Fibe",
+      "role": "Founder",
+      "score": 3,
+      "archetypes": [
+        "Strategic Leader"
+      ],
+      "rationale": "Founder of a tech company (Fibe); likely tech-forward enough to benefit from Zo as a personal productivity OS.",
+      "crm_file": "sharon-laker-kimberly.md"
+    },
+    {
+      "name": "Shaunak",
+      "org": "Docsum.AI",
+      "role": "Founder/Team",
+      "score": 3,
+      "archetypes": [
+        "Power User",
+        "Creator"
+      ],
+      "rationale": "At an AI company (Docsum.AI) so already in the AI ecosystem; would understand and potentially deeply use a personal AI computer.",
+      "crm_file": "shaunak.md"
+    },
+    {
+      "name": "Shruti Singh",
+      "org": "Zeni.AI",
+      "role": "Team member",
+      "score": 3,
+      "archetypes": [
+        "Power User"
+      ],
+      "rationale": "At an AI-native finance automation company; already operating in AI workflows and would grasp Zo's value quickly.",
+      "crm_file": "shruti-singh.md"
+    },
+    {
+      "name": "Shyam Chidamber",
+      "org": "SAIC Ventures",
+      "role": "Investor/Advisor",
+      "score": 3,
+      "archetypes": [
+        "Investor/Advisor"
+      ],
+      "rationale": "Investor with venture connections; potential advisor or evangelist for Zo in the investment community.",
+      "crm_file": "shyam-chidamber.md"
+    },
+    {
+      "name": "Tiff",
+      "org": "Substrate.Run",
+      "role": "Unknown",
+      "score": 3,
+      "archetypes": [
+        "Power User",
+        "Creator"
+      ],
+      "rationale": "Substrate.run is a developer infrastructure company \u2014 someone working there likely builds with AI tools and would appreciate a personal AI computer.",
+      "crm_file": "tiff.md"
+    },
+    {
+      "name": "Tiffany Huang",
+      "org": "Zo Computer",
+      "role": "Product/Operations",
+      "score": 4,
+      "archetypes": [
+        "Power User",
+        "Promoter",
+        "Strategic Leader"
+      ],
+      "rationale": "Already at Zo Computer with active partnership \u2014 internal champion who deeply understands the product and can advocate/adopt.",
+      "crm_file": "tiffany-huang.md"
+    },
+    {
+      "name": "Tomas Thire",
+      "org": "Sciemo.Ai",
+      "role": "Unknown",
+      "score": 3,
+      "archetypes": [
+        "Power User",
+        "Creator"
+      ],
+      "rationale": "Runs or works at an AI company (sciemo.ai) \u2014 likely technical, AI-native, and would value a personal AI computer for workflows.",
+      "crm_file": "tomas-thire.md"
+    },
+    {
+      "name": "Tejas",
+      "org": "Startery.Io",
+      "role": "Unknown",
+      "score": 3,
+      "archetypes": [
+        "Strategic Leader",
+        "Power User"
+      ],
+      "rationale": "Startery.io suggests a startup-focused org \u2014 founder/operator who likely juggles many workflows and could benefit from AI automation.",
+      "crm_file": "tejas.md"
+    },
+    {
+      "name": "Tope Awotona",
+      "org": "Calendly",
+      "role": "CEO & Founder",
+      "score": 4,
+      "archetypes": [
+        "Strategic Leader",
+        "Promoter"
+      ],
+      "rationale": "High-profile tech founder who built a scheduling empire; would appreciate a personal AI computer for productivity and has massive influence to promote it.",
+      "crm_file": "tope-awotona.md"
+    },
+    {
+      "name": "Tony Kim",
+      "org": "Cisco (Cisco Ventures)",
+      "role": "CVC",
+      "score": 3,
+      "archetypes": [
+        "Investor/Advisor"
+      ],
+      "rationale": "Corporate VC at Cisco Ventures with visibility into enterprise/dev-tools deals; could evaluate Zo as an investment or strategic partnership.",
+      "crm_file": "tony-kim.md"
+    },
+    {
+      "name": "Victor Hu",
+      "org": "Lumos Capital Group",
+      "role": "Investor",
+      "score": 3,
+      "archetypes": [
+        "Investor/Advisor"
+      ],
+      "rationale": "Active investor exploring AI coaching category; already engaged with V and evaluating the space Zo operates in.",
+      "crm_file": "victor.md"
+    },
+    {
+      "name": "Ulrik Soderstrom",
+      "org": "Benchmark Labs",
+      "role": "Founder/CEO",
+      "score": 3,
+      "archetypes": [
+        "Strategic Leader",
+        "Power User"
+      ],
+      "rationale": "Tech founder running a data/analytics company and co-organizing McKinsey Founders Orbit; likely power user of AI tooling with a relevant founder network.",
+      "crm_file": "ulrik-soderstrom.md"
+    },
+    {
+      "name": "Vineet",
+      "org": "Zeni.Ai",
+      "role": "[To be determined]",
+      "score": 3,
+      "archetypes": [
+        "Power User",
+        "Strategic Leader"
+      ],
+      "rationale": "At an AI-native finance automation company; signals technical orientation and comfort with AI-first workflows.",
+      "crm_file": "vineet.md"
+    },
+    {
+      "name": "Vir",
+      "org": "Instalily.Ai",
+      "role": "[To be determined]",
+      "score": 3,
+      "archetypes": [
+        "Power User",
+        "Creator"
+      ],
+      "rationale": "At an AI company; likely a builder/operator who would adopt a personal AI computer for development and workflow automation.",
+      "crm_file": "vir.md"
+    }
+  ]
+}

@@ -1,0 +1,312 @@
+---
+created: 2026-02-01
+last_edited: 2026-02-01
+version: 1
+provenance: b05-backfill-extended
+---
+# Task Backfill Review (Dec 15 - Jan 18)
+
+**140 unique items** extracted from 56 meetings (157 raw → 140 after dedup)
+
+Check items to approve. Say **"clarify #XX"** for transcript lookup.
+When done: **"import checked"**
+
+---
+
+## 🔴 Urgent (37)
+
+- [ ] #001 — Resolve 2FA access issues or provide billing visibility to Ilse *(Careerspan, 2025-12-19_ilse_x_vrijen_sync)*
+  - First step: Check OpenAI account settings for 2FA configuration and team access options
+- [ ] #002 — Provide $190k loan agreement document *(Careerspan, 2025-12-23_Meeting-with-vrijen-ankit)*
+  - First step: Draft and send formal loan agreement document to Vineet/Shruti
+- [ ] #003 — Send product access credentials (Nic) *(Careerspan, 2026-01-05_2026-01-05-Vrijen-attawar-and-nic-mahaney)*
+  - First step: Create employer and employee dummy accounts in staging
+- [ ] #004 — Notify Ilya of contract termination *(Careerspan, 2026-01-05_2026-01-05-Daily-co-founder-standup-check-trello)*
+  - First step: Draft termination notice email with 5-day notice timeline
+- [ ] #005 — Coordinate with Rahul regarding sync *(Careerspan, 2026-01-05_2026-01-05-Ilya-sync)*
+  - First step: Email or message Rahul to reschedule the sync and free time for Ilya's offboarding walkthroughs
+- [ ] #006 — Coordinate call with Ilia *(Careerspan, 2026-01-05_2026-01-05-Logan-x-vrijen)*
+  - First step: Send Ilia a message confirming the 3 PM call for today
+- [ ] #007 — WhatsApp Rahul *(Careerspan, 2026-01-05_2026-01-05-Logan-x-vrijen)*
+  - First step: Send WhatsApp message to Rahul about hiring coordination
+- [ ] #008 — Send community examples/paraphernalia to Jeff *(Careerspan, 2026-01-06_2026-01-06-Vrijen-Attawar-And-Jeffrey-Botteron)*
+  - First step: Gather community example files into a shared folder
+- [ ] #009 — Send UMass Eisenberg pilot study *(Careerspan, 2026-01-06_2026-01-06-Vrijen-Attawar-And-Jeffrey-Botteron)*
+  - First step: Locate the UMass Eisenberg pilot study summary document
+- [ ] #010 — Send Aspire Institute study *(Careerspan, 2026-01-06_2026-01-06-Vrijen-Attawar-And-Jeffrey-Botteron)*
+  - First step: Find and organize the Aspire Institute study results
+- [ ] #011 — Scan candidate pool for Agave and Deep Tune roles (for Holly) *(Careerspan, 2026-01-07_2026-01-07-Holly-x-v)*
+  - First step: Contact Holly to get role details and job requirements for Agave and Deep Tune
+- [ ] #012 — Inform Holly of Monday Timeline *(Careerspan, 2026-01-09_2026-01-09-Ilse-X-Vrijen)*
+  - First step: Send message to Holly explaining timeline delay due to strategic pivot
+- [ ] #013 — Brief Logan on Strategic Pivot *(Careerspan, 2026-01-09_2026-01-09-Ilse-X-Vrijen)*
+  - First step: Prepare talking points for today's standup about talent scanning as core product
+- [ ] #014 — Send materials package to Ivor *(Careerspan, 2026-01-09_Ivor-Stratford-x-Vrijen-Attawar_[M])*
+  - First step: Gather pitch deck, product overview, career center traction summary into package
+- [ ] #015 — Set up trial employer account for Ivor *(Careerspan, 2026-01-09_Ivor-Stratford-x-Vrijen-Attawar_[M])*
+  - First step: Create employer account in Careerspan and generate credentials
+- [ ] #016 — Send Shane the Andy Moat/Whispered intake link *(Careerspan, 2026-01-12_2026-01-12-Shane-Murphy-reuter-X-Vrijen-Attawar)*
+  - First step: Open email, draft message to Shane with the intake link
+- [ ] #017 — Write follow-up emails for deals from last week *(Careerspan, 2026-01-12_2026-01-12-Daily-co-founder-standup-check-trello)*
+  - First step: Open email list of deals from last week and identify recipients
+- [ ] #018 — Fix payment link routing bug in Interviewer product *(Careerspan, 2026-01-12_2026-01-12-Daily-co-founder-standup-check-trello)*
+  - First step: Locate payment link configuration file and review routing logic
+- [ ] #019 — Share Notion access with Logan (acquisition docs) ×2 *(Careerspan, Personal/Meetings/Week-of-2026-01-12/2026-01-14_2026-01-14-V-logan-acquisition-strategy)*
+  - First step: Open Notion and add Logan's email to private docs
+- [ ] #020 — Begin LinkedIn visibility campaign on priority targets *(Careerspan, Personal/Meetings/Week-of-2026-01-12/2026-01-14_2026-01-14-V-logan-acquisition-strategy-201734)*
+  - First step: Create first LinkedIn post/comment for top 3 targets
+- [ ] #021 — Send materials to Ray for buyer introduction *(Careerspan, Personal/Meetings/Week-of-2026-01-12/2026-01-15_Ray-Acquisition-Debrief)*
+  - First step: Compile acquisition outreach package (pitch deck, target list, key metrics) and send to Ray
+- [ ] #022 — Schedule Technical Call (Shivam/Kunal with Head of AI) *(Careerspan, Personal/Meetings/Week-of-2026-01-12/2026-01-15_2026-01-15-Shivam-desai-and-vrijen-attawar)*
+  - First step: Email Shivam to coordinate available times for technical call before Wednesday
+- [ ] #023 — Email Darwin Box *(Careerspan, Personal/Meetings/Week-of-2026-01-12/2026-01-15_2026-01-15-Trio-standup)*
+  - First step: Draft outreach email to Darwin Box
+- [ ] #024 — Email Teamwork Online *(Careerspan, Personal/Meetings/Week-of-2026-01-12/2026-01-15_2026-01-15-Trio-standup)*
+  - First step: Draft outreach email to Teamwork Online
+- [ ] #025 — Send calendar invite to Tiffany for Anna call ×2 *(Careerspan, Personal/Meetings/Week-of-2026-01-12/2026-01-15_2026-01-15-Chat)*
+  - First step: Open calendar and create invite for 4:30pm EST
+- [ ] #026 — Join South Park Commons Call *(Careerspan, 2026-01-16_2026-01-16-Pkr-qzco-jhz)*
+  - First step: Dial into SPC call immediately
+- [ ] #027 — Prepare Howie Product Feedback Dossier ×2 *(Careerspan, 2026-01-16_2026-01-16-Tope-awotona-x-vrijen)*
+  - First step: Open notes doc and list top 3 UX observations from Howie.ai usage
+- [ ] #028 — Confirm January 30th NYC Meeting with Tope ×2 *(Careerspan, 2026-01-16_2026-01-16-Tope-awotona-x-vrijen)*
+  - First step: Send calendar invite to Tope with 2-3 time slot options
+- [ ] #029 — Search for missing green card *(Personal, 2025-12-19_ilse_x_vrijen_sync)*
+  - First step: Check desk drawers, wallet, and common document storage locations
+- [ ] #030 — Complete values homework *(Personal, 2026-01-08_2026-01-08-Personal-Coaching-Session-On-Core-Values-And-Habi)*
+  - First step: Write answers to 'How do I exhibit it today?' and 'What is a way I can be more true to it?' for Kindness, Consistency/Honor, and Unity/Solidarity
+- [ ] #031 — Use Insights in Calendly Conversation ×2 *(Personal, 2026-01-16_2026-01-16-Therapy-Scheduling-Tools-Exploration-With-Beth-An)*
+  - First step: Draft key points from Beth's pain points (HIPAA, personal touch, dual calendar friction) for Calendly conversation
+- [ ] #032 — Send David public repo link *(Zo, 2026-01-05_2026-01-05-David-x-careerspan-part-2)*
+  - First step: Find the public repo link and send it to David
+- [ ] #033 — Provide substantive transcript (Really Raw meeting) *(Zo, 2026-01-10_2026-01-10-Really-raw-meeting)*
+  - First step: Open meeting recording or raw notes and begin documenting key discussion points
+- [ ] #034 — Schedule David's follow-up call with Zo team *(Zo, 2026-01-12_2026-01-12-Impromptu-google-meet-meeting)*
+  - First step: Send calendar invite to Zo team for late this week or next week
+- [ ] #035 — Knowledge swap session with David *(Zo, 2026-01-12_2026-01-12-Impromptu-google-meet-meeting)*
+  - First step: Schedule 30-60 min session for David to walk through networking methodology at high level
+- [ ] #036 — Provide update on scan usage *(Zo, 2026-01-16_2026-01-16-Trio-standup)*
+  - First step: Check current scan usage metrics and prepare brief summary
+- [ ] #037 — Prepare Demo of Productivity Setup for Tope ×2 *(Zo, 2026-01-16_2026-01-16-Tope-awotona-x-vrijen)*
+  - First step: Take screenshots of Zo dashboard and key workflows
+
+## 🟠 External (3)
+
+- [ ] #038 — Post-exit collaboration with Asher *(Personal, 2026-01-16_2026-01-16-Asher-king-abramson)*
+  - First step: Create a note to revisit after Careerspan exit closes
+- [ ] #039 — Demo Zo functionality to David *(Zo, Personal/Meetings/Week-of-2026-01-12/2026-01-12_2026-01-12-Fxu-mjpr-tum/2026-01-12_fxu-mjpr-tum)*
+  - First step: Create 5-bullet outline of Zo career tool capabilities to demo
+- [ ] #040 — Share Calendly founder transcript with Siddhanth *(Zo, 2026-01-16_2026-01-16-Thesis-interview)*
+  - First step: Send Siddhanth transcript from Calendly founder conversation
+
+## 🟡 Strategic (56)
+
+- [ ] #041 — Send Careerspan materials to Eric *(Careerspan, 2025-12-17_2025-12-17-Eric----Vrijen--Zo-Demo)*
+  - First step: Gather Careerspan materials and draft email to Eric
+- [ ] #042 — Update 'Padre' on product roadmap and recent sync *(Careerspan, 2025-12-19_ilse_x_vrijen_sync)*
+  - First step: Draft brief summary of current product roadmap status and key decisions from this sync
+- [ ] #043 — Send two targeted blurb emails *(Careerspan, 2025-12-22_Christine-Song-Ribbon-Partnership-Sync)*
+  - First step: Draft Ribbon/Partnerships email blurb
+- [ ] #044 — Share production/marketing invoices *(Careerspan, 2025-12-23_Meeting-with-vrijen-ankit)*
+  - First step: Send email with available invoices; note Upwork pending until Logan recovers
+- [ ] #045 — Resolve $4,500 payroll refund *(Careerspan, 2025-12-23_Meeting-with-vrijen-ankit)*
+  - First step: Contact Megan to arrange refund collection before books close
+- [ ] #046 — Audit secondary expenses *(Careerspan, 2026-01-05_2026-01-05-Daily-co-founder-standup-check-trello)*
+  - First step: Pull last 3 months of expense data from accounting software
+- [ ] #047 — Review War Room document for outreach *(Careerspan, 2026-01-05_2026-01-05-Daily-co-founder-standup-check-trello)*
+  - First step: Open War Room doc and identify top 5 senior contacts
+- [ ] #048 — Speak to Aviato and Nyne contacts *(Careerspan, 2026-01-05_2026-01-05-Daily-co-founder-standup-check-trello)*
+  - First step: Message first contact to schedule acquisition advice call
+- [ ] #049 — Speak to Ellie AI founders about partnership/acquisition *(Careerspan, 2026-01-05_2026-01-05-David-x-careerspan-part-1)*
+  - First step: Research Ellie AI and draft introductory email to founders
+- [ ] #050 — Draft thought leadership content on hiring market *(Careerspan, 2026-01-05_2026-01-05-David-x-careerspan-part-1)*
+  - First step: Create outline for 'Emperor has no clothes' hiring market narrative
+- [ ] #051 — Validate Sourcing logic with HR Tech seniors *(Careerspan, 2026-01-05_2026-01-05-Logan-x-vrijen)*
+  - First step: Draft outreach message to 2-3 senior HR tech contacts for validation
+- [ ] #052 — Prepare pricing options for follow-up *(Careerspan, 2026-01-06_2026-01-06-Vrijen-Attawar-And-Jeffrey-Botteron)*
+  - First step: Outline pricing tiers for free community vs. employer-paid model
+- [ ] #053 — Explore Superposition Integration *(Careerspan, 2026-01-09_2026-01-09-Ilse-X-Vrijen)*
+  - First step: Send initial outreach email to Superposition about partnership opportunity
+- [ ] #054 — Continue Superposition outreach (Marvin/McKinsey) *(Careerspan, 2026-01-09_2026-01-09-Daily-team-stand-up)*
+  - First step: Review last communication log with Marvin/McKinsey contact
+- [ ] #055 — Refine money-back guarantee concept *(Careerspan, 2026-01-09_2026-01-09-Daily-team-stand-up)*
+  - First step: Review existing guarantee template and Logan's quality feedback
+- [ ] #056 — Finalize Superposition proposal *(Careerspan, 2026-01-09_2026-01-09-Daily-team-stand-up)*
+  - First step: Compile current proposal materials and meeting notes
+- [ ] #057 — Pursue Andrea Patterson at Handshake *(Careerspan, 2026-01-09_Ivor-Stratford-x-Vrijen-Attawar_[M])*
+  - First step: Draft outreach message to Andrea Patterson via Neil mutual
+- [ ] #058 — Intensify Handshake pursuit *(Careerspan, 2026-01-09_Ivor-Stratford-x-Vrijen-Attawar_[M])*
+  - First step: Identify partnership/BD contacts and craft outreach message
+- [ ] #059 — Figure out Kin pricing/scope *(Careerspan, 2026-01-12_2026-01-12-Daily-co-founder-standup-check-trello)*
+  - First step: Open Kin proposal document and review current pricing options
+- [ ] #060 — Explore Patrick job board partnership *(Careerspan, 2026-01-12_2026-01-12-Daily-co-founder-standup-check-trello)*
+  - First step: Review Patrick's job board details and draft outreach email
+- [ ] #061 — Prepare for potential Tobe conversation *(Careerspan, 2026-01-12_2026-01-12-Shane-murphy-reuter-x-vrijen-attawar)*
+  - First step: Draft 3 bullet points on systems thinking examples from product contexts
+- [ ] #062 — Refine interview analysis tool *(Careerspan, Personal/Meetings/Week-of-2026-01-12/2026-01-12_2026-01-12-Fxu-mjpr-tum/2026-01-12_fxu-mjpr-tum)*
+  - First step: Review latest analysis output and identify 3 improvement areas
+- [ ] #063 — Design MVP without auth requirements *(Careerspan, Personal/Meetings/Week-of-2026-01-12/2026-01-12_2026-01-12-Fxu-mjpr-tum/2026-01-12_fxu-mjpr-tum)*
+  - First step: List 3 monetization models that work without persistent state
+- [ ] #064 — Compare Zo list with Notion doc to find gaps *(Careerspan, Personal/Meetings/Week-of-2026-01-12/2026-01-14_2026-01-14-V-logan-acquisition-strategy-201734)*
+  - First step: Export Zo list to CSV for comparison
+- [ ] #065 — Create 'Come Get Us' Document *(Careerspan, Personal/Meetings/Week-of-2026-01-12/2026-01-14_2026-01-14-V-logan-acquisition-strategy)*
+  - First step: Draft one-pager outline
+- [ ] #066 — Populate Full Classification Matrix *(Careerspan, Personal/Meetings/Week-of-2026-01-12/2026-01-14_2026-01-14-V-logan-acquisition-strategy)*
+  - First step: Apply framework to next 5 targets
+- [ ] #067 — Develop Differentiated Messaging *(Careerspan, Personal/Meetings/Week-of-2026-01-12/2026-01-14_2026-01-14-V-logan-acquisition-strategy)*
+  - First step: Draft recruiting company angle variant
+- [ ] #068 — Research exit transaction structures (asset purchase vs. stock purchase, earnouts) ×3 *(Careerspan, Personal/Meetings/Week-of-2026-01-12/2026-01-15_Ray-Acquisition-Debrief)*
+  - First step: Use ChatGPT to research asset purchase vs. stock purchase exits, and earnout structures
+- [ ] #069 — Consult with lawyer about deal structures ×2 *(Careerspan, Personal/Meetings/Week-of-2026-01-12/2026-01-15_Ray-Acquisition-Debrief)*
+  - First step: Draft email to lawyer requesting 30-min call to discuss asset vs stock purchase structures for Careerspan exit
+- [ ] #070 — Prioritize and sequence outreach to target list (30-40 companies) ×2 *(Careerspan, Personal/Meetings/Week-of-2026-01-12/2026-01-15_Ray-Acquisition-Debrief)*
+  - First step: Open target list document and add a column for 'play speed' (slow/fast) to categorize each target
+- [ ] #071 — Build financial model for offer scenarios ×2 *(Careerspan, Personal/Meetings/Week-of-2026-01-12/2026-01-15_Ray-Acquisition-Debrief)*
+  - First step: Open spreadsheet and create tabs for 'base case', 'conservative case', and 'bull case' with columns for valuation terms
+- [ ] #072 — Maintain skepticism and funnel discipline (ongoing) *(Careerspan, 2026-01-15_2026-01-15-Debrief-On-Selling-Careerspan-From-Ray)*
+  - First step: Create simple tracking sheet with columns: Prospect Name, Source, Contact Date, Status (In Funnel/Qualified/No), Notes
+- [ ] #073 — Complete Calendly Prep Document *(Careerspan, Personal/Meetings/Week-of-2026-01-12/2026-01-15_2026-01-15-Acuity-Scheduler-Features-And-Conversion-Rate-Ins)*
+  - First step: Open shared Calendly prep document and fill in third bullet point
+- [ ] #074 — Follow up with Unveesha *(Careerspan, Personal/Meetings/Week-of-2026-01-12/2026-01-15_2026-01-15-Trio-standup)*
+  - First step: Find previous conversation with Unveesha
+- [ ] #075 — Hit up Asher *(Careerspan, Personal/Meetings/Week-of-2026-01-12/2026-01-15_2026-01-15-Trio-standup)*
+  - First step: Draft message to Asher
+- [ ] #076 — Meet with Andy *(Careerspan, Personal/Meetings/Week-of-2026-01-12/2026-01-15_2026-01-15-Trio-standup)*
+  - First step: Schedule meeting with Andy
+- [ ] #077 — Identify Phenom contact *(Careerspan, Personal/Meetings/Week-of-2026-01-12/2026-01-15_2026-01-15-Trio-standup)*
+  - First step: Search CRM/network for Phenom relationship
+- [ ] #078 — Add 'Data Partnerships' section to outbound list spreadsheet ×2 *(Careerspan, Personal/Meetings/Week-of-2026-01-12/2026-01-15_2026-01-15-Chat)*
+  - First step: Open outbound list spreadsheet and create Data Partnerships section
+- [ ] #079 — Organize career tech founder gathering *(Careerspan, 2026-01-16_2026-01-16-Vrijen-Attawar-And-Asher-King-Abramson)*
+  - First step: Create a Trello board with columns: Guest List, Venue, Logistics, and Outreach; add at least 5 target founders to Guest List
+- [ ] #080 — Continue Careerspan exit process *(Careerspan, 2026-01-16_2026-01-16-Vrijen-Attawar-And-Asher-King-Abramson)*
+  - First step: Review and warm outreach to 3 PE firms from buyer network with updated pitch deck
+- [ ] #081 — Follow up on LHH outplacement opportunity *(Careerspan, 2026-01-16_2026-01-16-Asher-king-abramson)*
+  - First step: Review Cameron and Beth's LinkedIn profiles that Asher shared in chat
+- [ ] #082 — Pursue Handshake acquisition conversation *(Careerspan, 2026-01-16_2026-01-16-Asher-king-abramson)*
+  - First step: Check status with "guy" helping get through to Handshake
+- [ ] #083 — Review Skills Nexus AI Platform *(Careerspan, 2026-01-16_2026-01-16-Vrijen-attawar-and-jonny-coreson)*
+  - First step: Open link Jonny sent and review homepage and key features for 2 minutes
+- [ ] #084 — Follow Up with Matthew Cohen *(Careerspan, 2026-01-16_2026-01-16-Vrijen-attawar-and-jonny-coreson)*
+  - First step: Draft email to Matthew introducing yourself and mentioning Jonny's connection
+- [ ] #085 — Create General One-Pager *(Careerspan, 2026-01-16_2026-01-16-Pkr-qzco-jhz)*
+  - First step: Outline key sections and messages for pitch document
+- [ ] #086 — Process Tope Meeting *(Careerspan, 2026-01-16_2026-01-16-Pkr-qzco-jhz)*
+  - First step: Run meeting-ingestion skill on Tope conversation
+- [ ] #087 — Research Calendly's M&A History ×2 *(Careerspan, 2026-01-16_2026-01-16-Tope-awotona-x-vrijen)*
+  - First step: Search for 'Calendly acquisitions M&A history'
+- [ ] #088 — Intro Holly to Emily (Podcast Host) *(Personal, 2026-01-07_2026-01-07-Holly-x-v)*
+  - First step: Draft introduction email connecting Holly to Emily for O1 visa profile building
+- [ ] #089 — Intro Holly to Chris Russell (Job Board Podcast) *(Personal, 2026-01-07_2026-01-07-Holly-x-v)*
+  - First step: Draft introduction email connecting Holly to Chris for podcast appearance
+- [ ] #090 — Consult with friend regarding O1 visa costs *(Personal, 2026-01-07_2026-01-07-Holly-x-v)*
+  - First step: Send message to friend requesting O1 visa cost benchmarks for Holly
+- [ ] #091 — Brooklyn Meetup with Shivam *(Personal, Personal/Meetings/Week-of-2026-01-12/2026-01-15_2026-01-15-Shivam-desai-and-vrijen-attawar)*
+  - First step: Confirm exact time and location with Shivam and check on Tejas's availability
+- [ ] #092 — Share talent sourcing workflows for Zo *(Zo, 2025-12-17_2025-12-17-Eric----Vrijen--Zo-Demo)*
+  - First step: Prepare document outlining analogous talent sourcing workflows including Aviato/enrichment
+- [ ] #093 — Define "Speigel as a Service" MVP scope *(Zo, 2026-01-12_2026-01-12-Impromptu-google-meet-meeting)*
+  - First step: Draft one-page spec defining MVP that requires no accounts, no auth, no persistent state management
+- [ ] #094 — Run Siddhanth's connections through Zo for partnership leads ×2 *(Zo, 2026-01-16_2026-01-16-Thesis-interview)*
+  - First step: Request Siddhanth's connection list via email or text
+- [ ] #095 — Demo productivity system to Calendly founder *(Zo, 2026-01-16_2026-01-16-Thesis-interview)*
+  - First step: Confirm meeting time and location with Calendly founder for in-person demo
+- [ ] #096 — Cross-reference Siddhanth's connections for partnership leads *(Zo, 2026-01-16_2026-01-16-Thesis-interview)*
+  - First step: Load Siddhanth's contact list into Zo's partnership matching system
+
+## 🟢 Normal (44)
+
+- [ ] #097 — Prepare GTM narrative *(Careerspan, 2025-12-16_Victor-hu-Lumos-capital)*
+  - First step: Draft outline of key GTM points
+- [ ] #098 — Research Lumos Capital portfolio *(Careerspan, 2025-12-16_Victor-hu-Lumos-capital)*
+  - First step: Visit Lumos Capital website and list portfolio companies
+- [ ] #099 — Monitor OpenAI billing and API limits *(Careerspan, 2025-12-19_ilse_x_vrijen_sync)*
+  - First step: Log into OpenAI dashboard and check current usage and billing status
+- [ ] #100 — Send Ribbon team pitch/blurb to Christine *(Careerspan, 2025-12-22_Christine-Song-Ribbon-Partnership-Sync)*
+  - First step: Draft 3-sentence Ribbon pitch for Christine
+- [ ] #101 — Provide demo account and sign-up links to Christine *(Careerspan, 2025-12-22_Christine-Song-Ribbon-Partnership-Sync)*
+  - First step: Generate demo account link and sign-up URLs
+- [ ] #102 — Provide Getro admin credentials to Ilse *(Careerspan, 2026-01-05_2026-01-05-Daily-co-founder-standup-check-trello)*
+  - First step: Find Getro login credentials and share securely with Ilse
+- [ ] #103 — Send David Fireflies meeting notes *(Careerspan, 2026-01-05_2026-01-05-David-x-careerspan-part-1)*
+  - First step: Open Fireflies and locate transcript for 2026-01-05 meeting
+- [ ] #104 — Intro Holly to Careerspan Head of AI *(Careerspan, 2026-01-07_2026-01-07-Holly-x-v)*
+  - First step: Draft introduction email connecting Holly to Head of AI for technical eval
+- [ ] #105 — Tidy Up Silent Scans CSV *(Careerspan, 2026-01-09_2026-01-09-Ilse-X-Vrijen)*
+  - First step: Review and format the CSV Ilse generates for better ergonomics
+- [ ] #106 — Share Meeting Notes (Ilse sync) *(Careerspan, 2026-01-09_2026-01-09-Ilse-X-Vrijen)*
+  - First step: Send meeting notes to relevant team members
+- [ ] #107 — Schedule follow-up with Ivor *(Careerspan, 2026-01-09_Ivor-Stratford-x-Vrijen-Attawar_[M])*
+  - First step: Send calendar invite for week of 2026-01-13
+- [ ] #108 — Explore competitive interview tools *(Careerspan, 2026-01-12_2026-01-12-Impromptu-google-meet-meeting)*
+  - First step: Request access from David to SuperInterviews and Ben Erez's co-pilot tools
+- [ ] #109 — Drop link/resource to Logan *(Careerspan, 2026-01-12_2026-01-12-Daily-co-founder-standup-check-trello)*
+  - First step: Locate the link/resource file and copy to clipboard
+- [ ] #110 — Continue voice engine development *(Careerspan, 2026-01-12_2026-01-12-Daily-co-founder-standup-check-trello)*
+  - First step: Open voice engine project and review Pangram AI test results
+- [ ] #111 — Ask mother-in-law about Calendly trial *(Careerspan, 2026-01-12_2026-01-12-Shane-murphy-reuter-x-vrijen-attawar)*
+  - First step: Text mother-in-law: 'Quick Q - have you or colleagues used Calendly in your therapy practice?'
+- [ ] #112 — Share Zo-generated acquisition targets database link *(Careerspan, Personal/Meetings/Week-of-2026-01-12/2026-01-14_2026-01-14-V-logan-acquisition-strategy-201734)*
+  - First step: Locate the database link and send to Logan
+- [ ] #113 — Ask Ray for additional buyer introductions ×2 *(Careerspan, 2026-01-15_2026-01-15-Debrief-On-Selling-Careerspan-From-Ray)*
+  - First step: Send follow-up email/text to Ray: 'Any progress on additional buyer introduction you mentioned?'
+- [ ] #114 — Update Heather on Calendly Conversation *(Careerspan, Personal/Meetings/Week-of-2026-01-12/2026-01-15_2026-01-15-Acuity-Scheduler-Features-And-Conversion-Rate-Ins)*
+  - First step: Send a message or email to Heather with a brief summary of Calendly meeting
+- [ ] #115 — Explore Jack and Jill acquisition fit *(Careerspan, 2026-01-16_2026-01-16-Asher-king-abramson)*
+  - First step: Research Jack and Jill's current offerings and leadership
+- [ ] #116 — Explore Hiring Cafe partnership/acquisition *(Careerspan, 2026-01-16_2026-01-16-Asher-king-abramson)*
+  - First step: Revisit Hiring Cafe's site (haven't checked in a while)
+- [ ] #117 — Research Ascent Funding *(Careerspan, 2026-01-16_2026-01-16-Vrijen-attawar-and-jonny-coreson)*
+  - First step: Visit Ascent Funding's website and spend 2 minutes understanding their core value proposition
+- [ ] #118 — Brief Team on Tope Conversation ×2 *(Careerspan, 2026-01-16_2026-01-16-Tope-awotona-x-vrijen)*
+  - First step: Draft summary of key insights to share
+- [ ] #119 — Watch the SNL 'Kid by the Well' skit *(Other, 2026-01-08_2026-01-08-Logan-And-Vrijen-Finish-Their-Podcast)*
+  - First step: Open browser and search for SNL 'Kid by the Well' skit on YouTube
+- [ ] #120 — Intro Shivam to 42 Geeks *(Other, Personal/Meetings/Week-of-2026-01-12/2026-01-15_2026-01-15-Shivam-desai-and-vrijen-attawar)*
+  - First step: Send email introduction between Shivam and friend running 42 Geeks
+- [ ] #121 — Intro Holly to Erica Beavers (Alpic) *(Personal, 2026-01-07_2026-01-07-Holly-x-v)*
+  - First step: Draft introduction email connecting Holly to Erica for ChatGPT App Store exploration
+- [ ] #122 — Bring Joe a joint *(Personal, 2026-01-08_2026-01-08-Personal-Coaching-Session-On-Core-Values-And-Habi)*
+  - First step: Text Joe to coordinate meeting or drop-off for today
+- [ ] #123 — Continue exercise routine *(Personal, 2026-01-08_2026-01-08-Personal-Coaching-Session-On-Core-Values-And-Habi)*
+  - First step: Complete today's workout session
+- [ ] #124 — Watch Taylor Swift documentary *(Personal, 2026-01-08_2026-01-08-Personal-Coaching-Session-On-Core-Values-And-Habi)*
+  - First step: Check streaming availability of 'End of an Era'
+- [ ] #125 — Coordinate Boston meetup with Shane/Logan ×2 *(Personal, 2026-01-12_2026-01-12-Shane-Murphy-reuter-X-Vrijen-Attawar)*
+  - First step: Send message to Shane and Logan about potential Boston meetup timing, include Shane & Brinley if possible
+- [ ] #126 — Plan Visit with Amanda ×2 *(Personal, 2026-01-16_2026-01-16-Therapy-Scheduling-Tools-Exploration-With-Beth-An)*
+  - First step: Text Amanda to coordinate visit date for Beth's tech setup day
+- [ ] #127 — Research Therapist Practice Management Tools ×2 *(Personal, 2026-01-16_2026-01-16-Therapy-Scheduling-Tools-Exploration-With-Beth-An)*
+  - First step: Open browser and search for 'therapist practice management tools scheduling notes insurance'
+- [ ] #128 — Send Asher intros to Bay Area growth roles *(Personal, 2026-01-16_2026-01-16-Asher-king-abramson)*
+  - First step: Draft LinkedIn messages with brief context about Asher for Tim Hay and Jay Banya
+- [ ] #129 — Facilitate intro to Joseph at Superdemo *(Personal, 2026-01-16_2026-01-16-Asher-king-abramson)*
+  - First step: Send Asher Joseph's LinkedIn after Asher confirms interest
+- [ ] #130 — Share Agave custom solutions engineer opportunity *(Personal, 2026-01-16_2026-01-16-Asher-king-abramson)*
+  - First step: Send job link or recruiter contact for Agave solutions engineer role
+- [ ] #131 — Re-organize career tech founder group *(Personal, 2026-01-16_2026-01-16-Asher-king-abramson)*
+  - First step: Schedule for first week of February
+- [ ] #132 — Continue demoing meeting processing system *(Zo, 2025-12-17_2025-12-17-Eric----Vrijen--Zo-Demo)*
+  - First step: Set up next demo session with Eric to complete meeting processing system logic walkthrough
+- [ ] #133 — Research David's existing "email tone detector" custom GPT *(Zo, 2026-01-12_2026-01-12-Impromptu-google-meet-meeting)*
+  - First step: Ask David to share link to or access the email tone detector GPT he built
+- [ ] #134 — Interview feedback tool improvements *(Zo, 2026-01-12_2026-01-12-Impromptu-google-meet-meeting)*
+  - First step: Create PRD incorporating all feedback from David (question visibility, job requirements reorganization, self-assessment calibration, summary structure)
+- [ ] #135 — Complete Hearth availability form *(Zo, Personal/Meetings/Week-of-2026-01-12/2026-01-15_Ray-Acquisition-Debrief)*
+  - First step: Wait for form from Ray, complete within 24 hours of receipt
+- [ ] #136 — Review shared AI overview document *(Zo, 2026-01-16_2026-01-16-Trio-standup)*
+  - First step: Open and scan shared document to understand structure and key sections
+- [ ] #137 — Experiment with scan settings and thresholds *(Zo, 2026-01-16_2026-01-16-Trio-standup)*
+  - First step: Access scan settings and adjust threshold values to observe impact
+- [ ] #138 — Create partnership distribution list *(Zo, 2026-01-16_2026-01-16-Thesis-interview)*
+  - First step: Open partnership opportunities sheet and compile relevant data points
+- [ ] #139 — Complete connections distribution list for Siddhanth *(Zo, 2026-01-16_2026-01-16-Thesis-interview)*
+  - First step: Open Zo and create a new contact list for Siddhanth with relevant professional connections
+- [ ] #140 — Coordinate NYC intro opportunities *(Personal, 2026-01-16_2026-01-16-Asher-king-abramson)*
+  - First step: Think through which NYC connections would be valuable to meet
+
+## ~~Pre-struck (likely stale)~~
+
+*Items from Dec 2025 that reference specific dates/deadlines:*
+
+- ~~#XXX — Review manually if needed~~

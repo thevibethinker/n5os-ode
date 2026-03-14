@@ -1,0 +1,892 @@
+{
+  "drop_id": "D1.3",
+  "status": "complete",
+  "queries_run": 18,
+  "blocks_scanned": 681,
+  "leads": [
+    {
+      "name": "Jacob Bank",
+      "org": "Relay App",
+      "role": "Founder",
+      "score": 5,
+      "archetypes": [
+        "Power User",
+        "Creator",
+        "Promoter"
+      ],
+      "rationale": "AI tool company founder teaching AI workflows to professionals \u2014 perfect power user and potential distribution channel for Zo",
+      "source": "semantic:1"
+    },
+    {
+      "name": "Jason Cheung",
+      "org": null,
+      "role": "Community organizer / vibe coding networker",
+      "score": 4,
+      "archetypes": [
+        "Promoter",
+        "Strategic Leader"
+      ],
+      "rationale": "Runs large network of 3,300 top tech professionals from FAANG (directors/VPs/staff engineers) \u2014 high-signal distribution and sourcing channel",
+      "source": "semantic:1"
+    },
+    {
+      "name": "Nafisa Poonawala",
+      "org": null,
+      "role": null,
+      "score": 3,
+      "archetypes": [
+        "Power User"
+      ],
+      "rationale": "Engaged in discussion about N5OS as flagship Zo example; has health constraints suggesting need for supportive AI-first personal systems",
+      "source": "semantic:1"
+    },
+    {
+      "name": "Elaine P",
+      "org": null,
+      "role": "Career transitioner / builder",
+      "score": 3,
+      "archetypes": [
+        "Power User",
+        "Creator"
+      ],
+      "rationale": "Actively using ChatGPT, Cursor, and AI tools for career transition and software development \u2014 experiencing exact gaps Zo fills",
+      "source": "semantic:1"
+    },
+    {
+      "name": "Ulrik Soderstrom",
+      "org": "McKinsey Alumni Founders group",
+      "role": "Moderator/host",
+      "score": 3,
+      "archetypes": [
+        "Promoter",
+        "Strategic Leader"
+      ],
+      "rationale": "Hosts monthly McKinsey alumni founder group \u2014 connector to high-caliber AI-building founders",
+      "source": "semantic:1"
+    },
+    {
+      "name": "Deeya",
+      "org": null,
+      "role": "Founder (AI tools for consultants)",
+      "score": 4,
+      "archetypes": [
+        "Creator",
+        "Power User"
+      ],
+      "rationale": "McKinsey alum building AI tools for consulting space \u2014 builder archetype who would deeply adopt personal AI computer for her own workflows",
+      "source": "semantic:1"
+    },
+    {
+      "name": "Alex",
+      "org": null,
+      "role": "YC-connected founder",
+      "score": 3,
+      "archetypes": [
+        "Strategic Leader",
+        "Promoter"
+      ],
+      "rationale": "Offering YC application help and fundraising strategy \u2014 generous connector in founder network with tech ecosystem influence",
+      "source": "semantic:1"
+    },
+    {
+      "name": "Nikita",
+      "org": null,
+      "role": "Founder (AI process mapping)",
+      "score": 3,
+      "archetypes": [
+        "Creator",
+        "Power User"
+      ],
+      "rationale": "Building AI tool for mapping processes with consulting services integration \u2014 technical builder who would benefit from Zo workflows",
+      "source": "semantic:1"
+    },
+    {
+      "name": "Roger Borycki",
+      "org": "Presenteasen",
+      "role": "Founder",
+      "score": 3,
+      "archetypes": [
+        "Creator"
+      ],
+      "rationale": "Building biometrics for mental health/cognitive tracking \u2014 technical founder in AI/ML space",
+      "source": "semantic:1"
+    },
+    {
+      "name": "Abby",
+      "org": null,
+      "role": "Female founder",
+      "score": 3,
+      "archetypes": [
+        "Creator",
+        "Promoter"
+      ],
+      "rationale": "Active founder hosting female founder events \u2014 community builder who could amplify Zo in underrepresented founder networks",
+      "source": "semantic:1"
+    },
+    {
+      "name": "Jaya Pokuri",
+      "org": "Bonfire Analytics",
+      "role": "Founder",
+      "score": 5,
+      "archetypes": [
+        "Power User",
+        "Creator"
+      ],
+      "rationale": "Already using Whisper + Claude + Super Whisper + Zo; explicitly mentioned as a Zo setup candidate in meeting notes; founder building with AI tools daily",
+      "source": "semantic:2"
+    },
+    {
+      "name": "Vinay",
+      "org": "Bonfire Analytics",
+      "role": "Unknown (meeting participant)",
+      "score": 3,
+      "archetypes": [
+        "Power User"
+      ],
+      "rationale": "Present in same meeting as Jaya; described as heavy AI tooling user (Whisper, Claude, Monologue, Super Whisper, Zo); treats software as cognitive offload",
+      "source": "semantic:2"
+    },
+    {
+      "name": "Daniel",
+      "org": "Unknown",
+      "role": "Unknown (career coaching client)",
+      "score": 4,
+      "archetypes": [
+        "Creator"
+      ],
+      "rationale": "AI founder (due-diligence automation) actively building and raising pre-seed \u2014 would deeply benefit from a personal AI computer for dev workflows and automation",
+      "source": "semantic:2"
+    },
+    {
+      "name": "Andreas",
+      "org": "Animatics",
+      "role": "Co-founder (ex-Google Cloud AI Partnerships Europe)",
+      "score": 4,
+      "archetypes": [
+        "Creator",
+        "Strategic Leader"
+      ],
+      "rationale": "Building enterprise gen-AI video platform; ex-head of AI partnerships at Google Cloud; deeply technical AI builder raising $4M seed",
+      "source": "semantic:2"
+    },
+    {
+      "name": "Olivier",
+      "org": "Unknown (McKinsey Alumni Founders group)",
+      "role": "Founder",
+      "score": 3,
+      "archetypes": [
+        "Creator"
+      ],
+      "rationale": "200 devices sold, 500K scans \u2014 building hardware+software AI product with real traction; technical builder with enterprise validation",
+      "source": "semantic:2"
+    },
+    {
+      "name": "Aki Ito",
+      "org": "Business Insider",
+      "role": "Journalist/Reporter",
+      "score": 3,
+      "archetypes": [
+        "Promoter"
+      ],
+      "rationale": "Tech journalist covering AI job search tools \u2014 could amplify Zo's narrative as 'AI with integrity' vs spray-and-pray tools",
+      "source": "semantic:3"
+    },
+    {
+      "name": "Max Kolysh",
+      "org": "Unknown",
+      "role": "Thought leader on QA/AI quality engineering",
+      "score": 4,
+      "archetypes": [
+        "Creator",
+        "Promoter"
+      ],
+      "rationale": "Tech founder building Dover (recruiting automation), active LinkedIn voice on AI-era roles \u2014 strong builder profile who'd adopt a personal AI computer",
+      "source": "semantic:3"
+    },
+    {
+      "name": "Hamoon Ekhtiari",
+      "org": "FutureFit AI",
+      "role": "CEO",
+      "score": 4,
+      "archetypes": [
+        "Strategic Leader",
+        "Power User"
+      ],
+      "rationale": "Referenced in meeting intelligence pipeline \u2014 tech CEO building AI-powered career platform; strong fit as builder/adopter of personal AI infrastructure",
+      "source": "semantic:5"
+    },
+    {
+      "name": "Lance",
+      "org": "Livelihood",
+      "role": "Founder",
+      "score": 3,
+      "archetypes": [
+        "Creator",
+        "Strategic Leader"
+      ],
+      "rationale": "Tech-enabled health platform founder combining coaching + medication \u2014 building product that could leverage AI workflows",
+      "source": "semantic:6"
+    },
+    {
+      "name": "Ulrik",
+      "org": "Unknown (McKinsey Alumni network)",
+      "role": "Unknown (advisor/participant)",
+      "score": 3,
+      "archetypes": [
+        "Strategic Leader",
+        "Investor/Advisor"
+      ],
+      "rationale": "McKinsey alumni suggesting strategic fund connections (Energy Impact Partners) \u2014 network influence and tech-forward advisory signal",
+      "source": "semantic:6"
+    },
+    {
+      "name": "Alex Forman",
+      "org": "Unknown",
+      "role": "Unknown (meeting participant with V)",
+      "score": 4,
+      "archetypes": [
+        "Strategic Leader"
+      ],
+      "rationale": "Tech founder building API product (Parse), deeply understands non-technical users needing technical tools \u2014 strong alignment with Zo's personal AI computer thesis",
+      "source": "semantic:6"
+    },
+    {
+      "name": "Ilya Kucherenko",
+      "org": "Careerspan",
+      "role": "New team member (onboarding)",
+      "score": 3,
+      "archetypes": [
+        "Power User"
+      ],
+      "rationale": "Joining Careerspan team \u2014 insider who will use V's tools and could become a Zo evangelist within the org",
+      "source": "semantic:6"
+    },
+    {
+      "name": "Ben",
+      "org": "Zo Computer",
+      "role": "Developer",
+      "score": 4,
+      "archetypes": [
+        "Creator",
+        "Power User",
+        "Promoter"
+      ],
+      "rationale": "Core Zo developer who articulated 'it gives you wings, it gives you freedom' \u2014 deeply understands product, shapes velocity principles, internal champion",
+      "source": "semantic:6"
+    },
+    {
+      "name": "Jason Madeano Tweeks",
+      "org": "Unknown",
+      "role": "Unknown",
+      "score": 3,
+      "archetypes": [
+        "Creator"
+      ],
+      "rationale": "Discussed 'Liquid UI' and blurring user/developer boundaries \u2014 thinking aligned with Zo's vision of AI-powered personal computing",
+      "source": "semantic:7"
+    },
+    {
+      "name": "Ilse Funkhouser",
+      "org": "Careerspan",
+      "role": "Technical Lead / Product Developer",
+      "score": 3,
+      "archetypes": [
+        "Power User",
+        "Creator"
+      ],
+      "rationale": "Technical lead focused on efficiency, operational optimization, and AI tooling \u2014 would likely adopt a personal AI computer for workflow acceleration",
+      "source": "semantic:7"
+    },
+    {
+      "name": "Daniel Williams",
+      "org": "Careerspan",
+      "role": "Engineering Lead",
+      "score": 3,
+      "archetypes": [
+        "Power User",
+        "Creator"
+      ],
+      "rationale": "Software engineer with community network (Reactive Flux), systems thinker \u2014 fits builder/power user archetype for Zo",
+      "source": "semantic:7"
+    },
+    {
+      "name": "David Speige",
+      "org": "Unknown",
+      "role": "Unknown (coach/course creator implied)",
+      "score": 5,
+      "archetypes": [
+        "Power User",
+        "Creator"
+      ],
+      "rationale": "Actively integrating Fathom into Zo via API, storing API keys in Zo settings, using Zo for course content generation \u2014 already an adopter doing deep technical integration",
+      "source": "semantic:8"
+    },
+    {
+      "name": "Alex Wu",
+      "org": "Wisdom Partners",
+      "role": "Coaching/product leader",
+      "score": 4,
+      "archetypes": [
+        "Power User",
+        "Creator"
+      ],
+      "rationale": "Discussed AI email prioritization, dynamic preference models, and product philosophy with V \u2014 tech-forward leader building AI-adjacent products who shares Zo's 'less but tighter' philosophy",
+      "source": "semantic:8"
+    },
+    {
+      "name": "Heather",
+      "org": "Unknown (coaching industry)",
+      "role": "Coach/consultant",
+      "score": 3,
+      "archetypes": [
+        "Power User"
+      ],
+      "rationale": "Frustrated by Zapier complexity and tech products that underestimate non-technical users \u2014 exact pain point Zo solves; represents the non-technical-but-tech-forward coach archetype",
+      "source": "semantic:8"
+    },
+    {
+      "name": "Usha Srinivasan",
+      "org": "Not-for-profit community talent platform (Canada)",
+      "role": "Founder / Operator",
+      "score": 3,
+      "archetypes": [
+        "Creator",
+        "Strategic Leader"
+      ],
+      "rationale": "Founder building a talent platform for immigrant communities \u2014 could benefit from Zo for workflow automation and CRM, though non-technical and modest traction",
+      "source": "semantic:9"
+    },
+    {
+      "name": "Tiffany Huang",
+      "org": "Zo Computer",
+      "role": "Co-founder",
+      "score": 5,
+      "archetypes": [
+        "Strategic Leader",
+        "Promoter"
+      ],
+      "rationale": "Zo Computer co-founder leading community, brand, and growth \u2014 already deeply embedded in the ecosystem",
+      "source": "semantic:9"
+    },
+    {
+      "name": "Ben Guo",
+      "org": "Zo Computer",
+      "role": "Co-founder",
+      "score": 5,
+      "archetypes": [
+        "Strategic Leader",
+        "Power User"
+      ],
+      "rationale": "Zo Computer co-founder leading product and distribution \u2014 core to the platform itself",
+      "source": "semantic:9"
+    },
+    {
+      "name": "Pieter Levels",
+      "org": "",
+      "role": "Indie maker / @levelsio",
+      "score": 5,
+      "archetypes": [
+        "Promoter",
+        "Power User",
+        "Creator"
+      ],
+      "rationale": "Already publicly endorsing Zo ('vibe servering') \u2014 massively influential indie maker with huge audience",
+      "source": "semantic:9"
+    },
+    {
+      "name": "Ryo Lu",
+      "org": "Cursor",
+      "role": "Head of Design",
+      "score": 4,
+      "archetypes": [
+        "Promoter",
+        "Strategic Leader"
+      ],
+      "rationale": "Head of Design at Cursor endorsing Zo as 'Personal OS for everyone' \u2014 influential in dev tools space",
+      "source": "semantic:9"
+    },
+    {
+      "name": "Ian Kar",
+      "org": "",
+      "role": "@iankar_",
+      "score": 4,
+      "archetypes": [
+        "Power User",
+        "Promoter"
+      ],
+      "rationale": "Publicly enthusiastic about Zo's Claude Skills MCP hosting \u2014 active builder who sees 'hugeee potential'",
+      "source": "semantic:9"
+    },
+    {
+      "name": "Julian Connor",
+      "org": "",
+      "role": "Cofounder",
+      "score": 3,
+      "archetypes": [
+        "Power User",
+        "Promoter"
+      ],
+      "rationale": "Using Zo for lifestyle automation (weather \u2192 pool club booking) \u2014 demonstrates broad use-case adoption",
+      "source": "semantic:9"
+    },
+    {
+      "name": "Jesse Spevack",
+      "org": "Stripe",
+      "role": "Software Engineer",
+      "score": 4,
+      "archetypes": [
+        "Power User",
+        "Creator"
+      ],
+      "rationale": "Stripe engineer calling Zo 'the notebook I've been dreaming of' \u2014 technical user at a top-tier company with strong signal",
+      "source": "semantic:9"
+    },
+    {
+      "name": "Francesco Piccoli",
+      "org": "Almanax",
+      "role": "Co-Founder & CEO",
+      "score": 4,
+      "archetypes": [
+        "Power User",
+        "Creator"
+      ],
+      "rationale": "Prior-backed founder building AI for cybersecurity, UC Berkeley, well-connected (9K+) \u2014 technical founder profile with strong network",
+      "source": "semantic:17"
+    },
+    {
+      "name": "Stony Liu",
+      "org": "VenueHopper",
+      "role": "Founder, CEO",
+      "score": 3,
+      "archetypes": [
+        "Creator"
+      ],
+      "rationale": "Early-stage founder introducing AI to private events \u2014 building with AI signals Zo fit, though domain is less technical",
+      "source": "semantic:17"
+    },
+    {
+      "name": "David Speigel",
+      "org": "Independent / Product Career Accelerator (PCA)",
+      "role": "GTM Advisor, Product Management Consultant",
+      "score": 4,
+      "archetypes": [
+        "Power User",
+        "Strategic Leader"
+      ],
+      "rationale": "~25yr product leader across fintech/adtech, serial founder, heavy workflow/tooling user \u2014 would deeply adopt a personal AI computer for consulting and advisory work",
+      "source": "semantic:18"
+    },
+    {
+      "name": "Alex Reshewski",
+      "org": "Product Career Accelerator (PCA)",
+      "role": "Founder/Operator",
+      "score": 3,
+      "archetypes": [
+        "Creator",
+        "Promoter"
+      ],
+      "rationale": "Runs PCA ecosystem that David subcontracts to \u2014 creator/operator archetype running education/community business that could benefit from AI-powered workflows",
+      "source": "semantic:18"
+    },
+    {
+      "name": "Logan",
+      "org": "Careerspan",
+      "role": "Co-founder",
+      "score": 3,
+      "archetypes": [
+        "Power User",
+        "Creator"
+      ],
+      "rationale": "Tech startup co-founder actively doing GTM outreach, candidate sourcing, and startup operations \u2014 would benefit from AI-powered workflow automation",
+      "source": "semantic:18"
+    },
+    {
+      "name": "Logan Currie",
+      "org": "Careerspan",
+      "role": "Co-founder",
+      "score": 4,
+      "archetypes": [
+        "Power User",
+        "Creator"
+      ],
+      "rationale": "Tech startup co-founder actively building product, running experiments, and managing community channels \u2014 strong builder profile for personal AI computer",
+      "source": "semantic:19"
+    },
+    {
+      "name": "Katie McIntyre",
+      "org": "Unknown",
+      "role": "Unknown (LinkedIn connection in PM/GTM space)",
+      "score": 3,
+      "archetypes": [
+        "Promoter"
+      ],
+      "rationale": "Active LinkedIn presence in PM/GTM space connecting founders \u2014 network node who could amplify Zo to builder audience",
+      "source": "semantic:19"
+    },
+    {
+      "name": "Fei",
+      "org": "Nira",
+      "role": "Founder",
+      "score": 4,
+      "archetypes": [
+        "Power User",
+        "Creator"
+      ],
+      "rationale": "All-engineering 6-person team building in AI/hiring space, heads-down builder, open to deep product integrations and ecosystem collaboration",
+      "source": "semantic:20"
+    },
+    {
+      "name": "Pamela Kavalam",
+      "org": "Next Play",
+      "role": "Community Leader / Advisor",
+      "score": 4,
+      "archetypes": [
+        "Promoter",
+        "Strategic Leader"
+      ],
+      "rationale": "Explicitly said 'people on Next Play would really get a lot of use out of Zo' \u2014 warm champion with access to McKinsey alumni founder network",
+      "source": "semantic:20"
+    },
+    {
+      "name": "Sam Bourton",
+      "org": "Unknown (consulting background)",
+      "role": "Founder / Advisor",
+      "score": 3,
+      "archetypes": [
+        "Strategic Leader",
+        "Promoter"
+      ],
+      "rationale": "HIGH enrichment priority as channel partner to experienced founder cohort, connected through startup/retreat network",
+      "source": "semantic:20"
+    },
+    {
+      "name": "Edmund Cuthbert",
+      "org": "Superposition",
+      "role": "Founder/Leader",
+      "score": 4,
+      "archetypes": [
+        "Creator",
+        "Strategic Leader"
+      ],
+      "rationale": "Building AI hiring product (Superposition) with strong technical opinions; philosophically against marketplaces, wants 'the entire internet' as candidate side \u2014 systems thinker who'd adopt personal AI infra",
+      "source": "semantic:21"
+    },
+    {
+      "name": "Alex Caveney",
+      "org": "Unknown (advisor/investor)",
+      "role": "Trusted advisor to V",
+      "score": 3,
+      "archetypes": [
+        "Strategic Leader",
+        "Promoter"
+      ],
+      "rationale": "Pattern-based advisor with pragmatic VC lens; warm relationship with V, steady influence on GTM \u2014 could amplify Zo in founder/VC networks",
+      "source": "semantic:21"
+    },
+    {
+      "name": "Mihir",
+      "org": "InvoiceButler.ai",
+      "role": "Founder (YC alum)",
+      "score": 4,
+      "archetypes": [
+        "Power User",
+        "Creator"
+      ],
+      "rationale": "YC alum building AI product (InvoiceButler.ai), has acquisition experience and SaaS leadership track record \u2014 high-credibility tech founder archetype",
+      "source": "semantic:21"
+    },
+    {
+      "name": "Ilse",
+      "org": "TheApply.ai / Careerspan",
+      "role": "Team member",
+      "score": 3,
+      "archetypes": [
+        "Creator"
+      ],
+      "rationale": "Articulates compounding-effort UX concepts and candidate leverage flows \u2014 product-minded builder who thinks in systems",
+      "source": "semantic:21"
+    },
+    {
+      "name": "Joseph Lee",
+      "org": "Supademo",
+      "role": "Founder",
+      "score": 5,
+      "archetypes": [
+        "Power User",
+        "Creator"
+      ],
+      "rationale": "Serial builder (electronics arbitrage at 14 \u2192 seafood marketplaces \u2192 SaaS), thrives in ambiguity, 'Be Water' philosophy \u2014 quintessential builder-founder who'd deeply adopt a personal AI computer",
+      "source": "semantic:21"
+    },
+    {
+      "name": "Olivia O'Sullivan",
+      "org": "Forum Ventures",
+      "role": "Partner",
+      "score": 3,
+      "archetypes": [
+        "Investor/Advisor"
+      ],
+      "rationale": "VC partner backing AI/SaaS founders \u2014 understands builder tools, could adopt or recommend Zo to portfolio companies",
+      "source": "semantic:22"
+    },
+    {
+      "name": "Jason Calacanis",
+      "org": "LAUNCH",
+      "role": "Founder",
+      "score": 4,
+      "archetypes": [
+        "Promoter",
+        "Investor/Advisor"
+      ],
+      "rationale": "High-profile tech investor and media personality who champions founder tools \u2014 strong distribution potential if he adopts Zo",
+      "source": "semantic:22"
+    },
+    {
+      "name": "Tim He",
+      "org": null,
+      "role": null,
+      "score": 3,
+      "archetypes": [
+        "Power User"
+      ],
+      "rationale": "SaaS networking contact in V's CRM \u2014 active relationship suggests tech-forward professional who could benefit from Zo",
+      "source": "semantic:22"
+    },
+    {
+      "name": "Shivam Desai",
+      "org": "Careerspan",
+      "role": null,
+      "score": 3,
+      "archetypes": [
+        "Power User",
+        "Creator"
+      ],
+      "rationale": "Vertical SaaS + AI builder with career in tech \u2014 already in V's orbit, natural Zo early adopter candidate",
+      "source": "semantic:22"
+    },
+    {
+      "name": "Emily Nelson de Velasco",
+      "org": "Reverse-recruiting startup (bootstrapped)",
+      "role": "Founder",
+      "score": 4,
+      "archetypes": [
+        "Creator",
+        "Power User"
+      ],
+      "rationale": "Bootstrapped founder building ML-powered product, dogfooding with clients \u2014 strong signal for personal AI computer adoption",
+      "source": "semantic:23"
+    },
+    {
+      "name": "Sarah",
+      "org": "Careerspan (internal)",
+      "role": "Product lead",
+      "score": 3,
+      "archetypes": [
+        "Power User"
+      ],
+      "rationale": "Product discipline mindset, involved in project launches with quality gates \u2014 would benefit from AI-assisted workflow management",
+      "source": "semantic:24"
+    },
+    {
+      "name": "John",
+      "org": "Careerspan (internal)",
+      "role": "Engineering Lead",
+      "score": 3,
+      "archetypes": [
+        "Power User",
+        "Creator"
+      ],
+      "rationale": "Engineering lead with strong systems thinking, self-directed \u2014 natural fit for a personal AI dev environment",
+      "source": "semantic:24"
+    },
+    {
+      "name": "Rochel",
+      "org": "Careerspan",
+      "role": "Designer",
+      "score": 3,
+      "archetypes": [
+        "Creator"
+      ],
+      "rationale": "Called a 'rock star' designer by V; connected to former Walmart UX director \u2014 creative professional who could leverage Zo for design workflows",
+      "source": "semantic:24"
+    },
+    {
+      "name": "Alan",
+      "org": "Melly",
+      "role": "Founder",
+      "score": 4,
+      "archetypes": [
+        "Creator",
+        "Power User"
+      ],
+      "rationale": "Founder actively hiring engineers on constrained budget \u2014 signals hands-on builder who could leverage a personal AI computer for dev workflows and automation.",
+      "source": "semantic:25"
+    },
+    {
+      "name": "David",
+      "org": "Alfred",
+      "role": "Founder/Builder",
+      "score": 5,
+      "archetypes": [
+        "Power User",
+        "Creator",
+        "Strategic Leader"
+      ],
+      "rationale": "Building Alfred \u2014 a personal AI butler with VM-based deployment model; direct alignment with Zo's vision, already managing multiple instances",
+      "source": "semantic:26"
+    },
+    {
+      "name": "Andrew Cohen",
+      "org": "Brainscape",
+      "role": "Founder/CEO",
+      "score": 4,
+      "archetypes": [
+        "Power User",
+        "Promoter",
+        "Strategic Leader"
+      ],
+      "rationale": "15-year edtech founder, daily AI user, hiring prompt engineers, actively seeks AI workflow automation \u2014 pre-educated and pre-motivated for Zo",
+      "source": "semantic:26"
+    },
+    {
+      "name": "Shivam",
+      "org": "CorridorX",
+      "role": "Unknown",
+      "score": 3,
+      "archetypes": [
+        "Power User"
+      ],
+      "rationale": "Referenced as V's dev shop/talent network connection integrated into Careerspan pipeline \u2014 technical operator who could benefit from Zo",
+      "source": "semantic:26"
+    },
+    {
+      "name": "David Spiegel",
+      "org": null,
+      "role": "Founder / Advisor",
+      "score": 5,
+      "archetypes": [
+        "Power User",
+        "Promoter",
+        "Creator"
+      ],
+      "rationale": "Described as first Zo-to-Zo protocol test case, co-GTM partner, case study for non-technical founder Zo adoption \u2014 already deep in Zo ecosystem",
+      "source": "semantic:27"
+    },
+    {
+      "name": "Elie Finer",
+      "org": null,
+      "role": null,
+      "score": 3,
+      "archetypes": [
+        "Power User",
+        "Creator"
+      ],
+      "rationale": "Discussed AI tools, local models, and tech workflows with V \u2014 signals hands-on AI builder profile",
+      "source": "semantic:27"
+    },
+    {
+      "name": "Jason Madeano",
+      "org": "Tweeks",
+      "role": "Founder",
+      "score": 4,
+      "archetypes": [
+        "Creator",
+        "Promoter"
+      ],
+      "rationale": "Technical founder building consumer AI tool (Tweeks), YC-validated, aligned on liquid UI/privacy/personalization thesis \u2014 natural Zo ecosystem fit",
+      "source": "semantic:27"
+    },
+    {
+      "name": "Rochel Polter",
+      "org": "Careerspan",
+      "role": null,
+      "score": 3,
+      "archetypes": [
+        "Power User"
+      ],
+      "rationale": "Careerspan team member engaged in product demos and AI talent conversations \u2014 potential internal champion for Zo adoption",
+      "source": "semantic:27"
+    },
+    {
+      "name": "Amy Quan",
+      "org": "Unknown",
+      "role": "Event coordination and community activation",
+      "score": 3,
+      "archetypes": [
+        "Promoter"
+      ],
+      "rationale": "Runs founder community events and go-to-market programs \u2014 could promote Zo through ecosystem connections, though role is non-technical",
+      "source": "semantic:28"
+    },
+    {
+      "name": "Anthony DeLuise",
+      "org": "Unknown (higher education / product background)",
+      "role": "Senior IC / Product professional in career transition",
+      "score": 3,
+      "archetypes": [
+        "Power User"
+      ],
+      "rationale": "Uses Obsidian/markdown organization systems, product craft background, in career transition \u2014 could adopt Zo as personal productivity/knowledge system",
+      "source": "semantic:32"
+    },
+    {
+      "name": "Zain",
+      "org": "Unknown",
+      "role": "Unknown",
+      "score": 4,
+      "archetypes": [
+        "Power User",
+        "Creator"
+      ],
+      "rationale": "V directly demoed Zo-built systems to Zain and encouraged him to use Zo \u2014 warm lead with direct product exposure and V's endorsement",
+      "source": "semantic:32"
+    },
+    {
+      "name": "Zain Yousaf",
+      "org": "",
+      "role": "",
+      "score": 4,
+      "archetypes": [
+        "Power User",
+        "Creator"
+      ],
+      "rationale": "Actively interested in Zo systems, scheduled to receive demo and open source repo, passionate about AI productivity and workflow optimization",
+      "source": "semantic:33"
+    },
+    {
+      "name": "Anna Bao",
+      "org": "",
+      "role": "",
+      "score": 3,
+      "archetypes": [
+        "Creator",
+        "Strategic Leader"
+      ],
+      "rationale": "Discussed distributed connection architecture and community building systems \u2014 organizational design thinker who could leverage Zo for community ops",
+      "source": "semantic:33"
+    },
+    {
+      "name": "Maximilian Kwok",
+      "org": "",
+      "role": "",
+      "score": 3,
+      "archetypes": [
+        "Strategic Leader"
+      ],
+      "rationale": "Engaged in discussion about system infrastructure and public goods dynamics \u2014 systems thinker with potential fit for Zo's infrastructure model",
+      "source": "semantic:33"
+    },
+    {
+      "name": "Matthew Cohen",
+      "org": "",
+      "role": "",
+      "score": 3,
+      "archetypes": [
+        "Investor/Advisor",
+        "Strategic Leader"
+      ],
+      "rationale": "Advising on acquisition vs open source vs fundraise strategy, probing ICP validation \u2014 strategic advisor with deep context on Zo/Careerspan positioning",
+      "source": "semantic:33"
+    }
+  ]
+}

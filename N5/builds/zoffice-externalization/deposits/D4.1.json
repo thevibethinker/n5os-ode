@@ -1,0 +1,30 @@
+{
+  "drop_id": "D4.1",
+  "status": "complete",
+  "summary": "Performed a fresh-thread final audit of Zoffice rc3. Found one real packaging mismatch: the bundle manifest and filesystem included `contracts/mutual-acceptance-v2.0.0-rc3.json`, but the tarball omitted it because the contracts directory was filtered out wholesale during tar creation. Applied the minimum root-cause fix in `Zoffice/scripts/create_release_bundle.py`, rebuilt rc3, and re-verified that manifest, tarball, and filesystem now agree for the shipped surface.",
+  "artifacts": [
+    "N5/builds/zoffice-externalization/deposits/D4.1.json",
+    "Zoffice/scripts/create_release_bundle.py",
+    "Zoffice/releases/v2.0.0-rc3/bundle-manifest.json",
+    "Zoffice/releases/v2.0.0-rc3/bundle.sha256",
+    "Zoffice/releases/v2.0.0-rc3/zoffice-v2.0.0-rc3.tar.gz"
+  ],
+  "checks_run": [
+    "Read continuation brief, plan, status, meta, release-review, architecture-reconciliation, substrate-absorption-map, supersession-plan",
+    "Inspected `Zoffice/scripts/create_release_bundle.py`",
+    "Inspected `Zoffice/releases/v2.0.0-rc3/bundle-manifest.json`",
+    "Inspected `Zoffice/BOOTLOADER.md`, `Zoffice/MANIFEST.json`, and `Zoffice/contracts/mutual-acceptance-v2.0.0-rc3.json`",
+    "Compared manifest file set vs tarball file set vs current filesystem state",
+    "Verified checksum with `sha256sum -c bundle.sha256`",
+    "Ran `python3 Zoffice/scripts/healthcheck.py`",
+    "Ran `python3 Zoffice/scripts/layer2_smoke_test.py`",
+    "Grep-checked version references across `Zoffice/` excluding release artifacts"
+  ],
+  "issues_found": [
+    "Packaging mismatch: `contracts/mutual-acceptance-v2.0.0-rc3.json` appeared in the bundle manifest and current filesystem but was missing from the tarball before the fix.",
+    "Historical `contracts/mutual-acceptance-v2.0.0-rc1.json` remains in the working tree, but this is an intentional non-shipped historical artifact and does not block review."
+  ],
+  "fix_applied": "Updated `Zoffice/scripts/create_release_bundle.py` so `should_exclude()` does not exclude the `contracts/` directory itself during tar creation, while still filtering contract files to the version-specific contract for the selected release. Rebuilt `v2.0.0-rc3` after the patch.",
+  "close_recommendation": "close-now",
+  "broadcast": "D4.1 final audit completed. One real rc3 packaging bug was found and minimally fixed: the release tarball had omitted the rc3 acceptance contract even though the manifest listed it. After rebuilding, manifest/tarball/filesystem now align at 102 shipped files, checksum verification passes, healthcheck passes, layer2 smoke test passes, and rc3 is honestly review-ready for closeout. Completed: final audit, root-cause fix, rebuild, re-verification. Remaining: none for this build. Status: 3/3 (100%)."
+}

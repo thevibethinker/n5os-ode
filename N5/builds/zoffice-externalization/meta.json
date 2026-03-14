@@ -1,0 +1,168 @@
+{
+  "schema_version": 3,
+  "slug": "zoffice-externalization",
+  "title": "Zoffice Externalization \u2014 Release-ready external package",
+  "objective": "Use Pulse to reconcile prior Rice/Zoffice/substrate work and produce a reviewable versioned Zoffice release folder with integrated substrate transfer capability, stopping before transfer to Zoputer.",
+  "created": "2026-03-13",
+  "status": "complete",
+  "type": "code_build",
+  "build_mode": "learning",
+  "model": "byok:0771a084-ed26-496e-ac1b-bddc85ba2653",
+  "launch_mode": "orchestrated",
+  "delegate_only": false,
+  "first_wins": false,
+  "learning_landscape_generated": false,
+  "orchestrator_convo_id": "con_hs2l0mnC3kX6g5tx",
+  "implementation_branch": "feature/zoffice-externalization",
+  "lineage": {
+    "parent_type": "build_family",
+    "parent_ref": "n5os-rice",
+    "parent_conversation": "con_hs2l0mnC3kX6g5tx",
+    "moment": "Wrap up prior Rice/Zoffice work into an external reviewable package",
+    "branched_at": "2026-03-13T14:03:29.648962+00:00"
+  },
+  "waves": {
+    "W1": [
+      "D1.1",
+      "D1.2",
+      "D1.3"
+    ],
+    "W2": [
+      "D2.1",
+      "D2.2"
+    ],
+    "W3": [
+      "D3.1"
+    ],
+    "W4": [
+      "D4.1"
+    ]
+  },
+  "active_wave": "W4",
+  "drops": {
+    "D1.1": {
+      "name": "Audit prior builds and reconcile canonical deployment story",
+      "stream": 1,
+      "order": 1,
+      "wave": "W1",
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "started_at": "2026-03-13T19:00:00Z",
+      "completed_at": "2026-03-13T19:00:00Z"
+    },
+    "D1.2": {
+      "name": "Map substrate absorption into exported Zoffice",
+      "stream": 2,
+      "order": 1,
+      "wave": "W1",
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "started_at": "2026-03-13T19:10:00Z",
+      "completed_at": "2026-03-13T19:10:00Z"
+    },
+    "D1.3": {
+      "name": "Audit release machinery and propose packaging hardening",
+      "stream": 3,
+      "order": 1,
+      "wave": "W1",
+      "depends_on": [],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "started_at": "2026-03-13T19:20:00Z",
+      "completed_at": "2026-03-13T19:20:00Z"
+    },
+    "D2.1": {
+      "name": "Implement package hardening and integrated transfer surface",
+      "stream": 1,
+      "order": 2,
+      "wave": "W2",
+      "depends_on": [
+        "D1.1",
+        "D1.2",
+        "D1.3"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "started_at": "2026-03-13T20:30:00Z",
+      "completed_at": "2026-03-13T20:30:00Z"
+    },
+    "D2.2": {
+      "name": "Define release validation and review gate",
+      "stream": 2,
+      "order": 2,
+      "wave": "W2",
+      "depends_on": [
+        "D1.1",
+        "D1.2",
+        "D1.3"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "started_at": "2026-03-13T20:40:00Z",
+      "completed_at": "2026-03-13T20:40:00Z"
+    },
+    "D3.1": {
+      "name": "Create versioned release folder and final review artifact",
+      "stream": 1,
+      "order": 3,
+      "wave": "W3",
+      "depends_on": [
+        "D2.1",
+        "D2.2"
+      ],
+      "spawn_mode": "auto",
+      "blocking": true,
+      "status": "complete",
+      "started_at": "2026-03-13T23:00:00Z",
+      "completed_at": "2026-03-13T23:00:00Z"
+    },
+    "D4.1": {
+      "name": "Final release evaluation in new thread",
+      "stream": 1,
+      "order": 4,
+      "wave": "W4",
+      "depends_on": [
+        "D3.1"
+      ],
+      "spawn_mode": "manual",
+      "blocking": true,
+      "status": "complete",
+      "started_at": "2026-03-14T01:15:00Z",
+      "completed_at": "2026-03-14T01:15:00Z"
+    }
+  },
+  "broadcasts": [],
+  "task_pool": {
+    "enabled": false,
+    "tasks": [],
+    "max_concurrent_claims": 4,
+    "worker_drops": []
+  },
+  "recovery": {
+    "max_auto_retries": 2,
+    "dead_threshold_seconds": 900,
+    "stale_threshold_hours": 4,
+    "stale_no_progress_minutes": 60,
+    "enable_ai_judgment": true
+  },
+  "workers": {
+    "total": 7,
+    "complete": 7,
+    "in_progress": 0,
+    "blocked": 0,
+    "pending": 0
+  },
+  "started_at": "2026-03-13T14:03:43.851301+00:00",
+  "finalized_at": "2026-03-13T23:39:01.237027+00:00",
+  "finalization_passed": true,
+  "completed_at": "2026-03-14T01:15:00Z",
+  "summary": "Reconciled Zoffice/Rice/substrate into a single canonical external product story, absorbed transfer-safety into zo2zo, hardened and debugged release bundling, created rc3 review release, normalized canonical metadata to rc3, and completed a fresh-thread final audit confirming manifest/tarball/filesystem alignment.",
+  "last_progress_at": "2026-03-14T01:15:00Z"
+}

@@ -1,0 +1,142 @@
+{
+  "explicit_promise_override": {
+    "input": {
+      "candidate_type": "general_intelligence",
+      "candidate_data": {
+        "notes": "Low-priority discussion that would normally be Tier C",
+        "evidence": {
+          "quotes": [
+            {
+              "text": "I promise to get you that contract review by tomorrow",
+              "speaker": "Client"
+            },
+            {
+              "text": "This is a firm commitment from our side",
+              "speaker": "Client"
+            }
+          ],
+          "block_references": [
+            "B15_promise_made"
+          ]
+        },
+        "confidence": 0.4
+      },
+      "source_meeting_id": "meeting_override_1",
+      "meeting_context": null,
+      "existing_memory": null,
+      "relationships": null,
+      "conversation_id": "con_override_test1",
+      "processing_mode": "production",
+      "source_blocks": []
+    },
+    "expected_tier": "A",
+    "expected_override": true,
+    "expected_override_reason": "explicit_promise",
+    "description": "Low-scoring content promoted due to explicit promise"
+  },
+  "named_deliverable_override": {
+    "input": {
+      "candidate_type": "general_intelligence",
+      "candidate_data": {
+        "notes": "Brief discussion",
+        "evidence": {
+          "quotes": [
+            {
+              "text": "Can you prepare a comprehensive strategy proposal for our Q2 planning?",
+              "speaker": "Client CEO"
+            },
+            {
+              "text": "We need the full analysis document ready for the board meeting",
+              "speaker": "Client CEO"
+            }
+          ],
+          "block_references": [
+            "B20_deliverable_mention"
+          ]
+        },
+        "confidence": 0.3
+      },
+      "source_meeting_id": "meeting_override_2",
+      "meeting_context": null,
+      "existing_memory": null,
+      "relationships": null,
+      "conversation_id": "con_override_test2",
+      "processing_mode": "production",
+      "source_blocks": []
+    },
+    "expected_tier": "A",
+    "expected_override": true,
+    "expected_override_reason": "named_deliverable",
+    "description": "Generic content promoted due to named deliverable"
+  },
+  "introduction_request_override": {
+    "input": {
+      "candidate_type": "general_intelligence",
+      "candidate_data": {
+        "notes": "Social discussion",
+        "evidence": {
+          "quotes": [
+            {
+              "text": "Could you introduce me to your contact at TechCorp?",
+              "speaker": "Network Contact"
+            },
+            {
+              "text": "I would really value that connection",
+              "speaker": "Network Contact"
+            }
+          ],
+          "block_references": [
+            "B25_intro_request"
+          ]
+        },
+        "confidence": 0.35
+      },
+      "source_meeting_id": "meeting_override_3",
+      "meeting_context": null,
+      "existing_memory": null,
+      "relationships": null,
+      "conversation_id": "con_override_test3",
+      "processing_mode": "production",
+      "source_blocks": []
+    },
+    "expected_tier": "A",
+    "expected_override": true,
+    "expected_override_reason": "introduction_request",
+    "description": "Casual content promoted due to introduction request"
+  },
+  "critical_deadline_override": {
+    "input": {
+      "candidate_type": "general_intelligence",
+      "candidate_data": {
+        "notes": "Standard project discussion",
+        "evidence": {
+          "quotes": [
+            {
+              "text": "This is urgent - we need this immediately for the investor meeting",
+              "speaker": "Startup CEO"
+            },
+            {
+              "text": "This is critical for our funding round",
+              "speaker": "Startup CEO"
+            }
+          ],
+          "block_references": [
+            "B30_urgent_request"
+          ]
+        },
+        "confidence": 0.5
+      },
+      "source_meeting_id": "meeting_override_4",
+      "meeting_context": null,
+      "existing_memory": null,
+      "relationships": null,
+      "conversation_id": "con_override_test4",
+      "processing_mode": "production",
+      "source_blocks": []
+    },
+    "expected_tier": "A",
+    "expected_override": true,
+    "expected_override_reason": "critical_deadline",
+    "description": "Standard content promoted due to critical deadline"
+  }
+}

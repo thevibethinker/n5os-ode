@@ -1,0 +1,248 @@
+---
+created: 2026-03-10
+last_edited: 2026-03-10
+version: 1.0
+provenance: con_cXzw4w8OZcD47Wdj
+drop_id: D1.3
+build_slug: meeting-system-recovery-redesign
+---
+
+# Knowledge Pipeline Audit
+
+## Purpose
+
+Map the downstream flow from processed meetings into wisdom/knowledge outputs. Identify where the pipeline is broken, under-specified, or missing entirely, and surface redesign implications.
+
+---
+
+## 1. Current Downstream Flow
+
+The meeting ingestion pipeline (Skills/meeting-ingestion) processes transcripts through a well-defined state machine:
+
+```
+raw → ingested → identified → gated → processed → archived
+```
+
+**"Processed" means blocks have been generated.** These blocks are the primary output artifacts. **"Archived" means moved to weekly folders.** After archival, the pipeline currently ends.
+
+### 1.1 Block Output Types (What Gets Created)
+
+Each processed meeting generates 7-17 intelligence blocks depending on recipe and conditional triggers:
+
+| Block | Category | Downstream Knowledge Type |
+|-------|----------|---------------------------|
+| B00 Zo Take Heed | Deferred intents | Action triggers (B07 intros, B14 blurbs) |
+| B01 Detailed Recap | Narrative summary | Meeting memory |
+| B02_B05 Commitments & Actions | Promises + tasks | Deliverables tracking |
+| B03 Decisions | Key decisions | Decision history |
+| B08 Stakeholder Intelligence | Participant insights | CRM/relationship intelligence |
+| B21 Key Moments | Turning points | Narrative intelligence |
+| B26 Meeting Metadata | Structured data | Registry/classification |
+| B32 Thought Provoking Ideas | Novel ideas | Position/worldview system |
+| B33 Decision Rationale | Deep reasoning | Position/worldview system |
+| B06 Business Context | Strategic context | Market intelligence |
+| B28 Strategic Intelligence | Market landscape | Market intelligence |
+| B10 Relationship Trajectory | Relationship analysis | CRM/relationship evolution |
+
+### 1.2 Where Processed Blocks Currently Go
+
+After processing, blocks are **archived as flat markdown files inside the meeting folder**, then the folder moves to `Personal/Meetings/Week-of-YYYY-MM-DD/{internal|external}/`. That is the terminal state. There is **no automated downstream consumer** that reads archived blocks and routes them anywhere.
+
+### 1.3 Partial Downstream Consumers (Exist but Disconnected)
+
+| Consumer | Status | What It Does | Gap |
+|----------|--------|-------------|-----|
+| **B32 Position Extractor** (`N5/scripts/b32_position_extractor.py`) | Active agent (daily 5 AM) | Scans B32 blocks for worldview position candidates → `position_candidates.jsonl` → HITL triage → `positions.py` | Only consumes B32. Works via filesystem scan, not pipeline integration. |
+| **Relationship Intelligence OS** (`N5/builds/relationship-intelligence-os/`) | 22% complete (stalled) | Designed to: post-tick promotion gate → score blocks → write to brain.db + relationship graph + deliverables DB | D1.1 (contracts), D1.2 (scoring engine) done. D1.3 (post-tick hook) in progress. D2.x (memory/graph writes) not started. |
+| **Content Library v3** (`Knowledge/content-library/content_library.db`) | Exists but zero meeting integration | Content Library has `blocks` and `knowledge_refs` tables in schema. Content integration spec describes block-level topic tagging and knowledge promotion. | No script or automation connects meeting blocks → Content Library. The tables exist in schema but are empty for meeting content. |
+| **brain.db meeting_edges** (`N5/cognition/brain.db`) | 7042 edges from historical backfill | Meeting edges were backfilled from historical data. Tables for `relationship_edges`, `commitment_edges`, `org_edges` exist but are **empty (0 rows)**. | Backfill was a one-time operation. No live pipeline writes new meeting edges. The relationship-intelligence-os build was designed to fix this but stalled. |
+| **CRM profiles** (`Personal/Knowledge/CRM/individuals/*.md`) | Populated, not meeting-driven | CRM has 363 individual profiles. B08 (Stakeholder Intelligence) generates per-meeting participant insights. | No automation routes B08 output back into CRM profiles. Enrichment happens via `crm_enricher.py` during the identify stage (pre-processing), not post-processing. |
+| **Semantic memory / vectors** (`N5/cognition/vectors_v2.db`) | Active (daily reindex agent) | Daily agent reindexes knowledge files into vector store for semantic search. | Archived meeting blocks ARE indexed by the daily reindex (they're markdown files in the workspace). But there's no curation — all blocks get equal treatment regardless of signal quality. |
+
+---
+
+## 2. Breakpoints
+
+### BP-1: No Post-Archive Pipeline Stage (Critical)
+
+**The pipeline ends at archive.** There is no `elevate`, `promote`, or `extract` stage after a meeting is archived. The relationship-intelligence-os build was designed to add a post-tick promotion stage, but it stalled at 22%.
+
+**Impact:** All intelligence generated by blocks is trapped in per-meeting folders. It does not flow into CRM, Content Library, semantic memory (in a curated way), the position system, or the relationship graph.
+
+**Evidence:**
+- `archive.py` is the final script in the meeting CLI pipeline
+- `meeting_tick_integration.py` (relationship-intelligence-os build) exists as code but is not wired into the live `meeting_cli.py tick` command
+- No `post_process`, `elevate`, or `promote` command exists in meeting_cli.py
+
+### BP-2: Block Quality Is Not Scored (High)
+
+**Blocks are generated but never scored for quality or signal strength.** The relationship-intelligence-os build designed a promotion gate with a 0-100 scoring rubric and Tier A/B/C classification, but it's not deployed.
+
+**Impact:** Without scoring, there's no automated way to separate high-signal intelligence (a key strategic insight from B28) from routine metadata (B26). This makes bulk downstream routing impractical — you can't auto-promote without knowing what's worth promoting.
+
+**Evidence:**
+- `promotion_gate_engine.py` exists in the relationship-intelligence-os build artifacts but is not called by any live pipeline
+- The scoring rubric (strategic importance, relationship delta, commitment clarity, evidence quality, novelty, execution value) was designed but never activated
+
+### BP-3: CRM Feedback Loop Is One-Way (Medium)
+
+**CRM enrichment feeds INTO meeting identification but meeting output does NOT feed back into CRM.** The `crm_enricher.py` runs during the `identify` stage to add participant context. B08 (Stakeholder Intelligence) generates rich per-meeting insights about participants. But B08 output is never routed back to update CRM profiles.
+
+**Impact:** CRM profiles stagnate. V must manually update relationship intelligence. Meeting insights about people are generated and then buried in archived folders.
+
+**Evidence:**
+- `crm_enricher.py` reads from CRM during `identify`
+- No script reads B08 output and writes to CRM
+- The relationship-intelligence-os build D2.1 (CRM profile projection) is in "pending" status
+
+### BP-4: Content Library Integration Is Schema-Only (Medium)
+
+**Content Library v3 schema includes `blocks`, `block_topics`, `knowledge_refs`, and `relationships` tables designed for meeting block integration.** The integration spec (`content_library_integration.md`) describes how meeting intelligence blocks would be stored and retrieved. But no code implements this flow.
+
+**Impact:** Content Library cannot serve as a retrieval layer for meeting intelligence. Meeting-derived insights (commitments, strategic intelligence) are not queryable via Content Library search.
+
+**Evidence:**
+- Content Library v3 schema includes block-related tables (documented in architecture spec)
+- `content_ingest.py` handles articles, links, social posts — but has no meeting block ingest path
+- No `transcript` or `meeting-block` content type is registered in `TYPE_DIRECTORIES`
+
+### BP-5: Idea System Feed Is Partially Wired (Low-Medium)
+
+**B32 (Thought Provoking Ideas) and B33 (Decision Rationale) are annotated as "feeds idea system" in the BLOCK_INDEX.yaml.** B32 has a working extractor (`b32_position_extractor.py`) with a daily agent. B33 has no equivalent consumer.
+
+**Impact:** B32 → positions pipeline works but B33 is orphaned. The "idea system" as referenced in block metadata does not exist as a unified system.
+
+**Evidence:**
+- BLOCK_INDEX.yaml notes for B32 and B33: "Feeds idea system"
+- B32 position extractor agent is active (daily 5 AM ET)
+- No B33 consumer exists
+- No unified "idea system" exists
+
+### BP-6: Reflection Pipeline Does Not Exist (Medium)
+
+**The PLAN.md references Pocket recordings defaulting to "reflection" classification.** Reflection block prompts exist (`Prompts/Blocks/Reflection/R00-R09`). But there is no reflection pipeline — no script processes reflections, no agent orchestrates reflection extraction, and no destination stores reflection outputs.
+
+**Impact:** Pocket-sourced content that should become reflections has no processing path. The reflection prompts (R00 Emergent, R01 Personal, R02 Learning, R03 Strategic, etc.) are unused infrastructure.
+
+**Evidence:**
+- 11 reflection prompt files exist in `Prompts/Blocks/Reflection/`
+- No reflection-related code in `Skills/meeting-ingestion/scripts/`
+- No reflection processing scripts in `N5/scripts/`
+- PLAN.md specifies Pocket → reflection routing as a redesign requirement
+
+### BP-7: Meeting Title Quality Constrains Downstream (Low)
+
+**Meeting titles become folder names which become the primary identifier in all downstream systems.** Bad titles (generic "Meeting with X", missing date, wrong participant) propagate through the knowledge graph, positions extraction, and any future CRM integration.
+
+**Impact:** Upstream title quality acts as a multiplier on downstream intelligence quality. The `title_normalizer.py` exists in the meeting-ingestion skill but title generation during ingest is still heuristic-based.
+
+**Evidence:**
+- `title_normalizer.py` exists in Skills/meeting-ingestion/scripts/
+- Meeting folder names are used as `meeting_id` throughout the system
+- brain.db `meeting_edges` reference these IDs as `context_meeting_id`
+
+---
+
+## 3. Knowledge Destinations Map
+
+### 3.1 Existing Destinations (Documented or Partially Built)
+
+| Destination | Location | Current State | Receives Meeting Data? |
+|-------------|----------|---------------|----------------------|
+| Archived meeting folders | `Personal/Meetings/Week-of-*/` | Active | Yes (terminal storage) |
+| brain.db meeting_edges | `N5/cognition/brain.db` | 7042 historical edges | One-time backfill only |
+| brain.db relationship_edges | `N5/cognition/brain.db` | 0 rows (empty) | No |
+| brain.db commitment_edges | `N5/cognition/brain.db` | 0 rows (empty) | No |
+| brain.db org_edges | `N5/cognition/brain.db` | 0 rows (empty) | No |
+| Semantic vector index | `N5/cognition/vectors_v2.db` | Active (daily reindex) | Yes (uncurated bulk) |
+| Position candidates | `N5/data/position_candidates.jsonl` | Active (daily B32 scan) | Yes (B32 only) |
+| CRM profiles | `Personal/Knowledge/CRM/individuals/*.md` | 363 profiles | No (one-way: CRM → meeting, not meeting → CRM) |
+| Content Library v3 | `Knowledge/content-library/content_library.db` | Active for articles/links | No (schema ready, no integration) |
+| Meeting registry | `N5/data/meeting_registry.db` | Exists | Yes (statistics/dedup) |
+| HITL queue | `N5/review/meetings/hitl-queue.jsonl` | Active | Yes (escalation during processing) |
+
+### 3.2 Intended But Missing Destinations
+
+| Destination | Designed In | Status |
+|-------------|-------------|--------|
+| Promotion events store | relationship-intelligence-os D1.1 | Schema exists, not deployed |
+| Deliverables intelligence DB | relationship-intelligence-os D3.1 | Not started |
+| Relationship graph (live) | relationship-intelligence-os D2.3 | Not started |
+| Reflection store | (referenced in PLAN.md) | No design exists |
+| Wisdom objects | Wisdom Roots system outline | Conceptual only |
+
+---
+
+## 4. Redesign Implications
+
+### RI-1: The Post-Archive Stage Is the Critical Missing Piece
+
+The meeting pipeline needs a post-archive (or post-process) stage that acts as a router/elevator. This stage should:
+- Score blocks for signal quality (the promotion gate from relationship-intelligence-os)
+- Route high-signal blocks to appropriate destinations (CRM, Content Library, positions, graph)
+- Be deterministic where possible (Zone 3) — e.g., "B08 with confidence > 0.8 → CRM update candidate"
+- Use LLM judgment only where necessary (Zone 2) — e.g., "Is this B28 insight actually novel vs. already in knowledge store?"
+
+### RI-2: Upstream Quality Improvements Multiply Downstream Value
+
+The redesign's improvements to titling, classification, and metadata quality (D2.2 in the build plan) directly increase the value of downstream elevation. Specifically:
+- Better titles → better meeting_edge provenance in brain.db
+- Better meeting_type classification → better routing decisions (internal meetings → team dynamics, external → relationship intelligence)
+- Better participant identification → better CRM feedback loop
+- Pocket/reflection routing → unlocks the entire reflection prompt library (R00-R09)
+
+### RI-3: The Relationship Intelligence OS Build Should Be Absorbed
+
+The relationship-intelligence-os build (22% complete) designed exactly the post-processing pipeline that's missing. Its D1.1 (contracts) and D1.2 (promotion gate engine) are usable artifacts. Rather than treating it as a separate build, the meeting-system-recovery-redesign should absorb its design decisions and artifacts where they align.
+
+### RI-4: Content Library Should Be the Knowledge Hub, Not brain.db Alone
+
+The Content Library v3 schema already has `blocks`, `knowledge_refs`, and `relationships` tables. The Wisdom Roots system outline describes Content Library as "the soil from which knowledge and wisdom objects grow." Meeting blocks are a natural content type. The redesign should route curated meeting intelligence through Content Library as the intermediate store, with brain.db/semantic memory as the retrieval layer on top.
+
+### RI-5: The Reflection Pipeline Needs a Lightweight Design
+
+Pocket → reflection routing is a confirmed requirement. Reflection prompts (R00-R09) exist but have no processing infrastructure. The redesign should specify:
+- When a recording is classified as "reflection" (Pocket default, unless multi-speaker detected)
+- Which R-blocks to generate (lightweight recipe, not full meeting recipe)
+- Where reflection outputs land (separate from meeting archives? or a reflection subfolder?)
+
+---
+
+## 5. Decision Points for Build
+
+### DP-1: Canonical Destination for Elevated Meeting Knowledge
+
+**Options:**
+1. **Content Library v3 as primary hub** — Meeting blocks → scored → high-signal promoted to Content Library → downstream systems (brain.db, CRM, positions) consume from Content Library
+2. **brain.db as primary hub** — Meeting blocks → scored → written directly to brain.db tables → Content Library used only for curated articles/external content
+
+**Recommendation:** Option 1. Content Library has the richer schema (blocks, topics, knowledge_refs) and was architecturally positioned as the content substrate. brain.db excels at graph relationships and semantic retrieval but isn't designed as a content store.
+
+### DP-2: Which Downstream Steps Should Be Deterministic vs LLM-Driven
+
+| Step | Recommended Zone | Rationale |
+|------|-----------------|-----------|
+| Block quality scoring | Zone 2 (LLM + structured output) | Requires judgment on novelty, strategic importance |
+| Tier assignment (A/B/C) | Zone 3 (deterministic thresholds) | Once scored, tiering is mechanical |
+| CRM profile update routing | Zone 3 (rule-based) | "B08 exists + participant confidence > 0.7 → queue CRM update" |
+| CRM profile update content | Zone 2 (LLM synthesis) | Merging new B08 insight with existing profile requires judgment |
+| Position extraction from B32 | Zone 2 (existing, works) | Already deployed via b32_position_extractor.py |
+| Content Library ingest | Zone 3 (deterministic) | Mechanical: create record, attach tags, set topic |
+| Graph edge creation | Zone 3 (structured extraction) | relationship-intelligence-os already designed this as structured |
+| Reflection routing | Zone 3 (rule-based) | Source = Pocket + speakers ≤ 1 → reflection |
+| Reflection block generation | Zone 2 (LLM) | R-block prompts require LLM |
+
+---
+
+## 6. Summary
+
+The meeting ingestion pipeline is strong through the `processed` stage — block generation works, quality gates exist, HITL escalation is functional. **The critical gap is everything after `archive`.** Processed intelligence blocks sit in archived folders with no automated path to CRM, Content Library, semantic memory (curated), or the relationship graph.
+
+The relationship-intelligence-os build designed the missing post-processing pipeline but stalled at 22%. Its design artifacts (promotion gate, scoring rubric, post-tick hook pattern) should be absorbed into this redesign rather than rebuilt from scratch.
+
+Three things must be true for the knowledge pipeline to work:
+1. A post-archive elevation stage exists (the router)
+2. Upstream quality (titles, classification, metadata) is good enough to make routing decisions reliable
+3. Downstream destinations are wired and accepting writes
+
+This build addresses (2) through intake redesign. It should specify (1) and (3) as part of the execution plan.

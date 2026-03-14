@@ -1,0 +1,473 @@
+{
+  "drop_id": "D1.1",
+  "status": "complete",
+  "total_scanned": 190,
+  "leads": [
+    {
+      "name": "Adam Alpert",
+      "org": "Pangea.app",
+      "role": "Co-founder",
+      "score": 3,
+      "archetypes": [
+        "Strategic Leader",
+        "Power User"
+      ],
+      "rationale": "Co-founder of a tech platform (Pangea.app) \u2014 likely tech-forward builder who could adopt Zo for personal/team productivity and has relevant startup network.",
+      "crm_file": "adam-alpert.md"
+    },
+    {
+      "name": "Alec Barrett-Wilsdon",
+      "org": "Sourcestack.Co",
+      "role": "[To be determined]",
+      "score": 3,
+      "archetypes": [
+        "Power User",
+        "Creator"
+      ],
+      "rationale": "Associated with Sourcestack (data/developer tooling company) \u2014 signals technical orientation and potential interest in AI-powered workflows.",
+      "crm_file": "alec-barrett-wilsdon.md"
+    },
+    {
+      "name": "Ankit Mittal",
+      "org": "Zeni.Ai",
+      "role": "Unknown (AI company)",
+      "score": 4,
+      "archetypes": [
+        "Strategic Leader",
+        "Power User"
+      ],
+      "rationale": "At an AI company (Zeni.Ai does AI bookkeeping), likely deeply technical and would appreciate a personal AI computer for workflows and automation.",
+      "crm_file": "ankit-mittal.md"
+    },
+    {
+      "name": "Ash Straughn",
+      "org": "Sam",
+      "role": "Co-founder",
+      "score": 3,
+      "archetypes": [
+        "Strategic Leader",
+        "Power User"
+      ],
+      "rationale": "Co-founder of a recruiting platform \u2014 tech founder who could use Zo for automation and AI-assisted workflows in hiring tech.",
+      "crm_file": "ash-straughn.md"
+    },
+    {
+      "name": "Asher King-Abramson",
+      "org": "Warmer Jobs",
+      "role": "Founder",
+      "score": 3,
+      "archetypes": [
+        "Strategic Leader",
+        "Power User"
+      ],
+      "rationale": "Founder of a jobs platform \u2014 tech founder building in hiring space, would benefit from AI workflows and automation on Zo.",
+      "crm_file": "asher-king-abramson.md"
+    },
+    {
+      "name": "Ashraf Heleka",
+      "org": "Atis",
+      "role": "Founder",
+      "score": 3,
+      "archetypes": [
+        "Strategic Leader",
+        "Power User"
+      ],
+      "rationale": "Early-stage founder building AI for mortgages/legal \u2014 already in AI space, would understand and adopt a personal AI computer.",
+      "crm_file": "ashraf-heleka.md"
+    },
+    {
+      "name": "Austin",
+      "org": "Aviato.Co",
+      "role": "Unknown",
+      "score": 3,
+      "archetypes": [
+        "Power User"
+      ],
+      "rationale": "At Aviato (enrichment/data platform) \u2014 likely technical, works with data APIs and would value Zo's automation and integration capabilities.",
+      "crm_file": "austin-t.md"
+    },
+    {
+      "name": "Ben Guo",
+      "org": "Zo Computer",
+      "role": "Core Team Member / Engineer",
+      "score": 5,
+      "archetypes": [
+        "Power User",
+        "Creator"
+      ],
+      "rationale": "Zo Computer core team \u2014 already deeply embedded, ultimate power user and skill/integration creator for the platform.",
+      "crm_file": "ben-guo.md"
+    },
+    {
+      "name": "Ben",
+      "org": "Substrate.Run / Zo Computer",
+      "role": "Cofounder, Zo Computer",
+      "score": 5,
+      "archetypes": [
+        "Power User",
+        "Creator",
+        "Strategic Leader"
+      ],
+      "rationale": "Co-founder of Zo Computer itself \u2014 maximum alignment, active partnership with deep product knowledge.",
+      "crm_file": "ben.md"
+    },
+    {
+      "name": "Bram Adams",
+      "org": "YCB",
+      "role": "Founder",
+      "score": 3,
+      "archetypes": [
+        "Strategic Leader"
+      ],
+      "rationale": "Founder focused on persona-related work \u2014 likely tech-forward builder who could benefit from a personal AI computer.",
+      "crm_file": "bram-adams.md"
+    },
+    {
+      "name": "brady",
+      "org": "Theapply",
+      "role": "Unknown",
+      "score": 3,
+      "archetypes": [
+        "Creator"
+      ],
+      "rationale": "At theapply.ai \u2014 AI-native company signals technical orientation and potential power-user fit for Zo workflows.",
+      "crm_file": "brady.md"
+    },
+    {
+      "name": "Chaitanya",
+      "org": "TheAGICompany",
+      "role": "Unknown",
+      "score": 3,
+      "archetypes": [
+        "Power User"
+      ],
+      "rationale": "Working at an AGI company signals deep AI fluency and likely appetite for personal AI infrastructure like Zo.",
+      "crm_file": "chaitanya.md"
+    },
+    {
+      "name": "Colin Emerson",
+      "org": "Harvey",
+      "role": "Unknown",
+      "score": 3,
+      "archetypes": [
+        "Power User",
+        "Strategic Leader"
+      ],
+      "rationale": "Harvey is a leading AI legal tech company; someone there likely appreciates AI-native workflows and personal AI tooling.",
+      "crm_file": "unknown"
+    },
+    {
+      "name": "Devarsh Kumar",
+      "org": "Reliance Industries Limited",
+      "role": "Chairman's Office \u2013 Strategic Initiatives",
+      "score": 3,
+      "archetypes": [
+        "Strategic Leader"
+      ],
+      "rationale": "Senior strategic role at one of India's largest conglomerates; could champion AI productivity tools at enterprise scale, though RIL context is more corporate than typical Zo early adopter.",
+      "crm_file": "devarsh1-kumar.md"
+    },
+    {
+      "name": "Devd",
+      "org": "Varia-AI",
+      "role": "TBD",
+      "score": 3,
+      "archetypes": [
+        "Creator",
+        "Power User"
+      ],
+      "rationale": "Works at an AI company (Varia-AI), likely technical and building in the AI space \u2014 natural fit to explore a personal AI computer.",
+      "crm_file": "devd.md"
+    },
+    {
+      "name": "Edmund",
+      "org": "Superposition.AI",
+      "role": "TBD",
+      "score": 3,
+      "archetypes": [
+        "Creator",
+        "Power User"
+      ],
+      "rationale": "At an AI startup (Superposition.AI), likely technical builder who would appreciate a programmable personal AI server.",
+      "crm_file": "edmund.md"
+    },
+    {
+      "name": "Dylan Lieberman",
+      "org": "Anphoria",
+      "role": "Founder & CEO",
+      "score": 3,
+      "archetypes": [
+        "Creator",
+        "Power User"
+      ],
+      "rationale": "Young founder building a startup while at Cornell \u2014 entrepreneurial builder archetype who would benefit from AI-augmented workflows, though early-stage and student.",
+      "crm_file": "dylan-lieberman.md"
+    },
+    {
+      "name": "emre",
+      "org": "Emotionmachine",
+      "role": "TBD (emotionmachine.ai)",
+      "score": 3,
+      "archetypes": [
+        "Power User",
+        "Creator"
+      ],
+      "rationale": "AI-domain founder (emotionmachine.ai) likely building with AI tools daily \u2014 natural fit for a personal AI computer if technical.",
+      "crm_file": "emre.md"
+    },
+    {
+      "name": "Eric (Consonant.vc)",
+      "org": "Consonant.vc",
+      "role": "VC",
+      "score": 3,
+      "archetypes": [
+        "Investor/Advisor"
+      ],
+      "rationale": "VC at Consonant \u2014 if investing in AI/dev-tools space, relevant as advisor or portfolio introducer for Zo.",
+      "crm_file": "unknown"
+    },
+    {
+      "name": "Erica",
+      "org": "Alpic.ai",
+      "role": "TBD (alpic.ai)",
+      "score": 3,
+      "archetypes": [
+        "Power User",
+        "Strategic Leader"
+      ],
+      "rationale": "AI-domain company (alpic.ai) suggests tech-forward work; potential power user or team adopter if building AI products.",
+      "crm_file": "erica.md"
+    },
+    {
+      "name": "Ethan",
+      "org": "Marvinvc",
+      "role": "VC",
+      "score": 3,
+      "archetypes": [
+        "Investor/Advisor"
+      ],
+      "rationale": "VC at Marvin Ventures \u2014 relevant if fund thesis covers AI infra, dev-tools, or productivity.",
+      "crm_file": "ethan.md"
+    },
+    {
+      "name": "Fei Ma",
+      "org": "Nira",
+      "role": "Founder & CEO",
+      "score": 4,
+      "archetypes": [
+        "Strategic Leader",
+        "Creator"
+      ],
+      "rationale": "Founder building an 'AI Rolodex' / operating system product \u2014 deeply aligned with personal AI computer vision, would understand and adopt Zo naturally.",
+      "crm_file": "fei-ma-nira.md"
+    },
+    {
+      "name": "Francesco Piccoli",
+      "org": "Almanax",
+      "role": "Co-Founder & CEO",
+      "score": 3,
+      "archetypes": [
+        "Strategic Leader",
+        "Power User"
+      ],
+      "rationale": "AI-native founder building in cybersecurity \u2014 technical enough to deeply use Zo, connected via Ben Guo's network.",
+      "crm_file": "francesco-piccoli.md"
+    },
+    {
+      "name": "Gabi Zijderveld",
+      "org": "Unknown",
+      "role": "Business Owner/Operator",
+      "score": 3,
+      "archetypes": [
+        "Power User"
+      ],
+      "rationale": "Already attended a Zo Computer demo \u2014 expressed direct interest, warm lead with existing exposure to the product.",
+      "crm_file": "gabi-zijderveld.md"
+    },
+    {
+      "name": "Giovanna Ventola",
+      "org": "Rise",
+      "role": "Community Leader / TikTok Creator",
+      "score": 3,
+      "archetypes": [
+        "Promoter"
+      ],
+      "rationale": "Active content creator on TikTok with community leadership \u2014 could amplify Zo to a creator audience if she adopts it.",
+      "crm_file": "giovanna-ventola.md"
+    },
+    {
+      "name": "Graham Smith",
+      "org": "Equals",
+      "role": "Product/Partnerships",
+      "score": 3,
+      "archetypes": [
+        "Strategic Leader"
+      ],
+      "rationale": "At Equals (modern spreadsheet/data tool), likely tech-forward and would appreciate AI-powered workflows for data work.",
+      "crm_file": "graham-smith.md"
+    },
+    {
+      "name": "Hamoon Ekhtiari",
+      "org": "FutureFit.ai",
+      "role": "Founder/CEO",
+      "score": 4,
+      "archetypes": [
+        "Strategic Leader",
+        "Power User"
+      ],
+      "rationale": "Runs an AI company (FutureFit.ai) in the career/workforce space \u2014 would deeply understand and adopt a personal AI computer for his own workflows.",
+      "crm_file": "hamoon-ekhtiari.md"
+    },
+    {
+      "name": "Gus",
+      "org": "Redbear VC",
+      "role": "VC",
+      "score": 3,
+      "archetypes": [
+        "Investor/Advisor"
+      ],
+      "rationale": "VC at Redbear \u2014 potential investor/advisor angle for Zo, likely sees many AI/dev-tool deals.",
+      "crm_file": "gus.md"
+    },
+    {
+      "name": "Holly",
+      "org": "TryMatchbox",
+      "role": "Unknown",
+      "score": 3,
+      "archetypes": [
+        "Strategic Leader"
+      ],
+      "rationale": "Matchbox is a hiring/talent platform \u2014 tech-adjacent, would benefit from AI automation workflows Zo provides.",
+      "crm_file": "holly.md"
+    },
+    {
+      "name": "Jacob Bank",
+      "org": "Relay App",
+      "role": "Founder & CEO",
+      "score": 4,
+      "archetypes": [
+        "Strategic Leader",
+        "Power User"
+      ],
+      "rationale": "Founder/CEO of an AI app company (Relay App), participated in AI Agent MBA \u2014 deeply embedded in AI tooling space, strong adopter profile for a personal AI computer.",
+      "crm_file": "jacob-bank.md"
+    },
+    {
+      "name": "Jacob Solano",
+      "org": "Fibe",
+      "role": "Chief of Staff",
+      "score": 3,
+      "archetypes": [
+        "Power User"
+      ],
+      "rationale": "Chief of Staff at a tech company (Fibe), likely manages workflows and ops that Zo could automate; LinkedIn presence suggests tech-forward.",
+      "crm_file": "jacob-solano.md"
+    },
+    {
+      "name": "Ian (Zo Computer)",
+      "org": "Zo Computer",
+      "role": "Engineer",
+      "score": 3,
+      "archetypes": [
+        "Creator"
+      ],
+      "rationale": "Engineer at Zo Computer itself \u2014 already in the ecosystem, potential skills/integration builder and internal champion.",
+      "crm_file": "ian-zo.md"
+    },
+    {
+      "name": "Ilse",
+      "org": "TheApply.AI",
+      "role": "Unknown",
+      "score": 3,
+      "archetypes": [
+        "Power User",
+        "Strategic Leader"
+      ],
+      "rationale": "Works at an AI-powered job application company \u2014 AI-native workflow user who would understand and leverage a personal AI computer.",
+      "crm_file": "ilse.md"
+    },
+    {
+      "name": "Jason Cheung",
+      "org": "Newsletter/Events",
+      "role": "Newsletter author & event curator",
+      "score": 3,
+      "archetypes": [
+        "Promoter"
+      ],
+      "rationale": "Newsletter reach of ~3,300 makes him a potential amplifier for Zo to a tech-adjacent audience.",
+      "crm_file": "jason-cheung.md"
+    },
+    {
+      "name": "Jatin Sandilya",
+      "org": "Hypermodel.Ai",
+      "role": "Unknown (AI company)",
+      "score": 4,
+      "archetypes": [
+        "Power User",
+        "Creator"
+      ],
+      "rationale": "Running an AI company signals deep technical fluency and high likelihood of adopting a personal AI computer for workflows.",
+      "crm_file": "jatin-sandilya.md"
+    },
+    {
+      "name": "Jill Nephew",
+      "org": "Inqwire, PBC",
+      "role": "Founder",
+      "score": 3,
+      "archetypes": [
+        "Strategic Leader"
+      ],
+      "rationale": "Decade-long founder of a public benefit corp; likely tech-forward enough to benefit from Zo for ops and automation.",
+      "crm_file": "jill-nephew.md"
+    },
+    {
+      "name": "Joe Kirsten",
+      "org": "Ramp",
+      "role": "Unknown",
+      "score": 3,
+      "archetypes": [
+        "Power User",
+        "Strategic Leader"
+      ],
+      "rationale": "Ramp is a high-growth fintech; anyone there likely operates in a high-velocity, automation-friendly environment suited to Zo.",
+      "crm_file": "joe-kirsten.md"
+    },
+    {
+      "name": "Julien Khaleghy",
+      "org": "SerpApi",
+      "role": "CEO & Founder",
+      "score": 4,
+      "archetypes": [
+        "Power User",
+        "Creator",
+        "Strategic Leader"
+      ],
+      "rationale": "Technical founder running a developer-facing API company \u2014 would deeply understand and adopt a personal AI computer, likely build integrations.",
+      "crm_file": "julien-khaleghy.md"
+    },
+    {
+      "name": "John",
+      "org": "Recall.ai",
+      "role": "TBD",
+      "score": 3,
+      "archetypes": [
+        "Power User",
+        "Strategic Leader"
+      ],
+      "rationale": "Recall.ai is an AI meeting infrastructure company \u2014 signals technical orientation and AI-native workflows that align with Zo's value prop.",
+      "crm_file": "john.md"
+    },
+    {
+      "name": "Jonny",
+      "org": "LearningEconomy.io",
+      "role": "TBD",
+      "score": 3,
+      "archetypes": [
+        "Power User",
+        "Strategic Leader"
+      ],
+      "rationale": "LearningEconomy.io operates in verifiable credentials/Web3 education tech \u2014 technically-minded org that could benefit from AI automation workflows.",
+      "crm_file": "jonny.md"
+    }
+  ]
+}

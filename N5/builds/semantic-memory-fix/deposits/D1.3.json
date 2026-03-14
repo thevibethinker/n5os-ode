@@ -1,0 +1,15 @@
+{
+  "drop_id": "D1.3",
+  "status": "complete",
+  "summary": "Restructured _init_provider() in n5_memory_client.py to check vector dimensions BEFORE loading the local SentenceTransformer model. Previously, the local model (~55s load time) was loaded first, then discarded if 3072-dim vectors were detected. Now auto-detection happens first, and the local model only loads when actually needed.",
+  "artifacts": [
+    "N5/cognition/n5_memory_client.py"
+  ],
+  "metrics": {
+    "init_time_before_seconds": 55.7,
+    "init_time_after_seconds": 0.0,
+    "improvement_seconds": 55.7
+  },
+  "broadcast": "Provider init restructured. Local model no longer loaded when OpenAI is the active provider. Init ~55s faster when vectors_v2.db with 3072-dim vectors is present.",
+  "issues": []
+}

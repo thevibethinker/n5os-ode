@@ -1,0 +1,23 @@
+{
+  "drop": "D2.1",
+  "status": "complete",
+  "summary": "Manual setup drop for zoputer.zo.computer Archetype Zo account. V completed manual setup: created zoputer account, set up API keys, added ZOPUTER_API_KEY secret on va. Created documentation (setup guide, inventory) and zoputer_client.py script. Ping test successful.",
+  "manual_steps_completed": [
+    "Sign up at zo.computer with handle 'zoputer'",
+    "Confirm email verification",
+    "Complete onboarding wizard",
+    "Create API key named 'ZO_CONSULTING_API' on zoputer",
+    "Add secret 'ZOPUTER_API_KEY' to va (Settings > Developers)",
+    "Create folder structure on zoputer",
+    "Run integration test: python3 N5/scripts/zoputer_client.py ping"
+  ],
+  "artifacts": [
+    "Documents/consulting/archetype-setup-guide.md",
+    "Documents/consulting/zoputer-inventory.md",
+    "N5/scripts/zoputer_client.py"
+  ],
+  "tests": [
+    "python3 N5/scripts/zoputer_client.py ping"
+  ],
+  "completed_at": "2026-02-06"
+}

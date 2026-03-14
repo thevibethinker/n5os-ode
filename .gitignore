@@ -113,15 +113,8 @@ N5/cognition/pageindex/lib/
 !N5/cognition/*.sh
 !N5/cognition/schema.sql
 
-# Builds — Pulse worker outputs (source PLAN.md and meta.json tracked, outputs not)
-N5/builds/*/completions/
-N5/builds/*/workers/
-N5/builds/*/deposits/
-N5/builds/*/artifacts/
-N5/builds/_archive/*/completions/
-N5/builds/_archive/*/workers/
-N5/builds/_archive/*/deposits/
-N5/builds/_archive/*/artifacts/
+# Builds — PLAN.md, meta.json, drops/, deposits/, artifacts/ ARE tracked
+# (build artifacts are intellectual output, not runtime noise)
 
 # Audit logs
 N5/audit/

@@ -1,0 +1,52 @@
+{
+  "drop_id": "D1.3",
+  "status": "complete",
+  "completed_at": "2026-01-27T00:50:00Z",
+  "summary": "Successfully pushed corrected repo to GitHub with 37 commits and cleaned all stale Inbox n5os artifacts.",
+  "artifacts": [],
+  "verification": {
+    "backup_branch_created": true,
+    "backup_branch_name": "backup-before-history-restore-2026-01-26",
+    "force_push_successful": true,
+    "github_commit_count": 37,
+    "inbox_files_deleted": [
+      "Inbox/20251103-093347_n5os-lite-v1.0-COMPLETE.tar.gz",
+      "Inbox/20251103-093347_n5os-lite-v1.0-FINAL.tar.gz", 
+      "Inbox/20251103-093347_n5os-lite-v1.0-to-v1.2-DELTA.tar.gz",
+      "Inbox/20251103-093347_n5os-lite-v1.0-to-v1.2.1-DELTA-FIXED.tar.gz",
+      "Inbox/20251103-093347_n5os-lite-v1.0-vs-v1.1-COMPARISON.md",
+      "Inbox/20251103-093347_n5os-lite-v1.1-COMPLETE.tar.gz",
+      "Inbox/20251103-093347_n5os-lite-v1.1-RELEASE-NOTES.md",
+      "Inbox/20251103-093347_n5os-lite-v1.2-COMPLETE.tar.gz",
+      "Inbox/20251103-093347_n5os-lite-v1.2.1-COMPLETE.tar.gz",
+      "Inbox/20251103-093347_n5os-lite-v1.2.1-to-v1.2.2-DELTA.tar.gz",
+      "Inbox/20251103-093347_n5os-lite-v1.2.2-COMPLETE.tar.gz",
+      "Inbox/20251103-093347_n5os-lite/",
+      "Inbox/20251105-095006_n5os-lite-v1.0-COMPLETE.tar.gz",
+      "Inbox/20251105-095006_n5os-lite-v1.0-FINAL-COMPLETE.tar.gz",
+      "Inbox/20251105-095006_n5os-lite-v1.0-FINAL.tar.gz",
+      "Inbox/20251105-095006_n5os-lite-v1.0-final.tar.gz",
+      "Inbox/20251105-095006_n5os-lite-v1.0-to-v1.2-DELTA.tar.gz",
+      "Inbox/20251105-095006_n5os-lite-v1.0-to-v1.2.1-DELTA-FIXED.tar.gz",
+      "Inbox/20251105-095006_n5os-lite-v1.1-COMPLETE.tar.gz",
+      "Inbox/20251105-095006_n5os-lite-v1.1-RELEASE-NOTES.md",
+      "Inbox/20251105-095006_n5os-lite-v1.2-COMPLETE.tar.gz",
+      "Inbox/20251105-095006_n5os-lite-v1.2.1-COMPLETE.tar.gz",
+      "Inbox/20251105-095006_n5os-lite-v1.2.1-to-v1.2.2-DELTA.tar.gz",
+      "Inbox/20251105-095006_n5os-lite-v1.2.2-COMPLETE.tar.gz",
+      "Inbox/20251105-095006_n5os-lite-v1.2.2-to-v1.2.3-DELTA.tar.gz",
+      "Inbox/20251105-095006_n5os-lite-v1.2.3-COMPLETE.tar.gz",
+      "Inbox/20251105-095007_n5os-lite-v1.0-vs-v1.1-COMPARISON.md",
+      "Inbox/20251105-095007_n5os-lite-v1.1-DELTA.tar.gz",
+      "Inbox/20251105-095006_n5os-lite/",
+      "Inbox/20251028-131721_n5os_core_spec (1).md",
+      "Inbox/20251028-132904_n5os_core_spec.md"
+    ],
+    "inbox_remaining_n5os": []
+  },
+  "learnings": [
+    "Force push with --force-with-lease is safer than plain --force as it ensures no one else pushed changes",
+    "Creating backup branches before destructive operations provides rollback capability",
+    "The corrected export now has the full 37 commit history properly restored on GitHub"
+  ]
+}

@@ -1,0 +1,15 @@
+{
+  "theme_id": "consultant",
+  "theme_name": "Consultant",
+  "format": "webpage",
+  "mode": "generate",
+  "tone": "professional and analytical",
+  "audience": "startup founders evaluating engineering candidates",
+  "amount": "medium",
+  "images": "none",
+  "image_style": null,
+  "image_model": null,
+  "visibility": "unlisted",
+  "cards": 10,
+  "rationale": "Selected Consultant theme for its explicit alignment with professional/corporate contexts. The light blue/white color palette conveys trust and authority while maintaining clarity for data presentation. No AI-generated images to avoid generic visuals and keep focus on substantive candidate assessment data. Medium detail provides enough depth without overwhelming decision-makers. 10 cards allows for comprehensive coverage: hero + 6 evidence cards + gaps + risk + questions."
+}

@@ -1,0 +1,20 @@
+{
+  "drop_id": "D2.2",
+  "status": "complete",
+  "summary": "Created routing-and-titling-rules.md specifying: (1) meeting vs. reflection classification heuristic with two-pass deterministic+LLM evaluation and decision ladder, (2) Pocket default-to-reflection behavior with escalation paths, (3) title generation hierarchy resolving DP-1 (calendar for structural fields, transcript semantics for purpose), (4) banned title patterns list, (5) reflection block recipe (reflection_standard) using R00/R06 always + R01/R02/R03 conditional, (6) move-ready state model resolving DP-2 as manifest flag SET by derived verification with explicit check definitions for both meetings and reflections, (7) simplified reflection quality gate profile, (8) gate interlock fix recommendation, (9) downstream knowledge quality impact analysis, (10) implementation notes listing files to modify and create.",
+  "artifacts": [
+    "N5/builds/meeting-system-recovery-redesign/artifacts/routing-and-titling-rules.md"
+  ],
+  "learnings": [
+    "The reflection prompt library (R00-R09) has 11 prompts but only 5 should be in the default recipe — reflections lose value when over-processed",
+    "Move-ready as dual flag+derivation avoids both premature-flag and re-computation failure modes",
+    "Calendar match is broken system-wide (always 0.0) so the gate interlock fix must account for this by treating calendar mismatch as non-critical",
+    "Title quality is a multiplier on downstream knowledge quality — bad titles propagate through brain.db edges, position extraction, and CRM references",
+    "The block_selector.py needs only a minimal one-branch addition for reflection support since the recipe system is already well-designed"
+  ],
+  "errors": [],
+  "decision_points": {
+    "DP-1": "Split authority: calendar/source metadata for structural fields (date, participants), transcript semantics for descriptive field (purpose/topic). Conflicts on identity fields escalate to HITL.",
+    "DP-2": "Both manifest flag AND derived verification. Flag is authoritative signal for automation; derivation is the guard that protects the flag. move_ready.checks provides debuggability."
+  }
+}

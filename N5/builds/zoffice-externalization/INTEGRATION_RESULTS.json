@@ -1,0 +1,10 @@
+{
+  "slug": "zoffice-externalization",
+  "timestamp": "2026-03-13T23:39:01.161937+00:00",
+  "total": 0,
+  "passed": 0,
+  "failed": 0,
+  "results": [],
+  "all_passed": true,
+  "message": "No integration tests defined"
+}

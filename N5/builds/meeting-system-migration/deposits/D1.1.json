@@ -1,0 +1,398 @@
+{
+  "status": "complete",
+  "summary": "Audited 35 agents across 10 domains",
+  "findings": {
+    "total_agents": 35,
+    "active": 27,
+    "disabled": 8,
+    "by_domain": {
+      "health": [
+        {
+          "id": "0077f07e-64a7-43ca-b462-a97095620563",
+          "title": "Daily Health Data Sync",
+          "active": true,
+          "frequency": "Daily 7:30 AM"
+        },
+        {
+          "id": "4e2a98ad-b355-4f37-8ca5-10abf3c7ecef",
+          "title": "Morning Health Checkpoint: Fasted Initialization",
+          "active": true,
+          "frequency": "Daily 7:00 AM"
+        },
+        {
+          "id": "59e5df9a-492e-45f3-af56-24e84cc4df01",
+          "title": "Post-Workout Shake Health Check",
+          "active": true,
+          "frequency": "Daily 8:30 AM"
+        },
+        {
+          "id": "4163c54c-f805-4345-8d43-f39625a2a477",
+          "title": "Pre-Sleep Health Checkpoint Notification",
+          "active": true,
+          "frequency": "Daily 10:00 PM"
+        },
+        {
+          "id": "c6ca2440-8606-49cc-8c88-8df980bc841e",
+          "title": "Health Checkpoint: The One Meal",
+          "active": true,
+          "frequency": "Daily 9:00 AM"
+        },
+        {
+          "id": "22b8032a-8388-4f9a-8c54-2fedf1b963c2",
+          "title": "Evening Wind-Down Health Check",
+          "active": true,
+          "frequency": "Daily 6:00 PM"
+        },
+        {
+          "id": "75764953-bde2-462e-90f8-48c82241ed50",
+          "title": "Sync Fitbit Workouts and Weekly Summary",
+          "active": true,
+          "frequency": "Daily 8:00 AM"
+        },
+        {
+          "id": "f58056ad-80f0-4223-85f3-55fe046a4a00",
+          "title": "⇱ 🧠 Fitbit Sync and Checkpoint Verification",
+          "active": false,
+          "frequency": "4x daily (0,6,12,18)"
+        },
+        {
+          "id": "529ed812-f8a3-4913-93f8-e14f92c14aaa",
+          "title": "Backfill Fitbit Health Data for the Last 7 Days",
+          "active": false,
+          "frequency": "Hourly for 24 runs"
+        }
+      ],
+      "meetings": [
+        {
+          "id": "0c53b7ba-2094-4778-84dc-fcea71283581",
+          "title": "Meeting Manifest Generation Workflow Execution [MG-1]",
+          "active": true,
+          "frequency": "5x daily (6,9,12,15,18)"
+        },
+        {
+          "id": "0a08e6a8-0a03-4131-a805-c249bf5617ae",
+          "title": "Meeting Intelligence Generation Report [MG-2]",
+          "active": true,
+          "frequency": "5x daily (6,9,12,15,18)"
+        },
+        {
+          "id": "ce6995b8-cacf-4dbb-a72c-fd5f1c299cf2",
+          "title": "Meeting Warm Intro Email Drafts [MG-4]",
+          "active": true,
+          "frequency": "5x daily (6,9,12,15,18)"
+        },
+        {
+          "id": "f339ca26-473b-4956-abb6-2e9d4bc20f01",
+          "title": "Meeting State Transition: intelligence_generated to processed [MG-6]",
+          "active": true,
+          "frequency": "5x daily (6,9,12,15,18)"
+        },
+        {
+          "id": "5579f899-3b9a-41c6-9615-ba4a400ce053",
+          "title": "Meeting Blurb Generation Scheduled",
+          "active": false,
+          "frequency": "5x daily"
+        },
+        {
+          "id": "c7d010d5-02f5-4e5d-a0b5-2eb6a6565962",
+          "title": "Meeting Follow-Up Generation",
+          "active": false,
+          "frequency": "5x daily"
+        }
+      ],
+      "crm_deals": [
+        {
+          "id": "f0abd2aa-9509-43ae-ab55-9079ea936547",
+          "title": "Weekly CRM Gmail Enrichment Workflow",
+          "active": true,
+          "frequency": "Weekly Sunday 6:00 AM"
+        },
+        {
+          "id": "806f7fcc-be16-4666-a8f5-2e3c9c7ad4ab",
+          "title": "Deal Sync & Meeting Routing",
+          "active": true,
+          "frequency": "4x daily (6,12,18,0)"
+        },
+        {
+          "id": "259a13c8-565a-4472-88f3-60a6d22131dc",
+          "title": "Daily Acquisition Deal Tracking and Sync",
+          "active": false,
+          "frequency": "Daily 8:00 AM"
+        }
+      ],
+      "events": [
+        {
+          "id": "8828e095-8492-4229-8b43-2de4e0f3dd52",
+          "title": "NYC Unified Luma Events Pipeline Execution",
+          "active": true,
+          "frequency": "Daily 7:00 AM"
+        }
+      ],
+      "positions": [
+        {
+          "id": "4ce1dca6-fe5d-4e8d-a8e1-56e6428fb765",
+          "title": "Daily B32 Positions Extraction and Tension Detection",
+          "active": true,
+          "frequency": "Daily 5:00 AM"
+        },
+        {
+          "id": "dd19d90e-455e-4b3a-b064-98eb0d43d6bc",
+          "title": "Weekly Position Triage Summary",
+          "active": false,
+          "frequency": "Weekly Sunday 6:00 PM"
+        }
+      ],
+      "system": [
+        {
+          "id": "0a2c48cf-1b5e-405c-b8db-1f301c8acbbf",
+          "title": "⇱ 🤖 Daily Database Backup",
+          "active": true,
+          "frequency": "Daily 2:00 AM",
+          "cornerstone": true
+        },
+        {
+          "id": "9b813d5c-187b-4293-bb4f-652319043704",
+          "title": "⇱ 🧠 Weekly Meeting Organization [v2]",
+          "active": true,
+          "frequency": "Daily 3:30 AM & 3:30 PM",
+          "cornerstone": true
+        },
+        {
+          "id": "8e05d139-a58e-4f90-8203-ce14bcb51be1",
+          "title": "Weekly Persona Routing Audit Report",
+          "active": true,
+          "frequency": "Weekly Sunday 9:00 AM"
+        }
+      ],
+      "context_intelligence": [
+        {
+          "id": "13199a59-8f9b-4df2-ad1f-83e9995139c7",
+          "title": "Context Graph Deep Backfill Agent Schedule",
+          "active": true,
+          "frequency": "9x daily (6:30,8:30,10:30,12:30,14:30,16:30,18:30,20:30,22:30)"
+        }
+      ],
+      "stakeholders": [
+        {
+          "id": "b1495b64-0060-46a8-9fc6-f3a7b0d28db7",
+          "title": "🧠 Stakeholder Profile Auto-Creation Workflow",
+          "active": true,
+          "frequency": "Daily 2:00 PM"
+        }
+      ],
+      "task_management": [
+        {
+          "id": "9b09d4a3-2bcd-4e14-91e4-73d826d248ea",
+          "title": "Morning Task Briefing",
+          "active": true,
+          "frequency": "Daily 7:00 AM"
+        },
+        {
+          "id": "f5ec46f0-cb52-4614-b9ad-f2a0af5f0dd3",
+          "title": "Evening Accountability Check-In",
+          "active": true,
+          "frequency": "Daily 9:00 PM"
+        }
+      ],
+      "careerspan": [
+        {
+          "id": "4d3ac290-71fd-4e90-8593-20135bf5d36f",
+          "title": "Careerspan Scan Results Email Monitoring",
+          "active": true,
+          "frequency": "Hourly 8 AM-9 PM (12x/day)"
+        }
+      ],
+      "monitoring": [
+        {
+          "id": "63ac046b-7355-412e-bca6-6d40eb7b50f3",
+          "title": "Recall Bot Health Check",
+          "active": true,
+          "frequency": "Every 30 minutes (48x/day)"
+        },
+        {
+          "id": "632e3b97-cdc4-4a2a-84f4-bf96bd3dbf22",
+          "title": "Pulse Sentinel for build: b05-backfill-extended",
+          "active": true,
+          "frequency": "Every 5 minutes for 60 runs (temporary)"
+        },
+        {
+          "id": "f8c5ae47-274e-48c0-818a-72dfa0db8253",
+          "title": "Pulse Monitoring Update for meeting-system-migration",
+          "active": true,
+          "frequency": "Every 5 minutes for 50 runs (temporary)"
+        }
+      ],
+      "digest": [
+        {
+          "id": "ad169b76-5219-437b-8f69-f6305b5e20ba",
+          "title": "Unified Morning Digest",
+          "active": true,
+          "frequency": "Daily 8:00 AM"
+        }
+      ],
+      "survey": [
+        {
+          "id": "51c1e23e-a58f-40a5-a6a5-3cd9026f2184",
+          "title": "Next Play Pre-Event Survey Auto-Refresh",
+          "active": true,
+          "frequency": "Daily 10 AM & 6 PM (until Jan 30)"
+        }
+      ],
+      "performance": [
+        {
+          "id": "6006fb46-0857-4bf7-9fa8-13a0bf2f3334",
+          "title": "Weekly Performance Dashboard and HR Calendar Sync",
+          "active": true,
+          "frequency": "Weekly Sunday 8:00 PM"
+        }
+      ]
+    },
+    "consolidation_opportunities": [
+      {
+        "agents": ["0077f07e-64a7-43ca-b462-a97095620563", "4e2a98ad-b355-4f37-8ca5-10abf3c7ecef", "59e5df9a-492e-45f3-af56-24e84cc4df01", "4163c54c-f805-4345-8d43-f39625a2a477", "c6ca2440-8606-49cc-8c88-8df980bc841e", "22b8032a-8388-4f9a-8c54-2fedf1b963c2"],
+        "reason": "All health checkpoint agents use the same health_checkpoint.py script with different prompts. Could consolidate into a single scheduled agent that runs at 5 different times based on checkpoint type (fasted, post-workout, meal, evening, pre-sleep).",
+        "recommended_action": "Merge into single 'Health Checkpoint Orchestrator' agent with time-based routing"
+      },
+      {
+        "agents": ["0c53b7ba-2094-4778-84dc-fcea71283581", "0a08e6a8-0a03-4131-a805-c249bf5617ae", "ce6995b8-cacf-4dbb-a72c-fd5f1c299cf2", "f339ca26-473b-4956-abb6-2e9d4bc20f01"],
+        "reason": "Four meeting agents all run at identical times (5x daily: 6,9,12,15,18). They represent MG-1 (manifest), MG-2 (blocks), MG-4 (intros), MG-6 (state transition) pipeline stages.",
+        "recommended_action": "Consider consolidating into 'Meeting Processing Pipeline' agent that executes stages in sequence"
+      },
+      {
+        "agents": ["9b09d4a3-2bcd-4e14-91e4-73d826d248ea", "ad169b76-5219-437b-8f69-f6305b5e20ba"],
+        "reason": "Both morning tasks run at similar times (7 AM and 8 AM). Morning Task Briefing generates task summary; Unified Morning Digest generates broader digest. Could be a unified 'Morning Briefing' agent.",
+        "recommended_action": "Consider merging into single Morning Briefing agent with multiple output sections"
+      }
+    ],
+    "deletion_candidates": [
+      {
+        "id": "f58056ad-80f0-4223-85f3-55fe046a4a00",
+        "title": "⇱ 🧠 Fitbit Sync and Checkpoint Verification",
+        "reason": "DISABLED - Consolidated into Daily Health Data Sync (0077f07e). Instruction explicitly states 'Disabled due to Fitbit API rate limiting, consolidated at 7:30 AM'"
+      },
+      {
+        "id": "529ed812-f8a3-4913-93f8-e14f92c14aaa",
+        "title": "Backfill Fitbit Health Data for the Last 7 Days",
+        "reason": "DISABLED - Temporary backfill agent with 'next_run: null' indicating no future runs. Was one-time hourly 24-run task that has completed."
+      },
+      {
+        "id": "259a13c8-565a-4472-88f3-60a6d22131dc",
+        "title": "Daily Acquisition Deal Tracking and Sync",
+        "reason": "DISABLED - Consolidated into Deal Sync & Meeting Routing (806f7fcc). Instruction states 'PAUSED - Consolidated, Meeting→deal routing handled there'"
+      },
+      {
+        "id": "5579f899-3b9a-41c6-9615-ba4a400ce053",
+        "title": "Meeting Blurb Generation Scheduled",
+        "reason": "DISABLED - Replaced by Zo Take Heed system (2026-01-19). Instruction states blurbs now generated only on explicit request during meetings"
+      },
+      {
+        "id": "c7d010d5-02f5-4e5d-a0b5-2eb6a6565962",
+        "title": "Meeting Follow-Up Generation",
+        "reason": "DISABLED - Replaced by Zo Take Heed system (2026-01-19). Instruction states follow-ups now generated only on explicit request"
+      },
+      {
+        "id": "dd19d90e-455e-4b3a-b064-98eb0d43d6bc",
+        "title": "Weekly Position Triage Summary",
+        "reason": "DISABLED - Next run is Jan 4, 2026 (in past). May have been superseded or paused indefinitely"
+      }
+    ],
+    "frequency_concerns": [
+      {
+        "id": "13199a59-8f9b-4df2-ad1f-83e9995139c7",
+        "title": "Context Graph Deep Backfill Agent Schedule",
+        "current": "9x daily (every 2 hours on the half-hour)",
+        "recommended": "3x daily (morning, afternoon, evening)",
+        "reason": "Context graph extraction is quality-over-speed task per instruction. Running 9x daily may be excessive. Consider reducing to 3x for meaningful backfill intervals."
+      },
+      {
+        "id": "4d3ac290-71fd-4e90-8593-20135bf5d36f",
+        "title": "Careerspan Scan Results Email Monitoring",
+        "current": "12x daily (hourly 8 AM-9 PM)",
+        "recommended": "4x daily (9 AM, 12 PM, 3 PM, 6 PM)",
+        "reason": "Checking every hour for scan results may be overkill. Scan results are unlikely to arrive with urgency requiring hourly checks."
+      },
+      {
+        "id": "63ac046b-7355-412e-bca6-6d40eb7b50f3",
+        "title": "Recall Bot Health Check",
+        "current": "48x daily (every 30 minutes)",
+        "recommended": "Every 2 hours",
+        "reason": "Checking bot status every 30 minutes is high frequency for a non-critical monitoring task. Every 2 hours would provide adequate coverage."
+      },
+      {
+        "id": "409a4bf8-579c-4351-8b1d-b5759feae481",
+        "title": "Script Execution Notification",
+        "current": "Daily 8:00 AM",
+        "recommended": "Review necessity",
+        "reason": "Instruction title is generic 'Script Execution Notification' but runs thought_provoker_scan_v2.py. Rename to reflect actual purpose or consolidate with other meeting-related scripts."
+      },
+      {
+        "id": "6006fb46-0857-4bf7-9fa8-13a0bf2f3334",
+        "title": "Weekly Performance Dashboard and HR Calendar Sync",
+        "current": "Weekly Sunday 8:00 PM",
+        "recommended": "Consider moving to Sunday 9:00 AM",
+        "reason": "Performance dashboard is more useful in morning for planning the week ahead rather than Sunday evening."
+      }
+    ],
+    "dependency_risks": [
+      {
+        "id": "0c53b7ba-2094-4778-84dc-fcea71283581",
+        "title": "Meeting Manifest Generation Workflow Execution [MG-1]",
+        "risk": "References prompt 'Prompts/Meeting Manifest Generation.prompt.md'. Verify this file still exists and is current."
+      },
+      {
+        "id": "0a08e6a8-0a03-4131-a805-c249bf5617ae",
+        "title": "Meeting Intelligence Generation Report [MG-2]",
+        "risk": "References prompt 'Prompts/Meeting Block Generation.prompt.md'. Verify this file still exists and is current."
+      },
+      {
+        "id": "ce6995b8-cacf-4dbb-a72c-fd5f1c299cf2",
+        "title": "Meeting Warm Intro Email Drafts [MG-4]",
+        "risk": "References prompt 'Prompts/Meeting Warm Intro Generation.prompt.md'. Verify this file still exists and is current."
+      },
+      {
+        "id": "f339ca26-473b-4956-abb6-2e9d4bc20f01",
+        "title": "Meeting State Transition: intelligence_generated to processed [MG-6]",
+        "risk": "Uses manifest.json status field. Ensure schema hasn't changed or this will fail silently."
+      }
+    ],
+    "cornerstone_tasks": [
+      {
+        "id": "0a2c48cf-1b5e-405c-b8db-1f301c8acbbf",
+        "title": "⇱ 🤖 Daily Database Backup"
+      },
+      {
+        "id": "9b813d5c-187b-4293-bb4f-652319043704",
+        "title": "⇱ 🧠 Weekly Meeting Organization [v2]"
+      }
+    ],
+    "temporary_agents": [
+      {
+        "id": "51c1e23e-a58f-40a5-a6a5-3cd9026f2184",
+        "title": "Next Play Pre-Event Survey Auto-Refresh",
+        "expiry": "2026-01-30",
+        "reason": "UNTIL=20260130T000000Z in RRULE - auto-disable after Jan 30 event"
+      },
+      {
+        "id": "632e3b97-cdc4-4a2a-84f4-bf96bd3dbf22",
+        "title": "Pulse Sentinel for build: b05-backfill-extended",
+        "expiry": "COUNT=60 (5 min intervals = 5 hours)",
+        "reason": "Pulse sentinel with limited run count, will self-terminate after build completes"
+      },
+      {
+        "id": "f8c5ae47-274e-48c0-818a-72dfa0db8253",
+        "title": "Pulse Monitoring Update for meeting-system-migration",
+        "expiry": "COUNT=50 (5 min intervals = ~4.2 hours)",
+        "reason": "Pulse sentinel for this build, will self-terminate after completion"
+      }
+    ],
+    "overlap_analysis": {
+      "time_conflicts": [
+        "7:00 AM - Three agents (Morning Health Checkpoint, Morning Task Briefing, NYC Unified Luma Events Pipeline)",
+        "7:30 AM - Daily Health Data Sync",
+        "8:00 AM - Four agents (Unified Morning Digest, Thought Provoker, Sync Fitbit Workouts, 2 meeting agents run at 6,9,12,15,18 - 9 AM slot)"
+      ],
+      "resource_contention": "Multiple agents running between 8-9 AM may cause API rate limits or resource contention"
+    }
+  },
+  "artifacts": ["agent-audit-report.md"]
+}

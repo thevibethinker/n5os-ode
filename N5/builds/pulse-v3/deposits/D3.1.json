@@ -1,0 +1,12 @@
+{
+  "drop_id": "D3.1",
+  "build_slug": "pulse-v3",
+  "status": "complete",
+  "summary": "Updated SKILL.md with v3 lifecycle automation section, updated config.json to version 3.0 with lifecycle/auto_fix/fragment_routing sections, added v3 additions to guidelines document",
+  "artifacts": [
+    "Skills/pulse/SKILL.md",
+    "Skills/pulse/config/pulse_v2_config.json",
+    "N5/prefs/operations/pulse_v2_guidelines.md"
+  ],
+  "issues": []
+}

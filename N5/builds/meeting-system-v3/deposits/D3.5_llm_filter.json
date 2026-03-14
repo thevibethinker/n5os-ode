@@ -1,0 +1,17 @@
+{
+  "pass": false,
+  "stage": "llm",
+  "mechanical": {
+    "drop_id": "D3.5",
+    "build_slug": "meeting-system-v3",
+    "timestamp": "2026-02-01T20:48:30.822098",
+    "files_checked": 0,
+    "critical_count": 0,
+    "warning_count": 0,
+    "issues": {}
+  },
+  "llm": {
+    "error": "LLM validation timeout",
+    "pass": false
+  }
+}

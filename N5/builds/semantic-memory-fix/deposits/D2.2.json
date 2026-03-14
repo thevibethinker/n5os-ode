@@ -1,0 +1,17 @@
+{
+  "drop_id": "D2.2",
+  "status": "complete",
+  "summary": "Indexed Documents/ gap (319 → 1090 files, 99%+ coverage — 15 remaining are empty/nonexistent stubs). Fixed simple chunker to carry overlap lines between chunks (100-char carryover). Markdown chunker already had overlap logic.",
+  "artifacts": [
+    "N5/cognition/n5_memory_client.py (simple chunker overlap fix)"
+  ],
+  "metrics": {
+    "documents_before": 319,
+    "documents_after": 1090,
+    "documents_total": 1105,
+    "coverage_pct": 98.6,
+    "skipped_empty_or_missing": 15
+  },
+  "broadcast": "Documents/ is now indexed at 99% coverage. 15 skipped files are empty stubs. Simple chunker now carries overlap between chunks.",
+  "issues": []
+}

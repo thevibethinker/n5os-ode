@@ -1,0 +1,20 @@
+{
+  "drop_id": "D1.1",
+  "status": "complete",
+  "summary": "Successfully installed hnswlib v0.8.0 and rebuilt the ANN index for the semantic memory system. The index now contains 173,135 vectors (3072-dim from OpenAI text-embedding-3-large) and is fully operational.",
+  "artifacts": [
+    "/home/workspace/N5/cognition/brain.hnsw",
+    "/home/workspace/N5/cognition/brain.hnsw.ids"
+  ],
+  "metrics": {
+    "vectors_indexed": 173135,
+    "index_build_time_seconds": 120,
+    "search_latency_ms": 2,
+    "hnswlib_version": "0.8.0"
+  },
+  "broadcast": "hnswlib installed and ANN index rebuilt with 173K vectors. Search latency now ~2ms (was 11-14s brute-force). ANN_INDEX_PATH is: /home/workspace/N5/cognition/brain.hnsw",
+  "issues": [
+    "Database lock contention during index rebuild required retry with longer timeout",
+    "Vector count (173K) differs from brief estimate (190K) — actual count confirmed via DB query"
+  ]
+}

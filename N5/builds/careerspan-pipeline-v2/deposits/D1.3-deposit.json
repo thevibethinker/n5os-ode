@@ -1,0 +1,134 @@
+{
+  "drop_id": "D1.3",
+  "build_slug": "careerspan-pipeline-v2",
+  "stream": 1,
+  "completed_at": "2026-02-03T02:35:00Z",
+  "status": "complete",
+  "output": {
+    "skill_created": "Skills/careerspan-update-handler/",
+    "files_created": [
+      "Skills/careerspan-update-handler/SKILL.md",
+      "Skills/careerspan-update-handler/scripts/process_update.py"
+    ],
+    "features": [
+      "LLM-based update classification via /zo/ask API",
+      "Supports 4 update types: employer_response, candidate_status, role_status, general_intel",
+      "Airtable record lookup by identifier",
+      "Field update mapping based on classification",
+      "Core Questions completion detection",
+      "Dry-run mode for testing",
+      "Configuration loading from Integrations/careerspan-pipeline/config.yaml"
+    ],
+    "script_interface": {
+      "entry_point": "python3 Skills/careerspan-update-handler/scripts/process_update.py",
+      "required_args": [
+        "--email-subject",
+        "--email-body",
+        "--email-from"
+      ],
+      "optional_args": [
+        "--dry-run"
+      ]
+    },
+    "update_type_mapping": {
+      "employer_response": {
+        "target": "job_openings",
+        "actions": [
+          "Update Core Question fields",
+          "Check for completion",
+          "Update status to Finalized if complete",
+          "Email Shivam confirming completion"
+        ]
+      },
+      "candidate_status": {
+        "target": "candidates",
+        "actions": [
+          "Update status field based on interview stage"
+        ]
+      },
+      "role_status": {
+        "target": "job_openings",
+        "actions": [
+          "Update intake_status",
+          "Update ball_in_court to Shivam"
+        ]
+      },
+      "general_intel": {
+        "target": "any",
+        "actions": [
+          "Add to notes field"
+        ]
+      }
+    },
+    "field_mappings": {
+      "intake_status": "Intake Status",
+      "ball_in_court": "Ball In Court",
+      "core_question_checkboxes": [
+        "Salary Range (Checkbox)",
+        "Salary Visibility (Checkbox)",
+        "Location/Geo (Checkbox)",
+        "Visa/Sponsorship (Checkbox)",
+        "90-Day Success (Checkbox)",
+        "Anti-Pattern (Checkbox)"
+      ]
+    },
+    "output_format": {
+      "update_type": "string",
+      "records_updated": [
+        {
+          "table": "string",
+          "id": "string",
+          "fields_updated": [
+            "string"
+          ]
+        }
+      ],
+      "hiring_pov_refreshed": "boolean",
+      "email_sent": "boolean"
+    },
+    "dependencies": [
+      "AIRTABLE_API_KEY environment variable",
+      "ZO_CLIENT_IDENTITY_TOKEN environment variable",
+      "Integrations/careerspan-pipeline/config.yaml",
+      "PyYAML Python package",
+      "requests Python package"
+    ],
+    "integration_points": {
+      "airtable": {
+        "base_id": "appd12asvg42woz9I",
+        "tables": {
+          "job_openings": "tblHgSEOsoegYnJl7",
+          "candidates": "tblWB2mGbioA8pLBL",
+          "employers": "tblvIfVUHxzuBQ2WB"
+        }
+      },
+      "zo_ask": {
+        "endpoint": "https://api.zo.computer/zo/ask",
+        "purpose": "LLM classification of update type"
+      }
+    },
+    "testing": {
+      "dry_run_mode": "Available via --dry-run flag",
+      "recommended_test_cases": [
+        "Employer confirms salary range",
+        "Candidate progresses to next interview round",
+        "Role paused by employer",
+        "General intel about employer preferences"
+      ]
+    },
+    "notes": [
+      "Skill uses LLM classification for semantic understanding of email content",
+      "Permitted senders validated against config.yaml",
+      "Core Questions completion checks 6 checkbox fields",
+      "Status mapping for role_status: paused->Paused, closed->Closed, re-opened->Active",
+      "Single persistent thread per topic maintained with Shivam (per pipeline rules)"
+    ]
+  },
+  "next_steps": [
+    "Test skill with sample [UPDATE] emails",
+    "Integrate with pipeline orchestrator for automatic processing",
+    "Add error handling for ambiguous classifications",
+    "Consider adding hiring POV regeneration trigger when Core Questions complete"
+  ],
+  "provenance": "con_ARKuceMxUhr4g89X"
+}

@@ -1,0 +1,18 @@
+{
+  "drop_id": "D1.1",
+  "status": "complete",
+  "timestamp": "2026-02-07T19:45:00-05:00",
+  "summary": "Successfully implemented Forward Broadcast functionality in Pulse orchestrator. Added broadcast collection and injection logic to enable forward-only communication between Drops.",
+  "broadcast": "Forward Broadcast feature complete — deposits can now include 'broadcast' field which gets injected into subsequent Drop briefs",
+  "artifacts": [
+    "Skills/pulse/scripts/pulse.py"
+  ],
+  "decisions": [
+    "Placed broadcast injection logic in spawn_drop() to ensure all new Drops receive broadcasts",
+    "Store broadcasts in meta.json under 'broadcasts' key for persistence across orchestrator restarts",
+    "Inject broadcasts before common section markers (Requirements, Context, Files to Read) or append at end",
+    "Made broadcast field optional for backward compatibility"
+  ],
+  "concerns": [],
+  "notes_for_orchestrator": "The implementation is fully backward compatible. Deposits without 'broadcast' field continue to work normally. The feature only activates when deposits include the optional 'broadcast' field. The next Drop (D1.2) should test this implementation."
+}

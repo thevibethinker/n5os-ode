@@ -1,0 +1,10 @@
+{
+  "batch_count": 6,
+  "meetings_scanned_total": 276,
+  "deltas_extracted_total": 0,
+  "meetings_with_orgs_total": 79,
+  "orgs_unique_max": 16,
+  "unresolved_conflicts_total": 42,
+  "errors_total": 0,
+  "idempotency_observed": true
+}

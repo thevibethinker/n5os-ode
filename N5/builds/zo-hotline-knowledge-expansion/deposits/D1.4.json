@@ -1,0 +1,31 @@
+{
+  "drop_id": "D1.4",
+  "status": "complete",
+  "summary": "Created technical advice knowledge pack with 4 practical how-to guides for Zoseph: rules vs personas vs skills, debugging scheduled agents, zo.space best practices, and integration patterns. All files under 1500 char limit with YAML frontmatter and concrete UI guidance for non-technical users.",
+  "artifacts": [
+    "Knowledge/zo-hotline/90-technical-advice/rules-vs-personas-vs-skills.md",
+    "Knowledge/zo-hotline/90-technical-advice/debugging-scheduled-agents.md", 
+    "Knowledge/zo-hotline/90-technical-advice/zo-space-best-practices.md",
+    "Knowledge/zo-hotline/90-technical-advice/integration-patterns.md"
+  ],
+  "learnings": [
+    "Technical advice content benefits from decision trees - when to use what tool/approach",
+    "Non-technical users need specific UI directions (Settings > Section > Subsection) not generic guidance",
+    "Tiny examples work better than long explanations for troubleshooting guides"
+  ],
+  "errors": [],
+  "broadcast": [
+    "technical troubleshooting",
+    "rules vs personas",
+    "scheduled agent debugging", 
+    "zo.space development",
+    "integration patterns",
+    "webhook setup",
+    "asset management",
+    "skills creation",
+    "API development",
+    "hotline diagnosis",
+    "non-technical guidance",
+    "ui navigation"
+  ]
+}

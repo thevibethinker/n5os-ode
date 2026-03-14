@@ -1,0 +1,34 @@
+{
+  "drop_id": "D2.3",
+  "build_slug": "meeting-system-recovery-redesign",
+  "validated_at": "2026-03-10T22:14:35.782993+00:00",
+  "verdict": "FAIL",
+  "reason": "Code validation: 1 critical issues",
+  "mechanical": {
+    "drop_id": "D2.3",
+    "build_slug": "meeting-system-recovery-redesign",
+    "timestamp": "2026-03-10T22:14:35.783177",
+    "files_checked": 1,
+    "critical_count": 1,
+    "warning_count": 0,
+    "issues": {
+      "/home/workspace/N5/builds/meeting-system-recovery-redesign/artifacts/skill-packaging-and-export-policy.md": {
+        "critical": [
+          {
+            "type": "ellipsis_stub",
+            "message": "Function body is just `...`",
+            "line": 453,
+            "content": "..."
+          }
+        ],
+        "warnings": [],
+        "stats": {
+          "lines": 535,
+          "functions": 0,
+          "empty_functions": 0
+        }
+      }
+    }
+  },
+  "llm": null
+}
