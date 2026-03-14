@@ -1,1 +1,0 @@
-{"entities": [{"name": "David", "type": "PERSON", "context": "individual conducting research"}, {"name": "GTM Engineer communities", "type": "CONCEPT", "context": "potential communities for GTM Engineers"}], "relationships": [{"from": "David", "to": "GTM Engineer communities", "type": "RELATED_TO", "context": "David to research existence of these communities"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Tasks", "type": "CONCEPT", "context": "Things you must do"}, {"name": "Ideas", "type": "CONCEPT", "context": "Thoughts you generate"}, {"name": "Notes", "type": "CONCEPT", "context": "Information from external sources"}, {"name": "Media", "type": "CONCEPT", "context": "Content to process"}], "relationships": []}

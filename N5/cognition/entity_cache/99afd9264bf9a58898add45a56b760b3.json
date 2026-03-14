@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "facilitator of introductions"}, {"name": "42geeks.com", "type": "ORG", "context": "website for upcoming tracks"}], "relationships": [{"from": "Vrijen", "to": "42geeks.com", "type": "MENTIONS", "context": "provides information about upcoming tracks"}]}

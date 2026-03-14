@@ -1,1 +1,0 @@
-{"entities": [{"name": "git", "type": "TOOL", "context": "version control system used for file organization"}, {"name": "workspace cleanup", "type": "CONCEPT", "context": "process of organizing files and removing clutter"}], "relationships": []}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual mentioned in the text"}, {"name": "zo_report.py", "type": "TOOL", "context": "script mentioned for reporting bugs"}], "relationships": [{"from": "V", "to": "zo_report.py", "type": "USES", "context": "V uses the zo_report.py script to report bugs"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "N5/config/commands.jsonl", "type": "TOOL", "context": "Registry of executable commands"}], "relationships": [{"from": "N5/config/commands.jsonl", "to": "AI", "type": "USES", "context": "AI checks this file before operations"}]}

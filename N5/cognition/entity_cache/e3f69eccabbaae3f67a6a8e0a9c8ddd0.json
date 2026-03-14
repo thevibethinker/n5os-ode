@@ -1,1 +1,0 @@
-{"entities": [{"name": "X", "type": "CONCEPT", "context": "resource discussed in the voice primitive"}, {"name": "Y", "type": "CONCEPT", "context": "limited source mentioned in the voice primitive"}, {"name": "linkedin", "type": "ORG", "context": "source of the information"}], "relationships": []}

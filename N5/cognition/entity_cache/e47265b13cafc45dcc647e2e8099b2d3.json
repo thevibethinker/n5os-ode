@@ -1,1 +1,0 @@
-{"entities": [{"name": "Test Suite", "type": "CONCEPT", "context": "a collection of tests for validation"}, {"name": "CLI", "type": "TOOL", "context": "Command Line Interface for parsing"}, {"name": "Integration tests", "type": "TOOL", "context": "tests for spawning"}], "relationships": []}

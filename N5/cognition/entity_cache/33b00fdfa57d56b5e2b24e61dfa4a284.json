@@ -1,1 +1,0 @@
-{"entities": [{"name": "Jaya", "type": "PERSON", "context": "Founder of Bonfire"}, {"name": "Bonfire", "type": "ORG", "context": "Organization mentioned in the quote"}], "relationships": [{"from": "Jaya", "to": "Bonfire", "type": "WORKS_WITH", "context": "Jaya is the founder of Bonfire"}]}

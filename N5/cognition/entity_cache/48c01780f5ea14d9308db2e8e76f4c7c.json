@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo team", "type": "ORG", "context": "organization involved in the Demo event preparations"}, {"name": "Vrijen (V)", "type": "PERSON", "context": "individual involved in the Demo event preparations"}], "relationships": [{"from": "Vrijen (V)", "to": "Zo team", "type": "WORKS_WITH", "context": "collaborating on preparations for the Demo event"}]}

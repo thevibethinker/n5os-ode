@@ -1,1 +1,0 @@
-{"entities": [{"name": "Aviato", "type": "ORG", "context": "An API that provides data"}, {"name": "N5", "type": "ORG", "context": "A storage system location"}], "relationships": [{"from": "V", "to": "Aviato", "type": "USES", "context": "V uses Aviato API for data"}, {"from": "V", "to": "N5", "type": "USES", "context": "V stores data in N5 storage system"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "SourceMapConsumer", "type": "TOOL", "context": "Method associated with handling source maps in V's knowledge system."}, {"name": "pull request #127", "type": "EVENT", "context": "Specific GitHub pull request related to the project."}], "relationships": []}

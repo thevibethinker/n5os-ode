@@ -1,1 +1,0 @@
-{"entities": [{"name": "Tope", "type": "PERSON", "context": "Founder of Calendly"}, {"name": "Calendly", "type": "ORG", "context": "Scheduling tool founded in 2013"}], "relationships": [{"from": "Tope", "to": "Calendly", "type": "BELIEVES", "context": "Belief in improving scheduling efficiency"}]}

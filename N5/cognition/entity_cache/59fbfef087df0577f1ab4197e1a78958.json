@@ -1,1 +1,0 @@
-{"entities": [{"name": "DD", "type": "CONCEPT", "context": "A knowledge system differentiated from enrichment"}, {"name": "Enrichment", "type": "CONCEPT", "context": "An automatic and accumulative process"}], "relationships": [{"from": "DD", "to": "Enrichment", "type": "RELATED_TO", "context": "DD is defined as not being equivalent to enrichment"}]}

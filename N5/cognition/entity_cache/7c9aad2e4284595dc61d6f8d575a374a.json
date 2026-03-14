@@ -1,1 +1,0 @@
-{"entities": [{"name": "N5/crm_v3/profiles/", "type": "TOOL", "context": "YAML profile SSOT directory"}, {"name": "N5/data/crm_v3.db", "type": "TOOL", "context": "SQLite database for fast queries and enrichment queues"}, {"name": "N5/crm_v3/db/schema.sql", "type": "TOOL", "context": "Canonical database schema"}], "relationships": []}

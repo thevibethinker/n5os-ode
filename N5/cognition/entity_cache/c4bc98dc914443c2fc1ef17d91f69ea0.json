@@ -1,1 +1,0 @@
-{"entities": [{"name": "Shane", "type": "PERSON", "context": "CMO at major company"}, {"name": "V", "type": "PERSON", "context": "expert/advisor on productivity/AI"}], "relationships": [{"from": "Shane", "to": "V", "type": "BELIEVES", "context": "Shane acknowledges V's expertise in productivity/AI"}]}

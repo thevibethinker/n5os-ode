@@ -1,1 +1,0 @@
-{"entities": [{"name": "Slack", "type": "ORG", "context": "a messaging platform"}, {"name": "Zo", "type": "TOOL", "context": "a tool that integrates with Slack"}], "relationships": [{"from": "Slack", "to": "Zo", "type": "WORKS_WITH", "context": "enables bidirectional communication"}]}

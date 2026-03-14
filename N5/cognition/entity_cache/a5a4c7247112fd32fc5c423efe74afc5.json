@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan/Apply AI system", "type": "CONCEPT", "context": "system used for employer onboarding"}, {"name": "employer user", "type": "PERSON", "context": "user type in the system"}], "relationships": [{"from": "employer user", "to": "Careerspan/Apply AI system", "type": "USES", "context": "employer user sets password in the system"}]}

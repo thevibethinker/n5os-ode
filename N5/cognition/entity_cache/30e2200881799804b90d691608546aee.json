@@ -1,1 +1,0 @@
-{"entities": [{"name": "Mateo", "type": "PERSON", "context": "Friend of V, mentioned as example for potential informal social invitation blurbs"}], "relationships": [{"from": "V", "to": "Mateo", "type": "KNOWS", "context": "Friendship relationship; Mateo referenced as example friend for social invitations"}]}

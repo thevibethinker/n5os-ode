@@ -1,1 +1,0 @@
-{"entities": [{"name": "Gaurav Mundra", "type": "PERSON", "context": "Email communication regarding V's knowledge system"}, {"name": "Mumbai", "type": "LOCATION", "context": "Location of Gaurav Mundra"}], "relationships": [{"from": "V (Vrijen)", "to": "Gaurav Mundra", "type": "KNOWS", "context": "V has a contact in Gaurav Mundra"}]}

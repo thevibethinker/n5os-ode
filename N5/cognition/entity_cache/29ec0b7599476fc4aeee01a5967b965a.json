@@ -1,1 +1,0 @@
-{"entities": [{"name": "Tiff", "type": "PERSON", "context": "individual associated with Substrate.Run"}, {"name": "Substrate.Run", "type": "ORG", "context": "organization related to Tiff"}], "relationships": [{"from": "Tiff", "to": "Substrate.Run", "type": "WORKS_WITH", "context": "Tiff is associated with Substrate.Run"}]}

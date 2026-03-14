@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "delivering his core thesis"}, {"name": "product concept", "type": "CONCEPT", "context": "entire product concept discussion"}], "relationships": [{"from": "V", "to": "product concept", "type": "BELIEVES", "context": "high conviction in the core thesis related to product concept"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "proposed actions for business strategy"}, {"name": "Jack and Jill", "type": "ORG", "context": "example of potential acquisition target"}], "relationships": [{"from": "V", "to": "Jack and Jill", "type": "MENTIONS", "context": "cited as example of a 'juicy target' for acquirers"}]}

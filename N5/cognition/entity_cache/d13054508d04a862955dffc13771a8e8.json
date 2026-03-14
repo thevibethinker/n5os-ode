@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual expressing feelings about their knowledge system"}, {"name": "career advice", "type": "CONCEPT", "context": "work that V has experience in"}], "relationships": [{"from": "V", "to": "career advice", "type": "KNOWS", "context": "V has 10 years of experience giving career advice"}]}

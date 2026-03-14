@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual referenced in the text"}, {"name": "linkedin", "type": "ORG", "context": "source of the information"}], "relationships": [{"from": "V", "to": "linkedin", "type": "USES", "context": "platform for professional networking and information sourcing"}]}

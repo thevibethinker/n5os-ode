@@ -1,1 +1,0 @@
-{"entities": [{"name": "WorkThread", "type": "TOOL", "context": "A tool used for managing threads in the system"}, {"name": "ThreadStatus.ACTIVE", "type": "CONCEPT", "context": "A status indicating that the thread is currently active"}], "relationships": []}

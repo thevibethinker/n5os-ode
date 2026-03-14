@@ -1,1 +1,0 @@
-{"entities": [{"name": "google_drive", "type": "TOOL", "context": "a tool for managing files and documents"}], "relationships": [{"from": "V", "to": "google_drive", "type": "USES", "context": "V utilizes the tool for certain tasks"}]}

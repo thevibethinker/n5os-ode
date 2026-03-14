@@ -1,1 +1,0 @@
-{"entities": [{"name": "Hamoon Ekhtiari", "type": "PERSON", "context": "Contact for Futurefit.Ai"}, {"name": "Futurefit.Ai", "type": "ORG", "context": "Organization associated with Hamoon Ekhtiari"}], "relationships": [{"from": "Hamoon Ekhtiari", "to": "Futurefit.Ai", "type": "WORKS_WITH", "context": "Hamoon's affiliation with the organization"}]}

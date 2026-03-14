@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the individual responsible for reviewing health metrics and managing the learning loop"}], "relationships": [{"from": "V", "to": "health metrics", "type": "USES", "context": "V reviews and identifies what needs attention in health metrics"}]}

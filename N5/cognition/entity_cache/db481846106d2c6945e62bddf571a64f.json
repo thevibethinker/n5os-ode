@@ -1,1 +1,0 @@
-{"entities": [{"name": "Amanda", "type": "PERSON", "context": "receiving feedback loop"}, {"name": "Vrijen", "type": "PERSON", "context": "investing personal time in Amanda's success"}], "relationships": [{"from": "Vrijen", "to": "Amanda", "type": "WORKS_WITH", "context": "Vrijen is helping Amanda succeed"}]}

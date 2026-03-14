@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual concerned about technical literacy"}, {"name": "Zo", "type": "TOOL", "context": "AI tool that V needs to understand"}], "relationships": [{"from": "V", "to": "Zo", "type": "KNOWS", "context": "V needs to understand the differentiation of Zo from other tools"}]}

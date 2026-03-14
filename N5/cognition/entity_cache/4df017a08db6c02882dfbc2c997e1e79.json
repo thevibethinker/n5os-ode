@@ -1,1 +1,0 @@
-{"entities": [{"name": "MG-7C", "type": "TOOL", "context": "A system or tool that helps manage folders in the Inbox"}, {"name": "Inbox", "type": "CONCEPT", "context": "A location where folders are stored"}], "relationships": [{"from": "MG-7C", "to": "Inbox", "type": "USES", "context": "MG-7C finds folders in Inbox"}]}

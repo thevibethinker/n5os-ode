@@ -1,1 +1,0 @@
-{"entities": [{"name": "Tidelift", "type": "ORG", "context": "provides professional support for open source packages"}, {"name": "npm-env-paths", "type": "TOOL", "context": "a package that can be supported by Tidelift"}], "relationships": [{"from": "Tidelift", "to": "npm-env-paths", "type": "WORKS_WITH", "context": "provides support for this package"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual involved in knowledge system"}, {"name": "product team", "type": "ORG", "context": "team responsible for product development"}], "relationships": [{"from": "V", "to": "product team", "type": "CHAMPIONS", "context": "V advocates for prioritizing user feedback"}]}

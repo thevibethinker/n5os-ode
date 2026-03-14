@@ -1,1 +1,0 @@
-{"entities": [{"name": "bidi/core", "type": "TOOL", "context": "a tool implementing WebDriver BiDi"}, {"name": "WebDriver BiDi", "type": "CONCEPT", "context": "a protocol for browser interaction"}], "relationships": [{"from": "bidi/core", "to": "WebDriver BiDi", "type": "USES", "context": "bidi/core implements WebDriver BiDi comprehensively"}]}

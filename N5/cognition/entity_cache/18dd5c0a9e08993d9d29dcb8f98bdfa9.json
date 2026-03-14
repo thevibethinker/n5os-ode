@@ -1,1 +1,0 @@
-{"entities": [{"name": "Buffer", "type": "TOOL", "context": "class used for creating data packets"}, {"name": "smart-buffer", "type": "TOOL", "context": "alternative to Buffer that simplifies packet creation"}], "relationships": [{"from": "smart-buffer", "to": "Buffer", "type": "USES", "context": "smart-buffer is an alternative to Buffer"}]}

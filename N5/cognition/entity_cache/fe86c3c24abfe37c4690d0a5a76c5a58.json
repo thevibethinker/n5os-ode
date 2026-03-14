@@ -1,1 +1,0 @@
-{"entities": [{"name": "Chase", "type": "PERSON", "context": "Initiated outreach to Careerspan"}, {"name": "Careerspan", "type": "ORG", "context": "Organization approached by Chase"}], "relationships": [{"from": "Chase", "to": "Careerspan", "type": "WORKS_WITH", "context": "Chase initiated outreach to Careerspan"}]}

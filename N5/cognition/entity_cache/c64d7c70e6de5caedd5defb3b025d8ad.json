@@ -1,1 +1,0 @@
-{"entities": [{"name": "Architect", "type": "ORG", "context": "a role or organization invoked when a plan does not exist"}, {"name": "Level Upper", "type": "TOOL", "context": "workflow integration system for major builds"}, {"name": "P15", "type": "CONCEPT", "context": "a guideline for enforcing no false completion"}], "relationships": []}

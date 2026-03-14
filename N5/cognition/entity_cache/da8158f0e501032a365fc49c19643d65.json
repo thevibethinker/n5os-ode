@@ -1,1 +1,0 @@
-{"entities": [{"name": "Logan", "type": "PERSON", "context": "individual responsible for Twitter outreach targets"}, {"name": "V", "type": "PERSON", "context": "individual proposing LinkedIn outreach targets"}], "relationships": [{"from": "V", "to": "Logan", "type": "WORKS_WITH", "context": "both are collaborating on social outreach targets"}]}

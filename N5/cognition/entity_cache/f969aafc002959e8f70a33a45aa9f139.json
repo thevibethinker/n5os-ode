@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "skills-based hiring", "type": "CONCEPT", "context": "a hiring approach that focuses on skills"}], "relationships": [{"from": "V", "to": "skills-based hiring", "type": "BELIEVES", "context": "V believes skills-based hiring is the future"}]}

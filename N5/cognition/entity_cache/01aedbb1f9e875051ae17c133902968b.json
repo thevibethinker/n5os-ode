@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zoe", "type": "TOOL", "context": "a tool being demonstrated"}, {"name": "meeting", "type": "EVENT", "context": "event that V ran through a protocol"}], "relationships": [{"from": "V", "to": "Zoe", "type": "USES", "context": "V is demonstrating Zoe"}, {"from": "V", "to": "meeting", "type": "WORKS_WITH", "context": "V ran the meeting"}]}

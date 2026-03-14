@@ -1,1 +1,0 @@
-{"entities": [{"name": "SHRM", "type": "ORG", "context": "Society for Human Resource Management"}], "relationships": [{"from": "V", "to": "SHRM", "type": "WORKS_WITH", "context": "Partnership unlocking highest-value segment"}]}

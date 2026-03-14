@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "founder of the knowledge system"}, {"name": "Conflict Avoidance", "type": "CONCEPT", "context": "approach to disagreements"}], "relationships": [{"from": "V", "to": "Conflict Avoidance", "type": "BELIEVES", "context": "V believes in avoiding conflicts between founders"}]}

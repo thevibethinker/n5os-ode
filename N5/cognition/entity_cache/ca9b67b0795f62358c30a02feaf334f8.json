@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "the individual providing the answer"}, {"name": "Chrome OS", "type": "TOOL", "context": "the metaphor used in the answer"}], "relationships": [{"from": "Vrijen", "to": "Chrome OS", "type": "MENTIONS", "context": "used as a metaphor in answer"}]}

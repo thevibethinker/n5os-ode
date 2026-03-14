@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "The individual associated with the knowledge system."}, {"name": "session_state_manager.py", "type": "TOOL", "context": "The script managing conversation context and state."}], "relationships": []}

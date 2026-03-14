@@ -1,1 +1,0 @@
-{"entities": [{"name": "drop-close", "type": "TOOL", "context": "A Close Pulse worker that handles structured deposit JSON for orchestrator review"}, {"name": "thread-close", "type": "TOOL", "context": "Used for normal threads"}, {"name": "build-close", "type": "TOOL", "context": "Used for post-build synthesis"}], "relationships": []}

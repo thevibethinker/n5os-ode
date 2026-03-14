@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ian", "type": "PERSON", "context": "part of Zo team collaboration"}, {"name": "Zo team", "type": "ORG", "context": "overall collaboration context"}], "relationships": [{"from": "Ian", "to": "Zo team", "type": "WORKS_WITH", "context": "part of overall Zo team collaboration"}]}

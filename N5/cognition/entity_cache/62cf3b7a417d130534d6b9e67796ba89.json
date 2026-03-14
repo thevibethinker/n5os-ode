@@ -1,1 +1,0 @@
-{"entities": [{"name": "N5.md", "type": "CONCEPT", "context": "Core documentation related to the knowledge system"}, {"name": "prefs.md", "type": "CONCEPT", "context": "User preferences documentation related to the knowledge system"}], "relationships": [{"from": "N5.md", "to": "prefs.md", "type": "RELATED_TO", "context": "Both are core documents pulled for review"}]}

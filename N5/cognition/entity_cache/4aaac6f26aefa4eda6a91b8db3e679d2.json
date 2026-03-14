@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "individual discussing the Vibe Builder Persona"}, {"name": "Vibe Builder Persona", "type": "CONCEPT", "context": "concept leading to improved performance"}], "relationships": [{"from": "Vrijen Attawar", "to": "Vibe Builder Persona", "type": "USES", "context": "utilizes the concept to improve performance"}]}

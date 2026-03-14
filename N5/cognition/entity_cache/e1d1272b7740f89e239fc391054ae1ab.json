@@ -1,1 +1,0 @@
-{"entities": [{"name": "Nyne.ai", "type": "ORG", "context": "provides person and company intelligence with unique social media capabilities"}, {"name": "Aviato", "type": "ORG", "context": "complemented by Nyne.ai"}], "relationships": [{"from": "Nyne.ai", "to": "Aviato", "type": "WORKS_WITH", "context": "Nyne.ai complements Aviato"}]}

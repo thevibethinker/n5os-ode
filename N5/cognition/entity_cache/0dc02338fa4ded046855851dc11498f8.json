@@ -1,1 +1,0 @@
-{"entities": [{"name": "SKILL.md", "type": "TOOL", "context": "a file that defines reusable skills"}, {"name": "Skills", "type": "CONCEPT", "context": "a directory related to skills organization"}], "relationships": [{"from": "SKILL.md", "to": "Skills", "type": "RELATED_TO", "context": "SKILL.md exists within the Skills directory"}]}

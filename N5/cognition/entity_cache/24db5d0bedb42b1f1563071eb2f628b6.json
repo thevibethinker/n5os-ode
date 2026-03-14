@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "speaker expressing willingness to help"}, {"name": "New York", "type": "CONCEPT", "context": "location mentioned for a potential meeting"}], "relationships": [{"from": "Vrijen Attawar", "to": "New York", "type": "MENTIONS", "context": "indicating intention to visit"}]}

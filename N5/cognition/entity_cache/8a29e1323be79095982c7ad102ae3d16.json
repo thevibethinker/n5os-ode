@@ -1,1 +1,0 @@
-{"entities": [{"name": "Sarah", "type": "PERSON", "context": "provides a perspective on metrics success"}], "relationships": [{"from": "Sarah", "to": "metrics success", "type": "BELIEVES", "context": "Sarah believes that achieving 2 solid hires out of the next 5 roles results in sufficient time savings"}]}

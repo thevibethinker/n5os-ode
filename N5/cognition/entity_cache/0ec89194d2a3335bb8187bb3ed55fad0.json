@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the speaker discussing candidate screening"}, {"name": "Sarah", "type": "PERSON", "context": "mentioned in relation to the technical round of candidate screening"}], "relationships": [{"from": "V", "to": "Sarah", "type": "WORKS_WITH", "context": "V screens candidates before they reach Sarah's technical round"}]}

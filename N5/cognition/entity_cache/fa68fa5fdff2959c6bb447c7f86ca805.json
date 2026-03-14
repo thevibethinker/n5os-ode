@@ -1,1 +1,0 @@
-{"entities": [{"name": "Natural Integration", "type": "CONCEPT", "context": "Part of system prompt, applied contextually"}, {"name": "User Correction", "type": "CONCEPT", "context": "User can override in-conversation"}, {"name": "Documentation", "type": "TOOL", "context": "Reference guides for consistent application"}], "relationships": []}

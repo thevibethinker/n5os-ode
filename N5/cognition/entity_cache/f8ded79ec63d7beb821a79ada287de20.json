@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual involved in the Internal Careerspan team"}, {"name": "Internal Careerspan team", "type": "ORG", "context": "team focused on marketing/messaging strategy"}], "relationships": [{"from": "V", "to": "Internal Careerspan team", "type": "WORKS_WITH", "context": "part of the Internal Careerspan team"}]}

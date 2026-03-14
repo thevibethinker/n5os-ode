@@ -1,1 +1,0 @@
-{"entities": [{"name": "Laura", "type": "PERSON", "context": "a person associated with Included.Ai"}, {"name": "Included.Ai", "type": "ORG", "context": "an organization"}], "relationships": [{"from": "Laura", "to": "Included.Ai", "type": "WORKS_WITH", "context": "Laura is associated with Included.Ai"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ayush Jain", "type": "PERSON", "context": "User discussing career spans"}, {"name": "career span", "type": "CONCEPT", "context": "User base seeking PM jobs"}], "relationships": [{"from": "Ayush Jain", "to": "career span", "type": "MENTIONS", "context": "Discussing user base looking for PM jobs"}]}

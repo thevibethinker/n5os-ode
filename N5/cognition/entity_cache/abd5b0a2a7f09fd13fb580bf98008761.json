@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the individual analyzing the transcript"}, {"name": "Careerspan", "type": "ORG", "context": "the organization related to the business context block"}], "relationships": [{"from": "V", "to": "Careerspan", "type": "KNOWS", "context": "V analyzed the meeting transcript for Careerspan"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "speaker and subject of the knowledge system"}, {"name": "career span links", "type": "CONCEPT", "context": "a feature of the knowledge system"}], "relationships": [{"from": "Vrijen Attawar", "to": "career span links", "type": "USES", "context": "Vrijen mentions using career span links as a feature"}]}

@@ -1,7 +1,0 @@
-{
-  "drop_id": "D1.3",
-  "verdict": "PASS",
-  "reason": "All requirements met: load_prompt_file() added, generate_block() updated to use canonical prompts with transcript/context injection, fallback to BLOCK_DEFINITIONS preserved, BLOCK_DEFINITIONS dict intact, CLI interface unchanged",
-  "artifacts_verified": true,
-  "concerns": []
-}

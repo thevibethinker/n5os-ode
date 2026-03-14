@@ -1,1 +1,0 @@
-{"entities": [{"name": "Process to Knowledge", "type": "CONCEPT", "context": "Describes the transition from managing records to generating knowledge"}, {"name": "Quick Classify", "type": "TOOL", "context": "Tool for tagging and filing documents"}, {"name": "Close Conversation", "type": "TOOL", "context": "Tool for wrapping up conversations"}], "relationships": []}

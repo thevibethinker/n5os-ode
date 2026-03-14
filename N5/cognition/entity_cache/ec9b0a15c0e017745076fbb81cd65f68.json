@@ -1,1 +1,0 @@
-{"entities": [{"name": "Asher", "type": "PERSON", "context": "Person requesting intros to career tech founders"}, {"name": "Vrijen", "type": "PERSON", "context": "Owner of the action to provide intros"}], "relationships": [{"from": "Vrijen", "to": "Asher", "type": "KNOWS", "context": "Vrijen provides intros to Asher when requested"}]}

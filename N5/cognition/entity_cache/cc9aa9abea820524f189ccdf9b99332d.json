@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the individual associated with the knowledge system"}, {"name": "Personal/Meetings/Inbox", "type": "TOOL", "context": "the tool used for managing meetings"}, {"name": "eligible meetings", "type": "CONCEPT", "context": "the concept of meetings that meet specific criteria"}], "relationships": []}

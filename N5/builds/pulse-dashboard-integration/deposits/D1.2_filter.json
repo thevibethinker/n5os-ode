@@ -1,7 +1,0 @@
-{
-  "drop_id": "D1.2",
-  "verdict": "PASS",
-  "reason": "All requirements met: /api/refresh endpoint now calls Skills/pulse/scripts/pulse_dashboard_sync.py with cwd set to /home/workspace. Response format preserved (success/generated_at/summary/message structure). No TypeScript syntax errors. Only server.ts was modified as required.",
-  "artifacts_verified": true,
-  "concerns": []
-}

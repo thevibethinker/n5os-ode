@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": " refers to Vrijen"}, {"name": "Equals", "type": "TOOL", "context": "a tool for job lead distribution workflow"}], "relationships": [{"from": "V", "to": "Equals", "type": "USES", "context": "V is excited to set up Equals for job lead distribution"}]}

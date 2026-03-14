@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker of the text"}, {"name": "Wagatha Christie controversy", "type": "EVENT", "context": "A controversy related to football"}], "relationships": [{"from": "Vrijen Attawar", "to": "Wagatha Christie controversy", "type": "MENTIONS", "context": "Vrijen mentions the Wagatha Christie controversy"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "tags", "type": "CONCEPT", "context": "a data structure used to categorize accommodation levels"}, {"name": "accommodation", "type": "CONCEPT", "context": "categorization of levels of accommodation from minimal to full"}], "relationships": []}

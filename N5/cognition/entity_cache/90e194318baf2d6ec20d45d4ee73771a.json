@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual with a venture-building background"}, {"name": "sustainability", "type": "CONCEPT", "context": "principle for bringing ideas to life"}], "relationships": [{"from": "V", "to": "sustainability", "type": "BELIEVES", "context": "V believes in bringing ideas to life sustainably"}]}

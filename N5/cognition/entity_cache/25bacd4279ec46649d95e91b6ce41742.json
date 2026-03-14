@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "V's knowledge system expert"}, {"name": "varied queries", "type": "CONCEPT", "context": "different approaches for conducting searches"}], "relationships": [{"from": "Vrijen", "to": "varied queries", "type": "USES", "context": "V employs various query types in searches"}]}

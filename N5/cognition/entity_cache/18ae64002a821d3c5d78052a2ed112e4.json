@@ -1,1 +1,0 @@
-{"entities": [{"name": "Rehab", "type": "ORG", "context": "an organization involved in the funding stage"}, {"name": "Ascendia AI", "type": "ORG", "context": "an organization in residency and funding progress"}], "relationships": [{"from": "Rehab", "to": "Ascendia AI", "type": "WORKS_WITH", "context": "both organizations are involved in stages of funding"}]}

@@ -1,9 +1,0 @@
-{
-  "drop_id": "D1.3",
-  "verdict": "PASS",
-  "reason": "All core tasks completed successfully: backup created (crm_backup_20260201.db), CRM copied to canonical location (N5/data/crm.db), is_internal column added. 3 of 5 internal team members were flagged in CRM (Logan, Ilse, Shivam). The other 2 (Vrijen, Ankit) do not exist in the CRM - they are in N5/data/profiles.db instead. The Drop correctly documented this finding and provided actionable recommendations.",
-  "artifacts_verified": true,
-  "concerns": [
-    "Acceptance criterion '5 internal team members flagged' cannot be fully met because Vrijen Attawar and Ankit Mittal do not have entries in the CRM database - they exist only in N5/data/profiles.db. Architectural decision needed: either (a) add internal team to CRM for unified SSOT, or (b) treat profiles.db as internal team source of truth and CRM as external contacts only. This is a data architecture question for orchestrator, not a Drop failure."
-  ]
-}

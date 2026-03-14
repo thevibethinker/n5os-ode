@@ -1,1 +1,0 @@
-{"entities": [{"name": "stakeholder_intelligence", "type": "CONCEPT", "context": "a required intelligence block for meetings"}, {"name": "brief", "type": "CONCEPT", "context": "a required intelligence block for meetings"}, {"name": "[M]", "type": "CONCEPT", "context": "the state of meetings pending intelligence processing"}], "relationships": []}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "referring to himself"}, {"name": "meta-skill development", "type": "CONCEPT", "context": "referring to the skill of being your own coach"}], "relationships": [{"from": "V", "to": "meta-skill development", "type": "BELIEVES", "context": "believes in the concept of developing self-coaching skills"}]}

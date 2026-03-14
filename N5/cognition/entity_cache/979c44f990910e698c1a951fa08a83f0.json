@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "V's knowledge system"}, {"name": "Asher", "type": "PERSON", "context": "Connector/advocate for Vrijen"}], "relationships": [{"from": "Vrijen", "to": "Asher", "type": "WORKS_WITH", "context": "Asher solidifies role as connector/advocate for Vrijen"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Logan Currie", "type": "PERSON", "context": "Speaker in the discussion"}, {"name": "job boards", "type": "CONCEPT", "context": "Type of platform being discussed"}], "relationships": [{"from": "Logan Currie", "to": "job boards", "type": "BELIEVES", "context": "Believes in using a certain approach for working with job boards"}]}

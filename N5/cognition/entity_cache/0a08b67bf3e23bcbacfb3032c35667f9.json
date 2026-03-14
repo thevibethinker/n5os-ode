@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "speaker expressing thoughts"}, {"name": "Colby", "type": "ORG", "context": "university mentioned"}], "relationships": [{"from": "Vrijen Attawar", "to": "Colby", "type": "MENTIONS", "context": "discussing opinion about the university"}]}

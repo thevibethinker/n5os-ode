@@ -1,1 +1,0 @@
-{"entities": [{"name": "Skillcraft", "type": "ORG", "context": "Employer with 1 live job posting; 5 applicants in 1-1.5 weeks"}, {"name": "LinkedIn", "type": "TOOL", "context": "Platform used for heavy promotion of job postings"}], "relationships": [{"from": "Skillcraft", "to": "LinkedIn", "type": "USES", "context": "Heavy promotion of job postings across LinkedIn and groups"}]}

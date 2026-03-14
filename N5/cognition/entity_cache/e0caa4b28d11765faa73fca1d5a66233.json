@@ -1,1 +1,0 @@
-{"entities": [{"name": "David Spiegel", "type": "PERSON", "context": "Proposed framing the API"}, {"name": "Talent API Positioning", "type": "CONCEPT", "context": "Framing the API as career infrastructure"}], "relationships": [{"from": "David Spiegel", "to": "Talent API Positioning", "type": "BELIEVES", "context": "Proposes framing the API to support enterprise deals"}]}

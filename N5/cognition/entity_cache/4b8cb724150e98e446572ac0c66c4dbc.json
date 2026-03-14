@@ -1,1 +1,0 @@
-{"entities": [{"name": "Virgin", "type": "ORG", "context": "Referenced as being in Brooklyn"}, {"name": "Logan Currie", "type": "PERSON", "context": "Person mentioning Virgin"}], "relationships": [{"from": "Logan Currie", "to": "Virgin", "type": "MENTIONS", "context": "Logan mentions that Virgin is in Brooklyn"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "backpressure validation", "type": "CONCEPT", "context": "a process for validating builds"}, {"name": "builds", "type": "CONCEPT", "context": "the processes being validated"}, {"name": "per-build overrides", "type": "CONCEPT", "context": "configurations that can be applied to individual builds"}], "relationships": []}

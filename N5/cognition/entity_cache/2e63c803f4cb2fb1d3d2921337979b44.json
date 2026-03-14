@@ -1,1 +1,0 @@
-{"entities": [{"name": "ResourceReference", "type": "TOOL", "context": "A tool used to structure references to resources"}, {"name": "content_library", "type": "ORG", "context": "An organization or system that stores content"}], "relationships": []}

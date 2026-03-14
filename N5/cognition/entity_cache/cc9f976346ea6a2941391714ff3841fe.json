@@ -1,1 +1,0 @@
-{"entities": [{"name": "Alex Wisdom Partners Coaching", "type": "ORG", "context": "external participant in the meeting"}, {"name": "Vrijen", "type": "PERSON", "context": "participant in the meeting"}], "relationships": [{"from": "Vrijen", "to": "Alex Wisdom Partners Coaching", "type": "WORKS_WITH", "context": "participated together in a coaching meeting"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "N5", "type": "TOOL", "context": "A configuration or software tool used for manifest editing."}, {"name": "export_core_manifest.yaml", "type": "CONCEPT", "context": "A specific YAML file for configuration management."}], "relationships": []}

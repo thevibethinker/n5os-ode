@@ -1,1 +1,0 @@
-{"entities": [{"name": "Aviato", "type": "ORG", "context": "primary enrichment source"}, {"name": "Gmail", "type": "TOOL", "context": "primary enrichment source"}], "relationships": [{"from": "V", "to": "Aviato", "type": "USES", "context": "primary enrichment source"}, {"from": "V", "to": "Gmail", "type": "USES", "context": "primary enrichment source"}]}

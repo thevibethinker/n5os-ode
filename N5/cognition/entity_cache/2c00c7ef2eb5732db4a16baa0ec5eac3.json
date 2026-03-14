@@ -1,1 +1,0 @@
-{"entities": [{"name": "GTM", "type": "CONCEPT", "context": "Refers to a concept or methodology in marketing"}, {"name": "partnership", "type": "CONCEPT", "context": "Refers to a business collaboration or agreement"}], "relationships": [{"from": "GTM", "to": "partnership", "type": "RELATED_TO", "context": "They are connected in the context of discussion and strategy"}]}

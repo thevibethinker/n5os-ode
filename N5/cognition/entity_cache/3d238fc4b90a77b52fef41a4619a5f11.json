@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "module-one.scm", "type": "TOOL", "context": "file related to the knowledge system"}], "relationships": [{"from": "V", "to": "module-one.scm", "type": "USES", "context": "V utilizes the module-one.scm file in the knowledge system"}]}

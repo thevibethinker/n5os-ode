@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual discussing knowledge system"}, {"name": "conversation", "type": "EVENT", "context": "discussion held on a specific date"}], "relationships": [{"from": "V", "to": "conversation", "type": "KNOWS", "context": "V had a conversation on a specific date"}]}

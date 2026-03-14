@@ -1,1 +1,0 @@
-{"entities": [{"name": "info.socket.remoteAddress", "type": "CONCEPT", "context": "refers to the remote address of the returned socket"}, {"name": "159.203.75.235", "type": "CONCEPT", "context": "the IP address of the first proxy in the chain"}], "relationships": []}

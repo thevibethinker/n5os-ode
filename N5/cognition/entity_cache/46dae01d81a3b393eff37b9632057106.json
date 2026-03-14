@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual responsible for sending emails and delivering content"}, {"name": "content library", "type": "CONCEPT", "context": "repository where deliverables are stored"}], "relationships": [{"from": "V", "to": "content library", "type": "USES", "context": "V utilizes the content library for deliverables"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ilya Kucherenko", "type": "PERSON", "context": "Speaker expressing an opinion"}, {"name": "Fortune 100", "type": "ORG", "context": "Companies listed in the Fortune 100"}], "relationships": [{"from": "Ilya Kucherenko", "to": "Fortune 100", "type": "MENTIONS", "context": "Referring to organizations associated with the mentioned individual"}]}

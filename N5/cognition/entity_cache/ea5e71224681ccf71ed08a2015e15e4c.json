@@ -1,1 +1,0 @@
-{"entities": [{"name": "Nick", "type": "PERSON", "context": "President of an organization"}, {"name": "President", "type": "CONCEPT", "context": "Title of a senior leadership role"}], "relationships": [{"from": "Nick", "to": "President", "type": "USES", "context": "Nick holds the title of President"}]}

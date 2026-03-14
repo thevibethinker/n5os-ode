@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual preparing for meetings"}, {"name": "semi-stable context", "type": "CONCEPT", "context": "information reviewed before meetings"}], "relationships": [{"from": "V", "to": "semi-stable context", "type": "USES", "context": "to prepare for meetings"}]}

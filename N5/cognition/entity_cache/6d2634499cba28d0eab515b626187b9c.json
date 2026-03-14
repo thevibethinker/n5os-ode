@@ -1,1 +1,0 @@
-{"entities": [{"name": "individuals", "type": "ORG", "context": "Database table of individuals"}, {"name": "advisor", "type": "CONCEPT", "context": "Category of individuals"}, {"name": "referral_source", "type": "CONCEPT", "context": "Category of individuals"}, {"name": "active", "type": "BELIEF", "context": "Status of individuals"}], "relationships": []}

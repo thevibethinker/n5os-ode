@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo", "type": "PERSON", "context": "Creator of tasks in the registry"}], "relationships": [{"from": "V", "to": "Zo", "type": "KNOWS", "context": "V is aware of Zo as the creator of tasks"}]}

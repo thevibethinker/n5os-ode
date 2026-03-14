@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "user with a knowledge system"}, {"name": "Feedback", "type": "CONCEPT", "context": "evaluation of usefulness"}], "relationships": [{"from": "V (Vrijen)", "to": "Feedback", "type": "USES", "context": "method to gather user responses"}]}

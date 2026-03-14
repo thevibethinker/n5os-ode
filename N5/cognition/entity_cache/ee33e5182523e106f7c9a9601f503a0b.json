@@ -1,1 +1,0 @@
-{"entities": [{"name": "bird", "type": "TOOL", "context": "a command-line tool for interacting with Twitter"}, {"name": "@handle", "type": "PERSON", "context": "a placeholder for a Twitter user handle"}], "relationships": [{"from": "bird", "to": "@handle", "type": "USES", "context": "bird uses @handle to follow or unfollow a user"}]}

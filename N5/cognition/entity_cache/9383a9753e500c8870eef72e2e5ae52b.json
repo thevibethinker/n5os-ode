@@ -1,1 +1,0 @@
-{"entities": [{"name": "Aaron Mak Hoffman", "type": "PERSON", "context": "a person involved in the discussion"}, {"name": "Zoe", "type": "PERSON", "context": "a person mentioned in relation to customer-facing activities"}], "relationships": [{"from": "Aaron Mak Hoffman", "to": "Zoe", "type": "MENTIONS", "context": "in the context of customer-facing activities"}]}

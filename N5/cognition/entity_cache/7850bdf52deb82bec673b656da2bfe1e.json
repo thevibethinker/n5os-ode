@@ -1,1 +1,0 @@
-{"entities": [{"name": "Email", "type": "TOOL", "context": "Communication method with highest priority"}, {"name": "Blog", "type": "TOOL", "context": "Communication method with second priority"}, {"name": "Doc", "type": "TOOL", "context": "Communication method with third priority"}], "relationships": []}

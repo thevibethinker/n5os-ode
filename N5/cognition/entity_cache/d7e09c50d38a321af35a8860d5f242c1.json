@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual who has knowledge system"}, {"name": "Third-party service", "type": "CONCEPT", "context": "context of authentication usage"}], "relationships": [{"from": "V", "to": "Third-party service", "type": "USES", "context": "for authentication purposes"}]}

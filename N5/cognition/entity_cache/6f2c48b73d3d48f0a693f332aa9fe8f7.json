@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vibe Writer v2.0", "type": "TOOL", "context": "an optimized vehicle for the knowledge system"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "the entity related to the knowledge system"}], "relationships": [{"from": "V (Vrijen)", "to": "Vibe Writer v2.0", "type": "USES", "context": "V uses Vibe Writer v2.0 as a tool for the knowledge system"}]}

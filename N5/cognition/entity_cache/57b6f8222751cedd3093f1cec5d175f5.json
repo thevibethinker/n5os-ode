@@ -1,1 +1,0 @@
-{"entities": [{"name": "Griffin", "type": "PERSON", "context": "person involved in sharing materials"}, {"name": "MENG Fund", "type": "ORG", "context": "organization involved with Griffin"}], "relationships": [{"from": "Griffin", "to": "MENG Fund", "type": "WORKS_WITH", "context": "both parties collaborating on materials and relationship type"}]}

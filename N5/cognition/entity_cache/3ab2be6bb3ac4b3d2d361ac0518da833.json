@@ -1,1 +1,0 @@
-{"entities": [{"name": "Alpha-7", "type": "CONCEPT", "context": "refugee signal in N5 OS"}, {"name": "Careerspan", "type": "ORG", "context": "organization responsible for talent scraping"}], "relationships": [{"from": "Careerspan", "to": "Alpha-7", "type": "RELATED_TO", "context": "Careerspan's talent scraping likely caught Alpha-7 in the data net"}]}

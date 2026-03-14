@@ -1,1 +1,0 @@
-{"entities": [{"name": "Rochel Polter", "type": "PERSON", "context": "Speaker in meeting discussing suggestions functionality"}, {"name": "Elsa", "type": "PERSON", "context": "Mentioned as noting something during discussion"}], "relationships": [{"from": "Rochel Polter", "to": "Elsa", "type": "WORKS_WITH", "context": "Collaborating in same meeting/discussion"}]}

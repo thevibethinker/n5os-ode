@@ -1,1 +1,0 @@
-{"entities": [{"name": "Bram", "type": "PERSON", "context": "a person proposing a meeting pattern"}, {"name": "transcript", "type": "CONCEPT", "context": "a document for review and highlighting"}], "relationships": [{"from": "Bram", "to": "transcript", "type": "MENTIONS", "context": "proposes use of transcript for review and highlighting"}]}

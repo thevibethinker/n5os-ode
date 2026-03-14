@@ -1,1 +1,0 @@
-{"entities": [{"name": "B71", "type": "CONCEPT", "context": "Market Analysis"}, {"name": "B73", "type": "CONCEPT", "context": "Strategic"}], "relationships": [{"from": "B71", "to": "B73", "type": "RELATED_TO", "context": "Market insights end up in strategic reflections"}]}

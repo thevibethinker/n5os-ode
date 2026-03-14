@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "The individual associated with the knowledge system"}, {"name": "N5/prefs.md", "type": "TOOL", "context": "Document related to user preferences for file management"}], "relationships": [{"from": "V", "to": "N5/prefs.md", "type": "USES", "context": "V refers to this document for updating file saving policies"}]}

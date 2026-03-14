@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "Individual associated with the knowledge system"}, {"name": "va's API", "type": "TOOL", "context": "Application Programming Interface endpoints used for testing"}], "relationships": [{"from": "V", "to": "va's API", "type": "USES", "context": "V is involved in reviewing and testing the API endpoints"}]}

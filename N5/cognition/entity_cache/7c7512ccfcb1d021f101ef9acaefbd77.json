@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo", "type": "TOOL", "context": "a bot that can be interacted with via Slack"}], "relationships": [{"from": "V", "to": "Zo", "type": "USES", "context": "V uses Zo to communicate through Slack"}]}

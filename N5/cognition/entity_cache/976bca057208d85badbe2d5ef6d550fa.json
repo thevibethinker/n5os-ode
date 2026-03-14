@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Careerspan Founder"}, {"name": "Anthony DeLuise", "type": "PERSON", "context": "Product Leader, Career Transition"}], "relationships": [{"from": "Vrijen Attawar", "to": "Anthony DeLuise", "type": "WORKS_WITH", "context": "Collaborates on career transition products"}]}

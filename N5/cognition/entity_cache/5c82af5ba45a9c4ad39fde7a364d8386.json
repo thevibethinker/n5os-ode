@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ryan Vanderbilt", "type": "PERSON", "context": "A person offering help on design or perspective"}], "relationships": [{"from": "V", "to": "Ryan Vanderbilt", "type": "KNOWS", "context": "V is familiar with Ryan Vanderbilt and can reach out to him for design or perspective insights"}]}

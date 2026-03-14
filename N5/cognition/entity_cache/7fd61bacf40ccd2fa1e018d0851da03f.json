@@ -1,1 +1,0 @@
-{"entities": [{"name": "Email scanner", "type": "TOOL", "context": "a tool used for scanning emails"}, {"name": "Enrichment", "type": "TOOL", "context": "a process or tool used for enriching data"}, {"name": "Daily Meeting Prep Digest", "type": "TOOL", "context": "a tool for preparing daily meeting agendas"}], "relationships": []}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Referrals", "type": "CONCEPT", "context": "Method of recruitment"}, {"name": "job boards", "type": "CONCEPT", "context": "Recruitment platform"}], "relationships": [{"from": "Referrals", "to": "job boards", "type": "RELATED_TO", "context": "Comparative effectiveness in recruitment"}]}

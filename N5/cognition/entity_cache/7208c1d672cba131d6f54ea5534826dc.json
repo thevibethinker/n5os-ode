@@ -1,1 +1,0 @@
-{"entities": [{"name": "Orchestrator", "type": "CONCEPT", "context": "Role that coordinates workers"}, {"name": "Worker", "type": "CONCEPT", "context": "Role spawned by orchestrator"}], "relationships": [{"from": "Orchestrator", "to": "Worker", "type": "COORDINATES", "context": "An orchestrator manages or directs workers"}]}

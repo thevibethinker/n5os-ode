@@ -1,1 +1,0 @@
-{"entities": [{"name": "Theresa", "type": "PERSON", "context": "accepted approach without pushing for sophisticated integration"}, {"name": "Remotely Good", "type": "ORG", "context": "code deployed for licenses"}], "relationships": [{"from": "Theresa", "to": "Remotely Good", "type": "MENTIONS", "context": "accepted the approach regarding code deployment"}]}

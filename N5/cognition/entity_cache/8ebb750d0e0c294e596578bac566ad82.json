@@ -1,1 +1,0 @@
-{"entities": [{"name": "McKinsey Alumni Founders Monthly", "type": "ORG", "context": "name of the networking group"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "individual's name and role"}], "relationships": [{"from": "V (Vrijen)", "to": "McKinsey Alumni Founders Monthly", "type": "WORKS_WITH", "context": "V is a regular attendee and community member of the group"}]}

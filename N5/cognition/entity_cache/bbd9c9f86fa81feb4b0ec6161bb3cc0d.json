@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": " an individual associated with a knowledge system"}, {"name": "DEBUG_LOG.jsonl", "type": "TOOL", "context": "format for appending logs in JSON Lines format"}], "relationships": [{"from": "V", "to": "DEBUG_LOG.jsonl", "type": "USES", "context": "to maintain append-only, machine-parseable logs for each conversation"}]}

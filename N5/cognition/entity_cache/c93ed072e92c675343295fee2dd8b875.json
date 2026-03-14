@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "TOOL", "context": "a low-pressure assessment tool for evaluating socially atypical candidates"}, {"name": "founders", "type": "PERSON", "context": "individuals evaluating candidates"}], "relationships": [{"from": "founders", "to": "Careerspan", "type": "USES", "context": "founders use Careerspan to assess candidates"}]}

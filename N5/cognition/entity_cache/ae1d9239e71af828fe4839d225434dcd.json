@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo", "type": "TOOL", "context": "a system or tool being considered by V"}, {"name": "V", "type": "PERSON", "context": "the main subject considering the use of Zo"}], "relationships": [{"from": "V", "to": "Zo", "type": "USES", "context": "V is considering whether to pilot Zo as part of her stack"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual discussing knowledge system"}, {"name": "impossibility_audit.py", "type": "TOOL", "context": "tool used to scan for ceiling beliefs"}], "relationships": [{"from": "V (Vrijen)", "to": "impossibility_audit.py", "type": "USES", "context": "V uses this tool to scan for ceiling beliefs"}]}

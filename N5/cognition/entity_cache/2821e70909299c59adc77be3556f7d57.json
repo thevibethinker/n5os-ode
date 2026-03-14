@@ -1,1 +1,0 @@
-{"entities": [{"name": "Registry", "type": "TOOL", "context": "file path for the block type registry"}, {"name": "Command", "type": "TOOL", "context": "file path for the meeting process command"}, {"name": "Format Guide", "type": "TOOL", "context": "file path for the registry format guide"}], "relationships": []}

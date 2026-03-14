@@ -1,1 +1,0 @@
-{"entities": [{"name": "Accommodation Level", "type": "CONCEPT", "context": "Indicates the priority level associated with descriptions."}, {"name": "Purpose", "type": "CONCEPT", "context": "Describes the intended goal of the system."}, {"name": "Context", "type": "CONCEPT", "context": "Provides background information related to a specific situation."}], "relationships": []}

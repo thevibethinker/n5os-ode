@@ -1,1 +1,0 @@
-{"entities": [{"name": "b.js", "type": "TOOL", "context": "source file used in the code"}, {"name": "a.js", "type": "TOOL", "context": "source file used in the code"}, {"name": "c.js", "type": "TOOL", "context": "source file used in the code"}], "relationships": []}

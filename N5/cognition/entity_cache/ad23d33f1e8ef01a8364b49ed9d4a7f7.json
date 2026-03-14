@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "individual associated with careerspan.com"}, {"name": "CareerSpan", "type": "ORG", "context": "organization related to Vrijen"}], "relationships": [{"from": "Vrijen", "to": "CareerSpan", "type": "WORKS_WITH", "context": "associated with the organization CareerSpan"}]}

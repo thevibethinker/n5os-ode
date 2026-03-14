@@ -1,1 +1,0 @@
-{"entities": [{"name": "Andrew Yeung", "type": "PERSON", "context": "a known individual in V's knowledge system"}], "relationships": [{"from": "V", "to": "Andrew Yeung", "type": "KNOWS", "context": "V has knowledge of Andrew Yeung"}]}

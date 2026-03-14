@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zod", "type": "TOOL", "context": "TypeScript-first schema validation with static type inference"}, {"name": "@colinhacks", "type": "PERSON", "context": "the author of Zod"}], "relationships": [{"from": "@colinhacks", "to": "Zod", "type": "CREATED", "context": "author of the Zod tool"}]}

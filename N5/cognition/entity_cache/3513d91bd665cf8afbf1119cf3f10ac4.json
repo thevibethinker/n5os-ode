@@ -1,1 +1,0 @@
-{"entities": [{"name": "dschenkelman", "type": "PERSON", "context": "GitHub user"}], "relationships": [{"from": "V", "to": "dschenkelman", "type": "KNOWS", "context": "GitHub user interaction"}]}

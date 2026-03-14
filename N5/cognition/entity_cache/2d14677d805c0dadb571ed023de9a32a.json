@@ -1,1 +1,0 @@
-{"entities": [{"name": "N5/schemas/meeting-metadata.schema.json", "type": "TOOL", "context": "a schema related to meeting metadata"}, {"name": "stakeholder fields", "type": "CONCEPT", "context": "concept related to the metadata schema"}], "relationships": []}

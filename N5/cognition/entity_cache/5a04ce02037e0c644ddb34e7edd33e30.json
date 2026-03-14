@@ -1,1 +1,0 @@
-{"entities": [{"name": "Greenlite", "type": "ORG", "context": "a company related to Series B announcement"}, {"name": "V", "type": "PERSON", "context": "the individual with knowledge system"}], "relationships": [{"from": "V", "to": "Greenlite", "type": "KNOWS", "context": "V is tracking the Series B announcement of Greenlite"}]}

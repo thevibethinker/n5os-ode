@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "individual associated with scheduling meetings"}, {"name": "va@zo.computer", "type": "ORG", "context": "email address for notifications"}], "relationships": [{"from": "Vrijen", "to": "va@zo.computer", "type": "USES", "context": "used to send notifications for scheduling meetings"}]}

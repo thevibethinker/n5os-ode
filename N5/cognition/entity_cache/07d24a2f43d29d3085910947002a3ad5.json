@@ -1,1 +1,0 @@
-{"entities": [{"name": "Jason Cheung", "type": "PERSON", "context": "individual mentioned in the conversation"}, {"name": "Windsor Pro", "type": "TOOL", "context": "software or tool mentioned"}], "relationships": [{"from": "Jason Cheung", "to": "Windsor Pro", "type": "MENTIONS", "context": "discussing free trial and credits"}]}

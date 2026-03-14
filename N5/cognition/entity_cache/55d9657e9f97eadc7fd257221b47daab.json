@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Individual involved in a conversation about roles"}, {"name": "product roles", "type": "CONCEPT", "context": "Focus area mentioned in the conversation"}], "relationships": [{"from": "Vrijen Attawar", "to": "product roles", "type": "MENTIONS", "context": "Discussing the focus beyond just product roles"}]}

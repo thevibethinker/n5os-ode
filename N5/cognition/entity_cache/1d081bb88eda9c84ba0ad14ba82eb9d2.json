@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "founder of an AI-native recruiting firm"}, {"name": "SLA-based deal structure", "type": "CONCEPT", "context": "a potential deal structure believed to work"}], "relationships": [{"from": "V", "to": "SLA-based deal structure", "type": "BELIEVES", "context": "V believes it could work with him"}]}

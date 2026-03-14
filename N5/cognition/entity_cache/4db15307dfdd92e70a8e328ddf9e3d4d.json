@@ -1,1 +1,0 @@
-{"entities": [{"name": "Discord", "type": "TOOL", "context": "a platform for connection and collaboration"}], "relationships": [{"from": "V", "to": "Discord", "type": "USES", "context": "for ongoing feedback and collaboration"}]}

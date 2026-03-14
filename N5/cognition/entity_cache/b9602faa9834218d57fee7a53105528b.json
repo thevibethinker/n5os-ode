@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual engaged in networking"}, {"name": "Zo experimentation", "type": "CONCEPT", "context": "concept of interest in exploratory call"}], "relationships": [{"from": "V (Vrijen)", "to": "Zo experimentation", "type": "MENTIONS", "context": "signals interest in"}]}

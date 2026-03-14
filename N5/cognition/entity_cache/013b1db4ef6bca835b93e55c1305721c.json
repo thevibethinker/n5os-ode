@@ -1,1 +1,0 @@
-{"entities": [{"name": "email interaction history", "type": "CONCEPT", "context": "a concept related to V's knowledge system"}, {"name": "dossier sections", "type": "CONCEPT", "context": "a concept related to V's knowledge system"}, {"name": "update_profile_from_email()", "type": "TOOL", "context": "a method used in V's knowledge system"}], "relationships": []}

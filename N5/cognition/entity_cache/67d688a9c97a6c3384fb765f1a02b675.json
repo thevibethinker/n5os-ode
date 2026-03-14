@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "N5 OS", "type": "CONCEPT", "context": "the system being refactored"}], "relationships": [{"from": "V (Vrijen)", "to": "N5 OS", "type": "USES", "context": "V is involved in the refactoring of N5 OS"}]}

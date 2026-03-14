@@ -1,1 +1,0 @@
-{"entities": [{"name": "Worker 2", "type": "PERSON", "context": "A worker involved in the task"}, {"name": "Orchestrator", "type": "PERSON", "context": "The entity coordinating the workers"}], "relationships": [{"from": "Worker 2", "to": "Orchestrator", "type": "WORKS_WITH", "context": "Worker 2 completes a task and reports to the orchestrator"}]}

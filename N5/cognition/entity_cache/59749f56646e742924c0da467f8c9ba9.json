@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "Individual associated with the knowledge system"}, {"name": "Careerspan", "type": "ORG", "context": "System Verification organization or program"}], "relationships": [{"from": "V (Vrijen)", "to": "Careerspan", "type": "WORKS_WITH", "context": "V is involved with the Careerspan system"}]}

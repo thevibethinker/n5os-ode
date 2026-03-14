@@ -1,1 +1,0 @@
-{"entities": [{"name": "escalade", "type": "TOOL", "context": "function used to search for a file"}, {"name": "missing123.txt", "type": "CONCEPT", "context": "the file being searched for"}], "relationships": []}

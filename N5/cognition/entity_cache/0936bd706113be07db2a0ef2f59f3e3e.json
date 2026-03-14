@@ -1,1 +1,0 @@
-{"entities": [{"name": "Aviato", "type": "ORG", "context": "organization mentioned related to the enrichment process"}, {"name": "Worker", "type": "TOOL", "context": "refers to the system component aiding in batch enrichment"}], "relationships": []}

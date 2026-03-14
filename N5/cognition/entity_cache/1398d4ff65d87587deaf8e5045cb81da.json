@@ -1,1 +1,0 @@
-{"entities": [{"name": "David", "type": "PERSON", "context": "coaching experience"}, {"name": "PM coaching", "type": "CONCEPT", "context": "methodology and network"}], "relationships": [{"from": "David", "to": "PM coaching", "type": "KNOWS", "context": "source of methodology"}]}

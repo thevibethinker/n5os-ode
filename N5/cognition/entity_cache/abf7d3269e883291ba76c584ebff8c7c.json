@@ -1,1 +1,0 @@
-{"entities": [{"name": "Carson", "type": "PERSON", "context": "has eight traits"}, {"name": "LinkedIn", "type": "TOOL", "context": "platform for professional discoverability"}], "relationships": [{"from": "Carson", "to": "LinkedIn", "type": "MENTIONS", "context": "optimization for discoverability"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "SocksClient", "type": "TOOL", "context": "a client used to create a connection chain"}, {"name": "Socket", "type": "TOOL", "context": "a raw net.Socket established to a destination host"}], "relationships": [{"from": "SocksClient", "to": "Socket", "type": "USES", "context": "SocksClient creates a connection chain resulting in a Socket"}]}

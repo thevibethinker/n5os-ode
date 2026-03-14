@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "Co-founder and Strategic Partner"}, {"name": "Careerspan", "type": "ORG", "context": "Organization co-founded by V"}], "relationships": [{"from": "V (Vrijen)", "to": "Careerspan", "type": "WORKS_WITH", "context": "Close collaborator, working level"}]}

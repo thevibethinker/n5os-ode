@@ -1,1 +1,0 @@
-{"entities": [{"name": "Logan", "type": "PERSON", "context": "exclusive contact in the scenario"}], "relationships": [{"from": "Logan", "to": "Vrijen", "type": "WORKS_WITH", "context": "Logan has no Vrijen involvement, indicating a professional relationship"}]}

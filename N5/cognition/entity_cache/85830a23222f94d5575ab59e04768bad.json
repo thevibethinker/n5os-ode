@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the individual referenced"}, {"name": "principle_violation_detector.py", "type": "TOOL", "context": "Python script used for detecting principle violations"}], "relationships": [{"from": "V", "to": "principle_violation_detector.py", "type": "USES", "context": "V uses this tool to check principles"}]}

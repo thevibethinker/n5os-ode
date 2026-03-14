@@ -1,1 +1,0 @@
-{"entities": [{"name": "Victor", "type": "PERSON", "context": "individual initiating communication"}, {"name": "Zoom", "type": "TOOL", "context": "video communication platform"}], "relationships": [{"from": "Victor", "to": "Zoom", "type": "USES", "context": "prefers higher-fidelity video communication"}]}

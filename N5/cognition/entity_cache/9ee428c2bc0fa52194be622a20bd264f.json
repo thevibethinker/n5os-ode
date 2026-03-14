@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "The person utilizing the knowledge system"}, {"name": "SourceStack API", "type": "TOOL", "context": "A tool providing access to a job database"}], "relationships": [{"from": "Vrijen", "to": "SourceStack API", "type": "USES", "context": "Vrijen uses SourceStack API to access job data"}]}

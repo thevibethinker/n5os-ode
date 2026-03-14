@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "knowledge system developer"}, {"name": "stakeholder_profile_manager", "type": "TOOL", "context": "Python module for managing stakeholder profiles"}], "relationships": [{"from": "Vrijen", "to": "stakeholder_profile_manager", "type": "USES", "context": "utilizes the tool for managing stakeholder profiles"}]}

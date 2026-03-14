@@ -1,1 +1,0 @@
-{"entities": [{"name": "vibe coding", "type": "CONCEPT", "context": "a method or approach V might use for coding"}], "relationships": [{"from": "V", "to": "vibe coding", "type": "USES", "context": "V uses vibe coding as a starting point for understanding and modifying scripts"}]}

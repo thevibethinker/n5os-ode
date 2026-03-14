@@ -1,1 +1,0 @@
-{"entities": [{"name": "CorridorX", "type": "ORG", "context": "organization involved in custom workflows"}, {"name": "Ilse", "type": "PERSON", "context": "person who can configure the system"}], "relationships": [{"from": "Ilse", "to": "CorridorX", "type": "WORKS_WITH", "context": "Ilse configuring workflows for CorridorX"}]}

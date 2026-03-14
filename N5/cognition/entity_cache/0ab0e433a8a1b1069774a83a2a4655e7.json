@@ -1,1 +1,0 @@
-{"entities": [{"name": "N5MemoryClient", "type": "TOOL", "context": "A tool used for indexing documents."}, {"name": "Documents/System", "type": "CONCEPT", "context": "A directory for system documentation."}, {"name": "Personal/Knowledge/Architecture", "type": "CONCEPT", "context": "A directory for architecture documentation related to personal knowledge."}], "relationships": []}

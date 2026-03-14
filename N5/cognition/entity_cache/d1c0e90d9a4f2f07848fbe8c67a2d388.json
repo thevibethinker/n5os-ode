@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "a knowledge system developer or user"}, {"name": "prompt templates", "type": "TOOL", "context": "tools used to break predictable AI patterns"}], "relationships": [{"from": "V", "to": "prompt templates", "type": "USES", "context": "V uses prompt templates to enhance the distinctiveness of generated content"}]}

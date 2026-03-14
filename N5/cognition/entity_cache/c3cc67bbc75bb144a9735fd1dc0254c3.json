@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "person discussing their knowledge system"}, {"name": "vibe teacher", "type": "CONCEPT", "context": "a concept related to the vibe or atmosphere in learning"}], "relationships": [{"from": "V", "to": "vibe teacher", "type": "USES", "context": "V uses the concept of vibe teacher to enhance the learning experience"}]}

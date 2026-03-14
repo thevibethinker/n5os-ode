@@ -1,1 +1,0 @@
-{"entities": [{"name": "Trinayaan", "type": "PERSON", "context": "agreed to help Vrijen"}, {"name": "Vrijen", "type": "PERSON", "context": "organizer of career tech founder sessions"}], "relationships": [{"from": "Trinayaan", "to": "Vrijen", "type": "WORKS_WITH", "context": "helping organize sessions"}]}

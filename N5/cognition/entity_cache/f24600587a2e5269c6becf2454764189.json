@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "career coach"}, {"name": "Amanda", "type": "PERSON", "context": "client seeking job search assistance"}], "relationships": [{"from": "Vrijen", "to": "Amanda", "type": "WORKS_WITH", "context": "coaching session on job search and resume preparation"}]}

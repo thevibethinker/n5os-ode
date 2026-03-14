@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker providing an observation"}, {"name": "Zo", "type": "TOOL", "context": "System that stalls on long runs"}], "relationships": [{"from": "Vrijen Attawar", "to": "Zo", "type": "MENTIONS", "context": "Describes a workaround for its issue"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "parser", "type": "TOOL", "context": "software component that processes templates"}, {"name": "compiler version 1.0.12", "type": "TOOL", "context": "specific version of a compiler for templates"}, {"name": "runtime 1.0.0", "type": "TOOL", "context": "runtime required for precompiled templates"}], "relationships": []}

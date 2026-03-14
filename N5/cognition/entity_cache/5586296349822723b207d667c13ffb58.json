@@ -1,1 +1,0 @@
-{"entities": [{"name": "Warmer Jobs", "type": "CONCEPT", "context": "A product with a retention metric"}, {"name": "Careerspan", "type": "CONCEPT", "context": "A product with improved retention via job distribution"}], "relationships": [{"from": "Warmer Jobs", "to": "Careerspan", "type": "RELATED_TO", "context": "Both products have retention dynamics being compared"}]}

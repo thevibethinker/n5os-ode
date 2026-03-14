@@ -1,1 +1,0 @@
-{"entities": [{"name": "meeting_core_generator.py", "type": "TOOL", "context": "Script used for generating meeting content"}, {"name": "LLM", "type": "TOOL", "context": "Large Language Model used for content extraction"}], "relationships": [{"from": "meeting_core_generator.py", "to": "LLM", "type": "USES", "context": "Uses LLM to extract content from transcript"}]}

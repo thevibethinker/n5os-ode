@@ -1,1 +1,0 @@
-{"entities": [{"name": "Colin", "type": "PERSON", "context": "associated with a company implementing Greenhouse"}, {"name": "Greenhouse", "type": "TOOL", "context": "tool being implemented in Colin's company"}], "relationships": [{"from": "Colin", "to": "Greenhouse", "type": "USES", "context": "Colin's company is using Greenhouse for implementation"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "LLM", "type": "TOOL", "context": "A language model that can interpret words as code"}, {"name": "prompts", "type": "CONCEPT", "context": "A new classification of script in natural language"}], "relationships": [{"from": "LLM", "to": "prompts", "type": "RELATED_TO", "context": "Prompts are utilized by LLMs as part of natural language processing"}]}

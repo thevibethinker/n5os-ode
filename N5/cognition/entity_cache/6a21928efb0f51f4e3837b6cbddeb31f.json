@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "subject of the meeting seeking guidance"}, {"name": "Ilya", "type": "PERSON", "context": "individual providing sales guidance"}], "relationships": [{"from": "Vrijen", "to": "Ilya", "type": "WORKS_WITH", "context": "collaborative meeting for mentorship and guidance"}]}

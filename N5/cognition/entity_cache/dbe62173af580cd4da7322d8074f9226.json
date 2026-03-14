@@ -1,1 +1,0 @@
-{"entities": [{"name": "Victor", "type": "PERSON", "context": "Leadership at V's portfolio company"}, {"name": "Careerspan", "type": "ORG", "context": "An organization considered for partnership"}], "relationships": [{"from": "Victor", "to": "Careerspan", "type": "RELATED_TO", "context": "Partnership considered superior to in-house AI coaching"}]}

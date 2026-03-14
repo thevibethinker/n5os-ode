@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual associated with the pitch framework"}, {"name": "V's pitch framework", "type": "CONCEPT", "context": "system for resume review and evaluation"}], "relationships": [{"from": "V", "to": "V's pitch framework", "type": "USES", "context": "V utilizes the pitch framework for resume review"}]}

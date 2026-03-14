@@ -1,1 +1,0 @@
-{"entities": [{"name": "MENG", "type": "ORG", "context": "Organization to evaluate"}, {"name": "Vrijen", "type": "PERSON", "context": "Referenced individual with knowledge about acquisition timelines"}], "relationships": [{"from": "Vrijen", "to": "MENG", "type": "MENTIONS", "context": "Vrijen mentions MENG's evaluation factors"}]}

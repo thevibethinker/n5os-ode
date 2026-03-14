@@ -1,1 +1,0 @@
-{"entities": [{"name": "Bram Adams", "type": "PERSON", "context": "An individual who is an investor at YCB"}, {"name": "YCB", "type": "ORG", "context": "An organization where Bram Adams is employed as an investor"}], "relationships": [{"from": "Bram Adams", "to": "YCB", "type": "WORKS_WITH", "context": "Bram Adams is an investor at YCB"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "session state manager", "type": "TOOL", "context": "tool used for managing session states"}, {"name": "Graceful degradation", "type": "CONCEPT", "context": "a property of the system regarding handling failures"}], "relationships": []}

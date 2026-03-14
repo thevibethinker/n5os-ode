@@ -1,1 +1,0 @@
-{"entities": [{"name": "Kamina Singh", "type": "PERSON", "context": "individual communicating in the text"}, {"name": "Virgin", "type": "ORG", "context": "organization mentioned in the email context"}], "relationships": [{"from": "Kamina Singh", "to": "Virgin", "type": "WORKS_WITH", "context": "Kamina is communicating about emailing Virgin regarding changes"}]}

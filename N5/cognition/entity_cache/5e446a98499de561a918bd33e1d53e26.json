@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "The speaker discussing a job board setup"}, {"name": "job board", "type": "TOOL", "context": "A tool that can be set up quickly"}], "relationships": [{"from": "Vrijen Attawar", "to": "job board", "type": "MENTIONS", "context": "Discussing a job board setup that is quick and easy"}]}

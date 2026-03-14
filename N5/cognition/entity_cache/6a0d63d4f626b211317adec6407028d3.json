@@ -1,1 +1,0 @@
-{"entities": [{"name": "N5", "type": "ORG", "context": "The organization related to the meeting records"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "Individual associated with the knowledge system"}], "relationships": [{"from": "V (Vrijen)", "to": "N5", "type": "WORKS_WITH", "context": "V collaborates with the N5 organization for knowledge management"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "ORG", "context": "an organization that enables growth and improves outcomes"}], "relationships": [{"from": "Careerspan", "to": "growth enabler", "type": "RELATED_TO", "context": "Careerspan is framed as a growth enabler"}]}

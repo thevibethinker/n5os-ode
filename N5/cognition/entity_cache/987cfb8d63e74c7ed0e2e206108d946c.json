@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "individual who met someone in Singapore"}, {"name": "Singapore", "type": "ORG", "context": "location where the meeting occurred"}], "relationships": [{"from": "Vrijen Attawar", "to": "Singapore", "type": "KNOWS", "context": "met in Singapore"}]}

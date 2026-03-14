@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker"}, {"name": "Marvin", "type": "ORG", "context": "Organization mentioned"}], "relationships": [{"from": "Vrijen Attawar", "to": "Marvin", "type": "MENTIONS", "context": "As an organization that may resonate with the technology being discussed"}]}

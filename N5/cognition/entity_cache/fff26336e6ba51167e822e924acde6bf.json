@@ -1,1 +1,0 @@
-{"entities": [{"name": "HireVue", "type": "TOOL", "context": "AI recruiting tool"}, {"name": "Paradox", "type": "TOOL", "context": "AI recruiting tool"}], "relationships": [{"from": "V", "to": "HireVue", "type": "USES", "context": "V uses HireVue as an AI recruiting tool"}, {"from": "V", "to": "Paradox", "type": "USES", "context": "V uses Paradox as an AI recruiting tool"}]}

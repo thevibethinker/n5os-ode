@@ -1,1 +1,0 @@
-{"entities": [{"name": "spawn_worker.py", "type": "TOOL", "context": "Main spawning script"}, {"name": "session_state_manager.py", "type": "TOOL", "context": "Updated with link-parent command"}], "relationships": []}

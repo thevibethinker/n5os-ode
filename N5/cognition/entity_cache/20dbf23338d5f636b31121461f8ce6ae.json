@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual associated with generating content"}, {"name": "X content", "type": "CONCEPT", "context": "type of content being generated in V's voice"}], "relationships": [{"from": "V", "to": "X content", "type": "KNOWS", "context": "V is involved in generating X content"}]}

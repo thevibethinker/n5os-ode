@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "Founder who gives career advice"}, {"name": "career advice", "type": "CONCEPT", "context": "Advice given for career development"}], "relationships": [{"from": "V", "to": "career advice", "type": "BELIEVES", "context": "V has experience giving career advice for 10 years"}]}

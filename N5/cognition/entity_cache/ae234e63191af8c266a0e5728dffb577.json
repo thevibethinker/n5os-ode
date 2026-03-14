@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo", "type": "TOOL", "context": "base layer for non-engineers to build complex systems"}], "relationships": [{"from": "Zo", "to": "non-engineers", "type": "USES", "context": "serves as a base layer for building complex systems"}]}

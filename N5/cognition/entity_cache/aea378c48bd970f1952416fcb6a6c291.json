@@ -1,1 +1,0 @@
-{"entities": [{"name": "Pam K", "type": "PERSON", "context": "A person discussing sales hire prospects"}, {"name": "Boston", "type": "CONCEPT", "context": "Location where Pam K lives and is described as a nomad"}], "relationships": [{"from": "Pam K", "to": "Boston", "type": "RELATED_TO", "context": "Pam K lives in Boston and is described as a nomad"}]}

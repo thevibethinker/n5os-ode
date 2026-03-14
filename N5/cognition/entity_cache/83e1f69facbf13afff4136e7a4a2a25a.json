@@ -1,1 +1,0 @@
-{"entities": [{"name": "syncthing", "type": "TOOL", "context": "A tool for file synchronization, referenced in the command."}, {"name": "apt", "type": "TOOL", "context": "A package management system used in Debian-based systems."}], "relationships": []}

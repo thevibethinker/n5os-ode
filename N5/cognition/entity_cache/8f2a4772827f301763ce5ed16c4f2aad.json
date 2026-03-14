@@ -1,1 +1,0 @@
-{"entities": [{"name": "B90", "type": "CONCEPT", "context": "Insight Compound that is never used"}, {"name": "B73", "type": "CONCEPT", "context": "Strategic blocks used for compounding insights"}], "relationships": [{"from": "B73", "to": "B90", "type": "MENTIONS", "context": "B73 is mentioned in relation to B90, indicating it's preferred over B90"}]}

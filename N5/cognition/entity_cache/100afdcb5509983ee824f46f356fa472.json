@@ -1,1 +1,0 @@
-{"entities": [{"name": "JP Morgan", "type": "ORG", "context": "a financial services company"}], "relationships": [{"from": "Vrijen", "to": "JP Morgan", "type": "KNOWS", "context": "reported potential collaboration for an event"}]}

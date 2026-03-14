@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual implementing a knowledge system"}, {"name": "google_drive-list-files", "type": "TOOL", "context": "a tool used to list files from Google Drive"}], "relationships": [{"from": "V", "to": "google_drive-list-files", "type": "USES", "context": "V uses the tool to manage files"}]}

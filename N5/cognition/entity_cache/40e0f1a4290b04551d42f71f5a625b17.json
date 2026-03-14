@@ -1,1 +1,0 @@
-{"entities": [{"name": "debugging", "type": "CONCEPT", "context": "a process of identifying and resolving bugs in a computer program"}, {"name": "failing component", "type": "CONCEPT", "context": "a part of a system that is not functioning properly"}, {"name": "isolation", "type": "CONCEPT", "context": "testing components separately from the larger system"}], "relationships": []}

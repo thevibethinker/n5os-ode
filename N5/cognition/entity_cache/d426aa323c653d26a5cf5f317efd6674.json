@@ -1,1 +1,0 @@
-{"entities": [{"name": "Tony", "type": "PERSON", "context": "individual discussing bachata scene"}, {"name": "bachata scene", "type": "CONCEPT", "context": "dance community in NYC"}], "relationships": [{"from": "Tony", "to": "bachata scene", "type": "MENTIONS", "context": "Tony is interested in the bachata dance community in NYC"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "essential-links.json", "type": "TOOL", "context": "a file used for verifying links"}, {"name": "confidence scoring", "type": "CONCEPT", "context": "a method to assess the validity of links"}, {"name": "Company homepage", "type": "ORG", "context": "fallback option for missing links"}], "relationships": []}

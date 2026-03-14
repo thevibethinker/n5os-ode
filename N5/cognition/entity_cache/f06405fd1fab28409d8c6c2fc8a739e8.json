@@ -1,1 +1,0 @@
-{"entities": [{"name": "Worker 2", "type": "PERSON", "context": "identified as a worker in the completed task"}, {"name": "phase2_results.json", "type": "TOOL", "context": "file associated with the results of the knowledge system"}], "relationships": [{"from": "Worker 2", "to": "phase2_results.json", "type": "WORKS_WITH", "context": "Worker 2's task involves the results file"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "essential-links.json", "type": "TOOL", "context": "A resource used for verifying links in the knowledge system."}, {"name": "artifacts", "type": "CONCEPT", "context": "Logged records for transparency in the knowledge system."}], "relationships": []}

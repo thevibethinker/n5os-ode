@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker in the conversation"}, {"name": "Ben", "type": "PERSON", "context": "Assisting in admitting people"}], "relationships": [{"from": "Vrijen Attawar", "to": "Ben", "type": "WORKS_WITH", "context": "Coordinating to manage attendance"}]}

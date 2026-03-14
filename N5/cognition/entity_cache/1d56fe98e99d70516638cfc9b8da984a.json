@@ -1,1 +1,0 @@
-{"entities": [{"name": "Aditya", "type": "PERSON", "context": "primary contact at Sapphireventures"}, {"name": "Sapphireventures", "type": "ORG", "context": "organization where Aditya works"}], "relationships": [{"from": "Aditya", "to": "Sapphireventures", "type": "WORKS_WITH", "context": "Aditya is associated with Sapphireventures"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "founder and brain behind the knowledge system"}, {"name": "team", "type": "ORG", "context": "group of five or six members involved"}], "relationships": [{"from": "V", "to": "team", "type": "WORKS_WITH", "context": "V works with the team to scale the knowledge system"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Async messaging", "type": "CONCEPT", "context": "a feature for messaging functionality"}, {"name": "Persistent queue", "type": "CONCEPT", "context": "a feature for managing message storage"}, {"name": "Read receipts", "type": "CONCEPT", "context": "a feature that tracks message reading status"}], "relationships": []}

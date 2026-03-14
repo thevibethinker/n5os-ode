@@ -1,1 +1,0 @@
-{"entities": [{"name": "Buffer", "type": "TOOL", "context": "A tool for wrapping instances in encoding."}, {"name": "utf8", "type": "CONCEPT", "context": "A string encoding used by the Buffer."}], "relationships": []}

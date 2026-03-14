@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ryanair", "type": "ORG", "context": "airline company"}, {"name": "Logan Currie", "type": "PERSON", "context": "the speaker"}], "relationships": [{"from": "Logan Currie", "to": "Ryanair", "type": "MENTIONS", "context": "Logan mentioned Ryanair"}]}

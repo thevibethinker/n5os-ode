@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "ORG", "context": "organization addressing the pain point"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "individual associated with the knowledge system"}], "relationships": [{"from": "V (Vrijen)", "to": "Careerspan", "type": "USES", "context": "V uses Careerspan to address a pain point"}]}

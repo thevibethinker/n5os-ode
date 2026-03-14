@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "ORG", "context": "potential clients for career services"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "referring to the individual in focus"}], "relationships": [{"from": "V (Vrijen)", "to": "Careerspan", "type": "MENTIONS", "context": "potential clients for founders' career services"}]}

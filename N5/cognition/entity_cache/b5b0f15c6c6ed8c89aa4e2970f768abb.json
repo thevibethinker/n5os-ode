@@ -1,1 +1,0 @@
-{"entities": [{"name": "SOCKS server", "type": "CONCEPT", "context": "A type of server that handles incoming connections through the SOCKS protocol."}, {"name": "Socket", "type": "TOOL", "context": "An object representing a connection to a network."}], "relationships": []}

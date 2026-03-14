@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "speaker discussing networking"}, {"name": "Matt", "type": "PERSON", "context": "mentioned as a hypothetical individual in a networking scenario"}], "relationships": [{"from": "Vrijen Attawar", "to": "Matt", "type": "RELATED_TO", "context": "referring to an interaction in networking"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "founders", "type": "PERSON", "context": "founders of the candidate selection system"}, {"name": "Careerspan", "type": "ORG", "context": "an organization that identifies talent"}], "relationships": [{"from": "founders", "to": "Careerspan", "type": "BELIEVES", "context": "founders believe in Careerspan's approach to talent identification"}]}

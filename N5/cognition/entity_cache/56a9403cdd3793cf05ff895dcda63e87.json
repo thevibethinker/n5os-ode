@@ -1,1 +1,0 @@
-{"entities": [{"name": "Darius Goldman", "type": "PERSON", "context": "A founder in the same community as V."}], "relationships": [{"from": "V", "to": "Darius Goldman", "type": "KNOWS", "context": "Both are founders in the same community."}]}

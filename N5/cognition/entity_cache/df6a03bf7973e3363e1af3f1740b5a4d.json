@@ -1,1 +1,0 @@
-{"entities": [{"name": "Sarah Chen", "type": "PERSON", "context": "person involved in networking introductions"}, {"name": "Marcus Rodriguez", "type": "PERSON", "context": "person receiving networking introductions"}], "relationships": [{"from": "Sarah Chen", "to": "Marcus Rodriguez", "type": "WORKS_WITH", "context": "involved in networking introductions"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "CRM People Records", "type": "CONCEPT", "context": "A system for managing individual records."}, {"name": "slug", "type": "CONCEPT", "context": "A stable key for identifying individual files."}, {"name": "Intelligence Log", "type": "TOOL", "context": "An append-only log for chronological enrichment events."}], "relationships": []}

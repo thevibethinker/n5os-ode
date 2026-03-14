@@ -1,1 +1,0 @@
-{"entities": [{"name": "Feedback Engine", "type": "TOOL", "context": "system feature for prioritizing critical failures"}, {"name": "LLM", "type": "CONCEPT", "context": "Large Language Model in context of retry loops"}], "relationships": [{"from": "Feedback Engine", "to": "LLM", "type": "USES", "context": "optimized for LLM consumption in retry loops"}]}

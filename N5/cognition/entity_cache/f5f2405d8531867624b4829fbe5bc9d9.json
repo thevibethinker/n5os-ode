@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo", "type": "ORG", "context": "organization benefiting from network effects"}], "relationships": [{"from": "Builders", "to": "Users", "type": "RELATED_TO", "context": "Builders succeed when users succeed"}, {"from": "Zo", "to": "network effects", "type": "USES", "context": "Zo benefits from network effects"}]}

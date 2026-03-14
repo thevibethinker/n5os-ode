@@ -1,1 +1,0 @@
-{"entities": [{"name": "Adam", "type": "PERSON", "context": "Contact at Inpress.App"}, {"name": "Inpress.App", "type": "ORG", "context": "Organization associated with Adam"}], "relationships": [{"from": "Adam", "to": "Inpress.App", "type": "WORKS_WITH", "context": "Adam is associated with Inpress.App"}]}

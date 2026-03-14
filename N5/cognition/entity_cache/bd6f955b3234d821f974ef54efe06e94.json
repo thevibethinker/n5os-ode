@@ -1,1 +1,0 @@
-{"entities": [{"name": "X Voice", "type": "CONCEPT", "context": "Type of voice style"}, {"name": "LinkedIn Voice", "type": "CONCEPT", "context": "Type of voice style"}], "relationships": [{"from": "X Voice", "to": "LinkedIn Voice", "type": "RELATED_TO", "context": "Comparison of different voice styles"}]}

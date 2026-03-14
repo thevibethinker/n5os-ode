@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "speaker and subject of discussion"}, {"name": "AI", "type": "TOOL", "context": "mentioned as a means to assess teammate qualities"}], "relationships": [{"from": "Vrijen Attawar", "to": "AI", "type": "USES", "context": "to assess qualities like being a good teammate"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "ORCHESTRATOR_PLAN.md", "type": "TOOL", "context": "File used for orchestrator plans"}, {"name": "WORKER_1_*.md", "type": "TOOL", "context": "Worker assignment files for Worker 1"}, {"name": "WORKER_2_*.md", "type": "TOOL", "context": "Worker assignment files for Worker 2"}], "relationships": []}

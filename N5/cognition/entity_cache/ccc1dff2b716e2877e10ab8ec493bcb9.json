@@ -1,1 +1,0 @@
-{"entities": [{"name": "trust-building-in-recruiting", "type": "CONCEPT", "context": "framework for trust dynamics"}], "relationships": [{"from": "trust-building-in-recruiting", "to": "V", "type": "SUPPORTS", "context": "provides framework for trust dynamics"}]}

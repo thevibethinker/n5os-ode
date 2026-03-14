@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual working on the knowledge system"}, {"name": "n5_protect.py", "type": "TOOL", "context": "tool developed for protection in the knowledge system"}], "relationships": [{"from": "V", "to": "n5_protect.py", "type": "USES", "context": "V developed and utilizes n5_protect.py for the knowledge system"}]}

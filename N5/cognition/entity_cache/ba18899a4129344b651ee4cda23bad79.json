@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "User checking on worker status"}, {"name": "Worker", "type": "CONCEPT", "context": "Task or individual in progress"}], "relationships": [{"from": "V", "to": "Worker", "type": "KNOWS", "context": "V is assessing the status of the worker"}]}

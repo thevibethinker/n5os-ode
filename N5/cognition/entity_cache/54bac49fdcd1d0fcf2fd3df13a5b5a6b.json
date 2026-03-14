@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "incantum_triggers.json", "type": "TOOL", "context": "file generated containing triggers for the system"}], "relationships": [{"from": "V", "to": "incantum_triggers.json", "type": "USES", "context": "V generated and utilized the JSON file for triggers"}]}

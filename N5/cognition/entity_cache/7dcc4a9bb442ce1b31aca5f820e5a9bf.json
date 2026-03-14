@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "individual involved in the knowledge system"}, {"name": "transcripts", "type": "TOOL", "context": "output format produced by the meeting"}, {"name": "template and registry systems", "type": "CONCEPT", "context": "the competing systems producing different output formats"}], "relationships": []}

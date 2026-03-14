@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Primary Owner of V's knowledge system"}, {"name": "Ayush Jain", "type": "PERSON", "context": "Secondary Owner of V's knowledge system"}], "relationships": [{"from": "Vrijen Attawar", "to": "Ayush Jain", "type": "WORKS_WITH", "context": "They are co-owners of the knowledge system"}]}

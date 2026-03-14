@@ -1,1 +1,0 @@
-{"entities": [{"name": "The Fourth Effect", "type": "ORG", "context": "Organization co-founded by V"}, {"name": "V", "type": "PERSON", "context": "Co-Founder of The Fourth Effect"}], "relationships": [{"from": "V", "to": "The Fourth Effect", "type": "WORKS_WITH", "context": "V is a co-founder of the organization"}]}

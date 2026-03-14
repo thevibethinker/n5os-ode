@@ -1,1 +1,0 @@
-{"entities": [{"name": "musk", "type": "PERSON", "context": "referring to Elon Musk"}], "relationships": [{"from": "musk", "to": "DEI", "type": "RELATED_TO", "context": "contrasts perceptions of DEI based on the speaker's actions"}]}

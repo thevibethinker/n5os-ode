@@ -1,1 +1,0 @@
-{"entities": [{"name": "Luma", "type": "ORG", "context": "organization that hosts events"}, {"name": "V", "type": "PERSON", "context": "individual associated with the knowledge system"}], "relationships": [{"from": "V", "to": "Luma", "type": "USES", "context": "utilizes Luma for scanning newsletters and listservs for event links"}]}

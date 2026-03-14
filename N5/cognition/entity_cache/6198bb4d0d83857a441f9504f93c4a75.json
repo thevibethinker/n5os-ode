@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "V refers to Vrijen, who has a knowledge system."}, {"name": "Honor", "type": "BELIEF", "context": "A cornerstone value in V's approach to ethics and decisions."}], "relationships": [{"from": "V", "to": "Honor", "type": "BELIEVES", "context": "V's belief in honor as a framing for ethics and decisions."}]}

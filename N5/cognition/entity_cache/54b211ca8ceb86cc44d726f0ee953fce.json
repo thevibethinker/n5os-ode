@@ -1,1 +1,0 @@
-{"entities": [{"name": "Prevalence Analysis", "type": "CONCEPT", "context": "Analyzes conversations for recurring themes"}, {"name": "Lightcast", "type": "ORG", "context": "Standardized skill taxonomy organization"}], "relationships": [{"from": "Prevalence Analysis", "to": "Lightcast", "type": "RELATED_TO", "context": "Future integration with standardized skill taxonomies"}]}

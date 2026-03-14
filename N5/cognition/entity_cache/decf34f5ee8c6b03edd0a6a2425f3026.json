@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "referenced as Vrijen"}, {"name": "Email/messaging templates", "type": "TOOL", "context": "format for communication"}], "relationships": [{"from": "V", "to": "Email/messaging templates", "type": "USES", "context": "framework for outreach communication"}]}

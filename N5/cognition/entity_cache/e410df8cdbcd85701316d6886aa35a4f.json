@@ -1,1 +1,0 @@
-{"entities": [{"name": "Logan Currie", "type": "PERSON", "context": "Speaker discussing trust and communication"}, {"name": "Laura", "type": "PERSON", "context": "Referenced individual discussing the matching side"}], "relationships": [{"from": "Logan Currie", "to": "Laura", "type": "MENTIONS", "context": "Logan is referencing Laura's opinion on the crowded matching side"}]}

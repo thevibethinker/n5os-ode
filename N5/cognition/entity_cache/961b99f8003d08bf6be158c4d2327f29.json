@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "ORG", "context": "Organization mentioned as a customer"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "Person with a knowledge system and network"}], "relationships": [{"from": "V (Vrijen)", "to": "Careerspan", "type": "KNOWS", "context": "V can refer appropriate founders to Careerspan"}]}

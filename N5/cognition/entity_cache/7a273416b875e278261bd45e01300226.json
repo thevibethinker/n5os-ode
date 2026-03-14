@@ -1,1 +1,0 @@
-{"entities": [{"name": "Yale", "type": "ORG", "context": "university with a high student-to-career-service ratio"}, {"name": "data infrastructure", "type": "CONCEPT", "context": "system for maintaining a living record of professional stories"}, {"name": "resume tool", "type": "TOOL", "context": "reference to a type of tool being built"}], "relationships": []}

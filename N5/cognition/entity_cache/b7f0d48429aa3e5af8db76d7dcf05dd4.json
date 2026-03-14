@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "author of the knowledge system"}, {"name": "Efficiency Model", "type": "CONCEPT", "context": "framework for analyzing rule effectiveness"}], "relationships": [{"from": "V", "to": "Efficiency Model", "type": "KNOWS", "context": "V is associated with the analysis of the efficiency model"}]}

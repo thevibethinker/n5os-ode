@@ -1,1 +1,0 @@
-{"entities": [{"name": "Player", "type": "TOOL", "context": "A utility for parsing user data"}, {"name": "z.ZodError", "type": "CONCEPT", "context": "An error type used for validation in the parsing process"}], "relationships": [{"from": "Player", "to": "z.ZodError", "type": "USES", "context": "Player's parse method throws z.ZodError on validation issues"}]}

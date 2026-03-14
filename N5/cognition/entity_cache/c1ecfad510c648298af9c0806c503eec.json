@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the individual associated with the knowledge system"}, {"name": "job-source-extract", "type": "TOOL", "context": "specific command or tool used for job sourcing"}], "relationships": [{"from": "V", "to": "job-source-extract", "type": "USES", "context": "V uses the job-source-extract tool for sourcing jobs"}]}

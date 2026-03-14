@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ilse", "type": "PERSON", "context": "Speaker mentioning user growth and engineering bottleneck"}], "relationships": [{"from": "Ilse", "to": "engineering", "type": "MENTIONS", "context": "Discussing bottleneck related to new user growth"}]}

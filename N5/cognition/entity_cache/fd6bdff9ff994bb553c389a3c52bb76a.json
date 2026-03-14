@@ -1,1 +1,0 @@
-{"entities": [{"name": "Griffin", "type": "PERSON", "context": "a person open to making intros"}, {"name": "Vrijen", "type": "PERSON", "context": "referred to as V"}], "relationships": [{"from": "Griffin", "to": "Vrijen", "type": "BELIEVES", "context": "Griffin's decision depends on Vrijen impressing him"}]}

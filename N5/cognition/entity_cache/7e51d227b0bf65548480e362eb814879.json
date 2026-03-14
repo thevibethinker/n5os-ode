@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "a person whose knowledge system is being described"}, {"name": "semantic_filename", "type": "TOOL", "context": "a tool used for normalizing meeting filenames"}], "relationships": [{"from": "V", "to": "semantic_filename", "type": "USES", "context": "V uses semantic_filename to normalize meeting filenames"}]}

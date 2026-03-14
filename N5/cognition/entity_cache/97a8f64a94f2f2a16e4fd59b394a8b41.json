@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "serial founder with extensive professional experience"}, {"name": "workforce-focused organizations", "type": "ORG", "context": "type of organizations V operates"}], "relationships": [{"from": "V (Vrijen)", "to": "workforce-focused organizations", "type": "WORKS_WITH", "context": "V operates these organizations"}]}

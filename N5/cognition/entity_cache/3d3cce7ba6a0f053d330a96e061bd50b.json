@@ -1,1 +1,0 @@
-{"entities": [{"name": "commands.jsonl", "type": "TOOL", "context": "authoritative source for commands"}, {"name": "auto-generated docs", "type": "TOOL", "context": "documentation related to commands"}], "relationships": []}

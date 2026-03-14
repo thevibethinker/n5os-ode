@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "Individual known for creating a knowledge system"}, {"name": "MG-4", "type": "TOOL", "context": "Tool used to generate warm intro emails"}], "relationships": [{"from": "V", "to": "MG-4", "type": "USES", "context": "V uses MG-4 to generate emails for introductions"}]}

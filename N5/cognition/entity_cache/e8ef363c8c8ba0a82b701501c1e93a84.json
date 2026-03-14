@@ -1,1 +1,0 @@
-{"entities": [{"name": "Yale", "type": "ORG", "context": "University involved in the integration"}, {"name": "Careerspan", "type": "ORG", "context": "Organization involved in the integration"}], "relationships": [{"from": "Careerspan", "to": "Yale", "type": "RELATED_TO", "context": "Integration between Careerspan and Yale"}]}

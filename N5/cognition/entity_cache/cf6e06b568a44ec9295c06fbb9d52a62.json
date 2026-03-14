@@ -1,1 +1,0 @@
-{"entities": [{"name": "Davit", "type": "PERSON", "context": "mentioned as a hiring target"}, {"name": "Zo Computer", "type": "ORG", "context": "mentioned as a hiring target for Davit"}], "relationships": [{"from": "Davit", "to": "Zo Computer", "type": "MENTIONS", "context": "mentioned only as a hiring target, not as a partnership opportunity"}]}

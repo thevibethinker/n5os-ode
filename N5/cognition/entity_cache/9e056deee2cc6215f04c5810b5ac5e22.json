@@ -1,1 +1,0 @@
-{"entities": [{"name": "generator prompt file", "type": "TOOL", "context": "a file used in the configuration status of the system"}, {"name": "B07 blocks", "type": "CONCEPT", "context": "blocks that indicate whether semantic detection runs"}], "relationships": []}

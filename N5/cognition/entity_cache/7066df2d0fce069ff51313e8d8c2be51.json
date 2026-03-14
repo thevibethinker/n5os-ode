@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "suggested the employer/hiring manager profile idea"}, {"name": "Careerspan", "type": "TOOL", "context": "data layer for the hiring ecosystem"}], "relationships": [{"from": "Vrijen", "to": "Careerspan", "type": "MENTIONS", "context": "Vrijen mentioned Careerspan as a solution for reducing fraud risk in hiring"}]}

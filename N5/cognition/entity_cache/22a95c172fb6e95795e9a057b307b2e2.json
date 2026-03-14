@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "a person encountering challenges in the AI era"}, {"name": "Careerspan", "type": "ORG", "context": "an organization that may provide solutions"}], "relationships": [{"from": "Vrijen", "to": "Careerspan", "type": "MENTIONS", "context": "Vrijen mentions Careerspan as a potential source for solutions"}]}

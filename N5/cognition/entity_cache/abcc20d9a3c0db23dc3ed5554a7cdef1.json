@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual confirming brand voice"}, {"name": "Plot Twist", "type": "CONCEPT", "context": "specific copy angle for brand voice"}], "relationships": [{"from": "V", "to": "Plot Twist", "type": "KNOWS", "context": "V confirms the specific Plot Twist copy angle"}]}

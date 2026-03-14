@@ -1,1 +1,0 @@
-{"entities": [{"name": "Logan", "type": "PERSON", "context": "Availability coordination"}, {"name": "Ilse", "type": "PERSON", "context": "Availability coordination"}], "relationships": [{"from": "V", "to": "Logan", "type": "WORKS_WITH", "context": "Aligning schedules"}, {"from": "V", "to": "Ilse", "type": "WORKS_WITH", "context": "Aligning schedules"}]}

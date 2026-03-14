@@ -1,1 +1,0 @@
-{"entities": [{"name": "JSONL", "type": "CONCEPT", "context": "simple format, easy to parse"}, {"name": "V", "type": "PERSON", "context": "refers to Vrijen and their knowledge system"}], "relationships": [{"from": "V", "to": "JSONL", "type": "USES", "context": "V uses JSONL as a format for tracking attempts"}]}

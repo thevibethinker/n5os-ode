@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual who is positioning the knowledge system"}], "relationships": [{"from": "V", "to": "authentic insights", "type": "BELIEVES", "context": "V believes in creating authentic, unfiltered insights"}]}

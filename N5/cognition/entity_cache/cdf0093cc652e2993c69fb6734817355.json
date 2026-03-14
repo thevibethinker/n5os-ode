@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the individual associated with the knowledge system"}, {"name": "DBs", "type": "CONCEPT", "context": "referring to old databases"}], "relationships": [{"from": "V", "to": "DBs", "type": "USES", "context": "V uses old databases for inspection and rollback"}]}

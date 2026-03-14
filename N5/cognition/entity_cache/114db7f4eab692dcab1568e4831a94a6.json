@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "a person with follower growth on TikTok"}, {"name": "Logan", "type": "PERSON", "context": "a person who gained followers from a LinkedIn video"}], "relationships": [{"from": "Vrijen", "to": "Logan", "type": "KNOWS", "context": "both are mentioned in the context of follower growth on social platforms"}]}

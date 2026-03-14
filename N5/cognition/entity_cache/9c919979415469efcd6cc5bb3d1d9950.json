@@ -1,1 +1,0 @@
-{"entities": [{"name": "Conor Brady", "type": "PERSON", "context": "Primary contact associated with the knowledge system"}, {"name": "MeetFibe", "type": "ORG", "context": "Organization that Conor Brady is associated with"}], "relationships": [{"from": "Conor Brady", "to": "MeetFibe", "type": "WORKS_WITH", "context": "Conor Brady is associated with the organization MeetFibe"}]}

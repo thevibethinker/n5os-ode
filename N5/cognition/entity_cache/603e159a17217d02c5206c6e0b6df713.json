@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "Industry contact"}], "relationships": [{"from": "V", "to": "additional acquisition targets", "type": "KNOWS", "context": "Can suggest additional acquisition targets"}]}

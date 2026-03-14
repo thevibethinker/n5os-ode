@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "author of the knowledge system"}, {"name": "Core cognitive engine", "type": "TOOL", "context": "cognitive tool for strategic thinking"}], "relationships": [{"from": "V (Vrijen)", "to": "Core cognitive engine", "type": "USES", "context": "V uses the core cognitive engine as a tool for strategic thinking"}]}

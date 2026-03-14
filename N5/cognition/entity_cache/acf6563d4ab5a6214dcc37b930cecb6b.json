@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "Final decision maker on technical hiring strategy"}, {"name": "ROI", "type": "CONCEPT", "context": "Eager to experiment if ROI clear"}], "relationships": [{"from": "V", "to": "ROI", "type": "BELIEVES", "context": "Eager to experiment if ROI clear"}]}

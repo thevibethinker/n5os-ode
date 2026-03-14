@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "Careerspan", "type": "TOOL", "context": "job search and networking platform"}], "relationships": [{"from": "V (Vrijen)", "to": "Careerspan", "type": "USES", "context": "not using for job search but may use for networking or advisory"}]}

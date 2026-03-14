@@ -1,1 +1,0 @@
-{"entities": [{"name": "Workers", "type": "ORG", "context": "individuals involved in producing telemetry"}, {"name": "Orchestrator", "type": "TOOL", "context": "system that validates quality"}], "relationships": [{"from": "Workers", "to": "Orchestrator", "type": "USES", "context": "Workers produce telemetry that Orchestrator validates"}]}

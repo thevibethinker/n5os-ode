@@ -1,1 +1,0 @@
-{"entities": [{"name": "Emily", "type": "PERSON", "context": "provides Riverside link for podcast"}, {"name": "Riverside", "type": "TOOL", "context": "used for podcast recording session"}], "relationships": [{"from": "Emily", "to": "Riverside", "type": "MENTIONS", "context": "Emily provides the link for using Riverside"}]}

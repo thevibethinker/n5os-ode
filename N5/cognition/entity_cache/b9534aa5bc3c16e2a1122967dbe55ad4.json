@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "a key individual in the meeting"}, {"name": "knowledge system", "type": "CONCEPT", "context": "the system discussed during the meeting"}], "relationships": [{"from": "V (Vrijen)", "to": "knowledge system", "type": "BELIEVES", "context": "V has a belief in the value of the knowledge system"}]}

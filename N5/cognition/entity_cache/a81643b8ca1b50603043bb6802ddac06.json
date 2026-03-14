@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "owner of the knowledge system"}, {"name": "market structure analysis", "type": "CONCEPT", "context": "basis for high confidence"}], "relationships": [{"from": "V (Vrijen)", "to": "market structure analysis", "type": "BELIEVES", "context": "V believes market structure analysis leads to high confidence"}]}

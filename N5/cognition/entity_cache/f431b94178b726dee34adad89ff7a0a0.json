@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the person coordinating the career tech founder sessions"}, {"name": "career tech founder sessions", "type": "EVENT", "context": "sessions being coordinated by V"}], "relationships": [{"from": "V", "to": "career tech founder sessions", "type": "WORKS_WITH", "context": "V is helping to coordinate these sessions"}]}

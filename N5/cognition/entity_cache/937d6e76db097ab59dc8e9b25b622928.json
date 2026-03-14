@@ -1,1 +1,0 @@
-{"entities": [{"name": "Logan Currie", "type": "PERSON", "context": "Participant in the conversation"}, {"name": "career navigation", "type": "CONCEPT", "context": "Relevant concept in the discussion"}], "relationships": [{"from": "Logan Currie", "to": "career navigation", "type": "MENTIONS", "context": "Logan discusses the importance of career navigation"}]}

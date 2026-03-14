@@ -1,1 +1,0 @@
-{"entities": [{"name": "Kristen", "type": "PERSON", "context": "Contact person at Elly.Ai"}, {"name": "Elly.Ai", "type": "ORG", "context": "Organization associated with Kristen"}], "relationships": [{"from": "Kristen", "to": "Elly.Ai", "type": "WORKS_WITH", "context": "Kristen is associated with the organization Elly.Ai"}]}

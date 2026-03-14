@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "speaker and proponent of a solution"}, {"name": "Yale", "type": "ORG", "context": "organization mentioned as a potential partner"}], "relationships": [{"from": "Vrijen Attawar", "to": "Yale", "type": "WORKS_WITH", "context": "seeking collaboration to provide better solutions"}]}

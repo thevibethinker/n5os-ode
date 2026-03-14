@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zapier", "type": "ORG", "context": "major company cited regarding recruitment practices"}, {"name": "Logan", "type": "PERSON", "context": "cited source about recruiting practices"}], "relationships": [{"from": "Logan", "to": "Zapier", "type": "MENTIONS", "context": "cited regarding the head of recruiting's practices"}]}

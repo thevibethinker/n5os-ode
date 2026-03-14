@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "the individual utilizing the knowledge system"}, {"name": "Google Sheet", "type": "TOOL", "context": "the tool used for data storage and organization"}], "relationships": [{"from": "V (Vrijen)", "to": "Google Sheet", "type": "USES", "context": "V uses Google Sheet to store extracted data"}]}

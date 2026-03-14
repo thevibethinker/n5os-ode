@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "speaker in the discussion"}, {"name": "company", "type": "ORG", "context": "company mentioned in relation to an action"}], "relationships": [{"from": "Vrijen Attawar", "to": "company", "type": "WORKS_WITH", "context": "Vrijen mentions a company that is involved in a certain action"}]}

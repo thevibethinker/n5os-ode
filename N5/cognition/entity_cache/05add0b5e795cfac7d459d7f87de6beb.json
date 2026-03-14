@@ -1,1 +1,0 @@
-{"entities": [{"name": "Performance dashboard", "type": "TOOL", "context": "A tool for monitoring performance"}, {"name": "Configuration management", "type": "CONCEPT", "context": "A process for managing configurations"}, {"name": "Alert system", "type": "TOOL", "context": "A system for generating alerts"}], "relationships": []}

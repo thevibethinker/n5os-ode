@@ -1,1 +1,0 @@
-{"entities": [{"name": "Graham Smith", "type": "PERSON", "context": "Individual known by V"}, {"name": "YCB", "type": "ORG", "context": "Organization where V has connections"}], "relationships": [{"from": "V", "to": "Graham Smith", "type": "KNOWS", "context": "Introduced by someone"}, {"from": "V", "to": "YCB", "type": "WORKS_WITH", "context": "Connections at the organization"}]}

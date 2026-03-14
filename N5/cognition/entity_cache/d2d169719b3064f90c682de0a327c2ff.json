@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ben Guo", "type": "PERSON", "context": "participant in the conversation"}, {"name": "prompts folder", "type": "TOOL", "context": "a specific folder mentioned in the context of file organization"}], "relationships": [{"from": "Ben Guo", "to": "prompts folder", "type": "MENTIONS", "context": "discussing a tool that has been added for usefulness"}]}

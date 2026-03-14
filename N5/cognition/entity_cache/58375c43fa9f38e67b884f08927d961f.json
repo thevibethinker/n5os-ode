@@ -1,1 +1,0 @@
-{"entities": [{"name": "Video", "type": "TOOL", "context": "A component used to display video content"}, {"name": "staticFile", "type": "TOOL", "context": "A function used to reference static file assets"}], "relationships": []}

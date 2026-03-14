@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo", "type": "ORG", "context": "the entity generating social content"}], "relationships": [{"from": "V", "to": "Zo", "type": "USES", "context": "V uses Zo to generate social content"}]}

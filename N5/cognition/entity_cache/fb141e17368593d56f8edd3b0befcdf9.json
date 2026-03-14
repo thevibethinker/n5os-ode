@@ -1,1 +1,0 @@
-{"entities": [{"name": "thread-checkpoint", "type": "TOOL", "context": "alias in recipe file"}, {"name": "thread-export", "type": "TOOL", "context": "registered tool"}], "relationships": [{"from": "thread-checkpoint", "to": "thread-export", "type": "RELATED_TO", "context": "both are registered tools"}]}

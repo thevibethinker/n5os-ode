@@ -1,1 +1,0 @@
-{"entities": [{"name": "meeting_id", "type": "CONCEPT", "context": "Identifier for specific meetings"}, {"name": "meeting manifests", "type": "TOOL", "context": "Files that contain meeting details"}, {"name": "CRM markdown", "type": "TOOL", "context": "Format used for documenting meeting IDs"}], "relationships": []}

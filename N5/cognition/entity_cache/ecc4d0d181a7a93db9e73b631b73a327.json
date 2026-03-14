@@ -1,1 +1,0 @@
-{"entities": [{"name": "Griffin", "type": "PERSON", "context": "asking about competitive response and strategy"}, {"name": "MENG Fund", "type": "ORG", "context": "investor-level assessment"}], "relationships": [{"from": "Griffin", "to": "MENG Fund", "type": "MENTIONS", "context": "Griffin's inquiry implies seriousness on the part of MENG Fund"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual managing the knowledge system"}, {"name": "HOWIE", "type": "PERSON", "context": "email sender recognized by the filter rule"}, {"name": "ZO", "type": "PERSON", "context": "email recipient recognized by the filter rule"}], "relationships": []}

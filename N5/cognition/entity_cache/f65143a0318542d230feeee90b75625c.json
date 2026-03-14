@@ -1,1 +1,0 @@
-{"entities": [{"name": "JWT auth", "type": "CONCEPT", "context": "a method of authentication"}, {"name": "authentication system", "type": "CONCEPT", "context": "the system being built"}], "relationships": [{"from": "registry", "to": "JWT auth", "type": "USES", "context": "registry is creating a build that implements JWT authentication"}]}

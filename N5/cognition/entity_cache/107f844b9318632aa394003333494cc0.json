@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "Chat participant"}, {"name": "Careerspan", "type": "ORG", "context": "Organization mentioned in context of selling to unemployed people"}], "relationships": [{"from": "V", "to": "Careerspan", "type": "WORKS_WITH", "context": "V is associated with Careerspan, likely in a work capacity"}]}

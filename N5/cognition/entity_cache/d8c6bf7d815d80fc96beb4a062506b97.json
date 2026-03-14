@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "Subject of the knowledge system"}, {"name": "job search outcome", "type": "CONCEPT", "context": "Core concept being referenced"}], "relationships": [{"from": "V", "to": "job search outcome", "type": "BELIEVES", "context": "Value of differentiation may impact core job search outcome"}]}

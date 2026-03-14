@@ -1,1 +1,0 @@
-{"entities": [{"name": "N5_mirror", "type": "TOOL", "context": "A tool with files in the knowledge system"}, {"name": "timestamped files", "type": "CONCEPT", "context": "Files that are tracked with specific timestamps"}, {"name": "redundant folders", "type": "CONCEPT", "context": "Folders identified as unnecessary in the knowledge system"}], "relationships": []}

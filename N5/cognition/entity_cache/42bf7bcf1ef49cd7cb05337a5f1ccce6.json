@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo", "type": "TOOL", "context": "text-to-speech functionality"}, {"name": "Speechify", "type": "TOOL", "context": "integration for text-to-speech"}], "relationships": [{"from": "Zo", "to": "Speechify", "type": "WORKS_WITH", "context": "Speechify integration works well with Zo"}]}

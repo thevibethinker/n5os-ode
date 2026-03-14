@@ -1,1 +1,0 @@
-{"entities": [{"name": "Nafisa Poonawala", "type": "PERSON", "context": "individual who spoke to doctors"}], "relationships": [{"from": "Nafisa Poonawala", "to": "doctors", "type": "KNOWS", "context": "consulted with two different doctors"}]}

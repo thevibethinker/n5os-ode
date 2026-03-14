@@ -1,1 +1,0 @@
-{"entities": [{"name": "Registry", "type": "CONCEPT", "context": "a system that defines and manages block types"}, {"name": "Block Types", "type": "CONCEPT", "context": "components defined within the registry, numbered B01-B30"}], "relationships": [{"from": "Registry", "to": "Block Types", "type": "RELATED_TO", "context": "Registry contains and defines various block types"}]}

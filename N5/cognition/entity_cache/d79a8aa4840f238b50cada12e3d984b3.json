@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "The knowledge system's author"}, {"name": "n5_title_generator.py", "type": "TOOL", "context": "A Python script for generating descriptive thread titles"}], "relationships": [{"from": "V", "to": "n5_title_generator.py", "type": "USES", "context": "V employs this tool to generate thread titles"}]}

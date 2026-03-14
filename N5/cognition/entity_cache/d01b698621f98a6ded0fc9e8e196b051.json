@@ -1,1 +1,0 @@
-{"entities": [{"name": "Jaya Pokuri", "type": "PERSON", "context": "Participant in the discussion"}, {"name": "OpenAI", "type": "ORG", "context": "Organization mentioned as an expensive model"}], "relationships": [{"from": "Jaya Pokuri", "to": "OpenAI", "type": "MENTIONS", "context": "Discussing the cost and value of OpenAI"}]}

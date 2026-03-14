@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker discussing a command recognition system"}, {"name": "N5", "type": "CONCEPT", "context": "Command mentioned in the context of a knowledge system"}], "relationships": [{"from": "Vrijen Attawar", "to": "N5", "type": "MENTIONS", "context": "Discussing the command recognition related to N5"}]}

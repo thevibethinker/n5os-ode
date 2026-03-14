@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zapier", "type": "TOOL", "context": "automation tool"}, {"name": "n8n", "type": "TOOL", "context": "automation tool"}], "relationships": [{"from": "V", "to": "Zapier", "type": "MENTIONS", "context": "mention in competitive comparison"}, {"from": "V", "to": "n8n", "type": "MENTIONS", "context": "mention in competitive comparison"}]}

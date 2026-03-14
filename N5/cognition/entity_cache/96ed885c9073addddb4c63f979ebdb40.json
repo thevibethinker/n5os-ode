@@ -1,1 +1,0 @@
-{"entities": [{"name": "P32", "type": "CONCEPT", "context": "related to the design philosophy of simplicity over ease"}, {"name": "P31", "type": "CONCEPT", "context": "relates to owning the planning"}], "relationships": [{"from": "P32", "to": "P31", "type": "RELATED_TO", "context": "both are concepts related to V's design philosophy"}]}

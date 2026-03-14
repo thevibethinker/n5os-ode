@@ -1,1 +1,0 @@
-{"entities": [{"name": "Prompts/drive_meeting_ingestion.md", "type": "TOOL", "context": "File used for updating prompt configurations"}, {"name": "N5/config/drive_folders.json", "type": "TOOL", "context": "Configuration file for loading drive folder settings"}], "relationships": []}

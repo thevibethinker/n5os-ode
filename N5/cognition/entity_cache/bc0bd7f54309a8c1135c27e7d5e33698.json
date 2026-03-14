@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "ORG", "context": "organization that facilitates candidate screening"}], "relationships": [{"from": "Careerspan", "to": "employer", "type": "USES", "context": "employer uses Careerspan to find qualified candidates"}]}

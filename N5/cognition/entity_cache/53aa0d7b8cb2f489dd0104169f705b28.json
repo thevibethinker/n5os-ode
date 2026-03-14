@@ -1,1 +1,0 @@
-{"entities": [{"name": "Google Drive", "type": "ORG", "context": "cloud storage service used for storing sourced jobs"}, {"name": "job-source", "type": "TOOL", "context": "command for extracting job postings"}], "relationships": [{"from": "job-source", "to": "Google Drive", "type": "USES", "context": "updates sourced jobs in Google Drive"}]}

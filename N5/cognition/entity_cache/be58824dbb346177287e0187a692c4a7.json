@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "ORG", "context": "organization mentioned in relation to user data"}, {"name": "user data", "type": "CONCEPT", "context": "data related to users that is discussed in pilot phase"}], "relationships": []}

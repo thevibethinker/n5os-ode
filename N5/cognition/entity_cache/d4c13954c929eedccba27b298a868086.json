@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Name of the individual providing information"}, {"name": "GitHub", "type": "ORG", "context": "Platform mentioned in relation to a repository"}], "relationships": [{"from": "Vrijen Attawar", "to": "GitHub", "type": "USES", "context": "Provides GitHub repo link"}]}

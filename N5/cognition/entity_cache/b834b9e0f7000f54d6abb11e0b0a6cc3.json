@@ -1,1 +1,0 @@
-{"entities": [{"name": "stakeholder_intel", "type": "TOOL", "context": "a Python script used for calling different prompts"}, {"name": "Prompts/meetings/stakeholder_intel.prompt.md", "type": "TOOL", "context": "a file that may be extended with new read-only prompts and views"}], "relationships": []}

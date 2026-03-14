@@ -1,1 +1,0 @@
-{"entities": [{"name": "Logan", "type": "PERSON", "context": "advocate for creative thinking in sales"}, {"name": "the thing we are selling", "type": "CONCEPT", "context": "focus for creative thinking"}], "relationships": [{"from": "Logan", "to": "the thing we are selling", "type": "BELIEVES", "context": "advocates for focus on the product"}]}

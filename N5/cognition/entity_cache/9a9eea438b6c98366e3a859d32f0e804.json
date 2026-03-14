@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "Individual associated with a knowledge system"}, {"name": "Diagrams", "type": "TOOL", "context": "Visual tools to aid understanding"}], "relationships": [{"from": "V (Vrijen)", "to": "Diagrams", "type": "USES", "context": "V uses diagrams to turn messy plans into visual flows and clarify complex relationships"}]}

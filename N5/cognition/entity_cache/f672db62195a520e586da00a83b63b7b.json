@@ -1,1 +1,0 @@
-{"entities": [{"name": "TestQuickJSWASMModule", "type": "TOOL", "context": "a class that exposes memory leak detection API"}, {"name": "DEBUG_SYNC", "type": "CONCEPT", "context": "a variant related to the accuracy of the API"}], "relationships": [{"from": "TestQuickJSWASMModule", "to": "DEBUG_SYNC", "type": "USES", "context": "the API is accurate when using this variant"}]}

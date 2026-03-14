@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "knows about the refund request"}, {"name": "credits", "type": "CONCEPT", "context": "referring to the monetary value at stake"}], "relationships": [{"from": "V", "to": "credits", "type": "KNOWS", "context": "V acknowledges the urgency of the refund for credits"}]}

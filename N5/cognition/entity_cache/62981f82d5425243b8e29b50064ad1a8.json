@@ -1,1 +1,0 @@
-{"entities": [{"name": "argv", "type": "TOOL", "context": "Command-line argument variable used in the code"}, {"name": "console", "type": "TOOL", "context": "JavaScript object used to output data to the console"}], "relationships": []}

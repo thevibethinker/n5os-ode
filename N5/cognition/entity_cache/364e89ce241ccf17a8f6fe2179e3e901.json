@@ -1,1 +1,0 @@
-{"entities": [{"name": "V-OS tags", "type": "TOOL", "context": "intelligent tagging system for scheduling"}, {"name": "Howie scheduling bot", "type": "TOOL", "context": "scheduling bot utilizing V-OS tags"}], "relationships": [{"from": "Howie scheduling bot", "to": "V-OS tags", "type": "USES", "context": "Howie scheduling bot utilizes V-OS tags for scheduling"}]}

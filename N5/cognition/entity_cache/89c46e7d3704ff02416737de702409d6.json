@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "individual scheduling meetings"}, {"name": "Google Calendar", "type": "TOOL", "context": "tool used for event scheduling"}], "relationships": [{"from": "Vrijen", "to": "Google Calendar", "type": "USES", "context": "scheduling meetings via email"}]}

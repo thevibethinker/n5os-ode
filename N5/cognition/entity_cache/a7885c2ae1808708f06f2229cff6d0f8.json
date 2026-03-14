@@ -1,1 +1,0 @@
-{"entities": [{"name": "GET Themes", "type": "TOOL", "context": "API endpoint used to pull a list of themes"}, {"name": "themeId", "type": "CONCEPT", "context": "Identifier for themes in the application"}], "relationships": [{"from": "GET Themes", "to": "themeId", "type": "USES", "context": "Used to access theme identifiers"}]}

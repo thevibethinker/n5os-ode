@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "refers to the person Vrijen"}, {"name": "system", "type": "CONCEPT", "context": "refers to the critical system being discussed"}, {"name": "scripts", "type": "TOOL", "context": "refers to new scripts or commands created"}], "relationships": []}

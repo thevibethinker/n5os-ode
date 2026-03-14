@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "impact investor and student"}, {"name": "Yale MENG Fund", "type": "ORG", "context": "education-focused impact investment organization"}], "relationships": [{"from": "V", "to": "Yale MENG Fund", "type": "WORKS_WITH", "context": "V is an education-focused impact investor associated with the Yale MENG Fund"}]}

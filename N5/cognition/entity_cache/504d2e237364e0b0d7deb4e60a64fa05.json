@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker and representative of the knowledge system"}, {"name": "tool", "type": "TOOL", "context": "A tool built to induce organic reengagement of users"}], "relationships": [{"from": "Vrijen Attawar", "to": "tool", "type": "USES", "context": "Vrijen uses a tool to induce users to return organically"}]}

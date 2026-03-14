@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the individual making the decision"}, {"name": "Notion dashboard", "type": "TOOL", "context": "the tool being reviewed by the team"}], "relationships": [{"from": "V", "to": "Notion dashboard", "type": "USES", "context": "V's team uses the Notion dashboard for project management"}]}

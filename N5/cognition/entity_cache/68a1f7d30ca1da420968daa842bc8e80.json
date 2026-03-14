@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "the speaker sharing their experience"}, {"name": "McKinsey", "type": "ORG", "context": "a consulting firm mentioned in relation to value on time"}], "relationships": [{"from": "Vrijen Attawar", "to": "McKinsey", "type": "MENTIONS", "context": "discussing the firm's internal accounting system"}]}

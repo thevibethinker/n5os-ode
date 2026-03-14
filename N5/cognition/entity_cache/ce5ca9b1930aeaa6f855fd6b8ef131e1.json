@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ilya Kucherenko", "type": "PERSON", "context": "a speaker discussing a knowledge system"}, {"name": "job description", "type": "CONCEPT", "context": "a key concept in the knowledge system"}, {"name": "resume", "type": "CONCEPT", "context": "related to job description and candidates"}], "relationships": []}

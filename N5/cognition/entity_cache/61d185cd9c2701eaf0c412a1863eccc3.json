@@ -1,1 +1,0 @@
-{"entities": [{"name": "David Speigel", "type": "PERSON", "context": "excited about working with founders and interested in AI"}], "relationships": [{"from": "David Speigel", "to": "founders", "type": "WORKS_WITH", "context": "works with founders"}, {"from": "David Speigel", "to": "AI", "type": "MENTIONS", "context": "interested in figuring out what's new with AI"}]}

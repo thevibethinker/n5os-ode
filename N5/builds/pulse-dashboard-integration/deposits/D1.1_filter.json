@@ -1,7 +1,0 @@
-{
-  "drop_id": "D1.1",
-  "verdict": "PASS",
-  "reason": "All success criteria met: script executes without errors, --help displays usage, output JSON validates against required schema, Pulse builds correctly show drop counts (e.g., prompt-to-skill: 3 complete, 3 running, 1 pending, 42% progress), legacy builds marked with format: 'legacy', active builds sorted first then by last_activity descending. Script uses only stdlib, handles malformed JSON gracefully with stderr warnings, and includes bonus --dry-run option.",
-  "artifacts_verified": true,
-  "concerns": []
-}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Kunal Desai", "type": "PERSON", "context": "CorridorX team member"}, {"name": "CorridorX", "type": "ORG", "context": "Organization involved in engineering talent teams and AI engineering pods"}], "relationships": [{"from": "Kunal Desai", "to": "CorridorX", "type": "WORKS_WITH", "context": "Member of the CorridorX team"}]}

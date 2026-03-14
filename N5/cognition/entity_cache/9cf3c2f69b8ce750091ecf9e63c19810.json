@@ -1,1 +1,0 @@
-{"entities": [{"name": "Kim", "type": "PERSON", "context": "community stakeholder with job-seeking status"}, {"name": "Careerspan", "type": "TOOL", "context": "product used by Kim for job search"}], "relationships": [{"from": "Kim", "to": "Careerspan", "type": "USES", "context": "Kim uses Careerspan for job search"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Log rotator", "type": "TOOL", "context": "manages logs"}, {"name": "Dashboard", "type": "TOOL", "context": "tracks performance"}], "relationships": []}

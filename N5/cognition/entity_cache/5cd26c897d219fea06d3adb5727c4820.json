@@ -1,1 +1,0 @@
-{"entities": [{"name": "Elly", "type": "PERSON", "context": "V's colleague involved in sourcing and enrichment efforts"}], "relationships": [{"from": "V", "to": "Elly", "type": "WORKS_WITH", "context": "collaborating on data stream to enhance sourcing and enrichment"}]}

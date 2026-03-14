@@ -1,1 +1,0 @@
-{"entities": [{"name": "AI Technology Philosophy", "type": "CONCEPT", "context": "philosophy regarding AI technology and its application"}], "relationships": [{"from": "V (Vrijen)", "to": "AI Technology Philosophy", "type": "BELIEVES", "context": "V's belief in the philosophy that large language models suffice without needing extensive engineering"}]}

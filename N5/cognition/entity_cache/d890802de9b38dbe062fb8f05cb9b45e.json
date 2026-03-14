@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "individual connecting to Chrome profile"}, {"name": "Chrome", "type": "TOOL", "context": "web browser related to user's profile"}], "relationships": [{"from": "Vrijen Attawar", "to": "Chrome", "type": "USES", "context": "connecting to profile in the web browser"}]}

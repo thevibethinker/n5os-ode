@@ -1,1 +1,0 @@
-{"entities": [{"name": "SourceMapConsumer", "type": "TOOL", "context": "a tool that supports a bias option for fuzzy searching"}, {"name": "bias", "type": "CONCEPT", "context": "an option to control fuzzy searching direction"}], "relationships": []}

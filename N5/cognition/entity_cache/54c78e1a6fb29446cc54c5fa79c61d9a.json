@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "ORG", "context": "an organization involved in aligning incentives"}, {"name": "Edmund", "type": "PERSON", "context": "noted a potential change in structure once revenue flows"}], "relationships": [{"from": "Careerspan", "to": "Edmund", "type": "MENTIONS", "context": "Edmund discusses Careerspan's incentive structure"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Principle 18: State Verification", "type": "CONCEPT", "context": "A principle regarding state file updates and generation history tracking."}, {"name": "Principle 20: Modular Design", "type": "CONCEPT", "context": "A principle encouraging the use of separate modules for components such as email and calendar."}], "relationships": []}

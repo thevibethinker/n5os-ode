@@ -1,1 +1,0 @@
-{"entities": [{"name": "allow-uncaught", "type": "CONCEPT", "context": "a rule concerning error propagation"}, {"name": "async-only", "type": "CONCEPT", "context": "a rule requiring asynchronous tests"}], "relationships": []}

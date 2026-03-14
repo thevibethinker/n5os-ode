@@ -1,1 +1,0 @@
-{"entities": [{"name": "Stakeholder Name", "type": "PERSON", "context": "a person involved in the follow-up process"}, {"name": "n5_drop_followup.py", "type": "TOOL", "context": "a script for managing follow-up communication"}], "relationships": [{"from": "Stakeholder Name", "to": "n5_drop_followup.py", "type": "USES", "context": "uses the script for follow-up communication"}]}

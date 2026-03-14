@@ -1,1 +1,0 @@
-{"entities": [{"name": "Sam Bourton", "type": "PERSON", "context": "Speaker"}, {"name": "Arsenal", "type": "ORG", "context": "Football club associated with the CEO"}], "relationships": [{"from": "Sam Bourton", "to": "Arsenal", "type": "MENTIONS", "context": "Describes a CEO who holds a season ticket for the team"}]}

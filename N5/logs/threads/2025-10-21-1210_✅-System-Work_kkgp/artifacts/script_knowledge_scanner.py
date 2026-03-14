@@ -1,1 +1,0 @@
-/home/workspace/N5/scripts/modules/knowledge_scanner.py

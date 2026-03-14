@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "challenged Logan during a demo"}, {"name": "Logan", "type": "PERSON", "context": "was challenged by V during a demo"}], "relationships": [{"from": "V", "to": "Logan", "type": "CHALLENGES", "context": "V challenged Logan to dig deeper during the demo"}]}

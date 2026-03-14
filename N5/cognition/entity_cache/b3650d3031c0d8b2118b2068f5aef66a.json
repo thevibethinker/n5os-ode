@@ -1,1 +1,0 @@
-{"entities": [{"name": "David Speigel", "type": "PERSON", "context": "individual making a plan of action"}], "relationships": [{"from": "V", "to": "David Speigel", "type": "KNOWS", "context": "V is being introduced to David Speigel for community connections"}]}

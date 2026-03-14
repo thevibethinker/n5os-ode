@@ -1,1 +1,0 @@
-{"entities": [{"name": "Audio", "type": "TOOL", "context": "A component used for playing audio in a program"}, {"name": "staticFile", "type": "TOOL", "context": "A function used to handle static files"}, {"name": "interpolate", "type": "TOOL", "context": "A function used to perform interpolation"}], "relationships": []}

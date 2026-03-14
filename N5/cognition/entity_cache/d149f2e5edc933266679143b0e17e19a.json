@@ -1,1 +1,0 @@
-{"entities": [{"name": "Session State Manager", "type": "TOOL", "context": "Manages conversation context"}, {"name": "Reflection Processor", "type": "CONCEPT", "context": "Automated transformation pipeline"}], "relationships": []}

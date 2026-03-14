@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ray", "type": "PERSON", "context": "mentioned in relation to a form"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "the subject requesting action"}], "relationships": [{"from": "V (Vrijen)", "to": "Ray", "type": "KNOWS", "context": "V is awaiting Ray's form"}]}

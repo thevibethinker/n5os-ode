@@ -1,1 +1,0 @@
-{"entities": [{"name": "n5_safety.py", "type": "TOOL", "context": "a script protecting all operations"}, {"name": "Knowledge", "type": "CONCEPT", "context": "stable, evolving, architectural, context-related structured information"}], "relationships": [{"from": "n5_safety.py", "to": "Knowledge", "type": "USES", "context": "protects operations related to knowledge structures"}]}

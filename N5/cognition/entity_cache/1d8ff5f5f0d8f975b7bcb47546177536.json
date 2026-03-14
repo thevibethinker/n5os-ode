@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the individual with a knowledge system"}, {"name": "Block Registry", "type": "TOOL", "context": "a specific file related to V's knowledge system"}, {"name": "Essential Links", "type": "TOOL", "context": "a specific file related to V's knowledge system"}], "relationships": []}

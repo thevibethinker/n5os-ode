@@ -1,1 +1,0 @@
-{"entities": [{"name": "Tailwind", "type": "TOOL", "context": "A tool that must be installed in a Remotion project"}, {"name": "Remotion", "type": "ORG", "context": "A platform where Tailwind can be installed and used"}], "relationships": [{"from": "Tailwind", "to": "Remotion", "type": "USES", "context": "Tailwind must be installed and enabled in a Remotion project"}]}

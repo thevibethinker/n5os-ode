@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "V-OS Tag System", "type": "CONCEPT", "context": "system used for organizing workflow and data"}], "relationships": [{"from": "V", "to": "V-OS Tag System", "type": "USES", "context": "V utilizes the V-OS Tag System for task management"}]}

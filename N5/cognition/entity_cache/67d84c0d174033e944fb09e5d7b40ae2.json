@@ -1,1 +1,0 @@
-{"entities": [{"name": "Needle", "type": "ORG", "context": "founding team"}, {"name": "Ben Guo", "type": "PERSON", "context": "for partnership discussions"}], "relationships": [{"from": "Needle", "to": "Ben Guo", "type": "WORKS_WITH", "context": "for partnership discussions"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Emory", "type": "ORG", "context": "partnership credibility"}, {"name": "Darwin Box", "type": "CONCEPT", "context": "narrative related to the case study"}], "relationships": [{"from": "Emory", "to": "Darwin Box", "type": "RELATED_TO", "context": "feeds narrative"}]}

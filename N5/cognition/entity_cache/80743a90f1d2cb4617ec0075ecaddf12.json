@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual referenced in the response"}, {"name": "Settings", "type": "TOOL", "context": "section where secret keys are stored"}], "relationships": [{"from": "V", "to": "Settings", "type": "KNOWS", "context": "V knows about the section in Settings for storing secret keys"}]}

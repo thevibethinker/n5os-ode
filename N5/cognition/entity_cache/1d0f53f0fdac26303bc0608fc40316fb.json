@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "subject of the text"}, {"name": "Archive compression", "type": "CONCEPT", "context": "describes a data storage technique"}], "relationships": [{"from": "V (Vrijen)", "to": "Archive compression", "type": "KNOWS", "context": "V knows about archive compression as a concept"}]}

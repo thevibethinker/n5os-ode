@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "V's voice dials system"}, {"name": "Careerspan", "type": "ORG", "context": "organization associated with V"}], "relationships": [{"from": "Vrijen", "to": "Careerspan", "type": "WORKS_WITH", "context": "V represents or collaborates with Careerspan"}]}

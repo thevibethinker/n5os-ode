@@ -1,1 +1,0 @@
-{"entities": [{"name": "Sam", "type": "PERSON", "context": "individual related to Careerspan"}, {"name": "Careerspan", "type": "ORG", "context": "organization positioned as a competitive advantage in recruiting"}], "relationships": [{"from": "Sam", "to": "Careerspan", "type": "WORKS_WITH", "context": "Sam collaborates with Careerspan for competitive advantage in sourcing"}]}

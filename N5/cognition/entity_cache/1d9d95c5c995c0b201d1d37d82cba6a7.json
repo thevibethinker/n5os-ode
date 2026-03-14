@@ -1,1 +1,0 @@
-{"entities": [{"name": "LinkedIn", "type": "ORG", "context": "social media platform for professional networking"}, {"name": "Email templates", "type": "TOOL", "context": "predefined email formats for communication"}, {"name": "calendar links", "type": "TOOL", "context": "links for scheduling and managing appointments"}], "relationships": []}

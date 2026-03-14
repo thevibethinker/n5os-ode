@@ -1,1 +1,0 @@
-{"entities": [{"name": "Mishu", "type": "PERSON", "context": "co-founder partnership"}, {"name": "Uber", "type": "ORG", "context": "alumni community connections"}], "relationships": [{"from": "V", "to": "Mishu", "type": "WORKS_WITH", "context": "co-founder partnership"}, {"from": "V", "to": "Uber", "type": "KNOWS", "context": "alumni community connections"}]}

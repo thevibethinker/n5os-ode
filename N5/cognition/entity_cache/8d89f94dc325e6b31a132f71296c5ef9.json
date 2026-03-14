@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "Zo", "type": "TOOL", "context": "specialized configuration that activates capabilities and communication styles"}], "relationships": [{"from": "V", "to": "Zo", "type": "USES", "context": "V utilizes Zo for activating capabilities and communication styles"}]}

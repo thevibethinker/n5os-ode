@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "Subject of the knowledge system"}, {"name": "Logical assessment", "type": "CONCEPT", "context": "Basis of authority level"}], "relationships": [{"from": "V (Vrijen)", "to": "Logical assessment", "type": "BELIEVES", "context": "V believes in the logical assessment as a basis for authority level"}]}

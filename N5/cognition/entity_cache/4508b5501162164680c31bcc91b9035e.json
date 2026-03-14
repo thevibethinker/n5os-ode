@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual referenced in knowledge system"}, {"name": "Content Library", "type": "ORG", "context": "repository for curated content"}], "relationships": [{"from": "V (Vrijen)", "to": "Content Library", "type": "USES", "context": "uses the Content Library for structured content"}]}

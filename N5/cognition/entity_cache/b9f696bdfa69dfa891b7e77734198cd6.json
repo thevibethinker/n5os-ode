@@ -1,1 +1,0 @@
-{"entities": [{"name": "employer", "type": "CONCEPT", "context": "a role involved in the password setup process"}, {"name": "set_employer_password", "type": "TOOL", "context": "an endpoint for setting employer's password"}], "relationships": [{"from": "employer", "to": "set_employer_password", "type": "USES", "context": "the employer uses the endpoint for password setup"}]}

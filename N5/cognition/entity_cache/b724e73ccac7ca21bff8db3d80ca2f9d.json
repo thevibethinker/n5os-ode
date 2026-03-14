@@ -1,1 +1,0 @@
-{"entities": [{"name": "Jake Gates", "type": "PERSON", "context": "participant in the conversation who expresses resonance with the ideas presented"}], "relationships": [{"from": "V", "to": "Jake Gates", "type": "MENTIONS", "context": "V is discussed in the context of Jake Gates' thoughts"}]}

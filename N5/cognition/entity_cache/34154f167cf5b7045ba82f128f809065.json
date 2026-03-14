@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo", "type": "PERSON", "context": "Individual involved in warming outreach"}, {"name": "Howie", "type": "PERSON", "context": "Individual involved in warming outreach"}], "relationships": [{"from": "Zo", "to": "Howie", "type": "WORKS_WITH", "context": "Coordinating warming outreach"}]}

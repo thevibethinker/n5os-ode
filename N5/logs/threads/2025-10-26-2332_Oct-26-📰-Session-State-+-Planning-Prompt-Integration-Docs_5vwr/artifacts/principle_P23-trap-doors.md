@@ -1,1 +1,0 @@
-/home/workspace/Knowledge/architectural/principles/P23-identify-trap-doors.md

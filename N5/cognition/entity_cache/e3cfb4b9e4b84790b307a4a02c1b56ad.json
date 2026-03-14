@@ -1,1 +1,0 @@
-{"entities": [{"name": "Nicole", "type": "PERSON", "context": "individual thinking about the scalability of a deal"}, {"name": "Emory", "type": "ORG", "context": "organization involved in the potential deal"}], "relationships": [{"from": "Nicole", "to": "Emory", "type": "BELIEVES", "context": "Nicole believes in expanding the deal across all of Emory"}]}

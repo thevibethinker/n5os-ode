@@ -1,1 +1,0 @@
-{"entities": [{"name": "MG-7C", "type": "ORG", "context": "organization responsible for archiving"}, {"name": "V", "type": "PERSON", "context": "subject of the knowledge system"}], "relationships": [{"from": "V", "to": "MG-7C", "type": "WORKS_WITH", "context": "V collaborates with MG-7C for archiving purposes"}]}

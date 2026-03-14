@@ -1,1 +1,0 @@
-{"entities": [{"name": "Charles Jolley", "type": "PERSON", "context": "Founder / Advisor at Wisdom Partners"}, {"name": "Wisdom Partners", "type": "ORG", "context": "Organization founded by Charles Jolley"}], "relationships": [{"from": "Charles Jolley", "to": "Wisdom Partners", "type": "WORKS_WITH", "context": "Charles Jolley is the Founder / Advisor of Wisdom Partners"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ashraf", "type": "PERSON", "context": "providing value in Careerspan's success"}, {"name": "Careerspan", "type": "ORG", "context": "organization related to network effects"}], "relationships": [{"from": "Ashraf", "to": "Careerspan", "type": "WORKS_WITH", "context": "Ashraf sees mutual value in Careerspan's success"}]}

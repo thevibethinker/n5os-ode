@@ -1,1 +1,0 @@
-{"entities": [{"name": "Carson", "type": "PERSON", "context": "listed super-unicorn traits"}, {"name": "super-unicorn traits", "type": "CONCEPT", "context": "traits being analyzed by founders"}], "relationships": [{"from": "founders", "to": "super-unicorn traits", "type": "MENTIONS", "context": "founders scan networks for traits"}]}

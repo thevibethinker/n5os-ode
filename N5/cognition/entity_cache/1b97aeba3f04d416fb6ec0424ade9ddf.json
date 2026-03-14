@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker in the conversation, going to pick up his cat"}, {"name": "vet hospital", "type": "ORG", "context": "Destination where V is going to retrieve his cat"}], "relationships": [{"from": "Vrijen Attawar", "to": "vet hospital", "type": "RELATED_TO", "context": "Going to the vet hospital to pick up his cat"}]}

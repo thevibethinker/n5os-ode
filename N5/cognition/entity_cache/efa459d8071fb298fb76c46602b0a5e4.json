@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the individual described"}, {"name": "data obsession", "type": "CONCEPT", "context": "V's awareness of their focus on data"}], "relationships": [{"from": "V", "to": "data obsession", "type": "BELIEVES", "context": "V is self-aware about being data-obsessed"}]}

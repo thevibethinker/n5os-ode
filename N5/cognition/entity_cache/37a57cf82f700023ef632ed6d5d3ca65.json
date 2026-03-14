@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "Careerspan", "type": "ORG", "context": "organization that finds talent"}], "relationships": [{"from": "V (Vrijen)", "to": "Careerspan", "type": "USES", "context": "V utilizes Careerspan to identify talent"}]}

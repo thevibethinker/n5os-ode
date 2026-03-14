@@ -1,1 +1,0 @@
-{"entities": [{"name": "Rise", "type": "ORG", "context": "an organization related to candidate sourcing"}], "relationships": [{"from": "V", "to": "Rise", "type": "WORKS_WITH", "context": "committing to a proof of concept with Rise"}]}

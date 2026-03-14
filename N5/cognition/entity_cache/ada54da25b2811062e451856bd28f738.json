@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual in the knowledge system"}, {"name": "Internal Team", "type": "ORG", "context": "organization mentioned in the meeting directory"}], "relationships": [{"from": "V", "to": "Internal Team", "type": "WORKS_WITH", "context": "V is part of the Internal Team"}]}

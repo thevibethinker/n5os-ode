@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ulrik Soderstrom", "type": "PERSON", "context": "a person speaking in the text"}, {"name": "Silver Spring", "type": "ORG", "context": "a location mentioned"}], "relationships": [{"from": "Ulrik Soderstrom", "to": "Silver Spring", "type": "MENTIONS", "context": "Ulrik mentions traveling to Silver Spring"}]}

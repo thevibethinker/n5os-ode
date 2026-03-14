@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "ORG", "context": "an organization tackling UX problems"}, {"name": "conversational AI", "type": "TOOL", "context": "technology used for creating a reflection experience"}], "relationships": [{"from": "Careerspan", "to": "conversational AI", "type": "USES", "context": "to create a reflection experience"}]}

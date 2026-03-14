@@ -1,1 +1,0 @@
-{"entities": [{"name": "SDRs", "type": "CONCEPT", "context": "sales development representatives"}], "relationships": [{"from": "V", "to": "SDRs", "type": "MENTIONS", "context": "discussing hiring strategy"}]}

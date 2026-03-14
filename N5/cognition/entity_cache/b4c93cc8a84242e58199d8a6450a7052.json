@@ -1,1 +1,0 @@
-{"entities": [{"name": "GPT-E", "type": "TOOL", "context": "an auto-apply tool for meetings"}, {"name": "CRM", "type": "TOOL", "context": "platform for storing information for team members"}], "relationships": []}

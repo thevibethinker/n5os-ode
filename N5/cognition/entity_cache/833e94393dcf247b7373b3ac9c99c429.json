@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "refers to Vrijen, the individual in the knowledge system"}, {"name": "new_tool.py", "type": "TOOL", "context": "a script related to V's work in the knowledge system"}], "relationships": [{"from": "V", "to": "new_tool.py", "type": "USES", "context": "V uses the new_tool.py script in their work"}]}

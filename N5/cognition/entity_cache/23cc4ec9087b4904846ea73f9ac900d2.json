@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "a contact who is connected but hasn't established a meaningful dialogue"}, {"name": "SHRM", "type": "ORG", "context": "organization that is the target for outreach"}], "relationships": [{"from": "V", "to": "SHRM", "type": "WORKS_WITH", "context": "V is connected to SHRM regarding outreach"}]}

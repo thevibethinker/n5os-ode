@@ -1,1 +1,0 @@
-{"entities": [{"name": "Universities/Career Centers", "type": "ORG", "context": "Career coaching infrastructure for students"}, {"name": "Recruiting Platforms", "type": "TOOL", "context": "Signal technology layer to enhance talent identification"}, {"name": "Employers", "type": "ORG", "context": "Direct access to behavioral insights on candidates"}], "relationships": []}

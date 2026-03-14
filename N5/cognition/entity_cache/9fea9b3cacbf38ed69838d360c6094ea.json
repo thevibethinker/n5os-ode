@@ -1,1 +1,0 @@
-{"entities": [{"name": "Core Voice", "type": "CONCEPT", "context": "A system applied for specific types of communication"}, {"name": "voice.md", "type": "TOOL", "context": "File related to the Core Voice system"}], "relationships": [{"from": "Core Voice", "to": "voice.md", "type": "USES", "context": "Core Voice applies the voice.md file for communication preferences"}]}

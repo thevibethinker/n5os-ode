@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "speaking from Careerspan's usage data"}, {"name": "Careerspan", "type": "ORG", "context": "source of usage data"}], "relationships": [{"from": "Vrijen", "to": "Careerspan", "type": "USES", "context": "Vrijen uses Careerspan's usage data"}]}

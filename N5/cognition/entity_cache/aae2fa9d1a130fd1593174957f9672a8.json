@@ -1,1 +1,0 @@
-{"entities": [{"name": "Caleb", "type": "PERSON", "context": "a person expressing enthusiasm"}, {"name": "big stage", "type": "CONCEPT", "context": "a metaphor for a larger opportunity"}], "relationships": [{"from": "Caleb", "to": "V", "type": "WORKS_WITH", "context": "Caleb is excited about V's opportunity on a big stage"}]}

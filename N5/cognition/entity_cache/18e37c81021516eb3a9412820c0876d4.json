@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Recruiter discussing knowledge system"}, {"name": "Superposition AI", "type": "ORG", "context": "Company partnering with Vrijen"}], "relationships": [{"from": "Vrijen Attawar", "to": "Superposition AI", "type": "WORKS_WITH", "context": "Partnering to drive jobs"}]}

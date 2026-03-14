@@ -1,1 +1,0 @@
-{"entities": [{"name": "Operator", "type": "TOOL", "context": "a tool being adjusted for signal keywords"}, {"name": "personas", "type": "CONCEPT", "context": "reference to standalone personas from previous versions"}, {"name": "v1.x files", "type": "CONCEPT", "context": "files that still exist related to standalone personas"}], "relationships": []}

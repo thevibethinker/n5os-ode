@@ -1,1 +1,0 @@
-{"entities": [{"name": "Kunal", "type": "PERSON", "context": "individual associated with Corridorx.Io"}, {"name": "Corridorx.Io", "type": "ORG", "context": "organization where Kunal works"}], "relationships": [{"from": "Kunal", "to": "Corridorx.Io", "type": "WORKS_WITH", "context": "Kunal is affiliated with the organization"}]}

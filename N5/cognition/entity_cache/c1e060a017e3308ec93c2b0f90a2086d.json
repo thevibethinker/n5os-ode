@@ -1,1 +1,0 @@
-{"entities": [{"name": "Alex", "type": "PERSON", "context": "Encouraged to join the Zo Discord"}, {"name": "Zo Discord", "type": "ORG", "context": "Platform with approximately 1,000 members in target ICP"}], "relationships": [{"from": "Alex", "to": "Zo Discord", "type": "USES", "context": "Encouraged to join and try the product"}]}

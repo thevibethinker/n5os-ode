@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ash", "type": "PERSON", "context": "a technical buyer asking questions"}, {"name": "defensibility", "type": "CONCEPT", "context": "a concept technical buyers want to understand"}], "relationships": [{"from": "Ash", "to": "defensibility", "type": "KNOWS", "context": "Ash is seeking to understand the concept of defensibility"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Aaron", "type": "PERSON", "context": "associated with overall compression philosophy"}], "relationships": [{"from": "V", "to": "Aaron", "type": "KNOWS", "context": "V is aware of Aaron's philosophy"}]}

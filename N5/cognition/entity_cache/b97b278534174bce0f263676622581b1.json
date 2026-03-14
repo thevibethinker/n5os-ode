@@ -1,1 +1,0 @@
-{"entities": [{"name": "Output Review Tracker", "type": "TOOL", "context": "a tool intended for correlating images with content"}], "relationships": [{"from": "V (Vrijen)", "to": "Output Review Tracker", "type": "USES", "context": "V plans to integrate with Output Review Tracker"}]}

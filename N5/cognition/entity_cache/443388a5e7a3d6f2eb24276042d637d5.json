@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "individual discussing household situations"}], "relationships": [{"from": "Vrijen", "to": "high-earning households", "type": "BELIEVES", "context": "views this as standard practice for high-earning households"}]}

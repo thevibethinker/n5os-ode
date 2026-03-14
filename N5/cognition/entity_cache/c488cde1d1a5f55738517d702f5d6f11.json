@@ -1,1 +1,0 @@
-{"entities": [{"name": "N5/workflows/crm_query.prompt.md", "type": "TOOL", "context": "Universal query interface"}, {"name": "N5/workflows/crm_intel_synthesis.prompt.md", "type": "TOOL", "context": "Deep intelligence synthesis"}, {"name": "N5/workflows/crm_add_contact.prompt.md", "type": "TOOL", "context": "Add new contacts"}], "relationships": []}

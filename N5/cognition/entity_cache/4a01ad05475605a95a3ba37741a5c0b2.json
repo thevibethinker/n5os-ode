@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "Individual associated with the knowledge system"}, {"name": "routing_config.json", "type": "TOOL", "context": "Configuration file used for routing adjustments"}], "relationships": [{"from": "V", "to": "routing_config.json", "type": "USES", "context": "V uses this tool to adjust routing configurations"}]}

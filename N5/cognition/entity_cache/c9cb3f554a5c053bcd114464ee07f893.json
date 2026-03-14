@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker discussing careerspan"}, {"name": "careerspan", "type": "TOOL", "context": "Platform used by people to get jobs"}], "relationships": [{"from": "Vrijen Attawar", "to": "careerspan", "type": "USES", "context": "V mentions using careerspan to help people get jobs"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "README/Knowledge doc", "type": "CONCEPT", "context": "a planned document for the knowledge system"}, {"name": "operational runbook", "type": "CONCEPT", "context": "included in the defined single source of truth"}, {"name": "SSOT", "type": "CONCEPT", "context": "acronym for single source of truth"}], "relationships": []}

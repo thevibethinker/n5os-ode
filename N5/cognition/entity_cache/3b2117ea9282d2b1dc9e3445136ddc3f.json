@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "user of the knowledge system"}, {"name": "Howie tag choices", "type": "CONCEPT", "context": "natural language patterns for tag generation"}], "relationships": [{"from": "V", "to": "Howie tag choices", "type": "USES", "context": "to leave breadcrumbs for intelligent tag generation"}]}

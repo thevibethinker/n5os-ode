@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "Individual related to knowledge system"}, {"name": "Documents/System", "type": "CONCEPT", "context": "New structure created for documentation"}], "relationships": [{"from": "V", "to": "Documents/System", "type": "KNOWS", "context": "V is aware of the new structure created for documentation"}]}

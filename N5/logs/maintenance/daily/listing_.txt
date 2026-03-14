@@ -1,6 +1,0 @@
-total 74
--rw-r--r-- 1 root root  6104 Oct  9 09:33 2025-10-09.log
--rw-r--r-- 1 root root 12489 Oct 10 09:32 2025-10-10.log
--rw-r--r-- 1 root root 52733 Oct 11 09:31 2025-10-11.log
--rw-r--r-- 1 root root  3710 Oct  9 09:33 daily_guardian_20251009T093309Z.log
--rw-r--r-- 1 root root     0 Oct 11 09:31 listing_.txt

@@ -1,1 +1,0 @@
-{"entities": [{"name": "rubric", "type": "CONCEPT", "context": "a tool that enables iteration and prevents false completion"}, {"name": "P15", "type": "CONCEPT", "context": "refers to false completion"}], "relationships": [{"from": "rubric", "to": "P15", "type": "PREVENTS", "context": "rubric prevents P15 which is false completion"}]}

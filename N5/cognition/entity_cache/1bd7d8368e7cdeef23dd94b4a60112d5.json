@@ -1,1 +1,0 @@
-{"entities": [{"name": "Merisenda", "type": "PERSON", "context": "actively planning AI initiatives"}, {"name": "AI initiatives", "type": "CONCEPT", "context": "development costs, hiring approach, and building internally vs externally"}], "relationships": [{"from": "Merisenda", "to": "AI initiatives", "type": "MENTIONS", "context": "asked specific questions about"}]}

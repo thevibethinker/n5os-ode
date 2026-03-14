@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo", "type": "PERSON", "context": "individual with the power to iterate fast"}, {"name": "structural problems", "type": "CONCEPT", "context": "issues that can become irreversible"}], "relationships": [{"from": "Zo", "to": "structural problems", "type": "RELATED_TO", "context": "Zo's power can mask these problems until they are irreversible"}]}

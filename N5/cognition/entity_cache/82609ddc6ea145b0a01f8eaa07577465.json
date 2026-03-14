@@ -1,1 +1,0 @@
-{"entities": [{"name": "Short.io", "type": "ORG", "context": "A service used for stats ingestion"}, {"name": "stats ingestion task", "type": "CONCEPT", "context": "The process of pulling data"}], "relationships": [{"from": "Short.io", "to": "stats ingestion task", "type": "USES", "context": "Short.io is utilized for the stats ingestion task"}]}

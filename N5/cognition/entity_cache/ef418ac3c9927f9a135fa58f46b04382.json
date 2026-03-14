@@ -1,1 +1,0 @@
-{"entities": [{"name": "N5OS", "type": "CONCEPT", "context": "Element of V's personal brand"}, {"name": "V", "type": "PERSON", "context": "Identified as Vrijen, associated with the knowledge system"}], "relationships": [{"from": "V", "to": "N5OS", "type": "USES", "context": "V uses N5OS as a part of their personal brand"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Howie", "type": "PERSON", "context": "a person making scheduling preferences"}, {"name": "Logan", "type": "PERSON", "context": "a person whose schedule aligns with Howie"}], "relationships": [{"from": "Howie", "to": "Logan", "type": "WORKS_WITH", "context": "alignment of schedules"}]}

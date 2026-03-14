@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual involved in a meeting for EdTech strategy"}, {"name": "EdTech strategy", "type": "CONCEPT", "context": "strategy related to educational technology"}], "relationships": [{"from": "V", "to": "EdTech strategy", "type": "KNOWS", "context": "V is involved in discussions about EdTech strategy"}]}

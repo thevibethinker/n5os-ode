@@ -1,1 +1,0 @@
-{"entities": [{"name": "meeting transcript system", "type": "TOOL", "context": "system for recording meetings"}, {"name": "follow-up email drafts", "type": "TOOL", "context": "auto-generated emails for communication"}, {"name": "stakeholder profile auto-enrichment", "type": "CONCEPT", "context": "process of enriching profiles from interactions"}], "relationships": []}

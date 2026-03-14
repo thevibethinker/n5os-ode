@@ -1,1 +1,0 @@
-{"entities": [{"name": "Mai", "type": "PERSON", "context": "committed to sending follow-up information"}, {"name": "Lensa", "type": "ORG", "context": "provides details from their side"}], "relationships": [{"from": "Mai", "to": "Lensa", "type": "WORKS_WITH", "context": "Mai is coordinating with Lensa for follow-up information"}]}

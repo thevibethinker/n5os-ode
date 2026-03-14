@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ilse", "type": "PERSON", "context": "In development of API Endpoint"}], "relationships": [{"from": "Ilse", "to": "API Endpoint", "type": "WORKS_WITH", "context": "Development of the API Endpoint"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Michael", "type": "PERSON", "context": "requires committee consensus"}, {"name": "Cornell", "type": "ORG", "context": "initiated cost-cutting initiatives"}], "relationships": [{"from": "Michael", "to": "Cornell", "type": "WORKS_WITH", "context": "in the context of cost-cutting initiatives and decision-making"}]}

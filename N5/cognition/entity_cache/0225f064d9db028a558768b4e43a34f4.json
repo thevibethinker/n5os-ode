@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the knowledge system developer"}, {"name": "positions.db", "type": "TOOL", "context": "database used for storing position candidates"}], "relationships": [{"from": "V", "to": "positions.db", "type": "USES", "context": "V uses positions.db to manage position candidates"}]}

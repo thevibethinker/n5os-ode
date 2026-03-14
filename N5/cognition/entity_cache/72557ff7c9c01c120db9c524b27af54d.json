@@ -1,1 +1,0 @@
-{"entities": [{"name": "Danielle Raskin", "type": "PERSON", "context": "An individual associated with Fibe"}, {"name": "Fibe", "type": "ORG", "context": "An organization related to the community category"}], "relationships": [{"from": "Danielle Raskin", "to": "Fibe", "type": "WORKS_WITH", "context": "Danielle Raskin is associated with Fibe"}]}

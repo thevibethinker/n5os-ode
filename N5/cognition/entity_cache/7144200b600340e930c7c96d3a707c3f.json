@@ -1,1 +1,0 @@
-{"entities": [{"name": "Tope", "type": "PERSON", "context": "disclosed a core strategic vulnerability"}, {"name": "Careerspan", "type": "ORG", "context": "tech that could address the problem"}], "relationships": [{"from": "Tope", "to": "Careerspan", "type": "MENTIONS", "context": "disclosed a vulnerability that Careerspan's tech could address"}]}

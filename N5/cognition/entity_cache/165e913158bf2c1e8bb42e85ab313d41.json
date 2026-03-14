@@ -1,1 +1,0 @@
-{"entities": [{"name": "ES2018", "type": "CONCEPT", "context": "a version of ECMAScript"}, {"name": "matchToToken", "type": "FUNCTION", "context": "a function used in the knowledge system"}], "relationships": [{"from": "matchToToken", "to": "ES2018", "type": "USES", "context": "the function supports the ES2018 regex flag"}]}

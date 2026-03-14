@@ -1,1 +1,0 @@
-{"entities": [{"name": "Gmail", "type": "TOOL", "context": "email delivery service"}, {"name": "va@zo.computer", "type": "PERSON", "context": "email recipient"}], "relationships": [{"from": "V", "to": "Gmail", "type": "USES", "context": "uses for email delivery"}, {"from": "V", "to": "va@zo.computer", "type": "KNOWS", "context": "verified email recipient"}]}

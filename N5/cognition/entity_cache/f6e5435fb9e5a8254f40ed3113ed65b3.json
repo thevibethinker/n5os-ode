@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo core team", "type": "ORG", "context": "the team involved in navigating GTM for the AI platform"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "co-founder and involved engineer"}], "relationships": [{"from": "V (Vrijen)", "to": "Zo core team", "type": "WORKS_WITH", "context": "as a co-founder and engineer of the team"}]}

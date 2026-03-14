@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "individual thinking about popularizing a concept"}, {"name": "ZO", "type": "CONCEPT", "context": "a basic shell that can be built upon"}], "relationships": [{"from": "Vrijen Attawar", "to": "ZO", "type": "BELIEVES", "context": "thinking about popularizing ZO as a foundational concept"}]}

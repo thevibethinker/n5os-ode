@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "Individual associated with the knowledge system"}, {"name": "content-library-v4", "type": "TOOL", "context": "Specific capability related to V's knowledge system"}], "relationships": [{"from": "V", "to": "content-library-v4", "type": "USES", "context": "V uses the content-library-v4 tool for knowledge management"}]}

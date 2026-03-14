@@ -1,1 +1,0 @@
-{"entities": [{"name": "hr", "type": "CONCEPT", "context": "human resources"}, {"name": "V", "type": "PERSON", "context": "the speaker in the conversation"}], "relationships": [{"from": "V", "to": "hr", "type": "KNOWS", "context": "V has a good background for human resources"}]}

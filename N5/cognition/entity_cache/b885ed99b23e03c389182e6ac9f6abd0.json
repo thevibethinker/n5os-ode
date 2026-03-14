@@ -1,1 +1,0 @@
-{"entities": [{"name": "follow-up-email-generator", "type": "TOOL", "context": "Email follow-ups with voice integration"}, {"name": "deliverable-generate", "type": "TOOL", "context": "Content generation for client deliverables"}, {"name": "careerspan-timeline", "type": "TOOL", "context": "Company timeline and milestones"}], "relationships": []}

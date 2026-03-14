@@ -1,1 +1,0 @@
-{"entities": [{"name": ".n5ignored", "type": "CONCEPT", "context": "files that mark directories as non-existent by N5 operations"}, {"name": ".n5protected", "type": "CONCEPT", "context": "parallel concept related to directory protection"}], "relationships": []}

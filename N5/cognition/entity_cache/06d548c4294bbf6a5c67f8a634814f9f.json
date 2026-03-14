@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "The speaker, V"}, {"name": "Logan", "type": "PERSON", "context": "Also called 'Logs', described as 'a real powerhouse'"}], "relationships": [{"from": "Vrijen Attawar", "to": "Logan", "type": "KNOWS", "context": "V knows Logan and recommends introducing others to her"}]}

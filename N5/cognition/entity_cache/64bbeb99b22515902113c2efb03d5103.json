@@ -1,1 +1,0 @@
-{"entities": [{"name": "Aniket", "type": "ORG", "context": "serves recruiters as customers"}, {"name": "Vrijen", "type": "ORG", "context": "positions as recruiter alternative/complement"}], "relationships": [{"from": "Vrijen", "to": "Aniket", "type": "RELATED_TO", "context": "competes in the recruitment space"}]}

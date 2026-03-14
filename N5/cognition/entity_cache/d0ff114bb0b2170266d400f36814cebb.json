@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo", "type": "ORG", "context": "An organization or tool that processes requests with native LLM"}], "relationships": [{"from": "Zo", "to": "native LLM", "type": "USES", "context": "Zo processes requests directly with native LLM"}]}

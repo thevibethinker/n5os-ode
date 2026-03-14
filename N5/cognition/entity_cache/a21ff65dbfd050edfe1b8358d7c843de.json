@@ -1,1 +1,0 @@
-{"entities": [{"name": "TreeWalker", "type": "TOOL", "context": "A tool for performing transversal of the native AST"}, {"name": "TreeTransformer", "type": "TOOL", "context": "A tool for performing transformation of the native AST"}], "relationships": []}

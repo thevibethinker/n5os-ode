@@ -1,1 +1,0 @@
-{"entities": [{"name": "Meeting Monitor", "type": "TOOL", "context": "Code reused for external event filtering and calendar integration"}, {"name": "N5OS", "type": "TOOL", "context": "Tag extraction tool used within the integration"}], "relationships": []}

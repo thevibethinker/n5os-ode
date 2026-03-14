@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "Individual involved in the interactions"}, {"name": "planning_prompt.md", "type": "TOOL", "context": "A shared playbook used by both parties for planning"}], "relationships": [{"from": "V", "to": "planning_prompt.md", "type": "USES", "context": "V uses the planning_prompt.md as a shared playbook for meetings"}]}

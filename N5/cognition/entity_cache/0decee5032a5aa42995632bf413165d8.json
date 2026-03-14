@@ -1,1 +1,0 @@
-{"entities": [{"name": "N5/config/reflection-sources.json", "type": "TOOL", "context": "A configuration file used for reflection sources"}, {"name": "Drive folder ID", "type": "CONCEPT", "context": "Identifier for a specific drive folder"}, {"name": "Email lookback", "type": "CONCEPT", "context": "A time period for looking back at emails"}], "relationships": []}

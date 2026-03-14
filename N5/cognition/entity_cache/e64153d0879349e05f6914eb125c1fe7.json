@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "Knowledge system participant"}, {"name": "Jaya Pokuri", "type": "PERSON", "context": "Participant in the conversation"}], "relationships": [{"from": "V", "to": "Jaya Pokuri", "type": "WORKS_WITH", "context": "Collaborative conversation on tasks"}]}

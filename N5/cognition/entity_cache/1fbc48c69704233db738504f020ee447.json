@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the individual mentioned in the text"}, {"name": "UX", "type": "CONCEPT", "context": "refers to user experience design"}], "relationships": [{"from": "V", "to": "UX", "type": "MENTIONS", "context": "V is discussing UX from a senior perspective"}]}

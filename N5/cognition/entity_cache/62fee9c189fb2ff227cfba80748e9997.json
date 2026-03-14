@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "speaker discussing AI knowledge"}, {"name": "AI", "type": "CONCEPT", "context": "discussed as a tool with potential in knowledge systems"}], "relationships": [{"from": "Vrijen Attawar", "to": "AI", "type": "BELIEVES", "context": "believes AI can close the gap between intent and outcome"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "curl", "type": "TOOL", "context": "command-line tool used for transferring data"}, {"name": "n5-bootstrap-support-va.zocomputer.io", "type": "ORG", "context": "URL used for accessing resources"}], "relationships": [{"from": "curl", "to": "n5-bootstrap-support-va.zocomputer.io", "type": "USES", "context": "curl is used to test the connection to the URL"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Logan Currie", "type": "PERSON", "context": "Participant in the discussion"}], "relationships": [{"from": "Logan Currie", "to": "handshake", "type": "MENTIONS", "context": "Logan mentions handshake as part of the list being discussed"}]}

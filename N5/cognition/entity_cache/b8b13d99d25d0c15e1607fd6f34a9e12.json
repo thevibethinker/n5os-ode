@@ -1,1 +1,0 @@
-{"entities": [{"name": "Shujaat Ahmad", "type": "PERSON", "context": "Founder / Advisor / Community builder"}, {"name": "multiple startups", "type": "ORG", "context": "Businesses associated with Shujaat Ahmad"}], "relationships": [{"from": "Shujaat Ahmad", "to": "multiple startups", "type": "WORKS_WITH", "context": "Founder and operates multiple startups"}]}

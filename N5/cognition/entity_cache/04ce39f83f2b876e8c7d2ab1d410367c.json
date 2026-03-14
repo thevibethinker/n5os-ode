@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual with a knowledge system"}, {"name": "Meg's company", "type": "ORG", "context": "organization mentioned in relation to manual MVP approach"}], "relationships": [{"from": "V", "to": "Meg's company", "type": "MENTIONS", "context": "refers to collaboration on similar approaches"}]}

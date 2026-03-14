@@ -1,1 +1,0 @@
-{"entities": [{"name": "stakeholder-profile", "type": "CONCEPT", "context": "a framework for identifying stakeholder types"}, {"name": "follow-up-email", "type": "TOOL", "context": "an email template used for follow-up communication"}, {"name": "REVIEW_FIRST", "type": "CONCEPT", "context": "a guideline or principle in the testing process"}], "relationships": []}

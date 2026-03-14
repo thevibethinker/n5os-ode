@@ -1,1 +1,0 @@
-{"entities": [{"name": "docgen", "type": "TOOL", "context": "Command to regenerate command catalog after import"}, {"name": "index-rebuild", "type": "TOOL", "context": "Command to rebuild system index"}, {"name": "help", "type": "TOOL", "context": "Command to view imported command details"}], "relationships": []}

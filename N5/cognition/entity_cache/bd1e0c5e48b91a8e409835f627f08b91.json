@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "the speaker"}, {"name": "Darwin box", "type": "ORG", "context": "organization related to an email"}], "relationships": [{"from": "Vrijen Attawar", "to": "Darwin box", "type": "MENTIONS", "context": "mentioning the email sent to Darwin box"}]}

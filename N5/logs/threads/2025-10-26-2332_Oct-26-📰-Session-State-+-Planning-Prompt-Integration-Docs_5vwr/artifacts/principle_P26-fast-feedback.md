@@ -1,1 +1,0 @@
-/home/workspace/Knowledge/architectural/principles/P26-fast-feedback-loops.md

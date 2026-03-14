@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "individual discussing emails and discipline"}, {"name": "superposition call", "type": "EVENT", "context": "a specific call mentioned with positive feelings"}], "relationships": [{"from": "Vrijen Attawar", "to": "superposition call", "type": "MENTIONS", "context": "discussed in relation to email discipline"}]}

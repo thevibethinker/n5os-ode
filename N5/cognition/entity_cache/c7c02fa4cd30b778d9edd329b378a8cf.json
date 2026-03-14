@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo", "type": "PERSON", "context": "updated the document"}, {"name": "V-OS", "type": "TOOL", "context": "tags extracted from meeting"}], "relationships": [{"from": "Zo", "to": "V-OS", "type": "USES", "context": "Zo updated the document regarding V-OS"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "Current role holder"}, {"name": "Reliance Industries Limited", "type": "ORG", "context": "V's current employer"}], "relationships": [{"from": "V", "to": "Reliance Industries Limited", "type": "WORKS_WITH", "context": "V works as Sr. General Manager - Strategy & Investments at this organization"}]}

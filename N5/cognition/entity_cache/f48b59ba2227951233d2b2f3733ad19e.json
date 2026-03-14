@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "ORG", "context": "partnership providing data and community distribution"}], "relationships": [{"from": "V", "to": "Careerspan", "type": "WORKS_WITH", "context": "partnership for candidate signal data and community distribution"}]}

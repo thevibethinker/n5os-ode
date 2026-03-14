@@ -1,1 +1,0 @@
-{"entities": [{"name": "log file", "type": "TOOL", "context": "A tool used to check regular cycles"}, {"name": "health check", "type": "TOOL", "context": "A procedure to assess the system's health status"}, {"name": "dashboard", "type": "TOOL", "context": "A visual interface to display recent cycles"}], "relationships": []}

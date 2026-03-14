@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the individual conducting the analysis"}, {"name": "Pattern analyzer", "type": "TOOL", "context": "the tool used for analyzing email patterns"}], "relationships": []}

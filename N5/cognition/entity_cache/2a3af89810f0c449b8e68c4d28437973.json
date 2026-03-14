@@ -1,1 +1,0 @@
-{"entities": [{"name": "participants", "type": "CONCEPT", "context": "individuals involved in the identification process"}, {"name": "participant_confidence", "type": "CONCEPT", "context": "metric for evaluating participant identification accuracy"}], "relationships": []}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "debug logging system", "type": "TOOL", "context": "system for tracking debugging attempts"}, {"name": "build/debug conversations", "type": "CONCEPT", "context": "context in which the debug logging system operates"}], "relationships": []}

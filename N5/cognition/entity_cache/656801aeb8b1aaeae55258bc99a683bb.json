@@ -1,1 +1,0 @@
-{"entities": [{"name": "David Speigel", "type": "PERSON", "context": "Contact offering to make introductions and source relevant people for V"}], "relationships": [{"from": "David Speigel", "to": "V", "type": "RELATED_TO", "context": "Proactively making intros and filtering relevant connections for V"}]}

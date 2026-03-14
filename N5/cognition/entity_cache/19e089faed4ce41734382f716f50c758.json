@@ -1,1 +1,0 @@
-{"entities": [{"name": "encoding", "type": "CONCEPT", "context": "A parameter that determines how data is collected."}, {"name": "maxBuffer", "type": "CONCEPT", "context": "Refers to the summed character lengths of every string in the array."}], "relationships": []}

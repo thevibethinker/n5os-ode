@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "ORG", "context": "an organization involved in job matching"}, {"name": "Lensa job pool", "type": "CONCEPT", "context": "a pool of jobs used for matching algorithms"}], "relationships": [{"from": "Careerspan", "to": "Lensa job pool", "type": "USES", "context": "to run matching algorithms locally"}]}

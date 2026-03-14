@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo", "type": "TOOL", "context": "a workflow builder"}, {"name": "Zapier", "type": "TOOL", "context": "a workflow automation software"}], "relationships": [{"from": "V", "to": "Zo", "type": "USES", "context": "V uses Zo as a workflow builder"}, {"from": "V", "to": "Zapier", "type": "MENTIONS", "context": "V compares Zo to Zapier"}]}

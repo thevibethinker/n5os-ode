@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the individual with a knowledge system"}, {"name": "safety rules", "type": "CONCEPT", "context": "rules regarding safety that cannot be overridden"}, {"name": "N5/prefs/system/safety.md", "type": "TOOL", "context": "file containing safety rules"}], "relationships": []}

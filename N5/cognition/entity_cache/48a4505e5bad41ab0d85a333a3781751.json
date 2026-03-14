@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker in the discussion"}, {"name": "ASOPS", "type": "CONCEPT", "context": "Fable mentioned by Vrijen"}], "relationships": [{"from": "Vrijen Attawar", "to": "ASOPS", "type": "BELIEVES", "context": "Refers to ASOPS as a significant concept or fable"}]}

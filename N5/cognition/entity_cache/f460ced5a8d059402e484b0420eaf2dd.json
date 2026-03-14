@@ -1,1 +1,0 @@
-{"entities": [{"name": "Aaron Mak Hoffman", "type": "PERSON", "context": "person discussing Personas"}, {"name": "Personas", "type": "CONCEPT", "context": "automatic switching feature"}], "relationships": [{"from": "Aaron Mak Hoffman", "to": "Personas", "type": "MENTIONS", "context": "discussing the ability to switch Personas"}]}

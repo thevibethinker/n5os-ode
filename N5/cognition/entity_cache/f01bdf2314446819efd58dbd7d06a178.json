@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "refers to the individual discussing the knowledge system"}, {"name": "communities", "type": "CONCEPT", "context": "indicates groups that are engaged in the system"}], "relationships": [{"from": "V", "to": "communities", "type": "MENTIONS", "context": "V is discussing going to communities to set up a system"}]}

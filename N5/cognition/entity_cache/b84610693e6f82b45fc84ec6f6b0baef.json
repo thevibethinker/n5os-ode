@@ -1,1 +1,0 @@
-{"entities": [{"name": "Plaud", "type": "ORG", "context": "existing subscription used for cost"}], "relationships": [{"from": "V", "to": "Plaud", "type": "USES", "context": "V uses Plaud subscription for knowledge system"}]}

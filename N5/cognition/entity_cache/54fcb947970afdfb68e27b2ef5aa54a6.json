@@ -1,1 +1,0 @@
-{"entities": [{"name": "Plaud", "type": "TOOL", "context": "Platform where the record is made"}, {"name": "Zo", "type": "PERSON", "context": "Recipient of the transcript email"}], "relationships": [{"from": "V", "to": "Plaud", "type": "USES", "context": "V records on Plaud"}, {"from": "V", "to": "Zo", "type": "WORKS_WITH", "context": "V emails transcript to Zo"}]}

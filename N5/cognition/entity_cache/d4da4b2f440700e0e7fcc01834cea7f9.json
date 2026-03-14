@@ -1,1 +1,0 @@
-{"entities": [{"name": "V-OS tags", "type": "CONCEPT", "context": "system for classifying and prioritizing meetings"}, {"name": "Howie", "type": "TOOL", "context": "email scheduling assistant"}], "relationships": [{"from": "V-OS tags", "to": "Howie", "type": "USES", "context": "both systems share a unified tagging language"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "knowledge system owner"}, {"name": "Dry-Run Preview", "type": "CONCEPT", "context": "safety feature in V's knowledge system"}], "relationships": [{"from": "V", "to": "Dry-Run Preview", "type": "KNOWS", "context": "V knows about the Dry-Run Preview safety feature"}]}

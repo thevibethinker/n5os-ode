@@ -1,1 +1,0 @@
-{"entities": [{"name": "VA", "type": "PERSON", "context": "individual considering attending an event"}, {"name": "Tech Roof Up Party", "type": "EVENT", "context": "an event happening on Wednesday"}], "relationships": [{"from": "VA", "to": "Tech Roof Up Party", "type": "MENTIONS", "context": "VA is considering attending the event"}]}

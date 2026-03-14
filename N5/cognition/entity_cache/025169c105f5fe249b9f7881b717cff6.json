@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the subject of the knowledge system"}, {"name": "peer support", "type": "CONCEPT", "context": "values reciprocal help among peers"}], "relationships": [{"from": "V", "to": "peer support", "type": "BELIEVES", "context": "values peer support as a crucial aspect of their communication style"}]}

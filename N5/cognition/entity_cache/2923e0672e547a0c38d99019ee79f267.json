@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ben Guo", "type": "PERSON", "context": "speaking about bio models and APIs"}, {"name": "Zoho", "type": "ORG", "context": "mentioned as a tool for API integration"}], "relationships": [{"from": "Ben Guo", "to": "Zoho", "type": "MENTIONS", "context": "referring to the capability of bringing own API key"}]}

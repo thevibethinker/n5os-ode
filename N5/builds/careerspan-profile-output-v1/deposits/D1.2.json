@@ -1,8 +1,0 @@
-{
-  "drop_id": "D1.2",
-  "status": "complete",
-  "summary": "Researched FlowFuse: Series A industrial app platform built on Node-RED by Nick O'Leary and ZJ van de Weg. $14.5M total funding, 19 employees, 5x YoY growth. Product focus on IT/OT middleware, AI copilot via MCP, and enterprise governance at scale.",
-  "artifacts": ["drops/D1.2-flowfuse-company-intel.md"],
-  "issues": [],
-  "learnings": []
-}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "Individual with a knowledge system"}, {"name": "CLI tool", "type": "TOOL", "context": "A tool that scans deposits for contradictions"}], "relationships": [{"from": "V (Vrijen)", "to": "CLI tool", "type": "USES", "context": "V uses the CLI tool for scanning deposits"}]}

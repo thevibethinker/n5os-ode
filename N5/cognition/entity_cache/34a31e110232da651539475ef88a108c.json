@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ayush", "type": "PERSON", "context": "improved on Vrijen's employment verification template"}, {"name": "Vrijen", "type": "PERSON", "context": "reviewed Ayush's work and is involved in employment documentation"}], "relationships": [{"from": "Ayush", "to": "Vrijen", "type": "WORKS_WITH", "context": "collaborates on employment documentation"}]}

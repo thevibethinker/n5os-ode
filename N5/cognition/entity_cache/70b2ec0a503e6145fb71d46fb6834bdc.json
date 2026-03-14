@@ -1,1 +1,0 @@
-{"entities": [{"name": "sqlite3", "type": "TOOL", "context": "A library in Python used for database interaction."}, {"name": "crm", "type": "ORG", "context": "The context folder for customer relationship management."}], "relationships": []}

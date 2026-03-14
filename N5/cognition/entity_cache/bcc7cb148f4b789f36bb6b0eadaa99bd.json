@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "private piano and violin instructor and coach"}, {"name": "music", "type": "CONCEPT", "context": "related to the artistic side of the brain"}], "relationships": [{"from": "V", "to": "music", "type": "BELIEVES", "context": "music involves a different cognitive process"}]}

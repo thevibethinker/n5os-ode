@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "referring to Vrijen"}, {"name": "LLM", "type": "TOOL", "context": "referring to the language model used"}], "relationships": [{"from": "V", "to": "LLM", "type": "USES", "context": "V uses LLM for handling nuance and iterating"}]}

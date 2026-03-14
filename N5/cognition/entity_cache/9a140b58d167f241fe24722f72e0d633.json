@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual involved in knowledge system development"}, {"name": "Automation", "type": "CONCEPT", "context": "a method being implemented in the knowledge system"}], "relationships": [{"from": "V (Vrijen)", "to": "Automation", "type": "USES", "context": "V is implementing automation in the knowledge system"}]}

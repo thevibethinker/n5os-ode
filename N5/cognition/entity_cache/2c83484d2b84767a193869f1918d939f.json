@@ -1,1 +1,0 @@
-{"entities": [{"name": "Bennett", "type": "PERSON", "context": "acknowledged weak point in GTM"}, {"name": "Transcend", "type": "ORG", "context": "provides strategic guidance and network access in ed-tech sales"}], "relationships": [{"from": "Transcend", "to": "Bennett", "type": "RELATED_TO", "context": "Transcend provides support where Bennett has a weakness"}]}

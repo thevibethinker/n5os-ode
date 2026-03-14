@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "ORG", "context": "company building the data layer for the hiring ecosystem"}], "relationships": [{"from": "Careerspan", "to": "hiring ecosystem", "type": "RELATED_TO", "context": "building the data layer for"}]}

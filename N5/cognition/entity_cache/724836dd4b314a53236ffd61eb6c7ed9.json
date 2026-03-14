@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the individual discussed"}, {"name": "Andy", "type": "PERSON", "context": "mutual LinkedIn connection"}], "relationships": [{"from": "V", "to": "Andy", "type": "KNOWS", "context": "met through commenting on same posts and had a Zoom call"}]}

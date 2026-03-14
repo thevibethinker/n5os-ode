@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vibe X persona", "type": "CONCEPT", "context": "a persona pattern related to V's system"}, {"name": "Settings", "type": "TOOL", "context": "a configuration area in V's knowledge system"}], "relationships": [{"from": "Settings", "to": "Vibe X persona", "type": "USES", "context": "Settings contains the Load Vibe X persona pattern"}]}

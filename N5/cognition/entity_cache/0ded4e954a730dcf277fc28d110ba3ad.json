@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual associated with a knowledge system"}, {"name": "Fund One", "type": "ORG", "context": "fund associated with carried interest"}], "relationships": [{"from": "V (Vrijen)", "to": "Fund One", "type": "KNOWS", "context": "V has personal upside from community through Fund One"}]}

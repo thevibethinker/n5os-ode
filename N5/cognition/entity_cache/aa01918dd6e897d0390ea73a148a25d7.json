@@ -1,1 +1,0 @@
-{"entities": [{"name": "ParentZo Processor", "type": "TOOL", "context": "A processing tool that updates state, writes to audit, and optionally triggers next actions."}], "relationships": []}

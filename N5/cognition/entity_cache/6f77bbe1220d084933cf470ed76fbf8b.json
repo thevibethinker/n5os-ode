@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "Founder/CEO of the company"}, {"name": "McKinsey Consumer Community", "type": "ORG", "context": "Professional network of which V is a member"}], "relationships": [{"from": "V", "to": "McKinsey Consumer Community", "type": "KNOWS", "context": "V is a member of this community"}]}

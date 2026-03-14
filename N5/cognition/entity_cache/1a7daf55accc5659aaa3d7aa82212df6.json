@@ -1,1 +1,0 @@
-{"entities": [{"name": "Quantum Labs", "type": "ORG", "context": "Series B SaaS startup"}], "relationships": [{"from": "Vrijen", "to": "Quantum Labs", "type": "WORKS_WITH", "context": "Vrijen is actively engaged with Quantum Labs as a customer in a pilot program"}]}

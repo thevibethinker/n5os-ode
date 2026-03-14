@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "ORG", "context": "an organization with a notable survival record"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "the individual discussing the organization"}], "relationships": [{"from": "V (Vrijen)", "to": "Careerspan", "type": "KNOWS", "context": "V acknowledges the achievements of the organization"}]}

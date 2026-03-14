@@ -1,1 +1,0 @@
-{"entities": [{"name": "Griffin", "type": "PERSON", "context": "reviewing Careerspan's product"}, {"name": "Careerspan", "type": "ORG", "context": "product being reviewed"}], "relationships": [{"from": "Griffin", "to": "Careerspan", "type": "MENTIONS", "context": "Griffin discusses reviewing Careerspan's product"}]}

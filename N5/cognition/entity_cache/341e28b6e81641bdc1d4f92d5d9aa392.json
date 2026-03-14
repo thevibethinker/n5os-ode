@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo", "type": "PERSON", "context": "creator of the task"}, {"name": "task_registry.jsonl", "type": "TOOL", "context": "file used to store task details"}], "relationships": [{"from": "Zo", "to": "task_registry.jsonl", "type": "USES", "context": "Zo uses task_registry.jsonl to manage tasks"}]}

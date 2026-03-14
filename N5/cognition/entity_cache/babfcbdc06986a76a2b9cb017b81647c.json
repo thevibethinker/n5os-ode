@@ -1,1 +1,0 @@
-{"entities": [{"name": "Skillcraft", "type": "TOOL", "context": "Job posting or recruitment tool with metrics being tracked for performance"}], "relationships": [{"from": "V", "to": "Skillcraft", "type": "USES", "context": "Tracking job live time, applications, and conversion metrics"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "Subject of the knowledge system"}, {"name": "Careerspan", "type": "ORG", "context": "Organization addressing pain points"}], "relationships": [{"from": "V (Vrijen)", "to": "Careerspan", "type": "MENTIONS", "context": "Discusses how Careerspan addresses data-related issues"}]}

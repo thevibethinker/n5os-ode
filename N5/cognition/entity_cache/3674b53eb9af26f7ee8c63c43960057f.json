@@ -1,1 +1,0 @@
-{"entities": [{"name": "University of Southern California", "type": "ORG", "context": "Where V taught computer science"}, {"name": "V", "type": "PERSON", "context": "Subject of the text"}], "relationships": [{"from": "V", "to": "University of Southern California", "type": "WORKS_WITH", "context": "V taught computer science there"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Fibe", "type": "ORG", "context": "Organization where V operates"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "Individual responsible for managing events"}], "relationships": [{"from": "V (Vrijen)", "to": "Fibe", "type": "WORKS_WITH", "context": "V manages events at Fibe"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "owner of the knowledge system"}, {"name": "Meeting notes condenser", "type": "TOOL", "context": "a tool for condensing meeting notes"}], "relationships": [{"from": "V", "to": "Meeting notes condenser", "type": "USES", "context": "V is the owner and presumably utilizes this tool"}]}

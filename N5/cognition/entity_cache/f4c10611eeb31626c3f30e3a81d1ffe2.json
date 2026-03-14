@@ -1,1 +1,0 @@
-{"entities": [{"name": "Logan Currie", "type": "PERSON", "context": "Speaker discussing the type form"}, {"name": "Rahul", "type": "PERSON", "context": "Person referenced in the discussion about seniority level"}], "relationships": [{"from": "Logan Currie", "to": "Rahul", "type": "MENTIONS", "context": "Logan mentions Rahul's point about indicating seniority level"}]}

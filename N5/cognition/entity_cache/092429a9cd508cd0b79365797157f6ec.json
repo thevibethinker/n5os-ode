@@ -1,1 +1,0 @@
-{"entities": [{"name": "SourceMapConsumer", "type": "TOOL", "context": "A tool used to interact with source maps"}], "relationships": [{"from": "V", "to": "SourceMapConsumer", "type": "USES", "context": "V uses SourceMapConsumer for handling source maps"}]}

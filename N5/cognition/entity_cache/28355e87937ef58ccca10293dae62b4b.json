@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo Computer", "type": "ORG", "context": "company referenced in the product launch"}], "relationships": [{"from": "V", "to": "Zo Computer", "type": "WORKS_WITH", "context": "supporting the company"}]}

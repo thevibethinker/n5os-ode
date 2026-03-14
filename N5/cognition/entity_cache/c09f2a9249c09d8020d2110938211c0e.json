@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "speaker in the conversation"}, {"name": "account manager", "type": "CONCEPT", "context": "a position in sales"}], "relationships": [{"from": "Vrijen Attawar", "to": "account manager", "type": "MENTIONS", "context": "discussing the nature of the position"}]}

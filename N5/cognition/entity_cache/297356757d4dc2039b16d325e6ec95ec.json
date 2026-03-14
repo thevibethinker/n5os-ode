@@ -1,1 +1,0 @@
-{"entities": [{"name": "cosmiconfig", "type": "TOOL", "context": "A tool used for configuring application options"}, {"name": "defaultLoaders", "type": "CONCEPT", "context": "Concept related to loading configurations"}], "relationships": []}

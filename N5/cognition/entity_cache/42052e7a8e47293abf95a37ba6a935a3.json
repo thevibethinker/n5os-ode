@@ -1,1 +1,0 @@
-{"entities": [{"name": "style.color.ansi", "type": "TOOL", "context": "Tool for handling ANSI color codes"}, {"name": "style.bgColor.ansi", "type": "TOOL", "context": "Tool for handling ANSI background color codes"}], "relationships": []}

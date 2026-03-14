@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo", "type": "ORG", "context": "mentioned business model"}, {"name": "trust", "type": "BELIEF", "context": "assumes friend will be fair"}], "relationships": [{"from": "V", "to": "Zo", "type": "KNOWS", "context": "Zo's business model is relevant to V's concerns"}, {"from": "V", "to": "trust", "type": "BELIEVES", "context": "V assumes trust in friends"}]}

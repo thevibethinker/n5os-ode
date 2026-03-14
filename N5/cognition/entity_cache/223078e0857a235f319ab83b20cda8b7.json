@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "The individual associated with the knowledge system being discussed."}, {"name": "Resume", "type": "CONCEPT", "context": "A document type that is being assessed."}, {"name": "Proposal", "type": "CONCEPT", "context": "A document type that is flagged due to the presence of a keyword."}], "relationships": []}

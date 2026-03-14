@@ -1,1 +1,0 @@
-{"entities": [{"name": "pattern analyzer", "type": "TOOL", "context": "a tool for automated enrichment"}], "relationships": [{"from": "V", "to": "pattern analyzer", "type": "USES", "context": "V uses pattern analyzer for automated enrichment"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "HubSpot", "type": "ORG", "context": "external CRM tool"}, {"name": "Salesforce", "type": "ORG", "context": "external CRM tool"}], "relationships": [{"from": "V", "to": "HubSpot", "type": "USES", "context": "V uses HubSpot as an external CRM tool"}, {"from": "V", "to": "Salesforce", "type": "USES", "context": "V uses Salesforce as an external CRM tool"}]}

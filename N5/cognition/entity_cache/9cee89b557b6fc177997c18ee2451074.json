@@ -1,1 +1,0 @@
-{"entities": [{"name": "rotate_logs.py", "type": "TOOL", "context": "Log rotation script for managing logs"}, {"name": "Log Management", "type": "CONCEPT", "context": "System for handling log files"}], "relationships": []}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Usha", "type": "PERSON", "context": "operates as a not-for-profit"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "context provided about the knowledge system"}], "relationships": [{"from": "Usha", "to": "V (Vrijen)", "type": "WORKS_WITH", "context": "Usha's partnership building may involve V's system"}]}

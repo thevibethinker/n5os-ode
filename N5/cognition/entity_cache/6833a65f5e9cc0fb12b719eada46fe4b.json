@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo", "type": "PERSON", "context": "demonstrator for N5 Bootstrap"}, {"name": "N5 Bootstrap Demonstrator", "type": "TOOL", "context": "demonstration tool for enabling conversation"}], "relationships": [{"from": "Zo", "to": "N5 Bootstrap Demonstrator", "type": "USES", "context": "Zo uses the demonstrator to facilitate conversation"}]}

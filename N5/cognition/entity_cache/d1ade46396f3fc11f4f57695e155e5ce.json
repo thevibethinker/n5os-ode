@@ -1,1 +1,0 @@
-{"entities": [{"name": "debug.formatters", "type": "CONCEPT", "context": "object for adding custom formatters"}, {"name": "Buffer", "type": "TOOL", "context": "data type being rendered"}, {"name": "%h", "type": "TOOL", "context": "format specifier for rendering as hex"}], "relationships": []}

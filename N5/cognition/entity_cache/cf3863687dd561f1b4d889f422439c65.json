@@ -1,1 +1,0 @@
-{"entities": [{"name": "Andrew Yeung", "type": "PERSON", "context": "Founder & CEO"}, {"name": "5-10 person core team", "type": "CONCEPT", "context": "Team size estimate based on event scale"}], "relationships": [{"from": "V", "to": "Andrew Yeung", "type": "REPORTS_TO", "context": "V reports to Andrew Yeung"}]}

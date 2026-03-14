@@ -1,1 +1,0 @@
-{"entities": [{"name": "Jaya Pokuri", "type": "PERSON", "context": "mentioned as a contributor"}, {"name": "Nourish", "type": "ORG", "context": "an organization pairing people with dietitians"}], "relationships": [{"from": "Jaya Pokuri", "to": "Nourish", "type": "MENTIONS", "context": "discussing digitally enabled doctor companies"}]}

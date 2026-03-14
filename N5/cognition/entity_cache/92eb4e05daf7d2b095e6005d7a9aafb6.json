@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo Computer", "type": "ORG", "context": "a headless server"}, {"name": "Zo's Browser", "type": "TOOL", "context": "the browser used for authenticated interactions"}], "relationships": [{"from": "Zo Computer", "to": "Zo's Browser", "type": "USES", "context": "Zo's Browser is required for authenticated interactions"}]}

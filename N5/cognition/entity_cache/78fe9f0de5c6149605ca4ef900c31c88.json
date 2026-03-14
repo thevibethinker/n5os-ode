@@ -1,1 +1,0 @@
-{"entities": [{"name": "Aaron Mak Hoffman", "type": "PERSON", "context": "Speaker discussing external workflows"}, {"name": "APIs", "type": "TOOL", "context": "Used for external workflows"}], "relationships": [{"from": "Aaron Mak Hoffman", "to": "APIs", "type": "USES", "context": "To set up external workflows"}]}

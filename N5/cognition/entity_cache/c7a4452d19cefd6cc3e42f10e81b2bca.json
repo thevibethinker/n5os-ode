@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "TOOL", "context": "data layer of the job market"}], "relationships": [{"from": "V", "to": "Careerspan", "type": "USES", "context": "V wants to supplant the resume with Careerspan"}]}

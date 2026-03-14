@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "Maintainer of the system"}, {"name": "N5 System", "type": "ORG", "context": "Organization responsible for the system"}], "relationships": [{"from": "V", "to": "N5 System", "type": "WORKS_WITH", "context": "V maintains the N5 System"}]}

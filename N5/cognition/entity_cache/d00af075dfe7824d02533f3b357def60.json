@@ -1,1 +1,0 @@
-{"entities": [{"name": "Logan Currie", "type": "PERSON", "context": "Owner of the Juice Box One Pager"}, {"name": "Juice Box One Pager", "type": "CONCEPT", "context": "Partnership opportunity"}], "relationships": [{"from": "Logan Currie", "to": "Juice Box One Pager", "type": "WORKS_WITH", "context": "Assigned to Logan and is the owner"}]}

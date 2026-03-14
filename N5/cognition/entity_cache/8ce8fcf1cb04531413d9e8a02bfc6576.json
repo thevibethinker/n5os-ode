@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "speaker discussing LLM tool"}, {"name": "LLM call tool", "type": "TOOL", "context": "referenced earlier by Vrijen"}], "relationships": [{"from": "Vrijen Attawar", "to": "LLM call tool", "type": "MENTIONS", "context": "discussing differences with another tool"}]}

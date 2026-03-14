@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "founder of the knowledge system"}, {"name": "founder/startup cuisine", "type": "CONCEPT", "context": "specific niche in the startup ecosystem"}], "relationships": [{"from": "V", "to": "founder/startup cuisine", "type": "BELIEVES", "context": "V believes in establishing a standard for a specific niche"}]}

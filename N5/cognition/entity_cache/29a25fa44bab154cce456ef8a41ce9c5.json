@@ -1,1 +1,0 @@
-{"entities": [{"name": "Aaron Mak Hoffman", "type": "PERSON", "context": "person discussing project timeline"}, {"name": "Zoe", "type": "ORG", "context": "organization where V has been for a month or two"}], "relationships": [{"from": "Aaron Mak Hoffman", "to": "Zoe", "type": "WORKS_WITH", "context": "Aaron has been working in Zoe"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo Discord", "type": "TOOL", "context": "direct access channel to Parse's ICP"}, {"name": "Parse", "type": "ORG", "context": "has an ICP that Zo Discord connects to"}], "relationships": [{"from": "Zo Discord", "to": "Parse", "type": "USES", "context": "Provides direct access channel to Parse's ICP"}]}

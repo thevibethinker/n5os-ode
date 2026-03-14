@@ -1,1 +1,0 @@
-{"entities": [{"name": "MG-7C", "type": "ORG", "context": "organization performing archival"}, {"name": "C-state workflow", "type": "CONCEPT", "context": "workflow for transitioning meetings to archival state"}], "relationships": [{"from": "MG-7C", "to": "C-state workflow", "type": "USES", "context": "uses the C-state workflow to transition meetings to archival state"}]}

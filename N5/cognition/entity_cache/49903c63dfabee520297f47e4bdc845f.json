@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "the individual leading the planning and coordination"}, {"name": "February event", "type": "EVENT", "context": "the upcoming event requiring planning and coordination"}], "relationships": [{"from": "Vrijen", "to": "February event", "type": "WORKS_WITH", "context": "leading the planning and coordination for"}]}

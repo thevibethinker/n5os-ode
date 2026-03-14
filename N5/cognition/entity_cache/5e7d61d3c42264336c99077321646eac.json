@@ -1,1 +1,0 @@
-{"entities": [{"name": "candidates", "type": "CONCEPT", "context": "market actors with options"}, {"name": "employers", "type": "ORG", "context": "advised on talent competition"}, {"name": "linkedin", "type": "ORG", "context": "source of information"}], "relationships": [{"from": "employers", "to": "candidates", "type": "MENTIONS", "context": "advising on talent competition"}]}

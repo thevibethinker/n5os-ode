@@ -1,1 +1,0 @@
-{"entities": [{"name": "Howie", "type": "PERSON", "context": "Community partner"}, {"name": "Logan", "type": "PERSON", "context": "Founders' schedule alignment"}], "relationships": [{"from": "V", "to": "Howie", "type": "WORKS_WITH", "context": "Partnership in the community"}, {"from": "V", "to": "Logan", "type": "WORKS_WITH", "context": "Alignment on founders' schedule"}]}

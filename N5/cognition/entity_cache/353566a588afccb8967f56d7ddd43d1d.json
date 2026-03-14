@@ -1,1 +1,0 @@
-{"entities": [{"name": "Timeline", "type": "CONCEPT", "context": "a visual representation of events"}, {"name": "V", "type": "PERSON", "context": "the individual referred to in the text"}], "relationships": [{"from": "V", "to": "Timeline", "type": "KNOWS", "context": "V understands and considers the concept of a timeline"}]}

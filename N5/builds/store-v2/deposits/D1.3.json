@@ -1,9 +1,0 @@
-{
-  "drop_id": "D1.3",
-  "status": "complete",
-  "artifacts": [
-    "Sites/store-va/public/images/pulse-thumb.png",
-    "Sites/store-va/public/images/survey-analyzer-thumb.png"
-  ],
-  "summary": "Generated and saved product thumbnails: Minimal Flow for Pulse, Glass UI for Survey."
-}

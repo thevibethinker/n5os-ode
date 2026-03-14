@@ -1,1 +1,0 @@
-{"entities": [{"name": "Colin Navon", "type": "PERSON", "context": "Person asking questions about company status and funding"}, {"name": "Brady", "type": "PERSON", "context": "Has been spinning up engineering for a couple of years"}], "relationships": [{"from": "Colin Navon", "to": "Brady", "type": "KNOWS", "context": "Colin has known Brady for a couple of years"}]}

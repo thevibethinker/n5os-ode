@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual expressing thoughts"}, {"name": "Context-seeking Before Judging", "type": "CONCEPT", "context": "a principle V follows"}], "relationships": [{"from": "V", "to": "Context-seeking Before Judging", "type": "BELIEVES", "context": "V values this concept when making judgments"}]}

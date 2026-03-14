@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "The Vibe Strategist"}, {"name": "N5/schemas/aar.schema.json", "type": "TOOL", "context": "Schema validation tool"}], "relationships": [{"from": "Vrijen", "to": "N5/schemas/aar.schema.json", "type": "USES", "context": "for schema validation"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Pam K", "type": "PERSON", "context": "Participant in conversation discussing AI and job applications"}, {"name": "AI", "type": "CONCEPT", "context": "Artificial intelligence impacting job applications"}], "relationships": [{"from": "Pam K", "to": "AI", "type": "MENTIONS", "context": "Discusses AI's role in job applications"}]}

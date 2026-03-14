@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "ORG", "context": "an organization considering a sale/acquisition"}, {"name": "V", "type": "PERSON", "context": "referring to Vrijen in the context of the decision"}], "relationships": [{"from": "V", "to": "Careerspan", "type": "KNOWS", "context": "V is involved with the decision-making at Careerspan"}]}

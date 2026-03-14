@@ -1,1 +1,0 @@
-{"entities": [{"name": "Emotional State Adaptability", "type": "CONCEPT", "context": "Adaptability of emotional states in career development"}], "relationships": [{"from": "Emotional State Adaptability", "to": "traditional career tools", "type": "RELATED_TO", "context": "Contrasts with traditional approaches that assume confidence"}]}

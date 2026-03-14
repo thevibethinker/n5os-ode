@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ilse", "type": "PERSON", "context": "Team member who needs to be trained quickly due to knowledge transfer dependency"}, {"name": "Firebase", "type": "TOOL", "context": "Backend/database technology with scalability concerns raised"}], "relationships": []}

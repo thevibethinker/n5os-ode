@@ -1,1 +1,0 @@
-{"entities": [{"name": "TEMP Files", "type": "CONCEPT", "context": "A categorization system for files archived to scratch."}, {"name": "scratch", "type": "CONCEPT", "context": "A location where TEMP files are archived."}], "relationships": []}

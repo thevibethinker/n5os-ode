@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual expressing concerns about product development"}], "relationships": [{"from": "V", "to": "engineering complexity", "type": "BELIEVES", "context": "concern about the complexity involved in the product's engineering"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Nafisa Poonawala", "type": "PERSON", "context": "Speaker discussing V's situation"}, {"name": "Burn Foes", "type": "EVENT", "context": "Comedy special released by V last year"}], "relationships": [{"from": "Nafisa Poonawala", "to": "Burn Foes", "type": "MENTIONS", "context": "Referring to V's comedy special that is related to his current troubles"}]}

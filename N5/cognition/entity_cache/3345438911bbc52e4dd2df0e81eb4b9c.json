@@ -1,1 +1,0 @@
-{"entities": [{"name": "LinkedIn", "type": "ORG", "context": "a social media platform for professional networking"}], "relationships": [{"from": "V", "to": "LinkedIn", "type": "KNOWS", "context": "V has strong knowledge in LinkedIn data analysis and visibility strategies"}]}

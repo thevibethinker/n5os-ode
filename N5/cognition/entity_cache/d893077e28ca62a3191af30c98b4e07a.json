@@ -1,1 +1,0 @@
-{"entities": [{"name": "read-pkg-up", "type": "TOOL", "context": "A library used to read the package.json of the parent module."}], "relationships": []}

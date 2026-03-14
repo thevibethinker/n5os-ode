@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the subject of the knowledge system"}, {"name": "N5", "type": "ORG", "context": "reference to a configuration or system"}], "relationships": [{"from": "V", "to": "N5", "type": "USES", "context": "V utilizes the N5 system for managing preferences"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Gmail API", "type": "TOOL", "context": "API used for integrating email functionalities"}, {"name": "meeting_prep_digest.py", "type": "TOOL", "context": "Python script related to meeting preparation"}], "relationships": []}

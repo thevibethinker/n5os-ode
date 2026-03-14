@@ -1,1 +1,0 @@
-{"entities": [{"name": "Hamoon", "type": "PERSON", "context": "mentioned as having operational experience on embedded career tech solutions"}], "relationships": [{"from": "V", "to": "Hamoon", "type": "KNOWS", "context": "V knows Hamoon who has expertise in embedded career tech solutions"}]}

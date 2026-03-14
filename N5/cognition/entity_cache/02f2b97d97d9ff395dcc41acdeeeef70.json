@@ -1,1 +1,0 @@
-{"entities": [{"name": "FTPContext", "type": "CONCEPT", "context": "provides the foundation to write an FTP client"}, {"name": "Client API", "type": "TOOL", "context": "a system described for FTP client implementation"}], "relationships": [{"from": "Client API", "to": "FTPContext", "type": "USES", "context": "Client API is implemented using FTPContext"}]}

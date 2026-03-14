@@ -1,1 +1,0 @@
-{"entities": [{"name": "Anna", "type": "PERSON", "context": "requested a shift in logistics workload"}, {"name": "Vrijen", "type": "PERSON", "context": "agreed to Anna's request"}], "relationships": [{"from": "Anna", "to": "Vrijen", "type": "WORKS_WITH", "context": "collaborating on logistics changes"}]}

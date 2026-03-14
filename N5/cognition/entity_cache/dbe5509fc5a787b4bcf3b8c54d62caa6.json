@@ -1,1 +1,0 @@
-{"entities": [{"name": "Edward Tufte - Data Visualizer", "type": "PERSON", "context": "Data visualization expert"}], "relationships": [{"from": "V", "to": "Edward Tufte - Data Visualizer", "type": "KNOWS", "context": "V is aware of and recognizes the expertise of Edward Tufte in data visualization"}]}

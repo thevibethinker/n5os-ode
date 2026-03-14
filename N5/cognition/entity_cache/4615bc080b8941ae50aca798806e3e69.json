@@ -1,1 +1,0 @@
-{"entities": [{"name": "Critical", "type": "CONCEPT", "context": "prevents total degradation"}, {"name": "optimization", "type": "CONCEPT", "context": "improves rule adherence"}], "relationships": [{"from": "optimization", "to": "Critical", "type": "RELATED_TO", "context": "Optimization is related to the concept of preventing total degradation through improved rule adherence"}]}

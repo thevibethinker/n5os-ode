@@ -1,1 +1,0 @@
-{"entities": [{"name": "Dave Pino", "type": "PERSON", "context": "mentioned as undesirable option"}], "relationships": [{"from": "V", "to": "Dave Pino", "type": "MENTIONS", "context": "mentioned as undesirable option"}]}

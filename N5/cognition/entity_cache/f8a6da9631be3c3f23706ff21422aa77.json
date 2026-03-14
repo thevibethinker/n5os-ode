@@ -1,1 +1,0 @@
-{"entities": [{"name": "Block Type Registry", "type": "CONCEPT", "context": "approach for standardizing meeting transcript processing"}, {"name": "Zo instances", "type": "CONCEPT", "context": "instances where the block generation system is applied"}, {"name": "Registry v1.3", "type": "TOOL", "context": "version of the registry"}], "relationships": []}

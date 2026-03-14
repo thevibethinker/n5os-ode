@@ -1,1 +1,0 @@
-{"entities": [{"name": "Logan Chen", "type": "PERSON", "context": "contact for hiring topics"}], "relationships": [{"from": "V", "to": "Logan Chen", "type": "KNOWS", "context": "contact regarding Q4 hiring and candidate pipeline"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "registry", "type": "TOOL", "context": "system used to retrieve workers"}, {"name": "workers", "type": "CONCEPT", "context": "collection of workers retrieved from registry"}], "relationships": []}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "person expressing an opinion about job market data"}, {"name": "Careerspan", "type": "TOOL", "context": "data layer of the job market"}], "relationships": [{"from": "Vrijen Attawar", "to": "Careerspan", "type": "BELIEVES", "context": "believes Careerspan can supplant the r\u00e9sum\u00e9"}]}

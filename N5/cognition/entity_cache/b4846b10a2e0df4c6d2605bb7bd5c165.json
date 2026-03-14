@@ -1,1 +1,0 @@
-{"entities": [{"name": "sqlite3", "type": "TOOL", "context": "a command-line tool for managing SQLite databases"}, {"name": "content_library.db", "type": "CONCEPT", "context": "the database file being queried"}, {"name": "items", "type": "CONCEPT", "context": "table containing data within the database"}], "relationships": []}

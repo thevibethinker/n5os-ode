@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "ORG", "context": "a service that matches people based on their work and thought processes"}], "relationships": [{"from": "Careerspan", "to": "people", "type": "USES", "context": "to find people whose stories match the required profiles"}]}

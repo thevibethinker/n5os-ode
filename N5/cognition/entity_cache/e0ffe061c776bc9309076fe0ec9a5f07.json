@@ -1,1 +1,0 @@
-{"entities": [{"name": "stakeholder classifier helper", "type": "TOOL", "context": "a tool used to assist in classifying stakeholder types"}, {"name": "request JSON", "type": "CONCEPT", "context": "a format used for manually overriding detection"}], "relationships": []}

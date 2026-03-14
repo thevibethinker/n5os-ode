@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ilya Kucherenko", "type": "PERSON", "context": "Speaker discussing empirical data"}, {"name": "empirical data", "type": "CONCEPT", "context": "Data being analyzed in the conversation"}], "relationships": [{"from": "Ilya Kucherenko", "to": "empirical data", "type": "MENTIONS", "context": "Discussing analysis of empirical data"}]}

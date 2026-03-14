@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "Positioned as a resource for AI tooling questions"}, {"name": "AI", "type": "CONCEPT", "context": "Refers to artificial intelligence"}], "relationships": [{"from": "V", "to": "AI", "type": "KNOWS", "context": "V has knowledge about AI tooling questions"}]}

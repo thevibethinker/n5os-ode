@@ -1,1 +1,0 @@
-{"entities": [{"name": "Aaron", "type": "PERSON", "context": "wants to automate project timelines"}], "relationships": [{"from": "Aaron", "to": "V", "type": "WORKS_WITH", "context": "collaborating on project automation"}]}

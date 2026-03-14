@@ -1,1 +1,0 @@
-{"entities": [{"name": "5-phase framework", "type": "CONCEPT", "context": "a structured approach to project development"}], "relationships": [{"from": "V", "to": "5-phase framework", "type": "USES", "context": "V follows this model for project development"}]}

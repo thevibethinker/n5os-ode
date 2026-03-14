@@ -1,1 +1,0 @@
-{"entities": [{"name": "Dover", "type": "ORG", "context": "founder or contact"}], "relationships": [{"from": "V", "to": "Dover", "type": "KNOWS", "context": "previous call"}]}

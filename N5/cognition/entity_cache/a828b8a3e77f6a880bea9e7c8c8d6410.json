@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "individual delivering value"}, {"name": "Griffin", "type": "PERSON", "context": "partner evaluating Vrijen's potential"}], "relationships": [{"from": "Vrijen", "to": "Griffin", "type": "WORKS_WITH", "context": "team partnership potential"}]}

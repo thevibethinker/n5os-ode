@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "ORG", "context": "A recruiting tool that shows trajectory/improvement"}], "relationships": [{"from": "Careerspan", "to": "V", "type": "USES", "context": "V employs Careerspan to analyze recruitment data"}]}

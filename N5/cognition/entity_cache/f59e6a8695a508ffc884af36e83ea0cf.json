@@ -1,1 +1,0 @@
-{"entities": [{"name": "OpenAI API", "type": "TOOL", "context": "Used for embedding text in the knowledge system"}, {"name": "positions", "type": "CONCEPT", "context": "Represents the knowledge system that V is implementing"}], "relationships": []}

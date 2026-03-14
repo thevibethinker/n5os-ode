@@ -1,1 +1,0 @@
-{"entities": [{"name": "meme", "type": "TOOL", "context": "a tool used for generating images with text"}, {"name": "drake", "type": "CONCEPT", "context": "template used for creating memes"}], "relationships": []}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ayush", "type": "PERSON", "context": "spouse of Ayush's spouse"}, {"name": "V's knowledge system", "type": "CONCEPT", "context": "refers to the decision-making framework"}], "relationships": [{"from": "V's knowledge system", "to": "Ayush", "type": "RELATED_TO", "context": "decision to file taxes jointly involving Ayush's spouse"}]}

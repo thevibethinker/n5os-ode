@@ -1,1 +1,0 @@
-{"entities": [{"name": "Akiflow", "type": "TOOL", "context": "task management tool"}, {"name": "Aki", "type": "PERSON", "context": "recipient of formatted replies"}], "relationships": [{"from": "V", "to": "Akiflow", "type": "USES", "context": "V formats replies for task management"}, {"from": "V", "to": "Aki", "type": "WORKS_WITH", "context": "V sends replies to Aki"}]}

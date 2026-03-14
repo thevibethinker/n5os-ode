@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "The person discussing unity"}, {"name": "unity", "type": "CONCEPT", "context": "A concept related to collective action"}], "relationships": [{"from": "V", "to": "unity", "type": "BELIEVES", "context": "V expresses belief in the importance of unity for collective action"}]}

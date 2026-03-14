@@ -1,1 +1,0 @@
-/home/workspace/Knowledge/architectural/planning_prompt.md

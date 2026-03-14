@@ -1,1 +1,0 @@
-{"entities": [{"name": "CRM markdown", "type": "TOOL", "context": "a tool that must be backward-compatible"}, {"name": "stakeholder_intel_contract.md", "type": "TOOL", "context": "a reference document for consulting when in doubt"}], "relationships": []}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Darwinbox", "type": "ORG", "context": "multi-country enterprise with an international presence"}], "relationships": [{"from": "V", "to": "Darwinbox", "type": "KNOWS", "context": "aligned with Darwinbox's focus and presence"}]}

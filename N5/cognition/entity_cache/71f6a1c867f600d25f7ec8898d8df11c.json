@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ryan Vanderbilt", "type": "PERSON", "context": "Participant in the conversation discussing a new tool"}, {"name": "get a job tool", "type": "TOOL", "context": "How the tool is perceived by Ryan Vanderbilt"}], "relationships": [{"from": "Ryan Vanderbilt", "to": "get a job tool", "type": "USES", "context": "Ryan uses the tool for job-related purposes"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Acquisition Tracker", "type": "TOOL", "context": "bridging system for M&A intelligence"}, {"name": "Careerspan", "type": "ORG", "context": "organization involved in meetings related to M&A"}], "relationships": [{"from": "Acquisition Tracker", "to": "Careerspan", "type": "USES", "context": "captures intelligence from Careerspan meetings"}]}

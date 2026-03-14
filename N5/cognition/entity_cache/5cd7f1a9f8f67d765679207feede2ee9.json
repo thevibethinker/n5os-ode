@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ryan", "type": "PERSON", "context": "Identified emotional friction in product UX feedback."}, {"name": "Careerspan", "type": "ORG", "context": "Story creation flow related to user experience."}], "relationships": [{"from": "Ryan", "to": "Careerspan", "type": "MENTIONS", "context": "Discussed product UX feedback related to Careerspan."}]}

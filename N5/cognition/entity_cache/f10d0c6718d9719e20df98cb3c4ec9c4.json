@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "ORG", "context": "Product name for candidate profiling"}, {"name": "Darwinbox", "type": "ORG", "context": "Hiring platform to improve hiring quality"}], "relationships": [{"from": "Careerspan", "to": "Darwinbox", "type": "USES", "context": "Integration to improve hiring quality and internal mobility"}]}

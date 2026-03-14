@@ -1,1 +1,0 @@
-{"entities": [{"name": "founders", "type": "PERSON", "context": "both founders sharing tactical startup challenges"}], "relationships": [{"from": "founders", "to": "tactical startup challenges", "type": "WORKS_WITH", "context": "sharing challenges related to startup"}]}

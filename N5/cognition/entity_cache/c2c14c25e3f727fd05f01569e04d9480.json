@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "person sharing thoughts on emotional expression"}, {"name": "social media", "type": "TOOL", "context": "platform for sharing song lyrics"}], "relationships": [{"from": "V (Vrijen)", "to": "social media", "type": "USES", "context": "for expressing emotional states through song lyrics"}]}

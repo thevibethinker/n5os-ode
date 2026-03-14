@@ -1,1 +1,0 @@
-{"entities": [{"name": "V-OS", "type": "TOOL", "context": "Research system used by V"}, {"name": "Howie", "type": "PERSON", "context": "Entity associated with scheduling external meetings"}], "relationships": [{"from": "V-OS", "to": "Howie", "type": "USES", "context": "Howie is used for scheduling, triggering research"}]}

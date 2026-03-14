@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "a speaker discussing job recommendations"}, {"name": "careerspan", "type": "ORG", "context": "organization that recommends good jobs"}], "relationships": [{"from": "Vrijen Attawar", "to": "careerspan", "type": "MENTIONS", "context": "discusses the organization that provides job recommendations"}]}

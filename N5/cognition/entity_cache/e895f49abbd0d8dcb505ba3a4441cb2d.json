@@ -1,1 +1,0 @@
-{"entities": [{"name": "MG-7C", "type": "TOOL", "context": "Archiving tool used for managing folders"}, {"name": "mark_meeting_c_state.py", "type": "TOOL", "context": "Script for C-state marking workflow"}], "relationships": [{"from": "MG-7C", "to": "mark_meeting_c_state.py", "type": "USES", "context": "Marking meetings in the C-state marking workflow"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ben Guo", "type": "PERSON", "context": "individual associated with Velocity Coding"}, {"name": "Velocity Coding", "type": "ORG", "context": "organization related to coding and planning"}], "relationships": [{"from": "Ben Guo", "to": "Velocity Coding", "type": "WORKS_WITH", "context": "Ben Guo works with Velocity Coding"}]}

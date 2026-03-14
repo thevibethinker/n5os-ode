@@ -1,1 +1,0 @@
-{"entities": [{"name": "Logan", "type": "PERSON", "context": "Individual V is aligning with"}], "relationships": [{"from": "V", "to": "Logan", "type": "WORKS_WITH", "context": "Internal priority alignment with Logan"}]}

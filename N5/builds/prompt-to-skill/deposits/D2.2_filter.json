@@ -1,7 +1,0 @@
-{
-  "drop_id": "D2.2",
-  "verdict": "PASS",
-  "reason": "Both artifacts created and match brief exactly. SKILL.md has correct frontmatter and all required sections. close.py properly wraps N5/lib/close with guards and CLI args as specified.",
-  "artifacts_verified": true,
-  "concerns": []
-}

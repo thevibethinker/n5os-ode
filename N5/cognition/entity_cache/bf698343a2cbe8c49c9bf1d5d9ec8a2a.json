@@ -1,1 +1,0 @@
-{"entities": [{"name": "Max", "type": "PERSON", "context": "a person who requested information from Vrijen"}, {"name": "Vrijen", "type": "PERSON", "context": "referred to as V, the individual loading a meta resume example"}], "relationships": [{"from": "Max", "to": "Vrijen", "type": "REQUESTS", "context": "Max requested to see an example from Vrijen"}]}

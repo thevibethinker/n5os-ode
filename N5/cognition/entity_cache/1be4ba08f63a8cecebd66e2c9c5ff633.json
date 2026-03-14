@@ -1,1 +1,0 @@
-{"entities": [{"name": "Mihir", "type": "PERSON", "context": "engaged with social media post generation and business hypothesis aggregation"}], "relationships": [{"from": "V", "to": "Mihir", "type": "KNOWS", "context": "implied through engagement with social media"}]}

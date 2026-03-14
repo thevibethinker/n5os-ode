@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual involved in specialized research tasks"}, {"name": "Web scraping", "type": "TOOL", "context": "method used for analysis when direct processing is unavailable"}], "relationships": [{"from": "V (Vrijen)", "to": "Web scraping", "type": "USES", "context": "V utilizes web scraping for analysis"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the individual associated with the knowledge system"}, {"name": "N5OS", "type": "TOOL", "context": "a tool used for managing digests"}, {"name": "CRM", "type": "CONCEPT", "context": "Customer Relationship Management system referenced in email gathering"}], "relationships": []}

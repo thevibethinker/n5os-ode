@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo", "type": "PERSON", "context": "individual responsible for processing meetings"}, {"name": "N5", "type": "TOOL", "context": "system or tool related to meeting processes"}], "relationships": [{"from": "Zo", "to": "N5", "type": "USES", "context": "Zo uses N5 for processing meetings"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "Knowledge system contributor"}, {"name": "fullAccess", "type": "CONCEPT", "context": "Access level within the knowledge system"}], "relationships": [{"from": "V", "to": "fullAccess", "type": "KNOWS", "context": "V is aware of the access level options including fullAccess"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "N5/lists/intro-leads.jsonl", "type": "TOOL", "context": "a file used for storing intro leads"}, {"name": "execute_intro_lead()", "type": "EVENT", "context": "a function that writes data to a file"}], "relationships": []}

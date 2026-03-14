@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "introducer"}], "relationships": [{"from": "Vrijen", "to": "B30", "type": "KNOWS", "context": "generates INTRO_EMAIL_TEMPLATE"}, {"from": "B07", "to": "B30", "type": "RELATED_TO", "context": "B07 generates B30"}, {"from": "B07", "to": "B14", "type": "RELATED_TO", "context": "B07 generates B14"}]}

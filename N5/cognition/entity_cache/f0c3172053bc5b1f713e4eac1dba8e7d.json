@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "The individual whose knowledge system is being discussed."}, {"name": "linkedin", "type": "ORG", "context": "The platform where the social post is published."}, {"name": "AI job search", "type": "CONCEPT", "context": "The topic of the social post."}], "relationships": []}

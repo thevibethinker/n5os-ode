@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "Owner of specific use cases"}, {"name": "FutureFit", "type": "CONCEPT", "context": "Project related to the impact of delays"}], "relationships": [{"from": "Vrijen", "to": "FutureFit", "type": "RELATED_TO", "context": "Impact of delays on the FutureFit project"}]}

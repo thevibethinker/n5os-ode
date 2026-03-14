@@ -1,1 +1,0 @@
-{"entities": [{"name": "Close Cohen", "type": "ORG", "context": "coaching workflows"}, {"name": "Vrijen", "type": "PERSON", "context": "V's knowledge system"}], "relationships": [{"from": "Vrijen", "to": "Close Cohen", "type": "WORKS_WITH", "context": "potential integration in coaching workflows"}]}

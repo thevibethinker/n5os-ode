@@ -1,1 +1,0 @@
-{"entities": [{"name": "Season", "type": "TOOL", "context": "conversational AI CDP"}, {"name": "Dobzi", "type": "TOOL", "context": "automation for mid-market"}], "relationships": [{"from": "V", "to": "Season", "type": "MENTIONS", "context": "potential partnership"}, {"from": "V", "to": "Dobzi", "type": "MENTIONS", "context": "potential partnership"}]}

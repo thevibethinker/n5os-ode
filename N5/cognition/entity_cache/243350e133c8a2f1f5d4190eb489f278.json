@@ -1,1 +1,0 @@
-{"entities": [{"name": "Google Calendar API", "type": "TOOL", "context": "API used for managing calendar events"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "Individual managing meeting history"}], "relationships": [{"from": "V (Vrijen)", "to": "Google Calendar API", "type": "USES", "context": "Uses the API to manage meeting history and events"}]}

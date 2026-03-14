@@ -1,1 +1,0 @@
-{"entities": [{"name": "Howie", "type": "PERSON", "context": "Person mentioned in context of proposing times and sending a booking link"}], "relationships": [{"from": "V", "to": "Howie", "type": "WORKS_WITH", "context": "Collaborating on scheduling and booking"}]}

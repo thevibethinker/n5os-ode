@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "an individual involved in the decision-making process"}, {"name": "Needle", "type": "ORG", "context": "an organization whose product V is considering"}], "relationships": [{"from": "V", "to": "Needle", "type": "WORKS_WITH", "context": "V is exploring a potential partnership with Needle"}]}

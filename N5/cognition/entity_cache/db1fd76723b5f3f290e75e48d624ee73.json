@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker discussing a knowledge system"}, {"name": "Zo", "type": "TOOL", "context": "Tool used for generating stakeholder profiles"}], "relationships": [{"from": "Vrijen Attawar", "to": "Zo", "type": "USES", "context": "Using Zo to generate stakeholder profiles"}]}

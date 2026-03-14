@@ -1,1 +1,0 @@
-{"entities": [{"name": "Akiflow", "type": "ORG", "context": "Personal assistant tool for productivity"}], "relationships": [{"from": "V", "to": "Akiflow", "type": "USES", "context": "V uses Akiflow as a personal assistant"}]}

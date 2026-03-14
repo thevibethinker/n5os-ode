@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "brand evangelist for Zo"}, {"name": "Zo", "type": "ORG", "context": "integrated product"}], "relationships": [{"from": "V", "to": "Zo", "type": "BELIEVES", "context": "V is a brand evangelist for Zo"}, {"from": "Zo", "to": "CRM", "type": "RELATED_TO", "context": "Zo is integrated with CRM"}]}

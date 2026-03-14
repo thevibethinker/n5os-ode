@@ -1,1 +1,0 @@
-{"entities": [{"name": "Jane Smith", "type": "PERSON", "context": "name in directory"}, {"name": "Alex Chen", "type": "PERSON", "context": "name in directory"}, {"name": "Acme Ventures", "type": "ORG", "context": "organization in directory"}, {"name": "TechCorp", "type": "ORG", "context": "organization in directory"}], "relationships": []}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "manager", "type": "TOOL", "context": "a tool used for managing artifacts"}, {"name": "Documents/report.md", "type": "CONCEPT", "context": "a user document artifact"}], "relationships": [{"from": "manager", "to": "Documents/report.md", "type": "USES", "context": "manager is used to declare and update the status of the report artifact"}]}

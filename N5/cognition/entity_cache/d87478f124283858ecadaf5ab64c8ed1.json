@@ -1,1 +1,0 @@
-{"entities": [{"name": "B31", "type": "CONCEPT", "context": "a concept related to credibility scores"}, {"name": "B08", "type": "CONCEPT", "context": "a concept related to domain authority"}], "relationships": [{"from": "B31", "to": "B08", "type": "MENTIONS", "context": "B31 insights should reference B08 domain authority"}]}

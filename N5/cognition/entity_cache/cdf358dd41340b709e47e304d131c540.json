@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Co-founder participating in the standup"}, {"name": "Logan Currie", "type": "PERSON", "context": "Co-founder participating in the standup"}], "relationships": [{"from": "Vrijen Attawar", "to": "Logan Currie", "type": "WORKS_WITH", "context": "Co-founders collaborating in the daily standup"}]}

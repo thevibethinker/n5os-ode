@@ -1,1 +1,0 @@
-{"entities": [{"name": "AI", "type": "CONCEPT", "context": "Artificial Intelligence involved in making DIKW operational"}, {"name": "DIKW", "type": "CONCEPT", "context": "Data, Information, Knowledge, Wisdom framework"}], "relationships": [{"from": "AI", "to": "DIKW", "type": "USES", "context": "AI enables the operationalization of the DIKW framework"}]}

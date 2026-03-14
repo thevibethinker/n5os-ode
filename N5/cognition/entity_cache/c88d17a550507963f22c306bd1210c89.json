@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "Notable context regarding V's expertise"}, {"name": "AI coaching solution", "type": "TOOL", "context": "Portfolio company needs related to AI"}], "relationships": [{"from": "V", "to": "AI coaching solution", "type": "BELIEVES", "context": "Portfolio company requires an AI coaching solution"}]}

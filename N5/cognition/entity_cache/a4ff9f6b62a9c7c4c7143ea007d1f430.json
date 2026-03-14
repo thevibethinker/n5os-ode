@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "speaker expressing pride in a product"}, {"name": "VC money", "type": "CONCEPT", "context": "funding source for scaling the product"}], "relationships": [{"from": "Vrijen", "to": "VC money", "type": "MENTIONS", "context": "Discussing funding options for scaling the product"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "UglifyJS", "type": "TOOL", "context": "JavaScript minification tool used to produce warnings"}], "relationships": [{"from": "V", "to": "UglifyJS", "type": "USES", "context": "V uses UglifyJS to minify JavaScript code"}]}

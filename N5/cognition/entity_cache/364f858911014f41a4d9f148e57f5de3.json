@@ -1,1 +1,0 @@
-{"entities": [{"name": "Melly", "type": "ORG", "context": "looking for a Lead Engineer"}, {"name": "Lead Engineer", "type": "CONCEPT", "context": "technical bridge for a global team"}], "relationships": [{"from": "Melly", "to": "Lead Engineer", "type": "MENTIONS", "context": "searching for a Lead Engineer position"}]}

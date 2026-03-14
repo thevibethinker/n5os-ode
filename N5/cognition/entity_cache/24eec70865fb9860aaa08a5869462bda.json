@@ -1,1 +1,0 @@
-{"entities": [{"name": "manager", "type": "TOOL", "context": "a tool for managing artifacts"}, {"name": "quarterly_review.md", "type": "DOCUMENT", "context": "a markdown document for Q3 2025 analysis"}], "relationships": []}

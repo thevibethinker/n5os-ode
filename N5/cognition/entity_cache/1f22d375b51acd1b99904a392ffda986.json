@@ -1,1 +1,0 @@
-{"entities": [{"name": "Shivam", "type": "PERSON", "context": "Owner of the project"}, {"name": "Careerspan", "type": "ORG", "context": "Company related to recruitment"}], "relationships": [{"from": "Shivam", "to": "Careerspan", "type": "WORKS_WITH", "context": "Shivam is involved in recruitment activities related to Careerspan"}]}

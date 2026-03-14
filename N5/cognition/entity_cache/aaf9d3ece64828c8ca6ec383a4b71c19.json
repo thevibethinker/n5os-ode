@@ -1,1 +1,0 @@
-{"entities": [{"name": "huey", "type": "TOOL", "context": "a job queue tool"}, {"name": "simple-queue", "type": "TOOL", "context": "a job queue tool"}], "relationships": [{"from": "V (Vrijen)", "to": "huey", "type": "USES", "context": "V uses huey as a job queue"}, {"from": "V (Vrijen)", "to": "simple-queue", "type": "USES", "context": "V uses simple-queue as a job queue"}]}

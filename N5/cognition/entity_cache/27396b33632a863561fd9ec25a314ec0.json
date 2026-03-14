@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo", "type": "TOOL", "context": "A system that can create new chats and close conversations."}, {"name": "Aaron Mak Hoffman", "type": "PERSON", "context": "Someone involved in the conversation about Zo."}], "relationships": [{"from": "Zo", "to": "Aaron Mak Hoffman", "type": "MENTIONS", "context": "Aaron mentions the capabilities of Zo."}]}

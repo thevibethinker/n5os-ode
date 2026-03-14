@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual with a knowledge system"}, {"name": "P2 (SSOT)", "type": "CONCEPT", "context": "single source of truth principle"}], "relationships": [{"from": "V", "to": "P2 (SSOT)", "type": "BELIEVES", "context": "V believes in the principle of single source of truth"}]}

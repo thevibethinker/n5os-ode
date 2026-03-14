@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Individual speaking in the text"}, {"name": "Slack", "type": "TOOL", "context": "Communication platform used by the group"}], "relationships": [{"from": "Vrijen Attawar", "to": "Slack", "type": "USES", "context": "Slack engagement rates are mentioned"}]}

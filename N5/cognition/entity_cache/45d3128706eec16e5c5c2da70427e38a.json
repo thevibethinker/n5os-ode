@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "ORG", "context": "organization focused on technology"}, {"name": "Teamwork Online", "type": "ORG", "context": "organization interested in potential partnership"}], "relationships": [{"from": "Careerspan", "to": "Teamwork Online", "type": "WORKS_WITH", "context": "potential partnership discussion"}]}

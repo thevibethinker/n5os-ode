@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "Knowledge system user"}, {"name": "Uber", "type": "ORG", "context": "Mentioned as a network access resource"}], "relationships": [{"from": "Vrijen", "to": "Uber", "type": "USES", "context": "Offers access to network for exploring mutual value"}]}

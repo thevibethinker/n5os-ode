@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "Refers to Vrijen, the individual using the knowledge system."}, {"name": "Auto-route", "type": "TOOL", "context": "A tool within V's knowledge system to process files."}], "relationships": [{"from": "V", "to": "Auto-route", "type": "USES", "context": "V employs the Auto-route tool to manage file processing."}]}

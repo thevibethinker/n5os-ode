@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vibe Builder", "type": "TOOL", "context": "a tool used for building projects"}, {"name": "Vibe Architect", "type": "TOOL", "context": "a tool used for system designs"}, {"name": "Vibe Debugger", "type": "TOOL", "context": "a tool used for system-level fixes"}], "relationships": []}

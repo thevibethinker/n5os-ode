@@ -1,1 +1,0 @@
-{"entities": [{"name": "community", "type": "CONCEPT", "context": "a group of people V interacts with"}, {"name": "schedule", "type": "CONCEPT", "context": "time management context for work"}, {"name": "this week", "type": "CONCEPT", "context": "a time reference regarding when tasks are planned"}], "relationships": []}

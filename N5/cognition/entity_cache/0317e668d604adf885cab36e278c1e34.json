@@ -1,1 +1,0 @@
-{"entities": [{"name": "command crm-find", "type": "TOOL", "context": "command for easier access"}, {"name": "command crm-connections", "type": "TOOL", "context": "command for network mapping"}, {"name": "command crm-touchpoints", "type": "TOOL", "context": "command for interaction history"}], "relationships": []}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "speaker"}, {"name": "Google sheets", "type": "TOOL", "context": "spreadsheet application"}], "relationships": [{"from": "Vrijen Attawar", "to": "Google sheets", "type": "USES", "context": "refers to using Google sheets for matching people"}]}

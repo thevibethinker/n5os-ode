@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "Instructor of the class"}, {"name": "class", "type": "EVENT", "context": "Learning environment for students"}], "relationships": [{"from": "V", "to": "class", "type": "MENTIONS", "context": "V is conducting the class"}]}

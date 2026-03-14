@@ -1,1 +1,0 @@
-{"entities": [{"name": "N5/scripts/root_cleanup.py", "type": "TOOL", "context": "script for moving workspace root items"}, {"name": "Inbox", "type": "CONCEPT", "context": "destination for moved workspace root items"}], "relationships": [{"from": "N5/scripts/root_cleanup.py", "to": "Inbox", "type": "USES", "context": "script moves items to Inbox"}]}

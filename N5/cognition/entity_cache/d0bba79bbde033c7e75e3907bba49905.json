@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "Individual discussing thought leadership"}, {"name": "thought leadership post", "type": "CONCEPT", "context": "Type of content V is considering"}], "relationships": [{"from": "V", "to": "thought leadership post", "type": "THINKS_ABOUT", "context": "V is exploring the idea of writing a post"}]}

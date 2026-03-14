@@ -1,1 +1,0 @@
-{"entities": [{"name": "sqlite3", "type": "TOOL", "context": "command-line interface for managing SQLite databases"}, {"name": "events", "type": "CONCEPT", "context": "a table within the SQLite database used to store event data"}, {"name": "luma_events.db", "type": "EVENT", "context": "the SQLite database file that contains event information"}], "relationships": []}

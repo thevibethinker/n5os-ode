@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "Referred to as V in the knowledge system"}, {"name": "debug_logger.py", "type": "TOOL", "context": "Python script used for debugging log"}], "relationships": []}

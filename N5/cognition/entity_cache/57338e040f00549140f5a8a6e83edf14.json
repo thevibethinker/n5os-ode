@@ -1,1 +1,0 @@
-{"entities": [{"name": "python3", "type": "TOOL", "context": "programming language used in the script"}, {"name": "zo_feedback.py", "type": "TOOL", "context": "specific script being executed"}, {"name": "/home/workspace", "type": "CONCEPT", "context": "directory path in the command"}], "relationships": []}

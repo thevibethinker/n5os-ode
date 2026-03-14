@@ -1,1 +1,0 @@
-{"entities": [{"name": "IUI Guardrails v1.2", "type": "TOOL", "context": "Version of a software or framework for user interface design"}, {"name": "JD Analyzer v7.3", "type": "TOOL", "context": "Version of a tool for analyzing job descriptions"}, {"name": "GTM Pivot Plan v2.0", "type": "TOOL", "context": "Version of a strategy plan for go-to-market pivots"}], "relationships": []}

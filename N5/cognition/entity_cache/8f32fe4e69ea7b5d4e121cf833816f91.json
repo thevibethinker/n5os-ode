@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "individual with a knowledge system"}, {"name": "Careerspan", "type": "ORG", "context": "organization relevant to Vrijen's work"}], "relationships": [{"from": "Vrijen", "to": "Careerspan", "type": "RELATED_TO", "context": "cares about the organization's success beyond personal deliverables"}]}

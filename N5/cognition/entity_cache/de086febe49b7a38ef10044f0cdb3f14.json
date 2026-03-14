@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "The individual referenced in the knowledge system"}, {"name": "linkedin", "type": "ORG", "context": "Source of the voice primitive"}], "relationships": [{"from": "V", "to": "linkedin", "type": "USES", "context": "V uses linkedin as a source for information"}]}

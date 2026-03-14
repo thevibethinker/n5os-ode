@@ -1,1 +1,0 @@
-{"entities": [{"name": "Akiflow Tasks", "type": "TOOL", "context": "a tool used for task management and automation"}], "relationships": [{"from": "V", "to": "Akiflow Tasks", "type": "USES", "context": "V uses Akiflow Tasks in the knowledge system flow"}]}

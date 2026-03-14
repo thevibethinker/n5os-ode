@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker discussing ideas"}, {"name": "Zoe", "type": "CONCEPT", "context": "Refers to a non-visual idea or product"}], "relationships": [{"from": "Vrijen Attawar", "to": "Zoe", "type": "MENTIONS", "context": "Discusses the non-visual nature of Zoe in relation to products"}]}

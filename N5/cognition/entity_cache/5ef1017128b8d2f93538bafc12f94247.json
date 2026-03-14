@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "trial users", "type": "CONCEPT", "context": "group of people involved in testing features"}], "relationships": [{"from": "V", "to": "trial users", "type": "WORKS_WITH", "context": "involvement of trial users in feature considerations"}]}

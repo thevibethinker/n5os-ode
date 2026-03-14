@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "a person discussing hiring/talent challenges"}, {"name": "Careerspan", "type": "ORG", "context": "an organization being positioned in the market"}], "relationships": [{"from": "V", "to": "Careerspan", "type": "MENTIONS", "context": "talking about market feedback on Careerspan positioning"}]}

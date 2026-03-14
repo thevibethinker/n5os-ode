@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the individual described in the knowledge system"}, {"name": "Skills/meta-resume-generator", "type": "TOOL", "context": "the skill that outputs data directly"}], "relationships": [{"from": "V", "to": "Skills/meta-resume-generator", "type": "USES", "context": "V uses this tool to generate outputs"}]}

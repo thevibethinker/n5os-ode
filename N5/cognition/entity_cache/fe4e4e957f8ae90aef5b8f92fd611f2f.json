@@ -1,1 +1,0 @@
-{"entities": [{"name": "Jatin Sandilya", "type": "PERSON", "context": "individual associated with Hypermodel.Ai"}, {"name": "Hypermodel.Ai", "type": "ORG", "context": "organization where Jatin Sandilya works"}], "relationships": [{"from": "Jatin Sandilya", "to": "Hypermodel.Ai", "type": "WORKS_WITH", "context": "Jatin Sandilya is affiliated with Hypermodel.Ai"}]}

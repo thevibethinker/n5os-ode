@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "subject of the knowledge system"}, {"name": "AIs", "type": "CONCEPT", "context": "referenced group in relation to cheat-sheet"}], "relationships": [{"from": "V (Vrijen)", "to": "AIs", "type": "MENTIONS", "context": "V provides resources for AIs"}]}

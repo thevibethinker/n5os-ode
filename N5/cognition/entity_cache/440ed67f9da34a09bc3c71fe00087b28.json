@@ -1,1 +1,0 @@
-{"entities": [{"name": "jsonschema", "type": "TOOL", "context": "a library used for validation"}], "relationships": [{"from": "V", "to": "jsonschema", "type": "USES", "context": "V uses the jsonschema library for validation"}]}

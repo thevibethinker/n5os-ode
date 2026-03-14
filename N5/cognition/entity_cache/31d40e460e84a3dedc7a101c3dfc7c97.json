@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "Discord", "type": "ORG", "context": "platform for community-driven growth"}], "relationships": [{"from": "V (Vrijen)", "to": "Discord", "type": "USES", "context": "utilizes Discord for community interaction"}]}

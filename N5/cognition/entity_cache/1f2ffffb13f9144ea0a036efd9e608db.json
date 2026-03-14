@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "the speaker discussing knowledge"}, {"name": "Spurs", "type": "ORG", "context": "referring to a sports team, likely Tottenham Hotspur"}], "relationships": [{"from": "Vrijen Attawar", "to": "Spurs", "type": "MENTIONS", "context": "noting the affiliation to a sports team"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Sam team", "type": "ORG", "context": "Partner organization validating the filtering system"}, {"name": "Filtering System", "type": "TOOL", "context": "Core product for content/information filtering"}], "relationships": [{"from": "Filtering System", "to": "Sam team", "type": "WORKS_WITH", "context": "Being validated through partnership"}]}

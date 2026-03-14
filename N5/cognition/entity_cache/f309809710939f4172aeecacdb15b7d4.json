@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "The individual referenced in the knowledge system"}, {"name": "university economics", "type": "CONCEPT", "context": "An understanding relevant to Vrijen's focus"}], "relationships": [{"from": "Vrijen", "to": "university economics", "type": "BELIEVES", "context": "Shows understanding of university economics"}]}

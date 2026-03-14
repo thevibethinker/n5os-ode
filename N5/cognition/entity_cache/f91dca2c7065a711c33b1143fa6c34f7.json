@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo system", "type": "CONCEPT", "context": "system that V is learning"}], "relationships": [{"from": "Vrijen", "to": "Zo system", "type": "KNOWS", "context": "V is willing to invest time learning the Zo system"}]}

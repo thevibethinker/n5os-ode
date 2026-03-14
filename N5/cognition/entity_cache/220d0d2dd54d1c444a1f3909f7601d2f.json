@@ -1,1 +1,0 @@
-{"entities": [{"name": "Logan", "type": "PERSON", "context": "individual responsible for validation"}, {"name": "Greenhouse", "type": "ORG", "context": "organization being assessed for capabilities"}], "relationships": [{"from": "Logan", "to": "Greenhouse", "type": "WORKS_WITH", "context": "Logan is validating Greenhouse's capabilities"}]}

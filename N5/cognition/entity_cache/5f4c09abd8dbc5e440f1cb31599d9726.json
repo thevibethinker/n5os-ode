@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo", "type": "TOOL", "context": "a flexible product that can be tailored to user needs"}, {"name": "V", "type": "PERSON", "context": "engaged in discussions about Zo"}], "relationships": [{"from": "V", "to": "Zo", "type": "USES", "context": "V discusses the flexibility and adaptability of Zo"}]}

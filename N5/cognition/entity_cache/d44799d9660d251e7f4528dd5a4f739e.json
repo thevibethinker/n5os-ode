@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker discussing text extraction"}, {"name": "text extraction", "type": "CONCEPT", "context": "Method of processing text"}], "relationships": [{"from": "Vrijen Attawar", "to": "text extraction", "type": "KNOWS", "context": "Discussing the process and methods of text extraction"}]}

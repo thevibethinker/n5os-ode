@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "The subject of the text who has a knowledge system."}, {"name": "Andrew", "type": "PERSON", "context": "Friend of V who wanted him to attend."}], "relationships": [{"from": "V (Vrijen)", "to": "Andrew", "type": "KNOWS", "context": "Personal relationship signals trust/credibility."}]}

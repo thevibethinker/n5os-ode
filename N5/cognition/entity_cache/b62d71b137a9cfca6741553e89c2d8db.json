@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "Fitbit API", "type": "TOOL", "context": "technology used for manual entry"}], "relationships": [{"from": "V (Vrijen)", "to": "Fitbit API", "type": "USES", "context": "uses the API for manual data entry"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "TOOL", "context": "a tool used for screening candidates"}, {"name": "founders", "type": "PERSON", "context": "individuals involved in the hiring process who make decisions about candidates"}], "relationships": [{"from": "founders", "to": "Careerspan", "type": "USES", "context": "founders use Careerspan to screen candidates"}]}

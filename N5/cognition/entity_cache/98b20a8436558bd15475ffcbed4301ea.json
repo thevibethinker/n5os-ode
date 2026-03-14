@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the speaker who gave career advice and became a founder"}, {"name": "N5 OS", "type": "TOOL", "context": "a system that made it boring to do the right thing"}], "relationships": [{"from": "V", "to": "N5 OS", "type": "USES", "context": "V used N5 OS in a negative context"}]}

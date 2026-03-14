@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "founder involved in networking and support for first-time founders"}], "relationships": [{"from": "V", "to": "first-time-founder", "type": "RELATED_TO", "context": "V supports first-time founders"}, {"from": "V", "to": "bootstrapped", "type": "RELATED_TO", "context": "V's approach may involve bootstrapping"}]}

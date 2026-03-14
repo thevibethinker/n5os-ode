@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "author of the email rules"}, {"name": "email", "type": "TOOL", "context": "communication method described in the rules"}], "relationships": []}

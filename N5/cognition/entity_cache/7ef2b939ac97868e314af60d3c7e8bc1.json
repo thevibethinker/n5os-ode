@@ -1,1 +1,0 @@
-{"entities": [{"name": "Graham", "type": "PERSON", "context": "acknowledges the capability on the roadmap"}, {"name": "AI analyst", "type": "TOOL", "context": "future upgrade path mentioned"}], "relationships": [{"from": "Graham", "to": "AI analyst", "type": "MENTIONS", "context": "Graham acknowledges it's on the roadmap"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "ORG", "context": "organization mentioned as important for understanding latent signals"}], "relationships": [{"from": "V", "to": "Careerspan", "type": "USES", "context": "V believes Careerspan is valuable for understanding latent signals"}]}

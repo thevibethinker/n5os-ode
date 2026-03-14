@@ -1,1 +1,0 @@
-{"entities": [{"name": "gmail_tool", "type": "TOOL", "context": "a tool used for managing email communication"}, {"name": "email", "type": "CONCEPT", "context": "a concept representing electronic messages exchanged between people"}], "relationships": []}

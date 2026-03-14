@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "knowledge system creator or user"}, {"name": "P15", "type": "CONCEPT", "context": "core principle related to honest status reporting"}], "relationships": [{"from": "V", "to": "P15", "type": "BELIEVES", "context": "V adheres to the core principle P15 regarding status reporting"}]}

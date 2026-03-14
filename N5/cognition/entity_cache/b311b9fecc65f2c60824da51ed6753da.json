@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "VP, Head of AI at Workday"}, {"name": "Logan", "type": "PERSON", "context": "Person V knows directly"}, {"name": "Workday", "type": "ORG", "context": "Organization where V is VP, Head of AI"}], "relationships": [{"from": "Logan", "to": "V", "type": "KNOWS", "context": "Logan knows V directly"}]}

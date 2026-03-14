@@ -1,1 +1,0 @@
-{"entities": [{"name": "parent-module", "type": "TOOL", "context": "a tool referenced in the text"}, {"name": "sindresorhus", "type": "ORG", "context": "the author of the parent-module on GitHub"}], "relationships": [{"from": "parent-module", "to": "sindresorhus", "type": "MENTIONS", "context": "parent-module references the work of sindresorhus"}]}

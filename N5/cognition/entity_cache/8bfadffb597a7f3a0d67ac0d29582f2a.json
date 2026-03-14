@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "TOOL", "context": "a tool suggested for sharing"}], "relationships": [{"from": "Hiring leader", "to": "Careerspan", "type": "MENTIONS", "context": "suggested to share with daughter/friends"}]}

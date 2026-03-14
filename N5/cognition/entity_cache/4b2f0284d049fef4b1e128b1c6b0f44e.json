@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker and contributor to the knowledge system"}, {"name": "LinkedIn", "type": "TOOL", "context": "Platform used by candidates for professional networking"}], "relationships": [{"from": "Vrijen Attawar", "to": "LinkedIn", "type": "MENTIONS", "context": "Discusses the use of LinkedIn by candidates"}]}

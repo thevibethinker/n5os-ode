@@ -1,1 +1,0 @@
-{"entities": [{"name": "Logan", "type": "PERSON", "context": "person V coordinates with"}, {"name": "Ilse", "type": "PERSON", "context": "person V coordinates with"}], "relationships": [{"from": "V", "to": "Logan", "type": "WORKS_WITH", "context": "coordinates with Logan"}, {"from": "V", "to": "Ilse", "type": "WORKS_WITH", "context": "coordinates with Ilse"}]}

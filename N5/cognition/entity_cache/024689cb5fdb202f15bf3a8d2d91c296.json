@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "Senior Director of workforce development nonprofit"}, {"name": "Life Science Career Alliance", "type": "ORG", "context": "workforce development nonprofit"}], "relationships": [{"from": "V (Vrijen)", "to": "Life Science Career Alliance", "type": "WORKS_WITH", "context": "as Senior Director"}]}

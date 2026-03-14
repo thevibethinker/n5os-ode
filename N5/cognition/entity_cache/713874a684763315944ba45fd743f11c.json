@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "identifier of the knowledge system"}, {"name": "stripe", "type": "TOOL", "context": "payment processing tool"}], "relationships": [{"from": "Vrijen", "to": "stripe", "type": "USES", "context": "to process payments"}]}

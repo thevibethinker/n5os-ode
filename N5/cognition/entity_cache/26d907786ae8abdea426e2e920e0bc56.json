@@ -1,1 +1,0 @@
-{"entities": [{"name": "CMC", "type": "ORG", "context": "organization focusing on resume tools"}, {"name": "resume tools", "type": "TOOL", "context": "category in CMC's toolbox"}], "relationships": [{"from": "CMC", "to": "resume tools", "type": "USES", "context": "focusing on resume tools first"}]}

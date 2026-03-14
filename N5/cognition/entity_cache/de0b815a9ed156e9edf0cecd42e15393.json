@@ -1,1 +1,0 @@
-{"entities": [{"name": "Jake Weissbourd", "type": "PERSON", "context": "individual discussing recruiting employers"}, {"name": "recruiting employers", "type": "CONCEPT", "context": "concept related to job hosting"}], "relationships": [{"from": "Jake Weissbourd", "to": "recruiting employers", "type": "MENTIONS", "context": "discussing division of labor in job hosting"}]}

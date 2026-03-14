@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the subject of the knowledge system"}, {"name": "emails", "type": "TOOL", "context": "V's communication method"}], "relationships": [{"from": "V", "to": "emails", "type": "USES", "context": "V uses emails as a tool for communication"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Hydeparkvp", "type": "ORG", "context": "Organization related to V's knowledge system"}, {"name": "jim@hydeparkvp.com", "type": "PERSON", "context": "Email associated with the organization"}], "relationships": [{"from": "V", "to": "Hydeparkvp", "type": "WORKS_WITH", "context": "V is associated with the organization Hydeparkvp"}]}

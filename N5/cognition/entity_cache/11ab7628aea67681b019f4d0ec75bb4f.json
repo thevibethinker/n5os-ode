@@ -1,1 +1,0 @@
-{"entities": [{"name": "Markdown", "type": "TOOL", "context": "used for detail"}, {"name": "DB", "type": "TOOL", "context": "used for structure"}], "relationships": [{"from": "Markdown", "to": "DB", "type": "RELATED_TO", "context": "used for detail and structure respectively"}]}

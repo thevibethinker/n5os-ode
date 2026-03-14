@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "a person associated with the knowledge system"}, {"name": "product", "type": "TOOL", "context": "the product that is being onboarded"}], "relationships": [{"from": "V", "to": "product", "type": "USES", "context": "V's intention is to onboard users to their product"}]}

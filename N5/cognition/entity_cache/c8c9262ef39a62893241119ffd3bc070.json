@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "creator of smart-buffer"}, {"name": "smart-buffer", "type": "TOOL", "context": "a tool created to simplify network packet building and reading"}], "relationships": [{"from": "V", "to": "smart-buffer", "type": "CREATES", "context": "V created smart-buffer to simplify network packet handling"}]}

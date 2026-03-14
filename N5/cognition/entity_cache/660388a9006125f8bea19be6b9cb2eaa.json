@@ -1,1 +1,0 @@
-{"entities": [{"name": "someone@company.com", "type": "PERSON", "context": "Email address of a person V is enriching"}, {"name": "https://linkedin.com/in/someone", "type": "PERSON", "context": "LinkedIn profile URL of the person V is enriching"}], "relationships": []}

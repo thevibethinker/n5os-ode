@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual involved in the knowledge system"}, {"name": "commitment", "type": "CONCEPT", "context": "the promise being made"}], "relationships": [{"from": "V", "to": "commitment", "type": "MENTIONS", "context": "V discusses the concept of commitment in their knowledge system"}]}

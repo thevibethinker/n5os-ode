@@ -1,1 +1,0 @@
-{"entities": [{"name": "Template System", "type": "CONCEPT", "context": "a simple file system with variables"}, {"name": "Registry System", "type": "CONCEPT", "context": "a sophisticated JSON system with priorities, conditions, and feedback"}], "relationships": [{"from": "Template System", "to": "Registry System", "type": "RELATED_TO", "context": "two competing systems"}]}

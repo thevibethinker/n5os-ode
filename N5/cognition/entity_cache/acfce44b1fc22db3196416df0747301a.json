@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the subject who has a knowledge system"}, {"name": "Hamoon", "type": "PERSON", "context": "the primary decision-maker in partnership decisions"}], "relationships": [{"from": "V", "to": "Hamoon", "type": "WORKS_WITH", "context": "V is a key influencer in the partnership decisions involving Hamoon"}]}

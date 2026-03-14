@@ -1,1 +1,0 @@
-{"entities": [{"name": "Peter", "type": "PERSON", "context": "referenced as introducer"}, {"name": "Lensa team", "type": "ORG", "context": "company context"}], "relationships": [{"from": "V", "to": "Peter", "type": "KNOWS", "context": "referenced as introducer"}, {"from": "V", "to": "Lensa team", "type": "RELATED_TO", "context": "company context"}]}

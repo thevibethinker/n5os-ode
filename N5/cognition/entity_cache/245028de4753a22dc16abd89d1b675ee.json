@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the individual referenced in the knowledge system"}, {"name": "auto_init_conversation.py", "type": "TOOL", "context": "the script used for the scheduled task"}], "relationships": [{"from": "V", "to": "auto_init_conversation.py", "type": "USES", "context": "V runs the script as part of a scheduled task"}]}

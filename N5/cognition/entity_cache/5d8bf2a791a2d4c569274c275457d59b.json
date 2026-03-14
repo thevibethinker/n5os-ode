@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "V refers to Vrijen, who is associated with the knowledge system."}, {"name": "Jazz", "type": "ORG", "context": "An organization referenced in the context of sponsorship."}], "relationships": [{"from": "V", "to": "Jazz", "type": "MENTIONS", "context": "V mentions Jazz in relation to sponsorship."}]}

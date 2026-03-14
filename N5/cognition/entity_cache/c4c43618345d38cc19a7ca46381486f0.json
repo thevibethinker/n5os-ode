@@ -1,1 +1,0 @@
-{"entities": [{"name": "Close Cohen", "type": "PERSON", "context": "career coaching firm operator"}, {"name": "Seattle tech ecosystem", "type": "CONCEPT", "context": "context of observation"}], "relationships": [{"from": "Close Cohen", "to": "Seattle tech ecosystem", "type": "MENTIONS", "context": "observes the tech ecosystem in Seattle"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual mentioned in the text"}, {"name": "TalentOS", "type": "ORG", "context": "company being evaluated for partnership"}], "relationships": [{"from": "V", "to": "TalentOS", "type": "WORKS_WITH", "context": "evaluating partnership with TalentOS"}]}

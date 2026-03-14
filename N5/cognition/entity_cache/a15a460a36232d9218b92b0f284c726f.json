@@ -1,1 +1,0 @@
-{"entities": [{"name": "Build Title", "type": "CONCEPT", "context": "refers to the title of a specific build"}, {"name": "Parent Thread's Semantic Title", "type": "CONCEPT", "context": "refers to the semantic title of the parent thread"}, {"name": "build_slug", "type": "TOOL", "context": "used to look up builds"}], "relationships": []}

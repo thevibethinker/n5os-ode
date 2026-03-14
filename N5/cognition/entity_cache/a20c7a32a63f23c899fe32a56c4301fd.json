@@ -1,1 +1,0 @@
-{"entities": [{"name": "cosmiconfigSync", "type": "TOOL", "context": "a sync API for loading configurations"}, {"name": "defaultLoaders", "type": "CONCEPT", "context": "a concept that relates to handling special JS syntax"}], "relationships": [{"from": "defaultLoaders", "to": "cosmiconfigSync", "type": "USES", "context": "defaultLoaders uses the sync API cosmiconfigSync"}]}

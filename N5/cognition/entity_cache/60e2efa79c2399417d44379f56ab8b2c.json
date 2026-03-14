@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual discussed"}, {"name": "Careerspan", "type": "CONCEPT", "context": "product discussed"}], "relationships": [{"from": "V", "to": "Careerspan", "type": "MENTIONS", "context": "V mentions Careerspan in meetings regarding its product"}]}

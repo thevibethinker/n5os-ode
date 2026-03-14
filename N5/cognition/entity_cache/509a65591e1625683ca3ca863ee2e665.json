@@ -1,1 +1,0 @@
-{"entities": [{"name": "small employers", "type": "ORG", "context": "community networks connect to small employers like SMEs and municipal agencies"}], "relationships": [{"from": "V", "to": "small employers", "type": "WORKS_WITH", "context": "V connects community networks to small employers"}]}

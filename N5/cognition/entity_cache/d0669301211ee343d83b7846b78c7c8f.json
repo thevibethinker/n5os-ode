@@ -1,1 +1,0 @@
-{"entities": [{"name": "V-OS", "type": "TOOL", "context": "knowledge system used by V"}, {"name": "Phase 2B", "type": "EVENT", "context": "a stage in V's knowledge system development"}, {"name": "ZO Polling Implementation", "type": "CONCEPT", "context": "goal of Phase 2B involving calendar monitoring and research triggering"}], "relationships": []}

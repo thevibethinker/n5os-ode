@@ -1,1 +1,0 @@
-{"entities": [{"name": "Auto-Scan Productivity Tracker", "type": "TOOL", "context": "a tool deployed for tracking productivity"}, {"name": "eb34c59d-bcaa-45dd-8eed-27e45b7d33a6", "type": "EVENT", "context": "Unique ID for the scheduled task"}], "relationships": []}

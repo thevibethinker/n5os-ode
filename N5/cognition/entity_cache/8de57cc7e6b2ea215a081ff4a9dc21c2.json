@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual with a knowledge system"}, {"name": "version 3.0.0", "type": "TOOL", "context": "version of the knowledge system"}, {"name": "12 categories", "type": "CONCEPT", "context": "categories documented in the knowledge system"}], "relationships": []}

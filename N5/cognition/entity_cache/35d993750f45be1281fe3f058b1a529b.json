@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo", "type": "ORG", "context": "Webhook trigger for Applet 1"}, {"name": "Akiflow", "type": "TOOL", "context": "Query tool for listing tasks"}], "relationships": [{"from": "V", "to": "Zo", "type": "USES", "context": "Webhook service used in workflow"}, {"from": "V", "to": "Akiflow", "type": "USES", "context": "Tool used to manage tasks"}]}

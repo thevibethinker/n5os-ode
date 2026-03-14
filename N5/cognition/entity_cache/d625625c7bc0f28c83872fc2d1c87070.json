@@ -1,1 +1,0 @@
-{"entities": [{"name": "crm-find", "type": "TOOL", "context": "Smart people finder"}, {"name": "crm-connections", "type": "TOOL", "context": "Network mapper"}, {"name": "crm-touchpoints", "type": "TOOL", "context": "Interaction history"}, {"name": "crm-followup", "type": "TOOL", "context": "Priority follow-ups"}], "relationships": []}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Jacob Solano", "type": "PERSON", "context": "Chief of Staff at Fibe"}, {"name": "Fibe", "type": "ORG", "context": "Organization where Jacob Solano works"}], "relationships": [{"from": "Jacob Solano", "to": "Fibe", "type": "WORKS_WITH", "context": "Jacob Solano is the Chief of Staff at Fibe"}]}

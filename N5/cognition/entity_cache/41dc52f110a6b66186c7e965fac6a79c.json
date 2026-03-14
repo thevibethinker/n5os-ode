@@ -1,1 +1,0 @@
-{"entities": [{"name": "planning prompt", "type": "TOOL", "context": "used for planning"}, {"name": "thinking prompt", "type": "TOOL", "context": "used for analysis"}, {"name": "navigator prompt", "type": "TOOL", "context": "used for navigation"}], "relationships": []}

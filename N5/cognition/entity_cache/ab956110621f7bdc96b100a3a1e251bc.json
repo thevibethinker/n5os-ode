@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ashraf", "type": "PERSON", "context": "individual associated with posting"}, {"name": "Mind the Product", "type": "ORG", "context": "large free community"}], "relationships": [{"from": "Ashraf", "to": "Mind the Product", "type": "MENTIONS", "context": "Ashraf is connected to the Mind the Product community but hasn't posted personally"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "SocksClientEstablishedEvent", "type": "EVENT", "context": "An event representing the establishment of a client socket connection"}, {"name": "net.Socket", "type": "TOOL", "context": "The underlying raw Socket used for network communication"}], "relationships": []}

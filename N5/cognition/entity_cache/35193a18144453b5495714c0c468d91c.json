@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "Owner of the knowledge system"}, {"name": "Tope Awotona", "type": "PERSON", "context": "Recipient of the written document"}], "relationships": [{"from": "V", "to": "Tope Awotona", "type": "WORKS_WITH", "context": "V is collaborating or communicating with Tope Awotona"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "ORG", "context": "a tool that helps build career data"}, {"name": "The 'Wrong Time' Problem", "type": "CONCEPT", "context": "the issue people face in career timing"}], "relationships": [{"from": "Careerspan", "to": "The 'Wrong Time' Problem", "type": "USES", "context": "Careerspan addresses the timing issue in career management"}]}

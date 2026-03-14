@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "refers to the individual behind the knowledge system"}, {"name": "SHRM", "type": "ORG", "context": "organization mentioned with a mutual value proposition"}], "relationships": [{"from": "V", "to": "SHRM", "type": "WORKS_WITH", "context": "V collaborates with SHRM for mutual value"}]}

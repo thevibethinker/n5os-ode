@@ -1,1 +1,0 @@
-{"entities": [{"name": "Jeff", "type": "PERSON", "context": "individual who reveals the pain point"}, {"name": "Careerspan", "type": "ORG", "context": "organization that can help solve talent retention"}], "relationships": [{"from": "Jeff", "to": "Careerspan", "type": "MENTIONS", "context": "Jeff discusses Careerspan in relation to solving talent retention issues"}]}

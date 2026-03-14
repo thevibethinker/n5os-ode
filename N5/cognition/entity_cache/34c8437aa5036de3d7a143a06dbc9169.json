@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the individual with a knowledge system"}, {"name": "knowledge base", "type": "CONCEPT", "context": "the source of facts to be checked and updated"}], "relationships": [{"from": "V", "to": "knowledge base", "type": "USES", "context": "V uses the knowledge base to check facts and update information"}]}

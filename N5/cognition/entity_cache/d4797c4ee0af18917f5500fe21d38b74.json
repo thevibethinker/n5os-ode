@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Person discussing knowledge systems"}, {"name": "Zapier", "type": "TOOL", "context": "Automation tool mentioned"}], "relationships": [{"from": "Vrijen Attawar", "to": "Zapier", "type": "MENTIONS", "context": "Discusses experiences with the tool"}]}

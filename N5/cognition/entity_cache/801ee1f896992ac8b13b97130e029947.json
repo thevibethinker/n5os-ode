@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "Individual involved in the proposal process"}, {"name": "Superposition", "type": "ORG", "context": "Company associated with the flat-rate-per-link proposal"}], "relationships": [{"from": "Vrijen", "to": "Superposition", "type": "WORKS_WITH", "context": "Collaborating on the flat-rate-per-link proposal"}]}

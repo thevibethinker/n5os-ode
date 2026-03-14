@@ -1,1 +1,0 @@
-{"entities": [{"name": "LLM", "type": "TOOL", "context": "refers to the language model used for analysis"}, {"name": "Inbox", "type": "CONCEPT", "context": "folder where files are stored for processing"}], "relationships": []}

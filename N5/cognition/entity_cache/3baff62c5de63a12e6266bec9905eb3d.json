@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker discussing a talent network"}, {"name": "talent network", "type": "CONCEPT", "context": "Network of individuals who have shared stories"}], "relationships": [{"from": "Vrijen Attawar", "to": "talent network", "type": "MENTIONS", "context": "Discussing the existence of a talent network"}]}

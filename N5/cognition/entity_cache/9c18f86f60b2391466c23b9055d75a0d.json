@@ -1,1 +1,0 @@
-{"entities": [{"name": "ZoDrops", "type": "TOOL", "context": "packaged capabilities for the Zo community"}, {"name": "Zo", "type": "ORG", "context": "community for sharing capabilities"}], "relationships": [{"from": "ZoDrops", "to": "Zo", "type": "RELATED_TO", "context": "ZoDrops are for the Zo community"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Opus", "type": "TOOL", "context": "Complex builds, major writing, strategic decisions"}, {"name": "Sonnet", "type": "TOOL", "context": "Fast iteration, simple tasks"}, {"name": "Flash", "type": "TOOL", "context": "Quick lookups, simple routing"}], "relationships": []}

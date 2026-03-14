@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual with a knowledge system"}, {"name": "Zo scheduling interface", "type": "TOOL", "context": "interface for managing tasks"}], "relationships": [{"from": "V", "to": "Zo scheduling interface", "type": "USES", "context": "V uses the interface to manage tasks"}]}

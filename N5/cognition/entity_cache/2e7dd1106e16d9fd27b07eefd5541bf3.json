@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "Community Host"}, {"name": "Careerspan", "type": "ORG", "context": "Organization with aligned philosophy"}], "relationships": [{"from": "V (Vrijen)", "to": "Careerspan", "type": "BELIEVES", "context": "Authentic philosophy aligns with Careerspan values"}]}

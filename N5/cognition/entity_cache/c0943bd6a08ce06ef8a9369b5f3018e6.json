@@ -1,1 +1,0 @@
-{"entities": [{"name": "bootstrap_conversation_client.py", "type": "TOOL", "context": "a script included in the bootstrap package"}, {"name": "INSTRUCTIONS_FOR_DEMONSTRATOR_AI_CONVERSATION.md", "type": "TOOL", "context": "a file included in the demonstrator package"}], "relationships": []}

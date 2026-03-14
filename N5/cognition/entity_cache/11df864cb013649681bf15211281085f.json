@@ -1,1 +1,0 @@
-{"entities": [{"name": "Reliance Industries", "type": "ORG", "context": "Indian conglomerate"}], "relationships": [{"from": "V", "to": "Reliance Industries", "type": "KNOWS", "context": "First-degree connection"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Sarah Chen", "type": "PERSON", "context": "attendee of the event"}, {"name": "Call", "type": "EVENT", "context": "scheduled event with Sarah Chen"}], "relationships": [{"from": "V", "to": "Sarah Chen", "type": "KNOWS", "context": "V has a scheduled call with Sarah Chen"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Sender of the email"}, {"name": "shujaatbelongandleadcomlogantheapplyai", "type": "ORG", "context": "Recipient of the email"}], "relationships": [{"from": "Vrijen Attawar", "to": "shujaatbelongandleadcomlogantheapplyai", "type": "WORKS_WITH", "context": "Involved in a follow-up communication"}]}

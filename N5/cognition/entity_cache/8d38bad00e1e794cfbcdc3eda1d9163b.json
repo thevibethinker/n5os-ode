@@ -1,1 +1,0 @@
-{"entities": [{"name": "MG-7C", "type": "TOOL", "context": "system handling archival"}, {"name": "archive_completed_meetings.py", "type": "TOOL", "context": "deterministic Python script for archiving"}], "relationships": [{"from": "MG-7C", "to": "archive_completed_meetings.py", "type": "USES", "context": "tool implemented as a script for archiving"}]}

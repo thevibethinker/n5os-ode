@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the subject being discussed"}, {"name": "Zo", "type": "PERSON", "context": "default home-base persona for V"}], "relationships": [{"from": "Zo", "to": "V", "type": "WORKS_WITH", "context": "Zo is a persona operating under V"}]}

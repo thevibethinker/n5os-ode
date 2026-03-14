@@ -1,1 +1,0 @@
-{"entities": [{"name": "Women Back to Work", "type": "ORG", "context": "a part of a larger staffing agency"}, {"name": "CRIA", "type": "ORG", "context": "the parent company of Women Back to Work"}], "relationships": [{"from": "Women Back to Work", "to": "CRIA", "type": "RELATED_TO", "context": "a part of the larger staffing agency"}]}

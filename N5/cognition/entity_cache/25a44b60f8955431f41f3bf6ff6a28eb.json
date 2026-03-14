@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "subject of the text"}, {"name": "Excalidraw", "type": "TOOL", "context": "tool used for diagramming ideas"}], "relationships": [{"from": "V", "to": "Excalidraw", "type": "USES", "context": "V uses Excalidraw to diagram ideas"}]}

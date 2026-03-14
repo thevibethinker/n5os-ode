@@ -1,7 +1,0 @@
-{
-  "drop_id": "D1.1",
-  "verdict": "PASS",
-  "reason": "All verification criteria met: orphan folder deleted, backup created with 600 files, artifacts verified on filesystem",
-  "artifacts_verified": true,
-  "concerns": []
-}

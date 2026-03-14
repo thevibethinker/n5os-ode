@@ -1,1 +1,0 @@
-{"entities": [{"name": "Cf579", "type": "PERSON", "context": "individual associated with Cornell"}, {"name": "Cornell", "type": "ORG", "context": "organization where Cf579 is affiliated"}], "relationships": [{"from": "Cf579", "to": "Cornell", "type": "WORKS_WITH", "context": "Cf579 is associated with the organization Cornell"}]}

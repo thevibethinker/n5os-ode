@@ -1,1 +1,0 @@
-{"entities": [{"name": "Matchbox", "type": "ORG", "context": "organization involved in improving candidate quality"}, {"name": "Careerspan", "type": "ORG", "context": "organization supplying candidates"}], "relationships": [{"from": "Matchbox", "to": "Careerspan", "type": "WORKS_WITH", "context": "collaboration to improve candidate quality and founder experience"}]}

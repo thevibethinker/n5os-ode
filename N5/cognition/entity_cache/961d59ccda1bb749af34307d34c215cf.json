@@ -1,1 +1,0 @@
-{"entities": [{"name": "User guide", "type": "TOOL", "context": "a guide reflecting the platonic ideal"}, {"name": "Documents/N5.md", "type": "DOCUMENT", "context": "file reflecting the new structure"}, {"name": "N5/prefs/prefs.md", "type": "DOCUMENT", "context": "file to be updated if needed"}], "relationships": []}

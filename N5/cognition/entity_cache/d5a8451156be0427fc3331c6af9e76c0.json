@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "ORG", "context": "organization that allows people to build narratives within communities"}], "relationships": [{"from": "Careerspan", "to": "trust problem", "type": "RELATED_TO", "context": "Careerspan's approach relates to the emerging trust problem in hiring"}]}

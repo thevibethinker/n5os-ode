@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "V is the subject regarding knowledge systems."}, {"name": "draft_generator.py", "type": "TOOL", "context": "A script used by V for generating drafts."}, {"name": "Projects", "type": "ORG", "context": "The organization related to the script."}], "relationships": []}

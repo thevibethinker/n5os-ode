@@ -1,1 +1,0 @@
-{"entities": [{"name": "escalade", "type": "TOOL", "context": "A library or tool for node.js related to file system access"}, {"name": "lukeed", "type": "PERSON", "context": "Creator and maintainer of the escalade tool"}], "relationships": [{"from": "lukeed", "to": "escalade", "type": "WORKS_WITH", "context": "lukeed is the creator of the escalade tool"}]}

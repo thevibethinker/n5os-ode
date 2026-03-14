@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "CEO + Founder"}, {"name": "Aviato", "type": "ORG", "context": "data source reflecting an older role"}], "relationships": [{"from": "V (Vrijen)", "to": "Aviato", "type": "WORKS_WITH", "context": "data reflects information about V's career"}]}

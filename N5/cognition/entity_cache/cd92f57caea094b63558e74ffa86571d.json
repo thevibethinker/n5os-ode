@@ -1,1 +1,0 @@
-{"entities": [{"name": "Friends & Family Trial Agreement", "type": "CONCEPT", "context": "type of agreement related to the meeting result"}, {"name": "Trial Agreement", "type": "CONCEPT", "context": "status of the deal"}, {"name": "follow-up call", "type": "EVENT", "context": "next step scheduled for the meeting"}], "relationships": []}

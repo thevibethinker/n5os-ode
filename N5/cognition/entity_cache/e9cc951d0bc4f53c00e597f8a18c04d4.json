@@ -1,1 +1,0 @@
-{"entities": [{"name": "Faith", "type": "PERSON", "context": "Contact at 42Geeks"}, {"name": "42Geeks", "type": "ORG", "context": "Organization associated with Faith"}], "relationships": [{"from": "Faith", "to": "42Geeks", "type": "WORKS_WITH", "context": "Faith is associated with the organization 42Geeks"}]}

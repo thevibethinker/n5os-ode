@@ -1,1 +1,0 @@
-{"entities": [{"name": "V Attawar", "type": "PERSON", "context": "author of the statement"}, {"name": "learning signal density", "type": "CONCEPT", "context": "concept related to human data"}], "relationships": [{"from": "V Attawar", "to": "learning signal density", "type": "BELIEVES", "context": "V believes not all human data has equal learning signal density"}]}

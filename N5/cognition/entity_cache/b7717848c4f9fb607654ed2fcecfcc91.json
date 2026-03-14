@@ -1,1 +1,0 @@
-{"entities": [{"name": "Google Drive API", "type": "TOOL", "context": "API used for access control"}], "relationships": [{"from": "V", "to": "Google Drive API", "type": "USES", "context": "V uses authenticated Google Drive API credentials for access control"}]}

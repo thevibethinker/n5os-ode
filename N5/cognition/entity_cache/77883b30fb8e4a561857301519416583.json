@@ -1,1 +1,0 @@
-{"entities": [{"name": ".destroy()", "type": "CONCEPT", "context": "A method that must be implemented by a returned stream to abort streaming and clean up resources."}, {"name": "readStream", "type": "TOOL", "context": "The stream object that has the method .destroy() and can be obtained from openReadStream()."}], "relationships": []}

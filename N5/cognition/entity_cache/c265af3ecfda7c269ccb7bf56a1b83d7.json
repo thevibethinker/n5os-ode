@@ -1,1 +1,0 @@
-{"entities": [{"name": "Nafisa Poonawala", "type": "PERSON", "context": "speaking about script dependency"}, {"name": "scripts", "type": "CONCEPT", "context": "mentioned in relation to dependency"}], "relationships": [{"from": "Nafisa Poonawala", "to": "scripts", "type": "MENTIONS", "context": "discussing the need for additional dependency"}]}

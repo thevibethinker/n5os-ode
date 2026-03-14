@@ -1,1 +1,0 @@
-{"entities": [{"name": "Nira", "type": "PERSON", "context": "dynamic profile personalization"}, {"name": "Careerspan", "type": "ORG", "context": "captures fuzzy information"}], "relationships": [{"from": "Nira", "to": "Careerspan", "type": "USES", "context": "Nira uses Careerspan for capturing fuzzy information"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "Co-founder/CRO of a company"}, {"name": "Careerspan", "type": "ORG", "context": "Recruiting/talent services organization"}], "relationships": [{"from": "V", "to": "Careerspan", "type": "WORKS_WITH", "context": "V co-founded a company with strategic partnership opportunities for Careerspan's services"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Miss Piggy", "type": "PERSON", "context": "a character portrayed as an abuser"}, {"name": "patriarchy", "type": "CONCEPT", "context": "system reinforcing negative portrayals"}], "relationships": [{"from": "Miss Piggy", "to": "patriarchy", "type": "RELATED_TO", "context": "Miss Piggy's situation is interpreted as a critique of the patriarchy"}]}

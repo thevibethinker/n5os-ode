@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the individual referenced in the text"}, {"name": "glossary.json", "type": "TOOL", "context": "a file accumulating definitions across builds"}], "relationships": []}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "V is the subject of the text"}, {"name": "uglifyjs", "type": "TOOL", "context": "A tool used for compressing JavaScript files"}], "relationships": [{"from": "V", "to": "uglifyjs", "type": "USES", "context": "V uses uglifyjs to compress JavaScript files"}]}

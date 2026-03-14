@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "owner responsible for exception review"}, {"name": "System", "type": "ORG", "context": "automated system managing knowledge"}], "relationships": [{"from": "System", "to": "V", "type": "USES", "context": "V reviews exceptions in the automated system"}]}

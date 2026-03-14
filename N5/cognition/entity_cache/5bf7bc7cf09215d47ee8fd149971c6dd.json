@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker discussing the knowledge system"}, {"name": "Careers Man", "type": "TOOL", "context": "Recommended tool for analyzing job descriptions"}], "relationships": [{"from": "Vrijen Attawar", "to": "Careers Man", "type": "USES", "context": "Recommends the tool for job description analysis"}]}

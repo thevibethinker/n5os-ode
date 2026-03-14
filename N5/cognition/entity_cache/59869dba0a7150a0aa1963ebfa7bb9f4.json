@@ -1,1 +1,0 @@
-{"entities": [{"name": "GoogleChromeLabs", "type": "ORG", "context": "the organization responsible for the update-browser-version job"}, {"name": "chromium-bidi", "type": "TOOL", "context": "the GitHub repository related to the browser version update"}], "relationships": []}

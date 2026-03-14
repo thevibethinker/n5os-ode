@@ -1,1 +1,0 @@
-{"entities": [{"name": "README.md", "type": "TOOL", "context": "Documentation for the knowledge system"}, {"name": "index.jsonl", "type": "TOOL", "context": "Registry of all lists in the knowledge system"}, {"name": "{list-name}.jsonl", "type": "TOOL", "context": "A singular list within the knowledge system, maintained as SSOT"}], "relationships": []}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual transitioning to a consulting business"}, {"name": "AI tool", "type": "TOOL", "context": "tool promoted by V for prompting and automation"}], "relationships": [{"from": "V", "to": "AI tool", "type": "USES", "context": "V uses the tool for sales and marketing functionality"}]}

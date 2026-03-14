@@ -1,1 +1,0 @@
-/home/workspace/ZoATS/workers/backup_list/manager.py

@@ -1,1 +1,0 @@
-[2026-02-27T00:04:43Z] Posting cycle: Moltbook API timeout during publish (transient). Engagement collect succeeded: 96 posts, 76 comments, 115 followers, 1454 karma. 48 staged posts ready. No critical errors.

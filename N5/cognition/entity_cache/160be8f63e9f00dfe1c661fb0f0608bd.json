@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual analyzing partnership dynamics"}, {"name": "Ecosystem", "type": "CONCEPT", "context": "refers to partnership dynamics in forming market"}], "relationships": [{"from": "V (Vrijen)", "to": "Ecosystem", "type": "KNOWS", "context": "understands partnership dynamics in market formation"}]}

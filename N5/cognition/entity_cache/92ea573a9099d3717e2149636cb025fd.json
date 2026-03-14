@@ -1,1 +1,0 @@
-{"entities": [{"name": "Akiflow", "type": "ORG", "context": "a tool that is routed to"}, {"name": "n8n", "type": "TOOL", "context": "an automation tool used for routing"}], "relationships": [{"from": "V", "to": "Akiflow", "type": "USES", "context": "V routes to Akiflow"}, {"from": "V", "to": "n8n", "type": "USES", "context": "V uses n8n for routing"}]}

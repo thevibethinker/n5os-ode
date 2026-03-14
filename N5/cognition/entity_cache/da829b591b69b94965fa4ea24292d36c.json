@@ -1,1 +1,0 @@
-{"entities": [{"name": "Logan Currie", "type": "PERSON", "context": "individual discussing the knowledge system"}, {"name": "careerspan", "type": "ORG", "context": "organization referenced for job application purposes"}], "relationships": [{"from": "Logan Currie", "to": "careerspan", "type": "MENTIONS", "context": "referred in relation to job applications"}]}

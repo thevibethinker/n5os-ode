@@ -1,1 +1,0 @@
-{"entities": [{"name": "43North", "type": "ORG", "context": "an organization where V works"}, {"name": "nick@43north.org", "type": "PERSON", "context": "contact email of V"}], "relationships": [{"from": "nick@43north.org", "to": "43North", "type": "WORKS_WITH", "context": "Nick is the Portfolio Talent Lead at 43North"}]}

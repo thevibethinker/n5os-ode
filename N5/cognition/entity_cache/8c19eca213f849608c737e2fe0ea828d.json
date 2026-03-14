@@ -1,1 +1,0 @@
-{"entities": [{"name": "HR", "type": "ORG", "context": "Human Resources department involved in hiring"}, {"name": "hiring managers", "type": "ORG", "context": "Managers responsible for the hiring process"}], "relationships": [{"from": "HR", "to": "hiring managers", "type": "RELATED_TO", "context": "Both are involved in the hiring process"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "the speaker"}, {"name": "LLM API", "type": "TOOL", "context": "the tool being referred to for a discount"}], "relationships": [{"from": "Vrijen Attawar", "to": "LLM API", "type": "USES", "context": "referring to LLM API price for discounts"}]}

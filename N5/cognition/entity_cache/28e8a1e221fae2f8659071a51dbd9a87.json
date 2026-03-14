@@ -1,1 +1,0 @@
-{"entities": [{"name": "Maximilian Kwok", "type": "PERSON", "context": "Speaker discussing the concept"}, {"name": "V", "type": "PERSON", "context": "Subject of discussion"}], "relationships": [{"from": "Maximilian Kwok", "to": "V", "type": "KNOWS", "context": "Maximilian is speaking about V"}]}

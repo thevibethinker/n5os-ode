@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ilsa", "type": "PERSON", "context": "key operator"}], "relationships": [{"from": "Ilsa", "to": "operational continuity", "type": "RELATED_TO", "context": "leaving without transition plan affects operational continuity"}]}

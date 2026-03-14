@@ -1,1 +1,0 @@
-{"entities": [{"name": "once", "type": "TOOL", "context": "A tool for ensuring a callback is called only once"}, {"name": "wrappy", "type": "TOOL", "context": "A utility used to create a function that wraps a callback"}], "relationships": [{"from": "wrappy", "to": "once", "type": "USES", "context": "wrappy is used to create the once function"}]}

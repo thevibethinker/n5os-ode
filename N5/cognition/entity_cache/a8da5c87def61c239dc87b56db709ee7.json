@@ -1,1 +1,0 @@
-{"entities": [{"name": "stakeholder_name", "type": "PERSON", "context": "name of the stakeholder being searched"}, {"name": "organization", "type": "ORG", "context": "name of the organization related to the stakeholder"}], "relationships": []}

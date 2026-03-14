@@ -1,1 +1,0 @@
-{"entities": [{"name": "V1", "type": "CONCEPT", "context": "the current matching system used by V"}, {"name": "roles", "type": "CONCEPT", "context": "the positions being parsed and stored from the XML feed"}], "relationships": [{"from": "V1", "to": "roles", "type": "RELATED_TO", "context": "roles are part of the system V1 is concerned with"}]}

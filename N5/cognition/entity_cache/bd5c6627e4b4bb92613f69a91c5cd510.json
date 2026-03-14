@@ -1,1 +1,0 @@
-{"entities": [{"name": "Emily", "type": "PERSON", "context": "runs a podcast"}, {"name": "founder stories", "type": "CONCEPT", "context": "great instincts for"}], "relationships": [{"from": "V", "to": "Emily", "type": "KNOWS", "context": "suggested a connection"}, {"from": "V", "to": "founder stories", "type": "MENTIONS", "context": "has great instincts for"}]}

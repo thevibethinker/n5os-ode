@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "Orchestration Pattern", "type": "CONCEPT", "context": "a principle related to orchestrating agents"}], "relationships": [{"from": "V (Vrijen)", "to": "Orchestration Pattern", "type": "BELIEVES", "context": "V believes in the concept of orchestration"}]}

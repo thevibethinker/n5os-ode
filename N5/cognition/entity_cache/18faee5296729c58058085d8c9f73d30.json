@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the subject of the knowledge system"}, {"name": "transcript_length", "type": "CONCEPT", "context": "a measure used for analysis of transcript content"}], "relationships": [{"from": "V", "to": "transcript_length", "type": "KNOWS", "context": "V implements a check on transcript length for analysis purposes"}]}

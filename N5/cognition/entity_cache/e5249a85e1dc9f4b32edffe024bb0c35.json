@@ -1,1 +1,0 @@
-{"entities": [{"name": "Jviassy", "type": "PERSON", "context": "New local chapter lead"}, {"name": "V", "type": "PERSON", "context": "New local chapter lead/observer"}], "relationships": [{"from": "V", "to": "Jviassy", "type": "WORKS_WITH", "context": "both are local chapter leads"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker discussing cyborg future"}, {"name": "cyborg future", "type": "CONCEPT", "context": "Inevitable merging of man and machine"}], "relationships": [{"from": "Vrijen Attawar", "to": "cyborg future", "type": "BELIEVES", "context": "Believes in merging of man and machine"}]}

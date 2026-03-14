@@ -1,1 +1,0 @@
-{"entities": [{"name": "Paula", "type": "PERSON", "context": "Interviewer or conversation partner asking V about the origin story of what V built"}], "relationships": [{"from": "Paula", "to": "V", "type": "KNOWS", "context": "Paula is interviewing or having a conversation with V about V's entrepreneurial journey"}]}

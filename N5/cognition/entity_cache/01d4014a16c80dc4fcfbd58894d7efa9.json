@@ -1,1 +1,0 @@
-{"entities": [{"name": "n5", "type": "TOOL", "context": "Command router in /usr/local/bin/"}], "relationships": [{"from": "n5", "to": "Python script", "type": "USES", "context": "Routes `n5 launch-worker` to Python script"}, {"from": "n5", "to": "CLI interface", "type": "PROVIDES", "context": "Provides unified CLI interface"}]}

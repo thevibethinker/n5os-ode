@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual involved in peer learning"}, {"name": "Zo workflows", "type": "CONCEPT", "context": "workflows being explored by V"}], "relationships": [{"from": "V", "to": "Zo workflows", "type": "KNOWS", "context": "V is exploring Zo workflows independently"}]}

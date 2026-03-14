@@ -1,1 +1,0 @@
-{"entities": [{"name": "Us", "type": "ORG", "context": "The entity that promised the verification of the test transcript."}], "relationships": [{"from": "Us", "to": "Test Transcript Verification", "type": "PROMISES", "context": "Us promised to verify the test transcript."}]}

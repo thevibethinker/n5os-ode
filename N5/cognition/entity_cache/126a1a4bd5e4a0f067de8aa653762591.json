@@ -1,1 +1,0 @@
-{"entities": [{"name": "Fitbit app", "type": "TOOL", "context": "an application used for tracking weight and physical activity"}], "relationships": [{"from": "V", "to": "Fitbit app", "type": "USES", "context": "V uses the Fitbit app to log weight"}]}

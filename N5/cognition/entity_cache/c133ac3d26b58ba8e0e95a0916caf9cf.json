@@ -1,1 +1,0 @@
-{"entities": [{"name": "Aki", "type": "PERSON", "context": "person mentioned for email notification"}, {"name": "V", "type": "PERSON", "context": "person involved in matching engine actions"}], "relationships": [{"from": "V", "to": "Aki", "type": "WORKS_WITH", "context": "V notifies Aki as part of completion actions"}]}

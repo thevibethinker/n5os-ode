@@ -1,1 +1,0 @@
-{"entities": [{"name": "Safety validator", "type": "TOOL", "context": "A script used for validating safety measures."}, {"name": "Placeholder detection", "type": "TOOL", "context": "A script used for detecting placeholders in documents."}], "relationships": []}

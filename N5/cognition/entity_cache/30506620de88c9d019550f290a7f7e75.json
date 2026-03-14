@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual involved in the conversation"}, {"name": "Careerspan", "type": "ORG", "context": "organization being built related to hiring challenges"}], "relationships": [{"from": "V", "to": "Careerspan", "type": "WORKS_WITH", "context": "V is involved with the organization Careerspan"}]}

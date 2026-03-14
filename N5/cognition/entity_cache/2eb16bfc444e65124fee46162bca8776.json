@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "ORG", "context": "source of knowledge system"}, {"name": "Alex", "type": "PERSON", "context": "individual involved in price check"}], "relationships": [{"from": "Vrijen", "to": "Alex", "type": "WORKS_WITH", "context": "price check collaboration"}]}

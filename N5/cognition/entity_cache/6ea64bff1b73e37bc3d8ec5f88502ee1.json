@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo", "type": "PERSON", "context": "AI assistant for Vrijen"}, {"name": "Vrijen", "type": "PERSON", "context": "the main individual being assisted by Zo"}], "relationships": [{"from": "Zo", "to": "Vrijen", "type": "WORKS_WITH", "context": "Zo assists Vrijen in meeting prep and research"}]}

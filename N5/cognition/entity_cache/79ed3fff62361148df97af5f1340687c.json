@@ -1,1 +1,0 @@
-{"entities": [{"name": "Devd", "type": "PERSON", "context": "individual associated with Varia-Ai"}, {"name": "Varia-Ai", "type": "ORG", "context": "organization associated with Devd"}], "relationships": [{"from": "Devd", "to": "Varia-Ai", "type": "WORKS_WITH", "context": "Devd is part of the organization Varia-Ai"}]}

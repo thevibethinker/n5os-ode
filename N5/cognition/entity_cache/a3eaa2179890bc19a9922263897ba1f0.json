@@ -1,1 +1,0 @@
-{"entities": [{"name": "Pulse", "type": "ORG", "context": "system analyzing brief"}, {"name": "V", "type": "PERSON", "context": "recommended review"}], "relationships": [{"from": "Pulse", "to": "V", "type": "MENTIONS", "context": "recommended actions based on brief content"}]}

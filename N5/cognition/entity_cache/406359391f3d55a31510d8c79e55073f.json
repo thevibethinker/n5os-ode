@@ -1,1 +1,0 @@
-{"entities": [{"name": "MG-7C", "type": "ORG", "context": "C-state Archive Automation system managing archival workflow"}], "relationships": [{"from": "MG-7C", "to": "C-state Archive Automation", "type": "USES", "context": "handles archival workflow"}]}

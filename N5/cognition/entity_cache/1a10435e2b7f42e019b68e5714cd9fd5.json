@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual expressing the opinion"}, {"name": "AI for resume scanning", "type": "CONCEPT", "context": "subject of investment consideration"}], "relationships": [{"from": "V", "to": "AI for resume scanning", "type": "BELIEVES", "context": "V believes companies won't invest in it due to low signal-to-noise ratio"}]}

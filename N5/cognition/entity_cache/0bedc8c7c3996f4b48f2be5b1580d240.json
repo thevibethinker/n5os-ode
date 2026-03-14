@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual with a knowledge system"}, {"name": "Product School", "type": "ORG", "context": "organization related to hiring experience"}], "relationships": [{"from": "V", "to": "Product School", "type": "KNOWS", "context": "knowledge of hiring practices and experiences"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Author of the quote"}, {"name": "hypotheses", "type": "CONCEPT", "context": "Partnership hypotheses discussed by V"}], "relationships": [{"from": "Vrijen Attawar", "to": "hypotheses", "type": "BELIEVES", "context": "V believes in the importance of the partnership hypotheses"}]}

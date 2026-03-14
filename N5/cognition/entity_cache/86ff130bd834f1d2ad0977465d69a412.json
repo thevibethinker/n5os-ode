@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "individual discussing goals and support"}, {"name": "operating framework", "type": "CONCEPT", "context": "framework for helping others achieve their goals"}], "relationships": [{"from": "Vrijen Attawar", "to": "operating framework", "type": "BELIEVES", "context": "believes in helping boost other people"}]}

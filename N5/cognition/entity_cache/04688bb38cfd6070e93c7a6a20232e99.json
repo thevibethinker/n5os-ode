@@ -1,1 +1,0 @@
-{"entities": [{"name": "Gabi", "type": "PERSON", "context": "individual involved in the meeting"}, {"name": "Logan", "type": "PERSON", "context": "individual scheduled for a meeting with Gabi"}], "relationships": [{"from": "Gabi", "to": "Logan", "type": "WORKS_WITH", "context": "scheduled to meet about workflows"}]}

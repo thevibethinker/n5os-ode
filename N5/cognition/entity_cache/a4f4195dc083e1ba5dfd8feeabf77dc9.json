@@ -1,1 +1,0 @@
-{"entities": [{"name": "Plaud", "type": "ORG", "context": "an organization associated with foundational data"}, {"name": "AI", "type": "CONCEPT", "context": "artificial intelligence relevant to personalization"}], "relationships": [{"from": "Plaud", "to": "AI", "type": "BELIEVES", "context": "Plaud's philosophy centers on the impact of foundational data on AI personalization"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Aaron Mak Hoffman", "type": "PERSON", "context": "individual discussing knowledge system"}, {"name": "Replit", "type": "TOOL", "context": "platform used for building apps"}], "relationships": [{"from": "Aaron Mak Hoffman", "to": "Replit", "type": "USES", "context": "Aaron uses Replit to execute app builds"}]}

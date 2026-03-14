@@ -1,1 +1,0 @@
-{"entities": [{"name": "SQLite database", "type": "TOOL", "context": "A tool used for managing workout data"}, {"name": "OAuth credentials", "type": "TOOL", "context": "Used for authentication with Fitbit API"}], "relationships": []}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ryan", "type": "PERSON", "context": "provides feedback regarding emotional state"}, {"name": "emotional state matters", "type": "BELIEF", "context": "importance of emotional state in feedback"}], "relationships": [{"from": "Ryan", "to": "emotional state matters", "type": "BELIEVES", "context": "Ryan believes that emotional state is important"}]}

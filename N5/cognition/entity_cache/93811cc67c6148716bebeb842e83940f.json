@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "V's knowledge system"}, {"name": "Exploration", "type": "CONCEPT", "context": "Stage definition in the knowledge system"}], "relationships": [{"from": "Vrijen", "to": "Exploration", "type": "KNOWS", "context": "Vrijen understands the concept of exploration in relation to collaboration"}]}

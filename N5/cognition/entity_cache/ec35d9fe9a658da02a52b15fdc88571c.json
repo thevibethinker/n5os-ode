@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "ORG", "context": "A platform that uses AI-led coaching conversations for professional data extraction."}], "relationships": [{"from": "Careerspan", "to": "AI-led coaching conversations", "type": "USES", "context": "Utilizes AI-led coaching for extracting data."}]}

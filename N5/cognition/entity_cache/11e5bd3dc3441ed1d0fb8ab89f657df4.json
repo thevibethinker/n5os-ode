@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the individual whose knowledge system is being discussed"}, {"name": "Orchestrator", "type": "ORG", "context": "the entity that reviews V's knowledge system"}], "relationships": [{"from": "V", "to": "Orchestrator", "type": "WORKS_WITH", "context": "V's knowledge system is reviewed by the Orchestrator"}]}

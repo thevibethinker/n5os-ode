@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "Involved in a partnership exploration"}, {"name": "partnership exploration call", "type": "EVENT", "context": "Date: 2025-10-24"}], "relationships": [{"from": "V (Vrijen)", "to": "partnership exploration call", "type": "KNOWS", "context": "Participated in the call for partnership exploration"}]}

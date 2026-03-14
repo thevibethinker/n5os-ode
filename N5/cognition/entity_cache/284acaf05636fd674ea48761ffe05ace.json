@@ -1,1 +1,0 @@
-{"entities": [{"name": "Usha", "type": "PERSON", "context": "expressed interest in Careerspan's capabilities"}, {"name": "Careerspan", "type": "ORG", "context": "has capabilities acknowledged by Usha"}], "relationships": [{"from": "Usha", "to": "Careerspan", "type": "KNOWS", "context": "acknowledged its capabilities and expressed interest"}]}

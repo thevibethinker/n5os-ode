@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "individual discussing industry reliance on resumes"}, {"name": "the industry", "type": "ORG", "context": "the sector relying on resumes"}], "relationships": [{"from": "Vrijen", "to": "the industry", "type": "BELIEVES", "context": "that the industry is blind due to reliance on resumes"}]}

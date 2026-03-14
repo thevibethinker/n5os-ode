@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "User initiating task to draft investor email"}, {"name": "Action-check", "type": "TOOL", "context": "System that checks for matching tasks in registry"}], "relationships": [{"from": "V", "to": "Action-check", "type": "USES", "context": "System used to verify if task already exists before starting work"}]}

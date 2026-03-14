@@ -1,1 +1,0 @@
-{"entities": [{"name": "Mihir", "type": "PERSON", "context": "Provides advice and heuristics during meetings"}, {"name": "B25", "type": "EVENT", "context": "Meeting with no formal deliverables committed"}], "relationships": [{"from": "Mihir", "to": "B25", "type": "RELATED_TO", "context": "Provides advice and heuristics during the meeting, no concrete deliverables promised"}]}

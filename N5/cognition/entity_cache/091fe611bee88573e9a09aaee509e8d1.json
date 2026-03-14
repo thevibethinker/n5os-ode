@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the individual associated with the knowledge system"}, {"name": "Compression", "type": "CONCEPT", "context": "a technique for managing session data"}], "relationships": [{"from": "V", "to": "Compression", "type": "USES", "context": "V implements compression to manage long session data"}]}

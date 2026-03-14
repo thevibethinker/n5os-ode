@@ -1,1 +1,0 @@
-{"entities": [{"name": "AI-driven coaching", "type": "CONCEPT", "context": "a method of coaching that utilizes artificial intelligence"}], "relationships": [{"from": "founders", "to": "AI-driven coaching", "type": "BELIEVES", "context": "founders believe AI-driven coaching impacts career readiness"}]}

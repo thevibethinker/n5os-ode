@@ -1,1 +1,0 @@
-{"entities": [{"name": "Caleb", "type": "PERSON", "context": "individual with a track record in funding"}, {"name": "Emory", "type": "ORG", "context": "organization providing secondary value"}], "relationships": [{"from": "Caleb", "to": "Emory", "type": "RELATED_TO", "context": "Caleb's actions create secondary value related to Emory"}]}

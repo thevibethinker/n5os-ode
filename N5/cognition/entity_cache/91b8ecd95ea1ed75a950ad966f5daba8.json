@@ -1,1 +1,0 @@
-{"entities": [{"name": "Peterweddle", "type": "PERSON", "context": "a contact at Tatech"}, {"name": "Tatech", "type": "ORG", "context": "organization associated with Peterweddle"}], "relationships": [{"from": "Peterweddle", "to": "Tatech", "type": "WORKS_WITH", "context": "Peterweddle is associated with the organization Tatech"}]}

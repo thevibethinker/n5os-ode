@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual with a knowledge system"}, {"name": "The Fourth Effect", "type": "ORG", "context": "business model being analyzed for partnership potential"}], "relationships": [{"from": "V", "to": "The Fourth Effect", "type": "KNOWS", "context": "V needs to understand the business model for potential partnership"}]}

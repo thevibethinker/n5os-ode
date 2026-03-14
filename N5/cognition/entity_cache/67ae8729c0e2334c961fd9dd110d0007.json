@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "an individual who requests construction and system setup"}, {"name": "Builder", "type": "TOOL", "context": "a system activated for construction and setup tasks"}], "relationships": [{"from": "V", "to": "Builder", "type": "USES", "context": "V activates Builder for construction and setup requests"}]}

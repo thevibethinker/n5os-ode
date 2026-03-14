@@ -1,1 +1,0 @@
-{"entities": [{"name": "DeepWiki", "type": "ORG", "context": "a platform for creating Wikipedia-style documentation"}, {"name": "Canva", "type": "TOOL", "context": "a tool for creating design decks"}], "relationships": [{"from": "Canva", "to": "DeepWiki", "type": "MENTIONS", "context": "Canva decks are being considered for upload to DeepWiki"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "individual mentioned in the text"}, {"name": "Teacher Persona", "type": "CONCEPT", "context": "concept mentioned in relation to Vrijen"}], "relationships": [{"from": "Vrijen Attawar", "to": "Teacher Persona", "type": "KNOWS", "context": "Vrijen discusses the concept of Teacher Persona"}]}

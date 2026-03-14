@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ola", "type": "ORG", "context": "Organization mentioned in relation to HR"}, {"name": "Careerspan", "type": "ORG", "context": "Organization mentioned as not directly competing with Ola"}], "relationships": [{"from": "Ola", "to": "Careerspan", "type": "RELATED_TO", "context": "Different verticals of HR/career ecosystem"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "meeting-approve", "type": "TOOL", "context": "Command for reviewing and approving generated blocks"}, {"name": "deliverable-generate", "type": "TOOL", "context": "Command for creating deliverables from blocks"}, {"name": "follow-up-email-generator", "type": "TOOL", "context": "Command for drafting follow-up emails"}], "relationships": []}

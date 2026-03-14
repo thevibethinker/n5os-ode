@@ -1,1 +1,0 @@
-{"entities": [{"name": "Jacob Bank", "type": "PERSON", "context": "Founder & CEO of Relay App"}, {"name": "Relay App", "type": "ORG", "context": "An organization led by Jacob Bank"}], "relationships": [{"from": "Jacob Bank", "to": "Relay App", "type": "WORKS_WITH", "context": "Jacob Bank is the founder and CEO"}]}

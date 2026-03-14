@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "ORG", "context": "AI-powered virtual recruiter"}], "relationships": [{"from": "Careerspan", "to": "communities", "type": "WORKS_WITH", "context": "partners with communities to help job seekers"}]}

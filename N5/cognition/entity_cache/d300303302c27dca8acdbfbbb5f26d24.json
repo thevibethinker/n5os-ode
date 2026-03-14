@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual known for their knowledge system"}, {"name": "WORKER_[N]_ASSIGNMENT.md", "type": "TOOL", "context": "file related to assignments in the V's knowledge system"}], "relationships": []}

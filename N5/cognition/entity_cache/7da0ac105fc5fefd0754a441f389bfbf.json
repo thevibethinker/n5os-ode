@@ -1,1 +1,0 @@
-{"entities": [{"name": "Elaine P", "type": "PERSON", "context": "Participant in the conversation"}, {"name": "cursor", "type": "TOOL", "context": "Possibly a programming tool mentioned in relation to coding"}], "relationships": [{"from": "Elaine P", "to": "cursor", "type": "MENTIONS", "context": "Elaine P mentions cursor in the context of coding"}]}

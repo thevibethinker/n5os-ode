@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "ORG", "context": "organization evaluating ARR targets and KPI frameworks"}], "relationships": [{"from": "V", "to": "Careerspan", "type": "WORKS_WITH", "context": "V is associated with or involved with Careerspan"}]}

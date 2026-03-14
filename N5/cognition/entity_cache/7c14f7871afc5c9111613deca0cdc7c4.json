@@ -1,1 +1,0 @@
-{"entities": [{"name": "David Speigel", "type": "PERSON", "context": "Video editor sought by V"}], "relationships": [{"from": "V", "to": "David Speigel", "type": "WORKS_WITH", "context": "V needed a video editor"}]}

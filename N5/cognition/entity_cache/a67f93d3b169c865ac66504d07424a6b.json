@@ -1,1 +1,0 @@
-{"entities": [{"name": "Alex", "type": "PERSON", "context": "a person who made a discovery post-launch"}, {"name": "non-technical users", "type": "CONCEPT", "context": "identified as a key ICP"}], "relationships": [{"from": "Alex", "to": "non-technical users", "type": "BELIEVES", "context": "discovered the importance of serving non-technical users post-launch"}]}

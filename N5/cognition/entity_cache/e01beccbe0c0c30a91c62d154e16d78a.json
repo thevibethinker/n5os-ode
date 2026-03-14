@@ -1,1 +1,0 @@
-{"entities": [{"name": "minimist", "type": "ORG", "context": "a library for parsing command-line arguments"}, {"name": "tape", "type": "TOOL", "context": "a testing framework for JavaScript"}], "relationships": [{"from": "minimist", "to": "tape", "type": "USES", "context": "tape is used as a testing tool within the minimist library"}]}

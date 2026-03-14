@@ -1,1 +1,0 @@
-{"entities": [{"name": "Paul Lee", "type": "PERSON", "context": "speaker"}, {"name": "Greenlight", "type": "ORG", "context": "organization associated with Paul Lee"}], "relationships": [{"from": "Paul Lee", "to": "Greenlight", "type": "WORKS_WITH", "context": "Paul Lee works at Greenlight"}]}

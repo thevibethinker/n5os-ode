@@ -1,1 +1,0 @@
-{"entities": [{"name": "Human-in-the-Loop", "type": "CONCEPT", "context": "A system design approach that requires human approval for certain processes."}, {"name": "115+ commands", "type": "TOOL", "context": "Commands used within the knowledge system."}], "relationships": []}

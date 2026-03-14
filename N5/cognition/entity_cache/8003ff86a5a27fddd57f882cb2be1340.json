@@ -1,1 +1,0 @@
-{"entities": [{"name": "Google Drive", "type": "TOOL", "context": "a cloud storage service used for integration"}, {"name": "Coding agent", "type": "TOOL", "context": "a software agent used for coding integration"}], "relationships": []}

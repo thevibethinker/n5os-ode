@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual related to the knowledge system"}, {"name": "coaching", "type": "CONCEPT", "context": "concept related to positioning in the context"}], "relationships": [{"from": "V", "to": "coaching", "type": "BELIEVES", "context": "V validates coaching positioning"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo", "type": "ORG", "context": "Zo's built-in capabilities for knowledge systems"}], "relationships": [{"from": "V", "to": "Zo", "type": "USES", "context": "V uses Zo's capabilities for building the knowledge system"}]}

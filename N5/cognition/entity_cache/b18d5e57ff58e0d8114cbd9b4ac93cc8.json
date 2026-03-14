@@ -1,1 +1,0 @@
-{"entities": [{"name": "system_states", "type": "CONCEPT", "context": "intelligent initial values in the knowledge system"}, {"name": "existing manifests", "type": "CONCEPT", "context": "files that were migrated in the knowledge system"}, {"name": "files", "type": "CONCEPT", "context": "existing files used for intelligent initial values"}], "relationships": []}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Konrad", "type": "PERSON", "context": "contact associated with Aviato.Co"}, {"name": "Aviato.Co", "type": "ORG", "context": "organization associated with the person Konrad"}], "relationships": [{"from": "Konrad", "to": "Aviato.Co", "type": "WORKS_WITH", "context": "Konrad is associated with Aviato.Co"}]}

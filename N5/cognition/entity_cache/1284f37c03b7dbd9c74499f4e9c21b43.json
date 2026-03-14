@@ -1,1 +1,0 @@
-{"entities": [{"name": "experienced senior engineer", "type": "PERSON", "context": "describes the type of engineer involved in the project"}, {"name": "requirements", "type": "CONCEPT", "context": "specifies the needs from the beginning of the project"}, {"name": "rework", "type": "CONCEPT", "context": "refers to the need for revisions during the project"}], "relationships": []}

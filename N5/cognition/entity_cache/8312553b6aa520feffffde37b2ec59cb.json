@@ -1,1 +1,0 @@
-{"entities": [{"name": "LLMs", "type": "CONCEPT", "context": "Large Language Models used for code editing"}, {"name": "V", "type": "PERSON", "context": "Refers to the individual associated with the knowledge system"}], "relationships": [{"from": "V", "to": "LLMs", "type": "KNOWS", "context": "V is aware of LLMs and their performance in code editing"}]}

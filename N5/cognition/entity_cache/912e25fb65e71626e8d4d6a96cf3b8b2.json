@@ -1,1 +1,0 @@
-{"entities": [{"name": "Jen", "type": "PERSON", "context": "owner of the knowledge system"}, {"name": "integrated platforms", "type": "CONCEPT", "context": "potential solution for dual calendar problem"}], "relationships": [{"from": "Jen", "to": "integrated platforms", "type": "MENTIONS", "context": "exploring their use to solve a problem"}]}

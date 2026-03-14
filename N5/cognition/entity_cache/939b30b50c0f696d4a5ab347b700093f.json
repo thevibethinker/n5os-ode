@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "ORG", "context": "organization discussed in the meeting"}, {"name": "PostHog", "type": "TOOL", "context": "tool used for data validation"}], "relationships": [{"from": "Careerspan", "to": "PostHog", "type": "USES", "context": "Careerspan uses PostHog data for validation"}]}

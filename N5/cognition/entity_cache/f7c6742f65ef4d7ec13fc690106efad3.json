@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "offered trial and roadmap visibility"}, {"name": "Usha", "type": "PERSON", "context": "received trial offer from Vrijen"}], "relationships": [{"from": "Vrijen", "to": "Usha", "type": "WORKS_WITH", "context": "Vrijen offered trial to Usha"}]}

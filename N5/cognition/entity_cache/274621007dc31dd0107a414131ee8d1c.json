@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ryan Carson", "type": "PERSON", "context": "described essential players in technology"}, {"name": "technology", "type": "CONCEPT", "context": "next decade of development"}], "relationships": [{"from": "Ryan Carson", "to": "technology", "type": "MENTIONS", "context": "describes players that will build the next decade"}]}

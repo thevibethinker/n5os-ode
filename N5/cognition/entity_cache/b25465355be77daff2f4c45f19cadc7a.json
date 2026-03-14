@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "Refers to an individual involved in the knowledge system"}, {"name": "ASU", "type": "ORG", "context": "Refers to Arizona State University, mentioned in conference follow-up"}], "relationships": [{"from": "V", "to": "ASU", "type": "WORKS_WITH", "context": "Upon coordinating on ASU conference follow-up"}]}

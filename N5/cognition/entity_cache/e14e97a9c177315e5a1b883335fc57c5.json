@@ -1,1 +1,0 @@
-{"entities": [{"name": "Incantum", "type": "TOOL", "context": "a trigger system for natural language"}, {"name": "Graceful Degradation", "type": "CONCEPT", "context": "a process for handling incantum triggers"}], "relationships": [{"from": "Incantum", "to": "Graceful Degradation", "type": "USES", "context": "Incantum is used in the process of graceful degradation"}]}

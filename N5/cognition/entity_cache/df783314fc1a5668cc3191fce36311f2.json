@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo", "type": "PERSON", "context": "author of the LinkedIn tool"}, {"name": "LinkedIn", "type": "TOOL", "context": "tool for searching profiles and messaging"}], "relationships": [{"from": "Zo", "to": "LinkedIn", "type": "CREATED", "context": "Zo is the author of the LinkedIn tool"}]}

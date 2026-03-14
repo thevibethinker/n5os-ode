@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "The individual making the decision"}, {"name": "India travel", "type": "CONCEPT", "context": "The context for generating pay slips"}], "relationships": [{"from": "V", "to": "India travel", "type": "RELATED_TO", "context": "Decision to generate pay slips related to travel to India"}]}

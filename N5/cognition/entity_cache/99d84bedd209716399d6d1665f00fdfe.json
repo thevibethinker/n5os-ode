@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ilya", "type": "PERSON", "context": "part of the team briefing"}, {"name": "sales strategy", "type": "CONCEPT", "context": "new strategy discussed in the briefing"}], "relationships": [{"from": "Ilya", "to": "sales strategy", "type": "KNOWS", "context": "establishing the boundaries of the new sales strategy"}]}

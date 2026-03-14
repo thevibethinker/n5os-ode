@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "refers to the individual Vrijen"}, {"name": "meeting intelligence", "type": "CONCEPT", "context": "represents a concept of data derived from meetings"}], "relationships": [{"from": "V", "to": "meeting intelligence", "type": "USES", "context": "V uses meeting intelligence as a data asset for follow-ups"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "Introducer of the knowledge system"}, {"name": "WAGs", "type": "CONCEPT", "context": "Controversy about Wives and Girlfriends of footballers"}], "relationships": [{"from": "Vrijen", "to": "WAGs", "type": "MENTIONS", "context": "Introduced the concept in the knowledge system"}]}

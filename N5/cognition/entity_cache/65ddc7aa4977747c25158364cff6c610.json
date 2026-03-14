@@ -1,1 +1,0 @@
-{"entities": [{"name": "SBC", "type": "ORG", "context": "an organization that will be visited in the morning"}, {"name": "region", "type": "CONCEPT", "context": "context of the location where the meeting will take place"}], "relationships": []}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "subject of the knowledge system"}, {"name": "Logan Currie", "type": "PERSON", "context": "individual mentioned in the text"}], "relationships": [{"from": "V (Vrijen)", "to": "Logan Currie", "type": "KNOWS", "context": "relationship implied in the text"}]}

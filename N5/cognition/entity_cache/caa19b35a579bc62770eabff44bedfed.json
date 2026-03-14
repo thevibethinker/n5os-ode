@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "researcher involved in family care"}, {"name": "family care", "type": "CONCEPT", "context": "context of the research"}], "relationships": [{"from": "V (Vrijen)", "to": "family care", "type": "BELIEVES", "context": "research conducted in the context of family care"}]}

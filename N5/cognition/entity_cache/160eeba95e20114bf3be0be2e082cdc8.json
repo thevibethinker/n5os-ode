@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ivor Stratford", "type": "PERSON", "context": "Contact from Morpheus-Group"}, {"name": "Morpheus-Group", "type": "ORG", "context": "Organization associated with Ivor Stratford"}], "relationships": [{"from": "Ivor Stratford", "to": "Morpheus-Group", "type": "WORKS_WITH", "context": "Employee or contact at the organization"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "subject of the knowledge system"}, {"name": "Gamma app", "type": "TOOL", "context": "application used to manage gamma ID"}], "relationships": [{"from": "V", "to": "Gamma app", "type": "USES", "context": "V uses Gamma app to find and copy gamma ID"}]}

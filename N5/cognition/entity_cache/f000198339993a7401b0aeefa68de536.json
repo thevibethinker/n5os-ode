@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "Individual associated with the knowledge system"}, {"name": "name normalizer", "type": "TOOL", "context": "Tool for standardizing names in meetings"}, {"name": "low-quality meetings", "type": "CONCEPT", "context": "Meetings identified as needing regeneration for quality purposes"}], "relationships": []}

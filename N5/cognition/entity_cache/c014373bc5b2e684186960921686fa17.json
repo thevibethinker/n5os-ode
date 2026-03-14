@@ -1,1 +1,0 @@
-{"entities": [{"name": "Google Drive", "type": "TOOL", "context": "cloud storage service used to scan for transcripts"}, {"name": "N5", "type": "ORG", "context": "system used for processing requests"}], "relationships": []}

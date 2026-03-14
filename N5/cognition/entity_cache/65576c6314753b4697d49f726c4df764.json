@@ -1,1 +1,0 @@
-{"entities": [{"name": "SocksClient", "type": "TOOL", "context": "A tool used for creating UDP frames."}, {"name": "udpSocket", "type": "TOOL", "context": "A socket used for sending packets via UDP."}], "relationships": []}

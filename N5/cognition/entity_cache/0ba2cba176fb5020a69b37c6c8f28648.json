@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "Owner of the N5OS Health Sentinel"}, {"name": "N5OS Health Sentinel", "type": "TOOL", "context": "Proactive system monitoring tool used by V"}], "relationships": [{"from": "V", "to": "N5OS Health Sentinel", "type": "USES", "context": "V uses the N5OS Health Sentinel for monitoring purposes"}]}

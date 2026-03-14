@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ilya", "type": "PERSON", "context": "a person involved in negotiation lessons"}], "relationships": [{"from": "Ilya", "to": "negotiation lesson", "type": "MENTIONS", "context": "teaches about negotiation tactics"}]}

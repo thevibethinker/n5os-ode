@@ -1,1 +1,0 @@
-{"entities": [{"name": "23 and me genome", "type": "TOOL", "context": "a genetic testing tool used to analyze health information"}], "relationships": [{"from": "V", "to": "23 and me genome", "type": "USES", "context": "V uses the tool to query health information"}]}

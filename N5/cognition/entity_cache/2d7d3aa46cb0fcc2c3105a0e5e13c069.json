@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "focuses on candidates and gaining user trust"}, {"name": "Careerspan", "type": "ORG", "context": "company seeking data pipeline"}], "relationships": [{"from": "V", "to": "Careerspan", "type": "USES", "context": "V gains user trust to provide data for Careerspan"}]}

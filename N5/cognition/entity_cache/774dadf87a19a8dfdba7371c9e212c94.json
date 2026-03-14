@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker in the discussion"}, {"name": "Zoho", "type": "ORG", "context": "Environment where Vrijen builds knowledge system"}], "relationships": [{"from": "Vrijen Attawar", "to": "Zoho", "type": "USES", "context": "Building knowledge system within the Zoho environment"}]}

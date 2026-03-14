@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "research worker for information gathering"}, {"name": "API security", "type": "CONCEPT", "context": "best practices for security"}], "relationships": [{"from": "V", "to": "API security", "type": "KNOWS", "context": "researching best practices for"}]}

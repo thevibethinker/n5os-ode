@@ -1,1 +1,0 @@
-{"entities": [{"name": "Worker 4 validation system", "type": "TOOL", "context": "validation system operational and ready for W3 integration"}, {"name": "W3", "type": "ORG", "context": "integration with Worker 4 validation system"}], "relationships": [{"from": "Worker 4 validation system", "to": "W3", "type": "WORKS_WITH", "context": "integration for operation"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "The individual whose knowledge system is being described"}, {"name": "Casey", "type": "PERSON", "context": "Person referenced in relation to a layoff situation"}], "relationships": [{"from": "V", "to": "Casey", "type": "MENTIONS", "context": "V shares personal context about Casey's layoff"}]}

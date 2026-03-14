@@ -1,1 +1,0 @@
-{"entities": [{"name": "recipe linter tool", "type": "TOOL", "context": "A tool designed to validate recipe syntax"}, {"name": "bash commands", "type": "CONCEPT", "context": "Commands used in the bash shell scripting environment"}, {"name": "recipes", "type": "CONCEPT", "context": "Scripts or instructions for automating tasks"}], "relationships": []}

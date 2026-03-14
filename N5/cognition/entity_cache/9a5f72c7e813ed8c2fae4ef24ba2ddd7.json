@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual associated with a knowledge system"}, {"name": "Text-Cleanup Function", "type": "TOOL", "context": "function used for text processing"}], "relationships": [{"from": "V (Vrijen)", "to": "Text-Cleanup Function", "type": "USES", "context": "V uses this tool for text cleaning"}]}

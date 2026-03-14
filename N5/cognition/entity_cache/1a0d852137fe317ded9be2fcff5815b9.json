@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "a person who has a knowledge system"}, {"name": "operational protocols", "type": "CONCEPT", "context": "frameworks and methods used for various operations"}], "relationships": [{"from": "V (Vrijen)", "to": "operational protocols", "type": "USES", "context": "V employs operational protocols for various tasks"}]}

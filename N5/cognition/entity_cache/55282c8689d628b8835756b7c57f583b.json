@@ -1,1 +1,0 @@
-{"entities": [{"name": "registry", "type": "TOOL", "context": "refers to a system for managing conversations"}, {"name": "convo_id", "type": "CONCEPT", "context": "identifier for a specific conversation"}], "relationships": []}

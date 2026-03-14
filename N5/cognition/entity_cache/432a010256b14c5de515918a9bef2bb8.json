@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "mentioned as Vrijen"}, {"name": "Maximilian Kwok", "type": "PERSON", "context": "conversation participant"}], "relationships": [{"from": "Maximilian Kwok", "to": "V", "type": "KNOWS", "context": "implied conversation about V"}]}

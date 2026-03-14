@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "speaker discussing their experiences"}, {"name": "Zo tool", "type": "TOOL", "context": "tool that Vrijen is referring to"}], "relationships": [{"from": "Vrijen", "to": "Zo tool", "type": "USES", "context": "Vrijen is trying not to get sucked back into using the Zo tool"}]}

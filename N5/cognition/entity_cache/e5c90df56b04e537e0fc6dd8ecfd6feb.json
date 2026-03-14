@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "Subject of knowledge system"}, {"name": "calendar", "type": "TOOL", "context": "Used for scheduling events"}, {"name": "email summary", "type": "TOOL", "context": "Used for communication and updates"}], "relationships": []}

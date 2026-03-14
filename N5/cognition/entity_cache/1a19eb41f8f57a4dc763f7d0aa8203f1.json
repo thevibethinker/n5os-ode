@@ -1,1 +1,0 @@
-{"entities": [{"name": "Marvin", "type": "ORG", "context": "AI headhunter company"}, {"name": "Careerspan", "type": "ORG", "context": "Recruitment company"}], "relationships": [{"from": "Marvin", "to": "Careerspan", "type": "RELATED_TO", "context": "Both are companies in the recruitment sector with contrasting capabilities"}]}

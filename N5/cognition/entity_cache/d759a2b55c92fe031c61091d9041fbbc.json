@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the individual associated with the provided email"}, {"name": "gmail.com", "type": "ORG", "context": "the email service provider used by V"}], "relationships": []}

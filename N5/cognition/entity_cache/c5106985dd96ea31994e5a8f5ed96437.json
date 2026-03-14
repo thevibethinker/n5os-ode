@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "ORG", "context": "an organization providing findings for candidate resumes"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "the person analyzing resumes"}], "relationships": [{"from": "V (Vrijen)", "to": "Careerspan", "type": "USES", "context": "V uses Careerspan's findings to evaluate resumes"}]}

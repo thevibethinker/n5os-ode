@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the individual referenced in the text"}, {"name": "529 footprint", "type": "CONCEPT", "context": "a financial savings plan for education"}], "relationships": [{"from": "V", "to": "529 footprint", "type": "BELIEVES", "context": "V supports the concept of building the 529 financial footprint"}]}

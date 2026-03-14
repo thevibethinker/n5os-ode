@@ -1,1 +1,0 @@
-{"entities": [{"name": "Inbox", "type": "CONCEPT", "context": "a system for managing files"}, {"name": "Inbox/REVIEW.md", "type": "TOOL", "context": "a document updated weekly for review"}], "relationships": [{"from": "Inbox", "to": "Inbox/REVIEW.md", "type": "USES", "context": "Inbox utilizes REVIEW.md for weekly updates"}]}

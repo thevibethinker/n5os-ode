@@ -1,1 +1,0 @@
-{"entities": [{"name": "bun", "type": "TOOL", "context": "a tool used for running the production entry point"}, {"name": "zosite.json", "type": "CONCEPT", "context": "configuration file used for service settings"}], "relationships": []}

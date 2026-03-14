@@ -1,1 +1,0 @@
-{"entities": [{"name": "Christine Song", "type": "PERSON", "context": "Contact offering to stay connected and provide mutual support"}, {"name": "WhatsApp", "type": "TOOL", "context": "Communication platform Christine uses for staying in touch"}], "relationships": [{"from": "Christine Song", "to": "WhatsApp", "type": "USES", "context": "Preferred channel for reaching her"}]}

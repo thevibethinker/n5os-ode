@@ -1,1 +1,0 @@
-{"entities": [{"name": "SmartBufferOptions", "type": "CONCEPT", "context": "Defines options for a smart buffer in TypeScript"}, {"name": "BufferEncoding", "type": "CONCEPT", "context": "Type for buffer encoding options in TypeScript"}, {"name": "Buffer", "type": "TOOL", "context": "A class in Node.js for handling binary data"}], "relationships": []}

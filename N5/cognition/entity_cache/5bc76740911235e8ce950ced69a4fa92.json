@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo", "type": "PERSON", "context": "AI entity being evaluated"}, {"name": "P15", "type": "CONCEPT", "context": "rule referenced for adherence rate"}], "relationships": [{"from": "Zo", "to": "P15", "type": "USES", "context": "Zo is evaluated based on the adherence to the rules of P15"}]}

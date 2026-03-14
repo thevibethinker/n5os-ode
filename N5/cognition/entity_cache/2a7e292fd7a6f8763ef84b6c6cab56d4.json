@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker discussing their beliefs about funding and problem-solving"}, {"name": "Yale", "type": "ORG", "context": "University mentioned as a target for support"}], "relationships": [{"from": "Vrijen Attawar", "to": "Yale", "type": "MENTIONS", "context": "Expressing hope to help Yale students"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "hiring-market", "type": "CONCEPT", "context": "domain related to job positions"}, {"name": "positions.py", "type": "TOOL", "context": "CLI tool for managing job positions"}], "relationships": [{"from": "positions.py", "to": "hiring-market", "type": "USES", "context": "used in commands to manage positions in the hiring-market domain"}]}

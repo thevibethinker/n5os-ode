@@ -1,1 +1,0 @@
-{"entities": [{"name": "Pam K", "type": "PERSON", "context": "Speaker mentioning her family relationships and work connections."}, {"name": "founders", "type": "CONCEPT", "context": "Individuals who start and develop new companies."}], "relationships": [{"from": "Pam K", "to": "founders", "type": "KNOWS", "context": "Pam K's interest in connecting founders."}]}

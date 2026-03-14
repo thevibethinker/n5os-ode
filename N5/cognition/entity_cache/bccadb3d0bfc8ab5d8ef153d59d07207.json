@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker discussing talent networks"}, {"name": "Jane Street", "type": "ORG", "context": "Mentioned organization related to finance"}], "relationships": [{"from": "Vrijen Attawar", "to": "Jane Street", "type": "MENTIONS", "context": "Refers to the organization in the context of talent commitment and funding"}]}

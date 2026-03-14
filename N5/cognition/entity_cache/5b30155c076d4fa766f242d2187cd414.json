@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "stakeholder, peer founder"}], "relationships": [{"from": "V (Vrijen)", "to": "peer support relationship", "type": "KNOWS", "context": "has an active peer support relationship with a networking contact"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Jane Doe", "type": "PERSON", "context": "job seeker reactivates"}, {"name": "community leader", "type": "CONCEPT", "context": "analyzed context of Jane Doe's role"}], "relationships": [{"from": "Jane Doe", "to": "community leader", "type": "KNOWS", "context": "actually is a community leader"}]}

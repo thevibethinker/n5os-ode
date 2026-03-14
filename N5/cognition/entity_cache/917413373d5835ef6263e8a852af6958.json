@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "n5-intelligence", "type": "CONCEPT", "context": "concept related to the validation system"}], "relationships": [{"from": "V (Vrijen)", "to": "n5-intelligence", "type": "KNOWS", "context": "V is associated with the concept of n5-intelligence"}]}

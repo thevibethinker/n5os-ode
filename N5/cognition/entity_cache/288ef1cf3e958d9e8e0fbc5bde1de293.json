@@ -1,1 +1,0 @@
-{"entities": [{"name": "Mercury", "type": "ORG", "context": "Company associated with V"}, {"name": "V", "type": "PERSON", "context": "Individual with a role in business development/investor relations"}], "relationships": [{"from": "V", "to": "Mercury", "type": "WORKS_WITH", "context": "V is associated with Mercury in a business role"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Sequoia Capital", "type": "ORG", "context": "a venture capital firm"}], "relationships": [{"from": "V", "to": "Sequoia Capital", "type": "KNOWS", "context": "V is familiar with Sequoia Capital through investment analysis"}]}

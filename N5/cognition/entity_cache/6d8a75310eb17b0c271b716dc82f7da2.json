@@ -1,1 +1,0 @@
-{"entities": [{"name": "vm", "type": "TOOL", "context": "a virtual machine that executes code"}, {"name": "nextId", "type": "CONCEPT", "context": "a function called to get the next identifier"}], "relationships": [{"from": "vm", "to": "nextId", "type": "USES", "context": "vm uses nextId to obtain identifiers"}]}

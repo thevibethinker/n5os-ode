@@ -1,1 +1,0 @@
-{"entities": [{"name": "DEBUG_LOG.jsonl", "type": "TOOL", "context": "a file for logging build/debug conversations"}, {"name": "session_state_manager.py", "type": "TOOL", "context": "a Python file for managing session state initialization"}], "relationships": []}

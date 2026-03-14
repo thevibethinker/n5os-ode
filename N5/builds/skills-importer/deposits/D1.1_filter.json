@@ -1,9 +1,0 @@
-{
-  "drop_id": "D1.1",
-  "verdict": "PASS",
-  "reason": "Script created with all required CLI commands (import, --list, --all, --dry-run, --force, --dest), proper frontmatter transformation, GitHub raw fetching with branch fallback, validation checks, and installation logic. Uses only permitted libraries.",
-  "artifacts_verified": true,
-  "concerns": [
-    "list_skills uses probing rather than directory listing due to raw.githubusercontent.com limitations - may not discover all skills in a repo"
-  ]
-}

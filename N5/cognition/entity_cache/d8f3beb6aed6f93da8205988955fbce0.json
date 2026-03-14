@@ -1,1 +1,0 @@
-{"entities": [{"name": "Kathy Pham", "type": "PERSON", "context": "individual mentioned in outreach"}, {"name": "Logan", "type": "PERSON", "context": "owner responsible for outreach"}], "relationships": [{"from": "Logan", "to": "Kathy Pham", "type": "WORKS_WITH", "context": "Logan is managing outreach to Kathy Pham"}]}

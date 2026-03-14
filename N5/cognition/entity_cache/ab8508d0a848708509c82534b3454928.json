@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the main individual discussed"}, {"name": "LLM", "type": "TOOL", "context": "a type of language model"}, {"name": "AI", "type": "CONCEPT", "context": "artificial intelligence concept"}, {"name": "external API", "type": "CONCEPT", "context": "refers to external application programming interface"}], "relationships": []}

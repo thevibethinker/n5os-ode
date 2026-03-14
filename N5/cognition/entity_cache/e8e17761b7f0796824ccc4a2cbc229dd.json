@@ -1,1 +1,0 @@
-{"entities": [{"name": "Emory", "type": "ORG", "context": "an organization mentioned as a place for wise hearts seeking knowledge"}], "relationships": [{"from": "Emory", "to": "knowledge", "type": "MENTIONS", "context": "Emory is mentioned in relation to seeking and translating knowledge into opportunity"}]}

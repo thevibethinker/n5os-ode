@@ -1,1 +1,0 @@
-{"entities": [{"name": "AI Career Advisor project", "type": "CONCEPT", "context": "Project being discussed at the conference"}, {"name": "Technical conference", "type": "EVENT", "context": "Event where the session is presented"}, {"name": "audience", "type": "ORG", "context": "Technical conference attendees as the target audience"}], "relationships": []}

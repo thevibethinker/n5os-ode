@@ -1,1 +1,0 @@
-{"entities": [{"name": "N5", "type": "ORG", "context": "organization related to the integration script"}, {"name": "weekly_summary_integration.py", "type": "TOOL", "context": "script used for weekly summary integration"}], "relationships": []}

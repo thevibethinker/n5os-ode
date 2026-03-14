@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual involved in the knowledge system"}, {"name": "partnership exploration", "type": "CONCEPT", "context": "process of exploring potential partnerships"}], "relationships": [{"from": "V (Vrijen)", "to": "partnership exploration", "type": "KNOWS", "context": "V is engaged in exploring partnerships"}]}

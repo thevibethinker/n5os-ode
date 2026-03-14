@@ -1,1 +1,0 @@
-{"entities": [{"name": "memegen", "type": "TOOL", "context": "API for creating memes"}], "relationships": [{"from": "V", "to": "memegen", "type": "USES", "context": "V uses the memegen API for generating memes"}]}

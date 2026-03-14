@@ -1,1 +1,0 @@
-{"entities": [{"name": "Mihir", "type": "PERSON", "context": "exploring product"}, {"name": "product", "type": "CONCEPT", "context": "the focus of exploration"}], "relationships": [{"from": "Mihir", "to": "product", "type": "WORKS_WITH", "context": "exploring over weekend"}]}

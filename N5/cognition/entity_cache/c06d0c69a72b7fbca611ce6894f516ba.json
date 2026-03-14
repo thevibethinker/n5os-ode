@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ryan Vanderbilt", "type": "PERSON", "context": "person discussing V's post"}, {"name": "LinkedIn", "type": "ORG", "context": "platform where V posted content"}], "relationships": [{"from": "Ryan Vanderbilt", "to": "LinkedIn", "type": "MENTIONS", "context": "Ryan refers to a post on LinkedIn"}]}

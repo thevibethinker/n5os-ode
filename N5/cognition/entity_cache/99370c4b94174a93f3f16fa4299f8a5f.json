@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "knowledge system owner"}, {"name": "Careerspan", "type": "ORG", "context": "product and partnership approach provider"}], "relationships": [{"from": "V", "to": "Careerspan", "type": "USES", "context": "leverages Careerspan's product and approach to address market inefficiencies"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "owner of the ZoBridge Service"}, {"name": "ZoBridge Service", "type": "TOOL", "context": "a service facilitating collaboration between ParentZo and ChildZo"}], "relationships": [{"from": "V", "to": "ZoBridge Service", "type": "OWNS", "context": "V is the owner of the ZoBridge Service"}]}

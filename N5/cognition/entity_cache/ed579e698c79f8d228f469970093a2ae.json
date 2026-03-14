@@ -1,1 +1,0 @@
-{"entities": [{"name": "Nira", "type": "ORG", "context": "team mentioned"}, {"name": "Ash", "type": "PERSON", "context": "co-founder mentioned"}], "relationships": [{"from": "V", "to": "Nira", "type": "WORKS_WITH", "context": "V is coordinating with Nira team"}, {"from": "V", "to": "Ash", "type": "WORKS_WITH", "context": "V is coordinating with Ash as co-founder"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ilse", "type": "PERSON", "context": "a team member with deep technical knowledge"}, {"name": "software development", "type": "CONCEPT", "context": "field related to Ilse's knowledge"}], "relationships": [{"from": "Ilse", "to": "software development", "type": "KNOWS", "context": "Ilse has deep technical knowledge in the field"}]}

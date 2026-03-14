@@ -1,1 +1,0 @@
-{"entities": [{"name": "Shivam Desai", "type": "PERSON", "context": "Community connector / events facilitator"}, {"name": "Pace", "type": "ORG", "context": "Organization associated with Shivam Desai"}], "relationships": [{"from": "Shivam Desai", "to": "Pace", "type": "WORKS_WITH", "context": "Shivam Desai is presumed to be associated with Pace"}]}

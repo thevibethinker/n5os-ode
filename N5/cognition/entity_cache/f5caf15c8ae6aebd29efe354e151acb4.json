@@ -1,1 +1,0 @@
-{"entities": [{"name": "P2", "type": "CONCEPT", "context": "Refers to a single source of truth for all secrets"}, {"name": "P5", "type": "CONCEPT", "context": "Refers to an audit mechanism that prevents overwriting of data"}, {"name": "P19", "type": "CONCEPT", "context": "Refers to the process of managing errors related to missing secrets"}], "relationships": []}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Katya Simpson", "type": "PERSON", "context": "individual related to FutureFit x Careerspan meeting"}], "relationships": [{"from": "V", "to": "Katya Simpson", "type": "KNOWS", "context": "Katya is a stakeholder in the FutureFit x Careerspan project"}]}

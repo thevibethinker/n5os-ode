@@ -1,1 +1,0 @@
-{"entities": [{"name": "Fillout", "type": "ORG", "context": "a tool for form submissions"}, {"name": "N5", "type": "CONCEPT", "context": "the local environment for processing events"}], "relationships": [{"from": "Fillout", "to": "N5", "type": "USES", "context": "Fillout submissions are processed in the N5 environment"}]}

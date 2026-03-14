@@ -1,1 +1,0 @@
-{"entities": [{"name": "Aaron Mak Hoffman", "type": "PERSON", "context": "Mentioned by V as part of a conversation."}, {"name": "parallel", "type": "TOOL", "context": "Mentioned as a feature request related to long rides."}], "relationships": [{"from": "Aaron Mak Hoffman", "to": "parallel", "type": "MENTIONS", "context": "Aaron suggests parallel as a useful tool."}]}

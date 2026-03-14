@@ -1,1 +1,0 @@
-{"entities": [{"name": "Oleksandra", "type": "PERSON", "context": "Onboarding lead, primary operational guidance"}, {"name": "Ray Batra", "type": "PERSON", "context": "Executive authority, strategic direction"}], "relationships": [{"from": "Oleksandra", "to": "Ray Batra", "type": "WORKS_WITH", "context": "collaborating on operational guidance and strategic direction"}]}

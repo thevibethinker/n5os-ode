@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "individual sharing opinions"}, {"name": "Auto Apply tools", "type": "TOOL", "context": "software tools mentioned adversely"}], "relationships": [{"from": "Vrijen Attawar", "to": "Auto Apply tools", "type": "BELIEVES", "context": "negative opinion about their effectiveness"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "Individual with a knowledge system"}, {"name": "CRM", "type": "TOOL", "context": "Customer Relationship Management system used for context pulling"}], "relationships": [{"from": "V", "to": "CRM", "type": "USES", "context": "V uses CRM to pull relevant context from past meetings and profiles"}]}

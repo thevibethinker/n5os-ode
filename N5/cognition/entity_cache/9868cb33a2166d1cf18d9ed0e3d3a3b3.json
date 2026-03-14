@@ -1,1 +1,0 @@
-{"entities": [{"name": "Fireflies", "type": "ORG", "context": "an organization or tool that processes transcripts"}, {"name": "Vrijen Attawar", "type": "PERSON", "context": "the person speaking about the knowledge system"}], "relationships": [{"from": "Vrijen Attawar", "to": "Fireflies", "type": "USES", "context": "Vrijen uses Fireflies to manage transcripts"}]}

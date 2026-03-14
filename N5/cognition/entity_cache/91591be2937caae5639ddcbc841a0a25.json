@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ayush", "type": "PERSON", "context": "demonstrated flexibility around pay slip timing"}, {"name": "Vrijen", "type": "ORG", "context": "provides feedback to Ayush"}], "relationships": [{"from": "Ayush", "to": "Vrijen", "type": "WORKS_WITH", "context": "demonstrated willingness to adapt based on feedback from Vrijen"}]}

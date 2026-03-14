@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "person who works on the knowledge system"}, {"name": "minimist", "type": "ORG", "context": "the library related to the issues mentioned"}], "relationships": [{"from": "V", "to": "minimist", "type": "WORKS_WITH", "context": "V is involved with the minimist library and its issues"}]}

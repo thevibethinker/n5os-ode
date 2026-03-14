@@ -1,1 +1,0 @@
-{"entities": [{"name": "Nira", "type": "ORG", "context": "the organization related to V"}, {"name": "fei@withnira.com", "type": "PERSON", "context": "email address associated with Nira and possibly a person"}], "relationships": [{"from": "V", "to": "Nira", "type": "WORKS_WITH", "context": "V is associated with the organization Nira"}]}

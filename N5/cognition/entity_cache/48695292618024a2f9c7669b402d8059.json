@@ -1,1 +1,0 @@
-{"entities": [{"name": "UglifyJS", "type": "TOOL", "context": "JavaScript minification tool that may modify input and suppress errors."}, {"name": "Adobe ExtendScript", "type": "TOOL", "context": "Scripting tool that may give incorrect results in specific cases."}], "relationships": []}

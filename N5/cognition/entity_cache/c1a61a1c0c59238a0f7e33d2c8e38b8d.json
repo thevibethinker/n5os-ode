@@ -1,1 +1,0 @@
-{"entities": [{"name": "David", "type": "PERSON", "context": "Installed the local installation"}], "relationships": [{"from": "David", "to": "V", "type": "WORKS_WITH", "context": "Collaborates on the installation process"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Holly", "type": "PERSON", "context": "mentioned in relation to tactical unblocking"}], "relationships": [{"from": "V (Vrijen)", "to": "Holly", "type": "MENTIONS", "context": "V mentions tactical unblocking with reference to Holly"}]}

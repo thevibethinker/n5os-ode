@@ -1,1 +1,0 @@
-{"entities": [{"name": "Pam K", "type": "PERSON", "context": "individual discussing program eligibility"}, {"name": "LinkedIn", "type": "ORG", "context": "social networking platform for professionals"}], "relationships": [{"from": "Pam K", "to": "LinkedIn", "type": "USES", "context": "Pam K adds people on LinkedIn"}]}

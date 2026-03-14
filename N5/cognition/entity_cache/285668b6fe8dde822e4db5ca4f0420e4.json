@@ -1,1 +1,0 @@
-{"entities": [{"name": "Nick", "type": "PERSON", "context": "did not write a self-introduction"}, {"name": "Jihoon Suh", "type": "PERSON", "context": "same pattern as Nick"}], "relationships": [{"from": "Nick", "to": "Jihoon Suh", "type": "MENTIONS", "context": "both did not write a self-introduction"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "Subject of the knowledge system"}, {"name": "Aaron Mak Hoffman", "type": "PERSON", "context": "Recipient of the follow-up email"}], "relationships": [{"from": "V (Vrijen)", "to": "Aaron Mak Hoffman", "type": "KNOWS", "context": "Recipient of the follow-up email"}]}

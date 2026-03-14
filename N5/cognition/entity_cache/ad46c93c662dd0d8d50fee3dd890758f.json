@@ -1,1 +1,0 @@
-{"entities": [{"name": "V-OS", "type": "TOOL", "context": "system that translates tags to brackets"}, {"name": "Howie", "type": "PERSON", "context": "can query contact intelligence"}], "relationships": [{"from": "Howie", "to": "V-OS", "type": "USES", "context": "Howie can utilize V-OS for querying"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "format_summary", "type": "TOOL", "context": "Python function used for formatting summaries"}, {"name": "data", "type": "CONCEPT", "context": "Dictionary structure containing information for the summary"}], "relationships": []}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "client", "type": "ORG", "context": "the organization conducting the search"}, {"name": "market competitive", "type": "CONCEPT", "context": "the concept being queried for information"}, {"name": "transcript_key_concepts", "type": "CONCEPT", "context": "the key concepts derived from transcripts"}], "relationships": []}

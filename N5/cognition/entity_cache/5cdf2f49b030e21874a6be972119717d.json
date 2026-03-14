@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "individual exploring integration possibilities"}, {"name": "Zo-glasses", "type": "TOOL", "context": "potential connection for integration with glasses"}], "relationships": [{"from": "Vrijen", "to": "Zo-glasses", "type": "USES", "context": "exploring integration possibilities with glasses"}]}

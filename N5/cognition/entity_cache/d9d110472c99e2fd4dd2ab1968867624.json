@@ -1,1 +1,0 @@
-{"entities": [{"name": "error log", "type": "CONCEPT", "context": "a log that records errors and warnings during a build process"}, {"name": "build-name", "type": "CONCEPT", "context": "a placeholder for the name of a specific build process"}, {"name": "N5", "type": "ORG", "context": "presumably an organization related to the build process"}], "relationships": []}

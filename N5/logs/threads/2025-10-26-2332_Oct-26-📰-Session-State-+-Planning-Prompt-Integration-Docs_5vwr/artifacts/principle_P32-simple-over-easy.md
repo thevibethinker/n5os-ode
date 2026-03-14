@@ -1,1 +1,0 @@
-/home/workspace/Knowledge/architectural/principles/P32-simple-over-easy.md

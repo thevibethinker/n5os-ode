@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "Builder known as V"}, {"name": "Vibe Builder v2.0", "type": "TOOL", "context": "Version of the builder used by V"}], "relationships": [{"from": "V", "to": "Vibe Builder v2.0", "type": "USES", "context": "V utilizes Vibe Builder v2.0 for building purposes"}]}

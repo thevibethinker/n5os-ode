@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "knowledge system developer"}, {"name": "conversation ID", "type": "CONCEPT", "context": "identifier for ongoing dialogue"}], "relationships": [{"from": "V (Vrijen)", "to": "conversation ID", "type": "USES", "context": "used to track current dialogue"}]}

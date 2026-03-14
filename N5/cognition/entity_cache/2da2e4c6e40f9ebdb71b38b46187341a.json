@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo", "type": "ORG", "context": "a tool or service being discussed"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "the individual sharing knowledge"}], "relationships": [{"from": "V (Vrijen)", "to": "Zo", "type": "USES", "context": "V is promoting the use of Zo as a resource"}]}

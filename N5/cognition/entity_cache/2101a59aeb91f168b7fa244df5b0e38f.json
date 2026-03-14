@@ -1,1 +1,0 @@
-{"entities": [{"name": "Phase 2", "type": "CONCEPT", "context": "a stage in a process involving copying core scripts"}, {"name": "Phase 1", "type": "CONCEPT", "context": "the previous stage that needs to be completed before Phase 2"}], "relationships": [{"from": "Phase 1", "to": "Phase 2", "type": "RELATED_TO", "context": "Phase 2 depends on the completion of Phase 1"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Fractal Software", "type": "ORG", "context": "organization related to community insights"}], "relationships": [{"from": "V (Vrijen)", "to": "Fractal Software", "type": "MENTIONS", "context": "shared insights during a community call"}]}

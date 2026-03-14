@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "Author of comments, resolves threads"}, {"name": "Zo", "type": "PERSON", "context": "AI assistant that replies to V's comments"}], "relationships": [{"from": "Zo", "to": "V", "type": "WORKS_WITH", "context": "Zo replies to V's comments in threaded discussions"}]}

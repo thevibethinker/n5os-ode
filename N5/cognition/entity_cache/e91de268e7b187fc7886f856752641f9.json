@@ -1,1 +1,0 @@
-{"entities": [{"name": "Emory", "type": "ORG", "context": "an institution that will join as a follower"}], "relationships": [{"from": "V", "to": "Emory", "type": "WORKS_WITH", "context": "working with other institutions including Emory"}]}

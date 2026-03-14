@@ -1,1 +1,0 @@
-{"entities": [{"name": "email_connector.py", "type": "TOOL", "context": "a script for connecting emails"}, {"name": "email_connector.log", "type": "TOOL", "context": "a log file for the email connector"}], "relationships": []}

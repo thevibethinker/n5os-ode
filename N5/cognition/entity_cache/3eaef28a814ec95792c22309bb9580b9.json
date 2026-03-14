@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual discussing Careerspan's value proposition"}, {"name": "Careerspan", "type": "ORG", "context": "organization whose value proposition V articulates"}], "relationships": [{"from": "V", "to": "Careerspan", "type": "KNOWS", "context": "V articulates the value proposition of Careerspan"}]}

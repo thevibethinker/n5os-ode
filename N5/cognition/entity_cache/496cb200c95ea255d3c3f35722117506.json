@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ash", "type": "PERSON", "context": "describing existing partnership model"}, {"name": "partnership model", "type": "CONCEPT", "context": "describes the financial arrangement involving kickbacks"}], "relationships": [{"from": "Ash", "to": "partnership model", "type": "KNOWS", "context": "describes the terms and conditions of the partnership model"}]}

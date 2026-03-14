@@ -1,1 +1,0 @@
-{"entities": [{"name": "David", "type": "PERSON", "context": "person making introduction"}, {"name": "Zo", "type": "TOOL", "context": "tool to be demoed"}], "relationships": [{"from": "V", "to": "David", "type": "KNOWS", "context": "V knows David who will make the introduction"}, {"from": "V", "to": "Zo", "type": "USES", "context": "V is tasked with demoing Zo"}]}

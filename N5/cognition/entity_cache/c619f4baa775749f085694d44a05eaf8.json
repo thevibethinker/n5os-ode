@@ -1,1 +1,0 @@
-{"entities": [{"name": "N8N", "type": "TOOL", "context": "An automation tool"}, {"name": "Zapier", "type": "TOOL", "context": "An automation tool"}], "relationships": [{"from": "N8N", "to": "Zapier", "type": "RELATED_TO", "context": "Comparison of user satisfaction/retention differences"}]}

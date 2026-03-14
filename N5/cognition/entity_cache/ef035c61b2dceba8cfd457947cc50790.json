@@ -1,1 +1,0 @@
-{"entities": [{"name": "meeting_monitor.py", "type": "TOOL", "context": "a script for monitoring meetings"}, {"name": "priority queue", "type": "CONCEPT", "context": "a method of prioritizing tasks as urgent or normal"}, {"name": "daily digest", "type": "CONCEPT", "context": "a summary report of activities or tasks"}], "relationships": []}

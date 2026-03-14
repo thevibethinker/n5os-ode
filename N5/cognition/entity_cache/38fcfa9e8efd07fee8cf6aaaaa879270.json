@@ -1,1 +1,0 @@
-{"entities": [{"name": "employers", "type": "ORG", "context": "organizations optimizing for hiring practices"}], "relationships": [{"from": "employers", "to": "volume", "type": "RELATED_TO", "context": "employers prioritize quantity in hiring"}]}

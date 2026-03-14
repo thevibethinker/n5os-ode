@@ -1,1 +1,0 @@
-{"entities": [{"name": "commands.jsonl", "type": "TOOL", "context": "a file format used for registered commands"}, {"name": "manual script execution", "type": "CONCEPT", "context": "a method of running scripts manually"}, {"name": "direct file operations", "type": "CONCEPT", "context": "actions taken directly on files"}], "relationships": []}

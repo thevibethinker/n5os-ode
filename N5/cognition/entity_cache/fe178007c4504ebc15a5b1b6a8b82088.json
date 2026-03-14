@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "primary subject of the text"}, {"name": "team", "type": "ORG", "context": "group associated with V"}], "relationships": [{"from": "V", "to": "team", "type": "WORKS_WITH", "context": "V collaborates with the team"}, {"from": "V", "to": "emails", "type": "USES", "context": "V uses emails for communication"}]}

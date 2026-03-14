@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "speaker discussing a feature"}, {"name": "tool field", "type": "TOOL", "context": "missing element to be added"}], "relationships": [{"from": "Vrijen Attawar", "to": "tool field", "type": "USES", "context": "is getting it to add the tool field to everything"}]}

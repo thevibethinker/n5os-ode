@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual providing feedback on the system"}, {"name": "v1.3", "type": "TOOL", "context": "version of the meeting processing system"}], "relationships": [{"from": "V", "to": "v1.3", "type": "USES", "context": "V will start using this version for meeting processing if approved"}]}

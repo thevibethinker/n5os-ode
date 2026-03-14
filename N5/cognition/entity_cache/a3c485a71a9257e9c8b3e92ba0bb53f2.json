@@ -1,1 +1,0 @@
-{"entities": [{"name": "N5 knowledge base", "type": "CONCEPT", "context": "a knowledge resource referenced for analysis"}, {"name": "SWOT analysis", "type": "TOOL", "context": "a strategic analysis method generated automatically"}, {"name": "Strategic-Fit Score", "type": "CONCEPT", "context": "a scoring system indicating alignment with priorities"}], "relationships": []}

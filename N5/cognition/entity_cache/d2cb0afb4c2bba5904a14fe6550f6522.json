@@ -1,1 +1,0 @@
-{"entities": [{"name": "rollback feature", "type": "TOOL", "context": "tool used to undo changes"}, {"name": "system snapshot", "type": "TOOL", "context": "tool used to restore system state"}], "relationships": [{"from": "rollback feature", "to": "system snapshot", "type": "RELATED_TO", "context": "both are tools used for undoing changes"}]}

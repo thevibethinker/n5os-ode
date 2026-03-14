@@ -1,1 +1,0 @@
-{"entities": [{"name": "MG-7C", "type": "CONCEPT", "context": "refers to a specific stage in the meeting process"}, {"name": "Inbox folder", "type": "TOOL", "context": "tool used for organizing processed meetings"}], "relationships": [{"from": "Inbox folder", "to": "MG-7C", "type": "USES", "context": "Inbox folder is renamed to indicate readiness for MG-7C archive"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "N5 Bootstrap", "type": "CONCEPT", "context": "AI-to-AI conversational system for demonstrator-parent communication"}, {"name": "demonstrator", "type": "CONCEPT", "context": "entity involved in demonstrating the system"}, {"name": "parent", "type": "CONCEPT", "context": "entity communicating with the demonstrator"}], "relationships": []}

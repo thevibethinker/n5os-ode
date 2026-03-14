@@ -1,1 +1,0 @@
-{"entities": [{"name": "Pam K", "type": "PERSON", "context": "works with V and expresses enthusiasm for her"}, {"name": "the skim", "type": "ORG", "context": "organization where V worked for three years"}], "relationships": [{"from": "Pam K", "to": "the skim", "type": "WORKS_WITH", "context": "Pam K references V's experience at the skim"}]}

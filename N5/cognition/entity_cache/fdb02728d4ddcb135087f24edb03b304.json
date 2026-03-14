@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the individual associated with the knowledge system"}, {"name": "Gmail API", "type": "TOOL", "context": "an application programming interface used for interacting with Gmail"}], "relationships": [{"from": "V", "to": "Gmail API", "type": "USES", "context": "V has tested the Gmail API manually"}]}

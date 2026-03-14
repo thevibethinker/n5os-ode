@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual operating in a networking capacity"}, {"name": "Distill", "type": "TOOL", "context": "product being tested by V"}], "relationships": [{"from": "V", "to": "Distill", "type": "USES", "context": "V is a beta tester for the tool"}]}

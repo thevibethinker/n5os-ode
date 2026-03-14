@@ -1,1 +1,0 @@
-{"entities": [{"name": "Melissa", "type": "PERSON", "context": "individual seeking career advice"}, {"name": "Zo integration", "type": "ORG", "context": "mentioned in relation to individual seeking advice"}], "relationships": [{"from": "Melissa", "to": "Zo integration", "type": "MENTIONS", "context": "not a company representative for Zo integration"}]}

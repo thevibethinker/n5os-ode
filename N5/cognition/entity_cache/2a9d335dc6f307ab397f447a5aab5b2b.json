@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker discussing a quality improvement"}, {"name": "sherm qualified company", "type": "ORG", "context": "Organization related to sale price"}], "relationships": [{"from": "Vrijen Attawar", "to": "sherm qualified company", "type": "RELATED_TO", "context": "Impact on sale price"}]}

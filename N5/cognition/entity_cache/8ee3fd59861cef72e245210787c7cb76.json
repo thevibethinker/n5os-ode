@@ -1,1 +1,0 @@
-{"entities": [{"name": "SQLite", "type": "TOOL", "context": "database management system"}, {"name": "markdown", "type": "CONCEPT", "context": "markup language format for text"}], "relationships": [{"from": "V", "to": "SQLite", "type": "USES", "context": "migrating markdown to SQLite"}, {"from": "V", "to": "markdown", "type": "USES", "context": "generating markdown from DB"}]}

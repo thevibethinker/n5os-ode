@@ -1,1 +1,0 @@
-{"entities": [{"name": "money", "type": "CONCEPT", "context": "symbol of debt and apology in human history"}, {"name": "merchants", "type": "ORG", "context": "traders who needed money to facilitate trade"}], "relationships": [{"from": "money", "to": "merchants", "type": "USES", "context": "money was used by merchants to trade easier"}]}

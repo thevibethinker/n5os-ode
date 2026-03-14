@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the individual associated with the knowledge system"}, {"name": "Careerspan", "type": "ORG", "context": "the organization being referenced for growth and revenue"}], "relationships": [{"from": "V", "to": "Careerspan", "type": "KNOWS", "context": "V is involved with the organization and guiding its growth"}]}

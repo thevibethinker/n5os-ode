@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker discussing hiring process"}, {"name": "careerspan", "type": "ORG", "context": "Platform related to candidate hiring"}], "relationships": [{"from": "Vrijen Attawar", "to": "careerspan", "type": "USES", "context": "Vrijen mentions building pipelines through the careerspan platform"}]}

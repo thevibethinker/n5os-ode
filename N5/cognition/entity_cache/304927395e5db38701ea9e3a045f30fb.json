@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "Calendar fetch", "type": "EVENT", "context": "an API operation for retrieving calendar events"}, {"name": "Gmail search", "type": "EVENT", "context": "an API operation for searching emails"}], "relationships": []}

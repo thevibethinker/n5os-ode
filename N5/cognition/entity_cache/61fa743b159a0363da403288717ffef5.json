@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual involved in the knowledge system"}, {"name": "Akiflow", "type": "TOOL", "context": "current system to be integrated"}], "relationships": [{"from": "V", "to": "Akiflow", "type": "USES", "context": "V plans to integrate Akiflow into the current system"}]}

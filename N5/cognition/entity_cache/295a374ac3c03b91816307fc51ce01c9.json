@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "The individual with a knowledge system"}, {"name": "Laura", "type": "PERSON", "context": "Provides feedback and is crucial for alignment"}], "relationships": [{"from": "V (Vrijen)", "to": "Laura", "type": "WORKS_WITH", "context": "Execution of V's knowledge system depends on Laura's feedback"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "stream", "type": "CONCEPT", "context": "a data structure used in the context of object mode streams"}, {"name": "maxBuffer", "type": "CONCEPT", "context": "a parameter that refers to the number of items in an array"}], "relationships": []}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Orchestrator", "type": "ORG", "context": "an entity that provides clarification and updates assignments"}], "relationships": [{"from": "Orchestrator", "to": "Blocker Type A", "type": "RELATED_TO", "context": "provides clarification for missing information related to assignments"}]}

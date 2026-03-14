@@ -1,1 +1,0 @@
-{"entities": [{"name": "SHORT_IO_KEY", "type": "CONCEPT", "context": "A prerequisite for executing commands"}, {"name": "N5/data/shortio_clicks.jsonl", "type": "TOOL", "context": "File that receives new entries after run"}, {"name": "N5/logs/shortio_stats.log", "type": "TOOL", "context": "File that documents the absence of failures"}], "relationships": []}

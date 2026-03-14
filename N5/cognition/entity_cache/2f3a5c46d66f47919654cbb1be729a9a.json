@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "the speaker"}, {"name": "Zoom", "type": "TOOL", "context": "platform being used for communication"}], "relationships": [{"from": "Vrijen Attawar", "to": "Zoom", "type": "USES", "context": "using Zoom for communication"}]}

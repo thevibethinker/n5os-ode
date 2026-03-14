@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo", "type": "CONCEPT", "context": "a concept that may have strategic value in the market"}, {"name": "V", "type": "PERSON", "context": "the subject discussing the knowledge system"}], "relationships": [{"from": "V", "to": "Zo", "type": "BELIEVES", "context": "V believes in the strategic value of not making Zo instantly comprehensible"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo", "type": "ORG", "context": "built-in LLM capabilities"}, {"name": "LLM", "type": "CONCEPT", "context": "large language model technology"}], "relationships": [{"from": "V", "to": "Zo", "type": "USES", "context": "uses built-in LLM capabilities"}, {"from": "V", "to": "LLM", "type": "KNOWS", "context": "knowledge about LLM technology"}]}

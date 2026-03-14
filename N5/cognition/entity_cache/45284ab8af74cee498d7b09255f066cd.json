@@ -1,1 +1,0 @@
-{"entities": [{"name": "Registry Manager", "type": "TOOL", "context": "A tool for managing meeting registries with operations like add/query/validate."}, {"name": "N5/scripts/meeting_registry.py", "type": "TOOL", "context": "The script associated with the Registry Manager."}], "relationships": []}

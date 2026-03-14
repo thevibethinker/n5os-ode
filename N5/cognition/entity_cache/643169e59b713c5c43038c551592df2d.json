@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "ORG", "context": "an organization mentioned as a trust layer for hiring"}], "relationships": [{"from": "Careerspan", "to": "trust layer", "type": "RELATED_TO", "context": "described as a trust layer for hiring"}]}

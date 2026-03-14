@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo Settings", "type": "TOOL", "context": "Settings tool used for managing user rules"}, {"name": "User Rules", "type": "CONCEPT", "context": "Concept related to conditional rules in settings"}, {"name": "Conditional Rules", "type": "CONCEPT", "context": "Type of user rules that includes conditions and actions"}], "relationships": []}

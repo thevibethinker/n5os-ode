@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "speaker"}, {"name": "Claude", "type": "TOOL", "context": "system used by Logan"}], "relationships": [{"from": "Vrijen Attawar", "to": "Claude", "type": "MENTIONS", "context": "discussing a system used by Logan"}, {"from": "Logan", "to": "Claude", "type": "USES", "context": "has her own system in Claude"}]}

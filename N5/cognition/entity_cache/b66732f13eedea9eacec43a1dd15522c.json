@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vanilla Core", "type": "CONCEPT", "context": "cheap DIY knowledge system setup"}, {"name": "Custom Build", "type": "CONCEPT", "context": "interview-based workflow design for early believers"}], "relationships": [{"from": "Vanilla Core", "to": "Custom Build", "type": "RELATED_TO", "context": "both are tiers of V's knowledge system"}]}

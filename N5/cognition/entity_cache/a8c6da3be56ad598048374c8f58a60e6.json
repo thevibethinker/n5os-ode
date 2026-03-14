@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "content creator driving follower growth on TikTok"}, {"name": "Logan", "type": "PERSON", "context": "created a breakdown video that gained followers on LinkedIn"}], "relationships": [{"from": "Vrijen", "to": "Logan", "type": "RELATED_TO", "context": "both are involved in content creation strategies"}]}

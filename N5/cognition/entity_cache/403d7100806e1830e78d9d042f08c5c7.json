@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker reflecting on knowledge system"}, {"name": "AI coach", "type": "TOOL", "context": "Technology used for conversational interactions"}], "relationships": [{"from": "Vrijen Attawar", "to": "AI coach", "type": "USES", "context": "Vrijen uses AI coach for conversational interactions"}]}

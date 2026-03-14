@@ -1,1 +1,0 @@
-{"entities": [{"name": "Logan", "type": "PERSON", "context": "mutual friend"}, {"name": "Zo productivity setup", "type": "TOOL", "context": "demo related to productivity"}], "relationships": [{"from": "V", "to": "Logan", "type": "KNOWS", "context": "existing friendship"}, {"from": "V", "to": "Zo productivity setup", "type": "USES", "context": "demo interaction"}]}

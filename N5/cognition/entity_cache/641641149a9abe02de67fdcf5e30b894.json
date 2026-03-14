@@ -1,1 +1,0 @@
-{"entities": [{"name": "invalid_schema.json", "type": "CONCEPT", "context": "A specific schema file for validation"}, {"name": "timestamped directory", "type": "CONCEPT", "context": "Directory structure for archiving golden logs"}, {"name": "provenance", "type": "CONCEPT", "context": "The origin and history of data"}], "relationships": []}

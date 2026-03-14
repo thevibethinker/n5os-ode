@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual using the knowledge system"}, {"name": "knowledge system", "type": "TOOL", "context": "the tool utilized by V to analyze relationships"}], "relationships": []}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Darwinbox", "type": "ORG", "context": "organization interested in innovative candidate profiling"}], "relationships": [{"from": "V", "to": "Darwinbox", "type": "KNOWS", "context": "V is aware of Darwinbox's interest"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ashraf Heleka", "type": "PERSON", "context": "Meeting attendee"}, {"name": "Vrijen Attawar", "type": "PERSON", "context": "Meeting attendee"}], "relationships": [{"from": "Vrijen Attawar", "to": "Ashraf Heleka", "type": "WORKS_WITH", "context": "Both attended the meeting"}]}

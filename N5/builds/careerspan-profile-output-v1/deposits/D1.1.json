@@ -1,8 +1,0 @@
-{
-  "drop_id": "D1.1",
-  "status": "complete",
-  "summary": "Captured Careerspan’s palette, typography, spacing, UI patterns, and Gamma-friendly translation so downstream work can mirror the brand’s premium gradient aesthetic.",
-  "artifacts": ["drops/D1.1-design-spec.md"],
-  "issues": [],
-  "learnings": []
-}

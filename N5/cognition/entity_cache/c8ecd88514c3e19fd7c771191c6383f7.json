@@ -1,1 +1,0 @@
-{"entities": [{"name": "Graham", "type": "PERSON", "context": "Meeting participant, based in downtown Brooklyn (Metro Tech), grew up in Manhattan"}, {"name": "Vrijen", "type": "PERSON", "context": "Meeting participant, V"}], "relationships": [{"from": "Vrijen", "to": "Graham", "type": "KNOWS", "context": "Establishing rapport in meeting, discussed Brooklyn connections"}]}

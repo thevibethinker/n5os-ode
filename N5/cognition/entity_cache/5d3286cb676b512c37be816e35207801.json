@@ -1,1 +1,0 @@
-{"entities": [{"name": "Marcus", "type": "PERSON", "context": "A person engaging in a dialogue about curation."}, {"name": "candidates", "type": "CONCEPT", "context": "Refers to individuals who may self-report."}], "relationships": [{"from": "Marcus", "to": "candidates", "type": "MENTIONS", "context": "Marcus is asking about the role of candidates in the curation process."}]}

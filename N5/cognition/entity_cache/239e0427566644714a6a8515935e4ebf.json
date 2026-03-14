@@ -1,1 +1,0 @@
-{"entities": [{"name": "determinism", "type": "CONCEPT", "context": "approach for stability over time"}, {"name": "Vrijen", "type": "PERSON", "context": "individual associated with the knowledge system"}], "relationships": [{"from": "Vrijen", "to": "determinism", "type": "BELIEVES", "context": "gravitates toward determinism for stability over time"}]}

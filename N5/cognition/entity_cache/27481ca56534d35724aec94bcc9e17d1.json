@@ -1,1 +1,0 @@
-{"entities": [{"name": "V-Voice", "type": "ORG", "context": "The knowledge system discussed"}, {"name": "first five hires", "type": "CONCEPT", "context": "Foundation for the organization"}], "relationships": [{"from": "V-Voice", "to": "first five hires", "type": "BELIEVES", "context": "Belief that first five hires are foundational"}]}

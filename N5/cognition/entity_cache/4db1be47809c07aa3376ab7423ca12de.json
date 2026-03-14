@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ben", "type": "PERSON", "context": "operates community partnerships and founder resources"}, {"name": "Next Play", "type": "ORG", "context": "venture community and portfolio network focused on McKinsey Alumni"}], "relationships": [{"from": "Ben", "to": "Next Play", "type": "WORKS_WITH", "context": "Ben is involved in operations within Next Play"}]}

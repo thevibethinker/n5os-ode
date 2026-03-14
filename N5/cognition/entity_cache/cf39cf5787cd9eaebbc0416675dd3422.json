@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "ORG", "context": "strategic sourcing tool"}, {"name": "Tech Buffalo", "type": "ORG", "context": "partnership discussions"}], "relationships": [{"from": "Careerspan", "to": "Tech Buffalo", "type": "WORKS_WITH", "context": "partnership discussions"}]}

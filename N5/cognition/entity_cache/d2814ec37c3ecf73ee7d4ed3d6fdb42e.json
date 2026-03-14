@@ -1,1 +1,0 @@
-{"entities": [{"name": "gold", "type": "CONCEPT", "context": "a form of currency or asset"}, {"name": "bank", "type": "ORG", "context": "financial institution where money is stored"}], "relationships": [{"from": "gold", "to": "bank", "type": "RELATED_TO", "context": "gold is a form of currency associated with bank transactions"}]}

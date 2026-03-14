@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "Founder discussing business strategy"}, {"name": "Careerspan", "type": "ORG", "context": "Business related to the strategy discussion"}], "relationships": [{"from": "V", "to": "Careerspan", "type": "KNOWS", "context": "V is a founder of Careerspan"}]}

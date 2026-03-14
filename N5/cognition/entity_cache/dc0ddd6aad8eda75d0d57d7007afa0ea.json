@@ -1,1 +1,0 @@
-{"entities": [{"name": "Notion", "type": "TOOL", "context": "Data source platform referenced for job listings"}, {"name": "jobboard_cache.json", "type": "TOOL", "context": "Cache file path mentioned at N5/data/jobboard_cache.json"}], "relationships": [{"from": "Notion", "to": "jobboard_cache.json", "type": "RELATED_TO", "context": "Notion data would be saved to the cache file"}]}

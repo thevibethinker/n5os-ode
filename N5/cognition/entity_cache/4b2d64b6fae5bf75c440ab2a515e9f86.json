@@ -1,1 +1,0 @@
-{"entities": [{"name": "direct-knowledge-ingest", "type": "TOOL", "context": "command registered for knowledge ingestion"}, {"name": "N5 interface", "type": "TOOL", "context": "interface used for access"}], "relationships": [{"from": "direct-knowledge-ingest", "to": "N5 interface", "type": "USES", "context": "available through the N5 interface"}]}

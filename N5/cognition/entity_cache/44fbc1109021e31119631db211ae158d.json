@@ -1,1 +1,0 @@
-{"entities": [{"name": "recipe generation", "type": "CONCEPT", "context": "a process for creating recipes"}, {"name": "recipe template", "type": "TOOL", "context": "a structured format for organizing recipe information"}, {"name": "recipe authoring guidelines", "type": "CONCEPT", "context": "rules for creating recipes"}], "relationships": []}

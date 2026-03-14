@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "the speaker"}, {"name": "Zoho", "type": "TOOL", "context": "a software tool that V uses and promotes"}], "relationships": [{"from": "Vrijen Attawar", "to": "Zoho", "type": "USES", "context": "V uses Zoho every day and promotes it"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "block_templates", "type": "CONCEPT", "context": "directory containing template files"}, {"name": "block_type_registry.json", "type": "TOOL", "context": "configuration file used for block types"}], "relationships": []}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "SOCKS UDP frame data", "type": "CONCEPT", "context": "Data format used in networking for parsing UDP packets."}, {"name": "SocksUDPFrameDetails", "type": "CONCEPT", "context": "An object structure containing details of a SOCKS UDP frame."}], "relationships": []}

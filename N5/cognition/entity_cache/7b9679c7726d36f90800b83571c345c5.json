@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "knowledge system speaker"}, {"name": "semantic understanding", "type": "CONCEPT", "context": "method used to analyze discourse"}], "relationships": [{"from": "V (Vrijen)", "to": "semantic understanding", "type": "USES", "context": "V applies semantic understanding to analyze conversations"}]}

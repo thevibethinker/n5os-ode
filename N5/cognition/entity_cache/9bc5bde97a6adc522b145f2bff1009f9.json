@@ -1,1 +1,0 @@
-{"entities": [{"name": "Buffer", "type": "TOOL", "context": "A data structure used to store data temporarily."}, {"name": "text decoder", "type": "TOOL", "context": "A tool used to decode strings from various formats."}, {"name": "string", "type": "CONCEPT", "context": "A sequence of characters used in programming."}], "relationships": []}

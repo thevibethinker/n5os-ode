@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "ORG", "context": "the organization discussed"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "the person presenting the knowledge system"}], "relationships": [{"from": "V (Vrijen)", "to": "Careerspan", "type": "WORKS_WITH", "context": "V is involved with Careerspan's strategic development"}]}

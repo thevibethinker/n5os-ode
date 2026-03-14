@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual discussed"}, {"name": "Multiple Other Apps", "type": "TOOL", "context": "tools being tried and abandoned"}], "relationships": [{"from": "V (Vrijen)", "to": "Multiple Other Apps", "type": "USES", "context": "trying many tools"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo", "type": "PERSON", "context": "Individual who wakes up and searches for news"}, {"name": "workspace", "type": "TOOL", "context": "Place where Zo saves summaries"}], "relationships": [{"from": "Zo", "to": "workspace", "type": "USES", "context": "Zo saves summaries to the workspace"}]}

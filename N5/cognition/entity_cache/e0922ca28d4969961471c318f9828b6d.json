@@ -1,1 +1,0 @@
-{"entities": [{"name": "ReviewManager", "type": "TOOL", "context": "Core class for managing reviews"}, {"name": "Command-line interface", "type": "TOOL", "context": "Interface wrapping ReviewManager"}], "relationships": [{"from": "Command-line interface", "to": "ReviewManager", "type": "USES", "context": "The CLI uses ReviewManager to perform operations"}]}

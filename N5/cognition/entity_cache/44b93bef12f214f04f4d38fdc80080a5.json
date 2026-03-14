@@ -1,1 +1,0 @@
-{"entities": [{"name": "UMass Amherst", "type": "ORG", "context": "an organization providing results for marketing purposes"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "individual associated with the results"}], "relationships": [{"from": "V (Vrijen)", "to": "UMass Amherst", "type": "WORKS_WITH", "context": "V is involved with UMass Amherst results"}]}

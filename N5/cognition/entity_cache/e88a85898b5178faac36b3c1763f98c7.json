@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "Provides feedback on meeting outcomes"}], "relationships": [{"from": "Vrijen", "to": "v1.3", "type": "USES", "context": "Refers to the version of the meeting reprocessing tool"}, {"from": "Vrijen", "to": "rigid registry", "type": "MENTIONS", "context": "Comments on the format used in version 1.3"}]}

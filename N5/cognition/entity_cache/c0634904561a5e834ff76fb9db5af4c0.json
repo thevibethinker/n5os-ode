@@ -1,1 +1,0 @@
-{"entities": [{"name": "Reforge", "type": "ORG", "context": "organization exploring career/hiring products"}, {"name": "Product School", "type": "ORG", "context": "organization exploring career/hiring products"}], "relationships": [{"from": "Reforge", "to": "Product School", "type": "RELATED_TO", "context": "both organizations have explored career/hiring products internally"}]}

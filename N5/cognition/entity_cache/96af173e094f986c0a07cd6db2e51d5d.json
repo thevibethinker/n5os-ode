@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Individual discussing knowledge system"}, {"name": "British football", "type": "CONCEPT", "context": "Type of football mentioned"}], "relationships": [{"from": "Vrijen Attawar", "to": "British football", "type": "KNOWS", "context": "Familiarity with the concept of British football"}]}

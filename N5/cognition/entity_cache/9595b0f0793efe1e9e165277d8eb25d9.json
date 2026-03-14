@@ -1,1 +1,0 @@
-{"entities": [{"name": "Emily", "type": "PERSON", "context": "mentioned a contact"}, {"name": "Stage 1", "type": "CONCEPT", "context": "part of the job searching process"}], "relationships": [{"from": "Emily", "to": "Stage 1", "type": "MENTIONS", "context": "related to job searching"}]}

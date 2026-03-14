@@ -1,1 +1,0 @@
-{"entities": [{"name": "baseline strategy", "type": "CONCEPT", "context": "a strategy that is read-only"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "the individual proposing updates"}], "relationships": [{"from": "V (Vrijen)", "to": "baseline strategy", "type": "USES", "context": "V reads the baseline strategy"}]}

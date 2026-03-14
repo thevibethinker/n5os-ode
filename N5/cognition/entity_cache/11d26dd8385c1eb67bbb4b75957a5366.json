@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "speaker"}, {"name": "Zoe", "type": "PERSON", "context": "mentioned in social posts"}], "relationships": [{"from": "Vrijen Attawar", "to": "Zoe", "type": "MENTIONS", "context": "discussed in social posts"}]}

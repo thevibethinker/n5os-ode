@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker of the text"}, {"name": "Zoe", "type": "TOOL", "context": "Platform that Vrijen suggests signing up for"}], "relationships": [{"from": "Vrijen Attawar", "to": "Zoe", "type": "MENTIONS", "context": "Suggests signing up to Zoe"}]}

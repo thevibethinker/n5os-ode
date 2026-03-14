@@ -1,1 +1,0 @@
-{"entities": [{"name": "Worker", "type": "PERSON", "context": "the individual reporting the update"}, {"name": "Orchestrator", "type": "TOOL", "context": "the system reading the update"}], "relationships": [{"from": "Worker", "to": "Orchestrator", "type": "USES", "context": "the Worker is using the Orchestrator to read updates"}]}

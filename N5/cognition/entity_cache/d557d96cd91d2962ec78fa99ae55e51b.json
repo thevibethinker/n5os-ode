@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo AI", "type": "ORG", "context": "creator of the knowledge system"}, {"name": "Pamela Kavalam", "type": "PERSON", "context": "source of the external meeting"}], "relationships": [{"from": "Zo AI", "to": "Pamela Kavalam", "type": "RELATED_TO", "context": "derived information from the scheduled meeting"}]}

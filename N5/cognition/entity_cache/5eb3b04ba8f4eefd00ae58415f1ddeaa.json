@@ -1,1 +1,0 @@
-{"entities": [{"name": "David Speigel", "type": "PERSON", "context": "a person in conversation"}, {"name": "Fathom", "type": "TOOL", "context": "a tool mentioned regarding performance"}], "relationships": [{"from": "David Speigel", "to": "Fathom", "type": "USES", "context": "David is using Fathom"}]}

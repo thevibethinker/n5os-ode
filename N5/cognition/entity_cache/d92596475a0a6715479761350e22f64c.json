@@ -1,1 +1,0 @@
-{"entities": [{"name": "Voice Config", "type": "TOOL", "context": "File for voice configuration settings"}, {"name": "Essential Links", "type": "TOOL", "context": "File containing important links related to communication"}, {"name": "Commands Registry", "type": "TOOL", "context": "File that registers various commands"}], "relationships": []}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Andrew", "type": "PERSON", "context": "Individual who is part of the Fibe network"}, {"name": "Fibe network", "type": "ORG", "context": "Network with over 40,000 attendees"}], "relationships": [{"from": "Andrew", "to": "Fibe network", "type": "WORKS_WITH", "context": "Andrew is connected to the Fibe network"}]}

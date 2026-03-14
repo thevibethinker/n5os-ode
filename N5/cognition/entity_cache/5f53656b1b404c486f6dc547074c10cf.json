@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual involved in the decision"}, {"name": "Facebook group", "type": "TOOL", "context": "platform for user interaction"}], "relationships": [{"from": "V", "to": "Facebook group", "type": "USES", "context": "for updates and feedback to users"}]}

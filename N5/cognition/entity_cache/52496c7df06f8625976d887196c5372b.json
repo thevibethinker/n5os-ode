@@ -1,1 +1,0 @@
-{"entities": [{"name": "consultant.manifest", "type": "TOOL", "context": "Consultant persona"}, {"name": "debugger.manifest", "type": "TOOL", "context": "Debugger persona"}, {"name": "data/consulting_audit.db", "type": "TOOL", "context": "Audit trail database"}, {"name": "scripts/audit_logger.py", "type": "TOOL", "context": "Audit logging script"}], "relationships": []}

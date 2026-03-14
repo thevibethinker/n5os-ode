@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo", "type": "PERSON", "context": "tool or entity involved in generating meeting briefs"}, {"name": "V", "type": "PERSON", "context": "person whose priorities and knowledge system are being utilized"}], "relationships": [{"from": "Zo", "to": "V", "type": "USES", "context": "Zo uses V's current priorities to add talking points to the brief"}]}

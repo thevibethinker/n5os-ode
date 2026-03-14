@@ -1,1 +1,0 @@
-{"entities": [{"name": "LLMs", "type": "CONCEPT", "context": "Large Language Models that are stochastic and unreliable"}, {"name": "systems", "type": "CONCEPT", "context": "Systems that compensate for LLM failures"}], "relationships": [{"from": "LLMs", "to": "systems", "type": "RELATED_TO", "context": "Systems must be built to compensate for LLM failures"}]}

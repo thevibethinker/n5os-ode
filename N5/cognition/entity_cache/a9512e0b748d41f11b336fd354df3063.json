@@ -1,1 +1,0 @@
-{"entities": [{"name": "Alex Caveny", "type": "PERSON", "context": "Meeting participant identified from meeting folder ID (alexcavenygmailcom)"}, {"name": "MG-6 pipeline", "type": "TOOL", "context": "Processing pipeline that handles promotion of meetings from [M] state to [P] state"}], "relationships": []}

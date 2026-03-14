@@ -1,1 +1,0 @@
-{"entities": [{"name": "Logan", "type": "PERSON", "context": "Participant in the discussion"}, {"name": "strategy", "type": "CONCEPT", "context": "Topic pivoted to during the conversation"}], "relationships": [{"from": "Logan", "to": "strategy", "type": "MENTIONS", "context": "Discussion pivoted to strategy"}]}

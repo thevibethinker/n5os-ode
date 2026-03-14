@@ -1,1 +1,0 @@
-{"entities": [{"name": "Lensa Partnership", "type": "ORG", "context": "an entity involved in partnership exploration"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "the individual related to the knowledge system"}], "relationships": [{"from": "V (Vrijen)", "to": "Lensa Partnership", "type": "WORKS_WITH", "context": "V is involved in partnership exploration with Lensa"}]}

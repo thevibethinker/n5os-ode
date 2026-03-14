@@ -1,1 +1,0 @@
-{"entities": [{"name": ".gitignore", "type": "TOOL", "context": "file used for ignoring specified files in a Git repository"}, {"name": "Inbox", "type": "CONCEPT", "context": "a folder containing items that need to be processed or handled"}, {"name": "export folders", "type": "CONCEPT", "context": "directory format for storing dated exports"}], "relationships": []}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "the individual speaking"}, {"name": "bootloader", "type": "TOOL", "context": "software used in the context of hardware initialization"}], "relationships": [{"from": "Vrijen Attawar", "to": "bootloader", "type": "MENTIONS", "context": "discusses the usage or engagement with the tool"}]}

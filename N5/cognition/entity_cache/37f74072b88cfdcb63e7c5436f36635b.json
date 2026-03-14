@@ -1,1 +1,0 @@
-{"entities": [{"name": "AI", "type": "TOOL", "context": "Artificial Intelligence used for parsing job descriptions"}, {"name": "hiring manager", "type": "PERSON", "context": "a role related to the hiring process"}], "relationships": [{"from": "AI", "to": "hiring manager", "type": "USES", "context": "AI provides insights that can be defended to the hiring manager"}]}

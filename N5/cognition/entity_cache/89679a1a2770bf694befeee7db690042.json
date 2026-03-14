@@ -1,1 +1,0 @@
-{"entities": [{"name": "sqlite3", "type": "TOOL", "context": "database management tool used to query meeting data"}, {"name": "Meeting_Folder", "type": "CONCEPT", "context": "folder containing transcripts of meetings"}, {"name": "meeting_pipeline.db", "type": "TOOL", "context": "database file used to store meeting data"}], "relationships": []}

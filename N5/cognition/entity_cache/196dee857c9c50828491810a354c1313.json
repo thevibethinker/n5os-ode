@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "known individual involved in the knowledge system"}, {"name": "TemplateManager", "type": "TOOL", "context": "software implementation related to the meeting process"}], "relationships": [{"from": "V", "to": "TemplateManager", "type": "USES", "context": "V utilizes TemplateManager in the implementation"}]}

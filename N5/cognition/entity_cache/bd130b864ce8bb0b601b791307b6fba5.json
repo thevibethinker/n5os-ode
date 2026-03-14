@@ -1,1 +1,0 @@
-{"entities": [{"name": "Logan", "type": "PERSON", "context": "A person V is aligning with"}, {"name": "Ilias", "type": "PERSON", "context": "A person V is aligning with"}], "relationships": [{"from": "V", "to": "Logan", "type": "WORKS_WITH", "context": "V is coordinating with Logan"}, {"from": "V", "to": "Ilias", "type": "WORKS_WITH", "context": "V is coordinating with Ilias"}]}

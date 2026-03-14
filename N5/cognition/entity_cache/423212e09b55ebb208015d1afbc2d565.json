@@ -1,1 +1,0 @@
-{"entities": [{"name": "AbortSignal", "type": "CONCEPT", "context": "a feature used for aborting operations"}, {"name": "eagerOpen", "type": "CONCEPT", "context": "a property that defines stream behavior"}], "relationships": []}

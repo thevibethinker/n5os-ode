@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "The individual associated with the knowledge system."}, {"name": "google_drive-list-files", "type": "TOOL", "context": "Specific tool mentioned for listing files in Google Drive."}], "relationships": []}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "DIKW", "type": "CONCEPT", "context": "Data, Information, Knowledge, Wisdom hierarchy"}, {"name": "AI", "type": "TOOL", "context": "Artificial Intelligence technology"}], "relationships": [{"from": "AI", "to": "DIKW", "type": "USES", "context": "AI makes DIKW operational"}]}

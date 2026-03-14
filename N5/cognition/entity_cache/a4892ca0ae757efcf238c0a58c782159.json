@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the individual referenced as Vrijen"}, {"name": "digest", "type": "TOOL", "context": "a document used for summarizing meeting information"}], "relationships": [{"from": "V", "to": "digest", "type": "USES", "context": "V uses the digest for meetings"}]}

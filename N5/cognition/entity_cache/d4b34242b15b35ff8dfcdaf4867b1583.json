@@ -1,1 +1,0 @@
-{"entities": [{"name": "SHA256", "type": "TOOL", "context": "a hashing algorithm used to verify file integrity"}, {"name": "SOURCE_DIR", "type": "CONCEPT", "context": "the directory from which files are sourced"}, {"name": "DEST_DIR", "type": "CONCEPT", "context": "the directory where files are verified against"}], "relationships": []}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "Vrijen, a person with a knowledge system"}, {"name": "Level Upper", "type": "TOOL", "context": "a system that amplifies specialist personas"}], "relationships": [{"from": "Level Upper", "to": "V", "type": "USES", "context": "Level Upper ensures reasoning meets V's standards"}]}

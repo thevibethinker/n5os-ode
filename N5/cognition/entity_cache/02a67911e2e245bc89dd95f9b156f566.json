@@ -1,1 +1,0 @@
-{"entities": [{"name": "Aaron Mak Hoffman", "type": "PERSON", "context": "individual discussing strategy"}, {"name": "Replit", "type": "ORG", "context": "platform being referenced for strategy building"}], "relationships": [{"from": "Aaron Mak Hoffman", "to": "Replit", "type": "USES", "context": "referring to the platform for building strategy"}]}

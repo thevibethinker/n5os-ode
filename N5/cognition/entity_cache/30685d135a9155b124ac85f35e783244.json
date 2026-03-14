@@ -1,1 +1,0 @@
-{"entities": [{"name": "Morpheus", "type": "ORG", "context": "sells annotation services"}, {"name": "Handshake", "type": "ORG", "context": "contacts for Morpheus"}], "relationships": [{"from": "Morpheus", "to": "Handshake", "type": "WORKS_WITH", "context": "Morpheus sells services to Handshake"}]}

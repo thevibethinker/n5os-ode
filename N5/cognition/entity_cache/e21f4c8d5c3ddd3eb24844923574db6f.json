@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the person building a career coaching platform"}, {"name": "Fibe", "type": "ORG", "context": "organization mentioned in relation to managing event operations"}], "relationships": [{"from": "V", "to": "Fibe", "type": "KNOWS", "context": "V is learning from experiences managing event operations at Fibe's scale"}]}

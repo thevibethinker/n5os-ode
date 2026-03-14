@@ -1,1 +1,0 @@
-{"entities": [{"name": "Anthony", "type": "PERSON", "context": "individual whose context is understood for long-term relationship"}, {"name": "V", "type": "PERSON", "context": "Vrijen, positioned as a long-term career ally"}], "relationships": [{"from": "V", "to": "Anthony", "type": "WORKS_WITH", "context": "V aims to be a long-term career ally for Anthony"}]}

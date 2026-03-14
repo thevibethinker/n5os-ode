@@ -1,1 +1,0 @@
-{"entities": [{"name": "Logan", "type": "PERSON", "context": "Logan's contact"}, {"name": "Shane", "type": "PERSON", "context": "person known by Logan"}], "relationships": [{"from": "Logan", "to": "Shane", "type": "KNOWS", "context": "Logan knows Shane"}, {"from": "V", "to": "information", "type": "BELIEVES", "context": "V believes Logan is terrible at sussing out information"}]}

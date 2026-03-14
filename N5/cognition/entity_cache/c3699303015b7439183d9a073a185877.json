@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "A person whose success is being supported"}], "relationships": [{"from": "V", "to": "success", "type": "BELIEVES", "context": "V's success is a focus for support"}]}

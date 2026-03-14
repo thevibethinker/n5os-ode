@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual knowledgeable in the presented knowledge system"}, {"name": "platform", "type": "TOOL", "context": "the system used to gather data about candidates"}], "relationships": [{"from": "V", "to": "platform", "type": "USES", "context": "V uses the platform for data collection"}]}

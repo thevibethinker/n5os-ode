@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "ORG", "context": "an organization that reduces resume friction"}, {"name": "CMC", "type": "ORG", "context": "an organization that benefits from better visibility"}], "relationships": [{"from": "Careerspan", "to": "CMC", "type": "WORKS_WITH", "context": "Careerspan provides better visibility for CMC"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "AI-to-AI Communication", "type": "CONCEPT", "context": "Direct conversation between AIs without human involvement"}, {"name": "Bootstrap", "type": "CONCEPT", "context": "The initial phase or state in AI operation"}, {"name": "Conversation API", "type": "TOOL", "context": "A tool used for querying or interacting with the AI system"}], "relationships": []}

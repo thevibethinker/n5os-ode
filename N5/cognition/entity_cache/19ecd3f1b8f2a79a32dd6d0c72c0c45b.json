@@ -1,1 +1,0 @@
-{"entities": [{"name": "coupling", "type": "CONCEPT", "context": "refers to the interrelation of concepts"}, {"name": "familiarity", "type": "CONCEPT", "context": "refers to the ease of understanding a concept"}], "relationships": [{"from": "coupling", "to": "familiarity", "type": "RELATED_TO", "context": "they are concepts that are often conflated but are orthogonal"}]}

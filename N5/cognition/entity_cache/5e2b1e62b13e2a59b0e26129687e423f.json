@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "individual who developed a theory"}, {"name": "Elsa", "type": "PERSON", "context": "collaborator who helped refine the theory"}], "relationships": [{"from": "Vrijen Attawar", "to": "Elsa", "type": "WORKS_WITH", "context": "collaborated to make the theory work reliably"}]}

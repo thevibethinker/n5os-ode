@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "individual mentioned in a supportive context"}, {"name": "CRM maintenance script", "type": "TOOL", "context": "tool used for indexing meetings"}], "relationships": [{"from": "Vrijen Attawar", "to": "CRM maintenance script", "type": "USES", "context": "uses a script during meetings for CRM maintenance"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Aki", "type": "ORG", "context": "System receiving push files"}], "relationships": [{"from": "V", "to": "Aki", "type": "USES", "context": "Auto-sends files to Aki"}]}

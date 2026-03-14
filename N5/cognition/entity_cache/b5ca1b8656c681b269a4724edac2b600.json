@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "ORG", "context": "V's knowledge system"}, {"name": "Aaron", "type": "PERSON", "context": "has a system proven at scale"}], "relationships": [{"from": "Vrijen", "to": "Aaron", "type": "MENTIONS", "context": "Aaron's system is related to Vrijen's adoption"}]}

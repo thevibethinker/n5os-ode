@@ -1,1 +1,0 @@
-{"entities": [{"name": "New York City summit", "type": "EVENT", "context": "summit to be held in 2026"}, {"name": "Boston summit", "type": "EVENT", "context": "previous summit that the New York City summit is modeled after"}, {"name": "2026", "type": "CONCEPT", "context": "year when the summit will take place"}], "relationships": []}

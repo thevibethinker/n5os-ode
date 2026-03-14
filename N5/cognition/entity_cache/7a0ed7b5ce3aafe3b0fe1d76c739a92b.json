@@ -1,1 +1,0 @@
-{"entities": [{"name": "David Speigel", "type": "PERSON", "context": "mentioned in conversation"}, {"name": "Virginia", "type": "PERSON", "context": "connected to David Speigel"}], "relationships": [{"from": "David Speigel", "to": "Virginia", "type": "KNOWS", "context": "David is connected to Virginia"}]}

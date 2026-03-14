@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "sharing competitive intelligence"}, {"name": "Calendly", "type": "ORG", "context": "strategic pivot towards CRM-adjacency"}], "relationships": [{"from": "V", "to": "Calendly", "type": "KNOWS", "context": "sharing competitive intelligence"}]}

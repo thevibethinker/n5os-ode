@@ -1,2 +1,0 @@
-{"timestamp": "2026-02-24T19:07:34Z", "event": "substrate_sync", "status": "success", "details": "Push completed, 0 Tier 0 skills found to export"}
-{"timestamp": "2026-02-28T19:05:00Z", "event": "substrate_sync", "status": "success", "tier0_skills_found": 0, "operation": "push"}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Dylan Johnson", "type": "PERSON", "context": "Relationship Manager at Route"}, {"name": "Route", "type": "ORG", "context": "Fintech banking organization"}], "relationships": [{"from": "Dylan Johnson", "to": "Route", "type": "WORKS_WITH", "context": "Dylan Johnson is a Relationship Manager at Route"}]}

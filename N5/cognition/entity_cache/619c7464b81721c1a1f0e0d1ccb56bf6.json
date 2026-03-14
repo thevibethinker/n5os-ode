@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo Team", "type": "ORG", "context": "the team responsible for event logistics and content"}, {"name": "event content", "type": "CONCEPT", "context": "capturing and repurposing content from events"}, {"name": "post-event engagement pipeline", "type": "TOOL", "context": "a system for engaging with participants after the event"}], "relationships": []}

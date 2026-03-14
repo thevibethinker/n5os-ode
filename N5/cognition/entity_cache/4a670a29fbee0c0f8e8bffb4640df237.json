@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ben Guo", "type": "PERSON", "context": "Discussing exposing conversation features to Zo"}, {"name": "Zo", "type": "TOOL", "context": "AI system that should have conversation data exposed to it"}], "relationships": [{"from": "Ben Guo", "to": "Zo", "type": "WORKS_WITH", "context": "Working on exposing conversation features to Zo"}]}

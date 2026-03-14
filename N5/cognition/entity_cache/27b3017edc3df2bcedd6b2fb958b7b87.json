@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Founder/CEO of Careerspan"}, {"name": "Careerspan", "type": "ORG", "context": "Company founded by Vrijen Attawar"}], "relationships": [{"from": "Vrijen Attawar", "to": "Careerspan", "type": "WORKS_WITH", "context": "Founder and CEO of Careerspan"}]}

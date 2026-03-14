@@ -1,1 +1,0 @@
-{"entities": [{"name": "generate-with-voice", "type": "CONCEPT", "context": "A command for generating text with voice transformation."}, {"name": "N5/commands/generate-with-voice.md", "type": "TOOL", "context": "File path for the specific command related to voice generation."}, {"name": "content", "type": "CONCEPT", "context": "Category of the command."}], "relationships": []}

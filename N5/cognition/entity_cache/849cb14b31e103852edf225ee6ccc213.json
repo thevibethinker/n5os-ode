@@ -1,1 +1,0 @@
-{"entities": [{"name": "Laura", "type": "PERSON", "context": "A person involved in reviewing the advisor agreement"}], "relationships": [{"from": "V (Vrijen)", "to": "Laura", "type": "WORKS_WITH", "context": "V collaborates with Laura for agreement review"}]}

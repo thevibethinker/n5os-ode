@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vibe Operator", "type": "CONCEPT", "context": "A concept related to V's knowledge system"}, {"name": "Builder", "type": "CONCEPT", "context": "A concept in V's knowledge system for substantial builds"}], "relationships": [{"from": "Vibe Operator", "to": "Builder", "type": "RELATED_TO", "context": "Vibe Operator routes substantial builds to Builder"}]}

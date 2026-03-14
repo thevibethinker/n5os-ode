@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "Next Play", "type": "ORG", "context": "organization that values practical education"}], "relationships": [{"from": "Vrijen", "to": "Next Play", "type": "WORKS_WITH", "context": "collaboration on workshop formats"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "TooTallNate", "type": "PERSON", "context": "GitHub user"}, {"name": "coffee-script", "type": "TOOL", "context": "JavaScript programming language"}], "relationships": [{"from": "TooTallNate", "to": "coffee-script", "type": "USES", "context": "moving the package to devDependencies"}]}

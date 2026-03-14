@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "individual mentioned in the text"}, {"name": "religious", "type": "BELIEF", "context": "describes a characteristic of a group"}], "relationships": [{"from": "Vrijen Attawar", "to": "religious", "type": "MENTIONS", "context": "Vrijen refers to a group associated with religious beliefs"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "knowledge system developer"}, {"name": "rationale", "type": "CONCEPT", "context": "reasoning framework for decision-making"}], "relationships": [{"from": "V (Vrijen)", "to": "rationale", "type": "USES", "context": "V employs rationale to make reasoning transparent and document decision-making"}]}

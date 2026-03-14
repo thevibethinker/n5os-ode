@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "the speaker discussing financial decisions"}, {"name": "McKinsey", "type": "ORG", "context": "the organization associated with the retirement fund"}], "relationships": [{"from": "Vrijen", "to": "McKinsey", "type": "MENTIONS", "context": "referring to his retirement fund from working at McKinsey"}]}

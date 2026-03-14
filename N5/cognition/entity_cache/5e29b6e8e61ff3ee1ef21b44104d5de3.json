@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "speaker and user of OpenAI API"}, {"name": "OpenAI", "type": "ORG", "context": "provider of API services"}], "relationships": [{"from": "Vrijen Attawar", "to": "OpenAI", "type": "USES", "context": "uses OpenAI API for computing needs"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Max", "type": "PERSON", "context": "a member of the founder team"}], "relationships": [{"from": "Max", "to": "founder team interest", "type": "BELIEVES", "context": "suggests interest overrides schedule friction"}]}

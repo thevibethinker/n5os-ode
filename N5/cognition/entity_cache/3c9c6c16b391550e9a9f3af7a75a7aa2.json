@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ash Straughn", "type": "PERSON", "context": "individual discussing acquisition"}, {"name": "acquisition", "type": "CONCEPT", "context": "context of funding and future plans"}], "relationships": [{"from": "Ash Straughn", "to": "acquisition", "type": "MENTIONS", "context": "discussion about funding and acquisition strategy"}]}

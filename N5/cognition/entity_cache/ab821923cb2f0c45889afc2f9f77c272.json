@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "ORG", "context": "knowledge system"}], "relationships": [{"from": "Vrijen", "to": "team positions", "type": "BELIEVES", "context": "protecting team positions"}]}

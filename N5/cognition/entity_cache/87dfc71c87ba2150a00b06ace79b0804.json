@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "Internal team member"}, {"name": "David", "type": "PERSON", "context": "Managed contract with V"}], "relationships": [{"from": "V", "to": "David", "type": "WORKS_WITH", "context": "Managed the contract"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ben", "type": "PERSON", "context": "potential influencer or endorser"}, {"name": "Next Play", "type": "ORG", "context": "a strategic entry point for founders"}], "relationships": [{"from": "Ben", "to": "Next Play", "type": "BELIEVES", "context": "Ben's endorsement could unlock access to wider networks through Next Play"}]}

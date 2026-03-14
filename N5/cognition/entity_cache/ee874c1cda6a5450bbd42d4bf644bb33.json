@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "Author of an article about rule-following culture"}, {"name": "rule-following culture", "type": "CONCEPT", "context": "Topic of the article being written"}], "relationships": [{"from": "Vrijen", "to": "rule-following culture", "type": "MENTIONS", "context": "Article topic discussed by Vrijen"}]}

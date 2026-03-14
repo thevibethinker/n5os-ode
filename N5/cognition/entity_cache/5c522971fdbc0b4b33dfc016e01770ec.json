@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "The subject of the knowledge system"}, {"name": "HIGH-threshold", "type": "CONCEPT", "context": "A filter criterion for surfacing information"}], "relationships": [{"from": "V", "to": "HIGH-threshold", "type": "USES", "context": "V uses HIGH-threshold as a filter for information"}]}

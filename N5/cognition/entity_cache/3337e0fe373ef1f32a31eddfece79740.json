@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "primary decision-maker/user for the verification tool"}, {"name": "verification tool", "type": "TOOL", "context": "tool used by V for candidate verification"}], "relationships": [{"from": "V (Vrijen)", "to": "verification tool", "type": "USES", "context": "V uses this tool for verifying candidates"}]}

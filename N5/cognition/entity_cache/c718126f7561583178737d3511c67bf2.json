@@ -1,1 +1,0 @@
-{"entities": [{"name": "Creator economy", "type": "CONCEPT", "context": "an investment area related to infrastructure"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "a builder in the creator economy"}], "relationships": [{"from": "V (Vrijen)", "to": "Creator economy", "type": "KNOWS", "context": "V is in the trenches building in this area"}]}

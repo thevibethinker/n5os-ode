@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "a person discussing knowledge systems"}, {"name": "Sendo", "type": "PERSON", "context": "mentioned as a good man"}], "relationships": [{"from": "Vrijen Attawar", "to": "Sendo", "type": "KNOWS", "context": "Vrijen refers to Sendo as a good man"}]}

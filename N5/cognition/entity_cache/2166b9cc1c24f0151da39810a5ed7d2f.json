@@ -1,1 +1,0 @@
-{"entities": [{"name": "TTL alerts", "type": "CONCEPT", "context": "alerts related to time-to-live for monitoring"}, {"name": "weekly review", "type": "CONCEPT", "context": "a review process for operations"}, {"name": "health check", "type": "CONCEPT", "context": "system audit for monitoring system health"}], "relationships": []}

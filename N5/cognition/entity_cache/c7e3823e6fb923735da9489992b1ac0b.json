@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "name of the individual"}, {"name": "flow by Mihaili", "type": "CONCEPT", "context": "concept referenced by Vrijen"}], "relationships": [{"from": "Vrijen Attawar", "to": "flow by Mihaili", "type": "KNOWS", "context": "Vrijen references the concept of flow by Mihaili"}]}

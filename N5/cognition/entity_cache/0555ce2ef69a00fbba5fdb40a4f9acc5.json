@@ -1,1 +1,0 @@
-{"entities": [{"name": "Stack trace analysis", "type": "CONCEPT", "context": "a method for debugging"}, {"name": "Cross-file debugging", "type": "CONCEPT", "context": "a method for debugging"}, {"name": "Performance optimization", "type": "CONCEPT", "context": "a method for improving system efficiency"}], "relationships": []}

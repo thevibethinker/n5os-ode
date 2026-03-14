@@ -1,1 +1,0 @@
-{"entities": [{"name": "Michael Grady", "type": "PERSON", "context": "participant in a conversation"}, {"name": "N5", "type": "CONCEPT", "context": "knowledge framework or system"}], "relationships": [{"from": "Michael Grady", "to": "N5", "type": "MENTIONS", "context": "asking about dropping an instance of N5"}]}

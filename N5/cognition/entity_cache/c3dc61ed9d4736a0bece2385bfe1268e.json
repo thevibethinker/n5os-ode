@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker mentioning the knowledge system"}, {"name": "LLMs", "type": "TOOL", "context": "Large Language Models used for evaluating talent"}], "relationships": [{"from": "Vrijen Attawar", "to": "LLMs", "type": "USES", "context": "Evaluates talent with the help of LLMs"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "ORG", "context": "a service provider that scans databases for candidates"}], "relationships": [{"from": "V", "to": "Careerspan", "type": "USES", "context": "V pays Careerspan to scan its database"}]}

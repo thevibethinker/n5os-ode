@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "Individual involved in the internal product standup"}, {"name": "Careerspan", "type": "TOOL", "context": "Feature under development in the internal product standup"}, {"name": "Zo", "type": "ORG", "context": "Mentioned in relation to partnership or GTM discussions"}], "relationships": []}

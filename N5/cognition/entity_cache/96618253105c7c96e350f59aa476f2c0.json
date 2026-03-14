@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "Individual discussing acquisition opportunity"}, {"name": "acquisition opportunity", "type": "CONCEPT", "context": "Business opportunity being considered"}], "relationships": [{"from": "V", "to": "acquisition opportunity", "type": "MENTIONS", "context": "V is excited about the acquisition opportunity"}]}

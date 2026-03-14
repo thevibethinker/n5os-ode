@@ -1,1 +1,0 @@
-{"entities": [{"name": "architectural principles", "type": "CONCEPT", "context": "principles that guide major system work"}], "relationships": [{"from": "V (Vrijen)", "to": "architectural principles", "type": "BELIEVES", "context": "V believes in the importance of loading architectural principles before system work"}]}

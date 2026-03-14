@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "person discussing confidence score"}, {"name": "financial details", "type": "CONCEPT", "context": "specific details mentioned in the discussion"}, {"name": "action items", "type": "CONCEPT", "context": "tasks to be completed as a result of the discussion"}], "relationships": []}

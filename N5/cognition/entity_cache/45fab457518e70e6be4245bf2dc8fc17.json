@@ -1,1 +1,0 @@
-{"entities": [{"name": "g", "type": "CONCEPT", "context": "inner function related to AST nodes"}, {"name": "AST", "type": "CONCEPT", "context": "Acronym for Abstract Syntax Tree"}, {"name": "compressor", "type": "TOOL", "context": "Tool that discards the AST node"}], "relationships": []}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Jaya Pokuri", "type": "PERSON", "context": "Employee at Blanket"}, {"name": "Blanket", "type": "ORG", "context": "Organization where Jaya works"}], "relationships": [{"from": "Jaya Pokuri", "to": "Blanket", "type": "WORKS_WITH", "context": "Jaya works at Blanket helping build production"}]}

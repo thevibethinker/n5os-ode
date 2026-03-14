@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual performing evaluations and interviews"}, {"name": "Mishu", "type": "PERSON", "context": "individual working with V during panel interviews"}], "relationships": [{"from": "V", "to": "Mishu", "type": "WORKS_WITH", "context": "collaborates during panel interviews"}]}

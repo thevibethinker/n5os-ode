@@ -1,1 +1,0 @@
-{"entities": [{"name": "chat GPT", "type": "TOOL", "context": "an AI tool used for generating text"}], "relationships": [{"from": "V", "to": "chat GPT", "type": "USES", "context": "V utilizes chat GPT for assistance"}]}

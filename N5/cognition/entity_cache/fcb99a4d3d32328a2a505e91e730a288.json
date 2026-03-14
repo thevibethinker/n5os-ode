@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ryan", "type": "PERSON", "context": "has deep intuition about career development"}, {"name": "Blend", "type": "TOOL", "context": "a tool for capturing career preferences"}], "relationships": [{"from": "Ryan", "to": "Blend", "type": "USES", "context": "uses Blend for self-discovery"}]}

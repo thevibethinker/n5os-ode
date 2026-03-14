@@ -1,1 +1,0 @@
-{"entities": [{"name": "PORT_REGISTRY.md", "type": "TOOL", "context": "File related to port allocations"}, {"name": "port_registry.py", "type": "TOOL", "context": "Script for port management CLI"}, {"name": "Services", "type": "CONCEPT", "context": "UI for service management"}], "relationships": []}

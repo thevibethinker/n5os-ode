@@ -1,1 +1,0 @@
-{"entities": [{"name": "D3", "type": "ORG", "context": "refers to a strategic decision support entity"}], "relationships": [{"from": "V", "to": "D3", "type": "WORKS_WITH", "context": "D3 supports V's strategic decisions"}]}

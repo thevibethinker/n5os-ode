@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "V's knowledge system"}, {"name": "universities", "type": "ORG", "context": "V's moat"}], "relationships": [{"from": "Vrijen", "to": "universities", "type": "USES", "context": "V sees universities as a strength area"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "Speaker discussing monetization and economic realities"}, {"name": "Careerspan", "type": "ORG", "context": "Organization facing monetization dilemma"}], "relationships": [{"from": "Vrijen", "to": "Careerspan", "type": "RELATED_TO", "context": "Discusses the organization's fundamental dilemma regarding monetization"}]}

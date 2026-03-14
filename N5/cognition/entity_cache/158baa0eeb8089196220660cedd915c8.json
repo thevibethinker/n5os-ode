@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "ORG", "context": "Current organization or tool"}, {"name": "Apply AI", "type": "ORG", "context": "Legacy organization or tool"}], "relationships": [{"from": "Careerspan", "to": "Apply AI", "type": "BELIEVES", "context": "Treat both as identical entities in all contexts"}]}

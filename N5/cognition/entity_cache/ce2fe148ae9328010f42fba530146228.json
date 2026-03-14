@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "Owner of the email monitoring task"}, {"name": "Darwin Box", "type": "ORG", "context": "Email related to monitoring"}], "relationships": [{"from": "Vrijen", "to": "Darwin Box", "type": "USES", "context": "Monitoring the email from Darwin Box"}]}

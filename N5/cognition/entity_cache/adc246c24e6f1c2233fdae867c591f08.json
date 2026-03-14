@@ -1,1 +1,0 @@
-{"entities": [{"name": "Theresa", "type": "PERSON", "context": "planning November diversity/equity hackathon"}, {"name": "November diversity/equity hackathon", "type": "EVENT", "context": "focused on diversity and equity"}], "relationships": [{"from": "Theresa", "to": "November diversity/equity hackathon", "type": "WORKS_WITH", "context": "planning the event"}]}

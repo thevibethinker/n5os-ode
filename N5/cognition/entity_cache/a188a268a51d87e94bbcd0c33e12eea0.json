@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual involved in the knowledge system"}, {"name": "technical co-founder", "type": "PERSON", "context": "potential valuable contact"}], "relationships": [{"from": "V", "to": "technical co-founder", "type": "KNOWS", "context": "may be a valuable contact"}]}

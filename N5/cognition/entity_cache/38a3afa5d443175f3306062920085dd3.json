@@ -1,1 +1,0 @@
-{"entities": [{"name": "SHRM Foundation", "type": "ORG", "context": "organization responding to application"}, {"name": "Application acceptance", "type": "CONCEPT", "context": "phase of the process"}], "relationships": [{"from": "SHRM Foundation", "to": "Application acceptance", "type": "RELATED_TO", "context": "response to application acceptance phase"}]}

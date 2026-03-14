@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "Journal", "type": "TOOL", "context": "a tool for guided reflection and managing journal entries"}], "relationships": [{"from": "V (Vrijen)", "to": "Journal", "type": "USES", "context": "V uses the Journal tool for reflection and writing"}]}

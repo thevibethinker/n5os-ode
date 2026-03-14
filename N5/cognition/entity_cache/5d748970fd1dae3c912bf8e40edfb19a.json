@@ -1,1 +1,0 @@
-{"entities": [{"name": "Builder", "type": "PERSON", "context": "refuses to execute major work without a plan file"}], "relationships": [{"from": "Builder", "to": "plan file", "type": "USES", "context": "Builder requires a plan file to execute major work"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "logan@example.com", "type": "PERSON", "context": "Contact person with recent interactions"}], "relationships": [{"from": "V", "to": "logan@example.com", "type": "KNOWS", "context": "Co-founder, involved in hiring discussions"}]}

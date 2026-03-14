@@ -1,1 +1,0 @@
-{"entities": [{"name": "User", "type": "PERSON", "context": "refers to the individual specifying the override"}, {"name": "profile", "type": "CONCEPT", "context": "refers to the user-defined settings for overrides"}], "relationships": [{"from": "User", "to": "profile", "type": "USES", "context": "User specifies or refers to the profile for overrides"}]}

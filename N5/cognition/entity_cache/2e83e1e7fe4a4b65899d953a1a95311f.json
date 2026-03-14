@@ -1,1 +1,0 @@
-{"entities": [{"name": "Mai", "type": "PERSON", "context": "moved to website exploration"}], "relationships": [{"from": "Mai", "to": "product", "type": "VALIDATES", "context": "suggesting the metrics won her over"}]}

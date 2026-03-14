@@ -1,1 +1,0 @@
-{"entities": [{"name": "Howie", "type": "TOOL", "context": "email forwarding tool"}, {"name": "va@zo.computer", "type": "ORG", "context": "email address associated with V"}], "relationships": [{"from": "Howie", "to": "va@zo.computer", "type": "USES", "context": "Howie forwards emails to V's email address"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Akiflow", "type": "TOOL", "context": "Task management tool used by V"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "Individual referencing the knowledge system"}], "relationships": [{"from": "V (Vrijen)", "to": "Akiflow", "type": "USES", "context": "V uses Akiflow to manage projects"}]}

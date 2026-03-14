@@ -1,1 +1,0 @@
-{"entities": [{"name": "Brin", "type": "PERSON", "context": "attended the meeting"}, {"name": "meeting", "type": "EVENT", "context": "the meeting that ended at 11am"}], "relationships": [{"from": "Brin", "to": "meeting", "type": "RELATED_TO", "context": "Brin had the next meeting immediately after"}]}

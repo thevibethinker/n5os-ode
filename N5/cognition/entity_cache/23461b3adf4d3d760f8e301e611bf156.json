@@ -1,1 +1,0 @@
-{"entities": [{"name": "Mishal", "type": "PERSON", "context": "individual associated with Stitchsense.Ai"}, {"name": "Stitchsense.Ai", "type": "ORG", "context": "organization associated with Mishal"}], "relationships": [{"from": "Mishal", "to": "Stitchsense.Ai", "type": "WORKS_WITH", "context": "Mishal is part of the organization Stitchsense.Ai"}]}

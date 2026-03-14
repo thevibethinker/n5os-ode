@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "Participant with specific interests regarding suitor list and flight schedule."}, {"name": "suitor list", "type": "CONCEPT", "context": "Interest of V related to aligning preferences."}, {"name": "Friday call", "type": "EVENT", "context": "Event that V cannot attend due to flight."}], "relationships": []}

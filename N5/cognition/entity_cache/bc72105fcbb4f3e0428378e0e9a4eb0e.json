@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual mentioned as Vrijen"}, {"name": "webdriver-bidi-protocol", "type": "CONCEPT", "context": "a protocol related to web automation"}], "relationships": [{"from": "V", "to": "webdriver-bidi-protocol", "type": "KNOWS", "context": "V is aware of the webdriver-bidi-protocol"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "The speaker discussing data"}, {"name": "Aspire", "type": "ORG", "context": "An organization related to user applications"}], "relationships": [{"from": "Vrijen Attawar", "to": "Aspire", "type": "KNOWS", "context": "Vrijen is discussing data related to Aspire"}]}

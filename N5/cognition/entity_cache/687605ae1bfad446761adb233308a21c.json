@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "speaker discussing AI"}, {"name": "AI", "type": "CONCEPT", "context": "artificial intelligence and its use in life"}], "relationships": [{"from": "V", "to": "AI", "type": "BELIEVES", "context": "V believes in the beneficial acceleration of AI in our lives"}]}

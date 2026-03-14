@@ -1,1 +1,0 @@
-{"entities": [{"name": "Anna", "type": "PERSON", "context": "Speaker discussing venues in NYC"}, {"name": "New York City group party place", "type": "CONCEPT", "context": "Venue for free bookings in NYC"}], "relationships": [{"from": "Anna", "to": "New York City group party place", "type": "USES", "context": "Anna uses the venue for free bookings"}]}

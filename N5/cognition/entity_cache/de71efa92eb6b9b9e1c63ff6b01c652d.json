@@ -1,1 +1,0 @@
-{"entities": [{"name": "commands.jsonl", "type": "CONCEPT", "context": "File containing command entries"}, {"name": "docgen", "type": "TOOL", "context": "Tool used to rebuild registry entries from source"}], "relationships": []}

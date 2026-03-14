@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual mentioned"}, {"name": "weekends", "type": "CONCEPT", "context": "time period mentioned"}], "relationships": [{"from": "V", "to": "weekends", "type": "KNOWS", "context": "V is available to meet on weekends"}]}

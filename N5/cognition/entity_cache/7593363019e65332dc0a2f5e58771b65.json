@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "ORG", "context": "an organization involved in partnership evaluation"}, {"name": "Sam's company", "type": "ORG", "context": "an organization involved in partnership evaluation"}], "relationships": [{"from": "Careerspan", "to": "Sam's company", "type": "WORKS_WITH", "context": "direct partnership evaluation"}]}

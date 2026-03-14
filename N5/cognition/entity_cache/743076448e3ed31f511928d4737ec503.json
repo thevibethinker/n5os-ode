@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the individual related to the knowledge system"}, {"name": "Quality Gate", "type": "TOOL", "context": "a script used for quality assurance in meetings"}], "relationships": [{"from": "V", "to": "Quality Gate", "type": "USES", "context": "V uses the Quality Gate tool for processing meeting transcripts"}]}

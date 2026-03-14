@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "V's knowledge system"}, {"name": "session_state_manager.py", "type": "TOOL", "context": "Python script used for managing session state"}], "relationships": [{"from": "Vrijen", "to": "session_state_manager.py", "type": "USES", "context": "Utilizes the script to manage session state"}]}

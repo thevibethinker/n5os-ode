@@ -1,1 +1,0 @@
-{"entities": [{"name": "bun", "type": "TOOL", "context": "JavaScript runtime and package manager used for various tasks"}, {"name": "dotenv", "type": "TOOL", "context": "Library for loading environment variables from .env files"}], "relationships": [{"from": "bun", "to": "dotenv", "type": "USES", "context": "Bun automatically loads .env, so dotenv is not needed"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Builder", "type": "PERSON", "context": "A person or tool involved in the planning process"}, {"name": "PLAN.md", "type": "CONCEPT", "context": "A file format used for planning"}, {"name": "phase number", "type": "CONCEPT", "context": "A numerical identifier for phases in a process"}], "relationships": []}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "ORG", "context": "V's knowledge system and framework"}], "relationships": [{"from": "Vrijen", "to": "AI-as-leverage framework", "type": "USES", "context": "Vrijen uses this framework to build more with less"}]}

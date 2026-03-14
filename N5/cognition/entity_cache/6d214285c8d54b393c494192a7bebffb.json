@@ -1,1 +1,0 @@
-{"entities": [{"name": "Andrew", "type": "PERSON", "context": "Individual involved in curation"}, {"name": "Careerspan", "type": "ORG", "context": "Potential sponsor or partner in the future"}], "relationships": [{"from": "Andrew", "to": "Careerspan", "type": "WORKS_WITH", "context": "Potential future sponsorship or partnership"}]}

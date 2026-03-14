@@ -1,1 +1,0 @@
-{"entities": [{"name": "Edmund", "type": "PERSON", "context": "a person involved in the execution risks"}, {"name": "Careerspan", "type": "ORG", "context": "organization that may not keep pace with Edmund's speed"}], "relationships": [{"from": "Edmund", "to": "Careerspan", "type": "WORKS_WITH", "context": "Edmund's work involves Careerspan in executing tasks"}]}

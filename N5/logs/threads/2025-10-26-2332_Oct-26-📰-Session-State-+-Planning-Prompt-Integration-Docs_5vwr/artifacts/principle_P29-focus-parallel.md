@@ -1,1 +1,0 @@
-/home/workspace/Knowledge/architectural/principles/P29-focus-plus-parallel.md

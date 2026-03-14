@@ -1,1 +1,0 @@
-{"entities": [{"name": "Danielle", "type": "PERSON", "context": "Fibe team member involved in event logistics"}], "relationships": [{"from": "V", "to": "Danielle", "type": "WORKS_WITH", "context": "collaboration on event planning and coordination"}]}

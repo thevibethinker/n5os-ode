@@ -1,1 +1,0 @@
-{"entities": [{"name": "Brad Thomas", "type": "PERSON", "context": "individual associated with Orange-Quarter"}, {"name": "Orange-Quarter", "type": "ORG", "context": "organization where Brad Thomas works"}], "relationships": [{"from": "Brad Thomas", "to": "Orange-Quarter", "type": "WORKS_WITH", "context": "Brad is associated with the organization"}]}

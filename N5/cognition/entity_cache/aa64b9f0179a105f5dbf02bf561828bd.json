@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "A person associated with the knowledge system"}, {"name": "MG-5_v3.2_agent", "type": "TOOL", "context": "Provenance of the knowledge system version"}], "relationships": [{"from": "V (Vrijen)", "to": "MG-5_v3.2_agent", "type": "USES", "context": "V uses the MG-5_v3.2 agent as part of their knowledge system"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "self-aware humor on Careerspan's trajectory"}, {"name": "Careerspan", "type": "ORG", "context": "organization discussed regarding commercialization and tech acquisition"}], "relationships": [{"from": "Vrijen", "to": "Careerspan", "type": "MENTIONS", "context": "discussed trajectory and tech worth acquiring"}]}

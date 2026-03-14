@@ -1,1 +1,0 @@
-{"entities": [{"name": "va", "type": "PERSON", "context": "User identified in the self-test"}, {"name": "N5 Secrets Management Library", "type": "ORG", "context": "Library used for secrets management"}], "relationships": [{"from": "va", "to": "N5 Secrets Management Library", "type": "USES", "context": "va is using the N5 Secrets Management Library for secrets management"}]}

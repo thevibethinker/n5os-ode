@@ -1,1 +1,0 @@
-{"entities": [{"name": "Qix-", "type": "ORG", "context": "the organization associated with the 'node-is-arrayish' project"}, {"name": "node-is-arrayish", "type": "TOOL", "context": "a tool related to checking if a value is array-like"}], "relationships": []}

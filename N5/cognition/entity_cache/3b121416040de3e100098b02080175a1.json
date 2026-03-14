@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "ORG", "context": "an organization promoting personal branding through stories"}], "relationships": [{"from": "V", "to": "Careerspan", "type": "KNOWS", "context": "V is aware of Careerspan's positioning"}]}

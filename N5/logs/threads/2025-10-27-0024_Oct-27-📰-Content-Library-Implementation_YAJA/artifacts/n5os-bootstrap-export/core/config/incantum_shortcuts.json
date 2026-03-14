@@ -1,9 +1,0 @@
-{
-  "_description": "User-defined shortcuts for the incantum system. Define custom shortcuts that map to command sequences.",
-  "_format": "Key is the shortcut phrase (case-insensitive), value is array of command names",
-  "_example": {
-    "eod": ["conversation-end"],
-    "daily standup": ["careerspan-timeline", "daily-standup-generate"]
-  },
-  "_instructions": "Add your custom shortcuts below. The LLM will check this file when parsing N5 commands."
-}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the central figure discussing knowledge system"}, {"name": "historical patterns", "type": "CONCEPT", "context": "concept of analyzing past data for insights"}], "relationships": [{"from": "V", "to": "historical patterns", "type": "BELIEVES", "context": "V believes in searching historical patterns for insights"}]}

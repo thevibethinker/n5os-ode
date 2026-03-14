@@ -1,1 +1,0 @@
-{"entities": [{"name": "prefs.md", "type": "TOOL", "context": "a file that includes a context-aware loading guide"}, {"name": "Context-Aware Loading Guide", "type": "CONCEPT", "context": "specifies which modules to load for different task types"}], "relationships": []}

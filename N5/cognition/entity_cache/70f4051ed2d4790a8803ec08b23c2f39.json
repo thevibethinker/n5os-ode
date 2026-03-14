@@ -1,1 +1,0 @@
-{"entities": [{"name": "Dylan", "type": "PERSON", "context": "Dylan's firsthand experience at Fordham finance startup"}, {"name": "Fordham finance startup", "type": "ORG", "context": "organization where Dylan observed the gap"}], "relationships": [{"from": "Dylan", "to": "Fordham finance startup", "type": "KNOWS", "context": "Dylan has direct experience with the organization"}]}

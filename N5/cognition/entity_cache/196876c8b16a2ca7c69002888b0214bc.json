@@ -1,1 +1,0 @@
-{"entities": [{"name": "AI coaching", "type": "TOOL", "context": "coaching tool used for creating richer profiles"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "individual mentioned who has a knowledge system"}], "relationships": [{"from": "V (Vrijen)", "to": "AI coaching", "type": "USES", "context": "V uses AI coaching to enhance profiles and introductions"}]}

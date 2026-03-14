@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "The individual discussing the knowledge system"}, {"name": "ATS", "type": "TOOL", "context": "Applicant Tracking System mentioned as a product"}], "relationships": [{"from": "Vrijen Attawar", "to": "ATS", "type": "BELIEVES", "context": "V believes in creating a tailored ATS for founders"}]}

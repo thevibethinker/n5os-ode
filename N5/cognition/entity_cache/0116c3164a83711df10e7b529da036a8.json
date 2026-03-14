@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the individual expressing excitement"}, {"name": "founders", "type": "CONCEPT", "context": "target audience for the knowledge system"}], "relationships": [{"from": "V", "to": "founders", "type": "BELIEVES", "context": "values building for the founders community"}]}

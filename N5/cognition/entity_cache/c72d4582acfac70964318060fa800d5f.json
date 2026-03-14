@@ -1,1 +1,0 @@
-{"entities": [{"name": "Builder", "type": "CONCEPT", "context": "Role for building new features"}, {"name": "Operator", "type": "CONCEPT", "context": "Role for general conversation"}, {"name": "Researcher", "type": "CONCEPT", "context": "Role for research/exploration"}, {"name": "Writer", "type": "CONCEPT", "context": "Role for content writing"}], "relationships": []}

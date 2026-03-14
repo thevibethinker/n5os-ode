@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ulrik", "type": "PERSON", "context": "contact at Marvinventures"}, {"name": "Marvinventures", "type": "ORG", "context": "organization associated with Ulrik"}], "relationships": [{"from": "Ulrik", "to": "Marvinventures", "type": "WORKS_WITH", "context": "Ulrik is associated with Marvinventures"}]}

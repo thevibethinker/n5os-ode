@@ -1,1 +1,0 @@
-{"entities": [{"name": "Josh", "type": "PERSON", "context": "Username provided in the knowledge system"}, {"name": "United States", "type": "ORG", "context": "Country provided in the knowledge system"}], "relationships": [{"from": "Josh", "to": "United States", "type": "BELONGS_TO", "context": "Josh is from the United States"}]}

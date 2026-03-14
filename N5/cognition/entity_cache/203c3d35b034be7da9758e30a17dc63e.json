@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "has built a knowledge system"}, {"name": "N5 OS", "type": "TOOL", "context": "a system built by V with 11 agents and 77 stakeholder profiles"}], "relationships": [{"from": "V (Vrijen)", "to": "N5 OS", "type": "USES", "context": "built a system called N5 OS"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "V-OS", "type": "TOOL", "context": "A system used for managing event statuses"}, {"name": "meeting_prep_digest.py", "type": "TOOL", "context": "A script file related to event filtering"}, {"name": "Weekend availability", "type": "CONCEPT", "context": "A confirmed status for availability regarding events"}], "relationships": []}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "referring to the individual overseeing the knowledge system"}, {"name": "curl", "type": "TOOL", "context": "command-line tool used for transferring data with URLs"}], "relationships": []}

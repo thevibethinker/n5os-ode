@@ -1,1 +1,0 @@
-{"entities": [{"name": "Bram Adams", "type": "PERSON", "context": "Attendee of the meeting"}, {"name": "Vrijen Attawar", "type": "PERSON", "context": "Attendee of the meeting"}], "relationships": [{"from": "Vrijen Attawar", "to": "Bram Adams", "type": "WORKS_WITH", "context": "Both attended the meeting together"}]}

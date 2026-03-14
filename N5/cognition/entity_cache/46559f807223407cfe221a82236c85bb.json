@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo", "type": "TOOL", "context": "mentioned as something to check out"}, {"name": "Zoe", "type": "PERSON", "context": "mentioned alongside Zo"}], "relationships": [{"from": "V", "to": "Zo", "type": "USES", "context": "suggesting to check out Zo"}, {"from": "V", "to": "Zoe", "type": "MENTIONS", "context": "mentioned in relation to Zo"}]}

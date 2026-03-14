@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zoe", "type": "PERSON", "context": "Associated with meeting on 10-21"}, {"name": "Manifest", "type": "TOOL", "context": "File tracking system for meeting states, tracks fields like follow_up_email status"}], "relationships": [{"from": "Manifest", "to": "Zoe", "type": "RELATED_TO", "context": "Manifest tracks meeting state for Zoe meeting (10-21)"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "--generate-ids", "type": "TOOL", "context": "a flag used for reserving a worker ID"}, {"name": "--dry-run", "type": "TOOL", "context": "a flag used to preview linkage and file path"}], "relationships": []}

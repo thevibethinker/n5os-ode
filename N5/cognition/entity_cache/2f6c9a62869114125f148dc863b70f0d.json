@@ -1,1 +1,0 @@
-{"entities": [{"name": "Google Sheets", "type": "TOOL", "context": "software tool used for spreadsheets"}, {"name": "Slack", "type": "TOOL", "context": "communication tool used for messaging"}], "relationships": []}

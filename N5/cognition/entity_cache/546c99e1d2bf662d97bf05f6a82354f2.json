@@ -1,1 +1,0 @@
-{"entities": [{"name": "Position Tracker", "type": "TOOL", "context": "A worldview knowledge graph system used by V."}, {"name": "V", "type": "PERSON", "context": "The individual whose thinking is being documented."}], "relationships": [{"from": "V", "to": "Position Tracker", "type": "USES", "context": "V uses the Position Tracker to observe and document thinking evolution."}]}

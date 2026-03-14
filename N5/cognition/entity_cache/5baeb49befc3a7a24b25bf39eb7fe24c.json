@@ -1,1 +1,0 @@
-{"entities": [{"name": "Aviato", "type": "ORG", "context": "an enricher whose return type was changed"}, {"name": "Worker", "type": "TOOL", "context": "saves raw JSON and adapts to changes in Aviato's return type"}], "relationships": [{"from": "Aviato", "to": "Worker", "type": "WORKS_WITH", "context": "Worker must adapt to changes in Aviato's return type"}]}

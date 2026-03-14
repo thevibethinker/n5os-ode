@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "author of the text questioning knowledge acquisition regarding AI"}, {"name": "AI", "type": "CONCEPT", "context": "artificial intelligence as a tool for coding"}], "relationships": [{"from": "Vrijen Attawar", "to": "AI", "type": "MENTIONS", "context": "questioning knowledge about using AI for coding"}]}

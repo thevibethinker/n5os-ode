@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "ORG", "context": "an organization that provides a scan functionality"}, {"name": "scan functionality", "type": "TOOL", "context": "a feature used to support email outreach"}, {"name": "sourcing/matching use case", "type": "CONCEPT", "context": "a use case for the scan functionality"}], "relationships": []}

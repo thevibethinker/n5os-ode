@@ -1,1 +1,0 @@
-{"entities": [{"name": "ServiceAccountCredentials", "type": "TOOL", "context": "A tool used for accessing Google services"}, {"name": "google_service_account.json", "type": "FILE", "context": "File path for Google service account credentials"}], "relationships": []}

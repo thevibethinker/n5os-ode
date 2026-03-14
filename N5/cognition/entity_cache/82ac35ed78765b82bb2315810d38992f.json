@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "Careerspan", "type": "ORG", "context": "organization solving problems for universities"}], "relationships": [{"from": "Vrijen", "to": "Careerspan", "type": "MENTIONS", "context": "Vrijen highlights Careerspan's role in addressing university needs"}]}

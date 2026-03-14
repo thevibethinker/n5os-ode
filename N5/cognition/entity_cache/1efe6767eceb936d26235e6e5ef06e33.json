@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen Attawar)", "type": "PERSON", "context": "Attendee at the meeting"}, {"name": "Zo", "type": "PERSON", "context": "Attendee at the meeting"}], "relationships": [{"from": "V (Vrijen Attawar)", "to": "Zo", "type": "KNOWS", "context": "Both are attendees at the same meeting"}]}

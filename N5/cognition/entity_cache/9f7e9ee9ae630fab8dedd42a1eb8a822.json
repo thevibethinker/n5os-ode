@@ -1,1 +1,0 @@
-{"entities": [{"name": "Logan Currie", "type": "PERSON", "context": "Participant in the discussion"}, {"name": "Nicole meeting", "type": "EVENT", "context": "Scheduled meeting to sync after"}], "relationships": [{"from": "Logan Currie", "to": "Nicole meeting", "type": "MENTIONS", "context": "Discussion about syncing after the meeting"}]}

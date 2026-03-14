@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual involved in the knowledge system"}, {"name": "meeting_pipeline", "type": "TOOL", "context": "tool used for managing meeting processes"}], "relationships": [{"from": "V", "to": "meeting_pipeline", "type": "USES", "context": "V utilizes the meeting_pipeline tool for managing meetings"}]}

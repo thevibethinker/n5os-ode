@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ben", "type": "PERSON", "context": "contact associated with Substrate.Run"}, {"name": "Substrate.Run", "type": "ORG", "context": "organization associated with Ben"}], "relationships": [{"from": "Ben", "to": "Substrate.Run", "type": "WORKS_WITH", "context": "Ben is associated with the organization Substrate.Run"}]}

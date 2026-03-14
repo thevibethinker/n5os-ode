@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vibe Writer", "type": "TOOL", "context": "a tool used by V"}, {"name": "V's writing voice", "type": "CONCEPT", "context": "the style of writing developed by V"}], "relationships": [{"from": "Vibe Writer", "to": "V's writing voice", "type": "USES", "context": "Vibe Writer is optimized for V's writing voice"}]}

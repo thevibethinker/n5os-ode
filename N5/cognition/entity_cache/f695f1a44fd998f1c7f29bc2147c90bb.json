@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker discussing their practices and beliefs"}, {"name": "VCs", "type": "ORG", "context": "V is engaging with venture capitalists"}], "relationships": [{"from": "Vrijen Attawar", "to": "VCs", "type": "WORKS_WITH", "context": "Engaging with VCs to build relationships and favors"}]}

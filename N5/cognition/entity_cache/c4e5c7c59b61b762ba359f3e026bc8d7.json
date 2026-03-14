@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "Individual associated with the knowledge system"}, {"name": "LLM", "type": "TOOL", "context": "Large Language Model used for learning processes"}], "relationships": [{"from": "Vrijen", "to": "LLM", "type": "USES", "context": "V uses LLM to learn the process"}]}

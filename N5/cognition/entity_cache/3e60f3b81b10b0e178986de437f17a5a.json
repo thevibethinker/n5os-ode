@@ -1,1 +1,0 @@
-{"entities": [{"name": "DEFAULT_SCHEMA", "type": "CONCEPT", "context": "a predefined schema to use in the knowledge system"}, {"name": "YAML", "type": "CONCEPT", "context": "a data serialization format used in the knowledge system"}], "relationships": []}

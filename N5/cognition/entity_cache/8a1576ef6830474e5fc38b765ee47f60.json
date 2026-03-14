@@ -1,1 +1,0 @@
-{"entities": [{"name": "scheduled_task", "type": "CONCEPT", "context": "A task that is set to execute at a scheduled time."}, {"name": "digest-name", "type": "CONCEPT", "context": "A placeholder for the name of a command to be executed."}], "relationships": []}

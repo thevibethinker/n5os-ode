@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "a person referred to in the text"}, {"name": "/zo/ask", "type": "TOOL", "context": "a tool used for spawning workers"}], "relationships": [{"from": "V", "to": "/zo/ask", "type": "USES", "context": "V uses the tool for spawning workers"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Husain Rasheed", "type": "PERSON", "context": "Speaker in the text"}, {"name": "Career Span", "type": "TOOL", "context": "Tool mentioned that helps with HR stories"}], "relationships": [{"from": "Husain Rasheed", "to": "Career Span", "type": "USES", "context": "Husain Rasheed suggests using Career Span as a tool"}]}

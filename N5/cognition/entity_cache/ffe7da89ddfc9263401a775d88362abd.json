@@ -1,1 +1,0 @@
-{"entities": [{"name": "Function", "type": "CONCEPT", "context": "Handler function type in JavaScript"}, {"name": "string", "type": "CONCEPT", "context": "Data type in JavaScript representing a sequence of characters"}, {"name": "symbol", "type": "CONCEPT", "context": "Data type in JavaScript used to create unique identifiers"}], "relationships": []}

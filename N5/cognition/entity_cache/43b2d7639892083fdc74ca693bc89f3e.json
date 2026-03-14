@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "a speaker discussing knowledge systems"}, {"name": "employer", "type": "ORG", "context": "an entity involved in the knowledge system"}], "relationships": [{"from": "Vrijen Attawar", "to": "employer", "type": "WORKS_WITH", "context": "discussing the knowledge system in relation to the employer"}]}

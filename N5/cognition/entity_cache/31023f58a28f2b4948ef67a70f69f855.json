@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "Individual associated with a knowledge system"}, {"name": "Carnegie Mellon", "type": "ORG", "context": "Organization that hosted a sponsored hackathon"}], "relationships": [{"from": "V (Vrijen)", "to": "Carnegie Mellon", "type": "WORKS_WITH", "context": "V sponsored Carnegie Mellon hackathon"}]}

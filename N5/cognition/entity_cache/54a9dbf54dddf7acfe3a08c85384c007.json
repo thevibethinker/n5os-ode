@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ash", "type": "PERSON", "context": "raising an informed concern"}, {"name": "panel", "type": "EVENT", "context": "a recent discussion context"}], "relationships": [{"from": "Ash", "to": "panel", "type": "MENTIONS", "context": "raising a concern from"}]}

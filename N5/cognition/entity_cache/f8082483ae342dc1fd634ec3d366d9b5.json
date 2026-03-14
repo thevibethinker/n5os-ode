@@ -1,1 +1,0 @@
-{"entities": [{"name": "Mark C-State", "type": "CONCEPT", "context": "A state related to a meeting process"}, {"name": "Meeting", "type": "EVENT", "context": "A gathering for discussion or decision-making"}], "relationships": [{"from": "Meeting", "to": "Mark C-State", "type": "RELATED_TO", "context": "Transitioning a meeting to a different state"}]}

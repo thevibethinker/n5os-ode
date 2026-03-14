@@ -1,1 +1,0 @@
-{"entities": [{"name": "Pam K", "type": "PERSON", "context": "individual discussing the meeting"}, {"name": "Fireflies", "type": "TOOL", "context": "tool used to record meetings"}], "relationships": [{"from": "Pam K", "to": "Fireflies", "type": "USES", "context": "needs to use Fireflies to record meetings"}]}

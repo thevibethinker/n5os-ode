@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "Responsible for demos in handoff sequence"}, {"name": "Chaitanya", "type": "PERSON", "context": "Convenes internal review after Vrijen's demos"}], "relationships": [{"from": "Vrijen", "to": "Chaitanya", "type": "WORKS_WITH", "context": "Clear handoff sequence: Vrijen demos \u2192 Chaitanya convenes internal review"}]}

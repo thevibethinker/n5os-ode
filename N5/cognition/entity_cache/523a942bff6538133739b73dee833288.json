@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "one of the founders of Vrijen"}, {"name": "Vrijen", "type": "ORG", "context": "the organization that V is part of"}], "relationships": [{"from": "V", "to": "Vrijen", "type": "WORKS_WITH", "context": "founder of the organization"}]}

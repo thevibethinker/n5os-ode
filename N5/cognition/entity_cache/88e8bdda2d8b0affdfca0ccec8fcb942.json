@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "ORG", "context": "an organization that adds community partnerships"}], "relationships": [{"from": "Careerspan", "to": "community partnerships", "type": "RELATED_TO", "context": "as Careerspan adds community partnerships"}]}

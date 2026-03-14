@@ -1,1 +1,0 @@
-{"entities": [{"name": "LLM-driven project coordination system", "type": "TOOL", "context": "A system that coordinates projects using a language model."}, {"name": "Validation Loop", "type": "CONCEPT", "context": "A process that includes commands for managing project submissions, reviews, and approvals."}], "relationships": []}

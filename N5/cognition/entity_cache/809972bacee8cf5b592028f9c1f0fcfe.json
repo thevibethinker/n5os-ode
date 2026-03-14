@@ -1,1 +1,0 @@
-{"entities": [{"name": "foundations", "type": "CONCEPT", "context": "organizations that manage and distribute funds for charitable purposes"}, {"name": "charitable trusts", "type": "CONCEPT", "context": "trusts set up to benefit charitable activities"}, {"name": "US", "type": "ORG", "context": "country with specific legal requirements for foundations"}], "relationships": []}

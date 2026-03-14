@@ -1,1 +1,0 @@
-{"entities": [{"name": "source_brief.md", "type": "CONCEPT", "context": "the original source file"}, {"name": "decomposed_brief_v1.yaml", "type": "CONCEPT", "context": "the new file format created from the source"}], "relationships": []}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Caleb", "type": "PERSON", "context": "enthusiastic speaker"}, {"name": "Careerspan", "type": "ORG", "context": "organization performing at an event"}], "relationships": [{"from": "Caleb", "to": "Careerspan", "type": "BELIEVES", "context": "Caleb believes in Careerspan's potential to perform well"}]}

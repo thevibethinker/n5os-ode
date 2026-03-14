@@ -1,1 +1,0 @@
-{"entities": [{"name": "Jaya Pokuri", "type": "PERSON", "context": "Speaker discussing developer prompts in ChatGPT"}, {"name": "ChatGPT", "type": "TOOL", "context": "AI tool used for creating developer prompts"}], "relationships": [{"from": "Jaya Pokuri", "to": "ChatGPT", "type": "USES", "context": "Jaya discusses using ChatGPT for specific task prompts"}]}

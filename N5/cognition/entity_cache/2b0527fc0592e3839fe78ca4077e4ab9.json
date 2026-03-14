@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the individual referred to in the text"}, {"name": "App tools", "type": "TOOL", "context": "external contracts used by V"}], "relationships": [{"from": "V", "to": "App tools", "type": "USES", "context": "V uses the tools as external contracts"}]}

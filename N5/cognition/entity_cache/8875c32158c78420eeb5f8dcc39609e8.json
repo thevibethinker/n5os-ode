@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Founder and speaker"}, {"name": "scale AI", "type": "ORG", "context": "Organization discussed previously"}], "relationships": [{"from": "Vrijen Attawar", "to": "scale AI", "type": "MENTIONS", "context": "Reference to the organization discussed in a previous session"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Shaunak", "type": "PERSON", "context": "individual associated with Docsum.Ai"}, {"name": "Docsum.Ai", "type": "ORG", "context": "organization where Shaunak is affiliated"}], "relationships": [{"from": "Shaunak", "to": "Docsum.Ai", "type": "WORKS_WITH", "context": "Shaunak is affiliated with Docsum.Ai"}]}

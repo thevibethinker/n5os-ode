@@ -1,1 +1,0 @@
-{"entities": [{"name": "Builder", "type": "TOOL", "context": "An entity that creates scripts"}, {"name": "Debugger", "type": "TOOL", "context": "An entity that verifies the functionality of scripts"}], "relationships": [{"from": "Builder", "to": "Debugger", "type": "WORKS_WITH", "context": "Builder creates scripts and Debugger verifies them"}]}

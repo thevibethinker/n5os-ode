@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ilse", "type": "PERSON", "context": "Involved in quick builds and technical debt"}, {"name": "auto-emailing scan system", "type": "TOOL", "context": "A tool developed by Ilse that is now a blocker"}], "relationships": [{"from": "Ilse", "to": "auto-emailing scan system", "type": "USES", "context": "Ilse developed the auto-emailing scan system"}]}

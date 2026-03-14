@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "a person discussing content performance"}, {"name": "punchy content", "type": "CONCEPT", "context": "a type of content that is preferred in V's corpus"}], "relationships": [{"from": "V", "to": "punchy content", "type": "BELIEVES", "context": "V believes that punchy content outperforms other types of content"}]}

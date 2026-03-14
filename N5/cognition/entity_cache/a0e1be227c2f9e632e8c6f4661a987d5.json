@@ -1,1 +1,0 @@
-{"entities": [{"name": "Tally Survey", "type": "TOOL", "context": "A tool used for generating forms from natural language"}, {"name": "Worker", "type": "CONCEPT", "context": "A concept related to spawning parallel threads"}], "relationships": []}

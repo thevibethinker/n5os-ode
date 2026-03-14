@@ -1,1 +1,0 @@
-{"entities": [{"name": "Warm-intro agent", "type": "TOOL", "context": "a tool used for generating introductions"}, {"name": "N5/digests/warm-intro-drafts-2025-12-07.md", "type": "CONCEPT", "context": "a file summarizing the output of the warm-intro agent run"}], "relationships": []}

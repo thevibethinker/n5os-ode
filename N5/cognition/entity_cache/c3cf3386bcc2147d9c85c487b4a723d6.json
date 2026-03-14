@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "based on Careerspan experience"}, {"name": "Merisenda", "type": "PERSON", "context": "accepted guidance"}], "relationships": [{"from": "Vrijen", "to": "Merisenda", "type": "WORKS_WITH", "context": "accepted guidance based on experience"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Brian Aquart", "type": "PERSON", "context": "VP of Workforce and Community Education at Northwell"}, {"name": "Northwell", "type": "ORG", "context": "Organization where Brian Aquart works"}], "relationships": [{"from": "Brian Aquart", "to": "Northwell", "type": "WORKS_WITH", "context": "Brian Aquart is employed by Northwell"}]}

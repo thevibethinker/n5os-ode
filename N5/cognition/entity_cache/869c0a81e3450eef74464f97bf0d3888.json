@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "ORG", "context": "low-cost, high-value community sequencer"}, {"name": "sam", "type": "ORG", "context": "agency or platform that Careerspan works with"}], "relationships": [{"from": "Careerspan", "to": "sam", "type": "WORKS_WITH", "context": "Careerspan provides sourcing infrastructure for sam"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "the individual in focus within the knowledge system"}, {"name": "crm.db", "type": "TOOL", "context": "the database for storing discovered contacts"}], "relationships": []}

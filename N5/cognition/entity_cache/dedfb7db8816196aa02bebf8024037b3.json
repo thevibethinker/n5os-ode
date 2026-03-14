@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "Founder of the knowledge system"}, {"name": "Zo tool", "type": "TOOL", "context": "Tool mentioned in relation to focus challenges"}], "relationships": [{"from": "V", "to": "Zo tool", "type": "USES", "context": "V is trying to avoid reliance on the Zo tool"}]}

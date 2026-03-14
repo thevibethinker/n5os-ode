@@ -1,1 +1,0 @@
-{"entities": [{"name": "Claude Sonnet 4", "type": "TOOL", "context": "Model used for scheduled tasks"}, {"name": "V", "type": "PERSON", "context": "The individual associated with the knowledge system (Vrijen)"}], "relationships": [{"from": "V", "to": "Claude Sonnet 4", "type": "USES", "context": "V uses Claude Sonnet 4 for meeting monitoring tasks"}]}

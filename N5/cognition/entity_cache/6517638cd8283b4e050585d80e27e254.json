@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the individual responsible for actions"}, {"name": "Python scripts", "type": "TOOL", "context": "scripts updated with deprecation warnings"}], "relationships": [{"from": "V", "to": "Python scripts", "type": "USES", "context": "V updated Python scripts with deprecation warnings"}]}

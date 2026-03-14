@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vibe Operator", "type": "CONCEPT", "context": "Persona refinement process"}, {"name": "P15 rule", "type": "CONCEPT", "context": "Rule covering testing before claiming done"}], "relationships": [{"from": "Vibe Operator", "to": "P15 rule", "type": "RELATED_TO", "context": "Both concepts related to improving efficiency"}]}

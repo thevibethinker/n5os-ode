@@ -1,1 +1,0 @@
-{"entities": [{"name": "Jihoon", "type": "PERSON", "context": "possibly a colleague or acquaintance of V"}, {"name": "V", "type": "PERSON", "context": "the subject discussing knowledge system"}], "relationships": [{"from": "V", "to": "Jihoon", "type": "KNOWS", "context": "V acknowledges Jihoon despite lack of introduction"}]}

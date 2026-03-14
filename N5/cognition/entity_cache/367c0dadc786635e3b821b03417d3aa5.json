@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "positive sentiment", "type": "CONCEPT", "context": "a belief that enhances communication"}], "relationships": [{"from": "V", "to": "positive sentiment", "type": "BELIEVES", "context": "V believes in the value of positive sentiment in communication"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the individual associated with the knowledge system"}, {"name": "ANTHROPIC_API_KEY", "type": "TOOL", "context": "an API key for enabling AI mode in the implementation"}], "relationships": [{"from": "V", "to": "ANTHROPIC_API_KEY", "type": "USES", "context": "V can set this key for AI mode in the implementation"}]}

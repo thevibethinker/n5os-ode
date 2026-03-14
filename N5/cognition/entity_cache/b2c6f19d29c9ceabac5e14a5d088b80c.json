@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "N5/scripts/email_corrections.py", "type": "TOOL", "context": "script for email corrections"}], "relationships": [{"from": "V", "to": "N5/scripts/email_corrections.py", "type": "USES", "context": "V uses the script for email corrections"}]}

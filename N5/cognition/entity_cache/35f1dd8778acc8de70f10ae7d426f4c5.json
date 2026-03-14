@@ -1,1 +1,0 @@
-{"entities": [{"name": "Brady", "type": "PERSON", "context": "referred V for networking support and legal guidance"}], "relationships": [{"from": "V", "to": "Brady", "type": "KNOWS", "context": "Brady provided a referral for trustworthy contacts"}]}

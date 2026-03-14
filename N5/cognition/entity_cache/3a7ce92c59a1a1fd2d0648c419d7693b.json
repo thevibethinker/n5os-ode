@@ -1,1 +1,0 @@
-{"entities": [{"name": "Prompts/warm-intro-generator.prompt.md", "type": "TOOL", "context": "A specific prompt file used in V's knowledge system."}, {"name": "Personal/Meetings/Inbox", "type": "CONCEPT", "context": "A folder or concept related to personal meetings and inbox management."}], "relationships": []}

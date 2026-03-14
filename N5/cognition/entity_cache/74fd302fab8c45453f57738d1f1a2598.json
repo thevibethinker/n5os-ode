@@ -1,1 +1,0 @@
-{"entities": [{"name": "Worker status", "type": "CONCEPT", "context": "status categories for workers"}, {"name": "Progress percentages", "type": "CONCEPT", "context": "indicators of work completion"}, {"name": "Workers", "type": "CONCEPT", "context": "individuals performing tasks"}], "relationships": []}

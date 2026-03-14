@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "ORG", "context": "company providing solutions for job seekers"}, {"name": "FutureFit", "type": "ORG", "context": "platform that uses Careerspan's tools"}], "relationships": [{"from": "Careerspan", "to": "FutureFit", "type": "WORKS_WITH", "context": "Careerspan provides tools to FutureFit"}]}

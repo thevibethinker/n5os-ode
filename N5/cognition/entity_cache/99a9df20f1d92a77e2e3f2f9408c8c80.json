@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "owner of the Akiflow Actions Bridge"}, {"name": "Akiflow Actions Bridge (Aki)", "type": "TOOL", "context": "integration tool for tasks and meetings"}], "relationships": [{"from": "V", "to": "Akiflow Actions Bridge (Aki)", "type": "USES", "context": "V is the owner of this tool"}]}

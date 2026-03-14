@@ -1,1 +1,0 @@
-{"entities": [{"name": "The Recursive Mirror", "type": "CONCEPT", "context": "A failure mode where system output feeds back into intake with significant latency, trapping the system in a loop of its own past states"}], "relationships": []}

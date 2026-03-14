@@ -1,1 +1,0 @@
-{"entities": [{"name": "V-OS Tags", "type": "TOOL", "context": "embedded in email signatures to communicate instructions"}, {"name": "AI systems", "type": "CONCEPT", "context": "systems that receive instructions from V-OS Tags"}], "relationships": [{"from": "V-OS Tags", "to": "AI systems", "type": "USES", "context": "V-OS Tags are used to communicate with AI systems"}]}

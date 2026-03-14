@@ -1,1 +1,0 @@
-{"entities": [{"name": "Lensa", "type": "ORG", "context": "a company utilizing XML Feed via Appcast"}, {"name": "XML Feed", "type": "TOOL", "context": "a method for data transmission in the industry"}], "relationships": [{"from": "Lensa", "to": "XML Feed", "type": "USES", "context": "employs XML Feed via Appcast for data transmission"}]}

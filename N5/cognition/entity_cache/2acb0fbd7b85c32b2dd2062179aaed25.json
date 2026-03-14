@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual mentioned in the context of knowledge system"}, {"name": "generate_bluf", "type": "TOOL", "context": "function used for creating summaries"}], "relationships": []}

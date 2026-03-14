@@ -1,1 +1,0 @@
-{"entities": [{"name": "meeting_monitor.py", "type": "TOOL", "context": "File used for a 15-minute polling loop"}, {"name": "digest_integration.py", "type": "TOOL", "context": "File for digest formatting"}, {"name": "run_meeting_monitor.py", "type": "TOOL", "context": "File for Zo wrapper"}], "relationships": []}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "personas/PERSONAS_README.md", "type": "CONCEPT", "context": "Persona system overview"}, {"name": "evaluations/README.md", "type": "CONCEPT", "context": "Evaluation framework"}, {"name": "ParentZo-ChildZo/*/README.md", "type": "CONCEPT", "context": "Child Zo system docs"}], "relationships": []}

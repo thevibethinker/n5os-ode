@@ -1,1 +1,0 @@
-{"entities": [{"name": "Alfred Sogja", "type": "PERSON", "context": "Community operator / project lead"}, {"name": "Koretsu", "type": "ORG", "context": "Organization mentioned"}], "relationships": [{"from": "Alfred Sogja", "to": "Koretsu", "type": "WORKS_WITH", "context": "Alfred Sogja is a community operator / project lead at Koretsu"}]}

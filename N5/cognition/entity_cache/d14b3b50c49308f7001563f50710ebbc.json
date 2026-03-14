@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "An individual involved in the knowledge system"}], "relationships": [{"from": "They", "to": "V", "type": "INTRODUCES", "context": "They introduce V to a concept or entity"}]}

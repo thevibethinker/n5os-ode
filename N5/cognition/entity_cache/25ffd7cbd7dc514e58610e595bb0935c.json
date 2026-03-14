@@ -1,1 +1,0 @@
-{"entities": [{"name": "Josh Glazebrook", "type": "PERSON", "context": "Contributor to smart-buffer project"}, {"name": "smart-buffer", "type": "TOOL", "context": "A buffer management tool"}], "relationships": [{"from": "Josh Glazebrook", "to": "smart-buffer", "type": "WORKS_WITH", "context": "Developed and maintains the tool"}]}

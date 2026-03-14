@@ -1,1 +1,0 @@
-{"entities": [{"name": "N5", "type": "ORG", "context": "File path related to the knowledge system"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "The individual referenced in the text"}], "relationships": [{"from": "V (Vrijen)", "to": "N5", "type": "USES", "context": "V uses the N5 system for text generation"}]}

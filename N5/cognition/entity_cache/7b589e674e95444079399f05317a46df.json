@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker of the text"}, {"name": "Emory", "type": "ORG", "context": "University mentioned"}], "relationships": [{"from": "Vrijen Attawar", "to": "Emory", "type": "KNOWS", "context": "Mentioned that a person is an Emory grad"}]}

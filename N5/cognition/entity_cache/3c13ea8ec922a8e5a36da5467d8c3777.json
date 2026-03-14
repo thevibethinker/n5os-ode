@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the subject's name"}, {"name": "Vibe Debugger", "type": "TOOL", "context": "a tool or persona referenced for debugging"}], "relationships": [{"from": "V", "to": "Vibe Debugger", "type": "USES", "context": "V considers switching to this persona for planning"}]}

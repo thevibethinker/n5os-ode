@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the individual referred to as Vrijen"}, {"name": "meeting_auto_processor.py", "type": "TOOL", "context": "the script being executed for meeting processing"}, {"name": "/tmp/meeting_watcher.log", "type": "TOOL", "context": "the log file where output is redirected"}], "relationships": []}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo", "type": "TOOL", "context": "command-based tool for extracting and processing data"}, {"name": "native LLM", "type": "CONCEPT", "context": "language model used for extracting content from transcripts"}], "relationships": []}

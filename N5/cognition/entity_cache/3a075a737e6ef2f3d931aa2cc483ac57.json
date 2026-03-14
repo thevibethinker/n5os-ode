@@ -1,1 +1,0 @@
-{"entities": [{"name": "David", "type": "PERSON", "context": "career coach"}, {"name": "Zo/N5OS", "type": "TOOL", "context": "platform for coaching business"}], "relationships": [{"from": "David", "to": "Zo/N5OS", "type": "USES", "context": "exploring as a platform for coaching business"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual mentioned in relation to knowledge system"}, {"name": "stakeholder classifier", "type": "TOOL", "context": "tool for processing emails"}], "relationships": [{"from": "V", "to": "stakeholder classifier", "type": "USES", "context": "V uses the stakeholder classifier tool for email processing"}]}

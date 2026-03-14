@@ -1,1 +1,0 @@
-{"entities": [{"name": "Shivam", "type": "PERSON", "context": "meeting partner"}, {"name": "Tejas", "type": "PERSON", "context": "possible meeting partner"}], "relationships": [{"from": "V", "to": "Shivam", "type": "KNOWS", "context": "meeting scheduled"}, {"from": "V", "to": "Tejas", "type": "KNOWS", "context": "possible meeting partner"}]}

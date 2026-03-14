@@ -1,7 +1,0 @@
-{
-  "drop_id": "D3.1",
-  "verdict": "PASS",
-  "reason": "Manual verification: D3.1 deposit shows completed status with all acceptance criteria met. The ingest module works correctly - tested with dry-run and live execution, creates valid v3 manifests that pass schema validation.",
-  "artifacts_verified": true,
-  "concerns": []
-}

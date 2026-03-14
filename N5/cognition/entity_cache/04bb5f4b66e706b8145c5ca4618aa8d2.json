@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the speaker of the quote"}, {"name": "Google", "type": "ORG", "context": "a tool for meetings"}], "relationships": [{"from": "V", "to": "Google", "type": "USES", "context": "V refers to using Google for managing meetings"}]}

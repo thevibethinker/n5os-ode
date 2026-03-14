@@ -1,1 +1,0 @@
-{"entities": [{"name": "ikigai", "type": "CONCEPT", "context": "framework for career fulfillment"}], "relationships": [{"from": "V", "to": "ikigai", "type": "BELIEVES", "context": "V finds value in the ikigai concept for career guiding"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Close Cohen", "type": "ORG", "context": "Company founded by V"}, {"name": "V", "type": "PERSON", "context": "Founder/Operator of Close Cohen"}], "relationships": [{"from": "V", "to": "Close Cohen", "type": "WORKS_WITH", "context": "V is the Founder/Operator of Close Cohen"}]}

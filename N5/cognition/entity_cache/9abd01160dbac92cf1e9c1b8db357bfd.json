@@ -1,1 +1,0 @@
-{"entities": [{"name": "handlebars", "type": "TOOL", "context": "a templating engine for JavaScript"}, {"name": "nodejs", "type": "TOOL", "context": "a JavaScript runtime built on Chrome's V8 JavaScript engine"}], "relationships": [{"from": "handlebars", "to": "nodejs", "type": "MENTIONS", "context": "handlebars 1.1.0 are broken with nodejs"}]}

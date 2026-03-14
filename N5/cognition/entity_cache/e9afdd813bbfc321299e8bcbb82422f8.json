@@ -1,1 +1,0 @@
-{"entities": [{"name": "coding agent", "type": "TOOL", "context": "a tool used for coding tasks"}], "relationships": [{"from": "V", "to": "coding agent", "type": "USES", "context": "V suggests using coding agents for better outcomes"}]}

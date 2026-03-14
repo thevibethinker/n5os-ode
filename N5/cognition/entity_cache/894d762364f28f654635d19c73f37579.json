@@ -1,1 +1,0 @@
-{"entities": [{"name": "s.clean", "type": "TOOL", "context": "a method used for cleaning version strings"}, {"name": "loose", "type": "CONCEPT", "context": "an option that modifies the behavior of the s.clean method"}], "relationships": [{"from": "s.clean", "to": "loose", "type": "USES", "context": "s.clean can use the loose option for more flexible cleaning"}]}

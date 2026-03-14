@@ -1,1 +1,0 @@
-{"entities": [{"name": "N5 system components", "type": "CONCEPT", "context": "Components mentioned for validation rules"}, {"name": "index.schema.json", "type": "TOOL", "context": "File used for validating interfaces"}], "relationships": [{"from": "N5 system components", "to": "index.schema.json", "type": "USES", "context": "Used for validation against the schema"}]}

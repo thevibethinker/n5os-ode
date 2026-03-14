@@ -1,1 +1,0 @@
-{"entities": [{"name": "P5 principle", "type": "CONCEPT", "context": "referenced in personas but not enforced in rules"}, {"name": "dry-run rule", "type": "CONCEPT", "context": "preview before destroy"}], "relationships": [{"from": "P5 principle", "to": "dry-run rule", "type": "RELATED_TO", "context": "complementary principles for production safety"}]}

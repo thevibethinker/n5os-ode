@@ -1,1 +1,0 @@
-{"entities": [{"name": "Google Drive", "type": "ORG", "context": "cloud storage service"}, {"name": "Vrijen", "type": "PERSON", "context": "V's nickname or alias"}], "relationships": [{"from": "Vrijen", "to": "Google Drive", "type": "USES", "context": "V uses Google Drive for data storage"}]}

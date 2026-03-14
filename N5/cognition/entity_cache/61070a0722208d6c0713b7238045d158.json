@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "refers to Vrijen"}, {"name": "Aki", "type": "TOOL", "context": "a tool used to modify or delete information"}], "relationships": [{"from": "V", "to": "Aki", "type": "USES", "context": "V offers to modify/delete via Aki"}]}

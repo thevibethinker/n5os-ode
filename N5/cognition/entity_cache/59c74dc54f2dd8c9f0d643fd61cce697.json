@@ -1,1 +1,0 @@
-{"entities": [{"name": "Python", "type": "TOOL", "context": "Programming language used for scripts"}, {"name": "LLMs", "type": "CONCEPT", "context": "Large Language Models"}], "relationships": [{"from": "Python", "to": "LLMs", "type": "USES", "context": "Python scripts may call LLMs"}]}

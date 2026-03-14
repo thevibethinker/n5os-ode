@@ -1,1 +1,0 @@
-{"entities": [{"name": "Rob Cheung", "type": "PERSON", "context": "a person speaking"}, {"name": "sling", "type": "TOOL", "context": "a tool being used by Rob Cheung"}], "relationships": [{"from": "Rob Cheung", "to": "sling", "type": "USES", "context": "Rob Cheung describes his use of the tool"}]}

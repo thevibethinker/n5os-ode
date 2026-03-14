@@ -1,1 +1,0 @@
-{"entities": [{"name": "Jake Weissbourd", "type": "PERSON", "context": "mentioned as someone attending a conference"}], "relationships": [{"from": "Jake Weissbourd", "to": "V (Vrijen)", "type": "WORKS_WITH", "context": "attending the same conference"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "mentorship opportunity seeker"}, {"name": "director-level UX leader", "type": "PERSON", "context": "individual providing mentorship"}], "relationships": [{"from": "V (Vrijen)", "to": "director-level UX leader", "type": "MENTIONS", "context": "seeking mentorship from the director-level UX leader"}]}

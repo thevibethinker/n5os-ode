@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vibe Debugger", "type": "TOOL", "context": "suggested tool for debugging"}, {"name": "V", "type": "PERSON", "context": "the persona associated with the knowledge system"}], "relationships": [{"from": "V", "to": "Vibe Debugger", "type": "USES", "context": "V uses the Vibe Debugger for debugging"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "quality_gate.py", "type": "TOOL", "context": "script for validating meeting readiness"}, {"name": "4-stage quality framework", "type": "CONCEPT", "context": "framework used for meeting quality evaluation"}], "relationships": []}

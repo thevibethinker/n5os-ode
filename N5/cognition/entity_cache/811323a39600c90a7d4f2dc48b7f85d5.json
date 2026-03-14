@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "busy individual managing multiple tasks and crises"}, {"name": "Skyline", "type": "ORG", "context": "organization checking in on V's workload"}], "relationships": [{"from": "V", "to": "Skyline", "type": "WORKS_WITH", "context": "Skyline is involved in supporting V during a busy day"}]}

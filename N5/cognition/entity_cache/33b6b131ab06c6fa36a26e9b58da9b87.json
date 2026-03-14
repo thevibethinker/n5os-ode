@@ -1,1 +1,0 @@
-{"entities": [{"name": "Neo-Async", "type": "TOOL", "context": "a drop-in replacement for Async that covers its functionality and runs faster"}, {"name": "Async", "type": "TOOL", "context": "a library that Neo-Async is replacing"}], "relationships": [{"from": "Neo-Async", "to": "Async", "type": "USES", "context": "Neo-Async is used as a replacement for Async"}]}

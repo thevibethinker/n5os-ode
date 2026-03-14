@@ -1,1 +1,0 @@
-{"entities": [{"name": "Sofia Wernick", "type": "PERSON", "context": "job seeker in late-stage interviews"}, {"name": "Vrijen Attawar", "type": "PERSON", "context": "met with Sofia during a meeting"}], "relationships": [{"from": "Vrijen Attawar", "to": "Sofia Wernick", "type": "KNOWS", "context": "met during a meeting on 2025-09-09"}]}

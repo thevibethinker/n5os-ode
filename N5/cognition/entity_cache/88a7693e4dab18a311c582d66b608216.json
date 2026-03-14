@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ayush", "type": "PERSON", "context": "a party involved in the decision-making process"}], "relationships": [{"from": "V", "to": "Ayush", "type": "WORKS_WITH", "context": "both parties are involved in signing documents"}]}

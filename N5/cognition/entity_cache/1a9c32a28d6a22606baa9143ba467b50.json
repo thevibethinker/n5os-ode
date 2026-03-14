@@ -1,1 +1,0 @@
-{"entities": [{"name": "South Africa", "type": "ORG", "context": "country with highest income Gini coefficient in 2014"}, {"name": "Gini coefficient", "type": "CONCEPT", "context": "measure of income inequality"}], "relationships": [{"from": "South Africa", "to": "Gini coefficient", "type": "MENTIONS", "context": "country associated with specific Gini coefficient value"}]}

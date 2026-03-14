@@ -1,1 +1,0 @@
-{"entities": [{"name": "Oscar", "type": "PERSON", "context": "individual at Marvinvc"}, {"name": "Marvinvc", "type": "ORG", "context": "organization associated with Oscar"}], "relationships": [{"from": "Oscar", "to": "Marvinvc", "type": "WORKS_WITH", "context": "Oscar is associated with the organization Marvinvc"}]}

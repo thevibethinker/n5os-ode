@@ -1,1 +1,0 @@
-{"entities": [{"name": "RAG", "type": "CONCEPT", "context": "A major and finicky undertaking related to AI deployment"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "Speaker discussing their knowledge system and approach to AI"}], "relationships": [{"from": "V (Vrijen)", "to": "RAG", "type": "MENTIONS", "context": "Discussing RAG as a concept in AI deployment"}]}

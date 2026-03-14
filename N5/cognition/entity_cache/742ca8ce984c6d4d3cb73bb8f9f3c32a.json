@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual mentioned in the text"}, {"name": "Eightfold", "type": "ORG", "context": "organization related to a lawsuit"}], "relationships": [{"from": "V", "to": "Eightfold", "type": "MENTIONS", "context": "refers to the organization in the context of a lawsuit"}]}

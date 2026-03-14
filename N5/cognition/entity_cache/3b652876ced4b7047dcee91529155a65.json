@@ -1,1 +1,0 @@
-{"entities": [{"name": "Logan", "type": "PERSON", "context": "mentioned in relation to a comment about motivation"}, {"name": "numbers", "type": "CONCEPT", "context": "related to motivation and financial upside"}], "relationships": [{"from": "Logan", "to": "numbers", "type": "MENTIONS", "context": "Logan's comment relates numbers to motivation"}]}

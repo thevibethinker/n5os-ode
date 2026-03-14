@@ -1,1 +1,0 @@
-{"entities": [{"name": "Active redundancy", "type": "CONCEPT", "context": "A system functionality where both systems run simultaneously for load balancing"}, {"name": "Passive redundancy", "type": "CONCEPT", "context": "A system functionality where a backup activates upon failure"}], "relationships": []}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Alan", "type": "PERSON", "context": "Contact at Mymeli.Co"}, {"name": "Mymeli.Co", "type": "ORG", "context": "Organization represented by Alan"}], "relationships": [{"from": "Alan", "to": "Mymeli.Co", "type": "WORKS_WITH", "context": "Alan is associated with Mymeli.Co"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Stakeholder CRM", "type": "CONCEPT", "context": "A system for managing stakeholder profiles"}, {"name": "Salesforce", "type": "ORG", "context": "A customer relationship management tool that is not used by V"}], "relationships": [{"from": "Stakeholder CRM", "to": "Salesforce", "type": "RELATED_TO", "context": "Stakeholder CRM is not in Salesforce"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "AI classification", "type": "CONCEPT", "context": "A method used to analyze files in the knowledge system."}, {"name": "REVIEW.md", "type": "TOOL", "context": "A document generated for human review of analyzed files."}], "relationships": []}

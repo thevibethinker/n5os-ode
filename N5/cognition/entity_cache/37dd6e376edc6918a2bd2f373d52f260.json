@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the creator and knowledge holder"}, {"name": "Flight Extractor", "type": "TOOL", "context": "a smart LLM for extracting structured flight details"}], "relationships": [{"from": "V", "to": "Flight Extractor", "type": "CREATES", "context": "V created the Flight Extractor tool"}]}

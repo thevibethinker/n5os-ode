@@ -1,1 +1,0 @@
-{"entities": [{"name": "fifo", "type": "TOOL", "context": "a data structure used for managing queues"}, {"name": "fast-fifo", "type": "TOOL", "context": "an optimized version of fifo for quicker data processing"}], "relationships": []}

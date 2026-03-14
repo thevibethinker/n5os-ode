@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the individual sharing insights"}, {"name": "Corridor X", "type": "ORG", "context": "organization mentioned in relation to solving problems"}], "relationships": [{"from": "V", "to": "Corridor X", "type": "MENTIONS", "context": "V references Corridor X in relation to solving problems"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "conversations.db", "type": "TOOL", "context": "database used to analyze conversation metadata"}], "relationships": [{"from": "V (Vrijen)", "to": "conversations.db", "type": "USES", "context": "V uses conversations.db to analyze titles, types, and relationships in conversations"}]}

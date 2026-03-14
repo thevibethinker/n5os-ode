@@ -1,1 +1,0 @@
-{"entities": [{"name": "Michael Maher", "type": "PERSON", "context": "MBA Career Advisor at Cornell University"}, {"name": "Cornell University", "type": "ORG", "context": "Institution where Michael Maher works"}], "relationships": [{"from": "Michael Maher", "to": "Cornell University", "type": "WORKS_WITH", "context": "Michael Maher is an employee at Cornell University"}]}

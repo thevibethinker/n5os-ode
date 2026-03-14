@@ -1,1 +1,0 @@
-{"entities": [{"name": "cleanup-root", "type": "TOOL", "context": "part of the workflow used for moving items to Inbox"}, {"name": "inbox-process", "type": "TOOL", "context": "part of the workflow used for analyzing, routing, and generating reviews"}, {"name": "inbox-review", "type": "TOOL", "context": "command used for regenerating reviews on-demand"}], "relationships": []}

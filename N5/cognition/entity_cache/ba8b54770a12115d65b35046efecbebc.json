@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "a knowledge system designer"}, {"name": "LLM", "type": "TOOL", "context": "Large Language Model used for Natural Language parsing"}], "relationships": [{"from": "V", "to": "LLM", "type": "USES", "context": "V uses LLM for Natural Language parsing"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "taking on responsibilities"}, {"name": "Anna", "type": "PERSON", "context": "handing off responsibilities"}], "relationships": [{"from": "Anna", "to": "Vrijen", "type": "WORKS_WITH", "context": "handing off responsibilities to Vrijen"}]}

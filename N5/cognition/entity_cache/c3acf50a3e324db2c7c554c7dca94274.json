@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "Fillout", "type": "ORG", "context": "platform related to form management"}], "relationships": [{"from": "V", "to": "Fillout", "type": "USES", "context": "V uses Fillout for managing forms"}]}

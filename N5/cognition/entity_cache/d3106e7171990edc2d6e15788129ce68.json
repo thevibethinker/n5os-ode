@@ -1,1 +1,0 @@
-{"entities": [{"name": "Nyktravel", "type": "ORG", "context": "Organization associated with V"}, {"name": "krishna@nyktravel.com", "type": "BELIEF", "context": "Email contact for V"}], "relationships": [{"from": "V", "to": "Nyktravel", "type": "WORKS_WITH", "context": "V is associated with the organization Nyktravel"}]}

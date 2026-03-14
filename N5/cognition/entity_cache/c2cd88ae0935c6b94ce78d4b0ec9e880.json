@@ -1,1 +1,0 @@
-{"entities": [{"name": "MyComponent", "type": "TOOL", "context": "A component used in the knowledge system."}, {"name": "calculateMetadata", "type": "FUNCTION", "context": "Function utilized to calculate metadata for the video."}], "relationships": []}

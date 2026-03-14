@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual executing user acceptance testing"}, {"name": "Incantum", "type": "TOOL", "context": "tool for natural language dispatch"}], "relationships": [{"from": "V", "to": "Incantum", "type": "USES", "context": "V tests natural language dispatch via Incantum"}]}

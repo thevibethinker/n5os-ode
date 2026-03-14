@@ -1,1 +1,0 @@
-{"entities": [{"name": "follow-up email generator", "type": "TOOL", "context": "a tool for generating follow-up emails"}, {"name": "deliverable generators", "type": "TOOL", "context": "a tool for generating deliverables"}, {"name": "voice/knowledge tools", "type": "TOOL", "context": "tools related to voice and knowledge management"}], "relationships": []}

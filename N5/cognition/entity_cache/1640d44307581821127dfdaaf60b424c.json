@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual mentioning the challenge"}, {"name": "hard part", "type": "CONCEPT", "context": "the difficulty in focusing on one use case"}], "relationships": [{"from": "V", "to": "hard part", "type": "BELIEVES", "context": "V believes that the hard part is focusing on one use case"}]}

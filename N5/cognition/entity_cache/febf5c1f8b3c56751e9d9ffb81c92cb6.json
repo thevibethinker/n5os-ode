@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "The speaker of the quote"}, {"name": "products", "type": "CONCEPT", "context": "Items that the speaker loves and talks about"}], "relationships": [{"from": "V", "to": "products", "type": "MENTIONS", "context": "V talks about products he loves"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Yale", "type": "ORG", "context": "organization being discussed"}, {"name": "Careerspan", "type": "TOOL", "context": "tool for career services"}], "relationships": [{"from": "Careerspan", "to": "Yale", "type": "WORKS_WITH", "context": "potential collaboration with Yale's career services"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the individual referenced in the system"}, {"name": "partnership opportunity", "type": "CONCEPT", "context": "the subject of the email"}], "relationships": [{"from": "V", "to": "partnership opportunity", "type": "KNOWS", "context": "V understands the concept of partnership opportunities"}]}

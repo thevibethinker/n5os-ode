@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual with a knowledge system"}, {"name": "Speculation Mode", "type": "CONCEPT", "context": "a mode of operation for handling uncertain information"}], "relationships": [{"from": "V (Vrijen)", "to": "Speculation Mode", "type": "USES", "context": "utilizes Speculation Mode to manage uncertainty"}]}

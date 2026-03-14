@@ -1,1 +1,0 @@
-{"entities": [{"name": "v3", "type": "TOOL", "context": "a version of V's knowledge system used for integration"}], "relationships": [{"from": "Scripts", "to": "v3", "type": "USES", "context": "Scripts integrate with v3 for processing"}]}

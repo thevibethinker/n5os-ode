@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual with a knowledge system"}, {"name": "30 minutes", "type": "EVENT", "context": "duration of an informative meeting"}], "relationships": [{"from": "V (Vrijen)", "to": "30 minutes", "type": "RELATED_TO", "context": "meeting duration to assess fit"}]}

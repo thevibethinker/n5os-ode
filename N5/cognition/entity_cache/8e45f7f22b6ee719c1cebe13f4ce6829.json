@@ -1,1 +1,0 @@
-{"entities": [{"name": "Nicole", "type": "PERSON", "context": "individual facing health challenges"}, {"name": "energy", "type": "CONCEPT", "context": "characteristic displayed by Nicole"}], "relationships": [{"from": "Nicole", "to": "energy", "type": "RELATED_TO", "context": "Nicole remained engaged and professional despite health challenges"}]}

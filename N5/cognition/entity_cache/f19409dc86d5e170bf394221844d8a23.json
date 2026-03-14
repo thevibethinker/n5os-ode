@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual receiving the morning briefing"}, {"name": "Morning Briefing", "type": "EVENT", "context": "scheduled daily briefing for V"}], "relationships": [{"from": "Morning Briefing", "to": "V", "type": "DELIVERS", "context": "the morning briefing is sent to V"}]}

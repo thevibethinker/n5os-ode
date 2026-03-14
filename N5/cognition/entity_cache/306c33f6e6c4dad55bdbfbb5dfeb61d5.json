@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "founder concerned about AI coding tools"}, {"name": "AI coding tools", "type": "TOOL", "context": "tools that affect founder confidence"}], "relationships": [{"from": "V (Vrijen)", "to": "AI coding tools", "type": "BELIEVES", "context": "V believes AI tools create false confidence"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the person expressing gratitude and support"}, {"name": "knowledge system", "type": "CONCEPT", "context": "the subject of wisdom-sharing and decision-making"}], "relationships": [{"from": "V", "to": "knowledge system", "type": "MENTIONS", "context": "referring to the context of the wisdom-sharing call"}]}

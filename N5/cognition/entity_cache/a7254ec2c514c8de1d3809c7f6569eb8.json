@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "individual making the announcement"}, {"name": "Careerspan", "type": "ORG", "context": "the organization being sold"}], "relationships": [{"from": "Vrijen", "to": "Careerspan", "type": "MENTIONS", "context": "trying to sell Careerspan"}]}

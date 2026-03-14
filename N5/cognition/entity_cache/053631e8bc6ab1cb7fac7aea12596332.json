@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ayush", "type": "PERSON", "context": "seeking PM role while contributing to Careerspan"}, {"name": "Careerspan", "type": "ORG", "context": "the organization Ayush is contributing to"}], "relationships": [{"from": "Ayush", "to": "Careerspan", "type": "WORKS_WITH", "context": "Ayush is contributing to Careerspan while pursuing a PM role"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "AI", "type": "CONCEPT", "context": "Technology used for assistance in work"}, {"name": "cross-reference web", "type": "TOOL", "context": "System that enables various AI-assisted work capabilities"}], "relationships": [{"from": "cross-reference web", "to": "AI", "type": "USES", "context": "The cross-reference web enables AI-assisted work"}]}

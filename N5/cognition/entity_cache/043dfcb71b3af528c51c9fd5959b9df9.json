@@ -1,1 +1,0 @@
-{"entities": [{"name": "Victor", "type": "PERSON", "context": "mentioned in relation to portfolio company evaluation"}, {"name": "portfolio company", "type": "ORG", "context": "subject of evaluation regarding partnership decision"}], "relationships": [{"from": "Victor", "to": "portfolio company", "type": "MENTIONS", "context": "evaluating build vs. partner"}]}

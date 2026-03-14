@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "Knowledge system user"}, {"name": "Incantum system", "type": "TOOL", "context": "Natural language processing system"}], "relationships": [{"from": "V", "to": "Incantum system", "type": "USES", "context": "V utilizes the Incantum system for handling natural language variations"}]}

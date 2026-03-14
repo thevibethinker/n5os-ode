@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ilse", "type": "PERSON", "context": "mentioned in relation to strategic reflection"}, {"name": "silent scans", "type": "CONCEPT", "context": "blocked on Ilse's strategic reflection"}], "relationships": [{"from": "Ilse", "to": "silent scans", "type": "MENTIONS", "context": "Ilse's strategic reflection explicitly blocks the silent scans"}]}

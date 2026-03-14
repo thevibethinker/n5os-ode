@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual responsible for the knowledge system"}, {"name": "Prompt Tool", "type": "TOOL", "context": "AI-orchestrated tool used for meeting ingestion"}], "relationships": [{"from": "V (Vrijen)", "to": "Prompt Tool", "type": "USES", "context": "V uses the Prompt Tool for meeting ingestion"}]}

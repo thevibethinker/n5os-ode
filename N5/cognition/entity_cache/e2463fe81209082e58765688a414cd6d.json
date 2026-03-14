@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "A person with a knowledge system"}], "relationships": [{"from": "Vrijen", "to": "information architecture", "type": "BELIEVES", "context": "Vrijen believes his observation is conceptually identical to his information architecture"}]}

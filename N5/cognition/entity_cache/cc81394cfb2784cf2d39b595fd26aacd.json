@@ -1,1 +1,0 @@
-{"entities": [{"name": "lib", "type": "TOOL", "context": "a library or tool used for searching trial candidates"}, {"name": "trial candidates", "type": "CONCEPT", "context": "candidates for a trial based on specified tags"}], "relationships": []}

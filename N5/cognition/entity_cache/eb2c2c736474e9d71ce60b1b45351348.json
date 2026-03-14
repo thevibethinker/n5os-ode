@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "ORG", "context": "an organization that assists in sourcing candidates"}], "relationships": [{"from": "V", "to": "Careerspan", "type": "USES", "context": "V can offer a handoff to Careerspan for sourcing candidates"}]}

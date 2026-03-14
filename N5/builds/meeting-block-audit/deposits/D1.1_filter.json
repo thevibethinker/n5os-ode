@@ -1,7 +1,0 @@
-{
-  "drop_id": "D1.1",
-  "verdict": "PASS",
-  "reason": "Successfully scanned 20 meetings across Personal/Meetings/Week-of-2026-01-19/ and Personal/Meetings/Inbox/, identified quality issues per brief criteria (frontmatter, provenance, block_id, block_name, content depth, markdown fence), and produced properly structured JSON output with findings summary and degraded/good meeting details",
-  "artifacts_verified": true,
-  "concerns": []
-}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "an individual associated with a knowledge system"}, {"name": "recursive mirror", "type": "CONCEPT", "context": "a concept from V's crystallized wisdom"}], "relationships": [{"from": "V (Vrijen)", "to": "recursive mirror", "type": "BELIEVES", "context": "V believes in the concept of a recursive mirror"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "Individual associated with the knowledge system"}, {"name": "Zo Club", "type": "ORG", "context": "Organization mentioned in relation to the shout out mechanic"}], "relationships": [{"from": "V", "to": "Zo Club", "type": "WORKS_WITH", "context": "V is involved with the launch of Zo Club"}]}

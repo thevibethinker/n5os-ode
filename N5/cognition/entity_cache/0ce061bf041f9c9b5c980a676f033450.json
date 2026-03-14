@@ -1,1 +1,0 @@
-{"entities": [{"name": "buff", "type": "TOOL", "context": "a buffer object used for writing strings in JavaScript"}, {"name": "writeStringNT", "type": "CONCEPT", "context": "a method to write null-terminated strings to a buffer"}], "relationships": []}

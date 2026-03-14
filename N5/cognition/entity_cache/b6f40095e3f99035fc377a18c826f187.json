@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vineet", "type": "PERSON", "context": "individual associated with Zeni.Ai"}, {"name": "Zeni.Ai", "type": "ORG", "context": "organization where Vineet is associated"}], "relationships": [{"from": "Vineet", "to": "Zeni.Ai", "type": "WORKS_WITH", "context": "Vineet is associated with Zeni.Ai"}]}

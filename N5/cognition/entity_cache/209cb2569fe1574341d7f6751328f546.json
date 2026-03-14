@@ -1,1 +1,0 @@
-{"entities": [{"name": "N5", "type": "ORG", "context": "the organization related to V's scripts"}, {"name": "crm_daily_sync.py", "type": "TOOL", "context": "script used for syncing markdown and database"}], "relationships": []}

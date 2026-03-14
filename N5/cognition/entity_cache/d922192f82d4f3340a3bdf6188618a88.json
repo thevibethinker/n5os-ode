@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the individual associated with the knowledge system"}, {"name": "Quarterly Founder Dinners", "type": "EVENT", "context": "a specific event for vetted founders"}], "relationships": [{"from": "V", "to": "Quarterly Founder Dinners", "type": "MENTIONS", "context": "V talks about hosting dinners for vetted founders"}]}

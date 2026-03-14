@@ -1,1 +1,0 @@
-{"entities": [{"name": "Calendly", "type": "ORG", "context": "organization where V is CEO & Founder"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "the individual whose knowledge system is described"}], "relationships": [{"from": "V (Vrijen)", "to": "Calendly", "type": "WORKS_WITH", "context": "V is the CEO & Founder of Calendly"}]}

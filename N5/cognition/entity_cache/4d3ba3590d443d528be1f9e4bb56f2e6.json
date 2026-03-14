@@ -1,1 +1,0 @@
-{"entities": [{"name": "Deepak", "type": "PERSON", "context": "Contact in Eigenstrategicsystems"}, {"name": "Eigenstrategicsystems", "type": "ORG", "context": "Organization associated with Deepak"}], "relationships": [{"from": "Deepak", "to": "Eigenstrategicsystems", "type": "WORKS_WITH", "context": "Deepak is affiliated with the organization"}]}

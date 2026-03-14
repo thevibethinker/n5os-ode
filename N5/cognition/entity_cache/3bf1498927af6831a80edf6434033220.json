@@ -1,1 +1,0 @@
-{"entities": [{"name": "AI", "type": "CONCEPT", "context": "refers to artificial intelligence technology"}, {"name": "high school", "type": "ORG", "context": "refers to the education level where AI was not covered"}], "relationships": [{"from": "high school", "to": "AI", "type": "MENTIONS", "context": "AI was not covered or discouraged in high school education"}]}

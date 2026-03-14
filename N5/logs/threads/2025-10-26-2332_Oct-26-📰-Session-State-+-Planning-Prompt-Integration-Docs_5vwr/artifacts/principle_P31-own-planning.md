@@ -1,1 +1,0 @@
-/home/workspace/Knowledge/architectural/principles/P31-own-the-planning-process.md

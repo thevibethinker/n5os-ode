@@ -1,1 +1,0 @@
-{"entities": [{"name": "NIRA", "type": "ORG", "context": "an AI/careers organization"}, {"name": "Careerspan", "type": "ORG", "context": "a career tech organization"}], "relationships": [{"from": "NIRA", "to": "Careerspan", "type": "WORKS_WITH", "context": "exploring strategic alignment"}]}

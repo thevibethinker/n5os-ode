@@ -1,1 +1,0 @@
-{"entities": [{"name": "zoputer", "type": "ORG", "context": "an organization using the VA API"}, {"name": "va", "type": "TOOL", "context": "the API providing guidance to zoputer"}], "relationships": [{"from": "zoputer", "to": "va", "type": "USES", "context": "zoputer calls va for guidance via the VA API"}]}

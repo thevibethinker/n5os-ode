@@ -1,1 +1,0 @@
-{"entities": [{"name": "Michael", "type": "PERSON", "context": "Contact with V"}, {"name": "Anyreach.Ai", "type": "ORG", "context": "Organization associated with Michael"}], "relationships": [{"from": "V", "to": "Michael", "type": "KNOWS", "context": "Michael is a contact"}, {"from": "Michael", "to": "Anyreach.Ai", "type": "WORKS_WITH", "context": "Michael's organization"}]}

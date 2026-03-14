@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "ORG", "context": "organization involved in sale"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "individual involved in exploration phase"}], "relationships": [{"from": "V (Vrijen)", "to": "Careerspan", "type": "WORKS_WITH", "context": "involved in strategic exit options for sale"}]}

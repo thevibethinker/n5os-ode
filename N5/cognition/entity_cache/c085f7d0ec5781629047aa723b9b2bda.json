@@ -1,1 +1,0 @@
-{"entities": [{"name": "P8", "type": "CONCEPT", "context": "Self-contained system, doesn't require loading external state"}, {"name": "P15", "type": "CONCEPT", "context": "All objectives met: script, commands, docs, integration, testing"}, {"name": "P20", "type": "CONCEPT", "context": "Single-purpose script, clear interfaces, composable"}], "relationships": []}

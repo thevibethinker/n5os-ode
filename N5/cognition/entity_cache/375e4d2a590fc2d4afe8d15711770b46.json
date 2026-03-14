@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo", "type": "TOOL", "context": "a product that can be integrated with"}], "relationships": [{"from": "V (Vrijen)", "to": "Zo", "type": "USES", "context": "V discusses potential integration with Zo to enhance capabilities"}]}

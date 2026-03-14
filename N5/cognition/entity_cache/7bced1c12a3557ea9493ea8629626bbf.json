@@ -1,1 +1,0 @@
-{"entities": [{"name": "the firm", "type": "ORG", "context": "an organization implied to have power"}], "relationships": [{"from": "Me", "to": "the firm", "type": "MENTIONS", "context": "discussing the influence of the firm"}]}

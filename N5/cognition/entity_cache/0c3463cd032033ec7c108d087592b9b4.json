@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo", "type": "ORG", "context": "service platform"}, {"name": "ZoBridge", "type": "TOOL", "context": "service record within Zo"}], "relationships": [{"from": "V", "to": "Zo", "type": "USES", "context": "uses the Zo platform for service management"}, {"from": "Zo", "to": "ZoBridge", "type": "MENTIONS", "context": "refers to the ZoBridge service record"}]}

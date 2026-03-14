@@ -1,1 +1,0 @@
-{"entities": [{"name": "Colin Navon", "type": "PERSON", "context": "a person involved in the conversation"}, {"name": "wife", "type": "PERSON", "context": "Colin Navon's spouse"}], "relationships": [{"from": "Colin Navon", "to": "wife", "type": "WORKS_WITH", "context": "Colin is discussing ideas with his wife"}]}

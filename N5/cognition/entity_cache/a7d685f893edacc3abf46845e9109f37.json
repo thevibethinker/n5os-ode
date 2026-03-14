@@ -1,1 +1,0 @@
-{"entities": [{"name": "Automatic logging system", "type": "TOOL", "context": "system for capturing debugging attempts"}, {"name": "JSONL format", "type": "CONCEPT", "context": "format used for logging data"}], "relationships": []}

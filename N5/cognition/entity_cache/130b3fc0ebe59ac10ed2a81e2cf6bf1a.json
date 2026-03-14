@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker discussing their knowledge system"}, {"name": "Zoe", "type": "CONCEPT", "context": "Mentioned in relation to distinguishing concepts"}], "relationships": [{"from": "Vrijen Attawar", "to": "Zoe", "type": "MENTIONS", "context": "Vrijen refers to Zoe in the context of distinguishing concepts"}]}

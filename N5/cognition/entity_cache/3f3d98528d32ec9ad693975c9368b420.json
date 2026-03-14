@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "Individual with a knowledge system"}, {"name": "Zo-generated lists", "type": "TOOL", "context": "Lists built by V for data structuring"}], "relationships": []}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "Careerspan", "type": "TOOL", "context": "platform used by users to enhance their communication skills"}], "relationships": [{"from": "V", "to": "Careerspan", "type": "USES", "context": "V utilizes Careerspan as a tool for users to improve self-description"}]}

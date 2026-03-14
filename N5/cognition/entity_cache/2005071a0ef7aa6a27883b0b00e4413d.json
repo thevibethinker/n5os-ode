@@ -1,1 +1,0 @@
-{"entities": [{"name": "Alexander", "type": "PERSON", "context": "chief of staff"}], "relationships": [{"from": "Vrijen Attawar", "to": "Alexander", "type": "WORKS_WITH", "context": "mentions Alexander as chief of staff"}]}

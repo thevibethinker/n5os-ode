@@ -1,1 +1,0 @@
-{"entities": [{"name": "sam", "type": "PERSON", "context": "individual involved in fundraising and talent refocus"}, {"name": "Careerspan", "type": "ORG", "context": "organization focused on sourcing talent"}], "relationships": [{"from": "sam", "to": "Careerspan", "type": "WORKS_WITH", "context": "working together on talent sourcing and acquisition discussions"}]}

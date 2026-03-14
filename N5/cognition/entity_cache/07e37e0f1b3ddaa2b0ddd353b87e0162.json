@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ryan Vanderbilt", "type": "PERSON", "context": "Person mentioned in the conversation about raising a fund."}], "relationships": [{"from": "V", "to": "Ryan Vanderbilt", "type": "KNOWS", "context": "V is familiar with Ryan Vanderbilt."}, {"from": "Ryan Vanderbilt", "to": "fund", "type": "RELATED_TO", "context": "Ryan is helping with their fund-raising."}]}

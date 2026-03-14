@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "Careerspan", "type": "ORG", "context": "company referenced in the internal strategy document"}], "relationships": [{"from": "V (Vrijen)", "to": "Careerspan", "type": "WORKS_WITH", "context": "V is associated with the company discussed in the document"}]}

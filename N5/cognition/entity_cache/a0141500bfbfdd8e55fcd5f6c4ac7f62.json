@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "Voice preference", "type": "CONCEPT", "context": "a concept related to effective communication"}], "relationships": [{"from": "V", "to": "Voice preference", "type": "BELIEVES", "context": "V believes in effective communication strategies"}]}

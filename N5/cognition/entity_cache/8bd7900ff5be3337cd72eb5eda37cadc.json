@@ -1,1 +1,0 @@
-{"entities": [{"name": "Gmail", "type": "TOOL", "context": "Email service used for searching threads with contacts"}, {"name": "CRM", "type": "TOOL", "context": "Customer Relationship Management system for profiling"}], "relationships": []}

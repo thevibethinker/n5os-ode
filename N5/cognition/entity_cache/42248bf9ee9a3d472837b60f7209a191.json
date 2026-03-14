@@ -1,1 +1,0 @@
-{"entities": [{"name": "MG-7", "type": "CONCEPT", "context": "a reporting system"}, {"name": "MG-7C", "type": "CONCEPT", "context": "an archiving process for C-state meetings"}], "relationships": [{"from": "MG-7", "to": "MG-7C", "type": "RELATED_TO", "context": "MG-7C archives data related to MG-7"}]}

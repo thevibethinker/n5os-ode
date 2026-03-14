@@ -1,1 +1,0 @@
-{"entities": [{"name": "B26", "type": "TOOL", "context": "missing upstream block reference"}, {"name": "manifest.json", "type": "TOOL", "context": "missing upstream block reference"}, {"name": "[M] meeting", "type": "EVENT", "context": "type of meeting evaluated for intro generation"}], "relationships": []}

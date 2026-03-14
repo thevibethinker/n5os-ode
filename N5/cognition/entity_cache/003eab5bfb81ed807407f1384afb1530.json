@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual validating choices regarding his Zo system"}, {"name": "Zo system", "type": "TOOL", "context": "environment being reset and redesigned"}], "relationships": [{"from": "V", "to": "Zo system", "type": "USES", "context": "V resets and redesigns his Zo environment"}]}

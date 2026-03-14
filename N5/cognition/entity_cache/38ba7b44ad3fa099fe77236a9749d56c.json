@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "ORG", "context": "candidate-side engine"}], "relationships": [{"from": "Careerspan", "to": "V", "type": "WORKS_WITH", "context": "Careerspan is used by V as an engine for candidates"}]}

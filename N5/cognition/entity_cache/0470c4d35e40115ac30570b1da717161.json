@@ -1,1 +1,0 @@
-{"entities": [{"name": "Auto-init script", "type": "TOOL", "context": "schedules and runs tasks hourly"}, {"name": "SESSION_STATE", "type": "CONCEPT", "context": "a state indicator for conversation workspaces"}, {"name": "conversation workspaces", "type": "CONCEPT", "context": "spaces where conversations occur"}], "relationships": []}

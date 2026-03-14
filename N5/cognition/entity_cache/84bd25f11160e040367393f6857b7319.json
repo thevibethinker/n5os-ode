@@ -1,1 +1,0 @@
-{"entities": [{"name": "bot", "type": "TOOL", "context": "an application that interacts in chat channels"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "the owner or creator of the knowledge system"}], "relationships": [{"from": "V (Vrijen)", "to": "bot", "type": "USES", "context": "V utilizes the bot for various functionalities in chat"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the individual associated with the knowledge system"}, {"name": "redundancy", "type": "CONCEPT", "context": "a design feature of the system to prevent data loss"}], "relationships": [{"from": "V", "to": "redundancy", "type": "BELIEVES", "context": "V believes in redundancy as a means to prevent data loss"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Google Drive", "type": "TOOL", "context": "a cloud storage service used for file sharing and collaboration"}], "relationships": [{"from": "V", "to": "Google Drive", "type": "USES", "context": "V utilizes Google Drive for meeting pipeline management"}]}

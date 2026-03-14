@@ -1,1 +1,0 @@
-{"entities": [{"name": "Charles", "type": "PERSON", "context": "hires frequently and is active in the founder community"}], "relationships": [{"from": "V", "to": "Charles", "type": "KNOWS", "context": "V is aware of Charles' activities in the founder community"}]}

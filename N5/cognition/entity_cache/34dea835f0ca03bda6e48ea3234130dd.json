@@ -1,1 +1,0 @@
-{"entities": [{"name": "Andrew", "type": "PERSON", "context": "Quoted in LinkedIn regarding events"}, {"name": "NYC", "type": "CONCEPT", "context": "Location of the gatherings"}], "relationships": [{"from": "Andrew", "to": "NYC", "type": "MENTIONS", "context": "Reference to the place of the events"}]}

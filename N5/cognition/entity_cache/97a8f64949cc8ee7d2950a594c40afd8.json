@@ -1,1 +1,0 @@
-{"entities": [{"name": "System", "type": "CONCEPT", "context": "Knowledge system that auto-detects and proposes updates"}, {"name": "You", "type": "PERSON", "context": "User who reviews summary and approves or rejects changes"}], "relationships": [{"from": "You", "to": "System", "type": "USES", "context": "You interact with the system to review and manage changes"}]}

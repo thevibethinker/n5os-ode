@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "subject of the communication style"}, {"name": "SF startup culture", "type": "CONCEPT", "context": "context in which V operates"}], "relationships": [{"from": "V", "to": "SF startup culture", "type": "KNOWS", "context": "V is familiar with the communication style characteristic of the SF startup culture"}]}

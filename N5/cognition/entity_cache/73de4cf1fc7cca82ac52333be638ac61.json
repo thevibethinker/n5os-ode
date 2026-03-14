@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "V is the subject discussing knowledge system interactions"}, {"name": "CLI", "type": "TOOL", "context": "CLI is a command line interface used for ingesting data"}], "relationships": []}

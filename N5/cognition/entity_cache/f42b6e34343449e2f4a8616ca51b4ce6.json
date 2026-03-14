@@ -1,1 +1,0 @@
-{"entities": [{"name": "meeting-process", "type": "CONCEPT", "context": "Process for managing meeting transcripts"}, {"name": "meeting-approve", "type": "CONCEPT", "context": "Process for approving meeting outputs"}, {"name": "crm-find", "type": "TOOL", "context": "Tool for fast CRM queries"}], "relationships": []}

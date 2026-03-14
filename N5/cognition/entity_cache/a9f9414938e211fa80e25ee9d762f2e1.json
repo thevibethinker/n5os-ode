@@ -1,1 +1,0 @@
-{"entities": [{"name": "Lumos House", "type": "ORG", "context": "an organization with a tier system for events"}], "relationships": [{"from": "V", "to": "Lumos House", "type": "MENTIONS", "context": "refers to its tier system in events"}]}

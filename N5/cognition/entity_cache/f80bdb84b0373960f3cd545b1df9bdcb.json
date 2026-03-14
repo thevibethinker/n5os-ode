@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual mentioned in the text"}, {"name": "intake link", "type": "TOOL", "context": "process mentioned for reaching out"}], "relationships": [{"from": "V (Vrijen)", "to": "intake link", "type": "USES", "context": "tool for outreach process"}]}

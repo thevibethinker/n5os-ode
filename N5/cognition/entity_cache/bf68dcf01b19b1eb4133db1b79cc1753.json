@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual discussing the knowledge system"}, {"name": "internal blurbs", "type": "CONCEPT", "context": "requested for demo purposes"}], "relationships": [{"from": "V (Vrijen)", "to": "internal blurbs", "type": "USES", "context": "requested for demo purposes"}]}

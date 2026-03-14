@@ -1,1 +1,0 @@
-{"entities": [{"name": "dependency graph", "type": "CONCEPT", "context": "a graphical representation used in decomposition"}, {"name": "execution order", "type": "CONCEPT", "context": "the sequence in which tasks are carried out"}, {"name": "leaf pattern", "type": "CONCEPT", "context": "a foundational design pattern in system architecture"}], "relationships": []}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "the speaker"}, {"name": "Emory", "type": "ORG", "context": "organization providing a service"}], "relationships": [{"from": "Vrijen Attawar", "to": "Emory", "type": "MENTIONS", "context": "discussing branding and service provision"}]}

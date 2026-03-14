@@ -1,1 +1,0 @@
-{"entities": [{"name": "Sam Bourton", "type": "PERSON", "context": "a person discussing morale and team spirit"}, {"name": "QQB", "type": "TOOL", "context": "a tool or system referenced in relation to team morale"}], "relationships": [{"from": "Sam Bourton", "to": "QQB", "type": "MENTIONS", "context": "Sam discusses findings in QQB related to team spirit"}]}

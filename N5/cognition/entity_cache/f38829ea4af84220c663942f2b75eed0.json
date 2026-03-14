@@ -1,1 +1,0 @@
-{"entities": [{"name": "Binary", "type": "CONCEPT", "context": "Classification system categorizing items into critical and non-critical"}, {"name": "Mapping", "type": "CONCEPT", "context": "Procedure for determining the criticality status of items using specific identifiers"}], "relationships": []}

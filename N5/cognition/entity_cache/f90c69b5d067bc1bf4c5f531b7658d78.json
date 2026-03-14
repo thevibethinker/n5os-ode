@@ -1,1 +1,0 @@
-{"entities": [{"name": "Dual-write", "type": "TOOL", "context": "A system feature that can be disabled by commenting out sync calls"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "The individual responsible for the knowledge system"}], "relationships": [{"from": "V (Vrijen)", "to": "Dual-write", "type": "USES", "context": "V uses dual-write in the knowledge system"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Representative of the rebranding to Careerspan"}, {"name": "Careerspan", "type": "ORG", "context": "New name reflecting mission"}], "relationships": [{"from": "Vrijen Attawar", "to": "Careerspan", "type": "MENTIONS", "context": "Announcing the rebrand and mission"}]}

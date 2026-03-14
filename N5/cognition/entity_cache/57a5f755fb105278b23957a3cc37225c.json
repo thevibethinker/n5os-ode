@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo", "type": "PERSON", "context": "person responsible for responding"}, {"name": "architectural principles", "type": "CONCEPT", "context": "concept loaded to guide design"}], "relationships": [{"from": "Zo", "to": "architectural principles", "type": "USES", "context": "Zo loads architectural principles for correct design"}]}

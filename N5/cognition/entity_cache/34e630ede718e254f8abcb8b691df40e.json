@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "team member involved in operational discussions"}, {"name": "SDR", "type": "CONCEPT", "context": "related to scaling outbound through hiring"}], "relationships": [{"from": "V", "to": "SDR", "type": "MENTIONS", "context": "scaling outbound through hiring"}]}

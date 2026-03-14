@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "CEO with strategic relationship ownership"}, {"name": "Logan", "type": "PERSON", "context": "execution leader"}], "relationships": [{"from": "Vrijen", "to": "Logan", "type": "WORKS_WITH", "context": "Logan's execution leadership does not change Vrijen's ownership of relationships"}]}

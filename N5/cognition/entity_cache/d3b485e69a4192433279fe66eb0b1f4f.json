@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "demonstrator of the AI system"}, {"name": "Zo", "type": "TOOL", "context": "cloud-based AI computer system for job sourcing"}], "relationships": [{"from": "Vrijen", "to": "Zo", "type": "USES", "context": "using Zo to automate job sourcing"}]}

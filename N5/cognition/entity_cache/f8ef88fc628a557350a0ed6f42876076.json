@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo", "type": "ORG", "context": "Voice-to-insight workflow organization"}, {"name": "V (Vrijen)", "type": "PERSON", "context": "Individual with knowledge system"}], "relationships": [{"from": "V (Vrijen)", "to": "Zo", "type": "USES", "context": "V utilizes Zo's voice-to-insight workflow"}]}

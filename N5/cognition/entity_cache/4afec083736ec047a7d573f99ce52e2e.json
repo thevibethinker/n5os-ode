@@ -1,1 +1,0 @@
-{"entities": [{"name": "Urgent Meeting Detection", "type": "CONCEPT", "context": "Function developed for identifying urgent meetings"}, {"name": "Logging system", "type": "TOOL", "context": "System configured for tracking events and information"}, {"name": "Error handling", "type": "CONCEPT", "context": "Implementation of a method for managing errors"}], "relationships": []}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "Individual associated with the knowledge system"}, {"name": "individuals", "type": "ORG", "context": "Database table representing active individuals"}], "relationships": [{"from": "V (Vrijen)", "to": "individuals", "type": "USES", "context": "V uses the individuals database to manage contacts"}]}

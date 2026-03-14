@@ -1,1 +1,0 @@
-{"entities": [{"name": "Aspire", "type": "ORG", "context": "primary distribution channel for B2B model"}], "relationships": [{"from": "V", "to": "Aspire", "type": "WORKS_WITH", "context": "Aspire serves as the distribution channel for the B2B model"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Pulse", "type": "ORG", "context": "tool that runs prompt_lint.py"}, {"name": "prompt_lint.py", "type": "TOOL", "context": "program run on Drop briefs"}], "relationships": [{"from": "Pulse", "to": "prompt_lint.py", "type": "USES", "context": "runs on all Drop briefs"}]}

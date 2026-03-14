@@ -1,1 +1,0 @@
-{"entities": [{"name": "Jaya", "type": "PERSON", "context": "founder profile to be created"}, {"name": "CRM", "type": "TOOL", "context": "system for managing customer relationships"}], "relationships": [{"from": "V", "to": "Jaya", "type": "KNOWS", "context": "potential collaborator/advisor"}, {"from": "V", "to": "CRM", "type": "USES", "context": "for creating founder profiles"}]}

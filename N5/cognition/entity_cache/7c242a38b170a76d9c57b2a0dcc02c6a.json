@@ -1,1 +1,0 @@
-{"entities": [{"name": "Darwin Box", "type": "ORG", "context": "Organization involved in acquisition conversations"}], "relationships": [{"from": "V", "to": "Darwin Box", "type": "MENTIONS", "context": "In context of acquisition conversation"}]}

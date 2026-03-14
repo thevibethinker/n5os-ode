@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "individual who is involved in Career Span"}, {"name": "Career Span", "type": "ORG", "context": "organization or project related to careers"}], "relationships": [{"from": "Vrijen Attawar", "to": "Career Span", "type": "WORKS_WITH", "context": "Vrijen is still involved in Career Span"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "v1", "type": "TOOL", "context": "default version of the system"}, {"name": "v2", "type": "TOOL", "context": "version of the system being tested"}], "relationships": [{"from": "v1", "to": "v2", "type": "USES", "context": "v1 is used as a default while v2 is tested"}]}

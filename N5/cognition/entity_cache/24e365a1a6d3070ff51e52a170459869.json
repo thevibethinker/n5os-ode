@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo", "type": "TOOL", "context": "automated system that processes documents"}, {"name": "Document Inbox", "type": "CONCEPT", "context": "location for incoming transcripts"}], "relationships": [{"from": "Zo", "to": "Document Inbox", "type": "USES", "context": "Zo processes documents from the Document Inbox"}]}

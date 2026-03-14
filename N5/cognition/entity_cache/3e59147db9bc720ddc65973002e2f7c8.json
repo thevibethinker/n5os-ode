@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the individual initiating the discussion"}, {"name": "The Fourth Effect", "type": "ORG", "context": "organization whose mission is to be discovered"}], "relationships": [{"from": "V", "to": "The Fourth Effect", "type": "WORKS_WITH", "context": "potential collaboration inquiry"}]}

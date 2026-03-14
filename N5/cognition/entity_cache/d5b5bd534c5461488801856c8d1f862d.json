@@ -1,1 +1,0 @@
-{"entities": [{"name": "David", "type": "PERSON", "context": "individual referenced in the context"}, {"name": "Careerspan", "type": "ORG", "context": "organization involved in the interactions with David"}], "relationships": [{"from": "Careerspan", "to": "David", "type": "WORKS_WITH", "context": "Careerspan's interactions with David regarding product deliverables"}]}

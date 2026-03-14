@@ -1,1 +1,0 @@
-{"entities": [{"name": "logan", "type": "PERSON", "context": "mentioned in coordination tags"}, {"name": "ilse", "type": "PERSON", "context": "mentioned in coordination tags"}], "relationships": [{"from": "V", "to": "logan", "type": "KNOWS", "context": "V has coordination with logan"}, {"from": "V", "to": "ilse", "type": "KNOWS", "context": "V has coordination with ilse"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Josh Glazebrook", "type": "PERSON", "context": "creator of the socks project"}, {"name": "socks", "type": "TOOL", "context": "software project hosted on GitHub"}], "relationships": [{"from": "Josh Glazebrook", "to": "socks", "type": "CREATED", "context": "Josh Glazebrook is the creator of the socks project"}]}

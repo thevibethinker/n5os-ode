@@ -1,1 +1,0 @@
-{"entities": [{"name": "String", "type": "CONCEPT", "context": "The String encoding to be used"}, {"name": "utf8", "type": "CONCEPT", "context": "Default encoding if none is specified"}], "relationships": []}

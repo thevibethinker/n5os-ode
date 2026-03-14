@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual responsible for tweet approval"}, {"name": "positions.db", "type": "TOOL", "context": "database used for scoring tweets"}], "relationships": [{"from": "V", "to": "positions.db", "type": "USES", "context": "to score tweets against threshold"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "ORG", "context": "an organization focused on HR screening"}, {"name": "AI", "type": "TOOL", "context": "the technology used as a filter in hiring"}], "relationships": [{"from": "Careerspan", "to": "AI", "type": "USES", "context": "uses AI as the first filter for hiring"}]}

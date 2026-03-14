@@ -1,1 +1,0 @@
-{"entities": [{"name": "Michael Berlingo", "type": "PERSON", "context": "Founder of Starter U"}, {"name": "Starter U", "type": "ORG", "context": "Organization founded by Michael Berlingo"}], "relationships": [{"from": "Michael Berlingo", "to": "Starter U", "type": "WORKS_WITH", "context": "Founder of the organization"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker discussing technology and tools"}, {"name": "granola", "type": "TOOL", "context": "Software that captures audio directly from the processor"}], "relationships": [{"from": "Vrijen Attawar", "to": "granola", "type": "USES", "context": "Discusses how granola captures audio"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "bash", "type": "TOOL", "context": "command-line shell used for executing commands"}, {"name": "commands.jsonl", "type": "TOOL", "context": "file format potentially used for command storage"}, {"name": "executables.db", "type": "TOOL", "context": "database for indexing executables"}], "relationships": []}

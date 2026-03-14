@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "refers to Vrijen"}, {"name": "Bigger companies", "type": "ORG", "context": "potential partners for acquisition/integration"}], "relationships": [{"from": "V", "to": "Bigger companies", "type": "MENTIONS", "context": "potential interest in acquisition/integration"}]}

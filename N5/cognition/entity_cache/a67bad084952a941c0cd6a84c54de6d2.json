@@ -1,1 +1,0 @@
-{"entities": [{"name": "maf", "type": "PERSON", "context": "owner of the file entry"}, {"name": "staff", "type": "ORG", "context": "group to which the file entry owner belongs"}], "relationships": [{"from": "maf", "to": "staff", "type": "BELONGS_TO", "context": "maf is the owner belonging to the staff group"}]}

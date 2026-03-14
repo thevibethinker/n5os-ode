@@ -1,1 +1,0 @@
-{"entities": [{"name": "executable_manager", "type": "TOOL", "context": "module for managing executables"}, {"name": "prompts", "type": "CONCEPT", "context": "list of executable prompts related to meetings"}, {"name": "results", "type": "CONCEPT", "context": "search results based on the term 'analysis'"}], "relationships": []}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "BROWSER_BIN", "type": "CONCEPT", "context": "environment variable for browser launch"}, {"name": "Chrome", "type": "TOOL", "context": "web browser"}, {"name": "Edge", "type": "TOOL", "context": "web browser"}, {"name": "Chromium", "type": "TOOL", "context": "open-source web browser project"}], "relationships": []}

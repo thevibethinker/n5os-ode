@@ -1,1 +1,0 @@
-{"entities": [{"name": "V (Vrijen)", "type": "PERSON", "context": "individual discussing voice primitive"}, {"name": "voice primitive", "type": "TOOL", "context": "tool for ensuring consistency in decision-making"}], "relationships": [{"from": "V (Vrijen)", "to": "voice primitive", "type": "USES", "context": "V discusses the use of voice primitive to ensure consistency"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "scores_complete.json", "type": "TOOL", "context": "a file containing skills information"}, {"name": "support", "type": "CONCEPT", "context": "a grouping method based on story ID"}, {"name": "ownership mindset", "type": "BELIEF", "context": "a cross-cutting theme identified in stories"}], "relationships": []}

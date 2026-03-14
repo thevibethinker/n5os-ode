@@ -1,1 +1,0 @@
-{"entities": [{"name": "Tami Forman", "type": "PERSON", "context": "Speaker discussing nonprofit model"}, {"name": "Apple", "type": "ORG", "context": "Employer mentioned in the context of tech jobs"}], "relationships": [{"from": "Tami Forman", "to": "Apple", "type": "MENTIONS", "context": "Discussing employment opportunities in tech jobs at Apple"}]}

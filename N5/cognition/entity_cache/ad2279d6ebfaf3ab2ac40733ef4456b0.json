@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual referenced as Vrijen"}, {"name": "Blend project", "type": "CONCEPT", "context": "project related to V's interests"}], "relationships": [{"from": "V", "to": "Blend project", "type": "MENTIONS", "context": "V expresses curiosity about the project"}]}

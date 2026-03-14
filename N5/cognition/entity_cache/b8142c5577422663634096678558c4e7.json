@@ -1,1 +1,0 @@
-{"entities": [{"name": "Careerspan", "type": "ORG", "context": "a career narrative platform"}, {"name": "job-search space", "type": "CONCEPT", "context": "a market area where we are competing"}], "relationships": [{"from": "Careerspan", "to": "job-search space", "type": "RELATED_TO", "context": "Careerspan is competing in the job-search space"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "refers to Vrijen personally"}, {"name": "GROUP MIDNIGHT", "type": "ORG", "context": "an organization mentioned in context of mutual connections"}], "relationships": [{"from": "V", "to": "GROUP MIDNIGHT", "type": "KNOWS", "context": "V has connections with GROUP MIDNIGHT"}]}

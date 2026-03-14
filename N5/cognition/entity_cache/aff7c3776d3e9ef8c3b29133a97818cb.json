@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ben Guo", "type": "PERSON", "context": "Speaker discussing the model for communication"}, {"name": "Zoe", "type": "TOOL", "context": "Communication tool that can switch models"}], "relationships": [{"from": "Ben Guo", "to": "Zoe", "type": "MENTIONS", "context": "Discussing how the model can be changed for communication with Zoe"}]}

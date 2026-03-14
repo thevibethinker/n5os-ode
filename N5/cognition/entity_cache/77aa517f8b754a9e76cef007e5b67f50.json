@@ -1,1 +1,0 @@
-{"entities": [{"name": "Krista Tan", "type": "PERSON", "context": "Co-founder; member engagement & programming lead at Talent Collective"}, {"name": "Talent Collective", "type": "ORG", "context": "Organization co-founded by Krista Tan"}], "relationships": [{"from": "Krista Tan", "to": "Talent Collective", "type": "WORKS_WITH", "context": "Co-founder and programming lead"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Alex Caveny", "type": "PERSON", "context": "individual mentioned in the command usage"}], "relationships": [{"from": "V", "to": "Alex Caveny", "type": "KNOWS", "context": "V knows Alex Caveny as seen in the crm-touchpoints command"}]}

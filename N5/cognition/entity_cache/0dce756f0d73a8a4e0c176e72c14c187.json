@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ivor", "type": "PERSON", "context": "needs materials package to assist"}], "relationships": [{"from": "Ivor", "to": "V", "type": "WORKS_WITH", "context": "Ivor needs materials to help V"}]}

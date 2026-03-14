@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen", "type": "PERSON", "context": "owner of scheduling follow-up"}, {"name": "Logan", "type": "PERSON", "context": "owner of review draft"}], "relationships": [{"from": "Vrijen", "to": "Logan", "type": "WORKS_WITH", "context": "both involved in task management related to drafts"}]}

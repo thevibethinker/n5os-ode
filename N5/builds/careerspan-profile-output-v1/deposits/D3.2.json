@@ -1,9 +1,0 @@
-{
-  "drop_id": "D3.2",
-  "status": "complete",
-  "summary": "Generated Gamma webpage from assembled content",
-  "gamma_url": "https://gamma.app/docs/c19m6v2365s6fkd",
-  "artifacts": ["output/gamma-url.txt", "drops/D3.1-assembled-content.md"],
-  "issues": [],
-  "learnings": []
-}

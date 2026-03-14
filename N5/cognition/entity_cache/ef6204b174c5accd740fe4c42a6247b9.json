@@ -1,1 +1,0 @@
-{"entities": [{"name": "job_data", "type": "TOOL", "context": "Extracted job information including title, location, and description"}, {"name": "verification_status", "type": "CONCEPT", "context": "Confirmation that extraction is 100% accurate"}, {"name": "sheet_update_status", "type": "CONCEPT", "context": "Confirmation of Google Drive sheet update"}], "relationships": []}

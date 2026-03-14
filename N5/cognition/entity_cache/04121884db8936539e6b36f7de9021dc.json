@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the subject of the knowledge system"}, {"name": "Howie integration prototype", "type": "TOOL", "context": "a prototype tool used for integration"}], "relationships": [{"from": "V", "to": "Howie integration prototype", "type": "USES", "context": "V is using the Howie integration prototype"}]}

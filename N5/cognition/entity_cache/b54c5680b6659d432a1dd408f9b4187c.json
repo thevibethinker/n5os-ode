@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "Individual utilizing own terminology and setup"}, {"name": "incantum_shortcuts.json", "type": "TOOL", "context": "File used for custom mappings"}], "relationships": [{"from": "V", "to": "incantum_shortcuts.json", "type": "USES", "context": "V uses this file for custom mappings"}]}

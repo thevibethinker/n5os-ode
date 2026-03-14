@@ -1,1 +1,0 @@
-{"entities": [{"name": "Logan Currie", "type": "PERSON", "context": "person mentioning communication with another individual"}, {"name": "TikTok", "type": "ORG", "context": "social media platform"}], "relationships": [{"from": "Logan Currie", "to": "TikTok", "type": "MENTIONS", "context": "discussing communication on the platform"}]}

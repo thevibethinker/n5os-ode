@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "the individual using the knowledge system"}, {"name": "life_counter.py", "type": "TOOL", "context": "a script used for managing life activities and inventories"}], "relationships": [{"from": "V", "to": "life_counter.py", "type": "USES", "context": "V uses the life_counter.py script to increment and list activities"}]}

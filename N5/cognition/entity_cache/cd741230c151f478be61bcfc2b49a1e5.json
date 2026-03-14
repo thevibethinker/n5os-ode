@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual associated with the knowledge system"}, {"name": "jobs_review.py", "type": "TOOL", "context": "Python script used for reviewing jobs"}, {"name": "location:Remote", "type": "CONCEPT", "context": "filter applied to jobs for remote work"}], "relationships": []}

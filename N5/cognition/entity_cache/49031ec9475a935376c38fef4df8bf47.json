@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "Participant in the discussion about education"}, {"name": "brainwashing", "type": "BELIEF", "context": "Concept discussed in the context of education"}], "relationships": [{"from": "V", "to": "brainwashing", "type": "BELIEVES", "context": "V expresses a belief that education can be a form of brainwashing"}]}

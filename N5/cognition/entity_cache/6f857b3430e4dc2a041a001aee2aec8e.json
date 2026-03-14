@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "knowledge system developer"}, {"name": "JSONL", "type": "TOOL", "context": "data format used for items"}], "relationships": []}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "speaker discussing professional growth"}, {"name": "Logs", "type": "ORG", "context": "mentioned organization open to memberships for professional development"}], "relationships": [{"from": "Vrijen Attawar", "to": "Logs", "type": "MENTIONS", "context": "suggesting membership for professional communities"}]}

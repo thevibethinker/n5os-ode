@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "Individual mentioned in the knowledge system"}, {"name": "rpi_calculator.py", "type": "TOOL", "context": "Python script used for productivity calculations"}], "relationships": [{"from": "V", "to": "rpi_calculator.py", "type": "USES", "context": "V uses the rpi_calculator.py tool for productivity calculations"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "David Speigel", "type": "PERSON", "context": "Individual mentioned in the meeting notes"}], "relationships": [{"from": "V (Vrijen)", "to": "David Speigel", "type": "WORKS_WITH", "context": "V interacts with or collaborates with David Speigel"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Z", "type": "CONCEPT", "context": "represents a pragmatic metric"}, {"name": "ROI", "type": "CONCEPT", "context": "Return on Investment metric"}], "relationships": [{"from": "V", "to": "Z", "type": "BELIEVES", "context": "V believes in using pragmatic metrics"}, {"from": "V", "to": "ROI", "type": "USES", "context": "V uses ROI as a metric in business"}]}

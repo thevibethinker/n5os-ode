@@ -1,1 +1,0 @@
-{"entities": [{"name": "Srinidhi", "type": "PERSON", "context": "individual associated with Agreedpro"}, {"name": "Agreedpro", "type": "ORG", "context": "organization related to Srinidhi"}], "relationships": [{"from": "Srinidhi", "to": "Agreedpro", "type": "WORKS_WITH", "context": "Srinidhi is associated with the organization Agreedpro"}]}

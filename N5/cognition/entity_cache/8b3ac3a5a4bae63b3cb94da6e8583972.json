@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual involved in the decision-making process"}, {"name": "Q1", "type": "CONCEPT", "context": "the first quarter of the year"}], "relationships": [{"from": "V", "to": "Q1", "type": "KNOWS", "context": "V is aware of the need to choose a focus for Q1"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "internet", "type": "CONCEPT", "context": "a system of interconnected computer networks"}, {"name": "Narrow Networks", "type": "CONCEPT", "context": "tools that help manage high-signal clusters"}], "relationships": [{"from": "V", "to": "Narrow Networks", "type": "BELIEVES", "context": "supports the idea of managing high-signal clusters"}]}

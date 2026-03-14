@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "speaker discussing funding"}, {"name": "careerspan", "type": "ORG", "context": "organization offering services"}], "relationships": [{"from": "Vrijen Attawar", "to": "careerspan", "type": "MENTIONS", "context": "discussing the strengths of the organization"}]}

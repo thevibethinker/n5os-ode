@@ -1,1 +1,0 @@
-{"entities": [{"name": "system", "type": "CONCEPT", "context": "refers to the overall knowledge system or infrastructure work"}, {"name": "N5", "type": "TOOL", "context": "specific system for improvements"}], "relationships": [{"from": "system", "to": "N5", "type": "USES", "context": "system utilizes N5 for improvements"}]}

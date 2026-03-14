@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual involved in the knowledge system"}, {"name": "INTEGRATION_CHECKLIST.md", "type": "TOOL", "context": "checklist mentioned for integration tasks"}], "relationships": [{"from": "V", "to": "INTEGRATION_CHECKLIST.md", "type": "USES", "context": "V uses the integration checklist for tasks"}]}

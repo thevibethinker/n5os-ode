@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo", "type": "CONCEPT", "context": "a system that can be fractured through use"}], "relationships": [{"from": "V", "to": "Zo", "type": "BELIEVES", "context": "V believes that every use of Zo can fracture the system"}]}

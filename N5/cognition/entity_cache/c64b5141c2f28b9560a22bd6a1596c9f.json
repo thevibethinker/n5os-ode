@@ -1,1 +1,0 @@
-{"entities": [{"name": "Drop", "type": "ORG", "context": "organization associated with briefs"}, {"name": "prompt_lint.py", "type": "TOOL", "context": "tool that lints Drop briefs"}], "relationships": [{"from": "prompt_lint.py", "to": "Drop", "type": "USES", "context": "prompt_lint.py lints Drop briefs"}]}

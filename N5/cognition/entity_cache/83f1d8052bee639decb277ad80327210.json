@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual focused on learning and synthesis"}, {"name": "learning lab", "type": "CONCEPT", "context": "a mental space for evolving understanding"}], "relationships": [{"from": "V", "to": "learning lab", "type": "USES", "context": "V uses the learning lab for internal thinking"}]}

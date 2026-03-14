@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "speaker discussing charging and subsidies"}, {"name": "people", "type": "CONCEPT", "context": "refers to individuals who are broke"}], "relationships": [{"from": "Vrijen Attawar", "to": "people", "type": "MENTIONS", "context": "discussing the financial struggles of people"}]}

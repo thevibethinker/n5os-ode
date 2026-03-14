@@ -1,1 +1,0 @@
-{"entities": [{"name": "Logan", "type": "PERSON", "context": "individual scheduling a meeting"}, {"name": "Tech Week", "type": "EVENT", "context": "event occurring on Oct 7"}], "relationships": [{"from": "Logan", "to": "Tech Week", "type": "MENTIONS", "context": "scheduling a follow-up after the event"}]}

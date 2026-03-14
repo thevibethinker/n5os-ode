@@ -1,1 +1,0 @@
-{"entities": [{"name": "calendar events", "type": "CONCEPT", "context": "refers to scheduled activities or appointments in a calendar"}, {"name": "CalendarAPIError", "type": "TOOL", "context": "exception raised when there is an error with the calendar API"}], "relationships": []}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "<current_conversation_id>", "type": "CONCEPT", "context": "Placeholder for the current conversation ID in documentation"}, {"name": "SESSION_STATE.md", "type": "TOOL", "context": "Documentation file that contains conversation context"}], "relationships": []}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "Zo", "type": "ORG", "context": "an organization seeking to articulate value proposition"}, {"name": "ChatGPT", "type": "TOOL", "context": "a project that non-technical users may outgrow"}], "relationships": [{"from": "Zo", "to": "ChatGPT", "type": "RELATED_TO", "context": "Zo's target market includes users who have outgrown ChatGPT"}]}

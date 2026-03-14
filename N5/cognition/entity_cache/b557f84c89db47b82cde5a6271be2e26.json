@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "the speaker"}, {"name": "Hustle Fund", "type": "ORG", "context": "organization mentioned for co-branding"}], "relationships": [{"from": "Vrijen Attawar", "to": "Hustle Fund", "type": "MENTIONS", "context": "expressed interest in potential co-branding or collaboration"}]}

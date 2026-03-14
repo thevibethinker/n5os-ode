@@ -1,7 +1,0 @@
-{
-  "drop_id": "D2.1",
-  "verdict": "PASS",
-  "reason": "combined.txt exists and contains both test-a.txt and test-b.txt content",
-  "artifacts_verified": true,
-  "concerns": []
-}

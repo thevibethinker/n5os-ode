@@ -1,1 +1,0 @@
-{"entities": [{"name": "Wisdom object", "type": "CONCEPT", "context": "a concept within V's knowledge system"}, {"name": "RAG", "type": "TOOL", "context": "a tool used to find additional, related chunks"}], "relationships": [{"from": "Wisdom object", "to": "RAG", "type": "USES", "context": "Wisdom object uses RAG to find related chunks"}]}

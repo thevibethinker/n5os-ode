@@ -1,1 +1,0 @@
-{"entities": [{"name": "Ayush Jain", "type": "PERSON", "context": "person asking about progress"}, {"name": "Karispan", "type": "ORG", "context": "organization being inquired about"}], "relationships": [{"from": "Ayush Jain", "to": "Karispan", "type": "MENTIONS", "context": "Ayush is inquiring about the status of Karispan"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "mycareerspan.com", "type": "ORG", "context": "internal organization"}, {"name": "theapply.ai", "type": "ORG", "context": "internal legacy organization"}], "relationships": [{"from": "mycareerspan.com", "to": "theapply.ai", "type": "RELATED_TO", "context": "both are treated as the same organization in routing and classification"}]}

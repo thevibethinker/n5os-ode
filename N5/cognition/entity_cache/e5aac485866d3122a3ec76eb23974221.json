@@ -1,1 +1,0 @@
-{"entities": [{"name": "Vrijen Attawar", "type": "PERSON", "context": "Speaker discussing team composition and evaluation"}, {"name": "tool", "type": "TOOL", "context": "General purpose tool used for evaluating fit in teams"}], "relationships": [{"from": "Vrijen Attawar", "to": "tool", "type": "USES", "context": "Uses a general purpose tool for team evaluation"}]}

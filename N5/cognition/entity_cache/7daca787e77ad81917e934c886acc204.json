@@ -1,1 +1,0 @@
-{"entities": [{"name": "Architect", "type": "TOOL", "context": "A system or framework used by V for refactoring and design."}], "relationships": [{"from": "V", "to": "Architect", "type": "USES", "context": "V utilizes Architect as a tool for various operations."}]}

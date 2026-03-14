@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "The subject of the knowledge system"}, {"name": "bootstrap_conversation_client.py", "type": "TOOL", "context": "Script used to check conversation history"}], "relationships": [{"from": "V", "to": "bootstrap_conversation_client.py", "type": "USES", "context": "V uses this tool to check conversation history"}]}

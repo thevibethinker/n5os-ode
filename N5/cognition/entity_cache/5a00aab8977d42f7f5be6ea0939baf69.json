@@ -1,1 +1,0 @@
-{"entities": [{"name": "Getclera", "type": "ORG", "context": "Organization associated with V"}, {"name": "V", "type": "PERSON", "context": "The individual in focus"}], "relationships": [{"from": "V", "to": "Getclera", "type": "WORKS_WITH", "context": "V is associated with the organization Getclera"}]}

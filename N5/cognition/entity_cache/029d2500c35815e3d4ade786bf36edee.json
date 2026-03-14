@@ -1,1 +1,0 @@
-{"entities": [{"name": "V", "type": "PERSON", "context": "individual with a knowledge system"}, {"name": "guest capability", "type": "CONCEPT", "context": "refers to a person's competence"}], "relationships": [{"from": "V", "to": "guest capability", "type": "BELIEVES", "context": "high trust in guest capability"}]}

@@ -1,1 +1,0 @@
-{"entities": [{"name": "David", "type": "PERSON", "context": "person receiving the latest version of N5OS"}, {"name": "N5OS", "type": "TOOL", "context": "software system ensuring latest version with necessary files and fixes"}], "relationships": [{"from": "David", "to": "N5OS", "type": "USES", "context": "David has the latest version of N5OS"}]}
