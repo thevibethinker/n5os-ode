@@ -1,0 +1,12 @@
+{
+  "_comment": "Template for mapping local task references to Todoist task IDs. Copy this file to your state directory and populate as needed.",
+  "version": "1.0",
+  "mappings": [
+    {
+      "local_ref": "example:commitment-1",
+      "todoist_id": null,
+      "content": "Example task description",
+      "created_at": null
+    }
+  ]
+}

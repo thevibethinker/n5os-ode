@@ -71,7 +71,7 @@ The Filter will verify these criteria. Be specific and verifiable.
 **Skills-First:**
 Before building new functionality, check if a relevant skill exists:
 ```bash
-find /home/workspace/Skills -name "SKILL.md"
+find ./Skills -name "SKILL.md"
 ```
 - If reusable skill exists → USE IT
 - If building reusable functionality → CREATE A SKILL under `Skills/<name>/`

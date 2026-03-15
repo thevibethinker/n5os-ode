@@ -1,3 +1,4 @@
+import os
 #!/usr/bin/env python3
 """
 update_build.py - Worker completion tracking and build status management.
@@ -22,7 +23,7 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
-WORKSPACE = Path("/home/workspace")
+WORKSPACE = Path(os.environ.get("N5OS_WORKSPACE", Path(__file__).resolve().parents[2] if Path(__file__).resolve().parents[2].joinpath("N5").exists() else Path.cwd()))
 BUILDS_DIR = WORKSPACE / "N5" / "builds"
 SESSION_STATE_PATH = Path("/home/.z/workspaces") 
 

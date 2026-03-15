@@ -91,7 +91,7 @@ Brief description of folder role and contents.
 
 Use **POLICY.md** (all caps) for consistency and easy sourcing by title.
 
-Search pattern: `grep -r "POLICY.md" /home/workspace`
+Search pattern: `grep -r "POLICY.md" .`
 
 ---
 

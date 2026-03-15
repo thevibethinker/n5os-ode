@@ -38,7 +38,7 @@ from datetime import datetime, timedelta
 from pathlib import Path
 from textwrap import dedent
 
-DB_PATH = Path("/home/workspace/N5/data/journal.db")
+DB_PATH = Path(os.environ.get("N5OS_WORKSPACE", ".")) / "N5/data/journal.db"
 EDITOR = os.environ.get("EDITOR", "nano")
 
 ENTRY_TYPES = {

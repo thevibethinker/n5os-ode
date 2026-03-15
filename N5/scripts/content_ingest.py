@@ -23,7 +23,7 @@ from datetime import datetime
 from pathlib import Path
 
 # Paths
-WORKSPACE_ROOT = Path("/home/workspace")
+WORKSPACE_ROOT = Path(os.environ.get("N5OS_WORKSPACE", Path(__file__).resolve().parents[2] if Path(__file__).resolve().parents[2].joinpath("N5").exists() else Path.cwd()))
 DB_PATH = WORKSPACE_ROOT / "N5/data/content_library.db"
 CANONICAL_ROOT = WORKSPACE_ROOT / "Knowledge/content-library"
 LOG_ROOT = WORKSPACE_ROOT / "N5/runtime/runs/content-ingest"

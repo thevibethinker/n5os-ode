@@ -23,7 +23,7 @@ import sys
 from datetime import datetime, timedelta
 from pathlib import Path
 
-WORKSPACE = Path("/home/workspace")
+WORKSPACE = Path(os.environ.get("N5OS_WORKSPACE", Path(__file__).resolve().parents[2] if Path(__file__).resolve().parents[2].joinpath("N5").exists() else Path.cwd()))
 BUILDS_DIR = WORKSPACE / "N5" / "builds"
 DASHBOARD_DATA_DIR = WORKSPACE / "Sites" / "build-tracker" / "data"
 DASHBOARD_DATA_FILE = DASHBOARD_DATA_DIR / "builds.json"

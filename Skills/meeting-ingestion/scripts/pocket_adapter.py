@@ -1,3 +1,4 @@
+import os
 #!/usr/bin/env python3
 """
 Pocket Adapter (pocket_v1) — Normalizes HeyPocket webhook payloads into intake-v1 manifests.
@@ -24,7 +25,7 @@ from typing import Optional
 
 ADAPTER_NAME = "pocket_v1"
 ADAPTER_VERSION = "1.0.0"
-DEFAULT_INBOX = Path("/home/workspace/Personal/Inbox")
+DEFAULT_INBOX = Path(os.environ.get("N5OS_WORKSPACE", ".")) / "Personal/Inbox"
 
 
 def classify_content_type(speaker_count: int, duration_seconds: int) -> dict:

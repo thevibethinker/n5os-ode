@@ -22,7 +22,7 @@ from datetime import datetime, UTC
 
 # Add N5/scripts to path for imports
 import os
-WORKSPACE = Path(os.environ.get("ZO_WORKSPACE", "/home/workspace"))
+WORKSPACE = Path(os.environ.get("N5OS_WORKSPACE", "."))
 sys.path.insert(0, str(WORKSPACE / "N5/scripts"))
 
 from meeting_registry import MeetingRegistry

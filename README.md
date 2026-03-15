@@ -31,7 +31,7 @@ Think of N5OS Ode as firmware for your AI. Out of the box, Zo is a powerful but 
 ### 1. Install to Workspace Root
 
 > ⚠️ **IMPORTANT:** N5OS Ode files must live at your workspace ROOT, not inside a subfolder.
-> The `Prompts/`, `N5/`, `Knowledge/` folders should be directly in `/home/workspace/`, NOT in `/home/workspace/n5os-ode/`.
+> The `Prompts/`, `N5/`, `Knowledge/` folders should be directly in `./`, NOT in `./n5os-ode/`.
 
 **One command does everything:**
 

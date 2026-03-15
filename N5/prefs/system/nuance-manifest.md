@@ -169,5 +169,5 @@ When designing personas/prompts, Architect should:
 
 ---
 
-*Stored: /home/workspace/N5/prefs/system/nuance-manifest.md*  
+*Stored: ./N5/prefs/system/nuance-manifest.md*  
 *Referenced by: Vibe Architect*

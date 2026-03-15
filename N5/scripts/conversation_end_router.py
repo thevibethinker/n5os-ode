@@ -37,7 +37,7 @@ logger = logging.getLogger(__name__)
 
 # Constants
 CONVERSATION_WORKSPACE_BASE = Path("/home/.z/workspaces")
-USER_WORKSPACE = Path("/home/workspace")
+USER_WORKSPACE = Path(os.environ.get("N5OS_WORKSPACE", Path(__file__).resolve().parents[2] if Path(__file__).resolve().parents[2].joinpath("N5").exists() else Path.cwd()))
 BUILD_WORKSPACE = USER_WORKSPACE / "N5" / "builds"
 ARTIFACT_THRESHOLD_TIER2 = 3
 

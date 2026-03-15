@@ -28,7 +28,7 @@
 
 - **Editor:** nano (default) or any editor via `$EDITOR` env var
 - **Shell:** bash-compatible shell
-- **Filesystem:** Read/write access to `/home/workspace`
+- **Filesystem:** Read/write access to your workspace root
 
 ## Installation
 

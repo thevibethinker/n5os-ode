@@ -1,3 +1,4 @@
+import os
 #!/usr/bin/env python3
 """
 N5 File Protection System - Lightweight directory protection via marker files
@@ -25,9 +26,9 @@ try:
     from N5.lib.paths import N5_SCRIPTS_DIR, N5_ROOT, WORKSPACE_ROOT
 except ImportError:
     # Fallback for standalone execution
-    N5_SCRIPTS_DIR = Path("/home/workspace/N5/scripts")
-    N5_ROOT = Path("/home/workspace/N5")
-    WORKSPACE_ROOT = Path("/home/workspace")
+    N5_SCRIPTS_DIR = Path(os.environ.get("N5OS_WORKSPACE", ".")) / "N5/scripts"
+    N5_ROOT = Path(os.environ.get("N5OS_WORKSPACE", ".")) / "N5"
+    WORKSPACE_ROOT = Path(os.environ.get("N5OS_WORKSPACE", Path(__file__).resolve().parents[2] if Path(__file__).resolve().parents[2].joinpath("N5").exists() else Path.cwd()))
 
 logging.basicConfig(
     level=logging.INFO,
@@ -37,7 +38,7 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 MARKER_FILENAME = ".n5protected"
-WORKSPACE = Path("/home/workspace")
+WORKSPACE = Path(os.environ.get("N5OS_WORKSPACE", Path(__file__).resolve().parents[2] if Path(__file__).resolve().parents[2].joinpath("N5").exists() else Path.cwd()))
 VALID_PII_CATEGORIES = {"email", "phone", "name", "health", "financial", "ssn", "address", "dob"}
 
 
@@ -241,10 +242,10 @@ def auto_protect_services() -> int:
         # For now, we'll scan known service directories
         # This will be enhanced when we integrate with service registration
         service_dirs = [
-            "/home/workspace/n5-waitlist",
-            "/home/workspace/Projects/streaming-player-setup",
-            "/home/workspace/.n5_bootstrap_server",
-            "/home/workspace/N5/services/zobridge",
+            "./n5-waitlist",
+            "./Projects/streaming-player-setup",
+            "./.n5_bootstrap_server",
+            "./N5/services/zobridge",
         ]
         
         for dir_path in service_dirs:

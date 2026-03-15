@@ -1,3 +1,4 @@
+import os
 #!/usr/bin/env python3
 """
 Build Orchestrator v2 - LLM-Driven Project Coordination
@@ -36,7 +37,7 @@ try:
     from N5.lib.paths import N5_BUILDS_DIR
     ORCHESTRATION_DIR = N5_BUILDS_DIR
 except ImportError:
-    ORCHESTRATION_DIR = Path("/home/workspace/N5/builds")
+    ORCHESTRATION_DIR = Path(os.environ.get("N5OS_WORKSPACE", ".")) / "N5/builds"
 
 
 def get_project_dir(project: str) -> Path:

@@ -1,3 +1,4 @@
+import os
 #!/usr/bin/env python3
 """
 Intake Router — Moves classified items from Personal/Inbox/ to their destination.
@@ -19,7 +20,7 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-WORKSPACE = Path("/home/workspace")
+WORKSPACE = Path(os.environ.get("N5OS_WORKSPACE", Path(__file__).resolve().parents[2] if Path(__file__).resolve().parents[2].joinpath("N5").exists() else Path.cwd()))
 MEETINGS_INBOX = WORKSPACE / "Personal" / "Meetings" / "Inbox"
 REFLECTIONS_BASE = WORKSPACE / "Personal" / "Reflections"
 

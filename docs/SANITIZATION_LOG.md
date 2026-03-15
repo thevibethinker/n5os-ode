@@ -9,8 +9,8 @@ provenance: con_2yzxunQ3ZoBqIQ3Q
 
 **Worker:** Worker 002 - Core Scripts Sanitization
 **Date:** 2026-01-15
-**Source:** V's N5 workspace (`/home/workspace/N5/scripts/`)
-**Target:** n5OS-Ode export (`/home/workspace/N5/export/n5os-ode/N5/scripts/`)
+**Source:** V's N5 workspace (`./N5/scripts/`)
+**Target:** n5OS-Ode export (`./N5/export/n5os-ode/N5/scripts/`)
 
 ---
 
@@ -29,8 +29,8 @@ provenance: con_2yzxunQ3ZoBqIQ3Q
 **Source Lines:** ~300
 **Changes:**
 - **REMOVED:** `auto_protect_services()` function that referenced V-specific paths:
-  - `/home/workspace/n5-waitlist`
-  - `/home/workspace/Projects/streaming-platform`
+  - `./n5-waitlist`
+  - `./Projects/streaming-platform`
 - **REMOVED:** Import of `n5_user_services.py` (V-specific)
 - Kept core protection functionality intact
 - Updated docstring
@@ -105,8 +105,8 @@ provenance: con_2yzxunQ3ZoBqIQ3Q
 
 **Worker:** Worker 003 - Semantic Memory Sanitization
 **Date:** 2026-01-15
-**Source:** V's N5 cognition (`/home/workspace/N5/cognition/`)
-**Target:** n5OS-Ode export (`/home/workspace/N5/export/n5os-ode/N5/cognition/`)
+**Source:** V's N5 cognition (`./N5/cognition/`)
+**Target:** n5OS-Ode export (`./N5/export/n5os-ode/N5/cognition/`)
 
 ### Files Created
 

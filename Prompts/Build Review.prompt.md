@@ -157,7 +157,7 @@ import os
 import json
 from pathlib import Path
 
-RESULTS_FILE = Path("/home/workspace/N5/builds/{project}/spawn_results.jsonl")
+RESULTS_FILE = Path("./N5/builds/{project}/spawn_results.jsonl")
 
 async def spawn_worker(session, worker_id: str, assignment_content: str):
     """Spawn a single worker and write result to file."""

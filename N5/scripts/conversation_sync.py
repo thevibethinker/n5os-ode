@@ -1,3 +1,4 @@
+import os
 #!/usr/bin/env python3
 """
 Conversation DB Sync - Sync SESSION_STATE.md to conversations.db
@@ -25,7 +26,7 @@ class ConversationSync:
     """Sync SESSION_STATE.md to conversations.db."""
     
     WORKSPACE_BASE = Path("/home/.z/workspaces")
-    DB_PATH = Path("/home/workspace/N5/data/conversations.db")
+    DB_PATH = Path(os.environ.get("N5OS_WORKSPACE", ".")) / "N5/data/conversations.db"
     
     def __init__(self):
         self.conn = None

@@ -25,7 +25,7 @@
 
 **Action:**
 ```bash
-python3 /home/workspace/N5/scripts/debug_logger.py append \
+python3 ./N5/scripts/debug_logger.py append \
   --convo-id <current> \
   --component "<what you're fixing>" \
   --problem "<what's wrong>" \
@@ -45,7 +45,7 @@ python3 /home/workspace/N5/scripts/debug_logger.py append \
 1. Log the current attempt (as above)
 2. Check for circular patterns:
 ```bash
-python3 /home/workspace/N5/scripts/debug_logger.py patterns \
+python3 ./N5/scripts/debug_logger.py patterns \
   --convo-id <current> --window 10 --threshold 2
 ```
 3. If pattern detected → Stop and analyze OR switch to Vibe Debugger persona
@@ -61,7 +61,7 @@ python3 /home/workspace/N5/scripts/debug_logger.py patterns \
 1. Log what you know so far (outcome: partial)
 2. Review recent attempts:
 ```bash
-python3 /home/workspace/N5/scripts/debug_logger.py recent \
+python3 ./N5/scripts/debug_logger.py recent \
   --convo-id <current> --n 5 --format display
 ```
 3. Synthesize pattern from recent attempts
@@ -76,7 +76,7 @@ python3 /home/workspace/N5/scripts/debug_logger.py recent \
 
 **Action:**
 ```bash
-python3 /home/workspace/N5/scripts/debug_logger.py append \
+python3 ./N5/scripts/debug_logger.py append \
   --convo-id <current> \
   --component "prompt:<prompt_name>" \
   --problem "<what failed in prompt execution>" \
@@ -89,7 +89,7 @@ python3 /home/workspace/N5/scripts/debug_logger.py append \
 **Example:**
 ```bash
 # Failed prompt execution
-python3 /home/workspace/N5/scripts/debug_logger.py append \
+python3 ./N5/scripts/debug_logger.py append \
   --convo-id con_xyz123 \
   --component "prompt:drive_meeting_ingestion" \
   --problem "Tool call did not complete when reading prompt file" \
@@ -121,7 +121,7 @@ Think → Log hypothesis → Try fix → Log outcome → Check patterns → Next
 
 ### Success
 ```bash
-python3 /home/workspace/N5/scripts/debug_logger.py append \
+python3 ./N5/scripts/debug_logger.py append \
   --convo-id $CONVO_ID --component "$COMPONENT" \
   --problem "$PROBLEM" --hypothesis "$HYPOTHESIS" \
   --actions "$ACTIONS" --outcome success --notes "$NOTES"
@@ -129,7 +129,7 @@ python3 /home/workspace/N5/scripts/debug_logger.py append \
 
 ### Failure
 ```bash
-python3 /home/workspace/N5/scripts/debug_logger.py append \
+python3 ./N5/scripts/debug_logger.py append \
   --convo-id $CONVO_ID --component "$COMPONENT" \
   --problem "$PROBLEM" --hypothesis "$HYPOTHESIS" \
   --actions "$ACTIONS" --outcome failure --notes "$NOTES"
@@ -137,10 +137,10 @@ python3 /home/workspace/N5/scripts/debug_logger.py append \
 
 ### Check Recent + Patterns (After 2nd Failure)
 ```bash
-python3 /home/workspace/N5/scripts/debug_logger.py recent \
+python3 ./N5/scripts/debug_logger.py recent \
   --convo-id $CONVO_ID --n 5 --format display
 
-python3 /home/workspace/N5/scripts/debug_logger.py patterns \
+python3 ./N5/scripts/debug_logger.py patterns \
   --convo-id $CONVO_ID --window 10 --threshold 2
 ```
 

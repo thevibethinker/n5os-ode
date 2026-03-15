@@ -290,7 +290,7 @@ class SessionStateManager:
     def _sync_to_db(self):
         """Sync session state to conversations database (optional)."""
         try:
-            db_path = Path("/home/workspace/N5/data/conversations.db")
+            db_path = Path(os.environ.get("N5OS_WORKSPACE", ".")) / "N5/data/conversations.db"
             if not db_path.exists():
                 return
             

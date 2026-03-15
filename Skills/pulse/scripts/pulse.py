@@ -26,7 +26,7 @@ from typing import Optional
 from pulse_common import PATHS, WORKSPACE
 
 # Paths
-# WORKSPACE = Path("/home/workspace")  # Now imported from pulse_common
+# WORKSPACE = Path(os.environ.get("N5OS_WORKSPACE", Path(__file__).resolve().parents[2] if Path(__file__).resolve().parents[2].joinpath("N5").exists() else Path.cwd()))  # Now imported from pulse_common
 BUILDS_DIR = PATHS.BUILDS
 CONVERSATIONS_DB = PATHS.WORKSPACE / "N5" / "data" / "conversations.db"
 SKILLS_DIR = PATHS.SCRIPTS

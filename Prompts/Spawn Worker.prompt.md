@@ -195,7 +195,7 @@ Returns:
   "worker_id": "WORKER_XXXXX_20251226_143000",
   "timestamp": "2025-12-26T14:30:00.000000+00:00",
   "filename": "WORKER_ASSIGNMENT_20251226_143000_000000_XXXXX.md",
-  "output_path": "/home/workspace/Records/Temporary/WORKER_ASSIGNMENT_...",
+  "output_path": "./Records/Temporary/WORKER_ASSIGNMENT_...",
   "parent_workspace": "/home/.z/workspaces/con_XXXXX",
   "worker_updates_dir": "/home/.z/workspaces/con_XXXXX/worker_updates"
 }

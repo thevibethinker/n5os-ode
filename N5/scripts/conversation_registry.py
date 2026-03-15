@@ -20,7 +20,7 @@ from typing import Optional, List, Dict, Any
 
 
 # Default database path
-DEFAULT_DB_PATH = Path("/home/workspace/N5/data/conversations.db")
+DEFAULT_DB_PATH = Path(os.environ.get("N5OS_WORKSPACE", ".")) / "N5/data/conversations.db"
 
 
 class ConversationRegistry:

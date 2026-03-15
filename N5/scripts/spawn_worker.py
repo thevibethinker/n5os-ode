@@ -1,3 +1,4 @@
+import os
 #!/usr/bin/env python3
 """
 Spawn Worker v3.0 - Pure Plumbing
@@ -37,7 +38,7 @@ logging.basicConfig(
     datefmt="%Y-%m-%dT%H:%M:%S"
 )
 
-WORKSPACE = Path("/home/workspace")
+WORKSPACE = Path(os.environ.get("N5OS_WORKSPACE", Path(__file__).resolve().parents[2] if Path(__file__).resolve().parents[2].joinpath("N5").exists() else Path.cwd()))
 WORKSPACES_ROOT = Path("/home/.z/workspaces")
 OUTPUT_DIR = WORKSPACE / "Records" / "Temporary"
 VERSION = "3.0"

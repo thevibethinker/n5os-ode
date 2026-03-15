@@ -17,7 +17,7 @@ from typing import Any, Optional
 import os
 
 # Environment-based workspace path (defaults to hardcoded for backward compatibility)
-WORKSPACE = Path(os.environ.get("ZO_WORKSPACE", "/home/workspace"))
+WORKSPACE = Path(os.environ.get("N5OS_WORKSPACE", "."))
 
 
 # ============================================================================

@@ -5,7 +5,7 @@ This module provides centralized configuration for meeting ingestion scripts,
 allowing path customization through environment variables for deployment flexibility.
 
 Environment Variables:
-    ZO_WORKSPACE (str): Base workspace directory. Default: /home/workspace
+    N5OS_WORKSPACE (str): Base workspace directory. Default: current directory
         The root directory of the Zo workspace containing all user data.
         
     MEETINGS_DIR (str): Meeting storage directory. Default: {WORKSPACE}/Personal/Meetings
@@ -32,7 +32,7 @@ import os
 from pathlib import Path
 
 # Base workspace directory
-WORKSPACE = os.environ.get('ZO_WORKSPACE', '/home/workspace')
+WORKSPACE = os.environ.get('N5OS_WORKSPACE', '.')
 
 # Core meeting directories
 MEETINGS_DIR = os.environ.get('MEETINGS_DIR', f'{WORKSPACE}/Personal/Meetings')

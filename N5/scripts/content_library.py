@@ -1,9 +1,10 @@
+import os
 #!/usr/bin/env python3
 """
 Content Library - Unified Implementation
 =========================================
 Canonical location for content library functionality.
-DB: /home/workspace/N5/data/content_library.db
+DB: N5/data/content_library.db
 
 Provides search/add/get/mark_used for links and snippets used by:
 - email_composer.py (signature lookup)
@@ -40,7 +41,7 @@ from datetime import datetime
 from pathlib import Path
 from typing import Optional, List, Dict, Any, Union
 
-DB_PATH = Path("/home/workspace/N5/data/content_library.db")
+DB_PATH = Path(os.environ.get("N5OS_WORKSPACE", ".")) / "N5/data/content_library.db"
 
 
 @dataclass
@@ -502,7 +503,7 @@ def main():
             cmd.append("--dry-run")
         if args.move:
             cmd.append("--move")
-        result = subprocess.run(cmd, cwd="/home/workspace")
+        result = subprocess.run(cmd, cwd=os.environ.get("N5OS_WORKSPACE", "."))
         sys.exit(result.returncode)
     
     elif args.command == "sync":
@@ -510,7 +511,7 @@ def main():
         cmd = ["python3", "N5/scripts/content_backfill.py"]
         if args.dry_run:
             cmd.append("--dry-run")
-        result = subprocess.run(cmd, cwd="/home/workspace")
+        result = subprocess.run(cmd, cwd=os.environ.get("N5OS_WORKSPACE", "."))
         sys.exit(result.returncode)
     
     else:

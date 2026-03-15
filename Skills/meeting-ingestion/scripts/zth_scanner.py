@@ -12,7 +12,8 @@ Trigger Protocol:
     Close:  "zo at ease" (and phonetic variants)
     Inline: Single sentence with "zo" + action verb (no explicit open/close)
 
-Only V/Vrijen can trigger ZTH. Other speakers are rejected.
+Only the primary user (owner) can trigger ZTH. Other speakers are rejected.
+Configure owner names via OWNER_SPEAKER_PATTERNS.
 """
 
 import argparse
@@ -42,13 +43,13 @@ CLOSE_PATTERNS = [
 # Inline trigger pattern: "zo" + action verb in same sentence
 INLINE_PATTERN = r"(?:^|\.\s+)([^.]*\bzo[\s,]+(?:add|send|draft|write|create|update|research|remind|note|schedule|email|message|contact|follow up|introduce|look into)[^.]*\.?)"
 
-# V/Vrijen speaker name patterns
-V_SPEAKER_PATTERNS = [
-    r"^v$",
-    r"^vrijen",
-    r"^vrij$",
-    r"^va$",
-    r"^speaker\s*0$",  # Often V is Speaker 0 in Pocket
+# Owner speaker name patterns — customize these for your setup
+# Add regex patterns that match how your name appears in transcripts
+OWNER_SPEAKER_PATTERNS = [
+    r"^speaker\s*0$",  # Often the owner is Speaker 0 in auto-transcription
+    r"^owner$",
+    r"^me$",
+    r"^host$",
 ]
 
 # Task type classification keywords
@@ -82,10 +83,10 @@ EXECUTION_POLICY = {
 }
 
 
-def is_v_speaker(speaker: str) -> bool:
-    """Check if speaker is V/Vrijen."""
+def is_owner_speaker(speaker: str) -> bool:
+    """Check if speaker is the primary user (owner)."""
     speaker_lower = speaker.strip().lower()
-    return any(re.match(p, speaker_lower) for p in V_SPEAKER_PATTERNS)
+    return any(re.match(p, speaker_lower) for p in OWNER_SPEAKER_PATTERNS)
 
 
 def classify_task_type(instruction: str) -> str:
@@ -191,11 +192,11 @@ def scan_transcript(transcript_text: str, content_date: str = "") -> dict:
             continue
 
         # Speaker validation
-        if speaker and not is_v_speaker(speaker):
+        if speaker and not is_owner_speaker(speaker):
             rejections.append({
                 "raw_cue": full_text[open_start:close_end_pos or (open_end + len(body))].strip(),
                 "speaker": speaker,
-                "reason": f"Speaker '{speaker}' is not V/Vrijen",
+                "reason": f"Speaker '{speaker}' is not the owner",
             })
             continue
 
@@ -235,11 +236,11 @@ def scan_transcript(transcript_text: str, content_date: str = "") -> dict:
         line_text = lines[line_idx] if line_idx < len(lines) else ""
         speaker = extract_speaker_for_line(line_text, lines, line_idx)
 
-        if speaker and not is_v_speaker(speaker):
+        if speaker and not is_owner_speaker(speaker):
             rejections.append({
                 "raw_cue": sentence[:200],
                 "speaker": speaker,
-                "reason": f"Speaker '{speaker}' is not V/Vrijen",
+                "reason": f"Speaker '{speaker}' is not the owner",
             })
             continue
 

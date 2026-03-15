@@ -1,3 +1,4 @@
+import os
 #!/usr/bin/env python3
 """
 Content Library Query Script
@@ -15,7 +16,7 @@ import sqlite3
 from datetime import datetime
 from pathlib import Path
 
-DB_PATH = Path("/home/workspace/N5/data/content_library.db")
+DB_PATH = Path(os.environ.get("N5OS_WORKSPACE", ".")) / "N5/data/content_library.db"
 
 
 def format_duration(seconds: int | None) -> str:
