@@ -73,7 +73,7 @@ provenance: con_2yzxunQ3ZoBqIQ3Q
 ### `context_manifest.yaml`
 - Generic version with placeholder file references
 - Removed V-specific file paths:
-  - `Knowledge/stable/careerspan-timeline.md`
+  - `Knowledge/stable/company-timeline.md`
   - `Knowledge/content-library/personal/psychographic-portrait-*.md`
   - All `N5/prefs/communication/patterns/*` references
 - Disabled dynamic memory integration by default
@@ -84,7 +84,7 @@ provenance: con_2yzxunQ3ZoBqIQ3Q
   - Reflection processing
   - Meeting pipelines
   - CRM operations
-  - Careerspan references
+  - company-specific references
 - Kept universal safety rules
 
 ---
@@ -95,7 +95,7 @@ provenance: con_2yzxunQ3ZoBqIQ3Q
 - [x] No email addresses in exported files
 - [x] No personal names or handles in exported files
 - [x] No V-specific file paths remain
-- [x] No Careerspan references
+- [x] No company-specific references
 - [x] All scripts have updated docstrings
 - [x] DEPENDENCIES.md documents requirements
 

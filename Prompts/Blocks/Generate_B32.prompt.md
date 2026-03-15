@@ -44,7 +44,7 @@ For each provocation, use this EXACT structure:
 
 **Speaker**: V | [Person's name]
 **Classification**: V_POSITION | V_HYPOTHESIS | EXTERNAL_WISDOM
-**Domain**: hiring-market | careerspan | ai-automation | founder | worldview | epistemology | emerging
+**Domain**: hiring-market | your_company | ai-automation | founder | worldview | epistemology | emerging
 
 **The Spark**:
 What was said or implied that triggered this thought? (Direct quote or paraphrase from transcript)
@@ -70,7 +70,7 @@ When does this apply? Where does the principle break down or not hold? Edge case
 
 **Speaker**: V
 **Classification**: V_POSITION
-**Domain**: careerspan
+**Domain**: your_company
 
 **The Spark**:
 "If your whole professional identity can be captured in 6 stories... what does that mean for how we think about career ownership?"

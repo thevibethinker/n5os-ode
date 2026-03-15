@@ -169,11 +169,11 @@ The Knowledge compatibility shell SHOULD have `file 'Knowledge/POLICY.md'` (if n
 
 Two top-level Tier roots are recognized and governed by this policy:
 
-- `file 'Careerspan/'` — Primary business unit
-- `file 'Zo Consultancy/'` — Parallel business unit
+- `file 'YOUR_COMPANY/'` — Primary business unit
+- `file 'YOUR_CONSULTANCY/'` — Parallel business unit
 
 ### Routing Rules
-- Deliverables SSOT: all final deliverables live under `file 'Documents/Deliverables/'` with org buckets `Careerspan/` and `Zo Consultancy/`.
+- Deliverables SSOT: all final deliverables live under `file 'Documents/Deliverables/'` with org buckets per business unit.
 - Logs: centralized under `file 'N5/logs/'` with domain buckets (e.g., `knowledge/`, `records/`, `mirror/`).
 - Staging raw assets: use `file 'Records/'` (Company/Personal) per existing conventions.
 - System scripts, backups, runtime: under `file 'N5/'` (scripts/, backups/scripts/, runtime/...).
