@@ -192,15 +192,15 @@ def cmd_list(args):
 
 def cmd_archive(args):
     """Handle archive command."""
-    from archive import main as archive_main
-    
+    from archive import archive_all
+
     dry_run = not args.execute
-    results = archive_main(dry_run=dry_run)
+    results = archive_all(dry_run=dry_run)
     
     if args.json:
         print(json.dumps(results, indent=2))
     
-    return 0
+    return 0 if results.get("failed", 0) == 0 else 1
 
 
 def main():

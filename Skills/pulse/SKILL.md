@@ -54,146 +54,20 @@ python3 Skills/pulse/scripts/pulse.py resume <slug>
 
 # Post-build finalization
 python3 Skills/pulse/scripts/pulse.py finalize <slug>
-
-# Create jettison (off-ramp build)
-pulse jettison "<task>" [--from <parent>] [--type <type>]
-
-# View build lineage DAG
-pulse lineage [<slug>] [--format tree|json]
 ```
 
-## Jettison Launch Mode
+## Scope of the Public Export
 
-Jettisons are **off-ramp builds** — when you hit a tangent worth pursuing without derailing your current thread.
+This export ships the stable Pulse orchestration core:
 
-### When to Use
+- `start`
+- `status`
+- `tick`
+- `stop`
+- `resume`
+- `finalize`
 
-- Debugging issue surfaces mid-build that needs isolated investigation
-- Interesting idea emerges that deserves its own exploration
-- Current task has a prerequisite that should be handled separately
-- You want to branch off without losing the parent context
-
-### Command Syntax
-
-```bash
-# Basic jettison
-pulse jettison "fix the rate limiting issue"
-
-# Explicit parent build
-pulse jettison "debug the API" --from adhd-todo-research
-
-# Explicit type (overrides auto-detection)
-pulse jettison "explore gamification approaches" --type research
-
-# Custom moment description
-pulse jettison "handle auth edge case" --moment "Discovered during D1.2 execution"
-```
-
-### Type Auto-Detection
-
-Jettison auto-detects build type from keywords:
-
-| Keywords | Detected Type |
-|----------|---------------|
-| fix, bug, debug, error, refactor | `code_build` |
-| research, explore, investigate, analyze | `research` |
-| draft, write, content, blog, email | `content` |
-| plan, design, architect, strategy | `planning` |
-| (default) | `code_build` |
-
-### Output
-
-```
-╔══════════════════════════════════════════════════════════════╗
-║  JETTISON CREATED                                            ║
-╚══════════════════════════════════════════════════════════════╝
-
-Build:  j-fix-rate-limit-0126-0410
-Type:   code_build
-Folder: N5/builds/j-fix-rate-limit-0126-0410/
-
-Launch prompt (copy to new thread):
-────────────────────────────────────────────────────────────────
-Load and execute: file 'N5/builds/j-fix-rate-limit-0126-0410/drops/D1.1-jettison-task.md'
-────────────────────────────────────────────────────────────────
-```
-
-### Jettison Workflow
-
-1. **Trigger**: You're in a conversation, hit a tangent
-2. **Create**: Run `pulse jettison "<task>"` 
-3. **Launch**: Copy the launch prompt to a new thread
-4. **Execute**: The new thread loads the brief and executes
-5. **Complete**: Worker writes deposit to jettison's own folder
-6. **Notify**: Email sent on completion
-
-### Jettison vs Regular Build
-
-| Aspect | Regular Build | Jettison |
-|--------|---------------|----------|
-| Launch mode | Orchestrated (Pulse spawns) | Manual (you copy-paste) |
-| Folder | `N5/builds/<slug>/` | `N5/builds/j-<slug>/` |
-| Parent tracking | Optional | Always tracked (lineage) |
-| Learnings | Build-specific | Inherits from parent |
-| Worker count | Multiple (streams) | Single (D1.1 only) |
-
-## Lineage Tracking
-
-Builds can have parent-child relationships, forming a DAG (directed acyclic graph).
-
-### Lineage Schema
-
-Every build's `meta.json` can include:
-
-```json
-{
-  "lineage": {
-    "parent_type": "build",           // build, jettison, conversation, or null
-    "parent_ref": "adhd-todo-research", // slug or convo_id
-    "parent_conversation": "con_xyz",   // where jettison was triggered
-    "moment": "D1.2 hit rate limits",   // what triggered this
-    "branched_at": "2026-01-25T23:00:00Z"
-  }
-}
-```
-
-### Visualizing Lineage
-
-```bash
-# Show full lineage DAG
-pulse lineage
-
-# Show specific build's ancestry and descendants
-pulse lineage adhd-todo-research
-
-# JSON output for scripting
-pulse lineage --format json
-```
-
-### Example Output
-
-```
-Build Lineage
-========================================
-
-adhd-todo-research [R] ✓
-├── j-ratelimit-debug ⚡ ●
-│   └── j-api-redesign [P]⚡ ○
-└── j-gamification-tangent [R]⚡ ✓
-
-pulse-variants ✓
-
-Legend: ✓ complete  ● running  ○ pending  ✗ failed  ⚡ jettison
-Types: [R] research  [C] content  [P] planning
-```
-
-### Learnings Inheritance
-
-When a jettison is created from a parent build:
-1. Parent's `BUILD_LESSONS.json` is copied to jettison
-2. Lessons are marked with "inherited from: <parent>"
-3. Jettison can add its own lessons
-4. Learnings do NOT flow back to parent (one-way branch)
+The broader jettison, lineage, lifecycle, queue, and interview systems are not included in this public repo. Treat this export as the core unattended build runner rather than the full internal Pulse environment.
 
 ## Sentinel Setup
 
@@ -310,192 +184,6 @@ After build completes, the Sentinel should delete itself. If it doesn't, manuall
 
 **Note:** Sentinel creation requires the Zo agent API (create_agent tool), which is only available in interactive/scheduled contexts — not from Python scripts. The LLM orchestrating the build must create the Sentinel.
 
-## Pulse v2 Features
-
-### Task Queue
-- Multi-channel intake: `n5 task <description>` via SMS, email "Task: X", or chat
-- Task types: code_build, research, content, analysis, hybrid
-- Commands: `python3 N5/pulse/queue_manager.py add|list|prioritize|advance|next`
-
-### Interview System
-- Fragment-based async collection
-- Multi-channel aggregation (SMS + email + chat)
-- JSONL storage: `N5/pulse/interviews/<task-id>/fragments.jsonl`
-- Seeded judgment with LLM evaluation
-- Commands: `python3 N5/pulse/interview_manager.py start|add|status|seed`
-
-### Plan Review
-- Auto-sync to Google Drive: `Zo/Pulse Builds/<slug>/`
-- SMS notification with shareable link
-- Approval flow: "go" to build, "revise: X" for feedback
-- Commands: `python3 N5/pulse/plan_sync.py sync|notify|approve`
-
-### Tidying Swarm
-- 5 hygiene Drops post-build:
-  - Artifact verification
-  - Dead code detection
-  - Import cleanup
-  - Documentation gaps
-  - Test coverage check
-- Auto-fix for safe issues
-- Escalation for ambiguous findings
-
-### Telemetry
-- Persona + model attribution on all events
-- Requirements tracking during builds
-- Feedback → learnings pipeline
-- Commands: `python3 N5/pulse/telemetry_manager.py log|query|export`
-- Requirements: `python3 N5/pulse/requirements_tracker.py capture|list|export`
-
-## Pulse v3 Features (Lifecycle Automation)
-
-### Automated Lifecycle
-Pulse v3 automates the entire pre-build pipeline:
-
-```
-queued → interviewing → seeded → planning → plan_review → building → tidying → complete
-```
-
-The **Lifecycle Agent** polls every 5 minutes and advances tasks automatically:
-
-| From State | To State | Trigger |
-|------------|----------|---------|
-| queued | interviewing | Automatic on task creation |
-| interviewing | seeded | Seeded judgment confidence ≥ 0.8 |
-| seeded | planning | Plan generated |
-| planning | plan_review | V available (respects calendar/quiet hours) |
-| approved | building | Automatic |
-
-### Lifecycle Commands
-
-```bash
-# Start lifecycle automation
-python3 Skills/pulse/scripts/pulse.py lifecycle start
-
-# Stop lifecycle automation  
-python3 Skills/pulse/scripts/pulse.py lifecycle stop
-
-# Check lifecycle status
-python3 Skills/pulse/scripts/pulse.py lifecycle status
-
-# Manual single tick (useful for testing)
-python3 Skills/pulse/scripts/pulse.py lifecycle tick
-python3 Skills/pulse/scripts/pulse.py lifecycle tick --dry-run
-```
-
-### Fragment Tagging
-
-Tag SMS responses to route to specific interviews:
-
-```
-#task-my-build This is my response about the feature requirements
-```
-
-If you have one open interview, responses auto-route. With multiple open interviews, you'll be prompted to use a tag.
-
-### Auto-Fix Dispatch
-
-Tidying findings with confidence ≥ 0.9 auto-fix. Lower confidence findings escalate for manual review.
-
-Configure in `pulse_v2_config.json`:
-```json
-{
-  "auto_fix": {
-    "enabled": true,
-    "confidence_threshold": 0.9
-  }
-}
-```
-
-### Availability-Aware Reviews
-
-HITL plan reviews respect V's availability:
-- Checks Google Calendar for meetings
-- Respects quiet hours (configurable, default 10pm-7am ET)
-- Looks for `[DW]` (Deep Work) markers in calendar events
-- Defers review until next available window
-
-Force review regardless of availability:
-```bash
-python3 N5/pulse/review_manager.py initiate my-build --force
-```
-
-## v2 Lifecycle
-
-```
-pending → interviewing → seeded → planning → plan_review → building → tidying → complete
-```
-
-### Stage Transitions
-
-| From | To | Trigger |
-|------|----|---------|
-| pending | interviewing | Task intake via any channel |
-| interviewing | seeded | LLM judges ≥0.8 confidence |
-| seeded | planning | `pulse.py plan <task>` |
-| planning | plan_review | `plan_sync.py sync <slug>` |
-| plan_review | building | V responds "go" |
-| building | tidying | All Drops complete |
-| tidying | complete | Health score ≥0.9 or V approves |
-
-### v2 Lifecycle Diagram
-
-```
-┌─────────────────────────────────────────────────────────────┐
-│ 1. INTAKE (multi-channel)                                   │
-│    - SMS: "n5 task <description>"                           │
-│    - Email: Subject starts with "Task:"                     │
-│    - Chat: Direct request                                   │
-│    → Creates task in queue_manager.py                       │
-└─────────────────────────────────────────────────────────────┘
-                              ↓
-┌─────────────────────────────────────────────────────────────┐
-│ 2. INTERVIEW (async, fragment-based)                        │
-│    - Zo asks clarifying questions via same channel          │
-│    - Fragments stored in interviews/<task-id>/              │
-│    - LLM evaluates completeness (seeded judgment)           │
-│    - Exits when confidence ≥0.8                             │
-└─────────────────────────────────────────────────────────────┘
-                              ↓
-┌─────────────────────────────────────────────────────────────┐
-│ 3. PLANNING (Architect creates PLAN.md)                     │
-│    - Decompose into Streams/Drops                           │
-│    - Generate meta.json + drop briefs                       │
-│    - MECE validation on worker scopes                       │
-└─────────────────────────────────────────────────────────────┘
-                              ↓
-┌─────────────────────────────────────────────────────────────┐
-│ 4. PLAN REVIEW (human-in-the-loop)                          │
-│    - Sync to Google Drive: Zo/Pulse Builds/<slug>/          │
-│    - SMS V with review link                                 │
-│    - Wait for "go" or "revise: <feedback>"                  │
-└─────────────────────────────────────────────────────────────┘
-                              ↓
-┌─────────────────────────────────────────────────────────────┐
-│ 5. BUILD (automated orchestration)                          │
-│    - Create git snapshot (safety)                           │
-│    - Inject system learnings into briefs                    │
-│    - Spawn Drops via /zo/ask                                │
-│    - Tick loop: monitor, filter, escalate                   │
-└─────────────────────────────────────────────────────────────┘
-                              ↓
-┌─────────────────────────────────────────────────────────────┐
-│ 6. TIDYING (automated hygiene)                              │
-│    - Spawn 5 tidying Drops                                  │
-│    - Auto-fix safe issues                                   │
-│    - Escalate ambiguous findings                            │
-│    - Calculate health score                                 │
-└─────────────────────────────────────────────────────────────┘
-                              ↓
-┌─────────────────────────────────────────────────────────────┐
-│ 7. FINALIZE                                                 │
-│    - Verify all artifacts exist                             │
-│    - Run integration tests                                  │
-│    - Harvest learnings from deposits                        │
-│    - SMS: Finalization result                               │
-└─────────────────────────────────────────────────────────────┘
-```
-
 ## Build Folder Structure
 
 ```
@@ -521,22 +209,13 @@ N5/builds/<slug>/
 
 | Script | Purpose |
 |--------|---------|
-| `pulse.py` | Main orchestrator (start, tick, stop, finalize) |
-| `sentinel.py` | Lightweight monitor for scheduled polling |
+| `pulse.py` | Main orchestrator (start, status, stop, resume, tick, finalize) |
 | `pulse_safety.py` | Pre-build checks, artifact verification, snapshots |
-| `pulse_learnings.py` | Capture/propagate learnings (build + system) |
-| `pulse_integration_test.py` | Post-build integration tests |
-
-### v2 Scripts (in N5/pulse/)
-
-| Script | Purpose |
-|--------|---------|
-| `queue_manager.py` | Task queue CRUD operations |
-| `interview_manager.py` | Async interview orchestration |
-| `plan_sync.py` | Google Drive sync + approval flow |
-| `sms_intake.py` | SMS command routing |
-| `telemetry_manager.py` | Event logging with attribution |
-| `requirements_tracker.py` | Capture V's requirements/preferences |
+| `pulse_learnings.py` | Build-local learning capture and reporting |
+| `pulse_llm_filter.py` | Deposit quality filtering |
+| `pulse_code_validator.py` | Code-oriented validation helpers |
+| `pulse_file_routing.py` | Artifact routing helpers |
+| `pulse_common.py` | Shared path and utility helpers |
 
 ## SMS Commands
 
@@ -545,7 +224,6 @@ Text these to control Pulse:
 - `pulse done` — Mark builds complete, delete Sentinel
 - `pulse pause` — Pause ticking (agent stays alive)
 - `pulse resume` — Resume ticking
-- `n5 task <description>` — Add task to queue (v2)
 
 ## meta.json Structure
 
@@ -597,29 +275,14 @@ When a Drop has `spawn_mode: "manual"`:
 
 ## Learnings System
 
-Two tiers:
-1. **Build-local** → `N5/builds/<slug>/BUILD_LESSONS.json`
-2. **System-wide** → `N5/learnings/SYSTEM_LEARNINGS.json`
+Pulse ships build-local learnings via `N5/builds/<slug>/BUILD_LESSONS.json`.
 
 ```bash
 # Add build learning
 python3 Skills/pulse/scripts/pulse_learnings.py add <slug> "lesson text"
 
-# Add system learning
-python3 Skills/pulse/scripts/pulse_learnings.py add <slug> "lesson text" --system
-
 # List learnings
 python3 Skills/pulse/scripts/pulse_learnings.py list <slug>
-python3 Skills/pulse/scripts/pulse_learnings.py list-system
-
-# Promote build learning to system
-python3 Skills/pulse/scripts/pulse_learnings.py promote <slug> <index>
-
-# Inject system learnings into briefs
-python3 Skills/pulse/scripts/pulse_learnings.py inject <slug>
-
-# Harvest learnings from deposits
-python3 Skills/pulse/scripts/pulse_learnings.py harvest <slug>
 ```
 
 ## Integration Tests
@@ -658,8 +321,7 @@ python3 Skills/pulse/scripts/pulse_safety.py restore <slug>
 
 ## Related Files
 
-- `file 'Skills/pulse-interview/SKILL.md'` — Pre-build interview skill
-- `file 'N5/learnings/SYSTEM_LEARNINGS.json'` — System-wide learnings
-- `file 'N5/config/pulse_control.json'` — Sentinel control state
-- `file 'Documents/System/Build-Orchestrator-System.md'` — Legacy manual system
-- `file 'N5/pulse/'` — v2 scripts directory
+- `file 'Skills/pulse/scripts/pulse.py'` — Main Pulse CLI
+- `file 'Skills/pulse/scripts/pulse_safety.py'` — Pre-build and verification checks
+- `file 'Skills/pulse/scripts/pulse_learnings.py'` — Learning capture helpers
+- `file 'Skills/pulse/references/drop-brief-template.md'` — Drop brief shape

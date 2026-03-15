@@ -66,8 +66,8 @@ echo ""
 echo "Setting up configuration..."
 mkdir -p "$WORKSPACE/N5/config"
 
-if [[ -d "$SCRIPT_DIR/templates/configs" ]]; then
-    for template in "$SCRIPT_DIR"/templates/configs/*.template; do
+if [[ -d "$SCRIPT_DIR/N5/templates/configs" ]]; then
+    for template in "$SCRIPT_DIR"/N5/templates/configs/*.template; do
         [[ -f "$template" ]] || continue
         target="$WORKSPACE/N5/config/$(basename "$template" .template)"
         if [[ ! -f "$target" ]]; then
@@ -86,7 +86,11 @@ mkdir -p "$WORKSPACE/Personal/Meetings/Inbox"
 echo ""
 echo "Installation complete. The cloned n5os-ode/ folder will now be removed."
 echo "(Your installed files are safely in $WORKSPACE)"
-read -p "Press Enter to continue (or Ctrl+C to keep the folder)..." 2>/dev/null || true
+if [[ -t 0 ]]; then
+    read -p "Press Enter to continue (or Ctrl+C to keep the folder)..." 2>/dev/null || true
+else
+    echo "Non-interactive shell detected — continuing automatically."
+fi
 echo ""
 echo "Cleaning up..."
 cd "$WORKSPACE"

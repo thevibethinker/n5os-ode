@@ -22,6 +22,7 @@ Part of n5OS-Ode: https://github.com/thevibethinker/n5os-ode
 import argparse
 import sys
 import json as json_module
+import os
 from pathlib import Path
 from datetime import datetime, timezone
 import re
@@ -551,4 +552,3 @@ def main():
 
 if __name__ == "__main__":
     sys.exit(main())
-

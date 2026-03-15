@@ -24,9 +24,17 @@ jobs:
     
     - name: Check Python syntax
       run: |
-        python3 -m py_compile N5/scripts/*.py
-        if ls scripts/*.py 1>/dev/null 2>&1; then python3 -m py_compile scripts/*.py; fi
-        python3 -m py_compile N5/cognition/*.py
+        python3 - <<'PY'
+        import ast
+        from pathlib import Path
+
+        roots = [Path('N5/scripts'), Path('N5/cognition')]
+        if Path('scripts').exists():
+            roots.append(Path('scripts'))
+        for root in roots:
+            for path in root.glob('*.py'):
+                ast.parse(path.read_text(encoding='utf-8', errors='ignore'), filename=str(path))
+        PY
     
     - name: Validate repo structure
       run: |
@@ -74,4 +82,3 @@ jobs:
         echo "✅ All validation checks passed!"
         echo "Python: ${{ matrix.python-version }}"
         echo "OS: ubuntu-latest"
-

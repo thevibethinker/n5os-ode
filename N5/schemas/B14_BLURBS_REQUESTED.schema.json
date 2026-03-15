@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "B14 Blurbs Requested",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^BLB-\\d{3}$"
+    },
+    "subject": {
+      "type": "string",
+      "enum": ["V", "YOUR_COMPANY", "Other"]
+    },
+    "subject_detail": {
+      "type": "string"
+    },
+    "type": {
+      "type": "string",
+      "enum": ["short", "email"]
+    },
+    "recipient": {
+      "type": "string",
+      "minLength": 1
+    },
+    "audience_context": {
+      "type": "string",
+      "minLength": 1
+    },
+    "purpose": {
+      "type": "string",
+      "minLength": 1
+    },
+    "key_points": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "status": {
+      "type": "string",
+      "const": "pending"
+    }
+  },
+  "required": [
+    "id",
+    "subject",
+    "type",
+    "recipient",
+    "audience_context",
+    "purpose",
+    "key_points",
+    "status"
+  ],
+  "allOf": [
+    {
+      "if": {
+        "properties": {
+          "subject": {
+            "const": "Other"
+          }
+        },
+        "required": ["subject"]
+      },
+      "then": {
+        "required": ["subject_detail"]
+      }
+    }
+  ],
+  "additionalProperties": false
+}
