@@ -177,7 +177,11 @@ Skills/meeting-ingestion/
 │   ├── meeting_cli.py          # Unified CLI entry point
 │   ├── pull.py                 # Google Drive ingestion
 │   ├── processor.py            # Block generation pipeline
-│   └── archive.py             # Meeting archival to weekly folders
+│   ├── archive.py              # Meeting archival to weekly folders
+│   ├── classifier.py           # Meeting-type classification helpers
+│   ├── pocket_adapter.py       # Pocket integration adapter
+│   ├── router.py               # Skill routing glue
+│   └── zth_scanner.py          # Transcript scanning utilities
 ├── references/
 │   └── legacy_prompts.md       # Legacy prompt documentation
 └── assets/
@@ -190,7 +194,6 @@ This skill wraps existing N5 scripts:
 - `N5/scripts/meeting_orchestrator.py` - Duplicate prevention
 - `N5/scripts/meeting_normalizer.py` - Date/name normalization
 - `N5/scripts/meeting_manifest_generator.py` - Block manifest
-- `N5/scripts/meeting_crm_sync.py` - CRM synchronization
 
 Configuration:
 - `N5/config/drive_locations.yaml` - Google Drive folder IDs

@@ -157,7 +157,7 @@ See `file 'Lists/POLICY.md'` for example:
 - **Knowledge root (export SSOT):** `file 'Knowledge/'`
 - Keep architectural principles and standards under `Knowledge/architectural/` in this export package.
 
-The Knowledge folder SHOULD have `file 'Knowledge/POLICY.md'` (if not exists, create):
+The Knowledge folder SHOULD have `Knowledge/POLICY.md` (if not exists, create):
 - Treat as the canonical knowledge layer for this exported repo
 - Keep cross-reference standards centralized
 - Maintain MECE organization for architectural docs and principles
@@ -172,8 +172,8 @@ Two top-level Tier roots are recognized and governed by this policy:
 - `file 'YOUR_CONSULTANCY/'` — Parallel business unit
 
 ### Routing Rules
-- Deliverables SSOT: all final deliverables live under `file 'Documents/Deliverables/'` with org buckets per business unit.
-- Logs: centralized under `file 'N5/logs/'` with domain buckets (e.g., `knowledge/`, `records/`, `mirror/`).
+- Deliverables SSOT: all final deliverables live under `Documents/Deliverables/` with org buckets per business unit.
+- Logs: centralized under `N5/logs/` with domain buckets (e.g., `knowledge/`, `records/`, `mirror/`).
 - Staging raw assets: use `file 'Records/'` (Company/Personal) per existing conventions.
 - System scripts, backups, runtime: under `file 'N5/'` (scripts/, backups/scripts/, runtime/...).
 
@@ -200,4 +200,3 @@ Two top-level Tier roots are recognized and governed by this policy:
 - Clarified precedence hierarchy
 - Added enforcement mechanisms
 - Linked to example policies
-

@@ -7,9 +7,14 @@ Usage:
 """
 import sys
 import re
+import ast
 from pathlib import Path
-import py_compile
 import argparse
+
+
+def strip_fenced_code_blocks(text: str) -> str:
+    """Remove fenced code blocks to avoid validating example-only file mentions."""
+    return re.sub(r"```.*?```", "", text, flags=re.DOTALL)
 
 def main():
     parser = argparse.ArgumentParser(description="Validate n5OS-Ode repository")
@@ -21,23 +26,24 @@ def main():
     errors = []
     warnings = []
     
-    # 1. Check Python syntax
+    # 1. Check Python syntax without generating __pycache__
     py_files = sorted(root.rglob("*.py"))
     for pf in py_files:
         try:
-            py_compile.compile(str(pf), doraise=True)
+            source = pf.read_text(encoding="utf-8", errors="ignore")
+            ast.parse(source, filename=str(pf))
         except Exception as e:
             errors.append(f"Python syntax: {pf}: {e}")
     
     # 2. Check for file references in markdown/prompts
     file_ref_re = re.compile(r"`file '([^']+)'`")
     # Build set of relative paths from root
-    existing = {str(p.relative_to(root)).replace('\\', '/') for p in root.rglob('*') if p.is_file()}
+    existing = {str(p.relative_to(root)).replace('\\', '/') for p in root.rglob('*')}
     
-    md_files = list(root.rglob("*.md")) + list(root.rglob("*.prompt.md"))
+    md_files = sorted({*root.rglob("*.md"), *root.rglob("*.prompt.md")})
     for md_file in md_files:
         try:
-            txt = md_file.read_text(errors="ignore")
+            txt = strip_fenced_code_blocks(md_file.read_text(errors="ignore"))
         except Exception:
             continue
         
@@ -45,7 +51,11 @@ def main():
             ref = m.group(1)
             if ref.startswith('/'):
                 continue
-            ref_norm = ref.lstrip('./')
+            ref_norm = ref.lstrip('./').rstrip('/')
+            if ref_norm.startswith("path/to/"):
+                continue
+            if "YOUR_" in ref_norm:
+                continue
             if ref_norm not in existing:
                 warnings.append(f"Missing file ref: {md_file.relative_to(root)}: {ref}")
     
@@ -119,5 +129,3 @@ def main():
 
 if __name__ == "__main__":
     sys.exit(main())
-
-
