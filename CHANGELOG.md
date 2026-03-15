@@ -22,7 +22,7 @@ All notable changes to n5OS-Ode are documented here.
 - ✅ **File References**: Standardized backtick syntax for all file mentions
 - ✅ **Context Manifest**: All referenced files now exist in the repository
 - ✅ **Prompts**: Build Capability, Close Conversation, Journal all functional
-- ✅ **Placeholders**: Replaced PROJECT_REPO references where needed
+- ✅ **Placeholder Cleanup**: Replaced legacy template placeholder references where needed
 
 ### Notes
 - All scripts have minimal but functional implementations

@@ -154,14 +154,13 @@ See `file 'Lists/POLICY.md'` for example:
 - Links to schemas and knowledge base
 
 ### Knowledge Folder
-- **Canonical knowledge root (SSOT):** `file 'Personal/Knowledge/'`
-- **Compatibility shell:** `file 'Knowledge/'` (kept only for legacy paths; do not treat as primary)
+- **Knowledge root (export SSOT):** `file 'Knowledge/'`
+- Keep architectural principles and standards under `Knowledge/architectural/` in this export package.
 
-The Knowledge compatibility shell SHOULD have `file 'Knowledge/POLICY.md'` (if not exists, create):
-- Treats as a thin routing/compatibility layer, not the main repository
-- SSOT requirements LIVE UNDER `Personal/Knowledge/**`
-- Cross-reference standards
-- MECE principles (from `file 'Personal/Knowledge/Architecture/ingestion_standards/INGESTION_STANDARDS.md'`)
+The Knowledge folder SHOULD have `file 'Knowledge/POLICY.md'` (if not exists, create):
+- Treat as the canonical knowledge layer for this exported repo
+- Keep cross-reference standards centralized
+- Maintain MECE organization for architectural docs and principles
 
 ---
 
@@ -187,11 +186,7 @@ Two top-level Tier roots are recognized and governed by this policy:
 ## Related Files
 
 - **Lists Policy Example:** `file 'Lists/POLICY.md'`
-- **Ingestion Standards (canonical):** `file 'Personal/Knowledge/Architecture/ingestion_standards/INGESTION_STANDARDS.md'`
-- **Operational Principles (canonical):** `file 'Personal/Knowledge/Architecture/principles/architectural_principles.md'`
-- **Compatibility shells:**
-  - `file 'Knowledge/architectural/ingestion_standards.md'`
-  - `file 'Knowledge/architectural/operational_principles.md'`
+- **Architectural principles (export canonical):** `file 'Knowledge/architectural/principles.md'`
 - **File Protection:** `file 'N5/prefs/system/file-protection.md'`
 
 ---
