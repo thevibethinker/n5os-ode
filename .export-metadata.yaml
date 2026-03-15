@@ -1,0 +1,8 @@
+artifact_type: exportable
+designation: public-distribution
+repo: thevibethinker/n5os-ode
+visibility: public
+description: >
+  N5OS-ODE — Open Distribution Edition. Exportable productivity operating system
+  for non-technical users on Zo Computer. Successor lineage to Zoffice.
+last_export: 2026-03-15
