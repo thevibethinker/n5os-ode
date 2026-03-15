@@ -7,6 +7,8 @@ provenance: worker_006_documentation
 
 # N5OS Ode
 
+[![Ask DeepWiki](https://deepwiki.com/badge.svg)](https://deepwiki.com/vrijenattawar/n5os-ode)
+
 **A cognitive operating system for Zo Computer**
 
 N5OS Ode transforms Zo from a general-purpose AI assistant into a structured thinking partner. It gives your AI memory, specialized modes of operation, and workflows that evolve with you.
