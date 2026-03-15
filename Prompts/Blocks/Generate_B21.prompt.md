@@ -111,12 +111,12 @@ block_type: B21
 
 ### Good Quote Capture:
 
-**"We're not just buying technology, we're buying a partnership with someone who understands our mission."**  
-— Nicole Holubar (Emory Career Services)  
+**"We're not just buying technology, we're buying a partnership with someone who understands our mission."**
+— [Meeting Participant] ([Organization])
 *Context:* Explaining what matters most in vendor selection beyond features. Signals that relationship and shared values are decision factors, not just capability.
 
-**"The question isn't whether we can build this ourselves — it's whether we should, given opportunity cost."**  
-— Vrijen Attawar  
+**"The question isn't whether we can build this ourselves — it's whether we should, given opportunity cost."**
+— [V]
 *Context:* Reframing build vs. buy discussion from capability to strategy. Shifted conversation from technical to business priorities.
 
 ### Avoid:

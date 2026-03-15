@@ -1,10 +1,9 @@
 ---
 created: 2026-01-15
 last_edited: 2026-01-15
-version: 1.0
+version: 1
 provenance: n5os-ode-fix-day1-zero-errors
 ---
-
 # Changelog
 
 All notable changes to n5OS-Ode are documented here.

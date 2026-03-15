@@ -36,7 +36,7 @@ Think of N5OS Ode as firmware for your AI. Out of the box, Zo is a powerful but 
 **One command does everything:**
 
 ```bash
-git clone https://github.com/vrijenattawar/n5os-ode.git && cd n5os-ode && bash install.sh
+git clone https://github.com/YOUR_GITHUB_USER/n5os-ode.git && cd n5os-ode && bash install.sh
 ```
 
 This clones the repo, moves all contents to your workspace root, and cleans up the `n5os-ode/` folder.

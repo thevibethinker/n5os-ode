@@ -13,7 +13,7 @@ groups:
     description: "High-level thinking, planning, decision making, reasoning"
     files:
       - "Knowledge/architectural/architectural_principles.md"
-      - "Knowledge/stable/careerspan-timeline.md"
+      - "Knowledge/stable/company-timeline.md"
   
   system:
     description: "Lists, Index, System Operations, Database"
@@ -40,7 +40,7 @@ groups:
       - "N5/prefs/communication/style-guides/hedging-antipatterns.md"
       - "N5/prefs/communication/style-guides/directness-calibration.md"
       - "N5/prefs/communication/style-guides/succinctness-pairs.md"
-      - "Knowledge/content-library/personal/psychographic-portrait-linkedin-2026-01.md"  # V's authentic voice patterns, emotional triggers, themes
+      - "Knowledge/content-library/personal/psychographic-portrait.md"  # Owner's authentic voice patterns, emotional triggers, themes
       
   research:
     description: "Deep dive, analysis, web research"
@@ -51,7 +51,7 @@ groups:
   health:
     description: "Health planning, bio-context, energy management, supplement decisions"
     files:
-      - "Personal/Health/synthesis/Vrijen-Bio-Context.md"
+      - "Personal/Health/synthesis/Bio-Context.md"
       - "Personal/Health/stack/current_medications.yaml"
       - "Personal/Health/stack/current_supplements.yaml"
       - "N5/systems/health/regimen.json"
