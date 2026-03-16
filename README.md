@@ -362,8 +362,8 @@ We gratefully acknowledge their contribution to the Zo ecosystem.
 
 ## Version
 
-**N5OS Ode v1.1**  
-Released: January 2026
+**N5OS Ode v1.2**
+Released: March 2026
 
 ---
 
