@@ -53,7 +53,7 @@ jobs:
     - name: Check for common issues
       run: |
         # No PROJECT_REPO placeholders
-        ! grep -r "PROJECT_REPO" . --include="*.py" --include="*.md" 2>/dev/null || exit 1
+        ! grep -r "PROJECT_REPO" . --include="*.py" --include="*.md" --exclude="validate_repo.py" 2>/dev/null || exit 1
         
         # No untracked __pycache__
         ! find . -type d -name "__pycache__" 2>/dev/null | grep -v ".git" || exit 1
