@@ -64,6 +64,7 @@ jobs:
     
     - name: Lint YAML
       run: |
+        pip install pyyaml -q
         python3 - <<'PYEOF'
         import yaml
         from pathlib import Path
