@@ -170,7 +170,7 @@ You just saw raw conversation turned into structured, searchable intelligence. I
 Say something like:
 > "Let's do a quick gratitude entry"
 
-I'll ask you 2-3 questions. Answer naturally — even one sentence per answer is fine. When we're done, I'll save it to your journal database at `N5/data/journal.db`.
+I'll ask you 2-3 questions. Answer naturally — even one sentence per answer is fine. When we're done, I'll save it to your journal database at `data/journal.db`.
 
 ### After your entry
 

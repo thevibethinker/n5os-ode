@@ -1,8 +1,8 @@
 ---
 created: 2026-01-15
-last_edited: 2026-01-18
-version: 1.1
-provenance: n5os-ode-v1
+last_edited: 2026-03-18
+version: 2.0
+provenance: n5os-ode-v2
 ---
 
 # N5OS Ode
@@ -19,8 +19,8 @@ N5OS Ode transforms Zo from a general-purpose AI assistant into a structured thi
 
 Think of N5OS Ode as firmware for your AI. Out of the box, Zo is a powerful but generic assistant. N5OS Ode adds:
 
-- **Specialist Personas** — 6 focused modes (Builder, Researcher, Writer, Strategist, Debugger, Operator) that excel at different work types
-- **Behavioral Rules** — Persistent instructions that shape AI behavior across all conversations
+- **Specialist Personas** — 9 focused modes (Builder, Researcher, Writer, Strategist, Debugger, Operator, Architect, Teacher, Librarian) that excel at different work types
+- **Behavioral Rules** — 13 persistent instructions that shape AI behavior across all conversations
 - **Conversation State** — Memory that persists across long sessions
 - **Structured Outputs** — Block generators that transform transcripts into actionable intelligence
 - **Journaling System** — Guided reflection workflows for personal insights
@@ -54,8 +54,8 @@ Open a new Zo conversation and type:
 ```
 
 The bootloader will:
-- Install 6 specialist personas
-- Create 6 core behavioral rules  
+- Install 9 specialist personas
+- Create 13 behavioral rules  
 - Set up the folder structure (N5/, Knowledge/, Records/, Prompts/)
 - Initialize configuration files
 
@@ -113,6 +113,9 @@ Routes to the research specialist.
 | **Writer** | Emails, docs, polished content |
 | **Strategist** | Decisions, frameworks, planning |
 | **Debugger** | Troubleshooting, QA, root cause analysis |
+| **Architect** | System design, build planning, technical specs |
+| **Teacher** | Learning, conceptual understanding, skill building |
+| **Librarian** | State sync, coherence audits, filing |
 
 → See [docs/PERSONAS.md](docs/PERSONAS.md) for full details
 
@@ -120,7 +123,7 @@ Routes to the research specialist.
 
 ### Behavioral Rules
 
-6 core rules that shape AI behavior:
+13 core rules that shape AI behavior:
 
 1. **Session State** — Tracks conversation context automatically
 2. **Frontmatter** — Adds provenance to all markdown files
@@ -128,12 +131,19 @@ Routes to the research specialist.
 4. **File Protection** — Guards critical directories
 5. **Debug Logging** — Breaks failure loops
 6. **Clarifying Questions** — Reduces mistakes from ambiguity
+7. **Persona Routing** — Master routing table for specialist handoffs
+8. **Session State Updates** — Periodic state sync during work
+9. **Honest Workflow Reporting** — Quantitative progress tracking
+10. **Agent Conflict Gate** — Prevents agent sprawl
+11. **Pulse Orchestration** — Build orchestration discipline
+12. **Anti-Hallucination** — Penalizes fabrication over admitting uncertainty
+13. **Debug Logging Discipline** — Structured debug logging during problem-solving
 
 → See [docs/RULES.md](docs/RULES.md) for full details
 
 ### Principles Library
 
-18 codified architectural principles that shape how N5OS thinks:
+37 codified architectural principles that shape how N5OS thinks:
 
 - **P15** — Complete Before Claiming (prevents false "done")
 - **P28** — Plans as Code DNA (quality happens in planning)
@@ -169,6 +179,10 @@ N5OS includes packaged skills for advanced workflows:
 | --- | --- |
 | **meeting-ingestion** | Pull transcripts from Google Drive, generate intelligence blocks (B01-B28), track in registry |
 | **pulse** | Automated build orchestration - spawn parallel workers, validate deposits, escalate blockers |
+| **close** | Universal close router for conversations and builds |
+| **thread-close** | Thread-level conversation close workflow |
+| **systematic-debugging** | Root cause analysis methodology with structured phases |
+| **frontend-design** | Production-grade UI patterns with anti-slop guardrails |
 
 **Meeting Ingestion Quick Start:**
 ```bash
@@ -313,7 +327,7 @@ N5OS Ode is built on these beliefs:
 | [PERSONAS.md](docs/PERSONAS.md) | Specialist personas, routing |
 | [ROUTING.md](docs/ROUTING.md) | Persona choreography, handoffs |
 | [RULES.md](docs/RULES.md) | Behavioral rules, customization |
-| [PRINCIPLES.md](docs/PRINCIPLES.md) | 18 architectural principles |
+| [PRINCIPLES.md](docs/PRINCIPLES.md) | 37 architectural principles |
 | [FOLDER_STRUCTURE.md](docs/FOLDER_STRUCTURE.md) | Directory layout, conventions |
 | [BLOCK_SYSTEM.md](docs/BLOCK_SYSTEM.md) | Block generators for transcripts |
 | [BUILD_PLANNING.md](docs/BUILD_PLANNING.md) | Build planning system, templates, and execution flow |
@@ -362,7 +376,7 @@ We gratefully acknowledge their contribution to the Zo ecosystem.
 
 ## Version
 
-**N5OS Ode v1.2**
+**N5OS Ode v2.0**
 Released: March 2026
 
 ---
