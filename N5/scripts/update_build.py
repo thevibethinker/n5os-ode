@@ -1,5 +1,5 @@
-import os
 #!/usr/bin/env python3
+import os
 """
 update_build.py - Worker completion tracking and build status management.
 

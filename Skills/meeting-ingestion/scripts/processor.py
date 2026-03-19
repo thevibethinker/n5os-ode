@@ -20,8 +20,6 @@ from pathlib import Path
 from datetime import datetime, UTC
 from typing import List, Optional, Dict, Any
 
-# Add N5/scripts to path for imports
-import os
 WORKSPACE = Path(os.environ.get("N5OS_WORKSPACE", "."))
 sys.path.insert(0, str(WORKSPACE / "N5/scripts"))
 
@@ -71,7 +69,10 @@ def call_zo_api(prompt: str, output_format: Optional[dict] = None) -> Any:
     if not token:
         raise RuntimeError("ZO_CLIENT_IDENTITY_TOKEN not set")
     
-    payload = {"input": prompt}
+    payload = {
+        "input": prompt,
+        "model_name": "openai:gpt-5.2-2025-12-11",
+    }
     if output_format:
         payload["output_format"] = output_format
     
@@ -137,6 +138,8 @@ def generate_block(
     """
     block_description = BLOCK_DEFINITIONS.get(block_code, "Meeting intelligence block")
     
+    truncated_transcript = transcript_text[:30000]
+    
     prompt = f"""Generate the {block_code} intelligence block for this meeting transcript.
 
 ## Block Definition
@@ -148,7 +151,7 @@ def generate_block(
 - Meeting Type: {meeting_context.get('meeting_type', 'external')}
 
 ## Transcript
-{transcript_text[:30000]}  # Truncate very long transcripts
+{truncated_transcript}
 
 ## Instructions
 1. Analyze the transcript thoroughly

@@ -1,45 +1,89 @@
 ---
 created: 2025-11-17
-last_edited: 2025-11-17
-version: 1.0
+last_edited: 2026-03-18
+version: 2.0
 ---
 
 # Content Library Quick Reference
 
 **Database:** `N5/data/content_library.db`  
-**CLI Tool:** `N5/scripts/content_library_db.py`  
-**Status:** Active (JSON files deprecated as of 2025-11-17)
+**CLI Tools:**
+- `N5/scripts/content_library.py` — DB operations (search, add, get, stats)
+- `N5/scripts/content_query.py` — Quick query interface
+- `scripts/content_ingest.py` — File ingestion with normalization pipeline
+
+**Status:** Active (v5 normalization pipeline)
 
 ---
 
-## Common Commands
+## Ingesting Content
 
-### Search for links/snippets
+```bash
+# Auto-detect type and ingest
+python3 scripts/content_ingest.py /path/to/article.md
+
+# Specify type explicitly
+python3 scripts/content_ingest.py /path/to/file.md --type article
+
+# Preview without changes
+python3 scripts/content_ingest.py /path/to/file.md --dry-run
+
+# Ingest and move to canonical location
+python3 scripts/content_ingest.py /path/to/file.md --move
+
+# Add tags
+python3 scripts/content_ingest.py /path/to/file.md --tags "authored,medium"
+
+# Skip normalization (keep raw content)
+python3 scripts/content_ingest.py /path/to/file.md --no-normalize
+```
+
+### Content Types
+| Type | Canonical Location | Auto-Detection |
+|------|-------------------|----------------|
+| `article` | `Knowledge/content-library/articles/` | Substack, Medium, news sites |
+| `link` | `Knowledge/content-library/links/` | URLs with frontmatter (default) |
+| `social-post` | `Knowledge/content-library/social-posts/` | X/Twitter, LinkedIn URLs |
+| `profile` | `Knowledge/content-library/profiles/` | LinkedIn /in/ pages |
+| `resource` | `Knowledge/content-library/resources/` | Docs, GitHub repos |
+| `snippet` | `Knowledge/content-library/snippets/` | Short text blocks |
+| `reflection` | `Knowledge/content-library/reflections/` | Personal reflections |
+| `conversation` | `Knowledge/content-library/conversations/` | Chat transcripts |
+
+### Normalization Pipeline (v5)
+When `--normalize` is enabled (default):
+1. **Classification** — Detect content mode (article, link, profile, social)
+2. **Trafilatura extraction** — Extract clean text from HTML companion files
+3. **Boilerplate removal** — Strip navigation, ads, cookie banners
+4. **Summary generation** — Extract first meaningful paragraph as summary
+
+---
+
+## Searching the Library
+
 ```bash
 # Text search
-python3 N5/scripts/content_library_db.py search --query "trial"
-python3 N5/scripts/content_library_db.py search --query "calendly"
+python3 N5/scripts/content_library.py search --query "trial"
 
 # Filter by type
-python3 N5/scripts/content_library_db.py search --query "trial" --type link
+python3 N5/scripts/content_library.py search --query "trial" --type link
 
 # Search by tag
-python3 N5/scripts/content_library_db.py search --tag purpose=scheduling
-python3 N5/scripts/content_library_db.py search --tag entity=your_company
+python3 N5/scripts/content_library.py search --tag purpose=scheduling
 
 # Combined search
-python3 N5/scripts/content_library_db.py search --query "demo" --tag audience=prospects
+python3 N5/scripts/content_library.py search --query "demo" --tag audience=prospects
 ```
 
 ### Get specific item
 ```bash
-python3 N5/scripts/content_library_db.py get --id trial_code_general
+python3 N5/scripts/content_library.py get --id trial_code_general
 ```
 
 ### Add new item
 ```bash
 # Add link
-python3 N5/scripts/content_library_db.py add \
+python3 N5/scripts/content_library.py add \
   --id new_link \
   --type link \
   --title "New Link Title" \
@@ -48,7 +92,7 @@ python3 N5/scripts/content_library_db.py add \
   --tag entity=your_company
 
 # Add snippet
-python3 N5/scripts/content_library_db.py add \
+python3 N5/scripts/content_library.py add \
   --id bio_short \
   --type snippet \
   --title "Short Bio" \
@@ -58,12 +102,12 @@ python3 N5/scripts/content_library_db.py add \
 
 ### List all items
 ```bash
-python3 N5/scripts/content_library_db.py list --limit 50
+python3 N5/scripts/content_library.py list --limit 50
 ```
 
 ### Deprecate item
 ```bash
-python3 N5/scripts/content_library_db.py deprecate --id old_link
+python3 N5/scripts/content_library.py deprecate --id old_link
 ```
 
 ---
@@ -172,20 +216,20 @@ The Follow-Up Email Generator automatically queries the database when generating
 
 ### Find meeting booking link for 30-minute calls
 ```bash
-python3 N5/scripts/content_library_db.py search --tag duration=30min
+python3 N5/scripts/content_library.py search --tag duration=30min
 ```
 
 ### Find all company-related links
 ```bash
-python3 N5/scripts/content_library_db.py search --tag entity=your_company
+python3 N5/scripts/content_library.py search --tag entity=your_company
 ```
 
 ### Get trial link for career centers
 ```bash
-python3 N5/scripts/content_library_db.py get --id trial_code_career_centers
+python3 N5/scripts/content_library.py get --id trial_code_career_centers
 ```
 
 ---
 
-*Last updated: 2025-11-17*
+*Last updated: 2026-03-18*
 

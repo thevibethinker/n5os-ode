@@ -1,5 +1,5 @@
-import os
 #!/usr/bin/env python3
+import os
 """
 Pocket Adapter (pocket_v1) — Normalizes HeyPocket webhook payloads into intake-v1 manifests.
 

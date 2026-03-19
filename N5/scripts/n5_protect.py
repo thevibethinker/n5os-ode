@@ -1,5 +1,5 @@
-import os
 #!/usr/bin/env python3
+import os
 """
 N5 File Protection System - Lightweight directory protection via marker files
 
