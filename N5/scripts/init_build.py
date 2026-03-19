@@ -1,5 +1,5 @@
-import os
 #!/usr/bin/env python3
+import os
 """
 init_build.py - Initialize a new build workspace with v2 orchestration support.
 

@@ -1,5 +1,5 @@
-import os
 #!/usr/bin/env python3
+import os
 """
 Spawn Worker v3.0 - Pure Plumbing
 

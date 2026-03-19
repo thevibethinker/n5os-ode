@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+import os
 """
 Meeting Ingestion - Archive Script
 
@@ -17,7 +18,7 @@ from collections import defaultdict
 from datetime import datetime, timedelta
 from pathlib import Path
 
-WORKSPACE = Path(__file__).resolve().parents[3]
+WORKSPACE = Path(os.environ.get("N5OS_WORKSPACE", Path(__file__).resolve().parents[3]))
 INBOX = WORKSPACE / "Personal/Meetings/Inbox"
 MEETINGS = WORKSPACE / "Personal/Meetings"
 

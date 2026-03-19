@@ -1,5 +1,5 @@
-import os
 #!/usr/bin/env python3
+import os
 """
 Conversation DB Sync - Sync SESSION_STATE.md to conversations.db
 

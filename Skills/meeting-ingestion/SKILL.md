@@ -1,16 +1,17 @@
 ---
 name: meeting-ingestion
-description: Unified skill for ingesting meeting transcripts from Google Drive and orchestrating the processing pipeline (recap, blocks). Replaces legacy MG-1 through MG-6 agent sequence.
+description: Meeting transcript ingestion with multi-source intake (Google Drive, Pocket, manual), classification, intelligence block generation, ZTH trigger scanning, and archival. Replaces legacy MG-1 through MG-6 agent sequence.
 compatibility: Created for Zo Computer
 metadata:
-  author: community
-  version: "1.0.0"
+  author: va.zo.computer
+  version: "1.1.0"
   created: 2026-01-26
+  updated: 2026-03-18
 ---
 
 # Meeting Ingestion Skill
 
-Unified meeting transcript processing: download from Google Drive, generate intelligence blocks.
+Meeting transcript processing: download from Google Drive or Pocket, classify content type, generate intelligence blocks, scan for Zo Take Heed triggers, and archive to weekly folders.
 
 ## Quick Start
 
@@ -24,11 +25,20 @@ python3 Skills/meeting-ingestion/scripts/meeting_cli.py pull --dry-run
 # Pull and download
 python3 Skills/meeting-ingestion/scripts/meeting_cli.py pull --batch-size 5
 
+# Classify intake items
+python3 Skills/meeting-ingestion/scripts/classifier.py --batch Personal/Meetings/Inbox/ --dry-run
+
+# Scan for ZTH triggers
+python3 Skills/meeting-ingestion/scripts/zth_scanner.py scan --batch Personal/Meetings/Inbox/
+
 # Process all pending meetings
 python3 Skills/meeting-ingestion/scripts/meeting_cli.py process
 
 # Process specific meeting
 python3 Skills/meeting-ingestion/scripts/meeting_cli.py process /path/to/meeting --blocks B01,B05,B08
+
+# Archive completed meetings
+python3 Skills/meeting-ingestion/scripts/meeting_cli.py archive --execute
 ```
 
 ## Commands
@@ -176,13 +186,14 @@ Skills/meeting-ingestion/
 ├── scripts/
 │   ├── meeting_cli.py          # Unified CLI entry point
 │   ├── pull.py                 # Google Drive ingestion
-│   ├── processor.py            # Block generation pipeline
+│   ├── processor.py            # Block generation pipeline (via Zo API)
 │   ├── archive.py              # Meeting archival to weekly folders
-│   ├── classifier.py           # Meeting-type classification helpers
-│   ├── pocket_adapter.py       # Pocket integration adapter
-│   ├── router.py               # Skill routing glue
-│   └── zth_scanner.py          # Transcript scanning utilities
+│   ├── classifier.py           # Content type classification (meeting vs reflection)
+│   ├── pocket_adapter.py       # Pocket webhook payload adapter
+│   ├── router.py               # Post-classification routing
+│   └── zth_scanner.py          # Zo Take Heed trigger extraction
 ├── references/
+│   ├── intake-v1.schema.json   # Manifest schema
 │   └── legacy_prompts.md       # Legacy prompt documentation
 └── assets/
 ```

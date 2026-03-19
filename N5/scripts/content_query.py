@@ -1,5 +1,5 @@
-import os
 #!/usr/bin/env python3
+import os
 """
 Content Library Query Script
 Query and search the Content Library including media files.
