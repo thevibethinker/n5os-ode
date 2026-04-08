@@ -2,14 +2,14 @@
 created: 2026-01-15
 last_edited: 2026-01-15
 version: 1.1
-provenance: con_2yzxunQ3ZoBqIQ3Q
+provenance: sanitized
 ---
 
 # Core Scripts Sanitization Log
 
 **Worker:** Worker 002 - Core Scripts Sanitization
 **Date:** 2026-01-15
-**Source:** V's N5 workspace (`/home/workspace/N5/scripts/`)
+**Source:** the source N5 workspace (`/home/workspace/N5/scripts/`)
 **Target:** n5OS-Ode export (`/home/workspace/N5/export/n5os-ode/N5/scripts/`)
 
 ---
@@ -20,7 +20,7 @@ provenance: con_2yzxunQ3ZoBqIQ3Q
 **Source Lines:** ~500+
 **Changes:**
 - Removed DB sync to `conversations.db` (made optional, graceful fallback)
-- Removed V-specific classification keywords (kept generic)
+- Removed instance-specific classification keywords (kept generic)
 - Updated docstring with n5OS-Ode reference
 - Removed hardcoded persona references
 - Simplified `_sync_to_db()` to be resilient to missing DB
@@ -28,25 +28,25 @@ provenance: con_2yzxunQ3ZoBqIQ3Q
 ### 2. `n5_protect.py`
 **Source Lines:** ~300
 **Changes:**
-- **REMOVED:** `auto_protect_services()` function that referenced V-specific paths:
+- **REMOVED:** `auto_protect_services()` function that referenced instance-specific paths:
   - `/home/workspace/n5-waitlist`
   - `/home/workspace/Projects/streaming-platform`
-- **REMOVED:** Import of `n5_user_services.py` (V-specific)
+- **REMOVED:** Import of `n5_user_services.py` (instance-specific)
 - Kept core protection functionality intact
 - Updated docstring
 
 ### 3. `n5_load_context.py`
 **Source Lines:** ~200
 **Changes:**
-- **REMOVED:** N5MemoryClient integration (V-specific semantic memory)
+- **REMOVED:** N5MemoryClient integration (instance-specific semantic memory)
 - Simplified to pure file-based context loading
-- Updated keyword mappings (removed V-specific triggers)
+- Updated keyword mappings (removed instance-specific triggers)
 - Updated docstring
 
 ### 4. `debug_logger.py`
 **Source Lines:** ~350
 **Changes:**
-- No V-specific content found
+- No instance-specific content found
 - Updated docstring with n5OS-Ode reference
 - Made log path configurable via env var
 - Kept pattern detection logic intact
@@ -54,15 +54,15 @@ provenance: con_2yzxunQ3ZoBqIQ3Q
 ### 5. `journal.py`
 **Source Lines:** ~300
 **Changes:**
-- **REMOVED:** `diet` column from schema (V-specific health tracking)
-- **REMOVED:** `temptation` entry type prompts (V-specific)
+- **REMOVED:** `diet` column from schema (instance-specific health tracking)
+- **REMOVED:** `temptation` entry type prompts (instance-specific)
 - Kept core journaling functionality
 - Updated docstring
 
 ### 6. `content_ingest.py`
 **Source Lines:** ~250
 **Changes:**
-- No V-specific content found
+- No instance-specific content found
 - Updated docstring with n5OS-Ode reference
 - Kept all content type mappings
 
@@ -72,19 +72,19 @@ provenance: con_2yzxunQ3ZoBqIQ3Q
 
 ### `context_manifest.yaml`
 - Generic version with placeholder file references
-- Removed V-specific file paths:
-  - `Knowledge/stable/careerspan-timeline.md`
+- Removed instance-specific file paths:
+  - `Knowledge/stable/[redacted]-timeline.md`
   - `Knowledge/content-library/personal/psychographic-portrait-*.md`
   - All `N5/prefs/communication/patterns/*` references
 - Disabled dynamic memory integration by default
 
 ### `prefs.md`
 - Clean slate version with generic rules
-- Removed all V-specific protocols:
+- Removed all instance-specific protocols:
   - Reflection processing
   - Meeting pipelines
   - CRM operations
-  - Careerspan references
+  - [redacted-company] references
 - Kept universal safety rules
 
 ---
@@ -94,8 +94,8 @@ provenance: con_2yzxunQ3ZoBqIQ3Q
 - [x] All scripts are executable (`chmod +x`)
 - [x] No email addresses in exported files
 - [x] No personal names or handles in exported files
-- [x] No V-specific file paths remain
-- [x] No Careerspan references
+- [x] No instance-specific file paths remain
+- [x] No [redacted-company] references
 - [x] All scripts have updated docstrings
 - [x] DEPENDENCIES.md documents requirements
 
@@ -105,7 +105,7 @@ provenance: con_2yzxunQ3ZoBqIQ3Q
 
 **Worker:** Worker 003 - Semantic Memory Sanitization
 **Date:** 2026-01-15
-**Source:** V's N5 cognition (`/home/workspace/N5/cognition/`)
+**Source:** the source N5 cognition (`/home/workspace/N5/cognition/`)
 **Target:** n5OS-Ode export (`/home/workspace/N5/export/n5os-ode/N5/cognition/`)
 
 ### Files Created
@@ -113,14 +113,14 @@ provenance: con_2yzxunQ3ZoBqIQ3Q
 #### 1. `n5_memory_client.py`
 **Source Lines:** ~900+
 **Changes:**
-- **REMOVED:** Hardcoded paths to V's workspace (now configurable)
-- **REMOVED:** V-specific semantic profiles:
+- **REMOVED:** Hardcoded paths to the source workspace (now configurable)
+- **REMOVED:** instance-specific semantic profiles:
   - `crm` → (personal CRM paths)
   - `meetings` → (personal meeting paths)
   - `wellness` → (personal health tracking)
   - `voice-guides` → (personal communication patterns)
 - **REPLACED:** With generic profiles (`documents`, `notes`, `prompts`)
-- **REMOVED:** Import from `N5.lib.paths` (V-specific path management)
+- **REMOVED:** Import from `N5.lib.paths` (instance-specific path management)
 - **ADDED:** Environment variable configuration:
   - `N5_WORKSPACE` - workspace root
   - `N5_BRAIN_DB` - database path
@@ -138,7 +138,7 @@ provenance: con_2yzxunQ3ZoBqIQ3Q
 
 #### 2. `schema.sql`
 **Changes:**
-- Copied directly (no V-specific content)
+- Copied directly (no instance-specific content)
 - Added recommended indexes
 
 #### 3. `config.yaml`
@@ -161,7 +161,7 @@ provenance: con_2yzxunQ3ZoBqIQ3Q
 
 ### Verification Checklist
 
-- [x] No hardcoded V-specific paths
+- [x] No hardcoded instance-specific paths
 - [x] No personal file references
 - [x] Configurable via environment variables
 - [x] Works with both OpenAI and local embeddings
@@ -170,7 +170,7 @@ provenance: con_2yzxunQ3ZoBqIQ3Q
 
 ## Not Included (By Design)
 
-These scripts were NOT exported as they are V-specific:
+These scripts were NOT exported as they are instance-specific:
 - `acquisition_*.py` - Deal tracking
 - `akiflow_push.py` - Personal task management
 - `crm_*.py` - CRM operations

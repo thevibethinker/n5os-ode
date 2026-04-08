@@ -3,7 +3,7 @@ name: meeting-ingestion
 description: Meeting transcript ingestion with multi-source intake (Google Drive, Pocket, manual), classification, intelligence block generation, ZTH trigger scanning, and archival. Replaces legacy MG-1 through MG-6 agent sequence.
 compatibility: Created for Zo Computer
 metadata:
-  author: va.zo.computer
+  author: thevibethinker
   version: "1.1.0"
   created: 2026-01-26
   updated: 2026-03-18
