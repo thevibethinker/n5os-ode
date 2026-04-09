@@ -35,7 +35,7 @@ def ensure_db():
                 domains_json TEXT DEFAULT '[]',
                 use_count INTEGER DEFAULT 0,
                 last_used_at TEXT,
-                status TEXT DEFAULT 'candidate',
+                status TEXT DEFAULT 'client',
                 created_at TEXT DEFAULT (datetime('now')),
                 updated_at TEXT DEFAULT (datetime('now')),
                 notes TEXT
@@ -130,7 +130,7 @@ def test_insert_primitive():
         0,
         json.dumps(["career", "optionality"]),
         0,
-        "candidate"
+        "client"
     ))
     conn.commit()
     
@@ -174,7 +174,7 @@ def test_insert_source():
     """, (
         src_id, prim_id,
         "Personal/Meetings/test.md", "transcript",
-        "B35", "V", "I'm stealing that"
+        "B35", "[USER]", "I'm stealing that"
     ))
     conn.commit()
     

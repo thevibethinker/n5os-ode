@@ -49,12 +49,12 @@ def _extract_date_from_folder_name(folder_name: str) -> str:
 def _normalize_meeting_date(raw_date: str, folder_name: str) -> str:
     """Return canonical YYYY-MM-DD when possible, else 'unknown'."""
     if isinstance(raw_date, str) and raw_date:
-        candidate = raw_date.strip()
-        if "T" in candidate:
-            candidate = candidate.split("T", 1)[0]
+        client = raw_date.strip()
+        if "T" in client:
+            client = client.split("T", 1)[0]
         try:
-            datetime.strptime(candidate, "%Y-%m-%d")
-            return candidate
+            datetime.strptime(client, "%Y-%m-%d")
+            return client
         except Exception:
             pass
 

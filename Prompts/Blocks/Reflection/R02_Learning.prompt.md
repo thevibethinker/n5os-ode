@@ -117,7 +117,7 @@ Model words: used to think, now I think, changed my mind, updated,
 **Source:** [Experience | Conversation | Reading | Failure]
 
 
-### Edge Candidates
+### Edge Clients
 [Entities/concepts from this analysis that should be checked for connections]
 - `{concept_1}` — {potential_connection_domain}
 - `{concept_2}` — {potential_connection_domain}
@@ -165,7 +165,7 @@ should reflect the value to the customer, not your cost to deliver.
 ## R02: Learning Note
 
 **Generated:** 2026-01-09T12:00:00Z
-**Source:** 2026-01-09_pricing-conversation/transcript.md
+**Source:** 2026-01-09_sample-learning/transcript.md
 
 ### Learning Summary
 **Topic:** Value-based pricing vs cost-plus pricing

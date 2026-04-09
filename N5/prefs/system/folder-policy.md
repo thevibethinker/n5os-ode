@@ -89,7 +89,7 @@ Brief description of folder role and contents.
 
 ## Naming Convention
 
-Use **POLICY.md** (all caps) for consistency and easy sourcing by title.
+Use **POLICY.md** (all caps) for consistency and easy discovery by title.
 
 Search pattern: `grep -r "POLICY.md" .`
 

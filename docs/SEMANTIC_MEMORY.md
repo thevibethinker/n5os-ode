@@ -192,7 +192,7 @@ Use a cross-encoder for high-precision reranking:
 results = client.search(
     "complex technical query",
     use_reranker=True,
-    rerank_top_k=50  # Rerank top 50 candidates
+    rerank_top_k=50  # Rerank top 50 clients
 )
 ```
 

@@ -378,7 +378,7 @@ python3 N5/scripts/positions.py list
 python3 N5/scripts/positions.py audit
 ```
 
-**For each position candidate:**
+**For each position client:**
 
 1. Check overlap: `python3 N5/scripts/positions.py check-overlap "INSIGHT_TEXT" --threshold 0.4`
 2. Action based on similarity:
@@ -409,7 +409,7 @@ Reply with which items to commit, or skip to close.
 
 ## Full Step 8: Execute Commits
 
-Based on V's selection, execute the relevant commits.
+Based on [USER]'s selection, execute the relevant commits.
 
 For orchestrators with workers, this is the **atomic commit point** - all worker changes committed together.
 

@@ -67,7 +67,7 @@ Beyond keywords, look for:
 ### Counter-Indicators
 This block is NOT appropriate when:
 
-- The focus is entirely internal to V's product
+- The focus is entirely internal to [USER]'s product
 - The content is about personal feelings without market context
 - Discussion is theoretical without observable signals
 - The observation is about general business philosophy (→ R03)
@@ -83,11 +83,11 @@ What category of market signal is this?
 
 | Type | Definition | Example |
 |------|------------|---------|
-| **Competitive** | Actions or positioning of other players | "Marvin just raised Series A" |
-| **Channel** | Distribution path emergence or shift | "AI agents becoming sourcing channel" |
-| **Demand** | Customer behavior or need signals | "Recruiters asking for candidate ownership" |
+| **Competitive** | Actions or positioning of other players | "Acme Corp just raised Series A" |
+| **Channel** | Distribution path emergence or shift | "AI agents becoming discovery channel" |
+| **Demand** | Customer behavior or need signals | "Providers asking for relationship ownership" |
 | **Timing** | Window opening/closing indicators | "Market forming now, 6-12mo window" |
-| **Ecosystem** | Platform/partnership dynamics | "AI headhunters need distribution partners" |
+| **Ecosystem** | Platform/partnership dynamics | "AI matchings need distribution partners" |
 
 ### Dimension 2: Confidence Level
 How validated is this signal?
@@ -198,7 +198,7 @@ Flag connections when:
 [Direct | Adjacent | Context] — [How this connects to the business]
 
 
-### Edge Candidates
+### Edge Clients
 [Entities/concepts from this analysis that RIX should check for connections]
 - `{concept_1}` — {potential_connection_domain}
 - `{concept_2}` — {potential_connection_domain}
@@ -267,11 +267,11 @@ Coordinate with other blocks from the same reflection:
 
 ### Sample Input Transcript
 ```
-Had an interesting conversation with the Marvin team. They're an AI headhunter
-company — they have the candidate engagement nailed but zero distribution.
-Meanwhile we have distribution through the recruiter network but limited
-sourcing capacity. Feels like there's a partnership play here rather than
-a build-vs-buy decision. The market for AI recruiting tools is forming
+Had an interesting conversation with the Acme Corp team. They're an AI matching
+company — they have the client engagement nailed but zero distribution.
+Meanwhile we have distribution through the distribution network but limited
+discovery capacity. Feels like there's a partnership play here rather than
+a build-vs-buy decision. The market for AI productivity tools is forming
 right now — there's probably a 6-12 month window where partnerships can
 define the landscape before it consolidates.
 ```
@@ -279,8 +279,8 @@ define the landscape before it consolidates.
 ### Extraction Process
 
 **What was noticed:**
-- Explicit mention of a competitor/partner (Marvin)
-- Analysis of their strengths (candidate engagement) and gaps (distribution)
+- Explicit mention of a competitor/partner (Acme Corp)
+- Analysis of their strengths (client engagement) and gaps (distribution)
 - Market timing observation (6-12 month window)
 - Strategic category (partnership vs build-vs-buy)
 
@@ -292,7 +292,7 @@ This is a high-confidence market signal based on direct conversation. It suggest
 2. Confidence: High (direct conversation, firsthand observation)
 3. Actionability: Immediate (partnership outreach possible)
 4. Time Sensitivity: Medium-term (6-12 month window)
-5. YOUR_COMPANY Relevance: Direct impact (solves sourcing capacity problem)
+5. YOUR_COMPANY Relevance: Direct impact (solves discovery capacity problem)
 
 ### Final Formatted Output
 
@@ -300,10 +300,10 @@ This is a high-confidence market signal based on direct conversation. It suggest
 ## R04: Market Signal
 
 **Generated:** 2026-01-09T12:00:00Z
-**Source:** 2026-01-09_recruiter-game-plan/transcript.md
+**Source:** 2026-01-09_provider-game-plan/transcript.md
 
 ### Signal Summary
-**Signal:** AI headhunter companies (Marvin) have candidate engagement but lack distribution — partnership opportunity with YOUR_COMPANY's recruiter network
+**Signal:** AI matching companies (Acme Corp) have client engagement but lack distribution — partnership opportunity with YOUR_COMPANY's distribution network
 **Type:** Ecosystem
 **Confidence:** High
 **Time Sensitivity:** Medium-term (6-12mo)
@@ -311,26 +311,26 @@ This is a high-confidence market signal based on direct conversation. It suggest
 ### Analysis
 
 #### The Signal
-AI headhunter companies like Marvin have developed strong candidate engagement capabilities but struggle with distribution. YOUR_COMPANY has the inverse profile: strong distribution through recruiters, limited sourcing capacity.
+AI matching companies like Acme Corp have developed strong client engagement capabilities but struggle with distribution. YOUR_COMPANY has the inverse profile: strong distribution through providers, limited discovery capacity.
 
 #### Market Context
-The AI recruiting tools market is in a formative period where partnerships and integrations will likely define the competitive landscape. Early movers who establish ecosystem positions may benefit from consolidation dynamics.
+The AI productivity tools market is in a formative period where partnerships and integrations will likely define the competitive landscape. Early movers who establish ecosystem positions may benefit from consolidation dynamics.
 
 #### YOUR_COMPANY Relevance
-**Direct impact** — This signal suggests a path to solve YOUR_COMPANY's sourcing capacity limitation without building in-house AI headhunter capabilities. Partnership approach reduces time-to-market and capital requirements.
+**Direct impact** — This signal suggests a path to solve YOUR_COMPANY's discovery capacity limitation without building in-house AI matching capabilities. Partnership approach reduces time-to-market and capital requirements.
 
 ### Evidence
-> "They're an AI headhunter company — they have the candidate engagement nailed but zero distribution. Meanwhile we have distribution through the recruiter network but limited sourcing capacity."
+> "They're an AI matching company — they have the client engagement nailed but zero distribution. Meanwhile we have distribution through the distribution network but limited discovery capacity."
 
-> "The market for AI recruiting tools is forming right now — there's probably a 6-12 month window where partnerships can define the landscape."
+> "The market for AI productivity tools is forming right now — there's probably a 6-12 month window where partnerships can define the landscape."
 
 ### Actionability Assessment
 - **Recommended action:** Immediate
-- **Specific next step:** Initiate partnership conversation with Marvin; map other AI headhunter companies with similar profiles
-- **Risk of inaction:** Marvin partners with competitor, window closes as market consolidates
+- **Specific next step:** Initiate partnership conversation with Acme Corp; map other AI matching companies with similar profiles
+- **Risk of inaction:** Acme Corp partners with competitor, window closes as market consolidates
 
 ### Memory Connections
-- **Related knowledge:** `Knowledge/market-intel/ai-recruiting-landscape.md`
+- **Related knowledge:** `Knowledge/market-intel/ai-productivity-landscape.md`
 - **Related positions:** Position #23 (Distribution > Product in early markets)
 - **Prior reflections:** None directly related
 
@@ -359,7 +359,7 @@ Before submitting R04 output, verify:
 
 ### Quality
 - [ ] Signal is genuinely market-focused (not internal product thinking)
-- [ ] Distinguishes between observed fact and V's interpretation
+- [ ] Distinguishes between observed fact and [USER]'s interpretation
 - [ ] Multiple signals get separate entries, not combined
 - [ ] "Not applicable" returned if no market content present
 

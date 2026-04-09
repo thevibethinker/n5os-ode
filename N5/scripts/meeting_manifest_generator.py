@@ -28,7 +28,7 @@ def detect_meeting_type(meeting_dir: str) -> str:
     Rules:
     - Contains '_internal' or '_[M]' suffix → internal
     - Contains '_external', '_partnership', '_discovery', '_sales' → external
-    - Contains '_coaching', '_advisory' → external
+    - Contains '_advising', '_advisory' → external
     - Default → external (conservative: generate stakeholder intel unless explicitly internal)
     
     Returns: 'external', 'internal', or 'partnership'
@@ -42,7 +42,7 @@ def detect_meeting_type(meeting_dir: str) -> str:
     # External/Partnership markers
     external_markers = [
         '_external', '_partnership', '_discovery', '_sales',
-        '_coaching', '_advisory', '_demo', '_networking'
+        '_advising', '_advisory', '_demo', '_networking'
     ]
     
     for marker in external_markers:

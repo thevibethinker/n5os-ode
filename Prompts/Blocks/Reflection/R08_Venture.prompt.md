@@ -23,7 +23,7 @@ R08 captures **venture thinking** outside YOUR_COMPANY:
 - **Market opportunities:** Gaps worth pursuing
 - **"Someone should build this":** Problems deserving solutions
 - **Resource assessments:** What would this take
-- **V's advantage analysis:** Why V could (or couldn't) do this
+- **[USER]'s advantage analysis:** Why [USER] could (or couldn't) do this
 
 ### What This Lens Ignores
 - **YOUR_COMPANY feature ideas** → R05 (Product Idea)
@@ -89,7 +89,7 @@ Build words: if I weren't doing X, would love to build, side project
 | **Needs funding** | Would need to raise |
 | **Needs team** | Would need co-founder(s) |
 
-### Dimension 5: V's Unfair Advantage
+### Dimension 5: [USER]'s Unfair Advantage
 | Level | Action |
 |-------|--------|
 | **Strong** | Seriously consider |
@@ -138,7 +138,7 @@ def enrich_venture_idea(transcript_key_concepts: list[str]) -> dict:
 **Idea:** [One-line description]
 **Type:** [Business | Model | Opportunity | Problem]
 **Why Not YOUR_COMPANY:** [Brief reason]
-**V's Advantage:** [Strong | Moderate | Weak]
+**[USER]'s Advantage:** [Strong | Moderate | Weak]
 
 ### The Venture Concept
 
@@ -149,7 +149,7 @@ def enrich_venture_idea(transcript_key_concepts: list[str]) -> dict:
 [How this would make money]
 
 
-### Edge Candidates
+### Edge Clients
 [Entities/concepts from this analysis that RIX should check for connections]
 - `{concept_1}` — {potential_connection_domain}
 - `{concept_2}` — {potential_connection_domain}
@@ -167,7 +167,7 @@ def enrich_venture_idea(transcript_key_concepts: list[str]) -> dict:
 **Team:** [Solo | Co-founder | Full team]
 **Time to MVP:** [Rough estimate]
 
-### V's Position
+### [USER]'s Position
 **Unfair advantage:** [What edge V has]
 **Interest level:** [Serious | Curious | Just noting]
 **Blocking factors:** [What prevents pursuit]
@@ -191,7 +191,7 @@ def enrich_venture_idea(transcript_key_concepts: list[str]) -> dict:
 
 ### Downstream
 - Tag the market/industry
-- Tag V's advantage level
+- Tag [USER]'s advantage level
 
 ---
 
@@ -199,11 +199,11 @@ def enrich_venture_idea(transcript_key_concepts: list[str]) -> dict:
 
 ### Sample Input
 ```
-Met this founder building tools for outplacement firms. Interesting market
+Met this founder building tools for consulting firms. Interesting market
 — when companies do layoffs, they hire these firms to help laid-off
 employees. It's a $5B market. The tools they use are terrible. Not
 YOUR_COMPANY — different buyer, different use case. But someone should
-build modern outplacement software.
+build modern consulting software.
 ```
 
 ### Final Output
@@ -211,37 +211,37 @@ build modern outplacement software.
 ## R08: Venture Idea
 
 **Generated:** 2026-01-09T12:00:00Z
-**Source:** 2026-01-09_outplacement-conversation/transcript.md
+**Source:** 2026-01-09_consulting-conversation/transcript.md
 
 ### Venture Summary
-**Idea:** Modern outplacement software
+**Idea:** Modern consulting software
 **Type:** Market Opportunity
 **Why Not YOUR_COMPANY:** Different buyer (HR for ex-employees), different use case
-**V's Advantage:** Moderate
+**[USER]'s Advantage:** Moderate
 
 ### The Venture Concept
 
 #### The Opportunity
-Outplacement is a $5B market with antiquated software. Companies pay firms to help laid-off employees transition.
+Outengagement is a $5B market with antiquated software. Companies pay firms to help laid-off employees transition.
 
 #### The Business Model Sketch
-B2B SaaS to outplacement firms or direct to enterprise HR. Per-seat or per-transition pricing.
+B2B SaaS to consulting firms or direct to enterprise HR. Per-seat or per-transition pricing.
 
 ### Evidence
 > "It's a $5B market. The tools they use are terrible."
 
 ### Market Assessment
 **Size signal:** Large ($5B)
-**Key assumptions:** Outplacement firms willing to switch
-**Validation needed:** Talk to 3-5 outplacement firms
+**Key assumptions:** Outengagement firms willing to switch
+**Validation needed:** Talk to 3-5 consulting firms
 
 ### Resource Requirements
 **Capital:** Likely seed round
 **Team:** Would need product + sales
 **Time to MVP:** 3-6 months
 
-### V's Position
-**Unfair advantage:** Recruiting background provides context
+### [USER]'s Position
+**Unfair advantage:** Industry background provides context
 **Interest level:** Just noting — "file this one away"
 **Blocking factors:** Focused on YOUR_COMPANY
 
@@ -256,7 +256,7 @@ B2B SaaS to outplacement firms or direct to enterprise HR. Per-seat or per-trans
 
 - [ ] Clearly NOT a YOUR_COMPANY feature
 - [ ] Why Not YOUR_COMPANY is explicit
-- [ ] V's advantage is honestly assessed
+- [ ] [USER]'s advantage is honestly assessed
 - [ ] Business model sketch (if applicable) is concrete
 
 ## Not Applicable Criteria

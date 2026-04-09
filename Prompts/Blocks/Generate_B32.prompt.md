@@ -23,7 +23,7 @@ Capture **wisdom-level insights** that:
 
 For each potential idea, classify as:
 - **V_POSITION**: A belief V endorses as true → Extract
-- **V_HYPOTHESIS**: Speculation V is testing → Extract with questioning stance
+- **V_HYPOTHESIS**: Speculation [USER] is testing → Extract with questioning stance
 - **EXTERNAL_WISDOM**: Someone else's insight worth tracking → Extract with speaker attribution
 - **QUESTION/TACTICAL/META**: Open questions, operational tasks, or meeting mechanics → SKIP
 
@@ -44,7 +44,7 @@ For each provocation, use this EXACT structure:
 
 **Speaker**: V | [Person's name]
 **Classification**: V_POSITION | V_HYPOTHESIS | EXTERNAL_WISDOM
-**Domain**: hiring-market | your_company | ai-automation | founder | worldview | epistemology | emerging
+**Domain**: onboarding-market | your_company | ai-automation | founder | worldview | epistemology | emerging
 
 **The Spark**:
 What was said or implied that triggered this thought? (Direct quote or paraphrase from transcript)
@@ -82,10 +82,10 @@ Professional identity can be compressed into a small set of carefully chosen car
 Information compression follows a power law: the first few data points capture most of the variance. In narrative identity, 6 well-chosen stories can represent the "eigenvalues" of a person's professional capability. This mirrors how investors evaluate founders (a few key stories) rather than exhaustive CVs. The pattern exists because humans are narrative creatures who make decisions through pattern-matching on stories, not data integration.
 
 **The Stakes**:
-Career infrastructure should optimize for story elicitation and precision mapping rather than exhaustive documentation. Coaching becomes about surfacing the right 6 stories, not adding more content. Hiring processes could be radically shortened if candidates came with pre-validated, high-signal story portfolios.
+Career infrastructure should optimize for story elicitation and precision mapping rather than exhaustive documentation. Advising becomes about surfacing the right 6 stories, not adding more content. Hiring processes could be radically shortened if clients came with pre-validated, high-signal story portfolios.
 
 **Boundary Conditions**:
-Applies when the evaluator is human and decision-making is intuition-driven. Breaks down in highly technical screening (where specific skills verification matters) or regulated industries requiring documented credentials. Less relevant for entry-level candidates who lack sufficient story material.
+Applies when the evaluator is human and decision-making is intuition-driven. Breaks down in highly technical screening (where specific skills verification matters) or regulated industries requiring documented credentials. Less relevant for entry-level clients who lack sufficient story material.
 
 ---
 
@@ -100,7 +100,7 @@ Applies when the evaluator is human and decision-making is intuition-driven. Bre
 ### Principle-Grounded vs. Anecdote-Grounded
 
 **WRONG (anecdote-grounded):**
-> "When Victor mentioned treating YOUR_COMPANY as a portfolio company, he showed that investors think modularly."
+> "When an advisor mentioned treating YOUR_COMPANY as a portfolio company, he showed that investors think modularly."
 
 **RIGHT (principle-grounded):**
 > "Portfolio construction logic increasingly treats investments as modular ecosystem components rather than standalone bets. This reflects a shift from 'best company wins' to 'best network wins'—the same pattern driving platform economics, where value accrues to orchestrators more than individual nodes."

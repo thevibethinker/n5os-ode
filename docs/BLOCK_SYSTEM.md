@@ -20,7 +20,7 @@ A **block** is a focused extraction prompt that pulls specific types of informat
 ```yaml
 # B02 Output
 commitments:
-  - owner: "Sarah"
+  - owner: "a user"
     action: "Send revised proposal"
     deadline: "Friday EOD"
     context: "Client requested changes to scope section"
@@ -110,7 +110,7 @@ Most blocks output structured YAML:
 decisions:
   - decision: "Use vendor A for infrastructure"
     rationale: "Lower cost, better support SLA"
-    participants: ["Sarah", "Mike", "CEO"]
+    participants: ["a user", "Mike", "CEO"]
     implications: "Need to migrate by Q2"
 ```
 
@@ -121,7 +121,7 @@ Some blocks output formatted markdown for readability:
 ```markdown
 ## Meeting Recap
 
-**Attendees**: Sarah (PM), Mike (Eng), Client Team
+**Attendees**: a user (PM), Mike (Eng), Client Team
 
 **Purpose**: Q1 planning review
 
@@ -235,7 +235,7 @@ technical_mentions:
 ## Example
 
 ### Input
-"We've been using Kubernetes for orchestration and it's been solid. Sarah mentioned she's had issues with the Jenkins pipeline though - thinking about switching to GitHub Actions."
+"We've been using Kubernetes for orchestration and it's been solid. a user mentioned she's had issues with the Jenkins pipeline though - thinking about switching to GitHub Actions."
 
 ### Output
 ​```yaml
@@ -252,7 +252,7 @@ technical_mentions:
     
   - name: "GitHub Actions"
     category: "infrastructure"
-    context: "Considering as Jenkins replacement"
+    context: "Considering as Jenkins reengagement"
     sentiment: "positive"
 ​```
 ```

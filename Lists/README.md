@@ -49,7 +49,7 @@ domain: reading
   - status: in-progress
   - added: 2026-01-10
   - priority: high
-  - notes: "Recommended by Sarah"
+  - notes: "Recommended by a user"
 
 - **Thinking, Fast and Slow** by Daniel Kahneman
   - status: queued

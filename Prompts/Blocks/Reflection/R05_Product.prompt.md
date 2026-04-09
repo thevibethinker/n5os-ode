@@ -71,9 +71,9 @@ Validation words: test, validate, measure, would users, do they want
 ### Dimension 2: User Segment
 | Segment | YOUR_COMPANY Priority |
 |---------|---------------------|
-| **Recruiters** | Primary |
+| **Providers** | Primary |
 | **Employers** | Secondary |
-| **Candidates** | Tertiary |
+| **Clients** | Tertiary |
 | **Platform** | Enabling |
 
 ### Dimension 3: Effort Estimate
@@ -138,7 +138,7 @@ def enrich_product_idea(transcript_key_concepts: list[str]) -> dict:
 ### Product Summary
 **Idea:** [One-line description]
 **Problem:** [What user problem this solves]
-**User Segment:** [Recruiters | Employers | Candidates | Platform]
+**User Segment:** [Providers | Employers | Clients | Platform]
 **Validation Status:** [Validated | Partial | Untested]
 
 ### Product Thinking
@@ -150,7 +150,7 @@ def enrich_product_idea(transcript_key_concepts: list[str]) -> dict:
 [1-2 paragraphs on the proposed feature]
 
 
-### Edge Candidates
+### Edge Clients
 [Entities/concepts from this analysis that RIX should check for connections]
 - `{concept_1}` — {potential_connection_domain}
 - `{concept_2}` — {potential_connection_domain}
@@ -193,8 +193,8 @@ def enrich_product_idea(transcript_key_concepts: list[str]) -> dict:
 
 ### Sample Input
 ```
-Talking to Sarah at RecruitCorp, she mentioned spending hours every week
-manually tracking which candidates she's already reached out to. She has
+Talking to a user at RecruitCorp, she mentioned spending hours every week
+manually tracking which clients she's already reached out to. She has
 a spreadsheet but it's always out of date. We should have a simple
 outreach tracker in YOUR_COMPANY.
 ```
@@ -204,32 +204,32 @@ outreach tracker in YOUR_COMPANY.
 ## R05: Product Idea
 
 **Generated:** 2026-01-09T12:00:00Z
-**Source:** 2026-01-09_sarah-conversation/transcript.md
+**Source:** 2026-01-09_sample-user-conversation/transcript.md
 
 ### Product Summary
-**Idea:** Outreach tracker — log candidate outreach with channel and response status
-**Problem:** Recruiters spend hours manually tracking outreach in spreadsheets
-**User Segment:** Recruiters
+**Idea:** Outreach tracker — log client outreach with channel and response status
+**Problem:** Providers spend hours manually tracking outreach in spreadsheets
+**User Segment:** Providers
 **Validation Status:** Validated
 
 ### Product Thinking
 
 #### The Problem
-Recruiters spend significant time manually tracking which candidates they've contacted. Current solutions (spreadsheets) are manual and get out of date.
+Providers spend significant time manually tracking which clients they've contacted. Current solutions (spreadsheets) are manual and get out of date.
 
 #### The Solution Sketch
-Simple outreach tracker: log an outreach (date, channel, response status) when viewing a candidate. Surface in a list view.
+Simple outreach tracker: log an outreach (date, channel, response status) when viewing a client. Surface in a list view.
 
 ### Evidence
-> "spending hours every week manually tracking which candidates she's already reached out to"
+> "spending hours every week manually tracking which clients she's already reached out to"
 
 ### Effort vs Impact
 **Effort:** Quick — three fields, list view
 **Priority:** Important — saves user time, increases stickiness
 
 ### Validation Plan
-**Current status:** Validated by Sarah's direct feedback
-**How to validate:** Confirm with 5 more recruiters
+**Current status:** Validated by a user's direct feedback
+**How to validate:** Confirm with 5 more providers
 
 ### MVP Scope
 **Minimum version:** Date, channel, response status, list view

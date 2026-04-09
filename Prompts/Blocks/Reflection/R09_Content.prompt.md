@@ -75,7 +75,7 @@ Signal words: I should write about, note to self to share, would make
 |----------|-----------|
 | **Founders/entrepreneurs** | Twitter, Substack |
 | **Career professionals** | LinkedIn, newsletters |
-| **Recruiters/HR** | LinkedIn, industry pubs |
+| **Users/Teams** | LinkedIn, industry pubs |
 | **Tech community** | Twitter, dev blogs |
 
 ### Dimension 3: Uniqueness
@@ -153,7 +153,7 @@ def enrich_content_idea(transcript_key_concepts: list[str]) -> dict:
 [Why they should care]
 
 
-### Edge Candidates
+### Edge Clients
 [Entities/concepts from this analysis that RIX should check for connections]
 - `{concept_1}` — {potential_connection_domain}
 - `{concept_2}` — {potential_connection_domain}
@@ -211,7 +211,7 @@ they're building, not why it matters. This would make a good thread —
 ## R09: Content Idea
 
 **Generated:** 2026-01-09T12:00:00Z
-**Source:** 2026-01-09_founder-advice/transcript.md
+**Source:** 2026-01-09_sample-advice/transcript.md
 
 ### Content Summary
 **Title/Hook:** "Why investors really say no: a decoder ring"

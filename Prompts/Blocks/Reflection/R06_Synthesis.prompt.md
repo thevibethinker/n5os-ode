@@ -118,7 +118,7 @@ Document the specific domains bridged (e.g., Business + Psychology)
 [What this synthesis enables or explains]
 
 
-### Edge Candidates
+### Edge Clients
 [Entities/concepts from this analysis that should be checked for connections]
 - `{concept_1}` — {potential_connection_domain}
 - `{concept_2}` — {potential_connection_domain}
@@ -160,9 +160,9 @@ Document the specific domains bridged (e.g., Business + Psychology)
 
 ### Sample Input
 ```
-Interesting pattern: both in coaching and in sales, the best outcomes
+Interesting pattern: both in advising and in sales, the best outcomes
 happen when you stop trying to convince and start trying to understand.
-In coaching, we call it "holding space." In sales, the best closes
+In advising, we call it "holding space." In sales, the best closes
 happen when you deeply understand what the customer actually needs.
 It's the same principle: genuine curiosity beats persuasion.
 ```
@@ -172,17 +172,17 @@ It's the same principle: genuine curiosity beats persuasion.
 ## R06: Synthesis
 
 **Generated:** 2026-01-09T12:00:00Z
-**Source:** 2026-01-09_coaching-sales-pattern/transcript.md
+**Source:** 2026-01-09_advising-sales-pattern/transcript.md
 
 ### Synthesis Summary
-**Synthesis:** Genuine curiosity beats persuasion — same principle in coaching and sales
+**Synthesis:** Genuine curiosity beats persuasion — same principle in advising and sales
 **Type:** Pattern Recognition → Theory Development
-**Domains Connected:** Coaching, Sales
+**Domains Connected:** Advising, Sales
 
 ### The Synthesis
 
 #### The Insight
-Across multiple influence contexts, the most effective approach is not persuasion but understanding. In coaching, this is "holding space." In sales, the best outcomes emerge from understanding customer needs.
+Across multiple influence contexts, the most effective approach is not persuasion but understanding. In advising, this is "holding space." In sales, the best outcomes emerge from understanding customer needs.
 
 The underlying principle: genuine curiosity creates better outcomes than persuasive skill.
 
@@ -193,7 +193,7 @@ If true broadly, this inverts common assumptions about influence.
 > "genuine curiosity beats persuasion"
 
 ### Domains Bridged
-**Domain 1:** Coaching — "holding space," non-agenda presence
+**Domain 1:** Advising — "holding space," non-agenda presence
 **Domain 2:** Sales — understanding customer needs
 **Connection:** Both involve influence; both work better through understanding
 

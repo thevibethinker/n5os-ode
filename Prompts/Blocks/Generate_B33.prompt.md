@@ -88,7 +88,7 @@ When extracting an evolved idea, include the `evolution_type` field:
   "target_type": "idea",
   "target_id": "meaning-level-intelligence",
   "evolution_type": "domain_expansion",
-  "evidence": "V applied meaning-level intelligence to personal productivity, not just hiring",
+  "evidence": "V applied meaning-level intelligence to personal productivity, not just onboarding",
   "context_meeting_id": "mtg_2026-01-09_xyz"
 }
 ```

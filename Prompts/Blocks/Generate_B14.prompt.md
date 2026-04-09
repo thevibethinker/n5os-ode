@@ -76,8 +76,8 @@ For EVERY potential blurb, ask:
 ### Structure (One JSON Object Per Line)
 
 ```jsonl
-{"id": "BLB-001", "subject": "V", "type": "short", "recipient": "David", "audience_context": "Investor pitch deck", "purpose": "Speaker bio for partnership announcement", "key_points": ["Career coach background", "YOUR_COMPANY founder", "Non-technical but curious"], "status": "pending"}
-{"id": "BLB-002", "subject": "YOUR_COMPANY", "type": "email", "recipient": "Ilya", "audience_context": "University career services directors", "purpose": "Product overview for partnership discussions", "key_points": ["AI-powered matching", "Free for universities", "Employer subscription model"], "status": "pending"}
+{"id": "BLB-001", "subject": "[USER]", "type": "short", "recipient": "a partner", "audience_context": "Investor pitch deck", "purpose": "Speaker bio for partnership announcement", "key_points": ["Domain expert background", "YOUR_COMPANY founder", "Hands-on and learning"], "status": "pending"}
+{"id": "BLB-002", "subject": "YOUR_COMPANY", "type": "email", "recipient": "Ilya", "audience_context": "Enterprise department heads", "purpose": "Product overview for partnership discussions", "key_points": ["AI-powered matching", "Free for universities", "Employer subscription model"], "status": "pending"}
 ```
 
 ### Required Fields
@@ -85,7 +85,7 @@ For EVERY potential blurb, ask:
 ```json
 {
   "id": "BLB-XXX",              // BLB-001, BLB-002, etc. (sequential)
-  "subject": "V|YOUR_COMPANY|Other",
+  "subject": "[USER]|YOUR_COMPANY|Other",
   "subject_detail": "string",   // If subject=Other, specify what
   "type": "short|email",        // short=50-80 words, email=150-250 words
   "recipient": "string",        // Who requested it / who will use it
@@ -107,15 +107,15 @@ For EVERY potential blurb, ask:
 
 **Output:**
 ```jsonl
-{"id": "BLB-001", "subject": "Other", "subject_detail": "Danny's bio", "type": "short", "recipient": "V", "audience_context": "Team / stakeholders", "purpose": "Departure announcement", "key_points": ["Role at YOUR_COMPANY", "Key contributions", "Next steps"], "status": "pending"}
+{"id": "BLB-001", "subject": "Other", "subject_detail": "Danny's bio", "type": "short", "recipient": "[USER]", "audience_context": "Team / stakeholders", "purpose": "Departure announcement", "key_points": ["Role at YOUR_COMPANY", "Key contributions", "Next steps"], "status": "pending"}
 ```
 
 **Example 2:**
-> David: "I need a product description for the homepage - about 100 words explaining what we do"
+> a partner: "I need a product description for the homepage - about 100 words explaining what we do"
 
 **Output:**
 ```jsonl
-{"id": "BLB-001", "subject": "YOUR_COMPANY", "type": "short", "recipient": "David", "audience_context": "Website visitors", "purpose": "Homepage product description", "key_points": ["AI-powered matching", "University partnerships", "Employer benefits"], "status": "pending"}
+{"id": "BLB-001", "subject": "YOUR_COMPANY", "type": "short", "recipient": "a partner", "audience_context": "Website visitors", "purpose": "Homepage product description", "key_points": ["AI-powered matching", "University partnerships", "Employer benefits"], "status": "pending"}
 ```
 
 ### ❌ DO NOT CAPTURE:

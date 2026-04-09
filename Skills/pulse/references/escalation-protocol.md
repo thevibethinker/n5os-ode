@@ -60,7 +60,7 @@ async def send_sms(message: str):
     # ... API call
 ```
 
-## V's Response Options
+## [USER]'s Response Options
 
 When V receives an escalation, they can:
 

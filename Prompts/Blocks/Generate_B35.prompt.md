@@ -93,7 +93,7 @@ INSTRUCTIONS:
    - Extract the exact text (minimum 50 chars)
    - Tag with 1-3 relevant domains
    - Include brief context
-   - Flag if it's a capture signal (V endorsing someone else's language)
+   - Flag if it's a capture signal ([USER] endorsing someone else's language)
 4. Output as JSONL (one JSON object per line)
 5. Quality over quantity — only extract genuinely distinctive language, not generic statements
 
@@ -110,7 +110,7 @@ OUTPUT (JSONL):
 {"type": "analogy", "text": "The talent cliff isn't about skill—it's about options. When you're good enough, doors open that make honesty cheap.", "domains": ["talent", "optionality", "ethics"], "context": "Discussing why talented people can afford to be honest while struggling people may need to play games.", "capture_signal": false}
 {"type": "metaphor", "text": "Career development is portfolio construction—you're diversifying across skills, relationships, and opportunities.", "domains": ["career", "optionality"], "context": "Explaining career strategy to a client.", "capture_signal": false}
 {"type": "phrase", "text": "The meritocracy requires a minimum talent threshold just to participate honestly.", "domains": ["talent", "ethics", "status"], "context": "On the prerequisites for ethical behavior in competitive environments.", "capture_signal": false}
-{"type": "phrase", "text": "That's a beautiful framing—I'm absolutely stealing that.", "domains": ["relationships"], "context": "V endorsing a guest's phrasing of an idea.", "capture_signal": true}
+{"type": "phrase", "text": "That's a beautiful framing—I'm absolutely stealing that.", "domains": ["relationships"], "context": "[USER] endorsing a guest's phrasing of an idea.", "capture_signal": true}
 ```
 
 ---

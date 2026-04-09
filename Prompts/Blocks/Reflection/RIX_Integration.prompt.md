@@ -22,7 +22,7 @@ RIX is UNIQUE — it sees **everything** because it **always runs**:
 - **Memory connections** — links to prior positions, knowledge, meetings
 - **Edge relationships** — formal graph connections
 - **Pattern accumulation** — tracks recurring themes over time
-- **Integration context** — how this fits V's broader thinking
+- **Integration context** — how this fits [USER]'s broader thinking
 
 ### RIX's Unique Role
 Unlike R01-R09 which selectively extract specific content types:
@@ -88,7 +88,7 @@ profiles_to_query = ["positions", "knowledge", "meetings"]
 def query_memory_profiles(key_concepts: list[str]) -> dict:
     client = N5MemoryClient()
 
-    # Query positions (V's stated beliefs and stances)
+    # Query positions ([USER]'s stated beliefs and stances)
     position_hits = client.search_profile(
         profile="positions",
         query=" ".join(key_concepts),
@@ -142,7 +142,7 @@ Track across reflections:
 | Pattern | Threshold | Action |
 |---------|-----------|--------|
 | **Super-connector** | 5+ inbound edges | Flag for attention |
-| **Promotion candidate** | 3+ occurrences | Consider elevating to position |
+| **Promotion client** | 3+ occurrences | Consider elevating to position |
 | **Contradiction cluster** | 2+ CONTRADICTS | Flag for resolution |
 
 ---
@@ -245,7 +245,7 @@ python3 N5/scripts/reflection_edges.py add \
 **Super-connectors (5+ edges):**
 - [target-slug]: [X edges]
 
-**Promotion candidates (3+ occurrences):**
+**Promotion clients (3+ occurrences):**
 - [theme]: appeared in [list of reflections]
 
 **Contradiction clusters:**
@@ -253,7 +253,7 @@ python3 N5/scripts/reflection_edges.py add \
 
 ### Integration Narrative
 
-[2-3 paragraphs contextualizing how this reflection connects to V's broader thinking. What patterns does this reinforce? What evolution does this show? What questions does this raise?]
+[2-3 paragraphs contextualizing how this reflection connects to [USER]'s broader thinking. What patterns does this reinforce? What evolution does this show? What questions does this raise?]
 
 ### CLI Commands Executed
 
@@ -269,7 +269,7 @@ python3 N5/scripts/reflection_edges.py add --from "..." --to "..." --edge-type .
 
 ### Upstream
 RIX queries all memory profiles:
-- `positions` — V's stated beliefs and stances
+- `positions` — [USER]'s stated beliefs and stances
 - `knowledge` — Facts, articles, learnings
 - `meetings` — Prior conversations and their outcomes
 
@@ -290,13 +290,13 @@ RIX may reference other R-blocks from the same reflection:
 
 ### Sample Input
 ```
-Reflection: 2026-01-09_recruiter-game-plan
-Key concepts: recruiter, ownership, candidate, matching, trust
+Reflection: 2026-01-09_provider-game-plan
+Key concepts: provider, ownership, client, matching, trust
 
 Memory query returns:
-- Position: "candidate-ownership-thesis" (recruiter should own candidate relationship)
-- Knowledge: "trust-building-in-recruiting" (article on trust dynamics)
-- Meeting: "2025-12-meeting-with-agency-owner" (discussed candidate ownership)
+- Position: "relationship-ownership-thesis" (provider should own client relationship)
+- Knowledge: "trust-building-in-services" (article on trust dynamics)
+- Meeting: "2025-12-sample-prior-meeting" (discussed relationship ownership)
 ```
 
 ### Final Output
@@ -304,11 +304,11 @@ Memory query returns:
 ## RIX: Integration Analysis
 
 **Generated:** 2026-01-09T14:30:00Z
-**Source:** Personal/Reflections/2026/01/2026-01-09_recruiter-game-plan/transcript.md
+**Source:** Personal/Reflections/2026/01/2026-01-09_provider-game-plan/transcript.md
 
 ### Integration Summary
-**Reflection:** 2026-01-09_recruiter-game-plan
-**Concepts Extracted:** recruiter, ownership, candidate, matching, trust
+**Reflection:** 2026-01-09_provider-game-plan
+**Concepts Extracted:** provider, ownership, client, matching, trust
 **Memory Hits:** [positions: 2, knowledge: 1, meetings: 1]
 **Edges Created:** 3
 
@@ -316,61 +316,61 @@ Memory query returns:
 
 | Type | Concepts |
 |------|----------|
-| **Entities** | recruiters, candidates |
+| **Entities** | providers, clients |
 | **Themes** | ownership, trust, matching |
-| **YOUR_COMPANY** | recruiter tools, candidate flow |
+| **YOUR_COMPANY** | provider tools, client flow |
 
 ### Memory Hits
 
 #### Positions
 | Position | Relevance | Connection Type |
 |----------|-----------|-----------------|
-| candidate-ownership-thesis | Direct exploration of ownership model | EXTENDS |
-| recruiter-value-prop | Related to recruiter role definition | SUPPORTS |
+| relationship-ownership-thesis | Direct exploration of ownership model | EXTENDS |
+| provider-value-prop | Related to provider role definition | SUPPORTS |
 
 #### Knowledge
 | Item | Relevance | Connection Type |
 |------|-----------|-----------------|
-| trust-building-in-recruiting | Provides framework for trust dynamics | SUPPORTS |
+| trust-building-in-services | Provides framework for trust dynamics | SUPPORTS |
 
 #### Meetings
 | Meeting | Relevance | Connection Type |
 |---------|-----------|-----------------|
-| 2025-12-meeting-with-agency-owner | Prior discussion of same themes | EXTENDS |
+| 2025-12-sample-prior-meeting | Prior discussion of same themes | EXTENDS |
 
 ### Edges Created
 
 | From | To | Type | Evidence | Confidence |
 |------|----|------|----------|------------|
-| 2026-01-09_recruiter-game-plan | candidate-ownership-thesis | EXTENDS | "the recruiter owns the relationship until placement" | high |
-| 2026-01-09_recruiter-game-plan | trust-building-in-recruiting | SUPPORTS | "trust is the foundation of any good placement" | medium |
-| 2026-01-09_recruiter-game-plan | 2025-12-meeting-with-agency-owner | EXTENDS | "building on what we discussed about agency dynamics" | high |
+| 2026-01-09_provider-game-plan | relationship-ownership-thesis | EXTENDS | "the provider owns the relationship until engagement" | high |
+| 2026-01-09_provider-game-plan | trust-building-in-services | SUPPORTS | "trust is the foundation of any good engagement" | medium |
+| 2026-01-09_provider-game-plan | 2025-12-sample-prior-meeting | EXTENDS | "building on what we discussed about industry dynamics" | high |
 
 ### Pattern Flags
 
 **Super-connectors (5+ edges):**
-- candidate-ownership-thesis: 7 edges (growing theme)
+- relationship-ownership-thesis: 7 edges (growing theme)
 
-**Promotion candidates (3+ occurrences):**
-- "recruiter-candidate trust": appeared in 4 reflections — consider formalizing as position
+**Promotion clients (3+ occurrences):**
+- "provider-client trust": appeared in 4 reflections — consider formalizing as position
 
 **Contradiction clusters:**
 - None detected
 
 ### Integration Narrative
 
-This reflection continues V's exploration of the recruiter-candidate relationship, a theme that has been building over the past several weeks. The "candidate-ownership-thesis" position is becoming a super-connector with 7 inbound edges, suggesting it's a foundational belief worth documenting more formally.
+This reflection continues [USER]'s exploration of the provider-client relationship, a theme that has been building over the past several weeks. The "relationship-ownership-thesis" position is becoming a super-connector with 7 inbound edges, suggesting it's a foundational belief worth documenting more formally.
 
-The connection to the December meeting with the agency owner shows continuity of thinking — V is building on that conversation rather than starting fresh. The trust framework from knowledge base provides theoretical grounding.
+The connection to the December meeting with the industry partner shows continuity of thinking — [USER] is building on that conversation rather than starting fresh. The trust framework from knowledge base provides theoretical grounding.
 
-Notably, the recurring theme of "recruiter-candidate trust" has now appeared in 4 reflections. This may warrant elevation to a formal position statement.
+Notably, the recurring theme of "provider-client trust" has now appeared in 4 reflections. This may warrant elevation to a formal position statement.
 
 ### CLI Commands Executed
 
 ```bash
-python3 N5/scripts/reflection_edges.py add --from "2026-01-09_recruiter-game-plan" --to "candidate-ownership-thesis" --edge-type EXTENDS --evidence "the recruiter owns the relationship until placement" --confidence high
-python3 N5/scripts/reflection_edges.py add --from "2026-01-09_recruiter-game-plan" --to "trust-building-in-recruiting" --edge-type SUPPORTS --evidence "trust is the foundation of any good placement" --confidence medium
-python3 N5/scripts/reflection_edges.py add --from "2026-01-09_recruiter-game-plan" --to "2025-12-meeting-with-agency-owner" --edge-type EXTENDS --evidence "building on what we discussed about agency dynamics" --confidence high
+python3 N5/scripts/reflection_edges.py add --from "2026-01-09_provider-game-plan" --to "relationship-ownership-thesis" --edge-type EXTENDS --evidence "the provider owns the relationship until engagement" --confidence high
+python3 N5/scripts/reflection_edges.py add --from "2026-01-09_provider-game-plan" --to "trust-building-in-services" --edge-type SUPPORTS --evidence "trust is the foundation of any good engagement" --confidence medium
+python3 N5/scripts/reflection_edges.py add --from "2026-01-09_provider-game-plan" --to "2025-12-sample-prior-meeting" --edge-type EXTENDS --evidence "building on what we discussed about industry dynamics" --confidence high
 ```
 ```
 
@@ -400,7 +400,7 @@ python3 N5/scripts/reflection_edges.py add --from "2026-01-09_recruiter-game-pla
 | Pattern | Threshold | Action |
 |---------|-----------|--------|
 | Super-connector | 5+ edges | Add to integration narrative, consider deep-dive |
-| Promotion candidate | 3+ occurrences | Flag for position formalization |
+| Promotion client | 3+ occurrences | Flag for position formalization |
 | Contradiction cluster | 2+ CONTRADICTS | Flag for resolution in future reflection |
 
 ---

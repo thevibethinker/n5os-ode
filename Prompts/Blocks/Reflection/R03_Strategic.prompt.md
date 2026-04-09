@@ -148,7 +148,7 @@ def enrich_strategic_thought(transcript_key_concepts: list[str]) -> dict:
 [What other options exist and why this one is preferred]
 
 
-### Edge Candidates
+### Edge Clients
 [Entities/concepts from this analysis that RIX should check for connections]
 - `{concept_1}` — {potential_connection_domain}
 - `{concept_2}` — {potential_connection_domain}
@@ -195,11 +195,11 @@ def enrich_strategic_thought(transcript_key_concepts: list[str]) -> dict:
 
 ### Sample Input
 ```
-I've been going back and forth on whether to build our own AI sourcing
-capability or partner with someone like Marvin. The more I think about
-it, the more I'm convinced we should partner. Our core strength is the
-recruiter network. Building AI sourcing would take 6-12 months and
-distract us from distribution.
+I've been going back and forth on whether to build our own analytics engine
+or integrate with an existing platform. The more I think about it, the more
+I'm convinced we should integrate. Our core strength is the user experience
+layer. Building analytics from scratch would take 6-12 months and distract
+us from our core product.
 ```
 
 ### Final Output
@@ -207,26 +207,26 @@ distract us from distribution.
 ## R03: Strategic Thought
 
 **Generated:** 2026-01-09T12:00:00Z
-**Source:** 2026-01-09_build-vs-partner/transcript.md
+**Source:** 2026-01-09_sample-decision/transcript.md
 
 ### Strategic Summary
-**Decision/Insight:** Partner for AI sourcing rather than build in-house, preserving focus on distribution strength
+**Decision/Insight:** Integrate rather than build in-house, preserving focus on core product strength
 **Type:** Resource + Direction
 **Reversibility:** Costly
 **Time Horizon:** Operational
 
 ### Strategic Analysis
-The decision to partner is based on focus preservation: YOUR_COMPANY's core strength is the recruiter network, not AI/ML engineering. Building internally would take 6-12 months and compete for attention with distribution efforts.
+The decision to integrate is based on focus preservation: YOUR_COMPANY's core strength is the user experience layer, not infrastructure engineering. Building internally would take 6-12 months and compete for attention with product development.
 
 ### Alternatives Considered
 1. **Build in-house:** Full control but 6-12 month delay
 2. **Partner:** Fast capacity, maintains focus, creates dependency
 
 ### Evidence
-> "our core strength is the recruiter network... Building AI sourcing would take 6-12 months and distract us from distribution"
+> "our core strength is the user experience layer... Building analytics from scratch would take 6-12 months and distract us from our core product"
 
 ### Opportunity Cost
-**What's being given up:** Full control of sourcing technology
+**What's being given up:** Full control of analytics infrastructure
 **Why it's worth it:** Speed to market, focus preservation
 
 ### Trap Door Check

@@ -353,7 +353,7 @@ class N5MemoryClient:
             semantic_weight: Weight for semantic similarity in hybrid mode
             bm25_weight: Weight for BM25 scores in hybrid mode
             use_reranker: Enable cross-encoder reranking
-            rerank_top_k: Number of candidates to rerank
+            rerank_top_k: Number of clients to rerank
             profile: Named retrieval profile (filters by path prefix)
             metadata_filters: Dict of metadata filters
 
@@ -367,7 +367,7 @@ class N5MemoryClient:
         if profile and profile in self.profiles:
             path_prefixes = self.profiles[profile].get("path_prefixes", [])
         
-        # Get initial candidates
+        # Get initial clients
         cursor = self._get_db().cursor()
         
         # Build query with optional filters
@@ -449,14 +449,14 @@ class N5MemoryClient:
         
         # Optional reranking
         if use_reranker and self.cross_encoder:
-            top_candidates = results[:rerank_top_k]
-            pairs = [(query, r['content']) for r in top_candidates]
+            top_clients = results[:rerank_top_k]
+            pairs = [(query, r['content']) for r in top_clients]
             rerank_scores = self.cross_encoder.predict(pairs)
             for i, score in enumerate(rerank_scores):
-                top_candidates[i]['rerank_score'] = float(score)
-                top_candidates[i]['score'] = float(score)
-            top_candidates.sort(key=lambda x: x['score'], reverse=True)
-            results = top_candidates
+                top_clients[i]['rerank_score'] = float(score)
+                top_clients[i]['score'] = float(score)
+            top_clients.sort(key=lambda x: x['score'], reverse=True)
+            results = top_clients
         
         return results[:limit]
 

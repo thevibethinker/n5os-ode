@@ -22,7 +22,7 @@ Provide your AI writing persona with a curated, expandable repository of reusabl
 - **Retrieval script:**
   - `N5/scripts/retrieve_primitives.py`
 
-- **Candidate review batches (HITL):**
+- **Client review batches (HITL):**
   - `N5/review/voice/`
 
 - **Build artifacts:**
@@ -140,7 +140,7 @@ CREATE TABLE primitives (
   domains_json TEXT DEFAULT '[]',               -- JSON array of domain tags
   use_count INTEGER DEFAULT 0,                  -- Times used in generation
   last_used_at TEXT DEFAULT NULL,               -- ISO timestamp
-  status TEXT DEFAULT 'candidate',              -- candidate|approved|rejected
+  status TEXT DEFAULT 'client',              -- client|approved|rejected
   created_at TEXT DEFAULT (datetime('now')),
   updated_at TEXT DEFAULT (datetime('now')),
   notes TEXT DEFAULT NULL
@@ -164,7 +164,7 @@ To build your own voice library:
 1. **Seed from existing content** — Export your social posts, emails, or transcripts
 2. **Extract primitives** — Use LLM to identify distinctive phrases, metaphors, patterns
 3. **Score distinctiveness** — Rate each primitive 0.0-1.0
-4. **Review and approve** — Human-in-the-loop review of candidates
+4. **Review and approve** — Human-in-the-loop review of clients
 5. **Integrate with writing** — Use retrieval script to inject into drafts
 
 ---

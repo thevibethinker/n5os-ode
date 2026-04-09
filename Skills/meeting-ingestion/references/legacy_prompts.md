@@ -32,7 +32,7 @@ Meetings with people outside the organization (prospects, partners, advisors).
 
 **Detection:**
 - Default type when no internal markers present
-- Contains markers: `_external`, `_partnership`, `_discovery`, `_sales`, `_coaching`, `_advisory`, `_demo`, `_networking`
+- Contains markers: `_external`, `_partnership`, `_discovery`, `_sales`, `_advising`, `_advisory`, `_demo`, `_networking`
 
 **Standard Blocks:**
 - B01_DETAILED_RECAP (always)

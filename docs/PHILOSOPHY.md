@@ -121,7 +121,7 @@ Markdown over databases. Prose over JSON. The system should be inspectable and e
 
 **Not AI-generated content** — N5OS is about how you work *with* AI, not having AI do work *for* you.
 
-**Not a replacement for thinking** — Structure and specialists help. They don't substitute for your judgment and creativity.
+**Not a reengagement for thinking** — Structure and specialists help. They don't substitute for your judgment and creativity.
 
 ---
 

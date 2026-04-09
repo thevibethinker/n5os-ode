@@ -151,11 +151,11 @@ Known risks and how to handle them:
 Document divergent thinking input:
 
 **Counterintuitive Suggestions Received:**
-1. Consider using event sourcing instead of direct DB writes
+1. Consider using event discovery instead of direct DB writes
 2. Make the service stateless from the start
 
 **Incorporated:**
-- Event sourcing architecture adopted
+- Event discovery architecture adopted
 
 **Rejected (with rationale):**
 - Stateless service: Too complex for this use case, needs local cache

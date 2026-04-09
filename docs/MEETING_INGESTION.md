@@ -2,7 +2,7 @@
 created: 2026-01-26
 last_edited: 2026-01-26
 version: 1.0
-provenance: con_hbAG3moVKwj2aI3Y
+provenance: sanitized
 ---
 
 # Meeting Ingestion Pipeline Documentation

@@ -66,7 +66,7 @@ Conditional words: if we, when they, once X happens, assuming
 |------|------------|
 | **Market/Industry** | Industry dynamics |
 | **Technology** | Tech capabilities or adoption |
-| **Personal/Career** | V's own trajectory |
+| **Personal/Career** | [USER]'s own trajectory |
 | **YOUR_COMPANY-specific** | Company outcomes |
 
 ### Dimension 2: Timeframe
@@ -150,7 +150,7 @@ def enrich_prediction(transcript_key_concepts: list[str]) -> dict:
 [Why V expects this]
 
 
-### Edge Candidates
+### Edge Clients
 [Entities/concepts from this analysis that RIX should check for connections]
 - `{concept_1}` — {potential_connection_domain}
 - `{concept_2}` — {potential_connection_domain}
@@ -198,10 +198,10 @@ def enrich_prediction(transcript_key_concepts: list[str]) -> dict:
 
 ### Sample Input
 ```
-I'm pretty confident that the AI recruiting space will consolidate
+I'm pretty confident that the AI productivity space will consolidate
 significantly in the next 18 months. There are too many point solutions
 right now, and employers don't want to manage 10 different tools. The
-big ATS players will either build or acquire. I'd bet on this.
+big platform players will either build or acquire. I'd bet on this.
 ```
 
 ### Final Output
@@ -209,10 +209,10 @@ big ATS players will either build or acquire. I'd bet on this.
 ## R07: Prediction
 
 **Generated:** 2026-01-09T12:00:00Z
-**Source:** 2026-01-09_market-outlook/transcript.md
+**Source:** 2026-01-09_sample-market-review/transcript.md
 
 ### Prediction Summary
-**Prediction:** AI recruiting space will consolidate significantly within 18 months
+**Prediction:** AI productivity space will consolidate significantly within 18 months
 **Type:** Market/Industry
 **Timeframe:** Medium — 18 months
 **Confidence:** High
@@ -220,7 +220,7 @@ big ATS players will either build or acquire. I'd bet on this.
 ### The Prediction
 
 #### What Will Happen
-The AI recruiting tool landscape will undergo significant consolidation. Major ATS players will build or acquire, and most standalone startups will be acquired or fail.
+The AI productivity tool landscape will undergo significant consolidation. Major platform players will build or acquire, and most standalone startups will be acquired or fail.
 
 #### Underlying Logic
 Too many point solutions create buyer fatigue. Platform advantage will drive consolidation.
@@ -230,11 +230,11 @@ Too many point solutions create buyer fatigue. Platform advantage will drive con
 
 ### Falsification Criteria
 **The prediction is WRONG if:**
-- By mid-2027, funded AI recruiting startups have increased
-- Major ATS players have not made acquisitions
+- By mid-2027, funded AI productivity startups have increased
+- Major platform players have not made acquisitions
 
 **The prediction is RIGHT if:**
-- 2+ major acquisitions by top 5 ATS players
+- 2+ major acquisitions by top 5 platform players
 - 50%+ of current startups acquired/shut down
 
 ### Check-in Schedule

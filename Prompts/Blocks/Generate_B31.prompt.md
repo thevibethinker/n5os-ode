@@ -94,7 +94,7 @@ semantic_enrichment: true
 
 # B31: Stakeholder Research
 
-**Perspective:** Speaking as [career tech founder / early-stage investor / HR executive / etc.]
+**Perspective:** Speaking as [early-stage founder / early-stage investor / Operations executive / etc.]
 
 ## Insight 1: [Clear, descriptive title - as many words as needed]
 

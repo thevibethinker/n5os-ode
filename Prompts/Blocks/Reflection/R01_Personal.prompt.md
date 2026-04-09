@@ -126,7 +126,7 @@ This block is NOT appropriate when:
 [2-3 paragraphs exploring what you were feeling/experiencing and what it reveals]
 
 
-### Edge Candidates
+### Edge Clients
 [Entities/concepts from this analysis that should be checked for connections]
 - `{concept_1}` — {potential_connection_domain}
 - `{concept_2}` — {potential_connection_domain}
@@ -153,7 +153,7 @@ This block is NOT appropriate when:
 ### Upstream Connections
 - "I've noticed this before..."
 - "This is that pattern again..."
-- References to therapy, coaching, or prior journaling
+- References to therapy, advising, or prior journaling
 
 ### Downstream Connections
 - Tag the emotional state category
@@ -170,10 +170,10 @@ This block is NOT appropriate when:
 
 ### Sample Input
 ```
-I noticed I've been avoiding the investor outreach. Not because I don't
-think we need funding, but there's something about pitching that feels
-performative, like I'm not being authentic. Maybe it's my advisor identity
-conflicting with the founder identity.
+I noticed I've been putting off the difficult conversation with the team about
+changing the product roadmap. Not because I don't believe it's the right call,
+but something about redirecting months of their work feels heavy. Maybe it's
+my collaborative identity conflicting with the need to make a top-down decision.
 ```
 
 ### Final Output
@@ -181,29 +181,29 @@ conflicting with the founder identity.
 ## R01: Personal Insight
 
 **Generated:** 2026-01-09T12:00:00Z
-**Source:** 2026-01-09_funding-reflections/transcript.md
+**Source:** 2026-01-09_sample-reflection/transcript.md
 
 ### Insight Summary
-**Core Insight:** Investor pitch avoidance stems from identity conflict between authentic helper-self and performative founder-role
+**Core Insight:** Roadmap pivot avoidance stems from tension between collaborative leadership style and decisive authority
 **Emotional Tone:** Mixed
 **Energy Impact:** Drain
 
 ### Reflection
-There's avoidance around investor outreach traced to an identity tension rather than practical concerns. The feeling is one of inauthenticity — pitching requires a "performance" that conflicts with deeply held values around authenticity.
+There's avoidance around a necessary team conversation traced to a leadership identity tension. The discomfort isn't about whether the pivot is right — it's about the act of overriding collaborative work with a unilateral call.
 
 ### Evidence
-> "there's something about pitching that feels performative, like I'm not being authentic"
+> "something about redirecting months of their work feels heavy"
 
 ### Identity Layer
-**Aspect engaged:** Professional + Helper (in tension)
+**Aspect engaged:** Leader + Collaborator (in tension)
 
 ### Growth Edge
 **Signal:** Comfort zone expansion
-The growth opportunity is developing an authentic pitch style that integrates both identities.
+The growth opportunity is developing a communication style that frames pivots as collaborative evolution rather than top-down overrides.
 
 ### Suggested Response
 - **Type:** Processing + Conversation
-- **Specific action:** Journal on "what would an authentic pitch look like?"
+- **Specific action:** Journal on "what would a collaborative pivot conversation look like?"
 ```
 
 ---

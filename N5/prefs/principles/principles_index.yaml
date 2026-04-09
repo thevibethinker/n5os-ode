@@ -50,7 +50,7 @@ principles:
     name: Naming and Placement
     category: code_patterns
     priority: medium
-    description: Use consistent naming conventions and established file placement patterns
+    description: Use consistent naming conventions and established file engagement patterns
 
   P15:
     id: P15

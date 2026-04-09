@@ -312,20 +312,20 @@ def process_queue(
     
     # Find meetings to process
     # Look for .md files directly or folders
-    candidates = []
+    clients = []
     
     # Direct transcript files
     for md_file in STAGING_DIR.glob("*.md"):
-        candidates.append(md_file)
+        clients.append(md_file)
     
     # Meeting folders (with transcripts inside)
     for folder in STAGING_DIR.iterdir():
         if folder.is_dir() and not folder.name.startswith("."):
             transcript = find_transcript(folder)
             if transcript:
-                candidates.append(folder)
+                clients.append(folder)
     
-    logger.info(f"Found {len(candidates)} candidates in staging")
+    logger.info(f"Found {len(clients)} clients in staging")
     
     results = {
         "processed": 0,
@@ -334,10 +334,10 @@ def process_queue(
         "meetings": []
     }
     
-    for candidate in candidates[:batch_size]:
+    for client in clients[:batch_size]:
         try:
             meeting_result = process_meeting(
-                candidate,
+                client,
                 blocks=blocks,
                 skip_crm=skip_crm,
                 dry_run=dry_run
@@ -350,9 +350,9 @@ def process_queue(
                 results["failed"] += 1
                 
         except Exception as e:
-            logger.error(f"Failed to process {candidate}: {e}")
+            logger.error(f"Failed to process {client}: {e}")
             results["meetings"].append({
-                "meeting_path": str(candidate),
+                "meeting_path": str(client),
                 "error": str(e)
             })
             results["processed"] += 1

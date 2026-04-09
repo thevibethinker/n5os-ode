@@ -154,9 +154,9 @@ class SessionStateManager:
                     for field, val in value.items():
                         pattern = rf"(- \*\*{field}:\*\*\s+)([^\n]+)"
                         if re.search(pattern, content, re.IGNORECASE):
-                            def make_replacer(replacement_val):
+                            def make_replacer(reengagement_val):
                                 def replacer(m):
-                                    return m.group(1) + replacement_val
+                                    return m.group(1) + reengagement_val
                                 return replacer
                             content = re.sub(pattern, make_replacer(val), content, flags=re.IGNORECASE)
                     updated.append("Metadata")
@@ -164,9 +164,9 @@ class SessionStateManager:
                     for field, val in value.items():
                         pattern = rf"(- \*\*{field}:\*\*\s+)([^\n]+)"
                         if re.search(pattern, content, re.IGNORECASE):
-                            def make_replacer(replacement_val):
+                            def make_replacer(reengagement_val):
                                 def replacer(m):
-                                    return m.group(1) + replacement_val
+                                    return m.group(1) + reengagement_val
                                 return replacer
                             content = re.sub(pattern, make_replacer(val), content, flags=re.IGNORECASE)
                     updated.append("Progress")
@@ -273,9 +273,9 @@ class SessionStateManager:
         formatted_items = "\n".join(f"- {item}" for item in items)
         
         pattern = rf"(## {re.escape(section_name)}\n)(.*?)(?=\n##|\Z)"
-        replacement = rf"\1{formatted_items}\n\n"
+        reengagement = rf"\1{formatted_items}\n\n"
         
-        return re.sub(pattern, replacement, content, flags=re.DOTALL)
+        return re.sub(pattern, reengagement, content, flags=re.DOTALL)
     
     def _update_timestamp(self, content: str) -> str:
         """Update the last_updated timestamp in frontmatter."""

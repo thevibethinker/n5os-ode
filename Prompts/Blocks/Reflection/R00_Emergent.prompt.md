@@ -145,7 +145,7 @@ When querying prior R00s, count occurrences:
 [Why worth capturing despite not fitting standard blocks]
 
 
-### Edge Candidates
+### Edge Clients
 [Entities/concepts from this analysis that RIX should check for connections]
 - `{concept_1}` — {potential_connection_domain}
 - `{concept_2}` — {potential_connection_domain}
@@ -203,7 +203,7 @@ When querying prior R00s, count occurrences:
 ### Sample Input
 ```
 Interesting observation: the way I talk to myself during difficult decisions
-has changed. Used to be very critical, now it's more like coaching myself.
+has changed. Used to be very critical, now it's more like advising myself.
 Not sure if this is personal insight or learning — it's about my internal
 process but it's also a skill I've developed. Maybe it's "meta-skill
 development" — building the skill of being your own coach.
@@ -214,7 +214,7 @@ development" — building the skill of being your own coach.
 ## R00: Emergent
 
 **Generated:** 2026-01-09T12:00:00Z
-**Source:** 2026-01-09_self-talk-reflection/transcript.md
+**Source:** 2026-01-09_sample-emergent/transcript.md
 
 ### Emergent Summary
 **Provisional Label:** Meta-skill Development
@@ -224,7 +224,7 @@ development" — building the skill of being your own coach.
 ### The Content
 
 #### The Insight
-V has developed the ability to coach himself through decisions, applying techniques used with clients. This is a meta-skill: the skill of developing skills.
+[USER] has developed the ability to coach himself through decisions, applying techniques used with clients. This is a meta-skill: the skill of developing skills.
 
 #### Why This Matters
 Meta-skill development may be a distinct category worth tracking. The ability to self-coach has compounding returns.

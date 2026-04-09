@@ -9,7 +9,7 @@
     },
     "subject": {
       "type": "string",
-      "enum": ["V", "YOUR_COMPANY", "Other"]
+      "enum": ["[USER]", "YOUR_COMPANY", "Other"]
     },
     "subject_detail": {
       "type": "string"

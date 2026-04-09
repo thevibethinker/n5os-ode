@@ -127,7 +127,7 @@ semantic_enrichment: true
 
 ## Section 3: Blurb Requirements
 
-For intros V is making, note if blurb is needed:
+For intros [USER] is making, note if blurb is needed:
 
 | Intro | Blurb Needed? | Type | Status |
 |-------|---------------|------|--------|
