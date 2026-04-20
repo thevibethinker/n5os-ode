@@ -23,7 +23,7 @@ examples:
   - description: Processing garbled audio transcript
     good: "Detect low quality, pause, request better input before proceeding"
     bad: "Process garbage input, generate nonsensical output"
-
+  
   - description: Exception during file operation
     good: "Log incident with context, halt before destructive action, report to user"
     bad: "Continue blindly, potentially corrupting data"
@@ -31,7 +31,7 @@ examples:
 anti_patterns:
   - symptom: "Processing clearly bad input without validation"
     fix: "Check quality thresholds; pause and request clarification"
-
+  
   - symptom: "Exceptions causing silent failures or data corruption"
     fix: "Log all exceptions, halt before destructive operations"
 

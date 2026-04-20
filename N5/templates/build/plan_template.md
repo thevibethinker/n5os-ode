@@ -79,6 +79,43 @@ status: draft
 
 ---
 
+## MECE Validation
+
+<!-- 
+MANDATORY for multi-worker builds.
+Reference: N5/prefs/operations/mece-worker-framework.md
+Run validator: python3 N5/scripts/mece_validator.py {{SLUG}}
+-->
+
+### Scope Coverage Matrix
+
+<!-- List ALL scope items from plan. Each must map to exactly ONE worker. -->
+
+| Scope Item | Worker | Status |
+|------------|--------|--------|
+| `{{FILE_1}}` | W1.1 | ✓ |
+| `{{FILE_2}}` | W1.2 | ✓ |
+| `{{RESPONSIBILITY}}` | W1.1 | ✓ |
+
+### Token Budget Summary
+
+<!-- Ensure each worker stays within context budget (target <30%, hard limit <40%). -->
+
+| Worker | Brief (tokens) | Files (tokens) | Total % | Status |
+|--------|----------------|----------------|---------|--------|
+| W1.1 | ~2,000 | ~8,000 | 5% | ✓ |
+| W1.2 | ~1,500 | ~6,000 | 3.75% | ✓ |
+
+### MECE Validation Result
+
+- [ ] All scope items assigned to exactly ONE worker (no overlaps)
+- [ ] All plan deliverables covered (no gaps)
+- [ ] All workers within 40% token budget
+- [ ] Wave dependencies are valid (no circular, no same-wave deps)
+- [ ] `python3 N5/scripts/mece_validator.py {{SLUG}}` passes
+
+---
+
 ## Worker Briefs
 
 <!-- For builds using v2 orchestrator: briefs are in `workers/` folder. -->
@@ -112,6 +149,45 @@ status: draft
 
 ---
 
+## Learning Landscape
+
+<!-- Architect: Generate by reading N5/config/understanding_bank.json and analyzing plan concepts -->
+<!-- This section is REQUIRED for all builds when learning_mode is enabled -->
+
+### Build Friction Recommendation
+<!-- minimal: manual spawn + summary only | standard: + decision points + wave reviews | full: + learning drops + pedagogical AAR -->
+**Recommended:** {{FRICTION_LEVEL}}
+**Rationale:** {{WHY_THIS_LEVEL}}
+
+### Technical Concepts in This Build
+
+| Concept | V's Current Level | Domain | Pedagogical Value |
+|---------|-------------------|--------|-------------------|
+| {{CONCEPT_1}} | {{LEVEL}} | {{DOMAIN}} | ★ High / Medium / Low |
+| {{CONCEPT_2}} | {{LEVEL}} | {{DOMAIN}} | ★ High / Medium / Low |
+
+### Decision Points
+
+| ID | Question | Options | Value | Related Drop |
+|----|----------|---------|-------|--------------|
+| DP-1 | {{DECISION_QUESTION}} | 2-3 | ★ / Med / Low | W{{X}}.{{Y}} |
+
+### Drop Engagement Tags
+
+| Drop | Tag | Rationale |
+|------|-----|-----------|
+| W1.1 | pedagogical | Involves {{CONCEPT}} at {{LEVEL}} level |
+| W1.2 | mechanical | Pure file operations, concepts V knows |
+
+### Suggested Learning Drops
+
+<!-- Only for concepts where deep dive would significantly advance V's understanding -->
+| Concept | When to Trigger | Brief Path |
+|---------|-----------------|------------|
+| {{CONCEPT}} | If V wants deep dive during DP-{{N}} | `drops/L{{X}}.{{Y}}-{{slug}}.md` |
+
+---
+
 ## Level Upper Review
 
 <!-- Architect invokes Level Upper before finalizing. Document the divergent input here. -->
@@ -125,4 +201,3 @@ status: draft
 
 ### Rejected (with rationale):
 - {{WHAT_WAS_REJECTED}}: {{WHY}}
-

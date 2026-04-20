@@ -23,7 +23,7 @@ structure:
       - Spawn specialized threads
       - Integrate results
       - Identify gaps and blockers
-
+  
   specialists:
     - Researcher: Information gathering
     - Architect: System design

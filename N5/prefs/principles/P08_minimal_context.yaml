@@ -28,7 +28,7 @@ examples:
 anti_patterns:
   - symptom: "Loading entire file trees into context for simple tasks"
     fix: "Identify minimal necessary context; load only relevant files"
-
+  
   - symptom: "Prompts require external knowledge to understand"
     fix: "Make prompts self-contained with critical information inline"
 

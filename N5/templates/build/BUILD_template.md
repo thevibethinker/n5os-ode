@@ -54,15 +54,16 @@ provenance: {{CONVO_ID}}
 
 ---
 
-## Learnings Log
+## Build Lesson Ledger
 
-<!-- Aggregated insights from worker completions. Add as workers report back. -->
+**Read lessons from all workers:**
+```bash
+python3 N5/scripts/build_lesson_ledger.py read {{SLUG}}
+```
 
-### From W1.1:
-- _Pending completion_
+Lessons are logged by workers in real-time to `BUILD_LESSONS.json`. Review after each wave completion and incorporate relevant insights into subsequent worker briefs.
 
-### From W1.2:
-- _Pending completion_
+**Current lesson count:** _Check via command above_
 
 ---
 

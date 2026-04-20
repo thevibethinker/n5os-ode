@@ -31,7 +31,7 @@ examples:
     good: 'ASSUMPTIONS.md with Assumptions made, Placeholders list, Stubs and simulations'
     bad: 'Scattered TODO comments with no central tracking'
   - description: API assumption
-    good: 'ASSUMPTION comment: API supports pagination (VERIFY with docs)'
+    good: 'ASSUMPTION comment: Gmail API supports pagination (VERIFY with docs)'
     bad: 'Assume API works a certain way without noting it'
 
 anti_patterns:

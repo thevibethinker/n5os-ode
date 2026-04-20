@@ -1,0 +1,86 @@
+---
+id: P25
+name: Code Is Free
+category: strategy
+priority: medium
+version: "1.0.0"
+created: "2025-10-26"
+related: [P24, P15, P20]
+
+purpose: |
+  Generate, test, and discard code freely. The cost of code is near zero with AI;
+  the cost of bad architecture is infinite.
+
+when_to_apply:
+  - Prototyping alternative approaches
+  - Refactoring for clarity
+  - Rewriting modules with better abstractions
+  - Generating test implementations
+  - Exploring edge cases
+
+pattern:
+  core_behavior: |
+    Leverage AI code generation: prototype multiple approaches, throw away implementations, rewrite entire modules.
+    Don't be precious about code. Be precious about architecture.
+  
+  key_distinction: "Generation is cheap. Coordination is expensive."
+  
+  strategic_implications:
+    - Prototyping is cheap (test 3 approaches before committing)
+    - Refactoring is routine (improve continuously)
+    - Learning is fast (generate examples, explore, delete)
+    - Mistakes are cheap (try, fail, regenerate)
+    - Quality bar stays high (bad code is still bad - delete and regenerate)
+  
+  what_doesnt_change:
+    - Architecture still matters (maybe more than ever)
+    - Coordination is expensive (multi-component changes are hard)
+    - Understanding is required (you must know what you're building)
+    - Testing is critical (verify behavior, not just syntax)
+
+examples:
+  - description: Prototyping multiple approaches
+    good: "Generate JSONL (10min), SQLite (10min), in-memory dict (5min) implementations. Test all three. Choose best, delete others. 25min total, optimal solution"
+    bad: "Pick JSONL first, spend 2 hours implementing, realize SQLite might be better, sunk cost prevents switching"
+  
+  - description: Fearless refactoring
+    good: "Script grew to 300 lines. Rewrite from scratch with better abstractions (20min with AI), test equivalence, ship if cleaner"
+    bad: "It works, don't touch it. Fear of breaking prevents improvement"
+  
+  - description: Throwing away learning code
+    good: "/tmp/learning_jsonl_parsing.py explores 3 approaches, determines Python native is simplest. DELETE FILE. Learning complete, zero production value, infinite learning value"
+    bad: "Keep all exploration code 'just in case'"
+
+anti_patterns:
+  - symptom: "Generating without thinking"
+    fix: "Still need architecture. Code is free, chaos is expensive"
+  
+  - symptom: "Never throwing away prototypes"
+    fix: "Prototypes must be deleted. /tmp is your friend"
+  
+  - symptom: "Being precious about AI code"
+    fix: "If it's unclear, regenerate it. Code is free now"
+  
+  - symptom: "Skipping review"
+    fix: "Free to generate ≠ free to ship. Verify quality"
+
+verification:
+  before_claiming_code_is_free:
+    - Have clear architecture (chaos is expensive)
+    - Understand what you're building (coordination is expensive)
+    - Can validate correctness (bugs are expensive)
+    - Know how components interact (integration is expensive)
+  
+  safely_applying:
+    - Prototyping alternatives
+    - Refactoring isolated modules
+    - Generating test cases
+    - Exploring learning examples
+
+changelog:
+  - date: "2025-10-26"
+    version: "1.0.0"
+    changes: "Initial principle from velocity coding talk"
+  - date: "2025-11-02"
+    version: "1.0.0"
+    changes: "Migrated to YAML format from markdown"

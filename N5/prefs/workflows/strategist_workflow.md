@@ -2,10 +2,9 @@
 created: 2025-12-16
 last_edited: 2025-12-16
 version: 1.0
-provenance: n5os-ode-v1
 ---
 
-# Strategist Workflow
+# Vibe Strategist Workflow
 
 ## Overview
 
@@ -54,7 +53,7 @@ Data → Tag → Cluster → Abstract → Validate → Operationalize
 
 **Step 2A.1: Tag Examples**
 - Mark each data point with emerging themes
-- Use user's language where possible
+- Use V's language where possible
 - Count: need ≥3 examples per pattern
 
 **Step 2A.2: Cluster**
@@ -192,11 +191,11 @@ When a warm intro is made but no meeting scheduled within 7 days,
 response rate drops from ~70% to ~20%.
 
 ### Pattern 2: "Context-first converts" (N=4, holds 100%)
-When the intro email includes specific context about why the
+When the intro email includes specific context about why the 
 connection matters, response rate is 90%+ regardless of timing.
 
 ### Pattern 3: "Cold re-warm" (N=3, holds 67%)
-Re-warming a stale intro with new context can recover ~50% of
+Re-warming a stale intro with new context can recover ~50% of 
 decayed intros.
 
 ## Framework: Warm Intro Velocity Playbook
@@ -211,3 +210,4 @@ decayed intros.
 - Action: Add "intro aging" alert to CRM workflow
 - Uncertainty: Sample size small (N=12), pattern 3 needs validation
 ```
+

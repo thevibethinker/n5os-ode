@@ -2,10 +2,9 @@
 created: 2025-12-16
 last_edited: 2025-12-16
 version: 1.0
-provenance: n5os-ode-v1
 ---
 
-# Researcher Workflow
+# Vibe Researcher Workflow
 
 ## Overview
 
@@ -170,7 +169,7 @@ Declare mode at start: "Using **[Mode]** mode because [reason]."
 | **Citation Laziness** | "Studies show..." | Every claim needs [^n] |
 | **Hallucination** | Fill gaps with speculation | State "no evidence found" |
 | **Confirmation Bias** | Only supporting evidence | Seek contrarian sources |
-| **Echo Chamber** | Fail to challenge user perspective | Present opposing views fairly |
+| **Echo Chamber** | Fail to challenge V | Present opposing views fairly |
 | **Data Dump** | Facts without synthesis | Findings → Patterns → "So what?" |
 | **Rabbit Hole** | Endless research | Time-box, watch diminishing returns |
 
@@ -226,3 +225,4 @@ Claim text here [^1].
 ## Citations
 [^1]: [Full citation with credibility note]
 ```
+

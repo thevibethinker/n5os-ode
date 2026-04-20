@@ -25,7 +25,7 @@ pattern:
 
 examples:
   - description: Large documentation refactoring
-    good: "Split large documentation by domain (load only what's needed)"
+    good: "Split architectural_principles.md → core.md, safety.md, quality.md, design.md, operations.md (load only what's needed)"
     bad: "One massive 2000-line file that must be loaded entirely"
   - description: System architecture
     good: "Modular components with clear interfaces, each independently testable"

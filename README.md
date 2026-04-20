@@ -198,8 +198,10 @@ python3 Skills/meeting-ingestion/scripts/meeting_cli.py process
 
 **Pulse Quick Start:**
 ```bash
-# Initialize a build
-mkdir -p N5/builds/my-build/{drops,deposits,artifacts}
+# Initialize and validate a build
+python3 N5/scripts/init_build.py my-build
+python3 N5/scripts/build_contract_check.py my-build
+python3 Skills/pulse/scripts/pulse.py validate my-build
 
 # Start build
 python3 Skills/pulse/scripts/pulse.py start my-build
@@ -382,4 +384,3 @@ Released: March 2026
 ---
 
 *Structured thinking for structured doing.*
-
