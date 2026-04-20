@@ -17,13 +17,14 @@ Exit codes:
 
 import argparse
 import json
+import os
 import re
 import sys
 from pathlib import Path
 from datetime import datetime, timezone
 
-BUILDS_DIR = Path("/home/workspace/N5/builds")
-WORKSPACE_ROOT = Path("/home/workspace")
+WORKSPACE_ROOT = Path(os.environ.get("ZO_WORKSPACE") or os.environ.get("N5OS_WORKSPACE") or "/home/workspace")
+BUILDS_DIR = WORKSPACE_ROOT / "N5" / "builds"
 
 # Regex patterns for design/frontend keywords (word-boundary matched to avoid
 # false positives like "ui" matching "acquisition" or "page" matching "homepage")

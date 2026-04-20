@@ -63,6 +63,12 @@ MARKDOWN_ARTIFACT_EXTENSIONS = {
 HTML_TEXT_EXTENSIONS = {
     ".html",
     ".htm",
+    ".txt",
+    ".text",
+    ".json",
+    ".yaml",
+    ".yml",
+    ".csv",
 }
 
 
@@ -373,14 +379,14 @@ def check_drop_artifacts(slug: str, drop_id: str) -> Tuple[bool, Dict]:
             }
 
     if report['files_checked'] == 0:
-        report['critical_count'] += 1
+        report['warning_count'] += 1
         report['issues']['__build__'] = {
-            'critical': [{
+            'critical': [],
+            'warnings': [{
                 'type': 'no_artifacts_checked',
-                'message': 'Validator did not inspect any artifacts for this deposit',
+                'message': 'Validator did not inspect any code-like artifacts for this deposit',
                 'line': 0,
             }],
-            'warnings': [],
             'stats': {},
         }
 

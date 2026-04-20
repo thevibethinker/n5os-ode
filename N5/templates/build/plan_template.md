@@ -108,26 +108,26 @@ Run validator: python3 N5/scripts/mece_validator.py {{SLUG}}
 
 ### MECE Validation Result
 
-- [ ] All scope items assigned to exactly ONE worker (no overlaps)
+- [ ] All scope items assigned to exactly ONE Drop (no overlaps)
 - [ ] All plan deliverables covered (no gaps)
-- [ ] All workers within 40% token budget
+- [ ] All Drops within 40% token budget
 - [ ] Wave dependencies are valid (no circular, no same-wave deps)
 - [ ] `python3 N5/scripts/mece_validator.py {{SLUG}}` passes
 
 ---
 
-## Worker Briefs
+## Drop Briefs
 
-<!-- For builds using v2 orchestrator: briefs are in `workers/` folder. -->
+<!-- For exported Pulse builds: briefs live in `drops/` and deposits in `deposits/`. -->
 <!-- Titles are pre-decided to enable easy thread management. -->
 
-| Wave | Worker | Title | Brief File |
+| Wave | Drop | Title | Brief File |
 |------|--------|-------|------------|
-| 1 | W1.1 | {{W1.1_TITLE}} | `workers/W1.1-{{W1.1_SLUG}}.md` |
-| 1 | W1.2 | {{W1.2_TITLE}} | `workers/W1.2-{{W1.2_SLUG}}.md` |
-| 2 | W2.1 | {{W2.1_TITLE}} | `workers/W2.1-{{W2.1_SLUG}}.md` |
+| 1 | D1.1 | {{W1.1_TITLE}} | `drops/D1.1-{{W1.1_SLUG}}.md` |
+| 1 | D1.2 | {{W1.2_TITLE}} | `drops/D1.2-{{W1.2_SLUG}}.md` |
+| 2 | D2.1 | {{W2.1_TITLE}} | `drops/D2.1-{{W2.1_SLUG}}.md` |
 
-<!-- Add rows as needed. Wave 2+ workers depend on Wave 1 completion. -->
+<!-- Add rows as needed. Wave 2+ Drops depend on Wave 1 completion. -->
 
 ---
 

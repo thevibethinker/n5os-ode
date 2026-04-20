@@ -16,11 +16,12 @@ Creates:
     ├── PLAN.md           (architect's plan)
     ├── STATUS.md         (progress tracking)
     ├── meta.json         (machine-readable state)
-    ├── workers/          (worker briefs folder)
-    ├── completions/      (worker completion reports)
+    ├── drops/            (drop briefs folder)
+    ├── deposits/         (drop completion reports)
+    ├── artifacts/        (drop output artifacts)
     └── .n5protected      (prevents accidental deletion)
 
-The build is FOR AI execution. Architect fills the plan; workers execute it.
+The build is FOR AI execution. Architect fills the plan; Pulse executes Drops from it.
 """
 
 import argparse
@@ -199,6 +200,11 @@ def create_meta_json(slug: str, title: str, build_type: str, today: str) -> dict
         "status": "draft",
         "completed_at": None,
         "type": build_type,
+        "build_mode": "standard",
+        "current_stream": 1,
+        "total_streams": 1,
+        "active_wave": None,
+        "drops": {},
         "orchestrator_convo_id": None,
         "workers": {
             "total": 0,
@@ -207,7 +213,7 @@ def create_meta_json(slug: str, title: str, build_type: str, today: str) -> dict
             "blocked": 0,
             "pending": 0
         },
-        "waves": [],
+        "waves": {},
         "worker_details": []
     }
 
@@ -224,75 +230,63 @@ def generate_worker_stubs(build_dir: Path, slug: str, num_workers: int) -> list[
     Returns:
         List of created file paths
     """
-    workers_dir = build_dir / "workers"
-    template_file = TEMPLATES_DIR / "worker_brief_template.md"
-    
-    if template_file.exists():
-        template_content = template_file.read_text()
-    else:
-        # Minimal fallback template
-        template_content = """---
-worker_id: W{{WAVE}}.{{SEQ}}
-title: "[{{SLUG}}] W{{WAVE}}.{{SEQ}}: {{TASK_NAME}}"
+    drops_dir = build_dir / "drops"
+    today = datetime.now().strftime("%Y-%m-%d")
+
+    template_content = """---
+created: {{DATE}}
+last_edited: {{DATE}}
+version: 1.0
+provenance: init_build.py
+drop_id: {{DROP_ID}}
 build_slug: {{SLUG}}
-wave: {{WAVE}}
+title: "{{TASK_NAME}}"
+wave: W1
+stream: 1
 depends_on: []
-thread_title: "[{{SLUG}}] W{{WAVE}}.{{SEQ}}: {{TASK_NAME}}"
+spawn_mode: manual
+drop_type: general
+spec_completeness: partial
 ---
 
-# Worker Brief: {{TASK_NAME}}
+# {{DROP_ID}}: {{TASK_NAME}}
 
-**Your Mission:** [TO BE FILLED]
-
-**Output(s):**
-- `{{OUTPUT_PATH}}` (CREATE/UPDATE)
-
----
-
-## Context
+## Objective
 
 [TO BE FILLED]
 
----
+## Scope
 
-## Success Criteria
+- [TO BE FILLED]
 
-- [ ] [TO BE FILLED]
+## Scenarios
 
----
+S1: Placeholder scenario
+  Given: [TO BE FILLED]
+  When: [TO BE FILLED]
+  Then: [TO BE FILLED]
+  Verify: [TO BE FILLED]
 
-## Report Back
+## Deliverables
 
-**DO NOT COMMIT.** Write completion to `N5/builds/{{SLUG}}/completions/W{{WAVE}}.{{SEQ}}.json`
+- [TO BE FILLED]
 """
     
     created_files = []
     
     # Generate stubs in wave 1 by default
     for seq in range(1, num_workers + 1):
-        worker_id = f"W1.{seq}"
+        drop_id = f"D1.{seq}"
         task_name = f"Task {seq}"
-        filename = f"W1.{seq}-task-{seq}.md"
-        
+        filename = f"D1.{seq}-task-{seq}.md"
+
         content = template_content
         content = content.replace("{{SLUG}}", slug)
-        content = content.replace("{{WAVE}}", "1")
-        content = content.replace("{{SEQ}}", str(seq))
+        content = content.replace("{{DATE}}", today)
+        content = content.replace("{{DROP_ID}}", drop_id)
         content = content.replace("{{TASK_NAME}}", task_name)
-        content = content.replace("{{ONE_SENTENCE_MISSION}}", "[TO BE FILLED]")
-        content = content.replace("{{OUTPUT_PATH_1}}", "[TO BE FILLED]")
-        content = content.replace("{{OUTPUT_PATH_2}}", "[TO BE FILLED]")
-        content = content.replace("{{CONTEXT_DESCRIPTION}}", "[TO BE FILLED]")
-        content = content.replace("{{REQUIREMENT_SECTION_1}}", "Requirement 1")
-        content = content.replace("{{REQUIREMENT_SECTION_2}}", "Requirement 2")
-        content = content.replace("{{REQUIREMENT_DETAILS}}", "[TO BE FILLED]")
-        content = content.replace("{{CRITERION_1}}", "[TO BE FILLED]")
-        content = content.replace("{{CRITERION_2}}", "[TO BE FILLED]")
-        content = content.replace("{{CRITERION_3}}", "[TO BE FILLED]")
-        content = content.replace("{{CRITERION_4}}", "[TO BE FILLED]")
-        content = content.replace("{{ISO_TIMESTAMP}}", "[COMPLETION TIMESTAMP]")
-        
-        worker_file = workers_dir / filename
+
+        worker_file = drops_dir / filename
         worker_file.write_text(content)
         created_files.append(worker_file)
     
@@ -360,25 +354,39 @@ def init_build(
     
     # Create build directory structure
     build_dir.mkdir(parents=True, exist_ok=True)
-    workers_dir = build_dir / "workers"
-    workers_dir.mkdir(exist_ok=True)
-    completions_dir = build_dir / "completions"
-    completions_dir.mkdir(exist_ok=True)
+    drops_dir = build_dir / "drops"
+    drops_dir.mkdir(exist_ok=True)
+    deposits_dir = build_dir / "deposits"
+    deposits_dir.mkdir(exist_ok=True)
+    artifacts_dir = build_dir / "artifacts"
+    artifacts_dir.mkdir(exist_ok=True)
     
     # Create meta.json
     meta_content = create_meta_json(slug, title, build_type, today)
     if num_workers > 0:
-        # Pre-populate worker stats if generating stubs
+        # Pre-populate drop stats if generating stubs
         meta_content["workers"]["total"] = num_workers
         meta_content["workers"]["pending"] = num_workers
-        meta_content["waves"] = [{
-            "wave": 1,
-            "workers": [f"W1.{i}" for i in range(1, num_workers + 1)],
-            "status": "pending"
-        }]
+        drop_ids = [f"D1.{i}" for i in range(1, num_workers + 1)]
+        meta_content["waves"] = {"W1": drop_ids}
+        meta_content["active_wave"] = "W1"
+        meta_content["drops"] = {
+            drop_id: {
+                "title": f"Task {idx}",
+                "wave": "W1",
+                "stream": 1,
+                "order": idx,
+                "depends_on": [],
+                "spawn_mode": "manual",
+                "drop_type": "general",
+                "blocking": True,
+                "status": "pending"
+            }
+            for idx, drop_id in enumerate(drop_ids, start=1)
+        }
         meta_content["worker_details"] = [
             {
-                "id": f"W1.{i}",
+                "id": f"D1.{i}",
                 "title": f"Task {i}",
                 "status": "pending",
                 "thread_id": None,
@@ -434,8 +442,9 @@ Build initialized. Awaiting Architect plan.
 
 - **PLAN.md:** `N5/builds/{slug}/PLAN.md`
 - **meta.json:** `N5/builds/{slug}/meta.json`
-- **Workers:** `N5/builds/{slug}/workers/`
-- **Completions:** `N5/builds/{slug}/completions/`
+- **Drops:** `N5/builds/{slug}/drops/`
+- **Deposits:** `N5/builds/{slug}/deposits/`
+- **Artifacts:** `N5/builds/{slug}/artifacts/`
 """
     
     build_file = build_dir / "BUILD.md"
@@ -558,7 +567,7 @@ Examples:
         type=int,
         default=0,
         metavar="N",
-        help="Number of worker brief stubs to generate (default: 0)"
+        help="Number of drop brief stubs to generate (default: 0)"
     )
     parser.add_argument(
         "--force", "-f",
@@ -593,16 +602,17 @@ Examples:
     print(f"  ├── PLAN.md       (fill with Architect)")
     print(f"  ├── STATUS.md     (progress tracking)")
     print(f"  ├── meta.json     (build state)")
-    print(f"  ├── workers/      (worker briefs go here)")
+    print(f"  ├── drops/        (drop briefs go here)")
     if args.workers > 0:
         print(f"  │   └── {args.workers} stub(s) generated")
-    print(f"  ├── completions/  (worker reports go here)")
+    print(f"  ├── deposits/     (drop reports go here)")
+    print(f"  ├── artifacts/    (drop outputs go here)")
     print(f"  └── .n5protected  (deletion protection)")
     print()
     print(f"Build type: {args.type}")
     print(f"Pre-decided orchestrator title: [{args.slug}] ORCH: Orchestrator")
     print()
-    print(f"Next: Route to Architect to create plan and worker briefs.")
+    print(f"Next: Route to Architect to create plan and drop briefs.")
 
 
 if __name__ == "__main__":
