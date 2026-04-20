@@ -20,10 +20,11 @@ from pathlib import Path
 from typing import Any
 
 import requests
+from pulse_common import DEFAULT_ZO_ASK_MODEL, PATHS
 
-BUILDS_DIR = Path("/home/workspace/N5/builds")
-SYSTEM_LEARNINGS_PATH = Path("/home/workspace/N5/learnings/SYSTEM_LEARNINGS.json")
-REVIEW_DIR = Path("/home/workspace/N5/review/learnings")
+BUILDS_DIR = PATHS.BUILDS
+SYSTEM_LEARNINGS_PATH = PATHS.SYSTEM_LEARNINGS
+REVIEW_DIR = PATHS.WORKSPACE / "N5" / "review" / "learnings"
 
 
 def load_all_build_learnings() -> list[dict[str, Any]]:
@@ -84,7 +85,10 @@ def call_zo_ask(prompt: str, timeout: int = 120) -> str:
             "authorization": token,
             "content-type": "application/json"
         },
-        json={"input": prompt},
+        json={
+            "input": prompt,
+            "model_name": DEFAULT_ZO_ASK_MODEL,
+        },
         timeout=timeout
     )
     response.raise_for_status()

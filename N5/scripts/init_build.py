@@ -31,8 +31,16 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
+def resolve_workspace() -> Path:
+    for key in ("ZO_WORKSPACE", "N5OS_WORKSPACE"):
+        value = os.environ.get(key)
+        if value:
+            return Path(value).expanduser().resolve()
+    return Path(__file__).resolve().parents[2]
+
+
 # Paths
-WORKSPACE = Path(os.environ.get("N5OS_WORKSPACE", Path(__file__).resolve().parents[2] if Path(__file__).resolve().parents[2].joinpath("N5").exists() else Path.cwd()))
+WORKSPACE = resolve_workspace()
 BUILDS_DIR = WORKSPACE / "N5" / "builds"
 TEMPLATES_DIR = WORKSPACE / "N5" / "templates" / "build"
 

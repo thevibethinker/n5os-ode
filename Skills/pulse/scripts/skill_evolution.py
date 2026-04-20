@@ -19,8 +19,9 @@ from datetime import datetime, timedelta
 from pathlib import Path
 
 import requests
+from pulse_common import DEFAULT_ZO_ASK_MODEL, PATHS
 
-WORKSPACE = Path("/home/workspace")
+WORKSPACE = PATHS.WORKSPACE
 SKILLS_DIR = WORKSPACE / "Skills"
 ARCHIVE_DIR = SKILLS_DIR / "_archived"
 REVIEW_DIR = WORKSPACE / "N5/review/skills"
@@ -37,7 +38,7 @@ def get_auth_headers():
 
 def zo_ask(prompt: str) -> str:
     resp = requests.post(ZO_API, headers=get_auth_headers(), 
-                        json={"input": prompt}, timeout=120)
+                        json={"input": prompt, "model_name": DEFAULT_ZO_ASK_MODEL}, timeout=120)
     resp.raise_for_status()
     return resp.json()["output"]
 

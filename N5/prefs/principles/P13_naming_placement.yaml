@@ -16,14 +16,14 @@ when_to_apply:
 
 pattern:
   core_behavior: |
-    Follow established conventions: /home/workspace/Meetings/ for meetings
+    Follow established conventions: `Personal/Meetings/` for meetings
     Use format: {type}_{date}_{topic}.md
     Ask for location if ambiguous; never create new roots without consent.
 
 examples:
   - description: Saving meeting notes
-    good: "Store in /home/workspace/Meetings/ using format: standup_2025-11-02_team-sync.md"
-    bad: "Create random directory /home/workspace/Nov2Meetings/ without asking"
+    good: "Store in Personal/Meetings/ using format: standup_2025-11-02_team-sync.md"
+    bad: "Create random directory Nov2Meetings/ at the workspace root without asking"
 
 anti_patterns:
   - symptom: "Creating new top-level directories without user approval"

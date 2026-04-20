@@ -172,12 +172,12 @@ python3 Skills/meeting-ingestion/scripts/meeting_cli.py list --processed --limit
 ```bash
 # Process single meeting with custom blocks
 python3 Skills/meeting-ingestion/scripts/meeting_cli.py process \
-    "/home/workspace/Personal/Meetings/2025-01-26_client-kickoff/" \
+    "Personal/Meetings/2025-01-26_client-kickoff/" \
     --blocks B01,B05,B08,B21
 
 # Process without CRM sync
 python3 Skills/meeting-ingestion/scripts/meeting_cli.py process \
-    "/home/workspace/Personal/Meetings/2025-01-26_internal-standup/" \
+    "Personal/Meetings/2025-01-26_internal-standup/" \
     --skip-crm
 ```
 

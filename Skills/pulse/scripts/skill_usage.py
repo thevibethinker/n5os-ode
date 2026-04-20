@@ -11,9 +11,10 @@ Usage:
 import argparse
 import json
 from datetime import datetime, timedelta
-from pathlib import Path
 
-WORKSPACE = Path("/home/workspace")
+from pulse_common import PATHS
+
+WORKSPACE = PATHS.WORKSPACE
 USAGE_FILE = WORKSPACE / "N5/cognition/skill_usage.jsonl"
 
 

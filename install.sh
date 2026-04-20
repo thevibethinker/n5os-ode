@@ -5,7 +5,8 @@
 set -e
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-WORKSPACE="${WORKSPACE_ROOT:-/home/workspace}"
+DEFAULT_WORKSPACE="$(dirname "$SCRIPT_DIR")"
+WORKSPACE="${WORKSPACE_ROOT:-${ZO_WORKSPACE:-${N5OS_WORKSPACE:-$DEFAULT_WORKSPACE}}}"
 
 # Must be run from inside the n5os-ode directory
 if [[ ! -f "$SCRIPT_DIR/BOOTLOADER.prompt.md" ]]; then

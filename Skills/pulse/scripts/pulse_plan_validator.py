@@ -23,7 +23,15 @@ import sys
 from pathlib import Path
 from datetime import datetime, timezone
 
-WORKSPACE_ROOT = Path(os.environ.get("ZO_WORKSPACE") or os.environ.get("N5OS_WORKSPACE") or "/home/workspace")
+def resolve_workspace_root() -> Path:
+    for key in ("ZO_WORKSPACE", "N5OS_WORKSPACE"):
+        value = os.environ.get(key)
+        if value:
+            return Path(value).expanduser().resolve()
+    return Path(__file__).resolve().parents[3]
+
+
+WORKSPACE_ROOT = resolve_workspace_root()
 BUILDS_DIR = WORKSPACE_ROOT / "N5" / "builds"
 
 # Regex patterns for design/frontend keywords (word-boundary matched to avoid

@@ -5,13 +5,21 @@ import os
 from pathlib import Path
 
 
+def resolve_workspace() -> Path:
+    for key in ("ZO_WORKSPACE", "N5OS_WORKSPACE"):
+        value = os.environ.get(key)
+        if value:
+            return Path(value).expanduser().resolve()
+    return Path(__file__).resolve().parents[2]
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description="Validate required Pulse build contract artifacts.")
     parser.add_argument("slug", help="Build slug under N5/builds/")
     parser.add_argument("--json", action="store_true", help="Emit JSON output")
     args = parser.parse_args()
 
-    workspace = Path(os.environ.get("ZO_WORKSPACE") or os.environ.get("N5OS_WORKSPACE") or "/home/workspace")
+    workspace = resolve_workspace()
     root = workspace / "N5" / "builds" / args.slug
     plan_path = root / "PLAN.md"
     meta_path = root / "meta.json"

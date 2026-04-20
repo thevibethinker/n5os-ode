@@ -19,8 +19,10 @@ import sys
 from datetime import datetime
 from pathlib import Path
 
-SYSTEM_LEARNINGS_PATH = Path("/home/workspace/N5/learnings/SYSTEM_LEARNINGS.json")
-PERSONAL_LEARNINGS_DIR = Path("/home/workspace/Personal/Knowledge/Learnings")
+from pulse_common import PATHS
+
+SYSTEM_LEARNINGS_PATH = PATHS.SYSTEM_LEARNINGS
+PERSONAL_LEARNINGS_DIR = PATHS.WORKSPACE / "Personal" / "Knowledge" / "Learnings"
 
 
 def parse_review_file(filepath: Path) -> tuple[str, list[dict]]:
@@ -163,12 +165,21 @@ def index_to_brain(filepaths: list[Path]) -> bool:
     """Index the created markdown files to the N5 Brain."""
     if not filepaths:
         return True
-    
-    paths_str = " ".join([str(p) for p in filepaths])
-    cmd = f"python3 /home/workspace/N5/scripts/memory_indexer.py {paths_str}"
-    
+
+    cmd = [
+        "python3",
+        str(PATHS.WORKSPACE / "N5" / "scripts" / "memory_indexer.py"),
+        *[str(p) for p in filepaths],
+    ]
+
     try:
-        result = subprocess.run(cmd, shell=True, capture_output=True, text=True)
+        result = subprocess.run(
+            cmd,
+            capture_output=True,
+            text=True,
+            check=False,
+            cwd=str(PATHS.WORKSPACE),
+        )
         if result.returncode != 0:
             print(f"Warning: Brain indexing failed: {result.stderr}", file=sys.stderr)
             return False

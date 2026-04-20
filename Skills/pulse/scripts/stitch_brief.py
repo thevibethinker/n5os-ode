@@ -29,9 +29,11 @@ import subprocess
 import sys
 from pathlib import Path
 
-BUILDS_DIR = Path("/home/workspace/N5/builds")
-WORKSPACE_ROOT = Path("/home/workspace")
-STITCH_SCRIPT = Path("/home/workspace/Skills/google-stitch/scripts/stitch.ts")
+from pulse_common import PATHS
+
+BUILDS_DIR = PATHS.BUILDS
+WORKSPACE_ROOT = PATHS.WORKSPACE
+STITCH_SCRIPT = WORKSPACE_ROOT / "Skills" / "google-stitch" / "scripts" / "stitch.ts"
 
 DESIGN_KEYWORD_PATTERN = re.compile(
     r'\b(?:'

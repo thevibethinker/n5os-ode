@@ -22,7 +22,7 @@ spawn_mode: auto  # Options: auto (default) = /zo/ask headless | manual = V past
 spec_completeness: full  # full | partial | ambiguous — auto-spawn requires "full"
 thread_title: "[<slug>] D<stream>.<seq>: <Task Name>"
 quality_contract:
-  cwd: /home/workspace
+  cwd: .  # workspace root
   check_cmd: "python3 path/to/test_or_check.py"
   required:
     - check_cmd

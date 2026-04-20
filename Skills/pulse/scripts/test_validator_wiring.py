@@ -14,9 +14,9 @@ import shutil
 import subprocess
 import sys
 from datetime import datetime, timezone
-from pathlib import Path
+from pulse_common import PATHS
 
-BUILDS_DIR = Path("/home/workspace/N5/builds")
+BUILDS_DIR = PATHS.BUILDS
 TEST_SLUG = "test-validator-wiring"
 
 
@@ -95,8 +95,10 @@ def run_tick():
     """Run pulse tick on test build."""
     print("\n[TEST] Running pulse tick...")
     result = subprocess.run(
-        ["python3", "/home/workspace/Skills/pulse/scripts/pulse.py", "tick", TEST_SLUG],
-        capture_output=True, text=True, cwd="/home/workspace"
+        ["python3", str(PATHS.SCRIPTS / "pulse.py"), "tick", TEST_SLUG],
+        capture_output=True,
+        text=True,
+        cwd=str(PATHS.WORKSPACE),
     )
     print(f"STDOUT:\n{result.stdout}")
     if result.stderr:

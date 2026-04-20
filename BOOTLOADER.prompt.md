@@ -1204,7 +1204,7 @@ create_rule:
 
     **For creating ANY new directory:**
     1. Never create a folder unless confident in canonical location. If ANY doubt, ask first.
-    2. Before creating top-level dirs in /home/workspace, STOP and `ls -la /home/workspace` first.
+    2. Before creating top-level dirs in the workspace root, STOP and run `ls -la .` from the workspace root first.
     3. Check existing structure: Scripts→`N5/scripts/`, Docs→`Documents/`, Knowledge→`Knowledge/`, Records→`Records/`.
     4. NEVER create new top-level folders without explicit permission.
 ```

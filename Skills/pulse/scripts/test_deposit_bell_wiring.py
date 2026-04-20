@@ -7,9 +7,10 @@ import subprocess
 import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from pulse_common import PATHS
 
-BUILDS_DIR = Path("/home/workspace/N5/builds")
-PULSE_SCRIPT = Path("/home/workspace/Skills/pulse/scripts/pulse.py")
+BUILDS_DIR = PATHS.BUILDS
+PULSE_SCRIPT = PATHS.SCRIPTS / "pulse.py"
 TEST_SLUG = "test-deposit-bell"
 MISSING_SLUG = "test-deposit-bell-missing"
 
@@ -42,7 +43,7 @@ depends_on: []
 spawn_mode: manual
 spec_completeness: full
 quality_contract:
-  cwd: /home/workspace
+  cwd: .
   check_cmd: "python3 Skills/pulse/scripts/test_deposit_bell_wiring.py"
   required:
     - check_cmd
@@ -128,7 +129,7 @@ def run_ring(slug: str, drop_id: str) -> subprocess.CompletedProcess[str]:
         ["python3", str(PULSE_SCRIPT), "ring", slug, drop_id],
         capture_output=True,
         text=True,
-        cwd="/home/workspace",
+        cwd=str(PATHS.WORKSPACE),
         check=False,
     )
 

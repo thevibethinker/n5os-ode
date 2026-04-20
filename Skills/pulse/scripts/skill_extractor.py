@@ -22,11 +22,12 @@ from pathlib import Path
 from typing import Optional
 
 import requests
+from pulse_common import DEFAULT_ZO_ASK_MODEL, PATHS
 
-WORKSPACE = Path("/home/workspace")
+WORKSPACE = PATHS.WORKSPACE
 SKILLS_DIR = WORKSPACE / "Skills"
 REVIEW_DIR = WORKSPACE / "N5/review/skills"
-BUILDS_DIR = WORKSPACE / "N5/builds"
+BUILDS_DIR = PATHS.BUILDS
 ZO_API = "https://api.zo.computer/zo/ask"
 
 
@@ -38,7 +39,7 @@ def get_auth_headers():
 
 
 def zo_ask(prompt: str, output_format: Optional[dict] = None) -> str | dict:
-    payload = {"input": prompt}
+    payload = {"input": prompt, "model_name": DEFAULT_ZO_ASK_MODEL}
     if output_format:
         payload["output_format"] = output_format
     resp = requests.post(ZO_API, headers=get_auth_headers(), json=payload, timeout=120)

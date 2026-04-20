@@ -38,7 +38,7 @@ from pulse_common import (
 )
 
 # Paths
-# WORKSPACE = Path("/home/workspace")  # Now imported from pulse_common
+# WORKSPACE is imported from pulse_common
 BUILDS_DIR = PATHS.BUILDS
 CONVERSATIONS_DB = PATHS.WORKSPACE / "N5" / "data" / "conversations.db"
 SKILLS_DIR = PATHS.SCRIPTS

@@ -12,12 +12,24 @@ Import in other Pulse scripts:
 """
 
 import json
+import os
 from pathlib import Path
 from typing import Any, Optional
-import os
 
-# Environment-based workspace path (defaults to hardcoded for backward compatibility)
-WORKSPACE = Path(os.environ.get("ZO_WORKSPACE") or os.environ.get("N5OS_WORKSPACE") or "/home/workspace")
+
+def _resolve_workspace() -> Path:
+    for key in ("ZO_WORKSPACE", "N5OS_WORKSPACE"):
+        value = os.environ.get(key)
+        if value:
+            return Path(value).expanduser().resolve()
+    return Path(__file__).resolve().parents[3]
+
+
+WORKSPACE = _resolve_workspace()
+DEFAULT_ZO_ASK_MODEL = os.environ.get(
+    "ZO_ASK_MODEL",
+    "byok:c3c80408-cc27-4a87-b894-65ff059fb137",
+)
 
 
 # ============================================================================

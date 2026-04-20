@@ -7,9 +7,10 @@ import subprocess
 import sys
 from datetime import datetime, timedelta, timezone
 from pathlib import Path
+from pulse_common import PATHS
 
-BUILDS_DIR = Path("/home/workspace/N5/builds")
-PULSE_SCRIPT = Path("/home/workspace/Skills/pulse/scripts/pulse.py")
+BUILDS_DIR = PATHS.BUILDS
+PULSE_SCRIPT = PATHS.SCRIPTS / "pulse.py"
 TEST_SLUGS = {
     "dead_retry": "test-tick-recovery-dead",
     "spawn_retry": "test-tick-recovery-spawn",
@@ -72,7 +73,7 @@ def run_tick(slug: str) -> subprocess.CompletedProcess[str]:
         ["python3", str(PULSE_SCRIPT), "tick", slug],
         capture_output=True,
         text=True,
-        cwd="/home/workspace",
+        cwd=str(PATHS.WORKSPACE),
         check=False,
     )
 
