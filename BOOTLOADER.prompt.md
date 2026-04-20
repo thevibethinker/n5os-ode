@@ -1364,11 +1364,12 @@ create_rule:
     3. Offer choice: "Want me to set up a Pulse build, or proceed sequentially?"
 
     **If proceeding with Pulse:**
-    1. Pre-screen: `python3 Skills/pulse/scripts/pulse.py status` (check for active builds)
-    2. Init: `python3 N5/scripts/init_build.py <slug>`
-    3. Create feature branch: `git checkout -b feature/<slug>` before writing code
-    4. Launch: `python3 Skills/pulse/scripts/pulse.py start <slug>`
-    5. Finalize: `python3 Skills/pulse/scripts/pulse.py finalize <slug>`
+    1. Init: `python3 N5/scripts/init_build.py <slug>`
+    2. Contract gate: `python3 N5/scripts/build_contract_check.py <slug>`
+    3. Validate plan: `python3 Skills/pulse/scripts/pulse.py validate <slug>`
+    4. Create feature branch: `git checkout -b feature/<slug>` before writing code
+    5. Launch: `python3 Skills/pulse/scripts/pulse.py start <slug>`
+    6. Finalize: `python3 Skills/pulse/scripts/pulse.py finalize <slug>`
 
     Reference: `Skills/pulse/SKILL.md`
 ```

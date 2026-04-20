@@ -14,7 +14,7 @@ import json
 import re
 import sys
 from pathlib import Path
-from typing import List, Dict, Tuple
+from typing import List, Dict, Tuple, Iterable
 from datetime import datetime
 
 from pulse_common import PATHS, WORKSPACE
@@ -37,6 +37,192 @@ WARNING_PATTERNS = [
     (r'FIXME', 'fixme_generic', 'Generic FIXME'),
     (r'#.*placeholder', 'placeholder_comment', 'Placeholder comment'),
 ]
+
+CODE_ARTIFACT_EXTENSIONS = {
+    '.py',
+    '.pyi',
+    '.js',
+    '.jsx',
+    '.ts',
+    '.tsx',
+    '.mjs',
+    '.cjs',
+    '.sh',
+    '.bash',
+    '.zsh',
+    '.rb',
+    '.go',
+    '.rs',
+}
+
+MARKDOWN_ARTIFACT_EXTENSIONS = {
+    ".md",
+    ".markdown",
+}
+
+HTML_TEXT_EXTENSIONS = {
+    ".html",
+    ".htm",
+}
+
+
+def is_code_artifact(filepath: Path) -> bool:
+    """Return True when a Drop artifact should be mechanically scanned as code."""
+    return filepath.suffix.lower() in CODE_ARTIFACT_EXTENSIONS
+
+
+def is_markdown_artifact(filepath: Path) -> bool:
+    """Return True when an artifact is a markdown report or note."""
+    return filepath.suffix.lower() in MARKDOWN_ARTIFACT_EXTENSIONS
+
+
+def is_text_artifact(filepath: Path) -> bool:
+    """Return True when an artifact is a text file."""
+    return filepath.suffix.lower() in HTML_TEXT_EXTENSIONS
+
+
+def _looks_like_completion_report(filepath: Path) -> bool:
+    return "completions" in filepath.parts
+
+
+def _extract_numeric_footnotes(content: str) -> tuple[list[str], list[str]]:
+    markers = re.findall(r"\[\^(\d+)\]", content)
+    definitions = re.findall(r"^\[\^(\d+)\]:\s+.+$", content, re.MULTILINE)
+    return markers, definitions
+
+
+def _extract_pandoc_footnotes(content: str) -> list[str]:
+    return re.findall(r"\^\[(\d+)\]", content)
+
+
+def scan_markdown_file(filepath: Path, source_count: int = 0) -> Dict:
+    """Scan a markdown artifact for citation integrity and obvious placeholders."""
+    issues = {
+        "critical": [],
+        "warnings": [],
+        "stats": {
+            "lines": 0,
+            "footnote_markers": 0,
+            "footnote_definitions": 0,
+            "pandoc_footnotes": 0,
+            "urls": 0,
+        },
+    }
+
+    if not filepath.exists():
+        return issues
+
+    try:
+        content = filepath.read_text()
+        lines = content.split("\n")
+        issues["stats"]["lines"] = len(lines)
+    except Exception as e:
+        issues["critical"].append({
+            "type": "read_error",
+            "message": str(e),
+            "line": 0,
+        })
+        return issues
+
+    markers, definitions = _extract_numeric_footnotes(content)
+    pandoc_footnotes = _extract_pandoc_footnotes(content)
+    urls = re.findall(r"https?://[^\s)>\]]+", content)
+
+    issues["stats"]["footnote_markers"] = len(markers)
+    issues["stats"]["footnote_definitions"] = len(definitions)
+    issues["stats"]["pandoc_footnotes"] = len(pandoc_footnotes)
+    issues["stats"]["urls"] = len(urls)
+
+    marker_set = set(markers)
+    definition_set = set(definitions)
+    missing_definitions = sorted(marker_set - definition_set, key=int)
+    unused_definitions = sorted(definition_set - marker_set, key=int)
+
+    if missing_definitions:
+        issues["critical"].append({
+            "type": "missing_footnote_definitions",
+            "message": f"Missing markdown footnote definitions for: {', '.join(missing_definitions)}",
+            "line": 0,
+        })
+
+    if unused_definitions:
+        issues["warnings"].append({
+            "type": "unused_footnote_definitions",
+            "message": f"Unused markdown footnote definitions: {', '.join(unused_definitions)}",
+            "line": 0,
+        })
+
+    if marker_set and pandoc_footnotes:
+        issues["warnings"].append({
+            "type": "mixed_footnote_styles",
+            "message": "Report mixes markdown [^n] citations with pandoc ^[n] citations",
+            "line": 0,
+        })
+
+    has_numeric_footnotes = bool(marker_set and definition_set)
+    has_pandoc_footnotes = bool(pandoc_footnotes)
+    has_direct_urls = bool(urls)
+    has_any_citation = bool(has_numeric_footnotes or has_pandoc_footnotes or has_direct_urls)
+
+    if _looks_like_completion_report(filepath):
+        has_evidence_section = bool(re.search(r"^##\s+\d+\.\s+Evidence", content, re.MULTILINE))
+        has_sources_section = bool(re.search(r"^##\s+\d+\.\s+(Evidence and Sources|Sources)\b", content, re.MULTILINE))
+
+        if source_count > 0 and not has_any_citation:
+            issues["critical"].append({
+                "type": "missing_citations",
+                "message": "Completion report lists sources but contains no resolved citations or URLs",
+                "line": 0,
+            })
+        elif (has_evidence_section or has_sources_section) and not has_any_citation:
+            issues["critical"].append({
+                "type": "missing_citations",
+                "message": "Completion report has an evidence/sources section but no resolved citations or URLs",
+                "line": 0,
+            })
+
+    for i, line in enumerate(lines, 1):
+        for pattern, issue_type, message in WARNING_PATTERNS:
+            if re.search(pattern, line, re.IGNORECASE):
+                issues["warnings"].append({
+                    "type": issue_type,
+                    "message": message,
+                    "line": i,
+                    "content": line.strip()[:100],
+                })
+
+    return issues
+
+
+def _iter_artifact_candidates(slug: str, artifact: str) -> Iterable[Path]:
+    raw = Path(artifact)
+    if raw.is_absolute():
+        yield raw
+        return
+
+    yield PATHS.build(slug) / raw
+    yield PATHS.WORKSPACE / raw
+
+
+def _resolve_artifact_paths(slug: str, deposit: Dict) -> list[Path]:
+    artifact_strings: list[str] = []
+    artifact_strings.extend(deposit.get("artifacts", []))
+
+    report_path = deposit.get("report_path")
+    if report_path:
+        artifact_strings.append(report_path)
+
+    resolved: list[Path] = []
+    seen: set[str] = set()
+    for artifact in artifact_strings:
+        candidates = list(_iter_artifact_candidates(slug, artifact))
+        chosen = next((candidate for candidate in candidates if candidate.exists()), candidates[0])
+        key = str(chosen.resolve()) if chosen.exists() else str(chosen)
+        if key in seen:
+            continue
+        seen.add(key)
+        resolved.append(chosen)
+    return resolved
 
 
 def scan_file(filepath: Path) -> Dict:
@@ -140,32 +326,64 @@ def check_drop_artifacts(slug: str, drop_id: str) -> Tuple[bool, Dict]:
         return False, {'error': 'Deposit not found'}
     
     deposit = json.loads(deposit_path.read_text())
-    artifacts = deposit.get('artifacts', [])
+    artifacts = _resolve_artifact_paths(slug, deposit)
+    source_count = len(deposit.get("sources", []))
     
     report = {
         'drop_id': drop_id,
         'build_slug': slug,
         'timestamp': datetime.utcnow().isoformat(),
         'files_checked': 0,
+        'files_skipped': 0,
         'critical_count': 0,
         'warning_count': 0,
-        'issues': {}
+        'issues': {},
+        'skipped_artifacts': [],
     }
     
-    for artifact in artifacts:
-        artifact_path = Path(artifact)
-        if not artifact_path.is_absolute():
-            artifact_path = PATHS.WORKSPACE / artifact
-        
+    for artifact_path in artifacts:
         if artifact_path.exists() and artifact_path.is_file():
-            issues = scan_file(artifact_path)
+            if is_code_artifact(artifact_path):
+                issues = scan_file(artifact_path)
+            elif is_markdown_artifact(artifact_path):
+                issues = scan_markdown_file(artifact_path, source_count=source_count)
+            elif is_text_artifact(artifact_path):
+                issues = scan_file(artifact_path)
+            else:
+                report['files_skipped'] += 1
+                report['skipped_artifacts'].append(str(artifact_path))
+                continue
+
             report['files_checked'] += 1
             report['critical_count'] += len(issues['critical'])
             report['warning_count'] += len(issues['warnings'])
             
             if issues['critical'] or issues['warnings']:
                 report['issues'][str(artifact_path)] = issues
-    
+        else:
+            report["critical_count"] += 1
+            report["issues"][str(artifact_path)] = {
+                "critical": [{
+                    "type": "missing_artifact",
+                    "message": "Declared artifact does not exist",
+                    "line": 0,
+                }],
+                "warnings": [],
+                "stats": {},
+            }
+
+    if report['files_checked'] == 0:
+        report['critical_count'] += 1
+        report['issues']['__build__'] = {
+            'critical': [{
+                'type': 'no_artifacts_checked',
+                'message': 'Validator did not inspect any artifacts for this deposit',
+                'line': 0,
+            }],
+            'warnings': [],
+            'stats': {},
+        }
+
     passed = report['critical_count'] == 0
     
     # Log lesson if failed

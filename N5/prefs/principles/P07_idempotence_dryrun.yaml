@@ -28,7 +28,7 @@ examples:
 anti_patterns:
   - symptom: "Running workflow multiple times produces different results with same inputs"
     fix: "Make operations idempotent; same inputs → same outputs"
-
+  
   - symptom: "No way to preview changes before committing"
     fix: "Implement dry-run mode showing intended operations"
 

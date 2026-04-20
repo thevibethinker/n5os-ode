@@ -16,19 +16,19 @@ when_to_apply:
 
 pattern:
   core_behavior: |
-    Follow established conventions for file organization.
-    Use descriptive, consistent names.
+    Follow established conventions: /home/workspace/Meetings/ for meetings
+    Use format: {type}_{date}_{topic}.md
     Ask for location if ambiguous; never create new roots without consent.
 
 examples:
   - description: Saving meeting notes
-    good: "Store in appropriate directory using consistent naming pattern"
-    bad: "Create random directory without asking"
+    good: "Store in /home/workspace/Meetings/ using format: standup_2025-11-02_team-sync.md"
+    bad: "Create random directory /home/workspace/Nov2Meetings/ without asking"
 
 anti_patterns:
   - symptom: "Creating new top-level directories without user approval"
     fix: "Ask where to place content if location is ambiguous"
-
+  
   - symptom: "Inconsistent naming making files hard to find"
     fix: "Follow established patterns; use descriptive, consistent names"
 

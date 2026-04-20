@@ -1,0 +1,40 @@
+---
+id: P35
+name: Data Format Selection
+category: architecture
+priority: high
+version: "1.0.0"
+created: "2025-10-26"
+related: [P1, P22, P32]
+
+purpose: |
+  Choose data formats based on usage pattern, not familiarity. Human-authored text → YAML. Machine-generated streams → JSONL. Queryable data → SQLite.
+
+when_to_apply:
+  - Storing personas/prompts
+  - Logging/streaming data
+  - Configuration files
+  - Queryable datasets
+
+pattern:
+  core_behavior: |
+    Match format to who/what writes it: YAML (human-edited multi-line), JSONL (append-only streams), SQLite (transactional queries), JSON (machine interchange only).
+
+examples:
+  - description: Persona storage
+    good: "YAML for personas - native multi-line, comments, human-edited frequently, no escape characters"
+    bad: "JSON for personas - escaped newlines, hostile to humans editing prose"
+
+anti_patterns:
+  - symptom: "JSON for prose-heavy human-edited content"
+    fix: "Use YAML - natural multi-line, cleaner for humans"
+  - symptom: "YAML for logs"
+    fix: "Can't stream, can't append safely. Use JSONL"
+
+changelog:
+  - date: "2025-10-26"
+    version: "1.0.0"
+    changes: "Initial principle from velocity coding talk"
+  - date: "2025-11-02"
+    version: "1.0.0"
+    changes: "Migrated to YAML format from markdown"

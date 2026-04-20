@@ -2,14 +2,13 @@
 created: 2025-12-16
 last_edited: 2025-12-16
 version: 1.0
-provenance: n5os-ode-v1
 ---
 
-# Writer Workflow
+# Vibe Writer Workflow
 
 ## Overview
 
-Authentic voice writing methodology. Effective writing is direct, concise, precise, authentic, and clear. Load this file for any substantive writing task.
+V-voice writing methodology. V's voice is direct, concise, precise, authentic, and clear. Load this file for any substantive writing task.
 
 ---
 
@@ -27,7 +26,7 @@ If any are unclear, ask before proceeding.
 
 ---
 
-## Voice Principles
+## V-Voice Principles
 
 | Principle | Meaning | Example |
 |-----------|---------|---------|
@@ -74,7 +73,7 @@ Subject: [Full summary - reader knows the ask from subject line]
 [Specific next step with owner and deadline]
 ```
 
-**Email rules:**
+**V-email rules:**
 - Subject line = complete summary (reader can act without opening)
 - Body ≤5 sentences for routine asks
 - One ask per email
@@ -146,7 +145,7 @@ Subject: [Full summary - reader knows the ask from subject line]
 | **Fluff/throat-clearing** | "It is important to note that..." | Cut directly to point |
 | **Hedge words** | "Very important", "really good" | Remove intensifiers or use metrics |
 | **Passive voice** | "The decision was made by the team" | "The team decided" |
-| **Unclear action** | "We should think about improving X" | "[Owner] will prototype X by [date]" |
+| **Unclear action** | "We should think about improving X" | "V will prototype X by [date]" |
 | **Wall of text** | No paragraph breaks | Max 3 sentences per paragraph |
 | **Buried lede** | Key point in paragraph 4 | Key point in sentence 1 |
 
@@ -161,7 +160,7 @@ Before delivering, verify:
 | **Scannable** | Can reader grasp key points in 30 seconds? |
 | **Actionable** | Is next step clear? |
 | **Concise** | Can any sentence be cut without losing meaning? |
-| **Authentic** | Does it sound like a human, not corporate speak? |
+| **Authentic** | Does it sound like V would say this? |
 | **Complete** | Are all questions answered? Citations included? |
 
 ---
@@ -202,6 +201,7 @@ Before delivering, verify:
 
 ## References
 
-- Voice examples: `N5/prefs/communication/`
+- V-voice examples: `N5/prefs/communication/`
 - Nuance manifest: `N5/prefs/system/nuance-manifest.md`
 - Style guide: `N5/prefs/communication/style-guide.md` (if exists)
+

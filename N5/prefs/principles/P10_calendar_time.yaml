@@ -1,0 +1,38 @@
+---
+id: P10
+name: Calendar & Time Semantics
+category: behavior
+priority: medium
+version: "1.0.0"
+created: "2025-11-02"
+
+purpose: |
+  Handle time and calendar operations with clarity and respect for user timezone. Never auto-schedule without confirmation.
+
+when_to_apply:
+  - Creating calendar entries or follow-ups
+  - Scheduling events or tasks
+  - Working with time-sensitive operations
+
+pattern:
+  core_behavior: |
+    Propose calendar entries with clear descriptions.
+    Respect user's timezone; never auto-schedule without confirmation.
+    Use format: "Processed via N5 Ingestion – [Component]"
+
+examples:
+  - description: Creating follow-up task
+    good: "Propose: 'Review meeting notes – 2025-11-05 2pm ET' - await confirmation"
+    bad: "Auto-create calendar entry in wrong timezone without asking"
+
+anti_patterns:
+  - symptom: "Calendar entries created without user confirmation"
+    fix: "Always propose and wait for explicit approval"
+  
+  - symptom: "Time operations ignoring user's timezone"
+    fix: "Always use user's configured timezone for all time operations"
+
+changelog:
+  - date: "2025-11-02"
+    version: "1.0.0"
+    changes: "Initial YAML migration from operational_principles.md"
