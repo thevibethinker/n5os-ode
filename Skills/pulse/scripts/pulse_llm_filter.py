@@ -23,7 +23,7 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Dict, Tuple, Optional
 
-from pulse_common import DEFAULT_ZO_ASK_MODEL, PATHS, WORKSPACE
+from pulse_common import PATHS, WORKSPACE
 
 BUILDS_DIR = PATHS.BUILDS
 ZO_API_URL = "https://api.zo.computer/zo/ask"
@@ -146,8 +146,7 @@ Respond with ONLY valid JSON:
                     "content-type": "application/json"
                 },
                 json={
-                    "input": prompt,
-                    "model_name": DEFAULT_ZO_ASK_MODEL,
+                    "input": prompt
                     # No output_format - let LLM return text, we'll parse JSON from it
                 },
                 timeout=aiohttp.ClientTimeout(total=120)

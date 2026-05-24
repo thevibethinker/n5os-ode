@@ -62,6 +62,9 @@ python3 N5/scripts/build_contract_check.py <slug>
 # Validate plan before starting (recommended)
 python3 Skills/pulse/scripts/pulse.py validate <slug>
 
+# Stress-test build assumptions before starting
+python3 Skills/pulse/scripts/pulse.py grill <slug>
+
 # Check build status
 python3 Skills/pulse/scripts/pulse.py status <slug>
 
@@ -71,8 +74,11 @@ python3 Skills/pulse/scripts/pulse.py start <slug>
 # Manual tick (for testing)
 python3 Skills/pulse/scripts/pulse.py tick <slug>
 
-# Ring the deposit bell after a Drop writes its deposit
-python3 Skills/pulse/scripts/pulse.py ring <slug> <drop_id>
+# Render worker implementation notes
+python3 Skills/pulse/scripts/pulse.py notes <slug>
+
+# Review worker deviations before adapting later waves
+python3 Skills/pulse/scripts/pulse.py review-wave <slug>
 
 # Stop gracefully
 python3 Skills/pulse/scripts/pulse.py stop <slug>
@@ -103,9 +109,65 @@ Before starting any Pulse build, both checks must pass:
 ```bash
 python3 N5/scripts/build_contract_check.py <slug>
 python3 Skills/pulse/scripts/pulse.py validate <slug>
+python3 Skills/pulse/scripts/pulse.py grill <slug>
 ```
 
 If either command fails, do not run `start` yet. Fix missing artifacts first (`PLAN.md`, `meta.json`, and drop briefs in `drops/`).
+
+## Grill Gate
+
+`grill` is the pre-build interrogation gate. It has broad latitude to inspect
+the build folder, referenced workspace paths, existing skills, architecture
+patterns, validators, and graph-risk output. It should auto-answer anything the
+workspace can answer and ask only for real orchestrator decisions: authority,
+priority, product intent, irreversible scope, or unresolved path/contract drift.
+
+The report is written to:
+
+```bash
+N5/builds/<slug>/artifacts/GRILL_GATE.md
+N5/builds/<slug>/artifacts/grill_gate.json
+```
+
+Use the report to fix the plan and briefs before `start`. If `grill` exits
+non-zero, treat that as a "do not start yet" signal unless V explicitly
+overrides it.
+
+## Implementation Notes
+
+Workers must report deterministic implementation-note fields in their deposit.
+Pulse records the fields into locked append-only JSONL and renders Markdown for
+the orchestrator:
+
+```bash
+N5/builds/<slug>/implementation_notes.jsonl
+N5/builds/<slug>/IMPLEMENTATION_NOTES.md
+```
+
+Workers do not directly edit `IMPLEMENTATION_NOTES.md`; concurrent Markdown
+append is collision-prone. Deposits should include:
+
+- `files_touched`: exact workspace-relative files created or modified.
+- `plan_deviations`: changes from assigned plan, brief, task order, or success criteria.
+- `schema_deviations`: changes to data shapes, deposit formats, config keys, API contracts, or compatibility behavior.
+- `assumption_changes`: assumptions made, invalidated, or discovered during execution.
+- `scope_deviations`: out-of-brief work or extra files touched because the brief was incomplete.
+- `collision_risks`: files, interfaces, or decisions likely to conflict with parallel Drops.
+- `followup_required`: concrete orchestrator actions needed before later waves proceed.
+
+Examples:
+
+- Plan deviation: "Implemented locked JSONL notes instead of direct Markdown append because concurrent workers can collide."
+- Schema deviation: "Added optional `collision_risks[]` to deposits; older deposits remain valid with empty defaults."
+- Assumption change: "Assumed all target files existed; discovered a referenced review script is missing."
+- Scope deviation: "Touched `pulse.py` routing in addition to the notes module so operators can render notes."
+- Collision risk: "D2 and D4 both modify `Skills/pulse/scripts/pulse.py`; orchestrator should sequence router edits."
+- Follow-up required: "Review this before spawning Wave 2 because D3 depends on the new deposit fields."
+
+The orchestrator owns adaptation. Workers may read prior notes for context and
+propose plan updates in `followup_required`, but they should not independently
+rewrite future plans. The orchestrator reviews `IMPLEMENTATION_NOTES.md`, then
+updates `PLAN.md`, Drop briefs, sequencing, or status centrally.
 
 ## Plan Validation
 
@@ -123,9 +185,6 @@ The validator checks for:
 - **Empty sections** (headers without content)
 - **Missing Scenarios** — Drop briefs without a `## Scenarios` section get warnings
 - **Spec completeness** — Drops with `spawn_mode: auto` but `spec_completeness: partial|ambiguous` get warnings
-- **Missing `drop_type`** — new-style briefs should say whether the Drop is `code`, `debug`, `research`, etc.
-- **Missing `quality_contract`** — `drop_type: code` briefs should declare the local check loop
-- **Missing `debug_contract`** — `drop_type: debug` briefs should declare target, symptom, and debugging evidence requirements
 - **Warnings** (unchecked open questions, stale plans >14 days)
 
 A build should NOT start until validation passes. The `start` command does NOT enforce this automatically — you must run `validate` first.
@@ -199,11 +258,11 @@ When `.impeccable.md` exists and design Drops are detected, `validate` also chec
 6. `pulse.py validate <slug>` → confirm design context + references
 7. Start build — workers reference both text brief and visual mockup
 
-## Optional Graph Review For Shared Refactors
+## Required Graph Review For Refactor Drops
 
-If your workspace also includes a dependency-graph toolchain, use it before Drops that modify shared code in `N5/`, `Skills/`, `Prompts/`, or `Integrations/`.
+If a Drop will modify shared code in `N5/`, `Skills/`, `Prompts/`, or `Integrations/`, the brief should include a graph-review pre-check using `file 'N5/prefs/operations/dependency-graph-review.md'`.
 
-Recommended sequence when available:
+Minimum sequence:
 
 ```bash
 python3 Skills/codebase-graph/scripts/query.py index
@@ -216,60 +275,7 @@ If the review is `HIGH`, also run:
 python3 Skills/codebase-graph/scripts/query.py rdeps <target>
 ```
 
-Use the result to narrow scope or split the work into staged Drops before editing a shared hub. If the graph tool is not installed in your export, skip this step rather than assuming those commands exist.
-
-## Debug Swarm Protocol
-
-Debug swarms use the N5 Debug Protocol (`Skills/systematic-debugging/SKILL.md`) as their operating methodology. Every debug Drop runs Layers 1-3 of the protocol independently.
-
-### When to Use Debug Swarms
-
-- Multiple tests/components failing after a refactor
-- Bug has 2+ plausible root causes (hypothesis racing)
-- System-wide issue affecting multiple components
-- Circular fix detection fired and parallel approaches are needed
-
-### Debug Drop Brief Template
-
-Each debug Drop brief MUST include:
-
-```markdown
-## Debug Protocol
-- Target: <specific file or component>
-- Symptom: <what's broken>
-- Phase 1 pre-screen: Run `query.py review <target>` before investigating
-- Protocol: Follow N5 Debug Protocol Layers 1-3 (Skills/systematic-debugging/SKILL.md)
-
-## Hypothesis
-<specific theory this Drop is testing>
-
-## Scenarios
-Given: <system state>
-When: <the fix is applied>
-Then: <expected behavior>
-Verify: <how to confirm>
-```
-
-### Hypothesis Racing for Debugging
-
-When multiple theories compete, enable racing in `meta.json`:
-
-```json
-{
-  "first_wins": true,
-  "hypothesis_group": ["D1.1", "D1.2", "D1.3"]
-}
-```
-
-Each Drop includes a `verdict` in its deposit: `confirmed`, `rejected`, or `inconclusive`.
-
-### Swarm Synthesis
-
-After all debug Drops complete, the orchestrator:
-1. Collects verdicts from all Drops
-2. Checks for cross-Drop pattern convergence (did multiple Drops find the same upstream cause?)
-3. Runs `query.py rdeps` on the confirmed fix target for blast-radius validation
-4. Synthesizes a unified fix plan before implementation
+Use the result to narrow scope or split the work into staged Drops before editing a shared hub.
 
 ## Retry Failed Drops
 
@@ -341,7 +347,7 @@ file 'N5/builds/my-build/deposits/D1.2.json'
 
 - Confirm the deposit exists at the path above.
 - Then run:
-  - `python3 Skills/pulse/scripts/pulse.py ring my-build D1.2`
+  - `python3 Skills/pulse/scripts/pulse.py tick my-build`
   - (or run periodic tick via your scheduler of choice)
 ```
 
@@ -464,6 +470,16 @@ N5/builds/<slug>/
 
 Jettisons are **off-ramp builds** — when you hit a tangent worth pursuing without derailing your current thread.
 
+Jettison is not automatically a Git branch. Use the existing conversation workspace or `N5/builds/<slug>/` for exploratory work by default. Create a Git branch only when the jettison will change shared source, runtime behavior, `Sites/`, deployed skills, schema/data contracts, public/canonical outputs, or another risky surface that needs isolated review.
+
+Before creating or switching a branch/worktree for Pulse or jettison work, run:
+
+```bash
+python3 N5/scripts/n5_git_context_check.py --intent "<build or jettison intent>"
+```
+
+Respect the disposition: `main-ok` stays on `main`, `branch-required` uses a scoped feature branch, `worktree-required` uses a separate worktree, and `blocked` pauses until dirty state is classified.
+
 ### When to Use
 
 - Debugging issue surfaces mid-build that needs isolated investigation
@@ -534,24 +550,30 @@ Pulse recovery is handled in the orchestration loop:
 
 ## Learnings System
 
-Shipped by default:
+Two tiers:
 1. **Build-local** → `N5/builds/<slug>/BUILD_LESSONS.json`
-
-Optional for richer installs:
 2. **System-wide** → `N5/learnings/SYSTEM_LEARNINGS.json`
 
 ```bash
 # Add build learning
 python3 Skills/pulse/scripts/pulse_learnings.py add <slug> "lesson text"
 
+# Add system learning
+python3 Skills/pulse/scripts/pulse_learnings.py add <slug> "lesson text" --system
+
 # List learnings
 python3 Skills/pulse/scripts/pulse_learnings.py list <slug>
+python3 Skills/pulse/scripts/pulse_learnings.py list-system
+
+# Promote build learning to system
+python3 Skills/pulse/scripts/pulse_learnings.py promote <slug> <index>
+
+# Inject system learnings into briefs
+python3 Skills/pulse/scripts/pulse_learnings.py inject <slug>
 
 # Harvest learnings from deposits
 python3 Skills/pulse/scripts/pulse_learnings.py harvest <slug>
 ```
-
-If you create `N5/learnings/SYSTEM_LEARNINGS.json` in your workspace, you can also use the optional `--system`, `list-system`, `promote`, and `inject` flows.
 
 ## Forward Broadcast
 
@@ -756,7 +778,8 @@ python3 Skills/pulse/scripts/pulse_safety.py restore <slug>
 - `file 'Skills/spec-writing/references/scenario-patterns.md'` — Common scenario patterns by build type
 - `file 'Skills/pulse/references/holdout-scenarios-template.md'` — Holdout scenario convention
 - `file 'Skills/pulse/references/pyramid-summary-template.md'` — Multi-resolution context files
-- `BUILD_LESSONS.json` inside each build folder — Build-local learnings file
+- `N5/learnings/SYSTEM_LEARNINGS.json` — Optional system-wide learnings file, created by the learning commands when needed
+- `Documents/System/` — Optional local system manuals and maintainer playbooks
 
 ## Learning-Engaged Build Mode
 

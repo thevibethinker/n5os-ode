@@ -12,24 +12,21 @@ Import in other Pulse scripts:
 """
 
 import json
-import os
 from pathlib import Path
 from typing import Any, Optional
+import os
 
-
-def _resolve_workspace() -> Path:
-    for key in ("ZO_WORKSPACE", "N5OS_WORKSPACE"):
-        value = os.environ.get(key)
-        if value:
-            return Path(value).expanduser().resolve()
+def _workspace_root() -> Path:
+    env_root = os.environ.get("ZO_WORKSPACE")
+    if env_root:
+        return Path(env_root)
+    cwd = Path.cwd().resolve()
+    if (cwd / "N5" / "builds").exists() and (cwd / "Skills" / "pulse").exists():
+        return cwd
     return Path(__file__).resolve().parents[3]
 
 
-WORKSPACE = _resolve_workspace()
-DEFAULT_ZO_ASK_MODEL = os.environ.get(
-    "ZO_ASK_MODEL",
-    "byok:c3c80408-cc27-4a87-b894-65ff059fb137",
-)
+WORKSPACE = _workspace_root()
 
 
 # ============================================================================
