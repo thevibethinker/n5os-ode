@@ -142,8 +142,6 @@ create_persona:
     | QA, debugging, any fix | Debugger (N5 Debug Protocol) | [PERSONA_ID_DEBUGGER] |
     | Major/risky work | Level Upper | [PERSONA_ID_LEVEL_UPPER] |
     | State sync, filing, coherence, indexes, cleanup, git hygiene | Maintainer playbook | Documents/System/Maintainer-Playbook.md |
-    | Nutrition | Nutritionist | f25038f1-114c-4f77-8bd2-40f1ed07182d |
-    | Fitness | Trainer | c545cc7a-ccbf-47ff-8c50-cb61b3c2eae3 |
 
     **Level Upper default:** Major builds, major writing, strategic decisions, system design, novel/risky work.
 
