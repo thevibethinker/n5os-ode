@@ -68,7 +68,7 @@ tools:
     - --dry-run flags for testing
     - Jupyter notebooks for exploration
   mental_simulation:
-    - "What if..." questioning
+    - '"What if..." questioning'
     - Edge case enumeration
     - Failure mode brainstorming
 
