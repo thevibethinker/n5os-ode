@@ -1,7 +1,7 @@
 ---
 created: 2025-11-29
 last_edited: 2026-05-24
-version: 1.5
+version: 1.6
 provenance: con_zYZZqskcFrFyOWF0
 ---
 
@@ -56,6 +56,7 @@ If the local Zo has persona-switch tooling, use the target environment's local p
 | `@illustrator` | Image generation/editing, visual assets, multimodal critique |
 | `@writer` | Public-facing writing, email, website copy, polished prose |
 | `@teacher` | Explanations, learning paths, conceptual scaffolding |
+| `@level_upper` | Meta-reasoning enhancement, multi-persona orchestration for major builds/writing/design tasks |
 | `@operator` | Navigation, mechanical execution, state, final coordination |
 
 ## Maintainer
