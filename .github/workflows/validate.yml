@@ -55,8 +55,8 @@ jobs:
         # No PROJECT_REPO placeholders
         ! grep -r "PROJECT_REPO" . --include="*.py" --include="*.md" --exclude="validate_repo.py" 2>/dev/null || exit 1
         
-        # No untracked __pycache__
-        ! find . -type d -name "__pycache__" 2>/dev/null | grep -v ".git" || exit 1
+        # No committed __pycache__
+        ! git ls-files | grep "__pycache__" || exit 1
         
         # JSON files are valid
         python3 -m json.tool N5/config/emoji-legend.json > /dev/null

@@ -23,15 +23,17 @@ import sys
 from pathlib import Path
 from datetime import datetime, timezone
 
-def resolve_workspace_root() -> Path:
-    for key in ("ZO_WORKSPACE", "N5OS_WORKSPACE"):
-        value = os.environ.get(key)
-        if value:
-            return Path(value).expanduser().resolve()
+def workspace_root() -> Path:
+    env_root = os.environ.get("ZO_WORKSPACE")
+    if env_root:
+        return Path(env_root)
+    cwd = Path.cwd().resolve()
+    if (cwd / "N5" / "builds").exists():
+        return cwd
     return Path(__file__).resolve().parents[3]
 
 
-WORKSPACE_ROOT = resolve_workspace_root()
+WORKSPACE_ROOT = workspace_root()
 BUILDS_DIR = WORKSPACE_ROOT / "N5" / "builds"
 
 # Regex patterns for design/frontend keywords (word-boundary matched to avoid
@@ -69,22 +71,6 @@ CONTENT_REQUIRED = [
     "Objective",
     "Success Criteria",
 ]
-
-
-def extract_frontmatter(content: str) -> str:
-    match = re.match(r'^---\n(.*?)\n---\n', content, re.DOTALL)
-    return match.group(1) if match else ""
-
-
-def frontmatter_value(frontmatter: str, key: str) -> str | None:
-    match = re.search(rf'^{re.escape(key)}:\s*(.+)$', frontmatter, re.MULTILINE)
-    if not match:
-        return None
-    return match.group(1).strip()
-
-
-def frontmatter_has_key(frontmatter: str, key: str) -> bool:
-    return bool(re.search(rf'^{re.escape(key)}:\s*', frontmatter, re.MULTILINE))
 
 
 def check_drop_scenarios(slug: str) -> list[str]:
@@ -306,57 +292,6 @@ def check_spec_completeness(slug: str) -> list[str]:
     return warnings
 
 
-def check_drop_contracts(slug: str) -> list[str]:
-    """Warn when new-style code/debug Drops omit explicit runtime contracts."""
-    drops_dir = BUILDS_DIR / slug / "drops"
-    if not drops_dir.exists():
-        return []
-
-    warnings = []
-    for brief_path in sorted(drops_dir.glob("*.md")):
-        if brief_path.stem.startswith("C"):
-            continue
-
-        content = brief_path.read_text()
-        frontmatter = extract_frontmatter(content)
-        if not frontmatter:
-            warnings.append(f"Drop brief {brief_path.name} missing YAML frontmatter")
-            continue
-
-        drop_type = frontmatter_value(frontmatter, "drop_type")
-        if not drop_type:
-            warnings.append(
-                f"Drop brief {brief_path.name} missing drop_type "
-                f"(expected one of: code, debug, checkpoint, research, docs, learning)"
-            )
-            continue
-
-        if drop_type == "code":
-            if not frontmatter_has_key(frontmatter, "quality_contract"):
-                warnings.append(
-                    f"Drop brief {brief_path.name} is drop_type=code but missing quality_contract"
-                )
-                continue
-            if not re.search(r'^\s+check_cmd:\s*.+$', frontmatter, re.MULTILINE):
-                warnings.append(
-                    f"Drop brief {brief_path.name} quality_contract missing check_cmd"
-                )
-
-        if drop_type == "debug":
-            if not frontmatter_has_key(frontmatter, "debug_contract"):
-                warnings.append(
-                    f"Drop brief {brief_path.name} is drop_type=debug but missing debug_contract"
-                )
-                continue
-            for required_key in ("target", "symptom"):
-                if not re.search(rf'^\s+{required_key}:\s*.+$', frontmatter, re.MULTILINE):
-                    warnings.append(
-                        f"Drop brief {brief_path.name} debug_contract missing {required_key}"
-                    )
-
-    return warnings
-
-
 def find_placeholders(content: str) -> list[tuple[int, str, str]]:
     """Find unfilled placeholders in content.
     
@@ -489,10 +424,6 @@ def validate_plan(slug: str) -> dict:
     # Check spec completeness vs spawn mode consistency
     spec_warnings = check_spec_completeness(slug)
     warnings.extend(spec_warnings)
-
-    # Check explicit code/debug contracts
-    contract_warnings = check_drop_contracts(slug)
-    warnings.extend(contract_warnings)
 
     # Check for design context (.impeccable.md) — soft integration
     design_recommendations = check_design_context(slug)

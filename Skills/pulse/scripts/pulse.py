@@ -8,7 +8,6 @@ Commands:
   stop <slug>      - Gracefully stop orchestration
   resume <slug>    - Resume a stopped build
   tick <slug>      - Run single orchestration cycle (for scheduled tasks)
-  ring <slug> <drop_id> - Ring the deposit bell and request an immediate tick
   finalize <slug>  - Run post-build finalization (safety, tests, learnings)
   rush <slug>      - Override learning mode to auto-spawn (per-Drop, per-Wave, or entire build)
 """
@@ -36,9 +35,15 @@ from pulse_common import (
     RECOVERY_DEFAULTS,
     load_config,
 )
+from pulse_implementation_notes import (
+    DEVIATION_INSTRUCTIONS,
+    record_deposit_notes,
+    render_notes,
+    summarize_review,
+)
 
 # Paths
-# WORKSPACE is imported from pulse_common
+# WORKSPACE = Path("/home/workspace")  # Now imported from pulse_common
 BUILDS_DIR = PATHS.BUILDS
 CONVERSATIONS_DB = PATHS.WORKSPACE / "N5" / "data" / "conversations.db"
 SKILLS_DIR = PATHS.SCRIPTS
@@ -51,8 +56,121 @@ DEFAULT_SPAWN_WORKER_TIMEOUT = 180  # pre-running handshake timeout for legacy s
 DEFAULT_TICK_LEASE_SECONDS = 180
 DEFAULT_CIRCUIT_FAILURE_THRESHOLD = 3
 DEFAULT_CIRCUIT_COOLDOWN_SECONDS = 300
+DEFAULT_UPSTREAM_ADAPTER_TIMEOUT_SECONDS = 120
 ZO_API_URL = "https://api.zo.computer/zo/ask"
-DEFAULT_SPAWN_MODEL = "anthropic:claude-opus-4-6"
+DEFAULT_ZO_ASK_MODEL = os.environ.get("ZO_ASK_MODEL_NAME", "byok:8a1176d8-10bf-44e8-a25c-30329932843c")
+
+
+def get_upstream_integration(meta: dict, name: str) -> dict:
+    """Return opt-in upstream integration config for a build."""
+    integrations = meta.get("upstream_integrations") or meta.get("pulse_integrations") or {}
+    config = integrations.get(name, {})
+    return config if isinstance(config, dict) else {}
+
+
+def upstream_integration_enabled(meta: dict, name: str) -> bool:
+    return bool(get_upstream_integration(meta, name).get("enabled"))
+
+
+def _run_upstream_adapter(slug: str, adapter: str, action: str) -> dict:
+    """Run an optional upstream adapter and persist lifecycle logs."""
+    script = SKILLS_DIR / f"pulse_{adapter}_adapter.py"
+    log_dir = PATHS.build_artifacts(slug) / "upstream-lifecycle"
+    log_dir.mkdir(parents=True, exist_ok=True)
+    log_path = log_dir / f"{adapter}_{action}.log"
+
+    if not script.exists():
+        result = {
+            "ok": False,
+            "adapter": adapter,
+            "action": action,
+            "reason": f"adapter script missing: {script}",
+            "log_path": str(log_path),
+        }
+        log_path.write_text(json.dumps(result, indent=2), encoding="utf-8")
+        return result
+
+    try:
+        proc = subprocess.run(
+            ["python3", str(script), action, slug],
+            cwd=str(WORKSPACE),
+            text=True,
+            capture_output=True,
+            timeout=DEFAULT_UPSTREAM_ADAPTER_TIMEOUT_SECONDS,
+        )
+    except subprocess.TimeoutExpired as exc:
+        log_path.write_text((exc.stdout or "") + (exc.stderr or ""), encoding="utf-8")
+        return {
+            "ok": False,
+            "adapter": adapter,
+            "action": action,
+            "reason": f"adapter timed out after {DEFAULT_UPSTREAM_ADAPTER_TIMEOUT_SECONDS}s",
+            "log_path": str(log_path),
+        }
+    log_path.write_text((proc.stdout or "") + (proc.stderr or ""), encoding="utf-8")
+    return {
+        "ok": proc.returncode == 0,
+        "adapter": adapter,
+        "action": action,
+        "returncode": proc.returncode,
+        "log_path": str(log_path),
+    }
+
+
+def run_upstream_prestart_checks(slug: str, meta: dict) -> tuple[bool, list[dict]]:
+    """Run enabled upstream checks before a build starts."""
+    checks: list[dict] = []
+    if upstream_integration_enabled(meta, "agent_mail"):
+        checks.append(_run_upstream_adapter(slug, "agent_mail", "check"))
+    if upstream_integration_enabled(meta, "baml"):
+        checks.append(_run_upstream_adapter(slug, "baml", "generate"))
+    if upstream_integration_enabled(meta, "humanlayer"):
+        checks.append(_run_upstream_adapter(slug, "humanlayer", "smoke"))
+    return all(item.get("ok") for item in checks), checks
+
+
+def inject_upstream_integration_instructions(brief_content: str, slug: str, drop_id: str, meta: dict) -> str:
+    """Inject opt-in upstream integration instructions into worker prompts."""
+    sections: list[str] = []
+
+    if upstream_integration_enabled(meta, "agent_mail"):
+        sections.append(f"""### MCP Agent Mail Coordination
+
+This build has MCP Agent Mail enabled for worker coordination. Use it when you need an auditable handoff or file-reservation check:
+
+```bash
+python3 Skills/pulse/scripts/pulse.py agent-mail check {slug}
+```
+
+Before editing shared files, note likely ownership/collision risks in your deposit. If you need a cross-worker handoff, include a `broadcast` field in your deposit so Pulse can inject it into later Drops.
+""")
+
+    if upstream_integration_enabled(meta, "baml"):
+        sections.append(f"""### BAML Contract Discipline
+
+This build has BAML contract generation enabled. Keep structured outputs compatible with the generated Pulse deposit/review contract:
+
+```bash
+python3 Skills/pulse/scripts/pulse.py baml generate {slug}
+```
+
+If you intentionally change deposit or review shape, record it under `schema_deviations` in your deposit.
+""")
+
+    if upstream_integration_enabled(meta, "humanlayer"):
+        sections.append("""### HumanLayer-Style Approval Discipline
+
+This build has HumanLayer approval semantics enabled as a safety model. Do not perform destructive, external, publish, push, or protected-path actions unless the parent thread explicitly approved that exact action. If approval is missing, write a blocked deposit instead of proceeding.
+""")
+
+    if not sections:
+        return brief_content
+
+    section = "\n\n## Upstream Integration Instructions\n\n" + "\n\n".join(sections)
+    for marker in ["## Requirements", "## Context", "## Files to Read"]:
+        if marker in brief_content:
+            return brief_content.replace(marker, section + "\n\n" + marker, 1)
+    return brief_content + section
 
 
 def get_build_mode(meta: dict) -> str:
@@ -361,76 +479,6 @@ def save_meta(slug: str, meta: dict):
         json.dump(meta, f, indent=2)
 
 
-def get_deposit_path(slug: str, drop_id: str) -> Path:
-    return BUILDS_DIR / slug / "deposits" / f"{drop_id}.json"
-
-
-def record_tick_request(slug: str, source: str, drop_id: str | None = None) -> dict:
-    """Persist recent tick-trigger metadata for observability."""
-    now = datetime.now(timezone.utc).isoformat()
-    entry = {
-        "requested_at": now,
-        "source": source,
-    }
-    if drop_id:
-        entry["drop_id"] = drop_id
-
-    with locked_meta(slug) as meta:
-        meta["last_tick_request"] = entry
-        recent = meta.get("recent_tick_requests", [])
-        recent.append(entry)
-        meta["recent_tick_requests"] = recent[-10:]
-
-    return entry
-
-
-def should_send_watchdog_alert(
-    slug: str,
-    alert_key: str,
-    cooldown_seconds: int = 1800,
-) -> bool:
-    """Dedupe watchdog alerts so Sentinel does not spam repeated failures."""
-    now = datetime.now(timezone.utc)
-
-    with locked_meta(slug) as meta:
-        alerts = meta.get("watchdog_alerts", {})
-        prior = alerts.get(alert_key, {})
-        sent_at = _parse_iso(prior.get("sent_at"))
-
-        if sent_at and (now - sent_at).total_seconds() < cooldown_seconds:
-            return False
-
-        alerts[alert_key] = {
-            "sent_at": now.isoformat(),
-            "cooldown_seconds": cooldown_seconds,
-        }
-        meta["watchdog_alerts"] = alerts
-
-    return True
-
-
-def ring_drop_bell(slug: str, drop_id: str) -> int:
-    """Request an immediate tick after a Drop writes its deposit."""
-    deposit_path = get_deposit_path(slug, drop_id)
-    if not deposit_path.exists():
-        print(f"[BELL] Deposit missing for {drop_id}: {deposit_path}")
-        return 1
-
-    entry = record_tick_request(slug, source="deposit_bell", drop_id=drop_id)
-    status = load_meta(slug).get("status", "unknown")
-    print(
-        f"[BELL] {drop_id} requested tick for {slug} at {entry['requested_at']} "
-        f"(build status: {status})"
-    )
-
-    if status != "active":
-        print(f"[BELL] Build {slug} is {status}; skipping immediate tick.")
-        return 0
-
-    asyncio.run(tick(slug))
-    return 0
-
-
 def find_drop_brief_path(slug: str, drop_id: str) -> Path:
     """Find the file path for a Drop brief in the build's drops/ folder."""
     drops_dir = BUILDS_DIR / slug / "drops"
@@ -474,13 +522,21 @@ Load and execute: file 'N5/builds/{slug}/drops/{brief_path.name}'
 
 When complete, write deposit to:
 file 'N5/builds/{slug}/deposits/{drop_id}.json'
+
+Your deposit must include deterministic implementation-note fields:
+- `files_touched`: exact workspace-relative files created or modified
+- `plan_deviations`, `schema_deviations`, `assumption_changes`
+- `scope_deviations`, `collision_risks`, `followup_required`
+
+Use empty arrays when there are no entries. Do not edit `IMPLEMENTATION_NOTES.md`;
+Pulse renders it from structured deposit data.
 ```
 
 ## After you finish
 
 - Confirm the deposit exists at the path above.
 - Then run:
-  - `python3 Skills/pulse/scripts/pulse.py ring {slug} {drop_id}`
+  - `python3 Skills/pulse/scripts/pulse.py tick {slug}`
   - (or run periodic tick via your scheduler)
 """
 
@@ -495,7 +551,7 @@ def load_drop_brief(slug: str, drop_id: str) -> str:
 
 def get_deposit(slug: str, drop_id: str) -> Optional[dict]:
     """Get a Drop's deposit if it exists"""
-    deposit_path = get_deposit_path(slug, drop_id)
+    deposit_path = BUILDS_DIR / slug / "deposits" / f"{drop_id}.json"
     if deposit_path.exists():
         with open(deposit_path) as f:
             return json.load(f)
@@ -561,6 +617,15 @@ async def run_validators(slug: str, drop_id: str) -> tuple[bool, dict]:
         if not mech_passed:
             result["verdict"] = "FAIL"
             result["reason"] = f"Code validation: {mech_report.get('critical_count', 0)} critical issues"
+            return False, result
+
+    meta = load_meta(slug)
+    if upstream_integration_enabled(meta, "baml"):
+        baml_result = _run_upstream_adapter(slug, "baml", "generate")
+        result["baml"] = baml_result
+        if not baml_result.get("ok"):
+            result["verdict"] = "FAIL"
+            result["reason"] = f"BAML contract generation failed; see {baml_result.get('log_path')}"
             return False, result
 
     if validation.get("llm_filter_enabled", True) and validation.get("llm_filter_in_tick", False):
@@ -903,6 +968,8 @@ async def spawn_drop(slug: str, drop_id: str, brief: str, model: str = None) -> 
     token = os.environ.get("ZO_CLIENT_IDENTITY_TOKEN")
     if not token:
         raise RuntimeError("ZO_CLIENT_IDENTITY_TOKEN not set")
+    build_dir = PATHS.build(slug)
+    deposit_path = PATHS.build_deposits(slug) / f"{drop_id}.json"
 
     # Collect and inject broadcasts from prior Drops
     broadcasts = collect_broadcasts(slug)
@@ -917,9 +984,16 @@ async def spawn_drop(slug: str, drop_id: str, brief: str, model: str = None) -> 
     if pool.get("enabled") and drop_id in pool.get("worker_drops", []):
         print(f"[POOL] Injecting pool claim instructions for {drop_id}")
         brief_with_broadcasts = inject_pool_claim_instructions(brief_with_broadcasts, slug, drop_id)
+
+    brief_with_broadcasts = inject_upstream_integration_instructions(
+        brief_with_broadcasts,
+        slug,
+        drop_id,
+        meta,
+    )
     
     # Build deposit format as separate string to avoid f-string escaping issues
-    deposit_format = '''{\n  \"drop_id\": \"''' + drop_id + '''\",\n  \"status\": \"complete\",\n  \"summary\": \"What you accomplished\",\n  \"artifacts\": [\"list\", \"of\", \"files\", \"created\"],\n  \"learnings\": [\"any lessons for other workers\"],\n  \"errors\": []\n}'''
+    deposit_format = '''{\n  \"drop_id\": \"''' + drop_id + '''\",\n  \"status\": \"complete\",\n  \"summary\": \"What you accomplished\",\n  \"artifacts\": [\"list\", \"of\", \"files\", \"created\"],\n  \"files_touched\": [\"workspace-relative paths actually created or modified\"],\n  \"plan_deviations\": [],\n  \"schema_deviations\": [],\n  \"assumption_changes\": [],\n  \"scope_deviations\": [],\n  \"collision_risks\": [],\n  \"followup_required\": [],\n  \"learnings\": [\"any lessons for other workers\"],\n  \"errors\": []\n}'''
     
     full_prompt = f"""You are a Pulse Drop executing build \"{slug}\", task \"{drop_id}\".
 
@@ -931,11 +1005,12 @@ async def spawn_drop(slug: str, drop_id: str, brief: str, model: str = None) -> 
 **EXECUTION PROTOCOL:**
 1. Read the brief below carefully
 2. Execute the task completely
-3. When done, write your deposit JSON to: N5/builds/{slug}/deposits/{drop_id}.json
-4. Immediately after the deposit exists, ring Pulse's bell:
-   python3 Skills/pulse/scripts/pulse.py ring {slug} {drop_id}
+3. When done, write your deposit JSON to this absolute path: {deposit_path}
+4. Write any requested build artifacts under this absolute build folder: {build_dir}
 5. DO NOT commit code (orchestrator handles commits)
 6. If blocked, write deposit with status \"blocked\" and explain why
+
+{DEVIATION_INSTRUCTIONS}
 
 **DEPOSIT FORMAT:**
 {deposit_format}
@@ -947,11 +1022,9 @@ BRIEF:
 ---
 {brief_with_broadcasts}"""
     
-    effective_model = model or DEFAULT_SPAWN_MODEL
-    request_body = {"input": full_prompt, "model_name": effective_model}
+    request_body = {"input": full_prompt, "model_name": model or DEFAULT_ZO_ASK_MODEL}
 
-    print(f"[SPAWN] Spawning Drop {drop_id} via /zo/ask (model={effective_model})...")
-    print(f"[SPAWN] {drop_id} prompt length: {len(full_prompt)} chars")
+    print(f"[SPAWN] Spawning Drop {drop_id} via /zo/ask...")
 
     start = datetime.now()
     async with aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=DEFAULT_SPAWN_TIMEOUT)) as session:
@@ -1088,6 +1161,23 @@ def spawn_one(slug: str, drop_id: str, model: str = None) -> int:
 def start_build(slug: str) -> bool:
     """Start a build."""
     meta = load_meta(slug)
+    checks_passed, checks = run_upstream_prestart_checks(slug, meta)
+    if checks:
+        meta["upstream_prestart_checks"] = {
+            "checked_at": datetime.now(timezone.utc).isoformat(),
+            "passed": checks_passed,
+            "checks": checks,
+        }
+    if not checks_passed:
+        meta["status"] = "blocked"
+        meta["blocked_at"] = datetime.now(timezone.utc).isoformat()
+        meta["blocked_reason"] = "Upstream integration pre-start checks failed"
+        save_meta(slug, meta)
+        update_status_md(slug, meta)
+        for check in checks:
+            if not check.get("ok"):
+                print(f"[UPSTREAM BLOCK] {check['adapter']} {check['action']} failed; see {check['log_path']}")
+        return False
     meta["status"] = "active"
     meta["started_at"] = datetime.now(timezone.utc).isoformat()
     save_meta(slug, meta)
@@ -1111,6 +1201,23 @@ def resume_build(slug: str) -> bool:
     meta = load_meta(slug)
     if meta.get("status") != "stopped":
         print(f"[ERROR] Build {slug} is not stopped (current: {meta.get('status')})")
+        return False
+    checks_passed, checks = run_upstream_prestart_checks(slug, meta)
+    if checks:
+        meta["upstream_resume_checks"] = {
+            "checked_at": datetime.now(timezone.utc).isoformat(),
+            "passed": checks_passed,
+            "checks": checks,
+        }
+    if not checks_passed:
+        meta["status"] = "blocked"
+        meta["blocked_at"] = datetime.now(timezone.utc).isoformat()
+        meta["blocked_reason"] = "Upstream integration resume checks failed"
+        save_meta(slug, meta)
+        update_status_md(slug, meta)
+        for check in checks:
+            if not check.get("ok"):
+                print(f"[UPSTREAM BLOCK] {check['adapter']} {check['action']} failed; see {check['log_path']}")
         return False
     
     meta["status"] = "active"
@@ -1517,22 +1624,20 @@ async def _tick_inner(slug: str, lease_holder: str):
 
     _heartbeat_tick_lease(slug, lease_holder)
     
-    # 1. Check for new deposits from active Drops.
-    # Manual Drops sit in awaiting_manual/ready until a human writes the deposit,
-    # so they must be eligible for promotion here as well.
+    # 1. Check for new deposits from running Drops
     running = get_running_drops(meta)
-    deposit_ready_manual = [
-        (drop_id, info)
-        for drop_id, info in meta.get("drops", {}).items()
-        if info.get("status") in ("awaiting_manual", "ready") and get_deposit(slug, drop_id)
-    ]
-    deposit_candidates = running + deposit_ready_manual
     broadcasts_updated = False
     
-    for drop_id, info in deposit_candidates:
+    for drop_id, info in running:
         deposit = get_deposit(slug, drop_id)
         if deposit:
             print(f"[DEPOSIT] Found deposit for {drop_id}: {deposit.get('status', 'unknown')}")
+            try:
+                changed = record_deposit_notes(slug, drop_id, deposit)
+                if changed:
+                    print(f"[NOTES] Recorded implementation notes for {drop_id}")
+            except Exception as e:
+                print(f"[NOTES WARN] Could not record implementation notes for {drop_id}: {e}")
             
             # Update Drop status based on deposit
             old_status = info.get("status", "unknown")
@@ -1687,34 +1792,16 @@ async def _tick_inner(slug: str, lease_holder: str):
             info["failed_at"] = now.isoformat()
             info.pop("spawn_worker_pid", None)
             info.pop("spawn_requested_at", None)
-            update_drop_conversation_status(info.get("conversation_id"), "failed")
-            _increment_spawn_failures(meta, now.isoformat())
             broadcasts_updated = True
             continue
         if elapsed > DEFAULT_SPAWN_WORKER_TIMEOUT:
             print(f"[SPAWN_TIMEOUT] {drop_id} stuck in spawning for {int(elapsed)}s")
-            if worker_pid and _pid_is_running(worker_pid):
-                try:
-                    os.kill(int(worker_pid), 15)
-                except Exception:
-                    pass
             info["status"] = "failed"
             info["failure_reason"] = f"Spawn error: spawn handshake timeout after {int(elapsed)}s"
             info["failed_at"] = now.isoformat()
             info.pop("spawn_worker_pid", None)
             info.pop("spawn_requested_at", None)
-            update_drop_conversation_status(info.get("conversation_id"), "failed")
-            _increment_spawn_failures(meta, now.isoformat())
             broadcasts_updated = True
-
-    recovery_actions = assess_and_recover(slug, meta=meta, source="tick_auto")
-    if recovery_actions:
-        broadcasts_updated = True
-        _heartbeat_tick_lease(slug, lease_holder)
-        print(f"[RECOVERY] Inline recovery actions: {len(recovery_actions)}")
-        if meta.get("status") == "blocked":
-            print(f"[PULSE] Build {slug} blocked during inline recovery")
-            return
     
     # 3. Check for first-wins supersession
     if check_first_wins(slug, meta):
@@ -1884,16 +1971,14 @@ Progress: {complete}/{len(drops)} ({int(complete/len(drops)*100) if drops else 0
 """)
 
 
-def retry_drop(slug: str, drop_id: str, reason: str = None, meta: dict | None = None):
+def retry_drop(slug: str, drop_id: str, reason: str = None):
     """Reset a Drop to pending, archive old deposit, optionally appends retry reason to brief.
     
     Based on Theo's lesson: If output is bad, don't keep appending corrections.
     Revert and restart with corrected input. This gives the model a clean slate
     with better context rather than compounding errors.
     """
-    persist_changes = meta is None
-    if meta is None:
-        meta = load_meta(slug)
+    meta = load_meta(slug)
     
     if drop_id not in meta.get("drops", {}):
         print(f"[ERROR] Drop {drop_id} not found in build {slug}")
@@ -1961,9 +2046,8 @@ def retry_drop(slug: str, drop_id: str, reason: str = None, meta: dict | None = 
         except Exception as e:
             print(f"[RETRY] Warning: Could not update brief: {e}")
     
-    if persist_changes:
-        save_meta(slug, meta)
-        update_status_md(slug, meta)
+    save_meta(slug, meta)
+    update_status_md(slug, meta)
     
     print(f"[RETRY] {drop_id} reset from '{old_status}' to 'pending' (attempt {drop_info['retry_count'] + 1})")
     print(f"[RETRY] Run 'pulse tick {slug}' or wait for the next scheduled tick")
@@ -1992,6 +2076,27 @@ def validate_plan(slug: str):
     else:
         print(f"\n❌ Plan validation failed. Fix issues before starting build.")
         print(f"   Run: python3 {validator_path} {slug} --fix")
+
+
+def grill_build(slug: str) -> int:
+    from pulse_grill import analyze, render_markdown, write_report
+
+    result = analyze(slug)
+    report_path = write_report(slug, result)
+    print(f"[GRILL] Report written: {report_path}")
+    print(render_markdown(result))
+    return 0 if result.get("recommendation") != "do_not_start" else 2
+
+
+def review_wave(slug: str) -> int:
+    path = render_notes(slug)
+    summary = summarize_review(slug)
+    print(f"[REVIEW] Implementation notes rendered: {path}")
+    print(json.dumps(summary, indent=2))
+    if summary.get("requires_orchestrator_review"):
+        print("[REVIEW] Orchestrator should review deviations before adapting future plans or spawning dependent waves.")
+        return 2
+    return 0
 
 
 # ============================================================================
@@ -2102,12 +2207,7 @@ def _check_wave_death(meta: dict, config: dict) -> bool:
     return True
 
 
-def assess_and_recover(
-    slug: str,
-    meta: dict = None,
-    dry_run: bool = False,
-    source: str = "tick_auto",
-) -> list[dict]:
+def assess_and_recover(slug: str, meta: dict = None, dry_run: bool = False) -> list[dict]:
     """Assess build health and execute recovery actions.
 
     Deterministic rules applied in priority order:
@@ -2131,11 +2231,6 @@ def assess_and_recover(
     drops = meta.get("drops", {})
     now = datetime.now(timezone.utc)
 
-    def record_action(action: dict) -> None:
-        if not dry_run:
-            _log_recovery_action(slug, action)
-        actions.append(action)
-
     # Scan for dead/failed drops needing recovery
     for drop_id, info in drops.items():
         status = info.get("status", "")
@@ -2151,7 +2246,6 @@ def assess_and_recover(
                 "drop_id": drop_id,
                 "rule": "R1",
                 "action": "auto_retry",
-                "source": source,
                 "failure_type": failure_type,
                 "reason": f"Dead (timeout), auto-retry {retry_count + 1}/{max_retries}",
                 "retry_number": retry_count + 1,
@@ -2162,11 +2256,12 @@ def assess_and_recover(
                     "Focus on completing the core requirement first. "
                     "If blocked, write a deposit with status 'blocked' immediately."
                 )
-                retry_drop(slug, drop_id, reason=retry_reason, meta=meta)
+                retry_drop(slug, drop_id, reason=retry_reason)
                 info["auto_retried_at"] = now.isoformat()
                 info["auto_retry_reason"] = action["reason"]
-                info["recovery_source"] = source
-            record_action(action)
+                info["recovery_source"] = "tick_auto"
+            _log_recovery_action(slug, action)
+            actions.append(action)
             print(f"[RECOVERY] R1: {drop_id} auto-retried ({retry_count + 1}/{max_retries})")
             continue
 
@@ -2176,7 +2271,6 @@ def assess_and_recover(
                 "drop_id": drop_id,
                 "rule": "R2",
                 "action": "auto_retry",
-                "source": source,
                 "failure_type": failure_type,
                 "reason": f"Spawn error (transient), auto-retry {retry_count + 1}/{max_retries}",
                 "retry_number": retry_count + 1,
@@ -2186,11 +2280,12 @@ def assess_and_recover(
                     "Previous attempt failed during spawn (transient API error). "
                     "This is likely a temporary issue. Proceed normally."
                 )
-                retry_drop(slug, drop_id, reason=retry_reason, meta=meta)
+                retry_drop(slug, drop_id, reason=retry_reason)
                 info["auto_retried_at"] = now.isoformat()
                 info["auto_retry_reason"] = action["reason"]
-                info["recovery_source"] = source
-            record_action(action)
+                info["recovery_source"] = "tick_auto"
+            _log_recovery_action(slug, action)
+            actions.append(action)
             print(f"[RECOVERY] R2: {drop_id} auto-retried (spawn error, {retry_count + 1}/{max_retries})")
             continue
 
@@ -2200,11 +2295,11 @@ def assess_and_recover(
                 "drop_id": drop_id,
                 "rule": "R3",
                 "action": "needs_judgment",
-                "source": source,
                 "failure_type": failure_type,
                 "reason": info.get("failure_reason", "Content/logic failure"),
             }
-            record_action(action)
+            _log_recovery_action(slug, action)
+            actions.append(action)
             print(f"[RECOVERY] R3: {drop_id} needs AI judgment (content error)")
             continue
 
@@ -2214,7 +2309,6 @@ def assess_and_recover(
                 "drop_id": drop_id,
                 "rule": "R1/R2_exhausted",
                 "action": "escalate",
-                "source": source,
                 "failure_type": failure_type,
                 "reason": f"Retries exhausted ({retry_count}/{max_retries})",
             }
@@ -2222,7 +2316,8 @@ def assess_and_recover(
                 meta["status"] = "blocked"
                 meta["blocked_at"] = now.isoformat()
                 meta["blocked_reason"] = action["reason"]
-            record_action(action)
+            _log_recovery_action(slug, action)
+            actions.append(action)
             print(f"[RECOVERY] {drop_id} retries exhausted — escalating")
             continue
 
@@ -2231,11 +2326,11 @@ def assess_and_recover(
             "drop_id": drop_id,
             "rule": "R_unknown",
             "action": "escalate",
-            "source": source,
             "failure_type": failure_type,
             "reason": info.get("failure_reason", "Unknown failure type"),
         }
-        record_action(action)
+        _log_recovery_action(slug, action)
+        actions.append(action)
 
     # R4: Wave death — all blocking drops in current wave failed with retries exhausted
     if _check_wave_death(meta, config):
@@ -2243,7 +2338,6 @@ def assess_and_recover(
             "drop_id": "*",
             "rule": "R4",
             "action": "escalate",
-            "source": source,
             "failure_type": "wave_death",
             "reason": f"All blocking drops in {meta.get('active_wave', '?')} are dead/failed with retries exhausted",
         }
@@ -2251,7 +2345,8 @@ def assess_and_recover(
             meta["status"] = "blocked"
             meta["blocked_at"] = now.isoformat()
             meta["blocked_reason"] = action["reason"]
-        record_action(action)
+        _log_recovery_action(slug, action)
+        actions.append(action)
         print(f"[RECOVERY] R4: Build BLOCKED — {action['reason']}")
 
     # R5: Stale build detection
@@ -2260,11 +2355,11 @@ def assess_and_recover(
             "drop_id": "*",
             "rule": "R5",
             "action": "escalate",
-            "source": source,
             "failure_type": "stale",
             "reason": f"Build active >{config.get('stale_threshold_hours', 4)}h with no progress in >{config.get('stale_no_progress_minutes', 60)}min",
         }
-        record_action(action)
+        _log_recovery_action(slug, action)
+        actions.append(action)
         print(f"[RECOVERY] R5: Build stale — {action['reason']}")
 
     # Save meta if mutations occurred (non-dry-run)
@@ -2456,10 +2551,6 @@ def main():
     
     tick_parser = subparsers.add_parser("tick", help="Run single orchestration cycle (for scheduled tasks)")
     tick_parser.add_argument("slug", help="Build slug")
-
-    ring_parser = subparsers.add_parser("ring", help="Ring the deposit bell and request an immediate tick")
-    ring_parser.add_argument("slug", help="Build slug")
-    ring_parser.add_argument("drop_id", help="Drop ID whose deposit was written")
     
     finalize_parser = subparsers.add_parser("finalize", help="Run post-build finalization (safety, tests, learnings)")
     finalize_parser.add_argument("slug", help="Build slug")
@@ -2480,6 +2571,27 @@ def main():
     
     validate_parser = subparsers.add_parser("validate", help="Validate plan completeness before start")
     validate_parser.add_argument("slug", help="Build slug")
+
+    grill_parser = subparsers.add_parser("grill", help="Run pre-build Grill Gate")
+    grill_parser.add_argument("slug", help="Build slug")
+
+    notes_parser = subparsers.add_parser("notes", help="Render implementation notes")
+    notes_parser.add_argument("slug", help="Build slug")
+
+    review_wave_parser = subparsers.add_parser("review-wave", help="Review worker deviations before next wave")
+    review_wave_parser.add_argument("slug", help="Build slug")
+
+    agent_mail_parser = subparsers.add_parser("agent-mail", help="Optional upstream MCP Agent Mail adapter")
+    agent_mail_parser.add_argument("adapter_command", choices=["check", "smoke"], help="Adapter action")
+    agent_mail_parser.add_argument("slug", help="Build slug")
+
+    baml_parser = subparsers.add_parser("baml", help="Optional upstream BAML adapter")
+    baml_parser.add_argument("adapter_command", choices=["check", "generate"], help="Adapter action")
+    baml_parser.add_argument("slug", help="Build slug")
+
+    humanlayer_parser = subparsers.add_parser("humanlayer", help="Optional upstream HumanLayer adapter")
+    humanlayer_parser.add_argument("adapter_command", choices=["check", "smoke"], help="Adapter action")
+    humanlayer_parser.add_argument("slug", help="Build slug")
     
     rush_parser = subparsers.add_parser("rush", help="Override learning mode to auto-spawn")
     rush_parser.add_argument("slug", help="Build slug")
@@ -2502,8 +2614,6 @@ def main():
             asyncio.run(tick(args.slug))
     elif args.command == "tick":
         asyncio.run(tick(args.slug))
-    elif args.command == "ring":
-        raise SystemExit(ring_drop_bell(args.slug, args.drop_id))
     elif args.command == "finalize":
         asyncio.run(finalize_build(args.slug))
     elif args.command == "spawn-one":
@@ -2516,6 +2626,36 @@ def main():
         retry_drop(args.slug, args.drop_id, args.reason)
     elif args.command == "validate":
         validate_plan(args.slug)
+    elif args.command == "grill":
+        raise SystemExit(grill_build(args.slug))
+    elif args.command == "notes":
+        print(render_notes(args.slug))
+    elif args.command == "review-wave":
+        raise SystemExit(review_wave(args.slug))
+    elif args.command == "agent-mail":
+        adapter_cmd = [
+            "python3",
+            str(SKILLS_DIR / "pulse_agent_mail_adapter.py"),
+            args.adapter_command,
+            args.slug,
+        ]
+        raise SystemExit(subprocess.run(adapter_cmd, cwd=str(WORKSPACE)).returncode)
+    elif args.command == "baml":
+        adapter_cmd = [
+            "python3",
+            str(SKILLS_DIR / "pulse_baml_adapter.py"),
+            args.adapter_command,
+            args.slug,
+        ]
+        raise SystemExit(subprocess.run(adapter_cmd, cwd=str(WORKSPACE)).returncode)
+    elif args.command == "humanlayer":
+        adapter_cmd = [
+            "python3",
+            str(SKILLS_DIR / "pulse_humanlayer_adapter.py"),
+            args.adapter_command,
+            args.slug,
+        ]
+        raise SystemExit(subprocess.run(adapter_cmd, cwd=str(WORKSPACE)).returncode)
     elif args.command == "rush":
         rush_mode(args.slug, args.drop, args.wave)
 
