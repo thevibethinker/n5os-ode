@@ -337,10 +337,10 @@ The recommendation is stored as `spawn_recommendation` and applied if no explici
 ## Paste into a new thread
 
 ```text
-Load and execute: file 'N5/builds/my-build/drops/D1.2-voice-sensitive-task.md'
+Load and execute: example file path `N5/builds/my-build/drops/D1.2-voice-sensitive-task.md`
 
 When complete, write deposit to:
-file 'N5/builds/my-build/deposits/D1.2.json'
+example file path `N5/builds/my-build/deposits/D1.2.json`
 ```
 
 ## After you finish

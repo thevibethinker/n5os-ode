@@ -95,7 +95,7 @@ If you have a meeting transcript file:
 ```
 @Generate_B02
 
-Source: file 'Records/meetings/2026-01-15-client-call.md'
+Source: example file path `Records/meetings/2026-01-15-client-call.md`
 ```
 
 ---
