@@ -10,6 +10,8 @@ Commands:
   tick <slug>      - Run single orchestration cycle (for scheduled tasks)
   finalize <slug>  - Run post-build finalization (safety, tests, learnings)
   rush <slug>      - Override learning mode to auto-spawn (per-Drop, per-Wave, or entire build)
+  jettison <task>   - Create an off-ramp build for discovered work
+  lineage [slug]    - Show build lineage tree or JSON
 """
 
 import argparse
@@ -70,6 +72,197 @@ def get_upstream_integration(meta: dict, name: str) -> dict:
 
 def upstream_integration_enabled(meta: dict, name: str) -> bool:
     return bool(get_upstream_integration(meta, name).get("enabled"))
+
+
+def slugify_task(value: str) -> str:
+    """Convert a short task string into a safe Pulse build slug."""
+    import re
+
+    slug = re.sub(r"[^a-z0-9]+", "-", value.lower()).strip("-")
+    slug = re.sub(r"-+", "-", slug)
+    return slug[:80].strip("-") or "jettison-build"
+
+
+def create_jettison(task: str, parent: str | None = None, build_type: str = "general", moment: str | None = None) -> int:
+    """Create an off-ramp build for work discovered during a parent build or conversation."""
+    base_slug = slugify_task(task)
+    slug = base_slug
+    counter = 2
+    while (BUILDS_DIR / slug).exists():
+        slug = f"{base_slug}-{counter}"
+        counter += 1
+
+    build_dir = BUILDS_DIR / slug
+    build_dir.mkdir(parents=True, exist_ok=False)
+    for dirname in ("drops", "deposits", "artifacts", "launchers"):
+        (build_dir / dirname).mkdir(exist_ok=True)
+
+    now = datetime.now(timezone.utc)
+    today = now.date().isoformat()
+    meta = {
+        "schema_version": "1.0",
+        "slug": slug,
+        "title": task,
+        "objective": task,
+        "created": today,
+        "created_at": now.isoformat(),
+        "status": "draft",
+        "completed_at": None,
+        "type": build_type,
+        "build_mode": "standard",
+        "launch_mode": "jettison",
+        "current_stream": 1,
+        "total_streams": 1,
+        "active_wave": None,
+        "drops": {},
+        "orchestrator_convo_id": None,
+        "workers": {"total": 0, "complete": 0, "in_progress": 0, "blocked": 0, "pending": 0},
+        "waves": {},
+        "worker_details": [],
+        "lineage": {
+            "parent_type": "build" if parent else "conversation",
+            "parent_slug": parent,
+            "created_from": "pulse jettison",
+            "moment": moment,
+        },
+    }
+    save_meta(slug, meta)
+
+    build_md = build_dir / "BUILD.md"
+    build_md.write_text(
+        f"""---
+created: {today}
+last_edited: {today}
+version: 1.0
+provenance: pulse-jettison
+---
+
+# {task}
+
+## Objective
+
+{task}
+
+## Lineage
+
+- Launch mode: jettison
+- Parent: {parent or 'conversation'}
+- Moment: {moment or 'not specified'}
+
+## Next Action
+
+Fill `PLAN.md`, then run the normal Pulse contract checks before `pulse start`.
+""",
+        encoding="utf-8",
+    )
+    (build_dir / "PLAN.md").write_text(
+        f"""---
+created: {today}
+last_edited: {today}
+version: 0.1
+provenance: pulse-jettison
+---
+
+# Plan: {task}
+
+## Objective
+
+{task}
+
+## Scenarios
+
+S1: Define the jettison scope
+  Given: this work was split out from {parent or 'a conversation'}
+  When: the plan is completed
+  Then: the resulting Drops are independently executable
+  Verify: each Drop brief has objective, scope, deliverables, and verification steps
+
+## Drops
+
+- [TO BE FILLED]
+""",
+        encoding="utf-8",
+    )
+    (build_dir / "STATUS.md").write_text(
+        f"# Status: {task}\n\n- Status: draft\n- Created: {today}\n- Launch mode: jettison\n",
+        encoding="utf-8",
+    )
+    (build_dir / ".n5protected").write_text(
+        "Protected build workspace. Use Pulse/build close flows before delete.\n", encoding="utf-8"
+    )
+    print(f"created jettison build: {slug}")
+    print(f"path: N5/builds/{slug}")
+    return 0
+
+
+def collect_lineage() -> list[dict]:
+    """Collect build lineage data from N5/builds/*/meta.json."""
+    rows: list[dict] = []
+    if not BUILDS_DIR.exists():
+        return rows
+    for meta_path in sorted(BUILDS_DIR.glob("*/meta.json")):
+        try:
+            meta = json.loads(meta_path.read_text(encoding="utf-8"))
+        except Exception:
+            continue
+        lineage = meta.get("lineage") if isinstance(meta.get("lineage"), dict) else {}
+        rows.append({
+            "slug": meta.get("slug") or meta_path.parent.name,
+            "title": meta.get("title"),
+            "status": meta.get("status"),
+            "launch_mode": meta.get("launch_mode"),
+            "parent_slug": lineage.get("parent_slug"),
+            "parent_type": lineage.get("parent_type"),
+            "created": meta.get("created") or meta.get("created_at"),
+        })
+    return rows
+
+
+def print_lineage(slug: str | None = None, output_format: str = "tree") -> int:
+    """Print a simple build lineage tree or JSON payload."""
+    rows = collect_lineage()
+    if slug:
+        wanted = {slug}
+        changed = True
+        while changed:
+            changed = False
+            for row in rows:
+                parent = row.get("parent_slug")
+                if row["slug"] in wanted and parent and parent not in wanted:
+                    wanted.add(parent)
+                    changed = True
+                if parent in wanted and row["slug"] not in wanted:
+                    wanted.add(row["slug"])
+                    changed = True
+        rows = [row for row in rows if row["slug"] in wanted]
+
+    if output_format == "json":
+        print(json.dumps({"builds": rows}, indent=2))
+        return 0
+
+    by_parent: dict[str | None, list[dict]] = {}
+    for row in rows:
+        by_parent.setdefault(row.get("parent_slug"), []).append(row)
+
+    def emit(parent: str | None, depth: int, seen: set[str]) -> None:
+        for row in sorted(by_parent.get(parent, []), key=lambda item: item["slug"]):
+            marker = "  " * depth + "- "
+            print(f"{marker}{row['slug']} [{row.get('status') or 'unknown'}] {row.get('title') or ''}")
+            if row["slug"] not in seen:
+                seen.add(row["slug"])
+                emit(row["slug"], depth + 1, seen)
+
+    roots = [row for row in rows if not row.get("parent_slug") or row.get("parent_slug") not in {r["slug"] for r in rows}]
+    if not roots and rows:
+        roots = rows
+    printed = set()
+    for root in sorted(roots, key=lambda item: item["slug"]):
+        if root["slug"] in printed:
+            continue
+        print(f"- {root['slug']} [{root.get('status') or 'unknown'}] {root.get('title') or ''}")
+        printed.add(root["slug"])
+        emit(root["slug"], 1, printed)
+    return 0
 
 
 def _run_upstream_adapter(slug: str, adapter: str, action: str) -> dict:
@@ -2592,6 +2785,16 @@ def main():
     humanlayer_parser = subparsers.add_parser("humanlayer", help="Optional upstream HumanLayer adapter")
     humanlayer_parser.add_argument("adapter_command", choices=["check", "smoke"], help="Adapter action")
     humanlayer_parser.add_argument("slug", help="Build slug")
+
+    jettison_parser = subparsers.add_parser("jettison", help="Create an off-ramp build")
+    jettison_parser.add_argument("task", help="Task or objective for the jettison build")
+    jettison_parser.add_argument("--from", dest="parent", help="Parent build slug")
+    jettison_parser.add_argument("--type", choices=["code_build", "content", "research", "general"], default="general", help="Build type")
+    jettison_parser.add_argument("--moment", help="Triggering moment or discovery note")
+
+    lineage_parser = subparsers.add_parser("lineage", help="View build lineage DAG")
+    lineage_parser.add_argument("slug", nargs="?", help="Optional build slug to focus")
+    lineage_parser.add_argument("--format", choices=["tree", "json"], default="tree", help="Output format")
     
     rush_parser = subparsers.add_parser("rush", help="Override learning mode to auto-spawn")
     rush_parser.add_argument("slug", help="Build slug")
@@ -2656,6 +2859,10 @@ def main():
             args.slug,
         ]
         raise SystemExit(subprocess.run(adapter_cmd, cwd=str(WORKSPACE)).returncode)
+    elif args.command == "jettison":
+        raise SystemExit(create_jettison(args.task, parent=args.parent, build_type=args.type, moment=args.moment))
+    elif args.command == "lineage":
+        raise SystemExit(print_lineage(args.slug, output_format=args.format))
     elif args.command == "rush":
         rush_mode(args.slug, args.drop, args.wave)
 

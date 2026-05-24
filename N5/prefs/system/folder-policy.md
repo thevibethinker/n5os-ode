@@ -168,8 +168,8 @@ The Knowledge folder SHOULD have `Knowledge/POLICY.md` (if not exists, create):
 
 Two top-level Tier roots are recognized and governed by this policy:
 
-- `file 'YOUR_COMPANY/'` — Primary business unit
-- `file 'YOUR_CONSULTANCY/'` — Parallel business unit
+- `YOUR_COMPANY/` (example top-level business-unit placeholder) — Primary business unit
+- `YOUR_CONSULTANCY/` (example top-level business-unit placeholder) — Parallel business unit
 
 ### Routing Rules
 - Deliverables SSOT: all final deliverables live under `Documents/Deliverables/` with org buckets per business unit.

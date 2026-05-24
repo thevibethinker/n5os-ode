@@ -171,8 +171,8 @@ Research DEF CON CTF and ARG design patterns. Focus on puzzle taxonomy, player f
 3. 3-paragraph executive summary
 
 ## Reference Files
-- `file 'N5/builds/vibe-arg/CORE_ELEMENTS_LOCKDOWN.md'`
-- `file 'N5/builds/vibe-arg/PLAN.md'`
+- `N5/builds/vibe-arg/CORE_ELEMENTS_LOCKDOWN.md` (example reference path)
+- `N5/builds/vibe-arg/PLAN.md` (example reference path)
 
 ---
 **INSTRUCTION FOR SUB-AGENT:**
