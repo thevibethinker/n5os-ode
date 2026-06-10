@@ -1,7 +1,7 @@
 ---
 created: 2026-01-15
-last_edited: 2026-03-18
-version: 2.0
+last_edited: 2026-06-10
+version: 2.1
 provenance: n5os-ode-v2
 ---
 
@@ -19,11 +19,11 @@ N5OS Ode transforms Zo from a general-purpose AI assistant into a structured thi
 
 Think of N5OS Ode as firmware for your AI. Out of the box, Zo is a powerful but generic assistant. N5OS Ode adds:
 
-- **Specialist Personas** — 9 focused modes (Builder, Researcher, Writer, Strategist, Debugger, Operator, Architect, Teacher, Librarian) that excel at different work types
+- **Specialist Personas** — 11 focused modes (Operator, Builder, Researcher, Writer, Strategist, Debugger, Architect, Teacher, Designer, Illustrator, Level Upper) that excel at different work types
 - **Behavioral Rules** — 13 persistent instructions that shape AI behavior across all conversations
 - **Conversation State** — Memory that persists across long sessions
 - **Structured Outputs** — Block generators that transform transcripts into actionable intelligence
-- **Journaling System** — Guided reflection workflows for personal insights
+- **Pulse Build Orchestration** — Scenario-driven planning, contract checks, worker Drops, and build finalization
 - **Safety Rails** — Protection mechanisms that prevent data loss
 
 ---
@@ -54,7 +54,7 @@ Open a new Zo conversation and type:
 ```
 
 The bootloader will:
-- Install 9 specialist personas
+- Install 11 specialist personas
 - Create 13 behavioral rules  
 - Set up the folder structure (N5/, Knowledge/, Records/, Prompts/)
 - Initialize configuration files
@@ -80,18 +80,11 @@ Your AI will adapt its behavior to match.
 
 You're ready. Some things to try:
 
-**Journal Entry**
-```
-@Journal
-```
-Start a guided reflection session.
-
 **Build Something**
 ```
-@Build Capability
-I want to create a script that backs up my files daily
+I want to build a script that backs up my files daily.
 ```
-Activates structured planning and execution.
+Activates the Pulse workflow: scenario extraction, Architect planning, contract validation, execution, and finalization.
 
 **Use Personas**
 ```
@@ -115,7 +108,9 @@ Routes to the research specialist.
 | **Debugger** | Troubleshooting, QA, root cause analysis |
 | **Architect** | System design, build planning, technical specs |
 | **Teacher** | Learning, conceptual understanding, skill building |
-| **Librarian** | State sync, coherence audits, filing |
+| **Designer** | Frontend, UI/UX, page composition, design polish |
+| **Illustrator** | Image generation, editing, generative art, multimodal vision |
+| **Level Upper** | Counterintuitive review for major or risky work |
 
 → See [docs/PERSONAS.md](docs/PERSONAS.md) for full details
 
@@ -166,7 +161,7 @@ Transform meeting transcripts into structured intelligence:
 - **B05** — Questions raised
 - **B06** — Business context
 
-Plus reflection blocks (R01, R02, R06) for journaling.
+Plus reflection blocks (R01, R02, R06) for synthesis and post-meeting reflection.
 
 → See [docs/BLOCK_SYSTEM.md](docs/BLOCK_SYSTEM.md) for full details
 
@@ -179,8 +174,7 @@ N5OS includes packaged skills for advanced workflows:
 | --- | --- |
 | **meeting-ingestion** | Pull transcripts from Google Drive, generate intelligence blocks (B01-B28), track in registry |
 | **pulse** | Automated build orchestration - spawn parallel workers, validate deposits, escalate blockers |
-| **close** | Universal close router for conversations and builds |
-| **thread-close** | Thread-level conversation close workflow |
+| **spec-writing** | Scenario extraction used inside Pulse planning; not a separate build workflow |
 | **systematic-debugging** | Root cause analysis methodology with structured phases |
 | **frontend-design** | Production-grade UI patterns with anti-slop guardrails |
 
@@ -202,6 +196,7 @@ python3 Skills/meeting-ingestion/scripts/meeting_cli.py process
 python3 N5/scripts/init_build.py my-build
 python3 N5/scripts/build_contract_check.py my-build
 python3 Skills/pulse/scripts/pulse.py validate my-build
+python3 Skills/pulse/scripts/pulse.py grill my-build
 
 # Start build
 python3 Skills/pulse/scripts/pulse.py start my-build
@@ -230,6 +225,7 @@ Tiered conversation hygiene based on conversation complexity:
 - **Tier 3 (Full Build)** — Major changes, full documentation
 
 Supports Worker vs Full mode for orchestrated multi-conversation builds.
+Use `@Close Conversation` when you are ending a meaningful thread, packaging a worker handoff, or finalizing an orchestrated build.
 
 → See [docs/CONVERSATION_END.md](docs/CONVERSATION_END.md) for details
 
@@ -291,13 +287,13 @@ workspace/
 ├── Knowledge/               # Long-term reference
 │   └── content-library/     # Ingested articles and notes
 ├── Records/                 # Date-organized records
-│   └── journal/             # Journal entries
+│   └── meetings/            # Meeting records and dated operational notes
 ├── Prompts/                 # Reusable workflows
-├── Skills/                   # Packaged workflows
+│   └── Blocks/              # Block generators
+├── Skills/                  # Packaged workflows
 │   ├── meeting-ingestion/   # Meeting transcript processing
-│   └── pulse/               # Build orchestration
-│   ├── Blocks/              # Block generators
-│   └── reflections/         # Reflection templates
+│   ├── pulse/               # Build orchestration
+│   └── spec-writing/        # Scenario extraction for Pulse planning
 ├── BOOTLOADER.prompt.md     # Installation script
 └── PERSONALIZE.prompt.md    # Configuration wizard
 ```

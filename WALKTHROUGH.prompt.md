@@ -1,7 +1,7 @@
 ---
 title: N5OS Ode Walkthrough
 description: Interactive guided tour of N5OS Ode features — teaches new users how to use the system through hands-on demos
-version: 1.0.0
+version: 1.1.0
 tool: true
 tags: [n5os, onboarding, tutorial, walkthrough]
 created: 2026-03-15
@@ -29,19 +29,20 @@ Here's what we can explore together. Pick a number to start:
 
 1. **🎭 Persona Routing** — Watch your AI switch between specialist modes in real time
 2. **📝 Block System** — Turn a meeting transcript into structured intelligence
-3. **📓 Journal** — Write your first journal entry with guided reflection
-4. **🛡️ Safety System** — See file protection in action
-5. **🔍 Context Loading** — Load task-specific knowledge on demand
-6. **📂 Your Workspace** — A quick tour of where things live
-7. **🐙 GitHub Setup** — Connect your workspace to version control
+3. **🏗️ Pulse Builds** — Learn when to use Pulse, spec-writing, and build close
+4. **🧹 Close Conversation** — Capture artifacts, decisions, and worker handoffs at thread end
+5. **🛡️ Safety System** — See file protection in action
+6. **🔍 Context Loading** — Load task-specific knowledge on demand
+7. **📂 Your Workspace** — A quick tour of where things live
+8. **🐙 GitHub Setup** — Connect your workspace to version control
 
-Type a number (1-7) or **all** to go through everything, or **done** to finish.
+Type a number (1-8) or **all** to go through everything, or **done** to finish.
 
 ---
 
 ## 1. Persona Routing
 
-**What it is:** N5OS Ode has 6 specialist personas — like switching between different experts depending on what you need. The Operator (your default) decides who should handle each request.
+**What it is:** N5OS Ode has 11 specialist personas — like switching between different experts depending on what you need. The Operator (your default) decides who should handle each request.
 
 **Try it now:**
 
@@ -159,37 +160,70 @@ You just saw raw conversation turned into structured, searchable intelligence. I
 
 ---
 
-## 3. Journal
+## 3. Pulse Builds
 
-**What it is:** A guided reflection system. Instead of staring at a blank page, the AI asks you questions and compiles your answers into a journal entry stored in a local database.
+**What it is:** Pulse is the build workflow for non-trivial capability, feature, system, and repair work. It turns rough intent into scenarios, a PLAN.md, Drop briefs, contract gates, worker execution, deposits, and finalization.
 
-**Let's do a quick one.** We'll use the Gratitude reflection — it's the shortest (about 2 minutes).
+### When to use it
 
-### Try it now
+Use Pulse when the work has multiple moving parts, shared source changes, parallelizable Drops, long-running validation, or enough ambiguity that a plan should be reviewed before execution.
 
-Say something like:
-> "Let's do a quick gratitude entry"
+Do not use Pulse for quick edits, simple research answers, one-file fixes, or mechanical file operations that can be completed directly.
 
-I'll ask you 2-3 questions. Answer naturally — even one sentence per answer is fine. When we're done, I'll save it to your journal database at `data/journal.db`.
+### Where spec-writing fits
 
-### After your entry
+`Skills/spec-writing/` is not a separate build launcher. It is the scenario-extraction phase inside Pulse planning. Use it before Architect writes the plan when the behavior is ambiguous, user-facing, or failure-prone.
 
-You can always:
-- **List entries:** `python3 N5/scripts/journal.py list`
-- **Search:** `python3 N5/scripts/journal.py search "gratitude"`
-- **View one:** `python3 N5/scripts/journal.py view 1`
+### Required gates
 
-Other reflection types (Morning Pages, Evening Reflection, Weekly Review) go deeper — try them when you have more time.
+```bash
+python3 N5/scripts/init_build.py <slug>
+python3 N5/scripts/build_contract_check.py <slug>
+python3 Skills/pulse/scripts/pulse.py validate <slug>
+python3 Skills/pulse/scripts/pulse.py grill <slug>
+python3 Skills/pulse/scripts/pulse.py start <slug>
+```
 
 ### What Just Happened
 
-You created a journal entry through conversation, not typing into a text file. The entry is stored in a searchable database, tagged by type and date. Over time, patterns emerge — you can search across weeks or months of reflections.
+You learned the build decision boundary: Pulse is for orchestrated work, spec-writing feeds Pulse scenarios, and contract checks must pass before a build starts.
 
 ➡️ **Back to menu** — pick another number, or type **done**.
 
 ---
 
-## 4. Safety System
+## 4. Close Conversation
+
+**What it is:** Close Conversation is the thread-end workflow. It captures what changed, what was decided, what remains open, and whether a worker or orchestrator needs a formal handoff.
+
+### When to use it
+
+Use Close Conversation when a thread produced durable artifacts, decisions, research findings, build deposits, worker handoffs, or changes that need a truthful completion status.
+
+Skip formal close for simple Q&A with no artifacts or state worth preserving.
+
+### Worker vs. full close
+
+- **Worker close:** used inside Pulse worker threads. It writes a handoff/deposit and does not commit.
+- **Full close:** used for normal threads or orchestrators. It can include finalization, artifact breakdown, title generation, and commit planning.
+
+### Required close gate
+
+Before claiming close complete, run the close contract checker against the close checklist:
+
+```bash
+python3 N5/scripts/close_contract_check.py --checklist <path-to-close-checklist.json>
+```
+
+### What Just Happened
+
+You learned when to package a thread instead of just stopping. Pulse creates work; Close Conversation preserves the outcome.
+
+➡️ **Back to menu** — pick another number, or type **done**.
+
+---
+
+## 5. Safety System
 
 **What it is:** N5OS protects important directories from accidental deletion or moves. It uses `.n5protected` marker files — like a "do not disturb" sign on a hotel door.
 
@@ -220,7 +254,7 @@ The system will warn me that this path is protected and explain why. It doesn't 
 If you create a folder with important data, you can protect it:
 
 ```bash
-python3 N5/scripts/n5_protect.py protect Records/ --reason "Personal journal and meeting records"
+python3 N5/scripts/n5_protect.py protect Records/ --reason "Personal meeting records and dated operational notes"
 ```
 
 And if you ever need to remove protection:
@@ -237,7 +271,7 @@ You saw a lightweight but effective safety net. No complex permissions — just 
 
 ---
 
-## 5. Context Loading
+## 6. Context Loading
 
 **What it is:** Instead of loading every preference and protocol into every conversation (which would be slow and expensive), N5OS loads context *on demand* based on what you're working on.
 
@@ -282,7 +316,7 @@ You loaded task-specific context on demand. This is what makes N5OS efficient �
 
 ---
 
-## 6. Your Workspace
+## 7. Your Workspace
 
 **What it is:** A quick orientation of where things live in your N5OS workspace.
 
@@ -316,7 +350,7 @@ You can always ask me "where does X live?" or "where should I put this?" — the
 
 ---
 
-## 7. GitHub Setup
+## 8. GitHub Setup
 
 **What it is:** Connecting your workspace to GitHub gives you version control — the ability to track changes, undo mistakes, and keep a backup of your workspace on the cloud.
 
@@ -392,8 +426,8 @@ When you type **done**, I'll give you a quick summary of what you explored and s
 **Things to try after the walkthrough:**
 
 - **Connect Google Drive** → Enables automatic meeting transcript ingestion
-- **Run a real journal session** → Try `@Journal` and pick Morning Pages or Evening Reflection
-- **Start a build** → Say "I want to build..." and watch the full planning system activate
+- **Start a build** → Say "I want to build..." and watch Pulse planning activate
+- **Close a meaningful thread** → Use `@Close Conversation` when work produced artifacts, decisions, or build handoffs
 - **Explore the docs** → `docs/PHILOSOPHY.md` explains the thinking behind the system
 
 **Getting help:**

@@ -18,6 +18,7 @@ Fast navigation index for `/home/workspace`. Use this file first, then load only
 | Site staging, promotion, and GitHub-per-site protocol | `Documents/System/Sites-System.md` |
 | Cross-harness operating contract | `N5/HARNESS_CONTRACT.md` |
 | Session-state decision | `N5/SESSION_STATE_POLICY.md` |
+| Rule governance | `N5/prefs/system/rule-governance.md` |
 | Claude Code adapter | `CLAUDE.md` |
 | Codex adapter | `CODEX.md` |
 | Workspace identity / tone | `SOUL.md` |

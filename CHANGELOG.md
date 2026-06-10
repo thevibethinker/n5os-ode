@@ -36,7 +36,7 @@ All notable changes to n5OS-Ode are documented here.
 ## [1.0.1] - 2026-01-15
 
 ### Added
-- **Scripts**: `scripts/init_build.py`, `scripts/journal.py` (wrapper), `scripts/validate_repo.py`
+- **Scripts**: `scripts/init_build.py`, `scripts/validate_repo.py`
 - **Core Scripts**: `N5/scripts/conversation_end_router.py`, `N5/scripts/n5_safety.py` (Note: `N5/scripts/positions.py` is available in the extended installation)
 - **Configuration**: `N5/config/emoji-legend.json`, `N5/config/commit_targets.json`
 - **Documentation**: All missing context files (planning_prompt.md, style-guide.md, conversation-end-v3.md, etc.)
@@ -46,20 +46,20 @@ All notable changes to n5OS-Ode are documented here.
 - ✅ **Day-1 Zero-Errors**: All prompts now reference existing files and scripts
 - ✅ **File References**: Standardized backtick syntax for all file mentions
 - ✅ **Context Manifest**: All referenced files now exist in the repository
-- ✅ **Prompts**: Build Capability, Close Conversation, Journal all functional
+- ✅ **Prompts**: Close Conversation and block prompts functional
 - ✅ **Placeholders**: Replaced repository placeholder references where needed
 
 ### Notes
 - All scripts have minimal but functional implementations
 - n5OS-Ode is designed to be **dumped into another Zo workspace and work immediately**
 - No external dependencies beyond Python 3.7+
-- Database files (journal.db, etc.) are git-ignored and created at runtime
+- Runtime database files are git-ignored and created as needed
 
 ## [1.0.0] - 2025-12-15
 
 ### Initial Release
 - Core N5OS-Ode philosophy and architecture
-- 6 core prompts (Build Capability, Close Conversation, Journal, etc.)
+- Core prompts including Close Conversation and block generation
 - Block intelligence system (B01-B06)
 - Semantic memory framework
 - Session state management

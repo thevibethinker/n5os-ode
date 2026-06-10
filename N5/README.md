@@ -1,7 +1,7 @@
 ---
 created: 2026-01-15
-last_edited: 2026-01-15
-version: 1
+last_edited: 2026-06-10
+version: 1.1
 ---
 # N5 Directory
 
@@ -22,10 +22,11 @@ Core system files for N5OS-Ode.
 |--------|---------|-------|
 | `session_state_manager.py` | Conversation state tracking | `python3 N5/scripts/session_state_manager.py init --convo-id X` |
 | `n5_load_context.py` | Context file loading | `python3 N5/scripts/n5_load_context.py build` |
-| `journal.py` | Guided reflection sessions | `python3 N5/scripts/journal.py start` |
 | `n5_protect.py` | Path protection checks | `python3 N5/scripts/n5_protect.py check /path` |
 | `n5_safety.py` | Safety validation | `python3 N5/scripts/n5_safety.py check delete /path` |
 | `init_build.py` | Build workspace creation | `python3 N5/scripts/init_build.py my-build --title "Title"` |
+| `build_contract_check.py` | Build pre-start contract gate | `python3 N5/scripts/build_contract_check.py my-build` |
+| `close_contract_check.py` | Close workflow contract gate | `python3 N5/scripts/close_contract_check.py --checklist path/to/checklist.json` |
 
 ## Configuration
 
@@ -38,4 +39,3 @@ Main configuration files:
 - [Main README](../README.md) — Project overview
 - [Architecture](../docs/ARCHITECTURE.md) — System design
 - [Contributing](../docs/CONTRIBUTING.md) — How to contribute
-

@@ -17,9 +17,7 @@ SCHEMA_SQL = Path(__file__).parent.parent.parent / "N5" / "cognition" / "schema.
 
 
 def ensure_db():
-    """Create the database from schema.sql if it doesn't exist."""
-    if DB_PATH.exists():
-        return
+    """Create or upgrade the database from schema.sql."""
     DB_PATH.parent.mkdir(parents=True, exist_ok=True)
     conn = sqlite3.connect(DB_PATH)
     if SCHEMA_SQL.exists():
@@ -309,4 +307,3 @@ def run_all_tests():
 if __name__ == "__main__":
     success = run_all_tests()
     sys.exit(0 if success else 1)
-

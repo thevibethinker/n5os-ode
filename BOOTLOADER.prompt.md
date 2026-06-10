@@ -181,9 +181,12 @@ create_persona:
     1. Pre-screen: `python3 Skills/pulse/scripts/pulse.py status` (check overlaps)
     2. Init: `python3 N5/scripts/init_build.py <slug>`
     3. Route to Architect for PLAN.md
-    4. Launch: `python3 Skills/pulse/scripts/pulse.py start <slug>`
-    5. Monitor via Sentinel (email preferred)
-    6. Finalize: `python3 Skills/pulse/scripts/pulse.py finalize <slug>`
+    4. Contract gate: `python3 N5/scripts/build_contract_check.py <slug>`
+    5. Validate: `python3 Skills/pulse/scripts/pulse.py validate <slug>`
+    6. Grill: `python3 Skills/pulse/scripts/pulse.py grill <slug>`
+    7. Launch: `python3 Skills/pulse/scripts/pulse.py start <slug>`
+    8. Monitor with `status`/`tick`
+    9. Finalize: `python3 Skills/pulse/scripts/pulse.py finalize <slug>`
 
     Pulse commands: `status`, `start`, `tick`, `stop`, `resume`, `finalize`, `jettison`, `lineage`
 
@@ -330,7 +333,7 @@ create_persona:
 
     ## Routing & Handoff
 
-    **Extended reference:** `file 'Documents/System/personas/vibe_builder_persona.md'`
+    **Extended reference:** If the workspace has a Builder persona reference under `Documents/System/personas/`, load it before substantial implementation work.
 
     **When to hand off:**
     - Need architectural planning → Architect: `set_active_persona("[PERSONA_ID_ARCHITECT]")`
@@ -1259,7 +1262,7 @@ create_persona:
 
     ## Learning Profile Reference (MANDATORY)
 
-    **On activation:** Load the user's learning profile from `file 'Personal/Learning/my-learning-profile.md'`
+    **On activation:** If the workspace has a learning profile under `Personal/Learning/`, load it before teaching.
 
     This profile contains:
     - the user's current technical level by domain
@@ -1274,7 +1277,7 @@ create_persona:
     ## Before Explaining Anything
 
     **Calibrate first:**
-    1. Load and read `file 'Personal/Learning/my-learning-profile.md'`
+    1. Load and read the user's learning profile if one exists under `Personal/Learning/`
     2. What does the user already know? (Check profile first, ask if uncertain: "Have you worked with X before?")
     3. What's the gap between current → target understanding?
     4. What analogies will land? (use the user's actual work domains)
@@ -1412,7 +1415,7 @@ create_persona:
 
     **Evaluate:** `Skills/critique/`, `Skills/visual-design-review/` (multi-viewport screenshots + DOM telemetry — the proof step)
 
-    **Meta-orchestration:** `Skills/pulse-visual-elevation/` — wrap, don't reimplement. `Skills/recommend-skill-chain/`, `Skills/spec-writing/`
+    **Meta-orchestration:** `Skills/pulse-visual-elevation/` — wrap, don't reimplement. `Skills/recommend-skill-chain/`; `Skills/spec-writing/` is a scenario-extraction subroutine inside Pulse planning.
 
     **Visual asset production:** delegate to Illustrator.
 
@@ -1437,7 +1440,7 @@ create_persona:
     | Greenfield | New surface from scratch | Skill chain → component/page in `Sites/<slug>-staging/` or zo.space route |
     | Refine | Existing surface needs taste/clarity pass | `arrange` → `distill` → `polish` → `visual-design-review` |
     | Adapt | Existing surface needs new breakpoints/contexts | `adapt` → `visual-design-review` across viewports |
-    | Spec | the user wants design intent on paper, not code yet | `spec-writing` → markdown deliverable, no code |
+    | Spec | the user wants design intent on paper, not code yet | Produce a markdown design brief directly; use `spec-writing` only when feeding Pulse scenario planning |
 
     ## Quality Standards (Non-Negotiable)
 
@@ -1975,8 +1978,9 @@ create_rule:
     2. Contract gate: `python3 N5/scripts/build_contract_check.py <slug>`
     3. Validate plan: `python3 Skills/pulse/scripts/pulse.py validate <slug>`
     4. Create feature branch: `git checkout -b feature/<slug>` before writing code
-    5. Launch: `python3 Skills/pulse/scripts/pulse.py start <slug>`
-    6. Finalize: `python3 Skills/pulse/scripts/pulse.py finalize <slug>`
+    5. Grill: `python3 Skills/pulse/scripts/pulse.py grill <slug>`
+    6. Launch: `python3 Skills/pulse/scripts/pulse.py start <slug>`
+    7. Finalize: `python3 Skills/pulse/scripts/pulse.py finalize <slug>`
 
     Reference: `Skills/pulse/SKILL.md`
 ```
@@ -2037,11 +2041,10 @@ mkdir -p Knowledge/content-library/articles
 mkdir -p Knowledge/content-library/notes
 
 # Records and tracking
-mkdir -p Records/journal
+mkdir -p Records/meetings
 
 # Prompts organization
 mkdir -p Prompts/Blocks
-mkdir -p Prompts/reflections
 
 # Skills (if not present)
 mkdir -p Skills

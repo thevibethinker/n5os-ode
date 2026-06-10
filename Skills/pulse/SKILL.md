@@ -187,15 +187,17 @@ The validator checks for:
 - **Spec completeness** — Drops with `spawn_mode: auto` but `spec_completeness: partial|ambiguous` get warnings
 - **Warnings** (unchecked open questions, stale plans >14 days)
 
-A build should NOT start until validation passes. The `start` command does NOT enforce this automatically — you must run `validate` first.
+A build should NOT start until validation, contract, and grill gates pass. Treat `start` as an execution command, not a planner.
 
 **Pre-build workflow (mandatory):**
-1. Run spec-writing skill to extract scenarios from intent (`Skills/spec-writing/SKILL.md`)
-2. Run pulse-interview to decompose into Streams/Drops
-3. Architect creates plan with scenarios distributed into Drop briefs
-4. Optionally write holdout scenarios in `holdout_scenarios/`
-5. Validate plan
-6. Start build
+1. Extract scenarios from intent using `Skills/spec-writing/SKILL.md` when behavior is ambiguous, user-facing, or failure-prone.
+2. Run pulse-interview to decompose into Streams/Drops.
+3. Architect creates `PLAN.md` with scenarios distributed into Drop briefs.
+4. Optionally write holdout scenarios in `holdout_scenarios/`.
+5. Run `python3 N5/scripts/build_contract_check.py <slug>`.
+6. Run `python3 Skills/pulse/scripts/pulse.py validate <slug>`.
+7. Run `python3 Skills/pulse/scripts/pulse.py grill <slug>`.
+8. Start build only after gates pass.
 
 ## Design Context Integration (teach-impeccable)
 
@@ -774,7 +776,7 @@ python3 Skills/pulse/scripts/pulse_safety.py restore <slug>
 
 ## Related Files
 
-- `file 'Skills/spec-writing/SKILL.md'` — Pre-build scenario extraction skill
+- `file 'Skills/spec-writing/SKILL.md'` — Scenario extraction subroutine for Pulse planning, not a separate build workflow
 - `file 'Skills/spec-writing/references/scenario-patterns.md'` — Common scenario patterns by build type
 - `file 'Skills/pulse/references/holdout-scenarios-template.md'` — Holdout scenario convention
 - `file 'Skills/pulse/references/pyramid-summary-template.md'` — Multi-resolution context files

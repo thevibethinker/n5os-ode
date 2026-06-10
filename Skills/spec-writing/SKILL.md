@@ -1,9 +1,8 @@
 ---
 name: spec-writing
 description: >
-  Structured interview to extract behavioral scenarios from rough intent before Architect planning.
-  Runs before pulse-interview. Outputs scenario specs that the Architect consumes as input to PLAN.md.
-  Use when starting any Pulse build or when the user describes a new feature/system to build.
+  Scenario extraction subroutine for Pulse planning. Use inside the Pulse pre-build workflow
+  when rough intent needs behavioral scenarios before Architect writes PLAN.md and Drop briefs.
 compatibility: Created for Zo Computer
 metadata:
   author: n5os
@@ -15,10 +14,12 @@ metadata:
 
 ## When to Activate
 
-- Before any Pulse build (runs before pulse-interview)
-- When the user says "I want to build X" or describes a new feature/system
+- During Pulse planning when behavior is ambiguous, user-facing, failure-prone, or hard to verify
+- When the user says "I want to build X" and the request needs scenario clarification before planning
 - When the Architect persona needs scenario specs as planning input
 - On explicit request: "write specs", "extract scenarios", "what does working look like"
+
+Do not treat this as a standalone build workflow. Pulse owns build initialization, validation, execution, and finalization.
 
 ## Workflow
 

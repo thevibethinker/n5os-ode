@@ -16,6 +16,7 @@ This file is the canonical, tool-agnostic operating contract for `/home/workspac
 - `POLICY.md` governs folder placement and root hygiene.
 - `N5/HARNESS_CONTRACT.md` is the shared cross-harness operating contract.
 - `N5/SESSION_STATE_POLICY.md` governs when conversation-local session state is required, optional, or skipped.
+- `N5/prefs/system/rule-governance.md` governs when behavior belongs in global rules versus skills, folder contracts, or prefs.
 - Tool-specific files such as `CLAUDE.md` and `CODEX.md` are thin adapters. They should inherit this contract and add only tool-specific deltas.
 - If an adapter starts re-stating the full workspace manual, slim the adapter instead of expanding this file.
 
@@ -121,6 +122,7 @@ Use Pulse or explicit staged execution for large decomposable work.
 - Use `WORKSPACE_MAP.md` first for rapid navigation, then load deeper docs only as the task requires.
 - Use the conversation-local `SESSION_STATE.md` in `/home/.z/workspaces/<convo-id>/`, not the root `SESSION_STATE.md`, as the live record for an active thread when the current lane or workflow requires session state per `N5/SESSION_STATE_POLICY.md`.
 - Check the most specific available `POLICY.md` when placement or folder hygiene matters.
+- For rule creation, deletion, or migration, classify the behavior with `N5/prefs/system/rule-governance.md`; keep global rules as universal guardrails or thin routers, not procedural manuals.
 - Prefer existing `Recipe > Protocol > Script > Direct ops > Improvisation`.
 - Keep scratch and iterative artifacts in the conversation workspace by default.
 - Declare the intended location and rationale before creating permanent workspace artifacts.

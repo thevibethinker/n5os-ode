@@ -46,7 +46,6 @@ Scripts automatically create SQLite databases in `N5/data/`:
 
 | Database | Script | Purpose |
 |----------|--------|---------|
-| `journal.db` | `journal.py` | Journal entries |
 | `content_library.db` | `content_ingest.py` | Content library |
 | `conversations.db` | `session_state_manager.py` | Conversation tracking |
 

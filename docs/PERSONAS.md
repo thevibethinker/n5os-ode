@@ -13,7 +13,7 @@ This document describes the persona system in N5OS Ode — what each persona doe
 
 ## Overview
 
-N5OS Ode uses **6 specialist personas** that you can route work to based on the type of task. This isn't about having different "personalities" — it's about loading focused context and expertise for different kinds of work.
+N5OS Ode uses **11 specialist personas** that you can route work to based on the type of task. This isn't about having different "personalities" — it's about loading focused context and expertise for different kinds of work.
 
 | Persona | Domain | Use When |
 |---------|--------|----------|

@@ -306,7 +306,7 @@ For a comprehensive meeting analysis:
 
 ### Reflection Workflow
 
-For journaling:
+For post-meeting reflection, learning capture, or strategic synthesis:
 
 1. **R01** — Personal insights (self-understanding)
 2. **R02** — Learning notes (new knowledge)
@@ -332,4 +332,3 @@ For journaling:
 ---
 
 *Blocks transform information overload into actionable intelligence.*
-

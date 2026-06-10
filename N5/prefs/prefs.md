@@ -70,7 +70,6 @@ N5/
 | `n5_protect.py` | File/directory protection system |
 | `n5_load_context.py` | Load context bundles by task type |
 | `debug_logger.py` | Track debugging attempts, detect patterns |
-| `journal.py` | Personal journaling with typed entries |
 | `content_ingest.py` | Ingest content into knowledge library |
 
 ---
@@ -91,4 +90,3 @@ To customize n5OS-Ode for your workflow:
 - [n5OS-Ode README](../../README.md) — Project overview
 - [Architecture](../../docs/ARCHITECTURE.md) — System design
 - [Contributing](../../docs/CONTRIBUTING.md) — How to contribute
-

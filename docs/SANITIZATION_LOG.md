@@ -51,15 +51,7 @@ provenance: sanitized
 - Made log path configurable via env var
 - Kept pattern detection logic intact
 
-### 5. `journal.py`
-**Source Lines:** ~300
-**Changes:**
-- **REMOVED:** `diet` column from schema (instance-specific health tracking)
-- **REMOVED:** `temptation` entry type prompts (instance-specific)
-- Kept core journaling functionality
-- Updated docstring
-
-### 6. `content_ingest.py`
+### 5. `content_ingest.py`
 **Source Lines:** ~250
 **Changes:**
 - No instance-specific content found
@@ -178,5 +170,4 @@ These scripts were NOT exported as they are instance-specific:
 - `reflection_*.py` - Reflection system
 - `shortio_*.py` - Personal URL shortener
 - `stakeholder_*.py` - Contact intelligence
-
 

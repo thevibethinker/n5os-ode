@@ -1,7 +1,7 @@
 ---
 created: 2026-01-15
-last_edited: 2026-01-15
-version: 1.0
+last_edited: 2026-06-10
+version: 1.1
 provenance: n5os-ode-v1
 ---
 
@@ -24,10 +24,10 @@ workspace/
 ├── Knowledge/               # Long-term reference
 │   └── content-library/     # Ingested articles
 ├── Records/                 # Date-organized records
-│   └── journal/             # Journal entries
+│   └── meetings/            # Meeting notes and dated operational records
 ├── Prompts/                 # Reusable workflows
 │   ├── Blocks/              # Block generators
-│   └── reflections/         # Reflection templates
+│   └── Close Conversation.prompt.md
 ├── BOOTLOADER.prompt.md     # Installation prompt
 └── PERSONALIZE.prompt.md    # Configuration wizard
 ```
@@ -50,8 +50,8 @@ N5/
 │   ├── n5_protect.py
 │   ├── n5_load_context.py
 │   ├── debug_logger.py
-│   ├── journal.py
-│   └── content_ingest.py
+│   ├── build_contract_check.py
+│   └── close_contract_check.py
 └── cognition/                # Optional semantic memory
     ├── config.yaml
     ├── schema.sql
@@ -100,14 +100,11 @@ Knowledge/
 
 ```
 Records/
-├── journal/
-│   ├── 2026-01-15-morning-reflection.md
-│   └── 2026-01-14-weekly-review.md
+├── meetings/
 └── [other dated content]/
 ```
 
 **What goes here**:
-- Journal entries
 - Meeting notes
 - Daily logs
 - Time-specific records
@@ -122,17 +119,11 @@ Records/
 
 ```
 Prompts/
-├── Journal.prompt.md
 ├── Close Conversation.prompt.md
-├── Build Capability.prompt.md
 ├── Blocks/
 │   ├── Generate_B01.prompt.md
 │   ├── Generate_B02.prompt.md
 │   └── ...
-└── reflections/
-    ├── morning-pages.prompt.md
-    ├── evening-reflection.prompt.md
-    └── weekly-review.prompt.md
 ```
 
 **What goes here**:
@@ -248,4 +239,3 @@ N5OS Ode creates its directories alongside whatever you have. Nothing gets overw
 ---
 
 *Structure serves workflow. If it doesn't help, change it.*
-
