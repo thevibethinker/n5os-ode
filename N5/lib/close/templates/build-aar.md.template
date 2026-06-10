@@ -1,0 +1,37 @@
+# Build After-Action Report
+
+**Build:** {slug}
+**Date:** {date}
+**Drops:** {complete_drops}/{total_drops} complete ({failed_drops} failed)
+
+## Build Summary
+
+{build_summary}
+
+## Artifacts Created ({artifact_count})
+
+{artifact_list}
+
+## Key Decisions ({decision_count})
+
+{key_decisions}
+
+## Drop Summaries
+
+{drop_summaries}
+
+## Learnings
+
+{learnings_list}
+
+## Concerns Raised
+
+{concerns_list}
+
+## Position Candidates
+
+{position_candidates}
+
+## Content Library Candidates
+
+{content_candidates}

@@ -1,0 +1,28 @@
+buckets:
+  work:
+    description: "Professional work, projects, deliverables, and collaborators"
+    keywords: ["project", "client", "meeting", "proposal", "deadline", "review"]
+  system:
+    description: "Zo, N5, agents, skills, workspace operations, and automation"
+    keywords: ["zo", "n5", "agent", "skill", "workspace", "automation", "pulse"]
+  research:
+    description: "Research, strategy, market intelligence, and technical learning"
+    keywords: ["research", "paper", "market", "strategy", "analysis", "technical"]
+  personal:
+    description: "Personal life signals that the user explicitly wants tracked"
+    keywords: ["family", "health", "travel", "errand", "personal"]
+  other:
+    description: "Routine or uncategorized activity"
+    keywords: []
+
+priority:
+  high:
+    signals: ["commitment", "decision", "money", "deadline", "blocked"]
+  medium_high:
+    signals: ["new collaborator", "shipped", "created", "offer", "follow-up"]
+  medium:
+    signals: ["new idea", "feedback", "research", "draft"]
+  low:
+    signals: ["routine triage", "calendar browsing", "general reading"]
+  skip:
+    signals: ["system notification", "lock screen", "duplicate capture"]

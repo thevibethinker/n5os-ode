@@ -1,0 +1,37 @@
+# After-Action Report - Tier 3
+
+**Conversation ID:** {convo_id}
+**Date:** {date}
+**Type:** {type}
+
+## Summary
+
+{summary}
+
+## What Worked
+
+{what_worked}
+
+## What Could Improve
+
+{what_could_improve}
+
+## Key Decisions
+
+{key_decisions}
+
+## Learnings
+
+{learnings}
+
+## Position Candidates
+
+{position_candidates}
+
+## Content Library Candidates
+
+{content_candidates}
+
+## Follow-up Items
+
+{follow_up_items}
