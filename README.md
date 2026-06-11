@@ -1,7 +1,7 @@
 ---
 created: 2026-01-15
-last_edited: 2026-06-10
-version: 2.1
+last_edited: 2026-06-11
+version: 2.2
 provenance: n5os-ode-v2
 ---
 
@@ -168,15 +168,44 @@ Plus reflection blocks (R01, R02, R06) for synthesis and post-meeting reflection
 
 ### Skills
 
-N5OS includes packaged skills for advanced workflows:
+N5OS ships a self-contained skill suite. Skills fall into three practical groups:
+
+1. **Executable workflow skills** — include scripts/tests and can run locally after install.
+2. **Instruction skills** — reusable playbooks that guide the agent without requiring code.
+3. **Compatibility shims** — small alias packages that keep legacy prompt references resolvable while pointing to the canonical skill.
+
+Core executable workflows:
 
 | Skill | Description |
 | --- | --- |
-| **meeting-ingestion** | Pull transcripts from Google Drive, generate intelligence blocks (B01-B28), track in registry |
-| **pulse** | Automated build orchestration - spawn parallel workers, validate deposits, escalate blockers |
-| **spec-writing** | Scenario extraction used inside Pulse planning; not a separate build workflow |
-| **systematic-debugging** | Root cause analysis methodology with structured phases |
+| **meeting-ingestion** | Pull transcripts from Google Drive, generate intelligence blocks, and track processing state |
+| **pulse** | Build orchestration: planning, contract checks, worker Drops, snapshots, validation, learning capture |
+| **codebase-graph** | Static dependency graph for blast-radius review across N5, Skills, Prompts, and integrations |
+| **google-tasks-bridge** | Google Tasks sync bridge with parser/classifier tests |
+| **task-system** | Local task registry, daily briefings, staged review, and action-conversation context |
+| **sentience-sync** | Source-only Sentience API sync package with PII scrubbing, idempotency, local state, and tests |
+| **close / thread-close / build-close / drop-close** | Conversation, worker, build, and drop close workflows |
+| **visual-design-review** | Multi-viewport screenshot and DOM telemetry capture for UI review |
+| **recommend-skill-chain** | Recommends ordered design-skill chains from a visual spec |
+| **pulse-visual-elevation** | Orchestrates visual elevation passes around design-skill chains and review checkpoints |
+
+Design and generation skills:
+
+| Skill | Description |
+| --- | --- |
 | **frontend-design** | Production-grade UI patterns with anti-slop guardrails |
+| **teach-impeccable** | Captures project design context before frontend/design work |
+| **arrange, bolder, distill, delight, colorize, animate, adapt, polish, critique** | Atomic visual transformation and review playbooks |
+| **landing-page-generator, portfolio-generator, google-stitch, text-to-diagram, branded-pdf, remotion, algorithmic-art** | Specialized generation workflows |
+| **spec-writing / pulse-interview** | Scenario extraction and pre-build decomposition used inside Pulse planning |
+| **systematic-debugging** | Root cause analysis methodology with structured phases |
+| **debono-thinking-hats** | Multi-lens thinking workflow |
+
+Compatibility shims included intentionally:
+
+| Shim | Canonical replacement |
+| --- | --- |
+| **frontend-visual-director** | `Skills/frontend-design/`, `Skills/teach-impeccable/`, `Skills/visual-design-review/`, `Skills/pulse-visual-elevation/` |
 
 **Meeting Ingestion Quick Start:**
 ```bash
@@ -291,9 +320,14 @@ workspace/
 ├── Prompts/                 # Reusable workflows
 │   └── Blocks/              # Block generators
 ├── Skills/                  # Packaged workflows
+│   ├── codebase-graph/      # Dependency graph and blast-radius review
+│   ├── frontend-design/     # Flagship frontend/design guidance
+│   ├── google-tasks-bridge/ # Google Tasks bridge
 │   ├── meeting-ingestion/   # Meeting transcript processing
 │   ├── pulse/               # Build orchestration
-│   └── spec-writing/        # Scenario extraction for Pulse planning
+│   ├── sentience-sync/      # Sentience API sync package
+│   ├── task-system/         # Local task registry and briefings
+│   └── ...                  # Additional generation, design, close, and compatibility skills
 ├── BOOTLOADER.prompt.md     # Installation script
 └── PERSONALIZE.prompt.md    # Configuration wizard
 ```
@@ -374,8 +408,8 @@ We gratefully acknowledge their contribution to the Zo ecosystem.
 
 ## Version
 
-**N5OS Ode v2.0**
-Released: March 2026
+**N5OS Ode v2.2**
+Released: June 2026
 
 ---
 

@@ -96,8 +96,8 @@ Jan 24 | ❌ 👷🏽‍♂️ 🏗️ [API Integration] D1.2 Auth Handler (bloc
   "completed_at": "2026-01-24T12:00:00Z",
   "summary": "Created foo.py and bar.py with tests",
   "artifacts": [
-    "Skills/my-skill/scripts/foo.py",
-    "Skills/my-skill/scripts/bar.py"
+    "src/foo.py",
+    "src/bar.py"
   ],
   "learnings": "The API requires auth header even for public endpoints",
   "concerns": "Rate limiting may be an issue at scale",

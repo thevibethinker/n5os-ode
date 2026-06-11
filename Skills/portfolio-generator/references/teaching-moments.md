@@ -109,4 +109,4 @@ Every teaching moment follows this pattern:
 | **Agentic execution** | AI handles the full technical process end-to-end | Code generation + deploy |
 | **Iterative refinement** | Describe changes → AI implements → repeat | Polish step |
 | **Multi-source ingestion** | Combining data from multiple places | LinkedIn + resume + extras |
-| **Skills/tooling** | Reusable tools you can share and install | Cloning the GitHub repo |
+| **Skills/<skill-name>** | Reusable tools you can share and install | Cloning the GitHub repo |
