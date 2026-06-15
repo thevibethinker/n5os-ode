@@ -166,7 +166,7 @@ ORDER BY i.title;
 The Follow-Up Email Generator automatically queries the database when generating emails:
 
 **Workflow:**
-1. AI reads meeting commitments (B02/B25)
+1. AI reads meeting commitments from S-shape meeting artifacts (especially S02)
 2. AI detects promise to share link
 3. AI queries database: `search --query "[keyword]"`
 4. AI inserts correct URL into email

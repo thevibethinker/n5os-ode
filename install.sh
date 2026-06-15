@@ -4,6 +4,12 @@
 
 set -e
 
+UPDATE_EXISTING=0
+if [[ "${1:-}" == "--update" ]]; then
+    UPDATE_EXISTING=1
+    shift
+fi
+
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DEFAULT_WORKSPACE="$(dirname "$SCRIPT_DIR")"
 WORKSPACE="${WORKSPACE_ROOT:-${ZO_WORKSPACE:-${N5OS_WORKSPACE:-$DEFAULT_WORKSPACE}}}"
@@ -56,8 +62,11 @@ for f in BOOTLOADER.prompt.md PERSONALIZE.prompt.md WALKTHROUGH.prompt.md README
         if [[ ! -f "$WORKSPACE/$f" ]]; then
             cp "$SCRIPT_DIR/$f" "$WORKSPACE/$f"
             echo "  ✓ Copied $f"
+        elif [[ "$UPDATE_EXISTING" == "1" ]]; then
+            cp "$SCRIPT_DIR/$f" "$WORKSPACE/$f"
+            echo "  ✓ Updated $f"
         else
-            echo "  ⚠️  Skipped $f (already exists — delete it first to get the latest version)"
+            echo "  ⚠️  Skipped $f (already exists — delete it first to get the latest version, or rerun with --update)"
         fi
     fi
 done
@@ -85,18 +94,36 @@ mkdir -p "$WORKSPACE/Personal/Meetings/Inbox"
 
 # ===== Phase 4: Clean up =====
 echo ""
-echo "Installation complete. The cloned n5os-ode/ folder will now be removed."
-echo "(Your installed files are safely in $WORKSPACE)"
-if [[ -t 0 ]]; then
-    read -p "Press Enter to continue (or Ctrl+C to keep the folder)..." 2>/dev/null || true
+if [[ "$UPDATE_EXISTING" == "1" ]]; then
+    echo "Update complete. Source folder preserved."
 else
-    echo "Non-interactive shell detected — continuing automatically."
+    echo "Installation complete. The cloned n5os-ode/ folder may be removed if it is a disposable clone inside the target workspace."
+    echo "(Your installed files are safely in $WORKSPACE)"
+
+    cleanup_source=0
+    script_parent="$(dirname "$SCRIPT_DIR")"
+    script_base="$(basename "$SCRIPT_DIR")"
+    if [[ "$script_base" == "n5os-ode" && "$script_parent" == "$WORKSPACE" ]]; then
+        cleanup_source=1
+    fi
+
+    if [[ "$cleanup_source" == "1" ]]; then
+        if [[ -t 0 ]]; then
+            read -p "Press Enter to continue (or Ctrl+C to keep the folder)..." 2>/dev/null || true
+        else
+            echo "Non-interactive shell detected — continuing automatically."
+        fi
+        echo ""
+        echo "Cleaning up..."
+        cd "$WORKSPACE"
+        rm -rf "$SCRIPT_DIR"
+        echo "  ✓ Removed n5os-ode/ directory"
+    else
+        echo "Cleanup skipped: source folder is not a disposable n5os-ode clone inside the target workspace."
+        echo "  Source: $SCRIPT_DIR"
+        echo "  Target: $WORKSPACE"
+    fi
 fi
-echo ""
-echo "Cleaning up..."
-cd "$WORKSPACE"
-rm -rf "$SCRIPT_DIR"
-echo "  ✓ Removed n5os-ode/ directory"
 
 # ===== Done =====
 echo ""

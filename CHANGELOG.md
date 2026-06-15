@@ -9,6 +9,17 @@ provenance: sanitized
 
 All notable changes to n5OS-Ode are documented here.
 
+## [2.0.1] - 2026-05-07
+
+### Fixed
+- Added the missing `Knowledge/architectural/building_fundamentals.md` artifact referenced by the bootloader context manifest and the v2.0.0 changelog.
+- Clarified bootloader persona scope setup: create personas, capture IDs, set recommended scopes, verify scopes where possible, and warn without blocking if scope tooling is unavailable.
+- Added an existing-user update path to the README so users can pull/apply the patch, rerun the idempotent bootloader, and validate their installation.
+- Added `install.sh --update` so existing users can refresh root prompt/docs while preserving non-clobbering directory merges for personal workspace state.
+
+### Notes
+- This patch targets the public/export package repair path. Broader inherited documentation reference warnings from `N5/scripts/validate_repo.py --verbose` remain separate drift-cleanup work.
+
 ## [2.0.0] - 2026-02-18
 
 ### Added

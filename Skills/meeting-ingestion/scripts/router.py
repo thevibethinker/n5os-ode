@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-import os
 """
 Intake Router — Moves classified items from Personal/Inbox/ to their destination.
 
@@ -9,7 +8,7 @@ Usage:
     python3 router.py route --dry-run Personal/Inbox/<folder>/        # Preview destination
 
 Destinations:
-    meeting    → Personal/Meetings/Inbox/<folder>/
+    meeting    → Personal/Meetings/Active/<folder>/
     reflection → Personal/Reflections/YYYY/MM/<folder>/
 """
 
@@ -20,8 +19,12 @@ import sys
 from datetime import datetime, timezone
 from pathlib import Path
 
-WORKSPACE = Path(os.environ.get("N5OS_WORKSPACE", Path(__file__).resolve().parents[2] if Path(__file__).resolve().parents[2].joinpath("N5").exists() else Path.cwd()))
-MEETINGS_INBOX = WORKSPACE / "Personal" / "Meetings" / "Inbox"
+# --- D1 sys.path injection for paths.py ---
+from pathlib import Path as _D1Path
+sys.path.insert(0, str(_D1Path(__file__).parent))
+
+WORKSPACE = Path("/home/workspace")
+from paths import ACTIVE_DIR as MEETINGS_INBOX  # noqa: E402
 REFLECTIONS_BASE = WORKSPACE / "Personal" / "Reflections"
 
 
@@ -33,7 +36,7 @@ def resolve_destination(manifest: dict, folder_name: str) -> tuple[Path, str]:
     content_type = manifest.get("content_type", "unclassified")
 
     if content_type == "meeting":
-        return MEETINGS_INBOX / folder_name, "Personal/Meetings/Inbox/"
+        return MEETINGS_INBOX / folder_name, "Personal/Meetings/Active/"
 
     elif content_type == "reflection":
         content_date = manifest.get("content", {}).get("date", "")

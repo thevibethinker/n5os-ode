@@ -194,7 +194,7 @@ Several N5OS components already follow these patterns:
 - Use `BreakpointPrompting` for destructive operations
 - Follow `TaskReset` between sessions
 
-**Block System (`Prompts/Blocks/`)**
+**Meeting Shapes (`Skills/meeting-ingestion/`)**
 - Use `VisibleStateHeader` for progress tracking
 - Apply `ExampleAbundance` for clarity
 - Include `ActionableDeliverables` for next steps

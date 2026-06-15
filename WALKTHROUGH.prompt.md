@@ -28,7 +28,7 @@ After each section, you'll return to the menu. Type **done** anytime to finish t
 Here's what we can explore together. Pick a number to start:
 
 1. **🎭 Persona Routing** — Watch your AI switch between specialist modes in real time
-2. **📝 Block System** — Turn a meeting transcript into structured intelligence
+2. **📝 Meeting Shapes** — Turn a meeting transcript into canonical structured intelligence
 3. **🏗️ Pulse Builds** — Learn when to use Pulse, spec-writing, and build close
 4. **🧹 Close Conversation** — Capture artifacts, decisions, and worker handoffs at thread end
 5. **🛡️ Safety System** — See file protection in action
@@ -73,7 +73,7 @@ You saw the same AI behave differently depending on the task — not because it'
 
 ---
 
-## 2. Block System
+## 2. Meeting Shapes
 
 **What it is:** Blocks are structured templates that extract specific intelligence from meeting transcripts. Instead of reading a 30-minute transcript and trying to remember what was decided, blocks pull out recaps, decisions, commitments, and open questions automatically.
 
@@ -133,18 +133,18 @@ Alex: Sounds good. Let's check in again next Tuesday.
 
 Now let's extract intelligence from that transcript. I'll run three block generators:
 
-- **B01 (Detailed Recap)** — A structured summary of what was discussed
-- **B03 (Decisions Made)** — Every decision, who made it, and why
-- **B02 (Commitments)** — Who promised to do what, and by when
+- **S01 (Meeting Metadata)** — Title, date, participants, source, and processing metadata
+- **S02 (Decisions + Commitments)** — Decisions, commitments, owners, and next actions
+- **S03-S06** — Strategic implications, stakeholder intelligence, durable ideas, and narrative recap
 
 Watch how each block pulls different signal from the same conversation.
 
 ### Step 3: Review the output
 
 Look at the blocks that were generated. Notice:
-- **B01** gives you context you'd want if you missed the meeting
-- **B03** captures the *why* behind decisions (two tiers because competitors are $19-$49)
-- **B02** turns vague discussion into trackable commitments with dates
+- **S06** gives you the narrative context you'd want if you missed the meeting
+- **S02** captures the *why* behind decisions and the commitments that follow
+- **S03-S05** preserve strategic implications, stakeholder context, and reusable ideas
 
 This is what N5OS does with real meeting transcripts when you connect Google Drive and use the Meeting Ingestion skill.
 

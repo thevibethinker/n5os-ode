@@ -22,7 +22,7 @@ Think of N5OS Ode as firmware for your AI. Out of the box, Zo is a powerful but 
 - **Specialist Personas** — 11 focused modes (Operator, Builder, Researcher, Writer, Strategist, Debugger, Architect, Teacher, Designer, Illustrator, Level Upper) that excel at different work types
 - **Behavioral Rules** — 13 persistent instructions that shape AI behavior across all conversations
 - **Conversation State** — Memory that persists across long sessions
-- **Structured Outputs** — Block generators that transform transcripts into actionable intelligence
+- **Structured Outputs** — S-shape meeting artifacts that transform transcripts into reusable intelligence
 - **Pulse Build Orchestration** — Scenario-driven planning, contract checks, worker Drops, and build finalization
 - **Safety Rails** — Protection mechanisms that prevent data loss
 
@@ -44,6 +44,25 @@ git clone https://github.com/thevibethinker/n5os-ode.git && cd n5os-ode && bash 
 This clones the repo, moves all contents to your workspace root, and cleans up the `n5os-ode/` folder.
 
 **Verify it worked:** You should see `Prompts/`, `N5/`, `BOOTLOADER.prompt.md` etc. directly in your workspace root — NOT inside an `n5os-ode/` folder.
+
+### Existing Users: Update Path
+
+If you already installed N5OS Ode from an older package, update from the public repo instead of reinstalling destructively:
+
+```bash
+tmp="$(mktemp -d)"
+git clone https://github.com/thevibethinker/n5os-ode.git "$tmp/n5os-ode"
+WORKSPACE_ROOT="$PWD" bash "$tmp/n5os-ode/install.sh" --update
+python3 N5/scripts/validate_repo.py
+```
+
+Then open a new Zo conversation and re-run:
+
+```
+@BOOTLOADER.prompt.md
+```
+
+The update path refreshes root prompt/docs and merges missing packaged files without intentionally overwriting your personal state in `N5/`, `Knowledge/`, `Prompts/`, `Skills/`, or `Personal/`. After updating, verify `Knowledge/architectural/building_fundamentals.md` exists and review persona tool scopes in Settings > AI > Personas if your Zo account exposes scope metadata.
 
 ### 2. Run the Bootloader
 
@@ -150,20 +169,18 @@ Plus 13 more principles covering safety, modularity, error handling, and more.
 
 → See [docs/PRINCIPLES.md](docs/PRINCIPLES.md) for full details
 
-### Block System
+### Meeting Shapes
 
-Transform meeting transcripts into structured intelligence:
+Transform meeting transcripts into canonical structured artifacts:
 
-- **B01** — Detailed recap
-- **B02** — Commitments extracted
-- **B03** — Decisions made
-- **B04** — Open questions
-- **B05** — Questions raised
-- **B06** — Business context
+- **S01** — Meeting metadata and participants
+- **S02** — Decisions, commitments, and next actions
+- **S03** — Strategic implications and unresolved questions
+- **S04** — Stakeholder and relationship intelligence
+- **S05** — Durable ideas, frameworks, and market insights
+- **S06** — Narrative recap for human review
 
-Plus reflection blocks (R01, R02, R06) for synthesis and post-meeting reflection.
-
-→ See [docs/BLOCK_SYSTEM.md](docs/BLOCK_SYSTEM.md) for full details
+→ See [Skills/meeting-ingestion/SKILL.md](Skills/meeting-ingestion/SKILL.md) for current meeting-ingestion details
 
 
 ### Skills
@@ -318,7 +335,7 @@ workspace/
 ├── Records/                 # Date-organized records
 │   └── meetings/            # Meeting records and dated operational notes
 ├── Prompts/                 # Reusable workflows
-│   └── Blocks/              # Block generators
+│   └── Blocks/              # Reflection prompts and non-B legacy prompt shells
 ├── Skills/                  # Packaged workflows
 │   ├── codebase-graph/      # Dependency graph and blast-radius review
 │   ├── frontend-design/     # Flagship frontend/design guidance
@@ -361,7 +378,7 @@ N5OS Ode is built on these beliefs:
 | [RULES.md](docs/RULES.md) | Behavioral rules, customization |
 | [PRINCIPLES.md](docs/PRINCIPLES.md) | 37 architectural principles |
 | [FOLDER_STRUCTURE.md](docs/FOLDER_STRUCTURE.md) | Directory layout, conventions |
-| [BLOCK_SYSTEM.md](docs/BLOCK_SYSTEM.md) | Block generators for transcripts |
+| [meeting-ingestion/SKILL.md](Skills/meeting-ingestion/SKILL.md) | Canonical meeting-ingestion pipeline and S-shape artifacts |
 | [BUILD_PLANNING.md](docs/BUILD_PLANNING.md) | Build planning system, templates, and execution flow |
 | [SEMANTIC_MEMORY.md](docs/SEMANTIC_MEMORY.md) | Optional memory layer setup |
 | [CONVERSATION_END.md](docs/CONVERSATION_END.md) | Tiered conversation close |
@@ -379,7 +396,7 @@ N5OS Ode is a starting point, not a cage:
 - **Add personas** — Create specialists for your domains
 - **Modify rules** — Adapt to your preferences
 - **Create prompts** — Build workflows for recurring tasks
-- **Extend blocks** — Generate custom intelligence from transcripts
+- **Extend meeting shapes** — Generate custom structured intelligence from transcripts
 
 Everything can be edited in Zo Settings or the workspace.
 

@@ -26,7 +26,7 @@ workspace/
 ├── Records/                 # Date-organized records
 │   └── meetings/            # Meeting notes and dated operational records
 ├── Prompts/                 # Reusable workflows
-│   ├── Blocks/              # Block generators
+│   ├── Blocks/              # Meeting-shape artifacts
 │   └── Close Conversation.prompt.md
 ├── BOOTLOADER.prompt.md     # Installation prompt
 └── PERSONALIZE.prompt.md    # Configuration wizard
@@ -121,14 +121,12 @@ Records/
 Prompts/
 ├── Close Conversation.prompt.md
 ├── Blocks/
-│   ├── Generate_B01.prompt.md
-│   ├── Generate_B02.prompt.md
-│   └── ...
+│   └── Reflection/            # Reflection prompt shells
 ```
 
 **What goes here**:
 - Workflows you run repeatedly
-- Block generators
+- Meeting-shape artifacts
 - Reflection templates
 - Any procedure you want to invoke by name
 

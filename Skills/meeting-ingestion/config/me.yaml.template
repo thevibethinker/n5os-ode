@@ -1,0 +1,18 @@
+---
+created: 2026-04-20
+last_edited: 2026-04-20
+version: 1.0
+provenance: con_gCDXmfHWTx74W7jJ
+---
+
+identity:
+  canonical_short_name: "V"
+  email_addresses:
+    - "me@example.com"
+    - "v@example.com"
+  exact_names:
+    - "v"
+    - "v example"
+    - "v. example"
+  unique_tokens:
+    - "examplelastname"

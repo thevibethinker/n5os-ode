@@ -1,0 +1,58 @@
+---
+created: 2026-04-20
+last_edited: 2026-04-20
+version: 1.0
+provenance: con_gCDXmfHWTx74W7jJ
+---
+
+org_classification:
+  categories:
+    business_a:
+      signals:
+        - "business a"
+        - "business-a"
+        - "recruiting"
+        - "candidate"
+      manifest_hints:
+        - "business_a"
+    business_b:
+      signals:
+        - "business b"
+        - "product platform"
+        - "automation stack"
+      manifest_hints:
+        - "business_b"
+    personal:
+      signals:
+        - "family"
+        - "personal"
+        - "doctor"
+        - "therapy"
+    professional:
+      signals: []
+      manifest_hints: []
+  default_category: "professional"
+
+internal_identity:
+  email_allowlist:
+    - "me@example.com"
+  domain_allowlist:
+    - "example.com"
+  org_keywords:
+    - "business a"
+    - "business b"
+  name_keywords:
+    - "v"
+    - "examplelastname"
+
+staging:
+  internal_keywords:
+    - "standup"
+    - "internal"
+    - "sync"
+    - "team"
+    - "planning"
+    - "retro"
+  internal_people:
+    - "v"
+    - "teammate"

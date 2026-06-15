@@ -77,6 +77,60 @@ PERSONA_ID_LEVEL_UPPER = <id from create_persona>
 
 **Note on UUID placeholders:** The persona prompts below contain `[PERSONA_ID_<NAME>]` placeholders where they cross-reference other personas. After creating all 11, substitute the actual IDs you captured.
 
+**IMPORTANT — Persona scope setup:**
+After the IDs are captured, set recommended tool scopes explicitly. Do not guess or rely on the account default. If your Zo environment exposes `set_persona_scopes`, apply these scopes after persona creation and before creating routing rules:
+
+```
+set_persona_scopes:
+  persona_id: PERSONA_ID_OPERATOR
+  scopes: ["all"]
+
+set_persona_scopes:
+  persona_id: PERSONA_ID_BUILDER
+  scopes: ["all"]
+
+set_persona_scopes:
+  persona_id: PERSONA_ID_RESEARCHER
+  scopes: ["read_only", "web:search"]
+
+set_persona_scopes:
+  persona_id: PERSONA_ID_WRITER
+  scopes: ["workspace"]
+
+set_persona_scopes:
+  persona_id: PERSONA_ID_STRATEGIST
+  scopes: ["read_only", "web:search"]
+
+set_persona_scopes:
+  persona_id: PERSONA_ID_DEBUGGER
+  scopes: ["all"]
+
+set_persona_scopes:
+  persona_id: PERSONA_ID_ARCHITECT
+  scopes: ["workspace", "web:search"]
+
+set_persona_scopes:
+  persona_id: PERSONA_ID_TEACHER
+  scopes: ["read_only", "web:search"]
+
+set_persona_scopes:
+  persona_id: PERSONA_ID_DESIGNER
+  scopes: ["workspace", "web:search"]
+
+set_persona_scopes:
+  persona_id: PERSONA_ID_ILLUSTRATOR
+  scopes: ["workspace", "web:search"]
+
+set_persona_scopes:
+  persona_id: PERSONA_ID_LEVEL_UPPER
+  scopes: ["read_only", "web:search"]
+```
+
+Scope verification:
+- List personas after scope assignment and confirm all 11 Ode personas exist.
+- If scope metadata is visible, confirm each persona has the recommended scope set above.
+- If `set_persona_scopes` is unavailable or scope metadata cannot be inspected, continue the install but report: `WARNING: Persona tool scopes were not verified. Personas were created, but tool access may need manual review in Settings > AI > Personas.`
+- Do not block the rest of the bootloader only because scope tooling is unavailable; do block if persona creation itself failed.
 
 ### 1.1 Operator (Home Base — Navigation, routing, execution, state, orchestration)
 
@@ -2306,11 +2360,13 @@ Or verify manually:
 | Personas | List personas | 11 personas |
 | Rules | List rules | 13 core rules |
 | Principles | `ls N5/prefs/principles/P*.yaml \| wc -l` | matches repo count |
+| Building fundamentals | `ls Knowledge/architectural/building_fundamentals.md` | File exists |
 | Scripts | `ls N5/scripts/*.py \| wc -l` | 14+ |
 | Skills | `find Skills/ -name SKILL.md` | skill files present |
 | Maintainer playbook | `test -f Documents/System/Maintainer-Playbook.md` | exists |
 | Conversation DB | `ls N5/data/conversations.db` | File exists |
 | Semantic Memory | `ls N5/cognition/brain.db` | File exists |
+| Persona scopes | Review Settings > AI > Personas or scope metadata if available | Recommended scopes applied or warning recorded |
 
 ---
 
