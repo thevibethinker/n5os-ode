@@ -198,8 +198,6 @@ Core executable workflows:
 | **meeting-ingestion** | Pull transcripts from Google Drive, generate intelligence blocks, and track processing state |
 | **pulse** | Build orchestration: planning, contract checks, worker Drops, snapshots, validation, learning capture |
 | **codebase-graph** | Static dependency graph for blast-radius review across N5, Skills, Prompts, and integrations |
-| **google-tasks-bridge** | Google Tasks sync bridge with parser/classifier tests |
-| **task-system** | Local task registry, daily briefings, staged review, and action-conversation context |
 | **sentience-sync** | Source-only Sentience API sync package with PII scrubbing, idempotency, local state, and tests |
 | **close / thread-close / build-close / drop-close** | Conversation, worker, build, and drop close workflows |
 | **visual-design-review** | Multi-viewport screenshot and DOM telemetry capture for UI review |
@@ -213,7 +211,7 @@ Design and generation skills:
 | **frontend-design** | Production-grade UI patterns with anti-slop guardrails |
 | **teach-impeccable** | Captures project design context before frontend/design work |
 | **arrange, bolder, distill, delight, colorize, animate, adapt, polish, critique** | Atomic visual transformation and review playbooks |
-| **landing-page-generator, portfolio-generator, google-stitch, text-to-diagram, branded-pdf, remotion, algorithmic-art** | Specialized generation workflows |
+| **remotion** | Specialized video-generation workflow |
 | **spec-writing / pulse-interview** | Scenario extraction and pre-build decomposition used inside Pulse planning |
 | **systematic-debugging** | Root cause analysis methodology with structured phases |
 | **debono-thinking-hats** | Multi-lens thinking workflow |
@@ -339,11 +337,9 @@ workspace/
 ├── Skills/                  # Packaged workflows
 │   ├── codebase-graph/      # Dependency graph and blast-radius review
 │   ├── frontend-design/     # Flagship frontend/design guidance
-│   ├── google-tasks-bridge/ # Google Tasks bridge
 │   ├── meeting-ingestion/   # Meeting transcript processing
 │   ├── pulse/               # Build orchestration
 │   ├── sentience-sync/      # Sentience API sync package
-│   ├── task-system/         # Local task registry and briefings
 │   └── ...                  # Additional generation, design, close, and compatibility skills
 ├── BOOTLOADER.prompt.md     # Installation script
 └── PERSONALIZE.prompt.md    # Configuration wizard

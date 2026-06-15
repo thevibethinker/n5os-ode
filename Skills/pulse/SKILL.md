@@ -217,48 +217,9 @@ Inject its content into design-related Drop briefs as shared context so all work
 
 **Not a blocker:** Builds can proceed without design context. The recommendation surfaces during `validate` so you can make an informed choice.
 
-## Visual References via Google Stitch
+## Visual References For Design Drops
 
-For builds with design Drops, generate visual reference mockups using Google Stitch. These serve as a "visual brief" — workers get a screenshot alongside the text brief so everyone builds toward the same aesthetic.
-
-**Requires:** `STITCH_API_KEY` in environment, `Skills/google-stitch/` installed.
-
-**Commands:**
-```bash
-# Check which design Drops have/lack visual references
-python3 Skills/pulse/scripts/stitch_brief.py check <slug>
-
-# Preview prompts without calling API
-python3 Skills/pulse/scripts/stitch_brief.py generate <slug> --dry-run
-
-# Generate reference mockups for all design Drops
-python3 Skills/pulse/scripts/stitch_brief.py generate <slug>
-
-# Generate for a specific Drop only
-python3 Skills/pulse/scripts/stitch_brief.py generate <slug> --drop D7
-
-# List existing references
-python3 Skills/pulse/scripts/stitch_brief.py list <slug>
-```
-
-**How it works:**
-1. Finds `.impeccable.md` for the build's target project (required — run `/teach-impeccable` first)
-2. Identifies design-related Drops by keyword matching on titles and briefs
-3. Composes a Stitch prompt for each Drop: objective + design principles from `.impeccable.md`
-4. Creates a Stitch project, sets up a design system from the `.impeccable.md` context
-5. Generates screens and saves screenshots to `N5/builds/<slug>/context/<drop_id>-reference.png`
-
-**Validator integration (soft gate):**
-When `.impeccable.md` exists and design Drops are detected, `validate` also checks for Stitch references. If missing, it surfaces a recommendation with the generate command.
-
-**Recommended workflow:**
-1. Run `/teach-impeccable` → `.impeccable.md`
-2. Write plan + Drop briefs
-3. `stitch_brief.py generate <slug> --dry-run` → review prompts
-4. `stitch_brief.py generate <slug>` → generate mockups
-5. Review mockups, re-generate any that miss the mark
-6. `pulse.py validate <slug>` → confirm design context + references
-7. Start build — workers reference both text brief and visual mockup
+This export does not include `google-stitch` or the former Stitch helper. For design-heavy Pulse builds, create visual references manually or through the active frontend/design skills, then place them under `N5/builds/<slug>/context/` and mention them in the relevant Drop briefs.
 
 ## Required Graph Review For Refactor Drops
 
@@ -772,7 +733,6 @@ python3 Skills/pulse/scripts/pulse_safety.py restore <slug>
 | `pulse_safety.py` | Pre-build checks, artifact verification, snapshots |
 | `pulse_learnings.py` | Capture/propagate learnings (build + system) |
 | `pulse_integration_test.py` | Post-build integration tests |
-| `stitch_brief.py` | Generate Stitch visual references for design Drops |
 
 ## Related Files
 

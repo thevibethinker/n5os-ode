@@ -27,148 +27,39 @@ from typing import Optional, List, Dict, Any
 from . import guards, emoji, pii
 
 
+def _task_system_unavailable() -> Dict[str, Any]:
+    """Return a stable fallback when the optional task-system skill is not installed."""
+    return {
+        'is_action_conversation': False,
+        'context_available': False,
+        'task_system_available': False,
+        'reason': 'task-system skill is not included in this N5OS Ode export'
+    }
+
+
 def _check_task_system_integration(convo_id: str) -> Dict[str, Any]:
-    """Check if conversation is an action conversation via new task-system skill.
-
-    This replaces the old regex-based action_tagger.py approach.
-    Now we use the context.py script to gather data for AI reasoning.
-    """
-    try:
-        # Run the context script to check if this is an action conversation
-        result = subprocess.run(
-            ['python3', '/home/workspace/Skills/task-system/scripts/context.py',
-             'action-check', '--convo-id', convo_id],
-            capture_output=True,
-            text=True,
-            cwd='/home/workspace'
-        )
-
-        if result.returncode == 0:
-            try:
-                context = json.loads(result.stdout)
-
-                # Check if there are matching tasks
-                if context.get('matching_tasks'):
-                    return {
-                        'is_action_conversation': True,
-                        'matching_tasks': context.get('matching_tasks', []),
-                        'task_id': context.get('suggested_task_id'),
-                        'context_available': True
-                    }
-
-                # Check if conversation focus indicates action work
-                focus = context.get('session_state', {}).get('focus', '')
-                if focus and any(keyword in focus.lower() for keyword in ['draft', 'write', 'create', 'build', 'send', 'fix']):
-                    return {
-                        'is_action_conversation': True,
-                        'potential_task': True,
-                        'focus': focus,
-                        'context_available': True
-                    }
-            except json.JSONDecodeError:
-                pass
-
-        return {'is_action_conversation': False, 'context_available': False}
-
-    except Exception as e:
-        return {'is_action_conversation': False, 'error': str(e)}
+    """Task-system integration is optional and omitted from this export."""
+    return _task_system_unavailable()
 
 
 def get_task_completion_context(convo_id: str, task_id: int) -> Optional[Dict[str, Any]]:
-    """Get completion context for a task from the new task-system skill.
-
-    This replaces the old assess_task_completion() from close_hooks.py.
-    The context.py script gathers data, and AI does the reasoning.
-    """
-    try:
-        result = subprocess.run(
-            ['python3', '/home/workspace/Skills/task-system/scripts/context.py',
-             'completion-check', '--convo-id', convo_id, '--task-id', str(task_id)],
-            capture_output=True,
-            text=True,
-            cwd='/home/workspace'
-        )
-
-        if result.returncode == 0:
-            return json.loads(result.stdout)
-
-        return None
-    except Exception as e:
-        print(f"Error getting task completion context: {e}")
-        return None
+    """Return no task completion context when task-system is not installed."""
+    return None
 
 
 def get_task_next_step(task_id: int) -> Optional[Dict[str, Any]]:
-    """Get next step suggestion for a task from the new task-system skill.
-
-    This replaces the old infer_next_step() from close_hooks.py.
-    """
-    try:
-        result = subprocess.run(
-            ['python3', '/home/workspace/Skills/task-system/scripts/context.py',
-             'next-step', '--task-id', str(task_id)],
-            capture_output=True,
-            text=True,
-            cwd='/home/workspace'
-        )
-
-        if result.returncode == 0:
-            return json.loads(result.stdout)
-
-        return None
-    except Exception as e:
-        print(f"Error getting task next step: {e}")
-        return None
+    """Return no task next-step context when task-system is not installed."""
+    return None
 
 
 def update_task_status(task_id: int, status: str, notes: str = "") -> bool:
-    """Update task status using the new task-system skill.
-
-    This replaces the old update_task_from_conversation() from close_hooks.py.
-    """
-    try:
-        result = subprocess.run(
-            ['python3', '/home/workspace/Skills/task-system/scripts/task.py',
-             'update', str(task_id), '--status', status],
-            capture_output=True,
-            text=True,
-            cwd='/home/workspace'
-        )
-
-        if result.returncode == 0:
-            return True
-
-        print(f"Failed to update task status: {result.stderr}")
-        return False
-    except Exception as e:
-        print(f"Error updating task status: {e}")
-        return False
+    """No-op when task-system is not installed."""
+    return False
 
 
 def complete_task(task_id: int, actual_minutes: Optional[int] = None) -> bool:
-    """Mark a task as complete using the new task-system skill.
-    """
-    try:
-        cmd = ['python3', '/home/workspace/Skills/task-system/scripts/task.py',
-               'complete', str(task_id)]
-        if actual_minutes:
-            cmd.extend(['--actual', str(actual_minutes)])
-
-        result = subprocess.run(
-            cmd,
-            capture_output=True,
-            text=True,
-            cwd='/home/workspace'
-        )
-
-        if result.returncode == 0:
-            return True
-
-        print(f"Failed to complete task: {result.stderr}")
-        return False
-    except Exception as e:
-        print(f"Error completing task: {e}")
-        return False
+    """No-op when task-system is not installed."""
+    return False
 
 
 def json_serial(obj):

@@ -22,7 +22,7 @@ Initialize or refresh conversation-local `SESSION_STATE.md` when the thread is i
 - Pulse/drop/build-close flows
 - multi-step debugging likely to span turns
 - work expected to produce structured closeout or resume later
-- task-system / worker / action conversations that depend on tracked state
+- worker / action conversations that depend on tracked state
 - larger file mutations where explicit progress/state helps prevent drift
 
 ### Optional

@@ -34,7 +34,6 @@ Fast navigation index for `/home/workspace`. Use this file first, then load only
 | Graph / feed architecture | `N5/builds/graph-feed-architecture/`, `N5/data/signal-ledger/` |
 | Mind map / positions | `N5/data/positions.db`, `N5/scripts/positions.py`, `N5/scripts/sync_positions_to_entities.py` |
 | Meeting ingestion | `Skills/meeting-ingestion/SKILL.md`, `Personal/Meetings/` |
-| Tasks bridge | `Skills/google-tasks-bridge/`, `N5/data/taskintake.db` |
 | Research routing | `N5/scripts/research_router.py`, `Research/` |
 
 ## Workspace Roots

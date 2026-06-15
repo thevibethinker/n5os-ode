@@ -199,52 +199,13 @@ parent_context = emoji.resolve_parent_context(state, convo_id)
 7. **Scans content library** — Reusable artifacts (Tier 3)
 8. **PII audit** — Checks for sensitive data
 
-### Task System Integration
+### Task Tracking
 
-When closing a conversation, check if it's an action conversation:
-
-1. **Check for action conversation:**
-   ```bash
-   python3 Skills/task-system/scripts/context.py action-check --convo-id <id>
-   ```
-
-2. **If task found**, get completion context:
-   ```bash
-   python3 Skills/task-system/scripts/context.py completion-check --convo-id <id> --task-id <id>
-   ```
-
-3. **Reason about completion** using the context (see task-system SKILL.md)
-
-4. **Show assessment to V:**
-   ```
-   TASK: Draft investor memo
-
-   Assessment: ✅ COMPLETE
-   Evidence: investor-memo-v1.md created, matches task intent
-
-   Mark as: [complete] [partial] [blocked]
-   ```
-
-5. **Update task** based on V's choice:
-   ```bash
-   python3 Skills/task-system/scripts/task.py complete <id>
-   # or
-   python3 Skills/task-system/scripts/task.py update <id> --status in_progress
-   ```
-
-6. **If partial, get next step:**
-   ```bash
-   python3 Skills/task-system/scripts/context.py next-step --task-id <id>
-   ```
-   Show V the suggested follow-up.
+This export does not include the former `task-system` skill. When a conversation ends with follow-up work, record the follow-up directly in the close output or the appropriate project/build artifact instead of calling task-system scripts.
 
 ### Key Files
 
-- `file 'Skills/task-system/scripts/context.py'` — Context gathering for AI reasoning (action-check, completion-check, next-step)
-- `file 'Skills/task-system/scripts/task.py'` — Task operations (add, list, complete, update, tag-conversation)
-- `file 'Skills/task-system/scripts/db.py'` — Database operations
-- `file 'Skills/task-system/SKILL.md'` — Complete task system documentation and reasoning discipline
-- `file 'N5/lib/close/core.py'` — Thread close core functions with task integration support
+- `file 'N5/lib/close/core.py'` — Thread close core functions
 
 ---
 

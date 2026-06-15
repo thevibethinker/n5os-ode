@@ -240,17 +240,17 @@ def check_design_context(slug: str) -> list[str]:
 
         if refs_missing > 0 and refs_found == 0:
             recommendations.append(
-                f"No Stitch visual references found for {len(design_drop_ids)} design Drop(s). "
-                f"Consider running: python3 Skills/pulse/scripts/stitch_brief.py generate {slug}"
+                f"No visual references found for {len(design_drop_ids)} design Drop(s). "
+                "This export does not include the former Stitch helper; create references manually or through the active frontend/design skills and place them under the build context folder."
             )
         elif refs_found > 0 and refs_missing > 0:
             recommendations.append(
-                f"Stitch references: {refs_found}/{len(design_drop_ids)} design Drops covered. "
-                f"Generate remaining: python3 Skills/pulse/scripts/stitch_brief.py generate {slug}"
+                f"Visual references: {refs_found}/{len(design_drop_ids)} design Drops covered. "
+                "Refresh remaining references manually or through the active frontend/design skills and place them under the build context folder."
             )
         elif refs_found == len(design_drop_ids):
             recommendations.append(
-                f"✅ Stitch visual references found for all {refs_found} design Drop(s)."
+                f"✅ Visual references found for all {refs_found} design Drop(s)."
             )
 
     return recommendations
